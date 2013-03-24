@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이를 어쩝니까! 엘리시움의 높은 분들이 오신다고 해서 지금 난리가 났습니다!</p>
+          <p> </p>
+          <p>테미논 거점에 전황 확인차 오시는 모양인데 예정에도 없이 여길 들르신다는군요.</p>
+          <p> </p>
+          <p>말로는 우리 가디언의 사기를 북돋아 주려고 온다는데. </p>
+          <p> </p>
+          <p>어휴! 어째 일만 더 많아지는 기분입니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>혹시 모르니 주변의 용족을 한 마리도 남기지 말고 싹 청소하라는데.</p>
+          <p> </p>
+          <p>나가와 나가란트 놈들, 하필 오늘따라 유난히 많네요. 냄새라도 맡은 걸까요? </p>
+          <p> </p>
+          <p>만날 앓는 소리를 해야 하는 저도 괴롭지만, [%username] 님이 좀 도와주시면 안 될까요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>휴, 감사합니다. [%username] 님 덕분에 한시름 놓았습니다.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_Ab1_1231_NagaFighter_40_An], [%dic:STR_DIC_M_Ab1_1231_NagaKnight_39_An], [%dic:STR_DIC_M_Ab1_1231_NagaWizard_39_An]%을 각각 4마리, 3마리, 2마리씩만 없애주세요.</p>
+          <p> </p>
+          <p>나머지는 제가 어떻게든 처치할 수 있습니다.</p>
+          <p> </p>
+          <p>아참! 혹시 몰라하는 말인데요, 저 무기 말입니다. 네, 나가와 나가란트가 지닌 무기 말이예요.</p>
+          <p> </p>
+          <p>조잡해 보여도 만만치 않으니 조심하셔야 할 겁니다. 일이 깨끗이 마무리되면 저에게 말씀해 주시고요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>좀 서운하네요. 바투스 부탁은 들어주셨으면서 제 부탁은 매정하게 거절하시다니.</p>
+          <p> </p>
+          <p>에휴, 어쩔 수 없지요. </p>
+          <p> </p>
+          <p>급한 대로 사람을 모아 나가봐야겠습니다. 남는 손이 있을지 모르겠지만요... </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>부탁한 나가와 나가란트는 모두 처리하셨습니까?</p>
+          <p> </p>
+          <p>주변이 깨끗해진 걸로 봐서 약속은 지키신 것 같은데... </p>
+          <p> </p>
+          <p>혹시 별일은 없으셨습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>순순히 제 부탁을 들어주실 때 알아봤습니다. 실력도 대단한 분일 거라고 말이죠.</p>
+          <p> </p>
+          <p>그런데 죄송해서 어쩌죠? 엘리시움의 윗분들이 안 오신답니다. 일정이 촉박해서 바로 돌아가신다는군요.</p>
+          <p> </p>
+          <p>그래도 덕분에 주변의 나가와 나가란트를 소탕하니 속이 시원하네요. 여러 모로 수고 많으셨습니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">드키사스 섬의 용족을 처치하라</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Ab1_1231_NagaFighter_40_An]([%2]/4)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Ab1_1231_NagaKnight_39_An]([%5]/3)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Ab1_1231_NagaWizard_39_An]([%8]/2)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Luptinai]와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">주위의 나가와 나가란트를 싹 청소하라는 지시를 받은 룹티나이를 도와 나가란트 암흑전사, 나가란트 투사, 나가 암흑법사를 처치하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>룹티나이는 엘리시움의 시찰을 맞을 준비로 주변의 나가와 나가란트를 모두 처치해야 한다고 했다.</p>
+          <p> </p>
+          <p>그녀를 도와 주위의 제38 부대 나가와 나가란트를 처치해 주었더니 무척 고마워했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

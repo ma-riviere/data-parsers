@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p align="center"> - 의뢰장 - </p>
+          <p> </p>
+          <p>수확자 하비르타를 처치해 달라는 의뢰를 요청받았다.</p>
+          <p></p>
+          <p>찰리룽 흥신소 조직원들은 다음 내용을 숙지하고 지시에 따라 주기 바란다. </p>
+          <p> </p>
+          <p> 1. 이름: [%dic:STR_DIC_M_DF4_DaQ_DrakanPr_Re_55] </p>
+          <p></p>
+          <p> 2. 위치: 황혼의 드라나 농장</p>
+          <p></p>
+          <p> 3. 상세: 황혼의 드라나 농장에서 생산된 드라나를 직접 수확하는 드라칸 관리인. 수확한 드라나를 확보하면 용족의 드라나 생산에 대해 알 수 있을 것으로 추측됨.</p>
+          <p> </p>
+          <p>수확자 하비르타를 처치하여 갓 수확한 드라나를 구해온 자에게 의뢰대금을 지급하겠음.</p>
+          <p> </p>
+          <p>- 찰리룽 흥신소, [%dic:STR_DIC_E_46500] 일동 -</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">의뢰장을 접어 넣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>겔크마로스에 온 이후 드라나는 지긋지긋하게 보지만 아직 그 재배 방식은 제대로 밝혀진 부분이 없다고 한당, 냥냥.</p>
+          <p> </p>
+          <p>무엇보다 드라나 재배를 장치나 하수인에게 맡겨 두는데 녀석들에게서 뭘 알아낼 수 있겠냥?</p>
+          <p> </p>
+          <p>하지만 수확자 하비르타는 다르다지? 직접 드라나를 수확한다고 하니까, 냥냥. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">가져온 드라나를 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아직 하비르타가 수확한 드라나를 얻지 못했나 보구나, 냥냥?</p>
+          <p> </p>
+          <p>수확자 하비르타는 황혼의 드라나 농장에 있을 거니 딴 데 가지 말고 농장 가서 찾아봐랑, 냥냥.</p>
+          <p> </p>
+          <p>다른 데바가 의뢰대금을 차지하기 전에 어서 가서 처리해랑, 냥냥.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이게 바로 용족이 직접 수확했다는 드라나구낭, 갸릉.</p>
+          <p> </p>
+          <p>(상자에 넣으며) 기분 나쁜 물건이당, 냥! 틀림없이 몸에 안 좋은 거당.</p>
+          <p> </p>
+          <p>데바가 일을 잘 해주었구낭. 의뢰대금이 제법 묵직하니, 챙겨 가랑, 냥냥.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">용족 [%dic:STR_DIC_M_DF4_DaQ_DrakanPr_Re_55]를 처치하고 드라나를 챙겨 [%dic:STR_DIC_E_46500]에게 가져가라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">찰리룽 흥신소에서 의뢰장이 왔다. 의뢰를 수행하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>찰리룽 흥신소에서 드라칸 수확자를 처치하고 수확한 드라나를 구해 달라는 내용의 의뢰장을 받았다.</p>
+          <p> </p>
+          <p>황혼의 드라나 농장으로 가 수확자 하비르타를 처치한 후 얻은 드라나를 겔크마로스 관리부 직원에게 보고하자 수고했다며 의뢰대금을 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

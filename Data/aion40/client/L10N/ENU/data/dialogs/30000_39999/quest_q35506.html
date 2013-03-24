@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You came just in time!</p>
+          <p> </p>
+          <p>Please, take this. It's an urgent order for you, [%username], from Radiant Ops.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Well, let me see it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p align="center"> - CONFIDENTIAL - </p>
+          <p> </p>
+          <p>From: Radiant Ops Headquarters</p>
+          <p>To: Agent [%username]</p>
+          <p> </p>
+          <p>Subject: Radiant Ops has just been informed of a small Asmodian army threatening Elyos in the Eltnen and Heiron regions.</p>
+          <p> </p>
+          <p>Orders: Proceed immediately to [%dic:STR_DIC_E_LF2_name] and [%dic:STR_DIC_E_LF3_name] to neutralize at least two combat-worthy Asmodians. Once the Asmodian forces have been reduced, report to [%dic:STR_DIC_N_Valentius].</p>
+          <p> </p>
+          <p>Fly straight and bright!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I will report your participation in this operation to my superiors, [%username].</p>
+          <p> </p>
+          <p>Remember--every little helps. I'll check if the operation was successful on your return, and reward you accordingly.</p>
+          <p> </p>
+          <p>For the glory of Sanctum!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Faith and arms!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You don't want to carry out the order?</p>
+          <p> </p>
+          <p>I can't force you to, but considering that my superiors put out this urgent order....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"As did others."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], report.</p>
+          <p> </p>
+          <p>I'm in charge of securing the Eltnen and Heiron regions, so I need up to date information from each agent who returns from those locations.</p>
+          <p> </p>
+          <p>What's the current status in the field?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"The Asmodians are on the run."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, your mission was successful then. Good. Good.</p>
+          <p> </p>
+          <p>If all of our agents do as well, we'll have the area secured in no time.</p>
+          <p> </p>
+          <p>Here's a Radiant Ops reward in recognition of your service today.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Neutralize the [%dic:STR_DIC_E_Daily_1] in [%dic:STR_DIC_E_LF2_name] and [%dic:STR_DIC_E_LF3_name]([%2]/2).</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Report your success to [%dic:STR_DIC_N_Valentius].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Urgent Order: Neutralize the small Asmodian force making incursions into Eltnen and Heiron. Report your success to [%dic:STR_DIC_N_Valentius].</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Radiant Ops Headquarters issued an urgent order to neutralize Asmodian forces in Eltnen and Heiron. </p>
+          <p> </p>
+          <p>You completed your mission and received a reward from Radiant Ops.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+  
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>  
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

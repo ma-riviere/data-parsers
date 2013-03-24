@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hey, you're [%username]! I heard about you from Tellarius. He said you got rid of the Klaws in the desert. I was just trying to figure out how to address that problem here.</p>
+          <p> </p>
+          <p>Everybody is preoccupied with the Balaur and Lepharist Revolutionaries, but I think we need to keep an eye on the Klaws.</p>
+          <p> </p>
+          <p>Many people look down on them as insects, but really they're quite smart.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"How smart?"</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>They're dangerously smart. So smart that if we don't reduce their numbers pretty soon we may not need to worry about defending this area from the Balaur.</p>
+          <p> </p>
+          <p>You've dealt with them before. I don't have to tell you how tricky they can be.</p>
+          <p> </p>
+          <p>If we want to hold this camp, we've got to act now.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm glad to know you're with us. I've pinpointed their nest at Heiron Pass, but they've spread all over the place.</p>
+          <p> </p>
+          <p>Wherever they are, they've got to be put down. Kill as many [%dic:STR_DIC_M_NeutH1_38_An]s and [%dic:STR_DIC_M_NeutL1_37_An]s as you can manage.</p>
+          <p> </p>
+          <p>10 each seems like a good start.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Ten it is, then."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+
+          <p>Are you sure you're the same [%username] who fought Klaws in Eltnen? Those things are a menace! A horrible plague on all our lands! Straight from the heart of darkness itself!</p>
+          <p> </p>
+          <p>They lay in wait for us to show weakness, to turn our attention from their insidious invasion, and then when we least expect it they'll STRIKE!</p>
+          <p> </p>
+          <p>Klaaaaaaaaaaws!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Um...okay."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, [%username]!</p>
+          <p> </p>
+          <p>Have you finished already? It seems like you just left. Did you kill the Klaws?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I took care of them."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well done! I wish we had someone who could kill that many every day.</p>
+          <p> </p>
+          <p>Killing 20 Klaws is only scratching the surface, but they're smart enough to know they're in danger so they'll lay low for a time.</p>
+          <p> </p>
+          <p>Thanks for your assistance.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get rid of Klaws in the Poya Jungle.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_NeutH1_38_An]([%2]/10)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_NeutL1_37_An]([%5]/10)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report back to [%dic:STR_DIC_N_Zeuclid].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">You have to reduce the population of Klaws before they overrun the jungle. Kill Klaws in the Poya Jungle.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Zeuclid believes that Klaws could threaten all of Elysea some day if their numbers grow unchecked.</p>
+          <p> </p>
+          <p>He heard you'd battled Klaws in Eltnen, and asked you to bring your Klaw-killing experience to bear on the problem in the Poya Jungle. You killed Klaws as he requested.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아이고, 난 이제 끝장이오.</p>
+          <p> </p>
+          <p>20년 요리 인생이 이렇게 무너지는구려.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+    <Act href="HACTION_ASK_QUEST_ACCEPT">무슨 일인지 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>며칠 뒤에 [%dic:STR_DIC_ELA07]에서 큰 요리 대회가 열린다오. 천계의 내로라하는 요리사가 모두 참가하는 자리지.</p>
+          <p> </p>
+          <p>이번에는 으깬 생선살을 가미한 하이브 스테이크를 출품하려고 하는데 하이브 고기를 도무지 구할 수가 없구려.</p>
+          <p> </p>
+          <p>직접 사냥할까도 생각해 봤지만 난 죽은 짐승만 잘 다루지 산 것은 영 무서워서 말이오.</p>
+          <p> </p>
+          <p>급한 일 없으면 당신이 날 좀 도와주지 않겠소?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_MLA05]%을 사냥해 [%dic:STR_DIC_QILA05]%을 구해다 주시오.</p>
+          <p> </p>
+          <p>클리오네 호수에 가면 많을 거요.</p>
+          <p> </p>
+          <p>그리고 하이브 고기는 호수 낚시터에 있는 [%dic:STR_DIC_LA07]에게 전해 주면 되오.</p>
+          <p> </p>
+          <p>내 안 사람인데 요리에 쓸 물고기를 잡는 중이라오.</p>
+         </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+         <p>이제 겨우 3일 남았는데 오늘 내로 못 구하면, 휴...</p>
+         <p> </p>
+         <p>안타깝지만 어쩌겠소. 페이라가 생선은 구해 줄 테니 주요리를 생선으로 바꿔야겠구려.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+   <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>무슨 일이죠?</p>
+          <p> </p>        
+          <p>전 용병에게 도움을 청한 적이 없는데요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">하이브 고기를 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+<HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아하, 남편이 요리 재료를 부탁한 사람이 [%username] 님이었군요. </p>
+          <p> </p>
+          <p>그런데 하이브 고기는 어디 있나요?</p>
+          <p> </p>
+          <p>재료가 늦으면 남편이 [%username] 님을 원망할 지도 몰라요. 그러니 서둘러 분홍부리 하이브의 고기를 구해다 주세요.</p>   
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+    <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아하, 남편이 요리 재료를 부탁한 사람이 [%username] 님이었군요. </p>
+          <p> </p>
+          <p>색깔이 선명한 게 육즙이 끝내 줄 것 같은데요?</p>
+          <p> </p>
+          <p>감사합니다. 남편이 막무가내로 부탁했을 텐데 흔쾌히 재료도 구해다 주시고.</p>
+          <p> </p>
+          <p>받으세요. 약소하지만 저와 남편의 성의 표시입니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+                     <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_MLA05]의 고기를 모아 [%dic:STR_DIC_LA07]에게 가져가라</font></p>[%collectitem]</step>          
+    </steps>
+          <p><font font_xml="quest_summary">우노가 요리 대회에 출품할 요리 재료로 쓸 분홍부리 하이브의 고기를 구해달라고 한다. 하이브의 고기를 구해 우노의 아내 페이라에게 가져다 주자.</p>
+          <p></font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>우노가 대회에 출품할 요리 재료가 부족하다고 걱정이 이만저만이 아니었다. </p>
+          <p> </p>
+          <p>그래서 클리오네 호수의 분홍부리 하이브를 사냥해 얻은 고기를 우노의 아내 페이라에게 가져다 줬다. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

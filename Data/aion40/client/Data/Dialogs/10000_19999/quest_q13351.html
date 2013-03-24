@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p> - 긴급 지령서 - </p>
+          <p></p>
+          <p> 1. 발신 : 카탈람 파견대, [%dic:STR_DIC_W_LDF5b_A4_v11]의 [%dic:STR_DIC_N_LDF5_Village_Guard11_L]</p>
+          <p></p>
+          <p> 2. 수신 : [%username]</p>
+          <p></p>
+          <p> 3. 명령 : 남부 카탈람 [%dic:STR_DIC_W_LDF5b_SZ_A4]에 침투한 마족 1명을 처치할 것.</p>
+          <p></p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">의뢰를 수행한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+   <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>신속한 연락 체계 덕택에 마족들의 침투에 언제든 대응할 수 있습니다.</p>
+          <p> </p>
+          <p>물론 그런 연락에 신속하게 대응해주실 수 있는 [%username] 님 같은 분이 계셔서 가능한 일이지요.</p>
+          <p> </p>
+          <p>마족의 처리는 어떻게 되어가고 있나요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>좋은 소식을 가지고 오시리라 믿고 있었습니다.</p>
+          <p> </p>
+          <p>덕택에 아군 전력을 온존할 수 있었습니다.</p>
+          <p> </p>
+          <p>다음 번에도 잘 부탁드립니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">남부 카탈람 [%dic:STR_DIC_W_LDF5b_SZ_A4]에 침투한 마족을 처치하라([%2]/1)</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_N_LDF5_Village_Guard11_L]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">긴급 지령: 남부 카탈람 네빌림 고원에 침투한 마족을 처치하고 스티폰에게 보고하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>마족이 남부 카탈람 네빌림 고원을 노리고 침투해왔다.</p>
+          <p> </p>
+          <p>침투한 마족들을 소탕하고 스티폰에게 보고하였다.</p>
+          <p> </p>
+          <p></p>
+          <p> </p>
+          <p></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

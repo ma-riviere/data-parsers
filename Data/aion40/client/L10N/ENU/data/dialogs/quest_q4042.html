@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(This is a very old letter. The wet paper has made most of the words unreadable.)</p>
+          <p> </p>
+          <p>(Examining it carefully, you determine that the letter is directed to "Sahnu" and it is from "Ntuamu.")</p>
+          <p> </p>
+          <p>(You should show it to [%dic:STR_DIC_N_DF2a_Seiren_Sahnu].)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Well...off to Nahor Lake."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What do you want?! I've been waiting here for some news of my sister, but it has been so long the worry is making me a bit crazy.</p>
+          <p> </p>
+          <p>My other sisters say I should stop looking for her, that Ntuamu is probably dead, but I think she's still alive somewhere. We Seiren are strong!</p>
+          <p> </p>
+          <p>Even if she is dead...I must find out for sure.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">"This letter is for you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>A letter for me? Let me see.... Oh...this is definitely Ntuamu's handwriting, but the writing is so blurred I can't read it.</p>
+          <p> </p>
+          <p>Oh, Ntuamu! I must find out what this letter says. It's the only clue I have!</p>
+          <p> </p>
+          <p>Daeva, would you do me a great kindness? I've heard there's a scholar, [%dic:STR_DIC_N_Gunter], who restores damaged books. I can't leave home--I want to be here should Ntuamu return. Would you find Gunter for me? Perhaps he can restore this letter.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"I'll do my best."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select3">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes, Daeva, many people ask me to restore documents. Old books that have deteriorated or papers that have been left to gather mold or rot.</p>
+          <p> </p>
+          <p>Restoration is a truly rewarding job because it brings back lost memories.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT3_1">"Could you look at this?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select3_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh my...this letter is very old, but it's not in bad condition.</p>
+          <p> </p>
+          <p>The ink has been blurred, but the paper is intact so I think I can restore it. Let me just brush some of this restoration agent on it.</p>
+          <p> </p>
+          <p>See how the blurred ink fades away, revealing the latent ink still remaining from the original script? There...the letter is perfectly legible now.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO2">"Thank you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, I was waiting for you!</p>
+          <p> </p>
+          <p>Is Ntuamu's letter restored?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"It's readable now."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, thank you!</p>
+          <p> </p>
+          <p>I will reward your kindness someday. Seirens have a strong sense of gratitude.</p>
+          <p> </p>
+          <p>But for now please let me be. I need to read this letter from my long-lost sister.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Bring the letter to [%dic:STR_DIC_N_DF2a_Seiren_Sahnu].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Ask [%dic:STR_DIC_N_Gunter] to restore the letter.</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Return to [%dic:STR_DIC_N_DF2a_Seiren_Sahnu].</font></p></step>          
+    </steps>
+          <p><font font_xml="quest_summary">You found a letter inside a bottle. Take it to Sahnu.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You discovered a letter inside an old bottle at Nahor Lake.</p>
+          <p> </p>
+          <p>When you brought the letter to Sahnu, she asked you to restore it saying it was from her lost sister.</p>
+          <p> </p>
+          <p>You brought the letter to Gunter, an antique document restoration expert, and then returned it to Sahnu.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm glad you're still here, [%username]. Brigade General Perento would have chewed my hide off if you had left.</p>
+          <p> </p>
+          <p>I have urgent orders from him.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I'm listening."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>He received a report from Raninia about what you saw in Kromede's Trial. He wishes to confirm these visions are Asmodian in origin.</p>
+          <p> </p>
+          <p>Because if they are, then the counterfeit Stigmas are probably also from Asmodae, which would have certain...security implications.</p>
+          <p> </p>
+          <p>I'm sorry to even ask this, but would you go back inside [%dic:STR_DIC_W_IDCromede] and find out more about the location? I was told to ask you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent. I'll tell the Brigade General the good news.</p>
+          <p> </p>
+          <p>The report also mentioned that the nightmare would only end when [%dic:STR_DIC_M_IDCromede_Named_Judge_38_An] is killed. So, since you're going back inside [%dic:STR_DIC_W_IDCromede], you get to kill him.</p>
+          <p> </p>
+          <p>You must put a stop to this nightmare once and for all, [%username]! I've been ordered to give you a Silver Coin for your troubles, too.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Coins speak volumes. I'm on it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>If you think that's wise, then I will tell Brigade General Perento that you said no.</p>
+          <p> </p>
+          <p>You will be hearing from him. Good day.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I look forward to it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What I gave you was a direct order from Brigade General Perento, [%username].</p>
+          <p> </p>
+          <p>What I hope you have for me are the answers to my questions.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"It is Asmodae..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're sure? It's definitely Asmodae? Strange....</p>
+          <p> </p>
+          <p>And you killed Kaliga, you said? The General will be happy to hear that, even if it is just a dream!</p>
+          <p> </p>
+          <p>Please, take these...the coin Brigade General Perento promised you.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Enter [%dic:STR_DIC_W_IDCromede] and kill [%dic:STR_DIC_M_IDCromede_Named_Judge_38_An].([%2]/1)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk to [%dic:STR_DIC_N_Serdy].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Brigade General Perento was curious about the location of Kromede's Trial. Check again to see if it's Asmodae or not.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Serdy said Brigade General Perento ordered you to return to the nightmare to see if it indeed took place in Asmodae.</p>
+          <p> </p>
+          <p>You went back in and killed Kaliga while you were checking the location, and you were rewarded with coins from Brigade General Perento.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

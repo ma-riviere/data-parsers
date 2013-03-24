@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Rewrite by Dave 28 May -->
+<!-- Editing by Fran 31 May -->
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, [%username]! Good, you're still here.</p>
+          <p> </p>
+          <p>A letter from Grunn just arrived. That idiot. I mean, he's a genius, but...still an idiot.</p>
+          <p> </p>
+          <p>It seems we don't have a complete set of Defender's cores after all.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Wait, we don't?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Grunn says he "deduces the existence" of some other varieties of Defenders. I think that's Grunn-speak for "completely missed."</p>
+          <p> </p>
+          <p>We need intact cores from a [%dic:STR_DIC_M_Ab1_1011_LightGuardian_50_An] and a [%dic:STR_DIC_M_Ab1_1011_DarkGuardian_50_An].</p>
+          <p> </p>
+          <p>I know, this is hardly your fault. But...I still have enough "discretionary research funds" to make it worth your while.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Grunn might be an idiot, but he's a very clever sort of idiot.</p>
+          <p> </p>
+          <p>Note this part of the letter: "The [%dic:STR_DIC_M_Ab1_1011_LightGuardian_50_An] and [%dic:STR_DIC_M_Ab1_1011_DarkGuardian_50_An] do not coexist...."</p>
+          <p> </p>
+          <p>"When the Light's Defenders are present, the Shadow's Defenders hide themselves, and vice versa..." Hope that helps.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll solve this riddle."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You risked your life before. I suppose asking for further acts of bravery is presumptuous.</p>
+          <p> </p>
+          <p>I just hope we answer the riddles of the Divine Fortress before the Elyos get in there.</p>
+          <p> </p>
+          <p>Hmm...wonder whether any of them are sun-addled enough to tackle a Defender?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Farewell."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You look weary. Those Defenders are tenacious foes, eh?</p>
+          <p> </p>
+          <p>Still, your previous experience must have helped. Did you get all the cores? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here you go."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+           <p>I said five each of the [%dic:STR_DIC_I_QUEST_2826a] and [%dic:STR_DIC_I_QUEST_2826b], right?</p>
+          <p> </p>
+          <p>And...the Defenders of Light and Shadow do not appear together, I know I mentioned that...</p>
+          <p> </p>
+          <p>Uh, you can count to five, can't you, [%userclass]? Aah, forget I asked....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Yes, yes, I'll be back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Five! That's five each, and we have ten cores here.</p>
+          <p> </p>
+          <p>Blood for blood, as you soldiers say! Aaaand here you are. It's the reward I promised.</p>
+          <p> </p>
+          <p>I hope you find it to your liking, [%username]. It seems the sort of thing you'd need.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Destroy the [%dic:STR_DIC_M_Ab1_1011_LightGuardian_50_An] and [%dic:STR_DIC_M_Ab1_1011_DarkGuardian_50_An] to extract their cores and bring them to [%dic:STR_DIC_N_Ab1_1011_Quest_Da].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Muelina needs cores from two more types of Defenders. Gather cores from Light's Defenders and Shadow's Defenders and bring them to her.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Muelina was told of the Defenders of Light and Shadow, and needed you to get cores from those two Defenders as well.</p>
+          <p> </p>
+          <p>So you waited for each elusive type of Defender to appear, defeated them, and returned with the cores to Muelina, to her relief.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

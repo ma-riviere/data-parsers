@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q30709</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>Not entered</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select_none" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_N_Herald] has sent me a request that I cannot fulfill, [%username]. Maybe you can help?</p>
+	  			<p> </p>
+	  			<p>He needs someone to go to the [%dic:STR_DIC_W_IDTiamat_SZ_S6] and see if the stone statues there are somehow multiplying. It's a strange request, but the reward he's offering is more than fair.</p>
+	  			<p> </p>
+	  			<p>So, could you help?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm busy training, [%username]! What is it?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Well..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+         	<p>So then it's true...</p>
+	  			<p> </p>
+	  			<p>Rumors had been swirling around that the Dragon Lords had started trapping their victims in stone. They were alive, frozen in place, left to stare at the others as they were held in perpetual paralysis.</p>
+	  			<p> </p>
+	  			<p>The thought of it makes my stomach turn. Those poor souls...</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    			<steps>
+         		<step><p visible="[%0]"><font color="[%1]">Find the [%dic:STR_DIC_W_IDTiamat_SZ_S6] in [%dic:STR_DIC_W_IDTiamat_SZ_R1] and look to see whether there are an increasing number of stone statues.</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Report back to [%dic:STR_DIC_N_Herald].</font></p></step>
+    				</steps>
+          <p><font font_xml="quest_summary">Find the Noble Garden and examine the stone statues there.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ariana said Harold had a favor to ask. She asked you to find the Noble Garden, and check whether there are increasing numbers of stone statues there.</p>
+	  			<p> </p>
+	  			<p>You found there were more as you were there, and reported back to Harold. He'd heard rumors of the statues actually being trapped victims, and wanted to know if there was any truth to them. Sadly, there was...</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

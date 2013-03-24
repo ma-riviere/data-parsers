@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님, 한 번만 더 저희를 도와주시지 않겠어요?</p>
+          <p> </p>
+          <p>카룬 님의 흔적을 망치고 있는 [%dic:STR_DIC_M_LDF5A_B6_FrillFaimam_62_An]을 처치해 주세요.</p>
+          <p> </p>
+          <p>이대로 가다간 겨우 찾아낸 단서가 못쓰게 될 거예요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>붉은 눈 프릴파이둠은 처치하신 건가요?</p>
+          <p> </p>
+          <p>[%username] 님이 돌아오시기 만을 기다렸답니다.</p>
+          <p></p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">처치했다고 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>저희가 또 빚을 졌네요.</p>
+          <p> </p>
+          <p>여기 감사한 마음을 담아 준비했으니 받아 주세요.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">카룬의 흔적을 망치는 [%dic:STR_DIC_M_LDF5A_B6_FrillFaimam_62_An]을 처치하라([%2]/15)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_LDF5a_Yarna_E]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">기껏 찾아낸 카룬의 흔적을 망치는 붉은 눈 프릴파이둠을 처치하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>연족 서쪽 수색대의 야르나는 카룬의 흔적을 찾는 데에 방해가 된다며 도움을 청했다.</p>
+          <p> </p>
+          <p>겨우 찾아낸 카룬의 흔적을 망치는 붉은 눈 프릴파이둠을 처치하고 돌아가자 감사를 표했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

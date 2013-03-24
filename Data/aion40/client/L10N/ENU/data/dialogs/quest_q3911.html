@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], are you carrying out the teachings of Life faithfully?</p>
+          <p> </p>
+          <p>I am currently issuing tasks to Clerics and Chanters in Sanctum by order of Lady Yustiel.</p>
+          <p> </p>
+          <p>You should do your part if you truly walk the path of the [%userclass].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What role could I play?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You need only to carry out the teachings of Life. Use the resurrection skills you have learned from the Temple to raise fallen comrades.</p>
+          <p> </p>
+          <p>You can use any skills you like to accomplish this task.</p>
+          <p> </p>
+          <p>By this point it shouldn't be anything new. Report back to Thrasymedes when you're finished.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I trust this command isn't too onerous. It's intended bolster the Clerics and Chanters who belong to the Temple of Life, not burden others.</p>
+          <p> </p>
+          <p>Anywhere you go, you'll see those in need. Save your comrades lying on the cold ground.</p>
+          <p> </p>
+          <p>When you've performed [%dic:STR_DIC_E_RESURRECT] enough times, report back to [%dic:STR_DIC_N_Thrasymedes].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Faith and arms!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've no authority to compel you to this task, [%username].</p>
+          <p> </p>
+          <p>Even so, I wouldn't want to anger Lady Yustiel.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I've done enough for the good Lady already."</Act>
+    </Selects>
+  </HtmlPage>
+
+    <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Welcome, Disciple. I thought I sensed your return. Have you accomplished Hygea's task?</p>
+          <p> </p>
+          <p>I hope you didn't think of it as a burden. Lady Yustiel teaches us that when we give of ourselves, we recieve more than we give.</p>
+          <p> </p>
+          <p>Tell me of your travels. Did you resurrect your fallen comrades?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I have carried out Lady Yustiel's will."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>As you chose the path of [%userclass], it's generally assumed you have a giving spirit. Of course, we've been wrong on occasion....</p>
+          <p> </p>
+          <p>The wise [%userclass] returns to our basic teachings from time to time for those simple truths guide us always.</p>
+          <p> </p>
+          <p>Take this reward from the Temple of Life in commemoration for all of your faithful works.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Use the [%dic:STR_DIC_E_RESURRECT] to resurrect fallen comrades ([%2]/10).</font></p></step>               
+               <step><p visible="[%3]"><font color="[%4]">Talk with [%dic:STR_DIC_N_Thrasymedes].</font></p></step>               
+    </steps>
+          <p><font font_xml="quest_summary">Follow Hygea's instructions and use your resurrection skills on comrades who have fallen.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hygea recommended you to carry out a task issued by the Temple of Life.</p>
+          <p> </p>
+          <p>You used resurrection skills to raise fallen comrades and were rewarded by Thrasymedes.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

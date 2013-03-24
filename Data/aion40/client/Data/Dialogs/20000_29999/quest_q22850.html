@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p> - 긴급 지령서 - </p>
+          <p> </p>
+          <p> 1. 발신 : 카탈람 파견대, [%dic:STR_DIC_W_LDF5a_B9_7]의 [%dic:STR_DIC_N_LDF5_Village_Guard07_D]</p>
+          <p> </p>
+          <p> 2. 수신 : [%username]</p>
+          <p> </p>
+          <p> 3. 명령 : 북부 카탈람 [%dic:STR_DIC_W_LDF5a_B9]에 침투한 천족 데바 1명을 처치할 것.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">의뢰를 수행한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+   <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>천족이 불온한 움직임을 보이고 있습니다.</p>
+          <p> </p>
+          <p>아마 어떻게든 점령지를 차지해 보려는 속셈이겠지요.</p>
+          <p> </p>
+          <p>괘씸한 놈들입니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님은 명성만큼 일처리도 확실하시군요.</p>
+          <p> </p>
+          <p>이로써 천족들도 기가 꺾여 차마 접근하지 못할 겁니다.</p>
+          <p> </p>
+          <p>긴급히 내린 지령인데 잘 처리해 주셔서 감사합니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">북부 카탈람 [%dic:STR_DIC_W_LDF5a_B9]에 침투한 천족을 처치하라([%2]/1)</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_N_LDF5_Village_Guard07_D]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">긴급 지령: 북부 카탈람 황금깃털 진격로에 침투한 천족을 처치하고 자른켈에게 보고하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>북부 카탈람 황금깃털 진격로에 침투한 천족을 처치해 달라는 자른켈의 긴급 지령을 받아 천족을 처치하였다.</p>
+          <p> </p>
+          <p>돌아가서 결과를 보고하자 자른켈은 감사를 표했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hold, [%userclass]. Are you traveling to the Observatory?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Why? What would you ask of me?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Parched Barrens is a dangerous place, and too many travelers get injured despite our efforts to protect them. Word has it you possess the talent and skill to protect yourself.</p>
+          <p> </p>
+          <p>We must guard the entrance to the Barrens--leaving our post is not possible. If we had more Guardians, perhaps we could escort people to the Observatory, but for now that's not an option.</p>
+          <p> </p>
+          <p>Would you be willing to assist us? We need to kill [%dic:STR_DIC_M_LF2A_Basilisk_45_An]s over in the Barrens. That should reduce the risk significantly.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh! While you're out there, you'll see [%dic:STR_DIC_M_LF2A_DionaeaRed_45_An]s as well. They seem innocuous at first, just like big plants, but appearances can be deceiving out here.</p>
+          <p> </p>
+          <P>The Observatory Guardians are supposed to clear these creatures from the road on a regular basis, but they've fallen behind and it's becoming dangerous. Diokuroi is the Guardian in charge of this task at the Observatory, but something must have distracted him.</P>
+          <p> </p>
+          <p>When you get there, let Diokuroi know I asked you to take care of it--this time. Your service is appreciated, [%username]. Soar in the light.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Sun's blessings, Guardian."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, as you must. I'd rather lose my wings than ignore such a challenge, but you know your own business best, I'm sure.</p>
+          <p> </p>
+          <p>Do yourself a favor, though, and keep it in mind. We'll have no shortage of Basilisks between now and then, regardless.</p>      
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll remember."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Faith and arms, [%userclass]. What is your business here?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Themis asked me to clear..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>She said it's our job? Not that I know of. Still, it's not like we're lacking for things to do. Maybe someone forgot to mention it.</p>
+          <p> </p>
+          <p>I'll report Themis's request to Centurion Gaix and we'll see where it goes from there. </p>
+          <p> </p>
+          <p>In the meantime, welcome to the Observatory. Feel free to rest and restock, and sun's blessings on you.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Kill the violent animals at the Parched Barrens.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_LF2A_Basilisk_45_An] ([%2]/20)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_LF2A_DionaeaRed_45_An] ([%5]/15)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_N_Diokuroi].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Get rid of Basilisks and Dionaes on the road to the Observatory.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Themis asked you to kill Dionaes and Basilisks in order to help travelers stay safe in the Parched Barrens.</p>
+          <p> </p>
+          <p>You killed Basilisks and Dionaes int the Barrens and delivered Themis's message to Diokuroi, who guards the entrance of the Observatory Village. He promised to report it to Centurion Gaix and see what his orders are.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

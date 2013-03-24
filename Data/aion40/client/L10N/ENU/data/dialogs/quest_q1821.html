@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You know that Roah used to be a city in Heiron, right?</p>
+          <p> </p>
+          <p>That's where I'm from originally, so you can imagine how heartbreaking it is for me to see the former residents forced to wander the Abyss so long after their deaths. Just think--some of them could be my ancestors!</p>
+          <p> </p>
+          <p>I really wish I could do something to end their suffering.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What did you have in mind?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've been doing some research, and it seems that each of them is animated by a [%dic:STR_DIC_I_QUEST_1821a]. The high concentration of Aether here in the Abyss tends to build up and crystallize inside undead creatures.</p>
+          <p> </p>
+          <p>The solution is simple yet dangerous: defeat the [%dic:STR_DIC_M_Ab1_1211_Maidengolem_30_An]s and remove their crystals.</p>
+          <p> </p>
+          <p>I heard that you have some experience in dealing with them, [%username]. Do you think you can handle this?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Sun's blessings on you!</p>
+          <p> </p>
+          <p>You can find [%dic:STR_DIC_M_Ab1_1211_Maidengolem_30_An]s at the foot of the mountain behind the fortress.</p>
+          <p> </p>
+          <p>Please send them to their eternal rest, and bring me their [%dic:STR_DIC_I_QUEST_1821a]s.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Right away!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, I think I might have given you the wrong impression.</p>
+          <p> </p>
+          <p>This isn't just my own personal request--it would really help us all out if you could clear the path some. Won't you reconsider?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Maybe when I'm not so busy."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Whew, I'm all in a flurry today as usual.</p>
+          <p> </p>
+          <p>If you can bring me good news, that'll relieve some of my burden.</p>
+          <p> </p>
+          <p>Well? Do you have those [%dic:STR_DIC_I_QUEST_1821a]s?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Of course I do!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's no use just killing the [%dic:STR_DIC_M_Ab1_1211_Maidengolem_30_An]s and leaving it at that, you know.</p>
+          <p> </p>
+          <p>Their [%dic:STR_DIC_I_QUEST_1821a]s will cause them to resurrect after a while, unless you bring them here.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Sorry, I didn't realize."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I owe you a great debt, [%username].</p>
+          <p> </p>
+          <p>And not just me, but the residents of Roah, both ancient and modern.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect crystals from [%dic:STR_DIC_M_Ab1_1211_Maidengolem_30_An]s and take them to [%dic:STR_DIC_N_Ab1_1211_Quest_Li].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Hemera has asked you to defeat cursed ancient residents and bring her their Life Crystals.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hemera felt sorry for the cursed ancient residents who were wandering about the Ruins of Roah in eternal unrest.</p>
+          <p> </p>
+          <p>She asked you to destroy the Life Crystals inside their bodies to send them back to the flow of Aether.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

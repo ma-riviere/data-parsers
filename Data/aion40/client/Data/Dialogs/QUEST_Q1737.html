@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>자네 실력에는 정말 감탄했네. 포스를 모아 관문병을 처치하는 임무를 훌륭히 수행한 걸 보니 말이야.  </p>
+          <p> </p>
+          <p>그 정도 통솔력이라면 더 중요하고 힘든 임무를 줘도 괜찮겠다는 생각이 드는군.</p>
+          <p> </p>
+          <p>샤크미스나 아스칼론에게도 선뜻 맡기지 못하는 임무지만 자네라면 해내리라고 믿네. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">무슨 임무인지 물어본다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_M_Q1737all]의 수호신장을 쓰러트리는 임무라네.</p>
+          <p> </p>
+          <p>알다시피 하루가 멀다 하고 요새를 두고 우리와 마족, 용족 간에 전투가 벌어지고 있지 않나. 그리고 요새를 점령하려면 반드시 수호신장을 쓰러트려야 하지.</p>
+          <p> </p>
+          <p>요새에서 전투가 벌어질 때 자네가 포스를 이끌고 가서 수호신장을 처치해 주게. </p>
+          <p> </p>
+          <p>시엘의 서부 요새든 시엘의 동부 요새든 유황나무 요새든 어디라도 상관없네. 요새전이 벌어질 때 수호신장을 처치하면 된다네.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>쉽지 않은 일인데 선뜻 수락해 주니 정말 고맙군.</p>
+          <p> </p>
+          <p>일단 요새의 점령 가능 시간을 확인하고 포스를 조직한 후 수호신장을 공격하게.</p>
+          <p> </p>
+          <p>반드시 성공해서 수호 신장을 쓰러뜨리고 [%dic:STR_DIC_M_Q1737all]를 점령하길 바라겠네.</p>
+          <p> </p>
+          <p>시간이 오래 걸리겠지만 [%username]%이라면 성공할 거라고 믿네.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>쉽지 않은 일이라는 건 나도 알고 자네도 알고 있지.  </p>
+          <p> </p>
+          <p>하지만 난 자네가 이 정도의 패기는 가지고 있을 줄 알았네.</p>
+          <p> </p>
+          <p>솔직히 말해서 조금 실망했네.</p>
+          <p> </p>
+          <p>그렇지만 억지로 강요할 수는 없는 일이지. 나중에라도 마음이 바뀌면 다시 오게나.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>어서 오게, [%username]. 안 그래도 기다리던 참일세.</p>
+          <p> </p>
+          <p>그동안 많은 전투에 참여했다는 건 정찰병에게 들어서 알고 있네.</p>
+          <p> </p>
+          <p>수호신장을 쓰러뜨리고 온 건가?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정말 장하군, [%username]!</p>
+          <p> </p>
+          <p>워낙 힘든 임무라 시켜 놓고도 솔직히 마음이 편하지 않았다네.</p>
+          <p> </p>
+          <p>그런데 그 힘든 임무를 이렇게 훌륭히 수행하다니!</p>
+          <p> </p>
+          <p>자네 덕택에 에레슈란타에서 마족과 용족 놈들을 영원히 몰아낼 날도 멀지 않은 것 같군! </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_M_Q1737all]의 수호신장을 처치하라([%2]/7)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Taranis]%와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">타라니스가 수호신장을 처치하라는 임무를 줬다. 에레슈란타 하부 요새의 수호신장을 처치하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>타라니스는 관문병을 해치우는 임무를 훌륭하게 수행했다면서 이번에는 수호신장을 처치하는 임무를 맡기겠다고 했다. </p>
+          <p> </p>
+          <p>그의 명령대로 포스를 구성해서 에레슈란타 하부 요새의 수호신장을 처치했다.</p>
+          <p> </p>
+          <p>타라니스 총사령관은 에레슈란타에서 마족과 용족을 몰아낼 날이 멀지 않았다며 매우 기뻐했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Welcome, [%username]! The Priests of Blessing have followed your accomplishments, and we are quite impressed.</p>
+          <p> </p>
+          <p>You've become strong enough to carve your own path in the world.</p>
+          <p> </p>
+          <p>We have one last mission for you, and then we have a farewell gift to present to you on behalf of all the Priests of Blessing. Are you ready?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Yes."</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You've heard of Dark Poeta, correct?.</p>
+          <p> </p>
+          <p>Go there and kill [%dic:STR_DIC_M_IDLF1_H_DrakanFiName_50_Ah].</p>
+          <p> </p>
+          <p>I'm sure this is a suitable last mission, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Each time you kill [%dic:STR_DIC_M_IDLF1_H_DrakanFiName_50_Ah], you will receive more gifts from us.</p>
+          <p> </p>
+          <p>When you do such a deed for us, we will return our thanks by giving you a very precious item.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Okay."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Have our blessings helped you along the way?</p>
+          <p> </p>
+          <p>We won't be able to help you any more if you don't complete this last mission.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I understand."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Have you killed [%dic:STR_DIC_M_IDLF1_H_DrakanFiName_50_Ah]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I have."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've never seen someone return from Dark Poeta looking so good.</p>
+          <p> </p>
+          <p>Our blessing will always be with you.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Kill [%dic:STR_DIC_M_IDLF1_H_DrakanFiName_50_Ah] in Dark Poeta ([%2]/1). </font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with Karzanke.</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Karzanke asks you to kill [%dic:STR_DIC_M_IDLF1_H_DrakanFiName_50_Ah]. Go to Dark Poeta via the [%dic:STR_DIC_W_STR_DF3_SZ_G2_3], and take him out.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Karzanke asked you to kill [%dic:STR_DIC_M_IDLF1_H_DrakanFiName_50_Ah].</p>
+          <p> </p>
+          <p>You went to Dark Poeta and eliminated him easily.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

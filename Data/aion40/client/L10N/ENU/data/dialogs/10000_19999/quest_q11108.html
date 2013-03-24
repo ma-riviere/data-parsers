@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Dust, dust, dust! All this shadow-cursed dust! Like a damn plague, this dust!</p>
+          <p> </p>
+          <p>No matter how often I clean, it just settles on everything...makes all the items just filthy.</p>
+          <p> </p>
+          <p>Imagine what the Guardians must think when they come and see all their items covered in dust? I'm surprised they don't go to another warehouse.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"It's the climate here."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That was my theory, too! This shadow-plagued climate! So I figured, since I can't change the climate, I'll just cover everything with leather blankets.</p>
+          <p> </p>
+          <p>They have to be thin, though. And made of strong enough leather. I need a...particular type. Only the best for my warehouse, you see.</p>
+          <p> </p>
+          <p>I need...Baku hide! Baku hide is strong, thin, and it looks so elegant. Might I...might I ask you to procur some Baku hide for me, [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, Sun's Blessing, [%username]! But avoid the area outside the Scars of the Earth, would you? Everything's tainted by Petrification there.</p>
+          <p> </p>
+          <p>Petrification makes the leather crack easily, and if it cracks, dust will seep in. And if dust seeps in, well...you know how I feel about dust.</p>
+          <p> </p>
+          <p>The hide of the [%dic:STR_DIC_M_LF4_B_Baku_Giraffe_53_n] is most likely the best. Has a nice shine to it. Can you get some of that for me?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll find your Baku leather, Levilus."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No? What do you mean "no"? You know I can't go myself...I can't leave my warehouse! Every second I'm gone, dust settles on my items!</p>
+          <p> </p>
+          <p>Dusting everything is a full-time job, [%username]!</p>
+          <p> </p>
+          <p>And what if I go and someone comes to retrieve their items? Please don't let the dust win this war! Help me fight this enemy, will you?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I have real enemies to take care of."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Dust! Dust everywhere...on everything! All over my items, my fingertips, my rags! Why would Ariel create something like....</p>
+          <p> </p>
+          <p>Ah, [%username], you're back! And not a moment too soon!</p>
+          <p> </p>
+          <p>Did you bring the leather I asked for?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here's your special leather."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No leather yet? [%username], every moment you delay, another blanket of dust falls over my items!</p>
+          <p> </p>
+          <p>Imagine this dust was an Asmodian faction, will you? They grow in numbers as time passes!</p>
+          <p> </p>
+          <p>And remember, not just any Baku hide. I need [%dic:STR_DIC_M_LF4_B_Baku_Giraffe_53_n] hide. At the Scars of the Earth.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Wildgrove Baku hide. Got it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hmmm, very nice, very nice. This is very fine leather, [%username]!</p>
+          <p> </p>
+          <p>The dust won't stand a chance against protection like this.</p>
+          <p> </p>
+          <p>Here's a portion of what I've made today. Please, take it. Thank you for your aid.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect [%dic:STR_DIC_M_LF4_B_Baku_Giraffe_53_n] hides and bring them to [%dic:STR_DIC_N_Levilus].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Find Wildgrove Baku leather to help Levilus with his dust problem.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Levilus said he needed leather to protect his warehouse items from dust.</p>
+          <p> </p>
+          <p>He thanked you when you brought him the hides of Wildgrove Bakus.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

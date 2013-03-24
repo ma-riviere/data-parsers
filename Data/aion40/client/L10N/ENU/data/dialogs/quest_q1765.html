@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Nearby Sword's Edge is notorious around here. Its name came from the giant Balaur sword stuck in it.</p>
+          <p> </p>
+          <p>Shortly after the Balaur appeared in the Abyss, Elyos and Asmodians came together--however briefly--to fight them off.</p>
+          <p> </p>
+          <p>In the end, the Balaur ran off. Satbas, the Balaur Captain, left his sword behind. So the story goes.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"How interesting."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It would be, if the Balaur hadn't managed to capture it again. There's no fortress there, so both we and the Asmodians ended up abandoning it.</p>
+          <p> </p>
+          <p>Of course, now the Balaur have control of it. Their controlling anything is bad for us, but this island is close enough to the Lake Asteria Fortress that it could become a problem for us.</p>
+          <p> </p>
+          <p>Go to Sword's Edge. Kill the Draconutes stationed there. Report to me when you're done.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good. You'll need to kill [%dic:STR_DIC_M_Ab1_1251_LizardmanFi_33_An]s, [%dic:STR_DIC_M_Ab1_1251_LizardmanAs_33_An]s, [%dic:STR_DIC_M_Ab1_1251_LizardmanRa_33_An]s, and [%dic:STR_DIC_M_Ab1_1251_LizardmanPr_33_An]s.</p>
+          <p> </p>
+          <p>Your action will be the first step toward recapturing Sword's Edge, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm on it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You sounded so interested....</p>
+          <p> </p>
+          <p>No matter. I'll find another way, and next time we won't be so foolish as to abandon it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Good luck."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You've returned.</p>
+          <p> </p>
+          <p>How did you fare?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"The Balaur are slain."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well done, [%username]. Well done indeed.</p>
+          <p> </p>
+          <p>Thank you for your help.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get rid of Balaur who captured Sword's Edge.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Ab1_1251_LizardmanFi_33_An] ([%2]/10)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Ab1_1251_LizardmanAs_33_An] ([%5]/2)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Ab1_1251_LizardmanRa_33_An] ([%8]/2)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Ab1_1251_LizardmanPr_33_An] ([%11]/2)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report the result to [%dic:STR_DIC_N_Sione].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Draconutes are stationed at Sword's Edge. Defeat them for the safety of the Lake Asteria Fortress.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Sione told you to get rid of Balaur who captured Sword's Edge for the safety of the Lake Asteria Fortress near the island.</p>
+          <p> </p>
+          <p>You went to the island and got rid of the Dakaer Grunts, Raiders, Churl, and Medics.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q12404</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>Not entered</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You carry Adella's Staff, [%username]? Huh! The last time I heard her speak of you, she didn't seem terribly impressed, so you must have done something to change her mind.</p>
+          <p> </p>
+          <p>Adella's weapons are good, but my personal philosophy is that everything can be improved upon. Who wants to settle for 'good' when you can have 'brain-shatteringly awesome,' right?</p>
+          <p> </p>
+          <p>I can enhance that weapon for you, but you'll need to collect some items from other sorcerers, and it might not be easy. If I were you, I would talk to [%dic:STR_DIC_N_Gneise]. If she's willing to help out, then you might be able to convince [%dic:STR_DIC_N_Lumen] as well.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Enhancing Adella's Staff? You've been speaking to Ulian, haven't you. That sounds like him--trying to 'enhance' something that's already near-perfect...</p>
+          <p> </p>
+          <p>Ugh. Yes, I have something that might be able to help you. But it took me months to find the [%dic:STR_DIC_I_ldf4b_weapon_upgrade_01], so if you think I'm just going to hand it over to you, you're as dumb as a Calydon looks. You'll have to earn it.</p>
+          <p> </p>
+          <p>But before anything, you're going to have to convince Lumen to give you the Magical Aether Crystal. If he agrees, then we can talk.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"I'll go find Lumen."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select3">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ulian wants to enhance Adella's Staff? Of course he does! That boor has no appreciation for the beauty of limitations. You young Daevas! You're all the same, always hunting for the better and the best and one-upping each other.</p>
+          <p> </p>
+          <p>Well, too bad, [%userclass]. If you want the [%dic:STR_DIC_I_ldf4b_weapon_upgrade_02], then you will earn it by accomplishing tasks I assign. If you prove yourself stalwart, then I may consider your request.</p>
+          <p> </p>
+          <p>And you'll need more items than just my [%dic:STR_DIC_I_ldf4b_weapon_upgrade_02]. Oh, you already spoke to Grais, did you? Well, you'll also need a [%dic:STR_DIC_I_ldf4b_weapon_upgrade_03], but [%dic:STR_DIC_N_Ruaka] sells them.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO2">"Then maybe I'll start there."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], how did it go?</p>
+          <p> </p>
+          <p>Did you convince Grais and Lumen to lend you the materials?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">"I survived, though it was a bit demeaning."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It'll all be worth it in the end. Now... just you... wait....</p>
+          <p> </p>
+          <p>There! All done! Now would you look at that, [%username]!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk to [%dic:STR_DIC_N_Gneise].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Find [%dic:STR_DIC_N_Lumen] in Kamar and convince him to help you.</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Collect the [%dic:STR_DIC_E_Q12404] and bring them to [%dic:STR_DIC_N_Uquini].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">You can enhance Adella's Staff if you speak to Grais and Lumen.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ulian offered to enhance Adella's Staff for you, but you needed additional materials to do it.</p>
+          <p> </p>
+          <p>You collected materials from Grais and Lumen, though neither of them gave them up readily.</p>
+          <p> </p>
+          <p>Ulian used the materials to transform your item into Siel's Wealthy Staff.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

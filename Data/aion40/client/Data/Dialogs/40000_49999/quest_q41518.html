@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q41518</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>미입력</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select_none" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>지금 가장 급한 일은 시공의 우물과 떠도는 폐허지대를 탐색하는 일입니다.</p>
+          <p> </p>
+          <p>이곳에는 중력의 틈새와 이동의 틈새라는 것이 있습니다. </p>
+          <p> </p>
+          <p> 중력의 근원 때문에 생겨났다는 것은 알지만 구체적으로 어떤 역할을 하는지는 모릅니다.</p>
+          <p> </p>
+          <p>[%username] 님이 [%dic:STR_DIC_OBJ_LDF4b_FOBJ_Q41518A]가 어떤 역할을 하는지 확인해 주십시오. </p>
+          <p> </p>
+          <p>지도를 드릴 테니 아래에서부터 지도에 표시된 순서대로 살펴봐 주시면 됩니다. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>기다리고 있었습니다.</p>
+          <p> </p>
+          <p>중력의 틈새는 확인해 보셨습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>중력의 틈새에서 생명체들이 나온다고요? 그리고 이동의 틈새는 서로 연결되어 순간 이동이 가능하다고요?</p>
+          <p> </p>
+          <p>게다가 차원의 틈새로 이동하다가 배신자들이 사는 마을까지 발견했다고요?</p>
+          <p> </p>
+          <p>너무 놀라서 뭐라고 말해야 좋을지 모르겠습니다.</p>
+          <p> </p>
+          <p>일단 상부에 보고부터 해야겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">지도 아래쪽의 [%dic:STR_DIC_OBJ_LDF4b_FOBJ_Q41518A]를 확인하라[%2]</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">지도 중간의 [%dic:STR_DIC_OBJ_LDF4b_FOBJ_Q41518B]를 확인하라[%5]</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">지도 위쪽의 [%dic:STR_DIC_E_LDF4B_SensoryArea_Q41518A]를 정찰하라[%8]</font></p></step>
+               <step><p visible="[%9]"><font color="[%10]">[%dic:STR_DIC_N_Winbrey]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">떠도는 페허지대와 시공의 우물에 있는 중력의 틈새와 이동의 틈새의 역할을 확인하기로 했다. 지도를 보고 틈새를 찾자.</font></p>
+        </body>
+        </html>
+    </Contents>
+    <notifies>
+      <notify color="yellow" fontsize="16" pos="2" progress="3" showframe="true" time="5">배반자의 은신처를 발견했다! 윈브레이에게 가서 보고하자.</notify>
+    </notifies>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>윈브레이는 떠도는 폐허지대와 시공의 우물에 있는 중력의 틈새와 이동의 틈새를 확인해 달라고 했다.</p>
+          <p> </p>
+          <p>지도에 표시된 중력의 틈새와 이동의 틈새를 차례로 확인했더니 위험한 생명체가 나타나기도 하고 다른 공간으로 순간 이동하기도 했다.</p>
+          <p> </p>
+          <p>그리고 지도에 있는 수상한 마을 입구로 갔다가 연족 배신자들이 모여 사는 마을을 발견했다고 하자 윈브레이는 큰 충격을 받았다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

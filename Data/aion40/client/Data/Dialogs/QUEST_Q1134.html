@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>기운이 없어서 서 있기도 힘드네요.</p>
+          <p> </p>
+          <p>배탈이 나서 하루종일 굶었거든요.</p>
+          <p> </p>
+          <p>특별히 상한 음식을 먹은 적도 없는데 왜 이런지 모르겠어요. </p>              
+           </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아무래도 물 때문인 것 같아요.</p>
+          <p> </p>
+          <p>어제 유난히 냄새가 났거든요. 게다가 푸리네도 배탈이 났다는데 같이 먹은 거라곤 물밖에 없습니다.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_MLA141]%와 [%dic:STR_DIC_MLA142]의 배설물 때문에 요새 주변의 강과 웅덩이가 오염된 게 분명해요.</p>
+          <p> </p>
+          <p>이대로 두면 오염이 더 심해질 텐데 데바님이 좀 도와주시겠어요?</p>      
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정말 고마워요!</p>
+          <p> </p>
+          <p>그럼 요새 앞 웅덩이와 강에서 [%dic:STR_DIC_MLA141]%와 [%dic:STR_DIC_MLA142]%을 몰아내 주세요.</p>
+          <p> </p>
+          <p>그냥은 도망가지 않을 테니 놈들을 6마리씩만 잡으세요. 그럼 나머지 놈들도 겁을 먹고 도망갈 겁니다.</p>
+          <p> </p>
+          <p>그럼 부탁할... 아, 배가 계속 아프네요. 아무래도 신관님께 약을 좀 달라고 해야겠네요.</p>          
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>데바님은 도와주실 줄 알았는데 실망이에요.</p>   
+          <p> </p>      
+          <p>이런 일로 바쁘신 스피로스 님을 귀찮게 할 수도 없고 어떡한다...</p>
+          <p> </p>     
+          <p>할 수 없군요. 타이오투스에게 부탁하죠, 뭐.</p>     
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>웅덩이에서 [%dic:STR_DIC_MLA141]%와 [%dic:STR_DIC_MLA142]%을 몰아냈나요? </p>
+          <p> </p>
+          <p>이제 안심하고 물을 마셔도 괜찮은 건가요? </p>          
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">고개를 끄덕인다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정말 고맙습니다.</p>
+          <p> </p>
+          <p>데바님은 스피로스 님만큼이나 친절한 분이군요.</p>   
+          <p> </p>
+          <p>이건 제 성의니 거절하지 말아 주세요. </p>  
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">요새의 수원지를 오염시키는 동물을 처치하라</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_MLA141]([%2]/6)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_MLA142]([%5]/6)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_LA74]%와 대화하라 </font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">베르테론 요새 주변의 강과 웅덩이가 하이브와 레피스마의 배설물로 오염되고 있다. 하이브와 레피스마를 처치해 요새의 수원지를 보호하자.</p>
+          <p></font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아델리아와 푸리네가 물을 마시고 배탈이 났다고 했다. 아델리아는 하이브와 레피스마의 배설물 때문에 요새 주변의 수원지가 오염되서 그런 것 같다고 했다.</p>
+          <p> </p>
+          <p>주민들이 안심하고 물을 마실 수 있도록 수원지를 장악한 하이브와 레피스마를 처치했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

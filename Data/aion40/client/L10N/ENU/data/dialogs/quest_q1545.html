@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Arieluma, [%username]! I've been studying those samples you gathered for me. I didn't find much, but I think I know why. </p>
+          <p> </p>
+          <p>My new theory is that the real issue is probably detectable only in the in the [%dic:STR_DIC_M_ElementalEarth3_38_An]s.</p>
+          <p> </p>
+          <p>The distinction is small, but important.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"You want more dirt?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No...no...no...well, not exactly. You see, every Spirit has its own essence. It's a kind of crystal made from condensed energy. </p>
+          <p> </p>
+          <p>The nature or ability of a Spirit is determined by its essence. So, inspecting the essence of a spirit can tell you a lot about it.</p>
+          <p> </p>
+          <p>I've received essence samples taken from spirits in other areas. If I can get some essence from [%dic:STR_DIC_M_ElementalEarth3_38_An]s around here, I can compare them.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>If there's anything I can do for you in return, just ask.</p>
+          <p> </p>
+          <p>From each [%dic:STR_DIC_M_ElementalEarth3_38_An] you slay, you should be able to collect some [%dic:STR_DIC_I_QUEST_1545a].</p>
+          <p> </p>
+          <p>May the protection of Ariel be with you!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I hope so."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Of course you've already done so much, haven't you?</p>
+          <p> </p>
+          <p>It's just that I was hoping to actually answer this question of why the Spirits became violent.</p>
+          <p> </p>
+          <p>I hoped you might be curious, too.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Not terribly, no." </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've been prepping these samples for comparison. Take a look. This is the Essence of Earth I told you about.</p>
+          <p> </p>
+          <p>Did you manage to find some local [%dic:STR_DIC_I_QUEST_1545a] for comparison?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I've got this."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did you get this from a [%dic:STR_DIC_M_ElementalEarth3_38_An]? This doesn't look like 3 samples of [%dic:STR_DIC_I_QUEST_1545a].</p>
+          <p> </p>
+          <p>You may have made a mistake.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll go look again."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Wait...this is from a [%dic:STR_DIC_I_QUEST_1545a]? Really?</p>
+          <p> </p>
+          <p>I've never seen anything like this before. The problem's more serious than I thought.</p>
+          <p> </p>
+          <p>Thank you so much for volunteering. I think you may have discovered something important.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get rid of [%dic:STR_DIC_M_ElementalEarth3_38_An]s and collect essence from them for [%dic:STR_DIC_N_Sillen].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Collect some Essence of Earth and take it to Sillen so that she can compare it to healthy samples.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Sillen asked you to gather Essence of Earth so she can compare the local samples ot ones from healthy creatures elsewhere.</p>
+          <p> </p>
+          <p>You volunteered to assist her, and hunted Decayed Earth Spirits until you had gathered enough essence. When you delivered it to Sillen she said it looked very unusual, and she seemed quite excited.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

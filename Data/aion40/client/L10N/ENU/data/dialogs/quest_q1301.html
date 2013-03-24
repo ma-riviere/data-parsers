@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Have you had a chance to fly around the Fortress, [%username]? There are  [%dic:STR_DIC_I_AG_SOURCE_OD_10A]es floating up there!</p>
+          <p> </p>
+          <p>Kyros believes they are generated when two streams of Aether cross. Fascinating stuff....</p>
+          <p> </p>
+          <p>Of course, with an Abyss Gate beneath our feet, Aether streams cross fairly regularly, resulting in quite a few Small Vortexes. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Are they a threat?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh no, in fact they're really quite useful! We extract Aether powder from them, which is indispensable these days.</p>
+          <p> </p>
+          <p>Would you like to help gather some, [%username]? It'd be good flight training, and of course you'll be helping the war effort.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Now be careful. Daevas often get carried away when they collect Aether, and forget about their flight stamina. The moment you feel tired you must land until your strength recovers.</p>
+          <p> </p>
+          <p>As I said, [%dic:STR_DIC_I_AG_SOURCE_OD_10A] float all around the [%dic:STR_DIC_W_LF2_SZ_OP]. Please extract ten pinches of [%dic:STR_DIC_I_od_n_c_10b], then return to me.</p>
+          <p> </p>
+          <p>Faith and arms, [%userclass].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Faith and arms."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], please do not think that fighting is the only way you can serve the Five.</p>
+          <p> </p>
+          <p>There are many other tasks that need carrying out if we are to win this war. Gathering Aether powder is just one of those tasks, and can only be done by our Daevas.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I understand, but I don't have the time to spare."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Have you already gathered the Aether powder, [%username]?</p>
+          <p> </p>
+          <p>Aethertapping is very similar to extracting any of Atreia's nutrients, though I would imagine doing it in mid-air adds an extra challenge.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here you are."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This isn't what I asked for, Daeva. You must gather ten pinches of [%dic:STR_DIC_I_od_n_c_10b] before you return to me.</p>
+          <p> </p>
+          <p>I can neither accept this, nor reward you, until the quota is met in its entirety.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll get the rest."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ten pinches! Perfect!</p>
+          <p> </p>
+          <p>Such a small amount. A single drop of blackthorn poison can drop an adult Mamut in seconds--that's nothing compared to Aether powder.</p>
+          <p> </p>
+          <p>Of course, Aether powder is no poison, and has many positive uses. I'll have this sent to Sanctum straight away--here is your reward.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Bring the Aether Powder you extracted from [%dic:STR_DIC_I_AG_SOURCE_OD_10A] to [%dic:STR_DIC_N_Machaon].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Aethertapping Powder from the Small Vortexes floating above the Fortress.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You extracted Aether Powder from the Small Vortexes above the Fortress at [%dic:STR_DIC_N_Machaon]'s request, and brought them to him.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

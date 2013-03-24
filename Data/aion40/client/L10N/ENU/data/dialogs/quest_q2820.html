@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank the shadows you're here, [%username]. Listen, we're in deep trouble.</p>
+          <p> </p>
+          <p>Our medicine stocks are critically low. I requested resupply from Primum Landing, but who knows when it'll arrive? Some of our wounded can't wait.</p>
+          <p> </p>
+          <p>Azphel teaches us to fend for ourselves whenever possible. So I'm looking at Lake Asteria, of course...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"There's medicine in the lake?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Not in the lake, exactly. The horns of young Tricos near the lake. An intact horn is full of divine energy that speeds the healing process. Grind them up and you've got a powerful sedative, too.</p>
+          <p> </p>
+          <p>There's a manpower problem, though. All my soldiers are either wounded or guarding our walls.</p>
+          <p> </p>
+          <p>Thus I turn to you, [%username]. Only you can get medicine in time to succor our wounded comrades.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Many [%dic:STR_DIC_M_Ab1_1251_Trico_31_An]s wander Clocktower Plain, in front of the fortress. Should be obvious.</p>
+          <p> </p>
+          <p>The more horns you bring, the better. It'll take at least five horns to make medicine for everyone, though.</p>
+          <p> </p>
+          <p>Oh, and you must bring [%dic:STR_DIC_I_QUEST_2820a]s. Broken or flawed ones are useless. The aether leaks out before we can grind them up.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Intact, got it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Curse your weakness! Your comrades suffer, and you ignore them??</p>
+          <p> </p>
+          <p>You could be one of these wounded, think on that!</p>
+          <p> </p>
+          <p>Pull yourself together! I have no one else to send.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Farewell."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, praise Azphel! You're back!</p>
+          <p> </p>
+          <p>We've been attacked while you were away. That means more wounded, but it took our minds off the medicine shortage for a while.</p>
+          <p> </p>
+          <p>You got the horns, right?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here you go."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Are you sun-addled or just stupid? I told you to kill [%dic:STR_DIC_M_Ab1_1251_Trico_31_An]s!</p>
+          <p> </p>
+          <p>When they're dead, bring back [%dic:STR_DIC_I_QUEST_2820a]s--at least five.</p>
+          <p> </p>
+          <p>Daevas' lives depend on you, [%username]!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"On my way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well done, [%username]. We need this medicine more with each passing hour.</p>
+          <p> </p>
+          <p>Still no word from Primum Landing...thus, no fresh supplies. And the attacks keep coming.</p>
+          <p> </p>
+          <p>If you bring us more of these Small Undamaged Horns, I guarantee we'll put them to use.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect the horns of [%dic:STR_DIC_M_Ab1_1251_Trico_31_An]s and bring them to [%dic:STR_DIC_N_Ab1_1251_Quest_Da].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Asteria Fortress has run out of medicine. Hunt Young Asteria Tricos for the Small Undamaged Horns needed to make more medicine, and bring them to Snori.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Snori said the fortress has run out of medicine for the wounded, and he asked you to gather materials for more because their supplies are long overdue.</p>
+          <p> </p>
+          <p>When you returned with the horns of Young Asteria Tricos, Snori thanked you and said they'd need more horns soon.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

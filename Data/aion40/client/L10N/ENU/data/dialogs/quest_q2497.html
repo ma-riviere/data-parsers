@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, I've just had the worst bit of luck!</p>
+          <p> </p>
+          <p>I ALMOST caught a Gadill. I was so close!</p>
+          <p> </p>
+          <p>And just when I was about to land it, I stumbled over my toolbox and the fish escaped!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"That's terrible!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, it is terrible! Worst of all, when I kicked my fishing tool box, it fell into the water! I looked in the water for it, but didn't see it. Maybe it was swept away by the current. </p>
+          <p> </p>
+          <p>My [%dic:STR_DIC_OBJ_ToolBox_Q2497] contains [%dic:STR_DIC_I_QUEST_2497a], which I need. The trouble is...well, I can't swim.</p>
+          <p> </p>
+          <p>If you can swim well, would you please find it for me?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It looks like it should be somewhere around here. Maybe to the east....</p>
+          <p> </p>
+          <p>It also contains some expensive bait, though that's probably of little value to people who don't know about fishing.</p>
+          <p> </p>
+          <p>Without it, I may miss my ONE chance to finally catch a Gadill!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"You'll catch it. Don't worry."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Even you think I am pathetic, don't you? </p>
+          <p> </p>
+          <p>A simpleton whose only concern is trying to catch fish in the midst of a war.</p>
+          <p> </p>
+          <p>Not all Daevas need to go to war, you know....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Maybe you should get another hobby?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did you find my [%dic:STR_DIC_OBJ_ToolBox_Q2497]?</p>
+          <p> </p>
+          <p>Was the [%dic:STR_DIC_I_QUEST_2497a] in the box?</p>
+          <p> </p>
+          <p>Where did you find it?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"It was easy to find. Here you go."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>So do you think it didn't go to the east? How about searching the west?</p>
+          <p> </p>
+          <p>To be honest, I have no idea which direction it went. Where in Atreia could my toolbox be?</p>
+          <p> </p>
+          <p>The bait that I lost was specially ordered and quite expensive. It might not be available now.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Relax, I'll find it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, this is my fishing bait! </p>
+          <p> </p>
+          <p>Thank you. Hey, I just saw a Gadill passing by! </p>
+          <p> </p>
+          <p>Well, actually I see it tens of times a day...but now I can catch it.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Find the bait in the [%dic:STR_DIC_OBJ_ToolBox_Q2497] and bring it to [%dic:STR_DIC_N_Lif].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Lif was so excited while fishing Gadill that she kicked away her toolbox that contained her Fishing Bait. Find the tool box for Lif.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Lif, a Daeva of Fishing, was so excited to see a Gadill that she kicked her fishing toolbox into the water.</p>
+          <p> </p>
+          <p>She searched for the toolbox, but couldn't find it because she can't swim.</p>
+          <p> </p>
+          <p>You found the tool box and brought her the Fishing Bait, so she thanked you and said that she would give this Gadill-fishing thing another try.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q21523</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excuse me, [%userclass]. Could you do me a favor if you're not too busy?</p>
+          <p> </p>
+          <p>Please ask Warehouse Keeper [%dic:STR_DIC_N_Vort] where the Brilliant Magical Aether I asked for is.</p>
+          <p> </p>
+          <p>I requested it three days ago to repair the ship engine, but I still don't have it. Can you ask while I tend to my work?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Brilliant Magical Aether? I sent it from Pandaemonium by messenger two days ago. You mean it hasn't arrived?</p>
+          <p> </p>
+          <p>My messenger hasn't been seen lately either. Oh, dear... something terrible must have happened to him.</p>
+          <p> </p>
+          <p>Not that this answer helps Riger... but ask Trade Broker [%dic:STR_DIC_N_Shugo_LDF4a_08] if she can help. And give Riger my apologies.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"I'll do that, thanks."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select3">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, hello! What does Daeva want to trade today?</p>
+          <p> </p>
+          <p>Brilliant Magical Aether? Oooh, that very valuable, very high demand. Berinerk not seen for very long time.</p>
+          <p> </p>
+          <p>Better to look in Pandaemonium. Not much chance of showing up here.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO2">"Shards! Thanks anyway."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hmmm... you don't seem very happy.</p>
+          <p> </p>
+          <p>I also notice you don't seem to be carrying my Brilliant Magical Aether. What happened?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I have bad news..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That is unfortunate. I wonder what happened to the messenger. Did he fall prey to monsters? The Balaur? Or someone else?</p>
+          <p> </p>
+          <p>I'll contact Pandaemonium--both to report this incident and to get Brilliant Magical Aether.</p>
+          <p> </p>
+          <p>You did what you could, so you've earned the reward. Please take it.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk with Warehouse Keeper [%dic:STR_DIC_N_Vort].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Talk with Trade Broker [%dic:STR_DIC_N_Shugo_LDF4a_08].</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Report to [%dic:STR_DIC_N_Rigr].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Riger hasn't received his Brilliant Magical Aether from the warehouse. Find out what happened.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Riger asked you to find out why he hasn't gotten the Brilliant Magical Aether needed to repair the ship from the warehouse.</p>
+          <p> </p>
+          <p>You learned from Vord that the messenger sent with the item had vanished. You tried the Trade Broker but without success.</p>
+          <p> </p>
+          <p>Riger was chagrined, but he decided to contact Pandaemonium both to report the messenger's disappearance and to get another Brilliant Magical Aether.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

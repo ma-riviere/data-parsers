@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I now have no choice. I have no choice but to ask that you go inside the temple where the Dragonbound swarm.</p>
+          <p> </p>
+          <p>Go into the Udas Temple and find out what they are after.</p>
+          <p> </p>
+          <p>There is no guarantee you will learn anything of importance, but we must try.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Do I get to kill things?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Frankly speaking, learning the enemy's motives should mean more to your kind than it does to us.</p>
+          <p> </p>
+          <p>Will you go to the Udas Temple?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>In the village of the wingless, the gliding Daeva is cheiftain.</p>
+          <p> </p>
+          <p>You can reach the entrance through Undirborg, and somewhere inside lies the [%dic:STR_DIC_E_IDTemple_SensoryArea_Q30003].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll soar in the light, not just glide."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Two roads go to the same destination. One is littered with dangerous creatures and brambles. The other is well-packed and cleared by centurions.</p>
+          <p> </p>
+          <p>Which is the better road?</p>
+          <p> </p>
+          <p>Only with wisdom can one tell courageousness from foolishness.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm a wise Starturtle, I am."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What has your youthful enthusiasm learned of the Dragonbound?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"At least I found another level?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Once again, we are the flightless beings, surrounded by gliders. But I sense we are very close to uncovering the enemy's plot.</p>
+          <p> </p>
+          <p>This underground level may be where they keep their secret, judging by how tough that Nexus character was. The key must lead somewhere important at least.</p>
+          <p> </p>
+          <p>Now that you've got it, you can come and go as you please. I hope you can turn up some useful information.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Obtain a clue by striking down [%dic:STR_DIC_E_IDTemple_FanaticFiNamed_53_Ah], then go through the portal to find out the [%dic:STR_DIC_E_IDTemple_SensoryArea_Q30003].</font></p>[%collectitem]</step>
+               <step><p visible="[%3]"><font color="[%4]">Report back to [%dic:STR_DIC_N_Honeus].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Infiltrate Udas Temple to find the true motive of the Dragonbound. Defeat Nexus for a clue.</font></p>
+        </body>
+        </html>
+    </Contents>
+    <notifies>
+      <notify color="yellow" fontsize="16" pos="2" progress="1" showframe="true" time="5">Found the entrance to Lower Udas Temple! Report to Honeus.</notify>
+    </notifies>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Honeus said infiltrating the Udas Temple was the only hope of finding out the motive of the Dragonbound.</p>
+          <p> </p>
+          <p>You went but couldn't unveil the enemy's motive. However, you did find a passage to an underground level. It must lead to some of the enemy's real secrets.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

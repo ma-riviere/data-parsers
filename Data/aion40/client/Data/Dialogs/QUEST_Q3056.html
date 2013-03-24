@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p> - 현상 수배 - </p>
+          <p> </p>
+          <p>탈옥수 [%dic:STR_DIC_N_Siraus]를 아래의 죄목으로 현상 수배하는 바이다.</p>
+          <p> </p>
+          <p> 1. 호머론 일가족 살인</p>
+          <p> </p>
+          <p> 2. 호송병을 쓰러트리고 탈주</p>
+          <p> </p>
+          <p>시라우스의 행방에 대해 결정적인 제보를 하거나 직접 처치하고 증거물을 가져온 사람에게는 후사하겠음. </p>
+          <p> </p>
+          <p>행정관 [%dic:STR_DIC_N_Iphigenia] 백</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">시라우스를 잡기로 한다. </Act>
+      <Act href="HACTION_FINISH_DIALOG">살펴보기를 그만둔다.</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>잠깐만 내 얘기를 들어줘.</p>
+          <p> </p>
+          <p>호머론을 죽인 건 내가 아냐. 어떻게 가족 같은 소꼽 친구를 죽일 수 있겠나.</p>
+          <p> </p>
+          <p>진범은 따로 있어. 정말이야. 부모님 이름을 걸고 맹세하라면 하겠어.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">진범이 누구인지 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>당신 이름이 뭐지? </p>
+          <p> </p>
+          <p>그래, [%username]. 자넨 다른 사람과 다르군.</p>
+          <p> </p>
+          <p>내가 호머론네 집에 갔을 땐 이미 모두 죽어 있었어. 사방에 가득한 피 냄새, 그리고... 그 냄새가 났어.</p>
+          <p> </p>
+          <p>공포에 가득찬 영혼들의 냄새, 그래 그건 분명 [%dic:STR_DIC_M_LF2A_SpectreFxQ_50_An]의 냄새였어.</p>
+          <p> </p>
+          <p>그 냄새를 쫓아 마를라 동굴까지 왔는데 여기서 잡힐 수 없어.</p>
+          <p> </p>
+          <p>[%username], 제발 날 위해 아니, 내 친구 호머론을 위해 그놈을 잡아줘. 제발 부탁이야.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO2">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>죽음을 먹는 마볼로를 잡았어?</p>
+          <p> </p>
+          <p>여기 마를라 동굴에 있었지?</p>
+          <p> </p>
+          <p>확실할 거야. 내 코는 지금껏 틀린 적이 없었으니까.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 얘기한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>고마워, [%username].</p>
+          <p> </p>
+          <p>호머론 그 친구도 이제 편히 오드의 흐름으로 돌아갈 거야.</p>
+          <p> </p>
+          <p>마볼로가 지금껏 죽인 다른 사람들도 말이야.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">탈옥수 [%dic:STR_DIC_N_Siraus]를 찾아라</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_M_LF2A_SpectreFxQ_50_An]를 처치하라([%5]/1)</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">[%dic:STR_DIC_N_Siraus]와 대화하라</font></p></step>        
+    </steps>
+          <p><font font_xml="quest_summary">수배 중인 탈옥수 시라우스를 찾아봐야겠다.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>마를라 동굴에서 현상 수배 중인 탈옥수 시라우스를 만났다.</p>   
+          <p> </p>
+          <p>연행하려고 하자 호머론 가족을 죽인 진범은 따로 있다며 그를 잡아달라고 사정했다.</p>      
+          <p> </p>
+          <p>시라우스가 진범으로 지목한 죽음을 먹는 마볼로를 처치하고 돌아가자 친구 호머론이 이제 편안히 눈을 감았을 거라며 고마워했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

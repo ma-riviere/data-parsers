@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Devoted Field Warden:</p>
+          <p> </p>
+          <p>Observatory readings indicate that the amount of Aether in the atmosphere has dropped quite suddenly and unexpectedly.</p>
+          <p> </p>
+          <p>Only independent research will enable us to verify whether or not these readings are valid.</p>
+          <p> </p>
+          <p>Luckily, we have our own Aetheric Field Scanners--developed by the Pandaemonium Research Center--installed in key areas of Beluslan.</p>
+          <p> </p>
+          <p>Bring the findings from some [%dic:STR_DIC_OBJ_FOBJ_Q45008]s to the [%dic:STR_DIC_E_45007] as soon as possible.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">(Fold the letter and put it away.)</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've heard several disturbing rumors lately, Warden. Some have said that the Shedim Lords are...accelerating their advance on the Balaur. This may be due to the amount of...Aether dropping quite rapidly.</p>
+          <p> </p>
+          <p>But rumors are just rumors, you understand. Back to work.... Did you bring the Scan Results?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I think so. Here..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>And I think not. I was led to believe you would be bringing me something from the Aetheric Field Scanners in the Beluslan area.</p>
+          <p> </p>
+          <p>This is not a highly difficult mission, [%username], but it is important. Please return when you have something to show.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Sorry. I'll be back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you for bringing this to me, Warden. Please give me your letter as well. I'll need it to...properly record this finding with the other Field Wardens.</p>
+          <p> </p>
+          <p>As always, [%username], your time has been rewarded. Please take this token of our appreciation.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Retrieve the Scan Results from [%dic:STR_DIC_OBJ_FOBJ_Q45008]s and bring them to [%dic:STR_DIC_E_45007].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">A letter has arrived from the Field Wardens. Follow its instructions.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>According to a letter from the Field Wardens, Aetheric Field Scanners were installed in key areas of Beluslan to find out why the amount of Aether decreased.</p>
+          <p> </p>
+          <p>You located some Field Scanners and brought the Scan Results to the Beluslan Field Agent, who rewarded you for your time.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

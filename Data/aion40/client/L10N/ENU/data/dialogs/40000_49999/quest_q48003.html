@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The bridge is crowded today--like always. I suppose it's only natural that the gateway to Pandaemonium became a place to meet up...and to leave messages for others.</p>
+          <p> </p>
+          <p>In fact--because I obviously have nothing better to do--sometimes people even leave me secret messages, and then they ask me to pass them along to certain people who might happen by.</p>
+          <p> </p>
+          <p>If you catch my meaning.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"You have a message for me?"</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, nonono. No. I never said I had a message for you, [%username]. Certainly not! Never!</p>
+          <p> </p>
+          <p>In fact, I can say with absolute certainty that this private message from the Field Wardens was not for you. Definitely not. Hah. What ever gave you that idea?</p>
+          <p> </p>
+          <p>Although if there WAS a message for you, I suppose I would whisper it in your ear, if you leaned in close so no one else could hear it. If there was a message. Which there isn't. Understand?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Sorry about the secrecy, [%username]. The message is for you, in fact. It's a bit old, but this is the first we've been able to speak privately since I got it, so here it is--they made me memorize it.</p>
+          <p> </p>
+          <p>"The Field Wardens have urgent need of your presence. Please visit me in [%dic:STR_DIC_W_STR_DF3_SZ_A]. [%dic:STR_DIC_N_Rostrum]".</p>
+          <p> </p>
+          <p>That was the entire message. Are you interested in checking it out right away? Just let me know and I can send you on your way to Beluslan.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Let me think for a second."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Err...I see. Right. Of course you wouldn't do that because I definitely DON'T have a message for you.</p>
+          <p> </p>
+          <p>Maybe when you have time, come visit me again. If I have a MESSAGE for YOU at that time, I'll whisper it to you. But I don't have a SECRET MESSAGE right now. Not for you. Ahem.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I get it, I get it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Your reputation precedes you, [%username]. Even governor Vidar in Pandaemonium is following your progress with interest, or so I have heard.</p>
+          <p> </p>
+          <p>He is not alone. The Field Wardens have been watching you as well, and we could use your....</p>
+          <p> </p>
+          <p>But I'm getting ahead of myself. Forgive my impatience. Have you heard of the Field Wardens? We are not nearly as well-known as you, after all.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I have heard whispers."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Our sworn duty is to monitor Asmodae's Aetheric Field. We maintain the Observatories, keep track of...anomalies and ensure that Asmodae's defenses remain stable and strong. Should the Aetheric Field fall, all Asmodae--indeed, all Atreia--might fall with it. Obviously no one wants that to happen.</p>
+          <p> </p>
+          <p>You should know that the Field Wardens are an autonomous organization. Pandaemonium supports our stated efforts, but does not direct us. Less bureaucracy means more efficiency, which is why I am able to offer you a position with our order right now.</p>
+          <p> </p>
+          <p>What do you say, [%username]? The Field Wardens could use someone with your talents: reliability, intelligence, discretion....</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk with [%dic:STR_DIC_N_Rostrum].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Deryk of the Field Wardens has asked for you at the Beluslan Fortress.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Deryk of the Field Wardens called for you, so you traveled to the Beluslan Fortress to see him.</p>
+          <p> </p>
+          <p>He spoke of the Field Wardens, and offered you a job within the organization.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

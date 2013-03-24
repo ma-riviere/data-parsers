@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Let's see what was so urgent that a Daeva need be employed...</p>
+          <p> </p>
+          <p>Oh.... This is serious indeed.</p>
+          <p> </p>
+          <p>Oh dear, I do hope he's okay...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Your father?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No, Uncle Belbua.</p>
+          <p> </p>
+          <p>He sent a letter to my father nearly a month ago saying he would be visiting the citadel in a few days. It's just a short walk and he's heard nothing since the letter.</p>  
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Maybe he just delayed his trip?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No, he would have said something--sent another letter.</p>
+          <p> </p>
+          <p>Something must have happened on the road....</p>
+          <p> </p>
+          <p>[%username], I hate to ask right after you took the time to deliver this letter--our family has asked enough of you already--but do you think you could check on my uncle? If something did happen to him, I probably wouldn't survive looking for him. I'm not much of a fighter, but a Daeva...</p>
+          <p> </p>
+          <p>What do you think?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, thank you, [%username]!</p>
+          <p> </p>
+          <p>Hopefully this is all a misunderstanding and you'll find my uncle in good health.</p>
+          <p> </p>
+          <p>To get to [%dic:STR_DIC_FLA24], you just need to walk back in the direction of the Verteron Citadel. His place is on the outskirts of the Northern Tolbas Forest--you can't miss it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be quick."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Where are your priorities?</p>
+          <p> </p>
+          <p>You can deliver a letter but you can't go look for my uncle, who could be held hostage or worse as we waste time chatting about it?</p>          
+          <p> </p>
+          <p>Please change your mind! My father would be heartbroken if anything happened to Belbua.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Best of luck to you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did you find my Uncle?</p>          
+          <p> </p>
+          <p>Please, you must tell me!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Look...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You came back here without an answer, [%username]? My stomach is in knots! I haven't been able to eat, and you just amble back to me, my uncle forgotten?</p>
+          <p> </p>
+          <p>I need to know he's okay!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll hurry back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>My uncle's diary! Oh, look at the last page: "I could have sworn just now that a masked man stood outside my window. I got out of bed, and he disappeared into the night."</p>
+          <p> </p>
+          <p>Oh no...his final entry: "The masked one returned with friends. I'm badly injured and I've barricaded myself in...blast, they're coming.... Goodbye Manos." Oh...Uncle Belbua....</p>
+          <p> </p>
+          <p>I don't know how I'll tell my father. They were so close....</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Find a clue to Belbua's whereabouts, and bring it to [%dic:STR_DIC_LA23].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Belbua, Qydro's uncle, is missing. Find a clue to his whereabouts.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Belbua, Qydro's uncle, was missing.</p>
+          <p> </p>
+          <p>You went to Belbua's Farm and found a diary that suggested he was killed by the Lepharists.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

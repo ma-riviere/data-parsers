@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've been having these...dreams lately. Horrible dreams! They seem to get worse each night.</p>
+          <p> </p>
+          <p>In these dreams, I can see the tortured souls of Daevas...hear their screams. I can see everything so vividly.</p>
+          <p> </p>
+          <p>They're not like regular dreams, though. They're like visions...like I'm seeing a projection of something actually taking place.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Who is in these dreams?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm not sure. Everything grows hazy once I wake up, but I know something is wrong! I need to somehow see my dreams when awake, know what happened.</p>
+          <p> </p>
+          <p>Will you help me, [%username]?</p>
+          <p> </p>
+          <p>I've heard that [%dic:STR_DIC_I_QUEST_30226a]s, in sufficient numbers, allow you to see your dreams from the previous night while awake. Would you locate them for me?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>In Hanarkand, there are creatures called [%dic:STR_DIC_M_LF4_C5_FlyingFoam_55_An]s. The [%dic:STR_DIC_I_QUEST_30226a]s are made from their bodies.</p>
+          <p> </p>
+          <p>With their power, I'll be able to review my dream and find out where these tortured Daevas are being held.</p>
+          <p> </p>
+          <p>I know this sounds crazy, [%username], and maybe I'm wrong...maybe it is just a bad dream. But I need to be sure. Thank you for helping.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll see what I can find."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You think I'm crazy, don't you? You think I'm just suffering from nightmares?</p>
+          <p> </p>
+          <p>Whether you believe me or not, what I see every night are visions! I'm witness to some...some horrible event, and I don't know what it is or where it is!</p>
+          <p> </p>
+          <p>But I must find out, Daeva! I'll get the Fantasy Bubbles myself!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Go in her light."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm glad you're back, [%username]! I just had another dream that was horrific!</p>
+          <p> </p>
+          <p>Whatever it is, it's getting closer...I can feel it. These tortured faces are starting to haunt me now...haunt my waking life.</p>
+          <p> </p>
+          <p>Please tell me you were able to get the Fantasy Bubbles for me?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here's the Bubbles."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm telling you that Daevas are suffering somewhere around here, and you're just walking around doing nothing? You have to believe me!</p>
+          <p> </p>
+          <p>I need those Fantasy Bubbles so I can find out where! I'm afraid to fall asleep...afraid of what I'll see!</p>
+          <p> </p>
+          <p>[%username], you must kill the [%dic:STR_DIC_M_LF4_C5_FlyingFoam_55_An]s and bring me the [%dic:STR_DIC_I_QUEST_30226a]s!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll do what I can."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I hope this works, [%username]. It seems kind of odd to rely on scrying for answers in this age we live in. But if it works, it works....</p>
+          <p> </p>
+          <p>(She merges the Bubbles into one large bubble, holds it in both hands, and closes her eyes.)</p>
+          <p> </p>
+          <p>I think I see where the Daevas are being held. I can hear their cries louder than before. Can you hear that? It seems so close. So close, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Obtain [%dic:STR_DIC_I_QUEST_30226a]s and bring them to [%dic:STR_DIC_N_Kailaus].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Defeat Tidal Seafoams and obtain Fantasy Bubbles so Kailaus may clearly see her dreams.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Kailaus dreams of tortured Daevas and feels compelled to rescue them.</p>
+          <p> </p>
+          <p>You brought her Fantasy Bubbles, which helped her see the visions from her dreams more clearly.</p>
+          <p> </p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

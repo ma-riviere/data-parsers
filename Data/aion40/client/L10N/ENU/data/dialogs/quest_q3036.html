@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ahh! Now we can operate the Artifact!</p>
+          <p> </p>
+          <p>Then perhaps we can discover what the Artifact is and does.</p>
+          <p> </p>
+          <p>Oh, I'm so excited!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I can see that."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I so hope the Artifact functions well, and we can use it to help rebuild Theobomos. Right, I should stop talking, and get to work.</p>
+          <p> </p>
+          <p>[%username], I hope you'll do us one more favor. The Artifact still needs to be reactivated .</p>
+          <p> </p>
+          <p>You have more experience with it than anyone, so I'd like to give you the honor of, err, trying it out. It might be dangerous...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you. Here--use the Activation Stone on the [%dic:STR_DIC_OBJ_LF2a_Artifact_Q3036], then report back to me.</p>
+          <p> </p>
+          <p>I will be waiting.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I hope this works out...."</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+
+          <p>You went through so much to find and recharge the Activation Stone. Wouldn't you regret it if you quit now? </p>
+          <p> </p>
+          <p>Well, if you really don't want to...but I think you should finish what you started.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll keep my wings attached, thanks."</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've been so anxious, waiting for you!</p>
+          <p> </p>
+          <p>Did it work? Did you activate the Artifact?</p>
+          <p> </p>
+          <p>Tell me! Tell me everything!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"It worked! And there were lights...!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh my. Is it true? You mean, the Artifact has that much power? If we use it wisely, it'll be a huge help here. I'll report this to Sanctum immediately. Many Daevas there are curious about the Artifact.</p>
+          <p> </p>
+          <p>[%username], the success of this mission was completely yours.</p>
+          <p> </p>
+          <p>Lord Nezekan bless you.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Operate [%dic:STR_DIC_OBJ_LF2a_Artifact_Q3036] using the recharged Activation Stone.</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Report the result to [%dic:STR_DIC_N_Atropos].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Activate the Artifact with the recharged Activation Stone and report the result to Atropos.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Atropos suggested you activate the Artifact.</p>
+          <p> </p>
+          <p>When you used the Activation Stone, the Artifact operated and bestowed upon you a special benediction.</p>
+          <p> </p>
+          <p>When you reported the result to Atropos, she was pleased saying that it would be a great help to rebuilding Theobomos.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

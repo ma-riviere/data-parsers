@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You've really impressed us with your skills and your compassion, [%username].</p>
+          <p> </p>
+          <p>The Empyrean Lords blessed you with many gifts.</p>
+          <p> </p>
+          <p>Are you busy? There's something else you can do for us.</p>
+        </body>    
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"What is it you need?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Karnifs are lying low for now, but it won't stay that way for long.</p>
+          <p> </p>
+          <p>We must find a long-lasting solution, one that allows us to handle them without help.</p>
+          <p> </p>
+          <p>So, I've come up with a trap....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"A trap?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes, we'll just need some bait.</p>
+          <p> </p>
+          <p>To draw them into the trap, we'll need a [%dic:STR_DIC_M_TogD_11_An]'s rib. Karnifs are crazy about Wild Tog Meat.</p>
+          <p> </p>
+          <p>Could you get some [%dic:STR_DIC_I_quest_2212a]s for us, Daeva? We can't leave to do it ourselves.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Great! We need at least 6 [%dic:STR_DIC_I_quest_2212a]s to bait the traps.</p>
+          <p> </p>
+          <p>You can find [%dic:STR_DIC_M_TogD_11_An]s in the passage to [%dic:STR_DIC_W_DF1A_19].</p>
+          <p> </p>
+          <p>I'll reward you for your efforts, of course.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm on my way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You've no need to be sorry, it's our job to do.</p>
+          <p> </p>
+          <p>We're just spread so thin out here, it's frustrating.</p>
+          <p> </p>
+          <p>Maybe Commander Suthran can send help, but I'm afraid to ask.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Good luck."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're back just in time. Loriniah and I made the traps.</p>
+          <p> </p>
+          <p>All we need now is the bait. Did you manage to get any?</p>
+          <p> </p>        
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Will this be enough?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You haven't obtained enough [%dic:STR_DIC_I_quest_2212a]s yet.</p>
+          <p> </p>
+          <p>Maybe you forgot where to find them. There are [%dic:STR_DIC_M_TogD_11_An]s throughout the passage to the [%dic:STR_DIC_W_DF1A_19].</p>
+          <p> </p>
+          <p>Please hurry, we're so close to being done!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be right back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>These will be perfect. Just how the Karnifs like it!</p>
+          <p> </p>
+          <p>Now the road should be safe. Thanks for your help.</p>
+          <p> </p>
+          <p>Here is the reward I promised.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Hunt [%dic:STR_DIC_M_TogD_11_An]%s to get some bait and take it to [%dic:STR_DIC_N_Okkolenja].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Olenja said she needs bait to draw out some Karnifs. While she makes the traps, hunt Togs and take their ribs to her.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Olenja planned to make traps to capture Karnifs. While she and her comrade made the traps, you hunted Togs and gave her their ribs so that she could use them for bait.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

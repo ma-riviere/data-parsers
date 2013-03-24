@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did you know that the Spriggans and the Spriggles are the most powerful creatures in Patamor Thicket, [%username]?</p>
+          <p> </p>
+          <p>They used to stay on the other side of the lake, but lately they have expanded their territory into the Thicket itself.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Are they causing trouble?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>How did you know? These creatures are small but ferocious, and they've been multiplying like...well, Spriggans. Soon the entire area will be overrun.</p>
+          <p> </p>
+          <p>The fortress is in a state of emergency at the moment, though, so it can't send help right now. The locals have contributed to a fund to reward anyone who will hunt these pests.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What are you offering?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Eradicate the [%dic:STR_DIC_M_Sprigg2_23_An]s and [%dic:STR_DIC_M_Sprigg3_25_An]s, [%username], and I'll pay you with a Bronze Coin.</p>
+          <p> </p>
+          <p>You can trade them in for armor--it's not a bad deal. What do you say?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Most commendable. Come back after hunting twenty [%dic:STR_DIC_M_Sprigg2_23_An]s and nine [%dic:STR_DIC_M_Sprigg3_25_An]s.</p>
+          <p> </p>
+          <p>It won't be easy to hunt so many, but if you take down a few each time you pass through Patamor Thicket, you'll get there eventually.</p>
+          <p> </p>
+          <p>Good luck!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"They don't stand a chance."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I understand--what we're asking is no easy feat.</p>
+          <p> </p>
+          <p>It is probably wise that you know your limits.</p>         
+          <p> </p>
+          <p>Come back when you think you can handle it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I can do it. I'm just...busy."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Welcome, [%username].</p>
+          <p> </p>
+          <p>Did you hunt those Spriggans and Spriggles?</p>
+          <p> </p>
+          <p>I'm assuming you did. If not, you wouldn't be here now...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Here's what I've got so far."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You got them all!</p>
+          <p> </p>
+          <p>Thank you very much.</p>
+          <p> </p>
+          <p>Here is the Bronze Coin that I promised. I hope you make good use of it.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Eradicate the Spriggan Gatherers and Spriggle Wardens.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Sprigg2_23_An]s([%2]/20)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Sprigg3_25_An]s([%5]/9)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report the result to [%dic:STR_DIC_N_Gundalpun].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Eradicate the Spriggan Gatherers and Spriggle Wardens that are threatening the safety of the locals.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Kellan was worried that there was no help coming from the Fortress to combat the Spriggan problem. </p>
+          <p> </p>
+          <p>He also said that he would give the work to any Daevas willing to help. So you hunted 20 Spriggan Gatherers and 9 Spriggle Wardens and received a Bronze Coin as a reward. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

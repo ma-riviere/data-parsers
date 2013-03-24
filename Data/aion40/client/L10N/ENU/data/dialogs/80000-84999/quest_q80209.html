@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]! Come back to help me again?</p>
+          <p> </p>
+          <p>In addition to being a great romantic, I'm also an animal lover.</p>
+          <p> </p>
+          <p>Why, I'm a founding member of the Daru Eaters Repression Program, or D.E.R.P. for short.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"DERP. Right. What do you need?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We members of the D.E.R.P. have noticed the number of worgs increasing significantly in the region.</p>
+          <p> </p>
+          <p>We're worried that they might eat all the Daru. The D.E.R.P. cannot allow this!</p>
+          <p> </p>
+          <p>We can't harm animals ourselves, so instead we're offering rewards to anyone who kills the worgs for us. Interested?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Wonderful. I'm sure there will be no side-effects from this.</p>
+          <p> </p>
+          <p>Go and kill 18 of worgs, and come back when you're done.</p>
+          <p> </p>
+          <p>Watch out for teeth!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Goodbye."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What? We're saving those cute Darus from certain extinction and that's all you have to say?</p>
+          <p> </p>
+	        <p>I never should have trusted you!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll keep hunting."</Act>
+    </Selects>
+  </HtmlPage>
+
+ <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did you kill enough worgs? Are the Daru safe from predators?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"There are fewer Worgs now."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+         <p>Wonderful! Very well done!</p>
+          <p> </p>
+          <p>For your efforts, I hereby make you a fellow member of the D.E.R.P. as well!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Kill Worgs.([%2]/18).</font></p></step>
+	       <step><p visible="[%15]"><font color="[%16]">Report back to Winton.</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Kill the Worgs near Morheim Fortress.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You killed the Worgs until they were outnumbered by the Darus.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

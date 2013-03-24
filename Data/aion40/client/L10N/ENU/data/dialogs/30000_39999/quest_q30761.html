@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q30761</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(This bloody dagger radiates a sense of malevolence. Instinctively you know you shouldn't touch it with your bare hands.)</p>
+          <p> </p>
+          <p>(At the same time, you can't just abandon it, lest someone else find it.)</p>
+          <p> </p>
+          <p>([%dic:STR_DIC_N_Garnon] in [%dic:STR_DIC_W_LDF4a_SZ_OP] might know what to do with it.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Stop! That's close enough! Don't unwrap that thing--I can feel its power from here.</p>
+          <p> </p>
+          <p>The hatred radiating from that dagger is amazingly strong. I can't do anything about it, but I think I know who can.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">"Go on."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Try taking it to [%dic:STR_DIC_N_Gneise].</p>
+          <p> </p>
+          <p>He once gave a lecture at the Reian Sorcerer Association about utilizing emotions in weapons. If anyone would know how to deal with this, it would be him.</p>
+          <p> </p>
+          <p>I'm sorry I wasn't able to help you myself.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"That's all right."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, hello [%username]!</p>
+          <p> </p>
+          <p>What can I do for you?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I found this dagger..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh sweet Lady Siel!</p>
+          <p> </p>
+          <p>I know of only one weapon that could hold such ferocious hatred and malice. This must be the dagger that Dragon Lord [%dic:STR_DIC_MLA52] used to murder his predecessor, [%dic:STR_DIC_E_Apsu]!</p>
+          <p> </p>
+          <p>Amazing! I had thought this was lost forever.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <steps>
+               <step><p visible="[%0]"><font color="[%1]">Ask [%dic:STR_DIC_N_Garnon] in [%dic:STR_DIC_W_LDF4a_SZ_OP] about the dagger you found.</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Ask [%dic:STR_DIC_N_Gneise] about the dagger</font></p></step>
+          </steps>
+          <p><font font_xml="quest_summary">Find someone who knows more about the dagger you discovered at the Tiamat Stronghold.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You discovered a dagger filled with terrible malice and anger inside Tiamat Stronghold.</p>
+          <p> </p>
+          <p>When you told Garnon about the dagger, she said Grais would know more.</p>
+          <p> </p>
+          <p>Grais was shocked, but said the dagger must have been the one used to murder Dragon Lord Apsu.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

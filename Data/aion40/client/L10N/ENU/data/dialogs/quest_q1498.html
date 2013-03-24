@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It looks like I have a bit of a crisis on my hands, [%username]. The Kaidan Krall have abducted a geologist named Hierni.</p>
+          <p> </p>
+          <p>Fortunately she was taken to the Kaidan Mine and not the Kaidan Headquarters, so if we act swiftly we may be able to rescue her.</p>
+          <p> </p>
+          <p>There's no knowing what they might do to Hierni. I'm greatly concerned for her safety. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What should we do?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>A small strike force is on the way. They want us to distract the enemy by wiping out the Wallarms and Assaulters guarding the Kaidan Mine.</p>
+          <p> </p>
+          <p>I think you're perfect for the task, [%username]. Will you go and eliminate those Krall in the Kaidan Mine for us?</p>
+          <p> </p> 
+          <p>You will be rewarded handsomely for your efforts, of course.</p>    
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent. Leave right away then. Any delay is a risk to Hierni. Let me fill you in on a few things first, though.</p>
+          <p> </p>
+          <p>The Kaidan Mine is dangerous, so gather some allies before you go. When you defeat the Kaidan Wallarms and Assaulters, take their [%dic:STR_DIC_I_QUEST_1498a]s and [%dic:STR_DIC_I_QUEST_1498b]s, and return them to me.</p>
+          <p> </p>
+          <p>Faith and arms!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Faith and arms!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What? But...don't you care about that poor geologist?</p>
+          <p> </p>
+          <p>You're not turning down my offer simply because you have no colleagues to take to the Kaidan Mine, are you?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I need to think about it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank Ariel!</p>
+          <p> </p>
+          <p>I've been worried sick ever since you left!</p>
+          <p> </p>
+          <p>I'm delighted to see you unharmed. Were you successful?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I brought these."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did you forget to bring the [%dic:STR_DIC_I_QUEST_1498a]s and [%dic:STR_DIC_I_QUEST_1498b]s?</p>
+          <p> </p>
+          <p>I'm still going to need those, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll bring them back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ugh! I suppose one shouldn't expect good taste from a Krall, eh?</p>
+          <p> </p>
+          <p>Thank you very much. If there's more you can do, I'll be sure to let you know.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Gather the [%dic:STR_DIC_I_QUEST_1498a]s and [%dic:STR_DIC_I_QUEST_1498b]s and bring them to [%dic:STR_DIC_N_Anasya].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">To expedite the rescue of the prisoner held captive in the Kaidan Mine, eliminate the Kaidan Wallarms and Assaulters guarding the Mine and take their masks to Taera.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Taera said the Kaidan Krall have abducted a geologist named Hierni, and a rescue mission will soon take place.</p>
+          <p> </p>
+          <p>But in order to expedite the mission, the Kaidan Wallarms and Assaulters guarding the Kaidan Mine must first be eliminated.</p>
+          <p> </p>
+          <p>When you defeated the Krall guarding the Kaidan Mine and returned with the Guard's Masks and Charger's Masks, she praised your effort and gave you a reward.</p>   
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

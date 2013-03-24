@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>끈질긴 놈들 같으니라구! 아, 오해 마시오.</p>
+          <p> </p>
+          <p>당신에게 한 말이 아니라 여기서 쫓겨난 천족 놈들에게 한 말이라오. </p>
+          <p> </p>
+          <p>정찰병 보고로는 그놈들이 여기서 멀지 않은 뿌리의 섬에 진을 치고 이곳의 동태를 감시하고 있다더구려.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>머릿수도 얼마 안 되고 해서 그냥 둘까도 생각했는데 하는 짓이 점점 도를 지나치니 슬슬 걱정이 되는구려.</p>
+          <p> </p>
+          <p>놈들이 무슨 짓을 저지르기 전에 먼저 처치해야겠소.</p>
+          <p> </p>
+          <p>마침 도와줄 사람도 이렇게 나타났으니 말이오. 그래, [%username] 당신 말이오.</p>
+          <p> </p>
+          <p>설마 거절하진 않으리라 믿겠소.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>당신은 끈질긴 3명의 데바 중 아무나 3번을 영혼 치유사에게 보내주고 오시오.</p>
+          <p> </p>
+          <p>첫 번째 대상은 불꽃의 데바로 불리는 [%dic:STR_DIC_N_Nemea]라오. 마법 능력이 뛰어나니 각별히 주의하시오.</p>
+          <p> </p>
+          <p>두 번째 대상은 [%dic:STR_DIC_N_Nike]라오. 장검을 주로 사용한다더구려.</p>
+          <p> </p>
+          <p>마지막 대상은 [%dic:STR_DIC_N_Dactyl]이란 자인데 앞뒤 보지 않고 검을 휘두르니 조심하는 게 좋을 거요.</p>
+          <p> </p>
+          <p>그럼 좋은 소식 기다리겠소.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>도대체 거절하는 이유가 뭐요?</p>
+          <p> </p>
+          <p>설마 천족이 두려워서? 당신 정도 실력이면 놈들 세 명쯤은 한 번에 눕힐 수 있을 텐데...</p>
+          <p> </p>
+          <p>그래도 두렵다면 뭐 어쩔 수 없구려. 나중에라도 생각이 바뀌면 날 찾아오시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이제 막 요새 정비를 끝냈다오.</p>
+          <p> </p>
+          <p>이제 천족 아니, 용족이 쳐들어와도 끄덕없을 거요.</p>
+          <p> </p>
+          <p>아참, 부탁한 일은 어떻게 됐소? 3번 정도 영혼을 치유하는 굴욕을 맛보게 해주었겠지?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>놈들 이번에 겁 좀 먹었겠구려, 하하하.</p>
+          <p> </p>
+          <p>수고 많았소. 덕분에 당분간 천족 정찰대 걱정은 안 해도 되겠구려.</p>
+          <p> </p>
+          <p>피곤할 텐데 가서 좀 쉬시오.</p>
+          <p> </p>
+          <p>도움이 필요하면 내 연락하겠소.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_Nemea], [%dic:STR_DIC_N_Nike], [%dic:STR_DIC_N_Dactyl]%을 처치하라([%2]/3)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Ab1_1141_Quest_Da]%와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">요새를 빼앗긴 천족 가디언이 뿌리의 섬에서 유황 나무 요새를 정찰하고 있다고 한다. 천족 가디언을 처치하고 구드하르텐에게 결과를 알리자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>구드하르텐은 유황 나무 요새를 빼앗긴 천족이 멀지 않은 뿌리의 섬에서 계속 요새를 정찰하고 있다고 했다. 처음에는 그냥 두려고 했지만 점점 도를 넘어 행동하는 놈들에게 본때를 보여야겠다고 했다.</p>
+          <p> </p>
+          <p>그래서 부탁대로 뿌리의 섬으로 가서 네메아, 니케, 다크틸을 처치하고 구드하르텐에게 돌아가 결과를 보고하자 천족이 겁을 먹었을 거라며 흐뭇해했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

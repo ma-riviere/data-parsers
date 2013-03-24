@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hmm, you look like a [%userclass]. What brings you way out here?</p>
+          <p> </p>
+          <p>It's been a long time since I had anyone to talk to. Nothing but wild beasts and dust....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Are you all right?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I was bitten by an Arachna.</p>
+          <p> </p>
+          <p>I was gathering herbs when it happened, picking Theonias, minding my own business. It just attacked me out of nowhere!</p>
+          <p> </p>
+          <p>The wound isn't serious, but I do feel a little dizzy. Must be the poison.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Poison?!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Don't worry. It's not that bad. I took the antidote so I should be fine.</p>
+          <p> </p>
+          <p>What I do worry about is the number of Arachnas I see every day. In the past they weren't a problem, but now they seem to be everywhere....</p>
+          <p> </p>
+          <p>[%username], you look like an experienced [%userclass]. Could you kill some of the [%dic:STR_DIC_M_OctasideD_21_An]s?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you for helping me, [%username]!</p>
+          <p> </p>
+          <p>Just cull their numbers a bit. Twelve [%dic:STR_DIC_M_OctasideD_21_An]s should do.</p>
+          <p> </p>
+          <p>Once you get rid of them, I can get back to gathering herbs.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be quick!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I understand. I suppose Arachnas aren't much of a challenge for Daevas.</p>
+          <p> </p>
+          <p>I can't kill them myself, though. I've tried.</p>
+          <p> </p>
+          <p>Will you reconsider?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I have a lot to do right now."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're back! I'm so glad to see you! I knew you were right for the job!</p>
+          <p> </p>
+          <p>Did you kill the Arachnas?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I definitely thinned the herd."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you so much. I can get back to gathering now without worrying.</p>
+          <p> </p>
+          <p>It isn't much, but here's a token of my appreciation. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Hunt [%dic:STR_DIC_M_OctasideD_21_An]s. ([%2]/12).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_N_Medea].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Medea was not able to gather herbs due to Arachnas. Kill Arachnas for Medea.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Medea said she was bitten by an Arachna.</p>
+          <p> </p>
+          <p>You killed some Shade Arachnas so that she could gather herbs without having to worry.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

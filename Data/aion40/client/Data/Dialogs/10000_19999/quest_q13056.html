@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>저희들은 초창기에 이 곳 프라데스 초원까지 전진해서 티아마트군 패잔병들과 전투를 치뤘지요.</p>
+          <p> </p>
+          <p>연족의 평화가 깨지면서 이 먼 곳까지 진출해온 저희들은 순식간에 곤경에 빠지게 되었습니다.</p>
+          <p> </p>
+          <p>많은 제 동료들이 그때 티아마트군의 석화 마법에 쓰러졌지요.</p>
+          <p> </p>
+          <p>그 때의 동료들을 구하고 싶은 마음이었는데, 최근 소식을 들으니 브리트라군이 석화 마법을 해제할 수 있는 [%dic:STR_DIC_I_QUEST_13056A]%을 지니고 있다고 하더군요.</p>
+          <p> </p>
+          <p>[%username] 님이 좀 힘을 써주셔서 그 오드 구슬 조각을 구해오시면 석화된 데바들을 해방시킬 수 있을텐데, 좀 도와주시지 않곘습니까?</p>
+          <p> </p>
+          <p>오드 구슬 조각은 [%dic:STR_DIC_E_LDF5b_F4_Vri]%이 지니고 있다고 합니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이제 이 [%dic:STR_DIC_I_QUEST_13056A]%을 합쳐서 오드 구슬로 만들면 구슬로 유적지 데바 석상들을 해방시킬 수 있습니다.</p>
+          <p> </p>
+          <p>오드 구슬은 제가 합쳐드리겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">오드 구슬 조각을 전달한다.</Act>
+    </Selects>
+  </HtmlPage>
+ 
+  <HtmlPage name="check_user_item_ok">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>오드 구슬 조각이 모두 모였군요.</p>
+          <p> </p>
+          <p>이제 제대로 된 오드 구슬을 만들어을 사용하면 석화되어 있는 제 동료들을 해방시킬 수 있을 것입니다.</p>
+          <p> </p>
+          <p>석화된 데바들은 천족과 마족이 모두 섞여 있는 만큼, 해방시키기 전까지는 구별할 수 없으니 조심하시기 바랍니다.</p>
+          <p> </p>
+          <p>오드 구슬을 가지고 프라데스 요새 동북쪽에 있는 [%dic:STR_DIC_W_LDF5b_SZ_F4_1]로 가시면 [%dic:STR_DIC_N_LDF5b_FOBJ_F4_Lapidifier_L]%을 찾으실 수 있습니다.</p>
+          <p> </p>
+          <p>이제 얼마 남지 않았습니다. 꼭 제 동료들을 구출해주십시요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_fail">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아직 [%dic:STR_DIC_I_QUEST_13056A]%이 부족하군요.</p>
+          <p> </p>
+          <p>소지품을 한 번 잘 확인해보세요.</p>
+          <p> </p>
+          <p>온전한 오드 구슬을 만드려면 3개의 [%dic:STR_DIC_I_QUEST_13056A]%이 필요합니다.</p>
+          <p> </p>
+          <p>지금은 가지고 계신 숫자가 부족하니 반드시 오드 구슬 조각을 3개를 구해오셔야 합니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>동료들 구출은 어떻게 되어가고 있나요?</p>
+          <p> </p>
+          <p>성공하셨습니까?</p>
+          <p> </p>
+          <p>유적지 데바 석상 중에는 천족과 마족이 섞여 있지만 오드 구슬만 잘 사용하면 [%dic:STR_DIC_N_LDF5b_FOBJ_F4_Lapidifier_L]%으로 석화된 데바들을 구출할 수 있습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>성공하셨군요!</p>
+          <p> </p>
+          <p>역시 [%username] 님이십니다.</p>
+          <p> </p>
+          <p>오랜 동료들을 다시 만날 생각을 하니 벌써부터 가슴이 벅차군요.</p>
+          <p> </p>
+          <p>정말로 감사합니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_I_QUEST_13056A]%을 구해 [%dic:STR_DIC_N_LDF5b_Mainad_E]에게 전하라</font></p>[%collectitem]</step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_N_LDF5b_FOBJ_F4_Lapidifier_L]%에서 데바 구출하라([%5]/3)</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">[%dic:STR_DIC_N_LDF5b_Mainad_E]%에게 보고하라</font></p></step>
+
+    </steps>
+          <p><font font_xml="quest_summary">브리트라군으로 부터 오드 구슬을 구해 프라데스 초원에 유적지 데바 석상으로 석화되어 있는 데바를 구출하라.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>마이나드는 자신의 옛동료들이 티아마트군 패잔병으로 석화된 뒤 프라데스 초원에 방치되어 있다며 이들을 구하고 싶다고 했다.</p>
+          <p> </p>
+          <p>제43 군단 1부대 병사들로 부터 석화 마법을 해제할 수 있는 오드 구슬을 구해 이들을 해방시켜 주었다.</p>
+          <p> </p>
+          <p>이 이야기를 전하자 마이나드는 죽음에서 동료들이 돌아왔다며 진심으로 기뻐했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

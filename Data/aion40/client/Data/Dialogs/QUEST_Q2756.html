@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정찰 때문에 유황 나무 열도 곳곳을 돌아다니는데 그때마다 참 힘듭니다.</p> 
+          <p> </p>
+          <p>아트레이아와 에레슈란타 곳곳을 정찰을 해 봤지만 유황 나무 열도 같은 곳은 처음입니다.</p>
+          <p> </p>
+          <p>유황 때문에 날 수도 없는 곳이 태반이고 가만히 서 있기만 해도 생명력도 뚝뚝 떨어지니... </p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>게다가 정찰을 방해하는 놈들은 얼마나 많은지 몸을 숨기기가 힘들 지경입니다.</p> 
+          <p> </p>
+          <p>하지만 어디까지나 정찰이 최우선이다 보니 놈들을 처치할 수도 없고... </p>
+          <p> </p>
+          <p>특히 [%dic:STR_DIC_M_Ab1_1141_Worm_28_An], [%dic:STR_DIC_M_Ab1_1141_WormB_29_An]들은 바닥에 붙어 있다가 갑자기 튀어나와 공격을 하니 어떻게 할 수가 없습니다. </p>
+          <p> </p>
+          <p>[%username] 님이 좀 도와주시면 정말 큰 도움이 될 겁니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그럼 [%dic:STR_DIC_M_Ab1_1141_Worm_28_An], [%dic:STR_DIC_M_Ab1_1141_WormB_29_An]을 처치해 주십시오.</p> 
+          <p> </p>
+          <p>유황 나무 열도 여기저기에 많은데 특히 유황의 늪과 썩은 수액의 강에 많습니다.</p>
+          <p> </p>
+          <p>이미 아시겠지만 유황 때문에 생명력이 떨어지는 곳이 많으니 조심하십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>제 고충이 별로 절실하게 들리지 않았나 보군요.</p> 
+          <p> </p>
+          <p>남들은 별일 아니라고 할지 몰라도 전 임무 수행에 막대한 지장을 받고 있단 말입니다.  </p>
+          <p> </p>
+          <p>하지만 돕기 싫다면 어쩔 수 없죠. 저에게 강요할 수 있는 힘이 있는 것도 아니고요. </p>
+          <p> </p>
+          <p>알겠습니다. 다음에 다른 일이라도 좀 도와주십시오. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>유황 나무 열도를 돌면서 [%dic:STR_DIC_M_Ab1_1141_Worm_28_An], [%dic:STR_DIC_M_Ab1_1141_WormB_29_An]은 처치하셨나요?</p>
+          <p> </p>
+          <p>그놈들만 없으면 제가 어깨춤을 추며 정찰을 다니겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아이고, 정말 감사합니다.</p>
+          <p> </p>
+          <p>이제 정찰 다니다가 들킬까 봐 조마조마한 일을 없겠군요.</p>
+          <p> </p>
+          <p>다 [%username] 님 덕분입니다.</p>
+          <p> </p>
+          <p>이건 감사의 표시로 드리는 거니 사양하지 말고 받으십시오.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">정찰을 방해하는 식인충을 처치하라</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Ab1_1141_Worm_28_An]([%2]/5)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Ab1_1141_WormB_29_An]([%5]/3)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Gagnrad]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">가그라드는 유황 식인충 때문에 정찰에 큰 방해를 받고 있다고 한다. 유황 식인충과 끈끈한 유황 식인충을 처치해 주자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>가그라드는 유황 식인충 때문에 정찰을 다니는데 방해를 받고 있다고 했다.</p>
+          <p> </p>
+          <p>그래서 유황 나무 열도를 돌면서 유황 식인충과 끈끈한 유황 식인충을 처치해 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

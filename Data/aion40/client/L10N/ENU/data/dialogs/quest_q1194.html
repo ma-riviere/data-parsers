@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That Odium-studded trinket you brought back is significant without a doubt, but tells us little about the Krall's plans.</p>         
+          <p> </p>
+          <p>We'll need to investigate further.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"I see."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I should not ask more of you than I already have--and yet, I must.</p>
+          <p> </p>
+          <p>Conspiracy or no, the Krall are still attacking the citadel. We must weaken their offensive by striking hard.</p>
+          <p> </p>
+          <p>We should focus on taking down the Crack Tursin Trackers.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"How would we go about that?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, reconnaissance comes first, as always. Go to the [%dic:STR_DIC_FLA23] and look for any further clues for what the Krall are plotting.</p>
+          <p> </p>
+          <p>If you manage to find anything significant, eliminate the Crack Tursin Trackers. They're the backbone of the Krall force...one I intend for you to break.</p>
+          <p> </p>
+          <p>Once you have dealt with them, report back to me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You and I, [%username]...we are people of action.</p>
+          <p> </p>
+          <p>Even so, do not attempt this alone. You have a lot of ground to cover in your search, and the [%dic:STR_DIC_MLA27_5]s have slaughtered many of our bravest Elyos.</p>
+          <p> </p>
+          <p>I urge you to bring allies. Faith and arms.</p>          
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Faith and arms."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I apologize. I have already asked more of you than I had any right to.</p>
+          <p> </p>
+          <p>There will be other Daevas who can assist. If I send you into danger again and again, you will be no more a hero, but one day a martyr.</p>
+          <p> </p>
+          <p>Go, Daeva. Go and rest.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Thank you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]. I am glad to see you safe and well.</p>
+          <p> </p> 
+          <p>Do we have any more clues? Anything better than Odium-studded jewelry?</p>
+          <p> </p>
+          <p>And what of the Crack Tursin Trackers? Do they still draw breath?</p>   
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Well...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hold a moment. I want to hear every word of this.</p>
+          <p> </p>
+          <p>Kraka has a lair nearby? And they seemed to be hiding something in it?</p>
+          <p> </p>
+          <p>That is grave news. I fear they intend to open a passage to the Abyss, just as they did in Akarios Village. Then the Odium necklace is a tool...one for opening portals....</p>          
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Search the Tursin Garrison to locate the source of the conspiracy.</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Eliminate the Crack Tursin Trackers.</font></p>
+                     <p visible="[%3]"><font color="[%4]">  [%dic:STR_DIC_MLA27_5] ([%5]/9)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_LA19].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Return to the Tursin Garrison to search for clues. While you're there, weaken the Krall force by defeating Crack Tursin Trackers.</font></p>
+        </body>
+        </html>
+    </Contents>
+    <notifies>
+       <notify progress="1" pos="2" fontsize="16" showframe="true" time="5" color="yellow">Spatalos insisted that he needed more clues and asked you to return to the Tursin Garrison to search for more information. He also ordered you to eliminate Crack Tursin Trackers in order to weaken the Krall force.</notify>
+    </notifies>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>While eliminating the Crack Tursin Trackers at the Tursin Garrison, you discovered Kraka's Den and found a clue to their conspiracy.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

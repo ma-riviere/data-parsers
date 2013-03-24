@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q10051</QuestId>
+    <QuestName>레파르와 만남</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>어제 당황스러운 일이 있었소.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_N_Philmoi]라는 인간이 자신이 레파르 혁명단원이라고 당당히 밝히면서 친위대 본부로 들어왔지 뭐요.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_E_12]이 어떤 단체인지는 우리도 잘 알고 있소. 그래서 쫓아낼까 했지만 태도가 너무나 당당하기에 무슨 용건인지 들어나 보기로 했소.</p>
+          <p> </p>        
+          <p>그런데 "[%dic:STR_DIC_N_Lephar]가 [%username]에게 전할 말이 있다"는 말만 남기고는 휑 하니 가 버리는 게 아니겠소?</p>
+          <p> </p>
+          <p>헛소리로 치부할 일은 아닌 것 같아 당신을 부르긴 했소만... 이래저래 신경이 쓰이는구려.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_W_LDF4a_SZ_A2_01]에 있겠다고 했으니 판단은 알아서 하시길 바라오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">대화를 마친다.</Act>
+    </Selects>
+    <Voice file="Q10051-1.ogg"/>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], 오늘따라 표정이 조금 굳어 있는 것 같은데?</p>
+          <p> </p>
+          <p>무슨 일이라도 생겼나?</p>
+         </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">레파르가 찾는다고 말한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>레파르가? 자네에게 직접 할 말이 있다고 했다는 말인가?</p>
+          <p> </p>
+          <p>흠, 사르판에까지 와서 무슨 속셈일까...</p>
+          <p> </p>
+          <p>놈들에게도 티아마트는 적이라 이건가?</p>
+          <p> </p>
+          <p>적의 적은 동료가 될 수도 있겠지. 마족 놈들처럼. </p>
+          <p> </p>
+          <p>물론 아주 잠깐이겠지만 말일세.</p>
+          <p> </p>
+          <p>[%username], 레파르가 그렇게 나온다면 굳이 피할 이유는 없을 것 같군. 가서 한번 대화를 나눠 보게.</p>
+          <p> </p>
+          <p>하지만 절대 방심해선 안 되네.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO2">대화를 마친다.</Act>
+    </Selects>
+    <Voice file="Q10051-2.ogg"/>
+  </HtmlPage>
+
+  <HtmlPage name="select3">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님이시군요. 레파르 님께서 기다리고 계십니다.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_ILDF4a_FOBJ_Q10051]를 이용하면 차원의 문을 통해 레파르 님을 만나실 수 있지만 너무 늦게 오신 탓에 차원의 문의 마력이 약해져 버렸습니다.</p>
+          <p> </p>
+          <p>아, [%username] 님을 탓하는 게 아니니 오해하지 말아 주십시오.</p>
+          <p> </p>          
+          <p>[%dic:STR_DIC_M_LDF4A_A2_IronGolem_57_An]가 지닌 [%dic:STR_DIC_I_QUEST_10051A]이 있으면 어렵지 않게 마력을 충전할 수 있으니까요.</p>
+          <p> </p>
+          <p>메닌 마을 쪽으로 가시면 놈들을 볼 수 있으니 가서 마력의 핵을 좀 구해다 주시겠습니까?</p>
+          <p> </p>
+          <p>한낱 전령에 불과한 제가 상대하기에는 벅찬 녀석들이라서요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO3">대화를 마친다.</Act>
+    </Selects>
+    <Voice file="Q10051-3.ogg"/>
+  </HtmlPage>
+
+  <HtmlPage name="select4">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>돌아오셨군요, [%username] 님. </p>
+          <p> </p>
+          <p>[%dic:STR_DIC_I_QUEST_10051A]은 가져오셨습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">마력의 핵을 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_ok">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>차원의 문을 활성화하기에 충분한 양이로군요.</p>
+          <p> </p>
+          <p>잠시만 기다려주시겠습니까?</p>
+          <p> </p>
+          <p>(마력의 핵을 수정구에 갖다 대니 스르르 흡수되어 버린다.)</p>
+          <p> </p>
+          <p>이제 됐습니다.</p>
+          <p> </p>
+          <p>신비로운 수정구에 손을 올려놔 보십시오. 레파르 님께서 계신 곳으로 갈 수 있을 겁니다.</p>
+          <p> </p>
+          <p>의심하실 필요는 없습니다. [%username] 님을 함정에 빠트릴 생각이었다면 굳이 이곳까지 부를 필요도 없었으니까요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_fail">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_I_QUEST_10051A]이 없으면 차원의 문을 활성화할 수가 없습니다.</p>
+          <p> </p>
+          <p>대체 레파르 님을 얼마나 기다리게 만들 작정이십니까?</p>
+          <p> </p>
+          <p>그러니 빨리 [%dic:STR_DIC_M_LDF4A_A2_IronGolem_57_An]%을 처치하고 마력의 핵을 가져다 주십시오. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그렇다. 나 [%dic:STR_DIC_N_Israphel]은 그동안 레파르로 위장하고 너희의 곁에서 살아왔도다.</p>
+          <p> </p>
+          <p>궁금한 것이 많을 것이다, 데바여. </p>
+          <p> </p>
+          <p>그러나 네게 허락된 시엘의 눈금은 너무도 짧으니 전해야 할 말만 하겠노라.</p>
+          <p> </p>
+          <p>티아마트가 지닌 시엘의 유물에 대해서는 알고 있겠지. 호되게 당해 보았으니 말이다.</p>
+          <p> </p>
+          <p>그런데 너희는 아둔하게도 시엘의 유물을 단순히 강력한 무기로만 생각하는 듯하더구나.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT5_1">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>참으로 어리석고 아둔하도다! </p> 
+          <p> </p>
+          <p>티아마트에게서 시엘의 유물을 뺏지 못하면 아트레이아가 파멸할 것임을 깨닫지 못하다니...</p> 
+          <p> </p>
+          <p>너희를 대표하는 자에게 전하여 대책을 강구하라.</p>
+          <p> </p>
+          <p>주신의 이름을 걸고 공언하건대 시엘의 눈금이 더 이상 짧아지면 설사 아이온이 힘을 발휘한다 해도 파멸을 막을 수 없을 것이다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SET_SUCCEED">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>왔는가?</p>
+          <p> </p>
+          <p>희한한 일이군. 그렇지 않아도 자네 생각을 하던 참이었네.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">레파르와의 일을 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>바, 방금 뭐라고 했나? 이스라펠? 레파르가 이스라펠 주신이었다는 말인가?</p>
+          <p> </p>
+          <p>맙소사! 이스라펠 주신이 살아 있었다니!</p>
+          <p> </p>
+          <p>아니, 아니지. 지금은 시엘의 유물을 먼저 걱정해야겠군. 서둘러 대책을 마련해야겠네.</p>
+          <p> </p>
+          <p>하지만 이스라펠 주신이라니! 도저히 평정을 찾을 수가 없군. 분명 엘리시움이 발칵 뒤집어질 걸세.</p>
+          <p> </p>
+          <p>이스라펠 주신이 특별히 자네를 통해 말하다니, 자네는 세간의 평가보다 훨씬 대단한 인물인 것 같군. </p>
+          <p> </p>
+          <p>어쨌든 수고했네. 엘리시움과 카룬에게는 내가 말하도록 하지. </p>
+          <p> </p>
+          <p>맙소사... 맙소사! 이스라펠 주신이 살아 있다니!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_Kutos]와 대화하라</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">필모이와 만나기 전에 [%dic:STR_DIC_N_Killios]에게 의견을 물어봐라</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">[%dic:STR_DIC_W_LDF4a_SZ_A2_01]로 가서 필모이와 대화하라</font></p></step>
+               <step><p visible="[%9]"><font color="[%10]">[%dic:STR_DIC_M_LDF4A_A2_IronGolem_57_An]에게서 [%dic:STR_DIC_I_QUEST_10051A]을 모아 [%dic:STR_DIC_N_Philmoi]에게 가져가라</font></p>[%collectitem]</step>
+               <step><p visible="[%12]"><font color="[%13]">[%dic:STR_DIC_ILDF4a_FOBJ_Q10051]를 통해 레파르와 만나라</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Killios]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">지령: 레파르가 기다리고 있다고 한다. 레파르 혁명단원 필모이와 대화를 나누고, 무슨 일인지 알아보자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>쿠토스가 불러 찾아가 보니 레파르 혁명단원 필모이가 카룬 친위대의 본부로 들어와서는 레파르가 찾는다는 말을 남겼다고 했다.</p>
+          <p> </p>
+          <p>필모이는 신비로운 수정구를 통해 레파르가 있는 공간으로 안내해 주었다.</p>
+          <p> </p>
+          <p>그곳에서 레파르는 자신이 이스라펠 주신이라는 충격적인 사실을 말해 줬다.</p>
+          <p> </p>
+          <p>그가 보여 준 형상은 속임수나 잔꾀가 아니라 분명한 주신의 형상이었다.</p>
+          <p> </p>
+          <p>이스라펠은 티아마트에게서 시엘의 유물을 뺏지 못하면 아트레이아가 멸망할 것이라 경고했다.</p>
+          <p> </p>
+          <p>킬리오스에게 레파르의 정체와 경고를 전하자 엄청난 충격을 받아 말을 제대로 잇지 못했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>미션 진행: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

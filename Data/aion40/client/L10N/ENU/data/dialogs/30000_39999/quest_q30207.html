@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This is a remarkable discovery, [%username]! This ancient document you found is full of Balaur history, legends, burial rites!</p>
+          <p> </p>
+          <p>Do you know what it says here? It tells of a conjuring ceremony the Balaur use! It describes in perfect detail where this ceremony takes place, and the potion they use.</p>
+          <p> </p>
+          <p>With this, we can find out what in the shadows this Stormwing is and why it was sealed inside Beshmundir Temple.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What kind of potion is it?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's...it's hard to decipher this part. A gland of some sort...maybe an oil. I'll work on it....</p>
+          <p> </p>
+          <p>It says where it's located, and what you need to do to get it...but what is it?</p>
+          <p> </p>
+          <p>We need to find it, whatever it is, in order to figure out what this Stormwing is, and why it was locked in the temple. Will you lend a wing, [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Fra...Fragrant...oh, what we need to make the potion is [%dic:STR_DIC_I_QUEST_30207a]s! I had forgotten what this symbol meant...it's been some time since my schooling.</p>
+          <p> </p>
+          <p>The document is very clear about how to obtain it--you must kill [%dic:STR_DIC_M_LF4_C_Dragonfly_55_An]s and [%dic:STR_DIC_M_LF4_C_DragonSnake_55_An]s at Angrief Wastes.</p>
+          <p> </p>
+          <p>This could really be a huge find for us, [%username]. I'll decode the rest of the document while you get Fragrant Oil Glands.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"This shouldn't be too difficult."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We've come this far, [%username]--why are you quitting now? Half of this research find is credited to you!</p>
+          <p> </p>
+          <p>Look, we already know that Isbariya was warning against opening this Stormwing's tomb. But what is Stormwing? I must know!</p>
+          <p> </p>
+          <p>How can you not want to find out?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"There's a warning for a reason."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well? Did you find the Fragrant Oil Glands, [%username]?</p>
+          <p> </p>
+          <p>I've been on daggers and dams since you left! I must know what this Stormwing is! It's all I can think about.</p>
+          <p> </p>
+          <p>So hand over the oil glands so we can get started....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here's the Fragrant Oil Glands."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>A scholar you will never be, [%username]!</p>
+          <p> </p>
+          <p>If you only realized how important this is, you would have completed this task and been back here with the [%dic:STR_DIC_I_QUEST_30207a]s already.</p>
+          <p> </p>
+          <p>You have no damn idea what we Elyos might be facing...please, [%username]!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I will look into it now."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This is very peculiar...substance. It's a sickly sweet sort of smell, isn't it?</p>
+          <p> </p>
+          <p>All that remains now is the actual ceremony.... I must see what Stormwing is! It's strange, but I feel almost drawn to it...compelled to awaken it.</p>
+          <p> </p>
+          <p>Thank you, [%username]. Maybe you should have pursued a life of research instead of being a [%userclass].</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Obtain the [%dic:STR_DIC_I_QUEST_30207a] and bring it to [%dic:STR_DIC_N_Pilomenes].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">The Ancient Dragonbound Document revealed information about a conjuring ceremony. Defeat Fierce Serrators and Flametail Leowasps and bring back the material needed to perform the ceremony.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Pilomenes was ecstatic to find information about a conjuring ceremony in the Ancient Dragonbound Document.</p>
+          <p> </p>
+          <p>Having been informed that performing the ceremony will lead you to the identity of Stormwing, you brought back the Fragrant Oil Glands that were needed.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

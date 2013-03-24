@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I heard stories of Lepharist robbers attacking people. But I didn't think it'd happen to me.</p>
+          <p> </p>
+          <p>We were doing fine all the way up to the Moslan Forest, but then I started getting this creepy feeling, like somebody was following us.</p>
+          <p> </p>
+          <p>Then we got jumped by Lepharists. They took everything....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"You should've been more careful."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yeah, well, it's too late now. We've got no cargo, nothing.</p>
+          <p> </p>
+          <p>I'm not gonna get paid, Leinolz is saying maybe we'll have to pay for the cargo we lost, and Gogaerunerk is worried he's gonna get kicked out of the Traders.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"That's tough luck."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Stick around, this sob story only gets better. See, in that cargo was some Kandula I picked myself. To make medicine for my poor, ailing mother, right?</p>
+          <p> </p>
+          <p>When bad luck gets you, it really gets you. Hey, but maybe you could help out a fellow Asmo down on his luck?</p>
+          <p> </p>
+          <p>I'm not gonna get the rest of the cargo back, but do you think you could help me get some [%dic:STR_DIC_G_herb_d_n_c_10b]? For my mother?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've seen Kandula all around Altgard. Gribade Canyon, Basfelt Hunting Ground, Mosbear Habitat, MuMu Village, wherever.</p>
+          <p> </p>
+          <p>Just get some [%dic:STR_DIC_G_herb_d_n_c_10b] for me so my mother can get better.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm on it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Aah, it figures you wouldn't help. Marchutan himself's got it in for me, it looks like.</p>
+          <p> </p>
+          <p>You'd better get out of here before I rub my bad luck off onto you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Fate will smile on you again, you'll see."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I just want to get back on the road soon, get back to my mom. Leinolz says we gotta think of a way to get the cargo back, though....</p>
+          <p> </p>
+          <p>You got the [%dic:STR_DIC_G_herb_d_n_c_10b], at least?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Take some."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You haven't got any Kandula? What's your problem? You said you'd help me out.</p>
+          <p> </p>
+          <p>If you're not gonna do it for me, at least do it for my mom.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Fine, fine."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, even if I don't get anything else out of this, even if I gotta pay for the lost cargo out of my own pockets, at least I'll know my mom's gonna be okay.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect [%dic:STR_DIC_G_herb_d_n_c_10b]s and bring them to [%dic:STR_DIC_N_Viel]. </font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Viel said he had lost the Kandula he collected for his mother when their carriage was raided. Collect Kandula for him.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Viel was hired as a porter, and was on his way to Traders Berth with Leinolz and Gogaerunerk. But they lost the cargo when they were raid by Lepharist Revolutionaries.</p>
+          <p> </p>
+          <p>Viel lost all the Kandula he'd collected for his sick mother. You collected Kandula for him, and he thanked you very much.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

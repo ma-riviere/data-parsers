@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Losing Siel's Eastern Fortress was a big blow to us. We must do all we can to recover it. Quickly.</p>
+          <p> </p>
+          <p>First we have to rattle their defenses. Our best chance of regaining the fortress will be to attack while the Asmodians have control.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Why the Asmodians?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>While formidable opponents, they are easier to fight than the Balaur.</p>
+          <p> </p>
+          <p>It is most efficient to attack when the fortress enters the Vulnerable State.</p>
+          <p> </p>
+          <p>Will you help?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Go to the fortress when it's in the Vulnerable State and wipe out the [%dic:STR_DIC_M_1801_all]--every Asmodian Fighter, Asmodian Archer, Asmodian Mage, and Asmodian Priest. It doesn't matter if they are Veterans, Experienced or Novices.</p>
+          <p> </p>
+          <p>Bring back their [%dic:STR_DIC_I_QUEST_1801a]s, also. We can make them into charms.</p>
+          <p> </p>
+          <p>Go on. Get the job done.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm on my way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Clearly you are afraid. There is no room for fear in the Abyss.</p> 
+          <p> </p>
+          <p>Perhaps you should go back home where things are simpler.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Good-bye."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You have returned safely, [%username].</p>
+          <p> </p>
+          <p>Have you done as I asked? Do you have the [%dic:STR_DIC_I_QUEST_1801a]s?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I do. Here they are."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>          
+          <p>The more you delay this mission, [%username], the more difficult it will be for us to reclaim Siel's Eastern Fortress.</p>
+          <p> </p>
+          <p>Please hurry to the fortress and return with the [%dic:STR_DIC_I_QUEST_1801a]s.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be right back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent work--thank you.</p>
+          <p> </p>
+          <p>If we retake Siel's Eastern Fortress, we will have your efforts to thank, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Wipe out the [%dic:STR_DIC_M_1801_all]s and take the proof to [%dic:STR_DIC_N_Ruth].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">To reclaim Siel's Eastern Fortress, the Asmodians must be struck a blow while the fortress in the Vulnerable State. Go to the fortress to defeat them and return with the Wing Insignias.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ruth said that in order to recapture the Siel's Eastern Fortress, a significant blow must be inflicted on the enemy using a small force.  He advised you to defeat the Asmodians defending the fortress while the fortress was in the Vulnerable State.</p>
+          <p> </p>
+          <p>So after defeating the Asmodian fighters, archers, mages and priests, you returned to Ruth with their Wing Insignias.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

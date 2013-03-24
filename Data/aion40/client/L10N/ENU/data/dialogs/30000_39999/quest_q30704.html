@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q30704</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Reian Elder [%dic:STR_DIC_N_Talios] has an urgent request, and asked me to send a Daeva to him.</p>
+          <p> </p>
+          <p>I realize everyon is busy with the attack on Tiamat Stronghold, but he needs someone right now. Can you go? You're the only one I can entrust this to.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, Ancanus must have sent you.</p>
+          <p> </p>
+	  			<p>Thank you for coming so quickly. We've discovered that the Magic Material Merchants are illegally trading [%dic:STR_DIC_E_Q30704e]s among themselves.</p>
+          <p> </p>
+          <p>They claim they acquired them from a Shugo called [%dic:STR_DIC_N_Shugo_LDF4b_10]. I'd like you to find her and learn where she got the fragments from.</p>
+          <p> </p>
+          <p>Drazma Fragments are extremely dangerous, [%username]. We need to find out how many are already out there!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"I'll find them."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select3">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, hello, Daeva. Something you're looking for?</p>
+          <p> </p>
+          <p>Something special perhaps? That not even other shugo merchants sell?</p>      
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT3_1">"Tell me about Drazma Fragments."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select3_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Dra-Drarazma Fragments? Garinrinerk doesn't know anything about that! Not a thing. No no. Nothing....</p>
+          <p> </p>
+          <p>Er, well, fine, I sold a few. But did nothing wrong, nyerk!</p>
+          <p> </p>
+          <p>Was just selling them for a friend. Shulack named [%dic:STR_DIC_N_NPC_Shulack_LF4a_8] gave to me, said we would split profit. Good money, nyerk, nyerk.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO2">"Where's Larukin now?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select4">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>So that stupid shugo sold me out, eh? I should have known.</p>
+          <p> </p>
+          <p>Don't get me wrong, though, I'm just another middleman, er, middle-shulack here. A Shulack scientist named Hewahewa got the fragments for me. If you don't any more fragments loose, talk to him.</p>
+          <p> </p>
+          <p>You'll find [%dic:STR_DIC_M_IDTiamat_ShulackScientist_60_Ae] working at [%dic:STR_DIC_W_IDTiamat_SZ_R1]. He's probably so engrossed in his work, he'll never realize you're coming.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT4_1">"How many did you already sell?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select4_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I, I don't know! A few. All to that stupid shugo. You want to know who the end buyers were, go talk to him again.</p>
+          <p> </p>
+          <p>I'm a legitimate business man, helping provide low cost materials to saps who can't otherwise afford them. Now get out of here!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO3">"You're shut down now."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Just in time, [%username]. I was just wrapping up my investigation on the Drazma Fragments.</p>
+          <p> </p>
+	        <p>Fortunately, it appears that very few were actually sold, and I was able to confiscate all of them.</p>
+	        <p> </p>
+          <p>But more importantly, what happened to the source of the fragments?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"A Professor Hewahewa was distributing them."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hewahewa? You don't suppose he's related to the Hewahewa associated with the events in Dark Poeta, do you?</p>
+          <p> </p>
+          <p>Maybe it's just a coincidence. Good jub with the investigation, however.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk with [%dic:STR_DIC_N_Talios].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Ask [%dic:STR_DIC_N_Shugo_LDF4b_10] about the origin of the Drazma Fragments.</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Ask [%dic:STR_DIC_N_NPC_Shulack_LF4a_8] about the origin of the Drazma Fragments.</font></p></step>
+               <step><p visible="[%9]"><font color="[%10]">Report to [%dic:STR_DIC_N_Talios].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">There are illegal Drazma Fragments on the market. Find out where they came from.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Tailos told you that illegal Drazma Fragments were being circulated on the market.</p>
+          <p> </p>
+          <p>You found out that although Larukin supplied the items, he originally got them from a scientist who found them among the wastes from Professor Hewahewa's lab.</p>
+          <p> </p>
+          <p>When you told Tailos, he wondered if it was the same Hewahewa who was behind the Dark Poeta incident.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

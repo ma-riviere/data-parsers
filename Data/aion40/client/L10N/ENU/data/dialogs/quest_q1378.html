@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], are you busy, Daeva? </p>
+          <p> </p>
+          <p>We have an urgent request...if you have some time.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What is the problem?"</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Caldera Outpost is badly in need of supplies, but there is no one who can deliver them.</p>
+          <p> </p>
+          <p>Neither Beramones nor I can leave our post, nor can we assign a job this risky to The Watch.</p>
+          <p> </p>
+          <p>I can't send Humans to a place where Trolls and Lepharist Revolutionaries are lurking. [%username], will you help me?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you. What a relief! The supplies should have been delivered several days ago.</p>
+          <p> </p>
+          <p>Please take this. Be careful, it's heavier than it looks.</p>
+          <p> </p>
+          <p>Deliver it to [%dic:STR_DIC_N_Hylas]. He must be anxiously waiting for it, so please hurry. Too bad there's not enough Aether for you to fly--you'd have it there in no time!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"My feet will be my wings."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What should I do? They may already be out of supplies.</p>
+          <p> </p>
+          <p>Even though Daevas don't die of hunger they still suffer.</p>
+          <p> </p>
+          <p>I understand: you're busy. One way or another, I'll have to find the time myself.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Farewell."</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Arieluma! What are you doing in this light-forsaken place? If you're looking for love you've come to the wrong place! Haha! Ah, ahem....</p>
+          <p> </p>
+          <p>Seriously, what brings you here?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Arkel sent me with supplies."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Supplies! Of all the forgotten places in this land you walked into mine--with supplies! I could kiss you!</p>
+          <p> </p>
+          <p>I was about to run out of food. Thank you. You must have gone to some trouble to come here, so please accept this. It's small, but it's my token of gratitude.</p>
+		  <p> </p> 
+		  <p>You sure you don't want that kiss? </p>
+		  
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Deliver the supplies to [%dic:STR_DIC_N_Hylas]. </font></p></step>               
+    </steps>
+          <p><font font_xml="quest_summary">Go to the Caldera Outpost and deliver the supplies to Hylas as Arkel requested. </font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Arkel said that she had to have some supplies sent to the Caldera Outpost, but hadn't yet found the right person to deliver them.</p>
+          <p> </p>
+          <p>You delivered the supply package to Hylas at the Outpost. Hylas thanked you and gave you a token of gratitude.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

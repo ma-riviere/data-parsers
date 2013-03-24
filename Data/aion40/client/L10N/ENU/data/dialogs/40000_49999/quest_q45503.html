@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hey, you!</p>
+          <p> </p>
+          <p>This is an urgent order for you, [%username], from the Blood Crusade.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Let me see it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p align="center">  - Operation Order - </p>
+          <p> </p>
+          <p>From: The Blood Crusade</p>
+          <p> </p>
+          <p>To: Crusader [%username]</p>
+          <p> </p>
+          <p>The Blood Crusade has confirmed the presence of encroaching Elyos forces in the Silentera Canyon. If the Elyos are not dispatched, our fortress in Inggison will come under threat of direct attack. The Blood Crusade has issued a priority kill order. This order supersedes all other common orders.</p>
+          <p> </p>
+          <p>  1. Eliminate at least five Elyos soldiers near the [%dic:STR_DIC_E_UnderPass_Da].</p>
+          <p> </p>
+          <p>  2. Defeat the Elyos by any means possible--brutal tactics are authorized for this mission. Only make sure the cowards that are killed are of relative ability. There is no advantage in butchering those who cannot harm us.</p>
+          <p> </p>
+          <p>  3. Report to the [%dic:STR_DIC_E_45503] once the kills are confirmed and the enemies have lost the will to fight.</p>
+          <p> </p>
+          <p>May you walk in Azphel's shadow. Blood for blood!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good. </p>
+          <p> </p>
+          <p>Now be safe. We can't be seen dragging your corpse back for burial, [%username]. Not you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Don't worry."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, fair enough. Can't force you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"And I can't help you. Sorry."</Act>
+    </Selects>
+  </HtmlPage>
+
+   <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's good to see you, [%username].</p>
+          <p> </p>
+          <p>I hear the Silentera Canyon runs red with Elyos blood, my friend. I don't suppose you had a hand in that, hmm?</p>
+          <p> </p>
+          <p>Report in, Crusader. Tell me of your role.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"It is true. I sent them to their graves."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent. Yes, excellent. [%userclass]s like you are hard to find, my friend--I am glad we have you in our ranks.</p>
+          <p> </p>
+          <p>All endeavor reaps rewards. Here is yours, Crusader. Blood for blood!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Defeat the [%dic:STR_DIC_E_Daily_2] in the [%dic:STR_DIC_E_UnderPass_Da] ([%2]/5).</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Report to the [%dic:STR_DIC_E_45503].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Urgent order: Eliminate the Elyos causing a ruckus in the Silentera Canyon and report back to the Gelkmaros Branch Agent.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Blood Crusade has issued a kill order for the elimination of the Elyos forces in the Silentera Canyon. </p>
+          <p> </p>
+          <p>You completed the mission and received your reward from the Gelkmaros Branch Agent.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+  
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

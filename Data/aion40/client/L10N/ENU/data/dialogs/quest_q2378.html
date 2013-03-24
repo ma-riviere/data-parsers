@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You've helped me a lot, [%username], and I'd like to return the favor.</p>
+          <p> </p>
+          <p>Inside the Fire Temple are [%dic:STR_DIC_M_DFlame_GargoyleDarkD_36_Ae] and  [%dic:STR_DIC_M_DFlame_GargoyleDarkD_34_Ae]. </p>
+          <p> </p>
+          <p>These Gargoyles have [%dic:STR_DIC_I_QUEST_2378a] in them, rumored to have an incredible power.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"You've caught my interest."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I have little with which to reward you for your service.</p>
+          <p> </p>
+          <p>But if you go to the Fire Temple and procure [%dic:STR_DIC_I_QUEST_2378a]s, I can.</p>
+          <p> </p>
+          <p>I'll craft something wonderful with the Flame Stones.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The [%dic:STR_DIC_M_DFlame_GargoyleDarkD_36_Ae] and [%dic:STR_DIC_M_DFlame_GargoyleDarkD_34_Ae] are deep inside the Fire Temple.</p>
+          <p> </p>
+          <p>Defeat them, and you'll obtain [%dic:STR_DIC_I_QUEST_2378a]s.</p>
+          <p> </p>
+          <p>But you cannot go alone to the Fire Temple. Gather your allies--this task will be equal to the reward.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm on my way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Are you sure? This is the only way I can reward your deeds.</p>
+          <p> </p>
+          <p>If your time is worth nothing....</p>
+          <p> </p>
+          <p>We should part for now, Daeva.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"My time is mine." </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]! You were gone so long, I worried for you.</p>
+          <p> </p>
+          <p>Were you able to gather [%dic:STR_DIC_I_QUEST_2378a]s?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"It's been an interesting day."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm sorry, but I have no other way to reward you without the Flame Stones.</p>
+          <p> </p>
+          <p>Defeat the Gargoyles and procure [%dic:STR_DIC_I_QUEST_2378a]s.</p>
+          <p> </p>
+          <p>You won't be disappointed.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I remember."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes, yes it has. Today I can show my true power.</p>
+          <p> </p>
+          <p>Just a touch was all I needed to infuse these with my energy.</p>
+          <p> </p>
+          <p>Take this. It pales next to the service you gave dear Agnita.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Obtain the stones from [%dic:STR_DIC_M_DFlame_GargoyleDarkD_36_Ae] and  [%dic:STR_DIC_M_DFlame_GargoyleDarkD_34_Ae] and take them to [%dic:STR_DIC_N_Bulagan].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Bulagan wanted to reward your help. He said that the Flame Stones you could obtain in the Fire Temple had incredible powers. Defeat the Lurking Bloodfist and the Bloodfist Gargoyle and collect the Flame Stones.  </font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Bulagan wanted to reward you. He said that the Flame Stones from the Lurking Bloodfist and the Bloodfist Gargoyle had incredible powers.</p>
+          <p> </p>
+          <p>You went to the Fire Temple and defeated the Gargoyles. Bulagan infused energy into the Flame Stones and turned them into useful items.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

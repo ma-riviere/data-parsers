@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You know, [%username], I'm getting really close to giving up. I am terrible at cooking!</p>
+          <p> </p>
+          <p>This land is just horrible for an aspiring chef.</p>
+          <p> </p>
+          <p>But I have another idea first. I will not admit defeat just yet! I am an Elyos, and we do not ever admit defeat...even when cooking!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What's your new idea?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Have you ever tried Vortile Fins? They're almost entirely fat and cartilage, and they have a strange greasy texture...but they're delicious!</p>
+          <p> </p>
+          <p>I was invited to a dinner party in Sanctum once, and the host served the fins on a bed of greens. Very unique! Everybody asked how he made them.</p>
+          <p> </p>
+          <p>Anyway, that's my next idea. I want to experiment with [%dic:STR_DIC_I_QUEST_11033a]s. So would you bring me the fins of [%dic:STR_DIC_M_LF4_A_Varanus_Axolotl_51_n]s?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, thanks, [%username]. Please bring back 10 [%dic:STR_DIC_M_LF4_A_Varanus_Axolotl_51_n] fins...that should do it.</p>
+          <p> </p>
+          <p>I'll research some recipes and play around with seasonings while you're gone. This dish should be the one. This dish will be delicious!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Well, we can hope."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Burning light! I told you I was sorry, [%username]! I'm trying my best here.</p>
+          <p> </p>
+          <p>I gave you a reward for your pain and suffering! What else do you want me to do?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Go back to being a Scholar."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're back already? Great, great, I just about finished with the root broth. Smells good, huh?</p>
+          <p> </p>
+          <p>Did you bring all the [%dic:STR_DIC_I_QUEST_11033a]s I asked for?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here are the fins."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_ok">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, they're still fresh! Mmmmm.</p>
+          <p> </p>
+          <p>We just put these in the boiling broth like this, add some salt, some special seasonings....</p>
+          <p> </p>
+          <p>And in a few minutes, we'll have my soon-to-be-famous Vortile Fin porridge. Ummm, I hate to even ask this, but would you wait around for a minute until it's ready?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"The things I do for glory...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_fail">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, [%username], you didn't bring me enough [%dic:STR_DIC_I_QUEST_11033a]s. We've been over this several times now!</p>
+          <p> </p>
+          <p>And don't tell me that memory loss is one of the side effects of food poisoning again! I researched it while you were gone...and it's not! It's just being lazy!</p>
+          <p> </p>
+          <p>Now please go back out there for me. We have lots of hungry Legionaries shooting me daggers with their eyes.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"All right, I'll get them."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hmmm...it smells all right. Well, it doesn't smell horrible, at least.</p>
+          <p> </p>
+          <p>It's a little gummy, but it should be edible.</p>
+          <p> </p>
+          <p>Are you ready? Ready to try my masterpiece?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO2">"Sweet Ariel, protect me...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Your skin color still looks healthy...and it's staying in your stomach this time. I guess we succeeded, right?</p>
+          <p> </p>
+          <p>Uh-oh, what's that weird look on your face? Why are you covering your mouth?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"It tastes like qooqoo droppings...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hmm...that bad? But at least you're not throwing it up! That's a good sign.</p>
+          <p> </p>
+          <p>Aside from the taste, does it seem edible? Different Daevas have different tastes, you know?</p>
+          <p> </p>
+          <p>On the bright side, at least I made a meal that will kill hunger pains without killing Daevas.</p>
+         </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get the fins of [%dic:STR_DIC_M_LF4_A_Varanus_Axolotl_51_n] and bring them to [%dic:STR_DIC_N_Doria].</font></p>[%collectitem]</step>
+               <step><p visible="[%3]"><font color="[%4]">Talk with [%dic:STR_DIC_N_Doria] again.</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Eat the food [%dic:STR_DIC_N_Doria] made.</font></p></step>
+               <step><p visible="[%9]"><font color="[%10]">Talk with [%dic:STR_DIC_N_Doria].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Doria won't give up on finding edible ingredients. Help her collect Vortile Fins.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Doria said she wouldn't give up finding edible ingredients, and she had one more idea to try out.</p>
+          <p> </p>
+          <p>You brought Vortile Fins to her, and she asked you to taste the porridge once it was finished.</p>
+          <p> </p>
+          <p>It didn't taste good but it didn't kill you. She thanked you and said she finally found an edible meal--of sorts--to serve.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

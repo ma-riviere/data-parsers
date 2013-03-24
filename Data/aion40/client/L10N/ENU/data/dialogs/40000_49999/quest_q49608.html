@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p align="center"> - Work Order -</p>
+          <p> </p>
+          <p>1. To: Temp Worker [%username]</p>
+          <p> </p>
+          <p>2. Job Details: The stones needed for making cornerstones are lacking. Get 5 Intact Bricks near the Ancient Bulwark, and submit them to the supervising branch.</p>
+          <p> </p>
+          <p>3. Supervising Branch: Silverine North Katalam Branch</p>
+          <p> </p>
+          <p>The above mission will be considered in the evaluation process for hiring you as a full-time worker. Additional points may be added depending on the result. Do your best nyerk.</p>
+          <p> </p>
+          <p>- Dumurinerk, Recruiter of Silverine Limited</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">Fold the work order and put it away.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(Scribbling away in the ledger) I'm quite tied up now. Tell me quick.</p>
+          <p> </p>
+          <p>I can't memorize all the requests flooding down from Katalam, so I'm writing them down.</p>
+          <p> </p>
+          <p>You look like one of our temp workers. Did you just finish a job?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">Hand over the Intact Bricks.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Nyerk, did you think that I would pass it over because I'm busy?</p>
+          <p> </p>
+          <p>How can a Daeva try to pull the wool over my eyes? Nyerk.</p>
+          <p> </p>
+          <p>Don't you ever do this again. I'll let you off the hook just this one time because we're quite shorthanded right now.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">End dialog.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(Closing the ledger) I feel a chill. This must be from the Ancient Bulwark.</p>
+          <p> </p>
+          <p>Some Daevas would bring something similar to get away with this mission.</p>
+          <p> </p>
+          <p>(Puts them in a box with several locks) Now we have enough for the construction.</p>
+          <p> </p>
+          <p>Take this. This is your reward for the day.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Gather Intact Bricks and take them to Silverine North Katalam Branch.</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">You received a work order from Silverine Limited. Check the work details and perform the mission.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You received a work order from Silverine Limited.</p>
+          <p> </p>
+          <p>After you obtained the Intact Bricks in the Ancient Bulwark and took them to the Silverine North Katalam Branch, you were rewarded for your hard work.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

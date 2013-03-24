@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Krall...the Balaur....</p>
+          <p> </p>
+          <p>Can I ever get a break?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"What's wrong?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, hello [%username]. I'm just counting my troubles. I'm supposed to destroy the Krall in this area, you see.</p>
+          <p> </p>
+          <p>It's a tough job, though, because of their sheer numbers.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"They appear to be everywhere."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>They are everywhere. I am looking for an able Daeva to take this mission.</p>
+          <p> </p>
+          <p>Are you up to the challenge?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good. Go to the Kaidan Headquarters and remove the Krall.</p>
+          <p> </p>
+          <p>The [%dic:STR_DIC_E_LF2_1424_group1_1] and the [%dic:STR_DIC_E_LF2_1424_group1_2] are the ones giving us the trouble.</p>
+          <p> </p>
+          <p>Collect their [%dic:STR_DIC_I_QUEST_1424a]s and bring them back here.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"The task is mine."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Afraid of the Kaidan Headquarters?</p>
+          <p> </p>
+          <p>It's true that it's no place to go alone--come back when you've found some allies.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll do that."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>How did it go, [%username]? Did you and bring the [%dic:STR_DIC_I_QUEST_1424a]s?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here they are."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You haven't gone yet?</p>
+          <p> </p>
+          <p>Eltnen is in crisis!</p>
+          <p> </p>
+          <p>Please hurry and cull the Krall.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be right back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well done!</p>
+          <p> </p>
+          <p>I'll report this to the Brigade General immediately.</p>
+          <p> </p>
+          <p>Thank you for your efforts. This is the reward for successfully completing the mission.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect [%dic:STR_DIC_I_QUEST_1424a]s and bring them to [%dic:STR_DIC_N_Valerius].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Remove the Krall who are responsible for searching and raiding from the Kaidan Headquarters, and collect their Seeker's Marks.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Valerius wanted to weaken the Krall force which is responsible for searching and raiding before executing a mop-up operation in the Kaidan Headquarters. You removed the Krall as he ordered, collected Seeker's Marks, and brought them to him. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+ <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님도 잘 아시겠지만 인테르디카의 상황은 심각합니다.</p>
+          <p> </p>
+          <p>결계가 허물어져 용족이 쳐들어온 데다 사악한 마족 놈까지 진을 치고 있으니까요.</p>
+          <p> </p>
+          <p>지금의 요새 병력만으로는 도무지 해결이 안 되는 상태죠.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이 소식을 들은 8인의 성녀님께서는 '아라크네 자매회가 가장 잘할 수 있는 일로 인테르디카를 도우라.'고 말씀하셨습니다.</p>
+          <p> </p>
+          <p>네, 맞습니다. 인테르디카의 [%dic:STR_DIC_E_Li_35_45]가 [%dic:STR_DIC_M_quest_37117a]%을 무사히 처치할 수 있도록 우리가 지원하는 것이지요.</p>
+          <p> </p>
+          <p>이에 [%username] 님께 청하니 [%dic:STR_DIC_E_Mentor]가 되어 수행 데바를 도와주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님은 자매회의 뜻에 동참해 주실 줄 알았습니다.</p>
+          <p> </p>
+          <p>준비가 끝나는 대로 [%dic:STR_DIC_E_Li_35_45]%와 [%dic:STR_DIC_M_quest_37117a]%을 처치해 주십시오. </p>
+          <p> </p>
+          <p>그리고 일이 끝나면 함께한 수행 데바에 대한 평가를 해 주시기 바랍니다. </p>
+          <p> </p>
+          <p>기억하십시오, 침묵과 심장의 맹세를.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님은 주저없이 나서주실 줄 알았는데 의외군요.</p>
+          <p> </p>
+          <p>뭔가 중요한 사정이 있는 거라 생각하겠습니다.</p>
+          <p> </p>
+          <p>나중에라도 시간이 되시면 도와주십시오. 실력있는 도우미가 필요한 일은 많으니까요.</p>
+          <p> </p>
+          <p>그럼 살펴 가십시오. </p>
+          <p> </p>
+          <p>카이시넬의 축복이 함께하기를.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>기다리고 있었습니다.</p>
+          <p> </p>
+          <p>이번 인드라투 정예병 소탕 작전은 어땠습니까?</p>
+          <p> </p>
+          <p>흥미로운 얘깃거리가 꽤 있었을 것 같은데 얘기는 천천히 하고 일단 결과를 보고해 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 얘기한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(고개를 끄덕이며) 저런, 꽤 힘들었겠군요.</p>
+          <p> </p>
+          <p>그럴 수 밖에 없는 것이 [%username] 님은 오늘 두 가지 일을 하신 겁니다. 하나는 용족의 전력을 약화시킨 것이고, 다른 하나는 수행 데바에게 인드라투 정예병을 상대하는 방법을 훈련시킨 것이지요.</p>
+          <p> </p>
+          <p>[%username] 님의 선행은 아라크네 자매회에 알려 모든 형제자매에게 귀감이 되게 하겠습니다.</p>
+          <p> </p>
+          <p>앞으로도 많은 선행을 베푸시길 바랍니다.</p>
+          <p> </p>
+          <p>카이시넬의 축복이 함께하기를.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_E_Li_35_45]의 [%dic:STR_DIC_E_Mentor]가 되어 [%dic:STR_DIC_M_quest_37117a]%을 처치하라([%2]/5)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Zeinia]와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">수행 데바와 함께 인드라투 정예병을 처치하고 훈련 결과를 제이니아 자매에게 보고하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>제이니아 자매가 수행 데바와 함께 인드라투 군단의 정예병을 처치해 용족의 전력을 약화시켜 달라고 부탁했다.</p>
+          <p> </p>
+          <p>수행 데바의 도우미가 되어 용족을 함께 처치하고 제이니아에게 보고하자 노고를 크게 치하했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

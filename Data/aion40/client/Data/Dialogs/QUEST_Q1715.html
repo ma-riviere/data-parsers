@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q1715</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+       <p>그나저나 큰일입니다. 요즘 들어 불타는 피의 성운에 사는 화염족들이 이 근처에 자주 나타납니다.</p>
+       <p> </p>
+       <p>라테스란의 줄기를 노리는 것 같아서 마음이 좀 불안하군요.</p>
+       <p> </p>
+       <p>테미논 요새에 보고했지만 인원이 부족해 지원을 보낼 수 없다는 답변만 받았습니다.</p>
+       <p> </p>
+       <p>대신 은주화를 줄 테니 도와주겠다는 사람을 찾아보라더군요. [%username] 님처럼 능력 있는 분을 말입니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>어떻습니까, [%username] 님?</p>
+          <p> </p> 
+          <p>불타는 피의 성운으로 가서 [%dic:STR_DIC_A_Ab1_1715all] 무리를 소탕해 주시겠습니까?</p>  
+          <p> </p> 
+          <p>이번 일을 도와주시면 보답으로 은주화를 드리겠습니다.</p>     
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>임무를 수락해 주셔서 다행입니다.</p>
+          <p> </p>
+          <p>그럼 당장 불타는 피의 성운으로 가서 화염족에게 본때를 보여 주세요.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_Ab1_1221_Tauric_38_An], [%dic:STR_DIC_M_Ab1_1231_Tauric_38_An], [%dic:STR_DIC_M_Ab1_1241_Tauric_38_An] 상관없이 15마리만 처치하면 됩니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>다시 생각해 주실 순 없을까요?</p>
+          <p> </p>
+          <p>다른 분이면 이렇게 사정하지도 않습니다.</p>
+          <p> </p>
+          <p>[%username] 님 실력이 뛰어나단 걸 아니까 이렇게 부탁드리는 겁니다. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>벌써 일이 끝난 겁니까?</p>  
+         <p> </p>
+         <p>저와 얘기하고 얼마 지나지 않은 것 같은데... </p>  
+         <p> </p>
+         <p>설마 아직도 출발하지 않은 건 아니겠죠?</p>       
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>의심해서 죄송합니다.</p>
+          <p> </p>          
+          <p>너무 빨리 다녀오셔서 설마 하는 마음이 들었습니다.</p>   
+          <p> </p>   
+          <p>[%username] 님 덕분에 화염족 놈들이 겁 좀 먹었겠군요. 정말 수고 많으셨습니다.</p>   
+          <p> </p>   
+          <p>받으십시오. 약속한 은주화입니다.</p>     
+          <p> </p>   
+          <p>그리고 시간이 나면 다음에도 도와주러 와 주십시오. 언제든지 환영입니다. </p>        
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">불타는 피의 성운에 있는 [%dic:STR_DIC_A_Ab1_1715all]을 처치하라([%2]/15)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Theon]%와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">불타는 피의 성운에 사는 화염족의 동태가 수상하다고 한다. 화염족이 라테스란의 줄기 입구를 공격하기 전에 크로탄 화염족, 드키사스 화염족, 라미렌 화염족을 처치하고 테온에게 결과를 보고하자.</p>
+          <p></font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>테온은 불타는 피의 성운에 있는 화염족의 동태가 심상치 않다고 했다.</p>
+          <p> </p>     
+          <p>상부에서 지원군을 못 보내니 대신 도와줄 사람을 찾아보라고 했다며 그 일에 관심이 있는지 물었다. </p>     
+          <p> </p>   
+          <p>그의 제안을 받아들여 크로탄 화염족, 드키사스 화염족, 라미렌 화염족을 처치하고 돌아오자 수고했다며 은주화를 주었다. </p>   
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

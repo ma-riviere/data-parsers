@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, [%username]. It took quite some time, but I was finally able to talk to Aran.</p>
+          <p> </p>
+          <p>I looked deep into his eyes and let my mind become one with his...or, attempted to, at least. But his mind was like a stone!</p>
+          <p> </p>
+          <p>A stone weathered by a world of pain. His soul has deteriorated and his will broken...he is himself no more. He must be stopped.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Stopped?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes, stopped. Don't make me spell it out, [%username]. He protects the Jotun Studio because within its walls is a powerful device.</p>
+          <p> </p>
+          <p>This device holds the power of the ancient days. Aran wants to use it to cast his vengeance on the Elyos...this much I could read from his bitter mind.</p>
+          <p> </p>
+          <p>He blames us for Aion's Tower falling, for Lord Israphel and Lady Siel Displacing, for leaving his people to rot in Balaurea.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"But the Elyos are not responsible!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>He doesn't see the truth any longer.... He only sees what he wants to see. Time has distorted the soul of this once great leader of the Reians.</p>
+          <p> </p>
+          <p>It is impossible to persuade him otherwise. There is no longer any light in his spirit.</p>
+          <p> </p>
+          <p>The Reians will be furious, but you must relieve him from the shackles of his hatred. You must kill him, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I feel for Aran, and I understand his plight. I was supposed to assassinate him if I could not persuade him...but I cannot, my friend.</p>
+          <p> </p>
+          <p>There is no time to hesitate. You must kill [%dic:STR_DIC_M_LF4_B8_AncientClanWi_NamedQ_55_An].</p>
+          <p> </p>
+          <p>And please bring me everything you find on him. He was once a great leader, and the Reian Tribe will want his belongings to honor him by.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I understand. I will kill him."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You will not kill Aran? I am almost thankful to hear that.</p>
+          <p> </p>
+          <p>It's strange, [%username], but I pity him in a way. I felt the pain of his experiences.</p>
+          <p> </p>
+          <p>We will wait here and see what happens. Or, maybe we can find another Daeva to do what we will not.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"At least our souls will stay clean."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Aran lived a long life, and his soul, I hope, is finally at peace.</p>
+          <p> </p>
+          <p>I am almost afraid to ask, but did you finish helping his soul return to the Aether?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"He is dead. Here are his items."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I understand that you don't want to kill an old man, [%username], but the lives of many Elyos may be at risk if you don't.</p>
+          <p> </p>
+          <p>You must remove [%dic:STR_DIC_M_LF4_B8_AncientClanWi_NamedQ_55_An] from this world now.</p>
+          <p> </p>
+          <p>And please remember to bring back his possessions so I can give them to his people.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I am ready now."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It is a sad day, my friend. But with these belongings of his, I hope the Reians will remember Aran for who he was...not who he became.</p>
+          <p> </p>
+          <p>Thank you again, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Kill [%dic:STR_DIC_M_LF4_B8_AncientClanWi_NamedQ_55_An] and bring his possessions to [%dic:STR_DIC_N_Suleion].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Suleion said Aran wants to kill the Elyos. You must now kill him and retrieve his possessions.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Suleion looked in Aran's heart and realized that persuasion was not possible. In fact, he wanted to slaughter the Elyos in his insanity.</p>
+          <p> </p>
+          <p>You killed Aran, and brought Suleion his possessions for the Reians to bury.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

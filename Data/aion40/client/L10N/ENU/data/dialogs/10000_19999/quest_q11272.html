@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Sun's blessings, [%username].</p>
+          <p> </p>
+          <p>I wanted to talk with you about an idea I had. Do you have a moment?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"A-are you asking ME for advice?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm trying to let our Daevas know how much their work means to Lord Kaisinel...and to me.</p>
+          <p> </p>
+          <p>What would you think if I began to reward those who fought to take enemy fortresses?</p>
+          <p> </p>
+          <p>Would you be accepting of the idea?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Then let's try it, shall we?</p>
+          <p> </p>
+          <p>When you contribute to the occupation of a fortress, you'll receive [%dic:STR_DIC_I_JUNK_KAISINEL_REWARD_01A]s.</p>
+          <p> </p>
+          <p>If you bring me five marks, I'll give you a set of pauldrons that Kaisinel once gave to me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Your personal armor? That's some reward!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you for your input.</p>
+          <p> </p>
+          <p>Perhaps I don't understand normal Daeva-to-Daeva interaction anymore. Then again, perhaps you're the one who is flying too high to hear the people below.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"We just call that 'out of touch' now."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Have you given any further thought to my campaign of acknowledgement, [%username]?</p>
+          <p> </p>
+          <p>I place great store in your counsel.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I've totally bought into this idea."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yet you bring me no [%dic:STR_DIC_I_JUNK_KAISINEL_REWARD_01A]s. Weren't you worthy of them?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm working on it. Just give me time."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes, I see that from the favors in your hand and the smile on your face. Aion's light shines brightly within you today.</p>
+          <p> </p>
+          <p>By the power of Lord Kaisinel and the glory of Elysea, I give unto you these pauldrons. They were given to me by Lord Kaisinel, imbued with his power, and now I give them to you, who has proven a staunch supporter of Elysea and Sanctum.</p>
+          <p> </p>
+          <p>For victory!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect [%dic:STR_DIC_I_JUNK_KAISINEL_REWARD_01A]s and bring them to [%dic:STR_DIC_N_Heranas].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Destroy Mastarius, Marchutan's agent, and bring the symbol of your triumph to Veille.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Veille is contemplating a plan to give symbols of her favor to Daevas who fight to overtake enemy fortresses.</p>
+          <p> </p>
+          <p>You collected some of these favors and received a set of pauldrons which once belonged to her, gifts of Lord Kaisinel.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

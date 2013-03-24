@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We came here to secure a new strategic point in Mahindel Swamp, you know. So much for that.</p>
+          <p> </p>
+          <p>We got attacked early on by those sun-blighted fuzz-faces. All our materials were burned or taken--including my cube.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Go on...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's my own fault for coming here without understanding the situation.</p>
+          <p> </p>
+          <p>I know it's probably empty by now, but I really need to get my cube back. It has a lot of personal value....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"How will you do that?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Me? Oh, here I thought you knew where I was going with this....</p>
+          <p> </p>
+          <p>Listen, Jolk and I--we're having enough trouble trying to keep this little camp secure. If we split up, or abandon the site, well, there won't be anything left of it.</p>
+          <p> </p>
+          <p>But you, [%username]! You could find my cube on the [%dic:STR_DIC_M_LycanSeekerS_16_An]s easily! So...will you help?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, thank you.</p>
+          <p> </p>
+          <p>You'll find it on a [%dic:STR_DIC_M_LycanSeekerS_16_An]. I'm sure of it.</p>
+          <p> </p>
+          <p>It's probably too much to hope that our materials are still inside, but I can't help it.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"You'll find out soon enough."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hoo boy, I'm really in trouble.</p>
+          <p> </p>
+          <p>Please...if you change your mind...?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll let you know."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've tried my best to put this place to rights, but...without materials...</p>
+          <p> </p>
+          <p>Please tell me you have good news. Did you find my cube?</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here it is."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You've not found it yet? I'm certain that it's on a [%dic:STR_DIC_M_LycanSeekerS_16_An]. If you'll only kill a few more....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be right back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That's it! My cube!</p>
+          <p> </p>
+          <p>Oh, I hope our things are still in it....</p>
+          <p> </p>
+          <p>Please take this! It's a reward for your help. Take it now in case I'm of poor spirits when I open this....</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get rid of [%dic:STR_DIC_M_LycanSeekerS_16_An]s and take back [%dic:STR_DIC_N_Taora]'s cube.</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Taora, who came to Mahindel Swamp to scout the Black Claw Tribe, lost her cube when she was attacked. You agreed to find the cube for her.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Taora and Jolk undertook the mission to secure a strategic point in Mahindel Swamp, but they were ill-informed of the dangers. Upon arrival they were attacked, and Taora's cube was stolen.</p>
+          <p> </p>
+          <p>You got rid of the Black Claw Sleekpaws and found Taora's cube.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

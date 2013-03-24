@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], does the sound of battle still thrill your soul? Do you still rush towards the fight while others flee?</p>
+          <p> </p>
+          <p>A Daeva like yourself, renowned among the [%userclass]s, ought to have appropriate armor. I believe I have just the thing for you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I'm listening."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Do you remember your Daevanion armor, [%username]? The pride you felt to wear that first piece, and the lengths that were required to get the others?</p>
+          <p> </p>
+          <p>I've just received a new kind of Durable Daevanion armor, and I'd like you to be one of the first to wear it. All I need from you is ten [%dic:STR_DIC_DC_relic_armor_30]s.</p>
+          <p> </p>
+          <p>Why Divine Lamps? Let's just say that's a part of the fitting process that I have to be concerned about, not you. What say you?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Very well, I'll be waiting here for your return. You won't regret putting on this armor, I guarantee it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Blood for blood."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Very well then. I understand. Perhaps you're simply too fond of the armor you already have to consider replacing it.</p>
+          <p> </p>
+          <p>The choice is yours, but I'll still be here if you change your mind.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Farewell."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Welcome back! Have you brought the Divine Lamps? I can't properly tune the armor to your spirit's power without them.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here you go."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I appreciate your enthusiasm, [%username], but you have a few less than the ten Divine Lamps I asked you for.</p>
+          <p> </p>
+          <p>If you're having trouble finding them, you need to go see [%dic:STR_DIC_N_Olda] or [%dic:STR_DIC_N_Gerad] at Caps and Straps. That is, unless you've decided to give up already.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll come back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That's everything I need then. Now just pick out whichever piece of armor you want and put it on. I'll do the rest.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get ten [%dic:STR_DIC_DC_relic_armor_30]s and bring them to [%dic:STR_DIC_N_EVENT_Lilyolin].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">To equip a piece of Durable Daevanion armor, you need ten [%dic:STR_DIC_DC_relic_armor_30]s.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You gave Lilyolin ten Divine Lamps and received a piece of Durable Daevanion armor.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

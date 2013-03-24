@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p align="center">- 초록의 편지 -</p>
+          <p> </p>
+          <p>초록모자단 여러분 평안하셨습니까?</p>
+          <p> </p>
+          <p>이번 임무 지역은 [%dic:STR_DIC_W_LDF5A_B2]입니다.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_E_LDF5a_Idgel_Q39601]에서 조사에 필요한 [%dic:STR_DIC_I_quest_49701a]%을 수집해 [%dic:STR_DIC_E_LDF5a_Greenhat_BD]%에 전해 주십시오.</p>
+          <p> </p>
+          <p>잊지 마세요, 초록의 힘은 여러분 곁에 있습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">편지를 접어 넣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이번에 찢어진 대지로 임무를 나섰다는 얘기는 들었습니다.</p>
+          <p> </p>
+          <p>실버린 주식회사에서 관심을 가지고 그 지역에 있는 조각난 이디움을 모으고 있다더군요.</p>
+          <p> </p>
+          <p>그래서 저희 초록모자단에서도 조각난 이디움의 정체를 조사하기로 한 겁니다.</p>
+          <p> </p>
+          <p>조각난 이디움은 수집해 오셨습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">조각난 이디움을 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>저런, 무슨 일이 있었던 겁니까?</p>
+          <p> </p>
+          <p>실버린 주식회사에서 조각난 이디움을 모조리 쓸어간 겁니까?</p>
+          <p> </p>
+          <p>실버린이 조각난 이디움을 어디에 쓸 지 알아내야 합니다.</p>
+          <p> </p>
+          <p>그러니 [%dic:STR_DIC_I_quest_49701a]%을 모아 오십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>제대로 수거해 오셔서 정말 다행입니다.</p>
+          <p> </p>
+          <p>이제 실버린 주식회사에서 어떤 목적으로 이런 걸 모으는지 알아낼 일만 남았군요.</p>
+          <p> </p>
+          <p>[%username] 님이 빠르게 처리한 덕분에 수고를 덜었습니다.</p>
+          <p> </p>
+          <p>초록모자단을 대표해 감사 드립니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_I_quest_49701a]%을 수집해 [%dic:STR_DIC_E_LDF5a_Greenhat_BD]%에 전하라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">초록모자단에서 초록의 편지가 왔다. 내용을 확인하고 수행하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>초록모자단에서 초록의 편지가 왔다.</p>
+          <p> </p>
+          <p>실버린에서 모으고 있다는 조각난 이디움을 수집해 초록모자단 북부 카탈람 지부에게 전하자 조각난 이디움의 정체를 조사할 수 있겠다며 노고를 치하했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>There's a lot we don't know about this area, but one thing's clear: Heiron's a hive for the undead. The question is--why?</p>
+          <p> </p>
+          <p>My research suggests they rise for one of several different reasons--but why here and why now, I don't know.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"And that's important because...?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, for one thing, it'll tell us more about how to eliminate them. And it may explain what happened here.</p>
+          <p> </p>
+          <p>Nolantis and Medeus Manor both suffered regional disasters. They're swarming with the undead.</p>
+          <p> </p>
+          <p>Anubite Fighters are particularly interesting. Unlike other undead, I can't find any reason they're here at all. And every time I go to Nolantis Ruins, I end up gasping beside an Obelisk. I spend a ridiculous amount of money on soul healing.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"You're tenacious."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You have no idea--but I'm also tired. Resurrection just gets old after a while, you know? And it takes time.</p>
+          <p> </p>
+          <p>[%username], you've fought Anubites before, haven't you? Would you help me with my research?</p>
+          <p> </p>
+          <p>Would you confront some [%dic:STR_DIC_M_Skeleton_43_An]s for me?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That's great--thank you!</p>
+          <p> </p>
+          <p>You'll find [%dic:STR_DIC_M_Skeleton_43_An]s on the road between Nolantis Ruins and Ortin Farm.</p>
+          <p> </p>
+          <p>If you could get their personal effects for me, I can learn who these soldiers were and what their mission was. I think 15 should be enough.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Fifteen. Got it!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hm, no interest, eh?</p>
+          <p> </p>
+          <p>Can't blame you. Fighting the undead is smelly business.</p>
+          <p> </p>
+          <p>I'll try some other Daeva.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Sorry I can't help."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Anubite personal effects--those could bring a pretty penny. Still, research first. I need to know who they were and why they were here.</p>
+          <p> </p>
+          <p>So, what did you get?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here--I don't know what they are."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No luck with the [%dic:STR_DIC_M_Skeleton_43_An]s yet?</p>
+          <p> </p>
+          <p>Please keep looking for them. I need their personal things for the next step in  my research.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll do my best."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You got these from Anubite Fighters?</p>
+          <p> </p>
+          <p>I thought you'd bring personal belongings or something like that...but these...are interesting.</p>
+          <p> </p>
+          <p>Hmm...thanks, [%username]. Here's a little something for your trouble.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get personal items from [%dic:STR_DIC_M_Skeleton_43_An]s and take them to [%dic:STR_DIC_N_Lisidike].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Liske needed the belongings of [%dic:STR_DIC_M_Skeleton_43_An]s to find out what made them rise. Go to Nolantis Ruins, fight them, and take their things.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Liske was interested in finding out what made the undead rise. Her combat skills, however, weren't strong enough to get the research material she needed.</p>
+          <p> </p>
+          <p>She asked you to confront some Anubite Fighters for her. When you did, all you found were Hazy Disks, so you brought them to Liske.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

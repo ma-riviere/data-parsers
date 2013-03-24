@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hello again, [%username]. We've decided you need a proper test this time, so you may find this a bit more complicated.</p>
+          <p> </p>
+          <p>I am sure you'll be up to the challenge.</p>
+          <p> </p>
+          <p>Ready to get started?</p>  
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Sure."</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's simple, really. Go to [%dic:STR_DIC_FLA09], kill the Slinks that escaped from the lab, and bring me their [%dic:STR_DIC_I_QUEST_80190a].</p>
+          <p> </p>
+          <p>After that, you need to kill the escaped Lobnites and bring me their [%dic:STR_DIC_I_QUEST_80190b].</p>
+          <p> </p>
+          <p>Simple, right?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good. I knew you were the right Daeva for the job.</p>
+          <p> </p>
+          <p>Now then, off you go. Verteron Citadel is waiting. Those Slinks and Lobnites won't extract their oil and pincers by themselves, you know.</p>                   
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Umm, right."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, so much for Daeva bravery. You're just going to run away now?</p>
+          <p> </p>
+          <p>Get some friends to help you again if you really have to.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Fine."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Back so soon? That's good work then.</p>
+          <p> </p>
+          <p>You have four Slink Oils and four Lobnite Pincers, right?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Take them."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What's the problem? Those escaped animals are all around the Verteron Citadel.</p>
+          <p> </p>
+          <p>Don't tell me you can't find them. You probably haven't even left for Verteron yet, have you?</p>      
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Leaving now."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're a little more beat up than I thought you would be.</p>
+          <p> </p>
+          <p>At least you got the job done. The Wrights of Dawn appreciate your efforts.</p>
+          <p> </p>
+          <p>Here's the reward we promised.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Go to [%dic:STR_DIC_FLA09] and get [%dic:STR_DIC_I_QUEST_80190a] and [%dic:STR_DIC_I_QUEST_80190b], and bring them to [%dic:STR_DIC_N_event_Kerasiss]. </font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Kierus from the Wrights of Dawn wants to test your skills. Go to [%dic:STR_DIC_FLA09] and hunt Slinks and Lobnites for their oil and pincers.</font></p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Kierus is a Wrights of Dawn scholar. He asked you to bring him some Slink Oil and Lobnite Pincers as a test of your abilities.</p>
+          <p> </p>
+          <p>You went to [%dic:STR_DIC_FLA09], hunted Slinks and Lobnites, and brought him what he had asked you for.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

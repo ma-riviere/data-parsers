@@ -1,0 +1,2981 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="playermove">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:string" name="allow" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="change">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element ref="conditions" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="stat" use="optional"/>
+      <xs:attribute type="xs:string" name="func" use="optional"/>
+      <xs:attribute type="xs:int" name="value" use="optional"/>
+      <xs:attribute type="xs:int" name="delta" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="wpnmastery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="change"/>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="weapon" use="optional"/>
+      <xs:attribute type="xs:byte" name="effectid" use="optional"/>
+      <xs:attribute type="xs:byte" name="e" use="optional"/>
+      <xs:attribute type="xs:byte" name="basiclvl" use="optional"/>
+      <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="properties">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:string" name="first_target" use="optional"/>
+          <xs:attribute type="xs:byte" name="first_target_range" use="optional"/>
+          <xs:attribute type="xs:string" name="target_relation" use="optional"/>
+          <xs:attribute type="xs:string" name="target_type" use="optional"/>
+          <xs:attribute type="xs:string" name="awr" use="optional"/>
+          <xs:attribute type="xs:short" name="target_distance" use="optional"/>
+          <xs:attribute type="xs:short" name="target_maxcount" use="optional"/>
+          <xs:attribute type="xs:string" name="target_species" use="optional"/>
+          <xs:attribute type="xs:string" name="target_status" use="optional"/>
+          <xs:attribute type="xs:byte" name="revision_distance" use="optional"/>
+          <xs:attribute type="xs:short" name="effective_angle" use="optional"/>
+          <xs:attribute type="xs:byte" name="direction" use="optional"/>
+          <xs:attribute type="xs:byte" name="effective_width" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="useconditions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="playermove"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="effects">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:element ref="wpnmastery"/>
+        <xs:element ref="armormastery"/>
+        <xs:element ref="shieldmastery"/>
+        <xs:element ref="wpndual"/>
+        <xs:element ref="extendedaurarange"/>
+        <xs:element ref="boosthate"/>
+        <xs:element ref="statboost"/>
+        <xs:element ref="condskilllauncher"/>
+        <xs:element ref="boostheal"/>
+        <xs:element ref="subtypeextendduration"/>
+        <xs:element ref="weaponstatboost"/>
+        <xs:element ref="subtypeboostresist"/>
+        <xs:element ref="skillatk"/>
+        <xs:element ref="statdown"/>
+        <xs:element ref="stun"/>
+        <xs:element ref="hostileup"/>
+        <xs:element ref="statup"/>
+        <xs:element ref="shield"/>
+        <xs:element ref="boostskillcastingtime"/>
+        <xs:element ref="polymorph"/>
+        <xs:element ref="nofly"/>
+        <xs:element ref="dispel"/>
+        <xs:element ref="root"/>
+        <xs:element ref="dash"/>
+        <xs:element ref="healinstant"/>
+        <xs:element ref="skillatkdraininstant"/>
+        <xs:element ref="alwaysparry"/>
+        <xs:element ref="closeaerial"/>
+        <xs:element ref="bind"/>
+        <xs:element ref="heal"/>
+        <xs:element ref="snare"/>
+        <xs:element ref="provoker"/>
+        <xs:element ref="spellatkinstant"/>
+        <xs:element ref="spellatk"/>
+        <xs:element ref="alwaysblock"/>
+        <xs:element ref="protect"/>
+        <xs:element ref="reflector"/>
+        <xs:element ref="dispeldebuff"/>
+        <xs:element ref="weaponstatup"/>
+        <xs:element ref="slow"/>
+        <xs:element ref="bleed"/>
+        <xs:element ref="invulnerablewing"/>
+        <xs:element ref="fear"/>
+        <xs:element ref="hide"/>
+        <xs:element ref="alwaysdodge"/>
+        <xs:element ref="alwaysresist"/>
+        <xs:element ref="backdash"/>
+        <xs:element ref="summontrap"/>
+        <xs:element ref="boostskillcost"/>
+        <xs:element ref="summonservant"/>
+        <xs:element ref="poison"/>
+        <xs:element ref="onetimeboostskillcritical"/>
+        <xs:element ref="silence"/>
+        <xs:element ref="onetimeboostskillattack"/>
+        <xs:element ref="shapechange"/>
+        <xs:element ref="search"/>
+        <xs:element ref="sleep"/>
+        <xs:element ref="fphealinstant"/>
+        <xs:element ref="dispeldebuffphysical"/>
+        <xs:element ref="deboostheal"/>
+        <xs:element ref="mpattackinstant"/>
+        <xs:element ref="blind"/>
+        <xs:element ref="movebehind"/>
+        <xs:element ref="carvesignet"/>
+        <xs:element ref="signetburst"/>
+        <xs:element ref="resurrect"/>
+        <xs:element ref="buffbind"/>
+        <xs:element ref="buffsilence"/>
+        <xs:element ref="summontotem"/>
+        <xs:element ref="resurrectbase"/>
+        <xs:element ref="rebirth"/>
+        <xs:element ref="changehateonattacked"/>
+        <xs:element ref="onetimeboostheal"/>
+        <xs:element ref="resurrectpos"/>
+        <xs:element ref="dispeldebuffmental"/>
+        <xs:element ref="mpheal"/>
+        <xs:element ref="switchhpmp"/>
+        <xs:element ref="healcastorontargetdead"/>
+        <xs:element ref="spellatkdraininstant"/>
+        <xs:element ref="mphealinstant"/>
+        <xs:element ref="boostspellattack"/>
+        <xs:element ref="fpheal"/>
+        <xs:element ref="aura"/>
+        <xs:element ref="healcastoronatk"/>
+        <xs:element ref="spellatkdrain"/>
+        <xs:element ref="randommoveloc"/>
+        <xs:element ref="deform"/>
+        <xs:element ref="delaydamage"/>
+        <xs:element ref="summonskillarea"/>
+        <xs:element ref="summongroupgate"/>
+        <xs:element ref="buffsleep"/>
+        <xs:element ref="summonbindinggroupgate"/>
+        <xs:element ref="magiccounteratk"/>
+        <xs:element ref="buffstun"/>
+        <xs:element ref="petorderuseultraskill"/>
+        <xs:element ref="recallinstant"/>
+        <xs:element ref="summonhoming"/>
+        <xs:element ref="summon"/>
+        <xs:element ref="dispelbuff"/>
+        <xs:element ref="dispelbuffcounteratk"/>
+        <xs:element ref="skilllauncher"/>
+        <xs:element ref="switchhostile"/>
+        <xs:element ref="fpatkinstant"/>
+        <xs:element ref="fpatk"/>
+        <xs:element ref="return"/>
+        <xs:element ref="deathblow"/>
+        <xs:element ref="delayedskill"/>
+        <xs:element ref="noreducespellatk"/>
+        <xs:element ref="procatk_instant"/>
+        <xs:element ref="evade"/>
+        <xs:element ref="fall"/>
+        <xs:element ref="dphealinstant"/>
+        <xs:element ref="dpheal"/>
+        <xs:element ref="delayedfpatk_instant"/>
+        <xs:element ref="mpattack"/>
+        <xs:element ref="curse"/>
+        <xs:element ref="summonhousegate"/>
+        <xs:element ref="caseheal"/>
+        <xs:element ref="convertheal"/>
+        <xs:element ref="returnpoint"/>
+        <xs:element ref="stagger"/>
+        <xs:element ref="stumble"/>
+        <xs:element ref="simpleroot"/>
+        <xs:element ref="spin"/>
+        <xs:element ref="openaerial"/>
+        <xs:element ref="procfphealinstant"/>
+        <xs:element ref="paralyze"/>
+        <xs:element ref="procmphealinstant"/>
+        <xs:element ref="prochealinstant"/>
+        <xs:element ref="signet"/>
+        <xs:element ref="procdphealinstant"/>
+        <xs:element ref="pulled"/>
+        <xs:element ref="boostdroprate"/>
+        <xs:element ref="procvphealinstant"/>
+        <xs:element ref="xpboost"/>
+        <xs:element ref="noresurrectpenalty"/>
+        <xs:element ref="nodeathpenalty"/>
+        <xs:element ref="hipass"/>
+        <xs:element ref="dispelnpcbuff"/>
+        <xs:element ref="disease"/>
+        <xs:element ref="confuse"/>
+        <xs:element ref="dispelnpcdebuff"/>
+        <xs:element ref="sanctuary"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="armormastery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="change"/>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="armor" use="optional"/>
+      <xs:attribute type="xs:byte" name="effectid" use="optional"/>
+      <xs:attribute type="xs:byte" name="e" use="optional"/>
+      <xs:attribute type="xs:byte" name="basiclvl" use="optional"/>
+      <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="shieldmastery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="change"/>
+      </xs:sequence>
+      <xs:attribute type="xs:byte" name="effectid" use="optional"/>
+      <xs:attribute type="xs:byte" name="e" use="optional"/>
+      <xs:attribute type="xs:byte" name="basiclvl" use="optional"/>
+      <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="wpndual">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:byte" name="value" use="optional"/>
+          <xs:attribute type="xs:short" name="effectid" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:byte" name="basiclvl" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="extendedaurarange">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="change"/>
+      </xs:sequence>
+      <xs:attribute type="xs:int" name="effectid" use="optional"/>
+      <xs:attribute type="xs:byte" name="e" use="optional"/>
+      <xs:attribute type="xs:byte" name="basiclvl" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="boosthate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="change"/>
+      </xs:sequence>
+      <xs:attribute type="xs:int" name="effectid" use="optional"/>
+      <xs:attribute type="xs:byte" name="e" use="optional"/>
+      <xs:attribute type="xs:string" name="noresist" use="optional"/>
+      <xs:attribute type="xs:byte" name="basiclvl" use="optional"/>
+      <xs:attribute type="xs:string" name="element" use="optional"/>
+      <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="statboost">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="change" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute type="xs:int" name="effectid" use="optional"/>
+      <xs:attribute type="xs:byte" name="e" use="optional"/>
+      <xs:attribute type="xs:string" name="noresist" use="optional"/>
+      <xs:attribute type="xs:string" name="preeffect" use="optional"/>
+      <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+      <xs:attribute type="xs:byte" name="basiclvl" use="optional"/>
+      <xs:attribute type="xs:int" name="hopb" use="optional"/>
+      <xs:attribute type="xs:string" name="element" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="condskilllauncher">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:string" name="type" use="optional"/>
+          <xs:attribute type="xs:short" name="skill_id" use="optional"/>
+          <xs:attribute type="xs:byte" name="value" use="optional"/>
+          <xs:attribute type="xs:short" name="effectid" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="boostheal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="change"/>
+      </xs:sequence>
+      <xs:attribute type="xs:int" name="effectid" use="optional"/>
+      <xs:attribute type="xs:byte" name="e" use="optional"/>
+      <xs:attribute type="xs:byte" name="basiclvl" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="subtypeextendduration">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="change"/>
+      </xs:sequence>
+      <xs:attribute type="xs:int" name="effectid"/>
+      <xs:attribute type="xs:byte" name="e"/>
+      <xs:attribute type="xs:string" name="element"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="weapon">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:string" name="weapon" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="conditions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="weapon" minOccurs="0"/>
+        <xs:element ref="onfly" minOccurs="0"/>
+        <xs:element ref="abnormal" minOccurs="0"/>
+        <xs:element ref="back" minOccurs="0"/>
+        <xs:element ref="noflying" minOccurs="0"/>
+        <xs:element ref="targetflying" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="weaponstatboost">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="change"/>
+      </xs:sequence>
+      <xs:attribute type="xs:int" name="effectid" use="optional"/>
+      <xs:attribute type="xs:byte" name="e" use="optional"/>
+      <xs:attribute type="xs:string" name="noresist" use="optional"/>
+      <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+      <xs:attribute type="xs:short" name="hopb" use="optional"/>
+      <xs:attribute type="xs:byte" name="basiclvl" use="optional"/>
+      <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="subtypeboostresist">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="change"/>
+      </xs:sequence>
+      <xs:attribute type="xs:int" name="effectid" use="optional"/>
+      <xs:attribute type="xs:byte" name="e" use="optional"/>
+      <xs:attribute type="xs:byte" name="basiclvl" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="chain">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:string" name="category" use="optional"/>
+          <xs:attribute type="xs:string" name="precategory" use="optional"/>
+          <xs:attribute type="xs:short" name="time" use="optional"/>
+          <xs:attribute type="xs:byte" name="selfcount" use="optional"/>
+          <xs:attribute type="xs:byte" name="precount" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="skillatk">
+    <xs:complexType mixed="true">
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:element ref="modifiers"/>
+        <xs:element ref="subeffect"/>
+        <xs:element ref="subconditions"/>
+      </xs:choice>
+      <xs:attribute type="xs:int" name="value" use="optional"/>
+      <xs:attribute type="xs:int" name="delta" use="optional"/>
+      <xs:attribute type="xs:byte" name="e" use="optional"/>
+      <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+      <xs:attribute type="xs:short" name="critprobmod2" use="optional"/>
+      <xs:attribute type="xs:string" name="cannotmiss" use="optional"/>
+      <xs:attribute type="xs:int" name="hopb" use="optional"/>
+      <xs:attribute type="xs:short" name="accmod2" use="optional"/>
+      <xs:attribute type="xs:byte" name="rnddmg" use="optional"/>
+      <xs:attribute type="xs:short" name="hopa" use="optional"/>
+      <xs:attribute type="xs:string" name="noresist" use="optional"/>
+      <xs:attribute type="xs:short" name="accmod1" use="optional"/>
+      <xs:attribute type="xs:string" name="mode" use="optional"/>
+      <xs:attribute type="xs:string" name="element" use="optional"/>
+      <xs:attribute type="xs:byte" name="critadddmg1" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="statdown">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="change" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute type="xs:int" name="duration2" use="optional"/>
+      <xs:attribute type="xs:int" name="effectid" use="optional"/>
+      <xs:attribute type="xs:byte" name="e" use="optional"/>
+      <xs:attribute type="xs:string" name="element" use="optional"/>
+      <xs:attribute type="xs:string" name="preeffect" use="optional"/>
+      <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+      <xs:attribute type="xs:int" name="hopb" use="optional"/>
+      <xs:attribute type="xs:short" name="basiclvl" use="optional"/>
+      <xs:attribute type="xs:string" name="noresist" use="optional"/>
+      <xs:attribute type="xs:short" name="randomtime" use="optional"/>
+      <xs:attribute type="xs:short" name="accmod2" use="optional"/>
+      <xs:attribute type="xs:short" name="accmod1" use="optional"/>
+      <xs:attribute type="xs:short" name="duration1" use="optional"/>
+      <xs:attribute type="xs:byte" name="preeffect_prob" use="optional"/>
+      <xs:attribute type="xs:byte" name="hopa" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="startconditions">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:element ref="mp"/>
+        <xs:element ref="armor"/>
+        <xs:element ref="weapon"/>
+        <xs:element ref="chain"/>
+        <xs:element ref="selfflying"/>
+        <xs:element ref="target"/>
+        <xs:element ref="targetflying"/>
+        <xs:element ref="dp"/>
+        <xs:element ref="combatcheck"/>
+        <xs:element ref="arrowcheck"/>
+        <xs:element ref="hp"/>
+        <xs:element ref="form"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="motion">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:string" name="name" use="optional"/>
+          <xs:attribute type="xs:short" name="speed" use="optional"/>
+          <xs:attribute type="xs:string" name="instant_skill" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mp">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:int" name="value" use="optional"/>
+          <xs:attribute type="xs:byte" name="delta" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="armor">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:string" name="armor" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="stun">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element ref="conditions" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute type="xs:short" name="duration2" use="optional"/>
+      <xs:attribute type="xs:short" name="effectid" use="optional"/>
+      <xs:attribute type="xs:byte" name="e" use="optional"/>
+      <xs:attribute type="xs:short" name="accmod2" use="optional"/>
+      <xs:attribute type="xs:string" name="element" use="optional"/>
+      <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+      <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+      <xs:attribute type="xs:int" name="hopb" use="optional"/>
+      <xs:attribute type="xs:short" name="basiclvl" use="optional"/>
+      <xs:attribute type="xs:string" name="noresist" use="optional"/>
+      <xs:attribute type="xs:byte" name="preeffect_prob" use="optional"/>
+      <xs:attribute type="xs:short" name="hopa" use="optional"/>
+      <xs:attribute type="xs:short" name="randomtime" use="optional"/>
+      <xs:attribute type="xs:short" name="duration1" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mpuse">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:int" name="value" use="optional"/>
+          <xs:attribute type="xs:byte" name="delta" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="actions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="mpuse" minOccurs="0"/>
+        <xs:element ref="dpuse" minOccurs="0"/>
+        <xs:element ref="itemuse" minOccurs="0"/>
+        <xs:element ref="hpuse" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="hostileup">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:int" name="value" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:string" name="element" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:int" name="hopb" use="optional"/>
+          <xs:attribute type="xs:short" name="hopa" use="optional"/>
+          <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+          <xs:attribute type="xs:short" name="delta" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="statup">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element ref="change" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute type="xs:int" name="duration2" use="optional"/>
+      <xs:attribute type="xs:int" name="effectid" use="optional"/>
+      <xs:attribute type="xs:byte" name="e" use="optional"/>
+      <xs:attribute type="xs:string" name="noresist" use="optional"/>
+      <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+      <xs:attribute type="xs:short" name="hopb" use="optional"/>
+      <xs:attribute type="xs:short" name="hopa" use="optional"/>
+      <xs:attribute type="xs:short" name="basiclvl" use="optional"/>
+      <xs:attribute type="xs:string" name="preeffect" use="optional"/>
+      <xs:attribute type="xs:string" name="element" use="optional"/>
+      <xs:attribute type="xs:int" name="duration1" use="optional"/>
+      <xs:attribute type="xs:short" name="randomtime" use="optional"/>
+      <xs:attribute type="xs:string" name="maxstat" use="optional"/>
+      <xs:attribute type="xs:short" name="preeffect_prob" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="shield">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:int" name="hitvalue" use="optional"/>
+          <xs:attribute type="xs:byte" name="hitdelta" use="optional"/>
+          <xs:attribute type="xs:int" name="value" use="optional"/>
+          <xs:attribute type="xs:short" name="delta" use="optional"/>
+          <xs:attribute type="xs:int" name="duration2" use="optional"/>
+          <xs:attribute type="xs:short" name="effectid" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:string" name="element" use="optional"/>
+          <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+          <xs:attribute type="xs:short" name="basiclvl" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:short" name="hopb" use="optional"/>
+          <xs:attribute type="xs:string" name="percent" use="optional"/>
+          <xs:attribute type="xs:string" name="hittype" use="optional"/>
+          <xs:attribute type="xs:short" name="hopa" use="optional"/>
+          <xs:attribute type="xs:string" name="condrace" use="optional"/>
+          <xs:attribute type="xs:byte" name="hittypeprob2" use="optional"/>
+          <xs:attribute type="xs:short" name="duration1" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="selfflying">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:string" name="restriction" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="useequipmentconditions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="armor"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="target">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:string" name="value" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="boostskillcastingtime">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="change"/>
+      </xs:sequence>
+      <xs:attribute type="xs:int" name="duration2" use="optional"/>
+      <xs:attribute type="xs:int" name="effectid" use="optional"/>
+      <xs:attribute type="xs:byte" name="e" use="optional"/>
+      <xs:attribute type="xs:string" name="noresist" use="optional"/>
+      <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+      <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+      <xs:attribute type="xs:short" name="hopb" use="optional"/>
+      <xs:attribute type="xs:byte" name="basiclvl" use="optional"/>
+      <xs:attribute type="xs:short" name="accmod2" use="optional"/>
+      <xs:attribute type="xs:short" name="randomtime" use="optional"/>
+      <xs:attribute type="xs:byte" name="hopa" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="targetrace">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:string" name="race" use="optional"/>
+          <xs:attribute type="xs:int" name="value" use="optional"/>
+          <xs:attribute type="xs:byte" name="delta" use="optional"/>
+          <xs:attribute type="xs:string" name="mode" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="modifiers">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:element ref="targetrace"/>
+        <xs:element ref="abnormaldamage"/>
+        <xs:element ref="backdamage"/>
+        <xs:element ref="frontdamage"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="polymorph">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:int" name="model" use="optional"/>
+          <xs:attribute type="xs:string" name="type" use="optional"/>
+          <xs:attribute type="xs:int" name="duration2" use="optional"/>
+          <xs:attribute type="xs:short" name="effectid" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:byte" name="basiclvl" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:string" name="element" use="optional"/>
+          <xs:attribute type="xs:int" name="duration1" use="optional"/>
+          <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:byte" name="hopb" use="optional"/>
+          <xs:attribute type="xs:byte" name="hopa" use="optional"/>
+          <xs:attribute type="xs:byte" name="panelid" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="nofly">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:int" name="duration2" use="optional"/>
+          <xs:attribute type="xs:short" name="effectid" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:string" name="element" use="optional"/>
+          <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+          <xs:attribute type="xs:byte" name="basiclvl" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:byte" name="hopb" use="optional"/>
+          <xs:attribute type="xs:byte" name="hopa" use="optional"/>
+          <xs:attribute type="xs:short" name="duration1" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="effectids" type="xs:int"/>
+  <xs:element name="dispel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="effectids" maxOccurs="unbounded" minOccurs="0"/>
+        <xs:element ref="effecttype" maxOccurs="unbounded" minOccurs="0"/>
+        <xs:element ref="slottype" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="dispeltype" use="optional"/>
+      <xs:attribute type="xs:byte" name="e" use="optional"/>
+      <xs:attribute type="xs:string" name="noresist" use="optional"/>
+      <xs:attribute type="xs:string" name="element" use="optional"/>
+      <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+      <xs:attribute type="xs:short" name="hopb" use="optional"/>
+      <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+      <xs:attribute type="xs:byte" name="basiclvl" use="optional"/>
+      <xs:attribute type="xs:byte" name="hopa" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="root">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element ref="change" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute type="xs:int" name="duration2" use="optional"/>
+      <xs:attribute type="xs:int" name="effectid" use="optional"/>
+      <xs:attribute type="xs:byte" name="e" use="optional"/>
+      <xs:attribute type="xs:string" name="element" use="optional"/>
+      <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+      <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+      <xs:attribute type="xs:short" name="hopb" use="optional"/>
+      <xs:attribute type="xs:short" name="basiclvl" use="optional"/>
+      <xs:attribute type="xs:byte" name="resistchance" use="optional"/>
+      <xs:attribute type="xs:short" name="accmod2" use="optional"/>
+      <xs:attribute type="xs:string" name="noresist" use="optional"/>
+      <xs:attribute type="xs:short" name="duration1" use="optional"/>
+      <xs:attribute type="xs:byte" name="hopa" use="optional"/>
+      <xs:attribute type="xs:short" name="randomtime" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="dash">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:short" name="value" use="optional"/>
+          <xs:attribute type="xs:byte" name="delta" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:short" name="critadddmg2" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="subeffect">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:short" name="skill_id" use="optional"/>
+          <xs:attribute type="xs:byte" name="chance" use="optional"/>
+          <xs:attribute type="xs:string" name="addeffect" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="healinstant">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:string" name="percent" use="optional"/>
+          <xs:attribute type="xs:int" name="value" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:string" name="element" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:int" name="hopb" use="optional"/>
+          <xs:attribute type="xs:short" name="hopa" use="optional"/>
+          <xs:attribute type="xs:byte" name="delta" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="targetflying">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:string" name="restriction" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="skillatkdraininstant">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:short" name="hp_percent" use="optional"/>
+          <xs:attribute type="xs:short" name="value" use="optional"/>
+          <xs:attribute type="xs:byte" name="delta" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:byte" name="mp_percent" use="optional"/>
+          <xs:attribute type="xs:byte" name="accmod2" use="optional"/>
+          <xs:attribute type="xs:byte" name="critprobmod2" use="optional"/>
+          <xs:attribute type="xs:string" name="mode" use="optional"/>
+          <xs:attribute type="xs:string" name="element" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="alwaysparry">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:byte" name="value" use="optional"/>
+          <xs:attribute type="xs:short" name="duration2" use="optional"/>
+          <xs:attribute type="xs:short" name="effectid" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:short" name="hopb" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="closeaerial">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element ref="conditions" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute type="xs:byte" name="e" use="optional"/>
+      <xs:attribute type="xs:string" name="noresist" use="optional"/>
+      <xs:attribute type="xs:string" name="element" use="optional"/>
+      <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+      <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+      <xs:attribute type="xs:byte" name="hopb" use="optional"/>
+      <xs:attribute type="xs:byte" name="hopa" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="abnormaldamage">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:string" name="state" use="optional"/>
+          <xs:attribute type="xs:short" name="value" use="optional"/>
+          <xs:attribute type="xs:byte" name="delta" use="optional"/>
+          <xs:attribute type="xs:string" name="mode" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="bind">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:int" name="duration2" use="optional"/>
+          <xs:attribute type="xs:short" name="effectid" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="element" use="optional"/>
+          <xs:attribute type="xs:string" name="preeffect" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:short" name="hopb" use="optional"/>
+          <xs:attribute type="xs:byte" name="basiclvl" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:short" name="accmod2" use="optional"/>
+          <xs:attribute type="xs:short" name="randomtime" use="optional"/>
+          <xs:attribute type="xs:short" name="duration1" use="optional"/>
+          <xs:attribute type="xs:byte" name="hopa" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="dp">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:short" name="value" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="dpuse">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:short" name="value" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="heal">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element ref="change" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute type="xs:int" name="checktime" use="optional"/>
+      <xs:attribute type="xs:int" name="value" use="optional"/>
+      <xs:attribute type="xs:byte" name="delta" use="optional"/>
+      <xs:attribute type="xs:int" name="duration2" use="optional"/>
+      <xs:attribute type="xs:int" name="effectid" use="optional"/>
+      <xs:attribute type="xs:byte" name="e" use="optional"/>
+      <xs:attribute type="xs:string" name="noresist" use="optional"/>
+      <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+      <xs:attribute type="xs:short" name="hopb" use="optional"/>
+      <xs:attribute type="xs:short" name="hopa" use="optional"/>
+      <xs:attribute type="xs:short" name="basiclvl" use="optional"/>
+      <xs:attribute type="xs:string" name="preeffect" use="optional"/>
+      <xs:attribute type="xs:string" name="element" use="optional"/>
+      <xs:attribute type="xs:string" name="percent" use="optional"/>
+      <xs:attribute type="xs:short" name="duration1" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="snare">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="change" maxOccurs="unbounded" minOccurs="0"/>
+        <xs:element ref="conditions" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute type="xs:int" name="duration2" use="optional"/>
+      <xs:attribute type="xs:short" name="randomtime" use="optional"/>
+      <xs:attribute type="xs:short" name="effectid" use="optional"/>
+      <xs:attribute type="xs:byte" name="e" use="optional"/>
+      <xs:attribute type="xs:string" name="element" use="optional"/>
+      <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+      <xs:attribute type="xs:byte" name="preeffect_prob" use="optional"/>
+      <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+      <xs:attribute type="xs:short" name="hopb" use="optional"/>
+      <xs:attribute type="xs:short" name="basiclvl" use="optional"/>
+      <xs:attribute type="xs:string" name="noresist" use="optional"/>
+      <xs:attribute type="xs:int" name="duration1" use="optional"/>
+      <xs:attribute type="xs:byte" name="accmod2" use="optional"/>
+      <xs:attribute type="xs:byte" name="hopa" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="provoker">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:short" name="skill_id" use="optional"/>
+          <xs:attribute type="xs:string" name="provoke_target" use="optional"/>
+          <xs:attribute type="xs:int" name="duration2" use="optional"/>
+          <xs:attribute type="xs:int" name="effectid" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:string" name="hittype" use="optional"/>
+          <xs:attribute type="xs:string" name="element" use="optional"/>
+          <xs:attribute type="xs:byte" name="hittypeprob2" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:short" name="hopb" use="optional"/>
+          <xs:attribute type="xs:byte" name="basiclvl" use="optional"/>
+          <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+          <xs:attribute type="xs:short" name="hopa" use="optional"/>
+          <xs:attribute type="xs:byte" name="radius" use="optional"/>
+          <xs:attribute type="xs:byte" name="duration1" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="spellatkinstant">
+    <xs:complexType mixed="true">
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:element ref="modifiers"/>
+        <xs:element ref="subeffect"/>
+        <xs:element ref="subconditions"/>
+      </xs:choice>
+      <xs:attribute type="xs:int" name="value" use="optional"/>
+      <xs:attribute type="xs:short" name="delta" use="optional"/>
+      <xs:attribute type="xs:byte" name="e" use="optional"/>
+      <xs:attribute type="xs:string" name="element" use="optional"/>
+      <xs:attribute type="xs:short" name="accmod2" use="optional"/>
+      <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+      <xs:attribute type="xs:int" name="hopb" use="optional"/>
+      <xs:attribute type="xs:short" name="hopa" use="optional"/>
+      <xs:attribute type="xs:string" name="noresist" use="optional"/>
+      <xs:attribute type="xs:string" name="mode" use="optional"/>
+      <xs:attribute type="xs:byte" name="critadddmg2" use="optional"/>
+      <xs:attribute type="xs:short" name="critprobmod2" use="optional"/>
+      <xs:attribute type="xs:byte" name="basiclvl" use="optional"/>
+      <xs:attribute type="xs:byte" name="accmod1" use="optional"/>
+      <xs:attribute type="xs:byte" name="critadddmg1" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="spellatk">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element ref="conditions" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute type="xs:short" name="checktime" use="optional"/>
+      <xs:attribute type="xs:int" name="value" use="optional"/>
+      <xs:attribute type="xs:short" name="delta" use="optional"/>
+      <xs:attribute type="xs:int" name="duration2" use="optional"/>
+      <xs:attribute type="xs:int" name="effectid" use="optional"/>
+      <xs:attribute type="xs:byte" name="e" use="optional"/>
+      <xs:attribute type="xs:string" name="noresist" use="optional"/>
+      <xs:attribute type="xs:string" name="element" use="optional"/>
+      <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+      <xs:attribute type="xs:short" name="basiclvl" use="optional"/>
+      <xs:attribute type="xs:short" name="accmod2" use="optional"/>
+      <xs:attribute type="xs:byte" name="critadddmg2" use="optional"/>
+      <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+      <xs:attribute type="xs:short" name="hopb" use="optional"/>
+      <xs:attribute type="xs:short" name="critprobmod2" use="optional"/>
+      <xs:attribute type="xs:byte" name="hopa" use="optional"/>
+      <xs:attribute type="xs:short" name="duration1" use="optional"/>
+      <xs:attribute type="xs:short" name="randomtime" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="onfly" type="xs:string"/>
+  <xs:element name="alwaysblock">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:short" name="value" use="optional"/>
+          <xs:attribute type="xs:int" name="duration2" use="optional"/>
+          <xs:attribute type="xs:short" name="effectid" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:short" name="basiclvl" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:short" name="hopb" use="optional"/>
+          <xs:attribute type="xs:short" name="hopa" use="optional"/>
+          <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="protect">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:string" name="percent" use="optional"/>
+          <xs:attribute type="xs:byte" name="hitvalue" use="optional"/>
+          <xs:attribute type="xs:byte" name="radius" use="optional"/>
+          <xs:attribute type="xs:byte" name="value" use="optional"/>
+          <xs:attribute type="xs:int" name="duration2" use="optional"/>
+          <xs:attribute type="xs:short" name="effectid" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:short" name="hopb" use="optional"/>
+          <xs:attribute type="xs:short" name="basiclvl" use="optional"/>
+          <xs:attribute type="xs:short" name="duration1" use="optional"/>
+          <xs:attribute type="xs:byte" name="hopa" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="reflector">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:short" name="hitvalue" use="optional"/>
+          <xs:attribute type="xs:byte" name="radius" use="optional"/>
+          <xs:attribute type="xs:short" name="value" use="optional"/>
+          <xs:attribute type="xs:int" name="duration2" use="optional"/>
+          <xs:attribute type="xs:short" name="effectid" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:short" name="hopb" use="optional"/>
+          <xs:attribute type="xs:short" name="basiclvl" use="optional"/>
+          <xs:attribute type="xs:byte" name="hitdelta" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:string" name="hittype" use="optional"/>
+          <xs:attribute type="xs:short" name="hopa" use="optional"/>
+          <xs:attribute type="xs:byte" name="delta" use="optional"/>
+          <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+          <xs:attribute type="xs:byte" name="minradius" use="optional"/>
+          <xs:attribute type="xs:byte" name="hittypeprob2" use="optional"/>
+          <xs:attribute type="xs:short" name="duration1" use="optional"/>
+          <xs:attribute type="xs:short" name="randomtime" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="dispeldebuff">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:byte" name="dispel_level" use="optional"/>
+          <xs:attribute type="xs:short" name="power" use="optional"/>
+          <xs:attribute type="xs:short" name="value" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:int" name="hopb" use="optional"/>
+          <xs:attribute type="xs:short" name="hopa" use="optional"/>
+          <xs:attribute type="xs:string" name="element" use="optional"/>
+          <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+          <xs:attribute type="xs:byte" name="delta" use="optional"/>
+          <xs:attribute type="xs:byte" name="basiclvl" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="weaponstatup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="change"/>
+      </xs:sequence>
+      <xs:attribute type="xs:int" name="duration2" use="optional"/>
+      <xs:attribute type="xs:int" name="effectid" use="optional"/>
+      <xs:attribute type="xs:byte" name="e" use="optional"/>
+      <xs:attribute type="xs:string" name="noresist" use="optional"/>
+      <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+      <xs:attribute type="xs:short" name="hopb" use="optional"/>
+      <xs:attribute type="xs:byte" name="basiclvl" use="optional"/>
+      <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="slow">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="change"/>
+        <xs:element ref="conditions" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute type="xs:int" name="duration2" use="optional"/>
+      <xs:attribute type="xs:short" name="effectid" use="optional"/>
+      <xs:attribute type="xs:byte" name="e" use="optional"/>
+      <xs:attribute type="xs:string" name="element" use="optional"/>
+      <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+      <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+      <xs:attribute type="xs:short" name="hopb" use="optional"/>
+      <xs:attribute type="xs:short" name="basiclvl" use="optional"/>
+      <xs:attribute type="xs:short" name="accmod2" use="optional"/>
+      <xs:attribute type="xs:short" name="randomtime" use="optional"/>
+      <xs:attribute type="xs:int" name="duration1" use="optional"/>
+      <xs:attribute type="xs:string" name="noresist" use="optional"/>
+      <xs:attribute type="xs:byte" name="hopa" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="bleed">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element ref="conditions" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute type="xs:short" name="checktime" use="optional"/>
+      <xs:attribute type="xs:short" name="value" use="optional"/>
+      <xs:attribute type="xs:int" name="duration2" use="optional"/>
+      <xs:attribute type="xs:int" name="effectid" use="optional"/>
+      <xs:attribute type="xs:byte" name="e" use="optional"/>
+      <xs:attribute type="xs:string" name="element" use="optional"/>
+      <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+      <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+      <xs:attribute type="xs:short" name="hopb" use="optional"/>
+      <xs:attribute type="xs:short" name="delta" use="optional"/>
+      <xs:attribute type="xs:short" name="basiclvl" use="optional"/>
+      <xs:attribute type="xs:string" name="noresist" use="optional"/>
+      <xs:attribute type="xs:short" name="accmod2" use="optional"/>
+      <xs:attribute type="xs:byte" name="critadddmg2" use="optional"/>
+      <xs:attribute type="xs:short" name="duration1" use="optional"/>
+      <xs:attribute type="xs:byte" name="hopa" use="optional"/>
+      <xs:attribute type="xs:byte" name="critprobmod2" use="optional"/>
+      <xs:attribute type="xs:byte" name="preeffect_prob" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="invulnerablewing">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:int" name="duration2"/>
+          <xs:attribute type="xs:int" name="effectid"/>
+          <xs:attribute type="xs:byte" name="e"/>
+          <xs:attribute type="xs:string" name="noresist"/>
+          <xs:attribute type="xs:byte" name="preeffect"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fear">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:short" name="resistchance" use="optional"/>
+          <xs:attribute type="xs:short" name="duration2" use="optional"/>
+          <xs:attribute type="xs:short" name="effectid" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="element" use="optional"/>
+          <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+          <xs:attribute type="xs:short" name="randomtime" use="optional"/>
+          <xs:attribute type="xs:short" name="accmod2" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:short" name="hopb" use="optional"/>
+          <xs:attribute type="xs:byte" name="basiclvl" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:byte" name="hopa" use="optional"/>
+          <xs:attribute type="xs:byte" name="preeffect_prob" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="backdamage">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:short" name="value" use="optional"/>
+          <xs:attribute type="xs:byte" name="delta" use="optional"/>
+          <xs:attribute type="xs:string" name="mode" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="combatcheck" type="xs:string"/>
+  <xs:element name="hide">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element ref="change" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="state" use="optional"/>
+      <xs:attribute type="xs:int" name="duration2" use="optional"/>
+      <xs:attribute type="xs:short" name="randomtime" use="optional"/>
+      <xs:attribute type="xs:short" name="effectid" use="optional"/>
+      <xs:attribute type="xs:byte" name="e" use="optional"/>
+      <xs:attribute type="xs:byte" name="basiclvl" use="optional"/>
+      <xs:attribute type="xs:string" name="noresist" use="optional"/>
+      <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+      <xs:attribute type="xs:byte" name="bufcount" use="optional"/>
+      <xs:attribute type="xs:short" name="hopb" use="optional"/>
+      <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+      <xs:attribute type="xs:byte" name="type" use="optional"/>
+      <xs:attribute type="xs:byte" name="hopa" use="optional"/>
+      <xs:attribute type="xs:short" name="duration1" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="alwaysdodge">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:short" name="value" use="optional"/>
+          <xs:attribute type="xs:short" name="duration2" use="optional"/>
+          <xs:attribute type="xs:short" name="effectid" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:short" name="hopb" use="optional"/>
+          <xs:attribute type="xs:byte" name="basiclvl" use="optional"/>
+          <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="alwaysresist">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:int" name="value" use="optional"/>
+          <xs:attribute type="xs:int" name="duration2" use="optional"/>
+          <xs:attribute type="xs:int" name="effectid" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:short" name="hopb" use="optional"/>
+          <xs:attribute type="xs:short" name="randomtime" use="optional"/>
+          <xs:attribute type="xs:string" name="element" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="backdash">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:byte" name="distance" use="optional"/>
+          <xs:attribute type="xs:short" name="value" use="optional"/>
+          <xs:attribute type="xs:byte" name="delta" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="summontrap">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:short" name="skill_id" use="optional"/>
+          <xs:attribute type="xs:byte" name="time" use="optional"/>
+          <xs:attribute type="xs:int" name="npc_id" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:short" name="hopb" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="itemuse">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:int" name="itemid" use="optional"/>
+          <xs:attribute type="xs:byte" name="count" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="boostskillcost">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:byte" name="value" use="optional"/>
+          <xs:attribute type="xs:short" name="effectid" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+          <xs:attribute type="xs:byte" name="basiclvl" use="optional"/>
+          <xs:attribute type="xs:short" name="duration2" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:short" name="hopb" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="arrowcheck" type="xs:string"/>
+  <xs:element name="summonservant">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:short" name="skill_id" use="optional"/>
+          <xs:attribute type="xs:byte" name="time" use="optional"/>
+          <xs:attribute type="xs:int" name="npc_id" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:string" name="element" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:short" name="hopb" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="poison">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element ref="conditions" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute type="xs:short" name="checktime" use="optional"/>
+      <xs:attribute type="xs:short" name="value" use="optional"/>
+      <xs:attribute type="xs:byte" name="delta" use="optional"/>
+      <xs:attribute type="xs:int" name="duration2" use="optional"/>
+      <xs:attribute type="xs:int" name="effectid" use="optional"/>
+      <xs:attribute type="xs:byte" name="e" use="optional"/>
+      <xs:attribute type="xs:string" name="element" use="optional"/>
+      <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+      <xs:attribute type="xs:byte" name="basiclvl" use="optional"/>
+      <xs:attribute type="xs:string" name="noresist" use="optional"/>
+      <xs:attribute type="xs:short" name="accmod2" use="optional"/>
+      <xs:attribute type="xs:byte" name="critadddmg2" use="optional"/>
+      <xs:attribute type="xs:short" name="duration1" use="optional"/>
+      <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+      <xs:attribute type="xs:short" name="hopb" use="optional"/>
+      <xs:attribute type="xs:byte" name="hopa" use="optional"/>
+      <xs:attribute type="xs:byte" name="critprobmod2" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="onetimeboostskillcritical">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:byte" name="count" use="optional"/>
+          <xs:attribute type="xs:short" name="value" use="optional"/>
+          <xs:attribute type="xs:short" name="duration2" use="optional"/>
+          <xs:attribute type="xs:short" name="effectid" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:short" name="hopb" use="optional"/>
+          <xs:attribute type="xs:string" name="percent" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="silence">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:int" name="duration2" use="optional"/>
+          <xs:attribute type="xs:short" name="randomtime" use="optional"/>
+          <xs:attribute type="xs:short" name="effectid" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:byte" name="basiclvl" use="optional"/>
+          <xs:attribute type="xs:string" name="element" use="optional"/>
+          <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:short" name="hopb" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:short" name="duration1" use="optional"/>
+          <xs:attribute type="xs:short" name="accmod2" use="optional"/>
+          <xs:attribute type="xs:short" name="hopa" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="onetimeboostskillattack">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:short" name="count" use="optional"/>
+          <xs:attribute type="xs:string" name="type" use="optional"/>
+          <xs:attribute type="xs:short" name="value" use="optional"/>
+          <xs:attribute type="xs:int" name="duration2" use="optional"/>
+          <xs:attribute type="xs:short" name="effectid" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:short" name="hopb" use="optional"/>
+          <xs:attribute type="xs:byte" name="basiclvl" use="optional"/>
+          <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="shapechange">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:int" name="model" use="optional"/>
+          <xs:attribute type="xs:string" name="type" use="optional"/>
+          <xs:attribute type="xs:int" name="duration2" use="optional"/>
+          <xs:attribute type="xs:short" name="effectid" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:short" name="basiclvl" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:short" name="hopb" use="optional"/>
+          <xs:attribute type="xs:string" name="element" use="optional"/>
+          <xs:attribute type="xs:byte" name="panelid" use="optional"/>
+          <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+          <xs:attribute type="xs:byte" name="duration1" use="optional"/>
+          <xs:attribute type="xs:byte" name="hopa" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="search">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:string" name="state" use="optional"/>
+          <xs:attribute type="xs:int" name="duration2" use="optional"/>
+          <xs:attribute type="xs:short" name="effectid" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:byte" name="basiclvl" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:short" name="hopb" use="optional"/>
+          <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+          <xs:attribute type="xs:string" name="element" use="optional"/>
+          <xs:attribute type="xs:byte" name="hopa" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sleep">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:int" name="duration2" use="optional"/>
+          <xs:attribute type="xs:short" name="effectid" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:short" name="accmod2" use="optional"/>
+          <xs:attribute type="xs:string" name="element" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:int" name="hopb" use="optional"/>
+          <xs:attribute type="xs:short" name="basiclvl" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+          <xs:attribute type="xs:short" name="randomtime" use="optional"/>
+          <xs:attribute type="xs:short" name="duration1" use="optional"/>
+          <xs:attribute type="xs:byte" name="hopa" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fphealinstant">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:string" name="percent" use="optional"/>
+          <xs:attribute type="xs:short" name="value" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:string" name="element" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:short" name="hopb" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="dispeldebuffphysical">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:short" name="dispel_level" use="optional"/>
+          <xs:attribute type="xs:short" name="power" use="optional"/>
+          <xs:attribute type="xs:byte" name="value" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:short" name="hopb" use="optional"/>
+          <xs:attribute type="xs:byte" name="dpower" use="optional"/>
+          <xs:attribute type="xs:byte" name="delta" use="optional"/>
+          <xs:attribute type="xs:string" name="element" use="optional"/>
+          <xs:attribute type="xs:byte" name="hopa" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deboostheal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="change"/>
+      </xs:sequence>
+      <xs:attribute type="xs:int" name="duration2" use="optional"/>
+      <xs:attribute type="xs:short" name="randomtime" use="optional"/>
+      <xs:attribute type="xs:int" name="effectid" use="optional"/>
+      <xs:attribute type="xs:byte" name="e" use="optional"/>
+      <xs:attribute type="xs:byte" name="basiclvl" use="optional"/>
+      <xs:attribute type="xs:string" name="noresist" use="optional"/>
+      <xs:attribute type="xs:string" name="element" use="optional"/>
+      <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+      <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+      <xs:attribute type="xs:short" name="hopb" use="optional"/>
+      <xs:attribute type="xs:byte" name="hopa" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mpattackinstant">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:string" name="percent" use="optional"/>
+          <xs:attribute type="xs:short" name="value" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="element" use="optional"/>
+          <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:short" name="hopb" use="optional"/>
+          <xs:attribute type="xs:byte" name="hopa" use="optional"/>
+          <xs:attribute type="xs:short" name="critprobmod2" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:byte" name="delta" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="blind">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:short" name="value" use="optional"/>
+          <xs:attribute type="xs:int" name="duration2" use="optional"/>
+          <xs:attribute type="xs:short" name="randomtime" use="optional"/>
+          <xs:attribute type="xs:short" name="effectid" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:short" name="accmod2" use="optional"/>
+          <xs:attribute type="xs:string" name="element" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:short" name="hopb" use="optional"/>
+          <xs:attribute type="xs:byte" name="basiclvl" use="optional"/>
+          <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+          <xs:attribute type="xs:short" name="duration1" use="optional"/>
+          <xs:attribute type="xs:short" name="hopa" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:byte" name="delta" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="movebehind">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:short" name="value" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:string" name="mode" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="carvesignet">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element ref="subeffect" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="signet" use="optional"/>
+      <xs:attribute type="xs:short" name="signetid" use="optional"/>
+      <xs:attribute type="xs:byte" name="signetlvl" use="optional"/>
+      <xs:attribute type="xs:byte" name="prob" use="optional"/>
+      <xs:attribute type="xs:short" name="value" use="optional"/>
+      <xs:attribute type="xs:byte" name="delta" use="optional"/>
+      <xs:attribute type="xs:byte" name="e" use="optional"/>
+      <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+      <xs:attribute type="xs:short" name="basiclvl" use="optional"/>
+      <xs:attribute type="xs:short" name="critprobmod2" use="optional"/>
+      <xs:attribute type="xs:byte" name="signetlvlstart" use="optional"/>
+      <xs:attribute type="xs:string" name="mode" use="optional"/>
+      <xs:attribute type="xs:string" name="noresist" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="signetburst">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element ref="subeffect" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute type="xs:byte" name="signetlvl" use="optional"/>
+      <xs:attribute type="xs:string" name="signet" use="optional"/>
+      <xs:attribute type="xs:short" name="value" use="optional"/>
+      <xs:attribute type="xs:short" name="delta" use="optional"/>
+      <xs:attribute type="xs:byte" name="e" use="optional"/>
+      <xs:attribute type="xs:short" name="accmod2" use="optional"/>
+      <xs:attribute type="xs:string" name="element" use="optional"/>
+      <xs:attribute type="xs:byte" name="critprobmod2" use="optional"/>
+      <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+      <xs:attribute type="xs:string" name="noresist" use="optional"/>
+      <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="frontdamage">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:short" name="value" use="optional"/>
+          <xs:attribute type="xs:byte" name="delta" use="optional"/>
+          <xs:attribute type="xs:string" name="mode" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="abnormal">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:string" name="value" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="effecttype" type="xs:string"/>
+  <xs:element name="periodicactions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="mpuse" minOccurs="0"/>
+        <xs:element ref="hpuse" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute type="xs:short" name="checktime" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="resurrect">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:short" name="skill_id" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:short" name="hopb" use="optional"/>
+          <xs:attribute type="xs:string" name="element" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="buffbind">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:short" name="duration2" use="optional"/>
+          <xs:attribute type="xs:short" name="effectid" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:string" name="element" use="optional"/>
+          <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="buffsilence">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:short" name="duration2" use="optional"/>
+          <xs:attribute type="xs:short" name="effectid" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:string" name="element" use="optional"/>
+          <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="summontotem">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:short" name="skill_id" use="optional"/>
+          <xs:attribute type="xs:byte" name="time" use="optional"/>
+          <xs:attribute type="xs:int" name="npc_id" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:string" name="element" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="resurrectbase">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:short" name="skill_id" use="optional"/>
+          <xs:attribute type="xs:int" name="duration2" use="optional"/>
+          <xs:attribute type="xs:short" name="effectid" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:string" name="element" use="optional"/>
+          <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="rebirth">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:byte" name="resurrect_percent" use="optional"/>
+          <xs:attribute type="xs:short" name="skill_id" use="optional"/>
+          <xs:attribute type="xs:int" name="duration2" use="optional"/>
+          <xs:attribute type="xs:short" name="effectid" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:short" name="hopb" use="optional"/>
+          <xs:attribute type="xs:byte" name="hopa" use="optional"/>
+          <xs:attribute type="xs:string" name="element" use="optional"/>
+          <xs:attribute type="xs:int" name="randomtime" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="changehateonattacked">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:short" name="value1" use="optional"/>
+          <xs:attribute type="xs:short" name="value2" use="optional"/>
+          <xs:attribute type="xs:short" name="duration2" use="optional"/>
+          <xs:attribute type="xs:short" name="effectid" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:byte" name="basiclvl" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="onetimeboostheal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="change"/>
+      </xs:sequence>
+      <xs:attribute type="xs:short" name="duration2" use="optional"/>
+      <xs:attribute type="xs:short" name="effectid" use="optional"/>
+      <xs:attribute type="xs:byte" name="e" use="optional"/>
+      <xs:attribute type="xs:string" name="noresist" use="optional"/>
+      <xs:attribute type="xs:string" name="element" use="optional"/>
+      <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="resurrectpos">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:short" name="skill_id" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="dispeldebuffmental">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:short" name="dispel_level" use="optional"/>
+          <xs:attribute type="xs:short" name="power" use="optional"/>
+          <xs:attribute type="xs:byte" name="value" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:short" name="hopb" use="optional"/>
+          <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+          <xs:attribute type="xs:byte" name="delta" use="optional"/>
+          <xs:attribute type="xs:string" name="element" use="optional"/>
+          <xs:attribute type="xs:byte" name="hopa" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mpheal">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:short" name="checktime" use="optional"/>
+          <xs:attribute type="xs:short" name="value" use="optional"/>
+          <xs:attribute type="xs:byte" name="delta" use="optional"/>
+          <xs:attribute type="xs:int" name="duration2" use="optional"/>
+          <xs:attribute type="xs:int" name="effectid" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:short" name="hopb" use="optional"/>
+          <xs:attribute type="xs:byte" name="basiclvl" use="optional"/>
+          <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+          <xs:attribute type="xs:string" name="percent" use="optional"/>
+          <xs:attribute type="xs:string" name="element" use="optional"/>
+          <xs:attribute type="xs:byte" name="hopa" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="hpuse">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:short" name="value" use="optional"/>
+          <xs:attribute type="xs:byte" name="delta" use="optional"/>
+          <xs:attribute type="xs:string" name="ratio" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="switchhpmp">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:short" name="hopb" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="hp">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:short" name="value" use="optional"/>
+          <xs:attribute type="xs:byte" name="delta" use="optional"/>
+          <xs:attribute type="xs:string" name="ratio" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="healcastorontargetdead">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:string" name="type" use="optional"/>
+          <xs:attribute type="xs:float" name="range" use="optional"/>
+          <xs:attribute type="xs:string" name="healparty" use="optional"/>
+          <xs:attribute type="xs:int" name="value" use="optional"/>
+          <xs:attribute type="xs:byte" name="delta" use="optional"/>
+          <xs:attribute type="xs:int" name="duration2" use="optional"/>
+          <xs:attribute type="xs:short" name="effectid" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="element" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:byte" name="hopb" use="optional"/>
+          <xs:attribute type="xs:byte" name="hopa" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="spellatkdraininstant">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element ref="modifiers" minOccurs="0"/>
+        <xs:element ref="conditions" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute type="xs:short" name="hp_percent" use="optional"/>
+      <xs:attribute type="xs:int" name="value" use="optional"/>
+      <xs:attribute type="xs:byte" name="delta" use="optional"/>
+      <xs:attribute type="xs:byte" name="e" use="optional"/>
+      <xs:attribute type="xs:string" name="element" use="optional"/>
+      <xs:attribute type="xs:byte" name="mp_percent" use="optional"/>
+      <xs:attribute type="xs:short" name="critadddmg2" use="optional"/>
+      <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+      <xs:attribute type="xs:string" name="mode" use="optional"/>
+      <xs:attribute type="xs:short" name="hopb" use="optional"/>
+      <xs:attribute type="xs:byte" name="hopa" use="optional"/>
+      <xs:attribute type="xs:string" name="noresist" use="optional"/>
+      <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+      <xs:attribute type="xs:byte" name="critprobmod2" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mphealinstant">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:string" name="percent" use="optional"/>
+          <xs:attribute type="xs:short" name="value" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+          <xs:attribute type="xs:string" name="element" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:short" name="hopb" use="optional"/>
+          <xs:attribute type="xs:byte" name="delta" use="optional"/>
+          <xs:attribute type="xs:short" name="hopa" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="boostspellattack">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="change"/>
+      </xs:sequence>
+      <xs:attribute type="xs:int" name="duration2" use="optional"/>
+      <xs:attribute type="xs:int" name="effectid" use="optional"/>
+      <xs:attribute type="xs:byte" name="e" use="optional"/>
+      <xs:attribute type="xs:byte" name="basiclvl" use="optional"/>
+      <xs:attribute type="xs:string" name="noresist" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fpheal">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:short" name="checktime" use="optional"/>
+          <xs:attribute type="xs:byte" name="value" use="optional"/>
+          <xs:attribute type="xs:int" name="duration2" use="optional"/>
+          <xs:attribute type="xs:int" name="effectid" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:byte" name="basiclvl" use="optional"/>
+          <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:string" name="percent" use="optional"/>
+          <xs:attribute type="xs:string" name="element" use="optional"/>
+          <xs:attribute type="xs:byte" name="hopb" use="optional"/>
+          <xs:attribute type="xs:byte" name="hopa" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="aura">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:short" name="skill_id" use="optional"/>
+          <xs:attribute type="xs:byte" name="distance" use="optional"/>
+          <xs:attribute type="xs:byte" name="distance_z" use="optional"/>
+          <xs:attribute type="xs:int" name="effectid" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:short" name="hopb" use="optional"/>
+          <xs:attribute type="xs:byte" name="basiclvl" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="healcastoronatk">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:string" name="type" use="optional"/>
+          <xs:attribute type="xs:float" name="range" use="optional"/>
+          <xs:attribute type="xs:byte" name="value" use="optional"/>
+          <xs:attribute type="xs:int" name="duration2" use="optional"/>
+          <xs:attribute type="xs:short" name="effectid" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:short" name="accmod2" use="optional"/>
+          <xs:attribute type="xs:string" name="element" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:short" name="hopb" use="optional"/>
+          <xs:attribute type="xs:byte" name="basiclvl" use="optional"/>
+          <xs:attribute type="xs:byte" name="delta" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="spellatkdrain">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:short" name="hp_percent" use="optional"/>
+          <xs:attribute type="xs:short" name="checktime" use="optional"/>
+          <xs:attribute type="xs:int" name="value" use="optional"/>
+          <xs:attribute type="xs:byte" name="delta" use="optional"/>
+          <xs:attribute type="xs:int" name="duration2" use="optional"/>
+          <xs:attribute type="xs:int" name="effectid" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="element" use="optional"/>
+          <xs:attribute type="xs:short" name="basiclvl" use="optional"/>
+          <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+          <xs:attribute type="xs:byte" name="critadddmg2" use="optional"/>
+          <xs:attribute type="xs:short" name="accmod2" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="randommoveloc">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:byte" name="direction" use="optional"/>
+          <xs:attribute type="xs:byte" name="distance" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:short" name="hopb" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deform">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:int" name="model" use="optional"/>
+          <xs:attribute type="xs:string" name="type" use="optional"/>
+          <xs:attribute type="xs:int" name="duration2" use="optional"/>
+          <xs:attribute type="xs:short" name="effectid" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="element" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:short" name="hopb" use="optional"/>
+          <xs:attribute type="xs:byte" name="accmod2" use="optional"/>
+          <xs:attribute type="xs:short" name="randomtime" use="optional"/>
+          <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+          <xs:attribute type="xs:byte" name="basiclvl" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:byte" name="hopa" use="optional"/>
+          <xs:attribute type="xs:short" name="duration1" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="delaydamage">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:short" name="delay" use="optional"/>
+          <xs:attribute type="xs:short" name="value" use="optional"/>
+          <xs:attribute type="xs:byte" name="delta" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="element" use="optional"/>
+          <xs:attribute type="xs:byte" name="critprobmod2" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:byte" name="critadddmg2" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:byte" name="hopb" use="optional"/>
+          <xs:attribute type="xs:byte" name="hopa" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="summonskillarea">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:short" name="skill_id" use="optional"/>
+          <xs:attribute type="xs:byte" name="time" use="optional"/>
+          <xs:attribute type="xs:int" name="npc_id" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:byte" name="hopb" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="summongroupgate">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:byte" name="time" use="optional"/>
+          <xs:attribute type="xs:int" name="npc_id" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:byte" name="hopb" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="buffsleep">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:short" name="duration2" use="optional"/>
+          <xs:attribute type="xs:short" name="effectid" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:string" name="element" use="optional"/>
+          <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+          <xs:attribute type="xs:byte" name="basiclvl" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="subconditions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="abnormal" minOccurs="0"/>
+        <xs:element ref="noflying" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="summonbindinggroupgate">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:byte" name="time" use="optional"/>
+          <xs:attribute type="xs:int" name="npc_id" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="magiccounteratk">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:short" name="maxdmg" use="optional"/>
+          <xs:attribute type="xs:byte" name="value" use="optional"/>
+          <xs:attribute type="xs:int" name="duration2" use="optional"/>
+          <xs:attribute type="xs:short" name="effectid" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="element" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:short" name="hopb" use="optional"/>
+          <xs:attribute type="xs:byte" name="basiclvl" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+          <xs:attribute type="xs:byte" name="duration1" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="buffstun">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:short" name="duration2" use="optional"/>
+          <xs:attribute type="xs:short" name="effectid" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:short" name="basiclvl" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:string" name="element" use="optional"/>
+          <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="petorderuseultraskill">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:byte" name="ultra_skill" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:short" name="hopb" use="optional"/>
+          <xs:attribute type="xs:string" name="release" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="recallinstant">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:byte" name="e"/>
+          <xs:attribute type="xs:string" name="noresist"/>
+          <xs:attribute type="xs:string" name="hoptype"/>
+          <xs:attribute type="xs:byte" name="hopb"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="summonhoming">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:byte" name="attack_count" use="optional"/>
+          <xs:attribute type="xs:byte" name="npc_count" use="optional"/>
+          <xs:attribute type="xs:byte" name="time" use="optional"/>
+          <xs:attribute type="xs:int" name="npc_id" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:string" name="element" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:short" name="hopb" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="summon">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:int" name="npc_id" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:string" name="element" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:short" name="hopb" use="optional"/>
+          <xs:attribute type="xs:short" name="time" use="optional"/>
+          <xs:attribute type="xs:int" name="duration2" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="dispelbuff">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:byte" name="dispel_level" use="optional"/>
+          <xs:attribute type="xs:short" name="power" use="optional"/>
+          <xs:attribute type="xs:byte" name="value" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:string" name="element" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:short" name="hopb" use="optional"/>
+          <xs:attribute type="xs:byte" name="delta" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="dispelbuffcounteratk">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:short" name="hitvalue" use="optional"/>
+          <xs:attribute type="xs:byte" name="dispel_level" use="optional"/>
+          <xs:attribute type="xs:byte" name="power" use="optional"/>
+          <xs:attribute type="xs:byte" name="value" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:string" name="element" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:byte" name="hitdelta" use="optional"/>
+          <xs:attribute type="xs:byte" name="hopb" use="optional"/>
+          <xs:attribute type="xs:byte" name="hopa" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="skilllauncher">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:short" name="skill_id" use="optional"/>
+          <xs:attribute type="xs:byte" name="value" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:string" name="element" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="switchhostile">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fpatkinstant">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element ref="conditions" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="percent" use="optional"/>
+      <xs:attribute type="xs:byte" name="value" use="optional"/>
+      <xs:attribute type="xs:byte" name="e" use="optional"/>
+      <xs:attribute type="xs:string" name="element" use="optional"/>
+      <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+      <xs:attribute type="xs:short" name="hopb" use="optional"/>
+      <xs:attribute type="xs:string" name="noresist" use="optional"/>
+      <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+      <xs:attribute type="xs:byte" name="hopa" use="optional"/>
+      <xs:attribute type="xs:byte" name="delta" use="optional"/>
+      <xs:attribute type="xs:byte" name="critprobmod2" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fpatk">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element ref="conditions" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="percent" use="optional"/>
+      <xs:attribute type="xs:short" name="checktime" use="optional"/>
+      <xs:attribute type="xs:byte" name="value" use="optional"/>
+      <xs:attribute type="xs:short" name="duration2" use="optional"/>
+      <xs:attribute type="xs:int" name="effectid" use="optional"/>
+      <xs:attribute type="xs:byte" name="e" use="optional"/>
+      <xs:attribute type="xs:string" name="noresist" use="optional"/>
+      <xs:attribute type="xs:string" name="element" use="optional"/>
+      <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+      <xs:attribute type="xs:short" name="duration1" use="optional"/>
+      <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+      <xs:attribute type="xs:byte" name="hopb" use="optional"/>
+      <xs:attribute type="xs:byte" name="hopa" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="return">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deathblow">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:short" name="value" use="optional"/>
+          <xs:attribute type="xs:byte" name="delta" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="element" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="delayedskill">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:short" name="skill_id" use="optional"/>
+          <xs:attribute type="xs:int" name="duration2" use="optional"/>
+          <xs:attribute type="xs:int" name="effectid" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="element" use="optional"/>
+          <xs:attribute type="xs:byte" name="value" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:byte" name="basiclvl" use="optional"/>
+          <xs:attribute type="xs:byte" name="hopb" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="noreducespellatk">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:short" name="value" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="element" use="optional"/>
+          <xs:attribute type="xs:string" name="percent" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:byte" name="critprobmod2" use="optional"/>
+          <xs:attribute type="xs:short" name="delta" use="optional"/>
+          <xs:attribute type="xs:byte" name="hopb" use="optional"/>
+          <xs:attribute type="xs:byte" name="hopa" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="procatk_instant">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element ref="subeffect" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute type="xs:int" name="value" use="optional"/>
+      <xs:attribute type="xs:byte" name="e" use="optional"/>
+      <xs:attribute type="xs:string" name="element" use="optional"/>
+      <xs:attribute type="xs:byte" name="delta" use="optional"/>
+      <xs:attribute type="xs:string" name="noresist" use="optional"/>
+      <xs:attribute type="xs:short" name="critprobmod2" use="optional"/>
+      <xs:attribute type="xs:short" name="accmod2" use="optional"/>
+      <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+      <xs:attribute type="xs:short" name="basiclvl" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="evade">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="effecttype" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="dispeltype" use="optional"/>
+      <xs:attribute type="xs:byte" name="e" use="optional"/>
+      <xs:attribute type="xs:string" name="noresist" use="optional"/>
+      <xs:attribute type="xs:string" name="element" use="optional"/>
+      <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+      <xs:attribute type="xs:short" name="hopb" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fall">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element ref="conditions" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute type="xs:byte" name="e" use="optional"/>
+      <xs:attribute type="xs:string" name="noresist" use="optional"/>
+      <xs:attribute type="xs:string" name="element" use="optional"/>
+      <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+      <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+      <xs:attribute type="xs:byte" name="hopb" use="optional"/>
+      <xs:attribute type="xs:byte" name="hopa" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="dphealinstant">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:short" name="value" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:short" name="delta" use="optional"/>
+          <xs:attribute type="xs:string" name="element" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="dpheal">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:short" name="checktime" use="optional"/>
+          <xs:attribute type="xs:short" name="value" use="optional"/>
+          <xs:attribute type="xs:short" name="duration2" use="optional"/>
+          <xs:attribute type="xs:int" name="effectid" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+          <xs:attribute type="xs:string" name="percent" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:byte" name="hopb" use="optional"/>
+          <xs:attribute type="xs:byte" name="hopa" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="delayedfpatk_instant">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:short" name="delay" use="optional"/>
+          <xs:attribute type="xs:byte" name="value" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:string" name="element" use="optional"/>
+          <xs:attribute type="xs:string" name="percent" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:byte" name="hopb" use="optional"/>
+          <xs:attribute type="xs:byte" name="hopa" use="optional"/>
+          <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mpattack">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element ref="conditions" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute type="xs:short" name="checktime" use="optional"/>
+      <xs:attribute type="xs:short" name="value" use="optional"/>
+      <xs:attribute type="xs:int" name="duration2" use="optional"/>
+      <xs:attribute type="xs:int" name="effectid" use="optional"/>
+      <xs:attribute type="xs:byte" name="e" use="optional"/>
+      <xs:attribute type="xs:string" name="noresist" use="optional"/>
+      <xs:attribute type="xs:string" name="element" use="optional"/>
+      <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+      <xs:attribute type="xs:string" name="percent" use="optional"/>
+      <xs:attribute type="xs:byte" name="basiclvl" use="optional"/>
+      <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+      <xs:attribute type="xs:byte" name="hopb" use="optional"/>
+      <xs:attribute type="xs:byte" name="hopa" use="optional"/>
+      <xs:attribute type="xs:byte" name="preeffect_prob" use="optional"/>
+      <xs:attribute type="xs:byte" name="delta" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="back" type="xs:string"/>
+  <xs:element name="curse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="change" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute type="xs:int" name="duration2" use="optional"/>
+      <xs:attribute type="xs:short" name="effectid" use="optional"/>
+      <xs:attribute type="xs:byte" name="e" use="optional"/>
+      <xs:attribute type="xs:string" name="element" use="optional"/>
+      <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+      <xs:attribute type="xs:short" name="hopb" use="optional"/>
+      <xs:attribute type="xs:byte" name="basiclvl" use="optional"/>
+      <xs:attribute type="xs:string" name="noresist" use="optional"/>
+      <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+      <xs:attribute type="xs:byte" name="duration1" use="optional"/>
+      <xs:attribute type="xs:byte" name="hopa" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="summonhousegate">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:byte" name="time" use="optional"/>
+          <xs:attribute type="xs:int" name="npc_id" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:byte" name="hopb" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="caseheal">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:string" name="type"/>
+          <xs:attribute type="xs:byte" name="cond_value"/>
+          <xs:attribute type="xs:short" name="value"/>
+          <xs:attribute type="xs:byte" name="delta"/>
+          <xs:attribute type="xs:int" name="duration2"/>
+          <xs:attribute type="xs:short" name="effectid"/>
+          <xs:attribute type="xs:byte" name="e"/>
+          <xs:attribute type="xs:string" name="noresist"/>
+          <xs:attribute type="xs:string" name="hoptype"/>
+          <xs:attribute type="xs:short" name="hopb"/>
+          <xs:attribute type="xs:short" name="hopa"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="convertheal">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:string" name="type" use="optional"/>
+          <xs:attribute type="xs:int" name="value" use="optional"/>
+          <xs:attribute type="xs:short" name="duration2" use="optional"/>
+          <xs:attribute type="xs:short" name="randomtime" use="optional"/>
+          <xs:attribute type="xs:int" name="effectid" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+          <xs:attribute type="xs:string" name="hitpercent" use="optional"/>
+          <xs:attribute type="xs:byte" name="hitvalue" use="optional"/>
+          <xs:attribute type="xs:byte" name="delta" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:string" name="percent" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="returnpoint">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:byte" name="e"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="stagger">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:short" name="duration1" use="optional"/>
+          <xs:attribute type="xs:short" name="effectid" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:string" name="element" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:short" name="hopb" use="optional"/>
+          <xs:attribute type="xs:byte" name="hopa" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="stumble">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:short" name="duration1" use="optional"/>
+          <xs:attribute type="xs:short" name="effectid" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:string" name="element" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:short" name="hopb" use="optional"/>
+          <xs:attribute type="xs:byte" name="hopa" use="optional"/>
+          <xs:attribute type="xs:short" name="duration2" use="optional"/>
+          <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="simpleroot">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:short" name="duration1"/>
+          <xs:attribute type="xs:short" name="effectid"/>
+          <xs:attribute type="xs:byte" name="e"/>
+          <xs:attribute type="xs:string" name="noresist"/>
+          <xs:attribute type="xs:string" name="element"/>
+          <xs:attribute type="xs:string" name="hoptype"/>
+          <xs:attribute type="xs:short" name="hopb"/>
+          <xs:attribute type="xs:byte" name="hopa"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="spin">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:short" name="duration1" use="optional"/>
+          <xs:attribute type="xs:short" name="effectid" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:string" name="element" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:short" name="hopb" use="optional"/>
+          <xs:attribute type="xs:byte" name="hopa" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="openaerial">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element ref="conditions" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute type="xs:int" name="duration2" use="optional"/>
+      <xs:attribute type="xs:short" name="duration1" use="optional"/>
+      <xs:attribute type="xs:short" name="effectid" use="optional"/>
+      <xs:attribute type="xs:byte" name="e" use="optional"/>
+      <xs:attribute type="xs:string" name="noresist" use="optional"/>
+      <xs:attribute type="xs:string" name="element" use="optional"/>
+      <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+      <xs:attribute type="xs:byte" name="hopb" use="optional"/>
+      <xs:attribute type="xs:byte" name="hopa" use="optional"/>
+      <xs:attribute type="xs:byte" name="basiclvl" use="optional"/>
+      <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="procfphealinstant">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:byte" name="value" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:string" name="element" use="optional"/>
+          <xs:attribute type="xs:byte" name="delta" use="optional"/>
+          <xs:attribute type="xs:string" name="percent" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="paralyze">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element ref="conditions" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute type="xs:int" name="duration2" use="optional"/>
+      <xs:attribute type="xs:short" name="duration1" use="optional"/>
+      <xs:attribute type="xs:short" name="effectid" use="optional"/>
+      <xs:attribute type="xs:byte" name="e" use="optional"/>
+      <xs:attribute type="xs:byte" name="accmod2" use="optional"/>
+      <xs:attribute type="xs:string" name="element" use="optional"/>
+      <xs:attribute type="xs:string" name="noresist" use="optional"/>
+      <xs:attribute type="xs:short" name="basiclvl" use="optional"/>
+      <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+      <xs:attribute type="xs:byte" name="hopb" use="optional"/>
+      <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+      <xs:attribute type="xs:byte" name="hopa" use="optional"/>
+      <xs:attribute type="xs:byte" name="preeffect_prob" use="optional"/>
+      <xs:attribute type="xs:short" name="randomtime" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="procmphealinstant">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:int" name="value" use="optional"/>
+          <xs:attribute type="xs:short" name="delta" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+          <xs:attribute type="xs:string" name="element" use="optional"/>
+          <xs:attribute type="xs:string" name="percent" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="prochealinstant">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:int" name="value" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:short" name="delta" use="optional"/>
+          <xs:attribute type="xs:string" name="percent" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:byte" name="hopb" use="optional"/>
+          <xs:attribute type="xs:string" name="element" use="optional"/>
+          <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="signet">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:int" name="duration2" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:string" name="element" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="procdphealinstant">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:short" name="value" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="pulled">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:short" name="duration1" use="optional"/>
+          <xs:attribute type="xs:short" name="effectid" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:string" name="element" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:byte" name="hopb" use="optional"/>
+          <xs:attribute type="xs:byte" name="hopa" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="boostdroprate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="change"/>
+      </xs:sequence>
+      <xs:attribute type="xs:int" name="duration2" use="optional"/>
+      <xs:attribute type="xs:int" name="effectid" use="optional"/>
+      <xs:attribute type="xs:byte" name="e" use="optional"/>
+      <xs:attribute type="xs:string" name="noresist" use="optional"/>
+      <xs:attribute type="xs:string" name="element" use="optional"/>
+      <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+      <xs:attribute type="xs:byte" name="basiclvl" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="procvphealinstant">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:byte" name="value2" use="optional"/>
+          <xs:attribute type="xs:string" name="percent" use="optional"/>
+          <xs:attribute type="xs:short" name="value" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+          <xs:attribute type="xs:byte" name="preeffect_prob" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="xpboost">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="change" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute type="xs:int" name="duration2" use="optional"/>
+      <xs:attribute type="xs:byte" name="e" use="optional"/>
+      <xs:attribute type="xs:byte" name="basiclvl" use="optional"/>
+      <xs:attribute type="xs:string" name="noresist" use="optional"/>
+      <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="noresurrectpenalty">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:int" name="duration2" use="optional"/>
+          <xs:attribute type="xs:int" name="effectid" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:byte" name="basiclvl" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="nodeathpenalty">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:int" name="duration2" use="optional"/>
+          <xs:attribute type="xs:int" name="effectid" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:byte" name="basiclvl" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="hipass">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:int" name="duration2"/>
+          <xs:attribute type="xs:int" name="effectid"/>
+          <xs:attribute type="xs:byte" name="e"/>
+          <xs:attribute type="xs:byte" name="basiclvl"/>
+          <xs:attribute type="xs:string" name="noresist"/>
+          <xs:attribute type="xs:byte" name="preeffect"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="dispelnpcbuff">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:byte" name="dispel_level" use="optional"/>
+          <xs:attribute type="xs:short" name="power" use="optional"/>
+          <xs:attribute type="xs:byte" name="value" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:string" name="element" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:byte" name="hopb" use="optional"/>
+          <xs:attribute type="xs:byte" name="hopa" use="optional"/>
+          <xs:attribute type="xs:byte" name="delta" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="form">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:string" name="value" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="noflying" type="xs:string"/>
+  <xs:element name="disease">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element ref="conditions" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute type="xs:int" name="duration2" use="optional"/>
+      <xs:attribute type="xs:short" name="duration1" use="optional"/>
+      <xs:attribute type="xs:short" name="effectid" use="optional"/>
+      <xs:attribute type="xs:byte" name="e" use="optional"/>
+      <xs:attribute type="xs:string" name="element" use="optional"/>
+      <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+      <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+      <xs:attribute type="xs:string" name="noresist" use="optional"/>
+      <xs:attribute type="xs:byte" name="hopb" use="optional"/>
+      <xs:attribute type="xs:byte" name="hopa" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="confuse">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element ref="conditions" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute type="xs:int" name="duration2" use="optional"/>
+      <xs:attribute type="xs:short" name="duration1" use="optional"/>
+      <xs:attribute type="xs:short" name="effectid" use="optional"/>
+      <xs:attribute type="xs:byte" name="e" use="optional"/>
+      <xs:attribute type="xs:string" name="noresist" use="optional"/>
+      <xs:attribute type="xs:string" name="element" use="optional"/>
+      <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+      <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+      <xs:attribute type="xs:byte" name="hopb" use="optional"/>
+      <xs:attribute type="xs:byte" name="hopa" use="optional"/>
+      <xs:attribute type="xs:byte" name="preeffect_prob" use="optional"/>
+      <xs:attribute type="xs:byte" name="value" use="optional"/>
+      <xs:attribute type="xs:short" name="randomtime" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="dispelnpcdebuff">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:byte" name="dispel_level" use="optional"/>
+          <xs:attribute type="xs:short" name="power" use="optional"/>
+          <xs:attribute type="xs:byte" name="value" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:string" name="element" use="optional"/>
+          <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sanctuary">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:int" name="duration2" use="optional"/>
+          <xs:attribute type="xs:byte" name="e" use="optional"/>
+          <xs:attribute type="xs:string" name="noresist" use="optional"/>
+          <xs:attribute type="xs:string" name="element" use="optional"/>
+          <xs:attribute type="xs:byte" name="duration1" use="optional"/>
+          <xs:attribute type="xs:byte" name="preeffect" use="optional"/>
+          <xs:attribute type="xs:string" name="hoptype" use="optional"/>
+          <xs:attribute type="xs:byte" name="hopb" use="optional"/>
+          <xs:attribute type="xs:byte" name="hopa" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="slottype" type="xs:string"/>
+  <xs:element name="skill_template">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:element ref="properties"/>
+        <xs:element ref="useconditions"/>
+        <xs:element ref="startconditions"/>
+        <xs:element ref="useequipmentconditions"/>
+        <xs:element ref="effects"/>
+        <xs:element ref="actions"/>
+        <xs:element ref="motion"/>
+        <xs:element ref="periodicactions"/>
+      </xs:choice>
+      <xs:attribute type="xs:int" name="skill_id" use="optional"/>
+      <xs:attribute type="xs:string" name="name" use="optional"/>
+      <xs:attribute type="xs:int" name="nameId" use="optional"/>
+      <xs:attribute type="xs:short" name="cooldownId" use="optional"/>
+      <xs:attribute type="xs:string" name="stack" use="optional"/>
+      <xs:attribute type="xs:byte" name="lvl" use="optional"/>
+      <xs:attribute type="xs:string" name="skilltype" use="optional"/>
+      <xs:attribute type="xs:string" name="skillsubtype" use="optional"/>
+      <xs:attribute type="xs:string" name="tslot" use="optional"/>
+      <xs:attribute type="xs:string" name="activation" use="optional"/>
+      <xs:attribute type="xs:int" name="cooldown" use="optional"/>
+      <xs:attribute type="xs:short" name="duration" use="optional"/>
+      <xs:attribute type="xs:string" name="stigma" use="optional"/>
+      <xs:attribute type="xs:string" name="dispel_category" use="optional"/>
+      <xs:attribute type="xs:byte" name="req_dispel_level" use="optional"/>
+      <xs:attribute type="xs:int" name="cancel_rate" use="optional"/>
+      <xs:attribute type="xs:byte" name="chain_skill_prob" use="optional"/>
+      <xs:attribute type="xs:string" name="counter_skill" use="optional"/>
+      <xs:attribute type="xs:string" name="stance" use="optional"/>
+      <xs:attribute type="xs:short" name="skillset_exception" use="optional"/>
+      <xs:attribute type="xs:string" name="noremoveatdie" use="optional"/>
+      <xs:attribute type="xs:short" name="penalty_skill_id" use="optional"/>
+      <xs:attribute type="xs:string" name="ground" use="optional"/>
+      <xs:attribute type="xs:short" name="pvp_damage" use="optional"/>
+      <xs:attribute type="xs:short" name="ammospeed" use="optional"/>
+      <xs:attribute type="xs:string" name="remove_flyend" use="optional"/>
+      <xs:attribute type="xs:byte" name="tslot_level" use="optional"/>
+      <xs:attribute type="xs:string" name="unpottable" use="optional"/>
+      <xs:attribute type="xs:byte" name="skillset_maxoccur" use="optional"/>
+      <xs:attribute type="xs:short" name="pvp_duration" use="optional"/>
+      <xs:attribute type="xs:string" name="avatar" use="optional"/>
+      <xs:attribute type="xs:byte" name="conflict_id" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="skill_data">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="skill_template" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

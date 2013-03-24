@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This poison is getting to my head....</p>   
+          <p> </p>
+          <p>See those trees? The one in the middle talks to me.</p>  
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"You should get some fresh air..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Argh! Snap out of it, Roseino!</p>
+          <p> </p>
+          <p>I'm sorry, [%username]! There must be a strong hallucinogen in the airborne poisons here. I need to find a way to neutralize them.</p>
+          <p> </p>
+          <p>I need [%dic:STR_DIC_MLA56]s!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Ribbits?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes! [%dic:STR_DIC_MLA56]s!</p>
+          <p> </p>
+          <p>They're immune to the poison--you can tell by looking at them. They drink from the water with no ill effects!</p>
+          <p> </p>
+          <p>Something in their bodies must be naturally counteracting the poison, and I need to know what that is! Will you help me?</p>          
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good, I knew you had the spirit! I saw Yustiel's vitality in your eyes!</p>
+          <p> </p>
+          <p>I'm going to need quite a few samples of [%dic:STR_DIC_QILA83]...probably five. With five, I can conduct a thorough analysis of the components.</p>
+          <p> </p>
+          <p>Come back when you've got them, but be quick! That tree is looking at me funny.</p> 
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll see to it now."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Fine!</p>
+          <p> </p>
+          <p>Leave me to the trees then! Let's see how I fare on my own.</p>
+          <p> </p>
+          <p>Gah. I shouldn't waste energy on you. I'll accelerate my breathing, which will make my hallucinations worse.</p> 
+          <p> </p>
+          <p>Go on!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm gone."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Back so soon?</p>
+          <p> </p>
+          <p>Let me see what you have brought, then!</p>   
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here they are."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No no, I need five samples. That's the only way the tests can be reliable.</p>
+          <p> </p>
+          <p>Go get the other samples of [%dic:STR_DIC_QILA83]!</p>   
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm on it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes, exactly!</p>
+          <p> </p>
+          <p>Thank you, [%username]! I'll get started on some tests right away. I'll figure this out yet!</p>
+          <p> </p>
+          <p>Take this. Take it and leave, before the trees start talking to you, too!</p> 
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Obtain samples of Ribbit Blood and bring them to [%dic:STR_DIC_LA30].</font></p>[%collectitem]</step>              
+    </steps>
+          <p><font font_xml="quest_summary">The Ribbits that thrive in the Contaminated Swamp might hold the key to neutralizing the swamp's poison. Collect samples of Ribbit's Blood and bring them to Roseino.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Roseino said the Ribbits that thrive in the Contaminated Swamp might hold the key to neutralizing the swamp's poison. You collected samples of Ribbit's Blood and gave them to Roseino so that she could request a study from Sanctum.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

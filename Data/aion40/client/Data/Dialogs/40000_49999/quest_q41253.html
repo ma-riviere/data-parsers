@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q41253</QuestId>
+    <QuestName>헌화</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select_none" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님. 생각할 수록 괴로워요.</p>
+          <p> </p>
+          <p>저는 남편이 살아 있는 동안에도 좋은 아내가 아니었어요. 심지어 죽은 후에는 잊고 지내기까지 했죠.</p>
+          <p> </p>
+          <p>아... 저는 참 나쁜 여자였네요. 죽은 남편이 이런 저를 미워하고 있으면 어쩌죠?</p>
+          <p> </p>
+          <p>원망이 깊어 오드의 흐름으로 돌아가지 못했다면... 흑...</p>
+          <p> </p>
+          <p>남편에게 사과하고 용서를 받고 싶어요. [%username] 님. 혹시 남편에게 어떻게 사과해야하는지를 [%dic:STR_DIC_N_Ulstia]에게 물어봐 주시겠어요?</p>
+          <p> </p>
+          <p>제사장인 그녀라면 방법을 알 거예요.</p>
+ </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아름다운 데바여, 용건이 무엇있지 말씀해 보십시오.</p>
+          <p> </p>
+          <p>(모라이티아의 부탁을 설명한다)</p>
+          <p> </p>
+          <p>모라이티아의 남편이라면 잘 알고 있습니다. 아주 강인한 마법사였습니다.</p>
+          <p> </p>
+          <p>그가 오드의 흐름으로 떠나는 길을 지켜봐 줬던 기억이 있습니다.</p>
+          <p> </p>
+          <p>그에게 사과할 방법을 알고 싶다고 하셨습니까?</p>
+          <p> </p>
+          <p>심성이 여린 그녀다운 고민이군요.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_N_Aughoetia]에게서 [%dic:STR_DIC_I_Q41253b]를 사 오십시오. 그에게 사과할 수 있도록 도와드릴테니.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"알겠습니다."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+         <p>진심만 깃들어 있다면 사과의 형식이나 방법이 어떻든 무슨 의미가 있겠습니까?</p>
+         <p> </p>
+         <p>[%dic:STR_DIC_I_Q41253b]%은 가지고 오셨습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">수수한 꽃을 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_ok">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그럼 [%dic:STR_DIC_W_LDF4a_SZ_D_03]로 가 보십시오. 제 기억이 맞다면 묘지의 가장 높은 곳에 그의 무덤이 있을 겁니다.</p>
+          <p> </p>
+          <p>아마도 [%dic:STR_DIC_ILDF4a_Tomb_Q41253]을 찾아 보시면 될 것입니다. 그의 많은 제자들이 스승을 잊지 않고 끊임없이 관리해 왔으니까요.</p>
+          <p> </p>
+          <p>제가 만들어 드린 [%dic:STR_DIC_I_Q41253a_flaower]을 무덤에 내려두기만 하시면 그에게 모라이티아의 마음이 전달 될 겁니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+ <HtmlPage name="check_user_item_fail">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_I_Q41253b]%을 사오지 않으셨군요?</p>
+          <p> </p>
+          <p>제가 [%dic:STR_DIC_N_Aughoetia]에게 가면 구할 수 있다는 말을 해드리지 않았습니까?</p>
+          <p> </p>
+          <p>이상하군요...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select3">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(형용할 수 없는 어떤 감정이 느껴진다.)</p>
+          <p> </p>
+          <p>(비석에 새겨진 이름이 흐릿해서 이름을 알아볼 수 없지만 울스티아가 말한 무덤이 틀림 없는 것 같다.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SET_SUCCEED">꽃다발을 바친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>오셨군요.</p>
+          <p> </p>
+          <p>울스티아가 뭐라고 알려주던가요?</p>
+          <p> </p>
+          <p>설마 남편에게 사과할 방법은 이제 없다고 말하던가요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그렇군요...</p>     
+          <p> </p>     
+          <p>저를 대신해 꽃을 바쳐주셨다니, 정말 고맙습니다. 흑흑....</p>
+          <p> </p>     
+          <p>이제 단 한순간도 그를 잊지 않을 거예요.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_Ulstia]%와 대화하라</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_N_Aughoetia]에게서 [%dic:STR_DIC_I_Q41253b]%을 구입한 후 [%dic:STR_DIC_N_Ulstia]에게 돌아가라</font></p>[%collectitem]</step>
+               <step><p visible="[%6]"><font color="[%7]">[%dic:STR_DIC_W_LDF4a_SZ_D_03]에 있는 [%dic:STR_DIC_ILDF4a_Tomb_Q41253]에 [%dic:STR_DIC_I_Q41253a_flaower]%을 바쳐라</font></p></step>
+               <step><p visible="[%9]"><font color="[%10]">[%dic:STR_DIC_N_Moraytia]%와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">모라이티아의 죽은 남편에게 사과할 방법을 알아보자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>모라이티아는 죽은 남편에게 사과할 방법을 찾아봐 달라고 말했다.</p>
+          <p> </p>
+          <p>제사장 울스티아에게 물어보니 그의 무덤으로 가서 꽃다발을 내려 두는 것만으로 충분하다고 말했다.</p>
+          <p> </p>
+          <p>고요한 묘지로 가 그의 무덤에 꽃다발을 내려두고 모라이티아에게 돌아가니 대신 사과해 줘서 고맙다며 앞으로는 남편을 잊지 않을 것이라고 말했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

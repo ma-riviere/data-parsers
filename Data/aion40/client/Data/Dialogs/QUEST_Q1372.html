@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님은 좋겠군요. 여기가 맘에 안 들어도 바로 떠나면 그만이니까요.</p>
+          <p> </p>
+          <p>전 상부의 명령이 있기 전에는 여기서 꼼짝도 할 수 없습니다.</p>
+          <p> </p>
+          <p>가디언이 되면 엘리시움 같은 곳에서 편하게 일할 줄 알았는데 이 모양 이 꼴이라니. 재수가 없는지 늘 이런 곳에만 파견되지 뭡니까.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">힘내라고 한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님은 이곳의 상황이 어느 정도인지 모르니 그렇게 쉽게 말할 수 있는 겁니다. 하긴 잠시 들렀다 가는 사람이니 당연하지요.</p>
+          <p> </p>
+          <p>레파르 혁명단에게서 주민을 지키는 일이라면 저도 불만 없습니다. 가디언으로서 당연히 해야 할 일이니까요.</p>
+          <p> </p>
+          <p>하지만 지금 전 그 일뿐 아니라 주민이 먹을 식량까지 걱정해야 하는 판입니다.</p>
+          <p> </p>
+          <p>혁명단에, 사막화에, 식량 문제까지... 한시라도 마음 편한 순간이 없단 말입니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">도와주겠다고 한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정말입니까? 나중에 딴소리하기 없기에요.</p>
+          <p> </p>
+          <p>그럼 티포리드 고기를 좀 구해 주세요.</p>
+          <p> </p>
+          <p>주민들이 며칠 먹을 만큼은 구해야 도움이 되니 좀 넉넉하게 잡아다 주십시오.</p>          
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="PLAYEMOTION_angry;HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>마을 앞 개천 근처에 가면 [%dic:STR_DIC_I_QUEST_1372a]을 구할 수 있을 겁니다.</p>
+          <p> </p>
+          <p>거기에 [%dic:STR_DIC_M_hippolizardCh_31_An]가 많거든요. 얼마 전부터 그 주변에서 어슬렁거리는 걸 봤습니다. </p>      
+          <p> </p>
+          <p>아참, 꼭 엉덩이살로만 가져오세요. 다른 부위는 너무 질겨서 먹기가 힘들거든요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아니, 도와주겠다고 할 때는 언제고 이제 와서 싫다는 겁니까!</p>
+          <p> </p>
+          <p>지금 사람 부아 돋우는 겁니까? 내가 먼저 도와달라고 한 것도 아니잖아요!</p>
+          <p> </p>
+          <p>아, 됐습니다, 됐어요! 하기 싫으면 관두세요.</p>
+          <p> </p>
+          <p>싫다는 사람에게 아쉬운 소리까지 하면서 부탁하고 싶진 않네요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>좀 늦었군요.</p>
+          <p> </p>
+          <p>부탁한 [%dic:STR_DIC_I_QUEST_1372a]%은 구해 왔나요?</p>
+          <p> </p>
+          <p>다른 부위 말고 엉덩이살로만 가져왔겠죠?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">티포리드의 엉덩이살을 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이게 뭡니까? [%dic:STR_DIC_I_QUEST_1372a] 5덩이를 구해 오기로 했잖아요!</p>
+          <p> </p>
+          <p>이럴 거면 도와준다는 얘기를 하지나 말든지요.</p>
+          <p> </p>
+          <p>당장 내일 아침에 먹을 것도 부족한 판이니 지금이라도 빨리 다녀오세요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+           <p>아직 따뜻한 걸 보니 금세 잡아서 가져온 거로군요. 수고하셨습니다.</p>
+          <p> </p>
+          <p>이 정도 양이면 이틀은 식량 걱정을 하지 않아도 되겠네요.</p>
+          <p> </p>
+          <p>이건 감사의 표시로 드리는 겁니다. 받으십시오.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_I_QUEST_1372a]%을 모아 [%dic:STR_DIC_N_Beramones]에게 가져가라</font></p>[%collectitem]</step>              
+    </steps>
+          <p><font font_xml="quest_summary">아게이론 마을의 식량이 부족하다고 한다. 티포리드의 엉덩이살을 구해 베라모네스에게 가져가야겠다.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>베라모네스는 레파르 혁명단에게서 주민들을 지키는 것뿐 아니라 먹을 식량까지 구해야 한다면서 상황이 너무 힘들다고 하소연했다.</p>
+          <p> </p>
+          <p>그래서 베라모네스를 도우려고 하고 마을 앞에 있는 바위등 티포리드를 잡아 엉덩이살을 구해다 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

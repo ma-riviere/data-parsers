@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh [%username]! Thanks so much for helping me make that sleeping bag from Crausaur Leather and Brax Skin. It was so warm and cozy. I slept well for the first time in ages. Even on the hard floor inside the fortress, it was great.</p>
+          <p> </p>
+          <p>But then the other day this Shugo merchant had his eye on it, and...well I just so happened to....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"You didn't..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I did...I sold it to him. I kept telling him no, but he offered me so much Kinah! I just couldn't refuse!</p>
+          <p> </p>
+          <p>It's fine though. I mean, I have lots of time to make a new sleeping bag. The problem is I don't have the materials. I never expected to make another one, so I didn't keep the spare materials from the first....</p>
+          <p> </p>
+          <p>[%username], can you give me a hand?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Great! I'll need the same materials you got for me last time. Please hunt [%dic:STR_DIC_M_BraxD_21_n] and [%dic:STR_DIC_M_PhainiD_22_n]s around here and bring me their skins.</p>
+          <p> </p>
+          <p>Please hurry--I'm cold! I'll even give you some of the money I got from selling the other sleeping bag.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"That's the least you could do."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I feel guilty for selling the sleeping bag since you helped me make it, [%username]. But the merchant just kept bugging me!</p>
+          <p> </p>
+          <p>Please, help me just once more? I didn't even spend all the money from the sale. I'll give you what I have left.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Whatever...find someone else."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Brrr.... It's c...ccc...cold!</p>
+          <p> </p>
+          <p>Did you bring the [%dic:STR_DIC_I_QUEST_2429a] and [%dic:STR_DIC_I_QUEST_2429b]?</p>
+          <p> </p>
+          <p>Please, let me have them!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here you are."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You still haven't hunted the [%dic:STR_DIC_M_BraxD_21_n] and [%dic:STR_DIC_M_PhainiD_22_n]s? The beasts are right outside--it'll be easy.</p>
+          <p> </p>
+          <p>Please, get the Crasaur Leather and Brax Skin, and bring them back before I freeze!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"On my way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>These are well skinned, [%username]. Your skills have no doubt improved.</p>
+          <p> </p>
+          <p>Thanks for doing this. Now I can make a new sleeping bag. I just hope the merchant won't want this one too, HA Ha ha haaa...</p>
+          <p> </p>
+          <p>You'd help me again, right? Here, take this as a reward.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Obtain the skin of [%dic:STR_DIC_M_BraxD_21_n] and [%dic:STR_DIC_M_PhainiD_22_n]s, and take it to [%dic:STR_DIC_N_Fathir].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Favyr said he had sold his leather sleeping bag to a merchant and he needs materials to make a new one. Slay Crasaurs and Braxes for their skins.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Favyr said he had sold his sleeping bag to a merchant and he needed materials to make a new one.</p>
+          <p> </p>
+          <p>You brought him more Crasaur Leather and Brax Skin, for which he thanked you and gave you a reward.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

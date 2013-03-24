@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>신성 수호회 소속 [%username] 보시오.</p>
+          <p> </p>
+          <p>테오보모스에 파견된 회원에게 수호회의 일을 도울 유능한 회원을 알선해 달라는 요청을 받았소. [%username]%이 그 일에 적합한 듯 하여 특별히 의뢰서를 보내는 바요.</p>
+          <p> </p>
+          <p>무지몽매한 대지의 피조물들이 테오보모스 수호회원의 신성한 임무를 방해하고 있는 것 같소.</p>
+          <p> </p>
+          <p>테오보모스로 가서 [%dic:STR_DIC_M_LF2A_SpakyDesert_45_n]를 처리한 후 결과를 [%dic:STR_DIC_E_35014]에게 전하시오.</p>
+          <p> </p>
+          <p>명심하시오. 행동은 신속하게! 입은 무겁게! </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">의뢰서를 접어 넣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>어서 오십시오, [%username] 님.</p>
+          <p> </p>
+          <p>테오보모스의 활동을 지원하기 위해 오셨죠?</p>
+          <p> </p>
+          <p>많은 분들의 도움이 있었지만 아직 테오보모스는 외진 곳이라 일손이 많이 필요하답니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 말한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정말 수고많으셨습니다!</p>
+          <p> </p>
+          <p>테오보모스의 스파키는 다른 지역보다 훨씬 끈질기더라고요.</p>
+          <p> </p>
+          <p>[%username] 님이 도와주셨으니 당분간 편하게 일을 할 수 있을 것 같습니다. 답례로 신성 수호회의 증표를 드릴테니 유용하게 사용해 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_M_LF2A_SpakyDesert_45_n]를 처치하라([%2]/5)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_E_35014]%와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">신성 수호회에서 의뢰서가 왔다. 지시에 따르자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>신성 수호회에서 온 의뢰서에는 테오보모스의 활동을 방해하는 생물체를 처리해달라는 내용이 적혀 있었다.</p>
+          <p> </p>
+          <p>그래서 갑옷날개 스파키를 처치한 후 테오보모스 지부 회원에게 가져가자 협조에 감사를 표하며 증표로 보답하겠다고 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

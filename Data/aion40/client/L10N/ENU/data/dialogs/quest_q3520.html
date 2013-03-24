@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Arieluma, Daeva. I must pose a question. Not rhetorical, mind you, but an honest-to-Ariel question. You've seen your share of battles, so you will understand.</p>
+          <p> </p>
+          <p>See this armor I am wearing? And see that sack of grain over there? Which do you think would better hold up to a sword's blade?</p>
+          <p> </p>
+          <p>Well, the answer is not what sheathes my body. With the lack of supplies in this wasteland, even one of Senir's dried fish could puncture my armor.</p>
+          <p> </p>
+          <p>Since we have no steel or chain or even leather around here, I'm forced to make repairs with cloth. Can you believe that?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Then watch out for swords!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ha ha ha. Precisely, Daeva. That brings me to my point. I overheard a returning patrol say that Nacre Scales are as strong as a rock and as slick as an eel's belly.</p>
+          <p> </p>
+          <p>Have you heard that, too? Anyway, I want to try and repair my armor using some of those scales. It should work. But with the current state of these dilapidated threads I have on, I fear even sneezing too loud.</p>
+          <p> </p>
+          <p>May I shamelessly ask you to find me some [%dic:STR_DIC_I_QUEST_3520a]s for my armor? I will pay you for your trouble.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Faith and arms, my friend! Thank you.</p>
+          <p> </p>
+          <p>Five scales of the [%dic:STR_DIC_M_Criton_41_An] should do the trick. Try and find the most attractives ones, won't you?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll return shortly."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Do not fret, Daeva. But if you should see an injured soldier with a dried fish stuck in his chest, you'll know you could have prevented it.</p>
+          <p> </p>
+          <p>I guess I should go look for some more cloth to repair my armor....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Such a pity."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], you've returned! And not a moment too soon. I'm being sent out on patrol, and I was afraid I was going to have to tie wood across my chest for protection.</p>
+          <p> </p>
+          <p>Let me see the [%dic:STR_DIC_I_QUEST_3520a]s so I can get started on my repairs right away.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here are your scales."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], you must hurry! They're sending me out on patrol soon, and I fear for my life. This armor won't hold up!</p>
+          <p> </p>
+          <p>Please, get over to the Puitonen Bogs and find me those Pearly Crynac Scales.</p>
+          <p> </p>
+          <p>If I don't hear from you soon, I'm going to have to piece together my armor with tree branches and gulley grass.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be back before your patrol."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>These truly are harder than rocks! This is like steel! I may look a little odd with these on, but I'll be indestructible!</p>
+          <p> </p>
+          <p>You may have saved my life, [%username]! I am in your debt.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Gather five scales from [%dic:STR_DIC_M_Criton_41_An]s and take them to [%dic:STR_DIC_N_Ekseus].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Go to the Puitonen Bogs to find the Pearly Crynac Scales for Ekseus's armor.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+	        <p>You obtained the Pearly Crynac Scales for Ekseus, who was concerned that his armor would fail in battle.</p> 
+          <p> </p>
+          <p>When Ekseus received the materials, he thanked you and gave you a reward.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

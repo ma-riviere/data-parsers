@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>My informant tells me the Lepharist workers aren't getting any more potion with Yakomer dead. </p>
+          <p> </p>
+          <p>They're not happy about it, either.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Any clues where it's coming from?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes, we know who's making it.</p>
+          <p> </p>
+          <p>His name is Conky Hororuke.</p>
+          <p> </p>
+          <p>The good news is, he's the only one who knows how to make it, and he carries the recipe with him everywhere he goes.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Conky Hororuke, huh?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That's what I said, [%dic:STR_DIC_M_DF2_LehparKnNamedQ_39_Ae]. Your next job is to take him out.</p>
+          <p> </p>
+          <p>That'll put an end to this potion business.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>He'll be somewhere in the [%dic:STR_DIC_W_DF2_SUB_D5]. Oh, and bring that recipe back to me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Um, sure. Got it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Don't back out on me now.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Sorry, I've got to be somewhere."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You take care of Conky?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Yes, and here's the recipe."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You haven't left for the Lepharist Citadel yet? What kind of Asmodian are you?</p>
+          <p> </p>
+          <p>Get out there and kill [%dic:STR_DIC_M_DF2_LehparKnNamedQ_39_Ae]. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll do it on my own time."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Great work. I'll check this over. I'm sure Pandaemonium will be quite interested in how this stuff's made.</p>
+          <p> </p>
+          <p>Not a word of this to anybody, understand?</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Defeat [%dic:STR_DIC_M_DF2_LehparKnNamedQ_39_Ae], get anything you find on him, and take it to [%dic:STR_DIC_N_Gelkugin].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Defeat Conky Hororuke and search his body.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Gelkugin asked you to defeat Conky Hororuke, the man making the suspicious potion. You found the recipe for the potion on his body and brought it back to Gelkugin, who said Pandaemonium would be very interested in it.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

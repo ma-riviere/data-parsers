@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>라사냐에게 그대에 관한 이야기는 많이 들었소, [%username].</p>
+          <p> </p>
+          <p>실력과 책임감 모두 뛰어나 어떤 임무든 안심하고 맡길 수 있다고 말이오.</p>
+          <p> </p>
+          <p>나도 라사냐처럼 [%username]%을 무조건적으로 믿겠소. </p>
+          <p> </p>
+          <p>힘든 임무를 맡기게 될 것 같으니 잘 좀 부탁하오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">고개를 끄덕인다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>지금 우리 붉은 헤시아 군단을 괴롭히는 상대는 [%dic:STR_DIC_E_Lgrade4]이라오.</p>
+          <p> </p>
+          <p>어비스 전투 경험도 많고 실력도 뛰어나기 때문에 상대하기가 만만치 않지.</p>
+          <p> </p>
+          <p>덕분에 군단병들이 정찰 임무를 수행하는데 얼마나 방해가 심한지 모르오.</p>
+          <p> </p>
+          <p>그러니 [%username]%이 놈들을 좀 처치해 주시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>임무를 수락해 줘서 정말 고맙소.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_E_Lgrade4]을 처치하는 임무가 성공한다면 우리 붉은 헤시아 군단에 큰 도움이 될 거요.</p>
+          <p> </p>
+          <p>이왕이면 [%username]%과 실력이 비슷한 천군을 처치해 주시오. </p>
+          <p> </p>
+          <p>실력이 너무 떨어지는 놈은 처치해도 아무 소용이 없으니 말이오. </p>
+          <p> </p>
+          <p>그럼 어서 다녀오시오!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>라사냐가 그대의 실력과 책임감에 대해 허풍을 떤 거요?</p>
+          <p> </p>
+          <p>단번에 임무를 거절하다니 정말 실망스럽구려.</p>
+          <p> </p>
+          <p>어쩔 수 없구려. 힘든 일을 강요는 할 수는 없는 노릇이니.</p>
+          <p> </p>
+          <p>하지만 나중에라도 마음이 바뀌면 다시 오시오. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>기다리고 있었소, [%username]. </p>
+          <p> </p>
+          <p>[%dic:STR_DIC_E_Lgrade4]은 모두 처치했소? </p>
+          <p> </p>
+          <p>어떻게 됐는지 자세히 보고해 주시오. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">전투 결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>라사냐에게 들은 대로 훌륭한 실력이구려.</p>
+          <p> </p>
+          <p>이 정도 능력이라면 더 어려운 임무도 안심하고 맡길 수 있겠소.</p>
+          <p> </p>
+          <p>정말 수고 많았소. 이건 수고한 보답이니 사양 말고 받으시오.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_E_Lgrade4]과 전투하여 승리하라([%2]/10)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Semotor]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">어비스 전장에서 마족의 승리를 위해 천군 4급병과 싸워 이겨야겠다.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>세모토르는 라사냐에게 이야기를 많이 들었다며 힘든 임무라도 열심히 수행해 주길 바란다고 했다.</p>
+          <p> </p>
+          <p>그래서 명령대로 천군 4급병을 처치했더니 듣던 대로 뛰어난 실력이라며 흡족해했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

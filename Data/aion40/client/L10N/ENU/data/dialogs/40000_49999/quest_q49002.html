@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+        	<p>All right [%username], here's your first official mission of the Dimensional Vortex battle.</p>
+        	<p> </p>
+          <p>I want you to find and terminate that traitor [%dic:STR_DIC_N_Jahmanok] along with her two butlers [%dic:STR_DIC_N_LF2A_NPC_Abunka] and [%dic:STR_DIC_N_LF2A_NPC_Gastak].</p>
+          <p> </p>
+          <p>They stole a bunch of confidential documents from Pandaemonium, and then fled to Elysea. Show them that they can't hide from us.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I heard the reports from the Operations Division, that the attack on Jamanok Inn would never have succeeded without you.</p>
+          <p> </p>
+          <p>Tell me how those treacherous rats died. Like vermin, or did they find some measure of Asmodian honor at the last?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Here's how the battle went..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+        <p>Well, that's some bit of vengence, at least. A hollow comfort though, when you consider the countless Archons sacrified because Jamanok casually handed those documents over to the Elyos.</p>
+        <p> </p>
+        <p>At least it should serve as a warning to any others with thoughts of betrayal. Well done. You should get some rest now.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Terminate Jamanok and her associates.</font></p>
+               <p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_LF2A_NPC_Abunka]([%2]/1).</font></p>               
+               <p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_N_LF2A_NPC_Gastak]([%5]/1).</font></p>
+               <p visible="[%6]"><font color="[%7]">[%dic:STR_DIC_N_Jahmanok]([%8]/1).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report back to [%dic:STR_DIC_N_Sala].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Terminate Jamanok and her associates, who fled to Elysea with Confidential Documents stolen from Pandaemonium.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Salla asked you to get rid of Jamanok and her henchmen, who fled to Elysea with confidential documents stolen from Pandaemonium.</p>
+          <p> </p>
+          <p>You returned after killing Jamanok, Abunka, and Gastak. Salla said that your efforts would server as a warning to other would-be traitors.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

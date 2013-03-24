@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q12030</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>Not entered</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We must find a route into Tiamat Stronghold. The Balaur will want to hide it, but we must hunt regardless.</p>
+          <p> </p>
+          <p>Perhaps you can help us. A strong Daeva working alone might go unnoticed.</p>
+          <p> </p>
+          <p>Here's the plan: if you kill a [%dic:STR_DIC_M_TDown_DrakanFi_Noble_60_An], you can get a [%dic:STR_DIC_I_quest_12030a] for tactical navigation.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Perhaps, if we cut through the hillside...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">"This map should help the infiltration."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You've done well, [%username]. With this, we can find the entrance to Tiamat Stronghold in no time.</p>
+          <p> </p>
+          <p>You did well, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect a [%dic:STR_DIC_I_quest_12030a] and take it to [%dic:STR_DIC_N_Ruonas].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Ruonas needs a Sounding Gem to find the entrance to Tiamat Stronghold. Get one from an officer of the Protectorate.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+        	<!--JD comment: Please do not change "Hiroten" back to "Ruonas" again. See TTP #14890-->
+          <p>Hiroten said he was trying to find a path into Tiamat Stronghold.</p>
+          <p> </p>
+          <p>At his request, you killed an officer of the Protectorate for its Sounding Gem, which Balaur use as a map.</p>
+          <p> </p>
+          <p>When you brought it to the good Centurion, he said it would be helpful in planning battles.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

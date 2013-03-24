@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Faith and arms! I never thought to see you here. How have you been?</p>
+          <p> </p>
+          <p>Voluptes, remember? The Daeva's Ceremony at the Lyceum? We stood next to each other... Ah. Well, I was there too. Never mind.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"No, it's good to see you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, good to see you too. I have to say, you've made amazing progress since then. I hear about you all the time. Very impressive. </p>
+          <p> </p>
+          <p>As it is, I'm about to set out on my first big sortie as well. We're heading out soon to attack Bollvig and I'm leading the troops. It's a great honor.</p>
+          <p> </p>
+          <p>Hey, could I ask you for a favor, for old times' sake?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What is it you need?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The road to The Storm Circle is treacherous. To keep morale up and my soldiers together, I'd like to use torches and light the route there. </p>
+          <p> </p>
+          <p>We need every advantage we can get, and it's not as though there are many avenues we can use to attack. Doing this won't give anything away. </p>
+          <p> </p>
+          <p>There are seven Torches in Patema Ruins. A guy named Luric took them from Mountain Shiver in Calon, but we don't have enough oil for all of them. Could you get me some fuel to keep them burning? I'll ask the Admiral to reward you appropriately. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Great! I really, really appreciate it. Now, the best substitute for torch oil is [%dic:STR_DIC_I_QUEST_1625a].</p>
+          <p> </p>
+          <p>There are lots of [%dic:STR_DIC_M_Starturtle_40_n]s along the coast around the village. If you could hunt some and collect [%dic:STR_DIC_I_QUEST_1625a], we can make this plan work. We'll need at least seven lumps of fat to use in the torches, so you'll need to hurry.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll do my best."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh...right. I'm sure you have a lot to do. Sorry about that. I'll see if I can re-task one of my soldiers. I was hoping they could rest before the battle, but we do what we must.</p>
+          <p> </p>
+          <p>Anyway, it was good to see you again. Walk in the light, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"The same to you, Voluptes."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], did you get the [%dic:STR_DIC_I_QUEST_1625a]? We have to leave soon...we're running out of time. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"This should fuel the torches."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I know you have other tasks, but I must have Starturtle Fat to light the torches. It's the only way I can get my men there safely. We need every soldier we have if we're to stand a chance against Bollvig.</p>
+          <p> </p>
+          <p>For Elysea, right? And hurry. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"For Elysea."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Starturtle Fat! Thanks to Aion. Now those torches will stay lit. My thanks, [%username]. Faith and arms, and death to Bollvig!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Hunt [%dic:STR_DIC_M_Starturtle_40_n]s, collect their fat, and take it to [%dic:STR_DIC_N_Voluptes].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Hunt Cobalt Starturtles and take their fat to Voluptes so that he can light the way to the Patema Ruins for his soldiers.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Voluptes, the Blue Fleet Adjutant, wanted to light torches along the strike route in the Patema Ruins to protect his troops on their way to attack Bollvig.</p>
+          <p> </p>
+          <p>He asked for Starturtle Fat to fuel the torches since they were out of oil. You hunted the Starturtles and got the fuel he needed, giving him the advantage his troops need. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

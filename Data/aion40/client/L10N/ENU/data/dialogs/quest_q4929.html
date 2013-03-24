@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I don't think you have a particularly pleasant future in front of you, [%username].</p>
+          <p> </p>
+          <p>I hope that doesn't frighten you...I just want you to be prepared for it. Work hard and learn every skill you can.</p>
+          <p> </p>
+          <p>You should probably try the Divine Power Test. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"The Divine Power Test?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You know that only Daevas can use Divine Power skills, right? But you can't use them as often as you might like. That's why many Daevas are still inexperienced with Divine Power.</p>
+          <p> </p>
+          <p>The test is an incentive proposed by the Governor to solve that problem.</p>
+          <p> </p>
+          <p>They call it a test, but it's really more of a training program. It ends when you use a chosen skill ten times. Would you like to try the Divine Power Test?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're a Chanter? Then you must have learned the Word of Wind skill. If not, you should.</p>
+          <p> </p>
+          <p>That skill will be the subject of your Divine Power Test. Return to me when you've used the [%dic:STR_DIC_E_DP_Ch] ten times.</p>
+          <p> </p>
+          <p>Good luck!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I don't understand, but it's up to you.</p>
+          <p> </p>
+          <p>If you change your mind, you can take the test later.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll think it over."</Act>
+    </Selects>
+  </HtmlPage>
+
+    <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're back?</p>
+          <p> </p>
+          <p>Just so you know, what's important is how faithfully you have performed the task.</p>
+          <p> </p>
+          <p>Did you use [%dic:STR_DIC_E_DP_Ch] ten times. May I touch your brow?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Of course."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hmmm...the flow of your Divine Power is smooth and uninterrupted. It seems you've practiced the Divine Power skill properly.</p>
+          <p> </p>
+          <p>Well done--you've passed the test. But do hone your skills.</p>
+          <p> </p>
+          <p>Here's a reward we give to those who pass the test. This should be of use to you as a Chanter.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Use [%dic:STR_DIC_E_DP_Ch] ([%2]/10).</font></p></step>               
+               <step><p visible="[%3]"><font color="[%4]">Report the result to [%dic:STR_DIC_N_Freyr].</font></p></step>               
+    </steps>
+          <p><font font_xml="quest_summary">The Divine Power Test is sponsored by the Governor. Use the Word of Wind skill ten times to pass the test.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Freyr invited you to take part in the Divine Power Test being conducted to train Daevas who are inexperienced at using Divine Power.</p>
+          <p> </p>
+          <p>When you returned to Freyr after using the Word of Wind skill ten times, he congratulated you on passing the test.</p>
+	</body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

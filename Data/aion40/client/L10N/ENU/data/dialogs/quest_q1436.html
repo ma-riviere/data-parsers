@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, you've visited many places in Elysea, Daeva.</p>
+          <p> </p>
+          <p>It's no magic trick. I can tell by what you're wearing. There are slight differences from region to region.</p>
+          <p> </p>
+          <p>So, how long will you stay here in Eltnen?</p>           
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I'll be around a while."</Act>
+    </Selects>
+  </HtmlPage>
+ 
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Then, would you do me a favor? </p>
+          <p> </p>
+          <p>While you are travelling in Eltnen, please collect any [%dic:STR_DIC_E_plant_n_c_20a] you happen to see.</p>
+          <p> </p>
+          <p>Since Fess Fiber is light and strong, it is useful for me for making clothes for priests and mages.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you so much. I'm looking for 15 clumps of [%dic:STR_DIC_E_plant_n_c_20a] fiber.</p>
+          <p> </p>
+          <p>While other things might be scarce due to the encroaching desert, Fess usually grows well in this climate. Check the Eiron Desert and the Outpost Ruins.</p>
+          <p> </p>
+          <p>It's not urgent, so anytime you're back in Eltnen Fortress, come see me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I will."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, it's okay. I asked on the off chance you had the time.</p>
+          <p> </p>
+          <p>Maybe I'll take Adelphie out for a fiber field trip. Of course, the desert isn't her idea of a vacation.</p>
+          <p> </p>
+          <p>Well, until she's ready to take over, I'd best get back to work.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Walk in the light."</Act>
+    </Selects>
+  </HtmlPage>
+  
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Welcome back, [%username], what can I do for you?</p>
+          <p> </p>
+          <p>Oh my! I asked you to bring me some Fess fiber, right?</p>
+          <p> </p>
+          <p>I forget things so easily these days.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here you go."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>If this is all you can find, I don't know that it will really help me.</p>
+          <p> </p>
+          <p>But really, there's no hurry. When you have more [%dic:STR_DIC_E_plant_n_c_20a] I'd be glad to buy it off of you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I can get more."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you, I can really use this thread. It will make good armor.</p>
+          <p> </p>
+          <p>If you need any kind of armor, please come see me. I'll make sure you get the very best.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect [%dic:STR_DIC_E_plant_n_c_20a] fiber for [%dic:STR_DIC_N_Krato].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Collect fiber from the Fess plant, which grows in the Eiron Desert and the Outpost Ruins, and bring them to Krato.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Krato, an armorsmith, asked you to bring some fiber from your travels in Eltnen.</p>
+          <p> </p>
+          <p>You brought him some Fess, and he paid you gladly.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

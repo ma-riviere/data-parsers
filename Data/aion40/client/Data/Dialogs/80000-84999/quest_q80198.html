@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>좀전에 화낸것은 사과 할께요.</p>
+          <p> </p>
+          <p>너무 황당하다 보니 그런 반응이 나왔네요.</p>
+          <p> </p>
+          <p>그나저나, 부탁을 드리고 싶은것이 있습니다.</p>
+          <p> </p>
+          <p>꼭 들어주실 수 있음 좋겠는데... 가능할까요? 사례는 섭섭치 않게 하겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">무슨일인지 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]님께는 간단한 일일 꺼에요. 근처에 보이는 17마리의 붉은 크레스틀리치를 처치해 주세요.</p>
+          <p> </p>
+          <p>제가 사랑하는 분이 이 크레스틀리치 들에게 알러지가 있어, 근처에 가기만해도 반응을해 고생이 심하세요.</p>
+          <p> </p>
+          <p>행운의 편지 얼간이의 부탁도 들어주셨는데, 제 부탁도 들어주실 수 있겠죠?</p>
+          <p> </p>
+          <p>꼭 부탁 드려요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아, 너무 감사합니다.</p>
+          <p> </p>
+          <p>그분께 분명 도움이 될꺼에요.</p>
+          <p> </p>
+          <p>자 그럼 어서 근처의 붉은 크레스틀리치 17마리를 처치해 주세요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>에? 거절 하시는거에요?</p>
+          <p> </p>
+          <p>행운의 편지따윈 전달해 주면서, 이런 절실한 부탁은 거절 하는거에요?</p>
+          <p> </p>
+          <p>혹시 마음이 바뀌면 다시 찾아와 주세요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>붉은 크레스틀리치 17마리는 처치 하셨나요?</p>
+          <p> </p>
+          <p>역시 어렵지 않았죠?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">그렇다고 한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아.. 이제 당분간은 그사람이 좀 편하게 지낼 수 있겠네요.</p>
+          <p> </p>
+          <p>너무 감사해요. 다 [%username]님 덕분이에요.</p>
+          <p> </p>
+          <p>그럼 안녕히 가세요.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">근처에 17마리의 붉은 크레스틀리치를 처치하라.</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">리데린과 대화하라.</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">리데린이 사랑하는 사람의 고통을 덜어주기 위해 붉은 크리스틀리치 17마리를 처치해달라 부탁한다.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>리데린의 부탁대로 붉은 크레스틀리치 17마리를 처치했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

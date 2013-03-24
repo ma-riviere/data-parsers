@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've figured out why I wasn't able to summon the Tree Spirit last time--the Gray Twigs you brought me were old, [%username].</p>
+          <p> </p>
+          <p>The Spirit wasn't able to channel through it. Otherwise, it would have worked. I gave you one simple task, and you managed to mess it up.</p>
+          <p> </p>
+          <p>I now need a different material...something a bit stronger than twigs.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I suppose I'll be getting it?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, it's not really an additional favor, [%username]. It's still part of the original favor.</p>
+          <p> </p>
+          <p>So, yes, I think it would be nice of you to get it for me. It's only fair.</p>
+          <p> </p>
+          <p>Can I count on you this time?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm trying a different route this time. Summoning a Spirit requires an incredibly strong life force, so I'll need a material that will infuse the Spirit with a breath of life.</p>
+          <p> </p>
+          <p>I need the [%dic:STR_DIC_I_QUEST_30229a]s from [%dic:STR_DIC_M_LF4_B2_Centipede_53_An]s. They're in Undirborg.</p>
+          <p> </p>
+          <p>They're pretty tough creatures, but I'm sure a [%userclass] of your caliber has dealt with worms before.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Worms don't frighten me."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>So, you won't help me, [%username], even though you are mostly to blame for my original summoning not working?</p>
+          <p> </p>
+          <p>Daeva, I'm just asking for you to make right on your original promise to help!</p>
+          <p> </p>
+          <p>Is that too much to ask of a [%userclass]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I've helped all I can."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You made excellent time, [%userclass]. I've gotten everything ready in your absence. Now all I need is the life energy in those Hard Shells.</p>
+          <p> </p>
+          <p>Did you get them? I hope these are fresh--they won't work if they're from long-dead worms. You did kill them fresh, right?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Yes, I killed them fresh."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Seriously, [%username]? You singlehandedly ruin my first attempt at summoning a Spirit by bringing me dead twigs.</p>
+          <p> </p>
+          <p>And now you won't even do the right thing by bringing me the right materials for my second attempt?</p>
+          <p> </p>
+          <p>Go on, kill Vilethorn Laupedes and Burrowing Laupedes and bring me the [%dic:STR_DIC_I_QUEST_30229a]s. You know how important this is to me!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll kill your damn worms now!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Finally, everything has fallen into place. Stand back now, Daeva, I'm going to summon the Spirit! Do not stare it in the eyes when it appears.... I've been told that may frighten it.</p>
+          <p> </p>
+          <p>(She pulverizes the Hard Shells, sprinkles the powder around, and chants a spell with her eyes closed.)</p>
+          <p> </p>
+          <p>Why is nothing happening? I couldn't possibly have failed twice...because I don't fail! I never fail! Where is this blasted Spirit? I'll kill it if I see it!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Obtain [%dic:STR_DIC_I_QUEST_30229a]s and take them to [%dic:STR_DIC_N_Aiola].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Teressa needs a life-rich material to summon a Spirit. Defeat Burrowing Laupedes and Vilethorn Laupedes and bring back their Hard Shells.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Teressa said her failure last time was due to the poor quality of the material you brought.</p>
+          <p> </p>
+          <p>She needed a new life-rich material, so you killed Burrowing Laupedes and Vilethorn Laupedes and brought her their Hard Shells.</p>
+          <p> </p>
+          <p>However, summoning the Spirit failed once again, even with the Hard Shells.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

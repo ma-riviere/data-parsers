@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>용감한 데바들이 [%dic:STR_DIC_W_DF2_SUB_toDF2_DFlame]으로 갔습니다.</p>
+          <p> </p>
+          <p>그러나 많은 데바들이 목적을 달성하기도 전에 뜨거운 불길에</p>
+          <p> </p>
+          <p>휩싸이고 있습니다.</p>
+          <p> </p>
+          <p>더는 그들의 고통을 두고볼 수가 없습니다.</p>
+          <p> </p>
+	  <p>무언가 조치를 취해야 할 것 같습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">무슨 일이냐고 한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_W_DF2_SUB_toDF2_DFlame] 내부에 있는 무리들이 사라져간 데바들의 심장을 가지고 있다고 합니다.</p>
+          <p> </p>
+          <p>그것이 [%dic:STR_DIC_W_DF2_SUB_toDF2_DFlame] 내부를 더욱 뜨겁게 달구고 있는 것 같습니다.</p>
+          <p> </p>
+          <p>동료들과 함께 그곳으로 가셔서 그 심장을 모아 가지고 오세요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="PLAYEMOTION_comfort;HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_W_DF2_SUB_toDF2_DFlame]은 [%dic:STR_DIC_W_DF2_SUB_C5]의 용암 폭포 밑에 있습니다.</p>
+          <p> </p>
+          <p>사라져간 데바들의 물건을 꼭 찾아와 주십시오.</p>
+          <p> </p>
+          <p>기다리고 있겠습니다.</p>                 
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>할 수 없군요.</p>
+          <p> </p>
+          <p>제가 잠시 착각을 한 모양입니다.</p>
+          <p> </p>
+          <p>대신관께서 말씀하신 분이 그대가 아닌가 보군요....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정말 그곳에 사라진 데바들의 심장이 있었습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">붉고 뜨거운 심장 20개를 건넨다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>너무 고통스럽습니다. 그들의 소리가 멈추질 않아요.</p>       
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>오셨군요.</p>
+          <p> </p>
+          <p>[%username]님이 그들을 고통의 화염에서 구해주셨습니다.</p>
+          <p> </p>
+          <p>판데모니움에서 드리는 감사의 선물입니다.</p>
+          <p> </p>
+          <p>항상 그대를 축복하겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_W_DF2_SUB_toDF2_DFlame]에서 붉고 뜨거운 심장을 구해 에르다트에게 가져가라 </font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">신관 에르다트가 붉고 뜨거운 심장를 구해 오라고 한다. [%dic:STR_DIC_W_DF2_SUB_toDF2_DFlame]으로 가서 몬스터를 처치하고 심장을 모아오자.</p>
+          <p></font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>축복의 신관 에르다트가 붉고 뜨거운 심장을 찾아오라고 했다.</p>
+          <p> </p>
+          <p>그래서 [%dic:STR_DIC_W_DF2_SUB_toDF2_DFlame]에서 주요 몬스터를 잡아 붉고 뜨거운 심장을 구해 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

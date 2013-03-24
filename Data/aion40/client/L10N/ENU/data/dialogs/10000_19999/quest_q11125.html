@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Arieluma, [%username]. Dark days are upon us again. Drana energy is spreading from creature to creature, tainting everything it touches.</p>
+          <p> </p>
+          <p>It has spread all the way to the Inggison Outpost. If we don't do something quick, we'll be doomed.</p>
+          <p> </p>
+          <p>We need to kill off every creature infected by the Drana energy...before it affects the Obelisks.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"How bad has it gotten?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You've been in Inggison for some time now...I'm surprised you haven't noticed it. It's bad...terribly bad!</p>
+          <p> </p>
+          <p>What's worse, the creatures that get affected grow stronger, wilder. They attack with such ferocity now that even my most experienced Legionaries fall prey to their claws.</p>
+          <p> </p>
+          <p>What say you, [%username]? Care to lend your blade to a worthy cause?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've determined that the most dangerous creatures are [%dic:STR_DIC_M_LF4_B_Xipeto_Drana_54_An]s, [%dic:STR_DIC_M_LF4_B4_Crestlich_Drana_54_An]es, and [%dic:STR_DIC_M_LF4_B4_Kuillus_Drana_54_An]s.</p>
+          <p> </p>
+          <p>Destroy as many as you can and bring me their mutated body tissue afterwards. I need to have a research team study them so we can find out just how bad this has gotten.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Faith and arms, Daeva!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I understand you wayfarer Daevas want to make a name for yourself by killing Balaur and Asmodians on the battlefield....</p>
+          <p> </p>
+          <p>And even though this may not be the most glorious task, it is a much needed one. Glory is in the story, not the task, Daeva.</p>
+          <p> </p>
+          <p>Come back if you change your mind. And always remember, glory is in the story, not the task.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I don't seek glory."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You've returned, [%username]! And not a second too late.</p>
+          <p> </p>
+          <p>The interest in these mutated creatures has grown dramatically over the past few hours. I've spoken with several researchers and even an Aether Maintenance Soldier since you've been gone.</p>
+          <p> </p>
+          <p>They all want that body tissue for their research. I hope you brought them back...the [%dic:STR_DIC_I_QUEST_11125a]s, [%dic:STR_DIC_I_QUEST_11125b]s, and [%dic:STR_DIC_I_QUEST_11125c]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here's the mutated samples."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You haven't killed the contaminated creatures yet? Daeva, the Drana is spreading--every second brings more contamination across the land.</p>
+          <p> </p>
+          <p>You must destroy the [%dic:STR_DIC_M_LF4_B_Xipeto_Drana_54_An]s, [%dic:STR_DIC_M_LF4_B4_Crestlich_Drana_54_An]s, and [%dic:STR_DIC_M_LF4_B4_Kuillus_Drana_54_An] and get their mutated body tissue.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I will do it now."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Strange...they seem to have mutated more than I thought. Look at their abnormal forms, the putrification of their skin.</p>
+          <p> </p>
+          <p>I had no idea Drana could do something like this. Thank you, [%username]. You just might have saved all of our hides.</p>
+          <p> </p>
+          <p>I'll have my research team get to work on the tissue right away.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect the body tissue of [%dic:STR_DIC_M_LF4_B_Xipeto_Drana_54_An]s, [%dic:STR_DIC_M_LF4_B4_Crestlich_Drana_54_An]s, and [%dic:STR_DIC_M_LF4_B4_Kuillus_Drana_54_An]s. Bring them to [%dic:STR_DIC_N_Iaetia].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Mutated creatures in the land of the Balaur are spreading Drana contamination. Destroy them and bring back their remnants for study.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Iaetia was worried that Drana mutated Dragrints, Crestliches and Neokins were growing in number.</p>
+          <p> </p>
+          <p>You destroyed the contaminated creatures and brought her their body tissue for study as requested.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

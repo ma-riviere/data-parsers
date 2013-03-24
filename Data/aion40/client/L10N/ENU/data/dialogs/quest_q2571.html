@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Azphelumbra, [%username]! Are you busy?</p>
+          <p> </p>
+          <p>I was wondering if you could deliver this vaccine to [%dic:STR_DIC_N_Vonduca]. She's the leader of the watch here. </p>
+          <p> </p>
+          <p>If you haven't met her yet, you definitely should.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Why's that?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, [%dic:STR_DIC_N_Vonduca] is just an incredible person. </p>
+          <p> </p>
+          <p>She never learned how to swing a blade, yet she's become head of the Watch because everyone trusts her judgment.</p>
+          <p> </p>
+          <p>She was the one who led the villagers here.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Why did they come here?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The village was overrun with undead people and livestock. The few remaining Humans had to get out fast.</p>
+          <p> </p>
+          <p>Vonduca led that group of frightened people, including elderly villagers and children, safely through to this refuge.</p>
+          <p> </p>
+          <p>Personally I think it took a lot of guts. So, would you be willing to meet [%dic:STR_DIC_N_Vonduca] and deliver the vaccine? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Very good.</p>
+          <p> </p>
+          <p>Give her the package and tell her that this is the Undead Vaccine I mentioned before. She'll understand.</p>
+          <p> </p>
+          <p>And ask her if she needs any help.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"On my way!" </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, to be honest, there's another reason I'm asking you to do this.</p>
+          <p> </p>
+          <p>I'd just like you to have a talk with Vonduca and this is a good excuse. She really knows what's going on around here. She's a good person to know.</p>
+          <p> </p>
+          <p>If you change your mind, let me know.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I will." </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hmm...you don't look like an Archon, so perhaps you've come to help the village?</p>
+          <p> </p>
+          <p>I've found that having a few Daevas around is never a bad thing. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I brought this vaccine."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, so this is it? Sleipnir says you don't become undead if you drink this?</p>
+          <p> </p>
+          <p>Whoah, it smells really bad! But regardless, I'll have it distributed to the people.</p>
+          <p> </p>
+          <p>I wish we had this vaccine before, but I suppose only Lady Siel had the luxury of moving through time. We Humans, and even Daevas, must live with events as they happen.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Deliver the vaccine to [%dic:STR_DIC_N_Vonduca].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Deliver the vaccine Sleipnir gave you to Watch Leader Vonduca.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Centurion Sleipnir said Watch Leader Vonduca is an amazing person, and told you to deliver a box of vaccine and have a talk with her.</p>
+          <p> </p>
+          <p>You spoke with Vonduca when you delivered the vaccine, and found her to be quite pleasant and dedicated to her duties.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

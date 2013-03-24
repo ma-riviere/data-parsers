@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Are you [%username]? I've heard about you.</p>
+          <p> </p>
+          <p>Fate must be on my side to have finally met you--and today, of all days.</p>
+          <p> </p>
+          <p>Have you ever heard of a great Daeva named Rosarea? She lived and died a very long time ago. So few Daevas know of her.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"The Warrior of Laize?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Exactly right! She was a great Brigade General, and Empyrean Lord Israphel trusted her implicitly.</p>
+          <p> </p>
+          <p>Anyway, whoever knows her also remembers Laize's Panoply, with its beautiful violet shine. It offered perfect protection, or so the legends say.</p>
+          <p> </p>
+          <p>I'm no master crafter, but I'm confident I have the skills to recreate each piece of Laize's Panoply in all its original splendor!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"How far have you gotten?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm making good progress. I'm working on many different parts at once, but the shoes are complete. Well, nearly.</p>
+          <p> </p>
+          <p>I mean, the shoes look the same as the originals, but its performance is lacking. I think it's because they don't have enough Aether imbued into them.</p>
+          <p> </p>
+          <p>Think you could lend me a hand here, [%username]? If you do, I'll give you my prototypes! How about that?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>See this marble? It looks ordinary, but it can be used to collect Aether.</p>
+          <p> </p>
+          <p>I heard there are many creatures with lots of Aether at the Abyssal Splinter. That might be a good place to start.</p>
+          <p> </p>
+          <p>Take this marble, kill [%dic:STR_DIC_M_IDAbRe_Core_SilikaCannon_Ra_55_Ah]s and [%dic:STR_DIC_M_IDAbRe_Core_Millipede_Sc_55_An]s, and we can use the collected Aether to improve the shoes.</p>
+          <p> </p>
+          <p>I know you can do it!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"So do I."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You wouldn't say no if I was a master of Pandaemonium, would you.</p>
+          <p> </p>
+          <p>Psh, titles. Meaningless. All people think about is what organization you belong to and what family you came from.</p>
+          <p> </p>
+          <p>I thought you would be different, [%username]...but you're just one of the elite gang, I guess.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Far from the truth."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Do you know why Rosarea was called the Warrior of Laize?</p>
+          <p> </p>
+          <p>She was so beautiful that many men fell in love with her. Yet she was determined to devote her life to fighting the Balaur, so she didn't return any of their love.</p>
+          <p> </p>
+          <p>One of her many admirers wanted to get her attention--and make a point--so he gave her a Panoply engraved with Laizes, beautiful flowers covered with thorns that make them completely unapproachable.</p>
+          <p> </p>
+          <p>Rosarea knew what it meant, but refused to put her own emotions ahead of the war against the Balaur. Still, she wore the Panoply even though she knew it represented the man's resentment. She wanted to let him know that she understood.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Fascinating. But here's your marble."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That's definitely an impressive amount of Aether energy. But is it enough to complete the shoes?</p>
+          <p> </p>
+          <p>Well, we won't know until we try. Let me give it a shot. If not, I'll need to ask you to get me some more later.</p>
+          <p> </p>
+          <p>But if so, I'll give you the prototype shoes as promised! Wish me luck....</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Kill Aether-rich creatures and collect their Aether energy.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_IDAbRe_Core_SilikaCannon_Ra_55_Ah]([%2]/3)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_IDAbRe_Core_Millipede_Sc_55_An]([%5]/10)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Take the Aether marble to [%dic:STR_DIC_NPC_Darkhum].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Aether energy is required to complete Laize's Shoes. Go to the Abyssal Splinter and collect Aether energy.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Darkhum was restoring Laize's Panoply, a set of armor worn by Rosarea, a great warrior of ancient times.</p>
+          <p> </p>
+          <p>Darkhum had completed the shoes, but said a lack of Aether energy meant their performance wasn't up to par.</p>
+          <p> </p>
+          <p>You killed Aether-rich creatures at the Abyssal Splinter and brought him Aether energy to infuse the shoes with.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

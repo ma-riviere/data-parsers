@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>동쪽의 검은 평원을 통해서 하루에도 수백 명의 사람이 요새를 드나들고 있다네.</p>
+          <p> </p>
+          <p>그곳을 거치지 않고서는 요새로 들어올 수도 다른 지역으로 갈 수도 없으니 당연한 일이지.</p>
+          <p> </p>
+          <p>한마디로 요새에 볼일이 있는 인간에게는 거치치 않으면 안 되는 관문 같은 곳일세.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">고개를 끄덕인다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>헌데 칼니프가 그 검은 평원에서 날뛰고 있다네.</p>
+          <p> </p>
+          <p>몇 번이나 파수병을 보내 칼니프를 처치하게 했지만 도무지 수가 줄어들지를 않는군.</p>
+          <p> </p>
+          <p>자네는 파수병보다 실력이 훨씬 나은 것 같으니 자네가 가면 꽤 도움이 될 걸세.</p>
+          <p> </p>
+          <p>어떤가? 가서 [%dic:STR_DIC_M_KalnifNmdD_30_An] 놈들을 좀 처치해 주겠나?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그럼 지금 당장 검은 평원으로 가서 거기 있는 [%dic:STR_DIC_M_KalnifNmdD_30_An]를 쓸어버리게.</p>
+          <p> </p>
+          <p>지나는 인간을 마구잡이로 공격하고 있다네. 빨리 조치를 취하지 않으면 더 많은 인간이 다치게 될 걸세.</p>
+          <p> </p>
+          <p>그러니 될 수 있는 대로 빨리 가 주게나. 그럼 부탁하네.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>검은 평원에 칼니프가 나타난 것은 꽤 오래 전의 일이라네.</p>
+          <p> </p>
+          <p>처음에는 별거 아니라고 생각하고 방치한 것이 화근이었지.</p>
+          <p> </p>
+          <p>늦었다고 생각했을 때가 가장 빠른 때라는 말도 있지 않는가?</p>
+          <p> </p>
+          <p>그러니 아무 소용 없다고 생각하지 말고 지금이라도 놈들을 처치하는 일을 맡아 주게나.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>검은 평원에 직접 가본 지도 꽤 된 것 같군.</p>
+          <p> </p>
+          <p>요즘은 통 순시를 나갈 시간이 없어서 말이야.</p>
+          <p> </p>
+          <p>그래, 그곳은 어떻던가? 그리고 [%dic:STR_DIC_M_KalnifNmdD_30_An]는 모조리 쓸어버렸겠지?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>장하네. 자네 덕분에 당분간은 인간들이 검은 평원을 안심하고 지날 수 있을 걸세.</p>
+          <p> </p>
+          <p>이건 칼니프를 잘 처치해 준 보답으로 주는 것이라네.</p>
+          <p> </p>
+          <p>앞으로도 벨루스란의 안전을 위해 힘써 주게나.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">검은 평원의 [%dic:STR_DIC_M_KalnifNmdD_30_An]를 처치하라([%2]/10)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Nerthus]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">요새로 오려면 반드시 통과해야 하는 검은 평원에 칼니프가 날뛰고 있다고 한다. 검은 평원으로 가서 위협적인 칼니프를 처치하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>네르투스는 다른 지역에서 요새로 오려면 반드시 통과해야 하는 검은 평원에 칼니프가 나타나 사람들을 위협하고 있다고 했다.</p>
+          <p> </p>
+          <p>처음엔 한두 마리에 불과했지만 이제는 그곳을 장악하다시피 해서 주민들에게 위협이 된다고 하기에 그곳으로 가서 위협적인 칼니프를 처치했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

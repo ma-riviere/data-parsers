@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p align="center"> - Work Order -</p>
+          <p> </p>
+          <p>1. To: Temp Worker [%username]</p>
+          <p> </p>
+          <p>2. Job Details: Silverine Limited does not have enough Kokonas to pay the temp workers. Please get 5 Kokonas from the Skurv Croppers and turn them in to the supervising branch.</p>
+          <p> </p>
+          <p>3. Supervising Branch: Silverine North Katalam Branch </p>
+          <p> </p>
+          <p>The above mission will be considered in the evaluation process for hiring you as a full-time worker. Additional points may be added depending on the result. Do your best nyerk.</p>
+          <p> </p>
+          <p>- Danurinerk, Recruiter of Silverine Limited</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">Fold the work order and put it away.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did you get the Kokonas fruits?</p>
+          <p> </p>
+          <p>We had enough to pay everyone but those flying bugs ate what we had. How am I supposed to pay everyone, nyerk?</p>
+          <p> </p>
+          <p>Give me the Kokonas you brought, nyerk.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">Hand over the Kokonas fruits.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Does that mean there are no Kokonas fruits on the trees, nyerk?</p>
+          <p> </p>
+          <p>Of course there aren't since the harvest is already over.</p>
+          <p> </p>
+          <p>That's why you were told to get some from the Skurv Croppers, nyerk.</p>
+          <p> </p>
+          <p>They don't earn much, so it was clear that they'd have some Kokonas fruits on them, nyerk.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">End dialog.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Nyerk, I like the smell of Kokonas.</p>
+          <p> </p>
+          <p>It feels like the fur on my tail is getting softer.</p>
+          <p> </p>
+          <p>Our employees will love it, if we pay them like this, don't you think?</p>
+          <p> </p>
+          <p>If you become a regular employee of Silverine, [%username], you'll enjoy benefits like this as well, nyerk.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get Kokonas fruits from the Skurv Croppers and take them to the Silverine North Katalam Branch.</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">You received a work order from Silverine Limited. Check the work details and perform the mission.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You received a work order from Silverine Limited.</p>
+          <p> </p>
+          <p>You got Kokonas fruits from the Skurv Croppers and delivered them to the Silverine Limited North Katalam branch. They thanked you and gave you your reward.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

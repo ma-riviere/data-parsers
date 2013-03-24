@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Each scholar chooses between morality and academic ambition. There's a huge debate about experimenting on live bodies in Sanctum.</p>
+          <p> </p>
+          <p>To some extent, the research must continue. Almost anything can be done for good or evil, don't you agree?</p>
+          <p> </p>
+          <p>I think scholars alone should make that choice.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"An unsurprising position..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I admit I have my doubts, [%username]. I've considered it carefully since Centurion Sarantus first sent his request.</p>
+          <p> </p>
+          <p>Imagine studying a living body--what we might learn! Even more exciting, the Lepharists have made an artificial test subject.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Decisions, decisions..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>As a scholar, I can make an objective evaluation. What the Lepharist Revolutionaries achieved is something great.</p>
+          <p> </p>
+          <p>With their technology, our research could leap forward to dazzling heights...or it could destroy us.</p>
+          <p> </p>
+          <p>We cannot rush forward. The test subjects must be destroyed. [%username], will you help me?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Lepharist Revolutionaries used [%dic:STR_DIC_M_LabM_Slime_40_An], [%dic:STR_DIC_M_LabR_LockAgrint_41_An], [%dic:STR_DIC_M_LabR_LockZombie_41_An], [%dic:STR_DIC_M_LabPo_LockedKuillus_40_An], and [%dic:STR_DIC_M_LabM_Fellial_40_An] in their experiments. All of them have successfully mutated.</p>
+          <p> </p>
+          <p>While the notes are vague, I'm certain they weren't created to give foot-rubs.</p>
+          <p> </p>
+          <p>Put an end to the test subjects at the Lepharist Research Center before things get out of hand.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"By Aion's light."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It wasn't easy for me to ask this... I have some pride, you know.</p>
+          <p> </p>
+          <p>Very well. I'll ask Centurion Sarantus to send someone to help me.</p>
+          <p> </p>
+          <p>I'd still much rather work with you, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Sorry, I can't help."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Have you been to the Lepharist Research Center? Did you find all the test subjects?</p>
+          <p> </p>
+          <p>I'm sure the fighting was fierce. Please, tell me everything!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I've done as you asked."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I know I cannot eliminate their technology by destroying the test subjects but it may give us the time we need to adjust.</p>
+          <p> </p>
+          <p>For now, at least, we can breathe a small sigh of relief. Thank you, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Destroy the test subjects in the Lepharist Research Center.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_LabM_Slime_40_An] ([%2]/2)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_LabR_LockAgrint_41_An] ([%5]/1)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_LabR_LockZombie_41_An] ([%8]/1)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_LabPo_LockedKuillus_40_An] ([%11]/1)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_LabM_Fellial_40_An] ([%14]/1)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report the result to [%dic:STR_DIC_N_Kalione].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">The Lepharist Revolutionaries are conducting experiments on live test subjects. Go to the Lepharist Research Center and destroy all the test subjects.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Kalione became worried while investigating the live body experiment of the Lepharists.</p>
+          <p> </p>
+          <p>She was troubled because the prospect of academic achievement might come at a terrible price.</p>
+          <p> </p>
+          <p>Kalione decided to err on the side of caution and asked you to destroy the test subjects at the Lepharist Research Center.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

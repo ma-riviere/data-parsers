@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(목덜미를 치며) 앗, 따거! 이놈의 벌이 또!</p>
+          <p> </p>
+          <p>휴, 헤르카 님 말대로 벌통이 다시 생겼나 보군요. 아, 지난번에 벌통을 없애라고 명령서를 쓰신 분 말이에요.</p>
+          <p> </p>
+          <p>벌은 여왕 벌이 한 마리만 있어도 금세 무리를 이루기 때문에 여왕 벌을 몽땅 잡지 않는 한 벌통이 금방 다시 생길 거라고 하셨거든요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정말이지 학자들은 대단한 것 같아요.</p>
+          <p> </p>
+          <p>직접 보지도 않고 어떤 일이 일어날지 정확하게 예측하니 말이에요.</p>
+          <p> </p>
+          <p>그나저나 이거 난처하군요. 지금으로선 [%dic:STR_DIC_OBJ_DF4_BeeNest_Q21017]을 눈에 보이는 대로 없애는 게 최선의 방법이라는데 요새의 방어벽을 세우는 일도 아직 많이 남아 있고...</p>
+          <p> </p>
+          <p>괜찮다면 [%username] 님이 좀 없애 주시지 않겠습니까? 이전에 경험이 있으니 일처리가 더 빠를 것 같아서 말입니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>고맙습니다.</p>
+          <p> </p>
+          <p>(갑옷에 붙은 벌을 떼어내며) 이곳에 몰려드는 것 보니 성난 벌떼들이 안타고르 격전지에 [%dic:STR_DIC_OBJ_DF4_BeeNest_Q21017]%을 또 만든 모양입니다.</p>
+          <p> </p>
+          <p>그러니 격전지 주변을 잘 살펴 벌통을 없애 주십시오.</p>
+          <p> </p>
+          <p>뭐, 이미 경험이 있으니 저보다 잘 아시겠지만 말입니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>제 일을 남한테 떠맡기려는 건 아니었습니다.</p>
+          <p> </p>
+          <p>죄송합니다, 이번에는 어떻게든 혼자 힘으로 처리하지요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>벌통을 찾아서 없애신 겁니까?</p>
+          <p> </p>
+          <p>그런데 대체 녀석들의 소굴이 어디에 있던 겁니까?</p>
+          <p> </p>
+          <p>지난번 만큼 수가 늘었던가요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>에잇, 지독한 놈들.</p>
+          <p> </p>
+          <p>잡은 지가 언젠데 그만큼이나 수가 늘었답니까. 개량된 생명체라더니 번식력이 장난 아니군요.</p>
+          <p> </p>
+          <p>어쨌든 고맙습니다. 덕분에 이번 일도 수월하게 끝냈군요.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">성난 벌떼가 사는 [%dic:STR_DIC_OBJ_DF4_BeeNest_Q21017]%을 찾아 파괴하라([%2]/3)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Vyuin]%와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">안타고르 격전지에 성난 벌떼가 또 나타났다고 한다. 그냥 두면 위험하니 벌떼가 사는 겔크마로스 벌통을 찾아 파괴하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>뷰인은 성난 벌떼가 그새 늘었다며 용족 전문가인 헤르카의 조언대로 겔크마로스 벌통을 계속해서 없애야겠다고 했다.</p>
+          <p> </p>
+          <p>요새 방어벽을 구축하느라 바쁘니 대신 벌통을 파괴해 달라기에 벌통을 없애고 돌아가자 고맙다며 사례를 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>받으십시오.</p>
+          <p> </p>
+          <p>판데모니움 특수사령부에서 [%username] 님께 내려온 긴급 작전 명령서입니다.</p>
+          <p> </p>
+          <p>급한 일인 것 같던데 바로 확인해 보십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">명령서를 확인한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p align="center"> - 작전 명령서 - </p>
+          <p></p>
+          <p>발신: 판데모니움 특수사령부</p>
+          <p></p>
+          <p>수신: [%username]</p>
+          <p> </p>
+          <p>최근 엘테넨과 인테르디카에서 마계로 잠입해 오는 천족이 눈에 띄게 늘었다는 정보를 특수사령부에서 확인하였다. 피해가 더 커지기 전에 천족이 마계로 넘어오는 것을 막아야 한다.</p>
+          <p></p>
+          <p>이에 다음 명령을 내리니 신속히 수행하길 바란다.</p>
+          <p></p>
+          <p>  1. [%dic:STR_DIC_E_directportal]을 통해 [%dic:STR_DIC_E_LF2_name]과 [%dic:STR_DIC_E_LF3_name]에 침투할 것.</p>
+          <p></p>
+          <p>  2. 엘테넨과 인테르디카의 천족을 1명 이상 처치할 것.</p>
+          <p></p>
+          <p>  3. 단, 너무 전력이 떨어지는 적에게는 자비를 베풀 것.</p>
+          <p></p>
+          <p>  4. 적이 전의를 잃은 것을 확인하면 [%dic:STR_DIC_N_Tostig]에게 보고할 것.</p>
+          <p></p>
+          <p>특수사령부 요원들에게 신의 가호가 있기를!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>드디어 올 것이 왔군요. </p>
+          <p> </p>
+          <p>마계에 쳐들어 온 천족을 잡는 것만으로는 근본적이 해결책이 안 된다고 생각했었거든요.</p>
+          <p> </p>
+          <p>상부엔 [%username] 님이 작전을 수락하기로 했다고 보고하겠습니다.</p>
+          <p> </p>
+          <p>임무가 끝나면 제게 보고해 주시고 부디 몸 조심하십시오.</p>
+          <p> </p>
+          <p>판데모니움의 번영을 위해!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이번 작전을 수행하지 않겠다는 겁니까?</p>
+          <p> </p>
+          <p>하긴 쉽게 결정할 수 있는 일은 아니지요.</p>
+          <p> </p>
+          <p>작전이니 돌발 상황도 많을 텐고...</p>
+          <p> </p>
+          <p>알겠습니다. 상부에는 [%username] 님의 뜻을 잘 전달해 드리겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>오셨습니까, [%username] 님.</p>
+          <p> </p>
+          <p>이번 임무도 완벽하게 수행하셨겠죠?</p>
+          <p> </p>
+          <p>특수사령부의 보상을 준비해야 하니 정확한 보고를 해 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>임무 완수 확인했습니다, [%username] 님.</p>
+          <p> </p>
+          <p>천계까지 잠입하려면 여러 가지로 힘든 일이 많았을 텐데 수고 많으셨습니다. </p>
+          <p> </p>
+          <p>판데모니움 특수사령부에서 보상품을 드리겠습니다.</p>
+          <p> </p>
+          <p>판데모니움의 영광을 위해!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_E_LF2_name]이나 [%dic:STR_DIC_E_LF3_name]로 잠입해 [%dic:STR_DIC_E_Daily_2]을 처치하라([%2]/1)</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_N_Tostig]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">긴급 지령: 엘테넨이나 인테르디카로 잠입해 천족을 쓰러뜨린 후 에레슈란타 지부 요원에게 보고하라</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>판데모니움 특수사령부에서 엘테넨과 인테르디카에 침투해 천족을 처치하라는 긴급 지령이 내려왔다. </p>
+          <p> </p>
+          <p>임무를 완수한 후 에레슈란타 지부 요원에게 가서 보상을 받았다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

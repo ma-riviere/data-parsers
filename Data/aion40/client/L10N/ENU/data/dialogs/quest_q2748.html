@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We really clipped the Ellies' wings when we captured siel's Eastern Fortress.</p>
+          <p> </p>
+          <p>After losing the battle, they set up a bind point on the Island of Exile and deployed their Gray Wind Legionaries.</p>
+          <p> </p>
+          <p>I don't THINK they can do much harm with only a few Guardians and a Tower...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"You never know..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, we haven't taken action so far because they aren't much of a threat. But things have changed.</p>
+          <p> </p>
+          <p>They started taking supplies bound for the fortress, and more recently they've attacked every Asmodian who passes near their tower. It's just a matter of time before they build the courage to attack the fortress.</p>
+          <p> </p>
+          <p>I want them dealt with before things get worse, but all my Legionaries are occupied defending the fortress. Will you help [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>They have a bind point on the Island of Exile protected by an Guard Tower. Stationed there are Gray Wind Legionaries called [%dic:STR_DIC_N_Laius], [%dic:STR_DIC_N_Rodementhes], [%dic:STR_DIC_N_Salii], [%dic:STR_DIC_N_Satyr], and [%dic:STR_DIC_N_Ruth].</p>
+          <p> </p>
+          <p>They are fierce fighters, so be cautious. I look forward to your triumphant return!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Blood for blood!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Do you mean that you have a more important mission than this? I can't imagine what that could be.</p>
+          <p> </p>
+          <p>Well, I'll look for a Daeva braver and more responsible than you, [%username]. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Farewell."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Report, Daeva! Did you defeat the Gray Wind Legionaries guarding the Island of Exile?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Your supplies and travelers are now safe."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent! The sun-cursed Elyos will not dare attack Siel's Eastern Fortress now.</p>
+          <p> </p>
+          <p>Thank you for carrying out this important mission.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Defeat [%dic:STR_DIC_N_Laius], [%dic:STR_DIC_N_Rodementhes], [%dic:STR_DIC_N_Salii], [%dic:STR_DIC_N_Satyr], and [%dic:STR_DIC_N_Ruth]. ([%2]/5)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report the result to [%dic:STR_DIC_N_Ab1_1132_Quest_Da].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">The Gray Wind Legionaries of Elyos in the Island of Exile are watching for a chance to attack Siel's Eastern Fortress. Go to the Island of Exile and get rid of them.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Astar said that the Elyos, who had lost Siel's Eastern Fortress, established a bind point on the Island of Exile and sent the Gray Wind Legionaries to weaken the Asmodians.</p>
+          <p> </p>
+          <p>She asked you to mop up the Gray Wind Legionaries before they could work out a strategy to recapture the fortress. You went to the Island of Exile and eliminated the Gray Wind Legionaries.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

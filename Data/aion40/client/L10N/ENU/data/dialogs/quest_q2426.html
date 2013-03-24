@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I can't stop thinking about my laboratory.</p>
+          <p> </p>
+          <p>I had decades of research and the rarest of supplies and materials there. All abandoned.</p>
+          <p> </p>
+          <p>Not to mention all my personal things, of course.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Quite a loss."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I have to find a way to go back. This cabin will do for living, but it will never serve for research.</p>
+          <p> </p>
+          <p>I need to rid the place of spirits. But I haven't swung a sword in decades and my combat skills were never very good.</p>
+          <p> </p>
+          <p>Would you be willing to help me, [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That's what I hoped you'd say--thank you!</p>
+          <p> </p>
+          <p>It was [%dic:STR_DIC_M_ElementalEarth2D_23_An]s and [%dic:STR_DIC_M_ElementalEarth3D_23_An]s that raided my lab and drove me out.</p>
+          <p> </p>
+          <p>When they're gone, I can return. Please go to the Crystal Rise and get rid of them.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"On my way"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I understand. They're formidable opponents.</p>
+          <p> </p>
+          <p>I'll find some way to defeat those spirits: by magic, by sword, by sheer force of will.</p>
+          <p> </p>
+          <p>I can't abandon my research!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"May Azphel's shadow strengthen you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did you eliminate both the [%dic:STR_DIC_M_ElementalEarth2D_23_An]s and the [%dic:STR_DIC_M_ElementalEarth3D_23_An]s?</p>
+          <p> </p>
+          <p>And you must have seen my laboratory. How was it?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="PLAYEMOTION_surprise;HACTION_SELECT_QUEST_REWARD">"No spirits, but the lab's in ruins."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>In ruins? How is that possible? What did they do?</p>
+          <p> </p>
+          <p>Oh [%username], they've made our work meaningless!</p>
+          <p> </p>
+          <p>Thank you...for...for helping me. Now that I grasp the situation, I need to make a new plan.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Defeat the Spirits in order for Kistig to get back to his laboratory.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_ElementalEarth2D_23_An] ([%2]/8)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_ElementalEarth3D_23_An] ([%5]/3)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_N_Kistig].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Kistig had to abandon his laboratory because of spirits. He is now planning to get it back. Eliminate the Mud Spirits and Rock Spirits so he can return to the laboratory.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Kistig wanted to reclaim his laboratory from the spirits that attacked and occupied  it. He asked you to face down the Mud Spirits and Rock Spirits.</p>
+          <p> </p>
+          <p>When you came back after defeating the spirits, he asked about his laboratory. You had to tell him that it was destroyed. Although shocked and discouraged, he vowed that he would resume his research.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

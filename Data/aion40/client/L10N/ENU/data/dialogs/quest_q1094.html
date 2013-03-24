@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I apologize for the long journey here, but I had to speak with you.</p>
+          <p> </p>
+          <p>I saw those rubbings you made of Project Drakanhammer and I did some research.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Come up with anything interesting?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Nothing much, just a few mentions of some weapon of unimaginable power.</p>
+          <p> </p>
+          <p>We'll need to find more of Theobomos' research to find out what it was exactly.</p>
+          <p> </p>
+          <p>Field research like that is more in your line of work than mine, I'm afraid.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"I'll see what I can find."</Act>
+    </Selects>
+    <Voice file="Q1094-1.ogg"/>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I received word from Nestor that you'd be looking for Theobomos' research. I sent someone to search Theobomos' Stronghold before you came.</p>
+          <p> </p>
+          <p>It seems there's nothing there. We found old, broken debris and angry golems, but no research.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">"Any other leads?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Guardians on patrol around Port Anangke told us they saw some books scattered around the area...maybe one of them can tell us something?</p>
+          <p> </p>
+          <p>Take a look around and see if you can find a [%dic:STR_DIC_OBJ_LF2a_Book_Q1094A].</p>
+          <p> </p>
+          <p>And should you find Theobomos' laboratory...search it for information about Project Drakanhammer.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO2">"Let's hope I find that book."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select3">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(This seems to be Theobomos' journal! This is quite the lucky find!) </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO3">"I'll just take this...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select3_2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(It is a very old book. It's falling to pieces, but it seems like it's what you're looking for.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Hmm...Very interesting."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Fasimedes has been asking me what I've learned of Project Drakanhammer.</p>
+          <p> </p>
+          <p>I've learned nothing more. But you have, I hope?</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I found a library..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>So if Theobomos didn't create it...who did? I suppose we'll never know now if it's all destroyed.</p>
+          <p> </p>
+          <p>Sanctum will be disappointed to hear that Project Drakanhammer is long gone. If only Theobomos hadn't activated it prematurely, perhaps we'd have won the war by now.</p>
+          <p> </p>
+          <p>I'll put this all in the report to Fasimedes. As to your reward, take these. They're some of the results of my research.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Go to Sanctum and talk with [%dic:STR_DIC_N_Nestor].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Go to Theobomos and talk with [%dic:STR_DIC_N_Atropos].</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Find [%dic:STR_DIC_OBJ_LF2a_Book_Q1094A] at Port Anangke to get a possible lead about the secret laboratory [%8].</font></p></step>
+               <step><p visible="[%9]"><font color="[%10]">Get rid of [%dic:STR_DIC_M_teobomos_all] to get the keys to the laboratory, and enter [%dic:STR_DIC_OBJ_LF2a_Door_Q1094] to find the Assistant's Research Diary.</font></p>[%collectitem]</step>
+               <step><p visible="[%12]"><font color="[%13]">After reading [%dic:STR_DIC_E_LF2B_Q1094], go to Sanctum and report to [%dic:STR_DIC_N_Nestor].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Order: Nestor said he had something to tell you about Project Drakanhammer. Go to the Library of the Sages in Sanctum and meet Nestor.</font></p>
+        </body>
+        </html>
+    </Contents>
+    <notifies>
+       <notify progress="4"  pos="3" fontsize="16" showframe="true" time="5" color="yellow">You found the Research Diary!</notify>
+    </notifies>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Nestor wanted you to find more information about Theobomos' work on Project Drakanhammer, so you went back to Atropos.</p>
+          <p> </p>
+          <p>Atropos was convinced that Theobomos had a secret laboratory somewhere in the area. She sent you out to Port Anangke to find a book that may have held some clues.</p>
+          <p> </p>
+          <p>The book led you to the laboratory, as she thought. In the library there you discovered that Project Drakanhammer was immensely powerful, but now destroyed.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>Order: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>Mission Progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

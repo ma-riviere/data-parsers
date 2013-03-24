@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p> - Special Operations Order - </p>
+          <p> </p>
+          <p> 1. From: Giniki, Sanctum Ops HQ</p>
+          <p> </p>
+          <p> 2. To: [%username]</p>
+          <p> </p>
+          <p> 3. Order: Kill five of the Asmodian Daevas preventing us from advancing through Brusthonin.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Let's get started!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Our troops have let the cold grip of fear take them as their numbers were slowly whittled down, my friend.</p>
+          <p> </p>
+          <p>But then they had reason to hope! We heard you were coming, and would bring the pain and suffering that you're famed for.</p>
+          <p> </p>
+          <p>Did you receive my order?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Received and completed."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Outstanding!</p>
+          <p> </p>
+          <p>That should elevate our spirits and nullify Asmodian aspirations in one fell swoop.</p>
+          <p> </p>
+          <p>You've done very well, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Kill Asmodian Daevas ([%2]/5).</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Report to [%dic:STR_DIC_NPC_Arena_Geniki_E_LHM].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Emergency Order: Kill five Asmodian Daevas before reporting to Giniki.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Asmodians were hindering your plans to invade Brusthonin, so you eliminated them before reporting to Giniki for your reward.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

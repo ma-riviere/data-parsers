@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Very interesting.... The document doesn't give a specific location for Stormwing's prison.</p>
+          <p> </p>
+          <p>Instead, it describes how to get there from Beshmundir Temple.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_none_1">"And how do I get there?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_none_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Apparently, there is a large orb in the Ritual Chamber where you fought Isbariya the Resolute. It is a teleporter that takes you to the Prison of Ice, where Stormwing is imprisoned.</p>
+          <p> </p>
+          <p>But it seems this is no ordinary teleporter. It requires a specific energy source to function.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Not Asmodian blood, I hope."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, no, nothing so prosaic. It's the [%dic:STR_DIC_I_QUEST_30211a], found in a place called the [%dic:STR_DIC_W_IDCatacombs_SZ_C].</p>
+          <p> </p>
+          <p>There's a secret door to it before the Hero's Vault, wherever that is. But you've been to Beshmundir, so surely you know?</p>
+          <p> </p>
+          <p>You are the only one I know with a chance of finding that Rod and activating the teleporter. Can you do it?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The [%dic:STR_DIC_I_QUEST_30211a] was apparently given to a creature called [%dic:STR_DIC_M_IDCatacombsN_ShadowStalker_55_Ah] for safekeeping. You'll need to defeat it.</p>
+          <p> </p>
+          <p>Once you have the Rod, take it to the Ritual Chamber in the Temple of Eternity and activate the [%dic:STR_DIC_OBJ_IDCatacombs_BigOrb_Q30211].</p>
+          <p> </p>
+          <p>I know it's dangerous, but it's the only way we can be sure whether Stormwing's seal holds or not. You need to be prepared.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be ready for anything."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes, I realize the danger is increasing exponentially. I don't blame you for your caution.</p>
+          <p> </p>
+          <p>You've done more than enough. We've come this far thanks to your help.</p>
+          <p> </p>
+          <p>I will report our findings so far to Richelle, and request she send another Daeva to take us the rest of the way. Thank you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Best of luck to you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_ok">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(Nothing happens.)</p>
+          <p> </p>
+          <p>(Strange. The Quartz Rod should work.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I need to talk to Herka."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_fail">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(Nothing happens.)</p>
+          <p> </p>
+          <p>(Only the Quartz Rod can power the Rift Orb.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Right, silly of me to forget."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're back sooner than I thought you'd be. And you seem glum.</p>
+          <p> </p>
+          <p>Did you not see Stormwing's prison? Or has it already escaped...?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"There was a problem...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're right, that is strange. The Ancient Dragonbound Document says nothing about needing anything else to activate the Rift Orb.</p>
+          <p> </p>
+          <p>I'm afraid I'm at a bit of a loss. I have no idea how to proceed now.</p>
+          <p> </p>
+          <p>Please, give me a moment, I must think.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Obtain the [%dic:STR_DIC_I_QUEST_30211a] and activate the [%dic:STR_DIC_OBJ_IDCatacombs_BigOrb_Q30211].</font></p>[%collectitem]</step>
+               <step><p visible="[%3]"><font color="[%4]">Talk with [%dic:STR_DIC_N_Herka].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Defeat Shadowshift to obtain the Quartz Rod. Use it to activate the Rift Orb in the Ritual Chamber.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Herka learned from the restored Ancient Dragonbound Document that the Rift Orb in the Ritual Chamber where you fought Isbariya the Resolute is a teleporter to Stormwing's prison.</p>
+          <p> </p>
+          <p>She further discovered that an item called the Quartz Rod was needed to power the Rift Orb. She asked you to get it, as it was the only way to check on Stormwing's status.</p>
+          <p> </p>
+          <p>You defeated the Quartz Rod's caretaker, Shadowshift, and took the Rod to the Ritual Chamber. However, the Rift Orb did not work. Herka was stumped.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

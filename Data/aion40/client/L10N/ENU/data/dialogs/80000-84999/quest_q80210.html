@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, [%username], I was wondering if you could do a favor for me?</p>
+          <p> </p>
+          <p>MuMus overran the farm my siblings used to work on.</p>
+          <p> </p>
+          <p>We've made it all right here, but the fresh farm-picked Sweet Dado is so much better than what we can buy here.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+    <Act href="HACTION_ASK_QUEST_ACCEPT">"How can I help?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh thank you. Go to [%dic:STR_DIC_W_DF1A_17] and bring back 27 Sweet Dado for me.</p>
+          <p> </p>
+          <p>May the darkness grant you peace.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh thank you! </p>
+          <p> </p>
+          <p>I'll be waiting right here for you.</p>
+         </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Blood for blood."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+         <p>It's just a few Dado and some MuMus.</p>
+         <p> </p>
+         <p>You won't help?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Nope!"</Act>
+    </Selects>
+  </HtmlPage>
+
+   <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Were you able to get some Sweet Dado away from those MuMus?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here you go."</Act>
+    </Selects>
+  </HtmlPage>
+
+   <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Is that all?</p>
+      	  <p> </p>
+          <p>This just isn't enough. I'm sure I asked you to bring back more than this.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Farewell."</Act>
+    </Selects>
+  </HtmlPage>
+
+    <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you! My siblings and I will really enjoy this.</p>
+          <p> </p>
+          <p>We even had some leftovers that I saved for you, [%username].</p>
+          <p> </p>
+          <p>You'll feel much stronger after just a bite!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+                     <step><p visible="[%0]"><font color="[%1]">Gather 27 Sweet Dado and bring them to Sharine.</font></p>[%collectitem]</step>      
+    </steps>
+          <p><font font_xml="quest_summary">Sharine asked you to steal some Sweet Dado from the MuMu Croppers. Gather 27 and bring them to her.</font></p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Sharine and her siblings smile contentedly after a big meal.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

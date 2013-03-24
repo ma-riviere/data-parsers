@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이 요새 안에 있는 이드겔 연구소에는 아직까지 브리트라 군단이 남아 있습니다.</p>
+          <p> </p>
+          <p>우리가 프라데스 요새를 차지한 걸 알텐데도 그곳에 남아있는 것을 보면 뭔가 중요한 비밀이 숨겨져 있는 것이 분명합니다.</p>
+          <p> </p>
+          <p>사실은 요새를 점령하면서 티아마트 군단의 것으로 추정되는 책을 하나 발견했는데... </p>
+          <p> </p>
+          <p>비밀을 약속해 주신다면 [%username] 님에게만 내용을 알려드리겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">고개를 끄덕인다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정보에 따르면 브리트라가 티아마트의 연구를 그대로 진행하고 있다고 합니다.</p>
+          <p> </p>
+          <p>하지만 아직 짐작일 뿐 어디까지 티아마트의 연구를 조사하고 있는지는 자세히 확인하지 못하고 있습니다.</p>
+          <p> </p>
+          <p>브리트라의 진행 상황을 파악하는 일을 [%username] 님이 해 주시는 게 어떻겠습니까?</p>
+          <p> </p>
+          <p>동시에 요새 관리인 카이미르님이 부탁한 비명소리의 원인도 제거할 수 있으니 일석이조인 것 같습니다.</p>
+          <p> </p>
+          <p>어떠신가요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님이 해주셔야 할 일은 두 가지입니다.</p>
+          <p> </p>
+          <p>이드겔 연구소의 동태를 파악하는 것과 남아있는 [%dic:STR_DIC_M_BIDF5_R2_Killer_65_Ae]%을 처리하는 거죠.</p>
+          <p> </p>
+          <p>브리트라군 잔당이 하는 생체 실험 때문에 비명소리가 나는 것일테니 놈을 제거하면 비명소리도 사라질 겁니다.</p>
+          <p> </p>
+          <p>아, 임무를 마무리하시고 이 내용은 제가 아닌 요새 관리인 카이미르님에게 보고해 주시면 됩니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>흠, [%username] 님이 도와주실 거라고 생각하고 책 내용까지 말씀 드렸는데...</p>
+          <p> </p>
+          <p>알겠습니다. 억지로 강요를 할 수는 없으니까요.</p>
+          <p> </p>
+          <p>좀전에 말씀 드렸던 내용만 비밀로 해 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>세르테스를 만나고 왔소?</p>
+          <p> </p>
+          <p>내 얘기는 전했소? 내 짐작이 맞았대지?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>흐음... 생각보다 큰일이었군.</p>
+          <p> </p>
+          <p>용족 잔당 정도나 숨어있을 줄 알았지 연구까지 계속 진행 중이었을 줄은 몰랐소. </p>
+          <p> </p>
+          <p>어쨋든 [%username] 덕분에 기분나쁜 비명소리도 없애고, 브리트라 놈들의 연구도 막았구려.</p>
+          <p> </p>
+          <p>수고가 많았소. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_M_BIDF5_R2_Killer_65_Ae]%을 처치하라([%2]/1)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_LDF5b_Kaimir]%와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">세르테스의 부탁대로 이드겔 연구소를 조사하고, 제40 드라칸 척살병을 처치하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>세르테스는 이드겔 연구소는 지금은 브리트라 잔당이 차지한 것 같다며 연구소로 들어가 상황을 파악하고 비명소리의 원인을 찾아 제거해 달라고 했다. </p>
+          <p> </p>
+          <p>이드겔 연구소로 가 연족을 상대로 생체 실험을 하는 브리트라 연구원을 처치하고 요새 관리인 카이미르에게 보고하자 노고를 치하했다. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

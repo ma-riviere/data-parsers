@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm hesitant to ask you.... I have a mission that needs doing, [%username], but even you will find it difficult to undertake alone.</p>
+          <p> </p>
+          <p>Do you have allies you could call on? If you do, I would send you into Subterranea.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"I can muster a group."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Many people think the inhabitants of Subterranea have always worshipped the Balaur, but that isn't true. Mostly, they're brainwashed Reian tribesmen.</p>
+          <p> </p>
+          <p>Even now, there are disappearances among the surviving Reians. Without a doubt, they can be found in Subterranea.</p>
+          <p> </p>          
+          <p>There isn't much to be done for them now, I'm afraid, except to kill them. But perhaps with some research, we might be able to find a cure for what ails them.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I'm listening."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p> </p>
+          <p>These brainwashed souls carry around parchments smeared with Balaur blood, as if it's some sort of holy relic. </p>
+          <p> </p>
+          <p>I don't know if it's related to their brainwashing or not, but it's certainly important. It may even be related to the powers some of them wield.</p>
+          <p> </p>
+          <p>If you can bring me 50 [%dic:STR_DIC_I_QUEST_21043a]s from Subterranea, along with a [%dic:STR_DIC_I_junk_d_redeem_jewelry_02a] to confirm their power, I will have a Mithril coin for you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I knew you would accept without hesitation, [%username]. But please remember, you must never venture into Subterranea alone. Take allies with you, or perish.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I shall return."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I understand your hesitation, [%username]. Subterranea is a deadly place. But we can't just turn a blind eye to this situation, can we?</p>
+          <p> </p>
+          <p>See if you can find some allies to assist you, and then speak with me again.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"As you say."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Back in my homeland, there was a rumor that Balaur blood is blue. Of course, since arriving in Gelkmaros, I've seen plenty of evidence to the contrary.</p>
+          <p> </p>
+          <p>For example, the [%dic:STR_DIC_I_QUEST_21043a]s I asked you to retrieve, along with a [%dic:STR_DIC_I_junk_d_redeem_jewelry_02a]. Did you bring them?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here is what I have."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm sorry, but I can't give you a Mithril coin for...this. Is this a joke?</p>
+          <p> </p>
+          <p>I need you to bring me 50 [%dic:STR_DIC_I_QUEST_21043a]s and a [%dic:STR_DIC_I_junk_d_redeem_jewelry_02a]. Only then will you get your coin.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll give it another try."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent work. You and your allies are to be commended. Here is the Mithril coin I promised.</p>
+          <p> </p>
+          <p>When we discover the truth about these blood-stained parchments, I will make sure to inform you as well, [%username]. Please stop back if you'd like to recover some more. The more we have, the faster the research will go.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Bring 50 [%dic:STR_DIC_I_QUEST_21043a]s and a [%dic:STR_DIC_I_junk_d_redeem_jewelry_02a] to [%dic:STR_DIC_N_Godin].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">You and your allies must enter Subterranea to obtain 50 Fanatic's Parchments. Bring these and a Disposable Aether Refining Device to Godin for a reward.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Coin Administration Officer Godin offered a Mithril coin in excahnge for 50 Fanatic's Parchments and a Disposable Aether Refining Device.</p>
+          <p> </p>
+          <p>You went to Subterranea with some allies and obtained the Fanatic's Parchments that Godin described. You brought these along with a Disposable Aether Refining Device to Godin, who rewarded you with a Mithril coin.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

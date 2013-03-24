@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Sunken Canyon near the Dragonspine Rise--a fissure created by the power of Tiamat--is a source of many rare and useful minerals.</p>
+          <p> </p>
+          <p>Needless to say, Pandaemonium has taken quite an interest in the region. This is a rare opportunity to observe subterranean minerals and life forms we wouldn't normally have access to.</p>
+          <p> </p>
+          <p>If you're interested, [%username], I could use your help in this regard. We need to eradicate some dangerous creatures from the area--creatures which, as it turns out, can be harvested for Aether.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"How would I help?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, first you would need to acquire [%dic:STR_DIC_I_QUEST_21041a]s from within the creatures. Then purchase a Disposable Aether Refining Device to refine the crystals into Aether.</p>
+          <p> </p>
+          <p>This is quite a troublesome task, I understand, but you will be amply compensated. You will receive not only a Mithril coin, but something extra as well.</p>
+          <p> </p>
+          <p>Are you willing and able to assist me?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You will find an [%dic:STR_DIC_I_QUEST_21041a] within the body of each [%dic:STR_DIC_M_DF4_Mimic_Crk_52_An], [%dic:STR_DIC_M_DF4_Vespa_Crk_52_An], [%dic:STR_DIC_M_DF4_Kuillus_Crk_52_An], and [%dic:STR_DIC_M_DF4_Bookie_Crk_52_An] you slay.</p>
+          <p> </p>
+          <p>They don't seem to have anything in common except for the fact that they were nearby when the fissure was first formed. No doubt this is why their bodies contain unstable Aether crystals. This is a good thing, though--it means they are not completely contaminated by Drana!</p>
+          <p> </p>
+          <p>Bring me 15 [%dic:STR_DIC_I_QUEST_21041a]s and a [%dic:STR_DIC_I_junk_d_redeem_jewelry_02a] to refine them, and you will receive a Mithril coin...and something extra.</p>
+          <p> </p>
+          <p>I will await your return.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"This better be worth it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're free to refuse the mission, of course. It's not like Aether is important or anything. And I'm sure I can always find someone else who wants a Mithril coin, anyway.</p>
+          <p> </p>
+          <p>Come back when you have more time, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll do that."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Are you back already? I know your skills are quite renowned, but did you really finish this task so quickly?</p>
+          <p> </p>
+          <p>Remember, I asked for 15 [%dic:STR_DIC_I_QUEST_21041a]s and a [%dic:STR_DIC_I_junk_d_redeem_jewelry_02a] as well.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I have all of it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm sorry, but I can't give you the Mithril coin unless you complete the task before you. You must bring me 15 [%dic:STR_DIC_I_QUEST_21041a]s and a [%dic:STR_DIC_I_junk_d_redeem_jewelry_02a].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"But this is hard...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent work! Aether extracted from the crystals you brought will be put to good use. Here is the Mithril coin I promised...and a little something extra.</p>
+          <p> </p>
+          <p>I can always use more Aether, so if you ever want to help me again, feel free to stop by.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Bring 15 [%dic:STR_DIC_I_QUEST_21041a]s and a [%dic:STR_DIC_I_junk_d_redeem_jewelry_02a] to [%dic:STR_DIC_N_Assulin].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Hunt creatures inhabiting the Sunken Canyon near the Dragonspine Rise for Antiquity Crystals. Bring 50 of them and a Disposable Aether Refining Device to Avanna for a reward.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Coin Administration Officer Avanna needs someone to retrieve Antiquity Crystals, an unstable form of Aether, from creatures inhabiting the Sunken Waterfalls near the Dragonspine Rise.</p>
+          <p> </p>
+          <p>You agreed to bring 15 crystals and a Disposable Aether Refining Device for a Mithril coin and something extra.</p>
+          <p> </p>
+          <p>Avanna gave you a Mithril coin and a coin box as promised, and said you should return if you wish to help again.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

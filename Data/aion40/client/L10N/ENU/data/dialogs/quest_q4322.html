@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Kentari are cantankerous beasts, but for all their faults the smarter ones are excellent cooks.</p>
+          <p> </p>
+          <p>Surprising, isn't it? I've discovered that the secret ingredient in their cooking is a special spice. I tried to replicate it, but it's impossible. The Kentari keep the ingredients a secret.</p>
+          <p> </p>
+          <p>Since producing the spice is impossible, I've now succumbed to stealing it. Don't judge me, [%username]! You don't know real flavor until you've tasted stew made with Kentari spices.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"You're an odd one."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I don't want to harm the Kentari--I wouldn't want them to stop making the spices after all. However, I managed to steal a bag of the spices when I donned some cumbersome armor and waded into their camp.</p>
+          <p> </p>
+          <p>It might sound stupid and reckless...but it worked great!</p>
+          <p> </p>
+          <p>The armor was a fantastic idea, but then it started to wear out after being bludgeoned, bashed and slashed a few hundred times as I left the camp. Now I need materials to make another set of armor. Do you think you can help, [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Just bring me the skins of [%dic:STR_DIC_M_ShellizardD_29_An]s and [%dic:STR_DIC_M_merdionD_29_n]s. Balaur skin would be ideal...but the skins of those animals will work. Well, at least for a few minutes. </p>
+          <p> </p>
+          <p>The creatures should be right around here. Please get the skins as soon as possible...I'm running low on spices!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"On my way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You don't understand, [%username]! Kentari spices are the most delicious thing I've ever tasted!</p>
+          <p> </p>
+          <p>I need these spices! I can't stop thinking about them!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"You're delusional."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's true, I should focus more on my duties than my personal interests...but I just can't get those Kentari spices out of my head!</p>
+          <p> </p>
+          <p>Well, [%username]? I'm shaking with anticipation! Did you bring the skins for the armor?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here are the skins."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The armor wears out fast with a few dozen Kentari on me...I need more materials. Please bring the exact number of Lazy Ksellid and Iron Armored Snuffler hides I requested.</p>
+          <p> </p>
+          <p>Don't keep me waiting, [%username]! </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes, yes! This is it! This should be enough materials for more than a few suits of armor. I can almost taste those spices....</p>
+          <p> </p>
+          <p>Take this, and please come back later.... I'm thinking of starting a little enterprise as a Kentari spice merchant.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Bring the skins of [%dic:STR_DIC_M_ShellizardD_29_An]s and [%dic:STR_DIC_M_merdionD_29_n]s to [%dic:STR_DIC_N_Jorund].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Jorund needs Ksellid and Snuffler hides to make armor.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Jorund said he needs durable armor to steal the secret cooking spices from the Kentari.</p>
+          <p> </p>
+          <p>You brought him the hides of Lazy Ksellids and Ironback Snufflers, for which he was overjoyed. He said to come back later if you're interested in helping again.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

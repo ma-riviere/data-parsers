@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>To: [%username]</p>
+          <p>From: [%dic:STR_DIC_N_Ammianus], Academy Instructor</p>
+          <p> </p>
+          <p>'Luma, sparkles!</p>
+          <p> </p>
+          <p>For today's lesson, you're gathering [%dic:STR_DIC_I_QUEST_37001A]s. You'll get these power symbols off [%dic:STR_DIC_M_37001all]s at the Tursin Outpost.</p>
+          <p> </p>
+          <p>So go grab a Mentor and get to work.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Are they really on fire?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>'Luma, sparkle. How was working with your Mentor to get the [%dic:STR_DIC_I_QUEST_37001A]s?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"It was all right, I guess."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What happened? You couldn't find a good Mentor? Or you didn't go to the Tursin Outpost?</p>
+          <p> </p>
+          <p>I don't want to fail you, [%username], but I will if I have to.</p>
+          <p> </p>
+          <p>Please. Go with a Mentor to the Tursin Outpost and collect the [%dic:STR_DIC_I_QUEST_37001A]s. All right?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Sorry, teach. I'll go do it now."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Still burning hot!</p>
+          <p> </p>
+          <p>Keep up the good work, sparkle.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect [%dic:STR_DIC_I_QUEST_37001A]s with a [%dic:STR_DIC_E_Mentor], then take them to [%dic:STR_DIC_N_Ammianus].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Academy Instructor Markos assigned you to find a Mentor and collect Tursin Flames.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Academy Instructor Markos assigned you to find a Mentor and collect Tursin Flames. You went to the Tursin Outpost and defeated Tursin Veterans for Markos' reward and approval.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

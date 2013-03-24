@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, Daeva! I need someone to do me a favor! Nothing too troublesome, just a delivery to the [%dic:STR_DIC_FLA18_4] that I cannot spare time to do myself.</p>
+          <p> </p>
+          <p>Take this vial. It's a potion I've collected for my friend Illos.</p>
+          <p> </p>
+          <p>A man named Lepios was bitten by an Arachna. He only survived because of this treatment. Now that Illos is working with the Arachnas, I want him to have this just in case.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"This treatment is special?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes, very. I had to travel to Sanctum and speak with the Daeva of Life to get it.</p>
+          <p> </p>
+          <p>Could you do this for me, [%userclass]? The vial just needs to go to [%dic:STR_DIC_LA160], a researcher at [%dic:STR_DIC_FLA15_1].</p>
+          <p> </p>
+          <p>The camp isn't far from here, and you will be doing us all a great favor. What do you say?</p>          
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>My thanks to you, dear [%username]!</p>
+          <p> </p>
+          <p>Please hurry. He hasn't been attacked yet, but no need to wait until he has.</p>
+          <p> </p>
+          <p>Oh, and be careful! The Arachnas may attack you. Though their poison will not kill a Daeva, the suffering you endure will not be pleasant.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Thank you for the warning."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Very well.</p>
+          <p> </p>
+          <p>I'll send someone else. Someone with the spirit and sense of duty to help their fellow Elyos.</p>
+          <p> </p>
+          <p>Leave me, Daeva. I have things to organize.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Very well."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Careful, [%userclass]!</p>
+          <p> </p>
+          <p>You mustn't startle me when I'm carrying a biological sample! These are Isospora parasites. You must take my word for it when I say you do not want these in your body.</p>
+          <p> </p>
+          <p>I won't even start on the symptoms, just on the odd chance that you were planning on eating later today....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">"I've brought this from William."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>From William! Oh, this must be because of that incident with Lepios!</p>
+          <p> </p>
+          <p>So, this is the miracle treatment, is it? Quite a lot of it, isn't there? Maybe if I pour half of it into this other vial....</p>  
+          <p> </p>
+          <p>There! Now we can protect two people! In fact, I know exactly who should have the other half.</p>
+          <p> </p>
+          <p>[%username], would you mind taking this vial to [%dic:STR_DIC_LA30] for me? She's stationed out in the [%dic:STR_DIC_FLA17], and will have a greater need for this than I, even with the Arachnas around.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"I'll take it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Halt! This place isn't safe! Step any closer and you'll risk poisoning yourself!</p>
+          <p> </p>
+          <p>What business do you have here? If you haven't got a death wish, I'd strongly advise leaving.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I brought this from Illos."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>          
+          <p>Illos sent this, did he? I'll never turn down a free treatment. Thank you for bringing it.</p>
+          <p> </p>
+          <p>Take this for your trouble.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Take the potion to [%dic:STR_DIC_LA160].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Take the remaining potion to [%dic:STR_DIC_LA30].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Deliver William's potion to Illos, who is doing research in the forest.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>William asked you to give a healing potion to Illos, a researcher based in the Tolbas Forest.</p>
+          <p> </p>
+          <p>Illos was grateful but thought there was enough potion for him to share. He poured half the potion into a separate vial and asked you to bring it to Roseino, a Daeva stationed in the Contaminated Swamp.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

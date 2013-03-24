@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q3725</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>Script quest</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>These dredgions will be the end of us here in Inggison, [%username]!</p>
+          <p> </p>
+          <p>Every time we take over a fortress or kill one of their captains, those damn dredgions come in and we have to start at step one again.</p>
+          <p> </p>
+          <p>But we've got a new strategy now....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"A new strategy?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We've seen the right kinds of results from our double-bladed approach.</p>
+          <p> </p>
+          <p>The Balaur will be unable to regroup and resupply, but we must continue to pound them...sever their throat from both sides.</p>
+          <p> </p>
+          <p>You're the toughest [%userclass] I know, and we could really use your help on this one, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>First and foremost, infiltrate the Chantra Dredgion and pound it like a fist. Do not let up for one second!</p>
+          <p> </p>
+          <p>The second string of this operation is to hunt [%dic:STR_DIC_M_IDDreadgion_02_DrakanFiHigh_55_Ae]es and eliminate them...with extreme prejudice.</p>
+          <p> </p>
+          <p>With enough constant assaults, and the winnowing of one of their key troop types, we may finally gain the upper hand.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"You came to the right Daeva."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I really wasn't expecting you to decline this mission, [%username].</p>
+          <p> </p>
+          <p>You've taken down entire legions on your own, destroyed some of the fiercest creatures I've ever seen, done things that no other Daeva could pull off....</p>
+          <p> </p>
+          <p>But I ask you to take on one of the most important tasks I have, and you cower like a child who has soiled his britches.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Says you, here."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I have been waiting to hear your report on the operation, [%username]!</p>
+          <p> </p>
+          <p>Yannis has already briefed me. How did it go?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"The matter has been resolved."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Not bad, Daeva, not bad at all.</p>
+          <p> </p>
+          <p>You continue to make me proud.</p>
+          <p> </p>
+          <p>Here, take this. I thought you might enjoy it.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Terminate [%dic:STR_DIC_M_IDDreadgion_02_DrakanFiHigh_55_Ae] while attacking the dredgion.</font></p>
+                         <p visible="[%0]"><font color="[%1]">  Dredgion battle ([%2]/6)</font></p>
+                         <p visible="[%3]"><font color="[%4]">  Chantra Legatus ([%5]/15)</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Speak to [%dic:STR_DIC_N_Yulia].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">You accepted the operation to repeatedly strike the Chantra Dredgion and terminate Chantra Legatuses.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You accepted the task of repeatedly striking the Chantra Dredgion and terminate Chantra Legatuses.</p>
+          <p> </p>
+          <p>You reported the results to Yulia, who was very pleased.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

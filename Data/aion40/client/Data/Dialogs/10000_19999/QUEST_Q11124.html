@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>망할 클룩스와 발게스트 녀석들!</p>
+          <p> </p>
+          <p>용족을 몰아내고 요새를 세웠더니 마족이 쳐들어오질 않나, 마족이 쳐들어온 상황에서 클룩스와 발게스트가 덤비질 않나...</p>
+          <p> </p>
+          <p>아무리 영원히 사는 데바라지만 이렇게까지 궁지에 몰리면 죽음의 위협이 느껴진다고요.</p>
+          <p> </p>
+          <p>지긋지긋한 요새전... 요새전이 일어날 때마다 덤비는 클룩스와 발게스트도 지긋지긋합니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>클룩스와 발게스트는 난폭한 데다가 상대가 전투 중일 때에는 더욱 더 흥분해서 날뜁니다.</p>
+          <p> </p>
+          <p>그러니 요새전이 벌어질 때마다 마족을 상대하는 것도 부족해 클룩스와 발게스트를 신경써야 해요.</p>
+          <p> </p>
+          <p>제발 그것들이 요새전에 가담해서 같이 으르렁대지 않게 좀 처치해 주지 않으시겠어요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>저 앞에 있는 [%dic:STR_DIC_M_LF4_B7_Kuillus_Feeler_53_An]와 [%dic:STR_DIC_M_LF4_B7_Hellhound_Wolf_53_An]를 처치해 주세요.</p>
+          <p> </p>
+          <p>마족도 용족도 문제지만 그놈들 때문에 곤란한 적이 한두 번이 아닙니다.</p>
+          <p> </p>
+          <p>모두 처치하고 돌아와서 보고해주세요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>요새를 수호하는 임무를 드렸는데 거절하시겠다는 말인가요?</p>
+          <p> </p>
+          <p>데바로서의 책임감이 매우 부족하군요.</p>
+          <p> </p>
+          <p>돕기 싫다면 할 수 없지만 이것은 어디까지나 천족 모두를 이롭게 하는 길이란 걸 알아 주세요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>요새 주변의 클룩스와 발게스트를 모두 처치하셨나요?</p>
+          <p> </p>
+          <p>얼핏 보기에도 숫자가 많이 줄어든 것 같긴 합니다.</p>
+          <p> </p>
+          <p>이번 요새전에서는 신나게 마족을 상대하다가 클룩스와 발게스트를 해치워야 하는 일은 없겠군요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정말 감사합니다.</p>
+          <p> </p>
+          <p>클룩스와 발게스트를 처치해 주신 것은 마족을 처치하신 것만큼이나 큰 도움이 되는 일이었습니다.</p>
+          <p> </p>
+          <p>감사의 표시로 이것을 받아주시기 바라요.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">요새 주변의 클룩스와 발게스트를 처치하라</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_LF4_B7_Kuillus_Feeler_53_An]([%2]/6)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_LF4_B7_Hellhound_Wolf_53_An]([%5]/4)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Harmonia]%와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">요새 주변의 클룩스와 발게스트는 사나울 뿐 아니라 요새전 시에 덤벼들어 위협 요소가 되고 있다고 한다. 하모니아의 부탁대로 처치해주는 것이 좋겠다.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>하모니아는 요새 주변의 클룩스와 발게스트가 요새전 시와 평상시에도 큰 위협이 된다고 하였다.</p>
+          <p> </p>
+          <p>클룩스와 발게스트를 처치하고 돌아가자 고맙다며 감사 표시를 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

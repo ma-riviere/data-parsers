@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p align="center"> - 의뢰장 - </p>
+          <p> </p>
+          <p>용족 기술병 사트바쿤을 처치해 달라는 의뢰를 요청받았다.</p>
+          <p></p>
+          <p>찰리룽 흥신소 조직원들은 다음 내용을 숙지하고 지시에 따라 주기 바란다. </p>
+          <p> </p>
+          <p> 1. 이름: [%dic:STR_DIC_M_DF4_DaQ_DrakanFi_Re_55]</p>
+          <p></p>
+          <p> 2. 위치: [%dic:STR_DIC_SEN_DF4_SensoryArea_Q46512]</p>
+          <p></p>
+          <p> 3. 상세: 드라나 생장기를 설치하고 관리하는 역할을 맡은 드라칸 기술병으로 빨리 처치하지 않으면 비스콤 늪지의 드라나 오염이 심해질 것임.</p>
+          <p> </p>
+          <p>용족 기술병 사트바쿤을 추적하여 처치한 자에게 의뢰대금을 지급할 것임.</p>
+          <p> </p>
+          <p>- 찰리룽 흥신소, [%dic:STR_DIC_E_46500] 일동 -</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">의뢰장을 접어 넣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+   <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>왔구낭, 데바.</p>
+          <p> </p>
+          <p>요새 흥신소의 인지도가 높아진 것은 좋은데 너무 쓸데없는 의뢰가 많이 들어와서 걱정이당, 갸릉.</p>
+          <p> </p>
+          <p>아무리 흥신소라고 해도 잃어버린 애완동물이나 찾고 있을 수는 없는 노릇 아니냥.</p>
+          <p> </p>
+          <p>기술병 사트바쿤 처치? 그래, 이 정도는 되야 의뢰라고 할 수 있당, 냥냥.</p>
+          <p> </p>
+          <p>그래야 데바도 일할 맛이 나지 않겠냥?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>잘 했당, 데바!</p>
+          <p> </p>
+          <p>용족이라면 다 싹 처치해야 옳은 거당, 냥냥.</p>
+          <p> </p>
+          <p>의뢰가 걸린 용족이 있다면 더 좋지, 갸릉.</p>
+          <p> </p>
+          <p>자, 여기 준비해 둔 의뢰대금이당. 앞으로도 잘 부탁한당, 갸릉.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_SEN_DF4_SensoryArea_Q46512]에서 [%dic:STR_DIC_M_DF4_DaQ_DrakanFi_Re_55]을 추적해 처치하라([%2]/1)</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_E_46500]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">찰리룽 흥신소에서 의뢰장이 왔다. 의뢰를 수행하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>찰리룽 흥신소에서 용족 기술병 사트바쿤을 처치해 달라는 내용의 의뢰장을 받았다.</p>
+          <p> </p>
+          <p>의뢰를 확인하여 용족 기술병 사트바쿤를 처지하고 겔크마로스 관리부 직원에게 보고하자 수고했다며 의뢰대금을 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

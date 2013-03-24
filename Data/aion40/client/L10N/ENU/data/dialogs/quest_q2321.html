@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Rewrite Dave 15 June -->
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(There's a yellowed piece of paper within the weathered envelope.)</p>
+          <p> </p>
+          <p>(It's clearly words and sentences, but it looks like gibberish to you. Maybe it's in the Elyos language.)</p>
+          <p> </p>
+          <p>(You'd better show it to [%dic:STR_DIC_N_Gunter].)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll put this away."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Most of the manuscripts I restore are written in Asmodian or the language of our ancestors. But every once in a while I get a document written in the language of the Elyos--or even the Balaur.</p>
+          <p> </p>
+          <p>I bought a very expensive potion from a Shugo to learn the Balaur language. But you can't learn Elyos by quaffing a potion, and they don't exactly teach it in school, eh?</p>
+          <p> </p>
+          <p>The Shugos sell me Elyos books from time to time and I deconstruct them as best I can. I'm writing my own Elyos dictionary, as a matter of fact.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">"I found this letter..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Intriguing...It's a strange mix of Elyos and Asmodian. You'd have to be perfectly bilingual to really understand it, I think. You say you got it from a Elyos spirit?</p>
+          <p> </p>
+          <p>Hmm...it's a request of some kind. Someone--a spy, perhaps?--wants to know details of Aether levels...in Elysea? Can that be right?</p>
+          <p> </p>
+          <p>I'll write up a translated version, but there's no way I can deliver it to the intended recipient: [%dic:STR_DIC_N_Hellione] in [%dic:STR_DIC_W_LF3_SZ_FTW].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"The task is mine!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Asmo... Asmodian! Asmodian!</p>
+          <p> </p>
+          <p>No! Aiiieeeee!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I have a letter for you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Quiet! Why didn't you say so? Bring the letter here--my old eyes aren't that good, you know.</p>
+          <p> </p>
+          <p>Hmmm. Aether levels. That figures.</p>
+          <p> </p>
+          <p>Don't worry about the implications, [%userclass]. You should probably forget this ever happened and get out of here before you're noticed. Here's a small reward for your trouble.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk with [%dic:STR_DIC_N_Gunter] in Pandaemonium.</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Deliver the letter to [%dic:STR_DIC_N_Hellione] in the [%dic:STR_DIC_W_LF3_SZ_FTW] of Elysea.</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">You obtained a faded letter from an Ancient Elyos Spirit. It is written in a strange language. You'd better bring it to Gunter.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You found a letter written in a mixture of the Elyos and Asmodian languages when you defeated an Ancient Elyos Spirit.</p>
+          <p> </p>
+          <p>When you brought the letter to Gunter, he interpreted it for you. The letter was a missive from one secret agent to another. So you decided to deliver it to its original recipient.</p>
+          <p> </p>
+          <p>You went to Elysea and delivered the letter to Heraloene.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

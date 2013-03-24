@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Dear [%username],</p>
+          <p> </p>
+          <p>I have an important message to convey to the Field Wardens in Brusthonin, concerning their efforts here.</p>
+          <p> </p>
+          <p>My duties do not allow me to leave my post, so I would appreciate it if you would meet with me, and pass my message along to the [%dic:STR_DIC_E_45014].</p>
+          <p> </p>
+          <p>Our meeting must not arouse suspicion, which is why I contacted you directly--as you are a newer Field Warden, no one will suspect anything.</p>
+          <p> </p>
+          <p>The message is confidential, of course, so please destroy it upon reading.</p>
+          <p> </p>
+          <p>--Archon Centurion [%dic:STR_DIC_N_Vinduer]</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">(Mangle the letter.)</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Greetings, [%username]. Do you have a moment to talk about some cultivation work in Brusthonin?</p>
+          <p> </p>
+          <p>We must be discreet. I'm sure you understand.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">"Yes, of course."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The "cultivation" area is still quiet. Neither Elyos nor the undead appear there. However, the Adma Stronghold is in need of reaping.</p>
+          <p> </p>
+          <p>Do you need me to repeat any of that? I will deliver a more detailed message when I can, but for now you can just tell that to a Brusthonin Field Agent. They will understand the meaning.</p>
+          <p> </p>
+          <p>I am quite relieved the Wardens are able to cooperate in this matter....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"Understood. Blood for blood, friend."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This place is quite busy lately. So many people passing by, unaware of larger matters. Fortunately they have the Field Wardens to look after larger issues. Such as the Aetheric Field, of course.</p>
+          <p> </p>
+          <p>What brings you here today? Perhaps you carry a message?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I do...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Vinduer said that, and nothing more? Odd....</p>
+          <p> </p>
+          <p>Not to worry. The message sounds quite dramatic, but I assure you that there is nothing unexpected in it.</p>
+          <p> </p>
+          <p>I will take care of it from here, [%username]. Here is your due reward.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk with [%dic:STR_DIC_N_Vinduer].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Talk with [%dic:STR_DIC_E_45014].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">A forwarded letter has arrived from the Field Wardens. Follow its instructions.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>A private letter explains that an Archon Centurion who cooperates with the Wardens wishes to convey a message.</p>
+          <p> </p>
+          <p>You met Vinduer and delivered his message to the Brusthonin Field Agent, who gave you a reward.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

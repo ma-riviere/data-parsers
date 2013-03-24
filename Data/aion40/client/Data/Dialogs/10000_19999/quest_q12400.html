@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q12400</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>미입력</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님이 가지고 계신 아델라의 대검은 정말 좋은 무기입니다.</p>
+          <p> </p>
+          <p>뛰어난 연족 장인이 심혈을 다해서 만든 무기니까요.</p>
+          <p> </p>
+          <p>거기에 마력의 힘을 조금만 더하면 훨씬 뛰어난 성능을 가지게 될 겁니다.</p>
+          <p> </p>
+          <p>우리 연족 마법사들은 무기에 더 큰 힘을 더하기 위해 많은 연구를 해 왔거든요. </p>
+          <p> </p>
+          <p>관심이 있으시면 [%dic:STR_DIC_N_Gneise]와 대마법사 [%dic:STR_DIC_N_Lumen] 님을 만나 보십시오. 방법을 알려 주실 겁니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아델라의 대검을 강화하고 싶다고요?</p>
+          <p> </p>
+          <p>제가 가진 힘의 소울더트가 있으면 무기의 힘이 크게 강화될 거예요.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_I_ldf4b_weapon_upgrade_01]는 제가 오랜 시간 마력을 쏟아부어 만든 귀한 물건입니다.</p>
+          <p> </p>
+          <p>아무에게나 쉽게 줄 수는 없지요.</p>
+          <p> </p>
+          <p>뛰어난 능력과 인내심이 있다는 걸 증명하시면 그때 내어 드리겠습니다. </p>
+          <p> </p>
+          <p>제가 드리는 임무를 완수해서 인내의 구슬을 모아 오시면 힘의 소울더트를 드리지요. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select3">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아델라의 대검을 강화하고 싶단 말이오?</p>
+          <p> </p>
+          <p>내가 가지고 있는 [%dic:STR_DIC_I_ldf4b_weapon_upgrade_02]이 있으면 가능한 일이오. </p>
+          <p> </p>
+          <p>하지만 그건 시엘의 창 레기온 시절부터 내려오는 아주 귀한 물건이니 믿을 만한 사람에게만 넘길 거요.</p>
+          <p> </p>
+          <p>쉽지 않을 텐데 각오는 돼 있소?</p>
+          <p> </p>
+          <p>내가 내는 임무를 모두 수행해서 [%username]%이 신뢰할 수 있는 사람이라는걸 보여 주시오.</p>
+          <p> </p>
+          <p>그리고 힘의 소울더트와 마력의 오드 결정에 깃든 기운을 무기에 불어넣으려면 [%dic:STR_DIC_I_ldf4b_weapon_upgrade_03]이 있어야 한다오.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_N_Ruaka]에게 가면 구할 수 있으니 잊지 말고 챙겨 가시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO2">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>돌아오셨군요, [%username] 님.</p>
+          <p> </p>
+          <p>그라이제와 루멘 님에게서 무기를 강화할 재료는 구해 오셨습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">무기 강화 재료를 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>재료를 제대로 구해 오셨군요.</p>
+          <p> </p>
+          <p>그럼 잠시만 기다리십시오.</p>
+          <p> </p>
+          <p>(무기와 재료를 들고 주문을 외운다.)</p>
+          <p> </p>
+          <p>자, 다 됐습니다. 이제 강력한 무기가 됐으니 유용하게 잘 사용하시기 바랍니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_Gneise]%와 대화하라</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">사르판으로 가 [%dic:STR_DIC_N_Lumen]%와 대화하라</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">[%dic:STR_DIC_E_Q12400]를 모아 [%dic:STR_DIC_N_Uquini]에게 가져가라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">아델라의 대검을 강화할 수 있다고 한다. 그라이제와 루멘을 만나 방법을 물어보자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>유퀴니는 마법사의 힘으로 아델라의 대검을 강화시킬 수 있다고 했다.</p>
+          <p> </p>
+          <p>그라이제와 루멘을 만나 힘의 소울더트와 마력의 오드 결정을 구하고, 루아카에게서 융합의 조각을 구했다.</p>
+          <p> </p>
+          <p>유퀴니에게 재료를 넘기자 아델라의 대검을 시엘의 광휘 대검으로 강화시켜 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

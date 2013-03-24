@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Do you have time for a job, [%username]?</p>
+          <p> </p>
+          <p>Surely you've seen the heavy numbers of [%dic:STR_DIC_M_Kalnif_6_An]s all around the Anturoon Crossing. They're nothing but trouble--between attacking our runners and eating our main food source, it's a wonder we're still alive at all!</p>
+          <p> </p>
+          <p>Oh, food...you see, we eat a lot of Brax up here. But Brax are also the main prey for the [%dic:STR_DIC_M_Kalnif_6_An]s.</p>
+          <p> </p>
+          <p>If this continues much longer, the Brax will be hunted out of the area and we'll be back to munching on Sparkles and grass. That doesn't do much for a raider's strength.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I can't imagine it does."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>So you see our dilemma.</p>
+          <p> </p>
+          <p>I don't have time to get out there myself--not with the reports that Tobu expects--but surely you can help us out. </p>
+          <p> </p>
+          <p>Get out into the fields and kill a few [%dic:STR_DIC_M_Kalnif_6_An]s for us. We can't get rid of all of them, but if you can just cut their numbers, we'd be grateful.</p>
+          <p> </p>
+          <p>If you need motivation, imagine biting into a nice, warm Sparkle bug. Mmm...crunchy...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Heh--that never fails to motivate! Ever tried Sparkle, by the way? The wings get stuck in my teeth...</p>
+          <p> </p>
+          <p>All right, get out there and hunt nine [%dic:STR_DIC_M_Kalnif_6_An]s for me.</p>
+          <p> </p>
+          <p>Return when you're done and I'll see that you're paid well.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"The task is mine."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No time?</p>
+          <p> </p>
+          <p>What, do you fancy a nice barbecued insect this time of year?</p>
+          <p> </p>        
+          <p>Then get out of here. I'll find time to do it myself. And you call yourself a raider...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Try them with sauce."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+           <p>Tell me straight, kid.</p>
+          <p> </p>  
+          <p>Should I start stockpiling bugs?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"No need--a lot fewer Karnifs now."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent.</p>
+          <p> </p>
+          <p>Thanks for the hand, [%username]. It's good to know we can look forward to meat. And we could use more [%userclass]s like you around.</p>
+          <p> </p>
+          <p>Here's your reward. Use it wisely.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Hunt the [%dic:STR_DIC_M_Kalnif_6_An]%s, which are decimating the local Brax population ([%2]/9).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_N_Mijou].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Mijou is worried that Karnifs are eating all the local Brax. Hunt enough Karnif to protect the Brax population.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Mijou told you she was worried that Karnifs were hunting the local Brax from the Anturoon Crossing area. She asked you to cull the Karnif population to safeguard the raiders' best food source. You did as you were asked and received your reward.</p>                
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

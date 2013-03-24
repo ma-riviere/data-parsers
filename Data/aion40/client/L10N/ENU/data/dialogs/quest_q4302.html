@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>A Soul Healer's duty is never finished, [%username].</p>
+          <p> </p>
+          <p>As Daeva, we are blessed with immortality. We don't have to worry about the same dangers as Humans. But even immortality comes at a price.</p>
+          <p> </p>
+          <p>The soul is wearied by death, and each time we die, we lose a part of ourselves. A Soul Healer's job is to restore what was lost. For the glory of Asmodae, we follow our people, our soldiers and our Archons to the most forbidding places. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Blood for blood, Healer."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>As I was healing injured residents yesterday, I noticed many had been poisoned. I can heal mortal wounds and restore souls, but purging poison is another matter. Poison is much harder to treat than battle wounds, and far more dangerous as well.</p>
+          <p> </p>
+          <p>There are several creatures around here that inflict poisonous wounds, and if we could get rid of some of them it would lessen the workload on the Archons.</p>
+          <p> </p>
+          <p>What do you think, [%username]? Can you help?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you, [%username].</p>
+          <p> </p>
+          <p>Please get rid of the [%dic:STR_DIC_M_merdionD_27_n]s and [%dic:STR_DIC_M_ScorpionD_27_An]s around here.</p>
+          <p> </p>
+          <p>Their potent poison is dangerous to both Humans and Sapiens, but for a Daeva slaying them should be nothing.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll return when I'm done."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This is disappointing. Your help would be most appreciated by the residents, [%username].</p>
+          <p> </p>
+          <p>I guess I'll just have to find someone else....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Be well."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I can restore your soul in an instant, but scars heal much slower. Make sure to avoid getting injured, [%username].</p>
+          <p> </p>
+          <p>Please, let me know when you have finished.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"It's done."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you, [%username].</p>
+          <p> </p>
+          <p>The residents are now much safer, and the Archons will able to focus on more important tasks.</p>
+          <p> </p>
+          <p>The Snufflers and Scolopens reproduce at an alarming rate...but for now, their numbers are depleted. Please return, as I might require further assistance in the future.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get rid of poisonous creatures.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_merdionD_27_n]([%2]/13)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_ScorpionD_27_An]([%5]/15)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_N_Maxeldor].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Get rid of Snufflers and Scolopens to ensure the safety of residents, and lessen the workload on the Archons.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Maxeldor said poisonous creatures in the area are harming the residents and thus increasing the workload on the Archons.</p>
+          <p> </p>
+          <p>You slew several Saltongue Snufflers and Blacktail Scolopens. When you returned, Maxeldor thanked you.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

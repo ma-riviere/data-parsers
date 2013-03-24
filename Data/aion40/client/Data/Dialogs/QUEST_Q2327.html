@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이 근처에서 사람들에게 해를 끼치는 건 켄타릭만이 아닙니다. </p>
+          <p> </p>
+          <p>켄타릭 부락을 지나가면 동굴이 하나 있는데 거긴 옥타사이드가 득실거리죠. </p>
+          <p> </p>
+          <p>데바야 놈들에게 물려도 별 타격을 입지 않지만 인간은 그렇지 않습니다. 잘못하면 죽기도 하니까요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">얘기를 계속 듣는다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>켄타릭과 옥타사이드 때문에 주민들은 이 근처에 얼씬도 못하고 있습니다.</p>
+          <p> </p>
+          <p>따지고 보면 모두 우리 마족의 땅인데 그런 놈들 때문에 오히려 주인이 피해 다녀야 한다니 우스운 노릇이죠.</p>
+          <p> </p>
+          <p>언젠가는 놈들을 모두 내쫓고 주민들이 살 수 있도록 만들 겁니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">고개를 끄덕인다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그래서 말인데 우선은 옥타누의 안개동굴을 좀 청소해야겠습니다.</p>
+          <p> </p>
+          <p>한 마리 한 마리 잡다 보면 언젠가는 놈들도 씨가 마르겠죠.</p>
+          <p> </p>
+          <p>[%username] 님도 손을 좀 빌려 주십시오.</p>
+          <p> </p>
+          <p>많은 데바가 도울수록 놈들을 소탕하는 날도 빨라질 테니까요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그럼 옥타누의 안개동굴로 가서 [%dic:STR_DIC_M_OctasideDF2_29_An]와 [%dic:STR_DIC_M_OctasideBabyDF2_28_An], [%dic:STR_DIC_M_OctasideD_29_An], [%dic:STR_DIC_M_OctasideBabyD_28_An]를 처치해 주십시오.</p>
+          <p> </p>
+          <p>복잡한 동굴이니까 길을 잃지 않도록 조심하십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그렇게 힘든 일도 아닌 왜 거절하시는 겁니까?</p>
+          <p> </p>
+          <p>설마 옥타사이드가 무서워서 그러는 건 아니겠죠?</p>
+          <p> </p>
+          <p>어쨌든 싫다면 강요할 수야 없지요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>옥타누의 안개동굴에는 잘 다녀오셨습니까?</p>
+          <p> </p>
+          <p>제가 부탁한 녀석들은 모두 처치했겠죠?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>수고하셨습니다.</p>
+          <p> </p>
+          <p>[%username] 님 같은 분이 이렇게 노력을 해 주시니 이곳에서 주민들이 생활할 수 있는 날도 그리 멀지 않겠습니다.</p>
+          <p> </p>
+          <p>자, 이건 수고해 주신 보답입니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">옥타누의 안개동굴에서 옥타사이드를 처치하라</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_OctasideDF2_29_An]([%2]/3)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_OctasideBabyDF2_28_An]([%5]/3)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_OctasideD_29_An]([%8]/2)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_OctasideBabyD_28_An]([%11]/2)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Gelundorf]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">옥타누의 안개동굴로 가서 각종 옥타사이드를 처치하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>겔룬도프는 켄타릭과 옥타사이드 때문에 주민들이 이 지역에서 생활할 수 없다고 한탄했다.</p>
+          <p> </p>
+          <p>그래서 그의 부탁대로 옥타누의 안개동굴로 가서 옥타사이드를 처치해 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

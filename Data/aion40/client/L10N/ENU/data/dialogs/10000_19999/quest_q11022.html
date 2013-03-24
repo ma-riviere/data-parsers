@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Are you going to the surrounding forests, [%username]?</p>
+          <p> </p>
+          <p>....</p>
+          <p> </p>
+          <p>Don't look at me like that. I won't ask you to do anything strange.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Sorry. You took me by surprise."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Inggison Illusion Fortress is all alone in the middle of the forest, surrounded by animals.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_LF4_A_Kuillus_Feeler_51_An], [%dic:STR_DIC_M_LF4_A_Slime_Snail_51_An], and [%dic:STR_DIC_M_LF4_A_Lupyllini_Peacock_51_n] aren't that dangerous for people like you and me, of course, but for the scholars? That's a different story.</p>
+          <p> </p>
+          <p>Wouldn't you like to get rid of the animals for the scholars? It'll be our little secret.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good, good. This conversation is going well.</p>
+          <p> </p>
+          <p>If you bring their [%dic:STR_DIC_I_QUEST_11022a], I'll give you a reward. Wouldn't you like some shiny coins?</p>
+          <p> </p>
+          <p>Ah, sorry to ask you to do this but...on your way back, can you buy a [%dic:STR_DIC_I_Junk_redeem_jewelry_02a] for me?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Right. I'm going to leave you now...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>When I first came to Balaurea, I too thought I'd only deal with Balaur. But then I found all these other battles to fight!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I can see that, creepy guy."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Have you done what I asked, or do you need to be punished?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"What? Yes, I have everything requested."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>So you do need to be punished! Unfortunately, I haven't the time right now. Escorting scholars is a lot of work.</p>
+          <p> </p>
+          <p>Tell you what, if you bring me that [%dic:STR_DIC_I_QUEST_11022a] and a [%dic:STR_DIC_I_Junk_redeem_jewelry_02a] by the next time I see you, I'll forget all about this and just give you the coin reward. How about it?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Sounds good, yes."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good job getting rid of those animals with the sticky, stinky, succulent blood. Here's the reward I promised.</p>
+          <p> </p>
+          <p>If it's all right with you, I'd like you to do some more work for me. Oh, not right now, just whenever you can. Just between you and me, all right?</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Bring [%dic:STR_DIC_I_QUEST_11022a] and a [%dic:STR_DIC_I_Junk_redeem_jewelry_02a] to [%dic:STR_DIC_N_Eduardo].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Eduardo says he'll give you coins if you get rid of animals around the Fortress. Get rid of Steelback Neokins, Greenwood Sludger, and Arbor Plumas, and bring him their fluid as evidence.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Administration Officer Eduardo said animals around the Fortress bother the scholars. He asked you to get rid of Steelback Neokins, Greenwood Sludger, and Arbor Plumas.</p>
+          <p> </p>
+          <p>You got rid of the animals and brought their fluid as evidence. Eduardo gave you coins and mentioned he might have more work in the future.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

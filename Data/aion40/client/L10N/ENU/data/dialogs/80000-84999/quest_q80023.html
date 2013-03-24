@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Still eating well, I hope, [%username]! You have to keep your strength up for the Abyss War!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I eat like a Seraphim Lord!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I hope so. Now, since you're all set, how about sparing a thought for those who are less well off? It's hard this time of year, so I want to make sure the New Year feasting can benefit everyone.</p>
+          <p> </p>
+          <p>The only problem is, my [%dic:STR_DIC_I_WORLD_WRAP_EVENT_NEWYEAR_01A] supply wagon was attacked again. Can you spare a helping hand?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I wish there were more like you.</p>
+          <p> </p>
+          <p>This time, I need 10 [%dic:STR_DIC_I_WORLD_EVENT_FOOD_NEWYEAR_3STATS]s, 10 [%dic:STR_DIC_I_WORLD_EVENT_NEWYEAR_POTION_HP_MP_40A] and 10 bottles of [%dic:STR_DIC_I_WORLD_EVENT_NEWYEAR_FOOD_DPHEAL_30A] to make a meal for one of our seniors in need.</p>
+          <p> </p>
+          <p>Oh...and, again, if you already have enough in your cube, you can give it to me now.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Let me check."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh. Well, I don't want to impose too much on your time.</p>
+          <p> </p>
+          <p>But if you find any [%dic:STR_DIC_I_WORLD_EVENT_FOOD_NEWYEAR_3STATS]s, [%dic:STR_DIC_I_WORLD_EVENT_NEWYEAR_POTION_HP_MP_40A], or [%dic:STR_DIC_I_WORLD_EVENT_NEWYEAR_FOOD_DPHEAL_30A], you know where to find me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Be well."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Great! You're here. I have some seniors who've been eagerly awaiting your return.</p>
+          <p> </p>
+          <p>Dumplings, bulgogi, and cordial... mmmm!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I think I have it all."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No, that isn't enough. It has to be a New Year's feast, not just any old snacks, you know?</p>
+          <p> </p>
+          <p>I know the food is out there. And I know you can get it before it spoils!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"A New Year's feast, coming up!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, it looks and smells as if it's still edible. You were quick off the mark with this, Daeva.</p>
+          <p> </p>
+          <p>You really did a good thing today. I hope you know that.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Find 10 [%dic:STR_DIC_I_WORLD_EVENT_FOOD_NEWYEAR_3STATS]s, 10 [%dic:STR_DIC_I_WORLD_EVENT_NEWYEAR_POTION_HP_MP_40A], and 10 bottles of [%dic:STR_DIC_I_WORLD_EVENT_NEWYEAR_FOOD_DPHEAL_30A] for the [%dic:STR_DIC_I_WORLD_WRAP_EVENT_NEWYEAR_01A]es, and bring them to [%dic:STR_DIC_N_event_Namor]. </font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Open the new year lunch boxes that the monsters dropped and bring Namor the food he needs.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You opened the new year lunch boxes the monsters dropped and found the leek dumplings, bulgogi, and cordial that Namor was looking for. He thanked you.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

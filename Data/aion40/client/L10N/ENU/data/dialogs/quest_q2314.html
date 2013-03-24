@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Now that the Monitors are gone, I can start catching Gadill in earnest.</p>
+          <p> </p>
+          <p>But, hmm... I'm pretty hungry... Aren't you hungry, [%username]?</p>
+          <p> </p>
+          <p>I'd better eat something before I get started.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"What's on the menu?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, there are quite a few crustaceans about.</p>
+          <p> </p>
+          <p>Potcrabs and Starcrabs are pretty tasty when roasted.</p>
+          <p> </p>
+          <p>Starturtles are also quite good, despite how they look. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"You could have some of everything!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yum! Unfortunately I  have no talent for hunting, just fishing.</p>
+          <p> </p>
+          <p>If I tried it, I would probably collapse from exhaustion before I could catch anything.</p>
+          <p> </p>
+          <p>If you can catch some [%dic:STR_DIC_M_PotcrabD_24_An]s, [%dic:STR_DIC_M_StarcrabD_24_An]s, and some [%dic:STR_DIC_M_StarturtleD_25_An]s for us, I can cook them.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent!</p>
+          <p> </p>
+          <p>Get the [%dic:STR_DIC_I_QUEST_2314a], [%dic:STR_DIC_I_QUEST_2314b] and [%dic:STR_DIC_I_QUEST_2314c]s from them, and we'll feast, [%username].</p>
+         </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Tasty meal coming right up!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh dear! I didn't expect you to say no.... </p>
+          <p> </p>
+          <p>I thought it'd be nice for us to share a meal.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be back when I'm hungrier."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did you bring [%dic:STR_DIC_I_QUEST_2314a], [%dic:STR_DIC_I_QUEST_2314b] and [%dic:STR_DIC_I_QUEST_2314c]s?</p>
+          <p> </p>
+          <p>Goodness, I'm about to starve to death.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Does this look good?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You haven't gone to hunt them yet?</p>
+          <p> </p>
+          <p>You really want to see me faint, don't you? If I collapse and fall into the water, it's on your conscience.</p>
+          <p> </p>
+          <p>Please bring me [%dic:STR_DIC_I_QUEST_2314a], [%dic:STR_DIC_I_QUEST_2314b] and [%dic:STR_DIC_I_QUEST_2314c]s to cook up.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be right back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, thank you so much.</p>
+          <p> </p>
+          <p>After this meal, my enthusiasm for catching that Gadill will be renewed!</p>
+          <p> </p>
+          <p>I think you did most of the hard work for this meal, so it's only right I should reward you.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Hunt [%dic:STR_DIC_M_PotcrabD_24_An]s, [%dic:STR_DIC_M_StarcrabD_24_An]s and [%dic:STR_DIC_M_StarturtleD_25_An]s to obtain the ingredients for a meal, and bring them to [%dic:STR_DIC_N_Lif].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Get ingredients for Lif who can't concentrate on fishing because she's so hungry.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>After you got rid of the Monitors that were hindering Lif's fishing, she said she couldn't concentrate on her task because she was so hungry.</p>
+          <p> </p>
+          <p>You brought her a number of food ingredients, and she was overjoyed.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

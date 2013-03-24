@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>최근에 입수된 브리트라군의 전투 작전서에는 철벽의 보루 침공 작전이 소상히 적혀 있었습니다.</p>
+          <p> </p>
+          <p>문제는 침공 부대의 규모가 어마어마하다는 것인데... </p>
+          <p> </p>
+          <p>[%username] 님. 부디 철벽의 보루로 가 수비를 도와주실 수 있겠습니까?</p>
+          <p> </p>
+		  <p>보루를 향해 끝없이 [%dic:STR_DIC_E_Q18030all]%과 대장인 [%dic:STR_DIC_M_IDF5_TD_DragonRider_Chief_N_65_Al]%을 처치한다면 놈들은 힘을 잃고 물러나게 될 것입니다.</p>
+          <p> </p>
+          <p>티아마트와도 당당히 맞서던 [%username] 님의 힘이 꼭 필요하니 부디 외면하지 말아주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>돌아오셨군요!</p>
+          <p> </p>
+          <p>철벽의 보루는 어떻게 됐습니까?</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_E_Q18030all]%과 [%dic:STR_DIC_M_IDF5_TD_DragonRider_Chief_N_65_Al]%로부터 무사히 지켜내신 겁니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정말 다행입니다!</p>
+          <p> </p>
+          <p>철벽의 보루는 이름 그대로 최후의 방어선이라고 해도 과언이 아닙니다.</p>
+          <p> </p>
+          <p>보루가 밀리게 되면 남부 카탈람이 브리트라군에 의해 점령되는 것은 정말 순식간일 테니까요.</p>
+          <p> </p>
+          <p>[%username] 님은 그토록 중요한 곳을 지켜내 주신 겁니다.</p>
+          <p> </p>
+          <p>카탈람의 모든 전우들을 대신해 진심으로 감사 드리겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">철벽의 보루로 [%dic:STR_DIC_E_Q18030all]%을 막아내라</font></p>
+					 <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_E_Q18030_1]([%2]/3)</font></p>
+					 <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_E_Q18030_2]([%5]/3)</font></p>
+					 <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_E_Q18030_3]([%8]/3)</font></p>
+					 <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_E_Q18030_4]([%11]/5)</font></p>
+					 <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_IDF5_TD_DragonRider_Chief_N_65_Al]([%14]/1)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_LDF5_Village_Guard11_L]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">밀려드는 브리트라군 제43 군단 파쉬드 부대로 부터 철벽의 보루를 지키자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>스티폰은 철벽의 보루를 침공하려는 브리트라군의 계획을 알아냈다고 했다.</p>
+          <p> </p>
+          <p>그는 철벽의 보루로 가 침공하는 용족을 막아달라고 부탁했는데, 밀려드는 병력들과 지휘관 파쉬드를 처치하고 돌아가니 중요한 곳을 지켜내 줬다며 감사를 표했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

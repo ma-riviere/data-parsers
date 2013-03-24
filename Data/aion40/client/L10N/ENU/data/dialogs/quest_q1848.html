@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've been looking into the hidden treasure chambers, [%username], and think I might have stumbled across something interesting.</p>
+          <p> </p>
+          <p>This is what we know--every Fortress in Reshanta has a treasure chamber, but the chambers in the Krotan, Kysis and Miren Fortresses are larger.</p>
+          <p> </p>
+          <p>I believe the Balaur could be using those chambers for research, or perhaps to hide something from us.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Like what?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I have no idea. I'm a simple teleporter, [%username]. I have no combat experience, nor in-depth knowledge on Balaur tactics.</p>
+          <p> </p>
+          <p>However, I do hear things. And I do know that Krotan, Kysis and Miren Fortresses also have rooms that can only be entered with a specific key. These rooms are constantly guarded by fearsome Balaur warriors, each of whom are said to carry a certain stone on them.</p>
+          <p> </p>
+          <p>These stones might be the key to their movements. They've been seen entering rooms through locked doors, and I think those stones may be the answer.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I see."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], could you go and collect the stones for me?</p>
+          <p> </p>
+          <p>Once I have them, I can examine their properties and work out if they're some sort of teleportation device. It could result in a major breakthrough for our war effort.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Now listen, this is important.</p>
+          <p> </p>
+          <p>The [%dic:STR_DIC_M_Crotan_LizardRaKey_45_Ah]s, [%dic:STR_DIC_M_Dkisas_LizardRaKey_45_Ah]s, and [%dic:STR_DIC_M_Lamiren_LizardAsKey_45_Ah]s have the Round Rift Stones, while [%dic:STR_DIC_M_Crotan_NagaWiKey_45_Ah]s, [%dic:STR_DIC_M_Dkisas_NagaWiKey_45_Ah]s, and [%dic:STR_DIC_M_Lamiren_NagaFiKey_45_Ah]s have the Flat Rift Stones.</p>
+          <p> </p>
+          <p>I also want some Sharp Rift Stones. Those are carried by the [%dic:STR_DIC_M_Crotan_DrakanWiKey_45_Ah]s, [%dic:STR_DIC_M_Dkisas_DrakanPrKey_45_Ah]s, and [%dic:STR_DIC_M_Lamiren_DrakanWiKey_45_Ah]s.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll see what I can find."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No? You've said no?</p>
+          <p> </p>
+          <p>But you can't refuse! Our war effort is struggling at the moment, in part because of the Balaur's new transportation methods!</p>
+          <p> </p>
+          <p>We need to know how they do it, [%username]. Then we can stop them, and use their technologies for our own good. Don't you see that?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll come back when I can."</Act>
+    </Selects>
+  </HtmlPage>
+ 
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Weapons and armor are important. Of course they are, but when our enemies can move undetected thanks to technology, then we must understand that too.</p>
+          <p> </p>
+          <p>You can't fight what you can't see, and the Balaur are moving about almost at free will at the moment.</p>
+          <p> </p>
+          <p>Have you brought the stones?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Yes. Here."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No, this isn't right. Remember, I wanted flat stones, round stones, and sharp stones.</p>
+          <p> </p>
+          <p>There's no point in me starting my tests with an incomplete sample, is there? Hurry and fetch the others!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll go now."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Perfect!</p>
+          <p> </p>
+          <p>I'll get started right away. The sooner we can figure this technology out, the better.</p>
+          <p> </p>
+          <p>Thank you, [%username]. Here's your reward!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect the [%dic:STR_DIC_I_quest_1848all] and take them to [%dic:STR_DIC_N_Tellus].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Travel to the Krotan Chamber, Kysis Chamber and Miren Chamber and collect the Rift Stones as per Tellus' instructions.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Tellus thought that he might be able to figure out the Balaur teleportation paths if he were able to obtain the Rift Stones.</p>
+          <p> </p>
+          <p>You decided to help, and went to the Krotan Chamber, Kysis Chamber and Miren Chamber and collected the Rift Stones.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

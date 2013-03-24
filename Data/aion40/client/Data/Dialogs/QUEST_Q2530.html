@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>베스페르 유령마을의 언데드 문제를 근본적으로 해결하려면 아무래도 시간이 좀 걸릴 것 같소.</p>
+          <p> </p>
+          <p>아칸과 데바들을 파견해 계속해서 조사를 하고는 있지만 언제쯤이 되어야 완벽한 해결책이 마련될지 모르는 일이니 말이오.</p>
+          <p> </p>
+          <p>그렇다고 그동안 계속 손 놓고 기다릴 수는 없는 노릇이니 언데드에 의한 피해가 늘어나는 것만은 막아야 할 것 같소.</p>
+          <p> </p>
+          <p>일시적인 조치지만 주민들의 안전을 생각한다면 그 정도 노력은 당연한 것 아니겠소?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">고개를 끄덕인다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그래서 말인데 [%username]%이 그 일을 좀 도와줬으면 하오.</p>
+          <p> </p>
+          <p>지금도 많은 데바들이 언데드를 처치하는 임무를 수행하고 있지만 아무리 해도 끝이 없어서 말이오.</p>
+          <p> </p>
+          <p>여러 사람 보내느니 [%username]처럼 실력 있는 데바가 나서는 것이 도움이 될 것 같소.</p>
+          <p> </p>
+          <p>어떻소? 좀 도와주겠소?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그럼 베스페르 유령마을로 가서 [%dic:STR_DIC_M_SkeletonD_35_An]과 [%dic:STR_DIC_M_ZombieD_35_An], [%dic:STR_DIC_M_GraveknightD_36_An]을 좀 처치해 주시오.</p>
+          <p> </p>
+          <p>놈들이 자꾸 베스페르 유령마을 밖까지 나와서 지나가는 사람들을 해치고 있소.</p>
+          <p> </p>
+          <p>그러니 [%username]%이 나서서 놈들을 처치하면 주민들에게 도움이 될 거요. </p>
+          <p> </p>
+          <p>그럼 잘 좀 부탁하오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]의 실력과 사명감에 대한 소문을 많이 들어서 부탁한 것인데 거절하다니 뜻밖이구려.</p>
+          <p> </p>
+          <p>비밀리에 중대한 임무를 수행하는 중일 수도 있으니 데바로서 무책임하다고 추궁하지는 않겠소.</p>
+          <p> </p>
+          <p>대신 바쁜 일이 끝나면 다시 와서 도와주길 바라오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>예전에 왔을 때 벨루스란은 이런 모습이 아니었소. </p>
+          <p> </p>
+          <p>백 년도 훨씬 전이니 변하는 것도 당연한 일이지만 이런 식의 변화가 생길 거라고는 전혀 상상하지 못했소.</p>
+          <p> </p>
+          <p>어쩌다 이런 일이 생겼는지... 정말 안타까울 따름이오. </p>
+          <p> </p>
+          <p>그나저나 부탁한 일은 잘 처리했소?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>임무를 성실히 수행해 줘서 고맙소.</p>
+          <p> </p>
+          <p>[%username] 덕분에 주민들이 언데드에게 해를 입는 일이 좀 줄어들 것 같소. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">베스페르 유령마을의 언데드를 처치하라</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_SkeletonD_35_An]([%2]/5)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_ZombieD_35_An]([%5]/3)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_GraveknightD_36_An]([%8]/2)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Gigrite]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">베스페르 유령마을의 언데드 때문에 사람들이 피해를 입는 일을 막아야 한다. 지그리테의 부탁대로 아누바이트 자경단원과 창백한 좀비, 운페스트 용병을 처치하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>베스페르 유령마을의 언데드 문제를 해결하기 위해 파견된 지그리테는 근본적인 해결책을 찾는 데는 시간이 걸린다면서 주민들의 피해를 줄이기 위해 언데드를 처치해 달라고 했다.</p>
+          <p> </p>
+          <p>그래서 마을로 가서 아누바이트와 좀비, 운페스트를 처치하고 왔더니 주민들의 피해가 줄어들 거라면서 고마워했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

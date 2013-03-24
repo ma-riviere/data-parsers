@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아니, 제 얘기 좀 들어보시겠어요?</p>
+          <p> </p>
+          <p>제가 정말정말 아끼던 조각상이 있었어요. 어제만 해도 반들반들하게 닦아 놓았죠.</p>
+          <p> </p>
+          <p>그런데 왠걸, 오늘 아침에 보니 산산조각이 나있지 않겠어요?</p>
+ 	  <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">누가 그랬냐고 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>보나마나 뻔하죠! 두카키 일족이에요.</p>
+          <p> </p>
+          <p>원래 [%dic:STR_DIC_FLA13]%에 사는 놈들인데,</p>
+          <p> </p>
+          <p>왜 마을까지 내려와서 난리를 쳤는지 모르겠어요.</p>
+          <p> </p>
+          <p>아우 분해! 이 분을 어떻게 삭히지? [%username] 님이 가서 좀 복수해 주실래요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>감사합니다! 가서 제 분이 가라앉을 때까지</p>
+          <p> </p>
+          <p>이 어벙한 두카키 광부들을 처치해 주세요.</p>
+          <p> </p>
+          <p>한 18마리 정도면 제 분도 가라앉을 것 같네요.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>뭐라구요? 이렇게 예쁜 제가 부탁을 하는데 거절하다니!</p>
+          <p> </p>
+	  <p>정말 인정머리 없으시군요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+ <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>어벙한 두카키들은 충분히 혼내주셨나요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">충분히 혼내주고 왔다고 얘기한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+         <p>우와~! 벌써 갔다오신 거에요?</p>
+          <p> </p>
+          <p>짱이다! 저도 이제 기분이 좀 풀린 것 같네요.</p>
+          <p> </p>
+	  <p>이건 작지만 제 마음이에요.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">어벙한 두카키 광부를 처치하자([%2]/18)</font></p></step>
+	       <step><p visible="[%15]"><font color="[%16]">이니샤에게 결과를 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">[%dic:STR_DIC_FLA13]%에 있는 어벙한 두카키 광부를 혼내주자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이니샤의 화가 풀릴때까지 두카키 광부를 혼내주었다.</p>
+          <p></p>
+          <p>이니샤는 만족한 표정으로 미소지었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

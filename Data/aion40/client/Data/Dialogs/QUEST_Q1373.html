@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>마을에 환자가 생겼습니다. 부스럼이 심해서 보기가 여간 딱한 게 아닙니다.</p>
+          <p> </p>
+          <p>증세가 너무 심해서 약도 듣지 않네요.</p>
+          <p> </p>
+          <p>온천수를 떠다 바르면 효과가 있을 텐데... 그게 인간들로서는 여간 구하기 힘든 게 아니라서요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">왜 구하기 힘든지 묻는다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>온천수 자체는 뜨기 어렵지 않습니다. 그런데 문제는 물을 떠서 뜨거울 때 바르지 않으면 온천수의 효과가 사라진다는 겁니다.</p>
+          <p> </p>
+          <p>데바님들처럼 날개가 있는 것도 아니고 그렇다고 귀환 능력이 있는 것도 아니니 어떻게 물을 떠서 식기 전에 돌아오겠습니까.</p>
+          <p> </p>
+          <p>그래서 방법을 알면서도 어쩔 수가 없어서 손을 놓고 있는 겁니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">도울 일이 없는지 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님이 도와주신다면 저희야 감사한 일이죠.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_W_LF2_SZ_G4]로 가서 온천수를 떠다 주십시오.</p>
+          <p> </p>
+          <p>환자를 온천까지 데려갈 수가 없는 상황이니 지금은 그게 유일한 방법입니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_W_LF2_SZ_G4]에 가면 뜨거운 물이 솟아나는 간헐천이 있습니다. 거기서 이 보온병에 물을 떠다 주십시오.</p>
+          <p> </p>
+          <p>잊지 마십시오. 물을 뜨고 빨리 돌아오지 않으면 온천수의 효능이 사라집니다.</p>
+          <p> </p>
+          <p>꼭 시간 안에 돌아오십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>부스럼이라고 말하니 대수롭지 않은 것 같지만 환자를 직접 보시면 참혹해서 제대로 보실 수 없을 겁니다.</p>
+          <p> </p>
+          <p>불쌍한 사람 하나 살린다 생각하고 도와주십시오.</p>
+          <p> </p>
+          <p>마음이 바뀌시면 언제든 다시 오십시오. 부탁드립니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>시간 내에 돌아오셨군요!</p>
+          <p> </p>
+          <p>[%username] 님이라면 성공하실 줄 알았습니다.</p>
+          <p> </p>
+          <p>온천수를 어서 주십시오!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">온천수를 건넨다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>시간 내에 돌아오시기만 하면 뭘 합니까!</p>
+          <p> </p>
+          <p>온천수를 가지고 오셔야지요!</p>
+          <p> </p>
+          <p>어서 [%dic:STR_DIC_W_LF2_SZ_G4]에 가서 온천수를 떠 오십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>무사히 온천수를 가져 오셔서 정말 다행입니다.</p>
+          <p> </p>
+          <p>이것만 있으면 부스럼을 앓고 있는 환자도 바로 나을 겁니다.</p>
+          <p> </p>
+          <p>도와주셔서 정말 감사합니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_W_LF2_SZ_G4]의 간헐천에서 온천수를 길어라</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">온천수를 담은 보온병을 제한 시간 내에 [%dic:STR_DIC_N_Aerope]에게 가져가라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">아에로페의 부탁대로 부스럼 환자를 위해 온천수를 떠다 주자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아에로페는 부스럼 환자가 생겼지만 약이 없다고 하소연했다. 그래서 그녀의 부탁대로 온천수를 길어 정해진 시간 안에 가져다 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

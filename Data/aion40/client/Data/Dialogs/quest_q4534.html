@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님 잠시 제 얘기를 들어주시겠습니까?</p>
+          <p> </p>
+          <p>스프리그 문제로 긴히 상의할 게 있습니다.</p>
+          <p> </p>
+          <p>얘기하는데 그리 오래 걸리진 않을 겁니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">무슨 일인지 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>하아, 스프리그 때문에 요즘 두통과 불면증이 생겼습니다. </p>
+          <p> </p>
+          <p>지그리테 님은 베스페르 유령마을의 언데드 때문에 스프리그 문제는 신경도 못쓰고 계세요.</p>
+          <p> </p>
+          <p>[%username] 님처럼 유능한 분이 계셔야 이 문제를 해결할 수 있을 텐데, 혹시 시간이 되겠습니까?</p>
+          <p> </p>
+          <p>별 것 아닙니다. 스프리그 몇 놈을 처치해 주시면 됩니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>감사합니다, [%username] 님!</p>
+          <p> </p>
+          <p>요즘 맹수들이 날뛰는 틈을 타 스프리그들이 채집물을 마구 훼손하고 있습니다.</p>
+          <p> </p>
+          <p>특히, [%dic:STR_DIC_M_Sprigg3DF3_33_An]들이 문제입니다.</p>
+          <p> </p>
+          <p>그 녀석들을 손 봐 주시고 [%dic:STR_DIC_N_Sorgrim]에게 결과를 알려주십시오. 저는 언데드 일을 급히 처리해야 해서요.</p>
+          <p> </p>
+          <p>아, 녀석들은 [%dic:STR_DIC_W_STR_DF3_SZ_C1]에서 [%dic:STR_DIC_W_STR_DF3_SZ_C2]로 내려가는 길목에 있습니다.</p>
+          <p> </p>
+          <p>협동심이 강한 녀석들이니 조심하시기 바랍니다!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>급한 일이 있나 보군요.</p>
+          <p> </p>
+          <p>그렇다면 어쩔 수 없지요. </p>
+          <p> </p>
+          <p>다른 분께 부탁해 봐야겠군요. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_N_Alfgeir]%가 일을 부탁한 그분 맞죠?</p>
+          <p> </p>
+          <p>스프리그를 모두 처치했습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>수고하셨습니다. 덕분에 이곳에 와서 처음으로 임무를 하나 완수한 셈이 됐습니다.</p>
+          <p> </p>
+          <p>이렇게 일을 처리해 주시니 저로서는 뭐라 감사를 표해야 할지 모르겠습니다.</p>
+          <p> </p>
+          <p>제가 어비스에서 온 지 얼마 되지 않아 좀 피곤했거든요.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">검은 평원의 채집물을 훼손하는 [%dic:STR_DIC_M_Sprigg3DF3_33_An]%을 처치하라([%2]/10)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Sorgrim]%와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">알프게이르는 검은 평원의 채집물을 훼손하는 스프리그 때문에 골치가 아프다고 한다. 스프리그를 쫓아내고 소르그림에게 결과를 알리자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body> 
+          <p>검은 평원 쪽에 갔더니, 파수병 알프게이르가 날 불러 세웠다.</p>
+          <p> </p>
+          <p>설원 가르키온 서식지 주변의 채집물들이 검은 평원의 큰 수입원인데 스프리그 녀석들이 훼손해서 골치라고 했다.</p>
+          <p> </p>
+          <p>당장이라도 녀석들을 처치하러 가고 싶지만 언데드 일로도 바쁘다며 대신 처리해 달라고 부탁했다.</p>
+          <p> </p>
+          <p>알프게이르가 말한대로 스프리간트 수집꾼을 처치하고 소르그림에게 보고하자 고맙다며 사례를 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

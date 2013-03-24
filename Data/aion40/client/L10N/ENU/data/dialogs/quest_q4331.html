@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], help!</p>
+          <p> </p>
+          <p>It's about the Spriggs! After you handed that death threat over to Mirka, we sat about and hatched a plan to completely devastate them. It was brilliant. It was perfect. It was flawless.</p>
+          <p> </p>
+          <p>Then one of the Spriggs somehow snuck in and stole it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"You couldn't make this up."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I know! I'm an idiot!</p>
+          <p> </p>
+          <p>We have to get them back, [%username]. If they get a chance to read our plans, and somehow figure out what we're up to, they'll reinforce their weak spots and we'll have to start from scratch.</p>
+          <p> </p>
+          <p>Please! Please bring the stolen plans back?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ok. Good!</p>
+          <p> </p>
+          <p>Now, there are two sets of plans out there. One was written by me, the other by Mirka. We need to recover both, else the Spriggs will have us figured out.</p>
+          <p> </p>
+          <p>The plans will most likely be on the [%dic:STR_DIC_M_Sprigg2_32_An]s and [%dic:STR_DIC_M_Sprigg3_33_An]s. They're the fastest of the Spriggs, and the ones who can figure out which way is north on the plans.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"One way to find out."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh no! We're doomed!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"You'll figure something out."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did you recover the plans?</p>
+          <p> </p>
+          <p>Please say yes! I've been so nervous!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Is this what you were looking for?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No, no it's not!</p>
+          <p> </p>
+          <p>I need both the [%dic:STR_DIC_I_QUEST_4331A] and [%dic:STR_DIC_I_QUEST_4331B]. Without both, our plans are useless.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll get back out there then!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes! You did it!</p>
+          <p> </p>
+          <p>You saved my life, [%username], and maybe even the village! Now we can get started and show those Spriggs what happens when they mess with Alsig village.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Recover the [%dic:STR_DIC_I_QUEST_4331A] and [%dic:STR_DIC_I_QUEST_4331B] that were stolen by the Spriggs and return them to [%dic:STR_DIC_N_Adhis].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Some cheeky Spriggs managed to steal plans drawn up by Adhis and Mirka. Retrieve them and hand them back to Adhis.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Adhis told you the Spriggs had stolen battle plans that had been drawn up against them, and begged you to recover the drafts for the security of the village.</p>
+          <p> </p>
+          <p>You found both, returned them, and saved the village from a somewhat peculiar threat.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

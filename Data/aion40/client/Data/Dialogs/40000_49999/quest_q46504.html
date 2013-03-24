@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p align="center"> - 의뢰장 - </p>
+          <p> </p>
+          <p>사나운 카르쿠를 처치해 달라는 의뢰를 요청받았다.</p>
+          <p></p>
+          <p>찰리룽 흥신소 조직원들은 다음 내용을 숙지하고 지시에 따라 주기 바란다. </p>
+          <p> </p>
+          <p> 1. 이름: [%dic:STR_DIC_M_DF4_DaQ_Mosbear_DR_52]</p>
+          <p></p>
+          <p> 2. 위치: 겔크마로스 폭포 주변</p>
+          <p></p>
+          <p> 3. 상세: 흉폭한 하르키온으로 식수를 얻으러 폭포에 접근한 아칸을 공격하여 피해를 입힘. 하르키온 전용 덫을 놓았으나 쉽게 잡히지 않고 있음.</p>
+          <p> </p>
+          <p>카르쿠를 유인할 미끼로 [%dic:STR_DIC_OBJ_DF4_FOBJ_Q46504]%을 놓아 두었으니 이용할 것. 녀석을 가장 먼저 처치한 자에게 의뢰대금을 지급하겠음.</p>
+          <p> </p>
+          <p>- 찰리룽 흥신소, [%dic:STR_DIC_E_46500] 일동 -</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">의뢰장을 접어 넣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+   <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>의뢰받은 일은 빨리빨리 처리하는 것이 좋당, 갸릉.</p>
+          <p> </p>
+          <p>그렇지 않으면 다른 사람들이 먼저 의뢰대금을 모조리 타 갈 테니까, 냥냥.</p>
+          <p> </p>
+          <p>데바도 서둘러라, 갸릉.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>골칫거리라던 사나운 카르쿠를 잘 처리해 주었당, 냥냥.</p>
+          <p> </p>
+          <p>아무리 덩치좋고 힘 좋은 하르키온이라지만 아칸을 기습하다니... 정말 간도 큰 녀석이당, 냥냥.</p>
+          <p> </p>
+          <p>아무튼 일은 완수한 것 확인했으니 의뢰대금 꼭 받아가라, 갸릉.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_OBJ_DF4_FOBJ_Q46504]로 [%dic:STR_DIC_M_DF4_DaQ_Mosbear_DR_52]를 유인해 처치하라([%2]/1)</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_E_46500]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">찰리룽 흥신소에서 의뢰장이 왔다. 의뢰를 수행하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>찰리룽 흥신소에서 사나운 카르쿠를 쓰러뜨려 달라는 내용의 의뢰장을 받았다.</p>
+          <p> </p>
+          <p>의뢰를 확인하여 사나운 카르쿠를 처지한 후 겔크마로스 관리부 직원에게 보고하자 수고했다며 의뢰대금을 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

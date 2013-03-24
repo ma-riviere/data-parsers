@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Mother is certainly taking her time getting here.</p>
+          <p> </p>
+          <p>[%username], if you aren't too busy, I wonder if you would help me?</p>
+ 	  <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What do you need?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Mother is traveling from the countryside to Sanctum to see me and one of her friends.</p>
+          <p> </p>
+          <p>The last I heard, she was in the forest in [%dic:STR_DIC_MLA129], but she should be out by now.</p>
+          <p> </p>
+          <p>I suppose she might be having trouble with the Worgs. Would you please go check for me?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh thank you. The way her temper is sometimes, I'd think the Worgs would be more afraid of her than anything else.</p>
+          <p> </p>
+          <p>Although she's been unusually pleasant recently. I wonder if she's met someone.</p>
+          <p> </p>
+          <p>Eww, I don't want to think about that. Just check for the Worgs, okay?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll take care of it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, I should have known you'd say no.</p>
+          <p> </p>
+       	  <p>All right, I'll just find some other way. And worry in the meantime.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Goodbye."</Act>
+    </Selects>
+  </HtmlPage>
+
+ <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did you find her? What could be taking so long?</p>
+          <p> </p>
+          <p>I want her to be here for this ring.</p>        
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"She wasn't there."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+         <p>Well, at least you tried. I suppose I'll have to go myself.</p>
+          <p> </p>
+          <p>Thank you for your efforts, at least.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Kill [%dic:STR_DIC_MLA129]s ([%2]/17).</font></p></step>
+	       <step><p visible="[%15]"><font color="[%16]">Report back to Renniah.</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Kill the Worgs near the area where Renniah's mother was last heard from.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Renniah's mother is running late for her meeting with Renniah and a mysterious friend.</p>
+          <p> </p>
+          <p>Renniah asked you to find her mother at her last known location, so you killed the Starving Worgs in that vicinity while searching.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

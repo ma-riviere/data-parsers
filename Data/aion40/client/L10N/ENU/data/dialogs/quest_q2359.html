@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Daeva! I need your help, if you have time. I can't speak in detail of my mission, but it's urgent.</p>
+          <p> </p>
+          <p>I can tell you this...I'm searching for Daevas. Well, weapons, notes, their work, their findings.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"So I'd help search?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No, I need help uncovering, literally.</p>
+          <p> </p>
+          <p>Here's something I found recently. It's from a sword, most likely shattered in combat. These mineral deposits from the lava make it hard to see, but it has rich engravings.</p>
+          <p> </p>
+          <p>Look here, and here. This wasn't any old weapon. This was custom made. It belonged to a Daeva.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Needs cleaning, then."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That's the thing. I can't. I don't have the materials.</p>
+          <p> </p>
+          <p>That's where you come in. The [%dic:STR_DIC_M_FlyingEyeD_28_An]s produce an acidic fluid that will dissolve the scaling.</p>
+          <p> </p>
+          <p>I need someone to kill Oculazens and bring me their irises. That'd be you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'll need several [%dic:STR_DIC_I_QUEST_2359a]es, [%username]. Better a large supply than dribs and drabs and extra trips.</p>
+          <p> </p>
+          <p>Hurry! If this is what I think it is, lives are at stake.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Shards! I'm on it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No? I'm surprised. I figured you for the heroic type.</p>
+          <p> </p>
+          <p>Well, you're right, [%username]. It's not like a Daeva's soul is important!</p>
+
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"No need to be mean!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Great, [%username] you're back!</p>
+          <p> </p>
+          <p>I found this near the Red Lava Cliffs. If it's really a Daevic weapon, it gives us a place to focus our attention.</p>
+          <p> </p>
+          <p>Pass me those [%dic:STR_DIC_I_QUEST_2359a]es....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No, I asked for ten! TEN, remember?</p>
+          <p> </p>
+          <p>Move it, [%username]! If the missing Daevas are.... Listen, the time you take makes the difference between "rescuing" and "burying," get me?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm going!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Perfect. Now I just extract the fluid...mix it with these other materials... and create the solvent!</p>
+          <p> </p>
+          <p>Thanks, Daeva. Got to go, but your name will go in my report. Azphelumbra!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Obtain [%dic:STR_DIC_M_FlyingEyeD_28_An] Irises for [%dic:STR_DIC_N_Embla].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Embla needs Oculazen Irises to follow a clue to the missing Daevas. Hunt Observing Oculazens and take their Irises to Embla.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Embla found a clue to the missing Daeva case, a broken sword fragment, near the Red Lava Cliff. The fragment's markings were obscured by mineral crust, and she needed a solvent to clean it.</p>
+          <p> </p>
+          <p>You agreed to hunt Observing Oculazens, and collected their Irises for Embla's solvent.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

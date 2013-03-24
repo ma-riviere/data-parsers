@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q41516</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>Not entered</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select_none" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I believe the trebuchet is complete. Now we just need to test it before I can pass it onto our troops.</p>
+          <p> </p>
+          <p>I could use your help again, [%username]. The [%dic:STR_DIC_OBJ_LDF4b_FOBJ_TankBomb]s were also scattered by the Dust Twisters, and I need a few collected to carry out this test. Can you help?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>There you are.</p>
+          <p> </p>
+          <p>Have you collected enough Drana Missiles yet? Take any longer and this war might just fizzle out on its own, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I have everything!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_ok">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, so you do!</p>
+          <p> </p>
+          <p>I need to examine them quickly. Any dents... or damage, and they won't fly correctly, could even... explode during the firing process.</p>
+          <p> </p>
+          <p>No. These are all fine. Now you get to head to the [%dic:STR_DIC_OBJ_LDF4b_FOBJ_Tank], and make sure it can function correctly. Aim at the Tiamat Stronghold and fire!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Woohoo!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_fail">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Argh! No, [%username]! No, you don't!</p>
+          <p> </p>
+          <p>We can't test the trebuchet without the [%dic:STR_DIC_OBJ_LDF4b_FOBJ_TankBomb]s, you fool!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Could have sworn I had them..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good, you're back.</p>
+          <p> </p>
+          <p>How did the test go?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Went very well."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good. Good.</p>
+          <p> </p>
+          <p>I don't expect Tiamat Stronghold to collapse under a single attack, but our siege will gradually chip away at its walls. Sooner or later, the Balaur will fall.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Gather [%dic:STR_DIC_OBJ_LDF4b_FOBJ_TankBomb]s and take them to [%dic:STR_DIC_N_Debron].</font></p>[%collectitem]</step>
+               <step><p visible="[%3]"><font color="[%4]">Fire the [%dic:STR_DIC_OBJ_LDF4b_FOBJ_Tank] [%5].</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Report back to [%dic:STR_DIC_N_Debron].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">The Trebuchet is ready for testing. Gather the Drana Missiles and fire them at the Tiamat Stronghold.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Debron told you that the trebuchet was complete, and now needed to go through live fire testing. You gathered Drana Missiles for the test, then fired at the Tiamat Stronghold. It worked fine--more than fine, in fact!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

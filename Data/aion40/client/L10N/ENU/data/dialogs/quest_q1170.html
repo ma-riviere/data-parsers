@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(An air of mystery hovers around the ancient stone statue. The cold surface bears the scars of history.)</p>
+          <p> </p>
+          <p>(You sense a strange sadness in its silence.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"This statue, it feels...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(As your hand presses against it, the statue begins to tremble.)</p>          
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Strange...I wonder...?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(Having examined the rest of the statue, you look up and realize that its head is missing.)</p>          
+          <p> </p>
+          <p>(With your eyes on its sundered neck, the statue once again shakes, this time more violently. You sense frustration.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(Warmth emanates from the statue, currents of gratitude pouring from the cracks in its surface.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll try to restore you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(An icy chill fills the air around you, and the statue resolves into an almost imperceptibly harder, darker hue.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Hmm, I wonder what that's all about?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(The statue shakes with excitement as flecks of dust and stone fall from it. You feel compelled to replace its head.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"Here, I think this head belongs to you."</Act>
+    </Selects>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Find the head of the Stone Statue.</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Restore the Stone Statue's head.</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">You came across a Headless Stone Statue while on your way to [%dic:STR_DIC_FLA18]. Find its head.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You found a Headless Stone Statue while on your way to [%dic:STR_DIC_FLA18].</p>
+          <p> </p>
+          <p>The statue looked as if it had a tale of its own, so you touched it and it began to shake. It seemed to want something from you.</p>
+          <p> </p>
+          <p>You found the head and placed it on the statue.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act> New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

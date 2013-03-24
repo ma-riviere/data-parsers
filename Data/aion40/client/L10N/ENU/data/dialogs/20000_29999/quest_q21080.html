@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ohhhhhh...what to do? Why is this happening to me...? I'm about to tear my hair out!</p>
+          <p> </p>
+          <p>Ah, [%username]! I thought you already left the fortress.</p>
+          <p> </p>
+          <p>I'm glad you're here. Would you mind helping me with just one little thing?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"How little?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Centurion Gelastra ordered me to bring an urgent letter to Faruth in the Krug Basin.</p>
+          <p> </p>
+          <p>He said that I should use a Windstream at Dragonrest to get there faster, but I'm not really comfortable with that means of travel. What I mean is I'm scared to death, basically.</p>
+          <p> </p>
+          <p>Could you maybe take the letter to Faruth for me, [%username]? I would really appreciate it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you so much! Lord Marchutan really sent me a true savior in you, [%username]!</p>
+          <p> </p>
+          <p>Vellun said the fastest way is by riding a Windstream to [%dic:STR_DIC_W_SZ_DF4_A2], and then taking another one to the [%dic:STR_DIC_W_SZ_DF4_A6].</p>
+          <p> </p>
+          <p>Here's the letter. Get it to [%dic:STR_DIC_NPC_Vafuth] as soon as possible, and then let me know it worked.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be back before you know."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I guess it was too much to ask you to do my dirty work, [%username].</p>
+          <p> </p>
+          <p>I already took too much of your time.</p>
+          <p> </p>
+          <p>I'll handle this myself, I suppose. Somehow.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Face your fears!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select4">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Why are you here? If you don't have a reason to be here, you should leave immediately.</p>
+          <p> </p>
+          <p>Oh! Unless you've been to the Fortress. You have something fr me, perhaps?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT4_1">"Yes, a letter."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select4_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>From Centurion Gelastra?</p>
+          <p> </p>
+          <p>Sadly, it's not good news, but I appreciate your bringing it to me.</p>
+          <p> </p>
+          <p>Please inform the centurion I received the letter and will proceed as instructed.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO4">"I'll do that."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're back at last! I was so frightened for you, [%username].</p>
+          <p> </p>
+          <p>I was afraid you might have crashed into the ground, or glided into a Balaur hideout while taking the Windstream.</p>
+          <p> </p>
+          <p>What happened with the mission I gave you? Did you give Faruth the letter?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Everything went well."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'll tell Gelastra exactly what you said Faruth said. Is that one too many saids?</p>
+          <p> </p>
+          <p>It doesn't matter. I'm an Archon, but I'm too scared to ride the Windstream? I'd better get practicing right away.</p>
+          <p> </p>
+          <p>Here, take this. It's a sign of my gratitude, so don't even think about refusing!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Go to [%dic:STR_DIC_W_SZ_DF4_A2] through the [%dic:STR_DIC_DF4_SensoryArea_Q21080A].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Take the Windstream at [%dic:STR_DIC_W_SZ_DF4_A2] to [%dic:STR_DIC_W_SZ_DF4_A6].</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Leave the Wind Road and land on the cliff where [%dic:STR_DIC_NPC_Vafuth] is.</font></p></step>
+               <step><p visible="[%9]"><font color="[%10]">Deliver the letter from Gelastra to [%dic:STR_DIC_NPC_Vafuth].</font></p></step>
+               <step><p visible="[%12]"><font color="[%13]">Take the Wind Road near [%dic:STR_DIC_NPC_Vafuth] and go back to Gelkmaros Fortress.</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report to [%dic:STR_DIC_N_Niamela].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Niamela is afraid of the Windstream, and asked you to use it to deliver a letter from Gelastra to Faruth.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Niamela has an order from Centurion Gelastra to take an urgent letter to Faruth at the Krug Basin.</p>
+          <p> </p>
+          <p>She could deliver the letter faster if she used the Windstream the way Gelastra told her to. But since she can't find the nerve to do it, she asked for your help.</p>
+          <p> </p>
+          <p>You did as Niamela asked and took the Windstream to the Krug Basin. You found Faruth nearby, gave him the letter, and returned to Niamela for a reward.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

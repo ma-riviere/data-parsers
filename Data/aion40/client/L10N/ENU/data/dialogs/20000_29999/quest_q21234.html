@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>My armor is...soaking wet? What? You must be imagining things, [%username]. I suppose it could be all the blood, sweat, and tears I poured into taking the Altar of Avarice. Yes...that's it.</p>
+          <p> </p>
+          <p> It was a hard fought battle. We were surrounded on all fronts, our enemies were closing in, hope was lost, and then...Fundin the Fearless appeared!</p>
+          <p> </p>
+          <p>In one fell swoop, he shattered the enemy's defenses, and slaughtered dozens as he raged across the battlefield. Yes! It was glorious, and afterward, he was approached by fair Shaenna, who offered him a kiss in thanks. I'm so amazing.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"You're so delusional..."</Act>
+    </Selects>
+  </HtmlPage>
+ 
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Nonsense, [%username]! You just have not yet witnessed the fury of Fundin the Fearless!</p>
+          <p> </p>
+          <p>Anyway...now that I've conquered the Altar of Avarice, it's time to shore up its defenses. This is the staging point for the invasion into Ingisson, and soon the Elyos will witness the fury of Fundin the Fearless!</p>
+          <p> </p>
+          <p>Eradicating the pitiful [%dic:STR_DIC_M_LF4_C2_WaterWorm_55_An]s nearby is too simple a task for someone as powerful as I, so I'll let you have the honor. What do you say, [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This is a task suited for one of your skill, [%username]. You may be Asmodae's rising star, but you will never be Fundin the Fearless!</p>
+          <p> </p>
+          <p>I mean, [%username] the Fearless? That just doesn't have the same ring to it.</p>
+          <p> </p>
+          <p>Go now, and slay the [%dic:STR_DIC_M_LF4_C2_WaterWorm_55_An]s in the area. Oh, and uh...bring me their salivary glands...and make sure not to spill any of the liquid inside.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I wonder what that's for..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hah! You dare to refuse Fundin the Fearless?!</p>
+          <p> </p>
+          <p>Why, if I weren't so busy protecting the Altar of Avarice...I'd make you show me some respect!</p>
+          <p> </p>
+          <p>Begone, or I will be forced to teach you a harsh lesson!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'd like to see you try."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Blast these Waterworm glands! They're so fragile, and now I'm out.... Danton is eyeballing me too.... I'll bet he has more.</p>
+          <p> </p>
+          <p>Oh, [%username]! Quickly, hand over those salivary glands! I need to hurl one at Dant... Uh...</p>
+          <p> </p>
+          <p>I mean, I just want those Waterworms dead! They're a threat to our entire operation here at the Altar of Avarice!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here are the glands..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This isn't enough!</p>
+          <p> </p>
+          <p>You may have slain the Waterworms, but I need those glands or I will be defenseless!</p>
+          <p> </p>
+          <p>Uh... I mean the Altar of Avarice could be defenseless at a crucial time if we don't take care of those Waterworms.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be back."</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent! Now Fundin the Fearless wields the power at the Altar of Avarice! Take this, Danton!</p>
+          <p> </p>
+          <p>Shards! I missed! Oh, er... Please ignore what just happened. I was just mad at Danton for something that happened earlier. I can assure you that we are not using these Waterworm glands as water balloons. That would be ignorant and dangerous.</p>
+          <p> </p>
+          <p>Here, please take this, and come back and help whenever you feel like it.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Bring the salivary gland pouches of [%dic:STR_DIC_M_LF4_C2_WaterWorm_55_An]s to [%dic:STR_DIC_N_Fundin].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Do as Fundin has asked--hunt the Crater Waterworms near the Altar of Avarice and return with their salivary glands.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Fundin said the Crater Waterworms near the Altar of Avarice need to be eradicated. He asked that you slay the creatures and return to him with their salivary glands.</p>
+          <p> </p>
+          <p>You slew the Waterworms and took their salivary glands to Fundin, who assured you that he wasn't using them as water balloons. You don't quite believe him, though.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

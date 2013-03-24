@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q49020</QuestId>
+    <QuestName>Relyt's Orders</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p> - Emergency Order - </p>
+          <p> </p>
+          <p> 1. From: Pandaemonium Expedition Centurion Relyt</p>
+          <p> </p>
+          <p> 2. To: [%username]</p>
+          <p> </p>
+          <p> 3. Order: Gelkmaros has become infested with Elyos cowards. Act fast and kill them before they figure out how to get back to Elysea.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll go now."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Our scouts had been tracking the Elyos through our lands for hours. Then they just... disappeared.</p>
+          <p> </p>
+          <p>Nothing of them at all. I can only assume they rifted back to Elysea?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"No, they died. At my hand."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah! That would explain it, too.</p>
+          <p> </p>
+          <p>You work fast, [%username]. No wonder others struggle to keep up with the pace.</p>
+          <p> </p>
+          <p>Here's your reward. It's well deserved.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Kill the Elyos attacking Gelkmaros ([%2]/5).</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Report to [%dic:STR_DIC_N_Dmytro].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Emergency Order: Kill the Elyos who infiltrated Gelkmaros while the Rift was open, and report to Relyt.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Elyos used the Rift to infiltrate Gelkmaros. You eliminated them before reporting to Relyt.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

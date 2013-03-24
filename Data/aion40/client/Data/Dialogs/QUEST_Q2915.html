@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>다행히 손님이 많아서 오델라주 대금은 금방 갚을 수 있을 것 같습니다.</p>
+          <p> </p>
+          <p>그런데 이왕 오셨으니 제가 부탁을 하나 드려도 될까요?</p>
+          <p> </p>
+          <p>손님이 많다 보니 주방에 일손이 딸려서 말입니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>지금 안주를 만들 재료가 부족한 데다 재료가 있다고 해도 요리할 일손도 부족합니다.</p>
+          <p> </p>
+          <p>하지만 일손이 부족하다고 안주를 안 팔 수는 없잖습니까.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_I_shell_d_n_c_10a]를 좀 구해서 코니데 구이를 만들어다 주시겠습니까?</p>
+          <p> </p>
+          <p>요리만 해 오신다면 수고비는 잘 쳐 드리겠습니다. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>코니데 구이는 [%dic:STR_DIC_I_shell_d_n_c_10a]%와 소금만 있으면 됩니다.</p>
+          <p> </p>
+          <p>알트가르드에서 재료를 구한 후 판데모니움 장인의 회당에서 [%dic:STR_DIC_E_LF3_Cook_production]를 사용하면 만들 수 있지요.</p>
+          <p> </p>
+          <p>꼭 좀 부탁드립니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아아, 제가 사정이 정말 급한데...</p>
+          <p> </p>
+          <p>정말 안 되겠습니까? 수고비는 정말 섭섭지 않게 드리겠습니다.</p>
+          <p> </p>
+          <p>다시 좀 생각해 보십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아이고, 돌아오셨군요. 제가 얼마나 기다렸는지 모르실 겁니다.</p>
+          <p> </p>
+          <p>코니데 구이는 만들어 오셨나요?</p>
+          <p> </p>
+          <p>지금 주문이 이만저만 밀린 게 아닙니다.</p>
+          <p> </p>
+          <p>어서 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">코니데 구이를 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>주방에 일손이 부족하다고 누누이 말씀드리지 않았습니까.</p>
+          <p> </p>
+          <p>바빠서 눈코 뜰 새가 없을 지경인데 부탁한 요리도 안 가져오시고 말만 거시면 어쩝니까.</p>
+          <p> </p>
+          <p>정말 급합니다. 어서 가서 부탁한 걸 만들어 주세요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아이고, 덕분에 살았습니다.</p>
+          <p> </p>
+          <p>그렇지 않아도 코니데 구이를 주문하는 사람이 너무 많아서 애가 타던 중이지요.</p>
+          <p> </p>
+          <p>여기 코니데 구이 값입니다. 아트레이아 어딜 가도 이만큼 쳐 주는 데는 없을 겁니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_I_shell_d_n_c_10a]로 구이를 만들어 [%dic:STR_DIC_N_Genpels]에게 가져가라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">겐펠스는 음식 재료와 일손이 부족해 걱정이라고 한다. 그래서 알트가르드에서 코니데를 채집해 판데모니움의 장인의 회당에 있는 조리대에서 코니데 구이를 만들어다 주기로 했다.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>겐펠스는 주방에 일손이 달린다면서 음식을 좀 만들어다 달라고 했다.</p>
+          <p> </p>
+          <p>그래서 코니데를 구해 요리를 만들어 갔더니 고마워하며 사례를 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

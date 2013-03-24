@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q30457</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>미입력</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select_none" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>루멘 님이 만드신 이 마법의 우리를 쓰면 빛무리 정령을 사로잡을 수 있겠군요.</p>
+          <p> </p>
+          <p>[%username] 님을 만난 후 제 연구가 제대로 풀려 가는 것 같습니다.</p>
+          <p> </p>
+          <p>그럼 이 [%dic:STR_DIC_I_QUEST_30407A]를 다시 받으십시오.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_IDElementalN_ElementalLightM_60_Ah]에게 이 우리를 사용하면 바로 갇힐 겁니다.</p>
+          <p> </p>
+          <p>그럼 정령이 갇힌 우리를 저에게 가져다 주시면 됩니다. </p>
+          <p> </p>
+          <p>이왕이면 한꺼번에 여럿을 잡아 달라고 부탁하고 싶지만 우리가 하나뿐이니 어쩔 수 없죠.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>돌아오셨군요!</p>
+          <p> </p>
+          <p>어떻게 됐습니까? 우리는 잘 작동하던가요?</p>
+          <p> </p>
+          <p>빛무리 정령을 사로잡아 오셨으면 지금 바로 주십시오. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">정령이 갇힌 우리를 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>돌아오셨군요!</p>
+          <p> </p>
+          <p>어떻게 됐습니까? 우리는 잘 작동하던가요?</p>
+          <p> </p>
+          <p>빛무리 정령을 사로잡아 오셨으면 지금 바로 주십시오. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">정령이 갇힌 우리를 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>드디어 빛무리 정령을 손에 넣었군요.</p>
+          <p> </p>
+          <p>그동안의 고생이 헛되지 않았습니다. </p>
+          <p> </p>
+          <p>이게 다 [%username] 님이 힘을 써 주셨신 덕분입니다.</p>
+          <p> </p>
+          <p>앞으로도 빛무리 정령을 더 사로잡을 수 있게 계속 도와주시면 더욱 고맙겠고요.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_I_QUEST_30407A]로 [%dic:STR_DIC_M_IDElementalN_ElementalLightM_60_Ah]을 사로잡아 [%dic:STR_DIC_N_Yilios]에게 가져가라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">마법의 우리를 사용하여 라디스 숲에 있는 둥근 빛무리 정령을 사로잡자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>일리오스는 루멘이 만들어 준 마법의 우리를 사용해 둥근 빛무리 정령을 사로잡아 달라고 했다.</p>
+          <p> </p>
+          <p>그의 부탁대로 라디스 숲으로 기서 둥근 빛무리 정령을 잡아다 주자 은혜는 잊지 않겠다며 매우 고마워했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

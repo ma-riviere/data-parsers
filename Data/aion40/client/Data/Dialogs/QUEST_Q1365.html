@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>크랄의 자부심을 버리고 우리를 용족의 노예로 만든 울카토를 처단해야 한다, 크락!</p>
+          <p> </p>
+          <p>그러나 지금 우리 부족에는 나와 뜻을 같이 하는 용사의 숫자가 너무 적다.</p>
+          <p> </p>
+          <p>천족의 도움이 절실하다, 크라락!</p>
+          <p> </p>
+          <p>용족과 손을 끊기 위해서라도 카이단 크랄은 천족과 손을 잡아야 한다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">얘기를 계속 듣는다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>신뢰할 수 있고 실력이 뛰어난 데바와 손을 잡아야 한다, 크락.</p>
+          <p> </p>
+          <p>많은 데바를 만나 봤지만 완전히 믿을 만한 데바는 없었다.</p>
+          <p> </p>
+          <p>지금은 그대에게 희망을 걸고 있다.</p>
+          <p> </p>
+          <p>하지만 그 전에 실력을 증명해야 한다, 크라락.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이 근처에는 땅의 정령이 많다.</p>
+          <p> </p>
+          <p>그들을 처치하고 오면 그대의 능력을 믿겠다, 크락!</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_ElementalEarth2_31_An]%와 [%dic:STR_DIC_M_ElementalEarth3_31_An]을 처치하고 오겠는가?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그럼 땅의 정령을 처치하고 돌아오라, 크락!</p>
+          <p> </p>
+          <p>이 마방타의 은신처 근처에 있는 [%dic:STR_DIC_M_ElementalEarth2_31_An] 다섯과 [%dic:STR_DIC_M_ElementalEarth3_31_An]을 다섯씩 처치하고 오면 그대의 능력을 믿겠다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>나에게 보여 줄 능력과 신의는 없단 말인가, 크락!</p>
+          <p> </p>
+          <p>그 정도 성의도 없는 데바와 손을 잡을 생각은 없다. </p>
+          <p> </p>
+          <p>돌아가라, 크라락! </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>돌아왔구나, 데바여. </p>
+          <p> </p>
+          <p>땅의 정령은 모두 처치했는가, 크락!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>땅의 정령을 처치하다니 어느 정도 능력은 되는 모양이구나, 크락!</p>
+          <p> </p>
+          <p>나의 부탁을 순순히 들어주어 고맙다, 크락!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">마방타의 은신처 입구에 있는 땅의 정령을 처치하라</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_ElementalEarth2_31_An]([%2]/5)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_ElementalEarth3_31_An]([%5]/5)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_NPC_Mabangta]%와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">마방타에게 실력을 증명하기 위해 사막 정령과 모래사막 정령을 처치하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>마방타는 자신을 도울 능력이 뛰어난 데바가 필요하다며 실력을 증명하라고 했다.</p>
+          <p> </p>
+          <p>그래서 그의 지시대로 사막 정령과 모래사막 정령을 처치했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

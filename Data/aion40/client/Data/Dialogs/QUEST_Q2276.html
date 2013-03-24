@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>주키니는 사각사각한 촉감은 괜찮았지만 생각보다 맛은 별로였다.</p>
+          <p> </p>
+          <p>이왕 땅에서 나는 것을 맛본 거 다른 것도 먹고 싶군.</p>
+          <p> </p>
+          <p>비슷하게 생긴 걸로 호르토라는 게 있다고 들었는데 말이야.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">호르토는 어떻게 알았는지 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>물속에서 사는 세이렌이 그런 건 어떻게 알았냐 이거로군. </p>
+          <p> </p>
+          <p>그냥 슈고가 돌아다니는 곳은 생각보다 넓다고만 해 두지. </p>
+          <p> </p>
+          <p>그 얘기는 그만하고 [%dic:STR_DIC_G_vegetable_d_n_c_10c] 얘기를 마저 해 볼까?</p>
+          <p> </p>
+          <p>이번에도 구해다 줄 건가?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그럼 네가 [%dic:STR_DIC_G_vegetable_d_n_c_10c]%을 가져올 때까지 기다리겠다. </p>
+          <p> </p>
+          <p>호르토는 칼바리아 언덕과 그리바데 협곡에 있다고 들었다.</p>
+          <p> </p>
+          <p>주키니와 비슷하게 생겼다고 하던데 헷갈리지 말고 호르토를 가져와.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>쓸데없는 것에 관심을 쏟는다는 눈빛이군.</p>
+          <p> </p>
+          <p>도와주지 않을 거라면 상관하지 말아라.</p>
+          <p> </p>
+          <p>쓸데없이 얼쩡거리지 말고 그만 가 봐.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>생각보다 오래 걸렸군. </p>
+          <p> </p>
+          <p>왜 그렇게 꾸물거린 건가?</p>
+          <p> </p>
+          <p>어쨌든 왔으니 상관없다.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_G_vegetable_d_n_c_10c]나 내 놓으라고.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">호르토를 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_G_vegetable_d_n_c_10c]는 어디 있지?</p>
+          <p> </p>
+          <p>약속은 지키라고 있는 것이다.</p>
+          <p> </p>
+          <p>호르토를 가져오기 전에는 내 앞에 나타나지 말아라.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(조금씩 씹어 먹으며) 흐음, 생각보다 맛있는걸.</p>
+          <p> </p>
+          <p>주키니보다 이쪽이 훨씬 낫군.</p>
+          <p> </p>
+          <p>이거라면 오래 먹어도 질리지 않겠어.</p>
+          <p> </p>
+          <p>자, 이건 나와의 약속을 지킨 자에게 주는 보상이다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_G_vegetable_d_n_c_10c]를 모아 [%dic:STR_DIC_N_DF3_NPC_Irlein]에게 가져가라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">이를레인이 이번에는 호르토를 먹어 보고 싶다고 한다. 호르토를 채집해서 가져다 주자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이를레인은 주키니가 씹는 감촉은 좋았지만 생각보다 맛은 별로였다면서 호르토를 먹어 보겠다고 했다.</p>
+          <p> </p>
+          <p>호르토를 구해다 주었더니 맛있다고 좋아하면서 보상을 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

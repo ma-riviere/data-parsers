@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q41169</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이아요스가 드라칸에게 잡혀있다는 사실을 어서 호누스에게 알려야 합니다.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_W_LDF4a_SZ_A2_08]에 나가 있는 [%dic:STR_DIC_N_Honoos]라면 이아요스의 행방을 찾아낼 수 있을 거예요.</p>
+          <p> </p>
+          <p>그는 노련한 구조원이니 분명 우리를 도울 수 있을 겁니다.</p>
+          <p> </p>
+          <p>시간이 없어요. [%dic:STR_DIC_N_Iayos]가 지금 어떤 상태일지는 아무도 장담할 수 없습니다. 서둘러 주세요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님 맞으시죠? 늦으셨군요.</p>
+          <p> </p>
+          <p>아디루가 보낸 전갈이 먼저 도착했습니다. </p>
+          <p> </p>
+          <p>상황이 급박한 만큼 빠르게 설명 드리겠습니다. 저희는 얼마 전 드라칸에게 끌려가던 [%dic:STR_DIC_N_Iayos]를 목격했습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">이야기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>어떻게든 구출하려 했지만, 뒤늦게 가세한 슈라크들에 의해 끌려가 버렸죠. </p>
+          <p> </p>
+          <p>방향으로 봐서는 아마 메닌 마을에 있을 것이라 생각됩니다.</p>
+          <p> </p>
+          <p>이아요스를 구출하려면 우선 퇴로를 확보할 필요가 있으니 [%dic:STR_DIC_W_LDF4a_SZ_A2_02]을 감시하는 [%dic:STR_DIC_M_LDF4A_A2_DrakanFi_lab_57_An]들을 모두 처치하고 와 주세요.</p>
+          <p> </p>
+          <p>저는 슈라크와 다른 잡다한 녀석들을 처치하고 있겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>휴, 돌아오셨군요. 저도 막 돌아온 참입니다.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_LDF4A_A2_DrakanFi_lab_57_An]들은 모두 처치하셨습니까?</p>
+          <p> </p>
+          <p>그렇지 않으면 이아요스를 구출하는 일은 꽤나 애를 먹게 될 겁니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그렇군요. 잘하셨습니다.</p>
+          <p> </p>
+          <p>연족의 일을 두 팔 걷고 도와 주시다니 정말 친절한 분이시로군요.</p>
+          <p> </p>
+          <p>솔직히 당신이 오기 전까지 어찌할 바를 몰라 발만 동동 구르고 있던 참이었어요.</p>
+          <p> </p>
+          <p>하지만 이제 퇴로를 확보해 주셨으니 이아요스를 구하러 갈 수 있게 되었네요. 감사합니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+              <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_Honoos]와 대화하라</font></p></step>
+              <step><p visible="[%9]"><font color="[%10]">[%dic:STR_DIC_W_LDF4a_SZ_A2_02]의 [%dic:STR_DIC_M_LDF4A_A2_DrakanFi_lab_57_An]을 처치하여 퇴로를 확보해라([%11]/12)</font></p></step>
+              <step><p visible="[%24]"><font color="[%25]">[%dic:STR_DIC_N_Honoos]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">실종된 이아요스를 구출해야 한다. 우선 난민구조원 호누스에게 이 사실을 알려야겠다.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>실종된 이아요스를 구출하기 위해 난민구조원 호누스에게 도움을 청했지만 호누스 역시 눈 앞에서 이아요스를 놓치고 말았다고 했다.</p>
+          <p> </p>
+          <p>호누스는 이아요스를 탈출 시키기 위해 미리 퇴로를 확보할 필요가 있다고 했고, 메닌 마을의 드라칸을 처치하여 퇴로를 확보해 줬다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

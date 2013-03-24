@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>자, 훈련이다!</p>
+          <p> </p>
+          <p>지금 당장 제3 템페르 훈련소로 가 훈련을 수행해야 한다!</p>
+          <p> </p>
+          <p>내가 준 입장권은 잘 챙겼겠지?</p>
+          <p> </p>
+          <p>입장권이 있어야만 해당 투기장으로 들어갈 수 있고, 1번 입장에 1장씩이다.</p>
+          <p> </p>
+          <p>이번은 내가 줬지만 다음부터는 [%dic:STR_DIC_N_Eno] 행정관에게 [%username]%이 직접 요청하도록.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">고개를 끄덕인다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>고독의 투기장이든, 혼돈의 투기장이든, 협력의 투기장이든 어느 곳이라도 좋다.</p>
+          <p> </p>
+          <p>한 명과의 승부에 자신이 있으면 고독의 투기장으로, 어지러운 혼전에 자신이 있으면 혼돈의 투기장으로, 2인 3파티전에 자신이 있으면 협력의 투기장으로 가라.</p>
+          <p> </p>
+          <p>투기장에 진입하여 네게 덤비는 녀석을 한번만 쓰러뜨리면, 최초의 훈련은 완수다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>투기장에는 입장권이 있어야만 들어갈 수 있다.</p>
+          <p> </p>
+          <p>혹시 입장권이 없다면 행정관 에뇨에게 문의해 보아라.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>두려움에 떠는 제자는 사양이다!</p>
+          <p> </p>
+          <p>이 정도의 훈련에 겁이 나면 몰푸스에게나 가서 애걸해 보아라.</p>
+          <p> </p>
+          <p>혹시 아나? 1, 2 템페르에서 부족한 용기를 구할 수 있을지?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>훈련은 완료했나?</p>
+          <p> </p>
+          <p>적을 단 한번만 쓰러뜨리면 되는 간단한 훈련이다. 어렵지 않았을 것이다.</p>
+          <p> </p>
+          <p>어디 보고해 보아라.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">수상한 물건을 발견했다고 한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>상대가 떨어뜨린 물건이라고?</p>
+          <p> </p>
+          <p>그럴 리가... 아무리 실체와 유사하다고 하지만 상대는 모두 환영이다.</p>
+          <p> </p>
+          <p>이리 줘 보아라. 조사를 해야 할 필요가 있다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_W_IDArena_pvp_L]에서 상대를 쓰러뜨려라([%2]/1)</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_N_Junos]%와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">제3 템페르 훈련소에서 최초의 훈련을 시작할 때이다. 투기장으로 들어가 상대를 쓰러뜨리자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>주노스가 말한 대로 제3 템페르 훈련소에 가서 최초의 훈련을 수행하였다.</p>
+          <p> </p>
+          <p>훈련 중에 쓰러진 상대가 떨어뜨린 물건을 입수하여 주노스에게 가져다 주었다.</p>
+          <p> </p>
+          <p>주노스는 환영이 물건을 떨어뜨릴 리가 없다며 조사를 해 봐야 겠다고 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

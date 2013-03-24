@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're not from around here, are you [%username]? </p>
+          <p> </p>
+          <p>I guess you wouldn't really know the stories about the Whispering Forest. I heard a lot of scary tales about that forest even before this region became a wasteland.</p>
+          <p> </p>
+          <p>I don't really know the details. But they're just stories.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Maybe. Maybe not."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I suppose that's true. They might not be completely groundless.</p>
+          <p> </p>
+          <p>After all, the place is filled with [%dic:STR_DIC_M_SpectreD_38_An]s and [%dic:STR_DIC_M_ShadowStalkerD_38_An]s. Scary stories don't seem so unlikely, really.</p>
+          <p> </p>
+          <p>Someone should do something about those things.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You? Oh, I'm sure you can. It's brave of you to volunteer!</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_SpectreD_38_An]s and [%dic:STR_DIC_M_ShadowStalkerD_38_An]s are the biggest problem. They make terrifying noises that make the refugees nervous.</p>
+          <p> </p>
+          <p>Please be careful. The Whispering Forest is dangerous!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Blood for blood!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I wish we had the time or the personnel to deal with it. But this camp is jammed with civilians and refugees.</p>
+          <p> </p>
+          <p>We've got too much on our plates already, just keeping everyone alive.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"May Azphel protect you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The sounds of the spirits seem to have dimmed.</p>
+          <p> </p>
+          <p>Have you cleared out the [%dic:STR_DIC_M_SpectreD_38_An]s and [%dic:STR_DIC_M_ShadowStalkerD_38_An]s?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I have."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What a relief. I'll inform the villagers!</p>
+          <p> </p>
+          <p>This will be good news, and there's not enough of that these days.</p>
+          <p> </p>
+          <p>Thank you so much for helping us.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Destroy the Gloomy Specters and Vengeful Obscuras that are roaming in The Whispering Forest.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_SpectreD_38_An] ([%2]/7).</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_ShadowStalkerD_38_An] ([%5]/11).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_N_Noarynt].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Destroy the Gloomy Specters and Vengeful Obscuras that are roaming in The Whispering Forest.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Noarynt said the refugees fear the Whispering Forest, which exudes a dreadful aura.</p>
+          <p> </p>
+          <p>When you destroyed the Gloomy Specters and Vengeful Obscuras, she thanked you and gave you a present.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

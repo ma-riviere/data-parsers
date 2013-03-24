@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아, 투안 님이 물어본 것 때문에 오셨었지요?</p>
+          <p> </p>
+          <p>제가 경황이 없었습니다.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_N_LDF5b_Toan_E] 님에게는 상부에서 공격 명령서가 내려오지 않아 당분간은 지원 걱정은 않으셔도 좋다고 전해주십시오.</p>
+          <p> </p>
+          <p>[%username] 님 덕분에 상황이 그리 급박하지는 않다는 것도 말입니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님, 돌아오셨군요.</p>
+          <p> </p>
+          <p>가셨던 일은 어떻게 됐습니까?</p>
+          <p> </p>
+          <p>링거먼은 뭐라고 하던가요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">얘기를 전한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이런 앞 뒤 꽉 막힌 친구 같으니라고!</p>
+          <p> </p>
+          <p>하지만 공격 명령서가 오지 않는 데는 중대한 이유가 있을지 모르니 그의 판단이 옳습니다.</p>
+          <p> </p>
+          <p>[%username] 님 덕분에 상황이 견딜만하다고 하니 그쪽 일은 잠시 잊고 있어도 되겠습니다.</p>
+          <p> </p>
+          <p>그나저나 마쿠르가 급하게 요청했던 일이 있는데 링거먼 때문에 대기를 하느라 들어줄 수가 없었습니다.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_N_LDF5b_Macur_E]에게 가 그쪽 전황은 어떤지 확인해 주실 수 있겠습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>사우로 산맥은 항상 긴장을 하고 경계해야 하는 곳입니다.</p>
+          <p> </p>
+          <p>브리트라군과 티아마트의 패잔병, 마족을 동시에 견제해야 하는 곳이기 때문입니다.</p>
+          <p> </p>
+          <p>무슨 일로 오셨습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">얘기를 전한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>하하하, 그 문제라면 이미 해결했습니다.</p>
+          <p> </p>
+          <p>실은 작은 분쟁이 있어 투안에게 도움을 요청했었습니다.</p>
+          <p> </p>
+          <p>다행히 주변에 계신 데바님들 덕분에 문제를 해결할 수 있었습니다.</p>
+          <p> </p>
+          <p>바쁘실텐데 일부러 걸음해 주셔서 고맙습니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_LDF5b_Toan_E]%와 대화하라</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_N_LDF5b_Macur_E]%와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">투안에게 돌아가 링거먼의 얘기를 전해주고 다음 얘기를 듣자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>공격 명령서가 도착하지 않아 공격을 할 수 없었다는 링거먼의 얘기를 투안에게 전하니 마쿠르에게서 온 요청부터 지원해야겠다고 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

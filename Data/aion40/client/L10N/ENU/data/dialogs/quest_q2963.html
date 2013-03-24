@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You may think that I am foolish, going against Jafnhar's wishes. But you don't understand the Shadow Court. He's not safe, even in the Abyss.</p>
+          <p> </p>
+          <p>I'm afraid they won't stop looking for him. I have seen it before, [%username], done it myself....</p>
+          <p> </p>
+          <p>I must offer him sanctuary here in Pandaemonium.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"That is your choice, of course."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], you have chosen keep a dangerous secret for me. I must rely on your trust for a little while longer.</p>
+          <p> </p>
+          <p>I want you to go back to the Abyss, rescue Jafnhar, and bring him back here.</p>
+          <p> </p>
+          <p>You're risking your life and immortality by agreeing to this, but I can ask no other.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Some will call you a traitor for your actions, but trusting one's brothers until the full truth is revealed is no crime.</p>
+          <p> </p>
+          <p>Persuade Jafnhar to return to me. I will prepare a safe place for him, and do all in my power to ensure his protection.</p>
+          <p> </p>
+          <p>If we can convince him to disclose information on the Shadow Elders, I could claim to have sent him on a secret assignment. Hurry, before it's too late.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm on my way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Has the steel left your blood, when strength is required most?</p>
+          <p> </p>
+          <p>I will not betray you, but neither can I extend my protection.</p>
+          <p> </p>
+          <p>[%username], you're his only hope. You must reconsider, else you risk having blood on your hands.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll consider it further."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You! You should not be here, [%userclass]. I told you to tell Khrudgelmir that I was dead.</p>
+          <p> </p>
+          <p>How could you fail in such a simple mission?</p>
+          <p> </p>
+          <p>He doesn't think I'm alive, does he? If so, he'll stop at nothing to safeguard me.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">"He says he'll keep you safe."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Safe?! I'm a man who seeks the truth, a truth not found in Pandaemonium, or as an Asmodian.</p>
+          <p> </p>
+          <p>I have left that life, and stepped into something...different. To go back makes a mockery of everything I stand for.</p>
+          <p> </p>
+          <p>The Shadow Elders are my family now. Tell Khrudgelmir that I do not wish to be found. Should he send anyone else, I'll kill them where they stand.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"Very well."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Why are you alone?</p>
+          <p> </p>
+          <p>Tell me everything that happened.</p>
+          <p> </p>
+          <p>Quickly, [%username], before others see us together!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"He said to tell you...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I...I must respect his wishes. I will tell the Court I dealt with Jafnhar myself. Perhaps then they'll stop looking for him. </p>
+          <p> </p>
+          <p>For him to join the Shadow Elders, to kill for them...what went wrong?</p>
+          <p> </p>
+          <p>I have lost a dear friend, and do not understand why. I must think on this.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk to [%dic:STR_DIC_N_Jafnhar].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Convey Jafnhar's words to [%dic:STR_DIC_N_Srudgelmir].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Khrudgelmir wants to rescue Jafnhar and bring him back safely. Return to the Black Cloud Island and persuade Jafnhar to return.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Khrudgelmir asked you to bring Jafnhar back, promising to protect him at all costs.</p>
+          <p> </p>
+          <p>Jafnhar told you he now worked alongside the Shadow Elders and if others were to come for him, they would be killed.</p>
+          <p> </p>
+          <p>Khrudgelmir was concerned about his former friend, and did not understand his decision.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Medea keeps writing to me, and it's breaking my heart.</p>
+          <p> </p>
+          <p>She's miserable in that undercover job in Asmodae.</p>
+          <p> </p>
+          <p>I know she volunteered for the mission, but I don't think she realized how difficult it would be.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+       <Act href="HACTION_ASK_QUEST_ACCEPT">"Isn't it too late to do anything about it?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, she was too stubborn to listen when I tried to dissuade her from taking the job.</p>
+          <p> </p>
+          <p>But...perhaps now she's had a taste of real hardship, she'll rethink her ways. Would you go to Asmodae and deliver a letter to Medea?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Wait a moment while I scribble this note.</p>
+          <p> </p>
+          <p>...Warmest Regards... Jinus.</p>
+          <p> </p>
+          <p>Here it is! And if you can, [%username], please persuade Medea to return to Elysea.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm on it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm sorry. I should never have asked you to turn around and go back to Asmodae when you only just got back.</p>
+          <p> </p>
+          <p>My desperation got the better of me. I should have kept it between me and Medea... I will find some other way.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Yeah...sorry."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What news, [%username]?</p>
+          <p> </p>
+          <p>Any reply from Medea?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"She sent this."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>"Dear Jinus..."</p>
+          <p> </p>
+          <p>"...touched by your kindness... impossible for me to cut short my mission..."</p>
+          <p> </p>
+          <p>"...duties....Please thank [%username] for delivering this..."</p>
+          <p> </p>
+          <p>Well, the rest's personal, so I won't read it out. Thank you for trying, at any rate.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk with [%dic:STR_DIC_N_Medea].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Return to Morheim and deliver Jinus's letter to Medea.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Jinus was concerned for Medea, who is working undercover in Asmodae. He wrote her a letter urging her to come home.</p>
+          <p> </p>
+          <p>Medea sent you back to Jinus with a response that thanked him for his concern, but explained that she must continue her mission.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

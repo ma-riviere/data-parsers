@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Blasted Shugos! Think of nothing but Kinah!</p>
+          <p> </p>
+          <p>Oh! I'm sorry. I didn't notice you there, Daeva. I was so... so....</p>           
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+       <Act href="HACTION_SELECT1_1">"Upset?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes! That Shugo merchant gave me gold with so many impurities that it's unusable. I don't know why I keep doing business with him.</p>
+          <p> </p>
+          <p>I demanded a refund but he's being stubborn. Not that the refund would help me much.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Why not?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I need the ore more than the Kinah. I have an urgent order.</p>
+          <p> </p>
+          <p>The gold is just the final step in this order I'm working on. I don't have time to acquire it myself. And [%dic:STR_DIC_E_noblemetal_n_c_20a] is so rare and difficult to obtain....</p>
+          <p> </p>
+          <p>Oh [%username]! Would you help me?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>If you can please bring me 10 pieces of [%dic:STR_DIC_E_noblemetal_n_c_20a], I'll deal with getting that refund and get the rest of that order prepared.</p>
+          <p> </p>
+          <p>I've heard the ore is found in the Eiron Desert and the Outpost Ruins.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll get them."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, no. How am I going to fill this order? It's not like gold grows on trees.</p>
+          <p> </p>
+          <p>But regardless of my worries, I should leave a busy Daeva like you alone.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Walk in the light."</Act>
+    </Selects>
+  </HtmlPage>
+  
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, [%username]! I have been watching the door all day long for you.</p>
+          <p> </p>
+          <p>I've finished the rest of the order, and I'm ready for the [%dic:STR_DIC_E_noblemetal_n_c_20a] now.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Good as gold."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did you have trouble?</p>
+          <p> </p>
+          <p>I need ten pieces of [%dic:STR_DIC_E_noblemetal_n_c_20a] right away. This order is urgent.</p>
+          <p> </p>
+          <p>If you hurry, you might have time to go to the Eiron Desert and get back in time.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I can be quick."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent! This gold is much better than what the stupid Shugo merchant delivered. This is real high quality stuff. How can I thank you?</p>
+          <p> </p>
+          <p>Oh, I know! While you were getting the gold, I was able to get my refund from that stingy Shugo. Here, you deserve it all.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect [%dic:STR_DIC_E_noblemetal_n_c_20a] and bring it to [%dic:STR_DIC_N_Hiblrion].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Collect Gold Ore for Hibrion to use in crafting.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hibrion, a weaponsmith, had trouble with a Shugo merchant, so he asked you to help him acquire Gold Ore.</p>
+          <p> </p>
+          <p>When you brought him the Gold Ore, he paid you the refund he had gotten from the Shugo.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've been hanging out with the Shulacks lately, listening and learning.</p>
+          <p> </p>
+          <p>With what I've heard, what we've been able to suss from tinkering, and from the intel arriving from Udas Temple, I've figured out how to open a new Stigma slot!</p>
+          <p> </p>
+          <p>A bit of an ego hit having to admit I didn't figure it all out on my own, but I'll survive the embarrassment.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Hey, sometimes it takes a village."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It took a lot of Stigma Masters, Turners, researchers, and consultants, but we seem to have the process down now...mostly.</p>
+          <p> </p>
+          <p>I'll admit, it's still a little tricky...but if we succeed, poof! New Stigma slot!</p>
+          <p> </p>
+          <p>Yah, it's a bit risky, but what's risk to a Daeva? Do you want to give it a go?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Alrighty then. First, you'll need to collect Ensouled Aether, which was formed and concentrated in living tissue. According to our research, Ensouled Aether can be harvested from the beasts of [%dic:STR_DIC_W_LF4_SZ_C5_Od] in Inggison.</p>
+          <p> </p>
+          <p>You can obtain it from [%dic:STR_DIC_M_LF4_C5_Trico_55_n]s, [%dic:STR_DIC_M_LF4_C5_Tricon_55_An]s, [%dic:STR_DIC_M_LF4_C5_ElementalWater4_55_An]s and [%dic:STR_DIC_M_LF4_C5_FlyingFoam_55_An]s. Oh, and you'll also need to pick up a [%dic:STR_DIC_I_MATERIAL_STIGMA_QUEST_01]!</p>
+          <p> </p>
+          <p>If this works, and I'm positively kind of sure it will, we'll crack open that new Stigma slot.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Positively kind of? That's...encouraging."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Not interested in Stigma slots, huh? Really? That's kind of weird.</p>
+          <p> </p>
+          <p>Or do you just plan to try a different, less original technique?</p>
+          <p> </p>
+          <p>Whatever. Drop by if you change your mind.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"What do you mean "weird"?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No, you don't have to try my new new process. You could head over to the Udas Temple and look for more clues. I hear there's some good hiking over there, and perhaps you'll find a simpler and more risk averse method to open Stigma slots. Maybe. You never know.</p>
+          <p> </p>
+          <p>But it's an awful long way to walk...and my process is sort of sure to work.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Ok. Let's do this."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We'll need Ensouled Aether from [%dic:STR_DIC_M_LF4_C5_Trico_55_n]s, [%dic:STR_DIC_M_LF4_C5_Tricon_55_An]s, [%dic:STR_DIC_M_LF4_C5_ElementalWater4_55_An]s and [%dic:STR_DIC_M_LF4_C5_FlyingFoam_55_An]s.</p>
+          <p> </p>
+          <p>And don't forget a [%dic:STR_DIC_I_MATERIAL_STIGMA_QUEST_01]!</p>
+          <p> </p>
+          <p>Without those, it won't even kinda sorta work.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Yah, yah. I've kinda sorta got it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, we're part way there. This is some premium quality Ensouled Aether, but it's not nearly enough.</p>
+          <p> </p>
+          <p>We'll need mounds more before we can start...wait! Where are you going?</p>
+          <p> </p>
+          <p>Don't forget the Aether Refining Toolbox!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect [%dic:STR_DIC_E_Q11275] and bring it to [%dic:STR_DIC_N_Daniele].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Collect the materials Reemul needs to open a Stigma slot.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Reemul suggested you to try his new method for opening a Stigma slot. You thought it sounded itneresting, so you brought him a pile of Ensouled Aether and an Aether Refining Toolbox.</p>
+          <p> </p>
+          <p>He told you to bring more. Anticlimactic, really.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

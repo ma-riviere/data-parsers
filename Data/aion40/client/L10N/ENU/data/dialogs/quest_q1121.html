@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No, it's no good!</p>
+          <p> </p>
+          <p>I can't find them anywhere! I'm just going in circles....</p>
+          <p> </p>
+          <p>[%username], could you help me?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Help with what, exactly?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's my prayer bracelet--I've lost several  beads from it. I can't believe I was so stupid!</p>
+          <p> </p>
+          <p>I was out patrolling the [%dic:STR_DIC_FLA06]% when I noticed the cord was broken and the beads had slipped off! I retraced my route and found all but three of them.</p>
+          <p> </p>
+          <p>I found the last one in the shrubs...with a hungry Sparkle gnawing on it!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Perhaps it thought the bead was a seed?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That was my guess too! Anyway, I suspect the [%dic:STR_DIC_MLA44]%s and [%dic:STR_DIC_MLA13_6]%s ate the last three.</p>
+          <p> </p>
+          <p>A priest from [%dic:STR_DIC_ELA07] gave that bracelet to me personally. It's hugely important to me.</p>
+          <p> </p>
+          <p>Please, [%username]. Would you hunt Sparkles and Sparkies until you find those last three beads?</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, Aion's Grace!</p>
+          <p> </p>
+          <p>It shouldn't take too long to find the right [%dic:STR_DIC_MLA44]s and [%dic:STR_DIC_MLA13_6]s. I'm only missing three beads!</p>
+          <p> </p>
+          <p>Good luck, [%userclass]!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Thanks!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh...</p>
+          <p> </p>
+          <p>I hoped you would understand, [%username]. That bracelet means so much to me....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Sorry, Oz." </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're back!</p>
+          <p> </p>
+          <p>Please, tell me you found all my beads! I really want to fix this bracelet.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here you are! That should be all of them."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Wait, I told you I'd lost three beads, didn't I? I have to have all three.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be back soon." </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You got them all!</p>
+          <p> </p>
+          <p>I don't know what to say.... I'm so relieved! Th-thank you, [%username]! This bracelet means everything to me, and without you I'd have lost it.</p>
+          <p> </p>
+          <p>Please, take this.... I wish I could do more.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Return beads from the [%dic:STR_DIC_MLA44]s and [%dic:STR_DIC_MLA13_6]s to Oz.</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Oz, a mercenary scout, lost some precious prayer beads when his bracelet broke. Catch Elder Sparkies and Pincerhead Sparkles to retrieve them.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oz, a pious man, was making his rounds when his prayer bracelet broke. He retrieved most of it, but three beads were eaten by insects.</p>
+          <p> </p>
+          <p>You searched the Agaric Spore Road and caught Elder Sparkies and Pincerhead Sparkles to find the remaining beads.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

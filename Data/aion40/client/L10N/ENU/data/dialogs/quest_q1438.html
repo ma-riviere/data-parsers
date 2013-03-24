@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I know that manastones are fairly common, but our researchers don't have time to go hunting for them.</p>
+          <p> </p>
+          <p>Most manastones are sold at a bargain to stores, and that's really a shame--so much potential research gone to waste.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I see...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You know, maybe you can help us out. We need some manastones--HP +40, Accuracy +16, and Block +16 specifically.</p>
+          <p> </p>
+          <p>If you have all three and are willing to part with them, I can exchange them for a much better one.</p>
+          <p> </p>
+          <p>It'll be more beneficial to you than selling them to a store for next to nothing.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thanks, [%username]! That will be such a great help!</p>
+          <p> </p>
+          <p>If you've got them, you can hand them over right away. Otherwise, I'm willing to wait while you collect them.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Excellent."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're not going to sell them to a store after rejecting my offer, are you?</p>
+          <p> </p>
+          <p>That would be rather rude, you know....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I know. I won't."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's amazing how we can have so many of one kind of manastone and so few of another....</p>
+          <p> </p>
+          <p>Oh, [%username]! Great timing! Did you bring the manastones I asked for?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I did."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh...well, then they seem to have fallen from your cube.</p>
+          <p> </p>
+          <p>Remember, what we're really short on right now are the HP +40, Accuracy +16, and Block +16 manastones.</p>
+          <p> </p>
+          <p>You should retrace your steps and then come back.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll do that."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent! Exactly what we needed!</p>
+          <p> </p>
+          <p>We'll put these to good use, I assure you.</p>
+          <p> </p>
+          <p>Thank you, and please take this--I hope it will be useful to you.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+<HtmlPage name="select9">
+ 	<Contents cdata="true">
+ 		<html>
+ 		<body>
+ 			<p>The advancement of manastone knowledge depends on the efforts of people like you.</p>
+ 			<p> </p>
+ 			<p>So much so, that if you have some more to trade, I'd gladly accept them.</p>
+ 			<p> </p>
+ 			<p>Another set of HP +40, Accuracy +16, and Block +16 manastones would be best.</p>
+ 			<p> </p>
+ 	    </body>
+        </html>
+    </Contents>
+    <Selects>
+    	<Act href="HACTION_QUEST_ACCEPT">Accept.</Act>
+        <Act href="HACTION_FINISH_DIALOG">"I'll be back later with more."</Act>
+    </Selects>
+  </HtmlPage>
+  
+   <HtmlPage name="select10">
+ 	<Contents cdata="true">
+ 		<html>
+ 		<body>
+ 			<p>No, no this won't do at all.</p>
+ 			<p> </p>
+ 			<p>Together we can succeed, but only if you bring me what I need.</p>
+ 			<p> </p>
+ 			<p>HP +40, Accuracy +16, and Block +16 manastones. Come back when you can count to three</p>
+ 	    </body>
+        </html>
+    </Contents>
+    <Selects>
+        <Act href="HACTION_FINISH_DIALOG">"No need to be rude...."</Act>
+    </Selects>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect manastones and take them to Protesias.</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">You accepted Protesias's offer to exchange three common manastones for a valuable manastone.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Protesias, a manastone remover, offered to exchange three common manastones for a valuable manastone.</p>
+          <p> </p>
+          <p>You brought one each of the HP +40, Accuracy +16, and Block +16 manastones as he requested.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q39022</QuestId>
+    <QuestName>레아흐의 지령</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p> - 긴급 명령서 - </p>
+          <p></p>
+          <p> 1. 발신 : 엘리시움 원정군 백부장 레아흐</p>
+          <p></p>
+          <p> 2. 수신 : [%username]</p>
+          <p></p>
+          <p> 3. 명령 : 시공의 균열이 열려 있는 동안 잉기스온으로 침입한 마족을 처치하시오!</p>
+          <p></p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">의뢰를 수행한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>멀리서부터 당신의 기척이 느껴지더구려.</p>
+          <p> </p>
+          <p>아니, 용맹하게 적을 쓰러뜨리는 전투의 기세라고 할까.</p>
+          <p> </p>
+          <p>시공의 균열을 넘어 온 마족들을 처치하였소?</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그래, 마족들을 처치하느라 얼마나 힘들었소?</p>
+          <p> </p>
+          <p>그대의 노고로 환영요새가 다시 안정되었소.</p>
+          <p> </p>
+          <p>고마울 따름이오.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">잉기스온을 침투한 마족을 처치하라([%2]/5)</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_N_Leah]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">긴급 명령: 시공의 균열이 열려 있는 동안 잉기스온에 침투한 마족을 처치하고 레아흐에게 보고하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>마족이 시공의 균열을 이용해 잉기스온에 침공하였다. 침공한 마족들을 소탕하고 레아흐에게 보고하였다.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

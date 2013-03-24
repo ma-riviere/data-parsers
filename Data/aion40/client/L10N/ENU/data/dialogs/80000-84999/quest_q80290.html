@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Arieluma, [%username]! You've become quite the successful [%userclass], haven't you? Great battles, daring rescues... I'm sure you've already had quite a few adventures, right?</p>
+          <p> </p>
+          <p>A Daeva like you deserves an appropriate piece of armor, something truly worthy of your skills.</p>
+          <p> </p>
+          <p>I'd like to help you, if you've got a few minutes to listen.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"New armor? I'm listening."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes, I've received several pieces of a fantastic new Daevanion armor. It's custom fitted to the wearer, and nearly impossible to find anywhere else.</p>
+          <p> </p>
+          <p>The thing is, my supplier is a bit of a collector, with a taste for some of the rarer items available in Sanctum. I'm going to need to send him 10 [%dic:STR_DIC_LC_relic_armor_30]s in payment for each of these armor pieces.</p>
+          <p> </p>
+          <p>Can you get them? The results will be worth your trouble, I promise.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good, you won't regret this.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_N_Perena] sells Divine Lamps in the Caps and Straps store. Hurry back to me when you've purchased them, and don't forget that you'll need to buy ten!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Ten Divine Lamps. Got it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're not interested? That's too bad. This armor would have really helped you out.</p>
+          <p> </p>
+          <p>It's your choice, of course. Perhaps you feel there's more honor to be had in doing things the hardest way possible.</p>
+          <p> </p>
+          <p>Come back if you change your mind. I'll be here.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Goodbye."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You've returned! Do you have the Divine Lamps?</p>
+          <p> </p>
+          <p>Give them to me, and I'll get the armor I've been holding for you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here you go."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're back, but you don't have the lamps?</p>
+          <p> </p>
+          <p>Did you have trouble finding them? I told you that if you just to to Perena, she'll get you everything that you need.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Goodbye."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ten Divine Lamps for me, and some armor for you. Just pick whichever one you like the most.</p>
+          <p> </p>
+          <p>Thanks again, and may you always Soar in the Light.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get 10 [%dic:STR_DIC_LC_relic_armor_30]s and bring them to [%dic:STR_DIC_N_EVENT_Zephyrin].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Bring 10 [%dic:STR_DIC_LC_relic_armor_30]s and exchange them for a piece of Daevanion armor.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You gave Zephyrin ten Divine Lamps and received a piece of Durable Daevanion armor in return.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

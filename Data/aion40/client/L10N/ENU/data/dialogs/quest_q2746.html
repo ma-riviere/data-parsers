@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Shards! Blast! Blast it all! We lost Siel's Eastern Fortress!</p>
+          <p> </p>
+          <p>In the midst of a fierce fight with the blasted Balaur the Ellies saw an opportunity and exploited it. We did our best against the two armies, but then a sneak attack destroyed the Guardian General, and the battle for the fortress was lost. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Blast! That's bad news!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'll say it is. We cannot let the enemy keep the fortress. We must weaken the enemy and recapture the fortress at all costs!</p>
+          <p> </p>
+          <p>[%username], will you and your allies infiltrate the fortress and defeat [%dic:STR_DIC_M_2746_all]s guarding the fortress? Be warned, you will face both fighters and archers in this assault.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>When we lost the fortress, the Balaur and Elyos were still fighting. I'm not certain who now controls the fortress. It doesn't matter--you must kill them all and take it back!</p>
+          <p> </p>
+          <p>Defeat [%dic:STR_DIC_M_2746_all]s guarding the fortress and bring me [%dic:STR_DIC_I_QUEST_2746a] as proof. Take a few good allies with you--going alone will be suicide. Only the strongest can occupy the fortress.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Blood for blood!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You call yourself an Asmodian Daeva?! How can you just stand there?</p>
+          <p> </p>
+          <p>We fight in Reshanta to protect Asmodae. Yet you refuse to help! What are you, an Ellie?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Farewell."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The fortress is still in enemy hands, but we will knock down their Guardian General soon.</p>
+          <p> </p>
+          <p>Well Daeva, did you defeat the [%dic:STR_DIC_M_2746_all] and collect the [%dic:STR_DIC_I_QUEST_2746a]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I ripped this insignia from his corpse."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What are you waiting for?</p>
+          <p> </p>
+          <p>Don't you understand how dire this situation is?</p>
+          <p> </p>
+          <p>Stop delaying and go now to the Fortress. Defeat [%dic:STR_DIC_M_2746_all]s and bring me the [%dic:STR_DIC_I_QUEST_2746a].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"The task is mine!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thanks be to Azphel! You've taken the Guardian down.</p>
+          <p> </p>
+          <p>I know I chose the right Daeva for the job, [%username].</p>
+          <p> </p>
+          <p>But it is not over yet. We'll need time to recapture the fortress. Until then, we must hammer at the enemy's defenses. Help us when you can.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Bring proof that you defeated [%dic:STR_DIC_M_2746_all] to [%dic:STR_DIC_N_Amundi].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Gather allies to defeat the garrison guarding Siel's Eastern Fortress, and collect their Protector Insignias.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Amundi asked you to weaken the defense of Siel's Eastern Fortress to aid in recapturing it.</p>
+          <p> </p>
+          <p>You infiltrated the fortress, defeated the garrison guarding it, and took their Protector Insignias to Amundi.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

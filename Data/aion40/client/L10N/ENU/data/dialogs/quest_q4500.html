@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Azphelumbra. Isn't that how you Asmodians greet one another?</p>
+          <p> </p>
+          <p>You have Lepharists in Asmodae, too, I hear. </p>
+          <p> </p>
+          <p>The ones around here, however, are on an entirely different level.</p>
+
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Are they indeed?"</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The elite of the elite--that's what we've got at the Azoturan Fortress. They call themselves Expert Soldiers and Special Ops Soldiers.</p>
+          <p> </p>
+          <p>They're here now, but you can bet they'll be in Asmodae before long.</p>
+          <p> </p>
+          <p>How'd you like the chance to nip that in the bud, [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'll send you after the Special Ops Soldiers first--
+[%dic:STR_DIC_M_IDLF3CL_LehparWa_44_Ae]s, [%dic:STR_DIC_M_IDLF3CL_LehparAs_44_Ae], and [%dic:STR_DIC_M_IDLF3CL_LehparAsHide_44_Ae].</p>
+          <p> </p>
+          <p>Search their bodies for [%dic:STR_DIC_I_quest_4500a], and bring those to me.</p>
+          <p> </p>
+          <p>And...be careful. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Blood for blood...I mean...the task is mine."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Why wouldn't you jump at the chance? You're more than capable, and if you think they won't be coming for your kind next, you're wrong.</p>
+          <p> </p>
+          <p>A Lepharist is a Lepharist, right?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Perhaps."</Act>
+    </Selects>
+  </HtmlPage>
+ 
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You've looked better. </p>
+          <p> </p>
+          <p>Well, I said you could do it. I didn't say it would be easy.</p>
+          <p> </p>
+          <p>Hand over the [%dic:STR_DIC_I_quest_4500a]s you took off those scum, and get some rest.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I stripped these from their corpses." </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Taking longer won't make the situation better.</p>
+          <p> </p>
+          <p>While we wait around, they could be up to anything.</p>
+          <p> </p>
+          <p>Take out those Special Ops Soldiers and bring me their [%dic:STR_DIC_I_quest_4500a]s.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"On my way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good. Good.</p>
+          <p> </p>
+          <p>This should hit them where it hurts. They'll be a long time recovering from what you did today. </p>
+          <p> </p>
+          <p>May the blessings of light...no, I don't suppose that's the right thing to say, is it? The blessings of darkness, perhaps.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect [%dic:STR_DIC_I_quest_4500a]s and take them to [%dic:STR_DIC_N_Acestes].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Eliminate the Lepharist Special Ops Soldiers at Azoturan Fortress, collect their Insignias, and take them to Acestes.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Acestes said that the Lepharists in Azoturan are the elite of elites, and while they are only in Elysea now, they will soon infiltrate Asmodae.</p>
+          <p> </p>
+          <p>And as he suggested thinning their numbers before that happened, you eliminated the Azoturan Fighters, Azoturan Outriders, and Azoturan Assassins and took their insignias to Acestes as proof.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

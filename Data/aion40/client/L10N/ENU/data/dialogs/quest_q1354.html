@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did you understand my flight lecture?</p>
+          <p> </p>
+          <p>Then give it a try, [%username]!</p>
+          <p> </p>
+          <p>Theory is nothing. You must practice! Practice is everything!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Faith and Arms!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Here's the drill. First, pass through the hoop behind me, swoop down, then thread the holes on the columns of the circle tower.</p>
+          <p> </p>
+          <p>Last, fly to the highest circle tower, in the temple's center, pass through the hole there, and fly back to me.</p>
+          <p> </p>
+          <p>You have two minutes. Each circle grants a flight speed boost, so two minutes is enough. Ready?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Okay. Remember, two minutes, no more.</p>
+          <p> </p>
+          <p>Clear each circle I indicated and get back here in time. If your strength falters, don't fall. Find somewhere to land quickly.</p>
+          <p> </p>
+          <p>I'll start the timer now. Ready?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"We'll know soon...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Don't feel ready?</p>
+          <p> </p>
+          <p>Good judgment! Better to practice than to fall out of the air. That would be shameful.</p>
+          <p> </p>
+          <p>Practice, practice some more, then return here.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Thank you, teacher."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You've practiced? Are you ready?</p>
+          <p> </p>
+          <p>This is your first chance to fly at high speeds.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Wings don't fail me now!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Not quite, student.</p>
+          <p> </p>
+          <p>Don't worry, most people fail their first try. Practice is everything.</p>
+          <p> </p>
+          <p>Practice, pupil, and try again.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO2">"Swear my feathers ache...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Listen, rain-cloud!</p>
+          <p> </p>
+          <p>Two minutes is a short time.</p>
+          <p> </p>
+          <p>Quit being cocky and grab sky!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"S-sorry, Ma'am!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I always say, Daevas' wings should beat, never be beaten.</p>
+          <p> </p>
+          <p>You've passed. But always, always practice!</p>
+          <p> </p>
+          <p>If you do that, every sky, every wind, will call you 'master.'</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk with [%dic:STR_DIC_N_Marana] when you are ready to fly.</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">After completing the high level flight course in two minutes, talk with [%dic:STR_DIC_N_Marana].</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Ask [%dic:STR_DIC_N_Marana] about the results of the test.</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Take Marana's high level flight skill test. </font></p>
+        </body>
+        </html>
+    </Contents>
+    <notifies>
+       <notify progress="2"  pos="3" fontsize="16" showframe="true" time="5" color="yellow">Advanced Flight Test</notify>
+       <notify progress="3"  pos="3" fontsize="16" showframe="true" time="5" color="yellow">Stage 1: Passed.</notify>
+       <notify progress="4"  pos="3" fontsize="16" showframe="true" time="5" color="yellow">Stage 2: Passed.</notify>
+       <notify progress="5"  pos="3" fontsize="16" showframe="true" time="5" color="yellow">Stage 3: Passed.</notify>
+       <notify progress="6"  pos="3" fontsize="16" showframe="true" time="5" color="yellow">Stage 4: Passed.</notify>
+       <notify progress="7"  pos="3" fontsize="16" showframe="true" time="5" color="yellow">Stage 5: Passed. Return to the Eracus Temple Cavern</notify>
+       <notify progress="8"  pos="3" fontsize="16" showframe="true" time="5" color="yellow">See Marana for your results.</notify>
+    </notifies>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>After Marana's lecture, she suggested you try a flight test. You threaded the hoops and towers of the Eracus Temple Cavern, then shot back to the starting point.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

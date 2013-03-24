@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], let's talk for a moment. It'll take my mind off... my wounds.</p>
+          <p> </p>
+          <p>You're a mercenary, like me. We've spent most of our time here culling the local wildlife, and I've come to find the [%dic:STR_DIC_E_LF1_name] environs intriguing.</p>
+          <p> </p>
+          <p>This region is remote, so it's seen few battles. As a result, there are undisturbed ruins here. And the animals... they're wonderful! When they're not attacking us, that is. Nghh... damn that Worg.</p>
+          <p> </p>
+          <p>Have you seen the [%dic:STR_DIC_MLA12_1]? They're an amazing species unique to... ah... my... back....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Are you okay?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm getting better. My fever has gone. The wound still... burns, though.</p>
+          <p> </p>
+          <p>Anyway, I'd like to study the [%dic:STR_DIC_MLA12_1]. Rumor has it that they were simple plants, transformed by the Cataclysm... mutated!</p>
+          <p> </p>
+          <p>Will you help me study these creatures, [%username]? I'd like a few specimens. Or... rather, their hearts.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="PLAYEMOTION_comfort;HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent! I knew you had a curious mind.</p>
+          <p> </p>
+          <p>The [%dic:STR_DIC_MLA12_1]s roam on the [%dic:STR_DIC_FLA06]. I'd like to have a few hearts for my anatomy sketchbook.</p>
+          <p> </p>
+          <p>A scientific curiosity to ponder... while I heal. To think--a plant with a heart!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be back soon. You just read and rest."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>A shame.</p>
+          <p> </p>
+          <p>I shouldn't expect mercenaries to share my enthusiasm for natural studies. Though I wasn't born a naturalist... my love for this world grew over time.</p>
+          <p> </p>
+          <p>You better get going, [%username]. But look more closely at the world around you, eh?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Try to rest a little, Melponeh." </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're back!</p>
+          <p> </p>
+          <p>Did you find... the [%dic:STR_DIC_QILA70]s?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Are these okay?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No, [%username], [%dic:STR_DIC_QILA70]s, fresh ones!</p>
+          <p> </p>
+          <p>Please make sure you bring several, enough to see individual differences, you know.</p>
+          <p> </p>
+          <p>I think I need to rest now....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Sorry! I'll keep looking." </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], these are perfect!</p>
+          <p> </p>
+          <p>Now I can study these and learn if they arose out of the Cataclysm... or natural evolution.... A perfect project to calm a fevered mind!</p>
+          <p> </p>
+          <p>Thank you, friend. Please... take this as a token. I'll mention you in my paper, too.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Go to the [%dic:STR_DIC_FLA06] and gather [%dic:STR_DIC_QILA70]s for [%dic:STR_DIC_LA11] to study.</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">[%dic:STR_DIC_LA11], a naturalist, wants some [%dic:STR_DIC_QILA70]s to study. Go to the Agaric Spore Road and hunt Fearless Fungies!</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Melponeh is an amateur historian specializing in Sapien history. She asked you for some [%dic:STR_DIC_MLA12_1] hearts to study while she heals from an infected wound.</p>
+          <p> </p>
+          <p>You hunted Fungies on the Agaric Spore Road and brought their hearts to Melponeh, who can now study the Cataclysm's effect on the natural world.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

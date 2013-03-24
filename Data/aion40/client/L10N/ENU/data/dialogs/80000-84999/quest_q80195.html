@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hello again, [%username]. The Shapers of Dusk would like to give you a little test this time.</p>
+          <p> </p>
+          <p>You'll find this mission a little more complex than the last one, but I'm sure it will still be easy for you.</p>
+          <p> </p>
+          <p>After all, you had no problems with those Starved Mosbears.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"All right."</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Glad you're on board. Go to [%dic:STR_DIC_FLA_194]. Some Slinks and Lobnites escaped from a laboratory there, and have mixed in with the local wildlife.</p>
+          <p> </p>
+          <p>You won't be able to tell the difference, so just kill as many as you find. Bring me and  [%dic:STR_DIC_I_QUEST_80194a] and [%dic:STR_DIC_I_QUEST_80194b] that you pick up.</p>
+          <p> </p>
+          <p>You'll do this, right?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="PLAYEMOTION_comfort;HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I knew you'd be up for the task.</p>
+          <p> </p>
+          <p>Now remember, you won't be able to tell the escaped Slinks and Lobnites apart from their wild comrades, but the local population could use some culling regardless.</p>
+          <p> </p>
+          <p>Bring back four Slink Oils and four Lobnite Pincers for me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"The task is mine."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You aren't scared of a few slinks, are you?</p>
+          <p> </p>
+          <p>They were just test animals, and, I'm reliably informed, were injected with very very few mutagens. There's almost no chance of you getting bitten and turning into... well... anything!</p>
+          <p> </p>
+          <p>Come back if you change your mind.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Uh huh."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That was some fast work. Did you find the all of the Slink Oil and Lobnite Pincers I asked for?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Right here."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I knew that was too quick. Have you even left for Altgard Fortress yet?</p>
+          <p> </p>
+          <p>Hurry up, before those Lab Lobbers completely eliminate their wild Tentacled Lobnite cousins.</p>    
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Goodbye."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>A little more difficult this time, was it? At least you came back in one piece.</p>
+          <p> </p>
+          <p>The Shapers of Dusk are pleased with your performance. Take this reward for your services.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Go to [%dic:STR_DIC_FLA194] and get [%dic:STR_DIC_I_QUEST_80194a] and [%dic:STR_DIC_I_QUEST_80194b] for [%dic:STR_DIC_N_event_Proburr]. </font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Presteore from the Shapers of Dusk wants to test your skills by bringing back some Slink Oil and Lobnite Pincers that you hunt from escaped laboratory experiment Slinks and Lobnites.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Presteore asked you to bring him back some Slink Oil and Lobnite Pincers to test your worthiness for the Shapers of Dusk.</p>
+          <p> </p>
+          <p>You found where the escaped laboratory experiments hand gotten to, and brought him the items he had requested.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

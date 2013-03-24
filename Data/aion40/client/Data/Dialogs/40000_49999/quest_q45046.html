@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>결계 수호단원에게 알리오.</p>
+          <p> </p>
+          <p>결계 수호의 활동을 위해서는 많은 식량 자원이 필요하다오.</p>
+          <p> </p>
+          <p>특히 겔크마로스에서 활동하고 있는 단원들은 식량 수급이 어려워 활동에 지장이 있소.</p>
+          <p> </p>
+          <p>이 편지를 받는 단원 동지께서 식량으로 쓸 [%dic:STR_DIC_G_QUEST_45046a], [%dic:STR_DIC_G_QUEST_45046b], [%dic:STR_DIC_G_QUEST_45046c]%을 채집하여 [%dic:STR_DIC_N_Amphibia]나 [%dic:STR_DIC_N_Mollusca]에게 가져다 준다면 유용하게 쓰겠소.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">편지를 접어 넣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>혹시 편지를 받고 오신 건가요?</p>
+          <p> </p>
+          <p>결계가 없는 용계에서 우리 결계 수호단의 활동은 더욱더 다양합니다.</p>
+          <p> </p>
+          <p>때문에 필요한 물자도 많지만 아무래도 겔크마로스까지 진출한 단원의 수가 적기 때문에 어려움이 많지요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">채집물을 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>물론 [%username] 님께서도 여러 가지 요청이 들어있는 편지를 받으셨겠지요.</p>
+          <p> </p>
+          <p>수호단원이기 이전에 판데모니움의 대소사를 돌보는 데바이시니까 항상 바쁘시겠지만 단원을 위한 임무에도 매일 신경써 주시기를 바랍니다.</p>
+          <p> </p>
+          <p>수호단을 위해 희생하시는 데바를 위한 보상에 대해서도 언제나 많이 고민하고 있다는 걸 알아주세요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>식량으로 쓸 제라카, 멘즈네, 세베럼을 가지고 오셨군요.</p>
+          <p> </p>
+          <p>정말 고맙습니다. [%username] 님께서 힘들게 채집한 이 식량은 수호단의 겔크마로스 활동의 밑거름이 될 것입니다.</p>
+          <p> </p>
+          <p>이것은 수호단에서 매일 임무 수행을 위해 노력해 주시는 동지들을 위해 준비한 증표입니다.</p>
+          <p> </p>
+          <p>매일 수호단을 위해 노력해 주시기 바랍니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_G_QUEST_45046a], [%dic:STR_DIC_G_QUEST_45046b], [%dic:STR_DIC_G_QUEST_45046c]%을 모아 [%dic:STR_DIC_N_Amphibia]나 [%dic:STR_DIC_N_Mollusca]에게 가져가라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">결계 수호단에서 편지가 왔다. 지시에 따르자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>결계 수호단에서 온 편지의 내용은 식량으로 쓸 채집물을 모아 암피비아나 몰루스카에게 가지고 가라는 내용이었다.</p>
+          <p> </p>
+          <p>편지에 따라 제라카, 멘즈네, 세베럼을 채집하여 가지고 가자 증표 보상을 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

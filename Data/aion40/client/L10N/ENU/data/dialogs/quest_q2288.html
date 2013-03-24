@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>People in town are talking about you, [%username]. Well, you may be a Daeva, but I'm still better than you at one thing! I know this forest like the back of my hand, and I killed my first Mosbear before I lost my baby teeth.</p>
+          <p> </p>
+          <p>Nobody hunts [%dic:STR_DIC_M_Mosbear_all]s as swiftly as I do, not Human, Daeva or Balaur! Bet on it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Perhaps we should!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Truly? You'd challenge me?</p>
+          <p> </p>
+          <p>So be it! Go into the woods and kill three [%dic:STR_DIC_M_Mosbear_all]s, any kind you choose. Most make their lairs in the [%dic:STR_DIC_W_DF1A_11].</p>
+          <p> </p>
+          <p>Now, my record for three is 10 minutes. Do you really think you can better it?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You have a Pluma's confidence, friend.</p>
+          <p> </p>
+          <p>Well then, no sense in waiting!</p>
+          <p> </p>
+          <p>Tell me when you're ready, and your time will begin.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"Oh, I'm ready."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Backing down? I hardly blame you.</p>
+          <p> </p>
+          <p>I have a lifetime of knowledge and skill hunting Mosbears. Whereas you have...feathers.</p>
+          <p> </p>
+          <p>Challenge me another time, if you can work up the nerve.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"You'll eat those words...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, you're on time at least. Did you find any Mosbears?</p>
+          <p> </p>
+          <p>"Seeking" isn't hunting, duckling. You have to catch something!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Something like these?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What...Really? A full three?</p>
+          <p> </p>
+          <p>I...Nobody has ever matched me! You deserve that reputation of yours, Daeva.</p>
+          <p> </p>
+          <p>Here, take it. I never expected to lose....</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Kill three [%dic:STR_DIC_M_Mosbear_all]s in 10 minutes ([%2]/3).</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Return to [%dic:STR_DIC_N_Sjania].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Shania told you that nobody could beat her and hunt down three Mosbears within 10 minutes, so you took the bet.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Shania, the best hunter in the village, asked you to enter into a friendly wager.</p>
+          <p> </p>
+          <p>You hunted down three Mosbears in 10 minutes, beating her record, and won the purse.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

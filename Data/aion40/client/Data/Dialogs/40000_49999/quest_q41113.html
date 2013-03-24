@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q41100</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님.</p>
+          <p> </p>
+          <p>우리 카마르의 그림자단은 사르판의 데바와 피난민들을 위협하는 난폭한 생물들을 처치하기 위해 많은 노력을 기울이고 있습니다.</p>
+          <p> </p>
+          <p>하지만 저희 단원들의 능력만으로는 너무도 많은 그림자의 표적들을 처치할 수 없다는 것을 잘 알고 있습니다.</p>
+          <p> </p>
+          <p>그래서 당신처럼 강력한 데바에게 도움을 요청드리는 것이죠.</p>
+          <p> </p>
+              <p>부탁이니 [%dic:STR_DIC_E_Q41113a] 중 하나를 처치해 주시지 않겠습니까?</p>
+          <p> </p>
+             <p>카마르의 그림자단의 이름으로 감사와 보상을 약속드릴 수 있습니다. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님, 돌아오셨군요. 기다리고 있었습니다.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_E_Q41113a]은 처치하고 오셨습니까?</p> 
+          <p> </p>
+          <p>어떤 녀석과 전투를 벌이셨을 지 궁금하군요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그랬군요!</p>
+          <p> </p>
+          <p>자세한 이야기를 더 듣고 싶지만 [%username] 님은 바쁘신 분이니 그래서는 안 되겠죠.</p>
+          <p> </p>
+          <p>정말 수고가 많으셨습니다. 여기, 카마르의 그림자단에서 제공해드리는 보상입니다.</p>
+          <p> </p>
+          <p>다른 녀석들의 처리도 계속 해야하니 앞으로도 종종 찾아주시면 감사하겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_E_Q41113a] 중 하나를 처치하라([%2]/1)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Betios]와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">위험한 그림자의 표적들 중 하나를 찾아 처치해야겠다.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>베티오스는 사르판의 데바와 피난민들을 위협하는 위험한 그림자의 표적들을 처치해달라고 부탁했다.</p>
+          <p> </p>
+          <p>표적들 중 가장 먼저 만난 녀석을 처치하고 카마르의 그림자단에서 제공하는 보상을 받았다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

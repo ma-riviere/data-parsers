@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p align="center"> - Work Order -</p>
+          <p> </p>
+          <p>1. To: Temp Worker [%username]</p>
+          <p> </p>
+          <p>2. Job Details: Goldrine Hospital sent an urgent order. Fill up the Empty Water Bottle with water from the *** Swamp, and deliver it to the supervisor at Goldrine Hospital.</p>
+          <p> </p>
+          <p>3. Supervising Branch: Silverine South Katalam Branch </p>
+          <p> </p>
+          <p>The above mission will be considered in the evaluation process for hiring you as a full-time worker. Additional points may be added depending on the result. Do your best, nyerk.</p>
+          <p> </p>
+          <p>- Danurinerk, Recruiter of Silverine Limited</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">Fold the work order and put it away.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>How can I help you?</p>
+          <p> </p>
+          <p>There has been a number of patients suffering from stomachaches. Are you one of them, too, [%username]?</p>
+          <p> </p>
+          <p>Then you came to the right place. Our hospital specializes in treating stomachaches, nyerk.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">Hand over the Bottle of Swamp Water.</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(Squinting eyes) I am aware you are a quite capable [%userclass], and I really don't understand why you're working for Silverine.</p>
+          <p> </p>
+          <p>Nyerk, don't get me wrong. I'm just saying this because we're so glad to have a great talent like you with us, [%username], nyerk.</p>
+          <p> </p>
+          <p>(Pointing at the water bottle) As you can see, please keep mum about this bottled water.</p>
+          <p> </p>
+          <p>Well, no matter. It wouldn't hurt Goldrine, nyerk.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Fill up the Empty Water Bottle with swamp water from the *** swamp.</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Deliver the Bottle of Swamp Water to *** in Goldrine Hospital.</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">You received a work order from Silverine Limited. Check the work details and perform the mission.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You received a work order from Silverine Limited.</p>
+          <p> </p>
+          <p>After you filled up the Empty Water Bottle with swamp water from the *** swamp and took it to *** in Goldrine Hospital, you were rewarded for your hard work.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

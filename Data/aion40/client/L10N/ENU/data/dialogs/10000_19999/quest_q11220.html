@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Arieluma, [%username]. It's great to see you in the Temple of Scales! Actually, it's just great to see that you are still alive.</p>
+          <p> </p>
+          <p>Now that the bloodshed has ceased for the time being, it's probably a good idea if we stock up on supplies and perform some maintenance tests on our defenses.</p>
+          <p> </p>
+          <p>We can never be too sure...especially in this place.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Always quietest before the storm."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>My thoughts exactly. The battle to take this place burned through most of our supplies. It's difficult to stay stocked up...since we're right here on the front line, foes to the left and right.</p>
+          <p> </p>
+          <p>Sanctum is too far away, and Inggison is almost as bare as we are. If we were to be attacked right now, I fear what would happen.</p>
+          <p> </p>
+          <p>[%username], would you help me to get some supplies?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What we need most are weapons and materials to strengthen the fortress walls...but we can't get either at the moment. But I've researched some decent substitutes.</p>
+          <p> </p>
+          <p>There's [%dic:STR_DIC_M_LF4_C_DragonSnake_55_An]s near the Aetheric Field Observatory. Their skin is strong and durable...should do the trick.</p>
+          <p> </p>
+          <p>It's a temporary fix but should keep us out of harm's way if the attacks comes. Can you find [%dic:STR_DIC_I_QUEST_11220a] and bring some back here?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"As much as I can find."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This is why we Elyos have seen so many hard times, [%username]! Because of Daevas like you!</p>
+          <p> </p>
+          <p>You're selfish! You don't have faith in the Empyrean Lords! You won't help your brother when he is in need!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Bugs will not help us!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm glad you've returned, [%username]! I feel an attack is almost imminent. We've got holes the size of Kerubars in these walls!</p>
+          <p> </p>
+          <p>Were you able to get what we need from [%dic:STR_DIC_M_LF4_C_DragonSnake_55_An]s?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here's the Leowasp Carapaces."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], what are you doing just standing there?</p>
+          <p> </p>
+          <p>We've got Asmodians already measuring our necks for the gallows, and the Balaur have been cleaning their goblets to fill with our spilt blood!</p>
+          <p> </p>
+          <p>Get out there and dice up those [%dic:STR_DIC_M_LF4_C_DragonSnake_55_An]s and bring me back their skins! Shells! Whatever! We need your help!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I will get them now."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Serrators are pretty rare in Elysea...at least ones with skin like these. I guess they've adapted to Balaurea.</p>
+          <p> </p>
+          <p>This should be enough to fix the fortress walls for now...to keep out the beasts for a little while.</p>
+          <p> </p>
+          <p>On behalf of the residents of the Temple of Scales, I'd like to thank you, [%username]. We can't afford to give you much, but please take this....</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Bring the skins of [%dic:STR_DIC_M_LF4_C_DragonSnake_55_An]s to [%dic:STR_DIC_N_Chekius].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">As Chekius requested, get rid of Serrators and bring back their skins to fix the fortress walls.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Chekius said he urgently needed supplies because the battle to capture the Temple of Scales used up what they had left.</p>
+          <p> </p>
+          <p>You got rid of Serrators and brought back their skins for use for various purposes at the Temple. He thanked you and rewarded your courage.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

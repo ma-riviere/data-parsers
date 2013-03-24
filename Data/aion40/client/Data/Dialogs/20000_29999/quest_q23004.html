@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>예전에 비해 방벽 조사 재료의 수가 많이 줄어든 게 아무래도 이상합니다냥.</p>
+          <p> </p>
+          <p>슈라크 가드가 빼돌리고 있는 것 같은데 심증만 있고 물증이 없습니다냥. 돈이 되는 물건이니 슈라크라면 분명 그러고도 남을 겁니당, 냥냥.</p>
+          <p> </p>
+          <p>[%username]%이 [%dic:STR_DIC_N_LDF5b_ShulackGuard_03]%에게 가서 방벽 조사 재료의 숫자가 줄었다며 은근슬쩍 떠볼 수 있겠습니까냥?</p>
+          <p> </p>
+          <p>무서워서 직접 말 못하는 건 아니니 오해하지 마십시옹, 갸릉!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>음, [%username]?</p>
+          <p> </p>
+          <p>나 같은 호위병에게 무슨 볼일이냐거?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">방벽 조사 재료에 대해 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>엥, 수가 줄어들었다거?</p>
+          <p> </p>
+          <p>글쎄, 나는 잘 모르겠다거.</p>
+          <p> </p>
+          <p>아, 그러고 보니 요새 [%dic:STR_DIC_M_LDF5B_A1_Cherubim_63_n]들이 근처의 땅을 뒤적거리는 걸 자주 봤다거!</p>
+          <p> </p>
+          <p>쓸데없는 싸움이 될 것 같아서 무시하고 있었는데 그런 짓을 하고 있을 줄은 몰랐다거!</p>
+          <p> </p>
+          <p>그 놈들이 훔쳐간 게 분명하다거!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>왔군용! 어떻게 됐습니까, 냥냥?</p>
+          <p> </p>
+          <p>슈라크 가드가 범인인 줄 다 알고 있었습니다냥.</p>
+          <p> </p>
+          <p>내 당장 상부에 보고해서 잘라 버릴 겁니당, 갸릉!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아, 그런 거였습니까냥?</p>
+          <p> </p>
+          <p>떠돌이 케르비엘 채집꾼들이 방벽 조사 재료를 어디다 쓰려고 가져간 겁니까냥...</p>
+          <p> </p>
+          <p>그런 눈으로 보지 마십시옹, 냥냥!</p>
+          <p> </p>
+          <p>슈라크를 의심하는 건 당연한 일입니다냥.</p>
+          <p> </p>
+          <p>어쨌든 진범을 처치해줬다니 고맙습니당, 갸릉.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_LDF5b_ShulackGuard_03]%에게 방벽 조사 재료에 대해 물어봐라</font></p></step>
+               <step><p visible="[%9]"><font color="[%10]">방벽 조사 재료를 훔쳐가는 [%dic:STR_DIC_M_LDF5B_A1_Cherubim_63_n]%을 처치하라([%11]/10)</font></p></step>
+               <step><p visible="[%24]"><font color="[%25]">[%dic:STR_DIC_N_LDF5b_wallring_E]%에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">슈라크 가드가 방벽 조사 재료를 빼돌리는지 확인해 보자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>월링은 슈라크 가드가 방벽 조사 재료를 훔쳐가는 것 같다며 그를 추궁해달라고 부탁했다.</p>
+          <p> </p>
+          <p>그에게 방벽에 대해 물으니 아마 케르비엘이 훔쳐갔을 것이라고 말해 떠돌이 케르비엘 채집꾼을 처치하고 월링에게 알려 줬다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good timing! I was just thinking I could use your help, [%username].</p>
+          <p> </p>
+          <p>Our supply convoy arrives soon, and I'm concerned about these Drakes roaming the area. They snatch supplies sometimes, see.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Yes, they're greedy."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I don't want trouble on my watch, so I could use your services, [%username]. I can pay handsomely!</p>
+          <p> </p>
+          <p>What I need's for you to clear a route for the supply convoy by wiping out the Degenerated Drakes and [%dic:STR_DIC_M_Ab1_1241_drakeB_38_An]s in the areas nearby. Easy, right?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You've hunted such creatures before, right? Shadows, you could wipe out all the Degenerated Drakes and [%dic:STR_DIC_M_Ab1_1241_drakeB_38_An]s on Miren Island if you liked!</p>
+          <p> </p>
+          <p> I need to get on with my work. Find me immediately when you finish. Now, get going!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"This should be easy."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That's fine, but if we're besieged with no supplies...</p>
+          <p> </p>
+          <p>Ah, never mind. I have plenty of people who know the value of a favor.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm not your lackey."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I heard screeches and bones breaking outside our walls. Was that you exterminating the Degenerated Drakes and [%dic:STR_DIC_M_Ab1_1241_drakeB_38_An]s?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I...discouraged them, yes."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Nice work. Of course it turns out they changed the supply route after you left, but I'll still reward you as promised. No hard feelings?</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Wipe out any Drakes on Miren Island.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  Degenerated Drake ([%2]/9)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Ab1_1241_drakeB_38_An] ([%5]/9)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_N_Metis].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Metis worried that Drakes around the fortress would raid his supply convoy. Wipe out the Drakes to clear the supply route.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Metis asked you to drive off Drakes near the fortress to clear a route for his convoy of supplies.</p>
+          <p> </p>
+          <p>You killed the Drakes, but learned that the convoy had been rerouted. Metis was grateful enough to pay you anyhow.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

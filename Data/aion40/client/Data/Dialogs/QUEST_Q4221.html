@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그러고 보니 [%userclass]님 성함이 [%username] 아닙니까?</p>
+          <p> </p>
+          <p>맞군요. 도대체 어디 있다가 이제야 나타난 겁니까?</p>
+          <p> </p>
+          <p>우이킨이 [%username] 님을 애타게 찾았습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">우이킨이 누구인지 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>판데모니움에서 온 슈고라던데 [%username] 님에게 전할 물건이 있다더군요.</p>
+          <p> </p>
+          <p>뭐, 자세한 얘기는 안 했지만 꽤 높으신 분의 심부름으로 온 것 같았습니다.</p>
+          <p> </p>
+          <p>벨루스란 요새에서 며칠 기다리다가 아무래도 안 되겠다며 직접 찾아보겠다고 떠났는데 쫓아가야 하지 않겠습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>우이킨이 [%dic:STR_DIC_W_STR_DF3_SZ_E4]를 시작으로 [%dic:STR_DIC_W_STR_DF3_SZ_D1]를 거쳐 [%dic:STR_DIC_W_STR_DF3_SZ_G2_2]까지 간다고 했으니 그쪽으로 가 보세요.</p>
+          <p> </p>
+          <p>그나저나 길이 어긋나지 말아야 할 텐데... 벨루스란이 워낙 넓으니 허탕을 칠까 봐 걱정되는군요.</p>
+          <p> </p>
+          <p>혹시 모르니 우이킨 인상착의를 설명해 드릴게요.</p>
+          <p> </p>
+          <p>외눈 안경에 좀 특이한 말투를 쓰는 슈고입니다. 수하를 하나 데리고 다니고요.</p>
+          <p> </p>
+          <p>그럼 꼭 만나길 바라겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>꽤 중요한 일인 것 같던데 정말 쫓아가지 않을 겁니까?</p>
+          <p> </p>
+          <p>누구라고 말은 안 하지만 판데모니움의 높으신 분이 보낸 슈고 같았단 말입니다.</p>
+          <p> </p>
+          <p>뭐, 당사자가 싫다니 어쩔 수 없지만 보는 입장에선 좀 걱정되는군요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>에취, 마계는 다 이러는거... 냥?</p>
+          <p> </p>
+          <p>가도 가도 모두 눈밭이구냐앙.</p>
+          <p> </p>
+          <p>빨리 일을 끝내야 여기서 벗어날 수 있을 텐데 도대체 그 사람은 어디 있는 건지, 갸아룽.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">우이킨이 맞는지 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(잔뜩 경계하며) 내가 우이킨이 맞다거... 만 어떻게 내 이름을 안 거냐앙?</p>
+          <p> </p>
+          <p>아, 혹시 벨루스란 요새에서 에파인가 하는 데바를 만났냥?</p>
+          <p> </p>
+          <p>난 또 뭐라고... 괜히 겁먹었 아니, 긴장했구낭! 갸아룽.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_Shulack_DF3_01]%을 찾아라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">판데모니움에서 온 우이킨이라는 슈고가 찾는다고 한다. 암스니르 항구와 키눈가프 얼음도시, 은빛 구릉 방면으로 갔다는 우이킨의 뒤를 쫓아가자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>요새 경비병 에파는 왜 이제 나타났다며 우이킨이라는 슈고가 애타게 찾다가 얼마 전 요새를 떠났다고 했다.</p>
+          <p> </p>
+          <p>판데모니움의 높으신 분 심부름으로 온 것 같다기에 에파가 알려준 방면으로 뒤를 쫓아 우이킨을 겨우 만날 수 있었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q41216</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이제 일기장은 마지막 장까지 모두 읽었어.</p>
+          <p> </p>
+          <p>마지막 장에는 아버지가 끝까지 지키려 했던 유물에 대해서 적혀있더군... 내 이야기는 없었지만...</p>
+          <p> </p>
+          <p>어쨌든 유물은 밤그림자 도굴단 따위에게 빼앗겨서는 안 될 중요한 물건인 것 같아.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_W_LDF4a_SZ_B2_10]에 숨겨뒀다고 적혀있더군. 슈라크들이 쉽게 찾을 수 없게 말이야.</p>
+          <p> </p>
+          <p>어떤 유물인지는 아직 알 수 없지만, 곧 알 수 있겠지.</p>
+          <p> </p>
+          <p>[%username]. 마지막 부탁이야. 부유하는 고대성소 위로 올라가서 아버지가 남겨둔 유물을 찾아봐 줘. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_W_LDF4a_SZ_B2_10]에 갔던 일은 어떻게 되었어?</p>
+          <p> </p>
+          <p>이미 누군가가 들고 가버렸다고 해도 크게 실망하지는 않을 거야.</p>
+          <p> </p>
+          <p>오랜 시간이 흘렀고, 그것은 아버지의 연구와 관련된 것이지 나와 관련된 것이 아니니까.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">느빌림 비전서를 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>결국 찾아 왔구나! 아직도 그대로 있을 줄이야...</p>
+          <p> </p>
+          <p>(유물을 한참동안 읽어보더니 눈물을 터뜨린다.)</p>
+          <p> </p>
+          <p>이건... 아버지가 나를 위해 남겨둔 연구 자료야.</p>
+              <p> </p>
+          <p>아버지는, 아버지는... 내게 이걸 남겨주기 위해 목숨을 잃으셨던 거야...</p>
+          <p> </p>
+          <p>(목놓아 울기 시작한다.)</p>
+          <p></p>
+          <p>아빠... 미안해요... 고마워요... 흑흑흑...</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_Linacroft]에게 [%dic:STR_DIC_W_LDF4a_SZ_B2_10]에 숨겨진 유물을 가지고 돌아가라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">리나크로프트의 아버지가 죽음을 무릅쓰면서까지 지키고자 했던 유물을 되찾아오자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>리나크로프트는 아버지가 죽음을 무릅쓰면서 지키려고 했던 유물이 부유하는 고대성소 위에 숨겨져 있음을 알게 되었다.</p>
+          <p> </p>
+          <p>유물을 가지고 돌아오니 그것은 리나크로프트의 아버지가 그녀에게 남겨주기 위해 정리해 둔 연구자료였음이 밝혀졌다.</p>
+          <p> </p>
+          <p>리나크로프트는 뒤늦게 아버지의 사랑을 깨닫고 구슬피 울었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

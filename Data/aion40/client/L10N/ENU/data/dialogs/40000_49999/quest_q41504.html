@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q41504</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>Not entered</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select_none" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>There's one more thing we can do to try and bring these craters down... up? I'm not sure. Anyway.</p>
+          <p> </p>
+          <p>The Aether Bomb may have failed, but there is another way, another weapon, that we have yet to try. It will require some effort to create this weapon, but what's worth doing that doesn't require effort, eh?</p>
+          <p> </p>
+          <p>If you're willing to help, kill [%dic:STR_DIC_M_LDF4b_T1_Skeletonre_58_An] frights in the Fissure Barrens, obtain [%dic:STR_DIC_I_quest_41504a]s from them, and take them to [%dic:STR_DIC_N_Gneise]. She will know what to do.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've been waiting for you, [%username]. Do you have the seeds?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I do. Here."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_ok">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good work. One moment while I empower this blade with it.</p>
+          <p> </p>
+          <p>"Spirits of old! Spirits within! Send this blade to make the whole world spin!" Ha! It worked!</p>
+          <p> </p>
+          <p>This is now a Groundbreaker Sword, [%username]. Take it, and thrust it into the [%dic:STR_DIC_OBJ_LDF4B_FOBJ_CrackPortal]. With luck, the whole fissure will collapse. Just make sure you get out of the way first.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Here we go...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_fail">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No, this isn't right. You need to bring [%dic:STR_DIC_I_quest_41504a]s, not just any old seed. Great Siel, pay attention.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Oh. Oops."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We've all been waiting for you! How did you do? What happened?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Well..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hmm. Well, damage is damage. The crater may not be permanently destroyed, but we still did enough damage to put a dent in it, so to speak.</p>
+          <p> </p>
+          <p>The test is over, [%username]. We can consider it a success too, thanks to your hard work. Thank you!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Recover [%dic:STR_DIC_I_quest_41504a]s and take them to [%dic:STR_DIC_N_Gneise].</font></p>[%collectitem]</step>
+               <step><p visible="[%3]"><font color="[%4]">Destroy the [%dic:STR_DIC_OBJ_LDF4B_FOBJ_CrackPortal] with the Groundbreaker Sword.</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Report back to [%dic:STR_DIC_N_Grandia].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">There may be one final way to destroy the crater. Gather Crushing Seeds from Anubite Sentries, and take them to Grais.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Grido, aware that the Aether Bomb was useless when trying to destroy the Giant Crater, said a special weapon was needed. He sent you to obtain Crushing Seeds, which was in turn used to create a Groundbreaker Sword.</p>
+          <p> </p>
+          <p>You thrust the weapon into the Giant Crater Abyss Gap, destroying the center of the Giant Crater, albeit temporarily.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

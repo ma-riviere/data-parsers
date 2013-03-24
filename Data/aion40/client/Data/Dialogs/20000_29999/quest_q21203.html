@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아, [%username]. 얘기는 많이 들었소. </p>
+          <p> </p>
+          <p>젊은 나이에 실력이 뛰어나다고 소문이 자자하더구려. </p>
+          <p> </p>
+          <p>그런데 여기엔 무슨 일이오? 혹시 당신도 황혼의 드라나 농장 때문에?</p>
+          <p> </p>
+          <p>힘들지 않겠소? 아무리 날고 기는 실력이라도 혼자서 농장의 드라칸을 상대하기는 힘들 텐데.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이렇게 하는 게 어떻겠소?</p>
+          <p> </p>
+          <p>우리도 황혼의 드라나 농장을 정찰하려고 왔는데 여러 가지 일 때문에 일손이 부족하구려.</p>
+          <p> </p>
+          <p>당신이 도와주면 큰 도움이 될 것 같은데 좀 도와주겠소? 대신 바쁜 일이 끝나면 우리도 당신 일을 도와주리다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>우선 드라나 채집충 처리를 부탁하겠소.</p>
+          <p> </p>
+          <p>암흑의 포에타에 가 봤으면 알겠지만 용족은 [%dic:STR_DIC_M_DF4_Spaller_55_An]을 이용해 드라나를 수확한다오. 드라나가 워낙 강한 생명체라 일반적인 기구로는 캐지를 못하는 것 같소.</p>
+          <p> </p>
+          <p>그러니 놈들을 없애면 용족의 드라나 생산에 큰 차질이 생길 거요. </p>
+          <p> </p>
+          <p>아참, 우리가 조사한 바로 채집충을 이끄는 우두머리가 있더구려. [%dic:STR_DIC_M_Spaller_NmdQ_55_An]인데 놈도 꼭 없애주시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>혼자서도 자신 있나 보구려.</p>
+          <p> </p>
+          <p>하긴 그랬으니 여기까지 혼자 왔겠지. </p>
+          <p> </p>
+          <p>당신 뜻은 잘 알았소. 그래도 사람 맘이란 게 바뀌기 마련이니 혹시 생각이 바뀌면 오시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>황혼의 드라나 농장에서 오는 길이오?</p>
+          <p> </p>
+          <p>피곤해 보이는데 결과만 얘기해 주고 어서 가서 쉬시오.</p>
+          <p> </p>
+          <p>갔던 일은 어떻게 됐소?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>역시 소문대로구려. 5마리나 되는 드라나 채집충을 처치하다니 게다가 채집충 가나트까지.</p>
+          <p> </p>
+          <p>정말 수고가 많았소. 힘들 텐데 일단 좀 쉬구려.</p>
+          <p> </p>
+          <p>다음 일은 좀 천천히 해도 되니 쉬고 나서 오면 알려 주겠소.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">황혼의 드라나 농장의 드라나 채집충을 처치하라</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_DF4_Spaller_55_An]([%2]/5)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Spaller_NmdQ_55_An]([%5]/1)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Geeze]에게 결과를 알려라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">황혼의 드라나 농장에 있는 드라나 채집충과 우두머리인 채집충 가나트를 처치해 용족의 드라나 생산을 저지하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>기이즈는 상부상조하는 게 어떻겠냐며 자신들을 먼저 도와달라고 했다.</p>
+          <p> </p>
+          <p>황혼의 드라나 농장에 있는 드라나 채집충과 우두머리인 채집충 가나트를 처치해 달라는 것이었다. </p>
+          <p> </p>
+          <p>부탁대로 채집충을 처치하고 돌아가자 수고했다며 사례를 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

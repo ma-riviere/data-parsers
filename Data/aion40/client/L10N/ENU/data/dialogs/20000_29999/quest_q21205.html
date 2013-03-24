@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Blast these Balaur! I'll cut them open and wear their entrails as necklaces!</p>
+          <p> </p>
+          <p>I know, I know... I wouldn't really do it. But the cowards have been sending Drakies to steal supplies from our camp!</p>
+          <p> </p>
+          <p>It's basic guerilla warfare--cut off the enemy's supplies to weaken them. But I never thought the clever devils would do it to us!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"All's fair in war."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>In love and war, [%username], though a true Asmodian only has passion for the latter. I hope Arango heard that. He keeps glancing at me when he should be...THINKING OF WAYS TO CRUSH OUR ENEMIES!</p>
+          <p> </p>
+          <p>I'm sure he heard THAT. Anyway, as much as I'd like to march up to the Balaur barracks and cut out their hearts, I've got a better idea.</p>
+          <p> </p>
+          <p>We raid their supplies, and give them a taste of their own tactics. What do you say, [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes! If we raid them, we can not only replenish our own coffers, but weaken our enemies.</p>
+          <p> </p>
+          <p>Go to Vorgaltem Battlefield and nab the [%dic:STR_DIC_OBJ_DF4_Box_Q21205], but be careful.</p>
+          <p> </p>
+          <p>The Balaur won't take kindly to you stealing their vittles.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"You just said vittles...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Don't tell me you have something better to do, [%username].</p>
+          <p> </p>
+          <p>I could care less if I go hungry, but if we can weaken the Balaur, this will be worth the risk.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I've got better things to do."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've been thinking--I actually don't know what's in those Balaur supplies.... Perhaps it's better we don't eat them....</p>
+          <p> </p>
+          <p>Regardless, stealing the supplies will weaken the Balaur.</p>
+          <p> </p>
+          <p>Well, [%username]? Were you able to get the supplies?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I got them."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You numbskull!</p>
+          <p> </p>
+          <p>Who taught you how to count, an Elyos tactician?</p>
+          <p> </p>
+          <p>Go back and get the [%dic:STR_DIC_OBJ_DF4_Box_Q21205]. They should be inside the Balaur barracks in the Vorgaltem Battlefield.</p>          
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Sorry...I'll be back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent, [%username]!</p>
+          <p> </p>
+          <p>Let's see what's in these supplies now. Ugh...this smells foul, this looks...mostly edible, this is...gross! It's all slimy!</p>
+          <p> </p>
+          <p>Blast! We can't use any of this! Oh well, at least the Balaur won't be using it either. Thanks for your help, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Take food and goods from the [%dic:STR_DIC_OBJ_DF4_Box_Q21205] and bring them to Ankea.</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">The Vorgaltem Battlefield Scout Post is short on supplies due to Drakie thieves. Seize the Balaur supplies in the Vorgaltem Battlefield and bring them to Ankea.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ankea was furious that the Balaur had been stealing supplies from the camp, and proposed that you exact revenge on the Balaur.</p>
+          <p> </p>
+          <p>You seized the supplies from the Balaur barracks in the Vorgaltem Battlefield and returned to her. She said while the supplies didn't seem useful, it still helped.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

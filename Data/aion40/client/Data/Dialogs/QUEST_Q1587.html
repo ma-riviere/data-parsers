@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>리시디케의 말대로라면 곧 라스베르그가 움직일 텐데 상황이 그렇게 되도록 내버려 둘 수는 없습니다.</p>
+          <p> </p>
+          <p>원천적인 해결책은 라스베르그를 처치하는 것이지만 지금 상황에서는 불가능하지요. </p>
+          <p> </p>
+          <p>그러니 대신 놈의 병력에 타격이라도 입혀야겠습니다.</p>
+          <p> </p>
+          <p>근원적인 해결이 불가능하다고 두 손 놓고 있는 건 놈이 전면전을 펼칠 빌미를 주는 짓일 테니 말입니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>하지만 보다시피 이 파세르타 마을에는 가디언이 거의 없습니다. 자체적인 힘으로는 라스베르그의 병력을 약화시킬 수 없지요.</p>
+          <p> </p>
+          <p>그래서 드리는 부탁인데 [%username] 님이 이 임무를 좀 맡아 주시겠습니까?</p>
+          <p> </p>
+          <p>마을 북동쪽에 있는 멜란티스 유적지로 가서 [%dic:STR_DIC_M_Graveknight_44_An] 무리와 [%dic:STR_DIC_M_Lich_45_An]%을 처치해 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그럼 지금 당장 멜란티스 유적지로 가서 [%dic:STR_DIC_M_Graveknight_44_An] 무리와 [%dic:STR_DIC_M_Lich_45_An]%을 처치해 주십시오.</p>
+          <p> </p>
+          <p>언데드라고는 해도 한때 데바였던 자들이니 저항이 만만치 않을 겁니다. 그러니 꼭 동료와 함께 가십시오. </p>
+          <p> </p>
+          <p>그들도 한때는 천인이었지만 지금은 그들을 동정할 때가 아닙니다. 동정심에 머뭇거리다간 인테르디카의 주민 전체가 몰살당할지도 모른다는 걸 명심하십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>자신의 능력에는 벅찬 일이라고 생각하는 거요?</p>
+          <p> </p>
+          <p>상대가 만만치 않으니 감당할 자신이 없으면 수락하지 않는 게 오히려 나을지도 모르오.</p>
+          <p> </p>
+          <p>하지만 혹시라도 좋은 동료를 만나거든 다시 오시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>상황이 이 지경이 되니 더욱 안타까워지는군요.</p>
+          <p> </p>
+          <p>애초에 대응만 잘했더라도 오늘날 이런 사건은 생기지 않았을 텐데.</p>
+          <p> </p>
+          <p>하지만 안타까워도 현재는 현재의 최선을 다할 수밖에 없지 않겠습니까.</p>
+          <p> </p>
+          <p>부탁드린 대로 운페스트 투사 무리와 리치 신관은 처치했습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정말 수고 많았습니다.</p>
+          <p> </p>
+          <p>과거사는 과거사고 더 이상 아칸에게 치욕을 당하는 일이 없도록 최선을 다해야겠지요.</p>
+          <p> </p>
+          <p>일단 급한 불은 끈 것 같으니 다음 작전은 요새의 지시를 기다려야겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">멜란티스 유적지의 언데드를 처치하라</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Graveknight_44_An]([%2]/9)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Lich_45_An]([%5]/1)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Rance]와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">란스는 라스베르그가 전면전을 벌이기 전에 병력을 약화시키는 것이 좋겠다고 한다. 멜란티스 제단으로 가서 운페스트 투사 무리와 리치 신관을 처치하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>란스는 라스베르그가 전면전을 펼치기 전에 언데드의 병력을 약화시켜야 한다고 했다. 그래서 멜란티스 제단으로 가서 운페스트 투사 무리와 리치 신관을 처치했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

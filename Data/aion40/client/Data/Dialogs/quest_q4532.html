@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q4532</QuestId>    <QuestName>???</QuestName>    <QuestType>미입력</QuestType>  </QuestInfo>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>왜 자꾸 나를 괴롭히는 것인가?</p>
+          <p> </p>
+          <p>마족과는 관련되고 싶지 않다고 말한 것 같은데.</p>
+          <p> </p>
+          <p>너희 마족들은 기억력이 무척 나쁜 것 같구나.</p>
+          <p> </p>
+          <p>너희가 아니더라도 우리를 괴롭히는 것들은 충분히 많다. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">도울 일이 있는지 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>지금까지 뭘 들은 건가. 우리 일에 신경 쓰지 말라.</p>
+          <p> </p>
+          <p>(냉정히 돌아서다가 급히 고개를 돌리며) 잠깐...</p>
+          <p> </p>
+          <p>네가 그렇게 나온다면 한 가지만 말하마..</p>
+          <p> </p>
+          <p>보다시피 이 땅은 얼어붙고 황폐하다. 그래서 식량이 부족했지만 우리들은 현명하게 먹을 것을 나누고 지키며 살아가고 있었다.</p>
+          <p> </p>
+          <p>하지만 우리의 지혜로도 해결이 되지 않는 문제가 생겼다. 인간이여, 혹시 내 걱정을 함께 나눌 생각이 있는가?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>땅이 점점 오염되고 있다.</p>
+          <p> </p>
+          <p>그곳에 자라던 나무와 풀이 생명을 잃어가고 있다.</p>
+          <p> </p>
+          <p>그것은 모두 [%dic:STR_DIC_I_2052_Etc]가 만들어 낸 어둠의 존재 때문이다.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_DF3C2_ZombieCurseD_35_An]%를 처치해 오염이 확산되는 것을 막아 달라. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>잠시나마 인간을 믿었던 내가 바보다.</p>
+          <p> </p>
+          <p>이제 인간에게 부탁하는 일은 절대 없을 것이다.</p>
+          <p> </p>
+          <p>이 바람이 멈추기 전에 어서 우리의 영토에서 나가라.</p>
+          <p> </p>
+          <p>그 뒤에도 널 살려둘 수 있을 지 장담할 수 없으니. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>온몸에서 악취가 진동하는구나.</p>
+          <p> </p>
+          <p>죽음의 냄새... </p>
+          <p> </p>
+          <p>그곳에서 오는 것인가?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 얘기한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>우리 그란케르는 호의에 대해 진심으로 감사할 줄 아는 종족이다.</p>
+          <p> </p>
+          <p>네가 우리를 위해 힘써준 것을 우리는 잊지 않을 것이다.</p>
+          <p> </p>
+          <p>아들의 아들, 그 아들의 아들까지.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_M_DF3C2_ZombieCurseD_35_An]%를 처치해 오염의 확산을 막아라([%2]/10)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Vanargand]%와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">브리트라의 무기에서 시작된 오염 때문에 그란케르의 식량인 나무와 풀이 죽어가고 있다고 한다. 전염된 좀비를 처치해 오염의 확산을 막고 바나르간드에게 알리자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>바나르간드는 브리트라의 무기의 오염 때문에 나무와 풀이 죽어 안 그래도 부족한 식량이 더욱 부족하다고 했다.</p>
+          <p> </p>
+          <p>오염이 확산되는 걸 막기 위해  전염된 좀비를 처치하고 돌아가자 바나르간드는 호의를 절대 잊지 않겠다며 고마워했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

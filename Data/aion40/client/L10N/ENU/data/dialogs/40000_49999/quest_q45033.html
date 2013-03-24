@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Field Warden:</p>
+          <p> </p>
+          <p>The Lepharist Revolutionaries in Beluslan have recently become a greater concern for the Field Wardens. Thus far we have been able to successfully deal with them, but recently our supply of weapons was disrupted. We must remedy this.</p>
+          <p> </p>
+          <p>Until we can reestablish our normal supply chain, we are asking fellow Wardens to personally aid in the recovery of raw materials that we can use to make weapons for wider distribution.</p>
+          <p> </p>
+          <p>Forthwith, you are asked to gather [%dic:STR_DIC_G_QUEST_45033_a]s and [%dic:STR_DIC_G_QUEST_45033_b], and bring them to [%dic:STR_DIC_N_Columba], who will handle the matter from there.</p>
+          <p> </p>
+          <p>Please destroy this letter after reading it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">(Burn the letter.)</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Revolutionaries have become a big headache for the Field Wardens lately. As if their normal activities aren't enough of a nightmare, now they've begun to threaten an attack on the Aetheric Field itself.</p>
+          <p> </p>
+          <p>So far they haven't followed through on this threat, but we must take it seriously. The Field Wardens who are confronting them directly have requested more weapons to "seal the deal," but without Pandaemonium's aid we're a bit concerned.</p>
+          <p> </p>
+          <p>That's why you've been asked to pitch in. Do you have any supplies for me, [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Why am I doing this, exactly?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Lives are at stake, [%username]. The Lepharist Revolutionaries are not to be trifled with, and if we're going to deal with this situation expeditiously, we need to get those weapons now.</p>
+          <p> </p>	
+          <p>As for your idle questions, let's see: Salix Log is used for making weapon handles, and Adamantium Ore is used to craft blades. How's that, student of weaponcrafting?</p>
+          <p> </p>
+          <p>Look, I'm sorry to snap, but I've had a lot to do lately. Just please, help me, and the Wardens as a whole, and go gather [%dic:STR_DIC_G_QUEST_45033_a]s and [%dic:STR_DIC_G_QUEST_45033_b].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll do it as a favor to you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you, Warden. We can make several fine weapons with these materials, and perhaps that will be enough for our present engagement with the Lepharists.</p>
+          <p> </p>
+          <p>No doubt we'll need more in the future, but for today you've done your part.</p>
+          <p> </p>
+          <p>Please, take this token of our esteem. Perhaps I'll see you tomorrow?</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Gather [%dic:STR_DIC_G_QUEST_45033_a]s and [%dic:STR_DIC_G_QUEST_45033_b], and bring them to [%dic:STR_DIC_N_Columba].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">A letter has arrived from the Field Wardens. Follow its instructions.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>According to a letter from the Field Wardens, Salix Log and Adamantium Ore are needed to create weapons that will help settle the conflict with the Lepharist Revolutionaries.</p>
+          <p> </p>
+          <p>You collected supplies as the letter asked, and have been rewarded for your time.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

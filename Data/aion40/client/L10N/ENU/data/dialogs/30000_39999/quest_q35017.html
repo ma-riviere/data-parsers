@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>For [%username]'s eyes only:</p>
+          <p> </p>
+          <p>Theobomos is in turmoil and we've lost contact with Aetheric Field Protector Atropos, an Alabaster Order informant.</p>
+          <p> </p>
+          <p>The Alabaster Order needs you to find [%dic:STR_DIC_N_Atropos] and learn what's going on before something terrible takes place.</p>
+          <p> </p>
+          <p>Do what's necessary if the situation is urgent. Otherwise, report to [%dic:STR_DIC_E_35014].</p>
+          <p> </p>
+          <p>Move quickly and divulge nothing! </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">Fold the order and put it away.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Sun's Blessings, [%username]. What brings you out to my shard of the world?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">"The Order has missed your reports."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>They're worried because they haven't heard from me? How odd! I've been sending my reports on the regular schedule...</p>
+          <p> </p>
+          <p>I'm sure I can uncover the problem. You know, I recently switched from the expensive Shugo express mail service to a cheaper Shugo non-express service.</p>
+          <p> </p>
+          <p>That'll teach me to try and save money instead of worrying about things that are more important!</p>
+          <p> </p>
+          <p>Please tell the Alabaster Order that everything's fine. I'll resend the missing reports. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"I'll let them know."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Is she all right? Did you meet Aetheric Field Protector Atropos?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"She had mail problems, but it's under control."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Reports sent via mail were lost en route?</p>
+          <p> </p>
+          <p>Hm...If someone deliberately swiped Atropos's reports, we could have a big problem.</p>
+          <p> </p>
+          <p>For the time being, let's wait and see what Atropos finds out. </p>
+          <p> </p>
+          <p>You've done well, [%username]. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk with [%dic:STR_DIC_N_Atropos].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Report to [%dic:STR_DIC_E_35014].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">A call to action has arrived from the Alabaster Order. Follow their instructions.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Alabaster Order hadn't heard from their Agent, Aetheric Field Protector Atropos, and requested you find her.</p>
+          <p> </p>
+          <p>Atropos thinks the mail service messed up her report delivery, but Priamos is only mostly willing to take that at face value.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

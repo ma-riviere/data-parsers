@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>데바님들의 노력으로 타메스의 붕괴 위기는 모면했습니다.</p>
+          <p> </p>
+          <p>여러 차례 도와 주신 [%username] 님 덕분입니다. 정말 감사합니다.</p>
+          <p> </p>
+          <p>마지막으로 한 번만 더 타메스의 용족 간수들을 처치해 주시면 좋겠습니다.</p>
+          <p> </p>
+          <p>지반은 안전해졌지만 불안정한 용암층의 기운은 남아있어요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">고개를 끄덕인다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>타메스의 가장 깊은 곳에 있는 용암층은 과도한 드라나의 기운으로 매우 불안정합니다.</p>
+          <p> </p>
+          <p>지반이 안정되었지만 남아 있는 용족 간수들이 계속해서 드라나의 기운을 변형시킨다면 용암층에 어떤 변화가 일어날 지 모릅니다.</p>
+          <p> </p>
+          <p>마지막으로 광석 지층에 있는 용족 유령들을 모두 처치해 주세요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>타메스의 붕괴 위험에 대한 저의 권고를 진지하게 들어주신 분은 [%username] 님 뿐이었습니다.</p>
+          <p> </p>
+          <p>광석 지층에서의 마지막 임무로 유종의 미를 거두시길 바랍니다.</p>
+          <p> </p>
+          <p>용족 유령을 처치하시고 마지막으로 저에게 오시면 감사의 선물을 드리겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>행여라도 타메스가 붕괴된다면 그 여파는 일파만파가 될 것입니다. 타메스의 지반은 생각보다 이곳에 미치는 영향이 커요.</p>
+          <p> </p>
+          <p>지금이라도 지속적인 조치를 해야만 큰 사고를 막을 수가 있으니 다시 생각해 봐주세요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>마지막 임무를 수행하고 오셨습니까?</p>
+          <p> </p>
+          <p>오랜 시간 저의 심중을 괴롭히던 타메스의 붕괴 위협이 사라진다면 저는 여기에 있을 이유가 없을 것입니다.</p>
+          <p> </p>
+          <p>하지만 이곳은 또 어떤 새로운 문제로 위협받을 지 모르는 불안한 곳이니까 제가 이 자리를 계속 지켜야겠지요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>드디어 타메스의 지형이 안정되었으니 이제 밤 잠을 편하게 잘 수 있겠습니다.</p>
+          <p> </p>
+          <p>제 얘기를 경청해 주시고 타메스 붕괴 위협에 대해 염려해 주신 [%username] 님께 항상 감사하는 마음이었습니다.</p>
+          <p> </p>
+          <p>마지막 임무까지 수행해 주셨으니 제 감사의 뜻으로 이걸 받아주세요.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">광물 퇴적층의 [%dic:STR_DIC_M_IDRaksha_2F_Spaller_56_Ae]%을 처치하라([%2]/20)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Kenros]와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">켄로스는 지형학적으로 타메스의 지반에 붕괴 위험이 있다며 그것을 막기 위해서는 광물 퇴적층의 용족 유령을 처치해야 한다고 했다. 그를 도와주는 것이 좋겠다.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>건축학자 켄로스는 지형학적으로 타메스의 지반에 붕괴 위험이 있다며 그것을 막기 위해서는 광물 퇴적층의 용족 유령을 처치해야 한다고 말했다.</p>
+          <p> </p>
+          <p>그의 권고를 듣고 타메스에 가서 용족 유령을 처치하고 보고하니 이제 붕괴 위협이 사라졌다고 안심했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

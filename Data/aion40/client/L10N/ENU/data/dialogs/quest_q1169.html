@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We don't get much trouble from the Krall here. It's the Kobolds. They're smaller and faster, and raid our supplies regularly.</p>  
+          <p> </p>
+          <p>The militia do what they can, but what we really need to do is break the morale of those little shadow-lovers.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"How?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+        <p>There's one particular Kobold--from what we can tell, he's a folk hero over there.</p>          
+        <p> </p>
+        <p>They call him Lightningfoot Tuka. He can run fast as...well...lightning, and can dodge just about anything. </p>
+        <p> </p>
+        <p>Last time he led a raid here, they took all the Porguses before we could even sound the alarm.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"So you need to take him out?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Exactly. We need to show the Kobolds that their hero isn't immortal.</p>
+          <p> </p>
+          <p>It won't be easy. He's so fast you can barely get a swing in before he's out of your reach.</p>
+          <p> </p>
+          <p>How about it?</p>              
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you. Plenty have tried before, but I have faith in you.</p>
+          <p> </p>      
+          <p>[%dic:STR_DIC_MLA23] will be scouting out the path from the village to [%dic:STR_DIC_FLA13], planning his next raid.</p>
+          <p> </p>
+          <p>Stop that little runt in his tracks.</p>     
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"The task is mine."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I get it, [%username]. You're afraid you won't be fast enough to take him down.</p>
+          <p> </p>
+          <p>That's okay. I'm glad you know your limits. You can let the militia handle this one, then go back to preening your feathers or whatever it is you do.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Thanks for that."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did you see any sign of [%dic:STR_DIC_MLA23]?</p>
+          <p> </p>
+          <p>I know this seems like an impossible job, but please don't give up just yet.</p>       
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I found him...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ahahahaha! Yes! Try running away now, Lightningfoot! </p>
+          <p> </p>
+          <p>I'm sure the Kobolds are already wailing for their fallen hero. You'll see no tears on this side of the river, though.</p>
+          <p> </p>
+          <p>The villagers wanted to say thanks, so they collected this for you. I know it's not much, but please take it.</p> 
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Hunt [%dic:STR_DIC_MLA23], who regularly attacks the village ([%2]/1).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_LA24]%.</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Abolos, leader of the Tolbas Watch, asked you to hunt Lightningfoot Tuka, the famous raider who the Kobolds consider a hero. Find him on the way to the Dukaki Mine.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Abolos, leader of the Tolbas Watch, told you that Lightningfoot Tuka was leading repeated raids into the village and nobody could catch him.</p>
+          <p> </p>
+          <p>At his request, you killed Lightningfoot Tuka near the Dukaki Mine.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q41171</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+            <p>이번에 볼 시험은 제작 기술 시험일세.</p>
+	<p> </p>
+	<p>펜릴의 송곳니 단원이라면 한 가지 분야 정도의 제작은 능숙히 해낼 수 있어야하니 말일세.</p>
+	<p> </p>
+	<p>설마 제작 기술을 하찮게 여기는 데바는 아니겠지?</p>
+	<p> </p>
+            <p>시험을 통과하면 보상으로 펜릴의 방어구 하의를 지급할 테니 한번 열심히 해보게.</p>
+	<p> </p>
+	<p>가구 제작 기술로 시험을 치를 생각이라면 [%dic:STR_DIC_N_Darfen]을 찾아가 자세한 시험의 내용을 들으면 될 걸세.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+         <p>[%username] 님의 제작 기술 시험이니 특별히 시험을 더 완벽히 치를 수 있게 도와드리죠.</p>
+         <p> </p>
+	<p>보통은 뜨거운 마력의 심장을 제작해서 유제너 님께 검사를 맡고 휘장을 받아야만 합니다.</p>
+         <p> </p>
+         <p>하지만 제가 펜릴의 송곳니 휘장 도안을 드릴 테니 직접 만들어 버리세요.</p>
+         <p> </p>
+             <p>물론 정화 의식만큼은 피할 수 없지만, 휘장을 직접 만들었다는 것을 크바시르 님이 알면 분명 [%username] 님을 더 높게 평가하실 거예요.</p>
+         <p> </p>
+         <p>휘장을 완성하시면 [%dic:STR_DIC_I_relic_d_02]를 가지고 [%dic:STR_DIC_N_Balder] 님께 가시면 정화 의식을 행해 주실 겁니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정화 의식이라... 지난번에 공훈의 증표였으니 이번엔 뜨거운 마력의 심장이었겠군요.</p>
+          <p> </p>
+          <p>물론 성공하셨겠죠?</p>
+          <p> </p>
+          <p>마계와 펜릴의 송곳니를 위해서는 축하할 일입니다만 [%username] 님의 모습을 보니 좀 안타깝습니다.</p>
+          <p> </p>
+          <p>그렇게까지 힘들어 하면서 왜 펜릴의 송곳니가 되려고 하는지. 마계를 위하고자 한다면 다른 방법도 많은데 말입니다.</p>
+           <p> </p>
+          <p>이런, 제가 괜한 말을 한 것 같군요. 모두 [%username] 님이 걱정돼서 한 말이니 기분 나빠하진 마십시오.</p>
+           <p> </p>
+           <p>자, 의식을 올리겠습니다. 가져온 [%dic:STR_DIC_I_relic_d_02]를 이리 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">정화의 의식을 부탁한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+	<p>자, 정화의 의식은 무사히 끝났습니다.</p>
+	<p> </p>
+	<p>그런데 가지고 오신 펜릴의 송곳니 휘장은 이때까지 봤던 것들과는 조금 다르군요.</p>
+	<p> </p>
+	<p>음... 촉감이나 마감 같은 부분이 조금 더 훌륭하다고 해야 할까요?</p>
+	<p> </p>
+	<p>참 이상한 일이군요.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_W_DC1_5]에 있는 [%dic:STR_DIC_N_Darfen]과 대화하라</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">펜릴의 송곳니 휘장과 [%dic:STR_DIC_I_relic_d_02]를 가지고 [%dic:STR_DIC_N_Balder]와 대화하라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">크바시르에게 받은 제작 기술의 시험을 수행하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>크바시르는 이번엔 제작 기술 시험을 치를 차례라고 말했다.</p>
+          <p> </p>
+          <p>가구 제작 명인을 찾아가니 더 좋은 평가를 얻을 수 있도록 도와주겠다며 휘장의 도안을 주었다. </p>
+          <p> </p>
+          <p>얻은 도안대로 펜릴의 송곳니 휘장을 만들고 발데르에게 찾아가니 정화의 의식을 행해 주었다.</p>
+	 </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

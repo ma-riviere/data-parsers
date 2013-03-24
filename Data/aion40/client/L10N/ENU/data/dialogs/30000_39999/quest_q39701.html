@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p align="center"> - A Letter of Greenery -</p>
+          <p> </p>
+          <p>We hope everything is well and good with the members of the Green Hat Unit.</p>
+          <p> </p>
+          <p>This time, we'll be volunteering for ***. </p>
+          <p> </p>
+          <p>The Broken Idgel seems to be the cause of the mutated ecosystem. Please collect 5 Broken Idgels and deliver them to the North Katalam Branch of the Green Hat Unit.</p>
+          <p> </p>
+          <p>Always remember, nature precedes our existence.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">Fold the letter and put it away.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I heard you were out to *** for volunteer activities.</p>
+          <p> </p>
+          <p>Did you collect the Broken Idgels?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">Hand over the Broken Idgels.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, my. What happened?</p>
+          <p> </p>
+          <p>I think I heard Silverine Limited is collecting the Empty Idgels. Is that what it is?</p>
+          <p> </p>
+          <p>I have no idea for what Silverine would use the Idgels for, but I'm sure it's harmful to nature. You must beat them to the Broken Idgels.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">End dialog.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank goodness you brought them. There are many goons eyeing these. </p>
+          <p> </p>
+          <p>Especially, those bastards at Silverine Limited. They want the Idgel for its power.</p>
+          <p> </p>
+          <p>If those greedy bastards get their hands on these Idgel... It's too horrifying to even think about....</p>
+          <p> </p>
+          <p>You helped the *** area to gain new life. The Green Hat Unit is always thankful for your hard work, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect and deliver the Broken Idgels to the North Katalam Branch of the Green Hat Unit.</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">You received a Letter of Greenery from the Green Hat Unit. Read the letter and perform the mission.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You received a Letter of Greenery from the Green Hat Unit.</p>
+          <p> </p>
+          <p>You collected the Broken Idgels that were causing nature to mutate and delivered them to the North Katalam Branch of the Green Hat Unit. You were complimented for your hard work.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

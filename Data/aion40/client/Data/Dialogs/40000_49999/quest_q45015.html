@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>결계 수호단 일동 보시오.</p>
+          <p> </p>
+          <p>최근 대기 중의 오드 비율이 급격히 감소하는 사건이 있어서 수호단 내부가 소란스러웠던 일이 있었소.</p>
+          <p> </p>
+          <p>때문에 대기 중의 오드를 비롯한 각종 물질을 검출하여 조사하기로 하였소.</p>
+          <p> </p>
+          <p>판데모니움 연구소의 협조를 얻어 브루스트호닌 주요 지역에 검출 마법석을 설치해 두었으나 검출 결과를 회수할 인력이 부족한 상태라오.</p>
+          <p> </p>
+          <p>모든 결계 수호단원은 서둘러 [%dic:STR_DIC_OBJ_FOBJ_Q45015]을 조사하여 검출 결과를 회수해 [%dic:STR_DIC_E_45014]%에게 전하시오.</p>
+          <p> </p>
+          <p>시간이 지체되면 검출 물질은 쓸모가 없게 될 것이니 서둘러 주기 바라오.</p>
+          <p> </p>
+          <p>모든 단원에게 아이온 탑의 가호가 있기를!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">편지를 접어 넣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>결계 수호단은 마족의 안전을 위해 최선을 다하고 있습니다.</p>
+          <p> </p>
+          <p>때로는 노력에 비해 얻은 성과가 별로 없는 것이 아닌가 하는 생각도 종종 듭니다만...</p>
+          <p> </p>
+          <p>아닙니다, 항상 현재에 최선을 다 해야겠죠!</p>
+          <p> </p>
+          <p>[%username] 님도 검출 물질을 가져왔으면 어서 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">검출 물질을 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>회수를 서둘러 주십시오.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_OBJ_FOBJ_Q45015]은 브루스트호닌  곳곳에 설치되어 있습니다.</p>
+          <p> </p>
+          <p>상부의 움직임을 보니 보통 일이 아닌 듯한데... 한시라도 서두르는 편이 좋겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(조심스럽게 받으며) 브루스트호닌의 검출 물질... 확실히 받았습니다.</p>
+          <p> </p>
+          <p>이것을 조사해서 긍정적인 결과를 얻어야 할 텐데 걱정이군요.</p>
+          <p> </p>
+          <p>어쨌든 일을 잘 해줘서 감사합니다.</p>
+          <p> </p>
+          <p>받으십시오. 이건 [%username] 님에게 드리는 사례금입니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_OBJ_FOBJ_Q45015]에서 검출된 물질을 회수해 [%dic:STR_DIC_E_45014]에게 가져가라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">결계 수호단에서 편지가 왔다. 지시에 따르자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>결계 수호단에서 온 편지에 따르면 오드의 비율이 감소했다며 원인을 찾기 위해 브루스트호닌 주요 지역에 검출 마법석을 설치했다고 한다.</p>
+          <p> </p>
+          <p>검출 마법석을 찾아 검출 물질을 회수해 브루스트호닌 지부 단원에게 가져가자 결계 수호단에 전하겠다며 사례를 하였다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

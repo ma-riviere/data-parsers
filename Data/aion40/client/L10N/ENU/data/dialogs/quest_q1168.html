@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We should have planned better before we set out on the Great Pilgrimage.</p>
+          <p> </p>
+          <p>We had to pass through the Dukaki Settlement to get here, and I thought it'd be easy after that. Turns out nothing worth doing is easy, Daeva.</p>
+          <p> </p>
+          <p>The Gryphus have us trapped. They've stolen our food and we haven't eaten in days.</p>          
+          </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I see."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ever since my husband and I met, we've shared our dream of making the Great Pilgrimage.</p>
+          <p> </p>
+          <p>Miraju's Holy Ground calls to me. I must not let my spirits fail.</p>
+          <p> </p>
+          <p>I'm so exhausted, though. I don't have the energy to fight off the Gryphus. Would you help me?</p>                  
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Clearly you understand the significance of the Great Pilgrimage.</p>
+          <p> </p>
+          <p>In the cave just ahead, you'll find [%dic:STR_DIC_QILA81]s growing in abundance. These aren't just ordinary fungi--they have the power to induce sleep. I hope to use them on the Gryphus.</p>
+          <p> </p>
+          <p>If you could get me five of them, I could put them to sleep, which is easier on my conscience than killing them.</p> 
+          <p> </p>
+          <p>Do be careful in the cave, though--I've seen Arachnas scampering around in there.</p>     
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be careful."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah...if this is how it is to be, then I accept it. Even though I have come so close...</p>
+          <p> </p>
+          <p>Don't worry about us. Please, focus on your more pressing tasks and may Aion watch over you. </p>          
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"And over you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I hope it wasn't too much trouble, Daeva. Tell me, have you brought the mushrooms?</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_QILA81]s only grow in the darkest shadows and aren't easy to spot.</p>          
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here they are."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Week of Pilgrimage is drawing to a close--so, I fear, are our chances of reaching the Holy grounds.</p>          
+          <p> </p>
+          <p>Please, if you wish to help, you must fetch the [%dic:STR_DIC_QILA81]s without delay.</p>            
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm on it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That's them! Oh, well done, Daeva. You've brought all the [%dic:STR_DIC_QILA81]s we need.</p>
+          <p> </p>
+          <p>Now, all I need to do is scatter them across the grass, and the Gryphus will become victims of their own greed. There's a lesson there, and I'll remember it well.</p>
+          <p> </p>
+          <p>You have my sincere gratitude. Miraju's Holy Ground awaits!</p>                  
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Bring the mushrooms to [%dic:STR_DIC_LA71], so that she can make the Gryphus fall asleep.</font></p>[%collectitem]</step>               
+    </steps>
+          <p><font font_xml="quest_summary">Aggressive Gryphus are preventing the pilgrims from continuing on their journey. Collect Soporific Mushrooms to put the Gryphus to sleep so that the pilgrimage may continue.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You met a pilgrim couple, Anasia and Dronoa, near Talun's Nest. They were on their way to the Miraju's Holy Ground, but could not continue their journey because of the aggressive gryphus.</p>
+					<p> </p>      
+          <p>You acquired Soporific Mushrooms for the troubled pilgrims so that they could put the Gryphus to sleep.</p>          
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

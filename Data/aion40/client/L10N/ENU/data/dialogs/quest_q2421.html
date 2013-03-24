@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ahh [%username]! Could you go to Pandaemonium for me? </p>
+          <p> </p>
+          <p>I'd feel guilty leaving the fortress on an errand like this while we are shorthanded and overworked.</p>
+          <p> </p>
+          <p>It's really a small task.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What's the task?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Years ago when I ascended, my father gave me a fine sword as a present. However, it was far too fancy to be of any practical use. I entrusted the sword to Keruthis, the appearance modifier, to use as a model for reshaping.</p>
+          <p> </p>
+          <p>When I got stationed here, Arnkell, the weaponsmith made me this Flame Sword.</p>
+          <p> </p>
+          <p>To honor my father's gift, I'd like to reshape the Flame Sword into the pattern of my father's sword. But I'll need a your help, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Take this to the remodel shop at [%dic:STR_DIC_W_DC1_2] in Pandaemonium and speak to [%dic:STR_DIC_N_Kerupnise].</p>
+          <p> </p>
+          <p>She will reshape the sword if you tell her that I sent you.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"On my way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I see. No plans to go to Pandaemonium, huh?</p>
+          <p> </p>
+          <p>Don't trouble yourself on my account. If I can't find anyone else, I can always send Ipoderr.</p>
+          <p> </p>
+          <p>He'll whine about it for days, though.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Farewell."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That [%mainslotitem]...  Oh! How can you carry that...</p>
+          <p> </p>
+          <p>I'm glad to see you here. You must be here to modify its appearance. Performance isn't everything about a weapon, you know.</p>
+          <p> </p>
+          <p>Don't underestimate the importance of appearance--always use weapons that truly suit you.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">"Actually, I'm here for Asgeirr's sword."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Sword of Silver Quartz Asgeirr entrusted to me is a beautiful item. I will probably never see its like again.</p>
+          <p> </p>
+          <p>Just to look at it...Asgeirr will now be able to honor his father's gift every day.</p>
+          <p> </p>
+          <p>[%username], you should modify the appearance of your own weapon. There are many patterns that look better than the one you're using now.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"Azphelumbra."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, you've come back. How was your trip? </p>
+          <p> </p>
+          <p>Pandaemonium is always a wonderful place to visit.</p>
+          <p> </p>
+          <p>And I'm not just saying that because I'm from there.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I have your sword."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, it looks wonderful! The weight, shape and performance... I like everything about it.</p>
+          <p> </p>
+          <p>It may be too fancy for an Archon Sentinel, but this is what my father wanted.</p>
+          <p> </p>
+          <p>Thank you very much for going to Pandaemonium for me. Please take this as a reward for your time.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk with [%dic:STR_DIC_N_Kerupnise].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Talk with [%dic:STR_DIC_N_Asgeirr].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Asgeirr wants to reshape his weapon. Go to Pandaemonium to meet Keruthis.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Asgeirr told you he wanted to reshape his weapon, but he couldn't go to Pandaemonium. He asked you to go there for him.</p>
+          <p> </p>
+          <p>You went to Pandaemonium and had Keruthis modify the weapon's appearance. Asgeirr thanked you very much.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

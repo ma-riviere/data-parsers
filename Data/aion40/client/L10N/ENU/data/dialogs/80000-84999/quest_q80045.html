@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ahh, summer's here again! The summer was my favorite time of year as a kid. What about you, Daeva? Long, warm days with nothing much to do. Now I see why the grown-ups used to tell me those were the best days of my life! Oh to have them back again...</p>
+          <p> </p>
+          <p>I had this whole plan where I was going to get all my friends together, and we were going to dress up in sailor costumes like we had as kids, and sail a real boat to an island somewhere. You know, something we all wanted to do when we really were children, but our parents wouldn't let us.</p>
+          <p> </p>
+          <p>Only problem is...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Of course there was a hitch."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The sailboat I got turned out to need some repairs. I had all these [%dic:STR_DIC_I_QUEST_80045A]s cut specially for it, but they got intercepted on the way here through the Nolantis ruins.</p>
+          <p> </p>
+          <p>So now, instead of asking you to join me for some fun and relaxation on my sailboat, [%username], I have to ask you to rescue my planks from the monsters that ate them.</p>
+          <p> </p>
+          <p>How about we make it a game? You must have played dare games as a kid, right? See, this is almost as good as the boat thing!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, thank you, [%username]! Now, what you need to know is that the [%dic:STR_DIC_I_QUEST_80045A]s were most likely eaten by the [%dic:STR_DIC_M_Maidengolem_43_An]s, [%dic:STR_DIC_M_Graveknight_44_An]s, [%dic:STR_DIC_M_Spectre_44_An]s, and [%dic:STR_DIC_M_Branch_DeathKnight_45_Ae]s.</p>
+          <p> </p>
+          <p>Go kill them all... uh, in a childlike way, I guess?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"That does sound like my childhood."</Act>
+    </Selects>
+
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No? Was it the dare thing that put you off? Or you have something against sailboats? Or... I know! You just hate fun.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"They call me... FUNSMASHER!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, oh, you're back! Please tell me you've found all the [%dic:STR_DIC_I_QUEST_80045A]? I've been itching to start the repairs. I have the workers on standby!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here are your planks."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, what a relief! Maybe summer will be saved after all. Or at least, if not this summer, then next summer.</p>
+          <p> </p>
+          <p>I suppose you should take this sailor suit thing. I planned to wear mine on the sailing trip, but it'll take me ages to actually fix this boat up, so there's no point in letting it go to waste.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What have you been doing all this time? I need those planks!</p>
+          <p> </p>
+          <p>I'm going to miss the whole summer at this rate! We won't have good weather for long, you know.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Summer is overrated."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Go to the Nolantis Ruins and retrieve [%dic:STR_DIC_I_QUEST_80045A]s for [%dic:STR_DIC_N_event_Tallas].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Go to the Nolantis Ruins and retrieve White Planks for Tallas.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Tallas had planned some childlike festivities to recapture his youth, but the planks for repairing the sailboat were stolen by monsters.</p>
+          <p> </p>
+          <p>You recovered the planks, but it seems unlikely that the boat will be ready in time.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

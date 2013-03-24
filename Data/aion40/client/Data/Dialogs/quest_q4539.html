@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>낯이 익은 걸 보니 이 근방에서 자주 본 데바같당, 냥냥.</p>
+          <p> </p>
+          <p>몸도 다부지고 눈 빛이 강한 걸 보니 보통 데바가 아니구낭.</p>
+          <p> </p>
+          <p>혹시, 돈 좀 벌어볼 생각이 없냥, 냥냥?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">무슨 일인지 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>난 비그비르라는 노인에게서 투명 그리마의 가루를 싼 값에 사다가 도시에 판당. </p>
+          <p> </p>
+          <p>아주 비싼 값을 받을 수 있는 물건이지, 갸릉.</p>
+          <p> </p>
+          <p>그런데 요즘 문제가 생겼당.</p>
+          <p> </p>
+          <p>비그비르에게 가는 길이 지나치게 험난해졌당.</p>
+          <p> </p>
+          <p>갑자기 늘어난 괴물들이 길을 막고 있어 도저히 물건을 사러 갈 수가 없당. </p>
+          <p> </p>
+          <p>혹시 데바가 날 도와줄 수 있겠냥? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>고맙당, 갸릉!</p>
+          <p> </p>
+          <p>이번 일만 잘 처리해 주면 후사할 테니 실력을 맘껏 발휘해 봐랑.</p>
+          <p> </p>
+          <p>문제가 되는 녀석들은 [%dic:STR_DIC_M_KuillusVioletD_35_An]%와 [%dic:STR_DIC_M_DrakeVioletD_36_An]당. </p>
+          <p> </p>
+          <p>일이 다 끝나면 [%dic:STR_DIC_N_Byggvir]에게 결과를 알려줘랑. </p>
+          <p> </p>
+          <p>비그비르도 소식을 기다리고 있을 거당, 갸릉!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>키나에 욕심이 없다니 바보 같은 데바당, 냥냥!</p>
+          <p> </p>
+          <p>겁이 나면 난다고 솔직히 말해랑, 갸릉!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>너냐? [%dic:STR_DIC_N_Shugo_DF3_12]이 보낸 자가?</p>
+          <p> </p>
+          <p>도대체 킬루스와 드레이크때문에 번잡스러워서 살 수가 없다. </p>
+          <p> </p>
+          <p>녀석들은 처치했느냐? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 전한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>쓸만한 놈이군! 녀석들을 처치해줘서 고맙다.</p>
+          <p> </p>
+          <p>우매한 자는 아닌 것 같으니 내가 하는 말도 잘 이해하겠어.</p>
+          <p> </p>
+          <p>특별히 네게만 말해 주는데 곧 열세 번째 주신께서 오실 것이다. 그러니 그날을 위해 끝없이 실력을 갈고 닦도록 해!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_Shugo_DF3_12]의 교역로를 방해하는 장애물을 처치하라</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_KuillusVioletD_35_An]([%2]/6)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_DrakeVioletD_36_An]([%5]/4)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Byggvir]%와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">후아링링이 마음 놓고 교역을 할 수 있도록 킬루스와 드레이크를 처치해 주자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>후아링링은 비그비르 노인에게 싼 값으로 투명 그리마의 가루를 사서 도시에 비싼 값에 팔아 많은 키나를 번다고 했다.</p>
+          <p> </p>
+          <p>그런데 요즘 비그비르 노인의 거처로 가는 길을 킬루스와 드레이크들이 막아 서서 교역을 하는데 큰 차질이 생겼다고 했다.</p>
+          <p> </p>
+          <p>후아링링의 부탁대로 킬루스와 드레이크를 처치하고 비그비르에게 알리자 고마워서 알려주는 거라며 열세 번째 주신에 대한 얘기를 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

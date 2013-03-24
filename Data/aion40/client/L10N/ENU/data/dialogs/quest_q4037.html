@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, here it is. Heirnir is in pain because his soul refuses to leave his body. His flesh is corrupt without the flow of Aether, but he will not let go.</p>
+          <p> </p>
+          <p>There are two ways to cure his misery. The first would be to resuscitate his body, but he is so long dead that it's impossible. Not even the Shedim Lords could do it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"So what can be done?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You are anxious, aren't you? No worries, [%userclass]. You'll have your chance to help...if you're sure that's what you want.</p>
+          <p> </p>
+          <p>The other method is to turn him completely into an undead. This will release his mind and soul and end his pain, although his body will continue on.</p>
+          <p> </p>
+          <p>It's an easy task to make an undead, much easier than resuscitation...so long as you aren't squeamish. Are you, Daeva?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Just tell me what to do."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>So impatient. But have you truly thought it through?</p>
+          <p> </p>
+          <p>To take a man so devoted and rip away his mind, leaving him to eternal walking death...Is it just? Is it right? So many questions.</p>
+          <p> </p>
+          <p>I'm not the only one who knows of such things, but neither your Soul Healer nor the priest she consulted have the stomach for it. Weakness dooms this man to torment. You could wait until his soul extinguishes itself, however long that may take.</p>
+          <p> </p>
+          <p>What would you do, Daeva? Choose your path. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Go down the hill into the cemetery. [%dic:STR_DIC_M_DF2A_LichEquipD_46_An]s are abundant there. They hide their souls in orbs, which they keep close to their bodies inside their clothing.</p>
+          <p> </p>
+          <p>Soul is perhaps a strong word, of course, if anything so evil can be called a "soul."</p>
+          <p> </p>
+          <p>Find these orbs. When you use them on Heirnir, his mind and soul will be pulled down into eternal darkness, leaving only his undead shell behind.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"For pity's sake, I'll do it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Pfah! I should have known.</p>
+          <p> </p>
+          <p>That's all right, Daeva. I care nothing for his fate. His destiny is his own. </p>
+          <p> </p>
+          <p>May yours end well.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"And yours, shaman."</Act>
+    </Selects>
+  </HtmlPage>
+ 
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Who are you? Where are my children? Wait...I remember you.</p>
+          <p> </p>
+          <p>I have waited here for so long.... Did you find the Soul Healer? What did she give you? </p>
+          <p> </p>
+          <p>My wife is so ill.... I must help her. Give me the medicine now....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"May darkness grant you peace."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Wait...who are you? Where's my wife? What...?</p>
+          <p> </p>
+          <p>I know you, Daeva...have you seen the Soul Healer yet? I just need my head to stop...hurting....</p>
+          <p> </p>
+          <p>Please help me, Daeva.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I will return."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Wait...the light... What medicine is this?</p>
+          <p> </p>
+          <p>Daeva, what did you do? I'm...fading....</p>
+          <p> </p>
+          <p>There are voices! I hear them. They call to me. Emilia? Are you there? I'm coming....</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect the orbs of [%dic:STR_DIC_M_DF2A_LichEquipD_46_An]s and take them to [%dic:STR_DIC_N_Heirnir].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Do as Seznec suggested: Kill Lich Shamans to obtain their orbs, then use them on Heirnir to free him.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Seznec said Heirnir's pain would be alleviated by making him into a complete undead.</p>
+          <p> </p>
+          <p>To do that required a Lich Shaman's orb, so you killed the creatures until you obtained what you needed.</p>
+          <p> </p>
+          <p>When you used the orb on Heirnir, he claimed to hear the voice of his dead wife and let go, fading into a true undead.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

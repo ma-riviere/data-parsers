@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이렇게 찾아오신 걸 보니 [%username] 님도 연구 결과가 궁금하셨나 보군요.</p>
+          <p> </p>
+          <p>결론부터 말씀 드리자면 성공입니다! 용족의 스티그마 연구에 대해 모두 알아냈답니다.</p>
+          <p> </p>
+          <p>드라칸 연구원 놈들, 연구기록을 자세하게도 기록해 두었더라고요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">어떤 내용인지 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>남들에겐 몰라도 [%username] 님에겐 말씀 드려야죠.</p>
+          <p> </p>
+          <p>(주위를 살피더니 작은 목소리로)용족 놈들이 스티그마 슬롯을 여는 방법에 대해 연구를 했던 모양입니다. </p>
+          <p> </p>
+          <p>전투 능력을 향상시키기 위한 방편인 것 같은데 크랄과 라이칸, 용신도를 대상으로 임상 실험까지 완료한 것 같더군요. </p>
+          <p> </p>
+          <p>그래서 괜찮다면 여기서 알아낸 방법대로 [%username] 님의 스티그마 슬롯을 열어드릴까 하는데 괜찮겠습니까?</p>
+          <p> </p>
+          <p>맹세하건데 부작용 걱정은 안 하셔도 됩니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>잘 생각하셨습니다.</p>
+          <p> </p>
+          <p>그럼 바로 스티그마 슬롯을 열 준비를 하겠습니다.</p>
+          <p> </p>
+          <p>스티그마 슬롯을 여는 데는 저도 그렇지만 [%username] 님의 체력과 정신력이 많이 소모될 것입니다.</p>
+          <p> </p>
+          <p>그러니 마음의 준비를 하는 게 좋을 겁니다. 지금 시작해도 되겠습니까? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">고개를 끄덕인다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>용족의 연구 결과물이라 그러나 본데 걱정할 필요 전혀 없습니다.</p>
+          <p> </p>
+          <p>이런 말 하긴 뭐하지만 용족의 연구 수준은 우리 마족보다 높습니다. 특히 생체 연구 쪽은 월등하지요.</p>
+          <p> </p>
+          <p>그러니 걱정말고 제안을 받아 들이십시오. [%username] 님이니까 이렇게 권하지 다른 사람에겐 이렇게 사정하지도 않습니다. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>마음의 준비를 하는데 꽤 오래 걸렸군요.</p>
+          <p> </p>
+          <p>이제 스티그마 슬롯을 열 준비가 끝났습니까?</p>
+          <p> </p>
+          <p>괜찮다면 바로 스티그마 슬롯을 열도록 하겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">고개를 끄덕인다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>휴, 끝났습니다. </p>
+          <p> </p>
+          <p>온몸이 뜨거워지는 기분이 들지 않으십니까? 새로운 스티그마 슬롯이 열려서 그렇습니다.</p>
+          <p> </p>
+          <p>앞으로 [%username] 님이 가시는 길에 새로운 스티그마 슬롯이 도움이 되길 바랍니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_Garath]와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">가라스가 나두카 생체 연구소에서 발견한 스티그마 연구기록에서 알아낸 방법대로 스티그마 슬롯을 열어준다고 한다. 가라스의 지시대로 따르자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>가라스는 덕분에 용족의 스티그마 연구에 대해 알아냈다며 보답으로 새로운 스티그마 슬롯을 열어 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

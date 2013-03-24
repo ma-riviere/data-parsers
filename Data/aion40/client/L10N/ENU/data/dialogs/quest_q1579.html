@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Medeus Manor is overrun with the undead. I know they were just settlers trying to get by, but in death they're a hazard.</p>
+          <p> </p>
+          <p>I can't let this continue.</p>
+          <p> </p>
+          <p>We need to find out what caused it, why we've got so many undead.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Any answer would be a good one."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, the right answer would be the best.</p>
+          <p> </p>
+          <p>Now, I found some odd-colored bones at Medeus Manor West. Old bones fade, but these.... The color looked artificial--just odd.</p>
+          <p> </p>
+          <p>They may be a clue to why the residents rose from the dead, if I can get a closer look. Or maybe Sanctum can help us. Would you please collect some for me, [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You'll find [%dic:STR_DIC_I_QUEST_1579a] near the buildings around Medeus Manor.</p>
+          <p> </p>
+          <p>Five should be enough for my research.</p>
+          <p> </p>
+          <p>Thanks for the help!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"On way way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Helping the undead helps the living. It's all connected.</p>
+          <p> </p>
+          <p>I'm not going to ask again, though. There's no point.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I might do it. Later."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Arieluma! Did you bring the Discolored Bones for my research?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Five of them."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Um...this isn't five bones. I don't know what it IS but...</p>
+          <p> </p>
+          <p>A joke is a joke, and duty is duty.</p>
+          <p> </p>
+          <p>Go and get the Discolored Bones.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I...uh, I'm on my way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This is exactly what I need.</p>
+          <p> </p>
+          <p>It's clear I'll need help from Sanctum, so I'll pack them up and send them off to find out if the discoloration has something to do with the changes.</p>
+          <p> </p>
+          <p>Thanks again, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect [%dic:STR_DIC_I_QUEST_1579a] and take them to [%dic:STR_DIC_N_Edoras].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Discolored Bones may reveal why people are becoming Undead. Edoras asked you to go to Medeus Manor to get some for his research.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Edoras told you that he needed the Discolored Bones to find out why the residents became undead. You went to Medeus Manor and got them.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

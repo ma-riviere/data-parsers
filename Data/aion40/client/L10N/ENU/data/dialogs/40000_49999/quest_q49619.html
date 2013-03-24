@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p align="center"> - Work Order -</p>
+          <p> </p>
+          <p>1. To: Temp Worker [%username]</p>
+          <p> </p>
+          <p>2. Job Details: Collect the weapon payments from Weapon Merchant *** dispatched to the Beritra Garrison, then deliver it to the supervising branch. The code is 'Strigik cuckoos.'</p>
+          <p> </p>
+          <p>3. Supervising Branch: Silverine South Katalam Branch</p>
+          <p> </p>
+          <p>The above mission will be considered in the evaluation process for hiring you as a full-time worker. Additional points may be added depending on the result. Do your best, nyerk.</p>
+          <p> </p>
+          <p>- Dumurinerk, Recruiter of Silverine Limited</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">Fold the work order and put it away.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Nyerk, now I'm relieved.</p>
+          <p> </p>
+          <p>I'm a Potion Peddler, dragged here by the Beritra gangs while I was on my way to North Katalam.</p>
+          <p> </p>
+          <p>If I hadn't met you, I would've been in a big trouble by now, nyerk.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">Say 'Strigik cuckoos.'</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(Suddenly changes his look) Nyerk, I thought you were a Daeva looking to hunt down Beritra.</p>
+          <p> </p>
+          <p>You managed to come all the way up here.</p>
+          <p> </p>
+          <p>I don't feel good about them sending you here. Maybe they don't trust that I'll send the money.</p>
+          <p> </p>
+          <p>(Handing over the Heavy Leather Pouch) These are the weapon payments I received for this current period.</p>
+          <p> </p>
+          <p>Oh, they want the same order again.</p>
+          <p> </p>
+          <p>Don't get caught on your way back, nyerk.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">End dialog.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I heard you went to the Beritra Garrison to get the weapon payments.</p>
+          <p> </p>
+          <p>The Beritra Legion must've been pretty tough to deal with. So, did you meet the weapon merchant?</p>
+          <p> </p>
+          <p>You must've gotten what was instructed, nyerk?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">Hand over the Heavy Leather Pouch. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Nyerk, this is heavy! Boy, am I happy, nyerk.</p>
+          <p> </p>
+          <p>Oh by the way, did he order the same amount as before?</p>
+          <p> </p>
+          <p>Katalam is becoming more and more intense. I like it!</p>
+          <p> </p>
+          <p>I hope things stay this way, nyerk. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect the weapon payments from Weapon Merchant ***.</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Deliver the Heavy Leather Pouch to the Silverine South Katalam Branch.</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">You received a work order from Silverine Limited. Check the work details and perform the mission.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You received a work order from Silverine Limited.</p>
+          <p> </p>
+          <p>After collecting the weapon payments in arrears from Weapon Merchant *** dispatched to the Beritra Garrison, you delivered them to Silverine South Katalam Branch. For your efforts, you were rewarded.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

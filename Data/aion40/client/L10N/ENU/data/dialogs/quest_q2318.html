@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's amazing that anyone can manage to make a living in this frigid wasteland. Even more amazing are the animals that survive here.</p>
+          <p> </p>
+          <p>Biologists and Ecologists would be fascinated by those animals, but my concern is controlling their numbers to prevent them from harming the residents. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Safety first."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Fortress residents are afraid to venture even as far as Alsig Village.</p>
+          <p> </p>
+          <p>Dangerous animals are everywhere, from the Morheim Snow Field right in front of the Fortress to the Patamor Ridge Path.</p>
+          <p> </p>
+          <p>Could you get rid of some of them, [%username]? I can offer bronze coins to make it worth the trouble! </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ahh, very good.</p>
+          <p> </p>
+          <p>Go hunt 10 [%dic:STR_DIC_M_Zaif2D_21_An]s, 10 [%dic:STR_DIC_M_DaruD_21_n]s, and 10 [%dic:STR_DIC_M_Ettin_all]s.</p>
+          <p> </p>
+          <p>That should help greatly. Good luck with the hunt. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"The task is mine."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, it must be too much for you.</p>
+          <p> </p>
+          <p>Never mind. I'm sure there are other capable Daevas who want Coins.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Some other time."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did you get them all? That was fast.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"The task is complete."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you. Here are the coins I promised.</p>
+          <p> </p>
+          <p>Our residents thank you too, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Hunt fierce animals near the Fortress.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Zaif2D_21_An]s ([%2]/10)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_DaruD_21_n] ([%5]/10)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Ettin_all] ([%8]/10)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report to [%dic:STR_DIC_N_Nott].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">The Fortress residents are troubled by the fierce animals in the area. Hunt the animals.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Nott promised you bronze coins if you hunt the fierce animals around the Fortress.</p>
+          <p> </p>
+          <p>You hunted Worgs, Ettins, and Darus and received the coins. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

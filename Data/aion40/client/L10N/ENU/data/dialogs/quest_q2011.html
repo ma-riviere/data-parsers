@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- rewrite by Dave 11 May -->
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I understand you just got your wings. So let's put them to use.</p>
+          <p> </p>
+          <p>Altgard Fortress is a big place. You should probably learn your way around--from the air.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Just fly around?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Fly around? Yes, although your new wings won't keep you aloft for long...yet.</p>
+          <p> </p>
+          <p>If you really want a good look at Altgard Fortress, you should fly up to Borender.</p>
+          <p> </p>
+          <p>He watches for aerial threats from the slopes of that floating rock above the fortress--the one with the Abyss portal embedded in it. Tell Borender I sent you, and he'll point out the important landmarks.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1_1">"The task is mine."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You'll find [%dic:STR_DIC_N_Blender] near the top of that floating rock up there.</p>
+          <p> </p>
+          <p>Make sure you don't let your wings get too tired. If you start falling, just unfurl your wings shortly before you hit the ground.</p>
+          <p> </p>
+          <p>You wouldn't want to leave a crater, would you? Now go fly up to Borender!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+       <Act href="HACTION_SETPRO1">"I'm on it!"</Act>
+    </Selects>
+    <Voice file="Q2011-1.ogg"/>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Welcome to Altgard, [%username]. I hope you're tougher than the usual recruit, or Suthran will make your immortal life miserable.</p>
+          <p> </p>
+          <p>One way you can get on his good side: eliminate the [%dic:STR_DIC_E_13] as it floats out of the portal. High Priest Thrud says that the fungen will release spores if it floats near another fungen--and those spores make Humans and Daevas deathly ill.</p>
+          <p> </p>
+          <p>We need to get rid of those pests before that happens.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">"How do I do that?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+        	<p>You should be saying, "How do I do that, sir?" But I'm not as spit-and-polish as most folks here.</p>
+        	<p> </p>
+          <p>You'll need to fly out to the [%dic:STR_DIC_E_13] and attack them--blade, bow, magic, whatever. Any attack will do.</p>
+          <p> </p>
+		  <p>Report to [%dic:STR_DIC_N_Valuerin] when you're done. And don't leave a crater in the snow because you flew too long, eh?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO2">"Thanks for the advice...sir."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select3">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Borender tasked you with eliminating the [%dic:STR_DIC_E_13]?</p>
+          <p> </p>
+          <p>Excellent. Most recruits could use some aerial combat practice.</p>
+          <p> </p>
+          <p>And you got a bird's-eye view of the fortress during the mission, correct?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Good vantage point up there." </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well done, [%userclass].</p>
+          <p> </p>
+          <p>Killing fungens isn't glamorous, but few of our tasks are. Get used to that, and you'll do fine here in Altgard.</p>
+          <p> </p>
+          <p>Here is a small stipend. Equip yourself for further missions.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk with [%dic:STR_DIC_N_Valuerin].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Talk with [%dic:STR_DIC_N_Blender].</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Get rid of the [%dic:STR_DIC_E_13] ([%8]/5).</font></p></step>
+               <step><p visible="[%9]"><font color="[%10]">Talk with [%dic:STR_DIC_N_Valuerin].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Order: Pests from the Abyss threaten the health of Altgard's residents. Help [%dic:STR_DIC_N_Blender] get rid of Abyss Fungens.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Under orders from Valurion in the Altgard Fortress, you reported to Borender, who ordered you to eliminate Abyss Fungens before any could spread disease. You did so, then reported back to Valurion.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>Order: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>Mission Progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

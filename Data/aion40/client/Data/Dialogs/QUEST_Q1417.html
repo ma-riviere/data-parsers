@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님이 모든 임무를 성공하리라고는 솔직히 기대하지 않았습니다.</p>
+          <p> </p>
+          <p>반 정도만 성공해도 대단한 거라고 생각했는데 말입니다.</p>
+          <p> </p>
+          <p>긴 세월 동안 많은 데바를 봐서 안목 하나는 정확하고 생각했는데 그것도 아닌가 봅니다.</p>
+          <p> </p>
+          <p>어쨌든 모든 임무를 성공했으니 이젠 보고하는 일만 남았습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>엘테넨 요새로 돌아가서 지금까지 수행한 임무와 결과를 [%dic:STR_DIC_N_Telemachus] 군단장님께 보고하십시오.</p>
+          <p> </p>
+          <p>[%username] 님께 직접 보고를 들으면 텔레마커스 님도 기뻐하실 겁니다.</p>
+          <p> </p>
+          <p>아마 자세한 부분이 궁금하실 테니까요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그럼 지금 당장 요새로 가서 [%dic:STR_DIC_N_Telemachus] 대장님을 만나 보십시오.</p>
+          <p> </p>
+          <p>미리 전갈을 드렸으니 아마 기다리고 계실 겁니다.</p>
+          <p> </p>
+          <p>카이단 본진을 무너뜨리느라고 그동안 정말 수고 많으셨습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이렇게 대단한 일을 했는데 대장님께 보고할 생각이 없다는 겁니까?</p>
+          <p> </p>
+          <p>제가 이미 간단한 보고는 드렸지만 텔레마커스 님께서는 아마 직접 보고를 받고 싶어하실 겁니다.</p>
+          <p> </p>
+          <p>겸손도 지나치면 좋지 않습니다. 다시 생각해 보십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아이올로스에게서 간단한 보고는 들었네.</p>
+          <p> </p>
+          <p>자네를 믿고 보내기는 했지만 불안하지 않았다면 그건 거짓말이겠지.</p>
+          <p> </p>
+          <p>큰 업적을 세웠으니 한번 마음껏 자랑해 보게.</p>
+          <p> </p>
+          <p>어떻게 임무를 수행했는지 자세히 보고하게.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>자네가 세운 공적은 아무리 칭찬해도 부족하겠군.</p>
+          <p> </p>
+          <p>[%username] 덕분에 엘테넨이 평화를 되찾았다고 말하는 사람이 많다네. 비록 그 평화가 일시적이라고 해도 말이지.</p>
+          <p> </p>
+          <p>자, 많은 공을 세운 영웅을 위해 상을 준비했네.</p>
+          <p> </p>
+          <p>자네를 위한 것이니 사양하지 말고 받게.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">요새로 가서 [%dic:STR_DIC_N_Telemachus]에게 보고하라 </font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">텔레마커스 군단장이 기다리고 있다. 엘테넨 요새로 가서 보고하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아이올로스는 임무를 성공적으로 수행했으니 요새로 돌아가 텔레마커스 군단장에게 보고하라고 했다.</p>
+          <p> </p>
+          <p>텔레마커스 군단장은 덕분에 엘테넨에 평화가 찾아왔다면서 크게 치하했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

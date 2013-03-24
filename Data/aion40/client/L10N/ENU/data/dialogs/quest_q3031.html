@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p> -Wanted-</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_LF2A_TesinonSeamanM_46_An]s and [%dic:STR_DIC_M_LF2A_TesinonSeamanR_46_An]s wanted, dead. Leave none alive. Terminate these cursed sailors and put an end to their plundering, killing, abducting, spindling, and mutilating. Generous reward.</p>
+          <p> </p>
+          <p>Posted by [%dic:STR_DIC_N_Eunomia], Administration Officer</p>
+        </body>
+        </html>
+    </Contents>
+   <Background name="Doc_bg_q3031"/>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"Arr, there be cursed sailors wanting killing!"</Act>
+      <Act href="HACTION_FINISH_DIALOG">"I'm no bounty hunter."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Those shadow-cursed sailors at the Latheron coast get more brazen everyday.</p>
+          <p> </p>
+          <p>In their ruthless search for loot and plunder they've even attacked Guardians!</p>
+          <p> </p>
+          <p>I posted a "wanted" poster in the village, but I've heard nothing...yet.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I took care of your Sailor problem."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Finally someone has come to claim the bounty!</p>
+          <p> </p>
+          <p>Congratulations. Those barnacle crusted knuckle-draggers deserved what they got.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get rid of the cursed sailors on the wanted list.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_LF2A_TesinonSeamanM_46_An]s ([%2]/15)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_LF2A_TesinonSeamanR_46_An]s ([%5]/12)</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Claim the bounty from Administration Officer [%dic:STR_DIC_N_Eunomia].</font></p></step> 
+    </steps>
+          <p><font font_xml="quest_summary">Kill Krahumus Sailors and Kranuum Sailors, and claim the bounty from Administration Officer Eunomia.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You saw the wanted poster on the bulletin board of the Observatory village.</p>
+          <p> </p>
+          <p>You went to the Latheron coast, killed Krahumus Sailors and Kranuum Sailors. You reported the result to Administration Officer Eunomia, and claimed the bounty.</p>    
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

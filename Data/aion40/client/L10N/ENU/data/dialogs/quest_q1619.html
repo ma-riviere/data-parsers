@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You probably think it's absurd, [%username], but I have good reason to believe the completed test subject made by the Lepharists is in the Abyss.</p>
+          <p> </p>
+          <p>I overheard the researchers talking. They said they're experimenting with [%dic:STR_DIC_M_Ab1_PerfectWa_40_Ae] in Lake Asteria and Azoturan!</p>
+          <p> </p>
+          <p>RM-114c must be the test subject. We need to do something about this!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Are you sure?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I know what I heard. </p>
+          <p> </p>
+          <p>You need to go to Azoturan and kill [%dic:STR_DIC_M_Ab1_PerfectWa_40_Ae]. And bring back some cell samples.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Go to Reshanta through the Abyss Gateway. Lake Asteria is in the upper part of the Abyss.</p>
+          <p> </p>
+          <p>Use the Eastern Shard of Latesran. It will make things easier.</p>
+          <p> </p>
+          <p>Kill [%dic:STR_DIC_M_Ab1_PerfectWa_40_Ae], collect some cells, return to Sanctum, and give them to Xenophon. I wish you good luck, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Faith and arms!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Do you want all your work in Asmodae to be in vain, [%username]?</p>
+          <p> </p>
+          <p>If you think honor isn't important, I have nothing else to say.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I think I'll live."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Nerison told me you'd gone to Reshanta. I prayed you would kill RM-114c and come back safely.</p>
+          <p> </p>
+          <p>Lady Ariel must have heard my prayer.</p>
+          <p> </p>
+          <p>Did you get some cells from [%dic:STR_DIC_M_Ab1_PerfectWa_40_Ae]? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Fresh off the body."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You didn't go to Reshanta?</p>
+          <p> </p>
+          <p>Or you couldn't get rid of [%dic:STR_DIC_M_Ab1_PerfectWa_40_Ae] before you came back?</p>
+          <p> </p>
+          <p>Either way, I expected more of you, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"You'll have them next time."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good job, [%username]! When I gave you a mission to get a research report, I never expected it would become such a huge project.</p>
+          <p> </p>
+          <p>You deserve all the credit for bringing down the Lepharist Revolutionaries. Governor Fasimedes has been paying attention to this mission. I will tell him of your success.</p>
+          <p> </p>
+          <p>Please take this reward for your efforts.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Go to Lake Asteria to collect the cells of [%dic:STR_DIC_M_Ab1_PerfectWa_40_Ae] and give them to [%dic:STR_DIC_N_Xenophon].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Nerison said that he'd found evidence that the Lepharists are running an experiment on the completed test subject in the Abyss.  Go to Lake Asteria, kill RM-114c and get its cells.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Nerison said there's a completed test subject called RM-114c made by the Lepharists in the Abyss.</p>
+          <p> </p>
+          <p>You went to Lake Asteria in the upper layer of Reshanta, killed RM-114c and brought its cells to Xenophon as the evidence. He praised you for your excellent work.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

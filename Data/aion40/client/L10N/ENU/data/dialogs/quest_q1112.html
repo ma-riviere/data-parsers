@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Look at them. Silvery fins dancing through the pink and blue reflections of the perfect sunset above, through clouds of flying birds....</p>
+          <p> </p>
+          <p>I'm sorry, did you say something, [%username]? This is my true pleasure, fishing this small piece of paradise after many years exploring [%dic:STR_DIC_ELA05].</p>
+          <p> </p>
+          <p>My husband just does not understand, forever at his pots and recipes. Did he send you? No? Well perhaps you can help me then.</p>
+             </body>
+        </html>
+    </Contents>
+    <Selects>
+  <Act href="HACTION_ASK_QUEST_ACCEPT">"What is it you need?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+         <p>Do you see those [%dic:STR_DIC_MLA133]s and [%dic:STR_DIC_MLA134]?  While beautiful in their own way, their arrival has scared the fish away from my hook.</p>
+         <p> </p>
+         <p>If they were less disruptive, peace would return here, and Uno would not have to use other sources of food for our meals.</p>
+         <p> </p>
+         <p>Will you help me restore Lake Cliona to its previous state?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Wonderful, [%username]!</p>
+          <p> </p>
+          <p>Please remove five [%dic:STR_DIC_MLA133]%s and five [%dic:STR_DIC_MLA134]%. That should scare enough of the rest off to restore the natural harmony of this place.</p>
+         </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Simple enough. I'll be back once I'm done."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+         <p>Do not worry then, friend [%userclass]. I'm sure they will leave on their own eventually.</p>
+         <p> </p>
+         <p>I thought you might want to help, but I must have misjudged your character.</p>
+         <p> </p>
+         <p>Perhaps my husband will help me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm sure he will... eventually."</Act>
+    </Selects>
+  </HtmlPage>
+
+
+   <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It really would be so peaceful here, if not for all the...</p>
+          <p> </p>
+          <p>Oh, hello [%username]. Have you taken care of that small task yet?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+          <Act href="HACTION_SELECT_QUEST_REWARD">"I've done what you asked."</Act>
+    </Selects>
+  </HtmlPage>
+
+    <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Very good, very good. I'm sure it won't be long until the lake is restored to its natural balance. Ben and I can now return to fishing peacefully.</p>
+          <p> </p>
+          <p>I had a feeling about you, [%username]. Thank you so much for your assistance.</p>
+          <p> </p>
+          <p>I'll have Uno invite you for dinner sometime soon!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Hunt the uninvited guests in [%dic:STR_DIC_FLA03].</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_MLA134]([%2]/5)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_MLA133]([%5]/5)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Go back to [%dic:STR_DIC_LA07].</font></p></step>
+               
+    </steps>
+          <p><font font_xml="quest_summary">Feira asked you to catch five Brax and five Slinks.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Feira asked you to catch five Brax and five Slinks so that they would no longer scare the fish away.</p> 
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

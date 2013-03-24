@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>More orders. Listen to this. "Due to your outstanding work in the Manduri Forest, General Telemachus has authorized you to carry on ridding the area of the Vespines and Moss Spirits that threaten the peace."</p>
+          <p> </p>
+          <p>Does Centurion Maximus deliberately torment me? I can't do all this alone!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"You're looking for more help then?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes, I am. If you would be happy to carry on your work, that would be a relief to me. At least that way I would not have to get others involved in this dirty, unfortunate work.</p>
+          <p> </p>
+          <p>What do you say?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you, [%username].</p>
+          <p> </p>
+          <p>Well then, there is little more to be said. Come back when your work is done.</p>
+          <p> </p>
+          <p>Faith and arms.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Faith and arms."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Was the initial work that distressing? Did your heart bleed for the unfortunates you were destroying?</p>
+          <p> </p>
+          <p>I can't force you to do the work, and I do respect your decision. That said, if you change your mind, come back and see me. No doubt I will still need your help.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Good luck with the work."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, you're back already.</p>
+          <p> </p>
+          <p>Is your work done? Have the quotas been filled?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="PLAYEMOTION_clap;HACTION_SELECT_QUEST_REWARD">"Yes, I've done everything asked of me."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you, [%username]. Someday I hope this bloody business will be over, and I will have to buy you a drink or two in Sanctum's Dionysia Tavern.</p>
+          <p> </p>
+          <p>If you can stomach more of the same, then I have more work for you. For now though, take this. It is truly deserved.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Hunt the Vespines and Spirits causing trouble in the Manduri Forest.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Vespa_21_n]([%2]/7)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_ElementalEarth2_21_An]([%5]/9)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_N_Androkles].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Hunt the Grove Vespines and Moss Spirits for Androkles.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[Repeat Quest]</p>
+          <p> </p>
+          <p>Androkles had received further orders from the fortress to hunt Grove Vespines and Moss Spirits, something which pained him considerably.</p>
+          <p> </p>
+          <p>You successfully hunted for him, and were asked to return in the future when you have time, as further work needed doing in the forest.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

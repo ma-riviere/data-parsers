@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Rewrite Dave 16 July -->
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We Asmodians are used to struggle, but farming here in Brusthonin is a challenge unlike any I've ever faced. But mark my words, Daeva--no matter what happens, my crops will grow here.</p>
+          <p> </p>
+          <p>They will grow here despite the contaminated soil, the pervasive undead, the rampaging beasts...all the hardships.</p>
+          <p> </p>
+          <p>You Daevas know warfare and magic, but for farming...I think you need a Human like me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Perhaps we do."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We'll start with Sudorville. Once the Undead and the more lethal beasts are cleared out, we'll open the area for settlers and start plowing up earth.</p>
+          <p> </p>
+          <p>I don't know when that day will come, but I know it's coming. I'm raising Porguses and Braxes for the new settlers.</p>
+          <p> </p>
+          <p>Wish I had a bit of free time...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What's the matter?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, on an Undead-cleansing mission at Havenjark Farm, I saw a scarecrow called [%dic:STR_DIC_N_Scarecrow_Virhu], standing sentinel in his field, patiently waiting for his master.</p>
+          <p> </p>
+          <p>He'd lost almost all his straw over the centuries since the Cataclysm. No complaints, working away no matter what--the Asmodian ideal, eh?</p>
+          <p> </p>
+          <p>I wanted to help out my fellow Asmodian with some stuffing, but we had to be in camp by dark. [%username], will you help me?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Uproot--by force, if you must--some [%dic:STR_DIC_M_DF2A_MimicBigLilyD_46_An]s in The Eastweald and bring me [%dic:STR_DIC_I_QUEST_4076a]s.</p>
+          <p> </p>
+          <p>Those leaves of theirs will be good filling for Virhu.</p>
+          <p> </p>
+          <p>And they're bulkier than straw, so he won't lose them so easily.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"The task is mine!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I guess I knew no one else would care about a scarecrow.</p>
+          <p> </p>
+          <p>Virhu is a symbol to me, but I guess to you he's just sticks and straw. </p>
+          <p> </p>
+          <p>And it's not like we don't have other things to worry about, eh?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Indeed we do."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Such steadfast loyalty...if only our settlers could see Virhu. He's inspiring!</p>
+          <p> </p>
+          <p>Maybe that's what I want--to make him a symbol not just for me, but for all those who're restoring this poor land.</p>
+          <p> </p>
+          <p>So let's help old Virhu out--did you bring me [%dic:STR_DIC_I_QUEST_4076a]s?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here are the plants."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Were you too busy exploring the forest to gather leaves for me?</p>
+          <p> </p>
+          <p>I know it's not a matter of life and death for us, but is it so crazy to honor that scarecrow's efforts?</p>
+          <p> </p>
+          <p>Please, gather some [%dic:STR_DIC_I_QUEST_4076a]s...for Virhu's sake.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"On my way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>These leaves will work great once I shake them out and dry them a bit near the heat. </p>
+          <p> </p>
+          <p>Could you come back in a few minutes? By then the leaves will be nice and dry. It'd be rude to stuff Virhu with wet leaves.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Gather leaves from [%dic:STR_DIC_M_DF2A_MimicBigLilyD_46_An] and take them to [%dic:STR_DIC_N_Hloekk].</font></p>[%collectitem]</step>           
+    </steps>
+          <p><font font_xml="quest_summary">Holekk wants re-stuff Virhu, a lonely scarecrow who has guarded Havenjark Farm for centuries. Uproot Floating Plants to get Soggy Plants for Holekk.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Holekk was greatly moved by the steadfast example of Virhu, a lonely scarecrow watching over Havenjark Farm.</p>
+          <p> </p>
+          <p>He needed stuffing to refill the scarecrow, which had lost most of its straw. You brought Holekk Soggy Plants to dry out and use for stuffing. Holekk hoped the scarecrow would inspire all Asmodians.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

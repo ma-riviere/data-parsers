@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님 아닙니까!</p>
+          <p> </p>
+          <p>얘기 많이 들었습니다. 실력이 대단한 [%userclass]%이라면서요?</p>
+          <p> </p>
+          <p>그런 분이 이럴 때 딱 나타나시니 오늘 제 운이 정말 좋나 봅니다.</p>
+          <p> </p>
+          <p>바위산 감시기지에 있는 라이가스가 지원을 요청했는데 보낼 사람을 구하던 중이었거든요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">무슨 일인지 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>글쎄요, 저도 확실히는 모르겠지만 감시기지로 가는 길을 그리폰이 막고 있나봐요.</p>
+          <p> </p>
+          <p>자존심 덩어리 라이가스가 도와달라고 하는 걸 보면 문제가 꽤 심각한 것 같습니다.</p>
+          <p> </p>
+          <p>바위산 감시기지는 혁명단 건설기지를 감시하는 중요한 곳인데 문제가 생기면 큰일이죠.</p>
+          <p> </p>
+          <p>그러니 [%username] 님이 가셔서 상황을 살펴보고 [%dic:STR_DIC_M_Griffon_32_An]을 좀 처치해 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_M_Griffon_32_An]은 낮에만 나타난다고 하더군요.</p>
+          <p> </p>
+          <p>그러니까 임무를 수행하려면 꼭 낮에 가십시오.</p>
+          <p> </p>
+          <p>놈들을 처치하고 나면 꼭 제게 그곳 상황을 알려 주세요.</p>
+          <p> </p>
+          <p>상황을 보고 엘테넨 요새에 정식으로 지원군을 요청할지 말지를 결정해야 하니까요. 그럼 부탁드리겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>생각을 바꿀 수는 없나요?</p>
+          <p> </p>
+          <p>물론 [%username] 님도 개인적으로 바쁜 일이 많을 거라 생각해요. 도와달라는 이도 많을 테니 귀찮기도 할 거고요. </p>
+          <p> </p>
+          <p>하지만 그게 도움을 청하는 동료를 외면하는 것보다 더 중요한 건가요? 곰곰히 생각해 보시고 결심이 바뀌면 오세요. </p>
+          <p> </p>
+          <p>[%username] 님을 기다리고 있겠습니다. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님, 벌써 다녀오신 겁니까?</p>
+          <p> </p>
+          <p>그래, 상황이 어떻던가요?</p>
+          <p> </p>
+          <p>지원군을 파병할 만큼 그리폰의 공격이 심각하던가요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>놈들의 수가 그렇게 많진 않다니 다행이군요.</p>
+          <p> </p>
+          <p>그 정도면 요새에 지원을 요청하지 않아도 되겠습니다.</p>
+          <p> </p>
+          <p>라이가스가 하도 호들갑을 떨어 심각한 줄 알았더니. 그 친구 생각보다 허풍이 심한가 보네요, 호호호.</p>
+          <p> </p>
+          <p>아무튼 도와주셔서 감사합니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">바위산 감시기지로 가는 길을 막고 있는 [%dic:STR_DIC_M_Griffon_32_An]을 처치하라([%2]/7)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Lemia]와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">바위산 감시기지로 가는 길을 막고 있는 바람사냥꾼 그리폰을 처치해야겠다.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>레미아는 바위산 감시기지로 가는 길을 막고 있는 그리폰을 처치해 줄 사람을 찾는 중이라고 했다.</p>
+          <p> </p>
+          <p>쿠리울루 바위산으로 가서 바람사냥꾼 그리폰을 처치하고 그곳 상황을 레미아에게 알려 주자 야영기지에 지원군을 요청할 필요는 없겠다며 안심했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

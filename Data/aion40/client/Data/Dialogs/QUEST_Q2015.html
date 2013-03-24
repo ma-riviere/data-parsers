@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>티아마트의 장검 사건 때문에 아무래도 이 바스펠트 마을 근처의 레파르 혁명단 문제가 불거질 것 같습니다.</p>
+          <p> </p>
+          <p>그동안은 놈들이 있는 걸 알면서도 병력이 부족해서 별다른 조치를 취하지 않았거든요. 마을 근처로 와서 문제를 일으킬 때만 빼고요.</p>
+          <p> </p>
+          <p>그런데 이제 수에론 대장님께서 마을 근처에 놈들의 은신처가 있는 걸 알게 됐으니 그냥 넘어갈 수는 없을 것 같습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">얘기를 계속 듣는다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>대장님께서 문책하시기 전에 혁명단 놈들에게 적당한 조치를 취해야 합니다.</p>
+          <p> </p>
+          <p>가장 효과적인 방법은 아무래도 은신처에 있는 놈들의 우두머리를 처치하는 거겠죠.</p>
+          <p> </p>
+          <p>[%username] 님의 실력이 뛰어나다는 이야기는 많이 들었습니다. 놈들의 우두머리인 [%dic:STR_DIC_M_LehparAsChD_15_An]을 처치하는 일을 부탁드려도 될까요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1_1">해 보겠다고 한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>어려운 임무를 선선히 수락해 주셔서 감사합니다.</p>
+          <p> </p>
+          <p>마을을 나가 이둔의 호수에서 계속 북쪽으로 올라가면 다리가 하나 보일 겁니다. 그 다리 너머의 동굴이 놈들의 소굴입니다.</p>
+          <p> </p>
+          <p>동굴 안팎에 있는 [%dic:STR_DIC_M_LehparWaD_14_An], [%dic:STR_DIC_M_LehparAsD_14_An]를 처치하고 놈들의 두목인 [%dic:STR_DIC_M_LehparAsChD_15_An]도 처치해 주십시오.</p>
+          <p> </p>
+          <p>그럼 부탁드립니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+       <Act href="HACTION_SETPRO1">대화를 마친다.</Act>
+    </Selects>
+    <Voice file="Q2015-1.ogg"/>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>수에론 대장님의 문책이 오기 전에 [%username] 님이 오시길 기다리고 있었습니다.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_LehparAsChD_15_An]과 도굴단 놈들은 처치하고 오셨습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">처치했다고 대답한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>순식간에 처치하고 오셨군요.</p>
+          <p> </p>
+          <p>역시 [%username] 님의 실력에 대한 얘기가 헛소문이 아니었던 모양입니다.</p>
+          <p> </p>
+          <p>레파르 혁명단과 놈들의 우두머리를 처치했다는 보고를 빨리 요새로 보내야겠습니다. 그럼 문책 당하는 일은 없겠죠.</p>
+          <p> </p>
+          <p>자, 이건 제가 드리는 고마움의 표시입니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_Nokirjar]와 대화하라 </font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">레파르 혁명단을 처치하라</font></p>
+                     <p visible="[%3]"><font color="[%4]">  [%dic:STR_DIC_M_LehparAsChD_15_An]([%5]/1)</font></p>
+                     <p visible="[%3]"><font color="[%4]">  [%dic:STR_DIC_M_LehparWaD_14_An]([%8]/5)</font></p>
+                     <p visible="[%3]"><font color="[%4]">  [%dic:STR_DIC_M_LehparAsD_14_An]([%11]/5)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Nokirjar]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">지령: 레파르 혁명단의 두목 수마르혼과 도굴꾼을 처치하라.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>노키르자르는 레파르 혁명단을 처치하지 못하면 요새 대장에게 문책을 당할 것이라고 걱정했다. 그래서 도굴단 은신처로 가서 두목 수마르혼과 도굴단을 처치했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>지령: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>미션 진행: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p align="center"> - 현상 수배 - </p>
+          <p> </p>
+          <p> </p>
+          <p> </p>
+          <p> </p>
+          <p> </p>
+          <p> </p>
+          <p> </p>
+          <p> </p>
+          <p> </p>
+          <p> </p>
+          <p>검은 미망인 시니스를 아래의 죄목으로 현상수배하는 바이다.</p>
+          <p></p>
+          <p> 1. 사기 결혼</p>
+          <p> 2. 남편 4명을 독살하고 재산 갈취</p>
+          <p></p>
+          <p>[%dic:STR_DIC_M_CriminalLightWiNamedQ_24_An]의 행방에 대해 결정적인 제보를 하거나 직접 처치하고 증거물인 시니스의 머리카락을 가져온 사람에게는 후사하겠음.</p>
+          <p></p>
+          <p>-현상금 사냥꾼 [%dic:STR_DIC_N_Crios]백</p>
+        </body>
+        </html>
+    </Contents>
+    <Background name="Doc_bg_q3019"/>
+    <Selects>
+      <Act href="HACTION_SETPRO1">검은 미망인 시니스를 잡기로 한다. </Act>
+      <Act href="HACTION_FINISH_DIALOG">살펴보기를 그만둔다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>원래도 결혼에 관심이 없었는데 검은 미망인 시니스를 보고 결혼하고 싶은 맘이 싹 사라졌습니다.</p>
+          <p> </p>
+          <p>재산을 가로채려고 남편을 넷이나 죽이다니 어디 무서워서 결혼하겠습니까?</p>
+          <p> </p>
+          <p>독살한 방법도 어찌나 치밀한지 매일같이 스튜에 벽돌만한 버터를 녹여 먹였다더군요. 그래서 모두 고혈압에 심장마비로 죽었죠.</p>
+          <p> </p>
+          <p>아, 그런데 무슨 일로 온 거랬죠?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">시니스의 머리카락을 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_fail">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아무리 당신이 검은 미망인 시니스를 처치했다고 말해도 증거가 없으면 믿을 수가 없지요.</p>
+          <p> </p>
+          <p>말로만 하는 거라면 저도 시니스를 열 번은 더 잡았겠습니다, 하하.</p>
+          <p> </p>
+          <p>현상금이 필요하면 증거를 보여 주세요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>흐음, 시니스의 머리카락이 틀림없는 것 같군요.</p>
+          <p> </p>
+          <p>이런 걸 가져오셨으면 바로 말씀하시지. </p>
+          <p> </p>
+          <p>어쨌거나 수고 많으셨습니다. 받으십시오.</p>
+          <p> </p>
+          <p>시니스에게 걸린 현상금입니다. 그 여자를 잡느라 진땀깨나 뺐을 텐데 이걸로 기력을 회복할 만한 거라도 사 드십시오.</p>
+          <p> </p>
+          <p>물론 스튜는 빼고요, 하하하!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_M_CriminalLightWiNamedQ_24_An]를 처치하고 증거물을 구해 [%dic:STR_DIC_N_Crios]에게 가지고 가라</font></p>[%collectitem]</step>        
+    </steps>
+          <p><font font_xml="quest_summary">현상수배범인 검은 미망인 시니스를 처치하고 시니스의 머리카락을 잘라 크리오스에게 가져가 현상금을 받자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>남편 4명을 독살한 혐의로 수배된 검은 미망인 시니스를 처치하고 증거로 시니스의 머리카락을 가져가 크리오스에게 현상금을 받았다.</p>         
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

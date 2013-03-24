@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(보주에서 빛으로 된 글씨가 떠오른다.)</p>
+          <p> </p>
+          <p>("실렌테라 회랑을 지나 겔크마로스로 가라.")</p>
+          <p> </p>
+          <p>("용족의 방벽을 지키는 추악한 돌연변이 나타라즈를 처치해야 한다.")</p>
+          <p> </p>
+          <p>("바가바탐 봉인탑의 [%dic:STR_DIC_N_Stanis]에게 도움을 받으라.")</p>
+          <p> </p>
+          <p>(보주에서 글씨가 사라진다.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">살펴보기를 그만둔다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>무슨 일인가?</p>
+          <p> </p>
+          <p>바가바탐 봉인탑에 용무가 있는 것인가?</p>
+          <p> </p>
+          <p>다른 용무가 없다면 바가바탐 봉인탑의 일을 돕길 바란다.</p>
+          <p> </p>
+          <p>드라칸 몇 마리 정도는 해치울 수 있겠지? 전투를 돕겠다면 당장 도우라.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">보주를 보인다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>카이시넬 주신의 명을 받고 온 자로군.</p>
+          <p> </p>
+          <p>추악한 돌연변이라면 바가바탐 격전지를 배회하는 [%dic:STR_DIC_M_DF4_Raid]를 뜻한다.</p>
+          <p> </p>
+          <p>봉인탑을 점령한 후에도 어찌나 끈질기게 성문을 두드려 대던지 애를 먹던 참이었다.</p>
+          <p> </p>
+          <p>봉인탑을 지키는 책무를 지켜야 한다는 아버지의 말씀만 아니었으면 내가 진작 가서 해치웠을 것이다.</p>
+          <p> </p>
+          <p>하지만 이제 너의 몫이 된 것 같구나. 카이시넬 주신의 명이 있으니 기꺼이 너를 돕겠다.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_DF4_Raid]는 붉은 대지의 신전과 바가바탐 봉인탑 사이를 오가며 천족을 위협하고 있다. 강력한 녀석이니 포스를 모으지 않으면 상대할 수 없다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>오, [%username]!</p>
+          <p> </p>
+          <p>너의 군대가 행군하며 바가바탐 격전지를 흙먼지로 덮는 것을 보았다.</p>
+          <p> </p>
+          <p>언제 마족이 칠지 모르는 이 위태로운 곳에서 대단한 활약이었다.</p>
+          <p> </p>
+          <p>돌연변이 나타라즈의 죽음은 분명히 확인한 것인가?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">고개를 끄덕인다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>잘 해 주었다.</p>
+          <p> </p>
+          <p>네 실력에 감탄했다. 나중에 전쟁이 끝나거든 개인적으로 친분을 쌓고 싶구나.</p>
+          <p> </p>
+          <p>아버지께서 당신을 아주 마음에 들어하실 것 같구나.</p>
+          <p> </p>
+          <p>하지만 당신에게 주어진 카이시넬 주신의 명령은 아직 끝나지 않은 것 같다.</p>
+          <p> </p>
+          <p>보주를 살펴보아라. 새로운 지령이 와 있을 것이다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_Stanis]와 대화하라</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_M_DF4_Raid]를 처치하라[%5]</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">[%dic:STR_DIC_N_Stanis]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">보랏빛 보주에서 새로운 명령이 전달되었다. 스타니스에게 돌연변이 나타라즈에 대해 듣자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>보랏빛 보주는 겔크마로스 바가바탐 봉인탑의 스타니스의 도움을 받아 돌연변이 나타라즈를 처치한 것을 명했다.</p>
+          <p> </p>
+          <p>그래서 스타니스에게 자세한 얘길 듣고 포스를 모아 나타라즈를 처치하자 스타니스는 감탄을 표하며 다음 지령을 수행하라고 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ulaguru, are you in pain? Ulaguru? Talk to me, Ulaguru! No...wait...talk to [%username] here!</p>
+          <p> </p>
+          <p>It's no use! There's something wrong with the poor thing, and I have no idea what it is!</p>
+          <p> </p>
+          <p>He used to have no trouble in wolfing down whole buckets of food in seconds, but lately he just hasn't touched his meals--he just pushes them around with his foot. Do you think he's ill?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I'm neither a doctor nor a vet."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>        
+          <p>Me neither. Maybe he's become depressed after being locked up for so long? I'm the only one he has to talk to...all the others tease him or throw things at him.</p>
+          <p> </p>
+          <p>I need something that'll raise his spirits again, maybe something from Verteron...hmm. Oh, I know! Krall Rations!</p>
+          <p> </p>
+          <p>Will you help me, [%username]? Head to Verteron and obtain some [%dic:STR_DIC_I_junk_l_s_16d]s--they're Ulaguru's favorite! I'd go myself, but I can't risk leaving Ulaguru on his own for so long.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage> 
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you! I was hoping I would be able to turn to you if something happened to poor Ulaguru.</p>
+          <p> </p>
+          <p>Hurry to Verteron and obtain the [%dic:STR_DIC_I_junk_l_s_16d]s from Krall in the [%dic:STR_DIC_FLA22]. They're hostile and highly trained, but I'm sure you'll be fine.</p>
+          <p> </p>
+          <p>I'm not asking for many, just three rations. If they cheer Ulaguru up, then maybe I'll ask you to go again. If the rations do nothing, then we won't have wasted too much time.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"All this for a Krall? I'll be back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Please reconsider! I'm afraid Ulaguru is about ready to collapse.</p> 
+          <p> </p>
+          <p>You've seen the Krall in their natural habitat, haven't you? You've seen their energy and drive, and now look at Ulaguru!</p>  
+          <p> </p>
+          <p>Please, all my research will be in vain if I cannot complete my work. And I'll be honest: Ulaguru is more than a mere test subject to me. Ulaguru has become a friend, and I cannot stand by and watch him like this.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I can't help you right now."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]! Thank goodness you're here!</p>
+          <p> </p>
+          <p>Ulaguru has been getting weaker by the hour. I was just about to head to Luelas and ask him whether he could stomach making some Krall food for me.</p> 
+          <p> </p>
+          <p>How did you do?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I managed to get these."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No! We don't have time for this, [%username]!</p>
+          <p> </p>
+          <p>Ulaguru cannot go on like this much longer. If you want to actually help me, then you'll have to get back out there, infiltrate the [%dic:STR_DIC_FLA22] in Verteron, and fetch the [%dic:STR_DIC_I_junk_l_s_16d]s you promised me.</p> 
+          <p> </p>
+          <p>Remember, Ulaguru needs three rations!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That smell! Every time I smell Krall Rations, it sears my senses. I just can't get used to it!</p>
+          <p> </p>
+          <p>Here you are Ula...wow! Look at him go! We should probably step back a little, [%username].</p>
+          <p> </p>
+          <p>Those rations disappeared pretty quickly, wouldn't you say? If you happen to find any more on your travels, bring them to me. They certainly did the trick and cheered Ulaguru up!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get [%dic:STR_DIC_I_junk_l_s_16d]s from the Krall in the Verteron region and bring them to [%dic:STR_DIC_N_Mameia].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Marmeia is concerned about Ulaguru, who has been refusing to eat. Get Krall Rations from the Krall based in the [%dic:STR_DIC_FLA22] and [%dic:STR_DIC_FLA23] and bring them to Marmeia.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Marmeia told you how worried she is about Ulaguru, who has become depressed and is refusing to eat.</p>
+          <p> </p>
+          <p>You brought the Krall Rations back from the Verteron region to Marmeia. After feeding Ulaguru, Marmeia was delighted with Ulaguru's restored vitality and asked you to bring further supplies whenever you happened upon them.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

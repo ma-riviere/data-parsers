@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p align="center">  - 작전 명령서 - </p>
+          <p></p>
+          <p>발신: 판데모니움 특수사령부</p>
+          <p></p>
+          <p>수신: [%username]</p>
+          <p></p>
+          <p>판데모니움 특수사령부 켈크마로스 지부는 오만한 천족에 대항하여 모든 지역에서 강경한 전투 노선을 취할 것임을 선포한다. 천족을 향한 우리의 발톱은 때와 장소를 가리지 않을 것이다.</p>
+          <p></p>
+          <p>이에 다음 명령을 내리니 즉시 시행하길 바란다.</p>
+          <p></p>
+          <p>  1. 임무와 장소에 관계 없이 주의를 기울여 천족의 위치를 파악할 것.</p>
+          <p></p>
+          <p>  2. 천족을 발견하면 수단과 방법을 가리지 않고 5명을 처치할 것.</p>
+          <p></p>
+          <p>  3. 단, 너무 전력이 떨어지는 적에게는 자비를 베풀 것.</p>
+          <p></p>
+          <p>  4. 적이 전의를 잃은 것을 확인하면 [%dic:STR_DIC_E_45503]에게 보고할 것.</p>
+          <p></p>
+          <p>특수사령부 요원들에게 신의 가호가 있기를!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">명령서를 접어 넣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+   <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>오셨습니까, [%username] 님.</p>
+          <p> </p>
+          <p>오늘도 이곳 저곳에서 큰 싸움이 벌어진 모양이더군요.</p>
+          <p> </p>
+          <p>[%username] 님도 참여하셨다면 보상을 마련해야 하니 정확한 보고를 해 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>임무 완수를 확인했습니다, [%username] 님.</p>
+          <p> </p>
+          <p>판데모니움 특수사령부에서 보상품을 드리겠습니다.</p>
+          <p> </p>
+          <p>판데모니움의 영광을 위해!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_W_Daily]에서 [%dic:STR_DIC_E_Daily_2]을 처치하라([%2]/5)</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_E_45503]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">일일 지령: 장소를 가리지 말고 천족을 처치한 후 겔크마로스 지부 요원에게 보고하라</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>판데모니움 특수사령부에서 장소를 가리지 말고 천족을 처치하라는 명령서가 내려왔다.</p>
+          <p> </p>
+          <p>임무를 완수한 후 겔크마로스 지부 요원에게 가서 보상을 받았다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

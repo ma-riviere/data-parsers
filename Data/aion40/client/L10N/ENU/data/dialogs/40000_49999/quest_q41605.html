@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q41605</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>Not entered</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Listen up, [%username]. I've a task that needs assigning, and I think you're just the [%userclass] I need.</p>
+          <p> </p>
+          <p>We've been scouting out the Naduka Legion for some time now, and have identified two high-profile targets that we want dead. Their names are [%dic:STR_DIC_M_LDF4b_T2_DrakanFi_Tiamat_Named_59_An] and [%dic:STR_DIC_M_LDF4b_T2_DrakanWi_Tiamat_Named_59_An]. Without them, the Naduka Legion will be headless, confused, and that much easier to wipe out.</p>
+          <p> </p>
+          <p>What do you say? I only need one of them assassinated for now.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I heard the commotion from here, [%username]! At least, I assume you caused it...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I did. The job's done."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent! We'll watch their ranks for now, and see how they respond to their loss.</p>
+          <p> </p>
+          <p>Thank you, [%username]. You've done very well indeed.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Kill one of the [%dic:STR_DIC_M_Q41605all]s ([%2]/1).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report back to [%dic:STR_DIC_N_Ur].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Ur needs one of the Naduka Legion heads killed. Take out either Deputy Brigade General Lucarn or Aide Kaimar.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ur told you about a headhunting mission he had for you. He wanted the Naduka Legion cut down, and suggested you take out one of their two leaders. You completed the task without too much trouble, and received a fair reward.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

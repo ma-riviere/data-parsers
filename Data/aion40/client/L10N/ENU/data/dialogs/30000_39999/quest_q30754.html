@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q30754</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Reian Elder [%dic:STR_DIC_N_Garthenion] has asked me to send a Daeva to him. He claims it some sort of emergency.</p>
+          <p> </p>
+          <p>I know we're all very busy, but could you humor him? If it does turn out to be something important, you'll be the best one for the task.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Skafir finally sent one. Quicker than I expected too.</p>
+          <p> </p>
+	        <p>[%userclass], this is an urgent situation. I discovered illegal [%dic:STR_DIC_E_Q30704e]s scattered all around. These things are extremely dangerous, and we must get them removed.</p>
+          <p> </p>
+          <p>First though, we need to shut down the source: a shugo named [%dic:STR_DIC_N_Shugo_LDF4b_10] seems to be the best bet. Find her, and get these things off the market!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"The task is mine!"</Act>
+    </Selects>
+  </HtmlPage>
+
+<HtmlPage name="select3">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, hello, Daeva. Something you're looking for?</p>
+          <p> </p>
+          <p>Something special perhaps? That not even other shugo merchants sell?</p>      
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT3_1">"Tell me about Drazma Fragments."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select3_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Dra- Drarazma Fragments? Garinrinerk doesn't know anything about that!</p>
+          <p> </p>
+          <p>Er, well, fine, I sold a few. But did nothing wrong, nyerk!</p>
+          <p> </p>
+          <p>Was just selling them for a friend. Shulack named [%dic:STR_DIC_N_NPC_Shulack_LF4a_8] gave to me, said we would split profit. Good money, nyerk, nyerk.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO2">"Where's Larukin now?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select4">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>So that stupid Shugo sold me out, eh? I should have known.</p>
+          <p> </p>
+          <p>Don't get me wrong, though, I'm just another middleman, er, middle-Shulack here. A Shulack scientist named [%dic:STR_DIC_M_IDTiamat_ShulackScientist_60_Ae] got the fragments for me. If you don't any more fragments on the market, talk to him.</p>        
+      	  <p> </p>
+          <p>He works at [%dic:STR_DIC_W_IDTiamat_SZ_R1]. He's probably so engrossed in his work, he'll never realize you're coming.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT4_1">"How many did you already sell?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select4_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>A few. All to that stupid shugo. You want to know who the end buyers were, go talk to him again.</p>
+          <p> </p>
+          <p>I'm a legitimate business man, helping provide low cost materials to saps who can't otherwise afford them.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO3">"You're shut down now."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're finally back. Where you able to track the source of the Drazma Fragments?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"They're coming from Hewahewa."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hewahewa... I know that name from Dark Poeta....</p>
+          <p> </p>
+          <p>This can't be coincidence. I'll look into this, but in the meantime I need to congratulate you on a job well done.</p>
+          <p> </p>
+          <p>I'll warn Larukin about selling contraband, have the remaining fragments confiscated, and that should be the end of it.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk [%dic:STR_DIC_N_Garthenion].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Ask [%dic:STR_DIC_N_Shugo_LDF4b_10] about her Drazma Fragments source.</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Ask [%dic:STR_DIC_N_NPC_Shulack_LF4a_8] about his Drazma Fragments source.</font></p></step>
+               <step><p visible="[%9]"><font color="[%10]">Report the result to [%dic:STR_DIC_N_Garthenion].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">There are illegal Drazma Fragments on the market. Find out where they came from.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Garthenion told you that illegal Drazma Fragments are being circulated on the market.</p>
+          <p> </p>
+          <p>You found out that Larukin supplied the items, but that he originally got them from a scientist named Hewahewa.</p>
+          <p> </p>
+          <p>When you told Garthenion, he wondered if it was the same Hewahewa who was connected to the Dark Poeta incident.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

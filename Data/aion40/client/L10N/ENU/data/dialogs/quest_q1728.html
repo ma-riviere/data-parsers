@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Heard the rumors? Guardians around Reshanta have been ambushed by Asmodians.</p>
+          <p> </p>
+          <p>Seeing how it's even happened to some secret scouting parties, Brigade General Sakmis thinks there must be a spy, so I have a special mission.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"What are your orders?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's just between the Brigade General and me, but...okay, I trust you, [%username]. Come a little closer.</p>
+          <p> </p>
+          <p>I've been watching the Asmodian teleporters. The spy must be using them, so I was looking for anyone...unusual.</p>
+          <p> </p>
+          <p>Finally I found him! What's his name...? Mokur, Mokufi? Mokkurkalfi! He's got to be the one.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What did he do?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, he's been teleporting all over the Ridge of Latesran lately.</p>
+          <p> </p>
+          <p>He doesn't wear any insignia of rank, but his weapons and armor are definitely special. He resembles the description given by survivors, and the Asmodian teleporters are scared to death of him.</p>
+          <p> </p>
+          <p>My guess is he's watching our movements and laying his traps. The problem is, I don't know anyone who'll face off against someone like that. What about you, [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I knew you would! I last saw him at the Solitary Island in front of Primum Landing.</p>
+          <p> </p>
+          <p>When it's done, report to Brigade General [%dic:STR_DIC_N_Sakmis]. I'll tell him I assigned this to you.</p>
+          <p> </p>
+          <p>Oh, and one more thing. [%dic:STR_DIC_N_Mokkurkalfi] attacks Guardians in groups of three or four. Bring some friends.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"He'll get what he deserves."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Blast it! Listen, I told you the secret thinking you'd help!</p>
+          <p> </p>
+          <p>Okay. It's fine if you're unsure about this.</p>
+          <p> </p>
+          <p>But keep it absolutely secret, understand?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll think about it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, yes. Septimus told me he'd assigned you to this Mokkurkalfi situation.</p>
+          <p> </p>
+          <p>I assume you've killed him?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"We took care of it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>He must have been an extraordinary soldier. A shame he was Asmodian.</p>
+          <p> </p>
+          <p>You've done well, [%username]. You're a formidable Daeva yourself.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Assassinate [%dic:STR_DIC_N_Mokkurkalfi], the Asmodian spy.
+               ([%2]/1).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report back to [%dic:STR_DIC_N_Sakmis].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Recently Guardians in Reshanta were ambushed by an unknown Asmodian. Septimus identified Mokkurkalfi. Kill him and report in to Brigade General Sakmis.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Septimus told you that recent attacks on Guardians in Reshanta are the work of a professional assassin. He scouted Asmodian teleporters and found out that the assassin was an Asmodian named Mokkurkalfi.</p>
+          <p> </p>
+          <p>You killed Mokkurkalfi on Solitary Island. Brigade General Sakmis was pleased to learn of your success.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

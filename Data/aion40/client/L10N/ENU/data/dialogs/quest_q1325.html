@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], since you've come all the way out here, would you like to earn some Kinah?</p>
+          <p> </p>
+          <p>Oh, don't give me that look. It's nothing illegal, but keep it quiet, okay?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"It's not illegal?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Of course not. Ever seen a Snapping Spiner? They're all over the Outpost Ruins.</p>
+          <p> </p>
+          <p>Right now, [%dic:STR_DIC_I_QUEST_1326a] are very popular in Sanctum. They sell faster than fried Sylphen!</p>
+          <p> </p>
+          <p>See where I'm going with this?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I think so. Tell me more."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I have a vendor in Sanctum ready to buy a load of these things, but well, it's against regulations for me to leave my post.</p>
+          <p> </p>
+          <p>So if you catch [%dic:STR_DIC_M_Lobster_25_An]s and bring their [%dic:STR_DIC_I_QUEST_1326a] to me, I can pay you well and still sell them to my merchant friend at a profit.</p>
+          <p> </p>
+          <p>It's just like one hand washing the other, you see? What do you say?</p>
+         </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's a deal, then! [%dic:STR_DIC_M_Lobster_25_An]s are all over around the [%dic:STR_DIC_W_LF2_SZ_G1]. Just bring me the pincers.</p>
+          <p> </p>
+          <p>Oh, and if Heropres asks why you're hunting Spiners, don't mention my name whatever you do!</p>
+          <p> </p>
+          <p>He'll just try to swoop in and take some of my profit!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"It's our secret."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, all right, [%username]....</p>
+          <p> </p>
+          <p>I don't know why you'd turn down such an easy way to make Kinah.</p>
+          <p> </p>
+          <p>Don't mention this to Heropres, okay?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I won't."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That looks like the face of a successful hunter!</p>
+          <p> </p>
+          <p>Are we looking at a good haul?</p>
+          <p> </p>
+          <p>How many [%dic:STR_DIC_I_QUEST_1326a] did you get?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"This many."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Huh? This isn't what we agreed on. The Shugo says we need at least fifteen to make it worth his while.</p>
+          <p> </p>
+          <p>Fads in Sanctum come and go. If we miss this one, we'll have a lot of pincers smelling up the place.</p>
+          <p> </p>
+          <p>Hurry!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Be right back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Wow, do people really eat these things? I lived in Sanctum for a while, but I really don't understand the crazes.</p>
+          <p> </p>
+          <p>Well, it doesn't matter if I like them, as long as they're profitable!</p>
+          <p> </p>
+          <p>Here's your payment. I think you'll find it's more than enough.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Bring the Plump Pincers you obtained from [%dic:STR_DIC_M_Lobster_25_An]s to [%dic:STR_DIC_N_Novan].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Gather Spiners' Plump Pincers, which fetch a high price on the market, and bring them to Novan. </font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Novan said that, if you bring Spiner pincers to him, he would buy them at a high price, since they're popular in Sanctum these days.</p>
+          <p> </p>
+          <p>You went to the Outpost Ruins, hunted Spiners, and brought their Plump Pincers to him. Yum!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

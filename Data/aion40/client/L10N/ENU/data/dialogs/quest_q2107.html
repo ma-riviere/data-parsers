@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(You've found a small note, neatly folded in wax paper and tied together with string.)</p>
+          <p> </p>
+          <p>(After a quick examination, you find "Dear Ulgorn" written in neat handwriting on the underside.)</p>
+          <p> </p>
+          <p>(This note was clearly meant for Ulgorn, boss of the raiders. You should take it to him.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Well, this should be interesting."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What brings you here, [%username]?</p>
+          <p> </p>
+          <p>I don't recall sending you on a task that you'd have finished so soon...</p>
+          <p> </p>
+          <p>Perhaps you meant to speak with Tobu?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="PLAYEMOTION_blush;HACTION_SELECT2_1">"I think this is yours."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Let me read this...</p>
+          <p> </p>
+          <p>[%username], where did you get this?</p>
+          <p> </p>
+          <p>This letter...it takes me back to some dark times. Back to places I'd rather not return. You had no way of knowing, of course. But I wish you'd never found that letter.</p>
+          <p> </p>
+          <p>Tell no one else, but take the note back to [%dic:STR_DIC_N_Linevir]. Tell her that this is all too soon. The memories of my former wife are still fresh in my mind...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"The task is mine."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Why are you here, [%userclass]? You don't seem to need Soul Healing.</p>
+          <p> </p>
+          <p>Explain yourself or depart. You intrude on my prayers.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Ulgorn read this note..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>But...but...I don't understand! I thought I threw the note away! Ulgorn actually read the note?</p>
+          <p> </p>
+          <p>No...Oh no...</p>
+          <p> </p>
+          <p>Yes, I wrote the note, and yes, I did intend to give it to him. But then I had a change of heart. I knew Ulgorn hadn't recovered from his loss. I knew he wouldn't be ready for another...whatever it would have been.</p>
+          <p> </p>
+          <p>How can I even look at him again? I've been such a fool!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Take the letter to [%dic:STR_DIC_N_Ulgorn].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Take the letter to [%dic:STR_DIC_N_Linevir].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">You found a letter with Ulgorn's name on it while hunting near the lake. You should take it to the boss.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You found a letter with Ulgorn's name on it while hunting near the lake.</p>
+          <p> </p>
+          <p>You brought it to the boss. However, after reading it, Ulgorn became visibly upset and asked you to hand it back to Linevir.</p>
+          <p> </p>
+          <p>Linevir, in turn, was ashamed after finding out that the boss read her letter, and wasn't sure she would be able to face Ulgorn again.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

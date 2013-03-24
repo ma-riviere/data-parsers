@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's been a while since I've seen someone with your hunting skills, [%username]. I'm more than impressed.</p>
+          <p> </p>
+          <p>I'm sure you'll have to move on to some important Daeva business soon, but I'd really like to keep you around. We need the likes of you around here.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What else is going on?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, since you asked.... I know of a particular rotten Calydon we call [%dic:STR_DIC_M_LF2A_CalydonAsNamedQ_47_An]. I made a bet with the rest of the camp that nobody could catch him. As you might guess, he has one tooth made entirely of gold.</p>
+          <p> </p>
+
+          <p>If you can kill [%dic:STR_DIC_M_LF2A_CalydonAsNamedQ_47_An] and bring me his [%dic:STR_DIC_I_QUEST_3047a], I'll collect on that bet. Of course there'll be something in it for you....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Killing [%dic:STR_DIC_M_LF2A_CalydonAsNamedQ_47_An] should be fun. Really I should just go kill him myself and save my money, but...I love watching you work, [%username].</p>
+          <p> </p>
+          <p>I'm betting you'll be back in a flash with that [%dic:STR_DIC_I_QUEST_3047a].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Piece of cake."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Really? You don't want to kill him?</p>
+          <p> </p>
+          <p>Well, I was only telling you about it as a favor anyway. I can go kill him myself later.</p>
+          <p> </p>
+          <p>If you change your mind before I get around to it, let me know.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll let you know."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did you find [%dic:STR_DIC_M_LF2A_CalydonAsNamedQ_47_An]?</p>
+          <p> </p>
+          <p>Isn't he something? Did you take him down?</p>
+          <p> </p>
+          <p>Did you get his [%dic:STR_DIC_I_QUEST_3047a]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here you go."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did you find [%dic:STR_DIC_M_LF2A_CalydonAsNamedQ_47_An] yet?</p>
+          <p> </p>
+          <p>Don't worry if it takes a while. Calydons are cagey! Just keep at it and you'll bring him down.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I will."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Wow. This is his tooth, all right.</p>
+          <p> </p>
+          <p>It's much bigger than I thought!</p>
+          <p> </p>
+          <p>Here's the payoff I promised you. I should probably sell this to get some of that money back, but I think I'll keep it as a souvenir.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Kill [%dic:STR_DIC_M_LF2A_CalydonAsNamedQ_47_An], pull out his gold tooth and bring it to [%dic:STR_DIC_N_Maeleagros].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Remove the gold tooth from [%dic:STR_DIC_M_LF2A_CalydonAsNamedQ_47_An], and bring it to Melleas.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Melleas told you of a Calydon with a gold tooth, and asked you to bring it to him to settle a bet.</p>
+          <p> </p>
+          <p>When you brought the gold molar to Melleas, he paid you.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

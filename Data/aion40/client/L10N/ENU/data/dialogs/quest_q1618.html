@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I don't think I'm the right one to infiltrate the Alquimia Research Center.</p>
+          <p> </p>
+          <p>People who know me might be suspicious if they saw me hanging around there.</p>
+          <p> </p>
+          <p>If I get caught, everything I've worked for will be in vain. I can't risk being discovered.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I understand. Your work is important."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I think you're in a better position to get inside.</p>
+          <p> </p>
+          <p>Go to the [%dic:STR_DIC_W_STR_DF3_SZ_G4_3] and bring back the [%dic:STR_DIC_OBJ_DF3_Lehparbook_02]. My source tells me it contains detailed research notes on the Remodeled Human Test Subject.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Here's the Research Center Key. It's a giant stone building you can see to the north.</p>
+          <p> </p>
+          <p>Find out what they're doing and remember to bring back the [%dic:STR_DIC_OBJ_DF3_Lehparbook_02].</p>
+          <p> </p>
+          <p>When you're done, return to [%dic:STR_DIC_N_Xenophon] and give him a full report.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"You can count on me."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Fine. You're not a spy. Go back to Elysea.</p>
+          <p> </p>
+          <p>I'll do the rest of the mission alone.</p>
+          <p> </p>
+          <p>Thank you for your help thus far.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"You can do it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What happened, [%username]?</p>
+          <p> </p>
+          <p>I asked you to meet Nerison and ask about the Suspicious Box a long time ago.</p>
+          <p> </p>
+          <p>Why did it take so long?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I completed the mission."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I heard Lethe was in Asmodae, but I didn't know she had infiltrated the Lepharists.</p>
+          <p> </p>
+          <p>You mentioned a Research Center Journal. Did you leave it behind somewhere?</p>
+          <p> </p>
+          <p>It's important. Bring it to me! </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Faith and arms!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I never suspected that the Suspicious Box  Nerison reported was linked to Asmodae. Good work, Daeva.</p>
+          <p> </p>
+          <p>I can use the Research Center Journal to trace the history of the experiments. But it's written in code. That's a problem. </p>
+          <p> </p>
+          <p>I need to find someone to break the code. I need the information in this book!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Find the [%dic:STR_DIC_OBJ_DF3_Lehparbook_02] in the [%dic:STR_DIC_W_STR_DF3_SZ_G4_3] and take it to [%dic:STR_DIC_N_Xenophon] in Sanctum.</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Lethe told you to infiltrate the Alquimia Research Center and find the Research Center Journal, and take it to Xenophon.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Lethe told you to infiltrate the Alquimia Research Center and search for evidence. You found the Research Center Journal and took it to Xenophon. Xenophon said he couldn't read the journal as it was written in codes. He didn't know who could read it, and got worried.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

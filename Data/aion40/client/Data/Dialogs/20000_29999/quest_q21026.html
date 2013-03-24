@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>우린 아울라우 숲의 생태 현황을 파악하여 이곳에 있는 오드의 기운을 활성화할 수 있는 방안을 연구하기 위해서 이곳에 왔다네.</p>
+          <p> </p>
+          <p>하지만 이렇게까지 척박한 곳일 거라고는 생각하지 못했군.</p>
+          <p> </p>
+          <p>온 지 얼마 되지는 않았지만 생태 현황을 파악하기는커녕 숲길에 버티고 있는 하르키온과 펠리알을 처치하기 바쁘네.</p>
+          <p> </p>
+          <p>아울라우 숲이라고 해서 아울라우만 처치하면 될 거라 생각했는데 하르키온과 펠리알까지 훼방을 놓고 있으니 머리가 아프군.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>마침 판데모니움에서도 실력이 좋기로 소문이 자자한 [%username]%을 만나게 되어 반갑군. 별일이 없다면 우리를 좀 도와주게.</p>
+          <p> </p>
+          <p>아울라우 숲으로 가는 길에 있는 [%dic:STR_DIC_M_DF4_Mosbear_DR_51_An]과 [%dic:STR_DIC_M_DF4_Fellial_DR_51_An]을 처치해 줄 수 있겠는가?</p>
+          <p> </p>
+          <p>그것들이 사라져야 아울라우 숲을 정찰해 볼 수 있겠네.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>바로 이 앞길을 따라가면 [%dic:STR_DIC_M_DF4_Mosbear_DR_51_An]과 [%dic:STR_DIC_M_DF4_Fellial_DR_51_An]이 득실거리고 있다네.</p>
+          <p> </p>
+          <p>그것들을 남김 없이 처치하고 돌아오게나.</p>
+          <p> </p>
+          <p>부탁하네.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>내 아무리 아울라우 숲 개척의 중요성을 말해도 자네가 도와줄 생각이 없다면 하는 수가 없지.</p>
+          <p> </p>
+          <p>나중에 생각이 바뀌면 다시 나에게 와 주게.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>내가 말한 놈들을 처치하고 오는 길인가?</p>
+          <p> </p>
+          <p>용계의 불안정한 상태 때문인지 살아남은 생명체들은 모두 엄청난 전투력을 가지고 있더군.</p>
+          <p> </p>
+          <p>하르키온과 펠리알도 마찬가지였을 것 같은데, 어떤가?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>과연 [%username]%이로군. 이렇게 빨리 많은 놈들을 처치하다니.</p>
+          <p> </p>
+          <p>이제 남은 일은 우리에게 맡겨주게.</p>
+          <p> </p>
+          <p>이 병력이면 아울라우를 처치하며 헤쳐나갈 수가 있다네.</p>
+          <p> </p>
+          <p>자, 약속한 보상이라네. 받게.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">아울라우 숲 입구의 생명체를 처치하라</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_DF4_Mosbear_DR_51_An]([%2]/5)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_DF4_Fellial_DR_51_An]([%5]/5)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Varca]%와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">하르키온과 펠리알이 아울라우 숲 입구를 막고 있어 숲을 조사하는데 어려움이 있다고 한다. 바르카를 도와 하르키온과 펠리알을 처치하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아울라우 숲을 개척하러 온 선발대 대장인 비르카는 하르키온과 펠리알의 방해 때문에 숲의 진입이 어렵다고 호소했다.</p>
+          <p> </p>
+          <p>하르키온과 펠리알을 처치하고 보고하자 매우 고마워했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

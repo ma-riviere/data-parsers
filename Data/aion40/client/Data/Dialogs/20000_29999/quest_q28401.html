@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님이죠? 네피온의 영상구슬을 봤습니다. </p>
+          <p> </p>
+          <p>그런 규모의 드라나 농장이 우리가 모르는 곳에 숨겨져 있었다니 정말 깜짝 놀랐습니다. </p>
+          <p> </p>
+          <p>어쨌거나 아라카가 드라나 농장인 걸 안 이상 가만 둘 순 없습니다. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>드미트로 백부장님에게서도 아라카의 용족을 소탕하라는 명령서가 내려왔습니다.</p>
+          <p> </p>
+          <p>그때 봤던 영상에 아라카 연구원들이 있던데 놈들을 없애 주세요.</p>
+          <p> </p>
+          <p>놈들만 없어도 드라타민이나 수르카나 생산량이 현저히 낮아질 테고, 그것만으로도 티아마트 군단의 전력을 약화시킬 수 있을 겁니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>명심하십시오. [%dic:STR_DIC_M_Q18401]들을 처치해야 합니다.</p>
+          <p> </p>
+          <p>다른 용족을 처치해도 상관없지만 하나만 선택해야 한다면 연구원을 먼저 처치하십시오.</p>
+          <p> </p>
+          <p>병사는 쉽게 충원할 수 있어도 연구원은 그렇지 못하니까요.</p>
+          <p> </p>
+          <p>아참, 꼭 동료와 함께 가십시오. 최대 드라나 농장인 만큼 그곳을 지키는 용족의 수준이 만만치 않을 것 같습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>왜 싫다는 겁니까?</p>
+          <p> </p>
+          <p>바가바탐의 두 요새를 드나드는 놈들이라면 여기도 충분히 드나들 수 있습니다. </p>
+          <p> </p>
+          <p>언제 습격을 받을 지 모르는 상황에서 손 놓고 있는 건 말이 안 됩니다. </p>
+          <p> </p>
+          <p>기회가 있을 때 용족의 전력을 약화시켜야지요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(복장을 살피며) 꽤 치열했나 봅니다.</p>
+          <p> </p>
+          <p>장비도 많이 상했고, 어머 핏자국도 있군요.</p>
+          <p> </p>
+          <p>일은 어떻게 됐습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그렇군요. 수고하셨습니다.</p>
+          <p> </p>
+          <p>흠, 얘기를 들으니 생각했던 것보다 아라카 연구원 수가 많군요.</p>
+          <p> </p>
+          <p>한번에 정리하기는 힘들 것 같고 계속해서 꾸준히 없애는 게 좋을 것 같습니다.</p>
+          <p> </p>
+          <p>[%username] 님만 괜찮다면 그 일을 계속해서 부탁하고 싶군요.</p>
+          <p> </p>
+          <p>자세한 건 나중에 얘기하기로 하고 일단 이것부터 받으십시오. 이번 일에 대한 포상입니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_M_Q18401]을 소탕하라([%2]/20)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Luigir]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">루이지르의 지시대로 아라카 연구원을 소탕해 티아마트 군단의 전력을 약화시키자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>루이지르는 아라카가 드라나 농장인 것을 안 이상 가만 둘 수 없다고 했다.</p>
+          <p> </p>
+          <p>그의 지시대로 동료와 함께 아라카 연구원을 처치하고 돌아오자 수고했다며 포상을 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

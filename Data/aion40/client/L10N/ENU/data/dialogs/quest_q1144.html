@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Pumpkins. Round and golden like sun.</p>
+          <p> </p>
+          <p>Everything else withers. Everything else dies.</p>
+          <p> </p>
+          <p>Pumpkins. Full of goodness. They remain.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Pumpkins...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Now pumpkins rot. Left on vine. Goodness wasted.</p>
+          <p> </p>
+          <p>Master would harvest. Sell to [%dic:STR_DIC_LA76]. </p>
+          <p> </p>
+          <p>Get money. Get new coat for Nola. But Master gone.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Poor scarecrow..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Pumpkins rotting. Master would cry.</p>
+          <p> </p>
+          <p>Nola does not need. Only wants someone to harvest.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Master will come. Nola will tell Master of you.</p>
+          <p> </p>
+          <p>Master will be happy. Give you present. And new coat for Nola. Faithful, watching Nola.</p>
+          <p> </p>
+          <p>Harvest pumpkins. Bring to Eradis.</p> 
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll get them."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Poor pumpkins. Goodness gone to waste.</p>
+          <p> </p>
+          <p>Poor Master. Nola thinks maybe gone forever.</p>
+          <p> </p>
+          <p>Nola wait anyway. Forever.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Stand tall, Nola."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This time of year, everyone expects spiced pumpkin stew. Well, no pumpkins today. Probably no pumpkins tomorrow. It'll be zigis instead, I'm afraid.</p>
+          <p> </p>
+          <p>[%username]? You heard something about Belbua?</p>
+          <p> </p>
+          <p>He's been missing for days. Nobody knows where he's gone.</p> 
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I harvested his pumpkins."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes? You want to buy something?</p>
+          <p> </p>
+          <p>My menu's not what it was, since half our supply's dried up, but I'm sure I can fix you something to eat....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"No thanks."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hey! These are the pumpkins from Belbua's farm! How dare you steal another man's crops and try to sell them!</p>
+          <p> </p>
+          <p>Wait, no. You don't look like a pumpkin thief. You're doing a favor for someone, aren't you? Someone special?</p>
+          <p> </p>
+          <p>Here. This should be a fair payment for your kindness.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect pumpkins and take them to [%dic:STR_DIC_LA76].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Nola the scarecrow wants you to harvest pumpkins from Belbua's farm. Take some pumpkins to [%dic:STR_DIC_LA76] before they rot.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Scarecrow Nola wanted you to harvest the pumpkins from his master's farm.</p>
+          <p> </p>
+          <p>You harvested them and sold them to Eradis so they wouldn't rot.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

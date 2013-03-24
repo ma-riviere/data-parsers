@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've never seen a Daeva handle a loom as deftly as you, [%username].</p>
+          <p> </p>
+          <p>From time to time we give tests to determine your level of Tailoring ability.</p>
+          <p> </p>
+          <p>What do you think? Can I test you?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Test me."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Make Daphnis' Noble Sash and bring it to me.</p>
+          <p> </p>
+          <p>Bear in mind that if you agree to become a Tailoring Expert, you can't train at the same time to become an Expert in another field. Think about it before you answer. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You'll be able to make Daphnis' Noble Sash if you stay calm and focused. You can buy the Daphnis' Noble Sash design from [%dic:STR_DIC_N_Proserpina]. It's more complex than the pattern for [%dic:STR_DIC_E_Q1982], but well within your reach.</p>
+          <p> </p>
+          <p>When you finish the sash, bring it to me. I'll be waiting for you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"It'll be beautiful."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], I thought you were really interested in Tailoring.</p>
+          <p> </p>
+          <p>I don't want to force you to do anything you don't want to do, but if you decide to do it later, please come back to me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I will."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Welcome, [%username]!</p>
+          <p> </p>
+          <p>I was just thinking of you.</p>
+          <p> </p>
+          <p>Did you make Daphnis' Noble Sash?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I did."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You haven't made Daphnis' Noble Sash yet? </p>
+          <p> </p>
+          <p>I thought you would've succeeded by now.</p>
+          <p> </p>
+          <p>I understand you may be busy, so take as much time as you need to make Daphnis' Noble Sash and bring it to me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll get on it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, it's as pretty as I expected!</p>
+          <p> </p>
+          <p>I can discern talented people, you know. I always felt you had real Tailoring talent.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select10">
+    <Contents cdata="true">
+        <html>
+        <body>
+         <p>I thought you were an Expert in another field, [%username].</p>
+         <p> </p>
+         <p>In order to be an Expert in two fields, you must first complete the training in the other field.</p>
+         <p> </p>
+         <p>Do that, and then come back to me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"You'll see me again."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select10_2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's a pity, but you can only train to become one type of Expert at a time.</p>
+          <p> </p>
+          <p>You're walking another training path for now.</p>
+          <p> </p>
+          <p>Come back when you're done, and I'll teach you to become a Tailoring Expert.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I will."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select10_3">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Aren't you already a Tailoring Expert?</p>
+          <p> </p>
+          <p>Oh, you must have come to the wrong master.</p>
+          <p> </p>
+          <p>I wonder who you really need to see.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Oh, right."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Make Daphnis' Noble Sash and bring it to [%dic:STR_DIC_N_Daphnis].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Daphnis asked you to make Daphnis' Noble Sash, saying that you have a talent in Tailoring.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Daphnis asked you if you were interested in going farther in Tailoring.</p>
+          <p> </p>
+          <p>You made and brought her Daphnis' Noble Sash.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Have you heard the tales flying about Reshanta?</p>
+          <p> </p>
+          <p>Rumor has it there's a gigantic Unfest on Shade Island! That's east of the Teminon Landing in Elyos-occupied territory. They say it is incredibly strong and attacks every Asmodian it encounters.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Tell me more."</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Evidently, the Ellies call it Ladacus. Can you believe those sun-poxed Ellies are friendly with an Unfest? This Ladacus was once an Guardian but was turned into an Unfest as a punishment, so they say.</p>
+          <p> </p>
+          <p>I heard that it wears an Insignia of Elyos. Maybe if we defeat [%dic:STR_DIC_N_Labdacus] or whatever it is, we will strike at the morale of the Elyos.</p>
+          <p> </p>
+          <p>What do you think? Would you challenge it, [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Killing an Unfest like this one will not be easy. Gather some allies before you depart.</p>
+          <p> </p>
+          <p>Shade Island is near the Teminon Landing, an Elyos base. Be careful!</p>
+          <p> </p>
+          <p>One more thing. After defeating the vile [%dic:STR_DIC_N_Labdacus], bring me the [%dic:STR_DIC_I_QUEST_2728a] it wears as proof.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll crush his bones!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, it is just a rumor. Perhaps the Unfest is not so real a threat as I fear...but if it joins forces with the Elyos and attacks us? Well, I thought, with your reputation, you'd want to prevent that. I shouldn't believe everything I hear.</p>
+          <p> </p>
+          <p>Maybe some brave Daeva will seek it out and destroy it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Farewell."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hail, Daeva!</p>
+          <p> </p>
+          <p>Were the rumors of [%dic:STR_DIC_N_Labdacus] true? Was he working for the Ellies? How could they use the dead like that?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"He's not working for anyone now. Here."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Do not give up yet. A monster like that takes great skill and courage to defeat. If you round up some reliable friends you may yet have a chance.</p>
+          <p> </p>
+          <p>Return to me when you are victorious!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll bring you that insignia!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Shards! That must have been some fight!</p>
+          <p> </p>
+          <p>So, Ladacus really was bigger and stronger than normal Unfests. Yet, he was no match for a battle-hardened Daeva like yourself, [%username]!</p>
+          <p> </p>
+          <p>I will send this insignia to the Governor, along with my report. Future Elyos will tremble with fear when they hear the name  [%username]!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Defeat [%dic:STR_DIC_N_Labdacus] and take proof to [%dic:STR_DIC_N_Feroniad].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">A huge Unfest called Ladacus on the Shade Island near the Teminon Landing needs killing. You decided to gather allies and defeat it.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Peroniad says that everyone in Reshanta is talking about a huge Unfest that used to be an Elyos Guardian.</p>
+          <p> </p>
+          <p>You decided to gather allies and defeat it. It may indeed have been a Guardian, because it carried an Elyos Insignia.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q39020</QuestId>
+    <QuestName>텔레마커스의 지령</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p> - 긴급 명령서 - </p>
+          <p></p>
+          <p> 1. 발신 : 엘테넨 군단장 텔레마커스</p>
+          <p></p>
+          <p> 2. 수신 : [%username]</p>
+          <p></p>
+          <p> 3. 명령 : 시공을 타고 엘테넨으로 침입한 마족을 처치하라!</p>
+          <p></p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">의뢰를 수행한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>시공의 균열을 통해서 들어오는 마족의 움직임이 심상치 않네.</p>
+          <p> </p>
+          <p>[%username], 자네 혼자 힘으로 막아내기가 쉽지 않을 걸세.</p>
+          <p> </p>
+          <p>하지만 나는 자네를 믿고 있네.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>데바로서의 긍지를 다시 한 번 지켜냈군.</p>
+          <p> </p>
+          <p>역시 자네를 믿은 보람이 있네.</p>
+          <p> </p>
+          <p>수고했네.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">엘테넨을 습격한 마족을 처치하라([%2]/5)</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_N_Telemachus]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">긴급 명령: 시공의 균열이 열려 있는 동안 엘테넨에 침투한 마족을 처치하고 텔레마커스에게 보고하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>마족이 시공의 균열을 이용해 엘테넨에 침공하였다. 침공한 마족들을 소탕하고 텔레마커스에게 보고하였다.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

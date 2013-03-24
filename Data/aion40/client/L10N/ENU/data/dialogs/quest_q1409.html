@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I haven't had a minute to relax lately!</p>
+          <p> </p>
+          <p>The Kaidan Headquarters is practically on top of us, then the Tigric problems, and the Krall out there moving about doing Lords know what!</p>
+          <p> </p>
+          <p>Oh, and not to mention this latest report about the suspicious movements of the Mamaki tribe! What if they are planning to attack us?! How are we supposed to keep track of so many problems?!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Whoa, calm down, Kibelle."</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, I'm sorry. It's just...well, this heat puts us all on edge, I guess. We just don't have enough scouts or sentinels to keep track of everything.</p>
+          <p> </p>
+          <p>Listen, I...I know your reputation is deserved, and we've got some serious problems, [%username]. I think you're the right one to handle this.</p>
+          <p> </p>
+          <p>We need a little breathing room. I'm thinking that someone needs to strike at the Kaidan Headquarters and give those Mamaki ruffians a bloody nose. Make them think twice about attacking us. Are you up for it?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you. If we can just get one of these threats under control, it might let us focus enough on the rest of them.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_BrownieMWa_37_An]s, [%dic:STR_DIC_M_DBrownieFWa_37_An]s, and [%dic:STR_DIC_M_MBrownieFSc_37_An]s are the ones who do most of the scouting, so you should concentrate on eliminating them.</p>
+          <p> </p>
+          <p>The quicker this is done, the better.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Don't worry. I'll find them."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's all right. I understand. This isn't your post.</p>
+          <p> </p>
+          <p>Sorry for bothering you. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Light guide your efforts."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I sent a report to the Fortress while you were at the Kaidan Headquarters, [%username].</p>
+          <p> </p>
+          <p>For once, they sent a prompt reply, but it wasn't to me. It was to Tumblusen.</p>
+          <p> </p>
+          <p>How did things go?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I taught the Mamaki a lesson in humility."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That was fast. I expected it to take much longer.</p>
+          <p> </p>
+          <p>I received Temple training myself, but I guess I have a long way to go to catch up with you.</p>
+          <p> </p>
+          <p>Anyway, thanks to you, we don't need to worry about the Mamaki tribe for the time being. Maybe we're beginning to make progress for a change!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get rid of the Mamaki tribe in the Kaidan Headquarters.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_BrownieMWa_37_An] ([%2]/7)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_DBrownieFWa_37_An] ([%5]/7)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_MBrownieFSc_37_An] ([%8]/5)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report to [%dic:STR_DIC_N_Kibelle].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Get rid of the Mamaki scouting around the Observatory, at Kibelle's request.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Kibelle said that she was worried about the frequent appearance of Mamaki near the Observatory.</p>
+          <p> </p>
+          <p>You went to the Kaidan Headquarters and eliminated Mamaki Butchers, Warriors and Patrols. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

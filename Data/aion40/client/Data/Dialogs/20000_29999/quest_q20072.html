@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q20072</QuestId>
+    <QuestName>용계 진격</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]. 지금 당장 [%dic:STR_DIC_W_LDF4a_SZ_B1]으로 가 [%dic:STR_DIC_M_LDF4a_Monster_M_Aurora_58_An] 같은 것이 생겨났는지 찾아봐주게.</p>
+          <p> </p>
+          <p>그 흔적에서 추출한 [%dic:STR_DIC_I_quest_10072a]만 있다면 지금 당장이라도 [%dic:STR_DIC_N_Israphel] 주신님이 계신 시공간으로 갈 수 있을 테니 말일세.</p>
+          <p> </p>
+          <p>자세한 내용을 설명할 시간은 없으니 서둘러 출발해주게.</p>
+          <p> </p>
+          <p>혹여 연족이 공식적으로 차원의 흔적에 대해 물어 온다면 언제까지고 모르쇠로 일관할 수는 없는 일이니 말일세.</p>
+          <p> </p>
+          <p>다녀오면 모든 것을 설명해 주겠네.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">대화를 마친다.</Act>
+    </Selects>
+    <Voice file="Q20072-1.ogg"/>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>돌아왔군, [%username].</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_I_quest_10072a]은 가져왔나?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">시공간의 정수를 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_ok">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>바로 이것이 필요했던 것이라네.</p>
+          <p> </p>
+          <p>사실 자네가 가르논에게 가져갔던 차원의 흔적은 이스라펠 주신께서 만들었던 차원의 문을 다시 열 수 있는 일종의 열쇠였다네.</p>
+          <p> </p>
+          <p>문제는 열쇠와 동일한 파장을 가진 촉매가 어디에 있는지를 찾는 것이었지만, 연족 덕분에 손쉽게 찾을 수 있었군.</p>
+          <p> </p>
+          <p>다행스럽게도 연족이 아직까지 차원의 흔적의 용도도 파악하지 못한 것 같고 말이지.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT3">대화를 계속한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_fail">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아직 찾지 못했단 말인가?</p>
+          <p> </p>
+          <p>걱정이군... [%dic:STR_DIC_W_LDF4a_SZ_B1]에는 반드시 [%dic:STR_DIC_M_LDF4a_Monster_M_Aurora_58_An]들이 있어야만 할 텐데...</p>
+          <p> </p>
+          <p>미안하지만 다시 그곳으로 가서 샅샅이 찾아봐주겠나?</p>
+          <p> </p>
+          <p>만약 정말로 찾을 수 없다면 다른 대책을 강구해야 할 걸세.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select3">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이제 자네가 가져온 정수를 마르쿠탄 주신께서 주신 흔적과 반응시키면 차원이 변형되어 [%dic:STR_DIC_N_Israphel] 주신님이 향한 곳으로 갈 수 있을 걸세.</p>
+          <p> </p>
+          <p>이스라펠 주신께서 어떤 생각을 가지고 계신지는 모르겠지만, 그 분과 적지 않은 관계를 맺어온 자네라면 분명 그 분을 설득할 수 있을 거라 믿네.</p>
+          <p> </p>
+          <p>부디, 자네가 하는 일이 영광스러운 마르쿠탄 주신님의 특명이라는 사실을 잊지 말고, 시엘의 유물을 되찾아 오게.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT3_1">대화를 계속한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select3_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>준비가 되면 내게 말하게.</p>
+          <p> </p>
+          <p>차원의 흔적을 발동시켜 [%dic:STR_DIC_N_Israphel] 주신께서 계신 곳으로 보내줄 터이니.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO3">준비됐다고 답한다.</Act>
+    </Selects>
+    <Voice file="Q20072-2.ogg"/>
+  </HtmlPage>
+
+  <HtmlPage name="select4">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>누구도 이곳에는 들어올 수 없으리라 생각했건만... 놀랍구나. </p>
+          <p> </p>
+          <p>돌이켜보면 너는 나의 [%dic:STR_DIC_N_Lephar]라는 인물로서의 계획들을 숱하게 방해했었지. 하지만 동시에 이스라펠로서의 계획을 앞당겨 준 것 또한 너였으니...</p>
+          <p> </p>
+          <p>너와의 인연은 참으로 질긴 것 같구나.</p>
+          <p> </p>
+          <p>데바여, 시엘의 유물을 되찾으러 왔겠지만 안타깝게도 원하는 바는 이룰 수 없을 것이다.</p>
+          <p> </p>
+          <p>대신 계획을 앞당겨준 너에게 매우 값진 이야기를 들려주도록 하마.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT4_1">대화를 계속한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select4_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아직 영원의 탑이 온건한 모습을 갖추고 있었던 과거, 용제로 각성한 용족들은 [%dic:STR_DIC_ELA02]에 반기를 들고 스스로 신이 되고자 했었지.</p>
+          <p> </p>
+          <p>그들을 막기 위해 아이온께서 우리 열두 주신을 지상에 내리셨던 것이고...</p>
+          <p> </p>
+              <p>하지만 부끄럽게도 우리는 그들을 막지 못했고, 결계막을 두른 채 지리멸렬한 대치상황을 유지하는 것 밖에 할 수 있는 일이 없었다.</p>
+          <p> </p>
+	<p>그리하여 데바와 인간들 사이에서는 무력한 주신과 아이온을 비웃는 소리들이 들려오기 시작했지...</p>
+          <p> </p>
+          <p>나는 그런 상황을 견딜 수 없어 용제들을 단번에 섬멸할 계획을 세웠던 것이다.</p>
+         <p> </p>
+         <p>나는 자신있었다. 영원의 탑이 가진 힘을 흡수해 활용할 방법을 알고 있었으니까.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT4_1_1">대화를 계속한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select4_1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>영원의 탑의 힘이라면 용제들을 분명히 섬멸할 수 있었겠지만, 그러기 위해서는 용제들을 탑 근처에 끌어들일 필요가 있었다.</p>
+          <p> </p>
+          <p>그러기 위해 열두 주신에게는 화평을 제의해 결계를 해제했고, [%dic:STR_DIC_MLA51]에게는 열두 주신이 모였을 때 주신들을 처치하라고 회유하여 화평 회의장에 끌어들였던 것이지...</p>
+          <p> </p>
+          <p>하지만 [%dic:STR_DIC_MLA49]이 영원의 탑을 파괴하리라고는 전혀 생각치 못했다... 그래, 계획은 실패했고 대파국이 찾아왔지...</p>
+           <p> </p>
+           <p>나는 시엘이 다급히 자신을 희생하여 결계막을 생성하는 것을 보고는 그녀를 돕는 척하며 모습을 감춰버렸던 것이다.</p>
+          <p> </p>
+           <p>건방졌고, 비겁했고, 무책임했지... 마음껏 비웃어도 좋다.</p>
+          <p> </p>
+          <p>이제 내가 불러온 모든 참극을 마무리 지을 계획이 완성되었으니까.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT4_1_1_1">계획에 대해 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select4_1_1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>네가 안다고 하여 변하는 것은 없을 터이니 말해주도록 하마.</p>
+          <p> </p>
+          <p>나는 시엘의 유물이 지닌 힘과 공간을 다스리는 나의 힘을 이용해 [%dic:STR_DIC_ELA03]를 태초로 되돌리고자 한다.</p>
+          <p> </p>
+          <p>영원의 탑, [%dic:STR_DIC_ELA02]께서 온건하고 아름다운 모습으로 빛을 내뿜으셨던, 모든 것이 완벽했던 그때로!</p>
+          <p> </p>
+          <p>나는 그곳에서 새로운 아트레이아의 단 한 명의 주신이 되어 세상을 올바른 방향으로 이끌어 갈 것이다!</p>
+          <p> </p>
+          <p>그것이 분열, 파괴, 피와 희생! 이 모든 나의 과오들을 무로 되돌리고 속죄할 수 있는 유일한 길이니까...</p>
+          <p> </p>
+          <p>하지만 이 계획에는 필연적으로 고통이 수반되어야만 한다.</p>
+          <p> </p>
+	<p>데바여, 내가 말하는 고통이 무엇을 뜻하는지 알겠는가?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO4">의미를 생각해본다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]!</p>
+          <p> </p>
+             <p>조금 전 티아마트 용계 전체를 뒤흔들 만큼 거대한 오드의 파동이 느껴졌다!</p>
+          <p> </p>
+          <p>시엘의 유물이 아니고서야 그 정도의 파동을 내뿜을 수는 없을 터, 도대체 무슨 일이 일어난 것인가?</p>
+          <p> </p>
+          <p>네가 연족에게 알리지 않고 홀로 이스라펠 주신을 만나러 갔다는 사실은 이미 파악했으니 사실대로 답하거라!</p>
+          <p> </p>
+	<p>설마 아무것도 모른다고 답하지는 않겠지!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT5_1">그동안의 일을 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>시엘의 유물이 이스라펠 주신과 함께 소멸했다니...</p>
+          <p> </p>
+          <p>또다시 연족의 믿음을 져버리고 단독으로 행동했단 말인가!</p>
+          <p> </p>
+          <p>함께였다면 소멸을 막을 수도 있었을 것이다!</p>
+          <p> </p>
+          <p>우리 연족에게 시엘의 유물이 어떤 의미인지는 네가 누구보다도 잘 알고 있을 텐데...</p>
+          <p> </p>
+	<p>(눈을 질끈 감고 분을 삭인다.)</p>
+          <p> </p>
+          <p>지금 당장 내 눈앞에서 사라지거라... 어서!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SET_SUCCEED">대화를 마친다.</Act>
+    </Selects>
+    <Voice file="Q20072-3.ogg"/>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>기다리고 있었네!</p>
+          <p> </p>
+          <p>대체 어떻게 된 건가? 그 거대한 오드의 파동은 뭐란 말인가?</p>
+          <p> </p>
+          <p>내게 차분히 설명해주게.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">그동안의 일을 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이스라펠 주신이 시엘의 유물을 가져갔던 이유가...</p>
+          <p> </p>
+          <p>(표정이 굳어진다.)</p>
+          <p> </p>
+          <p>음, 이 일은 마르쿠탄 주신전에 상세히 보고하겠네.</p>
+          <p> </p>
+          <p>[%username]. 이것은 보통 일이 아니니 함부로 이 일에 대해 발설해서는 안 되네. </p>
+          <p> </p>
+          <p>곧 주신전의 부름이 있을 터이니 그때까지는 최대한 사람들의 입에 오르내리지 않도록 주의하게.</p>
+          </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_Aimah]와 대화하라</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_M_LDF4a_Monster_M_Aurora_58_An]에게서 [%dic:STR_DIC_I_quest_10072a]%을 추출하여 [%dic:STR_DIC_N_Aimah]에게 가져가라</font></p>[%collectitem]</step>
+               <step><p visible="[%6]"><font color="[%7]">[%dic:STR_DIC_N_Aimah]의 도움을 받아 이스라펠 주신이 있는 공간으로 가라</font></p></step>
+               <step><p visible="[%9]"><font color="[%10]">[%dic:STR_DIC_N_Israphel] 주신과 대화하라</font></p></step>
+               <step><p visible="[%12]"><font color="[%13]">[%dic:STR_DIC_N_Kahrun]이 다급히 부르고 있다. 그와 대화하라</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Aimah]에게 모든 것을 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">지령: 이스라펠을 설득해 시엘의 유물을 되찾아라.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아이마는 마르쿠탄 주신이 준 단서를 이용해 이스라펠 주신이 있는 공간으로 보내줬다.</p>
+          <p> </p>
+          <p>이스라펠 주신은 여기까지 찾아온 것에 놀라워 하며 이야기를 들려주겠다고 했다.</p>
+          <p> </p>
+          <p>대파국의 진실과 세계를 멸망시키고 시간을 되돌리고자 한다는 엄청난 이야기였다.</p>
+          <p> </p>
+          <p>시엘의 유물을 파괴하여 그를 막아보려 노력했지만, 너무나도 간단히 제압당해 버렸다.</p>                    
+          <p> </p>
+          <p>하지만 시엘의 유물이 발동되기 직전, 시엘 주신의 영혼이 나타나 이스라펠 주신을 감싸 안았고, 시엘의 유물과 이스라펠을 함께 소멸시켜 버렸다.</p>
+          <p> </p>
+          <p>이 모든 것을 알게된 카룬은 불같이 화를 냈고, 아이마는 당분간 이 사실을 누구에게도 발설하지 말기를 부탁했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>미션 진행: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

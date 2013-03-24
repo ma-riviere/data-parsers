@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did you bring any food? </p>
+          <p> </p>
+          <p>I think I might starve if I don't get some food soon.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I'll get you some food."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I haven't been able to forage because of all the Mosbears around.</p>
+          <p> </p>
+          <p>I collected some food yesterday, but it's back at my old place. If you could just get that for me, I'd be able to eat.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>There may be Mosbears nearby, so be very careful.</p>
+          <p> </p>
+          <p>It's a hut with a fence around. If you have a look around you should find some of my [%dic:STR_DIC_OBJ_FoodPouch_Q2527]es.</p>
+          <p> </p>
+          <p>I don't know how long I'll have to hide out here, so please get me five of them.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll return soon."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Didn't you come here to help me?</p>
+          <p> </p>
+          <p>If I don't get some food soon, I'll have to get out of here, Mosbears or no Mosbears. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I may come back this way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're back! Thank...Aion.</p>
+          <p> </p>
+          <p>My hands are shaking from hunger. I don't think I've ever been quite this hungry before.</p>
+          <p> </p>
+          <p>Did you bring the [%dic:STR_DIC_OBJ_FoodPouch_Q2527]es? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here you go."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh yum! Mmm...mmm...gmph.</p>
+          <p> </p>
+          <p>Thank you! When I get my strength back, I'm going to get my bearings and escape from these stupid Mosbears.</p>
+          <p> </p>
+          <p>If I live to see my tribe again, it's because of you, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What? Your hands are empty. </p>
+          <p> </p>
+          <p>Oh, you didn't go there, did you?</p>
+          <p> </p>
+          <p>If you could feel how hungry I am you'd understand. Please bring me the [%dic:STR_DIC_OBJ_FoodPouch_Q2527]es as soon as you can. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I will. I promise."</Act>
+    </Selects>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect [%dic:STR_DIC_OBJ_FoodPouch_Q2527]es and take them to [%dic:STR_DIC_N_Gark].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Gark has been starving while hiding from Mosbears. Get food sacks from the Sprigg house and bring them to Gark.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Gark said he had been starving while hiding from Mosbears. He asked you to recover some food sacks he had collected at his home and bring them to him.</p>
+          <p> </p>
+          <p>When you brought the food sacks to Gark, he ate happily and regained his strength. He said he would find a way to survive. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

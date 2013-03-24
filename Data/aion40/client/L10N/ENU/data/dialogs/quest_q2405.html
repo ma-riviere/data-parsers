@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I was really excited when they assigned me to the Halabana Hot Springs. I had visions of soaking in hot pools when I was off duty.</p>
+           <p> </p>
+          <p>No such luck. This place is completely infested with Lepharist Revolutionaries. I can't get near the springs!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Duty--and safety--come first."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes, yes, duty first. We fight them constantly and never gain any ground.</p>
+          <p> </p>
+          <p>It's just the two of us trying to hold them back--just Modgud and I.</p>
+          <p> </p>
+          <p>Would you help us, [%username]? Would you gather your team and defeat the Lepharists?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>If you take your team to the Halabana Hot Springs you'll find [%dic:STR_DIC_M_LehparWizardD_36_An]s, [%dic:STR_DIC_M_LehparPriestD_36_An]s, and [%dic:STR_DIC_M_LehparAsD_35_An]s.</p>
+          <p> </p>
+          <p>The Mages and Healers will use magic against you, and the Ambushers will try to sneak up on you. Don't underestimate any of them.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"We're on our way!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>But we can't handle this ourselves!</p>
+          <p> </p>
+          <p>The Lepharist Revolutionaries can't run about unchecked, and the two of us aren't a strong enough force to fight them.</p>
+          <p> </p>
+          <p>But I won't beg for your help. On your way!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Blood for blood, Mothir!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], you're back! No worse for the wear, I see.</p>
+          <p> </p>
+          <p>Have you taught the Lepharist Revolutionaries a hard lesson? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"We took them down handily."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent! That makes our job easier, at least for a while.</p>
+          <p> </p>
+          <p>With more support, we may eventually be able to wrest the Halabana Hot Springs from the Lepharists for good. </p>
+          <p> </p>
+          <p>When that day comes, we have a lot to thank you for, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Hunt down the Lepharist Revolutionaries who occupy the Halabana Hot Springs.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_LehparWizardD_36_An]([%2]/3)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_LehparPriestD_36_An]([%5]/3)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_LehparAsD_35_An]([%8]/7)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_N_Mothir].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">The Lepharist Revolutionaries occupy the Halabana Hot Springs. Kill the Lepharists as Mothir asked.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Mothir said that he was outnumbered by the Lepharist Revolutionaries in the Halabana Hot Springs.</p>
+          <p> </p>
+          <p>You killed the Halabana Mages, Healers, and Ambushers for him.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

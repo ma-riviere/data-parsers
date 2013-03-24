@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], isn't it?</p>
+          <p> </p>
+          <p>Aren't you the one who found Priest Philipemos's diary?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"I was."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good, then you're the one I'm looking for.</p>
+          <p> </p>
+          <p>Something's been bothering me ever since I read through it. Specifically, the part where Hippolytus forces Philipemos to hand over the Life Stone for his "experiment."</p>
+          <p> </p>
+          <p>What in Vaizel's name could a Lepharist Revolutionary need a Life Stone for? This, combined with the incident in the Library of the Sages, really has me concerned.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Incident?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah yes...er, this is something of a secret, so...you know...keep it between us.</p>
+          <p> </p>
+          <p>The Library was raided. Whoever it was managed to render all the guards and Daevas present unconscious. When our guards awoke, they searched the Library but hardly anything had been touched.</p>
+          <p> </p>
+          <p>Only one book was missing: a very old and precious tome called "Rules of Alchemy and of Life." We need to retrieve the book before they use the secrets within against us. Are you in?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good.</p>
+          <p> </p>
+          <p>The Lepharists are running a research camp out of Heiron, and our scouts say they receive books on a regular basis.</p>
+          <p> </p>
+          <p>[%username], I need you to head to the [%dic:STR_DIC_W_LF3_SZ_003] in Heiron and retrieve our [%dic:STR_DIC_OBJ_LC1_Book_Q1931].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll see what I can find."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh no...</p>
+          <p> </p>
+          <p>You don't seem to understand what they could do with the information in that book. It could mean...a number of nefarious things....</p>
+          <p> </p>
+          <p>You must reconsider! If things go the way I imagine they could, it will affect your life as well.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"We'll see."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>There you are.</p>
+          <p> </p>
+          <p>How did it go? Did you find the book? Did you find out what they're up to?</p>
+          <p> </p>
+          <p>Please...my nerves are ruined. You must tell me!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"You guys ask a lot of questions at once."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You haven't even been yet?!</p>
+          <p> </p>
+          <p>I...you...we...</p>
+          <p> </p>
+          <p>I can't even express myself, I'm so angry! Go back and get that book! Now!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"All right, all right, I'm going."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>They had it! I knew it!</p>
+          <p> </p>
+          <p>But...that means...oh dear....</p>
+          <p> </p>
+          <p>Thank you, [%username]. You've been a great help. Please take this.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Find the [%dic:STR_DIC_OBJ_LC1_Book_Q1931] at the [%dic:STR_DIC_W_IDLF3LP_SZ_1] in Heiron and return it to [%dic:STR_DIC_N_Gerania].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Go to the Lepharist Research Center in Heiron and retrieve the book the Revolutionaries stole.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Gerania was concerned that a book called "Rules of Alchemy and of Life" was stolen from the Library of the Sages and had ended up in the hands of the Lepharist Revolutionaries.</p>
+          <p> </p>
+          <p>You went to the Lepharist Research Center in Heiron, found the book, and brought it back to him.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

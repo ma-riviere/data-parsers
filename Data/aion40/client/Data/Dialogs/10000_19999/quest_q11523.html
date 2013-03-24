@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q11523</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이제 [%dic:STR_DIC_E_spearofCiel] 레기온에 가입하는 일만 남았구나.</p>
+          <p> </p>
+          <p>반대하던 원로들도 자네의 시험 결과를 듣게 된다면 더 이상은 반대할 수 없을 것이니 말이다.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_N_Kutos]에게 가서 자네가 모든 시험을 훌륭히 통과했음을 말해주어라.</p>
+          <p> </p>
+          <p>외지인의 레기온 가입을 반대하던 원로들은 감히 거역할 수 없는 나를 대신해 쿠토스를 찾아가 불만을 쏟아냈다.</p>
+          <p> </p>
+          <p>그러니 [%dic:STR_DIC_N_Kutos]에게 시험 결과를 말해 주면 그가 직접 반대하던 원로 모두에게 결과를 전할 것이다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아, [%username].</p>
+          <p> </p>
+          <p>시엘의 창 레기온 가입을 위한 마지막 시험을 치르러 떠났다는 소식은 들었소.</p>
+          <p> </p>
+          <p>그래, 어떻게 됐소?</p>
+          <p> </p>
+          <p>시험 내용을 들어보니... 가능할 것 같지 않던데 말이오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">결과를 이야기 한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>맙소사... 정말 대단하구려. </p>
+          <p> </p>
+          <p>[%username]. 갑자기 당신이 사르판에 처음 발을 들여놓았을 때가 생각나오.</p>
+          <p> </p>
+          <p>그때는 당신을 풋내기라고 생각했는데... 이제보니 이렇게나 커다란 데바였구려.</p>
+          <p> </p>
+          <p>사실 자네의 레기온 가입을 반대하는 원로들이 찾아와 많은 불만을 쏟아냈기에 나도 고민 중이었소만, 이제야 마음을 확실히 굳힐 수 있겠소.</p>
+          <p> </p>
+          <p>내가 반대하는 이들에게 잘 말해 줄테니 카룬 님께는 모든 이들의 동의를 얻었다고 보고하시오.</p>
+          <p> </p>
+          <p>여지껏 이렇게까지 혹독한 시험을 통과한 지원자는 없었으니 아무도 불만을 표하지 않을 거요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], 돌아왔군.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_N_Kutos]에게 시험 결과는 전하고 온 건가?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>축하한다.</p>
+          <p> </p>
+          <p>자네는 이제 자랑스럽고 명예로운 [%dic:STR_DIC_E_spearofCiel] 레기온의 일원이 되었도다.</p>
+          <p> </p>
+          <p>이제 어깨를 더 당당히 펴게. 그 찬란한 날개에 더 굳건히 힘을 주게!</p>
+          <p> </p>
+          <p>시엘 주신께서 당신의 창이 이렇게 당당하다는 것을 굽어보실 수 있게 말이다!</p>
+          <p> </p>
+          <p>하하하! 진심으로 축하한다. 이방인이여.</p>
+          <p> </p>
+          <p>앞으로 더 임무가 자네를 기다리고 있을 것이니 단단히 준비하는 게 좋을 것이다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_Kutos]에게 시험의 결과를 알려라</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_N_Kahrun]%에게 돌아가라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">카룬은 모든 시험을 훌륭히 통과했음을 쿠토스에게 알리고 돌아오라고 했다. 쿠토스를 만나자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>카룬은 모든 시험을 훌륭하게 통과해 보였으니 외지인의 레기온 가입을 반대하던 원로들도 아무런 불만을 표할 수 없을 것이라 말했다. </p>
+          <p> </p>
+          <p>반대 원로들의 불만을 받아주고 있는 쿠토스에게 시험 결과를 전하라는 카룬의 말에 따라 쿠토스에게 가니, 이런 시험을 통과한 이들은 본 적이 없다며 반대하는 원로들은 자신이 대신 설득해 주겠다고 말했다.</p>
+          <p> </p>
+          <p>카룬에게 돌아가 쿠토스의 말을 전하니 시엘의 창 레기온에 가입시켜 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

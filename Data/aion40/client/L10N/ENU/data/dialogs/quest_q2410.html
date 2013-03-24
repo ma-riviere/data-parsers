@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Something suspicious is going on at that Lepharist Citadel.</p>
+          <p> </p>
+          <p>They started with a bare-bones crew, but more Lepharists arrive every day.</p>
+          <p> </p>
+          <p>When I reported to the Fortress, they said to keep an eye on the place.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Sounds easy enough."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Or maybe not. What they want is regular reports on construction progress. That means we go inside. And there are guards at the entrance.</p>
+          <p> </p>
+          <p>[%username], I'm not exactly inconspicuous and I'm lousy at being stealthy. Will you help me?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Heh. Excellent. Thanks. From what I've seen there are [%dic:STR_DIC_M_FeA_LehparFiD_38_An]s, [%dic:STR_DIC_M_ReB_LehparRngD_38_An]s and [%dic:STR_DIC_M_WeA_LehparWiD_38_An]s defending the [%dic:STR_DIC_W_DF2_SUB_D5] entrance. Take 'em down.</p>
+          <p> </p>
+          <p>There's a silver coin in it for you if you succeed.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"On my way!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Cowed by Lepharists, eh? Too bad you can't live up to your reputation, [%username].</p>
+          <p> </p>
+          <p>If you change your mind, come see me again. You're the right Daeva for this job.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Thrive in Azphel's shadow."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>By Azphel's prickly butt--you're back and in one piece, too!</p>
+          <p> </p>
+          <p>How did it go?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Those guards won't be a problem anymore."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent! I knew you were the right Daeva, [%username].</p>
+          <p> </p>
+          <p>Here's the silver coin I promised, with my thanks.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Defeat the Lepharists who defend the entrance to the Lepharist Citadel.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_FeA_LehparFiD_38_An] ([%2]/6)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_ReB_LehparRngD_38_An] ([%5]/6)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_WeA_LehparWiD_38_An] ([%8]/5)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_N_Modgud].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Scouting the [%dic:STR_DIC_W_DF2_SUB_D5] is difficult because of the guards at the entrance. Help Modgud get rid of the [%dic:STR_DIC_M_FeA_LehparFiD_38_An]s, [%dic:STR_DIC_M_ReB_LehparRngD_38_An]s and [%dic:STR_DIC_M_WeA_LehparWiD_38_An]s who defend the entrance.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Sentinel Modgud asked you for help with scout the Lepharist Citadel.</p>
+          <p> </p>
+          <p>You got rid of the Lepharists defending the entrance and reported back.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

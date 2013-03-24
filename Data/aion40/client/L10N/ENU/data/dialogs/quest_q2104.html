@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Other raiders might crow about ending the Sprigg menace, but you know what? We could be putting Sprigg stupidity to work for us.</p>
+          <p> </p>          
+          <p>Consider this: A farmer harvests five bags of grain one day. That evening, he stores them in his granary. But when he comes back to the granary the next morning, he finds it has all been stolen!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What's your point?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Bear with me. I'm getting there. Later that second day, the farmer gathers another five sacks of grain. But this time, he knows that his granary is not secure, so he takes the sacks into his house. Common sense, right?</p>
+          <p> </p>
+          <p>Spriggs don't have the common sense of a farmer. Even after we steal the food they gather, they store their baskets in exactly the same places. Bad for the Spriggs, sure, but great for us.</p>
+          <p> </p>
+          <p>I want you to go to the [%dic:STR_DIC_W_DF1_22] and fetch me [%dic:STR_DIC_I_2104a]. Do this, and I will reward you well.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">"Accept."</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">"Decline." </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You seemed like the sort with some common sense, [%username]. You aren't just another bloodthirsty raider.</p>
+          <p> </p>
+          <p>The [%dic:STR_DIC_W_DF1_22]s can be found here and throughout the Aldelle Basin. You should have no trouble finding the dens, especially if you've been wandering around up here for a while.</p>
+          <p> </p>
+          <p>The food from about three baskets should be enough. We'll keep some for ourselves and put the rest toward the quota.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm on my way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+        <p>You know raiders are supposed to...what's the word I'm looking for...raid! Right? Raid! As in bringing back food and supplies so the rest of Asmodae doesn't starve!</p>
+        <p> </p>
+        <p>Or maybe you think stale bread and rotting meat is enough to keep us healthy. Good luck with that.</p>
+        <p> </p>
+        <p>Off with you, then. Common sense isn't as common as I thought.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Farewell."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, there you are.</p>
+          <p> </p>
+          <p>I was wondering what had happened to you. Let's see that food.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here you go."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No, [%username]...</p>
+          <p> </p>
+          <p>You were supposed to bring three baskets worth of fruit back. Three! This isn't enough. Did you lose count?</p>
+          <p> </p>
+          <p>It's not a job that will earn you glory, but it's important nonetheless.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Even if those Spriggs are stupid, they certainly know the difference between good fruit and bad fruit. These look perfect.</p>
+          <p> </p>
+          <p>These are for you. I'll see that the rest of the food gets on the next caravan to settled lands. Good work...raider.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Take [%dic:STR_DIC_E_2]s from the Spriggs and bring them back to [%dic:STR_DIC_N_Vanar].</font></p> [%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">There are several food baskets in the [%dic:STR_DIC_W_DF1_22]. Take [%dic:STR_DIC_I_2104a] from the Sprigg dens and take them to Vanar.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Vanar wanted the food the Spriggs had stored in their dens.</p>
+          <p> </p>
+          <p>You brought baskets of food to Vanar as requested.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

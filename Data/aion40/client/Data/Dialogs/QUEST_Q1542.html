@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>실은 [%username] 님이 이걸 구하러 간 사이에 프릴파이맘의 습격이 있었습니다.</p>
+          <p> </p>      
+          <p>얼마 전에 연구에 쓰려고 프릴파이맘의 알을 훔쳐왔는데 그것 때문에 어미들이 쫓아왔나 봐요.</p>
+          <p> </p>
+          <p>다행히 다른 분이 막아 주신 덕택에 인명 피해는 없었습니다만 그동안 연구해 오던 자료와 표본들이 모두 망가져버렸습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">얘기를 계속 듣는다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>자료야 다시 모으면 그만이지만 불안해서 도저히 연구에 집중할 수가 없습니다.</p>
+          <p> </p>
+          <p>데바님이 고생해서 가져다 주신 체액을 배양하다가 또 녀석들이 쳐들어오면 어쩌겠습니까.</p>
+          <p> </p>
+          <p>그래서 한 번만 더 청을 드리고 싶습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>주변에 있는 [%dic:STR_DIC_M_Frillfaimam1st_37_An]을 제거해 주시겠습니까?</p>
+          <p> </p>
+          <p>많이도 필요없고 딱 10마리만 잡아 주시면 됩니다.</p>
+          <p> </p>
+          <p>그 정도면 놈들도 겁을 먹고 함부로 쳐들어오지 못할 테니까요.</p>
+          <p> </p>
+          <p>꼭 좀 부탁드립니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정말 감사합니다.</p>
+          <p> </p>
+          <p>그리고 죄송하지만 바로 시작해 주시면 안 되겠습니까?</p>
+          <p> </p>
+          <p>놈들이 또 언제 쳐들어 올지 몰라 불안해서요. 좀 서둘러 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그렇습니까... 아, 너무 미안해 하실 필요는 없습니다. 애초에 무리한 부탁이었으니까요.</p>
+          <p> </p>
+          <p>일단은 아까 가져다주신 체액으로 연구를 다시 진행해야겠습니다.</p>
+          <p> </p>
+          <p>도중에 녀석들이 또 쳐들어오면 그때는 답이 없겠지만요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>프릴파이맘은 좀 잡으셨습니까?</p>
+          <p> </p>
+          <p>전 1차 배양을 끝내고 2차 배양을 준비하던 참이었습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>듣던 중 반가운 소리군요. 세네모네아 님도 이 소식을 들으면 무척 좋아하실 겁니다.</p>
+          <p> </p>
+          <p>요 며칠간 야영지에서 꼼짝을 못하셨거든요.</p>
+          <p> </p>
+          <p>약소하지만 제가 준비한 사례금입니다. 정말 수고 많으셨습니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">야영지를 위협하는 [%dic:STR_DIC_M_Frillfaimam1st_37_An]%을 잡아라([%2]/10)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Okonus]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">야영지 사람들이 안심하고 연구에 전념할 수 있도록 프릴파이맘을 처치해야겠다.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>오코누스는 프릴파이맘이 야영지를 습격해 그동안 모아놓은 자료를 모두 잃었다고 했다.</p>
+          <p> </p>
+          <p>이 상태로는 불안해서 연구를 계속할 수 없으니 주변의 프릴파이맘을 제거해 달라고 부탁했다. 그의 요청대로 프릴파이맘을 처치하자 정말 고맙다며 연거푸 감사 인사를 했다. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

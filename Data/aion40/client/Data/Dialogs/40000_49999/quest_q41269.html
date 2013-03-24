@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q41269</QuestId>
+    <QuestName>최고의 요리 2</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>요리 상인 [%dic:STR_DIC_N_Dohios]에게 물어보니 지금은 보급품이 도착하지 않아 상태가 좋지 못한 재료만 남아 있다고 하더군요. </p>
+          <p> </p>
+          <p>가장 중요한 재료인 고기가 신선하지 않으면 다른 재료들이 아무리 좋아도 맛을 살릴 수가 없습니다.</p>
+          <p> </p>
+          <p>흠... 염치 없습니다만 마지막으로 하나만 더 부탁드려도 될까요?</p>
+          <p> </p>
+          <p>근처를 돌아다니는 [%dic:STR_DIC_M_LDF4A_C2_Drakanstrider_wild_58_An]를 사냥하여 [%dic:STR_DIC_I_QUEST_41269A]을 구해 주십시오. 그것만 있으면 완벽한 요리가 탄생할 겁니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>빨리도 오셨군요!</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_I_QUEST_41269A]은 가져 오셨습니까?</p>
+          <p> </p>
+          <p>다른 재료들은 모두 준비 되었습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">재료를 건네 준다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>날 것으로 먹어도 될 만큼 싱싱한 빛깔이군요!</p>
+          <p> </p>
+          <p>이크크...</p>
+          <p> </p>
+          <p>빨리 요리를 시작해야겠습니다. 키노티아가 기다리다 목이 빠지겠군요.</p>
+          <p> </p>
+          <p>수고하셨습니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_I_QUEST_41269A]을 구해 [%dic:STR_DIC_N_Joubis]에게 돌아가라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">최고의 요리에 들어갈 싱싱한 고기를 구하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>조우비스는 최고의 요리에 들어갈 고기를 구하지 못했다고 했다.</p>
+          <p> </p>
+          <p>몇 번씩이나 마지막이라고 하면서 부탁을 계속했기에 짜증이 났지만 아픈 키노티아를 위한 요리라는 것을 알았기에 말없이 고기를 구해다 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

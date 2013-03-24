@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], dear, may I ask a favor of you?</p>
+          <p> </p>
+          <p>There's something I must do, but I'm too sick to do it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What do you need?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Please collect some [%dic:STR_DIC_E_herb_d_n_c_20a] for me.</p>
+          <p> </p>
+          <p>I promised it to someone, but I got sick, and I don't feel well enough to collect it.</p>
+          <p> </p>
+          <p>Will you please help me?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I think five stalks of [%dic:STR_DIC_E_herb_d_n_c_20a] will be enough.</p>
+          <p> </p>
+          <p>Look around for Theonia on the [%dic:STR_DIC_W_DF2_SUB_A2] and in the [%dic:STR_DIC_W_DF2_SUB_A3].</p>
+          <p> </p>
+          <p>I'll be here when you return.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Goodbye for now."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Too important, are you?</p>
+          <p> </p>
+          <p>Well, never mind then. I'll figure something out. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Azphelumbra."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ahh, [%username].</p>
+          <p> </p>
+          <p>Did you get the [%dic:STR_DIC_E_herb_d_n_c_20a] I asked you for?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I have it here."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>There are only a few days left until I promised to deliver the [%dic:STR_DIC_E_herb_d_n_c_20a].</p>
+          <p> </p>
+          <p>Please collect it for me--I'm counting on you!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"On my way!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You brought the Theonia. Thank you for your help!</p>
+          <p> </p>
+          <p>Here's a reward for you.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect [%dic:STR_DIC_E_herb_d_n_c_20a] and bring it to [%dic:STR_DIC_N_Medea]. </font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Medea is asking you to collect Theonia. Collect it on the Patamor Ridge Path or in the Patamor Thicket and bring it to her.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Medea said that she had to collect Theonia, but she couldn't because she was sick.</p>
+          <p> </p>
+          <p>So you collected it for her.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

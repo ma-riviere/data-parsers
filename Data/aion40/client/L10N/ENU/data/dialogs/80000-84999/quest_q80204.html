@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Psst, [%username]. Come over here for a minute, please.</p>
+      	  <p> </p>
+          <p>I was hoping you could help me with something. You see, I met a girl in Verteron who I want to take to a costume contest.</p>
+          <p> </p>
+          <p>The Krall over there makes the perfect costume for her, but I'm too scared to talk to him.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"And this is where I come in?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Pangota will sell the costumes he makes for the right amount of Odium. I have the Odium, but I'm too frightened to talk to him.</p>
+          <p> </p>
+          <p>If I give you the Odium Ore I've gathered, will you talk to him for me, please?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you so much. Now, after you get the costume, I'll need you to take it to Inisha in [%dic:STR_DIC_FLA09].</p>
+          <p> </p>
+          <p>Just tell her who it's from, and that I'd like her to wear it to the Masquerade Ball in Oriel.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Sun's blessings to you then."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No? I would have thought a Daeva like you wouldn't be afraid of a Krall.</p>
+          <p> </p>
+	        <p>What a shame. I guess I'll stay here impersonating an Asmodian and brooding until someone helps me then.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Goodbye."</Act>
+    </Selects>
+  </HtmlPage>
+
+<HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Grarr! Daevas? I don't sell to Daevas.</p>
+          <p> </p>
+          <p>Keep your filthy Kinah and leave me alone!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">"How about for Odium?"</Act>
+    </Selects>
+  </HtmlPage>
+
+<HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hmm, I've never seen such a large piece of Odium Ore before. Hmm. Hmm. Hmm.</p>
+          <p> </p>
+          <p>Fine. You want a sailor costume, here it is. Last one in the store. Now fly away. You're bad for my business.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"Goodbye then.</Act>
+    </Selects>
+  </HtmlPage>
+
+<HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hmm? Yes, I'm Inisha. Is there something you need, Daeva?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Kent sent this."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+         <p>From Kent? Oh, and it's perfect for the Masquerade. Except...</p>
+          <p> </p>
+          <p>Well, it's just a little to big, you know? I need a couple sizes smaller.</p>
+          <p> </p>
+	        <p>But I bet it would look just perfect on you, [%username]. Why don't you keep it instead?</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]"> Get a Sailor Costume from Pangota.</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]"> Take the costume to Inisha.</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Kent asked you to deliver the Sailor Costume to Inisha.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Kent wanted to send a present to Inisha. Unfortunately, the dress didn't fit her, so she gave it to you instead.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], 좀 전에 내가 투기장 입장권을 줬을 것이다.</p>
+          <p> </p>
+          <p>입장권이 있어야만 해당 투기장으로 들어갈 수 있고, 1번 입장에 1장씩이다.</p>
+          <p> </p>
+          <p>이번은 내가 줬지만 다음부터는 [%dic:STR_DIC_N_Reigar] 행정관에게 [%username]%이 직접 요청해야 한다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">고개를 끄덕인다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>자, 그럼 제3 템페르 훈련소의 규칙을 얼마나 잘 이해했는지 확인해 보겠다. </p>
+          <p> </p>
+          <p>백문이 불여일견이라고 직접 해 보는 것만큼 확실한 건 없지.</p>
+          <p> </p>
+          <p>대전 상대를 1명만 쓰러트리고 와라. </p>
+          <p> </p>
+          <p>혼돈의 투기장이든, 고독의 투기장이든, 협력의 투기장이든, 상대가 마족이든 천족이든 상관없다. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>1대 1 결투에 자신 있으면 고독의 투기장에, 대전 상대가 여럿인 게 나을 것 같으면 혼돈의 투기장에, 2인 3파티로 팀전을 하고 싶으면 협력의 투기장에 가면 된다.</p>
+          <p> </p>
+          <p>각 투기장으로 들어가는 출입구가 다르니 안으로 들어가기 전에 투기장 이름을 꼭 확인하고 들어가라.</p>
+          <p> </p>
+          <p>그럼, 좋은 결과 기대하겠다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>왜 그러나?</p>
+          <p> </p>
+          <p>실전과 같다고 하니 겁이 나나?</p>
+          <p> </p>
+          <p>이 정도 훈련을 겁내서야 어디 티아마트 군단을 어떻게 상대할 수가 있겠나!</p>
+          <p> </p>
+          <p>[%username]%은 공적이 뛰어난 [%userclass]이라 해서 내심 기대가 컸는데 실망이 크다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>표정이 이상하구나, [%username].</p>
+          <p> </p>
+          <p>안에서 무슨 일이 있었나?</p>
+          <p> </p>
+          <p>[%username] 실력이라면 이번 시험이 어렵지 않았을 텐데.</p>
+          <p> </p>
+          <p>시험 결과를 보고하라.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">피묻은 휘장과 함께 결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>어떤가, 첫 시험을 통과한 소감이?</p>
+          <p> </p>
+          <p>아직 얼떨떨하겠지만 차차 익숙하게 될 거다.</p>
+          <p> </p>
+          <p>마르쿠탄 주신전에서 제3 템페르 훈련소에 거는 기대가 크다.</p>
+          <p> </p>
+          <p>그러니 시간나는 대로 훈련을 받도록 해라.</p>
+          <p> </p>
+          <p>포상은 자연히 따르는 거고 [%username]의 실력이 눈에 띄게 성장할 것이다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_W_IDArena_pvp_D]에서 대전 상대를 쓰러트려라([%2]/1)</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">피묻은 휘장을 [%dic:STR_DIC_N_Shinin]에게 가져가라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">투기장 입장권을 사용해 제3 템페르 훈련소로 들어가 대전 상대를 물리치자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>전투교관 시닌은 훈련소 규칙을 이해했는지 확인해 보겠다며 투기장으로 들어가 대전 상대를 한 명 쓰러트리고 오라고 했다.</p>
+          <p> </p>
+          <p>투기장에서 대전 상대를 쓰러트리고 나오려는 순간 바닥에 피묻은 휘장이 떨어져 있는 것을 발견했다.</p>
+          <p> </p>
+          <p>시닌에게 휘장을 건네며 결과를 보고하자 일단 첫 시험에 통과한 것을 축하한다고 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

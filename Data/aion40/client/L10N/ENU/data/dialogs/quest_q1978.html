@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm not the only one watching your progress in Cooking, [%username]. While rumors travel quickly around Sanctum, the smell of good Cooking travels faster. You've garnered the attention of some very high officials in Sanctum and they have asked me to give you a test.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Why?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>They and I would like to bestow on you the title of Cooking Expert. But we want to know that you are more than just a combat cook...making only one dish to increase a fighting skill. Cooking an entire meal requires a higher degree of skill but also patience and timing.</p>
+          <p> </p>
+          <p>For the test you'll need buy the recipes for Hestia's Salad, Hestia's Smoothie, and Hestia's Fish, and cook up tasty versions of each.</p>
+          <p> </p>
+          <p>Now I should tell you, if you agree to become a Cooking Expert, you can only become an Expert in one other field, and even then you must wait until you've finished your studies. You should understand that before you decide to proceed.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Plan ahead carefully and keep cooking Hestia's Salad, Hestia's Smoothie, and Hestia's Fish. You will eventually create a [%dic:STR_DIC_E_Q1978all].</p>
+          <p> </p>
+          <p>It's not an easy job, but you have both the ability and the talent. I'll be waiting here.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be back soon."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I thought that, with your level of skill, you'd be able to make these dishes easily, [%username].</p>
+          <p> </p>
+          <p>I guess you haven't the passion for Cooking. You were so promising. I wish you well.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Farewell."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Mmmm...are you back with all the delicious dishes that I ordered? What do I smell?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"The smell of success."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The test requires the entire meal. You must have been busy with other things. Please find the time to make me a complete [%dic:STR_DIC_E_Q1978all] despite that.</p>
+          <p> </p>
+          <p>I have high hopes for you, [%username], so don't disappoint me. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I shan't."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Wonderful! Each dish has the unique, delicious taste of its ingredients. I think the task I gave you was too easy, [%username]. Or perhaps it comes naturally to you. That's why you're a good candidate for Expert and likely to be my successor should that need arise.</p>
+          <p> </p>
+          <p>I'm happy to see and taste your talent for Cooking, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select10">
+    <Contents cdata="true">
+        <html>
+        <body>
+         <p>It's a pity, but you can only take your Expert test in one craft at a time. If you are walking the path of an Expert in another field, you cannot work on your Cooking test.</p>
+          <p> </p>
+          <p>I guess you won't be progressing any further in Cooking for a while.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Farewell."</Act>
+    </Selects>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Make a [%dic:STR_DIC_E_Q1978all] and bring it to [%dic:STR_DIC_N_Hestia].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Hestia says that you have a talent for Cooking, and asked you to cook [%dic:STR_DIC_E_Q1978a], [%dic:STR_DIC_E_Q1978b], and [%dic:STR_DIC_E_Q1978c].</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hestia said you seemed to have a talent for cooking, and wanted to see how well you could prepare an entire meal.</p>
+          <p> </p>
+          <p>So you brought her a Yummy Banquet. The dishes were great.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

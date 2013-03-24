@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>결계 수호단원은 들으시오.</p>
+          <p> </p>
+          <p>수호단 활동에는 전투가 불가피하고 전투에는 소모품이 필수적이오.</p>
+          <p> </p>
+          <p>소모품 중에서도 물약이 중요하지만 단원의 활동을 위한 물약 공급은 어려운 상황이라오.</p>
+          <p> </p>
+          <p>때문에 물약의 재료가 되는 폴리아타를 단원들에게 부탁하겠소.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_G_QUEST_45048a]를 채집하여 [%dic:STR_DIC_N_Amphibia]나 [%dic:STR_DIC_N_Mollusca]에게 가지고 가주시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">편지를 접어 넣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>폴리아타는 여러 가지 물약에 들어가는 중요한 재료입니다.</p>
+          <p> </p>
+          <p>겔크마로스에서는 꽤 충분한 양을 채집할 수가 있지요.</p>
+          <p> </p>
+          <p>편지를 받으셨다면 알겠지만 수호단 상부에서 동지들에게 [%dic:STR_DIC_G_QUEST_45048a] 채집을 의뢰했습니다.</p>
+          <p> </p>
+          <p>혹시 폴리아타를 가지고 오신 거라면 신선도가 떨어지기 전에 저에게 주시기 바랍니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">폴리아타를 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님은 편지를 받지 못하셨나요?</p>
+          <p> </p>
+          <p>지금 겔크마로스에 드나드는 결계 수호단원이라면 누구나 폴리아타를 채집하고 있습니다.</p>
+          <p> </p>
+          <p>꽤 많은 양의 폴리아타가 모이기는 했지만 아직 조금 부족한 상태죠.</p>
+          <p> </p>
+          <p>매일매일 한 분도 빠짐 없이 [%dic:STR_DIC_G_QUEST_45048a]를 가져다 주셔야 충분한 분량이니 노력해 주시기 바랍니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>폴리아타 3개를 채집해 오셨군요.</p>
+          <p> </p>
+          <p>[%username] 님과 같은 의로운 동지들이 있기에 결계 수호단은 영원할 겁니다.</p>
+          <p> </p>
+          <p>이것은 수호단에서 준비한 보상을 위한 증표입니다.</p>
+          <p> </p>
+          <p>매일 볼 수 있게 되기를 바랍니다. 감사합니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_G_QUEST_45048a]를 모아 [%dic:STR_DIC_N_Amphibia]나 [%dic:STR_DIC_N_Mollusca]에게 가져가라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">결계 수호단에서 편지가 왔다. 지시에 따르자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>결계 수호단에서 온 편지의 내용은 약품 재료로 쓸 채집물을 모아 암피비아나 몰루스카에게 가지고 가라는 내용이었다.</p>
+          <p> </p>
+          <p>편지에 따라 폴리아타를 채집하여 가지고 가자 증표 보상을 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

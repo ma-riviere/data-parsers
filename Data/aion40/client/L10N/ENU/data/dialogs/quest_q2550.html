@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'll soon leave here to find my tribe, but there's something I want to do first.</p>
+          <p> </p>
+          <p>I can't do it on my own...Will you help me?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What is it?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We lost our home to the Mosbears. If not for them, we would still be living happily in a peaceful village and I would not be alone, suffering from hunger.</p>
+          <p> </p>
+          <p>I want revenge on those Mosbears. You can understand that, can't you? Can you help?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you. The place that's now called the Mosbear Snowfield used to be our lovely home.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_MosbearReD_33_An]s and [%dic:STR_DIC_M_MosbearReBigD_34_An]s now occupy it. I'll be happy if you kill all of them.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Wow, you're serious!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I understand. Yes, I do.</p>
+          <p> </p>
+          <p>I don't want to take any more of your time.</p>
+          <p> </p>
+          <p>But I will find a way to have revenge on the Mosbears. Someday.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I hope you do."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've been waiting for you.</p>
+          <p> </p>
+          <p>Our lovely home must have been swarming with Mosbears. Did you kill all of them? All of the hated Mosbears?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I killed them."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It makes me warm inside to know they have paid with their lives. Thank you.</p>
+          <p> </p>
+          <p>Now I can tell my tribe we have been avenged. The Mosbears who chased us out have paid the price!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Eliminate Mosbears, the enemy of the Spriggs.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_MosbearReD_33_An] ([%2]/30)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_MosbearReBigD_34_An] ([%5]/7)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_N_Gark].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Gark has asked you to revenge him on the Mosbears who ran his tribe out of their home. Go to the Mosbear Snowfield, which used to be the Sprigg habitat, and defeat Mosbears.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Gark said that the Mosbear Snowfield was originally the home of his tribe.</p>
+          <p> </p>
+          <p>Before leaving to find his tribesmen, he wanted to be revenged on Mosbears who took their home, and he asked you to defeat them.</p>
+          <p> </p>
+          <p>When you came back after defeating Mosbears, the vengeful Sprigg thanked you for your help.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

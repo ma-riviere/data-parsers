@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Curse this darkness! I can't read or write orders when the darkness sets in, and we don't get much wood for the fires.</p>
+          <p> </p>
+        <p>I know, I know...the darkness makes us stronger. I've heard it all as a youngster. Those arrogant Elyos sure have it easy, though, bathing in sunlight and never struggling like me, just to make out Ulgorn's handwriting.</p>
+          <p> </p>
+          <p>I have a temporary solution, though. It's not the sun, but at least Guheitun won't complain about me using all the firewood.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"What's your idea?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Look around: Which creature in this environment catches your eye? Either the [%dic:STR_DIC_M_spakyD_1_n] or the [%dic:STR_DIC_M_SpakleD_1_n], right?</p>
+          <p> </p>
+          <p>It's their glowing tails. The insects use them to attract prey and mates. But I can make use of that natural luminescence, too.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Don't the tails go dark when they die?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>They don't go dark right away. In fact, their abdomens stay alight for several hours after you sever them from the thorax.</p>
+          <p> </p>
+          <p>But I'm sure the proper names of bug parts don't concern you, and I have a heap of paperwork in any case. [%username], I need you to catch a [%dic:STR_DIC_M_spakyD_1_n] or two as well as a few [%dic:STR_DIC_M_SpakleD_1_n]s and gather their [%dic:STR_DIC_I_2105a]s for me. I'll sort my paperwork and await your return.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Great. Thank you, [%username].</p>
+          <p> </p>
+          <p>Remember, you can only get a [%dic:STR_DIC_I_2105a] from a [%dic:STR_DIC_M_spakyD_1_n] or a [%dic:STR_DIC_M_SpakleD_1_n]. I should think three lights will suffice for the reports I have to get filed.</p>
+          <p> </p>
+          <p>Please hurry. I'm behind schedule as it is!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll get right on it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm astounded the other raiders haven't gutted you by now, [%userclass].</p>
+          <p> </p>
+          <p>We Asmodians have survived by helping each other whenever we can and working toward a common goal. Refuse to help me now, [%username], and what happens tomorrow when you need my assistance?</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I don't need your help, Vanar."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good, you're back.</p>
+          <p> </p>
+          <p>These reports really should be up in the village already. Tobu is going to be furious.</p>
+          <p> </p>
+          <p>Show me the spheres you've gathered.</p>
+          </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here's what I found."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What is this, some kind of joke? Don't tell me this is all you came back with...</p>
+          <p> </p>
+          <p>[%username], I didn't ask for much...</p>
+          <p> </p>
+          <p>Soon it'll be dark, and Guheitun will put out the fire. Then how do you think I'll finish the reports?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be back soon."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>These are perfect! Thank you, [%username].</p>
+          <p> </p>
+          <p>Finally I can get those blasted reports finished. Then maybe Tobu and Ulgorn will let me do some real raiding!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect [%dic:STR_DIC_I_2105a]s by catching [%dic:STR_DIC_M_spakyD_1_n]s or [%dic:STR_DIC_M_SpakleD_1_n]s. Bring the spheres to [%dic:STR_DIC_N_Vanar].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">After collecting [%dic:STR_DIC_I_2105a]s, bring them to Vanar, who should be able to write the orders Ulgorn asked for.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Vanar should be writing orders as Ulgorn requested. However, he's having trouble reading and writing because the Aldelle Basin gets so dark.</p>
+          <p> </p>
+          <p>He requested you catch a [%dic:STR_DIC_M_spakyD_1_n] or two and [%dic:STR_DIC_M_SpakleD_1_n]s and collect their abdomens, which are naturally luminescent.</p>
+          <p> </p>
+          <p>You collected the light spheres as he requested. He was delighted and said that he should be able to write the orders Ulgorn requested.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

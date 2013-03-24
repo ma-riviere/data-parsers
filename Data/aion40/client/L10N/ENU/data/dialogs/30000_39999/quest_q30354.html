@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], you helped us advance beyond Kaluva's Nest, but I don't think we're going to get any farther without you.</p>
+          <p> </p>
+          <p>In order to investigate the deepest parts of the Abyssal Splinter, we must get through the Crystal Mezzanine.</p>
+          <p> </p>
+          <p>You're the only one I can trust, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Am I really?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>At the Crystal Mezzanine, you'll see [%dic:STR_DIC_M_IDAbRe_Core_FiNmd_Combine] standing right in the middle. When the investigators get close to it, it splits into [%dic:STR_DIC_M_IDAbRe_Core_Boss_Guardian_Light_Fi_55_Al] and [%dic:STR_DIC_M_IDAbRe_Core_Boss_Guardian_Dark_Fi_55_Al].</p>
+          <p> </p>
+          <p>We believe that both of them have to be killed at the same time to get past, but I can't imagine that'll be easy.</p>
+          <p> </p>
+          <p>Do you have any ideas, [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Here's what we know. After splitting into [%dic:STR_DIC_M_IDAbRe_Core_Boss_Guardian_Light_Fi_55_Al] and [%dic:STR_DIC_M_IDAbRe_Core_Boss_Guardian_Dark_Fi_55_Al], the Dayshade turns to disks lying on two sides.</p>
+          <p> </p>
+          <p>When you fight them, they build a shield. Rukril makes a Splendor Fragment, and Ebonsoul makes a Darkness Fragment. We think that if you take the Darkness Fragment to Rukril, his shield will disappear, and that the same thing happens if you take the Splendor Fragment to Ebonsoul.</p>
+          <p> </p>
+          <p>It sounds complicated, but the most important thing is you have to kill both of them at practically the same time. If one collapses first, the other will become too aggressive to deal with.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Two birds with one stone, got it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, I suppose I can't depend on you forever. I just thought since we'd established a bond of trust....</p>
+          <p> </p>
+          <p>Ah, never mind. I'll try and get more investigators, even if it means sending a request to the fortress.</p>
+          <p> </p>
+          <p>Maybe then we'll be able to fight Rukril and Ebonsoul at the same time.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Good idea."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're back! Did you get rid of Rukril and Ebonsoul? Did you get to the Crystal Mezzanine?</p>
+          <p> </p>
+          <p>What did you find?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"A strange artifact."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Really? An Artifact of Protection? Here?</p>
+          <p> </p>
+          <p>That's a problem. Neither this Artifact nor its Protectors are going to be...normal. We must find a way to turn the Artifact back to normal so we can use it.</p>
+          <p> </p>
+          <p>You've done a great job. Thanks a lot, [%username]!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get rid of the Crystal Mezzanine's sentry.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_IDAbRe_Core_Boss_Guardian_Light_Fi_55_Al]([%2]/1)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_IDAbRe_Core_Boss_Guardian_Dark_Fi_55_Al]([%5]/1)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report to [%dic:STR_DIC_NPC_Ab1_1011_TreasureGate_Da].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Rukril and Ebonsoul block the way to the Crystal Mezzanine. Destroy them and patrol deeper inside the Abyssal Splinter.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Gwal told you that investigators advanced to the Crystal Mezzanine, but haven't gone any further because of the protectors there.</p>
+          <p> </p>
+          <p>You got rid of Rukril and Ebonsoul, and found an Artifact of Protection. This discovery disturbed Gwal greatly.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

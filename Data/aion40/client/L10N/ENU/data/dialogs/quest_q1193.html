@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Sanctum thinks the Krall are plotting something, so we must investigate, reinforcements or no.</p>
+          <p> </p>
+          <p>If we can find evidence of some plot or another, we might get the extra Guardians we need.</p>     
+          <p> </p>
+          <p>You have been reliable so far--I'd like you to take this mission.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I will do my best."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm sending you to investigate. You'll have the best luck searching dead bodies, so be sure to make some. Head over to the [%dic:STR_DIC_FLA23], defeat [%dic:STR_DIC_MLA151]s and see if you can't find some evidence of this supposed conspiracy.</p>
+          <p> </p>
+          <p>Considering the Krall command hierarchy, the Sentinel Leaders would be most likely to have the evidence we need.</p>
+          <p> </p>
+          <p>You're going to need allies for this. Hunting alone will get you killed, and I have enough dead heroes on my conscience already.</p>          
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I expected no less.</p>
+          <p> </p>
+          <p>And at risk of repeating myself, take some allies. This is not one-Daeva assignment.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Got it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I am going to assume your reluctance stems from a lack of willing allies, rather than a sudden change of heart.</p>
+          <p> </p>
+          <p>At this rate, the Krall will break us through sheer weight of numbers.</p>
+          <p> </p>
+          <p>If we are to arm Verteron against the coming attack, we need evidence of that blasted conspiracy so we can convince Sanctum. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Good luck."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Back from the Tursin Garrison already? Did you find anything?</p>
+          <p> </p>
+          <p>I don't care how insignificant it seems--report anything unusual!</p>
+          <p> </p>
+          <p>Sanctum won't send reinforcements unless we can prove the Krall are up to something.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I found this...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], I know that slaughtering Krall is always worthwhile. I will never condemn you for that.</p>
+          <p> </p>
+          <p>But you had a clear objective, and you've returned empty-handed.</p>
+          <p> </p>
+          <p>I need you to find evidence of a Krall conspiracy, not just increase the body count.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be back soon."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>A Krall necklace? Is this all you've got to show for...</p>
+          <p> </p>
+          <p>Wait. This is Odium. They've decorated the shattering thing with Odium!</p>
+          <p> </p>
+          <p>Sanctum was right. The Krall are definitely up to something. Maybe now they'll send us more troops! Excellent work, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Kill [%dic:STR_DIC_MLA151]s in the [%dic:STR_DIC_FLA23] and bring the evidence to [%dic:STR_DIC_LA19].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Go to the Tursin Garrison to find some evidence of the alleged Krall plot.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>To convince Sanctum to send him reinforcements, Spatalos was forced to take the suggestion of a Krall conspiracy seriously.</p>
+          <p> </p>
+          <p>He told you to take some allies to the Tursin Garrison, defeat Krall, and bring back something that might shed some light on this matter.</p>
+          <p> </p>
+          <p>You found a necklace studded with Odium, but it only confirmed that the Krall are up to something. It revealed nothing else.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

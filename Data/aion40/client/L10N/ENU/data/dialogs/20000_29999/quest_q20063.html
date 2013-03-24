@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q20063</QuestId>
+    <QuestName>The Serpent of Fear</QuestName>
+    <QuestType>Not entered</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Finally! That monitor you installed has given us useful information. I've just received the first report. Let me tell you--it's quite a read.</p>
+          <p> </p>
+          <p>It seems that if a heart is in danger, one of Tiamat's Incarnations will appear. That alter ego must be killed before the heart itself is incapacitated.</p>
+          <p> </p>
+          <p>Ah no... I misread! Tiamat's Incarnation is the heart itself!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Are you sure?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That's what it says here. Each heart has one incarnation. The Fissure Incarnate for the Heart of Fissure, the Petrification Incarnate for the Heart of Petrification, and so on. I can't expect you to do all this, but I would like you to fight against the Heart of Petrification, [%username].</p>
+          <p> </p>
+          <p>The Petrification Incarnate appears only once [%dic:STR_DIC_E_LDF4B_Occupation_Combat] has begun. Obviously, this isn't something that you can carry out alone, so bring trusted allies and friends to fight alongside you.</p>
+          <p> </p>
+          <p>Ah, one last thing. The Fatebound Centurion [%dic:STR_DIC_N_Benjal] said that he would go there to help you. Meet him once the siege starts. And good luck!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"Good luck to you too, Garnon."</Act>
+    </Selects>
+    <Voice file="Q20063-1.ogg"/>
+  </HtmlPage>
+
+  <HtmlPage name="select3">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The [%dic:STR_DIC_M_LDF4b_T4_Tiamat_Crystal_Named_60_Af] has appeared. The attack must be now, Asmodian! </p>
+          <p> </p>
+          <p>Assault the structure, drive your way inside, and destroy the Incarnate being within! Garnon will need proof of your deed, so bring her the [%dic:STR_DIC_I_QUEST_10063a].</p>
+          <p> </p>
+          <p>Now is your chance, Asmodian! Take it!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO3">"Blood for blood!"</Act>
+    </Selects>
+      <Voice file="Q20063-2.ogg"/>
+  </HtmlPage>
+
+  <HtmlPage name="select4">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]!</p>
+          <p> </p>
+          <p>Did you do it? Is it over?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"The end has begun. I have the claw."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_ok">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>So the Heart of Petrification has been incapacitated! Excellent work!</p>
+          <p> </p>
+          <p>The other hearts will fall one by one, and soon, you'll be able to enter Tiamaranta's Eye! You've done a great service today. Thank you, on behalf of all the Reian people.</p>
+          <p> </p>
+          <p>Ah, before I forget, [%dic:STR_DIC_N_Adela] is waiting to speak with you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll see her now."</Act>
+    </Selects>
+    <Voice file="Q20063-3.ogg"/>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_fail">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>But... where is it?</p>
+          <p> </p>
+          <p>Did you do what you said, [%username]? As much I would love to just take your word, these stakes are not ones that I can gamble with. Kill the [%dic:STR_DIC_M_LDF4b_T4_Tiamat_Crystal_Named_60_Af], and bring me the [%dic:STR_DIC_I_QUEST_10063a] as proof!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I thought I had it..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I heard of your hard work, [%username]. I asked you here that I may congratulate you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"It was nothing, Adella."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Nothing? Haha! You are too modest, Asmodian. Others have songs written for getting dressed.</p>
+          <p> </p>
+          <p>Once all the incarnations are defeated, we'll be able to get into Tiamaranta's Eye. Then... then the real war begins, [%username].</p>
+          <p> </p>
+          <p>Best prepare ourselves now. As tough as things have been, this is an uphill battle.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Go to [%dic:STR_DIC_W_LDF4b_SZ_OP_A4], and talk with Garnon.</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Go to the Heart of Petrification once [%dic:STR_DIC_E_LDF4B_Occupation_Combat] breaks out. [%5].</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Talk with [%dic:STR_DIC_N_Benjal].</font></p></step>
+               <step><p visible="[%9]"><font color="[%10]">Destroy the [%dic:STR_DIC_M_LDF4b_T4_Tiamat_Crystal_Named_60_Af], and bring its [%dic:STR_DIC_I_QUEST_10063a] to Garnon as proof of your work.</font></p>[%collectitem]</step>
+               <step><p visible="[%12]"><font color="[%13]">Talk with [%dic:STR_DIC_N_Adela].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Order: The Vigilance Core you placed has reported results! Talk with Garnon.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Garnon told you that destroying Tiamat's Alter Ego (the Petrification Incarnate beast at the Heart of Petrification, in this case) would grant its victor control over the heart. </p>
+          <p> </p>
+          <p>You tested the theory, killed the Petrification Incarnate, and returned. Garnon was amazed at your progress and sent you on to meet Adella, who told you the toughest fight was yet to come, as Tiamaranta's Eye would soon be accessible.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>Mission Progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

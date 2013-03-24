@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p align="center"> - 의뢰장 - </p>
+          <p> </p>
+          <p>사냥꾼 후루후루를 처리해 달라는 의뢰를 요청받았다.</p>
+          <p></p>
+          <p>찰리룽 흥신소 조직원들은 다음 내용을 숙지하고 지시에 따라 주기 바란다. </p>
+          <p> </p>
+          <p> 1. 이름: [%dic:STR_DIC_M_DF4_DaQ_Owllau_As_52]</p>
+          <p></p>
+          <p> 2. 위치: 아울라우 숲에 본거지가 있을 것으로 추측됨.</p>
+          <p></p>
+          <p> 3. 상세: 아울라우 숲 주변의 희귀 동물을 사냥하여 겔크마로스의 생태계를 위협하고 생태 연구가의 연구를 방해하였음.</p>
+          <p> </p>
+          <p>사냥꾼 후루후루의 행방에 대해 결정적인 제보를 하거나 직접 처치한 자에게 의뢰대금을 지급할 것임.</p>
+          <p> </p>
+          <p>- 찰리룽 흥신소, [%dic:STR_DIC_E_46500] 일동 -</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">의뢰장을 접어 넣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이번에는 어떤 일을 했냥?</p>
+          <p> </p>
+          <p>의뢰를 제대로 완수했으면 보상금 준당, 갸릉.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(작은 목소리로) 아울라우는 그저 식사를 했을 뿐인데 생태계 위협 혐의라니 너무하지 않냥?</p>
+          <p> </p>
+          <p>우리야 의뢰를 처리하고 대금만 받으면 만사형통이니 상관없지만 말이당, 갸릉.</p>
+          <p> </p>
+          <p>데바도 일을 제대로 한 것 같으니 약속한 의뢰대금을 주겠당, 냥냥.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">희귀 동물을 잡아먹는 [%dic:STR_DIC_M_DF4_DaQ_Owllau_As_52]%를 처치하라([%2]/1)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_E_46500]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">찰리룽 흥신소에서 의뢰장이 왔다. 의뢰를 수행하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>찰리룽 흥신소에서 희귀 동물을 잡아먹는 사냥꾼 후루후루를 처치해 달라는 내용의 의뢰장을 받았다.</p>
+          <p> </p>
+          <p>의뢰를 확인하여 사냥꾼 후루후루를 처지하고 겔크마로스 관리부 직원에게 보고하자 수고했다며 의뢰대금을 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

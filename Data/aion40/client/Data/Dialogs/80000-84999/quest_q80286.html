@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>영예 공훈 상자로 교환을 원하십니까?</p>
+          <p> </p>
+          <p>교환된 미스릴 공훈 훈장은 다시 교환이 안되니 돌려달라는 말씀은 하지 말아 주십시오.</p>
+          <p> </p>
+          <p>그러려면 미스릴 공훈 훈장이 많이 필요할 것 같은데 혹시 가지고 있습니까? 있으면 10개씩 구하겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>좋습니다.</p>
+          <p> </p>
+          <p>[%username] 님에게 영예 공훈 상자를 교환해 드리겠습니다.</p>
+          <p> </p>
+          <p>미스릴 공훈 훈장 개수가 맞으면 보답으로 영예로운 공훈 상자를 드리겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">훈장을 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>훈장을 교환하는 일이니 신중하셔야겠지요.</p>
+          <p> </p>
+          <p>생각해보시고 마음의 결정을 내리시면 찾아오십시오.</p>
+          <p> </p>
+          <p>기다리고 있겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+<HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>기다리고 있었습니다.</p>
+          <p> </p>
+          <p>이번엔 미스릴 공훈 훈장 10개가 정확한가요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">훈장을 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>안타깝게도 미스릴 공훈 훈장이 조금 모자라는군요.</p>
+          <p> </p>
+          <p>확실하게 모이시면 다시 찾아와 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정확하군요.</p>
+          <p> </p>
+          <p>여기 받으십시오. 영예로운 공훈 상자입니다.</p>
+          <p> </p>
+          <p>기회가 되면 또 뵙겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">미스릴 공훈 훈장 10개를 모아 푸운즈에게 가져가라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">푸운즈에게 영예 공훈 상자를 교환하기 위해 미스릴 공훈 훈장 10개를 구해다 줘야겠다.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>푸운즈는 미스릴 공훈 훈장 10개를 영예 공훈 상자로 교환해준다고 한다.</p>
+          <p> </p>
+          <p>푸운즈에게 미스릴 공훈 훈장을 주자 영예 공훈 상자를 하나 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

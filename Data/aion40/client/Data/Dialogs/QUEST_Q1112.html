@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>전 노을을 바라보면서 낚시를 할 때가 제일 행복해요. 산호 빛으로 물든 하늘이 호수에 비쳐 환상적으로 빛나거든요.</p>
+          <p> </p>
+          <p>거기에 하이브 무리가 춤을 추면 더할 나위 없죠.</p>
+          <p> </p>
+          <p>역시 낚시는 제 삶의 기쁨이에요.</p>
+          <p> </p>
+          <p>그런데 요즘 제 행복을 망치는 문제가 생겼습니다.</p>
+           </body>
+        </html>
+    </Contents>
+    <Selects>
+  <Act href="HACTION_ASK_QUEST_ACCEPT">무슨 일인지 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_MLA134]%와 [%dic:STR_DIC_MLA133]%이 첨벙대면서 시끄럽게 물을 마시는 통에 물고기가 낚이지 않습니다. 하이브도 좀처럼 춤을 추지 않고요.</p>
+         <p> </p>
+         <p>하아, 남편의 요리에 필요한 물고기도 빨리 낚아야 하는데...</p>
+         <p> </p>
+         <p>[%username] 님이 절 좀 도와주시면 안 될까요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>도와주실 줄 알았습니다. 가서 [%dic:STR_DIC_MLA134]%와 [%dic:STR_DIC_MLA133]%을 5마리씩만 처치해 주세요.</p>
+          <p> </p>
+          <p>그 정도면 놈들도 겁을 먹고 호수에 오지 않을 겁니다.</p>
+         </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+         <p>놈들만 없다면 낚시가 더 잘 될 텐데... 아쉽지만 어쩔 수 없군요.</p>
+         <p> </p>
+         <p>나중에 우노에게 부탁해 봐야지요.</p>
+         <p> </p>
+         <p>제가 낚시만 하는 걸 못마땅해 하니 남편도 어쩌면 거절할지 모르겠군요. 게다가 겁쟁이니까요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+
+   <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이런, [%username] 님 발소리 때문에 고기들이 도망가잖아요.</p>
+          <p> </p>
+          <p>낚시터에서는 조용히 하는 게 상식 아닌가요?</p>
+          <p> </p>
+          <p>그나저나 부탁한 일은 어떻게 됐습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+          <Act href="HACTION_SELECT_QUEST_REWARD">결과를 얘기한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+    <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>어쩐지 얼마 전부터 고기들이 모여드는 것 같았어요.</p>
+          <p> </p>
+          <p>이젠 맘 놓고 낚시를 할 수 있겠군요.</p>
+          <p> </p>
+          <p>감사합니다. 혹시 낚시를 배우고 싶으면 저에게 오세요.</p>
+          <p> </p>
+          <p>[%username] 님에겐 특별히 제 비법을 알려 드리겠습니다. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_FLA03]의 불청객을 처치하라</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_MLA134]([%2]/5)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_MLA133]([%5]/5)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_LA07]에게 돌아가라</font></p></step>
+               
+    </steps>
+          <p><font font_xml="quest_summary">브락스와 레피스마 때문에 페이라가 낚시하는 데 차질이 있다고 한다. 브락스와 레피스마를 처치해 주자.</p>
+          <p></font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>클리오네 호수에서 페이라의 부탁을 받았다. 낚시를 방해하는 브락스와 레피스마를 처치해 달라는 것이었다. 놈들을 처치해 주고 페이라에게 보수를 받았다.</p> 
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

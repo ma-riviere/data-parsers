@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Welcome, traveler! Let me tell you a story.</p>
+          <p> </p>
+          <p>Long ago, there was a great Daeva named Rosarea. Over time she became known as the "Warrior of Laize" because her powerful armor was decorated with images of that flower.</p>
+          <p> </p>
+          <p>This Daeva was so amazing that Empyrean Lord Israphel trusted her with his deepest secrets. She was so skilled that she had become a full Brigade General at the tender age of 22.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Did she write down any of those secrets?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No. Now, you'd think that people would remark on her deeds or her place as Lord Israphel's confidant, but they didn't. What most people recalled was her armor.</p>
+          <p> </p>
+          <p>It was a striking violet color with laize inscribed on it everywhere. More importantly, it provided complete protection to its wearer.</p>
+          <p> </p>
+          <p>Which is why I've made it my life's work to restore Laize's Panoply.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Look, I'm not buying armor today."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, you misunderstand me. I'm not selling anything. I haven't even finished it.</p>
+          <p> </p>
+          <p>Actually, I've...ah...only finished the shoes. And they're not as good as the originals. They look lovely, but their protective powers leave...more than a bit to be desired.</p>
+          <p> </p>
+          <p>I think it's because they don't have enough Aether power. Perhaps you could help me with that, [%username]? It'd only take a little of your time.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You see this ordinary looking marble? It collects Aetheric power, and I've heard there's plenty among the creatures in the Abyssal Splinter.</p>
+          <p> </p>
+          <p>You've been there before? Then you know what to expect.</p>
+          <p> </p>
+          <p>Collecting Aether from [%dic:STR_DIC_M_IDAbRe_Core_SilikaCannon_Ra_55_Ah] and [%dic:STR_DIC_M_IDAbRe_Core_Millipede_Sc_55_An] should do it, I think.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"The Abyssal Splinter's my stomping ground!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, Rosarea! Oh, warrior of the flowers! Your panoply shall remain incomplete! Your greatness shall go unremembered!</p>
+          <p> </p>
+          <p>Oh, woe. Woe for our culture and what has been lost.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"That's laying it on a bit thick."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Let me tell you a story. A love story. Rosarea was not a traditionally beautiful Daeva. Her hair didn't glow and her skin wasn't soft. But when she fought in battle, her inner light could shine over a whole theater of war.</p>
+          <p> </p>
+          <p>One man loved and waited for her. And waited...and waited...and waited. His last gift to her was this suit of armor, crafted in resentment and emphasizing the thorns that keep laize-lovers from approaching.</p>
+          <p> </p>
+          <p>But Rosarea didn't care that this was armor of resentment, that it had been made by a rejected suitor who had grown to loathe her. These things were irrelevant to her, and she wore it anyway.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Harsh! Uh...here's your marble."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Perfect! Let me imbue the shoes with it right now.</p>
+          <p> </p>
+          <p>Isn't it so exciting? I can barely bring myself to watch the process.... Oooooh, these are much better. But is it enough?</p>
+          <p> </p>
+          <p>I'll give them a try. If they're sufficiently powered, they're yours. Otherwise, we both have more work to do.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get rid of Aether creatures to collect Aether energy.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_IDAbRe_Core_SilikaCannon_Ra_55_Ah]([%2]/3)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_IDAbRe_Core_Millipede_Sc_55_An]([%5]/10)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Take the Aether Marble to [%dic:STR_DIC_NPC_Laum].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Laum needs more Aetheric power to finish crafting Laize's Panoply. Collect Aether energy from creatures in the Abyssal Splinter.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Laum's life work is re-crafting Laize's Panoply--the armor originally worn by Rosarea, a great warrior of ancient times.</p>
+          <p> </p>
+          <p>So far, Laum had completed the shoes, but wanted to imbue them with more Aetheric power because they didn't work very well.</p>
+          <p> </p>
+          <p>You used an Aether Marble and gathered Aetheric power from creatures in the Abyssal Splinter.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

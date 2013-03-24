@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p align="center"> - Operation Order - </p>
+          <p> </p>
+          <p>From: The Blood Crusade</p>
+          <p> </p>
+          <p>To: Crusader [%username]</p>
+          <p> </p>
+          <p>The Blood Crusade has confirmed that Asmodian forces are outnumbered in Inggison. We must aid our brothers and sisters to push the front. As such, we have issued the following kill order:</p>
+          <p> </p>
+          <p>  1. Use the Silentera Canyon to infiltrate [%dic:STR_DIC_W_ZONE_NAME_LF4].</p>
+          <p> </p>
+          <p>  2. Once in Inggison, eliminate at least five Elyos of relative strength by any means necessary.</p>
+          <p> </p>
+          <p>  3. Report to the [%dic:STR_DIC_E_45503] once the kills are confirmed and the enemies have lost the will to fight.</p>
+          <p> </p>
+          <p>May you walk in Azphel's shadow. Blood for blood!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">Fold up the order.</Act>
+    </Selects>
+  </HtmlPage>
+
+   <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Azphelumbra, [%username]. Was the battle in Inggison fierce?</p>
+          <p> </p>
+          <p>I hear Asmodians flooded into the Silentera Canyon towards Inggison. It's true, sometimes offense comes before defense!</p>
+          <p> </p>
+          <p>How many of those Elyos weaklings did you slay, [%username]? Please report in.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I've done my part."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent work, [%username]. The Elyos will think twice before engaging us again.</p>
+          <p> </p>
+          <p>In Inggison, make one mistake, and even elite units can be annihilated. But it's nothing the Blood Crusade can't handle. We strike their flanks, demoralize their troops, hit them where it hurts--that's how we'll win this war.</p>
+          <p> </p>
+          <p>Here's your reward, [%userclass]. Blood for blood!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Infiltrate [%dic:STR_DIC_W_ZONE_NAME_LF4] and eliminate the [%dic:STR_DIC_E_Daily_2] ([%2]/5).</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Report to the [%dic:STR_DIC_E_45503].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Infiltrate Inggison and eliminate the Elyos, then report back to the Gelkmaros Branch Agent.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Blood Crusade issued a kill order for the Elyos in Inggison. </p>
+          <p> </p>
+          <p>You completed the mission and received your reward from the Gelkmaros Branch Agents.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+	 	  <HtmlPage name="select_acqusitive_quest_desc">
+	 	    <Selects>
+	 	      <Act>New quest: [%questname]</Act>
+	 	    </Selects>
+	 	  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

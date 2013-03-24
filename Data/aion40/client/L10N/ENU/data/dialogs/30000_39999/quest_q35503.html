@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I was looking for you, [%username]!</p>
+          <p> </p>
+          <p>Please take this. It's an urgent order from Radiant Ops.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Let's take a look...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p align="center">  - CONFIDENTIAL - </p>
+          <p> </p>
+          <p>From: Radiant Ops Headquarters</p>
+          <p>To: Agent [%username]</p>
+          <p> </p>
+          <p>Subject: Confirmation of Asmodian presence in Silentera Canyon obtained. Current status could lead to tactical disadvantage in region. Quick resolution critical to stabilize location.</p>
+          <p> </p>
+          <p>Orders: Eliminate at least five combat-worthy Asmodians in the [%dic:STR_DIC_E_UnderPass_Li]. This should cause adequate disruption in their ranks and secure our position. When targets have been eliminated, report to the [%dic:STR_DIC_E_35503].</p>
+          <p> </p>
+          <p>Faith and arms!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+  
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_E_Daily_1] has slowed our advances on the Balaur.</p>
+          <p> </p>
+          <p>Now, of course, we are asking fighters of great repute to carry out special orders for us.</p>
+          <p> </p>
+          <p>Be careful out there, friend. Danger lurks behind every corner!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Faith and arms!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No? You said no?</p>
+          <p> </p>
+          <p>Well, I can't force you to help, but considering that my superiors put out this urgent order....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"As have others."</Act>
+    </Selects>
+  </HtmlPage>  
+
+   <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]. Back so soon?</p>
+          <p> </p>
+          <p>Let's see, what were your orders today? Ah, yes...Silentera Canyon. Glad to see that HQ was aware of that situation.</p>
+          <p> </p>
+          <p>What do you have to report?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"The Asmodians are no longer a problem."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent work, [%username]. The Asmodians in Silentera Canyon appear to be on the run. Your mission was a great success.</p>
+          <p> </p>
+          <p>Take this reward for your service to Radiant Ops.</p>
+          <p> </p>
+          <p>For the glory of Sanctum!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Defeat the [%dic:STR_DIC_E_Daily_1] in the [%dic:STR_DIC_E_UnderPass_Li] ([%2]/5).</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">When your mission is complete, report to the [%dic:STR_DIC_E_35503].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Urgent Order: Eliminate Asmodians causing disturbance in the Silentera Canyon and report mission results to the Inggison Radiant Ops agent.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Radiant Ops Headquarters issued an urgent order for the elimination of Asmodians causing disturbances in Silentera Canyon.</p>
+          <p> </p>
+          <p>You completed the mission and reported to Radiant Ops for debriefing and a reward.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+  
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>  
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

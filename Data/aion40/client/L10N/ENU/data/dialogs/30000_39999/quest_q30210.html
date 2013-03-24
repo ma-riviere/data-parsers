@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ohhh, this is going to be amazing, [%username]. I've never restored a document as old as this.</p>
+          <p> </p>
+          <p>Seeing as how this is written on mummified flesh, like I first thought, I will need to use several solvents to clean it...without disintegrating it.</p>
+          <p> </p>
+          <p>I have this, this, this, and a little of that left, but...I'm missing one ingredient. It's a liquid that renews ancient inks.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Can I help you?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, that would be great, [%username]. You see, the Balaur always wrote in ink derived from blood and...oh, you don't care.</p>
+          <p> </p>
+          <p>The solvent that I need comes from [%dic:STR_DIC_I_QUEST_30210b]. The sulfer found near craters is the most potent.</p>
+          <p> </p>
+          <p>Can you bring some back for me?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Since this document originated from Inggison materials, I believe [%dic:STR_DIC_I_QUEST_30210b]s found in Inggison creatures will be the most effective.</p>
+          <p> </p>
+          <p>Go to Angrief Wastes and get Sulfur Crystals from [%dic:STR_DIC_M_LF4_C_Cyclops_Acid_55_An]s, [%dic:STR_DIC_M_LF4_C_Vampire_Acid_55_An]s, and [%dic:STR_DIC_M_LF4_C_Agrint_Acid_55_An]s.</p>
+          <p> </p>
+          <p>I think with solvent made from their crystals, the document's faded text should darken up enough to read it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be back soon."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, if you don't seem to care, then I won't care either.</p>
+          <p> </p>
+          <p>I thought it was important to you. I guess not.</p>
+          <p> </p>
+          <p>Do me a favor...take this document back. If I can't work on it, I don't even want to see it!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Restoring it was your job."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Welcome back, [%username]. You've been in Inggison so long I was afraid you wouldn't remember how to find the library again.</p>
+          <p> </p>
+          <p>Were you able to find the Sulfur Crystals?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here they are."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_fail">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You didn't make it to Inggison, [%username]?</p>
+          <p> </p>
+          <p>As I said earlier, I can't restore your document without the [%dic:STR_DIC_I_QUEST_30210b]s. I'm good, Daeva, but not that good.</p>
+          <p> </p>
+          <p>You're going to have to kill Sulfur Petrahulks, Sourwind Wraithlings, and Sulfur Dragrints. No way around it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll take care of it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_ok">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes, yes, this is perfect! This should only take a second....</p>
+          <p> </p>
+          <p>(She works on the ancient document using a mixture of ingredients.)</p>
+          <p> </p>
+          <p>There we go.... Didn't work as well as I had hoped, but the text on the document can be read now. Here you go.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Thank you, Gerania."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, you're back, [%username]!</p>
+          <p> </p>
+          <p>Was Gerania able to fix up the document? What does it say?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Here, read it for yourself."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Very peculiar! I'm truly amazed! Gerania's method really worked well.... I can read everything now.</p>
+          <p> </p>
+          <p>Should be no trouble finding out where Stormwing sleeps.</p>
+          <p> </p>
+          <p>Faith and arms, [%username]. You did a great job.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Obtain [%dic:STR_DIC_I_QUEST_30210b]s and bring them to [%dic:STR_DIC_N_Gerania].</font></p>[%collectitem]</step>
+               <step><p visible="[%3]"><font color="[%4]">Talk with [%dic:STR_DIC_N_Pilomenes].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Gerania says she needs a particular material to restore the document. Defeat Sulfur Petrahulks, Sourwind Wraithlings, and Sulfur Dragrints and bring back Sulfur Crystals.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Gerania said she needed a particular material to restore the Ancient Dragonbound Document.</p>
+          <p> </p>
+          <p>You brought her Sulfur Crystals, the material she needed, and she went to work.</p>
+          <p> </p>
+          <p>You took the restored document back to Pilomenes, who said he should now be able to figure out where Stormwing has been sealed.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

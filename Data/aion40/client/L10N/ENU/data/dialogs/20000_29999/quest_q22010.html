@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q22010</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>Not entered</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Not everyone gets to be the hero, [%username].</p>
+          <p> </p>
+          <p>You've been everywhere and have done everything. You've slain Balaur, fought in countless battles, seen parts of the world that I will never go to. I manage a warehouse. But you know what? I'm okay with that. My role may not be as pivotal as yours, but we are both cogs in the same machine.</p>
+          <p> </p>
+          <p>Now, I want to help the war effort in any way I can. I usually make medicine, but I've recently run out of supplies. Perhaps while you are out in the field, you could collect the ingredients I need? All I need is a few [%dic:STR_DIC_I_quest_22010a]s from the [%dic:STR_DIC_M_LDF4b_T2_Spider_Leaf_58_An]s in Edendell.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, good. You returned. I had worried that you'd forgotten my small favor amongst all your grandiose tasks.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">"This should be everything you asked for."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>And it is! [%username], thank you so much.</p>
+          <p> </p>
+          <p>Though we lead very different lives, I am glad that our paths crossed this once. You have helped me, and I will help an army.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect [%dic:STR_DIC_I_quest_22010a]s and bring them to [%dic:STR_DIC_N_Iali].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Warehouse Keeper Iali wants to help the front. Go to Edendell, kill the Orchidae Arachnas there, and bring back their Leaf Legs so that Iali can make her medicine.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>A Warehouse Keeper named Iali told you that she wanted to help with the war effort. Though her skills were limited, she told you she could make fine medicine if she had the ingredients she needed. She asked you to gather them for her, and you did.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

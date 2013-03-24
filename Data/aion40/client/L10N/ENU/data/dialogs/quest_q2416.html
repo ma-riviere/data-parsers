@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Are you busy, [%username]? They keep us so busy here, I don't have time to take care of anything for myself.</p>
+          <p> </p>
+          <p>If you don't mind, could you help me with something? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"What do you need?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'd like to prepare some Roast Abex on a skewer. </p>
+          <p> </p>
+          <p>This delicacy is not for me but...rather it's for...hmm, a friend who is rather glum lately.</p>
+          <p> </p>
+          <p>I want to cheer him up by making his favorite dish. But who has time to get ingredients around here?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"You want me to go shopping for you?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Not shopping Daeva, hunting. I have the spices I need, but not the [%dic:STR_DIC_I_QUEST_2416a] and [%dic:STR_DIC_I_QUEST_2416b].</p>
+          <p> </p>
+          <p>With your considerable prowess, you should have no problem getting them, [%username].</p>
+          <p> </p>
+          <p>I don't want to pressure you but it would really help me out. What do you say?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you so much. Please bring some [%dic:STR_DIC_I_QUEST_2416a] and five [%dic:STR_DIC_I_QUEST_2416b].</p>
+          <p> </p>
+          <p>Oh and keep this to yourself, all right? I don't need every hungry mouth for miles beating down my door.</p>
+          <p> </p>
+          <p>I can hear Tyr's stomach growling from out here!</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"One Abex Skewer coming up!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well all I can do is ask.</p>
+          <p> </p>
+          <p>I know it's not a vital quest but I had hope that you'd help out.</p>
+          <p> </p>
+          <p>I will get them by myself.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Sorry."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did you bring the ingredients I asked for?</p>
+          <p> </p>
+          <p>Well? Hand them over, I need to cook them while they are still fresh.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Abex move faster than I remember."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I know you're very busy, but I really need those ingredients as soon as possible.</p>
+          <p> </p>
+          <p>Please bring one piece of [%dic:STR_DIC_I_QUEST_2416a] and five [%dic:STR_DIC_I_QUEST_2416b].</p>
+          <p> </p>
+          <p>I am preparing the sauce right now so the sooner you get those to me, the better!</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll get right on that."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh you brought everything I needed!</p>
+          <p> </p>
+          <p>This sirloin is very fresh!</p>
+          <p> </p>
+          <p>Thank you very much! </p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Obtain [%dic:STR_DIC_I_QUEST_2416a] and [%dic:STR_DIC_I_QUEST_2416b] and bring them to [%dic:STR_DIC_N_Gullveig].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Obtain some cooking ingredients and bring them to Gullveig so that she can make a dish for her friend.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Gullveig asked you to procure some cooking ingredients for her.</p>
+          <p> </p>
+          <p>You brought Abex Sirloin and Sparkle Wings to her, for which she thanked you.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

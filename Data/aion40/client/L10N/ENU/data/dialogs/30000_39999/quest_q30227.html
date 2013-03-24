@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I see it now...I see it so clearly. The souls of the Daevas are imprisoned in the Beshmundir Temple...in some subterranean river.</p>
+          <p> </p>
+          <p>The spirit of a Daeva named Calike has shown me...shown me that an evil shaman has captured their souls.</p>
+          <p> </p>
+          <p>He's using their agony and torment as some type of energy source.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"That's horrible!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>They were Daevas who fought against the Balaur...but now they're somehow trapped by this wicked shaman.</p>
+          <p> </p>
+          <p>We must free their souls, [%username]. I am but a Daeva of the cloth...my faith is my weapon. And although my faith is strong, it is not strong enough to help them.</p>
+          <p> </p>
+          <p>They need a skilled [%userclass] to free them. For the sake of Siel, would you lend your wings to help them?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, faith and arms, [%username]! I hoped I could count on you. First, go to [%dic:STR_DIC_W_IDCatacombs_SZ_B3] under the Beshmundir Temple and meet [%dic:STR_DIC_N_Calike].</p>
+          <p> </p>
+          <p>He will tell you how to free the souls of the Daevas. It won't be easy, but I will pray for you. I will pray for all the Seraphim Lords to protect you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll kill this shaman!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You have become a heartless Daeva, [%username]. The souls of our brothers and sisters are being torn to pieces, and all you do is walk away.</p>
+          <p> </p>
+          <p>If you won't do it for me, you must do it for them.</p>
+          <p> </p>
+          <p>I did not ask for these dreams, Daeva. But when someone needs my help, I do all I can.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"That's why you're a priest."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Siel has sent us a hero to save us from this torture! We never lost hope that our prayers would be answered. Never!</p>
+          <p> </p>
+          <p>Please, Daeva, destroy Macunbello and end our torment. We have been here for so long. We have suffered for so long.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"How do I kill him?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Macunbello uses our pain as energy...our suffering is his strength. You must take the raft to the island and return the souls of Daevas to the flow of Aether.</p>
+          <p> </p>
+          <p>The more souls you free, the weaker Macunbello will become. And then you must defeat [%dic:STR_DIC_E_IDCatacombsN_Lichkey4_55_Ae] quickly in order to face [%dic:STR_DIC_E_IDCatacombsN_LichNmd_55_Ah].</p>
+          <p> </p>
+          <p>I know it seems cruel, but you must destroy the souls of the Daevas to free them. That is the only way. Speak with the boatman, and he will take you to the island.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"Understood."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I haven't slept in so long, [%username]. The screams terrify me now.... All I can do is lay there and listen to them suffer.</p>
+          <p> </p>
+          <p>Were you able to free the souls of the Daevas and destroy Macunbello? Are they one with the Aether again?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"They are free, priest."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I know their souls owe you a debt of gratitude, [%username]. They can rest now--their suffering has ceased.</p>
+          <p> </p>
+          <p>I am also very grateful to you. You have removed a great burden from my heart.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk to [%dic:STR_DIC_N_Calike].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Free the souls of Daevas and defeat [%dic:STR_DIC_E_IDCatacombsN_Lichkey4_55_Ae] within the given timeframe ([%5]/1).</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Destroy [%dic:STR_DIC_E_IDCatacombsN_LichNmd_55_Ah] ([%8]/1).</font></p></step>
+               <step><p visible="[%9]"><font color="[%10]">Report the result to [%dic:STR_DIC_N_Kailaus].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Free the souls of Daevas bound to Acheron Mire and destroy their captor, Macunbello.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Kailaus said the souls of Daevas were being tortured at Acheron Mire under the Beshmundir Temple.</p>
+          <p> </p>
+          <p>When you returned from freeing the souls and destroying Macunbello, Kailaus praised you for your compassion.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

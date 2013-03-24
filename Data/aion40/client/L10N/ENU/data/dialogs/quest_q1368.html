@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You helped us last time.</p>
+          <p> </p>
+          <p>Made Mabangtah happy.</p>
+          <p> </p>
+          <p>We Kobolds repay your kindness.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Repay me? How?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We have secret recipe. We tell you about secret food.</p>
+          <p> </p>
+          <p>The best food both Krall and Kobolds love. Daeva will love it too.</p>
+          <p> </p>
+          <p>We need your help, though.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I expected that."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We have no ingredients to make it. Difficult to get those ingredients. You can bring us what we need?</p>
+          <p> </p>
+          <p>You get them, and then we tell you about the secret food.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We tell you the ingredients. We need [%dic:STR_DIC_I_QUEST_1368a], [%dic:STR_DIC_I_QUEST_1368b], [%dic:STR_DIC_I_QUEST_1368c], and [%dic:STR_DIC_I_QUEST_1368d].</p>
+          <p> </p>
+          <p>Others you can collect, buy. Wind Breeze Hot Spice is special. Only Shugo peddlers sell. We think in the Eracus Temple Cavern at night.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_I_QUEST_1368d] is available in Daeva city. You can buy it from [%dic:STR_DIC_N_Luelas], a Cooking Merchant. Bring us all these ingredients.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Sounds tasty."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You ignore us?</p>
+          <p> </p>
+          <p>We sad. It really good food.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Just stop waving that ladle at me."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Do you have it all for us? [%dic:STR_DIC_I_QUEST_1368a], [%dic:STR_DIC_I_QUEST_1368b], [%dic:STR_DIC_I_QUEST_1368c], and [%dic:STR_DIC_I_QUEST_1368d]?</p>
+          <p> </p>
+          <p>Fresh ingredients make better food. Give us all the ingredients and we will show you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I finished your shopping."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You brought us not enough ingredients.</p>
+          <p> </p>
+          <p>We cannot make special food without all ingredients. Do you need us to tell you again?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I've got the list."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Now you have our secret recipe, too. You will enjoy. We repaid your kindness.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Gather food ingredients and take them to [%dic:STR_DIC_N_Brownie_Cook].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">A Kobold cook promised to give you a secret recipe, if you gather [%dic:STR_DIC_I_QUEST_1368a], [%dic:STR_DIC_I_QUEST_1368b], and [%dic:STR_DIC_I_QUEST_1368d]. She also said you could find [%dic:STR_DIC_I_QUEST_1368c] in the Eracus Temple Cavern at night.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>A Kobold cook shared a secret recipe with you as a reward for your help obtaining the ingredients.</p>
+          <p> </p>
+          <p>You brought him Crestlich Breast Meat, a Ruta, some Wind Breeze Hot Spice, and some Kukuru Powder, and he taught you his secret recipe.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

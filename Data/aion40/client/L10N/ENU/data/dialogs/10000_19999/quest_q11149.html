@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Do you see those swirling winds down by the gate, [%username]?</p>
+          <p> </p>
+          <p>Windstreams may be consistent, but geysers are shy things. They hide and then spout irregularly.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"How do we know anything about them?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, we've observed a lot of geysers in the Inggison Gravepit, especially between the Sawtooth Gate and the Angrief Gate.</p>
+          <p> </p>
+          <p>That's about all we know. So our first order of business is to find out exactly where they're located.</p>
+          <p> </p>
+          <p>Would you like help?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The best we can tell, the [%dic:STR_DIC_SEN_LF4_SensoryArea_Q11149A] is right under the cliff of the Sawtooth Gate.</p>
+          <p> </p>
+          <p>Then, you can walk north along the valley from the geyser to find the [%dic:STR_DIC_SEN_LF4_SensoryArea_Q11149B] and the [%dic:STR_DIC_SEN_LF4_SensoryArea_Q11149C].</p>
+          <p> </p>
+          <p>When you've determined their exact locations, please report back to me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"It'll be a nice sightseeing tour."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>My guards protect this area without breaks, and you can't even go walkies for some geysers?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Blow it out your ear, lady."</Act>
+    </Selects>
+  </HtmlPage>
+  
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Aaaand, once more Sanctum rejected my request for additional personnel, even when I explained our need to keep an eye on the unpredictable geysers! Anyone could fly through here.</p>
+          <p> </p>
+          <p>If only we knew exactly where the Windstreams and geysers were...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Good news! You know that now!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Your information will be very helpful for protecting the Sawtooth Gate and the Inggison Outpost.</p>
+          <p> </p>
+          <p>Thank you. This is your reward.</p>
+         </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Investigate geysers in the Inggison Gravepit.</font></p>
+                     <p visible="[%3]"><font color="[%4]">  Investigate the [%dic:STR_DIC_SEN_LF4_SensoryArea_Q11149A][%5].</font></p>
+                     <p visible="[%6]"><font color="[%7]">  Investigate the [%dic:STR_DIC_SEN_LF4_SensoryArea_Q11149B][%8].</font></p>
+                     <p visible="[%9]"><font color="[%10]">  Investigate the [%dic:STR_DIC_SEN_LF4_SensoryArea_Q11149C][%11].</font></p></step>
+               <step><p visible="[%12]"><font color="[%13]">Talk with [%dic:STR_DIC_N_LF4_Gateway_Li_Guard_Boss_Q05].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Investigate geysers in the Inggison Gravepit as Lady Pasiphae requested.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Lady Pasiphae said she needed to find out exactly where the geysers are in the Inggison Gravepit, and she asked you to investigate.</p>
+          <p> </p>
+          <p>You mapped the Sulfur Geyser, the Pool Geyser, and the Rock Geyser. Then you returned, and she rewarded you for acquiring helpful information.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

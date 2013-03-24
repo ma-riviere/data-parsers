@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This is not a good time to be here, [%username]. Those blasted Balaur at the Naduka Biolab are messing with us.</p>
+          <p> </p>
+          <p>How? Bees! I've seen them myself. We were already warned by an Archon named Vyuin that the Balaur were experimenting with bees.</p>
+          <p> </p>
+          <p>Come to think of it, ours showed up not long after he left. That's some coincidence....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Yeah, coincidence...not bad luck."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>At any rate, we knew something was wrong when they showed up. Bees aren't exactly common in this region, after all.</p>
+          <p> </p>
+          <p>Olga is saying they're "messengers of the tippled jesters," whatever that means. They've been hovering nearby, but haven't attacked...yet.</p>
+          <p> </p>
+          <p>I understand they're faster, more aggressive, and have strong venom. We need your help to get rid of them NOW.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Listen carefully. The [%dic:STR_DIC_W_DF4_SZ_C5_Lab] is in the deep end of the Petralith Canyon.</p>
+          <p> </p>
+          <p>We have no real idea what the Balaur are doing there...or to what. So I wouldn't go in unprepared.</p>
+          <p> </p>
+          <p>We'll hunker down in the meantime in case the [%dic:STR_DIC_M_DF4_W_C5_Bee_DR_lab_55_An]s attack again. We're counting on you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I won't let you down."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I suppose it's a bit much to expect of a lone Daeva, isn't it?</p>
+          <p> </p>
+          <p>Fine. I'll send for reinforcements from Pandaemonium. They'll feel out what's at the Biolab first before we do anything more.</p>
+          <p> </p>
+          <p>We'll play it your way for now, [%username]. I just hope we don't get stung to death before something gets done.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I suggest a bug-swatter."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I haven't seen a single blasted bee for hours now, let alone the swarms I'm used to.</p>
+          <p> </p>
+          <p>That must mean you just got back from the Naduka Biolab.</p>
+          <p> </p>
+          <p>I assume the [%dic:STR_DIC_M_DF4_W_C5_Bee_DR_lab_55_An]s are dead?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Swatted but good."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good. I think you just spared us a lot of hard hours of attack and defense. With foes as small as bees, it would've been tough.</p>
+          <p> </p>
+          <p>I can't imagine what it would've been like had their numbers grown even more. And the Biolab would've done it--count on it.</p>
+          <p> </p>
+          <p>You did us a good deed today, [%username]. I won't forget it, and neither will anyone I talk to.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Go to the [%dic:STR_DIC_W_DF4_SZ_C5_Lab] and wipe out [%dic:STR_DIC_M_DF4_W_C5_Bee_DR_lab_55_An]s.([%2]/10)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk to [%dic:STR_DIC_N_Helen].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Helline says that Massive Bee Swarms are gathering near the campsite. Go to the Naduka Biolab and break up their swarms.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Helline is concerned by Massive Bee Swarms that have been seen nearby. She theorized that they were the product of the Naduka Biolab.</p>
+          <p> </p>
+          <p>She sent you to the Biolab to get rid of the bees on their home turf, before they become a major threat.</p>
+          <p> </p>
+          <p>You went to the Naduka Biolab and wiped out the bees. Helline told you that you probably saved her and her troops a great deal of grief.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

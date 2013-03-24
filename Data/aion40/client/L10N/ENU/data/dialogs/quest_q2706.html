@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q2706</QuestId>
+    <QuestName>Defeating Rank 5 Elyos Soldier</QuestName>
+    <QuestType>Not entered</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Daeva, this will be the last mission I assign you for now. It's also the most difficult so far.</p>
+          <p> </p>
+          <p>But you [%username]...I'm sure that you will complete the mission successfully.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I will do my best."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Rank 5 troops have greater combat abilities than the other Elyos you have dealt with. They are seasoned troops, experienced in the arts of war.</p>
+          <p> </p>
+          <p>But surely they are no match for a battle-hardened veteran like you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Then go! Defeat [%dic:STR_DIC_E_Lgrade5]s. Pulverize these obstacles to Asmodian victory. Exterminate all those you encounter, especially if they look like they'd cause your comrades problems.</p>
+          <p> </p>
+          <p>Each death you deal out will stir the morale of your fellow Asmodians.</p>
+          <p> </p>
+          <p>Fight bravely Daeva, and come back safe.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll return as soon as I'm done."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah Daeva, you deserve some rest and respite from this endless combat.</p>
+          <p> </p>
+          <p>You have fought fiercely without cease. Once you have recovered you will, no doubt, be ready to take on even greater challenges. Return to me then.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You have returned, [%username].You look weary. Did you defeat the [%dic:STR_DIC_E_Lgrade5]s? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Aye Lisya, the Rank 5 Elyos are no more."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Your hard work in completing these missions, [%username], will be remembered by the Red Hasia.</p>
+          <p> </p>
+          <p>You have been of great help to our Legionaries.</p>
+          <p> </p>
+          <p>Accept this reward for your service and diligence.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Fight and defeat [%dic:STR_DIC_E_Lgrade5]s ([%2]/10).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report the result to [%dic:STR_DIC_N_Lasanya].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Defeat Rank 5 Elyos Soldiers for an Asmodian victory in the Abyss.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Lisya assigned you one last mission: to defeat Rank 5 Elyos Soldiers.</p>
+          <p> </p>
+          <p>As she ordered, you defeated many Rank 5 Elyos Soldiers. When you returned to Lisya, she thanked you for diligently completing these missions.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

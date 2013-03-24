@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(A journal with criminal names, bounties, and other details written in.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"What bounty hunter keeps notes? Rosina?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hello, [%username]. I'm ready to leave this desert, but Captain Oileus won't even think about leaving.</p>
+          <p> </p>
+          <p>There's a saying that the busy worker can become too engrossed in the hobby. I guess it's true, since it looks like the Captain has fallen in love seriously this time.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">"Is this journal yours?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Nope. I keep all my notes in my head.</p>
+          <p> </p>
+          <p>Did you look at this? This is scary. This hunter's traps kill the wanted criminals. What if some innocent person wanders in...?</p>
+          <p> </p>
+          <p>Do you want to bring it to [%dic:STR_DIC_N_Tityus] and ask him?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"I don't WANT to, but...sure."</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="select3">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Why are you bothering me?</p>
+          <p> </p>
+          <p>These dumplings are just about to come out. They don't make nearly enough. If you waste my time, others might get to them first.</p>
+          <p> </p>
+          <p>What do you want? Quickly!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT3_1">"Sorry! Is this yours?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select3_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What, a book? A journal? Why would I keep a journal?</p>
+          <p> </p>
+          <p>But this looks familiar.... Where did I see it?</p>
+          <p> </p>
+          <p>Ah! Right. Nagrunerk! I saw [%dic:STR_DIC_N_LF2a_Tavern_TrollBodyguard] holding this. I thought it was funny, such a small book in such a huge hand.</p>
+          <p> </p>
+          <p>Is that all? Don't bother me when dumplings are on the line.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO2">"O...kay."</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="select4">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Grr, busy...</p>
+          <p> </p>
+          <p>Grrr, master's whip...</p>
+          <p> </p>
+          <p>Grr, go...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT4_1">"This isn't yours, is it?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select4_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Grr, no...</p>
+          <p> </p>
+          <p>Grrr, master's...</p>
+          <p> </p>
+          <p>Grr, master [%dic:STR_DIC_N_Shugo_LF2a_14]'s book...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO3">"Wow. I even understood most of that."</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>So, what brings you here? Are you looking for someone?</p>
+          <p> </p>
+          <p>You came to the right place. Nagrunerk is the best, nyerk.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Did you lose this?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hey! This is.... Where did you find this?!</p>
+          <p> </p>
+          <p>Titirunerk took this along with all my.... Wait! You didn't read it, did you, nyerk?</p>
+          <p> </p>
+          <p>Here, take this! And forget you saw that journal!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Show the Red Journal to [%dic:STR_DIC_N_Rosina].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Show the Red Journal to [%dic:STR_DIC_N_Tityus].</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Show the Red Journal to [%dic:STR_DIC_N_LF2a_Tavern_TrollBodyguard].</font></p></step>
+               <step><p visible="[%9]"><font color="[%10]">Show the Red Journal to [%dic:STR_DIC_N_Shugo_LF2a_14].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Find the owner of the Red Journal you found in Marla Cave.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You found a Red Journal in Marla Cave. Inside were lists including the names, bounties, and characteristics of wanted criminals, and some gruesome depictions of death.</p>
+          <p> </p>
+          <p>You thought it belonged to a bounty hunter. You brought it to Rosina and Tityus and asked them if they knew anything about it. Tityus said that he saw Nagrunerk's bodyguard holding it.</p>
+          <p> </p>
+          <p>When you showed it to the bodyguard, he said it belonged to his master. When Nagrunerk saw the diary, he was surprised, said that it belonged to him, and gave you money to keep it quiet.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm so glad you went to the trouble of bringing me this bottle. Now I can finally get a sample of the poison to analyze, which will almost certainly lead me to a preventative vaccine.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"That's great news."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It really is great news.</p>
+          <p> </p>
+          <p>All I need to do now is collect the poison from Beritra's Weapon....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Ah...I see where this is going...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, but [%username]--you've been with me from the start and you know exactly what I'm trying to accomplish here! You're the perfect candidate to carry this task through to its end.</p>
+          <p> </p>
+          <p>The poison is easy to spot. It's the green puddle around [%dic:STR_DIC_W_STR_DF3_MS_Britra]. You just have to scoop it up. Quickly, of course.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Here's the potion bottle. Now, the most important part of this mission is that you must return no later than five minutes after scooping up the poison.</p>
+          <p> </p>
+          <p>After that, it will be useless--not worth analyzing.</p>
+          <p> </p>
+          <p>You should get going. The sooner you're back, the sooner I can find a vaccine.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"The task is mine."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You've seemed so interested up to this point. I can't imagine what's making you change your mind now.</p>
+          <p> </p>
+          <p>That's fine, though. Thank you for the bottle.</p>
+          <p> </p>
+          <p>You're free to go.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Good luck."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah! There you are, [%username].</p>
+          <p> </p>
+          <p>Were you successful? Do you have the potion?</p>
+          <p> </p>
+          <p>Hand it over quickly!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Here it is."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well done! I can tell by the color that it's quite strong.</p>
+          <p> </p>
+          <p>You did well and I'll analyze this right away. Thank you for all you've done.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Scoop the poison around [%dic:STR_DIC_W_STR_DF3_MS_Britra] into the potion bottle.</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Take the potion bottle to [%dic:STR_DIC_N_Gigrite] within five minutes.</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Once Gigrite had the Durable Potion Bottle, it was time to get the poison. Go to the Besfer Ghost Village to collect it.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Gigrite asked you to scoop poison from a puddle around Beritra's Weapon in Besfer Ghost Village. She said you should hurry and get the potion back to her.</p>
+          <p> </p>
+          <p>You did as you were asked and Gigrite got started on her vaccine.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

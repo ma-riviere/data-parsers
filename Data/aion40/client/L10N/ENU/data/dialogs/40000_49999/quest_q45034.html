@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Field Warden:</p>
+          <p> </p>
+          <p>Recent events have depleted our supply of medicinal herbs. While we have enough to handle present needs, refilling our stockpile is essential if we are to be prepared for future events. This is espcially crucial considering the recent disruption of our normal supply lines.</p>
+          <p> </p>
+          <p>All Field Wardens are asked to turn in any [%dic:STR_DIC_G_QUEST_45034_a] they might come across. This is a rather mundane substance, but a crucial one for producing medical supplies. Turn in any spare quantities to Field Agent [%dic:STR_DIC_N_Columba], who will see to it that they reach our stockpiles.</p>
+          <p> </p>
+          <p>Blood for blood, Warden.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll have to keep an eye out."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I didn't realize our engagement with the Lepharists had been so bloody as to use up so many potions. In fact, I was under the impression that things had been settled more peacably....</p>
+          <p> </p>
+          <p>But it's pointless to speculate--I am not privy to everything the Field Wardens do. All that matters right now is that we can use Neunan to replenish our stocks of potions. Did you bring any?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Herbal remedies, eh?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Surely by now you yourself have utilized herbs to heal wounds? Then you should know that even a tiny dose of herbs can do a great deal to ease pain and mend flesh. Every bit helps.</p>
+          <p> </p>
+          <p>So, we can stand here yapping about supply chains, or you can go and bring me some [%dic:STR_DIC_G_QUEST_45034_a]. Which one actually helps us, [%username]?</p>
+          <p> </p>
+          <p>I'll tell you which. The second one!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"But I wanted to talk about supply chains..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, thank you for this, [%username]. I do appreciate your time.</p>
+          <p> </p>
+          <p>Even the smallest effort helps immensely in the long run. You can't win a war without winning many small battles along the way. Some so small, no one even knows they're happening....</p>
+          <p> </p>
+          <p>Anyway, take this token to compensate you for today's exertions.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Gather [%dic:STR_DIC_G_QUEST_45034_a] and bring it to [%dic:STR_DIC_N_Columba].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">A letter has arrived from the Field Wardens. Follow its instructions.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>A letter from the Field Wardens asks Wardens to gather Neunan, which will be used to refill the Wardens' stock of medical supplies.</p>
+          <p> </p>
+          <p>You collected Neunan and brought it to the Beluslan Field Agent, who rewarded you for your time.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

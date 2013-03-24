@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sample_macro>
+	<macro>
+		<name>War Cry</name>
+		<icon>1</icon>
+		<desc>Shouts the name of the automatically selected target and begins to attack.</desc>
+		<command>/AutomaticSelection</command>
+		<command>/Shout Attack [Target]!</command>
+		<command>/attack</command>
+	</macro>
+	<macro>
+		<name>Heal Ally</name>
+		<icon>2</icon>
+		<desc>Heals Group Member 1 and selects the previous target once again.</desc>
+		<command>/Select [Group1]</command>
+		<command>/Skill Healing Light I</command>
+		<command>/Delay 2</command>
+		<command>/Select [PreviousTarget]</command>
+	</macro>
+	<macro>
+		<name>Assist</name>
+		<icon>3</icon>
+		<desc>Attacks the target selected by Group Member 1.</desc>
+		<command>/Select [Group1]</command>
+		<command>/Group Attack [TargetOfTarget] selected by [Group1]!</command>
+		<command>/Select [TargetOfTarget]</command>
+		<command>/attack</command>
+	</macro>
+	<macro>
+		<name>Many Skill</name>
+		<icon>4</icon>
+		<desc>Uses the skills registered in the first and second slots of the Quickbar in succession.</desc>
+		<command>/AutomaticSelection</command>
+		<command>/Quickbar 1 1 1</command>
+		<command>/Delay 3</command>
+		<command>/Quickbar 1 1 2</command>
+	</macro>
+	<macro>
+		<name>Variable</name>
+		<icon>1</icon>
+		<desc>Registers the name of a desired skill in Variable 1 to use the selected skill on the entire group.</desc>
+		<command>/Variable 1 Blessing of Health 1</command>
+		<command>/Select [Group1]</command>
+		<command>/Skill [Variable1]</command>
+		<command>/Delay 2</command>
+		<command>/Select [Group2]</command>
+		<command>/Skill [Variable1]</command>
+		<command>/Delay 2</command>
+		<command>/Select [Group3]</command>
+		<command>/Skill [Variable1]</command>
+		<command>/Delay 2</command>
+		<command>/Select [Group4]</command>
+		<command>/Skill [Variable1]</command>
+		<command>/Delay 2</command>
+		<command>/Select [Group5]</command>
+		<command>/Skill [Variable1]</command>
+		<command>/Delay 2</command>
+	</macro>
+</sample_macro>

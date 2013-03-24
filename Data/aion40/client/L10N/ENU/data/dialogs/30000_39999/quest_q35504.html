@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p align="center"> - CONFIDENTIAL - </p>
+          <p> </p>
+          <p>From: Radiant Ops Headquarters</p>
+          <p>To: Agent [%username]</p>
+          <p> </p>
+          <p>Subject: Unconfirmed reports of Asmodian presence in Inggison. Enemy activity at this location threatens Elyos forces in Balaurea. Asmodians forces must not be allowed to stand in the way of the Elyos.</p>
+          <p> </p>
+        <p>Orders: Locate and eliminate at least five combat-worthy Asmodians in [%dic:STR_DIC_W_ZONE_NAME_LF4]. Terminate with extreme prejudice. On mission completion, report to the [%dic:STR_DIC_E_35503].</p>
+          <p> </p>
+          <p>Fly in the glory of Aion's tower.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Extreme prejudice, awesome!"</Act>
+    </Selects>
+  </HtmlPage>
+
+   <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well I'll be a prickle-backed Mookie, [%username]'s back!</p>
+          <p> </p>
+          <p>I wasn't sure we'd be seeing you again after that last mission. We've lost a lot of agents in [%dic:STR_DIC_W_ZONE_NAME_LF4] lately.</p>
+          <p> </p>
+          <p>Give me your report...and tell me what really happened.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"It was an adventure, that's for sure."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I just got confirmation of your success, [%username]. Nice job.</p>
+          <p> </p>
+          <p>I bet those Asmodian bats are quaking in their boots now. They'll won't be so quick to try advancing into Radiant Ops territory again!</p>
+          <p> </p>
+          <p>Here, take this package from Radiant Ops Headquarters. You deserve it.</p>
+          <p> </p>
+          <p>For Sanctum and glory!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Eliminate the [%dic:STR_DIC_E_Daily_1] infiltrators in [%dic:STR_DIC_W_ZONE_NAME_LF4] ([%2]/5).</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">On mission completion, report to the [%dic:STR_DIC_E_35503].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Daily Order: Eliminate the Asmodians causing disturbances in Inggison and report back to the Inggison Radiant Ops agent.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Radiant Ops Headquarters issued a daily order for the elimination of Asmodians who infiltrated Inggison.</p>
+          <p> </p>
+          <p>Success. You eliminated the troublesome Asmodians and received a reward from Radiant Ops.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+	 	  <HtmlPage name="select_acqusitive_quest_desc">
+	 	    <Selects>
+	 	      <Act>New quest: [%questname]</Act>
+	 	    </Selects>
+	 	  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

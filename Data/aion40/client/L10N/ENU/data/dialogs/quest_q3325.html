@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Most duties around here can be handled by a single Daeva, but when we're on patrol we travel groups.</p>
+          <p> </p>
+          <p>You wouldn't think that Clodworms, Amphas, and Gryphus would be much of a challenge, but several patrols were injured in rampaging Ampha stampede last week. What a disaster that was!</p>
+          <p> </p>
+          <p>When something like that happens, you do NOT want to be out there alone!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"That's terrible."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're probably accustomed to the desert by now, [%username]. How about giving us hand with some of the dangerous beasts in the area? They're making this route unsafe to travel.</p>
+          <p> </p>
+          <p>We're going to focus on the [%dic:STR_DIC_M_Clodworm_29_An]s, [%dic:STR_DIC_M_Worm_30_An]s, and [%dic:STR_DIC_M_Condor_30_An]s.</p>
+          <p> </p>
+          <p>We can't kill them all...but we can sure put a dent in their numbers.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thanks. The Guardian Watchman of Sanctum will be happy to reward you for your assistance. We're proud, but we know when to ask for help.</p>
+          <p> </p>
+          <p>When you're done, come back and see me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"See you in a few."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Right. I thought you might have other pressing business. Sorry I bothered you.</p>
+          <p> </p>
+          <p>Have a safe journey, Daeva.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Thanks. I'll try."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I just saw you in action up there. Impressive!</p>
+          <p> </p>
+          <p>Fabulous skill and tenacity!</p>
+          <p> </p>
+          <p>Looked like you cleared out a bunch of Wriggling Clodworms, Dune Amphas, and Big Wing Gryphus.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Yes. It's a bit of a mess up there now."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you, [%username]. Without you, this task would've taken a lot longer.</p>
+          <p> </p>
+          <p>Please, take this for your troubles.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Kill the creatures in the desert.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Clodworm_29_An]([%2]/5)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Worm_30_An]([%5]/5)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Condor_30_An]([%8]/5)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Speak to [%dic:STR_DIC_N_Acaste].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">You accepted Acaste's request to kill the creatures threatening travelers through the desert.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Acaste said that the ferocious creatures in the desert are a threat to travelers.</p>
+          <p> </p>
+          <p>He was thrilled when you helped make the route safer by killing Wriggling Clodworms, Dune Amphas, and Razorwing Gryphus. Plus, he gave you a nice reward for your troubles.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

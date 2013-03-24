@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, just a moment! Wait a minute, please.</p>
+          <p> </p>
+          <p>Err, are you busy now?</p>
+          <p> </p>
+          <p>Can I ask you a favor?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What is it now?"</Act>
+    </Selects>
+  </HtmlPage> 
+
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The more I eat, the hungrier I become. I'm afraid this isn't going to be enough.</p>
+          <p> </p>
+          <p>Just a bit more to fill my belly. Some more [%dic:STR_DIC_E_berry_d_n_c_20b]s and [%dic:STR_DIC_E_vegetable_d_n_c_20b], which grow nearby, should do it. </p>
+          <p> </p>
+          <p>Would you help me again? Perhaps in return for a reward?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you. Bring me some [%dic:STR_DIC_E_berry_d_n_c_20b]s and some [%dic:STR_DIC_E_vegetable_d_n_c_20b].</p>
+          <p> </p>
+          <p>They shouldn't be hard to find.</p>
+          <p> </p>
+          <p>I'm very hungry so please, try to hurry.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I am the vegetable slayer."</Act>
+    </Selects>
+
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You don't need to be sorry. I've asked too much of you.</p>
+          <p> </p>
+          <p>I will get the food myself. Don't worry about me.</p>
+          <p> </p>
+          <p>Thanks to the Rabano you brought me before, I've gained enough energy to get them myself.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"You might need the exercise."</Act>
+    </Selects>
+  </HtmlPage>
+ 
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, you're back!</p>
+          <p> </p>
+          <p>Give me what you brought first. We'll talk later about what happened.</p>
+          <p> </p>
+          <p>I ate more Rabano, but I am still hungry.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"This is the Kirka and Chikra I could find."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hmm, does this look like enough [%dic:STR_DIC_E_berry_d_n_c_20b]s and [%dic:STR_DIC_E_vegetable_d_n_c_20b] to you? </p>
+          <p> </p>
+          <p>That's really strange... We'd better have a serious discussion about your ability to count.</p>
+          <p> </p>
+          <p>After you bring me all the food I asked for, that is.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"No reward is worth this...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, these look very fresh!</p>
+          <p> </p>
+          <p>Thank you! Maybe now I can get my stomach to stop growling.</p>
+          <p> </p>
+          <p>Please take this. It's a reward for your hard work.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect [%dic:STR_DIC_E_berry_d_n_c_20b]s and [%dic:STR_DIC_E_vegetable_d_n_c_20b], then bring them to [%dic:STR_DIC_N_DF2_NPC_Sprigg].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Collect Kirka and Chikra and bring them to Vivi.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>After eating the Rabano, Vivi said that he was still hungry and asked you to collect Kirka and Chikra for him.</p>
+          <p> </p>
+          <p>You collected Kirka and Chikra from nearby and brought them to him. Then he thanked you and rewarded you.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

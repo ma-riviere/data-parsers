@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I suppose we're not going to get any more information out of the report you found. To find out what the Balaur are planning, we need to pay them a visit.</p>
+          <p> </p>
+          <p>Considering where their supplies are transported, I would say that their final destination is likely the Silentera Canyon. And since a ritual is involved, there seems to be only one possibility. The Beshmundir Temple.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"That seems likely."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Whatever kind of ceremony they have planned, we need to stop it. Nothing the Balaur are up to can be any good for us.</p>
+          <p> </p>
+          <p>As you probably know, the Beshmundir Temple is not easy to access. Neither is the Silentera Canyon. It won't be easy, but I need your help [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>With all the secrecy involved here, my guess is that you will need to access the deepest part of the Beshmundir Temple. It won't be easy.</p>
+          <p> </p>
+          <p>Get rid of any Temple Protectors in your way, and then eliminate whoever is in charge of the ritual. I read a report that someone named [%dic:STR_DIC_E_IDCatacombsN_DrakanMonkBossNmd_55_Ah] was in the area, but I can't be sure he's involved. We shall see.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_W_ZONE_NAME_IDCatacombs] is only accessible when the entrance of the Silentera Canyon is open. Watch the corridor carefully so you don't miss your chance.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm on my way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Too challenging for you? Refusing a mission like this is disrespectful to the Shedim Lords, [%username]. I hope you will reconsider.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I will think on it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've been waiting for your return, [%username]. Did you finish the task I gave you?</p>
+          <p> </p>
+          <p>Has Isbariya the Resolute been dispatched, along with the Temple Protectors?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Yes, but..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>A warning from Isbariya? This is ominous. I wonder if this was all a terrible idea....</p>
+          <p> </p>
+          <p>However, we can't sit here and dwell on regret. We have to face the consequences and do our best to avoid them.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get rid of the Protectors of the Beshmundir Temple.</font></p>
+                         <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_IDCatacombsN_DrakanMonk1Nmd_55_Ah] ([%2]/1)</font></p>
+                         <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_IDCatacombsN_DrakanMonk2Nmd_55_Ah] ([%5]/1)</font></p>
+                         <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_IDCatacombsN_DrakanMonk3Nmd_55_Ah] ([%8]/1)</font></p>
+                         <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_IDCatacombsN_DrakanMonk4Nmd_55_Ah] ([%11]/1)</font></p></step>
+               <step><p visible="[%12]"><font color="[%13]">Get rid of [%dic:STR_DIC_E_IDCatacombsN_DrakanMonkBossNmd_55_Ah]([%14]/1).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_N_Hler].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Get rid of Isbariya the Resolute and the Temple Protectors holding a suspicious ceremony at the Beshmundir Temple.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Richelle said that since there was no way of divining the purpose, the Balic ceremony must be stopped at all costs.</p>
+          <p> </p>
+          <p>You got rid of Isbariya the Resolute and the Protectors at the Beshmundir Temple, but when he was dying, Isbariya spoke a warning, echoed by a strange shriek from elsewhere.</p>
+          <p> </p>
+          <p>When you reported to Richelle, she wondered if all this hadn't been a mistake.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p> - 긴급 작전 명령서- </p>
+          <p></p>
+          <p> 1. 발신: 판데모니움 작전사령부</p>
+          <p></p>
+          <p> 2. 수신: [%username]</p>
+          <p></p>
+          <p> 3. 명령: </p>
+          <p></p>
+          <p>하나, 테오보모스 작전 수행을 방해하는 [%dic:STR_DIC_NPC_LF2A_DirectPortal_Guard_Li_Eh]를 처치하라.</p>
+          <p></p>
+          <p>둘, 작전 수행 결과는 마르쿠탄 템페르 훈련소에 있는 [%dic:STR_DIC_N_Sala]에게 보고하라.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">명령서를 접어 넣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>오셨습니까, [%username] 님.</p>
+          <p> </p>
+          <p>테오보모스에서 활약이 대단하셨다죠?</p>
+          <p> </p>
+          <p>보상을 준비해야 하니 정확한 보고를 해 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>임무 완수를 확인했습니다, [%username] 님.</p>
+          <p> </p>
+          <p>이번 임무에 대한 보상인데 마음에 들었으면 좋겠군요.</p>
+          <p> </p>
+          <p>그럼 다음에 또 뵙겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_NPC_LF2A_DirectPortal_Guard_Li_Eh]를 처치하라([%2]/2)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Sala]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">긴급 명령: 테오보모스 시공 작전을 방해하는 자마노크 대포 관리자를 처치한 후 살라에게 보고하라</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>판데모니움 작전사령부에서 자마노크 대포 관리자를 처치하라는 긴급 명령서를 받아 임무를 수행했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

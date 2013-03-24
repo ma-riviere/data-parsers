@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이 험난한 곳에 요새를 만들고 살아가는 인간도 대단하지만 이렇게 척박한 기후에서 살아가는 짐승들도 대단하다는 생각이 듭니다.</p>
+          <p> </p>
+          <p>하지만 그런 감탄은 솔직히 생물학자나 생태학자의 몫인 것 같습니다.</p>
+          <p> </p>
+          <p>저 같은 행정관은 주민이 짐승에게 피해를 안 입도록 숫자를 적절히 조절할 방법을 생각해야 하지요. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">고개를 끄덕인다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>요새 바로 앞인 모르헤임 만년설원부터 파타모르 고갯길까지 위험한 동물들이 많습니다.</p>
+          <p> </p>
+          <p>주민들이 마음 놓고 숲이나 이랄시그 마을로 갈 수가 없을 정도지요. </p>
+          <p> </p>
+          <p>[%username] 님이 좀 처치해 주시겠습니까? </p>
+          <p> </p>
+          <p>처치해야 하는 숫자가 많기는 하지만 동주화가 보상이니 수행할 만한 가치는 있을 겁니다. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>잘 생각하셨습니다.</p>
+          <p> </p>
+          <p>그럼 [%dic:STR_DIC_M_Zaif2D_21_An] 3마리, [%dic:STR_DIC_M_DaruD_21_n] 3마리, [%dic:STR_DIC_M_Ettin_all] 3마리를 처치하고 오십시오.</p>
+          <p> </p>
+          <p>놈들의 분포 상황에 맞춰 숫자를 정한 것이니까 꼭 저만큼씩 처치해 주십시오. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>숫자가 많다고 하니 엄두가 안 나시나 보군요.</p>
+          <p> </p>
+          <p>괜찮습니다. 주화를 원하는 데바가 많을 테니까요.</p>
+          <p> </p>
+          <p>나중에라도 주화가 필요하면 다시 오십시오. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>제가 부탁한 놈들은 모두 처치하셨습니까?</p>
+          <p> </p>
+          <p>시간이 꽤 걸릴 줄 알았는데 생각보다는 빨리 돌아오셨군요. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>수고하셨습니다.</p>
+          <p> </p>
+          <p>주민들도 [%username] 님께 고마워할 겁니다. </p>
+          <p> </p>
+          <p>약속드린 주화입니다. 받으십시오. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">요새 주위의 사나운 짐승을 사냥하라</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Zaif2D_21_An]([%2]/3)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_DaruD_21_n]([%5]/3)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Ettin_all]([%8]/3)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Nott]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">요새 주위에 사나운 짐승이 많아 주민들의 불편이 크다고 한다. 부탁받은 짐승들을 처치하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>노트는 요새 주위에 사나운 짐승이 많다면서 놈들을 처치하면 동주화를 주겠다고 했다.</p>
+          <p> </p>
+          <p>그래서 자이프와 다루, 에틴을 처치하고 주화를 받았다. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

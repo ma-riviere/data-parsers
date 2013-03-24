@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], as a Daeva, you're aware of the disorientation and pain that come from using an Obelisk. </p>
+          <p> </p>
+          <p>Resurrection causes serious physical and mental aftereffects.</p>
+          <p> </p>
+          <p>As Soul Healers, we help resurrected Daevas recover from these.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"And we appreciate it!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This may be a delicate subject, but as far as I know, the Lepharist Revolutionaries have surprisingly few Soul Healers.</p>
+          <p> </p>
+          <p>I asked around about this, and even sent a letter to a researcher who studies them.</p>
+          <p> </p>
+          <p>According to him, the Laboratory of WonshiKutz in the Lepharist Citadel makes a special ointment that helps Daevas recover from resurrection after effects.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Fascinating."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>His story fires my curiosity. What kind of ointment could equal the attentions of a Soul Healer? Apparently it smells terrible!</p>
+          <p> </p>
+          <p>The Lepharist Citadel isn't far from here, but a Human like me could never go there.</p>
+          <p> </p>
+          <p>[%username], will you go to the Laboratory of WonshiKutz and find some of the Smelly Ointment the Lepharists use? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you, thank you! What we discover from this...it could change everything.</p>
+          <p> </p>
+          <p>My source says The Laboratory of WonshiKutz is under the building located at the entrance of the Lepharist Citadel.</p>
+          <p> </p>
+          <p>I hope you'll be able to find the [%dic:STR_DIC_I_QUEST_2419a] there.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"The task is mine."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], even you must have resurrected at least once.</p>
+          <p> </p>
+          <p>I can't imagine how that felt, but as a Soul Healer, I've helped many Daevas recover afterward. I know it's not easy.</p>
+          <p> </p>
+          <p>This ointment could make resurrection easier for you and all your kind.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll think about it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>So many Daevas come for soul healing these days.</p>
+          <p> </p>
+          <p>I'm told the combat against the Lepharists is getting fiercer.</p>
+          <p> </p>
+          <p>Were you able to get some of the [%dic:STR_DIC_I_QUEST_2419a] they use?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I'll be honest, this wasn't easy."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What I'm asking may be nothing compared to defeating the Lepharists, but it will be helpful to all Daevas.</p>
+          <p> </p>
+          <p>I believe it's the most important thing I've ever been involved in.</p>
+          <p> </p>
+          <p>I can do neither without your help. Please bring back the [%dic:STR_DIC_I_QUEST_2419a] for me. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Sorry for the delay."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The researcher was right about one thing, at least--it smells terrible!</p>
+          <p> </p>
+          <p>I'll analyze the components--perhaps we can isolate the active ingredient and make an ointment that doesn't stink from here to Elysea.</p>
+          <p> </p>
+          <p>Thank you so very much!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Defeat the laboratory soldiers, procure [%dic:STR_DIC_I_QUEST_2419a] and take it to [%dic:STR_DIC_N_Malak].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Malak has heard that Smelly Ointment protects the Lepharists from Soul Sickness. Go to the Laboratory of WonshiKutz and procure the Smelly Ointment the Lepharists are known to use.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Soul Healer Malak wondered how the Lepharists could recover from Soul Sickness so easily without the aid of Soul Healers.</p>
+          <p> </p>
+          <p>Then, he heard that the Lepharists were using a special ointment and wanted to get it.</p>
+          <p> </p>
+          <p>You went to the Laboratory of WonshiKutz, defeated the Lepharists guarding the laboratory, and procured the Smelly Ointment for him. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

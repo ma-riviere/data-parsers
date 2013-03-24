@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I know there's a job to do here, but all the real action is at New Heiron Gate. The Balaur came through the Abyss Gate there, they attack constantly--and I got sent here.</p>
+          <p> </p>
+          <p>I want to fight!</p>
+          <p> </p>
+          <p>Either my superior doesn't like me, or he trusts me too much....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"You're pretty busy here."</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What else can I do but my duty? Spirits and the undead do present their own challenges.</p>
+          <p> </p>
+          <p>Though the undead walk at all hours of the day, Spirits show up only at night. Usually, they just hang around, but there's something strange going on at Medeus Manor Cemetery.</p>
+          <p> </p>
+          <p>I've seen [%dic:STR_DIC_M_UndeadLightWiCN_41_An]s performing a strange magical ritual, while [%dic:STR_DIC_M_UndeadLightFiCN_41_An]s stand guard.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"That's really odd."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Afterwards, conditions in and around Medeus Manor get worse--more undead, plants turning poisonous, monsters we've never seen before.</p>
+          <p> </p>
+          <p>One way or another, the land remains uninhabitable. We need to stop them.</p>
+          <p> </p>
+          <p>I could use your help, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>If you can eliminate the [%dic:STR_DIC_M_UndeadLightFiCN_41_An]s and [%dic:STR_DIC_M_UndeadLightWiCN_41_An]s, we can start reclaiming the land.</p>
+          <p> </p>
+          <p>Remember, they show up only at night. Be on the alert.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Faith and arms, Rance!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's one night's sleep and the kind of fighting you've done before. You know how short-handed we are.</p>
+          <p> </p>
+          <p>Why say no now?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Undead magic makes me nervous."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>How did it go out there, [%username]?</p>
+          <p> </p>
+          <p>Did you get rid of the Gladiator Spirits and the Missing Mage's Spirits?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Their revels all have ended."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent! I hope we can repair the damage.</p>
+          <p> </p>
+          <p>I want to see people return here to live before I leave.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get rid of spirits who appear only at night and perform strange rituals.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_UndeadLightFiCN_41_An] ([%2]/2)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_UndeadLightWiCN_41_An] ([%5]/2)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report the result to [%dic:STR_DIC_N_Rance].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Medeus Manor gets more devastated after spirits who appear only at night perform a strange ceremony. Eliminate the Gladiator Spirit and Missing Mage's Spirits.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Rance observed the Gladiator and Mage spirits performing magic that devastates Medeus Manor. You eliminated them to stop the damage.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

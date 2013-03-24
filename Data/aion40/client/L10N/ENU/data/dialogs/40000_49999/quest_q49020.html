@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q49020</QuestId>
+    <QuestName>Aegir's Orders</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p> - Emergency Order - </p>
+          <p> </p>
+          <p> 1. From: Archon Brigade General Aegir</p>
+          <p> </p>
+          <p> 2. To: [%username]</p>
+          <p> </p>
+          <p> 3. Order: The Elyos cowards have somehow ended up in Morheim. Wipe them out before they start planting trees and... skipping.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll see to them now."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You've got blood on you, [%username]. Too thin for Asmodian... did you receive my order?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I did. Task's done, too."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent work.</p>
+          <p> </p>
+          <p>The Elyos should know better than to invade our lands. Asmodae is a forge that turns the finest ore into steel, but melts dirt in minutes.</p>
+          <p> </p>
+          <p>We have become steel, [%username]. The Elyos will never understand that.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Kill the Elyos attacking Morheim ([%2]/5).</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Report to [%dic:STR_DIC_N_Aegir].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Emergency Order: Kill the Elyos who infiltrated Morheim while a Rift was open, then report to Aegir.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Elyos used a Rift to infiltrate Morheim. You eliminated the Elyos before reporting to Aegir for a reward.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

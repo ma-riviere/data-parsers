@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I have received orders, [%username]. Orders which must be carried out even though I am loath to do so. This world has spilled its lifeblood, Aether, which turns the natural into something quite unnatural.</p>
+          <p> </p>
+          <p>Perhaps I should have volunteered for Sanctum. Perhaps I should have devoted my life to the Five, but Atreia turns, and I must turn with it...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Er...something wrong?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's the Manduri forest. There are two problems I have been asked to address there. The first is a simple overpopulation of [%dic:STR_DIC_M_Vespa_21_n]s, but the second....</p>
+          <p> </p>
+          <p>Look at the ground, [%username]. Look at the rocks and soil--inanimate. Enter the Forest, though--the Aether has drawn some of these inanimate things together. The Aether has given them LIFE.</p>
+          <p> </p>
+          <p>We call them [%dic:STR_DIC_M_ElementalEarth2_21_An]s, and while we could grant them freedom and leave them alone, their rampaging ways threaten the safety of travelling Humans. They have to be destroyed. Would you help me?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you.</p>
+          <p> </p>
+          <p>I will wait here. Return to me when your work is done.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I will."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I understand.</p>
+          <p> </p>
+          <p>Destroying those which have only just been granted life is a terrible thing to have to do, but my orders still stand. If you change your mind, come back. I need good [%userclass]s like you to help out.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Good luck."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Back so soon, [%username]?</p>
+          <p> </p>
+          <p>I won't ask how the task was; I only hope your work is done.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"It is."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you, you have done well.</p>
+          <p> </p>
+          <p>There is more work that needs doing and I would like to call on you again, if I may. Take this for now--it is more than deserved.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Hunt the Vespines and Moss Spirits causing trouble in the Manduri Forest.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Vespa_21_n] ([%2]/7)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_ElementalEarth2_21_An] ([%5]/7)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_N_Androkles].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Hunt some of the Grove Vespines and Moss Spirits for Androkles.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Androkles received an order from the fortress to hunt Grove Vespines and Moss Spirits, something which pained him considerably.</p>
+          <p> </p>
+          <p>You successfully hunted for him and were asked to return when you have enough time, as further work needs to be done in the Forest.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

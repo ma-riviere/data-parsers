@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The undead are up to something.</p>
+          <p> </p>
+          <p>Usually they act alone. Lately I've seen them fighting as a group--but it's more than that.</p>
+          <p> </p>
+          <p>They seem to be organized--they have a leader.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"A leader? That's new."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Indeed. I've had scouts watching them. There's one undead they appear to follow.</p>
+          <p> </p>
+          <p>You've been up against these undead before, [%username]. I know you can deal with this upstart.</p>
+          <p> </p>
+          <p>Can I count on you?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good. That's what I wanted to hear.</p>
+          <p> </p>
+          <p>There's a stone altar in the Patema Ruins. My scouts have seen [%dic:STR_DIC_M_SpectreNamedQ_41_An] there at night. It's the perfect opportunity to make a move.</p>
+          <p> </p>
+          <p>This job should be fledgling's play for a talented Daeva like you--one location, one target.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Just a casual stretch of my wings."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Tired of dealing with the undead?</p>
+          <p> </p>
+          <p>I understand. It's messy business. But we can't resettle this region until we eliminate them. This leader is a complication we didn't expect.</p>
+          <p> </p>
+          <p>I hope you'll change your mind.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Faith and arms."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Arieluma, [%username]! I'm still pondering this idea of the undead having a leader. Coordinated attacks--who would have thought it possible?</p>
+          <p> </p>
+          <p>Makes me wonder if this Gellar was a military commander during his lifetime. Hmm.</p>
+          <p> </p>
+          <p>So, did you eliminate him?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I did, but not without a fight."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>But I knew you could do it. Getting rid of Gellar will make our job much easier.</p>
+          <p> </p>
+          <p>Thanks for your service, [%username], and for completing the mission successfully.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get rid of [%dic:STR_DIC_M_SpectreNamedQ_41_An] ([%2]/1).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report the result to [%dic:STR_DIC_N_Rance].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Get rid of Gellar, leader of the undead.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Rance found out that the undead had a leader called Gellar. He sent you to eliminated Gellar. Upon your success, Rance gave you a reward.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

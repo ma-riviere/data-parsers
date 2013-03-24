@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>보시다시피 저희는 조를 짜서 순찰을 돌고 있어요.</p>
+          <p> </p>
+          <p>이 앞을 지키는 보초병 역할이야 저 혼자서도 충분하지만 꽤 멀리만 나가도 위험한 것들이 많기 때문에 두 세 명씩 조를 짜지 않으면 안 되거든요.</p>
+          <p> </p>
+          <p>특히나 최근에는 순찰병이 동물들과 싸우다 부상을 입은 일도 있어요.</p>
+          <p> </p>
+          <p>스콜램피스니, 램피스, 시무르그가 겉보기엔 하찮아보여도 공격력은 이곳의 데바들을 다치게 할 정도니까요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님이라면 이제 사막에도 익숙해 지셨을 법한데, 저희들을 좀 도와주시는 것이 어떤가요?</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_Clodworm_29_An], [%dic:STR_DIC_M_Worm_30_An], [%dic:STR_DIC_M_Condor_30_An]를 처치해 주시면 됩니다.</p>
+          <p> </p>
+          <p>그것들은 한 두 마리 처치해서는 눈 꿈쩍도 하지 않는 둔한 놈들이니까 있는대로 잡아서 혼쭐을 내주셨으면 좋겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>고맙습니다. 저희도 가디언 파수병으로서 엘리시움의 녹봉을 먹고 있으니 임무를 도와 주시면 그만한 대가를 나눠 드려야겠지요.</p>
+          <p> </p>
+          <p>목적이 있어 여행중인 데바님을 공짜로 잡아 둘 수는 없는 노릇이니까요.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_Clodworm_29_An], [%dic:STR_DIC_M_Worm_30_An], [%dic:STR_DIC_M_Condor_30_An]%을 모두 처치하시면 돌아와서 말씀해 주시기 바랍니다. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>목적 없이 이런 사막에 오셨을 분도 아닌데 제가 너무 귀찮게 해드렸군요.</p>
+          <p> </p>
+          <p>조심해서 가시기 바랍니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>방금 저쪽에서 전투하시는 걸 봤습니다.</p>
+          <p> </p>
+          <p>들은대로 놀라운 솜씨더군요.</p>
+          <p> </p>
+          <p>제가 말씀드린대로 꿈틀대는 스콜램피스, 사구 램피스, 큰 날개 시무르그를 모두 처치하셨습니까? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">모두 처치했다고 한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정말 감사합니다. [%username] 님께서 해주신 일은 저희 정찰대원들이 3일 정도 고생해야 할 수 있는 일입니다.</p>
+          <p> </p>
+          <p>감사의 표시로 드리는 것이니 사양하지 말아주세요.</p>
+          <p> </p>
+          <p>정찰대원들의 수고를 덜어주셔서 정말 고맙습니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">사막의 생명체를 처치하라</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Clodworm_29_An]([%2]/3)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Worm_30_An]([%5]/3)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Condor_30_An]([%8]/3)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Acaste]%와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">사막을 지나는 데바들은 물론 정찰대원들까지 위협하는 생명체들을 처치해 달라는 아카스테의 부탁을 들어주는 것이 좋겠다.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아카스테는 사막의 생명체들이 생각보다 난폭해서 지나는 데바들은 물론 정찰대원들까지 위협하고 있다고 했다.</p>
+          <p> </p>
+          <p>그녀의 부탁으로 스콜램피스와 사구 램피스, 큰 날개 시무르그를 처치해 주자 고맙다며 답례했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

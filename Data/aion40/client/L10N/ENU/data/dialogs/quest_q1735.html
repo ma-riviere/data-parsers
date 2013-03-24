@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thanks to you, [%username], we have a fine stock of weapons.</p>
+          <p> </p>
+          <p>Now, we may focus on armor. Like the weapons, it must also be Aether-treated.</p>
+          <p> </p>
+          <p>And, as before, I regret to say that we have not enough....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Would you have me gather more?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I would be grateful to have any Aether you can provide!</p>
+          <p> </p>
+          <p>This time, we need [%dic:STR_DIC_G_od_n_r_40a]s extracted from [%dic:STR_DIC_G_od_40_1].</p>
+          <p> </p>
+          <p>I shall need bigger pieces than last time, but I am sure you can provide them?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">"Accept."</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">"Decline."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>As I said before, find [%dic:STR_DIC_G_od_n_r_40a]s in [%dic:STR_DIC_G_od_40_1].</p>
+          <p> </p>
+          <p>It may be even harder than last time, and it will require higher skill to extract them.</p>
+          <p> </p>
+          <p>Luck and light be with you, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Luck and light be with you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I understand why you refuse, and you have done much for me already.</p>
+          <p> </p>
+          <p>If you reconsider, I'm sure I can use your aid in the future.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I shall think on it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Have you found the [%dic:STR_DIC_G_od_40_1]?</p>
+          <p> </p>
+          <p>Have you brought enough [%dic:STR_DIC_G_od_n_r_40a]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here is what I have brought."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, it is not enough!</p>
+          <p> </p>
+          <p>I know I risk being impolite, but the situation grows urgent, and I would ask you to hurry.</p>
+          <p> </p>
+          <p>The Asmodians could attack at any time, after all, and we would be unarmored, defenseless!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I could fight them off. Don't fear."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Perhaps one day, you shall become the Daeva of Aethertapping!</p>
+          <p> </p>
+          <p>With this much Pristine Aether, I can outfit the entire Legion!</p>
+          <p> </p>
+          <p>Take this meager token of gratitude for all your help.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Extract [%dic:STR_DIC_G_od_n_r_40a] from [%dic:STR_DIC_G_od_40_1] and bring it to  [%dic:STR_DIC_N_Cymaon].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Pristine Aether is needed to make armor for the Abyss. Extract Pristine Aether and bring it to Cymaon.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Cymaon said that Pristine Aether is needed to make armor for the Abyss. He said that armor would require bigger pieces of Aether and higher skill to extract them.</p>
+          <p> </p>
+          <p>So you extracted Pristine Aether from the Burning Vortex and brought it to him.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

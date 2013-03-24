@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The order you found from the Lepharist Revolutionaries worries me, [%username].</p>
+          <p> </p>
+          <p>I reported it to the fortress and expect the deciphered message to come soon, but in the meantime, we have to take action.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"How do you mean?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We must take action against the Lepharist Revolutionaries.</p>
+          <p> </p>
+          <p>If we attack quickly, we could earn some time while the fortress examines the order.</p>
+          <p> </p>
+          <p>Will you do this for us? For the observatory?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you.</p>
+          <p> </p>
+          <p>Head to the [%dic:STR_DIC_W_DF1A_29]. Kill the Revolutionaries and bring their [%dic:STR_DIC_I_quest_2270a]s as proof.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"On my way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Perhaps you don't realize how important the Altgard Observatory is, [%username].</p>
+          <p> </p>
+          <p>Never mind. I'll seek out another Daeva.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Good luck."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did you kill the Lepharist Revolutionaries?</p>
+          <p> </p>
+          <p>Please, show me the proof.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here you go...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You haven't gone yet?</p>
+          <p> </p>
+          <p>Should I explain the importance of the observatory a bit more slowly, so you'll understand?</p>
+          <p> </p>
+          <p>Go! Kill them and bring back the proof!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You brought the insignias of the Revolutionaries! Excellent!</p>
+          <p> </p>
+          <p>This should buy us some extra time to hear back from the fortress.</p>
+          <p> </p>
+          <p>Thank you. Take this for your trouble.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Bring the proof that you killed some [%dic:STR_DIC_M_LehparWaD_17_An_q]s and [%dic:STR_DIC_M_LehparPriestD_17_An]s to [%dic:STR_DIC_N_Neifenmer].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Neifenmer asked you to get rid of the Lepharist Revolutionaries so that their plans may be delayed.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Neifenmer asked you to help buy them some time until they hear back from the fortress about the Lepharists' plans. He asked you to kill some Lepharist Revolutionaries to delay their plans, and bring back proof of your actions.</p>
+          <p> </p>
+          <p>You went to their campsite and brought the Lepharists' Insignias back to him.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

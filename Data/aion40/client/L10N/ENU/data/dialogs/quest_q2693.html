@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]! I've had a message for you. You're to go to the Beluslan Fortress and find Brigade General Nerita.</p>
+          <p> </p>
+          <p>The quartermaster who just came through said that the Brigade General was looking for you. I wouldn't waste any time--get going.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What's wrong?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Do I know? Do I have nothing better to do here than take messages for you? If Brigade General [%dic:STR_DIC_N_Nerthus] wants to see you, she's probably going to give you an important mission. Why else would she try to track you down? </p>
+          <p> </p>
+          <p>Anyway, get going so I can get back to work. Blood for blood. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, and if you feel up to it, you might pass along a good word for us here. Out of sight, out of mind, as they say, and we could use some attention down here. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I shall. For Asmodae."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're...refusing? To go see the Brigade General? Are you insane? You had better have something truly important to occupy your attention. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'd tell you, but I'd have to kill you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, there you are. I've been waiting for you to drop by. Tell me, do you know of the Krall? </p>
+          <p> </p>
+          <p>They're a race of sapiens that live in Elysea.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">"I haven't heard of them."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Spies have brought back information that they can use Aether. They probably learned it from the Balaur. </p>
+          <p> </p>
+          <p>Some Krall have gone mad, however, possibly from using too much Aether. They've begun attacking one another in great battles for no apparent reason. I want to know why.</p>
+          <p> </p>
+          <p>I want you to bring me a sample of the Aether energy that drove them mad. I'm given to understand it's somewhere around the Kishar Village in Heiron. Go to the Ghost Village Observation Post and talk to [%dic:STR_DIC_N_Sorgrim]. He'll tell you how to get there. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"The task is mine."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, [%username]. I've been waiting for you. This is a dangerous mission, but Brigade General Nerita has confidence in your abilities. I've rarely seen her so impressed with anyone. Hope you live up to her expectations. </p>
+          <p> </p>
+          <p>The first difficulty you'll face is that the Krall are at least as agressive as the Mau. It's not going to be easy. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"How do I get there?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The rift you'll need usually appears in Mahisha's Nest. It's a little to the southwest of Kidorun's Campsite. It only appears irregularly, though. </p>
+          <p> </p>
+          <p>The rift will take you to either the Grey Fog Marches or the Decayed Grove. If you arrive at the Grove, take the road south through Black Tears Swamp to get to the village. Pass the village and go up the hill to the east. You might find some insane Krall there.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk with [%dic:STR_DIC_N_Nerthus].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Talk with [%dic:STR_DIC_N_Sorgrim].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Centurion Freyja said that Brigade General Nerita was looking for you. Go to the fortress and meet Nerita.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Centurion Freyja said that Brigade General Nerita of the Beluslan fortress was looking for you. You went to the fortress and met Nerita. She said her spy had found interesting information about Sapiens in Heiron called Krall.</p>
+          <p> </p>
+          <p>She wanted to learn more about these Krall, some of whom had gone mad from too much use of Aether. She asked you to obtain a sample of the energy that drove them insane. </p>
+          <p> </p>
+          <p>You went to Sorgrim and he gave you directions to get to Kishar Village. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

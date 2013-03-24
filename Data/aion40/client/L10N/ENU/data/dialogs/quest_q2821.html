@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Rewrite by Dave 27 May -->
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're [%username], right? I know you're good at what you do. And I hope you can be discreet.</p>
+          <p> </p>
+          <p>Look at us: Everything seems under control here at Roah, right? Sure! So why are we taking casualties? I'm the laughingstock of the officer corps!</p>
+          <p> </p>
+          <p>My men are sharp. No enemy has even reached these walls, not one. Yet every day, we find one or two sentries lying unconscious--if we find them at all.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Sentries are disappearing?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Exactly. I questioned one survivor, and she said she was attacked by a statue. Nothing else there, so she let her guard down--and boom! She's waking up hours later.</p>
+          <p> </p>
+          <p>We didn't realize those 'statues' were Ancient Garcikhans, and my pluma of a predecessor didn't bother warning me about them. I'd like you to drive off the Ancient Garcikhans and protect our sentries.</p>
+          <p> </p>
+          <p>Make no mistake, I'd have my troops over those of any other fortress. We've crushed the Elyos and the Balaur many times. But I equip them for large-scale battles, not guerilla fighting against statue-monsters.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Aye, blood for blood! I like a ready volunteer.</p>
+          <p> </p>
+          <p>There are many [%dic:STR_DIC_M_Ab1_1211_Gargoyle_30_An]s in the outer area of Roah Fortress. Be careful, they're more agile than you'd think.</p>
+          <p> </p>
+          <p>And bring some [%dic:STR_DIC_I_QUEST_2821a]s as proof you have disposed of them. Nothing like war trophies to put the troops at ease.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll find and kill them."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>If you're busy with other tasks, so be it. Let the other officers talk behind my back; we have special problems here in Roah.</p>
+          <p> </p>
+          <p>I could reorganize my men for skirmishes. They'd be effective against the Garcikhan...but vulnerable if the Elyos or Balaur come to call.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Farewell."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Caught the [%dic:STR_DIC_M_Ab1_1211_Gargoyle_30_An]s, I take it? My sentries all came back safely...</p>
+          <p> </p>
+          <p>Show me the proof: the [%dic:STR_DIC_I_QUEST_2821a]s.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here are Garcikhan Horns."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Bah! Without proof it hardly matters how many Ancient Garcikhans you slay. My guards will be too skittish to keep watch!</p>
+          <p> </p>
+          <p>I'm short of men, but I'm not without resources. I'll reward you well for those [%dic:STR_DIC_I_QUEST_2821a]s.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"On my way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good work. I'll pass these around at the next briefing, and my troops will stop jumping at every shadow.</p>
+          <p> </p>
+          <p>More to the point, the other fortress commanders won't joke any more about my "non-battle casualties."</p>
+          <p> </p>
+          <p>Here's a little something...an extra supply allocation, if you like.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Destroy [%dic:STR_DIC_M_Ab1_1211_Gargoyle_30_An]s and return with proof to [%dic:STR_DIC_N_Ab1_1211_Quest_Da].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Hunt the Ancient Garcikhans that interfere with the fortress sentries. Take their horns as proof and return to Herat.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Herat was concerned about ambush attacks on sentries guarding Roah Fortress's outer wall. Ancient Garcikhans are to blame.</p>
+          <p> </p>
+          <p>The soldiers in the fortress are equipped to fight soldiers, not stealthy predators, so Herat asked you to hunt the Garcikhans instead.</p>
+          <p> </p>
+          <p>When you routed the Ancient Garcikhans and returned with their horns, she thanked you and said the news would improve morale at Roah Fortress.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그동안 드레드기온을 지속적으로 공격한 것이 효과가 있었던 것 같소.</p>
+          <p> </p>
+          <p>바라나트 군단 수뇌부에서 계속적으로 공격을 받는 이유와 해결 방법을 찾아내기 위해 감사관을 파견했다고 하오.</p>
+          <p> </p>
+          <p>그만큼 용족도 현재의 상황에 위기의식을 느끼고 있는 것 같소.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>드레드기온에 파견된 감사관이 상황을 조사하고 있으니 우리 측에 불리해 질 수 있소. </p>
+          <p> </p>
+          <p>특히나 드레드기온에 침투하는 방법을 발견하고 그걸 막기 위한 대책을 세운다면 말이오.</p>
+          <p> </p>
+          <p>그러니까 계속적으로 드레드기온에 침투해서 혼란을 주려면 감사관을 처치해야만 하오.</p>
+          <p> </p>
+          <p>[%username], 이 임무를 맡아 주겠소?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_M_IDAb1_Dreadgion_DrakanRAInspector_50_Ah]가 드레드기온 여기저기를 조사하겠지만 상부에 보고를 하려면 반드시 사령실로 가야 할 거요. </p>
+          <p> </p>
+          <p>그러니 감사관 니르샤카가 사령실에 있을 때를 노려 주시오.</p>
+          <p> </p>
+          <p>감사관과 마주칠 확률이 높진 않겠지만 중요한 임무니 포기하지 말고 꼭 처치해 주시오.</p>
+          <p> </p>
+          <p>그럼 부탁하오!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이번 임무는 정말 중요하오.</p>
+          <p> </p>
+          <p>감사관 니르샤카 때문에 그간의 수고가 허사로 돌아가야 하겠소?</p>
+          <p> </p>
+          <p>웬만한 일이라면 다시 생각해 보라는 말도 하지 않을 거요.</p>
+          <p> </p>
+          <p>하지만 사안이 사안이니만큼 다시 한번 생각해 보고 돌아오길 바라오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]%이 한시바삐 돌아오기를 기다리고 있었소.</p>
+          <p> </p>
+          <p>감사관 니르샤카는 어찌 됐소?</p>
+          <p> </p>
+          <p>그놈을 처치해서 상부에 보고하지 못하게 막았소?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>놈을 처치했다니 정말 다행이오. </p>
+          <p> </p>
+          <p>당분간은 바라나트 군단이 상황을 명확하게 파악하지 못할 거요. </p>
+          <p> </p>
+          <p>이 기회를 놓치지 않는다면 에레슈란타에서 용족의 세력을 크게 약화시킬 수도 있겠지.</p>
+          <p> </p>
+          <p>이건 그동안의 노고에 대한 보답이오. 유용하게 쓰길 바라겠소.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_M_IDAb1_Dreadgion_DrakanRAInspector_50_Ah]를 처치하라 ([%2]/1)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Henir]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">드레드기온이 공격받는 원인을 조사하러 온 감사관 니르샤카를 처치해서 바라나트 군단이 원인을 파악하지 못하게 막아라.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>헤니르는 드레드기온이 공격받는 원인과 해결 방법을 찾기 위해 바라나트 군단이 감사관 니르샤카를 파견했다고 했다.</p>
+          <p> </p>
+          <p>그래서 감사관을 처치해 바라나트 군단이 원인을 파악하지 못하도록 막았다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

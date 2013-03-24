@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>To: [%username]</p>
+          <p>From: [%dic:STR_DIC_N_Turbo], Marchutan Priory </p>
+          <p>Task: Collect [%dic:STR_DIC_I_quest_48602a]s</p>
+          <p> </p>
+          <p>General Suthran wishes an examination of Black Claw Mau weapons and their weaknesses.</p>
+          <p> </p>
+          <p>Find a [%dic:STR_DIC_E_Mentor] and fight [%dic:STR_DIC_M_LycanFighterS_16_Ae]s, [%dic:STR_DIC_M_LycanSeekerS_17_Ae]s, and [%dic:STR_DIC_M_LycanWarriorS_16_Ae]s at the Black Claw Outpost.</p>
+          <p> </p>
+          <p>Bring me their [%dic:STR_DIC_I_quest_48602a]s for study. Keep your eyes open and be willing to learn.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Sounds like a fun afternoon."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Mau may seem like mindless savages, but I assure you they are anything but.</p>
+          <p> </p>
+          <p>Hopefully, the Claw Spears should tell us what materials and skills they have access to, especially from the Balaur.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I think we got enough for study."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I beg to differ. Remember, if you and your Mentor separate, you may not find the [%dic:STR_DIC_I_quest_48602a]s you need.</p>
+          <p> </p>
+          <p>Or were you not able to find a Mentor? If so, I encourage you to redouble your efforts.</p>
+          <p> </p>
+          <p>This isn't just about your own development, you know. That would be arrogant. Altgard itself will benefit from your task.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Then why isn't Altgard doing it?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>These should do nicely. I'll take these to General Suthran as soon as we're done here.</p>
+          <p> </p>
+          <p>You and your Mentor have done fine work. I can already see your strength growing.</p>
+          <p> </p>
+          <p>Here are some further rewards from the Priory. Congratulations on your success.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">With the aid of a [%dic:STR_DIC_E_Mentor], collect and take [%dic:STR_DIC_I_quest_48602a]s to [%dic:STR_DIC_N_Turbo].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">The Marchutan Priory has an assignment. Find a Mentor, defeat Black Claw Mau fighters, and take their weapons for study.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Marchutan Priory asked you to collect the weapons of Black Claw Mau fighters for study.</p>
+          <p> </p>
+          <p>With your Mentor, you defeated Brutal Black Claw Warriors, Brutal Black Claw Searchers, and Brutal Black Claw Stalkers, and collected their Claw Spears.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

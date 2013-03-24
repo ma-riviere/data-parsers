@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p align="center"> - A Letter of Greenery -</p>
+          <p> </p>
+          <p>We hope everything is well and good with the members of the Green Hat Unit.</p>
+          <p> </p>
+          <p>This time, we'll be leaving for the South Katalam Bulwark to volunteer. </p>
+          <p> </p>
+          <p>Silverine has stacked Fake Stones near the South Katalam Bulwark, so collect the Fake Stones and deliver them to the South Katalam Branch of the Green Hat Unit.</p>
+          <p> </p>
+          <p>Always remember, nature precedes our existence.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">Fold the letter and put it away.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Those Silverines must think the Bulwark belongs to them.</p>
+          <p> </p>
+          <p>They pile up all kinds of useless stuff there.</p>
+          <p> </p>
+          <p>So, did you collect the Fake Stones? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">Hand over the Fake Stones.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Were you not on your way back from the Bulwark?</p>
+          <p> </p>
+          <p>Then, hit the road now and collect the Fake Stones in South Katalam Bulwark.</p>
+          <p> </p>
+          <p>They're made of waste so they can't be left there. Otherwise, they'll contaminate the soil, nyerk.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">End dialog.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(Looking at the stone) Nyerk, even I'd be duped.</p>
+          <p> </p>
+          <p>Who would say these stones were made of waste?</p>
+          <p> </p>
+          <p>It baffles me why they don't use their talent for something good.</p>
+          <p> </p>
+          <p>Well, thanks to you, the South Katalam Bulwark has gained new life. The Green Hat Unit is always thankful for your hard work, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect the Fake Stones stacked by Silverine at the South Katalam Bulwark and deliver them to the South Katalam Branch of the Green Hat Unit.</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">You received a Letter of Greenery from the Green Hat Unit. Read the letter and perform the mission.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You received a Letter of Greenery from the Green Hat Unit.</p>
+          <p> </p>
+          <p>After you collected the Fake Stones polluting the soil at the South Katalam Bulwark, you delivered them to the South Katalam Branch of the Green Hat Unit. You were complimented for your hard work.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

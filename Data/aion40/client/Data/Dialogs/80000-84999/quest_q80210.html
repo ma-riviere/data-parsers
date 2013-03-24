@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>저는 일찍이 부모님을 잃고,</p>
+          <p> </p>
+          <p>어린 동생들과 힘겹게 살아가고 있답니다.</p>
+          <p> </p>
+          <p>예전에는 가족들과 함께 밭도 일구고 행복하게 살았는데..</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+    <Act href="HACTION_ASK_QUEST_ACCEPT">뭔가 도와줄 것이 없는지 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>우리들이 가꾸던 땅은 이미 무무들이 모두 차지해 버렸답니다.</p>
+          <p> </p>
+	  <p>[%dic:STR_DIC_W_DF1A_17]%에 가면 무무들이 고구마를 재배하고 있다고 해요.</p>
+          <p> </p>
+          <p>가서 고구마 27개만 뺏어와 주시면 안되겠어요?</p>
+          <p> </p>
+          <p>[%username] 님이 그렇게만 해주시면 큰 도움이 될 것 같아요.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정말 감사합니다.</p>
+          <p> </p>
+          <p>기다릴테니 어서 다녀오세요!</p>
+         </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+         <p>동생들이 굶어 죽을 지경인데..</p>
+         <p> </p>
+         <p>세상은 이렇게 각박하구나..</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+   <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>고구마는 좀 있던가요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">뺏어온 고구마를 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+   <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이게 다인가요?</p>
+	  <p> </p>
+          <p>이걸론 저 혼자 먹기에도 모자랍니다. 좀 더 부탁드릴께요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+    <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>감사합니다! 동생들과 너무 맛있게 먹었어요.</p>
+          <p> </p>
+          <p>좋아하실 지 모르겠지만 [%username] 님께도 좀 나눠드릴께요.</p>
+          <p> </p>
+          <p>한 입 먹으면 힘이 날 거에요!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+                     <step><p visible="[%0]"><font color="[%1]">고구마 27개를 모아 샤리느에게 가져가라.</font></p>[%collectitem]</step>      
+    </steps>
+          <p><font font_xml="quest_summary">샤리느가 무무 고구마 경작꾼에게서 고구마를 좀 빼앗아 달라고 한다. 27개를 모아 가져다 주자.</p>
+          <p></font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>샤리느는 동생들과 함께 행복한 미소를 지었다.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

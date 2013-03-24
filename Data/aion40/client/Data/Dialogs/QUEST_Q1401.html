@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아, 이 일을 어찌하면 좋습니까!</p>
+          <p> </p>
+          <p>이래서 거짓말을 하면 벌을 받는다는 얘기가 있나 봅니다.</p>
+          <p> </p>
+          <p>힐라스 님께 트롤과 트롤킨을 모두 처치했다고 말씀드렸더니 이번엔 다른 놈들까지 처치하라지 뭡니까? </p>
+          <p> </p>
+          <p>이번에는 지난번보다 훨씬 날쌔고 난폭한 놈들입니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이제 와서 [%username] 님께 도움을 받았다는 얘기는 차마 못하겠고...</p>
+          <p> </p>
+          <p>그 사실이 알려지면 남에게 의지하는 놈으로 평생 낙인이 찍힐 겁니다.</p>
+          <p> </p>
+          <p>[%username] 님, 이왕 도와준 것 이번 한 번만 더 도와주면 안 되겠습니까?</p>
+          <p> </p>
+          <p>그러면 이 은혜는 평생 잊지 않겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정말 감사합니다, 정말로요.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_Troll_37_An]과 [%dic:STR_DIC_M_Trollkin_37_An]%을 처치해 주십시오.</p>
+          <p> </p>
+          <p>지난번에 처치한 놈들보다 더 약삭빠른 놈들이니 주의하시고요.</p>
+          <p> </p>
+          <p>그럼 전 [%username] 님만 믿겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이제 방법은 하나뿐이군요.</p>
+          <p> </p>
+          <p>힐라스 님께 사실 그대로 말씀드려야겠습니다.</p>
+          <p> </p>
+          <p>가디언의 자존심을 내팽개쳤냐는 소리는 듣겠지만 속으로 끙끙 않는 것보다 그 편이 나을 것 같네요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>언제 오시나 기다리고 있었습니다.</p>
+          <p> </p>
+          <p>놈들을 찾기가 꽤 힘들었죠? 미리 말씀드려야 했었는데 워낙 정신이 없다보니 말하는 걸 잊어버려서요.</p>
+          <p> </p>
+          <p>저기... 일은 어떻게 됐습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아휴, 덕분에 살았습니다.</p>
+          <p> </p>
+          <p>아무리 [%username] 님이라도 이번 일은 쉽지 않을 거라고 생각했거든요.</p>
+          <p> </p>
+          <p>자, 이걸 받으세요. 아니, 사양하지 마십시오.</p>
+          <p> </p>
+          <p>마음 같아서는 더한 거라도 드리고 싶습니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">화산지대의 트롤을 처치하라</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Troll_37_An]([%2]/3)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Trollkin_37_An]([%5]/2)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Paion]과 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">파이온의 임무를 한 번 더 도와주기로 했다. 트롤 싸움꾼과 날쌘 트롤킨을 처치하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>파이온은 트롤과 트롤킨을 모두 처치했다고 보고하자 힐라스가 다른 놈들까지 처치하라고 했다며 울상을 지었다.</p>
+          <p> </p>
+          <p>그래서 다시 한번 화산지대 깊숙한 곳으로 가서 트롤 싸움꾼과 날쌘 트롤킨을 처치했다. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

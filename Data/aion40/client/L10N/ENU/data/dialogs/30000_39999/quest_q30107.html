@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(What looks like a Drakan document lies on the table. You can't understand what it says.)</p>
+          <p> </p>
+          <p>(Perhaps Centurion [%dic:STR_DIC_N_Taustir] would be interested in this.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll just yoink this...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What brings you here, [%username]? I thought you were off running important missions for that...Reian. What's his name? Aglauros.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">"I found something...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You say this is a Drakan document? I can't read it. If this is Balaur, it's encoded in some way. Or some dialect I'm not familiar with.</p>
+          <p> </p>
+          <p>Hmmmm.... I hate to say it, but why don't you ask [%dic:STR_DIC_N_Aglauros]? He's been in Gelkmaros for a very long time. If anyone can read this, it's probably a Reian like him.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"Likely true."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Do you need something of me, Daeva? Speak.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Can you read this?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, I see why you couldn't decipher this. As you suspected, it is Balaur, but it is also in code. </p>
+          <p> </p>
+          <p>Fortunately, I have seen this code before. Give me a moment, and I will be able to figure this out....</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk with [%dic:STR_DIC_N_Taustir].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Talk with [%dic:STR_DIC_N_Aglauros].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">You found an unusual document inside Udas Temple. Show it to Taustir.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You found a Drakan document inside Udas Temple. Unable to decipher it, Taustir told you to ask Aglauros.</p>
+          <p> </p>
+          <p>Aglauros took the document and said to wait while he decoded it.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

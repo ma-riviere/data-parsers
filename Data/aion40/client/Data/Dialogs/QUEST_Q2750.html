@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>도적단에 있다가 각성했다는 [%userclass]이 [%username] 님 맞죠? </p>
+          <p> </p>
+          <p>실력이 뛰어나다는 얘기는 많이 들었습니다. 만난 김에 도움을 좀 받을 수 있으면 좋겠군요.</p>
+          <p> </p>
+          <p>시엘의 서부 요새를 빼앗기는 바람에 정찰을 위해 우리 군단이 급하게 이곳으로 파견됐는데 어려움이 좀 있거든요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>시엘의 서부 요새를 되찾는 것이 선결 과제라 요새 쪽으로 계속 정찰병을 보내고 있습니다.</p>
+          <p> </p>
+          <p>그런데 [%dic:STR_DIC_M_Ab1_1131_Specter_27_An] 때문에 임무를 수행하기가 힘듭니다.</p>
+          <p> </p>
+          <p>숨어서 정찰하고 있는데 공격해 대니 속수무책으로 당할 수밖에요. 게다가 기억까지 혼란시키니 문제가 더 큽니다.</p>
+          <p> </p>
+          <p>[%username] 님이 놈들을 처치하는 걸 좀 도와주시겠습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>임무 특성상 비밀리에 움직여야 하기 때문에 놈들을 처치하러 다니기가 곤란했습니다.</p>
+          <p> </p>
+          <p>[%username] 님이 [%dic:STR_DIC_M_Ab1_1131_Specter_27_An]를 처치해 주신다면 저희가 임무를 수행하기가 쉬워질 겁니다. </p>
+          <p> </p>
+          <p>참, 기억 파괴자는 공중을 떠다니며 공격할 대상을 찾으니 놈들을 잡으려면 비행하는 게 편할 겁니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>저희가 능력이 없어서 기억 파괴자를 처치하지 못하는 게 아닙니다.</p>
+          <p> </p>
+          <p>임무를 위해 최대한 눈에 띄지 않게 조용히 있어야 하니 어쩔 수 없이 차는 거지요.</p>
+          <p> </p>
+          <p>[%username] 님의 평판을 믿고 부탁드린 건데 이런 상황을 듣고도 도와주지 않겠다면 할 수 없지요.</p>
+          <p> </p>
+          <p>다른 분께 도움을 청하겠습니다. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>생각보다 일찍 돌아오셨군요.</p>
+          <p> </p>
+          <p>부탁한 [%dic:STR_DIC_M_Ab1_1131_Specter_27_An]는 모두 처치하셨습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>덕분에 우리 붉은 헤시아 군단이 수월하게 정찰 임무를 수행할 수 있게 됐군요.</p>
+          <p> </p>
+          <p>감사합니다, [%username] 님.</p>
+          <p> </p>
+          <p>하지만 기억 파괴자가 모두 사라진 게 아니니 다음에도 시간이 나면 조금 더 도와주십시오. </p>
+          <p> </p>
+          <p>아스펠의 가호가 함께하길!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_M_Ab1_1131_Specter_27_An]를 처치하라([%2]/8)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Goeldag]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">붉은 헤시아 군단에 시엘의 서부 요새를 정찰하는 걸 기억 파괴자가 방해한다고 한다. 고엘다그의 부탁대로 기억 파괴자를 처치해야겠다.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>고엘다그는 시엘의 서부 요새를 빼앗긴 후 요새를 정찰하기 위해 붉은 헤시아 군단이 급히 파견됐다고 했다.</p>
+          <p> </p>
+          <p>하지만 숨어서 조용히 정찰하는 군단병을 기억 파괴자들이 계속 공격해서 임무를 수행하는 데 곤란을 겪고 있다고 했다.</p>
+          <p> </p>
+          <p>그래서 부탁대로 기억 파괴자를 처치해 줬더니 정찰하는 게 쉬워졌다면서 고마워했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q41254</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select_none" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_W_LDF4a_sarpan_main]은 드넓고 위험한 지역입니다.</p>
+          <p> </p>
+          <p>그렇기에 직접 발로 뛰며 모든 곳의 정보를 파악하는 것은 사실상 불가능에 가깝습니다.</p>
+          <p> </p>
+          <p>날개를 펼치고 마음껏 날아다닐 수만 있다면 아무런 문제도 되지 않겠지만, 이곳은 결계의 바깥이니 비행도 불가능하죠.</p>
+          <p> </p>
+          <p>하지만 제가 특별히 준비한 개인용 오드 비행장치라면 안전하게 정찰에 성공할 수 있을 겁니다. </p>
+          <p> </p>
+          <p>어떻습니까? 정찰 임무를 한번 수행해 보시겠습니까? [%username] 님은 가만히 계시기만 하면 됩니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>준비가 다 끝나셨습니까?</p>
+          <p> </p>
+          <p>말씀해 주시면 바로 정찰 비행을 보내드리도록 하죠.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SET_SUCCEED">준비가 되었다고 말한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이번 정찰은 정말 운이 좋았군요.</p>
+          <p> </p>
+          <p>유물을 이렇게 쉽게 찾아내다니... 하지만 발견한 것만으로는 아무런 의미가 없습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">어떻게 하는게 좋을지 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>용족이 눈치채기 전에 유물을 회수해야겠죠.</p>
+          <p> </p>
+          <p>당연한 것 아니겠습니까?</p>
+          </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_Sotuon]에게 말을 걸어 [%dic:STR_DIC_W_LDF4a_SZ_C1]를 정찰하라</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_N_Sotuon]과 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">파괴된 봉인지를 안전하게 비행 정찰하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>소투온이 준비해 준 장치를 이용해 파괴된 봉인지를 정찰하다가 고대의 유물이 지표면에 드러나 있는 것을 발견했다.</p>
+          <p> </p>
+          <p>용족은 아직 유물의 존재를 눈치채지 못한 것 같았다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>빌어먹을 시무르그 놈들!</p>
+          <p> </p>
+          <p>가만히 길을 가는 우리를 부리로 쪼아대지 뭡니까?</p>
+          <p> </p>
+          <p>놈들 때문에 짐보따리는 다 찢기고 안에 있던 식량도 모두 잃어버렸습니다.</p>           <p> </p>         
+           <p>아... 며칠을 굶었더니 화낼 힘도 없군요.</p>
+           <p> </p>
+           <p>브라우니 소굴을 지나 겨우 여기까지 왔는데 식량을 구하러 다시 되돌아갈 수도 없고...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+           <p>데바님, 저희 좀 도와주시면 안 되겠습니까?</p>
+          <p> </p>
+          <p>이러다가 환영신의 성소로 가기도 전에 굶어 죽겠습니다.</p>
+           <p> </p>
+           <p>저희가 기운을 차릴 수 있도록 먹을 것 좀 구해 주십시오.</p>        
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정말 감사합니다, [%username] 데바님!</p>
+           <p> </p>
+          <p>근처에 있는 [%dic:STR_DIC_QILA79]%와 [%dic:STR_DIC_QILA80] 정도면 먹을 만하겠군요.</p> 
+          <p> </p>
+          <p>[%dic:STR_DIC_QILA79]% 3개와 [%dic:STR_DIC_QILA80] 5개 정도만 구해 주십시오.</p>
+           <p> </p>
+           <p>그럼 다녀오십시오. 저희는 불을 피우고 있겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>괜찮습니다. 이런 부탁을 한 저희가 잘못이죠.</p>
+          <p> </p>
+          <p>저희 문제는 알아서 해결할 테니 신경 쓰지 말고 가세요.</p>
+          <p> </p>
+          <p>나중에 시간이 나거든 저와 아내의 시체나 묻어 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>데바님이 언제 오시나 기다리고 있었습니다.</p>
+          <p> </p>
+          <p>너무 배가 고파서 서 있을 힘도 없군요.</p>   
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">고기를 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아니, 배고픈 사람을 상대로 장난하시는 겁니까?</p>
+          <p> </p>
+          <p>앗, 죄송합니다. 너무 굶어 잠시 제정신이 아니었나 봅니다.</p>
+          <p> </p>
+          <p>페슬롯과 시무르그의 고기를 빨리 구해 주십시오. 이렇게 부탁드리겠습니다.</p>  
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>감사합니다, 감사합니다!</p>
+          <p> </p>
+          <p>여기서 꼼짝없이 굶어죽는 줄 알았는데 데바님 덕분에 살았습니다.</p>
+          <p> </p>          
+          <p>저, 이걸 받아 주십시오. 데바님의 도움에 비하면 약소합니다만 저희가 드릴 수 있는 게 이것 밖에 없군요.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">식량을 구해 [%dic:STR_DIC_LA31]에게 가져가라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">순례자 [%dic:STR_DIC_LA31] 부부가 시무르그의 공격으로 짐을 잃고 며칠째 굶었다고 한다. 그래서 흉포한 시무르그와 절벽길 페슬롯 고기를 모아 드로노아에게 가져다 주자.</p>
+          <p></font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>시무르그의 공격으로 짐을 잃은 순례자 드로노아 부부가 며칠째 굶고 있었다. 부부를 위해 근처에 있는 페슬롯과 시무르그를 잡아 고기를 가져다 주었다.</p>
+          <p> </p>                 
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

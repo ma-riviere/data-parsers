@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh hello, [%username]. You've come at just the right time. I was about to call you.</p>
+          <p> </p>
+          <p>Have you ever heard of Arbolu? He's a tree with mysterious power in the north end of Heiron. He blocks harmful energy, enhances the vitality of plants, and repels undead.</p>
+          <p> </p>
+          <p>Arbolu is the reason there are so many Elim around there.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Must be a nice place."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Usually it is, but I hear that plants around Arbolu's Haven have begun to wither and die. It seems Arbolu's energy is waning.</p>
+          <p> </p>
+          <p>Daevas of Life are investigating, but the cause has eluded them.</p>
+          <p> </p>
+          <p>They've asked me to send something to revive the plants.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Like what?" </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well there's no way to know for sure, but my theory is that the soil is running out of nutritive elements.</p>
+          <p> </p>
+          <p>I've gathered up some good soil, and I need someone to take this to [%dic:STR_DIC_N_Erone], Daeva of Life, and tell her to sprinkle it around the ailing trees.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's kind of you to volunteer. I don't relish losing any more messengers on that run. Arbolu's Haven is east of the jungle. You should be careful of undead along the way, but from what I hear you should be able to handle them.</p>
+          <p> </p>
+          <p>Give this to [%dic:STR_DIC_N_Erone], and tell her what I said.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"On my way!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Do you have something more urgent to do? </p>
+          <p> </p>
+          <p>I don't want to lose another messenger to the undead along the way.</p>
+          <p> </p>
+          <p>We've still got time, so please come back if you change your mind.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I will." </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, hello. Welcome.</p>
+          <p> </p>
+          <p>What brings you to Arbolu's Haven?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Senea sent this."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, the soil Senea was sending us. I've been eager to see it. </p>
+          <p> </p>
+          <p>Hmm...this certainly looks fertile, but...there's something strange about it.</p>
+          <p> </p>
+          <p>Though it's weak, I sense a certain virulence. I don't think I can use this. I'm sorry you had to come all this way for nothing.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Deliver the Bag of Dirt to [%dic:STR_DIC_N_Erone]. </font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Plants around Arbolu's Haven are withering up. Take the Bag of Dirt from Senea to Erone, Daeva of Life, to help solve the problem.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Erone had asked Senea for help, saying the plants around Arbolu's Haven were withering. Senea asked you to take some fertile soil to Erone to see if it would help.</p>
+          <p> </p>
+          <p>When you gave the soil to Erone, she said the soil was contaminated and couldn't be used. She apologized for wasting your time.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

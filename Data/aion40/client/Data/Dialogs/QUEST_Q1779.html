@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>고대도시 루의 요새는 아주 중요한 군사적 요충지입니다. 아티팩트가 3개나 있거든요.</p>
+          <p> </p>
+          <p>저와 메르쿠스가 여기로 온 것도 그 때문입니다.</p>
+          <p> </p>
+          <p>네자칸의 방패 군단이 요새를 쉽게 탈환할 수 있게 고대도시 루의 요새에 대한 정보를 수집하고 있죠.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다. </Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그런데 그게 생각만큼 쉽지가 않네요.</p>
+          <p> </p>
+          <p>삼엄한 경비 때문에 정보를 캐기는 커녕 요새 근처에 가기도 힘듭니다.</p>
+          <p> </p>
+          <p>요새 주변을 순찰하는 [%dic:STR_DIC_M_AncientCity_Guard]만 없어도 좀 나을 것 같은데 어떻습니까? 우리를 도와 공을 한 번 세워 보시겠습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>생각보다 간단치는 않을 겁니다. 요새 주변에는 주둔군 뿐 아니라 가공할 만한 위력의 방어 시설들이 여럿 있으니까요.</p>
+          <p> </p>
+          <p>혼자서 가는 것은 무모한 일일 겁니다. 반드시 뜻이 맞는 데바님들을 몇 분 모아 함께 가세요.</p>
+          <p>요새의 공중에 떠 있는 감시자의 눈도 조심하십시오. 자신도 모르게 당할 수 있습니다.</p>
+          <p> </p>
+          <p>그럼 무운을 빕니다. 아리엘 주신의 가호가 함께하길!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>다른 임무라도 있는 겁니까?</p>
+          <p> </p>
+          <p>이번 일을 잘 끝내면 [%username] 님의 전적에 큰 도움이 될 텐데 아쉽군요.</p>
+          <p> </p>
+          <p>대신 전면전이 벌어질 때는 꼭 도와주십시오. 설마 그때도 거절하진 않으시겠죠?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>부탁한 임무는 무사히 끝내셨습니까?</p>
+          <p> </p>
+          <p>모습을 보니 멀쩡해 보여 다행이긴 합니다만.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.  </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>수고 많으셨습니다.</p>
+          <p> </p>
+          <p>요새 주둔군을 물리친 만큼 [%username] 님의 명성도 드높아졌을 겁니다.</p>
+          <p> </p>
+          <p>방금 돌아오신 분께 이런 말을 드리긴 미안하지만 요새를 탈환하려면 갈 길이 아직도 멉니다. </p>
+          <p> </p>
+          <p>그러니 모쪼록 계속 도와주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_M_AncientCity_Guard]을 처치하라([%2]/10)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Livy]에게 결과를 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">리비우스와 메르쿠스가 고대도시 루의 요새의 정보를 수집할 수 있게 동료를 모아 요새 주둔군을 처치해 주자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>리비우스는 군사적 요충지인 고대도시 루의 요새를 탈환하기 위해 정보를 수집 중인데 삼엄한 감시 때문에 힘들다며 도움을 요청했다.</p>
+          <p> </p>
+          <p>그의 부탁대로 요새 주변을 순찰하는 요새 주둔군을 처치하고 돌아가자 아직도 갈 길이 멀다며 계속 도와달라고 부탁했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

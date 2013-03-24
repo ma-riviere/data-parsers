@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I reported the Crucible Rift problem to my superiors, but I need to figure out what to do in the meantime. Paperwork moves very slowly through those elevated command levels.</p>
+          <p> </p>
+          <p>We can't just sit here like sun-poxed Elyos while Balaur keep pouring into the Crucible.</p>
+          <p> </p>
+          <p>While you were over talking to Inggness, a group of trainees was ambushed by Balaur! They're in pretty bad shape....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Close down the Crucible!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'd love to, but that would be a political nightmare. The sheer mounds of paperwork! Hmm...</p>
+          <p> </p>
+          <p>Besides, that kind of decision is way above my pay grade.</p>
+          <p> </p>
+          <p>Let's see if we can't just deal with this ourselves, shall we? You're one of our best and brightest, [%username]. Think you could take on those Balaur on your own?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That's the spirit! Nerves like iron and shadow!</p>
+          <p> </p>
+          <p>Go into the Solo Crucible, subdue Vanktrist Spacetwine until another [%dic:STR_DIC_E_IDArena_Solo_Bonus_In] opens. Then go through and smite those shard-blasted [%dic:STR_DIC_M_quest_28208a]s before they set foot on Asmodian soil.</p>
+          <p> </p>
+          <p>Might be a bit tricky, that. Vanktrist never says down for long, but go! For the greater glory of Asmodae and Lord Marchutan!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"The task is mine!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This is a surprise. I was sure you'd be game for the challenge.</p>
+          <p> </p>
+          <p>Pity. There aren't many other Daevas around who'd survive such a task.</p>
+          <p> </p>
+          <p>Consider your decision carefully. Asmodae needs you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"And I need some lunch."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank Aion! You're back, [%username]!</p>
+          <p> </p>
+          <p>I was beginning to fear the worst. What happened in the Solo Crucible?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"The situation is under control."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Marvelous. Can you just fill in this form for me? This section, right here.</p>
+          <p> </p>
+          <p>Interestingly, I've had others patrolling the Crucible too, and under 'Enemy Encountered,' they keep checking Elyos, rather Balaur. Did you run into any Elyos? Oh, well... I'll have to talk to Inggness about it. Seems like there might be more than one rift fittering about.</p>
+          <p> </p>
+          <p>Anyway, great job. Please, take this reward for your continued service to the Marchutan Priory.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Defeat [%dic:STR_DIC_E_IDArena_Solo_S6_VanqJr_55_An], the final opponent in the Solo Crucible ([%2]/5). </font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Go through the [%dic:STR_DIC_E_IDArena_Solo_Bonus_In] and destroy any [%dic:STR_DIC_M_quest_28208a]s ([%5]/1).</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Talk with [%dic:STR_DIC_N_Anja].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Go through the Crucible Rift in the Crucible Challenge and destroy the enemy. Report back to Combat Sergeant Anja when the task is complete.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Combat Sergeant Anja asked you to protect the trainees in the Crucible Challenge until her superiors send down new orders.</p>
+          <p> </p>
+          <p>You trounced Vanktrist, vanquished Rift-riding intruders, and reported back to Anja, who rewarded you for your efforts.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q41100</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님. 부탁을 드리고 싶은 임무가 있는데 선뜻 말을 꺼내기가 쉽지 않습니다.</p>
+          <p> </p>
+          <p>얼마 전 카마르의 그림자단원의 정예병들이 [%dic:STR_DIC_E_Q41116a]을 토벌하겠다며 출정했지만... 그들은 단 하나도 처치하지 못하고 패배했습니다.</p>
+          <p> </p>
+          <p>심지어 키벨리스크에 영혼을 각인시키는 것을 깜빡해서 소멸해버린 동료도 있었습니다.</p>
+          <p> </p>
+          <p>표적들을 얕잡아 본 쓰라린 댓가인 것이죠...</p>
+          <p> </p>
+          <p>그래서 [%username] 님께 부탁드리는 것입니다. 당신이라면 당신만큼 강력한 동료들을 많이 알고 계실테니까요.</p>
+          <p> </p>
+          <p>부디 동료들과 함께 [%dic:STR_DIC_E_Q41116a]을 처치해 주십시오. 무리하실 필요는 없으니 단 하나만이라도 처치해 주시면 됩니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님, 돌아오셨군요!</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_E_Q41116a]은 처치하고 오셨나요?</p> 
+          <p> </p>
+          <p>만만한 녀석은 하나도 없었을 텐데 어떤 놈을 처치하고 오신 겁니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그 강력한 녀석을... 정말 대단들 하시군요.</p>
+          <p> </p>
+          <p>정말 고생이 많으셨습니다. 여기, 카마르의 그림자를 대표해서 드리는 감사의 표시입니다.</p>
+          <p> </p>
+          <p>아무리 [%username] 님이라고 해도 피로가 쌓이셨을 테니 푹 쉬어두시길 바랍니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_E_Q41116a] 중 하나를 처치하라([%2]/1)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Betios]와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">흉폭하기 그지없는 그림자의 표적들 중 하나를 찾아 처치하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>베티오스는 흉폭한 그림자의 표적들을 처치하러 간 병사들이 처참히 패배했다며 도움을 요청했다.</p>
+          <p> </p>
+          <p>믿음직한 동료들을 모아서 표적 중 하나를 처치하고 돌아가니 대단한 일을 했다며 감사를 표했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

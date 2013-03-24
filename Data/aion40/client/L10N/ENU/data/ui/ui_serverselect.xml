@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Screen name="UI_ServerSelect" widget_cnt="17">
+	<Widget flag="not_movable;not_showfocus;visible;alwaysfittoscreen;transparent" frame="0,0,1680,1050" h_pos_align="center" name="decoration_dialog" type="window" v_pos_align="middle">
+		<Widget frame="0,0,1680,92" h_pos_align="center" type="static" v_pos_align="top">
+			<Widget frame="23,0,817,92" type="static">
+				<Skin name="lobby_deco_up_left" state="0" />
+			</Widget>
+			<Widget frame="840,0,817,92" type="static">
+				<Skin name="lobby_deco_up_right" state="0" />
+			</Widget>
+		</Widget>
+		<Widget frame="0,891,1680,159" h_pos_align="center" type="static" v_pos_align="bottom">
+			<Widget frame="23,0,817,159" type="static">
+				<Skin name="lobby_deco_down_left" state="0" />
+			</Widget>
+			<Widget frame="840,0,817,159" type="static">
+				<Skin name="lobby_deco_down_right" state="0" />
+			</Widget>
+		</Widget>
+	</Widget>
+	<Dialog flag="not_movable;visible;transparent;alwaysfittoscreen" frame="0,0,1280,960" h_pos_align="center" name="server_select_dialog" type="dlg_select_server">
+		<Widget flag="transparent" font="default" font_size="16" frame="0,15,1280,24" h_pos_align="center" halign="center" text="STR_LOBBY_SELECT__SERVER_LIST" text_color="0.93,0.93,0.87,1.0" type="static" v_pos_align="top" valigh="middle" />
+		<Widget frame="372,161,536,526" h_pos_align="center" type="static" v_pos_align="middle">
+			<Skin name="lobby_dialog_frame" state="0" />
+		</Widget>
+		<Widget cell_padding="0" cell_space="0,0" column_set1="STR_LOBBY_SERVER__NAME,138,center" column_set2="STR_LOBBY_SERVER__LANGUAGE,70,center" column_set3="STR_LOBBY_SERVER__GMT,90,center" column_set4="STR_LOBBY_SERVER__CHARACTER_COUNT,70,center" column_set5="STR_LOBBY_SERVER__STATUS,110,center" flag="vscroll;not_sort" frame="400,173,479,506" h_pos_align="center" header_height="23" item_height="23" item_width="0" mask_color="0,0,0,0.5" name="server_list" skin_type="lobby" type="listview" v_pos_align="middle" viewmode="detail">
+			<Skin name="lobby_list_up" state="row" />
+			<Skin name="lobby_list_selected" state="row_selected" />
+			<Skin name="lobby_list_over" state="row_mouseover" />
+		</Widget>
+		<Widget frame="833,199,17,479" h_pos_align="center" linker="server_list" preset="lobby_scroll" type="scrollbar" v_pos_align="middle">
+			<Widget flag="not_active" frame="1,1,15,16" h_pos_align="proportion" name="minus" preset="lobby_scroll_minus" type="button" />
+			<Widget flag="not_active" frame="1,462,15,16" h_pos_align="proportion" name="plus" preset="lobby_scroll_plus" type="button" v_pos_align="bottom" />
+		</Widget>
+		<Widget action="request_play" font="button" font_size="12" frame="426,900,121,25" h_pos_align="center" name="prev_button" preset="lobby_button_default" text="STR_LOBBY_SERVER__PREV" text_color="0.66,0.72,0.72,1.0" text_over_color="0.95,1.0,0.90,1.0" text_selected_color="0.64,1.0,0.6,1.0" type="button" v_pos_align="bottom" />
+		<Widget action="request_play" defbutton="true" font="button" font_size="12" frame="573,900,121,25" h_pos_align="center" name="start_button" preset="lobby_button_default" text="STR_LOBBY_SERVER__START" text_color="0.66,0.72,0.72,1.0" text_over_color="0.95,1.0,0.90,1.0" text_selected_color="0.64,1.0,0.6,1.0" type="button" v_pos_align="bottom" />
+		<Widget action="quit_login" font="button" font_size="12" frame="720,900,121,25" h_pos_align="center" name="quit_button" preset="lobby_button_default" text="STR_LOBBY_SERVER__QUIT" text_color="0.66,0.72,0.72,1.0" text_over_color="0.95,1.0,0.90,1.0" text_selected_color="0.64,1.0,0.6,1.0" type="button" v_pos_align="bottom" />
+	</Dialog>
+</Screen>

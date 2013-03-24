@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="id" type="xs:short"/>
+  <xs:element name="name" type="xs:string"/>
+  <xs:element name="desc" type="xs:string"/>
+  <xs:element name="race" type="xs:string"/>
+  <xs:element name="max_member_light" type="xs:byte"/>
+  <xs:element name="max_member_dark" type="xs:byte"/>
+  <xs:element name="enter_min_level_light" type="xs:byte"/>
+  <xs:element name="enter_min_level_dark" type="xs:byte"/>
+  <xs:element name="can_enter_mentor" type="xs:string"/>
+  <xs:element name="coolt_tbl_id" type="xs:byte"/>
+  <xs:element name="f2p_coolt_tbl_id" type="xs:short"/>
+  <xs:element name="coolt_sync_id" type="xs:byte"/>
+  <xs:element name="enter_guild" type="xs:string"/>
+  <xs:element name="exit_world_1" type="xs:string"/>
+  <xs:element name="exit_alias_1" type="xs:string"/>
+  <xs:element name="exit_world_2" type="xs:string"/>
+  <xs:element name="exit_alias_2" type="xs:string"/>
+  <xs:element name="bm_restrict_category" type="xs:byte"/>
+  <xs:element name="share_max_member" type="xs:byte"/>
+  <xs:element name="enter_max_level_light" type="xs:byte"/>
+  <xs:element name="enter_max_level_dark" type="xs:byte"/>
+  <xs:element name="desc_hud" type="xs:string"/>
+  <xs:element name="client_instance_cooltime">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="id"/>
+        <xs:element ref="name"/>
+        <xs:element ref="desc"/>
+        <xs:element ref="desc_hud" minOccurs="0"/>
+        <xs:element ref="race"/>
+        <xs:element ref="max_member_light"/>
+        <xs:element ref="max_member_dark"/>
+        <xs:element ref="share_max_member" minOccurs="0"/>
+        <xs:element ref="enter_min_level_light" minOccurs="0"/>
+        <xs:element ref="enter_max_level_light" minOccurs="0"/>
+        <xs:element ref="enter_min_level_dark" minOccurs="0"/>
+        <xs:element ref="enter_max_level_dark" minOccurs="0"/>
+        <xs:element ref="can_enter_mentor"/>
+        <xs:element ref="exit_world_1" minOccurs="0"/>
+        <xs:element ref="exit_alias_1" minOccurs="0"/>
+        <xs:element ref="exit_world_2" minOccurs="0"/>
+        <xs:element ref="exit_alias_2" minOccurs="0"/>
+        <xs:element ref="bm_restrict_category" minOccurs="0"/>
+        <xs:element ref="coolt_tbl_id"/>
+        <xs:element ref="f2p_coolt_tbl_id"/>
+        <xs:element ref="coolt_sync_id"/>
+        <xs:element ref="enter_guild" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="client_instance_cooltimes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="client_instance_cooltime" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="generated_time"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="type" type="xs:string"/>
+  <xs:element name="value" type="xs:short"/>
+  <xs:element name="typevalue" type="xs:string"/>
+  <xs:element name="client_instance_cooltime2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="id"/>
+        <xs:element ref="name"/>
+        <xs:element ref="type"/>
+        <xs:element ref="typevalue" minOccurs="0"/>
+        <xs:element ref="value"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="client_instance_cooltime2s">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="client_instance_cooltime2" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="generated_time"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Greetings Daeva! I am Magorunerk, nyerk. Greatest coin collector in all Atreia.</p>
+          <p> </p>
+          <p>I came here looking for special coins. Maybe Daeva has some?</p>
+          <p> </p>
+          <p>Say, Daeva looks familiar. Are you [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"The same."</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Magorunerk thought so. Heard a lot about Daeva...thought you'd be bigger though. Akakakak!</p>
+          <p> </p>
+          <p>You do lots of jobs for people, yes? Do any work for the Field Wardens lately?</p>
+          <p> </p>
+          <p>Magorunerk is collecting Ward Tokens, but it is not easy, nyerk. Want to help?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Magorunerk has a buyer looking for 10 Ward Tokens, but only has 2 so far. Need 8 more.</p>
+          <p> </p>
+          <p>If Daeva gives me 8 [%dic:STR_DIC_I_COIN_D_PROTECTION_01], Magorunerk gives this Crusader Token, nyerk. Fair trade.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Let me take a look..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Magorunerk would get Ward Tokens himself, but Shugo cannot join the Wardens. Maybe Charlirunerk's Daemons....</p>
+          <p> </p>
+          <p>Anyway Shugo is proposing a fair deal. 8 Ward Tokens for 1 Crusader Token, nyerk.</p>
+          <p> </p>
+          <p>Cannot possibly refuse that! Akakakakak!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Watch me."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Daeva has already found all the [%dic:STR_DIC_I_COIN_D_PROTECTION_01]s?</p>
+          <p> </p>
+          <p>Daeva is faster than Magorunerk thought!</p>
+          <p> </p>
+          <p>Magorunerk completely trust Daeva, of course, but he must still check to see if they are the right Tokens. Standard procedure, akakakakak!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"See for yourself."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Daeva is fast but not smart, Shugo thinks. Cannot count to 8. Same as fingers, nyerk.</p>
+          <p> </p>
+          <p>Shugo needs 8 [%dic:STR_DIC_I_COIN_D_PROTECTION_01]s.</p>
+          <p> </p>
+          <p>Magorunerk getting frustrated here!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Well, excuse me!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hmmmm... You sure these are Ward Tokens? Look right, but funny taste. Maybe that from Daeva's hands. Better go wash. Nyerk!</p>
+          <p> </p>
+          <p>Anyway, these seem real, so here is Crusader Token as promised.</p>
+          <p> </p>
+          <p>No one ever say Magorunerk not honest trader, nyerk!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect [%dic:STR_DIC_I_COIN_D_PROTECTION_01]s and bring them to [%dic:STR_DIC_N_Shugo_Exchange_06].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Magorunerk collects Ward Tokens. Find Ward Tokens and bring them to him.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Magorunerk introduced himself as a coin collector and told you he was looking for Ward Tokens.</p>
+          <p> </p>
+          <p>Magorunerk gave you a Crusader Token as a reward when you handed him 8 Ward Tokens.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, [%username], do you have a spare moment? I'd like to ask a favor of you.</p>
+          <p> </p>
+          <p>I have to send some stuff to Noris, but have no time to go to the Artisans Hall.</p>
+          <p> </p>
+          <p>Neither of us can leave our posts long enough to make an exchange.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"How can I help?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_N_Noris] has lived all his life here in Sanctum, but dreams of traveling to every corner of Atreia and the Abyss.</p>
+          <p> </p>
+          <p>He has a particular interest in the Abyss, so I like to buy Abyss goods from teleporting travelers if they have any.</p>
+          <p> </p> 
+          <p>I've gathered some here but don't have time to deliver them. Would you do it, [%username]?</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_N_Noris] is a Sanctum Guard stationed in front of the Artisans Hall.</p>
+          <p> </p>
+          <p>Pass through Elyos Square and the Sky Canal, then go straight inside.</p>
+          <p> </p>
+          <p>I can't give you much besides our thanks, but if you need funds for your travels, this job can be helpful.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"It's an honor to help."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I understand. I know I'm not offering much, so I'm really not offended.</p>
+          <p> </p>
+          <p>So many Daevas pass through here that one will surely help us out.</p>
+          <p> </p>
+          <p>May the protection of Ariel be with you.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"And with you."</Act>
+    </Selects>
+  </HtmlPage>
+ 
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I take pride in my work guarding the Artisans Hall and the Protectors Hall. They're the most important places in Sanctum.</p>
+          <p> </p>
+          <p>But there times I'd like to spread my wings and travel, you know? No rest for a Daeva, though.</p>
+          <p> </p>
+          <p>Anyway, what brings you here?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">"Polyidus sent these for you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Fantastic! Look at these! You never see things like this in Sanctum.</p>
+          <p> </p>
+          <p>All the way from Reshanta! It makes me want to go all the more.</p>
+          <p> </p>
+          <p>Thank you! Thank you so much!</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"No problem."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I wish Noris could be satisfied with a peaceful life here in Sanctum.</p>
+          <p> </p>
+          <p>But I can certainly understand his restless wings. If I'd never been out of Sanctum, I'd want to see more of the world, too.</p>
+          <p> </p>
+          <p>Were you able to take those goods to him?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"He really appreciates them."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you very much. Each souvenir I send him makes him smile for a while, and that's all the reward I need.</p>
+          <p> </p>
+          <p>Speaking of which, here's what I promised you. It's not much, but should still be helpful.</p>
+          <p> </p>
+          <p>May the light guide your path.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk with [%dic:STR_DIC_N_Noris].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Talk with [%dic:STR_DIC_N_Polyidus].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Polyidus collects souvenirs for Noris, a Sanctum Guard who dreams of travel. Deliver the items to him at the Artisans Hall.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Polyidus's friend Noris collects souvenirs, dreaming of the day he can travel to the Abyss.</p>
+          <p> </p> 
+          <p>Goods from the Abyss are quite rare in Sanctum, so Polyidus asks teleporting travelers to get them.</p>
+          <p> </p> 
+          <p>He wanted to send the goods he had collected to his friend, so you delivered them to Noris outside the Artisans Hall.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, hello, [%username]. You have something you want to trade?</p>
+          <p> </p>
+          <p>No? Then perhaps you're the tavern-crawling type. What're the current specials at the Dionysia?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"The depressed Qooqoo swears colorfully there."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Really? Someone like you working for THEM? You look smarter than that.... Ah, well, it takes all kinds.</p>
+          <p> </p>
+          <p>You know, I'm no spy.... Just a guy trying to make a living. But your current employers aren't making things easy for me.</p>
+          <p> </p>
+          <p>I'm tired of them ignoring me. Well, if they want their precious info, they'll have to compensate me. And since you work for them now....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Don't worry. I don't want any Kinah.</p>
+          <p> </p>
+          <p>I need [%dic:STR_DIC_I_QUEST_80061A]. It's no ordinary envelope. Its special features will come in handy for your employers' spy work.</p>
+          <p> </p>
+          <p>You get me some from [%dic:STR_DIC_M_Lobster_25_An]s, and you'll have your letter. Simple as that.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Then I know what I must do."</Act>
+    </Selects>
+
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Fine. Your funeral, if you want to disappoint your employers and not gain information vital to the war....</p>
+          <p> </p>
+          <p>I love Elysea as much as the next man, but I need to eat. I can't continue paying for materials out of pocket.</p>
+          <p> </p>
+          <p>Don't I deserve a little light and happiness for everything I do for them?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"If only you WOULD see a little light."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That didn't take too long. See, all you needed was a little motivation.</p>
+          <p> </p>
+          <p>I have that letter all ready for you, assuming you have something ready for me...?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Yes, yes, I've got it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ahh, finally. I've just saved enough Kinah for a good dinner tonight...at the Dionysia.</p>
+          <p> </p>
+          <p>So here's that letter. Frankly, I'm relieved I can give it to you. This info will do a lot of good.</p>
+          <p> </p>
+          <p>You'd better take care of it. Good Daevas were displaced for that letter.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hey, I have all the time in the world. Your employers don't. Won't they be upset if their precious plans go awry?</p>
+          <p> </p>
+          <p>I still need that [%dic:STR_DIC_I_QUEST_80061A] from [%dic:STR_DIC_M_Lobster_25_An]s and you need that letter. It's a simple trade.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"How about you trade me some teeth?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get [%dic:STR_DIC_I_QUEST_80061A]s from [%dic:STR_DIC_M_Lobster_25_An]s and give them to [%dic:STR_DIC_N_event_Kardinal].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Get Faded Envelopes and give them to Kardinal.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You met Kardinal, your contact at the Trade Brokerage.</p>
+          <p> </p>
+          <p>Tired of working for free, he'd only give you the letter if you got him some Faded Envelopes.</p>
+          <p> </p>
+          <p>You retrieved some, and he finally gave you your letter in return.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

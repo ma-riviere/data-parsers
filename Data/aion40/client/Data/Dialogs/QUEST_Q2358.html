@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>신경이 지나치게 예민한 것도 살아가는 데 여러 가지로 불편한 것 같소.</p>
+          <p> </p>
+          <p>요즘 자주 눈앞이 흐려져서 건강이 안 좋아지는 건가 싶어서 걱정하고 있었소.</p>
+          <p> </p>
+          <p>아무래도 이렇게 뜨거운 곳에서 죽어라 일하고 있으니 몸에 이상이 나타날 수도 있다 싶어서 말이오.</p>
+          <p> </p>
+          <p>그런데 알고 보니 그게 타오르는 옵스큐라 때문이더구려. 놈의 몸 주변에 나타나는 아지랑이 때문에 주변까지 다 흐려져 보인 거였소.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이유는 알아냈지만 증세가 나아지진 않더구려. 아니 그때부터 오히려 신경이 더 쓰이게 됐소.</p>
+          <p> </p>
+          <p>그렇다고 바쁜데 [%dic:STR_DIC_M_ShadowstalkerD_28_An]만 죽어라 쫓아다니며 처치할 수도 없는 일이고 말이오.</p>
+          <p> </p>
+          <p>그래서 부탁인데 바쁜 일이 없으면 타오르는 옵스큐라 좀 대신 처치해 주지 않겠소?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아마 놈을 보면 바로 저놈이 [%dic:STR_DIC_M_ShadowstalkerD_28_An]구나 하고 느낌이 딱 올 거요.</p>
+          <p> </p>
+          <p>그림자처럼 형체가 분명하지 않은 것에 어슴푸레해 보이는 불꽃이 타오르고 있거든.</p>
+          <p> </p>
+          <p>9마리 정도 처치하면 신경이 좀 덜 쓰이지 않을까 싶소. 그럼 부탁하오!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>나 못지 않게 [%username]도 바쁜가 보구려.</p>
+          <p> </p>
+          <p>할 일이 많은 사람을 개인적인 일 때문에 붙잡아 둘 수야 없는 일이지.</p>
+          <p> </p>
+          <p>뭐 참고 견디면 어떻게든 되지 않겠소? 정말 눈앞이 흐려진 것도 아니고 말이오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_M_ShadowstalkerD_28_An]는 처치했소?</p>
+          <p> </p>
+          <p>놈들만 사라지면 이렇게 신경이 날카롭진 않을 것 같소.</p>
+          <p> </p>
+          <p>가끔은 이렇게 예민한 내 자신이 정말 싫다니까...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>듣던 중 반가운 소식이구려.</p>
+          <p> </p>
+          <p>다른 조사도 이렇게 술술 풀리면 좋을 텐데...</p>
+          <p> </p>
+          <p>어쨌거나 고맙소. 덕분에 조사에 집중할 수 있게 됐소.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_M_ShadowstalkerD_28_An]를 처치하라([%2]/9)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Embla]와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">엠블라는 타오르는 옵스큐라 때문에 눈앞이 흐려지는 것이 신경 쓰인다고 한다. 다른 일로 바쁜 그녀 대신 타오르는 옵스큐라를 처치해 주기로 했다.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>무스펠 화산에서 임무를 수행하고 있는 엠블라는 타오르는 옵스큐라 때문에 눈앞이 흐려지는 것이 아주 신경이 쓰인다고 했다.</p>
+          <p> </p>
+          <p>하지만 시간이 없어서 그냥 참고 있다기에 대신 타오르는 옵스큐라를 처치해 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

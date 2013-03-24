@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q41162</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select_none" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>붉은비늘 살리바도는 정확히 어떤 형태의 전투를 벌이는지 전혀 알려져 있지 않습니다.</p>
+          <p> </p>
+          <p>놈을 본 데바의 숫자가 극소수에 불과하기 때문입니다. 워낙에 조심성이 강한 놈이라 쉽게 모습을 드러내질 않죠.</p>
+          <p> </p>
+          <p>자, 여기 그놈을 유인할 수 있는 미끼가 완성되었습니다.</p>
+          <p> </p>
+          <p>이걸 가지고 가서 놈이 식탁으로 사용하는 [%dic:STR_DIC_ILDF4a_Decoy_Q41162] 위에 올려두세요. [%dic:STR_DIC_W_LDF4a_SZ_A1]의 남쪽을 찾아보시면 덩그러니 놓여 있을 겁니다.</p>
+          <p> </p>
+          <p>그리고 [%dic:STR_DIC_M_LDF4A_A1_SalivadoRedQ_57_Ae]가 나타나면... 그 다음은 아시죠? 바로 무찌르는 겁니다!</p>
+          <p> </p>
+          <p>처치한 후에는 제게 돌아오실 필요 없이 바로 [%dic:STR_DIC_N_Bargeni] 님께로 보고해 주시면 됩니다. 그럼, 행운을 빌어요!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(웨렌느가 얘기했던 바위가 확실한 것 같다.)</p>
+          <p> </p>
+          <p>(맹수의 미끼를 내려두고 기다려 봐야겠다.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">미끼를 바위 위에 놓는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]! [%dic:STR_DIC_M_LDF4A_A1_SalivadoRedQ_57_Ae]를 처치하러 갔다는 이야기는 웨렌느에게 전해 들었소.</p>
+          <p> </p>
+          <p>일은 어떻게 됐소?</p>
+          <p> </p>
+          <p>설마 실패한 거요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>허허, 그토록 우리를 괴롭히던 맹수를 그렇게 간단하게 처리해 버리다니...</p>
+          <p> </p>
+          <p>대단하시오.</p>
+          <p> </p>
+          <p>우두머리를 잃은 살리바도들은 이제 곧 풀이 죽을 테니 한시름 놓을 수 있을 것 같소.</p>
+          <p> </p>
+          <p>자, 이곳의 평화를 위해 애써 주신 분에 대한 보상이오.</p>
+          <p> </p>
+          <p>사양할 필요 없으니 받아 주시오.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_ILDF4a_Decoy_Q41162]을 찾아 [%dic:STR_DIC_N_Werenne]가 만든 미끼를 올려 둬라</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_M_LDF4A_A1_SalivadoRedQ_57_Ae]를 처치하라([%5]/1)</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">[%dic:STR_DIC_N_Bargeni]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">웨렌느가 만들어 준 미끼만 있다면 살리바도의 우두머리를 유인할 수 있다고 한다. 우두머리를 꾀어내어 처치해 버리자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>웨렌느는 붉은비늘 살리바도를 꾀어낼 수 있는 미끼를 만들어 줬다.</p>
+          <p> </p>
+          <p>웨렌느가 알려준 대로 반질거리는 돌판을 찾아 미끼를 올려두니 곧 우두머리가 나타났고, 가볍게 처치한 후 사르판 수호대 천부장 바르제니에게 보고했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

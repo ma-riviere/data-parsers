@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Dealing with the command officers of the Bastion is the best way to get at them, I think. They have so many grunts, it's pointless to strike at their main force.</p>
+          <p> </p>
+          <p>Only the senior staff know anything. That's where we have to hit them.</p>
+          <p> </p>
+          <p>We'd like to keep up the attacks. Keep striking at them while they're still trying to reorganize from our last hit.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"There's more work then?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The most important remaining officers at the Bastion are Highpriest Rhipel and Highmage Wyron, but we've decided not to kill them yet. Instead we're going to send them a message.</p>
+          <p> </p>
+          <p>Your task will be to eliminate Rhipel's bodyguard, [%dic:STR_DIC_M_LF2_LehparAsNamedQ_39_Ae], and Highmage Wyron's favorite pupil [%dic:STR_DIC_M_LF2_LehparWiNamedQ_39_Ae].</p>
+          <p> </p>
+          <p>That'll send them a message. They'll know that we can take them down anytime, whenever we want.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Very little is known about [%dic:STR_DIC_M_LF2_LehparAsNamedQ_39_Ae], so watch out. We don't even have a reliable description. It's said that no one left alive has seen Scop's face.</p>
+          <p> </p>
+          <p>In contrast, [%dic:STR_DIC_M_LF2_LehparWiNamedQ_39_Ae] is very well known for his magical skills. He's reputed to be very handsome...face of an angel, soul of a devil.</p>
+          <p> </p>
+          <p>Neither will be an easy target, but this is a critical mission for our strategy. Don't fail.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"You have my word!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I understand the desire to strike directly, but think about it, [%username]. Leaving those terrified officers in a position of power will paralyze the Lepharists. If you kill them, they'll be replaced with effective underlings.</p>
+          <p> </p>
+          <p>See what I mean?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll think it over."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've been waiting for you.</p>
+          <p> </p>
+          <p>Did everything go according to plan?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"It went perfectly."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Great! That should have put the fear of the five in them. Now we just let them stew for a while...let that terror fester....</p>
+          <p> </p>
+          <p>Soon they'll start reorganizing the Bastion defenses strictly to protect their own hides, and open gaps elsewhere.</p>
+          <p> </p>
+          <p>We'll eventually eliminate Rhipel and Wyron, but they'll wreck the cohesion of the Lepharist defenses first. Brilliant, eh?</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Defeat the bodyguards protecting the High Mage and the High Priest in the Bastion.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_LF2_LehparAsNamedQ_39_Ae] ([%2]/1)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_LF2_LehparWiNamedQ_39_Ae] ([%5]/1)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report back to [%dic:STR_DIC_N_Elram].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Elram is carrying out the second stage of an operation against the commanders of the Lepharist Bastion. Eliminate Faceless Scop and Pale Narcis, bodyguards to the High Mage and High Priest of the Lepharist Bastion.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Elram moved on to the next stage of the operation against the Lepharists. He asked you to eliminate Faceless Scop and Pale Narcis, in order to terrify Highpriest Rhipel and Highmage Wyron, whom they guard.</p>
+          <p> </p>
+          <p>You reported back to Elram after defeating Scop and Narcis. He was very pleased that the Lepharist commanders would be too terrified to be effective.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

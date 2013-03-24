@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Nothing brings me more pride than being a part of the Pandaemonium Expeditionary Force. But if it weren't for Svidar, I never would have gotten here.</p>
+          <p> </p>
+          <p>Though lately...I have noticed he's been a little...odd. More so than usual. I think there's something in those Leowasp wings he keeps eating.</p>
+          <p> </p>
+          <p>But he's still a great person. He's looked after me since I was a little girl--just take his ramblings with a grain of salt.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I'll keep that in mind."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm trying to keep Svidar's responsibilities in line while he's got this Leowasp wing obsession, and I could use some help. </p>
+          <p> </p>
+          <p>Right now I need to clear out the area around the Crimson Temple and shore up our defenses.</p>
+          <p> </p>
+          <p>Mind helping me out?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This shouldn't be too difficult for a Daeva of your skill. </p>
+          <p> </p>
+          <p>You just need to dispatch the [%dic:STR_DIC_M_DF4_Draky_DR_54_An]s in the Vorgaltem Battlefield near the Crimson Temple, and bring me back their horns as proof.</p>
+          <p> </p>
+          <p>Unlike Svidar, I can promise I'm not going to cook them...I just need the horns for confirmation.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll return with the horns."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We've all got other things to do, I suppose.</p>
+          <p> </p>
+          <p>Oh well, it can't be helped. I'll have to do this one myself.</p>
+          <p> </p>
+          <p>Thanks anyway, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Good luck."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's great having someone like Svidar to look out for me. Though I'm more looking out for him at the moment. </p>
+          <p> </p>
+          <p>I just hope this Leowasp wing infatuation passes. It's not healthy.</p>
+          <p> </p>
+          <p>Well, did you get rid of the Drakies?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here are the horns."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This isn't enough, [%username].</p>
+          <p> </p>
+          <p>Look, I can understand you being suspicious, what with the way Svidar obsesses over those Leowasp wings....</p>
+          <p> </p>
+          <p>You might think I have some deranged purpose for the horns, but I swear, they're just for confirmation. Please, bring them to me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be back."</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thanks, [%username].</p>
+          <p> </p>
+          <p>With the Drakies wiped out, we've secured our position here, and we'll be able to focus on more dangerous enemies when they come--and they will.</p>
+          <p> </p>
+          <p>Here, take this as a token of my, and Svidar's, gratitude. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Obtain the horns of [%dic:STR_DIC_M_DF4_Draky_DR_54_An]s and take them to [%dic:STR_DIC_N_Cozett].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Eradicate the Drakies at the Vorgaltem Battlefield as Cozett asked and return with their horns as proof.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Cozett said the Drakies around the Crimson Temple need to be eradicated to solidify the temple's defenses.</p>
+          <p> </p>
+          <p>You slew the Drakies, and returned with their horns as proof. Cozett expressed gratitude on behalf of Svidar.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

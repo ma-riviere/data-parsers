@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Asmodians are attacking the fortress again! We must drive them back at all costs!</p>
+          <p> </p>
+          <p>They have even built a Guard Tower! Surely our gate will not last long under such an assault!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"We must take action!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I have a daring plan. We will destroy their Guard Tower!</p>
+          <p> </p>
+          <p>Without it, they will surely flee like the cowards they are.</p>
+          <p> </p>
+          <p>Of course, we need every Daeva in the fortress to stay to strengthen the gates. You must destroy the Guard Tower by yourself, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">"Accept."</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">"Decline."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>They will tell stories of this glorious battle for centuries to come: [%username] and the Battle of the Guard Tower!</p>
+          <p> </p>
+          <p>Siel's Left Wing Fortress must not fall!</p>
+          <p> </p>
+          <p>Destroy [%dic:STR_DIC_OBJ_1131_AttackTower_Da]! Smash it in Lady Ariel's name!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"For Lady Ariel!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>There is no time for backup! You must press the attack now!</p>
+          <p> </p>
+          <p>If your courage falters, then we are all doomed! Where is your sense of duty?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll go look for it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oho, you have succeeded! All hail [%username], hero of Siel's Left Wing Fortress!</p>
+          <p> </p>
+          <p>Tell me, how many Asmodian roaches did you crush along the way?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Dozens!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This day will live forever in the annals of history!</p>
+          <p> </p>
+          <p>Yet the Asmodians did not flee like I thought. Perhaps they have a secret plan we did not anticipate.</p>
+          <p> </p>
+          <p>Perhaps they have--dare I say it--another Guard Tower?</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Destroy the [%dic:STR_DIC_OBJ_1131_AttackTower_Da] that attacks the fortress gate ([%2]/1).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_N_Ab1_1131_Quest_Li].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Asmodians have built a Guard Tower to capture the fortress. Okeanos said that you, and you alone could destroy it.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Asmodians attacked the fortress gate, and things looked bleak. You destroyed the Guard Tower, and single-handedly saved the day.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

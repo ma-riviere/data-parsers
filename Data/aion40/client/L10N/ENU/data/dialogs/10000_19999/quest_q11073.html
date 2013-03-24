@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, is it that time of day already? No?</p>
+          <p> </p>
+          <p>Kaisinel's backside, I'm tired!</p>
+          <p> </p>
+          <p>Sure, I'm helping keep the fortress secure, but maybe we could be allowed to go outside? To kill all the creatures in the forest that get on my nerves?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Don't you enjoy the downtime?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Optimists may sing of peace, but I like to prepare for other, newer threats.</p>
+          <p> </p>
+          <p>In battle here, the biggest threat comes from poisonous tentacles or exploding thorns, not our thinking enemies. You won't see any [%dic:STR_DIC_M_LF4_A4_Fellial_Dr_51_An]s or [%dic:STR_DIC_M_LF4_A_Shellizard_Feeler_51_An]s on my watch!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Doesn't killing them make you more tired?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Though I stand sentry during the day, nighttime is MY time. When it gets dark, my energy flies up into the stars and I go out to hunt Moonflowers and Ksellids.</p>
+          <p> </p>
+          <p>Except...yes, I guess I have started to feel the exhaustion set in. I truly do need to skip one of these activities, and the General will kill me if I don't show up for duty, so....</p>
+          <p> </p>
+          <p>Would you deal with the Moonflowers and Ksellids lurking to the north of the fortress for me? Just for today?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I knew you were my kind of [%userclass]!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Faith and ARMS!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I guess I'll have to go out again tonight to deal with the Moonflowers and Ksellids.</p>
+          <p> </p>
+          <p>At this rate, I could collapse of exhaustion any second.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"It's your own fault."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Isn't it a rush? Going to the Wildheart Grove and getting Moonflowers and Ksellids before they get you? But it's also practical.</p>
+          <p> </p>
+          <p>Imagine there's a battle with the Balaur. You touch a Moonflower or Ksellid accidentally, and you'd be poisoned before you even glimpse the enemy.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"It'll be harder to brush against them now."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good work, [%username]. Now we're safe...to get killed by our chosen enemies instead of  natural ones.</p>
+          <p> </p>
+          <p>Errr...sorry. I'll be more amiable after a good night's sleep tonight. Thank you for the help.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Hunt the Moonflowers and Ksellids north of the fortress.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_LF4_A4_Fellial_Dr_51_An]([%2]/11)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_LF4_A_Shellizard_Feeler_51_An]([%5]/20)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_N_Phryne].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Accept the request of Legionary Phryne, who works hard every night to hunt Moonflowers and Ksellids north of the fortress.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Phryne worried about Moonflowers and Ksellids north of the fortress, so she went out to hunt them every night.</p>
+          <p> </p>
+          <p>She was very grateful you hunted the Moonflowers and Ksellids for her so she could sleep.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

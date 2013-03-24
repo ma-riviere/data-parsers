@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>- 긴급 명령서 -</p>
+          <p> </p>
+          <p>1. 발신: 카탈람 파견대의 페페 천부장</p>
+          <p> </p>
+          <p>2. 수신: [%username]</p>
+          <p> </p>
+          <p>3. 명령: [%dic:STR_DIC_W_LDF5A_OP_D] 근처에서 마족의 동향을 살피고 아칸 보초병을 처치해 주십시오!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">의뢰를 수행한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+		  <p>잠시만 조용히 말하겠습니다.</p>
+		  <p> </p>
+		  <p>포르티스 신관장은 모르고 있는 일이라서 말입니다.</p>
+		  <p> </p>
+          <p>아칸 보초병을 처치했습니까?</p>
+          <p> </p>
+		  <p>[%username] 님에게 긴급히 지령을 보냈었습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">그렇다고 한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>고맙습니다.</p>
+          <p> </p>
+          <p>마족 놈들이 깜짝 놀랐을 겁니다. 카탈람을 정복하겠다는 헛된 꿈도 버리겠지요.</p>
+          <p> </p>
+		  <p>만일 포르티스 신관장이 이 계획을 알았다면 자기가 공을 세워야 한다고 설레발을 쳐서 다 망쳐놓았을 것입니다.</p>
+		  <p> </p>
+		  <p>[%username] 님께서 신속히 해결해주셔서 정말 다행입니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_W_LDF5A_OP_D] 근처에서 아칸 보초병을 처치하라</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_LDF5A_OP_D_Guard_Fi_D_Q_61_An]([%2]/2)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_LDF5A_Pepe_E]%와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">긴급 지령:마족 본거지인 룬의 신전 부근에서 아칸 보초병을 처치하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>마족 본거지를 살피던 중 카탈람 파견대의 페페 천부장에게 지령이 왔다.</p> 
+		  <p> </p>
+		  <p>아칸 보초병을 처치해달라는 지령대로 룬의 신전 근처에서 아칸 보초병을 처치하고 페페 천부장에게 돌아갔다.</p> 
+		  <p> </p>
+		  <p>페페 천부장은 마족 놈들이 깜짝 놀랐을 것이라며 좋아했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

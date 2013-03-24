@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, [%username]! You look a little lost. Sense something a little different about the place?</p>
+          <p> </p>
+          <p>We've commenced restoration work at last. Thanks again for your help eliminating the ghosts.</p>
+          <p> </p>
+          <p>You may not be able to see the changes yet--give it some time.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"All that ice and snow--how...?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We're starting slowly, raising the air temperature using Magic Flame Wards. It takes a while, but it protects the buildings.</p>
+          <p> </p>
+          <p>There's been some discussion about applying heat directly, but the risk is too great. Higher temperatures may damage the ruins, and even lead to structural collapse.</p>
+          <p> </p>
+          <p>Something odd though--the Magic Flame Wards aren't as effective as we expected. At first I thought it was because it's so cold here. But...I think there's more to it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What do you think is happening?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>A Daeva of Flame posted here previously told me that the ghost of Priest Esekiel appeared at critical moments in the work and destroyed whatever Magic Flame Wards were being deployed. Now, we've seen her spirit here but...</p>
+          <p> </p>
+          <p>I'm at a loss to explain why a priest who governed Kurngalfberg would interfere with the restoration of the city.</p>
+          <p> </p>
+          <p>You've dealt with the ghosts of Kurngalfberg before. Would you take care of Esekiel's ghost for me?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I wish more Daevas were like you--willing to accept a charge without hesitation. Thank you.</p>
+          <p> </p>
+          <p>From what I hear, [%dic:STR_DIC_M_UndeadDarkWiNamedDQ_38_An] has been using a [%dic:STR_DIC_I_QUEST_2563a] that shoots blasts of icy energy. It must be incredibly powerful to break a Magic Flame Ward.</p>
+          <p> </p>
+          <p>She must be stopped. Send her back to the flow of Aether, and bring me the Frozen Orb.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"The task is mine!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No. No? You understand the strategic importance of this city, don't you?</p>
+          <p> </p>
+          <p>We're understaffed, overworked, and working furiously to make up for lost time.</p>
+          <p> </p>
+          <p>We need your help, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I've fought enough undead, thanks."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, this is hard work. It's taking everything I've got to maintain this Magic Ward. And there's still so much more to do.</p>
+          <p> </p>
+          <p>You did vanquish [%dic:STR_DIC_M_UndeadDarkWiNamedDQ_38_An] and bring the Frozen Orb with you, right?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I did."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Is this a joke? </p>
+          <p> </p>
+          <p>Look, I understand that [%dic:STR_DIC_M_UndeadDarkWiNamedDQ_38_An] isn't an ordinary foe and she's armed with an extraordinary weapon.</p>
+          <p> </p>
+          <p>But you've got to eliminate her and get the Frozen Orb. We can't finish this work if you don't.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I understand. On my way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Is this the orb? I've seen many treasures, but I've never seen anything like this before. How...odd.</p>
+          <p> </p>
+          <p>I wonder where Esekiel got it--but then Kurngalfberg was known for advanced magical objects, so it would be no surprise if it was made here. I think it would be best to send this to Pandaemonium for study.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Send [%dic:STR_DIC_M_UndeadDarkWiNamedDQ_38_An] back to the flow of Aether, then take the Frozen Orb and bring it to [%dic:STR_DIC_N_Kistenian].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Daeva of Flame Kistenian says the Magic Flame Wards he casts keep losing strength due to Priest Esekiel's interference. Vanquish Esekiel, take away her Frozen Orb and bring it to Kistenian.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Kistenian told you that the Magic Flame Wards he casts are weaker than they should be. He thought the ghost of Priest Esekiel was interfering with his work.</p>
+          <p> </p>
+          <p>He asked you to send Esekiel back to the flow of Aether and to take the powerful Frozen Orb from her. When you brought the Orb to Kistenian, he was intrigued by it and wanted to send it to Pandaemonium for study.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

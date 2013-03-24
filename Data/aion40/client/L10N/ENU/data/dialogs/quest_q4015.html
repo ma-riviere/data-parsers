@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I don't know how familiar you are with [%dic:STR_DIC_W_ZONE_NAME_DF2A]--have you heard of the [%dic:STR_DIC_W_DF2A_SZ_D]?</p>
+          <p> </p>
+          <p>They say it's not as fertile as the Havenjark Farm, but we hoped to cultivate it or perhaps use it for livestock.</p>
+          <p> </p>
+          <p>We built a Settlers Campsite there and dispatched a team of laborers to conduct soil tests and so on.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Sounds like a good start."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well...we haven't heard from them yet. They were supposed to return once they'd completed their preliminary tests--just a couple of days. But it's been nearly a week, and we've had no word.</p>
+          <p> </p>
+          <p>The area's not known to be dangerous, but now I'm starting to wonder.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I agree. Something's not right."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That's what I thought. And while people insist nothing's wrong, no one's volunteering to launch a search party either.</p>
+          <p> </p>
+          <p>The Shedim Lords must have sent you to me, [%username].</p>
+          <p> </p>
+          <p>Would you go to the [%dic:STR_DIC_W_DF2A_SZ_D] and check on the team?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>If you find them, tell them to report back immediately.</p>
+          <p> </p>
+          <p>If they're in trouble, I hope you'll do what you can to help.</p>
+          <p> </p>
+          <p>And if you don't find them at all...well, look for any clues as to their fate.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"The task is mine!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No? So you'll sympathize, but you won't help.</p>
+          <p> </p>
+          <p>I'm...surprised, to say the least.</p>
+          <p> </p>
+          <p>Well, take your wings and go, Daeva. I'll find help elsewhere.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Walk in Azphel's shadow."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(Hm. Looks like the team Centurion Vinduer is looking for.)</p>
+          <p> </p>
+          <p>(This one's not breathing. Not a good sign.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">"I'd better check the bodies."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(These wounds were made by sharp weapons. Elyos weapons, most likely. This place is crawling with sun-suckers.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"I'd better go tell Vinduer."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], I don't see my team with you. Are they still out there? What happened?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Dead at the hands of the Elyos."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Elyos? Elyos in Brusthonin?</p>
+          <p> </p>
+          <p>They've slaughtered civilians in cold blood.</p>
+          <p> </p>
+          <p>I should have sent guards with them.... No. No time for regrets. We need to retaliate and obliterate the Elyos.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Find the labor team that never returned from the [%dic:STR_DIC_W_DF2A_SZ_D].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Report the result to [%dic:STR_DIC_N_Vinduer].</font></p></step> 
+    </steps>
+          <p><font font_xml="quest_summary">Vinduer sent a team of laborers to the Vigrid Plains to prepare the land for farming, and they didn't return. Vinduer asked you to look for them.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Vinduer said the laborers who went to scout the Vigrid Plains never returned. He feared for their safety.</p>
+          <p> </p>
+          <p>You searched for the laborers, but you found them all dead--murdered by the Elyos.</p>
+          <p> </p>
+          <p>When reported to Vinduer, he swore to retaliate.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

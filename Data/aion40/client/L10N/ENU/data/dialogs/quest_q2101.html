@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--Tightening pass 16 april by Dave. First quest in the game.-->
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I saw you collapse. What happened to you?</p>
+          <p> </p>
+          <p>Did a Sprigg catch you nappin'? Did you slip? Are you sick?</p>
+          <p> </p>
+          <p>Don't slow us down, [%username]. We've got raiding to do.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I'm fine. It was nothing."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hmm. I'm glad you're okay, then.</p>
+          <p> </p>
+          <p>Quickly! [%dic:STR_DIC_N_Vandarnt] wants to see you.</p>
+          <p> </p>
+          <p>He saw you on the ground a minute ago, so you'll have to hop to it. You don't want him thinkin' you were sleeping on the job.</p>
+          <p> </p>
+          <p>Hurry, he's waiting for you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That's more like it.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_N_Vandarnt] is standing over there, right by a milestone. Just keep to the path and hustle over there.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm on my way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What?</p>
+          <p> </p>
+          <p>What's wrong with you, [%username]?</p>
+          <p> </p>
+          <p>If you're going to make it in this world, you can't afford to be lazy....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I have to go."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]...feeling better?</p>
+          <p> </p>
+          <p>Surprised to see you on the ground. You looked tougher than most of the raider wannabes we get around here.</p>
+          <p> </p>
+          <p>You were lucky we weren't in a hurry. I sent the others off to raze the Sprigg dwellings around here.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"It won't happen again."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That's what I want to hear.</p>
+          <p> </p>
+          <p>We need all the [%userclass]s we can get our hands on, especially with these quotas of ours.</p>
+          <p> </p>
+          <p>So, enough talk. There's work to be done.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Meet [%dic:STR_DIC_N_Vandarnt].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">You heard that Vandar was waiting for you. Follow the path and meet him.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>For some reason you passed out. When you woke, Asak told you to talk to Vandar.</p>
+          <p> </p>
+          <p>Vandar said he had to make sure you were fit for raiding, and he told you that there were heavy quotas to meet.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

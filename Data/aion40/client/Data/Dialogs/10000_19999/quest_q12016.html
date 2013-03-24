@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q12016</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>미입력</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>어쩌다 보니 감당하기 힘든 일을 맡게 됐습니다.</p>
+          <p> </p>
+          <p>용암온천 남쪽에 용신도들이 사는 마을이 있습니다.</p>
+          <p> </p>
+          <p>그곳의 용신도를 처치하라는 명령이 내려왔는데 전투랑은 한참 먼 학자다 보니 어떻게 해야 좋을지 모르겠습니다.</p>
+          <p> </p>
+          <p>[%username] 님 같은 데바들에게 부탁하는 수밖에 없을 것 같습니다.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_LDF4b_T3_FanaticFi_58_An], [%dic:STR_DIC_M_LDF4b_T3_FanaticAs_58_An], [%dic:STR_DIC_M_LDF4b_T3_FanaticWi_58_An], [%dic:STR_DIC_M_LDF4b_T3_FanaticCh_58_An]를 좀 처치해 주시겠습니까? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님이 돌아오기만 기다리고 있었습니다.</p>
+          <p> </p>
+          <p>상부에서 진척 상황을 묻는 서신이라도 오면 어쩌나 조마조마했습니다.</p>
+          <p> </p>
+          <p>가신 일은 어떻게 됐습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>용신도를 처치하셨다니 정말 다행입니다.</p>
+          <p> </p>
+          <p>임무를 완수했다고 보고할 수 있겠군요.</p>
+          <p> </p>
+          <p>이제 불안해하지 않고 연구를 계속할 수도 있을 테고요.</p>
+          <p> </p>
+          <p>도와주셔서 정말 감사합니다, [%username] 님.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_M_Q12016_All]를 처치하라([%2]/15)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Favilian]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">파빌리안은 버림받은 마을의 용신도를 처치하라는 명령을 받았다고 한다. 전투를 못하는 파빌리안 대신 아바드 전투병, 아바드 정찰병, 아바드 흑술사, 아바드 수도사를 처치하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>파빌리안은 버림받은 마을의 용신도를 처치하라는 명령을 받았지만 전투를 하지 못해 곤란해하고 있었다.</p>
+          <p> </p>
+          <p>그래서 대신 용신도를 처치해 줬더니 다시 연구에 몰두할 수 있게 됐다며 고마워했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

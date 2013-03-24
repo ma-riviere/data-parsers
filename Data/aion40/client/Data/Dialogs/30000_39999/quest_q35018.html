@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 보시오.</p>
+          <p> </p>
+          <p>최근 테오모보스에서 활동하는 차우린린에게서 소식이 끊겼다오.</p>
+          <p> </p>
+          <p>바라지 않는 일이오만 위급한 상황이 생긴 것일지도 모르니 서둘러 [%dic:STR_DIC_N_Shugo_LF2a_4]%를 만나 상황을 파악하시오.</p>
+          <p> </p>
+          <p>만약 상황이 심각하면 바로 급전을 치고, 그게 아니라면 [%dic:STR_DIC_E_35014]에게 보고하시오.</p>
+          <p> </p>
+          <p>명심하시오. 행동은 신속하게! 입은 무겁게! </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">의뢰서를 접어 넣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(반가운 표정으로) 드디어 신성 수호회에서 사람을 보냈구낭.</p>
+          <p> </p>
+          <p>차우린린 기다리느라 탈모증 생기는 줄 알았당, 갸릉.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">사정을 말한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그게 말이당. 보고서를 왜 안 보냈냐면...</p>
+          <p> </p>
+          <p>냥, 어차피 말할 것 속시원하게 말하겠당.</p>
+          <p> </p>
+          <p>지금 주는 활동비는 너무 부족하당. 그걸로는 우편료 감당하기도 벅차당.</p>
+          <p> </p>
+          <p>이런 먼지 구덩이에서 일하는데 솔직히 최고급 보습제 정도는 마음껏 살 수 있을 정도의 수고료는 받아야 하지 않겠냥?</p>
+          <p> </p>
+          <p>그러니 상부에 활동비를 좀 올려 달라고 해 줘랑. 안 그러면 차우린린, 보고서 안 보낼거당, 갸릉.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>요즘 들어 테오보모스에 문제가 많아 걱정이오.</p>
+          <p> </p>
+          <p>그래, 차우린린은 만나봤소?</p>
+          <p> </p>
+          <p>무슨 일로 소식이 끊겼던 거였소? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>허참, 기가 막히구려.</p>
+          <p> </p>
+          <p>지금 지불하는 활동비가 절대 적지 않은데... </p>
+          <p> </p>
+          <p>알겠소. 알려준 사항은 상부에 보고하겠소.</p>
+          <p> </p>
+          <p>에잇, 권한만 있으면 차우린린을 당장 회원 명부에서 제명하고 싶구려. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_Shugo_LF2a_4]과 대화하라</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_E_35014]%에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">신성 수호회에서 의뢰서가 왔다. 지시에 따르자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>신성 수호회는 차우린린의 소식이 끊겼다며 가서 상황을 알아보라 했다.</p>
+          <p> </p>
+          <p>차우린린을 만나 물어보니 지금 받는 수고료로는 더 이상 활동하기 힘들다며 활동비를 인상해 달라는 요구를 했고 프리아모스에게 그대로 전하자 기막혀 하며 상부에 보고하겠다고 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

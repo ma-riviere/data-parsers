@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p> - 긴급 지령서 - </p>
+          <p> </p>
+          <p> 1. 발신 : 카탈람 파견대, [%dic:STR_DIC_W_LDF5a_E1_8]의 [%dic:STR_DIC_N_LDF5_Village_Guard08_L]</p>
+          <p> </p>
+          <p> 2. 수신 : [%username]</p>
+          <p> </p>
+          <p> 3. 명령 : 북부 카탈람 [%dic:STR_DIC_W_LDF5a_E1_QUEST]에 침투한 마족 데바 1명을 처치할 것.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">의뢰를 수행한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+   <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>브리트라군 지원 병력을 감시해 왔는데 최근 일이 더 힘들어졌습니다.</p>
+          <p> </p>
+          <p>마족이 나타나 방해를 하기 때문입니다.</p>
+          <p> </p>
+          <p>마족을 처치해주셨습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>감사합니다.</p>
+          <p> </p>
+          <p>마족이라도 없어야 브리트라군을 감시하는 일이 좀 수월해질 텐데 말입니다.</p>
+          <p> </p>
+          <p>마족 녀석들. 이곳까지 나타난 것을 보면 실력은 없으면서 자신감만 높은 것 같습니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">북부 카탈람 [%dic:STR_DIC_W_LDF5a_E1_QUEST]에 침투한 마족을 처치하라([%2]/1)</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_N_LDF5_Village_Guard08_L]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">긴급 지령: 북부 카탈람 실루스 요새 진입로에 침투한 마족을 처치하고 살린에게 보고하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>북부 카탈람 실루스 요새 진입로에 침투한 마족을 처치해 달라는 살린의 긴급 지령을 받아 마족을 처치하였다.</p>
+          <p> </p>
+          <p>살린은 브리트라군을 감시하는데 마족이 방해가 되었다며 마족은 실력은 없으면서 자신감만 높은 것 같다고 하였다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

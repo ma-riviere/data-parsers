@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q41460</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>카룬 님께 지금 [%username] 님이 어떤 상황에 처해 있으신지는 들었습니다.</p>
+          <p> </p>
+          <p>특별히 혹독한 시험을 준비하라고 말씀하셨으니 그에 걸맞는 과제를 드리지요.</p>
+          <p> </p>
+          <p>티아마란타의 골칫거리인 [%dic:STR_DIC_E_Q41460all]들을 처치하고 돌아오시면 [%dic:STR_DIC_I_Q41454a_02]를 드리도록 하겠습니다.</p>
+          <p> </p>
+          <p>적지 않은 수를 처치해 주셔야합니다만, 징표는 한 개 밖에 드릴 수 없으니 이해해 주시길 부탁드립니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>사실 저는 시엘의 창 레기온에 외부인이 들어간다는 것에 회의적이지만, [%username] 님의 실력은 잘 알기에 조용히 있을 생각입니다.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_E_Q41460all]들은 처치하고 오시는 길입니까?</p>
+          <p> </p>
+          <p>처치하기가 쉽지 않았을 텐데요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정말 대단하시군요.</p>
+          <p> </p>
+          <p>그 위대한 희생을 증명할 수 있도록 징표를 드리겠습니다.</p>
+          <p> </p>
+          <p>카룬 님이 믿는 분이라면 저 또한 믿을 수 있습니다. 부디 끝까지 수고하셔서 카룬 님의 기대에 부응해 주시길 바랍니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_E_Q41460all]들을 처치하라([%2]/242)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Pasquale]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">희생의 증표를 얻기 위해 배반한 연족들을 처치하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+           <p>시엘의 창 레기온에 가입하기 위한 마지막 시험을 통과하기 위해서 티아마란타의 배반한 연족들을 처치하고 희생의 징표를 받았다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

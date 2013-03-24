@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Enough talking, it's time for fighting!</p>
+          <p> </p>
+          <p>Go to the Crucible Coliseum, and prove your worth.</p>
+          <p> </p>
+          <p>Normally you'd have to ask Administrator [%dic:STR_DIC_N_Eno] for your ticket, but this time you can use the one I gave you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Which arena should I pick?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Discipline, Chaos, Harmony... it doesn't matter which, just defeat at least one opponent.</p>
+          <p> </p>
+          <p>Just choose whichever arena appeals to you more, kill an opponent, and return to me with the news.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Don't forget to pick up an Arena Ticket from Perbano. You won't be able to enter the Coliseum without one.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Thanks for the reminder."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What was that? "N-n-n-no thanks!" Did I hear a quiver in your voice? Well, I wouldn't want to send a whimpering hatchling as grist to the mill. You wouldn't last five minutes.</p>
+          <p> </p>
+          <p>Go and waste Molfus's time instead. Who knows? Maybe you can find your misplaced courage in one of the other Crucibles.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Y-y-yes ma'am!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Done with your training? Let's hear the report.</p>
+          <p> </p>
+          <p>You're looking a little less than composed. I assume they wiped the floor with you?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"No, I won... but I found this."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Your opponent dropped this? I--well, congratulations, [%username], you've brought me something I genuinely didn't expect. Not often that happens any more.</p>
+          <p> </p>
+          <p>The thing is, and I wouldn't usually mention this, but your opponents in the Coliseum are intended to be phantoms, like in the other Crucibles. But no phantom could have dropped this. Pass it here so I can take a look.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Defeat an opponent in the [%dic:STR_DIC_W_IDArena_pvp_L] ([%2]/1).</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Talk to [%dic:STR_DIC_N_Junos].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">It's time for your first training in the Crucible Coliseum. Enter the arena and defeat at least one opponent.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Junos instructed you to defeat one opponent in the Crucible Coliseum. When you defeated them, they dropped a strange insignia, which you showed to Junos.</p>
+          <p> </p>
+          <p>Junos let you in on the fact that the Coliseum opponents are usually phantoms, and that this must have come from someone real.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

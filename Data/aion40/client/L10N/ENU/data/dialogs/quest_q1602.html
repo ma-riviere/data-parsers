@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I have a dozen tasks to complete, all of which are annoying. The Tigrics, however, have really earned my ire.</p>
+          <p> </p>
+          <p>That's why I'm sending you to their village. The herd needs culling.</p>
+          <p> </p>
+          <p>I need your assistance, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I'm glad to help."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Search for Tigric Looters wandering about and bring me some [%dic:STR_DIC_I_QUEST_1602a].</p>
+          <p> </p>
+        <p>It's high-quality and fetches a fine price in Sanctum. This way, we kill two birds with one stone.</p>
+          <p> </p>
+          <p>What do you think? Will you help me?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Just head to Tigric Village, catch [%dic:STR_DIC_M_Tauric_39_An]s and bring 15 pieces of [%dic:STR_DIC_I_QUEST_1602a] to me.</p>
+          <p> </p>
+          <p>Try not to mar the leather. Scraps are worthless.</p>
+          <p> </p>
+          <p>While you're doing that, I'll deal with some of my other headaches.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I understand purrfectly."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Look, I really do need your help.</p>
+          <p> </p>
+          <p>This is quick, easy Kinah and we make the paths safer for everyone.</p>
+          <p> </p>
+          <p>I hope you'll reconsider, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I've made other plans."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I contacted Sanctum and told Benes about our little plan. He's very excited.</p>
+          <p> </p>
+          <p>Benes is always trying to be a trendsetter, so it's not hard to sell him on the idea of Tigric leather.</p>
+          <p> </p>
+          <p>Now, did you actually get any [%dic:STR_DIC_I_QUEST_1602a]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Just like you asked."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've already started dealing with Benes in Sanctum!</p>
+          <p> </p>
+          <p>Of course the first priority is getting rid of the Tigric Looters, but my reputation, and purse, are at stake as well.</p>
+          <p> </p>
+          <p>Please bring me 15 pieces of Tigric Leather before he changes his mind. Hurry up!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"All right, I'll be back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>These are splendid samples. Benes will be pleased.</p>
+          <p> </p>
+          <p>You know, I might make my fortune if the Tigric leather clothing sells like hot cakes.</p>
+          <p> </p>
+          <p>I heard an interesting rumor from a resident. I'll check the story out first and get back to you.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Take the leather from [%dic:STR_DIC_M_Tauric_39_An] to [%dic:STR_DIC_N_Seniferes].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Garrett wants to make some money while getting rid of Tigrics. He asked you to collect Tigric Leather and bring it to him.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Garrett suggested making some money while getting rid of Tigrics. When you collected the Tigric leather and brought it to Garrett, he told you a fashion designer in Sanctum was interested.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

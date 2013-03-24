@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>There are only two roads into our outpost. One of them leads through this gate.</p>
+          <p> </p>
+          <p>The other crosses the canyon, straight to the center of the Inggison Gravepit.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"How do you deal with that one?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We patrol, of course! Not that we have enough soldiers.</p>
+          <p> </p>
+          <p>Recently, some of the patrollers have been coming back sick. They have full-body rashes or neverending hiccups.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Ugh. Any idea what's causing it?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We talked to the Reians, and they suspect the Wind Mushrooms that grow on the cliff rocks in the canyon.</p>
+          <p> </p>
+          <p>My soldiers are allergic to their spores.</p>
+          <p> </p>
+          <p>Can you help me get a hold of some mushrooms so we can make an antidote, [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Look at the cliffs along the wind road. You should find three types of mushrooms.</p>
+          <p> </p>
+          <p>The plants may look similar, but they've got different effects. So we need all types--[%dic:STR_DIC_OBJ_Toadstool]s, [%dic:STR_DIC_OBJ_Toadstool_002]s, and [%dic:STR_DIC_OBJ_Toadstool_003]s.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"And use the geysers if I fall off, right?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You must be from Sanctum.</p>
+          <p> </p>
+          <p>Next time you come to the Fortress, it won't be here! You can't ignore our problems and still expect peace and safety.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll look for you if we lose the Fortress, then."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Why should Sanctum care that we're weak and distracted?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I brought the mushrooms to study."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Asmodians won't care about our allergies when they attack.</p>
+          <p> </p>
+          <p>We need those [%dic:STR_DIC_OBJ_Toadstool]s, [%dic:STR_DIC_OBJ_Toadstool_002]s, and[%dic:STR_DIC_OBJ_Toadstool_003]s.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Faith and arms!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Let's get these straight to the medics. The're certainly unique....</p>
+          <p> </p>
+          <p>Thank you for your hard work, [%username]. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect [%dic:STR_DIC_E_Q11229] and bring them to [%dic:STR_DIC_N_LF4_Gateway_Li_Guard_Boss_Q05].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Collect Wind Mushrooms for Lady Pasiphae's medical research needs.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Lady Pasiphae's soldiers patrol the Windstreams, where they've discovered allergies to Wind Mushrooms.</p>
+          <p> </p>
+          <p>You collected all three types of fungus, and she thanked you before sending the specimens to the medical researchers.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

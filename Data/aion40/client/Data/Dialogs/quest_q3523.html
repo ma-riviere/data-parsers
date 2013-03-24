@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님! 잘 오셨습니다.</p>
+          <p> </p>
+          <p>마침 의논드리고 싶은 일이 있었거든요.</p>
+          <p> </p>
+          <p>시간이 있으시면 잠시 제 이야기를 들어 주시겠습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이미 알고 계시겠지만, 최근 마을을 습격하는 족속들이 부쩍 늘어 정기적인 소탕작업을 하고 있습니다.</p>
+          <p> </p>
+          <p>한참 떨어진 메데우스 장원에 있는 녀석도 마을을 습격하는데 그 근처에 있는 스테논 해안에서도 언제 정령들이 몰려올지 모르는 일 아닙니까?</p>
+          <p> </p>
+          <p>엔디온은 괜한 걱정이라고 하지만 저는 영 마음이 놓이지 않습니다.</p>
+          <p> </p>
+          <p>마을에 봉사하는 기분으로 [%dic:STR_DIC_M_QUEST_3523] 소탕 작업에 참여해주시지 않겠습니까?</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_ElementalWater3_43_An], [%dic:STR_DIC_M_ElementalWater3_44_An], [%dic:STR_DIC_M_ElementalWater3_45_An]%을 처치해 주시면 됩니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님이 도와주신다고 하니 마음이 든든합니다!</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_QUEST_3523]들을 처치해 주세요.</p>
+	  <p> </p>
+          <p>다치지 않도록 조심하세요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아, 이런... 어쩔 수 없네요.</p>
+          <p> </p>
+          <p>하지만 다음엔 꼭 도와주실거라 믿습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>물에 흠뻑 젖으신 걸 보니 치열한 싸움이었나 봅니다.</p>
+          <p> </p>
+          <p>감기 걸리시겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정말 수고가 많으셨습니다.</p>
+          <p> </p>
+          <p>이건 작은 보답으로 드리는 것이니 부디 받아주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_M_QUEST_3523]을 처치하라([%2]/10)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Catid]와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">언제 마을을 습격할지 모르는 해안의 정령을 처치하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>카티드는 엔디온이 해안의 정령을 너무 우습게 보고 있다며 대책이 필요하다고 했다.</p>
+          <p> </p>
+          <p>해안의 정령도 마음만 먹으면 충분히 마을을 습격할 수 있으니 방지 차원에서 그들을 처치 해달라고 부탁했다.</p>
+          <p> </p>
+          <p>그래서 해안으로 가 정령들을 처치해줬다. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

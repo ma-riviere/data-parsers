@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>As you know, [%username], our primary mission is to block the Abyss Gate. You destroyed it once but, of course, it's been rebuilt.</p>
+          <p> </p>
+          <p>I think it's necessary to go a bit further this time.</p>
+          <p> </p>
+          <p>Return to Dark Poeta via the Artifact of Transcendence over there. Can you guess what your mission is?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Kill everyone and blow things up?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Exactly! This time you'll completely block the [%dic:STR_DIC_OBJ_Dragonportal_IDLF1]. Permanently deactivate it.</p>
+          <p> </p>
+          <p>High Priest Jucleas personally chose you for this mission. Don't let him down.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Now, we need to work out how to shut that thing down. You'll have to look for some kind of plans, something that would show us how to cripple the device.</p>
+          <p> </p>
+          <p>First find that, memorize its contents, then destroy the [%dic:STR_DIC_OBJ_Dragonportal_IDLF1] completely. </p>
+          <p> </p>
+          <p>If you fail, all of Elysea will be in danger, [%username]. Block the gate...no matter the cost.</p>
+          </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I won't fail you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What? What did you say? Did you really turn down the mission?</p>
+          <p> </p>
+          <p>The future of Elysea rest on your shoulders, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm sorry."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Lifeform Remodeling Project: Dragrint Facility commencing mass production. Telepathy Controller installation complete.</p>
+          <p> </p>
+          <p>Drana Harvest: The Drana Fields occupies site of old strip mine. Cultivation progressing successfully.</p>
+          <p> </p>
+          <p>Abyss Gate: Three power generators connected. Power will only be interrupted in the event that all three generators are disconnected.</p>
+          <p> </p>
+          <p>Others: The Brigade General is at Anuhart Headquarters, and won't return to Dark Poeta unless there are problems with Telepathy Controller and power generators.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"My, my...they have been busy."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've been waiting for you, [%username]. How was your mission?</p>
+          <p> </p>
+          <p>I confess, I was a bit worried, though obviously the Seraphim Lords have been with you thus far.</p>
+          <p> </p>
+          <p>Proceed with your report.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Well..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Splendid! The thrice-cursed Anuhart Legion can't invade Elysea again.</p>
+          <p> </p>
+          <p>Small wonder that you've attracted the attention of so many patrons of Sanctum, [%username]. Your success, your efforts, are nothing short of...well, divine.</p>
+          <p> </p>
+          <p>I salute you, defender of Elysea!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Go to Dark Poeta and find the [%dic:STR_DIC_FOBJ_IDLF1_Scroll_Q3502]s.</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Destroy the [%dic:STR_DIC_M_IDLF1_BionicCPU_50_Ah] ([%5]/1).</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Destroy the power generators to close the [%dic:STR_DIC_OBJ_Dragonportal_IDLF1].</font></p>
+                     <p visible="[%9]"><font color="[%10]"> [%dic:STR_DIC_M_IDLF1_Generator1_50_Ah] ([%11]/1)</font></p>
+                     <p visible="[%12]"><font color="[%13]"> [%dic:STR_DIC_M_IDLF1_Generator2_50_Ah] ([%14]/1)</font></p>
+                     <p visible="[%15]"><font color="[%16]"> [%dic:STR_DIC_M_IDLF1_Generator3_50_Ah] ([%17]/1)</font></p></step>
+               <step><p visible="[%18]"><font color="[%19]">Kill [%dic:STR_DIC_M_IDLF1_H_DrakanFiName_50_Ah] ([%20]/1).</font></p></step>
+               <step><p visible="[%21]"><font color="[%22]">Return to Sanctum and report to [%dic:STR_DIC_N_Jucleas].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Permanently block the Abyss Gate to stop the Anuhart Legion from invading Elysea.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Maloren said that you must completely block the Abyss Gate used by the Balaur in Dark Poeta but didn't know just how you'd manage.</p>
+          <p> </p>
+          <p>You found the Balaur Operation Orders in Dark Poeta, and learned that destroying all power generators would permanently block the gate.</p>
+          <p> </p>
+          <p>However, just as you destroyed the generators, Brigade General Anuhart appeared and a titanic battle ensued.</p>
+          <p> </p>
+          <p>You defeated Brigade General Anuhart and reported back to Sanctum. Jucleas praised and thanked you for saving Elysea from danger...again.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

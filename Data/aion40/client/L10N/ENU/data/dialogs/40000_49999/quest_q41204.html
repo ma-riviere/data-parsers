@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q41204</QuestId>
+    <QuestName>Break it Twice, Shame on Me</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select_none" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I have the solution to our rampaging Petrahulk problem! Well, my rampaging Petrahulk problem.</p>
+          <p> </p>
+          <p>The Aether link between shamans and Petrahulks is disconnected, which means that the... ah, sorry. You're not interested, are you.</p>
+          <p> </p>
+          <p>Anyway, I worked up a spell to subdue the Petrahulks. I'm going to cast it on you, [%username], so that you can try it on the [%dic:STR_DIC_ILDF4a_Golem_Q41204] in [%dic:STR_DIC_W_LDF4a_SZ_B1]. Just to make sure. Can't be too careful, right?</p>
+          <p> </p>
+          <p>Why send you instead of going myself? Because... I have to... concentrate too hard. To do it out there.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(This Petrahulk appears to be broken.)</p>
+          <p> </p>
+          <p>(All you have to do to test the spell is touch it.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"I hope you're not ticklish!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're back! Did my spell work?</p>
+          <p> </p>
+          <p>What happened? Did it go okay?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Well, actually..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Master Masios? Oh, no! I'm never going to live this down.</p>
+          <p> </p>
+          <p>Oh, I'm in so much trouble now!</p>
+          <p> </p>
+          <p>No, it's not your fault, it's mine. Here, [%username], take this reward. You've earned it.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Touch the [%dic:STR_DIC_ILDF4a_Golem_Q41204].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Try to subdue the [%dic:STR_DIC_M_Q41204a_golem].</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Return to [%dic:STR_DIC_N_Feityios] with your report.</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Feyos finally figured out how to resolve the Petrahulk problem.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Feyos came up with a spell to subdue the Petrahulks but needed you to test it first.</p>
+          <p> </p>
+          <p>When you tested the spell on the Ossified Petrahulk, it went berserk.</p>
+          <p> </p>
+          <p>When things got totally out of control, Feyos's master Masios appeared and fixed the problems Feyos had made.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

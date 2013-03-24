@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Fire Spirits just told me something quite interesting, [%username].</p>
+          <p> </p>
+          <p>They said a great battle took place here in ancient times. And in this battle, a Flame Spirit name Flarestorm was imprisoned by the Balaur.</p>
+          <p> </p>
+          <p>Do you know what they did to poor Flarestorm? They trapped it in a latrine incinerator and forced it to burn their waste for an eternity. Poor spirit is still trapped in there.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"That's disgusting."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've developed a sort of kinship with these Fire Spirits. I refuse to let one be tormented like that!</p>
+          <p> </p>
+          <p>You're one of the most skilled [%userclass]s I know of, [%username]. Would you help me to free Flarestorm from this horrible fate?</p>
+          <p> </p>
+          <p>The incinerator is in the Beshmundir Temple, they said.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Poor Flarestorm has been contaminated by so much foul waste that he's turned blue. Who knows what those Balaur eat for that to happen! You will find the [%dic:STR_DIC_W_IDCatacombs_SZ_D2] in a corner of the Garden of the Dead inside the Beshmundir Temple.</p>
+          <p> </p>
+          <p>Go there and return [%dic:STR_DIC_E_IDCatacombsN_ElementalFireNmd_55_Ah] back to the flow of Aether. It's been there for quite a long time, so you may need to fight him repeatedly for it to work.</p>
+          <p> </p>
+          <p>Oh, that item I gave you earlier is a key to the Blue Flame Incinerator. Use it to open the door.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll free that spirit."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Do you have no empathy, [%username]? Flarestorm fought for our people and now suffers for it! He's been soaking in Balaur waste for a millenium!</p>
+          <p> </p>
+          <p>It shames me to even think about it. I am very disappointed in you, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Your wings will fly you there as well."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I can't help but feel bad about Flarestorm. A kind, gentle Spirit who fought bravely, only to end up suffering in such a humiliating prison.</p>
+          <p> </p>
+          <p>It breaks my heart to think of it.</p>
+          <p> </p>
+          <p>Did you help Flarestorm find his peace? Is he one with the Aether again, Daeva?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Flarestorm is at peace."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm sure he still suffers from the contamination.... A thousand years submerged in Balaur waste doesn't wash away so easily.</p>
+          <p> </p>
+          <p>But I have faith that he will be completely free one day...if he can count on Daevas like us.</p>
+          <p> </p>
+          <p>Thank you for what you've done, [%username]. I know Ariel favors those who help the helpless.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Vanquish [%dic:STR_DIC_E_IDCatacombsN_ElementalFireNmd_55_Ah] to remove the Balaur's contamination ([%2]/1).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_N_Aiola].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">You have agreed to return Flarestorm, an ancient Spirit bound by the Balaur, to the flow of Aether.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Teressa said the Fire Spirits she summoned told her that an ancient Spirit remained enslaved by the Balaur.</p>
+          <p> </p>
+          <p>She said you must repeatedly return Flarestorm to the flow of Aether in order to free it from its captors.</p>
+          <p> </p>
+          <p>So you went to the Blue Flame Incinerator in the Beshmundir Temple and vanquished Flarestorm.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

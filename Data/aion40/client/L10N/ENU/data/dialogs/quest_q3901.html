@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Noble [%username], I have a task I would ask of you. I need you to deliver a book for me--an Esoteric Book of Justice.</p>
+          <p> </p>
+          <p>This tome holds little for you now as it was the heart of your early training. The next tome, on the other hand...</p>
+          <p> </p>
+          <p>It's a simple task, but I daren't entrust just anyone with something this valuable.</p>   
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I am honored by your trust."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+        	<p>Would you please take the book to Boreas at the Protectors Hall? Tell him I studied it thoroughly.</p>
+          <p> </p>
+          <p>And as long as you're there, see if he'll share any other [%userclass] secrets with you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's gratifying to see a [%userclass] advancing in rank. All too many of our brothers and sisters... Well, you know.</p>
+          <p> </p>
+          <p>You look ready to tackle the greater mysteries of our order.</p>
+          <p> </p>
+          <p>Don't forget--Boreas at the Protectors Hall. He'll be glad for the book...and the opportunity to work with you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Faith and arms!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This is not make-work, I assure you.</p>
+          <p> </p>
+          <p>I didn't choose you, [%username], just to deliver a book, no matter how valuable.</p>
+          <p> </p>
+          <p>I'm recommending you for advancement. Fear not, if you have no interest in it, it won't be foisted upon you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Give me some time to think."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What is it, [%username]? Do you know anything about the truth of Justice?</p>
+          <p> </p>
+          <p>Or is it something else? Are you here to look at a book?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Yes. I'm also here to return a book."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That Macus asked you to deliver this volume means that he recognized your service and is recommending you for specialized training.</p>
+          <p> </p>
+          <p>You're a promising Daeva, [%username], but to delve deeper into Lord Nezekan's mysteries, you require instruction.</p>
+          <p> </p>
+          <p>If you wish, we will study from the second Esoteric Book of Justice.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk with [%dic:STR_DIC_N_Boreas].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Deliver the Esoteric Book of Justice to Boreas.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Macus asked you to deliver a book that contains the secret skills of Gladiators and Templars to Boreas.</p>
+          <p> </p>
+          <p>Upon receiving the Esoteric Book of Justice, Boreas said that it was time for you to learn the next volume of the Esoteric Books, and that he would help you learn.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

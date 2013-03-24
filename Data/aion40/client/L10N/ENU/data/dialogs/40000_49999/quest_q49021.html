@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q49020</QuestId>
+    <QuestName>Nerita' Orders</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p> - Emergency Order - </p>
+          <p> </p>
+          <p> 1. From: Archon Brigade General Nerita</p>
+          <p> </p>
+          <p> 2. To: [%username]</p>
+          <p> </p>
+          <p> 3. Order: The Elyos have wandered into Beluslan. Make sure they receive the standard Asmodian greeting.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Oh I'll welcome them alright."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You look well, [%username]. I've heard of your progress, and had hoped to run into you soon.</p>
+          <p> </p>
+          <p>What brings you here?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Your order has been completed. The Elyos are dead."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, of course.</p>
+          <p> </p>
+          <p>Didn't think I'd have someone like you take it on, you know. Not that I'd ever turn down your help.</p>
+          <p> </p>
+          <p>Here's your reward, old friend. I hope we can work together again soon.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Kill the Elyos attacking Beluslan ([%2]/5).</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Report to [%dic:STR_DIC_N_Nerthus].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Emergency Order: Kill the Elyos who infiltrated Beluslan while the Rift was open, then report to Nerita.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Elyos used the Rift to infiltrate Beluslan. You eliminated the Elyos before reporting to Nerita.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

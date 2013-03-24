@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q1705</QuestId>
+    <QuestName>Rank 6 Asmodian Soldier</QuestName>
+    <QuestType>Not entered</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>By now, [%username], you should know what I want.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Dead Asmodian Soldiers?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Exactly. This time, as you can guess, your target will be the [%dic:STR_DIC_E_Dgrade6]s.</p>
+          <p> </p>
+          <p>Rumor has it that Level 6 Soldiers are conducting "important missions" in the Asmodian camp. If you succeed, this could be the most devastating attack yet.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I knew you wouldn't turn down this mission.</p>
+          <p> </p>
+          <p>Now get rid of the [%dic:STR_DIC_E_Dgrade6]s you find. There's no test in killing the meek or the weak, so I'll not deem your task complete until Asmodians of equal or relative skill lie dead at your feet.</p>
+          <p> </p>
+          <p>As always, I wish you the best of luck.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Thank you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I have no time for terrified children. Go back to Atreia if you need a pacifier; you won't find one out here.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"No need to be rude...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did you kill the [%dic:STR_DIC_E_Dgrade6]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I did."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well done.</p>
+          <p> </p>
+          <p>When I give you a mission, I know not to worry, [%username]. It always gets done.</p>
+          <p> </p>
+          <p>Thanks to you, our Legionaries' attacks will be more effective. I appreciate your work here.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Fight against [%dic:STR_DIC_E_Dgrade6] and win ([%2]/10).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report the result to [%dic:STR_DIC_N_Ascalon].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Get rid of the Level 6 Asmodian Soldiers to weaken the Asmodian's influence in the Abyss.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Calon told you that it was time to strike a major blow to the Asmodians. He asked you to get rid of the Level 6 Asmodian Soldiers.</p>
+          <p> </p>
+          <p>After you completed the task and returned to Calon, he thanked you and explained that your actions would help Nezekan's Shield Legionaries handle Asmodians more easily.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

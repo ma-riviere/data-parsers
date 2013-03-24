@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I don't mind action, but it seems this work never ends! Letum dumps all the work on me, trivial or not, and I'm forced to complete it while others stand around.</p>
+          <p> </p>
+          <p>I'm a talented soldier, but even Contineo could handle some of these tasks, and he used to be a farmer! What's even worse is I have residents asking me for favors. If I have to find one more lost Porgus.... I swear on Azphel's shadow....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"You have it rough."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>In addition to all the other work that needs doing, residents are complaining about rampaging Scolopens. Even a small sting from a Poisontip Scolopen can be fatal, but I don't have time to go out and kill the beasts.</p>
+          <p> </p>
+          <p>Letum insists I do her work before I help the residents, even though none of this work is that important. Exterminating the Scolopens will save lives. Can you lend a hand, [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We've wiped out the Scolopens several times, but the beasts reproduce fast. However, a skilled Daeva might make a difference.</p>
+          <p> </p>
+          <p>Kill the [%dic:STR_DIC_M_ScorpionDF2_32_An]s around here. I think about 14 should do the trick.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"On my way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's fine, [%username]. I need to find time to do this. It's my job.</p>
+          <p> </p>
+          <p>I just wish I had a twin sometimes....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Who doesn't?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Even though I receive important assignments, I also get a lot of trivial work. I mean...an officer asked me to clean their armor. I know for a fact Contineo could do that.</p>
+          <p> </p>
+          <p>I'd like to just start shirking responsibilities so the officers and residents would stop coming to me.</p>
+          <p> </p>
+          <p>Well, what about the Scolopens, [%username]?.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"It's done."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thanks, [%username]. You just got me another hour of sleep tonight.</p>
+          <p> </p>
+          <p>The Scolopens will be back though. We just have to keep killing them until their numbers stop replenishing.</p>
+          <p> </p>
+          <p>Take this as a reward. I hope it'll be useful. Now I'm off to find a lost Porgus...ughhh.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get rid of [%dic:STR_DIC_M_ScorpionDF2_32_An]s([%2]/14).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_N_Raukus].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Raukus has too much work, and needs help killing the Poisontip Scolopens around the village.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Raukus had too much work to complete on his own.</p>
+          <p> </p>
+          <p>You helped him out by killing Poisontip Scolopens around the village, for which he was grateful.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

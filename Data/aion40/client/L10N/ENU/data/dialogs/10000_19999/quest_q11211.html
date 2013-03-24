@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Eternal darkness on it all! Arrgh! I've really gotten myself into a bind this time, [%username].</p>
+          <p> </p>
+          <p>I went to the Forest of Antiquity to start my research, but I was attacked by Drakes. Dozens of them! They came out of nowhere!</p>
+          <p> </p>
+          <p>I wasn't injured too badly, but they took my bag!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Just buy a new bag."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's not the bag itself that concerns me, it's what's in the bag! My notebook full of my Dramata research, an emergency potion...and some clothes are, er, special to me.</p>
+          <p> </p>
+          <p>I need to get that stuff back! Losing that notebook alone will set my investigation back several months. I knew I shouldn't have packed my lunch in that bag. The smell must have aroused the Drakes.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Looks like you better get moving."</Act>
+    </Selects> 
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>There in lies the problem, [%username]. I am needed elsewhere and I can't go looking for my stuff. The longer I wait, the further it goes. By tomorrow my bag could be miles away from here.</p>
+          <p> </p>
+          <p>Would you help me find it? I saw them tear through the bag, and my belongings flew everywhere. So you'll need to search the area carefully--everything is important.</p>
+          <p> </p>
+          <p>There was a bunch of stuff in there, but I'd be happy if I could just get the [%dic:STR_DIC_OBJ_FOBJ_Q11211A], [%dic:STR_DIC_OBJ_FOBJ_Q11211B], [%dic:STR_DIC_OBJ_FOBJ_Q11211C], and [%dic:STR_DIC_OBJ_FOBJ_Q11211D] back.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I passed a Drake den in the Forest of Antiquity, and I'm pretty sure that's where my bag ended up.</p>
+          <p> </p>
+          <p>Oh, I pray to Ariel that my research notes are still in one piece. And I hope my potion hasn't been spilt.</p>
+          <p> </p>
+          <p>Please, [%username], you can't just stand there! Hurry!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"All right, I'm going!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You, [%username], turn down a mission? Now I've seen it all.</p>
+          <p> </p>
+          <p>I thought you would take any adventure offered to you--at least that's what I've heard.</p>
+          <p> </p>
+          <p>Well, I can't force you. I guess I'll do it myself. I'll have to switch my schedule around....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"My heart bleeds for you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I was so close to hunting down that Dramata nest...so close, and then this happened!</p>
+          <p> </p>
+          <p>Please tell me you had some luck finding my stuff, [%username].</p>
+          <p> </p>
+          <p>You got my [%dic:STR_DIC_OBJ_FOBJ_Q11211A], [%dic:STR_DIC_OBJ_FOBJ_Q11211B], [%dic:STR_DIC_OBJ_FOBJ_Q11211C], and [%dic:STR_DIC_OBJ_FOBJ_Q11211D], right? Please say yes!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here's what you lost."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did you even go to the Drake den? What's the matter? I'm not going to reward you for postponing the search!</p>
+          <p> </p>
+          <p>Please, imagine how I feel! You must get to the Forest of Antiquity and start looking!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm leaving now."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, nice, nice...everything looks good. Nothing broken...but my lunch is missing. I guess that just proves that they were after my Mookie Pickles.</p>
+          <p> </p>
+          <p>As promised, I will reward you, Daeva. I don't know if this will work for you, but it's all that I can offer.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Find [%dic:STR_DIC_OBJ_FOBJ_Q11211A], [%dic:STR_DIC_OBJ_FOBJ_Q11211B], [%dic:STR_DIC_OBJ_FOBJ_Q11211C], and [%dic:STR_DIC_OBJ_FOBJ_Q11211D]. Bring them to [%dic:STR_DIC_N_Wivius].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Find the items Wivius lost when he was attacked by Drakes in the Forest of Antiquity.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Wivius asked you to find the precious items that he lost when he was attacked by Drakes.</p>
+          <p> </p>
+          <p>So you went to the Forest of Antiquity and found his items. He thanked you and gave you a reward.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

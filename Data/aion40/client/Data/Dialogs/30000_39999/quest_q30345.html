@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이런 일이 생기리라고는 상상도 못한 충격적인 일이 있어났다.</p>
+          <p> </p>
+          <p>너무 굴욕적이라서 차마 입에 담고 싶지도 않을 정도이니라.</p>
+          <p> </p>
+          <p>이미 일어난 일을 되돌릴 수는 없지만 다시는 이런 일이 발생하지 않도록 일벌백계해야 할 필요가 있다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">무슨 일인지 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>밤그림자 도굴단이라는 슈라크 놈들이 겔크마로스 방어기지에서 보급품을 훔쳐갔노라.</p>
+          <p> </p>
+          <p>슈라크가 훔쳐 갔을 거라고는 상상도 못해서 범인이 놈들이라는 걸 알아내기까지 시간이 많이 걸렸다.</p>
+          <p> </p>
+          <p>이미 보급품을 처분한 후일 테니 되찾을 수도 없는 상황이니라.</p>
+          <p> </p>
+          <p>그렇다고 놈들을 그냥 내버려 둘 수는 없다. [%username]%이 놈들에게 마족이 얼마나 무서운 존재인지를 보여 주길 바란다.  </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_M_IDCatacombs_Shulack] 놈들은 지금 [%dic:STR_DIC_W_ZONE_NAME_IDCatacombs]에 있다고 한다.</p>
+          <p> </p>
+          <p>우리의 분노를 피해 달아난 것인지 용족의 유물을 노리는 것인지 모르겠지만 말이다.</p>
+          <p> </p>
+          <p>그곳으로 가서 밤그림자 도굴단을 모조리 처치해 주길 바라노라.</p>
+          <p> </p>
+          <p>마족의 분노가 얼마나 큰지 뼈저리게 느낄 수 있도록 말이다. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>지금 이 임무를 거부한 것인가?</p>
+          <p> </p>
+          <p>[%username]에게 마족의 자긍심은 없는 것인가?  </p>
+          <p> </p>
+          <p>도저히 믿을 수가 없도다. 이런 데바를 믿고 임무를 맡기려 했다니... </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>슈라크에게 그런 일을 당했다고 생각하니 지금도 분노가 가시지 않는다.</p>
+          <p> </p>
+          <p>다시는 마족에게 대항하지 못하도록 엄중히 다스려야 한다.</p>
+          <p> </p>
+          <p>밤그림자 도굴단 놈들은 모두 처치했는가?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이제 밤그림자 도굴단 놈들도 감히 마족에게 대항할 생각은 하지 못할 것이니라.</p>
+          <p> </p>
+          <p>하지만 이 정도로는 우리 마족의 분노를 전부 보여 줬다고는 할 수 없다.</p>
+          <p> </p>
+          <p>마족의 분노는 끝이 없다는 것을 제대로 알려 줘야 한다</p>
+          <p> </p>
+          <p>그러니 다음에도 그들을 징벌해 주기를 바라노라.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_M_IDCatacombs_Shulack]%을 처치하라([%2]/12)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Hler]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">밤그림자 도굴단이 보급품을 훔쳤다고 한다. 파슈만디르 사원에 숨어 있는 밤그림자 도굴단에게 본때를 보여 주자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>흘레르는 슈라크 무리인 밤그림자 도굴단에게 겔크마로스 방어기지의 보급품을 도둑맞았다면서 크게 분노했다.</p>
+          <p> </p>
+          <p>다시는 마족의 물건에 손을 대지 못하도록 본때를 보여달라기에 파슈만디르 사원에 숨어 있는 밤그림자 도굴단을 처치했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

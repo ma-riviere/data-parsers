@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, hello there, [%username].</p>
+          <p> </p>
+          <p>Sorry, I was a bit distracted--worried about the end of my prestigious 20-year career.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+    <Act href="HACTION_ASK_QUEST_ACCEPT">"What's wrong?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, I hate to bother you with it. There's this cooking contest in [%dic:STR_DIC_ELA07], you see. I'm dying to enter it with my latest and greatest recipe--grilled Airon steak with Green Peppercorn Sauce and chopped Aria.</p>
+          <p> </p>
+          <p>There's just one problem. I'm missing the main ingredient: the Airon steak! I'm terrified of Airons, so there's no way I can go near one, let alone kill it.</p>
+          <p> </p>
+          <p>I don't know, [%username]. I really don't know what to do. Do you... think you could help me with this? I need someone to go and collect the steaks.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, thank you so much!</p>
+          <p> </p>
+          <p>Please get me some [%dic:STR_DIC_QILA05] from three [%dic:STR_DIC_MLA05]s. You should be able to find whole flocks of them out by [%dic:STR_DIC_FLA03]. That should be enough to test the recipe and enter the contest.</p>
+          <p> </p>
+          <p>Once you have the meat, take it to my wife, [%dic:STR_DIC_LA07]. She's gathering the Aria we need, and I need time to prepare this Peppercorn Sauce. I am already salivating at the thought of it!</p>
+         </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"You better save me some!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+         <p>Shards and feathers! I only have three days until the contest. What can I do now?</p>
+         <p> </p>
+         <p>Hmm, maybe Feira can bring me some fish, or maybe I can create some kind of vegetable soup... no. Oh, I don't know!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Good luck. You'll need it."</Act>
+    </Selects>
+  </HtmlPage>
+
+   <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes, [%username]?</p>
+          <p> </p>        
+          <p>Please, speak quickly. I've got to chop buckets of Aria but have a knife blunter than Asmodian wit.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Your husband wanted me to bring you these."</Act>
+    </Selects>
+  </HtmlPage>
+
+<HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Bring me what? If you were supposed to bring me the Airon steaks, I told Uno I'd need six. I have enough aria for three steaks, you see, and we need to prepare a fair amount for this competition anyway.</p>
+          <p> </p>
+          <p>Judges will not award prizes based on hearsay--they all need to sample our delicious food!</p>
+          <p> </p>
+          <p>Please hurry, [%username].</p>       
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Ah. I'm sorry."</Act>
+    </Selects>
+  </HtmlPage>
+
+    <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, excellent!</p>
+          <p> </p>
+          <p>Oh my, these are fantastic cuts too! Uno will be delighted with them, [%username]! Excellent work!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+                     <step><p visible="[%0]"><font color="[%1]">Bring the Airon meat to [%dic:STR_DIC_LA07].</font></p>[%collectitem]</step>          
+    </steps>
+          <p><font font_xml="quest_summary">Uno is getting worried about having enough ingredients for his entry in a cooking contest. He asked you to hunt the nearby Airons and take their meat to his wife, Feira.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Uno didn't have the ingredients necessary for an upcoming cooking contest, so you hunted Airon and brought their meat to his wife, Feira.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

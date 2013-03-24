@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님! 지난 일은 참 감사했습니다. </p>
+          <p> </p>
+          <p>용암 발게스트 때문에 수사는 한참 미뤄지고 말았지만 그래도 [%username] 님 덕에 어느 정도 진척이 있었죠.</p>
+          <p> </p>
+          <p>그래서 다음 단서를 추적하고 있습니다.</p>
+          <p> </p>
+          <p>거의 이 사건도 막바지군요... 이제 결정적인 단서만 구하면 제 임무는 끝납니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그래서 더욱 수사에 박차를 가하고 있습니다.</p>
+          <p> </p>
+          <p>하지만 다음 단서 역시 땅에 남은 흔적을 조사하는 일이라 걱정이 되는군요.</p>
+          <p> </p>
+          <p>더구나 흠, 이건 비밀인데... (낮은 소리로) 그 흔적은 지금도 땅에 계속 생기고 있을 겁니다.</p>
+          <p> </p>
+          <p>그러니 지난번처럼 [%dic:STR_DIC_M_HellhoundD_28_An]가 방해라도 하면 정말 큰일이지요.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_HellhoundD_28_An]%을 처치해서 화근을 없애야 할 것 같은데 [%username] 님이 도와 주시지 않겠습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이 근처에 [%dic:STR_DIC_M_HellhoundD_28_An]가 아주 많습니다.</p>
+          <p> </p>
+          <p>이리저리 바닥을 쑤석거리고 다니는 바람에 제가 찾는 흔적이 점점 사라지고 있지요. 머리가 둘이라서 두 배로 빨리 사라지는 것 같아요.</p>
+          <p> </p>
+          <p>10마리만 처치해 주셔도 큰 도움이 될 것 같습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>안 도와주시겠다고요?</p>
+          <p> </p>
+          <p>설명하느라 쓸데없이 시간만 낭비한 셈이로군요. </p>
+          <p> </p>
+          <p>한시라도 빨리 조사에 착수해야 하니 그만 돌아가 주세요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>제가 조사하는 사건에 대해 궁금하다고요?</p>
+          <p> </p>
+          <p>죄송하지만 제가 알려드릴 수 있는 부분은 없습니다. [%username] 님께 나쁜 일은 아니라는 것 정도만 말씀 드리지요.</p>
+          <p> </p>
+          <p>그나저나 [%dic:STR_DIC_M_HellhoundD_28_An]는 모두 처치한 겁니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>감사합니다. 앞으로 조사에 도움이 되겠군요.</p>
+          <p> </p>
+          <p>결정적인 단서가 나타날 때가 되었는데... 영 그 녀석이 나타나질 않네요. 아, 이 내용은 비밀인데... 제가 말한 부분에 대해서는 함구해 주셨으면 좋겠습니다.</p>
+          <p> </p>
+          <p>그리고 이건 절 도와주신 보답입니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_M_HellhoundD_28_An]를 처치하라([%2]/10)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Utgar]와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">우트가르의 조사를 무사히 마무리할 수 있도록 용암 발게스트를 처치하는 일을 돕자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>우트가르는 조사가 막바지에 이르렀지만 용암 발게스트가 걱정된다며 처치하여 화근을 없애줄 것을 청했다.</p>
+          <p> </p>
+          <p>그래서 발게스트를 처치하고 돌아가자 감사를 표하며 사례하였다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

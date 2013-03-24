@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q10081</QuestId>
+    <QuestName>전쟁의 여파</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_LDF5a_LDeadBody_Q10081]%을 보았나?</p>
+          <p> </p>
+          <p>우리가 요새로 쓰고 있는 이곳 재건된 빛의 탑 주위에 제대로 묻히지 못한 가디언의 시체가 아직도 남아있다네.</p>
+          <p> </p>
+          <p>[%username]. 그들의 군표를 가져다 주게.</p>
+          <p> </p>
+          <p>포르티스 신관이 말하길 [%dic:STR_DIC_LDF5a_quest_10081a]를 가지고 주신께 기도하면 주신이 전사자를 위해 넋을 위로해준다고 하는군.</p>
+          <p> </p>
+          <p>자네가 군표를 가져오면 전사한 가디언을 위해 그들의 군표를 가지고 주신께 기도하겠네.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">알았다고 한다.</Act>
+    </Selects>
+	<Voice file="Q10081-1.ogg"/>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>다녀왔군. 가디언의 군표를 가져왔는가?</p>
+          <p> </p>
+          <p>이곳으로 퇴각할 때 많은 가디언이 쓰러졌네. 마족과 브리트라군에게 이중으로 공격 당한 결과였지.</p>
+          <p> </p>
+		  <p>속박의 힘이 풀리고 마족에게 공격당할 때 브리트라군이 카탈람을 급습했네.</p>
+		  <p> </p>
+		  <p>연합군이 정복했던 카탈람의 땅과 요새를 브리트라군에게 빼앗겼지.</p>
+		  <p> </p>
+		  <p>티아마트의 땅에 제4 용제가 나타날 줄은 아무도 몰랐기 때문에 연합군은 속수무책으로 퇴각할 수밖에 없었네.</p>
+		  <p> </p>
+          <p>지난 3개월 동안 천족은 마족과 브리트라군 때문에 많은 피를 흘렸네.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">가디언의 군표를 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_ok">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>전사한 가디언의 군표를 가져왔군. 이들은 전사했네.</p>
+          <p> </p>
+          <p>하지만 용맹하게 싸웠네. 온갖 적으로부터 천족을 지키려 했지.</p>
+          <p> </p>
+          <p>그 의미와 희생을 잊어서는 안되네. 그리고 그 정신을 이어받아야 하네.</p>
+          <p> </p>
+          <p>카탈람은 본래 티아마트의 땅이었고 연합군이 자리를 잡으려 했었네.</p>
+          <p> </p>
+          <p>하지만 마족과의 화평은 깨어졌고 제4 용제가 카탈람에 나타났네. 이것이 무엇을 의미하겠는가?</p>
+		  <p> </p>
+		  <p>자네와 나는 마족을 응징하고 브리트라군을 척살해 카탈람을 정복해야 하네.</p>
+          <p> </p>
+          <p>그것이 바로 카탈람 파견대의 목표라네.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1_1">잊지 않겠다고 한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_fail">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>전사한 [%dic:STR_DIC_LDF5a_quest_10081a]가 어디에 있다는 것인가?</p>
+          <p> </p>
+          <p>용맹하게 전사한 가디언의 희생을 모욕하지 말게!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>백부장 [%dic:STR_DIC_LDF5a_Diel_E]을 만나게.</p>
+          <p> </p>
+          <p>카탈람 파견대의 목표를 어서 실행하세.</p>
+          <p> </p>
+          <p>카탈람을 정복하려면 먼저 카탈람 전역에 흩어져 있는 기지부터 정복해야 하네.</p>
+          <p> </p>
+		  <p>사방에 브리트라군과 마족이 있기 때문에 기지를 정복해 천족의 세력을 넓혀야 하지.</p>
+		  <p> </p>
+          <p>디엘은 바로 그런 일을 하고 있네.</p>
+          <p> </p>
+          <p>어서 가서 만나게. 기지로 안내해줄 것이네.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO2">알았다고 한다.</Act>
+    </Selects>
+	<Voice file="Q10081-2.ogg"/>
+  </HtmlPage>
+
+  <HtmlPage name="select3">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>기지로 보낼 영웅이 드디어 나타났군. [%username].</p>
+          <p> </p>
+          <p>3개월 동안 누워만 있길래 영영 일어나지 않는 줄 알았네. 티아마란타에서 큰 공훈을 세웠다지?</p>
+          <p> </p>
+          <p>그 실력이 아직 녹슬지 않았기를 바라네.</p>
+          <p> </p>
+          <p>반갑네. 나는 디엘이라고 하네.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT3_1">도와줄 일이 없는지 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select3_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>물론 도와줄 일이 있지. [%dic:STR_DIC_LDF5_Village_Guard02_L]%을 도와주게.</p>
+          <p> </p>
+          <p>베르덴은 [%dic:STR_DIC_W_LDF5A_A4]에 있는 [%dic:STR_DIC_W_LDF5a_A4_2]에 있는데 그곳으로 마족 놈들이 모이고 있네. 기지를 빼앗으려고 말이네.</p>
+          <p> </p>
+          <p>티린스 님께 들었겠지만 카탈람에서는 천족과 마족 그리고 용족이 기지를 두고 줄기찬 전투를 벌이고 있네.</p>
+          <p> </p>
+		  <p>특히 우리가 있는 북부 카탈람에서는 브리트라군이 실루스 산맥과 요새를 중심으로 활동하고 있고 마족이 룬의 신전을 주둔지로 삼고 전투를 펼치고 있네.</p>
+		  <p> </p>
+		  <p>강력했던 속박의 힘이 사라진 후 연족은 여기 재건된 빛의 탑과 룬의 신전 사이에 있는 적막의 호수에 주둔지를 마련했지.</p>
+		  <p> </p>
+		  <p>이렇게 사방에 적이 있기 때문에 기지는 매우 중요하네. 아군의 영역 확장과 이동로 확보를 위해 꼭 기지를 정복해야 하지.</p>
+		  <p> </p>
+          <p>어서 베르덴에게 가게. 자네의 도움을 절실하게 기다리고 있을 것이네.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO3">도와주겠다고 한다.</Act>
+    </Selects>
+	<Voice file="Q10081-3.ogg"/>
+  </HtmlPage>  
+  
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]님! 초면이지만 정말 반갑습니다!</p>
+          <p> </p>
+		  <p>거두절미하고 말씀드리겠습니다.</p>
+		  <p> </p>
+          <p>기지를 노리는 [%dic:STR_DIC_LDF5_Recon02_D_Q10081] 때문에 군을 재정비할 틈도 없이 연이은 전투를 치르고 있습니다.</p>
+          <p> </p>
+          <p>[%username]님이 성가신 제72 수색대만 처치해주신다면 전투 준비를 끝마칠 수 있을 것 같습니다.</p>
+          <p> </p>
+          <p>제72 수색대를 처치해주시겠습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO6">알았다고 한다.</Act>
+    </Selects>
+	<Voice file="Q10081-4.ogg"/>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>제72 수색대를 처치해 주셨습니까?</p>
+          <p> </p>
+          <p>지금 천족이나 마족 할 것 없이 모두 카탈람을 차지하기 위해 기지를 정복하려고 혈안이 되어 있습니다.</p>
+          <p> </p>
+          <p>그래서 한 명의 마족이라도 처치하는 일이 정말 중요합니다.</p>
+          <p> </p>
+          <p>미리 처치해두지 않으면 나중에는 적이 눈덩이처럼 불어날 테니 말입니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">처치했다고 한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>제72 수색대를 처치해주셔서 정말 감사합니다. 무사히 이곳의 군사 재정비를 마치고 한 숨 돌릴 수 있을 것 같습니다.</p>
+          <p> </p>
+          <p>그런데 혹시 괜찮다면 북부 카탈람이나 남부 카탈람의 다른 기지에 [%username]님에 대해 알려도 되겠습니까?</p>
+          <p> </p>
+          <p>다른 기지에서도 분명 [%username]님의 도움을 필요로 할 것입니다. 저처럼 끊임없이 브리트라군이나 마족의 공격을 받고 있을 테니 말입니다.</p>
+		  <p> </p>
+		  <p>그리고 혹시 [%username] 님이 다른 기지를 보게 되시면 그냥 지나가지 마시고 반드시 점령해 주십시오.</p>
+		  <p> </p>
+		  <p>기지를 빼앗긴다는 것은 천족의 영토 뿐 아니라 군수 물품 이동로도 빼앗기게 되는 것이니 말입니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_W_LDF5A_OP_L]에 있는 [%dic:STR_DIC_LDF5a_Tiryns_Commander]와 대화하라</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_LDF5a_quest_10081a]를 모아 [%dic:STR_DIC_W_LDF5A_OP_L]에 있는 [%dic:STR_DIC_LDF5a_Tiryns_Commander]에게 가져가라</font></p>[%collectitem]</step>
+               <step><p visible="[%6]"><font color="[%7]">[%dic:STR_DIC_W_LDF5A_OP_L]에 있는 [%dic:STR_DIC_LDF5a_Diel_E]과 대화하라</font></p></step>
+               <step><p visible="[%9]"><font color="[%10]">[%dic:STR_DIC_W_LDF5a_A4_2]를 점령하면 나타나는 [%dic:STR_DIC_LDF5_Village_Guard02_L]%와 대화하라</font></p></step>        
+               <step><p visible="[%12]"><font color="[%13]">[%dic:STR_DIC_W_LDF5a_A4_2]를 점령한 상태에서 [%dic:STR_DIC_LDF5_Recon02_D_Q10081]%을 소탕하라([%14]/3)</font></p></step>       
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_W_LDF5a_A4_2]를 점령하면 나타나는 [%dic:STR_DIC_LDF5_Village_Guard02_L]%와 대화하라</font></p></step>         
+    </steps>
+          <p><font font_xml="quest_summary">지령: 전쟁의 흔적을 수습하고 제72 기지로 가서 천족의 카탈람 정복을 돕자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>티린스는 재건된 빛의 탑 주위를 돌며 가디언의 군표를 모아 달라고 했다.</p>
+		  <p> </p>
+		  <p>마족 그리고 브리트라군과의 전쟁으로 쓰러진 가디언들의 시체에서 군표를 가져다 티린스에게 주었다.</p> 
+		  <p> </p>
+		  <p>티린스는 군표를 보며 어서 카탈람을 정복하자고 했다.</p>
+          <p> </p>
+		  <p>한편 사령관 티린스는 천족의 카탈람 정복을 위해 일하고 있는 백부장 디엘을 만나보라고 했다.</p> 
+		  <p> </p>
+		  <p>디엘은 기지에 도움이 필요하니 그곳에 가 있는 베르덴을 만나 마족을 막으라고 했다.</p> 
+		  <p> </p>
+		  <p>베르덴은 전쟁 준비에 한창이었는데 제72 수색대를 처치해달라고 부탁했다. 제72 수색대를 처치하자 베르덴은 고맙다며 다른 기지에 이름을 알리고 싶다고 했다.</p> 
+		  <p> </p>
+		  <p>카탈람의 다른 기지에도 도움이 필요할 것이라고 하며 기지를 보거든 꼭 점령해 달라고 하였다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>미션 진행: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

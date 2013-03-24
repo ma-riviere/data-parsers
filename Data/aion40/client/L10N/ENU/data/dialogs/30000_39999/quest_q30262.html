@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>If we're to use the Abyssal Splinter to our advantage, we need to remove any obstacles in our path.</p>
+          <p> </p>
+          <p>The first thing we need to do is get rid of those Orkanimum Fragments.</p>
+          <p> </p>
+          <p>The creatures that are born from Orkanimum Fragments are also a concern, but...remove the fragments, remove the creatures, right?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Right."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I know you have some prior experience in the Abyssal Splinter, [%username], so I'd like you to lead this operation for me.</p>
+          <p> </p>
+          <p>Sending in a pink-back would be a waste of time. I need a veteran fighter handling this.</p>
+          <p> </p>
+          <p>You might have some trouble putting together a crew to go in there, but I need you nonetheless. Can I count on you?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I knew I could count on you, [%username].</p>
+          <p> </p>
+          <p>Take passage to the Abyssal Splinter and get rid of any and all [%dic:STR_DIC_OBJ_IDAbRe_Core_Seed]s you find. That should clear up the works for us.</p>
+          <p> </p>
+          <p>Remember, most seem to be birthed from the destruction of a [%dic:STR_DIC_M_IDAbRe_Core_SilikaCannon_Ra_55_Ah], so be on your guard.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll take care of things."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did I do something to disgruntle you, [%username]?</p>
+          <p> </p>
+          <p>I've given you one of the most important missions we have in Inggison, and you decline it as casually as waving away flies from the table.</p>
+          <p> </p>
+          <p>I'm done with you...done! I don't even want to look at you right now.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"You're testier than a tired Shulack!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>So, how was your time in the Abyssal Splinter?</p>
+          <p> </p>
+          <p>Did you quiet our little Orkanimum Fragment problem?</p>
+          <p> </p>
+          <p>Dish out all the savory details, will you?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I destroyed as many as I could find..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Bravo, [%username], bravo!</p>
+          <p> </p>
+          <p>But I'm afraid that Orkanimum Fragments are harder to find than a handsome Asmodian. Dark crevices are a fragment's best friend.</p>
+          <p> </p>
+          <p>If you find yourself with some free time, I could use your help out there again.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Destroy [%dic:STR_DIC_OBJ_IDAbRe_Core_Seed]s([%2]/10).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report the result to [%dic:STR_DIC_NPC_Ab1_1011_TreasureGate_Li].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Creatures are being birthed from Orkanimum Fragments in the Abyssal Splinter. Destroy the fragments.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Aratus said that creatures were messing up operations inside the Abyssal Splinter.</p>
+          <p> </p>
+          <p>So you destroyed the Orkanimum Fragments which created these creatures.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

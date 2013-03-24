@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q30751</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>Not entered</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select_none" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What could Kahrun possibly be thinking, going after the Dragon Lord like that? But who knows? Maybe he really can kill Tiamat.</p>
+          <p> </p>
+          <p>If that happens, though, the Reian Tribe will get all of Siel's Relics. We can't allow that to happen.</p>
+          <p>[%username], you need to go to the [%dic:STR_DIC_W_IDTiamat_SZ_T1] and help Kahrun defeat [%dic:STR_DIC_M_IDTiamat_Tiamat_Drakan_Named_60_Al]. Then grab the Relics before Kahrun can.</p>
+          <p> </p>
+          <p>It won't be easy, but you're the only one I can trust. Now gather your allies and get out there!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Lord Marchutan...? I thought he had refused to help us in person!</p>
+          <p> </p>
+          <p>Wait... You set this up, didn't you? You Asmodians, and your Empyrean Lord--you're in league with Israphel! This whole thing was a play to steal Siel's Relics!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">"Of course not!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Even if I were to believe you, your so-called Lord is another story. Marchutan could have helped us from the beginning, but he just watched.</p>
+          <p> </p>
+          <p>If Lord Israphel hadn't showed up, it would have been Marchutan who stole the Relics. I should have known better than to trust you! This is the final trick I'll let you Asnodians play on me. We're done.</p>
+          <p> </p>
+          <p>At least one good thing has come out of this debacle; Tiamat is dead. I will return to Kamar with the news.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO2">"A great victory."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select3">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Israphel! His plots get more and more inconvenient. I must call the other Lords to council.</p>
+          <p> </p>
+          <p>Aside from our problems with the relics, once the other Dragon Lords hear of Tiamat's death, they will rush to fill that power vacuum.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT3_1">"And as for me...?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select3_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>First, notify Commander [%dic:STR_DIC_N_Udvi] of Tiamat's death. I will send my scouts out to track Israphel, but I will need you to do the difficult work, [%username].</p>
+          <p> </p>
+          <p>A Daeva who can defeat Tiamat can do anything, so I trust that you can find [%dic:STR_DIC_N_Israphel], take Siel's Relics from him, and bring them to me.</p>
+          <p> </p>
+          <p>Go back to the city and wait for news from my messengers. I will have them bring any clues to you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SET_SUCCEED">"Fine, I'll help--since it furthers our cause."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]! You are back!</p>
+          <p> </p>
+          <p>Does that mean that Tiamat...</p>
+          <p> </p>
+          <p>Dead! You actually did it! Ah, but what of Siel's Relics?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"It's like this..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I can hardly believe it. Tiamat is dead, and Lord Israphel appeared and took Siel's Relics?</p>
+          <p> </p>
+          <p>It seems almost impossible. I think that for now, it would be best if you didn't tell anyone else about Lord Israphel's part in this.</p>
+          <p> </p>
+          <p>I'll return to Pandaemonium and try to find a solution for what to do next.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <steps>
+               <step><p visible="[%0]"><font color="[%1]">Go to the [%dic:STR_DIC_W_IDTiamat_SZ_T1] and kill Dragon Lord [%dic:STR_DIC_M_IDTiamat_Tiamat_Drakan_Named_60_Al] ([%2]/1).</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Talk to [%dic:STR_DIC_N_IDTiamat_Kahrun_1] in the [%dic:STR_DIC_W_IDTiamat_SZ_T1].</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Talk to [%dic:STR_DIC_N_IDTiamat_Marchutan_1] in the [%dic:STR_DIC_W_IDTiamat_SZ_T1].</font></p></step>
+               <step><p visible="[%9]"><font color="[%10]">Report back to [%dic:STR_DIC_N_Udvi].</font></p></step>
+          </steps>
+          <p><font font_xml="quest_summary">Go to the Dragon Lord's Refuge, and help Kahrun kill Tiamat.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Skafir was worried that Kahrun might steal Siel's Relics for himself if he killed Tiamat alone.</p>
+          <p> </p>
+          <p>You fought Tiamat alongside Kahrun at the Dragon Lord's Refuge, and with Lord Marchutan's help, you succeeded in slaying the Dragon Lord.</p>
+          <p> </p>
+          <p>Kahrun returned, only to see Lord Israphel suddenly appear, grab Siel's Relics, and disappear again.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>Mission Progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

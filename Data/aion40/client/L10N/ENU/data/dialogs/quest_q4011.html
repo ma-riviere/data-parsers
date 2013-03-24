@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(A letter is pinned to the wall.)</p>
+          <p> </p>
+          <p>(The paper is yellowed, the writing faded.) </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"I wonder if I can read it...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(The letter is addressed to someone named [%dic:STR_DIC_N_Kaindal].)</p>
+          <p> </p>
+          <p>(It was probably written by the house's owner.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"I'll ask about it back at camp."</Act>
+      <Act href="HACTION_FINISH_DIALOG">"I'll just put it back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>A letter from one of the old Havenjark houses?</p>
+          <p> </p>
+          <p>Let me see that. My folks lived here during the first resettlement, 'til it failed.</p>
+          <p> </p>
+          <p>I might recognize the name.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">"Really? Sure, here."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oridin... Hmm, don't know him, but I remember [%dic:STR_DIC_N_Kaindal] from my parents' stories. </p>
+          <p> </p>
+          <p>He was the first one to leave when the crops failed.</p>
+          <p> </p>
+          <p>He wandered somewhere really far. Ishalgen, I think? Pa said he became a thief or a raider or something.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO2">"THAT Kaindal?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select3">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], look at you, Daeva!</p>
+          <p> </p>
+          <p>Why're you back here? Slumming? Showing off? Secret business?</p>
+          <p> </p>
+          <p>Aah...you don't mind me teasing, right?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT3_1">"Found something for you..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select3_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>A deserted house? Let me read that... Oridin? Oh, shards, what memories! Why didn't he send this?</p>
+          <p> </p>
+          <p>He wanted to come join me here. He would've been disappointed. Stout, steadfast, but honest. Would've made a lousy Raider.</p>
+          <p> </p>
+          <p>I'd rather think he found a patch of green somewhere to farm. Two old friends in one day! Thanks, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SET_SUCCEED">"Stay safe, rascal."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That letter has me thinking. This place broke them. My folks, Kaindal, all of them.</p>
+          <p> </p>
+          <p>But when you beat us down, we just get tougher. It's been decades. I bet we're strong enough now to rescue this place.</p>
+          <p> </p>
+          <p>So where's Kaindal? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Funny story, that...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>So Pa was right? Huh. Times must have been blasted hard to turn a farmer into a Raider!</p>
+          <p> </p>
+          <p>Well, not this time. The land wants us back. Can't you feel it?</p>
+          <p> </p>
+          <p>And this time we're tough enough to win our place!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Ask [%dic:STR_DIC_N_Dettil] about the letter.</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Seek [%dic:STR_DIC_N_Kaindal] in Ishalgen.</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Talk with [%dic:STR_DIC_N_Dettil].</font></p></step>         
+    </steps>
+          <p><font font_xml="quest_summary">You found an old letter on Havenjark Farm. Learn more about its history.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You found an old, unsent letter pinned to a wall in Havenjark. You brought it back to camp where Dettil recognized one of the names. Kaindal came with Dettil's parents to cultivate Brusthonin, but left when the crops failed.</p>
+          <p> </p>
+        <p>You discovered Kaindal was in your old group, the Ulgorn Raiders. Your visit and the letter left him happily nostalgic.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

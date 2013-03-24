@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>슈고족에게 일을 맡기면 깔끔하고 확실하게 처리한다고들 하는데 그거 다 헛소문입니다.</p>
+          <p> </p>
+          <p>그게 아니라면 그 바보 같은 녀석들이 글을 제대로 못 읽는 거겠죠.</p>
+          <p> </p>
+          <p>이런 일이 한두 번이 아니니 이젠 아주 화가 나는군요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">무슨 일인지 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>슈고 특급 배달부가 편지를 주고 갔는데 제게 온 게 아닙니다.</p>
+          <p> </p>
+          <p>붉은갈기 동굴마을에 있는 프레이야 백부장에게 보내는 건데 저에게 주고 갔군요.</p>
+          <p> </p>
+          <p>이름이 비슷하기라도 하면 말도 안 합니다. 어떻게 브리아나와 프레이야를 헷갈릴 수 있습니까!</p>
+          <p> </p>
+          <p>그리고 저에게 올 편지는 도대체 누구에게 갖다 준 건지... </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>슈고 특급 배달부까지 부른 걸 보면 분명 급한 편지일 겁니다.</p>
+          <p> </p>
+          <p>하지만 전 임무가 있어서 이곳을 떠날 수가 없습니다.</p>
+          <p> </p>
+          <p>그렇다고 믿음도 가지 않는 슈고 특급 배달부를 다시 부를 수도 없는 노릇이고...</p>
+          <p> </p>
+          <p>[%username] 님이 좀 도와주시겠습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>붉은갈기 동굴마을로 가서 [%dic:STR_DIC_N_Freyja] 백부장에게 이 편지를 전해 주십시오.</p>
+          <p> </p>
+          <p>중요한 편지 같으니까 지체하지 말고 지금 바로 가 주십시오.</p>
+          <p> </p>
+          <p>그럼 전 [%username] 님만 믿겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>다른 사람의 사정에는 별로 관심이 없으신가 보죠?</p>
+          <p> </p>
+          <p>하긴 그러니까 데바가 되는 축복을 받았는데도 아칸으로 봉사하지 않는 거겠죠.</p>
+          <p> </p>
+          <p>알겠습니다. 이건 제 돈을 들여서라도 프레이야 백부장에게 보낼 테니 [%username] 님은 신경 쓰지 마십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>어서 오십시오, [%username] 님.</p>
+          <p> </p>
+          <p>붉은갈기 동굴마을에는 무슨 일이십니까?</p>
+          <p> </p>
+          <p>도움을 주러 오신 거라면 언제든지 환영입니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">편지를 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>오빠의 편지로군요. 가져다 주셔서 감사합니다.</p>
+          <p> </p>
+          <p>빨리 받으라고 슈고 특급 우편으로 보냈을 텐데 오히려 브리아나 님과 [%username] 님께 폐를 끼치게 되다니...</p>
+          <p> </p>
+          <p>답장을 보낼 때 항의해야겠어요.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_Freyja]에게 편지를 전하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">슈고 특급 배달부가 프레이야에게 갈 편지를 브리아나에게 주고 갔다고 한다. 붉은갈기 동굴마을로 가서 프레이야에게 편지를 전하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>브리아나는 슈고 특급 배달부가 또 편지를 잘못 전해 주고 갔다면서 신경질을 내고 있었다. </p>
+          <p> </p>
+          <p>그래서 붉은갈기 동굴마을로 가서 프레이야에게 편지를 전해 주었더니 폐를 끼쳤다고 미안해하면서 고맙다는 인사를 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

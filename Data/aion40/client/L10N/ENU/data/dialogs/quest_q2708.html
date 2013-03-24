@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q2708</QuestId>
+    <QuestName>Defeating Rank 3 Elyos Soldier</QuestName>
+    <QuestType>Not entered</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Your success in the last mission is commendable, [%username]. That dark-winged Lisya knows a fine recruit when she sees one.</p>
+          <p> </p>
+          <p>I'm reassured by your presence. I wish for a moment of respite, yet we cannot rest for the enemy will not.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I am at your command." </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The enemy we are up against this time is very strong. The Rank 3 Elyos Soldiers are veterans who have gone through hell and high water in the Abyss. You'd best be careful.</p>
+          <p> </p>
+          <p>I believe you have what it take to annihilate them, [%username]. Yet I warn you, your opponents will kill you without a qualm if given the opportunity. Be safe.</p>
+          <p> </p>
+          <p>Will you defeat the [%dic:STR_DIC_E_Lgrade3]s for the Red Hasia and for Asmodae?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I knew I could count on you, shadow-blessed. The Elyos soldiers will shiver with fear and take wing when they see you set upon their ranks. </p>
+          <p> </p>
+          <p>Remember, there is little point wasting your time killing those who pose the rest of us no trouble. You're a talent best spent fighting their best, [%username]. And if you aren't fighting them, then they'll cause all manner of trouble.</p>
+          <p> </p>
+          <p>I'm confident that you will defeat them and return safe.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll finish off those Ellies for Asmodae!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh...I didn't expect you to reject the mission. Whom else can I turn to?</p>
+          <p> </p>
+          <p>Please, [%username], we need your help. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Good luck."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Welcome, [%username], do you return triumphant?</p>
+          <p> </p>
+          <p>What is your report?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Rank 3 Elyos defeated as requested."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Mission accomplished eh? Just as I expected, [%username].</p>
+          <p> </p>
+          <p>Not only are our Red Hasia Legionaries successfully carrying out their missions but, thanks to you, the morale of Elyos has begun to fail! We'll crush those light lovers yet!</p>
+          <p> </p>
+          <p>But, our work is far from over....</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Fight and defeat [%dic:STR_DIC_E_Lgrade3]s ([%2]/10).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report the result to [%dic:STR_DIC_N_Semotor].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Defeat Rank 3 Elyos Soldiers for an Asmodian victory in the Abyss.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Commending your previous success, Semotor said he was confident that you could handle a more difficult mission.</p>
+          <p> </p>
+          <p>He asked you to defeat the experienced Rank 3 Elyos Soldiers.</p>
+          <p> </p>
+          <p>When you returned victorious, he said you'd demoralized the Elyos and thanked you for your service.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

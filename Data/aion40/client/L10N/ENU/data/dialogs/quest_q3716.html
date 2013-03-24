@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q3716</QuestId>
+    <QuestName>[Group] Destroy Surkana</QuestName>
+    <QuestType>Hunt</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You've done good work, [%username], but we're just beginning.</p>
+          <p> </p>
+          <p>Neutralizing a Dredgion takes more than just eliminating its captain.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Of course, sir."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>To cripple the Dredgion effectively, we need to destroy its essential facilities.</p>
+          <p> </p>
+          <p>Your mission is to infiltrate the ship and sabotage the core facilities, while still searching every corner until you find and eliminate the captain.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You'll destroy the [%dic:STR_DIC_M_IDAb1_Dreadgion_Surkana_1] and [%dic:STR_DIC_M_IDAb1_Dreadgion_Surkana_4] and bring the Dredgion to a stand-still.</p>
+          <p> </p>
+          <p>Let me repeat--you must destroy the core facilities if we are to throw the Dredgion into comprehensive confusion.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I understand, sir."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Why Governor Michalis would recommend an unqualified Daeva like you, we may never know.</p>
+          <p> </p>
+          <p>There's no shame in fear, but don't let it rule you, [%username].</p>
+          <p> </p>
+          <p>Now, excuse me. I have to look for another infiltration specialist.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm sorry, sir. I just...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Welcome back, [%username].</p>
+          <p> </p>
+          <p>Give me your official report. How stands the Dredgion's core facilities?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Destroyed with Aion's blessing!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well done.</p>
+          <p> </p>
+          <p>If you and other Daevas can continue the work you began today, the Dredgion will eventually disappear from Reshanta altogether. This I believe whole-heartedly.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Destroy the Dredgion's core facilities.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_IDAb1_Dreadgion_Surkana_1] ([%2]/1).</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_IDAb1_Dreadgion_Surkana_4] ([%5]/1).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report the result to [%dic:STR_DIC_N_Mias].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">You have agreed to attack the Dredgion's core facilities to paralyze its functions.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Eliminating the captain wouldn't be enough to throw the Dredgion into chaos.</p>
+          <p> </p>
+          <p>So Maias ordered you to destroy the Armory Maintaining Surkana and the Nuclear Control Surkana.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], [%userclass]의 길을 가는 것이 녹록치 않았을 텐데 정말 훌륭하네요!</p>
+          <p> </p>
+          <p>이젠 내가 더 이상 가르칠 것도 없으니 말입니다.</p>
+          <p> </p>
+          <p>그렇다고 배움을 멈춰서는 안 되겠죠? 진정한 [%userclass]이라 말할 수 있으려면 더욱 노력해야 하니까요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">고개를 끄덕인다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그래서 새로운 스승을 소개하려고 합니다.</p>
+          <p> </p>
+          <p>판데모니움 중앙 의사당으로 가 하두브란트 님을 만나보세요.</p>
+          <p> </p>
+          <p>그분이라면 당신을 더욱 훌륭한 [%userclass]%이 될 수 있도록 인도해 주실 겁니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>자, 이건 추천서예요. 잊지 말고 챙겨가세요.</p>
+          <p> </p>
+          <p>중앙 의사당으로 가 [%dic:STR_DIC_N_DC1_Hadubrand_M] 님을 찾거든 전해 주세요.</p>
+          <p> </p>
+          <p>그러면 별말 없이 당신을 받아 줄 거예요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>소개를 거절하다니... 혹시 하두브란트 님께 가르침을 받고 있는 건가요?</p>
+          <p> </p>
+          <p>그렇더라도 추천서를 가져 가는 게 좋을 거예요.</p>
+          <p> </p>
+          <p>내가 추천한 사람이라면 하두브란트 님이 더 신경 써 줄 테니 말입니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>각성은 진정한 데바가 되기 위한 첫 걸음마에 불과합니다.</p>
+          <p> </p>
+          <p>진정한 데바로 거듭나려면 연구에 힘쓰고 자신의 한계를 시험하는 전투 경험을 쌓는 것이 좋습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">추천서를 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(추천서를 읽으며) 메자이나가 직접 추천서를 써 준 것입니까?</p>
+          <p> </p>
+          <p>그녀가 누군가를 추천하는 건 참으로 오랜만입니다.</p>
+          <p> </p>
+          <p>하지만 으스댈 것까지는 없습니다. 처음에는 조금만 재능이 있어도 매우 뛰어난 것처럼 보일 수 있습니다.</p>
+          <p> </p>
+          <p>아, 그렇다고 당신이 그렇다는 소리는 아닙니다.</p>
+          <p> </p>
+          <p>앞으로 궁금한 것이 있거든 언제든 찾아오십시오. 성심성의껏 돕겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_DC1_Hadubrand_M]에게 추천서를 가져가라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">메자이나의 추천서를 하두브란트에게 보이자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>메자이나는 이제 가르칠 것이 없다며 추천서를 써 줄 테니 하두브란트에게 가 보라고 했다.</p>
+          <p> </p>
+          <p>추천서를 본 하두브란트는 뛰어난 데바가 되려면 앞으로도 배워야 할 것이 많다며 가르침이 필요하면 언제라도 오라고 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

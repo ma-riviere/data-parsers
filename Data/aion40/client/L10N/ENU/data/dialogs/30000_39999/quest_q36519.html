@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I was looking for you, [%username].</p>
+          <p> </p>
+          <p>We received a new kill order. Naturally, I thought of you right away, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Show me it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p align="center"> - Wanted Dead or Alive - </p>
+          <p> </p>
+          <p>All Fortuneers are advised to read the following proclamation.</p>
+          <p> </p>
+          <p> 1. Name: [%dic:STR_DIC_M_LF4_DayQ_DGaurdRa_53_An]</p>
+          <p> </p>
+          <p> 2. Charge: Informer for the Asmodians</p>
+          <p> </p>
+          <p> 3. Details of Crime: Disguised as an Elyos, Bowmaster Kemar stole military secrets and fled to Gelkmaros. Kemar must be eliminated before the confidential documents are delivered to the Asmodians. Last known whereabouts: Vorgaltem Battlefield, Gelkmaros.</p>
+          <p> </p>
+          <p>Anyone who eliminates Bowmaster Kemar and retrieves the confidential documents will receive a generous reward.</p>
+          <p> </p>
+          <p>- Decreed by [%dic:STR_DIC_E_36500], Fortuneers Legion</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Great! Great news!</p>
+          <p> </p>
+          <p>Others have sworn to kill Kemar, but soon disappear after entering Gelkmaros....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"He hasn't met me yet."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>All right. We'll cope...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Yes you will."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, well, well, it's [%username]. Back from Gelkmaros so soon?</p>
+          <p> </p>
+          <p>What's that I see in your hand there? Are those the confidential papers? Does this mean Bowmaster Kemar is sleeping in the shadows?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here are your precious papers."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Why in all Elysea are you standing here before me empty-handed, [%username]?</p>
+          <p> </p>
+          <p>Those documents must be recovered before the Asmodians get their claws on them. In all my years as a Fortuneer, I have never been this edgy about a bounty.</p>
+          <p> </p>
+          <p>Get out there and do what you do best, Fortuneer! And I don't mean gulping down ale!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Fine, I'm leaving now."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>So these are the precious documents that you risked your life for, and that I risked my reputation on? It's a cipher...the bloody thing is all coded! I have no idea what it says.</p>
+          <p> </p>
+          <p>Even if those wretched Asmodians got possession of these documents, I doubt they could do anything with it. It's gibberish.</p>
+          <p> </p>
+          <p>In any case, you did well, [%username]. Here's the reward you were promised.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Go to Gelkmaros, eliminate [%dic:STR_DIC_M_LF4_DayQ_DGaurdRa_53_An], and bring the confidential documents to [%dic:STR_DIC_E_36500].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">You've been given a proclamation from the Fortuneers Legion.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>A proclamation was handed to you from the Fortuneers Legion.</p>
+          <p> </p>
+          <p>You eliminated Bowmaster Kemar, who was charged with stealing Elyos military secrets. The Fortuneers Captain issued you a reward.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

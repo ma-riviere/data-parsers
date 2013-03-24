@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q41170</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select_none" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>곤란하네요... 방금 전투를 벌이다 약간의 부상을 입은 것 같아요.</p>
+          <p> </p>
+          <p>아무래도 이아요스 구출은 [%username] 님께서 단독으로 진행해 주셔야겠습니다.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_W_LDF4a_SZ_A2_02]로 가셔서 [%dic:STR_DIC_N_Iayos]를 찾아 이곳까지 호위해 주시길 부탁드립니다.</p>
+          <p> </p>
+          <p>[%username] 님의 실력은 익히 들었으니 혼자서도 문제 없을 것이라 믿습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님? 도, 도와 주세요! </p>
+          <p> </p>
+          <p>용족에게 붙잡혀 여기저기 끌려 다니다가 옴짝달싹 못하는 신세가 되었습니다.</p>
+          <p> </p>
+          <p>꼼짝없이 죽겠다고 생각하던 참에 이렇게 나타나 주셔서 얼마나 반가운지 말로 표현할 수가 없습니다.</p>
+          <p> </p>
+          <p>어서 저를 여기서 벗어날 수 있게 도와 주세요!</p>
+          <p> </p>
+          <p>저는 이미 돌아갈 준비가 끝났어요!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">호위를 시작한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>결국 이아요스를 구하셨군요!</p>
+          <p> </p>
+          <p>대체 어떻게 된 건가요? 웬만하면 빠져 나올 수 있었을 텐데 결박되어 있기라도 했던 건가요?</p>
+          <p> </p>
+          <p>이아요스는 꽤 충격을 받았는지 수척해져 있던데요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아, 그랬군요. 슈라크 녀석들이 연족을 붙잡아 두고 뭘 하려고 했던 걸까요?</p>
+          <p> </p>
+          <p>슈라크와 관련된 수상한 일이 계속 일어나고 있습니다.</p>
+          <p> </p>
+          <p>이아요스를 그대로 두었더라면 생명이 위태로웠을 지도 모릅니다.</p>
+          <p> </p>
+          <p>동료의 생명을 구해 주셔서 정말 감사합니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">실종된 [%dic:STR_DIC_N_Iayos]를 찾아라.</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_N_Iayos]를 [%dic:STR_DIC_N_Honoos]가 있는 곳까지 안전하게 호위하라</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">[%dic:STR_DIC_N_Honoos]와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">이제 이아요스를 구출할 때가 왔다. 메닌 마을로 가 이아요스를 구출하자. </font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>호누스가 전투에서 부상을 입어 혼자서 이아요스를 구출하러 갔다.</p>
+          <p> </p>
+          <p>슈라크들에 둘러 쌓여 꼼짝도 못하고 있던 이아요스는 자신을 구출하러 왔다는 사실에 크게 기뻐했다.</p>
+          <p> </p>
+          <p>슈라크들이 방해했지만, 이아요스는 결국 안전한 곳으로 구출될 수 있었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

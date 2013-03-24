@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Something's been bothering me. Well, I should say two somethings--at the Elyos guard tower near our fortress.</p>
+          <p> </p>
+          <p>I thought I must have been mistaken at first. No Elyos would show their pretty faces here unless they were out of their minds... </p>
+          <p> </p>
+          <p>I've caught them watching me, though.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"That's creepy."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I know! One minute they seemed to be watching me, then they'd just vanish. I can't even sleep, they're just creeping me out so much.</p>
+          <p> </p>
+          <p>My commander thinks they're just well-trained scouts observing our movements, but I think it's something more personal.</p>
+          <p> </p>
+          <p>Would you go teach a lesson to those annoying glowworms? I don't ever want to see them around the fortress again.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>They're called [%dic:STR_DIC_N_Livy] and [%dic:STR_DIC_N_Mercus]. Take them out and bring me a lock of their rich brown hair.</p>
+          <p> </p>
+          <p>Yes, hair. Elyos hair. As evidence. Oh, just do it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Whatever you say."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, well, I guess I'm safe enough from them inside the fortress.</p>
+          <p> </p>
+          <p>But if my commander is right and they are scouts, someone should deal with them anyway.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Maybe someone will."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did you get the hair? Uh, I mean, get the evidence?</p>
+          <p> </p>
+          <p>Did they mention me?</p>
+          <p> </p>
+          <p>You defeated them, right?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here's your 'evidence'."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Are you trying to trick me with these?</p>
+          <p> </p>
+          <p>These two strands of hair are identical in color and length and smell. They must belong to one person, not two.</p>
+          <p> </p>
+          <p>Please take care of both of those guys.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Both, got it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Mmm... Elyos hair smells like... uh, never mind. I can uh... sleep better knowing they won't be bothering me now.</p>
+          <p> </p>
+          <p>Please accept these. And please don't mention to anyone about the hair.</p>
+          <p> </p>
+          <p>Thank you, [%username]. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Take evidence of your defeating [%dic:STR_DIC_N_Livy] and [%dic:STR_DIC_N_Mercus] at the Elyos guard tower to [%dic:STR_DIC_N_Ab1_1211_Quest_Da].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Two scouts from the Elyos guard tower have been spotted near the fortress. Defeat Livius and Mercus and take their hair as evidence to Herat.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Herat asked you to eliminate the Elyos scouts.</p>
+          <p> </p>
+          <p>Following her instructions, you defeated Livius and Mercus at the Elyos guard tower and took their hair to Herat.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

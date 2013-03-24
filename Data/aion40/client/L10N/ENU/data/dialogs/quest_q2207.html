@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Kuhuu kuu kwang kwang!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Er...what?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Kuhuu kuu!</p>
+          <p> </p>
+          <p>(It holds out a scrap of parchment.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(It smiles as you take the parchment, pointing at the Mau interpreter.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Erm...help?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(You brush the paper aside. It looks disappointed.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Sorry, I don't speak Mau."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>May you receive the blessings of your ancestors! </p>
+          <p> </p>
+          <p>[%dic:STR_DIC_N_Lycan_Messenger], the Red Mane tribe's Emissary, requests a favor.</p>
+          <p> </p>
+          <p>We've come to speak with the fortress commander, but he doesn't seem to have time for us.</p>
+          <p> </p>
+          <p>Please, will you deliver this document to Commander [%dic:STR_DIC_N_Sueron]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">"What is it?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We represent the Red Mane Mau living in the Beluslan area.</p>
+          <p> </p>
+          <p>We understand the troubles you have had with the Black Claw Tribe.</p>
+          <p> </p>
+          <p>We of the Red Mane Tribe, however--we wish to make peace, you see. Please, deliver the document to [%dic:STR_DIC_N_Sueron]. We must meet with him.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"I'll do what I can."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select3">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>They sent a document? After I made it clear that I wouldn't hear them? How arrogant!</p>
+          <p> </p>
+          <p>I won't read it. It's sure to be full of babble.</p>
+          <p> </p>
+          <p>You seem to have taken a personal interest in the matter. If it's so important to you, why don't you tell me what it says?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT3_1">"Well, basically..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select3_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>So the Mau are at odds within, are they?</p>
+          <p> </p>
+          <p>They clearly wish to be at peace with the winning side. When we've wiped out the Black Claws, though, they'll turn against us, just you mark my words.</p>
+          <p> </p>
+          <p>Well, I won't hear of it. Your feeble mind may be fooled by this drivel, but I won't live to see us taken down.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO2">"I'll let them know."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did you deliver the document?</p>
+          <p> </p>
+          <p>What did Commander Suthran say?</p>
+          <p> </p>
+          <p>Please, we're desperate for peace.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I gave Suthran the letter, and..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What?! Infiltration?!</p>
+          <p> </p>
+          <p>Oh, is that what it's come to? Then there truly is no hope.</p>
+          <p> </p>
+          <p>We can't go back to the Red Manes with nothing to show for our efforts. We were so sure we'd be heard....</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk with [%dic:STR_DIC_N_Lycan_Interpreter]%.</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Deliver the document to [%dic:STR_DIC_N_Sueron].</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Tell [%dic:STR_DIC_N_Lycan_Interpreter] what [%dic:STR_DIC_N_Sueron] said.</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">You agreed to deliver a Mau document to Commander Suthran for the Mau Emissaries, who came to the Fortress hoping to make peace with Asmodae.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>At the request of Mau Emissary Emgata, you delivered a Mau document to Fortress Commander Suthran.</p>
+          <p> </p>
+          <p>Suthran suspected a trick, however, and made it clear that he would not make any treaty with Sapiens. Emgata was very disappointed at Suthran's refusal.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

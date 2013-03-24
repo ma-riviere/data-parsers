@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이곳은 그런데로 정리 되었습니다. </p>
+          <p> </p>
+          <p>하지만 여전히 마족에게 밀리고 있는 상황입니다. 여전히 요새가 위험합니다. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+    <Act href="HACTION_ASK_QUEST_ACCEPT">또 한 번 도움이 될 수 없는지 묻는다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>근처에 수호대원 [%dic:STR_DIC_N_event_Celta]가 맡은 구역이 어려움에 쳐했다고 합니다. </p>
+          <p> </p>
+	  <p>자세한 이야기는 [%dic:STR_DIC_N_event_Celta]를 찾아가 들어주십시오. </p>
+          <p> </p>
+          <p>저는 이 곳에서 계속 싸우고 있겠습니다.  </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정말 감사합니다.</p>
+          <p> </p>
+          <p>다시 한 번 천족의 승리를 위하여 부탁드리겠습니다. </p>
+         </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+         <p>마족과 힘겹게 싸우고 있습니다.</p>
+         <p> </p>
+         <p>도움이 절실합니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님이시군요! </p>
+          <p> </p>
+          <p>[%dic:STR_DIC_Branch_Event_GuardDaRa_25_An]들의 위협이 계속되고 있습니다. </p>
+          <p> </p>
+          <p>이 경계병들과 싸우다가 제 동료들은 안타깝게 그만... </p>
+          <p> </p>
+          <p>이 마족들, 용서하지 않겠어! </p>
+          <p> </p>
+          <p>경계병들을 처치하고 그들이 제 동료들로부터 빼앗아간, </p>
+          <p> </p>
+          <p>[%dic:STR_DIC_I_QUEST_80314a] 12개를 수집해주세요. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">알았다고 한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+   <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_I_QUEST_80314a]를 다 회수하셨나요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">천족의 증표를 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+   <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_I_QUEST_80314a]가 모자랍니다.</p>
+	  <p> </p>
+          <p>천족을 위해서, 더 힘써주세요!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+    <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_I_QUEST_80314a]를 다 찾아와주시다니!</p>
+          <p></p>
+          <p>감사합니다! [%username] 님의 도움이 있어 요새를 수호 할 수 있겠습니다!</p>
+          <p> </p>
+          <p>이 것은 제 성의인 [%dic:STR_DIC_I_QUEST_80314b]입니다. </p>
+          <p></p>
+          <p>[%username] 님은 자격이 있으십니다. </p>
+          <p></p>
+          <p>이 것을 사용하신다면 [%username] 님은 더 강해지실 수 있으실겁니다. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+                     <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_event_Celta]와 대화하라.</font></p></step>      
+                     <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_I_QUEST_80314a] 12개를 모아 [%dic:STR_DIC_N_event_Celta]에게 가져가라.</font></p>[%collectitem]</step>     
+    </steps>
+          <p><font font_xml="quest_summary">천족을 위해 [%dic:STR_DIC_Branch_Event_GuardDaRa_25_An]들을 처치하고 [%dic:STR_DIC_I_QUEST_80314a] 12개를 회수하여 [%dic:STR_DIC_N_event_Celta]에게 갖다주자.</p>
+          <p></font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>셀타는 마족들을 물리쳐 희생한 천족 동료들의 노력이 헛되지않았다며 기뻐했다. </p>
+          <p> </p>
+          <p>그는 더 강해질 수 있는 자격이 있다며 어비스 교환권을 건네주었다. </p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

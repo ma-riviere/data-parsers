@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q41158</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We just received some intel, [%username]. It seems that as soon as we start our assault on the [%dic:STR_DIC_W_IDTiamat_SZ_R2], the Tiamat Legion will strike back at our flanks and try to tip us off balance.</p>
+          <p> </p>
+          <p>The fear is holding our assault back. We need to send a small team in to take out a specific unit within the Balaur ranks. I'd like you to head up that team.</p>
+          <p> </p>
+          <p>I need you to take care of the [%dic:STR_DIC_E_Q30718a]s. With them gone, our assaulting forces won't have to worry about a counterattack and we should be able to keep up our momentum. What do you say?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>They're getting desperate, you know. In all my days, I've never seen the Balaur acting like this.</p>          
+          <p> </p>          
+          <p>Did you wipe out the [%dic:STR_DIC_E_Q30718a]s?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Yes. The job's done."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent! The legion owes you once again, [%username]!</p>
+          <p> </p>
+          <p>It's time to start the assault! I'll have the soldiers armed and ready shortly.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Wait for the attack to start, then take out the [%dic:STR_DIC_E_Q30718a]s ([%2]/12).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report back to [%dic:STR_DIC_N_IDTiamat_Sorus].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Kill the defending forces once they launch their counterattack.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Sorus told you how the Balaur were planning to launch a counterattack immediately after the Elyos assault had started, and asked you to act first and destroy the force the Balaur were planning on sending out.</p>
+          <p> </p>
+          <p>Your work was fast and effective, and when you returned, Sorus told you that it was now time to start the main assault!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

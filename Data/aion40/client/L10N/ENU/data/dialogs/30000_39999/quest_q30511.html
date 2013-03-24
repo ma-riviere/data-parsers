@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q30511</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>Not entered</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Deathchant Legion sent me over as soon as we heard about [%dic:STR_DIC_W_ZONE_NAME_IDYun]. I was going to ask you to help clear it out and retake it...</p>
+          <p> </p>
+          <p>But you already look ready to go! You must know what I'm about to ask before I even ask it. A psychic!</p>
+          <p> </p>
+          <p>Just to clarify for the less blessed, will you undertake this mission to kill members of the [%dic:STR_DIC_M_Q30511_ALL] and take their [%dic:STR_DIC_I_QUEST_30511A]s?</p>
+          <p> </p>
+          <p>That way, we can keep track of kills and record how close we are to clearing out the entire Outpost.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+ 
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That was quick! Of course, with your psychic abilities, I'm sure this was easy for you!</p>
+          <p> </p>
+          <p>Now, if you'd give me the Vasharti Seals you collected...?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">"Here! And I'm not psychic!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Your psychic abilities came in handy, didn't they?</p>
+          <p> </p>
+          <p>But we'll need to keep up the pressure. I'm sure I can count on you to help in the future. Hey, maybe I'm psychic too!</p>
+          <p> </p>
+          <p>No, really. What if I AM psychic? That would be great for my career...</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect [%dic:STR_DIC_I_QUEST_30511A]s, and take them to [%dic:STR_DIC_Anarin].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Defeat Vasharti Legionaries at Rentus Base and collect their Seals for the record.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Anarin wanted you to kill Vasharti Legionaries and collect their Seals for record-keeping purposes.</p>
+          <p> </p>
+          <p>So you purged them from Rentus Base and returned to your reward (even if she did decide you were psychic).</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

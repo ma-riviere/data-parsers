@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Do you have family, Daeva?</p>
+          <p> </p>
+          <p>I do...or did. A brother and sister. They had the best jobs around--they both worked in the castle.</p>
+          <p> </p>
+          <p>Our parents were so proud....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Then the epidemic..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Then the epidemic.</p>
+          <p> </p>
+          <p>I never saw them again after Lord Lannok ordered the castle gates shut. I was locked outside, and thought my days were up, only I never got sick.</p>
+          <p> </p>
+          <p>I survived, and the others perished.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Are you certain they're dead?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Near enough. The chances of them surviving when nearly everyone here became undead are, well...impossible. I'd sooner think they slipped away than cling to such an unlikely hope.</p>
+          <p> </p>
+          <p>All I want now is for someone to go back to the Castle and release my brother and sister. They don't deserve what's happened to them.</p>
+          <p> </p>
+          <p>Would you mind doing it for me? I couldn't face seeing them again, not like that.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Our grandmother gave each of us a keepsake when we were children. She gave me this silver bracelet, she gave my brother a [%dic:STR_DIC_I_QUEST_4091a], and my sister had a beautiful [%dic:STR_DIC_I_QUEST_4091b].</p>
+          <p> </p>
+          <p>Thank you for doing this, [%username]. The phrase "blood for blood" rings truer now than ever before, but I mean it. Blood for blood.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Blood for blood, Ervin."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I see. I'll find another then.</p>
+          <p> </p>
+          <p>I just hope others will be able to help. I cannot bear to think of them shambling around the Castle grounds.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Someone will help, I'm sure."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Is it done? Please say it is. They deserve their release.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"It's done. Here are their things."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No...no, it wasn't them. These aren't the keepsakes our grandmother gave us.</p>
+          <p> </p>
+          <p>Remember, they'll be [%dic:STR_DIC_M_Adma_Corn_TestresultZombie_50_Ae]s, [%dic:STR_DIC_M_Adma_Maid_BansheeBlue_50_Ae]s, or [%dic:STR_DIC_M_Adma_Maid_BansheeMaid_50_Ae]s.</p>
+          <p> </p>
+          <p>When you bring me a [%dic:STR_DIC_I_QUEST_4091a] and a [%dic:STR_DIC_I_QUEST_4091b], I'll know your work is done, and my siblings have been freed.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I see. I'll be quick."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes...these are their things. So...so they had turned after all....</p>
+          <p> </p>
+          <p>I had forced myself to think of them dead, but still a part of me hoped they were alive. So foolish...I'm so foolish.</p>
+          <p> </p>
+          <p>Thank you, [%username]. Take this, and please...leave me to grieve for a while.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Find the keepsakes from the [%dic:STR_DIC_M_Adma_Corn_TestresultZombie_50_Ae]s, [%dic:STR_DIC_M_Adma_Maid_BansheeBlue_50_Ae]s, and [%dic:STR_DIC_M_Adma_Maid_BansheeMaid_50_Ae]s and take them to [%dic:STR_DIC_N_Ervin].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Find the keepsakes Ervin's grandmother gave to her sister and brother, both of whom worked in Adma Castle at the time of the epidemic.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ervin believes that her brother and sister, both of whom once worked in Adma Castle, might have turned undead.</p>
+          <p> </p>
+          <p>She asked you to check whether they were alive and to bring her their keepsakes if they had joined the ranks of the undead.</p>
+          <p> </p>
+          <p>You killed the Undead in Adma Stronghold and found the necklace and ring you had been told about. Ervin confirmed that they belonged to her brother and sister, and thanked you for helping her.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

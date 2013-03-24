@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>As a researcher in Balaurea, you have to expect to engage in a battle every now and again.</p>
+          <p> </p>
+          <p>Do you see what's in my bag here? I've got a dagger, potions, a Power Shard, a Revival Stone, bandages...I'm prepared for anything.</p>
+          <p> </p>
+          <p>The truth of the past always hides in dangerous places.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"So does the truth of the present."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I can handle quite a bit, [%username], but those Withered Rotrons and Shortleaf Agrints...there's too many of them. I can't even set foot in the Hanarkand Plains anymore.</p>
+          <p> </p>
+          <p>Is there any way I could get you to do me a favor? I'd pay....</p>
+          <p> </p>
+          <p>Will you eradicate some [%dic:STR_DIC_M_LF4_C_Rottentree_Green_54_An]s and [%dic:STR_DIC_M_LF4_C_Agrint_Green_54_An]s for me?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I appreciate this, [%username].</p>
+          <p> </p>
+          <p>There's so much work to be done in Hanarkand Plains.</p>
+          <p> </p>
+          <p>Just kill off enough so they won't bother my research. Maybe that'll send a message to the rest of them.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Doubt it, but we'll see."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Busy? I'm the one who's busy! I have research!</p>
+          <p> </p>
+          <p>But you're a blasted soldier-at-arms...a warrior. You cut and dice and that's it!</p>
+          <p> </p>
+          <p>Forget it, [%username]! I'll do it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll check in on you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, you're back. Good, good. I've been fiddling with a philosophical dilemma in your absence, and maybe you can help me with it.</p>
+          <p> </p>
+          <p>Ever wonder why you fight so well? Experience in the field, or were you born with it? Think about it....</p>
+          <p> </p>	
+          <p>By the way, did you kill off those Withered Rotrons and Shortleaf Agrints for me?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Research all you want now."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You are the best, [%username]!</p>
+          <p> </p>
+          <p>All right, I've got so much work to do now. But think about my question...give it a few days and let me know.</p>
+          <p> </p>
+          <p>Here's a little something for your time, my friend.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get rid of Rotrons and Agrints.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_LF4_C_Rottentree_Green_54_An]([%2]/7)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_LF4_C_Agrint_Green_54_An]([%5]/7)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_N_Yereos].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Get rid of the Rotrons and Agrints that are interfering with Yereos's research.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yereos said he couldn't focus on his research because Withered Rotrons and Shortleaf Agrints were everywhere.</p>
+          <p> </p>
+          <p>He asked for your help, so you got rid of the interfering creatures in Hanarkand Plains for him. When you returned, he thanked you with a reward.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Now that you have the power of the Abyss key, the Fire Temple will open for you, [%username]. Bulagan knows the way.</p>
+          <p> </p>
+          <p>With your power and Bulagan's guidance, we will free Agnita at last. Will you see it through?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"You have to ask?" </Act>
+    </Selects>
+    <Voice file="Q2036-1.ogg"/>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You have returned, Daeva. It is good. Are you prepared to seek Agnita in the Fire Temple?</p>
+          <p> </p>
+          <p>Fly northwest to the great lava fall. The [%dic:STR_DIC_OBJ_DF2_DragonDoor_In] lies between the flows. Pass the temple gates and seek out [%dic:STR_DIC_N_NPC_HolyGrailKeeper_Q2036].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">"How will I know her?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Agnita is entombed in some mundane object. The Temple's magic shields it and I can see it only dimly. It is hidden in the Temple's deepest recesses.</p>
+          <p> </p>
+          <p>Kromede set a guardian over the treasure. This [%dic:STR_DIC_M_TreasureGuardianQ_36_Ae] must know of [%dic:STR_DIC_N_NPC_HolyGrailKeeper_Q2036]. Defeat him and rescue her.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO2">"My claws, his blood."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, you've returned, but...</p>
+          <p> </p>
+          <p>Where is Agnita?</p>
+          <p> </p>
+          <p>What is that in your hand?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="PLAYEMOTION_salute;HACTION_CHECK_USER_HAS_QUEST_ITEM">"In my hand, I hold Agnita."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_ok">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Agnita is finally free! I'm not given to emotion, but...such a joyous day!</p>
+          <p> </p>
+          <p>Kromede was exceptionally powerful, to seal Agnita's essence in such a tiny thing...</p>
+          <p> </p>
+          <p>Wait! [%dic:STR_DIC_N_Anund] must know as well. Go to the Fortress and share your deeds with her! </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Gladly."</Act>
+    </Selects>
+    <Voice file="Q2036-3.ogg"/>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_fail">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Have you done nothing?</p>
+          <p> </p>
+          <p>[%username], I'm not a man in the habit of waiting.</p>
+          <p> </p>
+          <p>You have your orders. Save Agnita!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Sir, yes sir!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Welcome, traveler.</p>
+          <p> </p>
+          <p>Have a story to tell?</p>
+          <p> </p>
+          <p>Out with it already! I could use some good news! </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Agnita is free by my hand."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Magnificent! No easy feat, from the sound of it!</p>
+          <p> </p>
+          <p>With this rescue, you've helped us redeem our name!</p>
+          <p> </p>
+          <p>Take this, a meager exchange for the Shadow Court's honor.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk with [%dic:STR_DIC_N_Gelkugin].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Talk with [%dic:STR_DIC_N_Bulagan].</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Go into the [%dic:STR_DIC_OBJ_DF2_DragonDoor_In], defeat the [%dic:STR_DIC_M_TreasureGuardianQ_36_Ae], for a clue to [%dic:STR_DIC_N_NPC_HolyGrailKeeper_Q2036]'s prison.</font></p></step>
+               <step><p visible="[%9]"><font color="[%10]">Find the Sacred Chalice Agnita is sealed in and take it to [%dic:STR_DIC_N_Gelkugin].</font></p>[%collectitem]</step>
+               <step><p visible="[%12]"><font color="[%13]">Bring [%dic:STR_DIC_N_Anund] the happy news.</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Order: Agnita must be rescued. Talk to Gelkugin.</font></p>
+        </body>
+        </html>
+    </Contents>
+    <notifies>
+       <notify progress="3" pos="2" fontsize="16" showframe="true" time="5" color="yellow">Old Parchment acquired!</notify>
+    </notifies>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Gelkugin said you could now reach Agnita. You entered the Fire Temple.</p>
+          <p> </p>
+          <p>You battled the Sacred Chalice Guardian, Denlavis for a parchment revealing Agnita's prison. You found the Sacred Chalice in a mountainous pile of treasures and freed her.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>Mission Progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+
+</HtmlPages>

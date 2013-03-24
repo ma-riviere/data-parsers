@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, my stomach....</p>
+          <p> </p>
+          <p>Ah, hello again, [%username]. Sorry, I'm in quite a lot of pain recently. My stomach, I mean.</p>
+          <p> </p>
+          <p>I'm just not getting enough vegetables lately. My body's reacting poorly to the lack.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"That sounds uncomfortable."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Quite. I've tried over and over to find some vegetables around here, but all I can find is Hasia, which doesn't really agree with me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Are there no vegetables to be had?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>There is some [%dic:STR_DIC_DF3_vegetable_d_n_c_30a] in the Mosbear Snowfield, but I don't have the time to leave and collect it.</p>
+          <p> </p>
+          <p>I don't suppose you have the time to go, do you?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Delightful.</p>
+          <p> </p>
+          <p>Be careful of the Mosbears near there. They eat the Rogen as well, and they can get possessive of it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Thanks for the tip."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I understand. This is not a big mission nor is it something that affects everyone. Just me. Me and my poor stomach.</p>
+          <p> </p>
+          <p>Anyway, thanks for listening to me, at least.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"No problem."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]! I feel as though I've been waiting since the start of the Millennium War!</p>
+          <p> </p>
+          <p>Did you find the Rogen?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I did."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You did, but didn't bring them back? I must be frank--that's an odd choice.</p>
+          <p> </p>
+          <p>How about you come back again when you have them?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll do that."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, I'm so pleased. This pain has gone on far too long.</p>
+          <p> </p>
+          <p>Thank you so much, [%username]. I can't tell you how much I appreciate this.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect [%dic:STR_DIC_DF3_vegetable_d_n_c_30a] and bring it to [%dic:STR_DIC_N_Alfgeir].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Gather Rogen that grows in the Mosbear Snowfield and bring it to Alfgeir.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Alfgeir said that he's had a stomachache for a while because he hasn't been able to eat enough vegetables.</p>
+          <p> </p>
+          <p>He said Hasias grow in the area, but they upset his stomach even more, so he asked if you would gather some Rogen for him, which you did.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

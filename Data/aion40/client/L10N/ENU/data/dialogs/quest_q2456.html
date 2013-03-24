@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, you startled me. I was lost in thought.</p>
+          <p> </p>
+          <p>I was thinking about the nature of consciousness.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+       <Act href="HACTION_SELECT1_1">"Do you think about that a lot?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes, I do.</p>
+          <p> </p>
+          <p>In fact, I've come up with some very interesting ideas, but my stomach is growling so much I can't get them sorted out properly.</p>
+          <p> </p>
+          <p>I've got nothing left in my pockets, either. I'll have to go forage for some food and I'll completely lose my train of thought!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What is it that you eat, anyway?"</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I am a vegetarian. I rarely eat meat as I find it muddles my thoughts. Except for the delicious fish that Lif prepares for me--Oh so delicious!</p>
+          <p> </p>
+          <p>Generally I can eat things found in the Patamor Thicket though... Do you want to help me?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you. It's very kind of you to do this for me.</p>
+          <p> </p>
+          <p>I think [%dic:STR_DIC_E_vegetable_d_n_c_20a]s should be good. It's easy to digest, rich in fiber and quite tasty.</p>
+          <p> </p>
+          <p>If you could bring me some, that would be just what I need.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Defeating vegetables? Easy."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I knew that you would refuse.</p>
+          <p> </p>
+          <p>Most people like to seem helpful but they rarely enjoy the actual work involved.</p>
+          <p> </p>
+          <p>If you don't have anything more to say you should leave me be... I have to think of a way to handle this....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Nobody delivers out this far, Sprigg."</Act>
+    </Selects>
+  </HtmlPage>
+ 
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Have you already gone?</p>
+          <p> </p>
+          <p>Let me see have what you brought! </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"How about these?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hmmm... I'm afraid that's not quite right.</p>
+          <p> </p>
+          <p>What I need is only 10 [%dic:STR_DIC_E_vegetable_d_n_c_20a]s.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Ten? Well, all right."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ooooh... tasty tasty Rabano! Mmmm!</p>
+          <p> </p>
+          <p>Some people say that Rabano has neither taste nor smell. But I think that's just because the taste is subtle and they somehow miss it completely. </p>
+          <p> </p>
+          <p>My sense of taste is quite delicate. There are so many nuances within food!</p>
+          <p> </p>
+          <p>Anyway, thanks to you, I can appease my hunger!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect [%dic:STR_DIC_E_vegetable_d_n_c_20a] and bring it to [%dic:STR_DIC_N_DF2_NPC_Sprigg].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Collect Rabano and bring it to Vivi, who is starving.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The enlightened Sprigg, Vivi, asked you to get him something to eat as he didn't want to quit thinking long enough to go gather food.</p>
+          <p> </p>
+          <p>So, you brought him some Rabano so that he wouldn't starve.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

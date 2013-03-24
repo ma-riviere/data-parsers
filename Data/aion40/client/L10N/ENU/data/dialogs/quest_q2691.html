@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The rift always opens at the same place, but where it dumps you out within the complex is completely random.</p>
+          <p> </p>
+          <p>Your first task then is to figure out where you are. If you're lucky, you'll get to the Cursed Ancient Temple where Deshirung the Blimp is. </p>
+          <p> </p>
+          <p>If you find yourself somewhere else, take your bearings and figure out how to get to the temple. Be wary--if you meet either an Elyos Daeva or a Lepharist, you'll have no choice but to fight. Be stealthy when you can. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I'll remember."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Cursed Ancient Temple is deep to the west in the Lepharist Research Center. It may seem abandoned--there are very few guards and there's typically no one in the basement. Don't be fooled, though. </p>
+          <p> </p>
+          <p>Once you're inside, finding the lithographs won't be difficult. They're too large and heavy to take out, though. You'll need to take rubbings of them and bring those back. Much easier to transport. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent. All right. There are three lithographs, meaning you'll need to make three copies. Copy [%dic:STR_DIC_OBJ_LF3_Slate_Q2691a], [%dic:STR_DIC_OBJ_LF3_Slate_Q2691b], and [%dic:STR_DIC_OBJ_LF3_Slate_Q2691c]. That should get you the information about Lumiel Temple. Take them to Gunter in Pandaemonium when you get back.</p>
+          <p> </p>
+          <p>I think that's all you need. Don't leave evidence behind, be stealthy, and come back in one piece. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"All right, I'm going."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Making rubbings is too hard for you? I guess you're worried there won't be enough glory for you. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I've just got so much to do."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Greetings, [%username]. I received a message from Centurion Freyja saying that you were bringing these. She wants to know what we discover.</p>
+          <p> </p>
+          <p>So, do you have the rubbings? I'm excited to see them--it isn't often we get to look at Elyos artifacts. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here they are."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What...why did you come here without copies to show me? That wastes your time and mine. Centurion Freyja is anxious to see these...if she learns you came here without them, she'll be very angry. Back to the Research Center with you. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Sorry... I'll be back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Fascinating...they cover a wide variety of information. This one, for example, is a poem of praise for the Empyrean Lord Lumiel. My, it does go on, too.  </p>
+          <p> </p>
+          <p>This next one looks to be a treatise on the nature of magic. There are numerical formulae, explanations...very dry. And this one...oh my. It's about Ariel. How very fascinating....</p>
+          <p> </p>
+          <p>I'll have to translate the ancient Atreian and make a report. Thank you for your help, [%username]. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Make rubbed copies of [%dic:STR_DIC_OBJ_LF3_Slate_Q2691a], [%dic:STR_DIC_OBJ_LF3_Slate_Q2691b], and [%dic:STR_DIC_OBJ_LF3_Slate_Q2691c] and bring them to [%dic:STR_DIC_N_Gunter] in Pandaemonium.</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Dewi suggests that you make rubbings from the lithographs in the Cursed Ancient Temple in Heiron. Make the copies and bring them to Gunter, a document restoration expert in Pandaemonium.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Dewi sent you to make rubbings of the lithographs within the Cursed Ancient Temple in Heiron. You made the copies and took them to Gunter, who found them very intriguing. The last rubbing was apparently about Ariel, the ruler of Elysea, and that made him very interested. He thanked you for your help and started writing his report.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I need to start all over again: somewhere safe and quiet, where there are no Spirits, no Lepharists--nothing to threaten my research. </p>
+          <p> </p>
+          <p>When the Spirits attacked my lab, I grabbed my potions and research materials. I wanted to save them at all costs.</p>
+          <p> </p>
+          <p>I put the bottles into a box, flung the research materials into a barrel, and fled.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Quick thinking! What happened?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It was too much to carry. The [%dic:STR_DIC_OBJ_DF2_WoodenBox_Q2427] was especially heavy because it contained all that glass. I had to put it down.</p>
+          <p> </p>
+          <p>I carried the [%dic:STR_DIC_OBJ_DF2_Barrel_Q2427] a little farther...but I had to escape...I thought I could retrieve everything later.</p>
+          <p> </p>
+          <p>I really need the [%dic:STR_DIC_I_QUEST_2427a] and the [%dic:STR_DIC_I_QUEST_2427b]. [%username], assuming they survived, would you please find them for me?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+ 
+          <p>I left the [%dic:STR_DIC_OBJ_DF2_WoodenBox_Q2427] containing the medicine bottles in front of the lab door. </p>
+          <p> </p>
+          <p>Then I hid the [%dic:STR_DIC_OBJ_DF2_Barrel_Q2427] containing the research materials near the wagon below the hill.</p>
+          <p> </p>
+          <p>Please find them for me!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll do my best."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+					<p>Please don't turn me down! I need your help.</p>
+          <p> </p>
+          <p>I'll have to recreate decades of lost work if you won't help me. I beg you!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I've done enough. Azphelumbra, Kistig."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Azphelumbra, [%username]!</p>
+          <p> </p>
+          <p>Did you find the [%dic:STR_DIC_OBJ_DF2_WoodenBox_Q2427] holding my medicine bottles and the [%dic:STR_DIC_OBJ_DF2_Barrel_Q2427] of  research materials? Were they intact?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here are your bottles and materials."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well? What news? You look awfully empty-handed.</p>
+          <p> </p>
+          <p>It might not be urgent to you, [%username], but this is the work of my life. I can't continue my research without it.</p>
+          <p> </p>
+          <p>Please hurry and bring me the [%dic:STR_DIC_I_QUEST_2427a] and the [%dic:STR_DIC_I_QUEST_2427b]!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"On my way!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1"> <Contents cdata="true"> <html> <body> 
+  			<p>You found them! Thank you so much!</p>
+        <p> </p>
+        <p> Now I can continue my research, all thanks to you.</p> <p> </p> <p>I don't know how I can thank you...</p> 
+  </body> 
+  </html> 
+  </Contents> 
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Find the items in the [%dic:STR_DIC_OBJ_DF2_WoodenBox_Q2427] and the [%dic:STR_DIC_OBJ_DF2_Barrel_Q2427] and take them to [%dic:STR_DIC_N_Kistig].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Kistig wants to continue his research but he left his medicine bottles and research materials behind when he fled. Go get the bottles and research so he can continue his work.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>When Kistig escaped from his lab, he took medicine bottles and research materials. The Spirits attacked him as he ran, so he abandoned everything to save his own life.</p>
+          <p> </p>
+          <p>To help him continue his research, you went to the ruins of the lab and brought him back his bottles and research. He thanked you.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

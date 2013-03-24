@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>신성 수호회 일동 보시오.</p>
+          <p> </p>
+          <p>우리는 가장 큰 싸움이 벌어지는 시대의 한 가운데에 있소. 그 동안 결계막을 방패 삼아 침묵을 지켰던 주신께서 움직이기 시작하셨기 때문이오.</p>
+          <p> </p>
+          <p>이 땅에 천족과 용족, 마족이 모두 모였소. 큰 싸움이 벌어지고 많은 피가 흐를 것이오.</p>
+          <p> </p>
+          <p>때문에 신성 수호회에서는 물약과 비약을 제작하여 잉기스온 환영요새에 기증하고자 한다오.</p>
+          <p> </p>
+          <p>하지만 아직은 자금과 재료가 부족하여 많은 회원의 도움이 필요한 상태라오.</p>
+          <p> </p>
+          <p>모든 신성 수호회 회원에게 알리니, 물약과 비약을 만들 재료인 [%dic:STR_DIC_G_QUEST_35048]를 채취하여 [%dic:STR_DIC_E_35021]에게 가져가시오.</p>
+          <p> </p>
+          <p>명심하시오. 행동은 신속하게! 입은 무겁게! </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">의뢰서를 접어 넣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>무슨 일로 오셨습니까?</p>
+          <p> </p>
+          <p>(코를 벌름대며) 어쩐지 향기로운 약초 냄새가 나는 것 같군요.</p>
+          <p> </p>
+          <p>혹시 약초를 기부하기 위해 오신 겁니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">가져온 약초를 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>잉기스온 환영요새에서 필요한 약초는 [%dic:STR_DIC_G_QUEST_35048]입니다.</p>
+          <p> </p>
+          <p>다른 약초는 이미 충분한 물량을 확보해 두었기 때문이죠.</p>
+          <p> </p>
+          <p>그러니 [%username] 님께도 에어데를 부탁하고 싶군요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>천족과 마족의 군사력은 비슷하다고 알고 있습니다.</p>
+          <p> </p>
+          <p>더구나 결계 내부가 아닌 용계라서 양쪽 모두에게 불리하지요. 이럴 때야말로 충분한 군수품에 기댈 수 밖에 없습니다.</p>
+          <p> </p>
+          <p>[%username] 님이 기부하신 약초는 잉기스온의 군수품으로 유용하게 쓰일 겁니다. 답례로 신성 수호회의 증표를 드릴 테니 유용하게 써 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">약품을 만들 [%dic:STR_DIC_G_QUEST_35048]%를 모아 [%dic:STR_DIC_E_35021]에게 가져가라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">신성 수호회에서 의뢰서가 왔다. 지시에 따르자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>신성 수호회에서 온 의뢰서에는 잉기스온 환영요새에 물약과 비약을 기증하기 위해 많은 약초가 필요하니 기부를 요청한다는 내용이 적혀 있었다.</p>
+          <p> </p>
+          <p>에어데를 구해 잉기스온 지부 회원에게 가져가자 협조에 감사를 표하며 신성 수호회 증표를 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

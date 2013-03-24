@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+        	<p>For the Eyes of [%username] Only:</p>
+          <p> </p>
+          <p>This is an urgent request from Centurion [%dic:STR_DIC_N_Stanis], an Alabaster Order undercover operative. He needs someone discreet to carry some information that is too important to write down.</p>
+          <p> </p>
+          <p>Use the [%dic:STR_DIC_W_ZONE_NAME_Underpass] to infiltrate Gelkmaros and search for Centurion Stanis who is currently on a mission to capture the [%dic:STR_DIC_W_DF4_SZ_3011_A] there.</p>
+          <p> </p>
+          <p>[%username], move quickly and bring his message back to an [%dic:STR_DIC_E_35021].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">Fold the order and put it away.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Not so loud! What business do you have in Gelkmaros, [%userclass]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">"Leowasp Leowasp in the plains." </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>And "Cellatu Cellatu in the mountains."</p>
+          <p> </p>
+          <p>Listen up, I'm trusting you to deliver this message back to the Alabaster Order syllable for syllable. You ready?</p>
+          <p> </p>
+          <p>Worg's tail, spirit's tears, black wound, blue mist.</p>          
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"I'm sure there's a mnemonic for that."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>How's the weather in Gelkmaros?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Stanis says, 'Worg's tail, spirit's tears...'"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That's a high-level code for the Alabaster Order. I'll need to report this to the other officers.</p>
+          <p> </p>
+          <p>Remember, you know nothing about this.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk with [%dic:STR_DIC_N_Stanis].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Relay the message to an [%dic:STR_DIC_E_35021].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">A call to action has arrived from the Alabaster Order. Follow its instructions.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Centurion Stanis at the Vorgaltem Citadel had a top secret message for the Alabaster Order. You infiltrated Gelkmaros and met Centurion Stanis whose coded message you relayed to Tersichore or Eriphyle.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

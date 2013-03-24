@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah...ahhh...ahhhhchoo!</p>
+          <p> </p>
+          <p>Uhhh... I've been outside too long, away from the comforts of a warm hearth.</p> 
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+       <Act href="HACTION_SELECT1_1">"Are you sick?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Sick? No, I've taken up sneezing as a competitive sport. Doing well, wouldn't you say?</p>
+          <p> </p>
+          <p>Of course I'm sick! What else would put me...aaah...ahCHOOO! Ugh, what else would put me in such a miserable state?</p>
+          <p> </p>
+          <p>Maybe you could help me instead of standing there mocking the ill?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What can I do?"</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That's more like it.</p>
+          <p> </p>
+          <p>I need Rubuses and Ruko. Then I'll be able to make rubus juice and blankets, so I can recover.</p>
+          <p> </p>
+          <p>Will you do that?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Rubuses and Ruko are abundant around here. You'd probably have more trouble avoiding them.</p>
+          <p> </p>
+          <p>Be sure to maintain vigilance! The Kalgolems and Arachnas won't hesitate to attack if you turn your back on them.</p>
+          <p> </p>
+          <p>Despite your snark, I wouldn't be able to forgive myself if something happened to you while you were helping me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be careful."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Too hard to just pick up things that you would trip over anyway?</p>
+          <p> </p>
+          <p>A fine Daeva you are.</p>
+          <p> </p>
+          <p>I'll just lie here, then, and hopefully become well simply by sheer force of will! Good day.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"May better luck come your way."</Act>
+    </Selects>
+  </HtmlPage>
+ 
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ughh...I feel like the Krall are stampeding through my head.</p>
+          <p> </p>
+          <p>And I can't stop shaking. I do hope you've found what I asked for. I need to wrap up and have a swig of something healthy as soon as possible!</p>
+          <p> </p>
+          <p>Do you have my supplies?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here they are."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No, no, no!</p>
+          <p> </p>
+          <p>Five Rubuses and ten clumps of Ruko--that's what I asked for. My eyes are perfectly healthy, I'll have you know!</p> 
+          <p> </p>
+          <p>I'm sorry. I don't mean to shout. I just feel horrible.... Please, come back when you've collected my supplies.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll do my best."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes, that's it. You've brought all the Rubuses and Ruko I need. This is wonderful, really wonderful.</p>         
+          <p> </p>
+          <p>Finally, I can do something about this frightful cold. I'll have those Rubuses squeezed in no time.</p>
+          <p> </p>
+          <p>Please. You must take this as payment.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Gather Rubuses and Ruko and bring them to [%dic:STR_DIC_N_Leipos].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Gather Rubuses and Ruko from the Altamia Ridge and bring them to Vascus.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Vascus was feeling ill and asked you to find him some Rubuses and Ruko so he can make nutritious juice and warm blankets.</p>
+          <p> </p>
+          <p>You collected the supplies and brought them back to him.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

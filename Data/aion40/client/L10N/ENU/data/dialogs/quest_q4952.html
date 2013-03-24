@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Personally, I trust your ability, [%username]. But that's not how things are handled on an official level.</p>
+          <p> </p>
+          <p>The last requirement is proof of your ability to make a rare piece of Handicrafting.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What do you mean by 'rare?'"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>A rare item is one that's difficult to craft--beautiful, powerful, and a perfect example of its kind.</p>
+          <p> </p>
+          <p>For example, making Vidar's Noble Necklace is an excellent way to prove your ability.</p>
+          <p> </p>
+          <p>Would you like to try? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good.</p>
+          <p> </p>
+          <p>Make Vidar's Noble Necklace. It's more complex than [%dic:STR_DIC_E_Q2977], but you've got the skills for the task.</p>
+          <p> </p>
+          <p>Good luck!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Thanks!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm disappointed, [%username]. I never expected a Daeva with your skill or reputation to turn me down.</p>
+          <p> </p>
+          <p>If that's the way you want it...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"For now."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>One of a Master's most important responsibilities is nurturing successors, so I expect a lot from you, [%username].</p>
+          <p> </p>
+          <p>Were you able to make Vidar's Noble Necklace?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here's my necklace."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This isn't bad, but it's not what I've come to expect from you.</p>
+          <p> </p>
+          <p>You can--and will--do better if you apply yourself.</p>
+          <p> </p>
+          <p>Try again--make another Vidar's Noble Necklace and bring it here.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll do the best I can."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent! Well proportioned, delicately wrought--this is a fine necklace!</p>
+          <p> </p>
+          <p>Now I'm confident enough to recommend you as a Handicrafting Expert without hesitation.</p>
+          <p> </p>
+          <p>I'm quite pleased--you'll make a good successor.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Make Vidar's Noble Necklace and take it to [%dic:STR_DIC_N_Lanse].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Lanse said you need to prove your ability to receive the title of Handicrafting Expert. Show your talent by making Vidar's Noble Necklace.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Lanse said that you need to prove your ability by making a rare Handicrafting to receive the title of Handicrafting Expert.</p>
+          <p> </p>
+          <p>You made Vidar's Noble Necklace and took it to her as she requested. She was pleased, saying she'd finally found her successor.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

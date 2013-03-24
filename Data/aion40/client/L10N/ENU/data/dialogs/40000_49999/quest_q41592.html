@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q41592</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>Not entered</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]! [%username], please help!</p>
+          <p> </p>
+          <p>You know the Balaur are causing all kinds of havoc around here, right? They've destroyed our Siege Chariots and have stolen my [%dic:STR_DIC_I_quest_41592a], preventing me from starting repairs. </p>
+          <p> </p>
+          <p>Worse, the [%dic:STR_DIC_M_LDF4b_T1_S3_DrakanFi_PagatiDrop_Destroy_58_An]s are openly taunting me, waving my tools around and snapping them into pieces!</p>
+          <p> </p>
+          <p>I need them back! Please, before it's too late.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, the list of things that need doing just gets longer and longer, and all I can do is sit on my hands and pray that someone brings me my things back.</p>
+          <p> </p>
+          <p>Did you, friend? Do you have my tools?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">"I think so. Are these them?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes! Yes, they are! Oh thank you, [%username]!</p>
+          <p> </p>
+          <p>I'll fix the Trebuchet right away. Then I have to tinker with the missiles, and tend to the chariots. Oh... so much work!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Find the [%dic:STR_DIC_I_quest_41592a] and bring them to [%dic:STR_DIC_N_Solpress].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">The Balaur stole Solas' maintenance tools. Kill the Vasharti Cavalry Scouts and recover them.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Solas told you how the Vasharti Cavalry Scouts had stolen his maintenance tools, causing delays and delaying repair schedules. You agreed to help, and after killing the scouts, were able to recover the items Solas needed.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

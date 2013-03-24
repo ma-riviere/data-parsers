@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've been rereading my notes, [%username], and I think the reason why the Quartz Rod didn't work was because it didn't have enough energy.</p>
+          <p> </p>
+          <p>You see, the Quartz Rod powers the Rift Orb, so, obviously, it won't work if it doesn't have enough energy.</p>
+          <p> </p>
+          <p>We need to replenish the Rod's energy and it should power up the orb. Now we just need to figure out what kind of energy it uses.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Some type of Balaur energy, maybe?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That's exactly what I was thinking. The Balaur made it, so it must be something they would use.</p>
+          <p> </p>
+          <p>Surkana Fragments, perhaps. They would have used it back in the day when the document was first written...still use it to this day, too.</p>
+          <p> </p>
+          <p>Will you get some, [%username]? This might be the last piece of the puzzle.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>From my research, I know that the Balaur use Gathering Worms to harvest Dranas. And these worms have Surkana in their flesh.</p>
+          <p> </p>
+          <p>They're all over Mephistis Farm, Angrief Wastes and Hanarkand Plains.</p>
+          <p> </p>
+          <p>So, kill [%dic:STR_DIC_M_LF4_B4_Spaller_mini_54_An]s, [%dic:STR_DIC_M_LF4_C4_Spaller_mini_55_An]s, and [%dic:STR_DIC_M_LF4_C2_Spaller_mini_55_An]s, and you should come up with [%dic:STR_DIC_I_QUEST_30212a]s.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I hope this works."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I know I've been pushing you too hard, [%username]. You must need a break.</p>
+          <p> </p>
+          <p>How about this...take a break, have an ale, just relax for awhile. But come back when you're rested and we'll start again then.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"That's a great plan."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The [%userclass]-turned-Scholar has returned!</p>
+          <p> </p>
+          <p>How did it go? Did you kill the Gathering Worms?</p>
+          <p> </p>
+          <p>Give me the Surkana Fragments and I'll see if it recharges the Quartz Rod.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here you go...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You haven't left to get the Surkana yet? Stormwing's seal weakens with every wasted minute, [%username]!</p>
+          <p> </p>
+          <p>You remember what Faithful Respondent Utra said would happen if Stormwing ever got out, don't you?</p>
+          <p> </p>
+          <p>We don't have time for games. You must find the [%dic:STR_DIC_I_QUEST_30212a]s as soon as you can!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll get the Surkana now."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(Pilomenes holds the Quartz Rod in one hand and the Surkana Fragments in the other as he chants a spell.)</p>
+          <p> </p>
+          <p>No, no, no...this isn't working! This damn Surkana doesn't have enough energy!</p>
+          <p> </p>
+          <p>We need to think of something else, [%username]. And quick.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Obtain [%dic:STR_DIC_I_QUEST_30212a]s and bring them to [%dic:STR_DIC_N_Pilomenes].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">The Quartz Rod didn't have enough energy, so you have to defeat Collector Spallers, Plain Gathering Worms, and Crater Gathering Worms to obtain Surkana Fragments.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Pilomenes deduced that the reason why the Rift Orb didn't work was because the Quartz Rod didn't have enough energy.</p>
+          <p> </p>
+          <p>You defeated Gathering Worms and brought back Surkana Fragments. Pilomenes attempted to replenish the Rod's energy, but failed.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

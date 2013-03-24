@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아무리 생각해도 타란의 용암동굴의 뉴트를 소탕하는 걸로는 이름을 크게 날릴 수 없을 것 같습니다.</p>
+          <p> </p>
+          <p>사람들이 다 아는 유명한 놈을 처치해야 그만큼 저도 유명해지겠죠.</p>
+          <p> </p>
+          <p>그런데 제가 실력이 그렇게 크게 뛰어나지가 않아서 말입니다...</p>
+          <p> </p>
+          <p>[%username] 님! 이왕 도와주신 거 조금만 더 도와주십시오.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">고개를 끄덕인다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>타란의 용암동굴에 비굴한 골방크라는 좀비가 있습니다.</p>
+          <p> </p>
+          <p>무슨 사연으로 뉴트가 사는 동굴에서 살게 됐는지는 모르겠지만 어쩌다 사람을 보면 무슨 목걸이를 내놓으라면서 달려든다고 하더군요.</p>
+          <p> </p>
+          <p>나름대로 악명도 높고 어쨌거나 사람들에게 해를 끼치는 놈이니 그 좀비를 처치했다고 하면 저도 유명해질 겁니다.</p>
+          <p> </p>
+          <p>[%username] 님, [%dic:STR_DIC_M_ZombieNamedD_28_Ae]%을 좀 처치해 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>타란의 용암동굴에 들어가 보셨으니 알겠지만 혼자 가기엔 위험한 곳입니다. </p>
+          <p> </p>
+          <p>용암이 있는 곳까지 들어가야 [%dic:STR_DIC_M_ZombieNamedD_28_Ae]를 찾을 수 있을 겁니다.</p>
+          <p> </p>
+          <p>그럼 부탁드립니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님은 데바라서 제 심정을 모르실 겁니다.</p>
+          <p> </p>
+          <p>남한테 업신여김을 당하는 게 얼마나 분하고 괴로운지 아십니까?</p>
+          <p> </p>
+          <p>절 하찮게 여기는 사람들에게 이것 봐라, 내가 이런 일을 했다 하고 자랑 좀 하겠다는 게 그렇게 나쁜 일입니까?</p>
+          <p> </p>
+          <p>싫으면 관두십시오. 절 도와줄 마음씨 좋은 데바님을 꼭 찾을 겁니다!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님이 [%dic:STR_DIC_M_ZombieNamedD_28_Ae]를 처치하고 오면 어떻게 소문을 낼까 궁리하고 있었습니다.</p>
+          <p> </p>
+          <p>자연스럽게 소문이 멀리 퍼져야 할 텐데 말입니다.</p>
+          <p> </p>
+          <p>그나저나 그 좀비는 처치하신 거죠?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 얘기한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>감사합니다, 정말 감사합니다.</p>
+          <p> </p>
+          <p>그리고 잘 아시겠지만 [%username] 님이 골방크를 처치한 것은 절대 비밀입니다.</p>
+          <p> </p>
+          <p>이거 받으십시오. 그동안 제가 여행하면서 이리저리 마련한 것입니다.</p>
+          <p> </p>
+          <p>다시 한번 부탁드리지만 비밀은 절대 지켜 주셔야 합니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_M_ZombieNamedD_28_Ae]를 처치하라([%2]/1)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Kimci]와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">이름을 크게 날리고 싶다는 킴씨를 위해 비굴한 골방크를 처치해 주자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>킴씨는 이름을 크게 날리려면 유명한 놈을 처치해야 한다고 했다. 그래서 비밀을 지켜 주기로 하고 비굴한 골방크를 대신 처치해 주었다. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

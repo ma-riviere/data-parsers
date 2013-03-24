@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님, 지금 당신한테서 상당한 행운의 기운이 막 뿜어져 나오는 거 알아요?</p>
+          <p> </p>
+          <p>혹시 뭔가 교환받을 수 있는 럭키 티켓이라도 갖고 있는거 아니에요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">그런 것 같다고 한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이런! 난 정말 천재인가봐.</p>
+          <p> </p>
+          <p>자, 내 말 알아들었으면 빼지 말고 어서 줘봐요.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_I_WORLD_EVENT_SUMMERDAY_KINA_EXCHANGE]이 진짜인지 아닌지 확인해보고 용돈으로 교환해줄게요.</p>
+          <p> </p>
+          <p>요즘 위조 교환권이 판을 치고 있거든요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">교환권을 보여준다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">그냥 간다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>음! 진짜 교환권 맞네요.</p>
+          <p></p>
+          <p>당신 정말 행운아라는 거 알아요?</p>
+          <p></p>
+          <p>이 교환권 몇 장 발행했더라? 아무튼 엄청 적게 발행했는데 이걸 얻다니!</p>
+          <p></p>
+          <p>아, 이러고 있을 때가 아니지.</p>
+          <p></p>
+          <p>용돈 액수가 어떻게 되려나... 음, 기억났다! 잠시만요, 몇 사람이 받아갔는지 기록을 해야하거든요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">교환권을 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>왜 그냥 가요?</p>
+          <p> </p>
+          <p>지금은 기분이 별로인가? 아니면 가지고 있는 교환권이 위조된 건가?</p>
+          <p> </p>
+          <p>그래도 생각나면 다시 찾아와요! 용돈 아직 많이 남았어요!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>당신 정말 행운아라는 거 알아요?</p>
+          <p></p>
+          <p>이 교환권 몇 장 발행했더라? 아무튼 엄청 적게 발행했는데 이걸 얻다니!</p>
+          <p></p>
+          <p>아, 이러고 있을 때가 아니지.</p>
+          <p></p>
+          <p>용돈 액수가 어떻게 되려나... 음, 기억났다! 잠시만요, 몇 사람이 받아갔는지 기록을 해야하거든요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">교환권을 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>어라? [%dic:STR_DIC_I_WORLD_EVENT_SUMMERDAY_KINA_EXCHANGE]이 없는 것 같은데요?</p>
+          <p></p>
+          <p>가방을 한 번 더 확인해보세요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">가방을 확인해보고 다시 온다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>당신은 행운이 충만한 데바니까 매사 긍정적으로 즐겁게 지내요!</p>
+          <p> </p>
+          <p>아참, 이거 쓸데 없는 곳에 쓰면 안 되는거 알죠?</p>
+          <p> </p>
+          <p>알뜰하게 쓰세요.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_event_Pritta]에게 [%dic:STR_DIC_I_WORLD_EVENT_SUMMERDAY_KINA_EXCHANGE]을 건네주고 용돈을 받아라.</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">행운의 용돈 교환권을 들고 프리타를 찾아가면 용돈을 받을 수 있다고 한다.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>행운의 용돈 교환권을 들고 프리타를 찾아갔더니 용돈을 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

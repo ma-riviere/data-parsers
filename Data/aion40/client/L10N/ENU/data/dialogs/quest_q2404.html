@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I patrolled the eastern side of the village with Letum a few days ago.</p>
+          <p> </p>
+          <p>There were a lot of Tipolids in the Tripeed field, so we chased them down and killed most of them. We didn't want them to damage the field.</p>
+          <p> </p>
+          <p>But a villager came to me yesterday and said that Tipolids had damaged the field since then. It doesn't seem possible that they could have come back in such numbers so quickly.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Perhaps they were hiding."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Perhaps.... But the reason is less important than the fact that they're back. I told my commander that we took care of them, and now it will seem that I am either a liar or incompetent.</p>
+          <p> </p>
+          <p>I need someone to go hunt those Tipolids before word gets back to the wrong person.</p>
+          <p> </p>
+          <p>How about it? I can make it worth your time.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm glad you understand, [%username].</p>
+          <p> </p>
+          <p>Please go to the Halabana Hot Springs and hunt [%dic:STR_DIC_M_hippolizardReD_37_An]s.</p>
+          <p> </p>
+          <p>Once you've killed them, come back and let me know...and thanks.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"It could have happened to anyone."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>If my commander hears about the [%dic:STR_DIC_M_hippolizardReD_37_An]s, I could be in big trouble.</p>
+          <p> </p>
+          <p>Please, it's a real problem for me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Sometimes you have to fix your own mistakes."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, I've been waiting for you.</p>
+          <p> </p>
+          <p>Did you kill those Scoop Tail Tipolids?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"The deed is done."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you so much. This will keep me out of trouble.</p>
+          <p> </p>
+          <p>I'm hoping for a promotion to the Watch, and this could have been a stain on my record.</p>
+          <p> </p>
+          <p>When I'm an important Daeva, I'll remember who helped me out, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Hunt the [%dic:STR_DIC_M_hippolizardReD_37_An]s that damage the Tripeed field ([%2]/12).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_N_Mirmak].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Head toward the Halabana Hot Springs and hunt the Scoop Tail Tipolids as Mirmak asked. </font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Mirmak said he already told his commander that the Tipolid problem was fixed, and then they unexpectedly returned.</p>
+          <p> </p>
+          <p>You went to the Halabana Hot Springs and hunted the Scoop Tail Tipolids. He was very grateful for your help.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

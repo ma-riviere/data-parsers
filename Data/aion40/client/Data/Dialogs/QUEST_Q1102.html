@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>일단 초원에서 케루빔 수를 줄이는 것부터 시작하세. </p>
+          <p> </p>
+          <p>아게르 농장 일에만 신경쓰느라 여기가 이렇게 된 줄 몰랐나 보더군.</p> 
+          <p> </p>
+          <p>벌써 농장 하나는 케루빔 소굴이 됐고 나머지 농장도 놈들 등쌀에 죽을 맛인가 봐. </p> 
+          <p> </p>
+          <p>하긴 조금만 방심하면 곡식을 훔쳐가고 농작물을 죄다 파헤쳐 놓으니 그럴 수밖에.</p> 
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+         <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body> 
+         <p>여기마저 케루빔 소굴이 되면 큰일이라고 신관이 단장에게 부탁했다더군.</p>
+         <p> </p>
+           <p>어쨌거나 우리야 돈벌이가 늘어나니 좋지.</p> 
+           <p> </p>   
+           <p>다른 사람들은 한참 전에 와서 [%dic:STR_DIC_MLA131]을 잡으러 갔다네.</p>
+           <p> </p>  
+           <p>어떤가? 자네도 케루빔을 처치해 보겠나?</p>     
+       </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>잘 생각했네.</p>
+          <p> </p>
+          <p>일단 이 주변에 있는 [%dic:STR_DIC_MLA131]부터 처리하게. 근처에 없으면 초원에 있는 농장을 돌아보고.</p>
+          <p> </p>
+          <p>다른 단원들이 케루빔을 다 잡아 보수를 가로채기 전에 서두르는 게 좋을걸세.</p>
+          </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+         <p>무슨 생각으로 거절하는 건가? </p>
+         <p> </p>
+         <p>기억만 잃은 게 아니라 판단력도 잃었나 보군. </p>
+         <p> </p>
+         <p>알았네. 자네 아니라도 할 사람은 많으니 그만 가 보게.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>벌써 일을 끝냈나?</p>
+          <p> </p>
+          <p>내 눈을 속일 생각은 꿈에도 하지 말게.</p>        
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 얘기한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>생각보다 손이 빠르군, [%username].</p>
+          <p> </p>
+          <p>이건 약속한 보수일세.</p>          
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">아카리오스 초원의 [%dic:STR_DIC_MLA131]%을 처치하라([%2]/3)</font></p></step>
+                      <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_LA148]에게 결과를 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">미레스가 새로운 일거리를 주었다. 아카리오스 초원의 농장을 침입한 줄무늬 케루빔을 처치하자.</p>
+          <p></font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>미레스가 농장에서 곡식을 훔쳐가는 줄무늬 케루빔을 없애라고 해 케루빔을 처치하고 성공 보수를 받았다.</p>  
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

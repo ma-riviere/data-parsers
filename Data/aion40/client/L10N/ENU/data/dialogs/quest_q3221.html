@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Bah! These field reports are nearly worthless.</p>
+          <p> </p>
+          <p>I ask for information about the Nute Warrens or the Lepharist Research Center, I get crazy stories about phantom ships near Jeiaparan Village or some person named Berone who vanishes in mid-air.</p>
+          <p> </p>
+          <p>Here's another one! A Shugo with a strange accent traveling around Heiron. Strange accent? I can barely understand any of them anyway with their nyerk nyerking!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Um...okay."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Okay, check this one--a Shugo calling himself Roikinerk has been seen around the Lepharist Research Center, the Decayed Grove, and Puitonen Bogs.</p>
+          <p> </p>
+          <p>What's a Shugo doing there? Making Kinah, I suppose. Blasted Shugos will trade with anyone--even Lepharists.</p>
+          <p> </p>
+          <p>We'd better check this out. [%username], do you think you can find this Roikinerk?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good, good. Look around the [%dic:STR_DIC_W_LF3_SZ_003], the [%dic:STR_DIC_W_LF3_SZ_D3], and [%dic:STR_DIC_W_LF3_SZ_F2].</p>
+          <p> </p>
+          <p>If you think he's a Lepharist spy, do whatever you need to do.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll take care of it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'll get someone else to check it out, then.</p>
+          <p> </p>
+          <p>I think this Shugo could be real trouble.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm sure you're right."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, Daeva, good to see you. Nee-urk.</p>
+          <p> </p>
+          <p>Help me out here. Nee-urk?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"What are you doing here?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh...Roikinerk not sure. Nee-urk. Roikinerk has never been in Heiron before, so no idea where I am now.</p>
+          <p> </p>
+          <p>Was heading to village, but keep walking in circles. Nee-urk.</p>
+          <p> </p>
+          <p>Roikinerk must have lost way. Nee-urk nee-urk.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Find [%dic:STR_DIC_N_Shulack_LF3_01] and investigate who he is.</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">A Shugo with a strange accent has been reported in Heiron. Find out who he is and make sure he's not a Lepharist spy.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Graa received a report that a Shugo with a strange accent was seen around the Lepharist Research Center, Decayed Grove, and Puitonen Bogs. She asked you to track down this odd Shugo and investigate him.</p>
+          <p> </p>
+          <p>When you found Roikinerk, he said he'd lost his way.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

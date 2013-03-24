@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님은 스스로 운이 좋은 편이라고 생각하시오?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">잘 모르겠다고 한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이번 기회에 운이 얼마나 좋은지 한 번 시험해 보는 건 어떻겠소?</p>
+          <p> </p>
+          <p>그저 재미로 보는 것이니 부담 갖지 않으셔도 될 거요.</p>
+          <p> </p>
+          <p>한 번 해보시겠소?</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">운을 시험해 본다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">운 따위는 믿지 않는다고 한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>오오 좋소.</p>
+          <p></p>
+          <p>어디까지나 재미로 보는 것이니 심각하게 생각하지 마시오.</p>
+          <p></p>
+          <p>잠시만 기다리시게, 점을 치고 있는 중이오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">잠시 기다려준다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>허허, 그냥 재미로 보는 것인데 너무 심각하게 생각하는 것 같구려.</p>
+          <p> </p>
+          <p>혹시라도 궁금해지면 다시 찾아오시게나.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>자, 점괘가 나왔소.</p>
+          <p> </p>
+          <p>그럼 마지막으로 [%username] 님의 염원을 담아야 하니 상자 위에 손을 살짝 얹어주시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">상자에 손을 얹는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>다 됐소!</p>
+          <p></p>
+          <p>친구들하고 같이 모여서 열어 본다면 더 재미있을게요.</p>
+          <p></p>
+          <p>뭐가 나와도 놀라지 말고, 껄껄껄.</p>
+          <p> </p>
+          <p>상자에서 나온 것은 직접 사용해도 되고 옆에 있는 [%dic:STR_DIC_N_event_Druike] 할망구한테 다른 걸로 바꿔달라고 해도 된다오.</p>
+          <p> </p>
+          <p>그럼 잘 가시게나.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_event_Metrano]%이 주는 점괘 상자를 받아라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">메트라노를 찾아가면 운을 시험해 볼 수 있는 상자를 받을 수 있다고 한다.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>메트라노에게 인사를 건냈더니 운을 한 번 시험해보라며 점괘상자를 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

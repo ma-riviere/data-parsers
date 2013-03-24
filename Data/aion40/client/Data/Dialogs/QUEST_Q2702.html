@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>전투를 벌이는 양측의 전력이 비슷하면 소강 상태가 계속되기 마련이라오.</p>
+          <p> </p>
+          <p>하지만 소강 상태는 패배와 다름없다는 게 내 생각이오. </p>
+          <p> </p>
+          <p>그럴 때일수록 후방에서 먼저 움직여 균형을 깨야 한다오. </p>
+          <p> </p>
+          <p>최소의 병력을 투입하여 상대의 허를 찌르는 작전을 구상하고 있는데 [%username]%이 그 일을 좀 도와주겠소?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">고개를 끄덕인다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>현재 천족은 가디언은 물론이고 일단 데바들까지 동원해서 작전을 수행하고 있소.</p>
+          <p> </p>
+          <p>그중에서 9급병은 능력이 뛰어나지는 않지만 전체 병력의 대부분을 담당하고 있는 주요 구성원이라오.</p>
+          <p> </p>
+          <p>그대가 [%dic:STR_DIC_E_Lgrade9]을 물리쳐 놈들의 전력에 타격을 줬으면 하는데. 임무를 수행해 주겠소?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_E_Lgrade9]을 만나면 반드시 물리쳐 주시오.</p>
+          <p> </p>
+          <p>천군 하나하나가 쓰러질 때마다 에레슈란타에서 아스펠 주신의 영광이 드높아질 거요.</p>
+          <p> </p>
+          <p>다만 한 가지 명심할 점이 있소. 천군 9급병이라도 [%username]%과 실력이 비슷한 놈으로 처치해 달라는 것이오. </p>
+          <p> </p>
+          <p>실력이 너무 떨어지는 천군은 처치해 봤자 소용이 없으니 그 점을 명심하길 바라오.</p>
+          <p> </p>
+          <p>그럼 [%username]의 승리를 빌겠소.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>어비스는 적을 두려워하는 자가 있을 곳이 아니오.</p>
+          <p> </p>
+          <p>그러니 천족이 두렵다면 이곳을 곧 떠나시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>천군의 반격이 만만치 않았을 텐데 무사히 돌아왔구려. </p>
+          <p> </p>
+          <p>[%dic:STR_DIC_E_Lgrade9]은 모두 처치했소? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">전투 결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정말 수고했소, [%username].</p>
+          <p> </p>
+          <p>그대의 명성은 에레슈란타에서도 익히 들었는데 과연 명성이 헛소문이 아니었구려.</p>
+          <p> </p>
+          <p>에레슈란타의 전세를 뒤집기 위해 노력한 그대의 공적을 헤르츠 군단장님께 보고하겠소.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_E_Lgrade9]과 전투하여 승리하라([%2]/10)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Lasanya]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">어비스에서 마족의 승리를 위해 천군 9급병과 싸워 이겨야겠다.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>라사냐는 팽팽한 균형을 이루고 있는 전세를 뒤집기 위해서는 천족의 세력을 타격을 가해야 한다고 했다.</p>
+          <p> </p>
+          <p>그러려면 능력이 뛰어나지는 않지만 천족 병력의 대다수를 이루고 있는 천군 9급병을 처치해야 한다고 했다.</p>
+          <p> </p>
+          <p>그래서 전장을 돌며 천군 9급병을 마주칠 때마다 격렬한 전투를 벌여 그들을 처치했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

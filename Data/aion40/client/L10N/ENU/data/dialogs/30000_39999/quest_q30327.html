@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Daevic souls I dreamt of are imprisoned in the Beshmundir Temple, in a place known as the Acheron Mire. It is all clear now--painfully so.</p>
+          <p> </p>
+          <p>An evil shaman has been keeping the souls imprisoned. He uses their screams and pain to gather energy.... I cannot tell for what, but no end could justify such means.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"This must end."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I agree. We must free the souls of these Daevas as soon as possible.</p>
+          <p> </p>
+          <p>Please, [%username], I need your help. This task is beyond a Daeva like me...and I am weakened by my use of the Dream Powder.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You must first go to the [%dic:STR_DIC_W_IDCatacombs_SZ_B3] under the Beshmundir Temple and meet [%dic:STR_DIC_N_Calike]. He has been sending me these visions, and he will be able to tell you how you can free the Daevas.</p>
+          <p> </p>
+          <p>I am certain this will not be easy, but if anyone is able to do it, it is you, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Thank you for your faith in me."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I am sorry you are unable to help, [%username]. I personally feel that saving the tormented souls of Daevas is a task we cannot ignore, but perhaps it is not your duty to aid me.</p>
+          <p> </p>
+          <p>Please leave me. I must look for other Daevas who are more willing.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"When I have more time...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>...hero has come to FREE us...</p>
+          <p> </p>
+          <p>...right to not lose HOPE...</p>
+          <p> </p>
+          <p>...must END our pain...augh....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"How can I help?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>...Macunbello uses PAIN as fuel....</p>
+          <p> </p>
+          <p>...use raft...cross TO...unf...cross to island...free souls...this will weaken HIM....</p>
+          <p> </p>
+          <p>...[%dic:STR_DIC_E_IDCatacombsN_Lichkey4_55_Ae] must fall as well...quickly...short time....</p>
+          <p> </p>
+          <p>...only then...can you...ungh...SLAY [%dic:STR_DIC_E_IDCatacombsN_LichNmd_55_Ah]....</p>
+          <p> </p>
+          <p>...when ready...speak to BOAT man...he will take you...erg....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"Your pain will end soon."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Say nothing, [%username]. I knew you succeeded the moment it occurred. Last night no dream came to me. The souls sleep in peace, and so do I.</p>
+          <p> </p>
+          <p>Clearly, you destroyed this Macunbello.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">(Nod.)</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Then let us remember them in silence, for their souls have finally passed back into the flow of Aether.</p>
+          <p> </p>
+          <p>May the Shedim Lords help them to find peace....</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk with [%dic:STR_DIC_N_Calike].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Free the souls of Daevas and defeat [%dic:STR_DIC_E_IDCatacombsN_Lichkey4_55_Ae] within the given timeframe ([%5]/1).</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Destroy [%dic:STR_DIC_E_IDCatacombsN_LichNmd_55_Ah] ([%8]/1).</font></p></step>
+               <step><p visible="[%9]"><font color="[%10]">Report the result to [%dic:STR_DIC_N_Unset].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Free the souls of Daevas bound to the Acheron Mire and destroy their tormenter, Macunbello.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Greeta said Daevic souls are being tormented at Acheron Mire under the Beshmundir Temple.</p>
+          <p> </p>
+          <p>You destroyed Macunbello, freeing the souls from torment, and Greeta from her nightmares.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

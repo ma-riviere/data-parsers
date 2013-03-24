@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p align="center">-  업무 지시서 -</p>
+          <p> </p>
+          <p>1. 수신자: 관리자 [%username]</p>
+          <p> </p>
+          <p>2. 업무: 동봉한 장부를 골드린 마을의 판다룽에게 전달하고 인수증을 담당 지부에 전달해 주시기 바랍니다냥.</p>
+          <p> </p>
+          <p>3. 담당 지부: 실버린 남부 카탈람 지부</p>
+          <p> </p>
+          <p>위 업무는 승진 평가에 포함되니 성실히 임해 주시기 바랍니다냥.</p>
+          <p> </p>
+          <p>- 실버린 주식회사, 인사담당자 두무링 백</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">업무 지시서를 접어 넣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>여기엔 무슨 일이십니까냥?</p>
+          <p></p>
+          <p>긴히 찾는 물건이라도 있습니까냥?</p>
+          <p></p>
+          <p>(손을 비비며) 비용만 맞는다면 원하는 걸 구해다 드릴 수 있습니당. </p>
+          <p></p>
+          <p>무엇이든지 말입니당, 갸릉.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">밀봉한 장부를 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>냥, 이제보니 실버린 주식회사에서 보낸 심부름꾼이었군용.</p>
+          <p></p>
+          <p>(수염을 세우며) 장부를 보진 않았겠죵?</p>
+          <p></p>
+          <p>일 끝났으면 이만 가 보십시옹. 아하, 인수증?</p>
+          <p> </p>
+          <p>여기 있습니당, 갸릉.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>상부에서 [%username]%을 상부에서 무척 좋게 봤나 봅니당.</p>
+          <p> </p>
+          <p>장부 배달을 맡기다니 말입니당. 그것도 골드린 주식회사로 보내는... </p>
+          <p> </p>
+          <p>물건은 잘 전달했겠지용?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">인수증을 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>골드린 간부의 서명이 맞군용.</p>
+          <p> </p>
+          <p>혹시나 해서 말하는데 이번 일은 절대 다른 이에게 말하면 안됩니당.</p>
+          <p> </p>
+          <p>장부를 전달했다는 것도, 골드린 간부를 만났다는 것도 말입니당.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">골드린 간부 판다룽%와 대화하라</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">실버린 남부 카탈람 지부에 인수증을 전달하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">실버린 주식회사에서 업무 지시서가 왔다. 업무를 확인하고 수행하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>실버린 주식회사에서 업무 지시서가 왔다.</p>
+          <p> </p>
+          <p>동봉된 장부를 골드린 간부 판다룽에게 전달하고 인수증을 받아 실버린 남부 카탈람 지부에게 전하자 수고했다며 사례를 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

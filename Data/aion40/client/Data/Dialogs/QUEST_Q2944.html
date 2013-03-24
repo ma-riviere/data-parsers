@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>유능한 [%userclass]인 줄만 알았더니 재봉에도 일가견이 있군요.</p>
+          <p> </p>
+          <p>이 정도 솜씨면 주신께 바칠 천수품을 만들어도 손색이 없겠어요.</p>
+          <p> </p>
+          <p>그건 그렇고 [%username]! 부탁 하나만 더 해도 될까요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">무슨 일인지 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>실은 이 로브, 어비스에 있는 [%dic:STR_DIC_N_Baht]가 부탁한 거예요.</p>
+          <p> </p>
+          <p>단골 손님이 특별 주문을 한 거라며 제게 부탁한 거죠.</p>
+          <p> </p>
+          <p>오늘까지 물건을 가져다 주기로 했는데 어때요? 직접 가져다 주지 않겠어요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>고마워요. 그럼 잠깐만 기다려 주세요.</p>
+          <p> </p>
+          <p>(잠시 후 꾸러미 하나를 건네며) 받으세요. 들고가기 쉽게 로브를 포장한 겁니다.</p>
+          <p> </p>
+          <p>그럼 당신만 믿겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>뭔가 사정이 있나보군요. 그럼 어쩔 수 없죠.</p>
+          <p> </p>
+          <p>그렇지만 나중에라도 생각이 바뀌면 다시 오세요.</p>
+          <p> </p>
+          <p>기다리고 있을게요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+ 
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>마음에 드는 물건이 없으십니까? 죄송하지만 지금은 이게 최대한 노력한 것이랍니다.</p>
+          <p> </p>
+          <p>아마 어비스의 다른 곳에 가셔도 사정이 별반 다르지 않을 겁니다.</p>
+          <p> </p>
+          <p>그러니 웬만하면 이 물건 안에서 골라 보십시오. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">쟈키아의 꾸러미를 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아, 쟈키아 님이 보내신 분이군요.</p>
+          <p> </p>
+          <p>(꾸러미를 풀어 물건을 꺼내 본다.) </p>
+          <p> </p>
+          <p>와, 로브가 너무 훌륭하네요. 아니, 이걸 [%username] 님이 만드신 거라고요?</p>
+          <p> </p>
+          <p>쟈키아 님이 만드신 것과 차이가 없는걸요. 정말 대단합니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">쟈키아의 꾸러미를 [%dic:STR_DIC_N_Baht]에게 전하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">쟈키아가 준 주트 로브 하의를 어비스에 있는 방어구 상인 바흐트에게 전해야겠다.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>쟈키아는 프리뭄 거점에 있는 방어구 상인 바흐트에게 급히 전달할 물건이 있다며 그 일을 해 달라고 부탁했다.</p>
+          <p> </p>
+          <p>쟈키아가 준 꾸러미를 바흐트에게 가져가자 고마워하며 사례를 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

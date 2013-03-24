@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q4116</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've entered the rift and scouted everywhere I could. I was shocked to find the Silikor of Memory walking around. Was it resurrected somehow?</p>
+          <p> </p>
+          <p>[%username], gather your allies quickly and go into [%dic:STR_DIC_E_D_LF2a_entrance]. Find the [%dic:STR_DIC_I_Q4116a] and take it to Hort.</p>
+          <p> </p>
+          <p>Hurry before those sun-poxed Elyos get to it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I got a report that the rift is connected to the Theobomos Lab.</p>
+          <p> </p>
+          <p>Apparently some scholar named Theobomos left invaluable research there, which is why the Elyos are so dedicated to unveiling the secrets of his lab.</p>
+          <p> </p>
+          <p>If we could beat the Elyos to that information, it would give our Asmodian scholars a huge advantage.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">"Something like this maybe?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Is this the Silikor's Memory from the Theobomos Lab?</p>
+          <p> </p>
+          <p>Fantastic! I'll send this to Pandaemonium for deciphering immediately.</p>
+          <p> </p>
+          <p>Well done. I hope our scholars can pull some useful information out of that.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Find the [%dic:STR_DIC_I_Q4116a] and give it to [%dic:STR_DIC_N_Hort].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Find the Silikor's Memory containing Theobomos's research findings.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Parqusha asked you to obtain the Silikor's Memory and give it to Hort.</p>
+          <p> </p>
+          <p>Hort was thrilled to receive it, saying it may contain Theobomos's extensive research records.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>War is a dish best served cold.... Wait, that's not right--war is a hot mess, [%username].</p>
+          <p> </p>
+          <p>I want nothing more than to run out onto Vorgaltem Battlefield and unleash death on these Balaur cowards and their pets.</p>
+          <p> </p>
+          <p>But I know that alone, I would wind up a Drakie dinner.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I know the feeling."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's just a few of us here, and the Balaur are relentless.</p>
+          <p> </p>
+          <p>Arango bothers me as well. I keep catching his furtive glances, and sometimes I hear him whispering poems to himself.... I think he's got a thing for me, but I'm only interested in stopping the Balaur.</p>
+          <p> </p>
+          <p>Regardless, we need help to keep from being overrun. You up to the challenge, [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I received a scouting report that said the [%dic:STR_DIC_E_Q21207]s are planning an attack.</p>
+          <p> </p>
+          <p>Take them out, and it's possible you will have prevented our demise. Just don't venture in too deep.</p>
+          <p> </p>
+          <p>When you slay the Drakan, take their [%dic:STR_DIC_I_QUEST_21207a]s as proof, and bring them back. It'll also help disarm the survivors.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"The task is mine."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This is important, [%username]!</p>
+          <p> </p>
+          <p>We could be overrun by the Balaur if we don't stop these attacks before they happen!</p>
+          <p> </p>
+          <p>We need your help.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I've got better things to do."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]! You're back!</p>
+          <p> </p>
+          <p>A little later than I would have liked, but I suppose the important thing is you came back...even though those others didn't....</p>
+          <p> </p>
+          <p>Well, did you spill Drakan blood? Did you bring back the [%dic:STR_DIC_I_QUEST_21207a]s?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here's the proof."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What? This isn't enough, you dolt!</p>
+          <p> </p>
+          <p>You've got the counting skills of an Elyos tactician!</p>
+          <p> </p>
+          <p>Hurry to the Vorgaltem Battlefield and slay more [%dic:STR_DIC_E_Q21207]s and return with their [%dic:STR_DIC_I_QUEST_21207a]s!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm going, I'm going..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well done, [%username]. We can all breathe a little easier.</p>
+          <p> </p>
+          <p>As long as we continue to delay the Balaur offensive, we can bide our time until more troops arrive.</p>
+          <p> </p>
+          <p>Here, take this. It's not much, but it's all I have to offer in a place like this.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Obtain the weapons of the [%dic:STR_DIC_E_Q21207]s and take them to [%dic:STR_DIC_N_Ankea].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Follow Ankea's instructions--eliminate the Drakan of the Naduka Legion defending the Vorgaltem Battlefield, then take their weapons back as proof.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ankea said she obtained intelligence of an imminent Drakan attack and needed help to stop it.</p>
+          <p> </p>
+          <p>You eliminated the Drakan of the Naduka Legion defending the Vorgaltem Battlefield and took their weapons. Ankea said it should delay the Balaur offensive, and expressed her gratitude.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You been up to Sanctum before, haven't you?</p>
+          <p> </p>
+          <p>Ya know, silver's proving mightily profitable up there right about now. It's in most everything you can get there that's worth gettin'.</p>
+          <p> </p>
+          <p>They used to be able to get it from one of the local villages, but now it's been taken over by the Dukaki Kobolds....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"So how do they get silver now?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Great question! Funny answer!</p>
+          <p> </p>
+          <p>It's pretty hard to come by. Mostly, it has to be purchased now, but...every now and then a brave, young...er, mercenary will come around...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"You want me to get silver for Sanctum."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Close! Ever so close!</p>
+          <p> </p>
+          <p>There's money to be made here. I want you to get the [%dic:STR_DIC_I_noblemetal_10a] from the [%dic:STR_DIC_FLA13] and bring it to me. I, in turn, will sell it to Sanctum and we can split the profit!</p>
+          <p> </p>
+          <p>There's more money to be made here than you've ever seen. What do you say?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent!</p>
+          <p> </p>
+          <p>I'd heard about your mercenary past, so figured of all the Daevas, you'd have fewer qualms about making money than most.</p>
+          <p> </p>
+          <p>Remember, you just need to mine five samples of [%dic:STR_DIC_I_noblemetal_10a] from the [%dic:STR_DIC_FLA13].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Hi ho, here I go."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Refused by a former mercenary!</p>
+          <p> </p>
+          <p>What is the world coming to, eh?</p>
+          <p> </p>
+          <p>Get going then. Clearly you have no business with us folk.</p>          
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Goodbye, Saminel."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, [%username]!</p>
+          <p> </p>
+          <p>How'd you make out with the silver?</p>         
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Got it right here."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>         
+          <p>No, this isn't right! I asked for five samples of [%dic:STR_DIC_I_noblemetal_10a].</p>
+          <p> </p>
+          <p>Go get the rest--and quickly, before the others get suspicious!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Perfect! Didn't I ask for six samples though? I can't remember...five will do just fine!</p>
+          <p> </p>
+          <p>Here's the payment I promised. Keep this to yourself, all right? If the others find out I've been making money on the side, they'll have my guts for garters!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Mine [%dic:STR_DIC_I_noblemetal_10a] in the [%dic:STR_DIC_FLA13] and take it to [%dic:STR_DIC_N_Saminel]. </font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Apparently silver is currently being traded at a high price in Sanctum. Collect some silver ore in the Dukaki Mine and bring it to Saminel.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_N_Saminel], a militiaman of Tolbas Village, said Silver Ore was currently being traded at high prices in Sanctum and wanted to know if you would like to work with him.</p>
+          <p> </p>
+          <p>He offered you a good price, so you took up his offer. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님은 데바시니 당연히 전투 실력이 뛰어나겠죠.</p>
+          <p> </p>
+          <p>하지만 가르키온 잡는 건 절 못 당할 걸요.</p>
+          <p> </p>
+          <p>이 근처의 사냥터는 제 손바닥처럼 환한 데다 어릴 때부터 가르키온을 사냥해 왔으니까요.</p>
+          <p> </p>
+          <p>데바님이 아무리 실력이 좋다고 해도 저보다 빨리 [%dic:STR_DIC_M_Mosbear_all]을 잡을 수는 없을 겁니다.</p>
+          <p> </p>
+          <p>내기해도 좋아요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">내기를 받아들이겠다고 한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>지금 저한테 도전하시는 거예요?</p>
+          <p> </p>
+          <p>좋아요! 그럼 제가 [%dic:STR_DIC_M_Mosbear_all] 3마리를 잡아온 기록보다 더 빠른 시간 안에 돌아오면 내기에 이긴 걸로 하지요. 그러니까 10분 안에요.</p>
+          <p> </p>
+          <p>가르키온이라면 뭐든 상관 없습니다. [%dic:STR_DIC_W_DF1A_11]에 가면 많을 거예요.</p>
+          <p> </p>
+          <p>호호호호, 그런데 과연 저보다 빨리 사냥할 수 있을까요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>자신만만하시군요.</p>
+          <p> </p>
+          <p>그럼 지금부터 시작해 볼까요?</p>
+          <p> </p>
+          <p>사냥을 시작할 준비가 되면 준비됐다고 말하세요.</p>
+          <p> </p>
+          <p>그럼 그 순간부터 시간을 지금부터 시간을 재겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"준비됐습니다." </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>자신이 없으신가 보군요.</p>
+          <p> </p>
+          <p>당연한 일이죠. 이 근방의 사냥터와 가르키온을 저만큼 잘 알지는 못할 테니까요.</p>
+          <p> </p>
+          <p>이런 말을 듣는 게 분하면 나중에 다시 도전하셔도 좋아요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>일단 시간 안에는 돌아오셨군요.</p>
+          <p> </p>
+          <p>그런데 가르키온을 잡긴 잡으셨나요?</p>
+          <p> </p>
+          <p>시간 안에 왔어도 사냥을 안 했으면 아무 소용없습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이럴 수가! 정말 10분 만에 가르키온 3마리를 처치하다니!</p>
+          <p> </p>
+          <p>저보다 빨리 사냥하는 사람이 있을 거라고는 상상도 못했어요.</p>
+          <p> </p>
+          <p>실력이 정말 대단하시군요!</p>
+          <p> </p>
+          <p>자, 이걸 받으세요. 내기에 이겼으니 돈을 드려야죠.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">10분 안에 [%dic:STR_DIC_M_Mosbear_all]을 처치하라([%2]/3)</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_N_Sjania]에게 돌아가라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">샤니아가 가르키온 사냥만큼은 자신이 최고라고 하기에 10분 안에 가르키온 3마리를 사냥하기로 내기를 했다.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>샤니아는 가르키온 사냥만큼은 자신이 최고라며 자신이 있다면 내기를 하지고 했다.</p>
+          <p> </p>
+          <p>그래서 10분 동안 가르키온 3마리를 사냥했더니 대단한 실력이라며 놀라워했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

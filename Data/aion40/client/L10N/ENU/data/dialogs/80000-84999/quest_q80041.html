@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Azphelumbra, [%username]. Is this your first Mortality Festival?</p>
+          <p> </p>
+          <p>I wish it were under better circumstances. This year's festival may lack a lot of the punch of last year's.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Why?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, it's the paper kites! The whole festival revolves around them. The children learn about the fragility of life through the fragile kites.</p>
+          <p> </p>
+          <p>But they're all tattered and broken this year, and then someone stole our [%dic:STR_DIC_I_WORLD_EVENT_CHILDREN_SCROLL_SHIELD_ALL_30A]s, which is how we repair them.</p>
+          <p> </p>
+          <p>Without [%dic:STR_DIC_I_WORLD_EVENT_CHILDREN_SCROLL_SHIELD_ALL_30A], we have no useable kites. And without kites, we can't hold the festival. Can you...?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+        	<p>It may seem a bit grim to some, but the Mortality Festival really does teach important lessons to the kids.</p>
+          <p> </p>
+          <p>They learn to appreciate the time they have, and to make the most of every moment. And there's plenty of fun to be had too.</p>
+          <p> </p>
+          <p>Have you been to Haramel, Nochsana Training Camp, Kromede's Trial, the Fire Temple, Steel Rake, or Dark Poeta recently? You might have some Paper Scales in your Cube, if you have.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Let me check...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Bah, very well, [%username]!</p>
+          <p> </p>
+	        <p>You never would have passed the Mortality Festival if I was the master of ceremonies back in your time! Good riddance!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Don't push me!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I think I know who took our Paper Scales, but I have no proof.</p>
+          <p> </p>
+          <p>These young Daevas today just don't take to tradition sometimes. But the children all love it, fortunately.</p>
+          <p> </p>
+          <p>Did you manage to get your hands on any [%dic:STR_DIC_I_WORLD_EVENT_CHILDREN_SCROLL_SHIELD_ALL_30A]s?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Hmmm, let's see."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Nope, no, I can't work with what you have.</p> 
+	        <p> </p>
+          <p>Say...I could get you a ticket to this year's Mortality Festival if you can find me about 20 [%dic:STR_DIC_I_WORLD_EVENT_CHILDREN_SCROLL_SHIELD_ALL_30A].</p> 
+	        <p> </p>
+          <p>They're all over Haramel, Nochsana Training Camp, Kromede's Trial, the Fire Temple, Steel Rake, and Dark Poeta. I just need 20.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be back soon."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, not bad...these will do nicely. The children will be so happy!</p>
+          <p> </p>
+          <p>[%username], you've really saved the day for us. Please, feel free to come back during the festival. I'll have a seat with your name on it.</p>
+          <p> </p>
+          <p>And just in case you don't make it back, take this...a little something for your troubles.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get [%dic:STR_DIC_I_WORLD_EVENT_CHILDREN_SCROLL_SHIELD_ALL_30A]s for [%dic:STR_DIC_N_event_Negin].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Get Paper Scales so Negin can repair kites for the festival.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Negin is trying to repair paper kites for the approaching Mortality Festival, but someone stole the Paper Scales he needed.</p>
+          <p> </p>
+          <p>You found the Paper Scales and gave them to Negin. He thanked you and gave you a reward.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

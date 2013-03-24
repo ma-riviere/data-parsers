@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>So, Asmodian, what's the situation in Heiron now that the Balaur have taken the Observatory?</p>
+          <p> </p>
+          <p>Yes, I know about it--Daevas of Zephyr are intelligence agents. We make a point to stay informed.</p>
+          <p> </p>
+          <p>But now I need more information--what's the story?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"The situation's still criticial...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hmm. The Bakarma Legion must be stronger than we thought--and they have something up their sleeves.</p>
+          <p> </p>
+          <p>I better wrap things up quickly here.</p>
+          <p> </p>
+          <p>[%username], could you help me? I came here to gather information on the Indratu Brigade General and other leaders, but the Nagarants have kept me away.</p>
+          <p> </p>
+          <p>Would you take on the [%dic:STR_DIC_A_IDLF3CI_1517a]s and [%dic:STR_DIC_A_IDLF3CI_1517b]s? Then I can infiltrate the fortress.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thanks. My enemy's enemy, eh?</p>
+          <p> </p>
+          <p>It looks like every warrior's been assigned a mage. You should probably find some allies to go with you to defeat [%dic:STR_DIC_A_IDLF3CI_1517a]s and [%dic:STR_DIC_A_IDLF3CI_1517b]s.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"My enemy's enemy indeed."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You don't understand the importance of this mission.</p>
+          <p> </p>
+          <p>You want to know what this has to do with Asmodians? I've heard the Bakarma Legion has requested reinforcement from the Indratu Legion. </p>
+          <p> </p>
+          <p>It's almost certain that a force will head out from Indratu to Beluslan before long. Isn't it obvious what will happen then?!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Certain? Obvious? Not really."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]! The longer you were gone, the more convinced I was you'd failed.</p>
+          <p> </p>
+          <p>So, how did things go?</p>
+          <p> </p>
+          <p>Did you get rid of some [%dic:STR_DIC_A_IDLF3CI_1517a]s and [%dic:STR_DIC_A_IDLF3CI_1517b]s?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Your way should be clear."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent. I can start my work now.</p>
+          <p> </p>
+          <p>I hope you'll be willing to help again if it's needed. I appreciate the forward work.</p>
+          <p> </p>
+          <p>This is for your trouble. And there's more where that came from if you join me again.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get rid of Balaur guarding the Indratu Fortress.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_A_IDLF3CI_1517a] ([%2]/11)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_A_IDLF3CI_1517b] ([%5]/20)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report the result to [%dic:STR_DIC_N_Erebos].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Get rid of Apprentices and Chandala Fangblades guarding the fortress so that Erebus can complete his mission.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You encountered an Elyos named Erebus, who asked for your help.</p>
+          <p> </p>
+          <p>He wanted you to eliminate Apprentices and Chandala Fangblades guarding the fortress so that he could gather information about the five leaders of the Indratu Legion.</p>
+          <p> </p>
+          <p>When you came back after successfully completing your mission, he asked you to help him again if you could.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

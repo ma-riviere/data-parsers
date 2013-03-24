@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이곳의 평화가 언제까지 계속될지 모르겠습니다. </p>
+          <p> </p>
+          <p>용족들이 서부 요새로 곧 쳐들어온다는 정보가 있어서요.</p>
+          <p> </p>
+          <p>그들이 언제, 어떻게 들이닥칠지 모르겠지만 먼저 살펴볼 데가 있습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body> 
+          <p>[%dic:STR_DIC_W_IDAbRe_Low_Wciel_SZ_All] 안입니다. 보물을 찾으러 가 본적이 있으면 알겠지만 그 안에 있는 용족의 수도 상당하거든요.</p>
+          <p> </p>
+          <p>그들만 처치해도 용족의 기세가 크게 꺾일 겁니다.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_W_IDAbRe_Low_Wciel_SZ_All]로 가서 용족을 처치하고 와 주시겠습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>준비가 되면 옆에 있는 빛나는 마법진을 발동시키세요. 마법진이 용족이 숨어있는 [%dic:STR_DIC_W_IDAbRe_Low_Wciel_SZ_All]로 데려다 줄 겁니다.</p>
+          <p> </p>
+          <p>거기서 [%dic:STR_DIC_M_LeftCiel_NagaWiNamedQ_35_Ah]를 포함해 가능한 많은 용족을 처치하고 오면 됩니다.</p>
+          <p> </p>
+          <p>그리고 도움이 될 만한 정보를 하나 드리지요.</p>
+          <p> </p>
+          <p>왼쪽 날개 그늘에 발이 닿는 순간 용족의 보호 마법진이 작동해 보물 상자가 하나씩 사라질 겁니다. 그러니 뭐라도 챙겨 나오려면 서둘러 용족을 처치하는 게 좋을 거에요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>용족을 두려워하시는 겁니까?</p>
+          <p> </p>
+          <p>흠, 그럼 더 이상 권하지 않겠습니다.</p>
+          <p> </p>
+          <p>싸우기도 전에 두려움을 갖는 건 이미 진 것과 다름없으니까요.</p>
+          <p> </p>
+          <p>용족에 대한 두려움이 가시면 그때 다시 와 주십시오. 그 날이 빨리 오길 바라겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>돌아오셨군요. 그렇지 않아도 기다리고 있었습니다.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_W_IDAbRe_Low_Wciel_SZ_All]에서 똬리를 틀고 있는 용족을 혼내주고 오셨습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>훌륭합니다!</p>
+          <p> </p>
+          <p>야만적인 마족의 기세가 한풀 꺾였고, 용족도 큰 타격을 입었으니 당분간은 평화롭겠군요.</p>
+          <p> </p>
+          <p>하지만 긴장을 늦출 수 없습니다. 용족이 곧바로 세력을 정비하고 나타날 테니까요.</p>
+          <p> </p>
+          <p>언제든 도와주시면 고맙겠습니다. 이건 작지만 보답이라고 생각하고 받아주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_W_IDAbRe_Low_Wciel_SZ_All]의 용족을 모두 처치하라</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_E_Low_Wciel]([%2]/40)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_LeftCiel_NagaWiNamedQ_35_Ah]([%5]/1)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Ab1_1131_TreasureGate_Li]%와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">히포다미아의 지시대로 왼쪽 날개 그늘에 있는 용족을 모두 처치해 용족의 기세를 꺾자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>히포다미아는 마족의 기세는 한 풀 꺾였지만 용족의 기세는 여전하다며 곧 서부 요새를 공격할 거라는 정보가 있다고 했다.</p>
+          <p> </p>
+          <p>용족의 기세를 꺾기 위해 왼쪽 날개 그늘에 대거 포진해 있는 용족을 모두 처치해 달라고 했다.</p>
+          <p> </p>
+          <p>왼쪽 날개 그늘로 가 용족과 보물수호자 나바트마를 처치하고 돌아가자 수고했다며 치하했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>저기... 데바님!</p>
+          <p> </p>
+          <p>생각해 보니 푸스콘 씨앗 5알로는 부족할 것 같습니다.</p>
+          <p> </p>
+          <p>푸스콘이 아무데서나 잘 자라는 식물이라지만 평생 사냥이나 하던 사람들이니 여러 번 재배에 실패할 게 뻔합니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그러면 그때마다 푸스콘 씨앗을 구해야 하는데 매번 데바님께 부탁할 수는 없고...</p>
+          <p> </p>
+          <p>그래서 말인데 푸스콘 밭을 지키고 있는 [%dic:STR_DIC_M_RatmanWarriorM_11_An]%와 [%dic:STR_DIC_M_RatmanWarriorM_13_An]%을 처치해 주시면 안 될까요?</p>
+          <p> </p>
+          <p>그 근처를 순찰하는 놈들인데, 숙련 순찰꾼과 그 수하인 순찰꾼들로 꽤 조직적인 감시를 하고 있어요.</p>
+          <p> </p>
+          <p>놈들만 없어도 씨앗을 구하기가 좀 수월할 겁니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>역시 데바님은 책임감 있는 분이시군요.</p>
+          <p> </p>
+          <p>무무 경작지에 있는 [%dic:STR_DIC_M_RatmanWarriorM_11_An]%와 [%dic:STR_DIC_M_RatmanWarriorM_13_An]%을 없애 주십시오.</p>
+          <p> </p>
+          <p>모조리 없애주면 좋겠지만 그러기는 힘들 테니 둘 합쳐 5마리만 부탁드립니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>데바님이 안 도와주시면 누가 도와준단 말입니까!</p>
+          <p> </p>
+          <p>이왕 시작한 것 데바님이 끝까지 마무리해 주시면 안 되겠습니까?</p>
+          <p> </p>
+          <p>이렇게 부탁드립니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_M_RatmanWarriorM_11_An]%은 잡았습니까?</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_RatmanWarriorM_13_An]%은 더 사납던가요?</p>
+          <p> </p>
+          <p>놈들이 그냥 있지만은 않았을 텐데 다친 데는 없어 보이네요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="PLAYEMOTION_clap;HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>역시 데바님이군요.</p>
+          <p> </p>
+          <p>무무 놈들을 다섯 놈이나 물리치시다니! 정말 대단합니다.</p>
+          <p> </p>
+          <p>나머지는 사냥꾼에게 처리하라고 해야겠습니다.</p>
+          <p> </p>
+          <p>자, 이걸 받으십시오. 제 일을 끝까지 도와주신 데에 대한 보답입니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">푸스콘 밭을 지키고 있는 [%dic:STR_DIC_M_RatmanWarriorM_11_An]%와 [%dic:STR_DIC_M_RatmanWarriorM_13_An]%을 처치하라([%2]/5)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Titt]와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">티트와 마을 사람들이 푸스콘 씨앗을 쉽게 구할 수 있도록 밭을 순찰하는 아인종을 처치하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>티트는 아무래도 푸스콘 씨앗이 부족할 것 같다며 이후에도 씨앗을 쉽게 구할 수 있도록 푸스콘 밭을 지키고 있는 무무 순찰꾼과 무무 숙련 순찰꾼을 처치해 달라고 부탁했다. 순찰꾼을 처치하고 돌아가자 티트는 무척 고마워하며 성의를 표시했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

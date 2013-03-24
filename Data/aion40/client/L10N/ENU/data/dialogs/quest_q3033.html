@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Word has it that an abandoned Artifact lies somewhere in [%dic:STR_DIC_W_LF2B_SZ_B2]. I sent Guardians several times to investigate, but it's surrounded by Kerubiels.</p>
+          <p> </p>
+          <p>I don't know why Kerubiels would hang around the Artifact, but there you are.</p>
+          <p> </p>
+          <p>Finding an artifact in Theobomos is of vast importance...Sanctum's quite interested...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Why would an Artifact be out here?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well if not for Kerubiels, we'd have an answer for that. But all the Guardians I've sent were thwarted.</p>
+          <p> </p>
+          <p>[%username], will you help me?</p>
+          <p> </p>
+          <p>Destroy the [%dic:STR_DIC_M_LF2A_Cherubim3_46_An]s and [%dic:STR_DIC_M_LF2A_Cherubim4_46_An]s around the Artifact.</p>          
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Artifact is at the [%dic:STR_DIC_W_LF2B_SZ_B2].</p>
+          <p> </p>
+          <p>A Guardian who went there said he could feel unusual energy emanating from it.</p>
+          <p> </p>
+          <p>If you remove those Kerubiels, we can start investigating.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Faith and arms."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We have Guardians, of course, but Theobomos is so vast there aren't enough of them to patrol it all.</p>
+          <p> </p>
+          <p>I am asking for your help, [%username].</p>
+          <p> </p>
+          <p>Please reconsider.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be back when I've more time."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Your mission? Were you able to locate the Artifact?</p>
+          <p> </p>
+          <p>Was it difficult to approach the Artifact with all the Kerubiels hanging about?</p>                 
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"The place is nasty with them...or was."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent. Now they've been discouraged, we can investigate the Artifact immediately.</p>
+          <p> </p>
+          <p>I've protected the Aetheric Field in other regions, but this is the first time an Artifact has been discovered nearby. I'm very excited.</p>
+          <p> </p>
+          <p>Thank you for helping me with this important mission.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Defeat Kerubiels that guard the Artifact.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_LF2A_Cherubim3_46_An] ([%2]/13)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_LF2A_Cherubim4_46_An] ([%5]/10)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_N_Atropos].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">An Artifact was found at the Latheron Coast. Kill Kerubiels around the Artifact so that Atropos can investigate it.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Atropos was excited about an Artifact found in Theobomos.</p>
+          <p> </p>
+          <p>She had hope that the Artifact might be of help in rebuilding Theobomos.</p>
+          <p> </p>
+          <p>As she requested, you killed Kerubiels and Arch Kerubiels, the biggest obstacles for the investigation.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

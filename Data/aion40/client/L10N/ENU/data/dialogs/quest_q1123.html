@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Come to pester me again?</p>
+          <p> </p>
+          <p>Actually....</p>
+          <p> </p>
+          <p>I have a good use for your skills, [%userclass].  Tell me, have you met [%dic:STR_DIC_LA53] on your travels?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Tutty?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes, Tutty. He's...my pet Porgus.</p>
+          <p> </p>
+          <p>I lavish the little fellow with as much care as I would my own child. He bolted yesterday when I turned my back. He hasn't answered me when I've called for him, nor did he return for his dinner.</p>
+          <p> </p>
+          <p>Tell me, [%userclass], would you find him for me? Age has gnarled my knees, my sight is failing...I'd have little chance on my own.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I suppose I can."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm sure you can locate [%dic:STR_DIC_LA53] for me.</p>
+          <p> </p>
+          <p>He loves to run, so he may be quite a distance away. However, he should be easy to recognize among other Porgus. He's tame, and he knows that people and campfires mean food!</p>
+          <p> </p>
+          <p>If he is still alive, of course....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good! Good.</p>
+          <p> </p>
+          <p>Oh, I just remembered--[%dic:STR_DIC_LA53] has been quite taken with the [%dic:STR_DIC_FLA07]. I would search there first.</p>
+          <p> </p>
+          <p>Those Dukaki Kobolds might have him penned up somewhere.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll find him. Just wait here."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You have a mercenary's cold heart, [%userclass]. No coin, no comfort!</p>
+          <p> </p>
+          <p>Tell me, is this how your parents raised you?</p>
+          <p> </p>
+          <p>Get out of here before I teach you some manners!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Goodbye."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I thought you were looking for [%dic:STR_DIC_LA53].</p>
+          <p> </p>
+          <p>Where is he? Or are you still looking?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"The Dukaki...they were barbecuing him...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>They were what?!</p>
+          <p> </p>
+          <p>Those...those filthy vermin! To butcher my friend, just to fill their...their greedy, worm-ridden guts?!</p>
+          <p> </p>
+          <p>This is an outrage--unforgivable!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Go to [%dic:STR_DIC_FLA07] and look for signs of [%dic:STR_DIC_LA53].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Mission completed! Talk with [%dic:STR_DIC_LA12]%.</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">[%dic:STR_DIC_LA12]'s beloved pet, [%dic:STR_DIC_LA53], has disappeared. Go and look for him.</font></p>
+        </body>
+        </html>
+    </Contents>
+    <notifies>
+      <notify state="succeed" progress="0" pos="2" fontsize="16" showframe="true" time="5" color="yellow">You found Tutty, but dead and turning on a spit!</notify>
+    </notifies>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_LA12] raised [%dic:STR_DIC_LA53] with the utmost care for years, but now the Porgus is missing.</p>
+          <p> </p>
+          <p>You offered to go to [%dic:STR_DIC_FLA07] and search for him.</p>
+          <p> </p>
+          <p>Sadly, the Dukaki Kobolds had killed him.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

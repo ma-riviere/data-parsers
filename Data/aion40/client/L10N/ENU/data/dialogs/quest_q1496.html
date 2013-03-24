@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I want to do something about the Kaidan Mine. The presence of so many Krall is making it difficult to protect the bind point.</p>
+          <p> </p>
+          <p>They say the best defense is a good offense, right?</p>  
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Some do, yes."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Krall can't do anything without the Mamaki Kobolds. They can fight, but they can't mine.</p>
+          <p> </p>
+          <p>If we hunt down the Mamaki sentinels, the rest of the Kobolds will panic, and the Krall will be helpless.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Sounds like a plan."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>As long as you agree to help us, [%username], we can do this before they receive reinforcements from Kaidan Headquarters.</p>
+          <p> </p>
+          <p>The safety of Eltnen is at stake--please say you'll help.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Kobolds are easy to fight one by one, but they often attack in numbers, and the Krall will be guarding them.</p>
+          <p> </p>
+          <p>I don't recommend you go alone. Take some friends who can help you get the job done.</p>
+          <p> </p>
+          <p>Kill [%dic:STR_DIC_M_MBrownieMWa_28_An]s and [%dic:STR_DIC_M_MBrownieFWa_28_An]s. Bring their weapons back to me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Consider it done."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I can't even sleep at night worrying about the safety of Eltnen, but you can say no? </p>
+          <p> </p>
+          <p>Is it because you don't have anyone to go with you? Please, keep looking!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll see what I can do."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Of course, it could be argued that targeting the Krall directly is more effective than killing Kobolds. And we'd better be prepared to do that, too....</p>
+					<p> </p>
+          <p>Did you kill the [%dic:STR_DIC_M_MBrownieMWa_28_An]s and [%dic:STR_DIC_M_MBrownieFWa_28_An]s? Hand over the weapons.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here they are."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You underestimate the seriousness of the problem. Krall have kidnapped Humans with help from the Kobolds. We need to stop them now!</p>
+          <p> </p>
+          <p>So please hurry to the Kaidan Mine and bring back their [%dic:STR_DIC_I_QUEST_1496a]s and [%dic:STR_DIC_I_QUEST_1496b]s.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm just leaving now."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Crude, but extremely heavy, these Kobold weapons. I'll have them melted down.</p>
+          <p> </p>
+          <p>You did us a great service, [%username]. I will, of course, reward you.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Take weapons from [%dic:STR_DIC_M_MBrownieMWa_28_An]s and [%dic:STR_DIC_M_MBrownieFWa_28_An]s, and give them to [%dic:STR_DIC_N_Anasya].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Hunt Kobolds in the Kaidan Mine as part of a plan to secure the safety of Eltnen. Kill Mamaki Butchers and Mamaki Brawlers, and collect their weapons.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Guardian Taera said you should get rid of Kobolds in the Kaidan Mine to secure the safety of residents in Eltnen.</p>
+          <p> </p>
+          <p>You went to the Kaidan Mine, got rid of Mamaki Butchers and Mamaki Brawlers, and took their weapons to Taera. She asked you to continue to help Eltnen.</p>   
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I know I lost our last bet, but I can't help thinking that it might have just been luck on your part.</p>
+          <p> </p>
+          <p>Tell you what: if you want to prove that you really are better than me, why don't we make another wager?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"All right."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Okay, let's start right now.</p>
+          <p> </p>
+          <p>My highest record is 10 Mosbears in 30 minutes, so that's what you'll have to beat. Bring back 10 pairs of [%dic:STR_DIC_I_quest_2230a] as proof.</p>
+          <p> </p>
+          <p>I don't care what kind of Mosbear it is--any of them will do. If you succeed, I'll admit to everyone that you're the better hunter.</p>
+          <p> </p>
+          <p>I'll start the timer the moment you agree.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Okay, off you go!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"I'll be back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hah! So you admit that your last success was luck?</p>
+          <p> </p>
+          <p>I thought as much. I know more about hunting than anyone around here.</p>
+          <p> </p>
+          <p>If you want to prove me wrong, you know where to find me. I will accept your challenge anytime.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be back later."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, you did come back on time....</p>
+          <p> </p>
+          <p>Did you bring the [%dic:STR_DIC_I_quest_2230a], though?</p>
+          <p> </p>
+          <p>Without proof, your words mean nothing, you know.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I have these."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You didn't bring 10 pairs of [%dic:STR_DIC_I_quest_2230a].</p>
+          <p> </p>
+          <p>I can only assume this means that you're either too scared to do it or you realized that you were going to lose!</p>
+          <p> </p>
+          <p>You've not much time left, [%username], if you still expect to beat me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be right back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select7">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Once you lose, it's over. Are you saying that you want to try again?</p>
+          <p> </p>
+          <p>You can't beat me, you know. But if you want another chance that badly, then all right. I can watch you fall on your face all day.</p>
+          <p> </p>
+          <p>Tell me when you are ready, and I'll start the timer again. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"I'm ready."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I can't believe you did it! You caught 10 Mosbears in 30 minutes!</p>
+          <p> </p>
+          <p>I really don't want to admit this, but it looks like I have to: [%username], you are a better hunter than I am.</p>
+          <p> </p>
+          <p>Here, take this. It's your winnings.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Hunt Mosbears in 30 minutes and take 10 pairs of [%dic:STR_DIC_I_quest_2230a] to [%dic:STR_DIC_N_Sjania].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Shania offered you a wager. You promised to get 10 pairs of Mosbear Tusks in 30 minutes.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Shania said that it was simply luck that you won the last bet and suggested another.</p>
+          <p> </p>
+          <p>You hunted 10 Mosbears in 30 minutes and brought her 10 pairs of Mosbear Tusks as proof.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q41561</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>미입력</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>내게서 신뢰의 구슬을 받을 수 있는 첫 번째 임무를 알려 주겠소.</p>
+          <p> </p>
+          <p>타메스로 가서 [%dic:STR_DIC_E_Raksha]를 처치하고 [%dic:STR_DIC_I_quest_41561a]를 가져오시오.</p>
+          <p> </p>
+          <p>쉬운 일은 아니겠지만 그대가 믿을 만한 사람이라면 해낼 수 있을 거요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>기다리고 있었소, [%username].</p>
+          <p> </p>
+          <p>약속한 대로 라크샤는 처치했소?</p>
+          <p> </p>
+          <p>그럼 증거를 가져왔을 텐데.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">회한의 정수를 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이걸 보니 [%username]%이 빈말만 하는 사람은 아닌 것 같구려.</p>
+          <p> </p>
+          <p>[%username]에게 어느 정도는 신뢰가 생겼소.</p>
+          <p> </p>
+          <p>자, 신뢰의 구슬이오.</p>
+          <p> </p>
+          <p>이게 어느 정도 모이면 마력의 오드 결정을 주겠소.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_E_Raksha]를 처치하고 [%dic:STR_DIC_I_quest_41561a]를 모아 [%dic:STR_DIC_N_Lumen]에게 가져가라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">신뢰할 만한 사람이라는 것을 루멘에게 증명해야 한다. 타메스에 가서 라크샤를 처치하고 회한의 정수를 가져가자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>루멘은 신뢰할 만한 사람이라는 것을 자신에게 증명하라고 했다.</p>
+          <p> </p>
+          <p>그래서 그의 말대로 타메스에 가서 라크샤를 처치하고 회한의 정수를 구해 갔더니 신뢰의 구슬을 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

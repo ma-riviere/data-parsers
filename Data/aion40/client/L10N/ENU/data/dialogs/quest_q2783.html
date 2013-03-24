@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>They sometimes call this island "the grave of claws" because of that massive, wrecked machine there. Nobody knows who built it or when, but it is certainly ancient.</p>
+          <p> </p>
+          <p>There's a legend that says it once walked these islands, smiting anything it came across. I thought it was a fallen statue, but I've had second thoughts now that I've studied the Petralith.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Go on, I'm curious."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Looking more closely, I found light-emitting cores set into its body parts, the [%dic:STR_DIC_OBJ_Ab1_GiganticCore_Q2783A], [%dic:STR_DIC_OBJ_Ab1_GiganticCore_Q2783B], and [%dic:STR_DIC_OBJ_Ab1_GiganticCore_Q2783C].</p>
+          <p> </p>
+          <p>Those cores are also emitting massive Aetheric pulses now. I doubt that was happening before. I guess the Petralith was dormant before, but it's reactivated now. Setting aside why it's started now, I'm sure we could study those cores and learn some very useful tricks.</p>
+          <p> </p>
+          <p>[%username], would you collect them for me? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Collect the [%dic:STR_DIC_I_QUEST_2783a], [%dic:STR_DIC_I_QUEST_2783b], and [%dic:STR_DIC_I_QUEST_2783c], and take them to [%dic:STR_DIC_N_Fjuedil] in Pandaemonium.</p>
+          <p> </p>
+          <p>He's not just the Airship Dock manager. He's also one of the foremost engineers of Aether-powered devices. In essence, all our airships move by Aether power, and he's spent his whole life learning them inside and out.</p>
+          <p> </p>
+          <p>I am sure that he can figure out how these cores work and how to tap their abilities.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Sounds good."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What? You come all the way here from Pandaemonium only to wash your hands of this?</p>
+          <p>I really don't understand what you're thinking.</p>
+          <p> </p>
+          <p>But fine, go on your merry way. I'll have Jebal send someone else.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Just thought it'd be more exciting."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Azphelumbra.</p>
+          <p> </p>
+          <p>If you're picking up cargo, I'm not your guy. Go get Kamorunerk.</p>
+          <p> </p>
+          <p>I just direct the take-off and landing of airships, not their cargo.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Actually, I have something for you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No, I need more than this junk to learn anything.</p>
+          <p> </p>
+          <p>Go back to the Grave of Claws and search the [%dic:STR_DIC_OBJ_Ab1_GiganticCore_Q2783A], [%dic:STR_DIC_OBJ_Ab1_GiganticCore_Q2783B], and [%dic:STR_DIC_OBJ_Ab1_GiganticCore_Q2783C].</p>
+          <p> </p>
+          <p>That's where the cores are. Those are what I need.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm gonna wear out my wings..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, these from the Petralith in Reshanta? Njord and Radgrid said they were sending me some powerful Aetheric gadgets that I could probably develop into weapons.</p>
+          <p> </p>
+          <p>Hm... Even at a glance, these are unusual. Okay. I'm not really the expert, but I'll do my best not to let them down.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect the cores from the [%dic:STR_DIC_OBJ_Ab1_GiganticCore_Q2783A], [%dic:STR_DIC_OBJ_Ab1_GiganticCore_Q2783B], and [%dic:STR_DIC_OBJ_Ab1_GiganticCore_Q2783C], and take them to [%dic:STR_DIC_N_Fjuedil].</font></p>[%collectitem]</step>               
+               
+    </steps>
+          <p><font font_xml="quest_summary">Radgrid discovered Aetheric cores in the body of the Petralith, pulsating with energy. Remove a core from each body part and take them to Fjuedil in Pandaemonium.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+        <p>Radgrid discovered shining cores that blast Aetheric waves in the shoulder, heart and wings of the Petralith. He believes that with research, they could be turned into awesome weapons.</p> 
+          <p> </p>
+          <p>He had you take the Petralith cores and deliver them to Fjuedil in Pandaemonium. Fjuedil, an authority on Aether power, is now studying and learning from them. </p>        
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

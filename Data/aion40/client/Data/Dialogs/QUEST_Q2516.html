@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>벨루스란 요새의 주민들은 다른 요새에 사는 사람들보다 불안할 겁니다.</p>
+          <p> </p>
+          <p>파편이 떨어지고 요새가 붕괴할지도 모르는 위험에 처해 있으니까요.</p>
+          <p> </p>
+          <p>게다가 요새 주변에도 위험한 생명체들이 많습니다. </p>
+          <p> </p>
+          <p>하지만 병력이 부족한 상황이니 아칸 파수병들이 다 처리하지를 못하고 있지요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그래서 제가 일반 데바들에게 임무를 맡기고 보상으로 은주화를 드리고 있습니다.</p>
+          <p> </p>
+          <p>임무는 [%dic:STR_DIC_M_VespaD_29_n]와 [%dic:STR_DIC_M_XipetoD_30_An]를 처치하는 일입니다.</p>
+          <p> </p>
+          <p>베스파는 겉으로는 위험해 보이지 않지만 날개에서 떨어지는 독가루가 문제입니다. 눈에 들어가면 실명할 수도 있으니까요. </p>
+          <p> </p>
+          <p>그리고 나무 둥치인 줄 알고 검은 가지 아스크를 건드렸다가 다친 주민들도 많고요.</p>
+          <p> </p>
+          <p>주민들을 위해 임무를 맡아 주시겠습니까? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_M_VespaD_29_n]는 벨루스란 요새 앞에 많습니다.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_XipetoD_30_An]는 검은 평원 여기저기에 있고요.</p>
+          <p> </p>
+          <p>주민들을 위해 놈들을 처치하고 오십시오.</p>
+          <p> </p>
+          <p>시간이 꽤 걸리는 일이지만 보상으로 은주화를 드리니 [%username] 님께도 손해 나는 일은 아닐 겁니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>내키지 않는다면 임무를 맡지 않아도 상관없습니다.</p>
+          <p> </p>
+          <p>시간이 많이 걸리는 임무다 보니 하다가 포기하느니 처음부터 거절하는 게 낫지요.</p>
+          <p> </p>
+          <p>하지만 마음이 바뀌면 언제든지 돌아오십시오. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님, 돌아오셨군요.</p>
+          <p> </p>
+          <p>부탁한 대로 [%dic:STR_DIC_M_VespaD_29_n]와 [%dic:STR_DIC_M_XipetoD_30_An]는 모두 처치하셨습니까?</p>
+          <p> </p>
+          <p>얼마나 처치했는지 결과를 상세히 보고해 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>주민들을 위해 큰 일을 해 주셨군요. 정말 감사합니다.</p>
+          <p> </p>
+          <p>[%username] 님 덕분에 주민들이 요새 주변과 검은 평원을 안심하고 다닐 수 있겠습니다.</p>
+          <p> </p>
+          <p>자, 이거 받으십시오. 약속했던 은주화입니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">벨루스란 요새의 주민을 위협하는 생명체를 처치하라</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_VespaD_29_n]([%2]/12)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_XipetoD_30_An]([%5]/8)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Govanon]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">요새 주변의 베스파와 아스크가 주민들을 위협한다고 한다. 벨루스란 요새 앞에 있는 평원 베스파와 검은 평원에 있는 검은 가지 아스크를 처치하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>고바논은 요새 주민을 위협하는 생명체가 많지만 아칸 병력이 부족해서 일반 데바들에게 임무를 맡기고 있다면서 주민들을 위해 임무를 수행해 달라고 했다.</p>
+          <p> </p>
+          <p>그래서 주민을 위협한다는 평원 베스파와 검은 가지 아스크를 처치하고 보상으로 은주화를 받았다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

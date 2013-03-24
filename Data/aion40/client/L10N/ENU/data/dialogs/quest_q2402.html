@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Where did you get this poison? It doesn't look poisonous at all.</p>
+          <p> </p>
+          <p>It isn't Chaintail Scolopen venom, is it?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Yes, it is."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hm... Chaintail Scolopen venom... well, isn't poison. If someone were to drink a cupful, he might suffer mild indigestion.</p>
+          <p> </p>
+          <p>Did Neior tell you to gather this? He may know medicine, but he doesn't know toxicology.</p>
+          <p> </p>
+          <p>Blast! What a waste of time!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"You still need the right poison, don't you?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes. Yes, I do.</p>
+          <p> </p>
+          <p>[%username], how would you feel about killing [%dic:STR_DIC_M_ScorpionDF2_37_An]s and gathering their poison?</p>
+          <p> </p>
+          <p>Even a drop is deadly. You must be careful.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Don't underestimate [%dic:STR_DIC_M_ScorpionDF2_37_An]s! Their poison is a hundred times stronger than Chaintail Scolopen venom--a thousand times!</p>
+          <p> </p>
+          <p>I'll need ten drops. Thanks.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"On my way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Neior has failed me...now you're refusing to help...</p>
+          <p> </p>
+          <p>There must be another way!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Sorry, Modgud."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're safe! What a relief! I'm on patrol in just minutes.</p>
+          <p> </p>
+          <p>Did you hunt [%dic:STR_DIC_M_ScorpionDF2_37_An]s and bring the poison?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here it is."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I should go out on my patrol....</p>
+          <p> </p>
+          <p>It's dangerous out there... Well, I have the Obelisk to fall back on, right?</p>
+          <p> </p>
+          <p>I can't keep doing this without poison for my weapon. Please hurry and bring me Scolopen Poison.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"The task is mine!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You got it! This is the just the poison we needed for our weapons.</p>
+          <p> </p>
+          <p>Thank you so much! Please accept some recompense for  your trouble</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Hunt [%dic:STR_DIC_M_ScorpionDF2_37_An]s and bring their poison to [%dic:STR_DIC_N_Modgud].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Modgud said that Chaintail Scolopen poison was useless. Hunt Goldtail Scolopens and bring their poison to him.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Modgud said that Chaintail Scolopen poison had virtually no poisonous effect.</p>
+          <p> </p>
+          <p>You hunted Goldtail Scolopens and brought the poison to him as he asked.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

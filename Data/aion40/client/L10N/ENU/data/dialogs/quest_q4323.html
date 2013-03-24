@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Matilda, beautiful Matilda, how can I carry on without you, my sweet?</p>
+          <p> </p>
+          <p>Oh, [%username], I didn't see you there. Just ignore my ramblings.... I'm just reminiscing about when I was a farmer, and I couldn't protect those I loved.</p>
+          <p> </p>
+          <p>Matilda...that marvelous snout, those adorable little hooves, the way you snorted after rolling in mud. I'll never meet another Porgus like you! Blast those villanous Spriggs who took you away!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"You have issues."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You could never understand the bond we shared, [%username]. It was special...but now all I think about is getting vengeance on the Spriggs.</p>
+          <p> </p>
+          <p>Those infernal creatures took Matilda away and did Azphel knows what to her! My blood boils whenever I think about it.... They could be capturing someone else's prized Porgus right now!</p>
+          <p> </p>
+          <p>But no more--the terror ends now. There will be blood. Will you help me put a stop to the Sprigg tyranny, [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Venture to the north of the Alsig Village, and you will find the [%dic:STR_DIC_M_Sprigg2_32_An]s and [%dic:STR_DIC_M_Sprigg3_33_An]s. Show the foul creatures no mercy, [%username]. Kill them all.</p>
+          <p> </p>
+          <p>I'm a soldier now, but a farmer does not become a soldier overnight. You can make those tyrannical Spriggs suffer more than I ever could. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Death to the Spriggs!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It doesn't matter, [%username]. The Spriggs will pay for their barbarism. I will make them pay for Matilda!</p>
+          <p> </p>
+          <p>I've been a farmer for a long time, but one day I will have the power to defeat those monsters.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"You need serious help."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I joined the Watch to get away from all the things that reminded me of Matilda...but it's no use! I can't stop thinking about her.</p>
+          <p> </p>
+          <p>What about the Spriggs, [%username]? Can Matilda finally rest in peace?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Sprigg blood flowed in rivers."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes! Now no other farmer will have to suffer as I did. Matilda's spirit can now rest in peace, and perhaps I can as well.... </p>
+          <p> </p>
+          <p>We must ensure the Spriggs don't return. The savages are resilient. Here, take this, and my deepest thanks.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get rid of Spriggs around the village.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Sprigg2_32_An]([%2]/22)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Sprigg3_33_An]([%5]/9)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_N_Contineo].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Contineo wants you to slay Sprigg Fighters and Sprigg Looters around the Alsig Village to avenge Matilda.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Contineo said when he was a farmer he lost his prized Porgus, Matilda, to Spriggs. He demanded vengeance, and said to kill the Spriggs around Alsig Village.</p>
+          <p> </p>
+          <p>You killed Sprigg Fighters and Sprigg Looters, and gave Contineo the peace of mind he desired.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

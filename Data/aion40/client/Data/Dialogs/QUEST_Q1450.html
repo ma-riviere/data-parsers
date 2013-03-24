@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그런데 하그네가 도움을 청한 게 하필 지금이라니 참 곤란하군요.</p>
+          <p> </p>
+          <p>신비샘으로 달려드는 드레이크를 쫓아내느라 눈코 뜰새가 없거든요.</p>
+          <p> </p>
+          <p>게다가 길을 잃은 순례자도 돌봐야해서 말입니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], 당신이 좀 도와주면 안 되겠습니까?</p>
+          <p> </p>
+          <p>모처럼 하그네가 부탁한 일인데 꼭 들어주고 싶어서 그럽니다.</p>
+          <p> </p>
+          <p>물론 보수는 충분히 드리겠습니다. 어떻습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>고맙습니다. </p>
+          <p> </p>
+          <p>[%dic:STR_DIC_E_metal_n_c_30b]을 10개만 구해다 주세요.</p>
+          <p> </p>
+          <p>그 광석은 이 주변과 쿠리울루 바위산으로 가는 길목에 많으니 찾기는 쉬울 겁니다.</p>
+          <p> </p>
+          <p>그럼 당신만 믿겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정말 안 되겠습니까?</p>
+          <p> </p>
+          <p>도무지 짬이 안 나서 부탁드린 건데...</p>
+          <p> </p>
+          <p>휴, 알겠습니다. 그냥 슈메룬에게서 부탁해서 구해야겠습니다.</p>
+          <p> </p>
+          <p>바가지를 쓰긴 하겠지만 사정이 급하니 어쩔 수 없죠. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>어서 오십시오. 안 그래도 오실 때가 됐는데, 하고 있었습니다.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_E_metal_n_c_30b]을 구해 오셨습니까?</p>
+          <p> </p>
+          <p>예전에는 발에 채이는 광석이었는데 요즘은 꼭 그렇지만도 않은 모양이더군요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">아다만타이트 광석을 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>분명히 말씀드린 것 같은데요. [%dic:STR_DIC_E_metal_n_c_30b] 20개라고 말입니다.</p>
+          <p> </p>
+          <p>이런, 제가 재촉을 해서 마음이 급하셨나 보군요. 죄송합니다.</p>
+          <p> </p>
+          <p>좀 늦어도 괜찮으니 모쪼록 10개를 구해다 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>역시 [%username], 당신에게 부탁하길 잘했군요.</p>
+          <p> </p>
+          <p>사실 슈메룬에게 부탁하면 쉽게 구할 수 있지만 물건을 믿을 수 있어야죠.</p>
+          <p> </p>
+          <p>이 정도 품질이면 하그네도 만족할 겁니다. 이건 수고해 주신 답례이니 받아 주세요.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_E_metal_n_c_30b]을 모아 [%dic:STR_DIC_N_Ophelos]에게 가져가라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">바쁜 오펠로스를 대신해 하그네에게 보낼 아다만타이트를 구해다 주자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>오펠로스는 하그네의 부탁을 꼭 들어주고 싶은데 일이 많아 자리를 비울 수 없다며 대신 아다만타이트를 구해다 달라고 부탁했다.</p>
+          <p> </p>
+          <p>그의 부탁대로 아다만타이트를 가져다 주자 무척 고마워하며 사례를 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>제게는 두 아이가 있지요.</p>
+          <p> </p>
+          <p>바스와 세린이라고 하는데 정말 사랑스러워요. 친남매가 아닌데도 사이좋게 지내는 걸 보면 정말 대견합니다.</p>
+          <p> </p>
+          <p>죽은 동생이 지금 이 모습을 보면 무척 좋아했을 텐데...</p>          
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"아이들은 어디 있습니까?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>여기서 조금 떨어진 톨바스 마을에 있습니다. </p>
+          <p> </p>
+          <p>요새는 언제 크랄이 쳐들어올지 몰라서 위험한 데다 뛰어놀 만한 곳도 마땅치 않아서요.</p>
+          <p> </p>
+          <p>그래서 근무를 설 땐 아이들을 톨바스 마을에 있는 가노에게 맡기고 오죠. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+         <p>아, 이런! 오늘이 야간 근무를 서는 날이란 걸 깜박했군요.</p>
+         <p> </p>
+         <p>가노에게 내일 아침까지 애들을 돌봐 달라고 미리 말했어야 했는데...</p>
+         <p> </p>
+         <p>[%username] 님! 바쁘지 않으면 대신 [%dic:STR_DIC_LA145]에게 가서 말 좀 전해 주시겠어요?</p>        
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>휴, 정말 고마워요. 혹시 거절하면 누구에게 부탁해야 하나 걱정이었거든요.</p>
+          <p> </p>
+          <p>가노에게 오늘 제가 야간 근무이니 아이들을 내일까지 잘 부탁한다고 전해 주세요.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_LA145]%은 톨바스 숲에 있을 거예요.  보통 이 시간에는 약초를 캐러 다니니까요.</p>         
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>바쁜가 보군요. 이를 어쩐다.</p>
+          <p> </p>
+          <p>바스와 세린이 계속 기다릴 텐데 걱정이네.</p>    
+          <p> </p>
+          <p>다른 사람을 찾을 수 있을지...</p>  
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>여기 풍경은 정말 좋지 않습니까?</p>
+          <p> </p>
+          <p>전 원래 엘리시움에 살았습니다. 하지만 그곳의 각박한 생활을 못 견디고 여기로 왔죠.</p>
+          <p> </p>
+          <p>화려함은 없지만 여유를 맘껏 누릴 수 있어 너무 행복합니다.</p>         
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">페리넨스의 말을 전한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아, 그래요? 페리넨스 님도 참 힘들겠군요.</p>
+          <p> </p>
+          <p>세린과 바스는 제가 잘 데리고 있을 테니 걱정하지 마십시오.</p>
+          <p> </p>
+          <p>캐던 약초만 마저 캐고 마을로 돌아가겠습니다.</p>        
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_LA145]%와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">바쁜 페리넨스를 대신해 가노에게 가서 바스와 세린을 돌봐 달라고 부탁하자.</p>
+          <p></font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>홀로 바스와 세린을 키우는 페리넨스는 가노의 도움을 자주 받는다고 했다.</p>
+          <p> </p>
+          <p>야간 근무 때문에 아이들을 데리러 갈 수 없으니 가노에게 애들을 부탁하고 싶다고 말했다.</p>
+          <p> </p>
+          <p>바쁜 페리넨스를 대신해 가노를 만나 얘기를 전했다.</p>      
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

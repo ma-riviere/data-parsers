@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Your Siel's Supreme Greatsword will need some work, Daeva...but I can restore its powers. It won't be easy, though.</p>
+          <p> </p>
+          <p>It's taken on some heavy damage! Did a dragon gnaw on this thing?</p>
+          <p> </p>
+          <p>Like I said, I can fix it but it will require some work from you. Will you help?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Whatever it takes, Reian."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This is no typical sword, Daeva. I can't just pound out the flaws on an anvil and rub a stone up its sides.</p>
+          <p> </p>
+          <p>What I need in order to fix your Siel's Supreme Greatsword is extremely rare.</p>
+          <p> </p>
+          <p>Only one Daeva I know has the right material. But if you can get that for me, I can surely restore your sword's true powers.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Have you ever heard of [%dic:STR_DIC_I_Insidium_01]s? Probably not...no one uses it these days.</p>
+          <p> </p>
+          <p>It's an ore birthed from the immense heat and energy produced when Lady Siel fought Tiamat before the Cataclysm. That's what Honeus says, anyways.</p>
+          <p> </p>
+          <p>You can ask him yourself. If [%dic:STR_DIC_N_Honeus] takes a shine to you, he'll give you the Noxallon Ingot...but he may ask you to run an errand for him first.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll get the Ingot."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's your choice, Daeva.</p>
+          <p> </p>
+          <p>But the moment you run into a pack of angry Balaur and you pull that chunk of dead metal from your sheath, you'll wish you had taken me up on my offer.</p>
+          <p> </p>
+          <p>I'll be here for a few more hours.... Come back if you change your mind.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"It has served me well so far."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I guess Honeus must have liked you, [%username].</p>
+          <p> </p>
+          <p>Give me the Noxallon Ingot and your Siel's Supreme Greatsword and I'll get to work.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here's the sword and Ingot."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did you get lost along the way, [%username]? How your culture has survived as long as it has is beyond me, Daeva.</p>
+          <p> </p>
+          <p>If you want this sword repaired, go find [%dic:STR_DIC_N_Honeus], run his errand for him and bring me the [%dic:STR_DIC_I_Insidium_01]. And remember--they need to be in your CUBE. Can't fix a sword you're holding, can I?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"At least I still have a culture."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's time for some old Reian magic now. This shouldn't take more than a minute...just hold on.</p>
+          <p> </p>
+          <p>(He places the Noxallon Ingot in a forge and tempers the sword.)</p>
+          <p> </p>
+          <p>There we go...all fixed up, good as new. Give it a swing. You'll notice the difference right away.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Obtain the [%dic:STR_DIC_I_QUEST_30018] and bring it to [%dic:STR_DIC_N_Gefeios].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Obtain the Noxallon Ingot, a material that can restore the power of Siel's Supreme Greatsword.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+           <p>Gefeios said he needed a special material in order to restore the true powers of Siel's Supreme Greatsword.</p>
+          <p> </p>
+          <p>You went to see Honeus and received the Noxallon Ingot after doing him a favor. With the ingot, Gefeios restored your sword into a Noble Siel's Supreme Greatsword.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

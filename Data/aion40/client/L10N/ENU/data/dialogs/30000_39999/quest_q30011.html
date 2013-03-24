@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, that was unexpected.</p>
+          <p> </p>
+          <p>Hmmm...what to try next?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Is something wrong?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh! You're still here!</p>
+          <p> </p>
+          <p>No, no. Don't leave. I need to speak with you about the bottles of poison you brought.</p>
+          <p> </p>
+          <p>I've never seen anything remotely similar to it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Maybe it's local?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>My thoughts exactly!</p>
+          <p> </p>
+          <p>They probably found something inside or around the Udas Temple.</p>
+          <p> </p>
+          <p>We must know the [%dic:STR_DIC_E_IDTemple_SensoryArea_Q30011] in order to neutralize it. Will you return to the [%dic:STR_DIC_E_IDTemple_LF4] and find it?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Based on its natural properties, I think you should concentrate on searching for peculiar insects before anything else, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Happy medicating!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The deaths of your comrades in arms shall weigh down your wings, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Hey, I already brought you the poison."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Has the time finally come? Can I make a superb antidote that will bring my name to everyone in Atreia?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"So, there was this Arachna, see...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>There aren't any Arachnas that big. Especially of the poisonous variety.</p>
+          <p> </p>
+          <p>If you're not telling tales, I can use that as the basis for my next article...and the antidote, of course.</p>
+          <p> </p>
+          <p>What do you mean, you killed it? The greatest biological find of our age and you destroyed it?! Yes, I can still make the antidote, but that's not the POINT! Oh, why did I send a [%userclass] to do a real Daeva's job?</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Find the [%dic:STR_DIC_E_IDTemple_SensoryArea_Q30011] used by the Dragonbound [%2].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Destroy [%dic:STR_DIC_E_IDTemple_OctacideNamed_54_Ah].([%5]/1)</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Talk with [%dic:STR_DIC_N_Steurios].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Steurios wants to know the source of the Dragonbound's poison. Go to the Udas Temple to search for it.</font></p>
+        </body>
+        </html>
+    </Contents>
+    <notifies>
+      <notify color="yellow" fontsize="16" pos="2" progress="1" showframe="true" time="5">You discovered Kingspin's nest! Destroy Kingspin. For light and life!</notify>
+    </notifies>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Steurios said he'd never seen anything like the Dragonbound's poison, but that he could make an antidote if only he knew its source.</p>
+          <p> </p>
+          <p>You went to the Udas Temple and discovered the caverns beneath it, where you destroyed Kingspin, much to Steurios's academic dismay.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

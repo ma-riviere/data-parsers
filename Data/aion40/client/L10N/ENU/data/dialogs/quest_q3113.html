@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Daevas are pouring into the Theobomos Lab.</p>
+          <p> </p>
+          <p>What do you think they're up to?</p>
+          <p> </p>
+          <p>I imagine it's just curiosity. After all, it takes a lot to scare a Daeva off, thanks to their long livedness.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Is livedness a word?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Haha. I don't know. Maybe I just created it--like that terrible experiment in the Theobomos Lab. Unstable Triroan? Have you seen it?</p>
+          <p> </p>
+          <p>The monster absorbs every single bit of Aetheric energy around it, and then multiplies it exponentially. By now the lab must be about to explode!</p>
+          <p> </p>
+          <p>Hmmm...I wonder if you'd be up for neutralizing this Triroan. Otherwise a raft of Daevas might be killed by their own curiosity. What do you say?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>If you can pull this off, I'll give you a coin. And not just any coin--Sanctum has allocated a generous amount of special coins for investigations like this one.</p>
+          <p> </p>
+          <p>Anyway, I'll wait here and leave the hard work to you. Be careful in the lab!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I will be."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Does the Theobomos Lab scare you, [%username]? Are you claustrophobic?</p>
+          <p> </p>
+          <p>Weird. Most Daevas would die to dive into danger zone and prove their worth.</p>
+          <p> </p>
+          <p>Well, never mind. There are hundreds of other Daevas I can ask.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"None like me, though."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're back! I heard Unstable Triroan has been put in check. Was it you?</p>
+          <p> </p>
+          <p>I hope you didn't wind up back here the hard way. Are you coming back from a meeting with the Soul Healer, by any chance?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Things went...okay."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, who cares, really? The thing is, you've terminated Unstable Triroan, [%username].</p>
+          <p> </p>
+          <p>Here is your coin, as authorized by Sanctum. You've earned it.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Terminate [%dic:STR_DIC_M_IDLF2A_ElementalKingNmd_50_Ah] ([%2]/1).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Speak to [%dic:STR_DIC_N_Ionse].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Ionse said she'll give you a coin if you get rid of Triroan, a monster who is causing an abnormal multiplication of Aetheric energy in the Theobomos Lab.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ionse said she would give you a coin if you got rid of Triroan, a monster causing abnormal multiplication of Aetheric energy.</p>
+          <p> </p>
+          <p>You went to the Theobomos Lab and terminated Unstable Triroan. You returned to Ionse and she gave you a coin as promised.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

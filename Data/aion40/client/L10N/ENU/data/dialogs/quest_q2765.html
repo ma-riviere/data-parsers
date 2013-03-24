@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Do you dream, [%username]? I do. I dream. I have a nightmare that never seems to go away.</p>
+          <p> </p>
+          <p>I see spirits encircling me, their howls and their shrieks chilling me faster than the coldest of Asmodae's evenings. They turn to come for me, and just as I'm about to be attacked, I wake.</p>
+          <p> </p>
+          <p>It's...terrifying.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Why are you telling me this?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Why? Because of the work I do with Grabakr, of course.</p>
+          <p> </p>
+          <p>I'm his escort, so wherever he goes, I go. His interest in geology takes us all over Reshanta, to places near and far, places brimming with vicious creatures that need dispatching.</p>
+          <p> </p>
+          <p>I've fought all kinds of terrible beasts, you know, and have more than enough scars to show for it. I'm still struggling to get over the last worm bite....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I still don't understand."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What I'm trying to get at is our next assignment. Grabakr wants us to go to Dryrock and examine ore samples there.</p>
+          <p> </p>
+          <p>The problem is that the area is filled with [%dic:STR_DIC_M_Ab1_1251_ShadowStalker_34_An]s, the very same abominations that haunt my dreams. I'm no coward, but I'd sooner face a Legion of Ellies than those ghosts.</p>
+          <p> </p>
+          <p>Thing is, I can't duck out of this assignment, so I'm asking others to head there before we go and clear the spirits out of the area. No one has agreed to help yet, but I'm still holding out hope. How about you, [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You said yes? Thank Marchutan for bringing you to me!</p>
+          <p> </p>
+          <p>Please head to Dryrock and kill all the [%dic:STR_DIC_M_Ab1_1251_ShadowStalker_34_An]s you come across. Bring me any [%dic:STR_DIC_I_QUEST_2765a]s you find. Legend has it that anyone carrying the fragments will not be attacked by spirits.</p>
+          <p> </p>
+          <p>Please hurry! Grabakr will want to leave soon.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"The task is mine. Wait here."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Then...what if the nightmares are my destiny?</p>
+          <p> </p>
+          <p>Please [%username]! You must help me!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I said no. You can't avoid your fate."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]! I think Grabakr is gearing up to leave for Dryrock.</p>
+          <p> </p>
+          <p>Have you done as I asked? Did you bring me [%dic:STR_DIC_I_QUEST_2765a]s from the spirits you destroyed?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Yes, my work is done."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Then where are my [%dic:STR_DIC_I_QUEST_2765a]s??</p>
+          <p> </p>
+          <p>You have to hurry now. If you get back after we've left then I'll have no wards in Drydock! My blood would be on your hands, [%username]....</p>
+          <p> </p>
+          <p>We had a deal, [%username], and you've not kept your word yet. Don't make me regret turning to you for help.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Don't doubt me. I'll be back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Just in time! And these fragments, the energy they emit is so...capricious.</p>
+          <p> </p>
+          <p>Here's your reward, [%username]. You should go, I must make the spirit ward before we leave, and there's not much time left.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Defeat the [%dic:STR_DIC_M_Ab1_1251_ShadowStalker_34_An]s in Dryrock, collect their fragments and take them to [%dic:STR_DIC_N_Arnora].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Defeat the Fearful Spirits in Dryrock, then collect their fragments for Arnora.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Arnora was about to go to Dryrock with Grabakr, but was afraid of the Fearful Spirits wandering about the island.</p>
+          <p> </p>
+          <p>You agreed to help Arnora, who had visions in which she was killed by the spirits. You defeated the Fearful Spirits yourself, then took their fragments back to Arnora. He took the fragments from you, and said he would make a necklace from them to ward off other spirits.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

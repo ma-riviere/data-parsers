@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p align="center"> - CONFIDENTIAL - </p>
+          <p> </p>
+          <p>From: Radiant Ops Headquarters</p>
+          <p>To: Agent [%username]</p>
+          <p> </p>
+          <p>Subject: Confirmation just in; Asmodians and Balaur have commenced battle in Gelkmaros. Intelligence speculates that this situation will enable a small, quick strike force to infiltrate and drive the Asmodians from Balaurea.</p>
+          <p> </p>
+          <p>Orders: Commence immediately. Use the Silentera Canyon to infiltrate [%dic:STR_DIC_W_ZONE_NAME_DF4] and terminate a minimum of five combat-worthy Asmodians in Gelkmaros. Once your mission is complete, report to the [%dic:STR_DIC_E_35503].</p>
+          <p> </p>
+          <p>Sun's blessings upon you!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Yes! Balaurea!"</Act>
+    </Selects>
+  </HtmlPage>
+
+   <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>There've been hordes of Daevas heading towards the Silentera Canyon and Gelkmaros today. I've seen nothing but battle reports and casualties all day. Exhausting.</p>
+          <p> </p>
+          <p>[%username], were you able to complete your mission?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Oh, yes."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I just received confirmation of your mission's success, [%username]. Well done.</p>
+          <p> </p>
+          <p>Even large forces have been known to get annihilated in Gelkmaros if they let their guard down. Aion's grace must have been shining on you today. But, I guess our covert tactics in Radiant Ops are particularly effective in these types of situations.</p>
+          <p> </p>
+          <p>Radiant Ops HQ sent this reward over for you. Congratulations.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Infiltrate [%dic:STR_DIC_W_ZONE_NAME_DF4] and eliminate [%dic:STR_DIC_E_Daily_1] ([%2]/5).</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">When the mission is accomplished, report to the [%dic:STR_DIC_E_35503].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Daily Order: Infiltrate Gelkmaros to eliminate Asmodians. Report the result to the Inggison Radiant Ops agent.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Radiant Ops Headquarters issued a daily order to infiltrate Gelkmaros and eliminate the Asmodian threat.</p>
+          <p> </p>
+          <p>You completed the mission and received a reward from Radiant Ops.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+  
+	 	  <HtmlPage name="select_acqusitive_quest_desc">
+	 	    <Selects>
+	 	      <Act>New quest: [%questname]</Act>
+	 	    </Selects>
+	 	  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

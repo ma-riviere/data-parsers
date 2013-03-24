@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>To: [%username]</p>
+          <p>From: [%dic:STR_DIC_N_Vespasianus], Academy Instructor</p>
+          <p> </p>
+          <p>Do you know how to use [%dic:STR_DIC_I_QUEST_37005A]? Me neither, but that doesn't keep me from wanting more, more, more.</p>
+          <p> </p>
+          <p>Your assignment today: Take a Mentor to the Kaidan Mine, and get the ore from the [%dic:STR_DIC_M_37005all].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Sometimes homework seems so pointless."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>My poor little Porgus bun! You must be tired after dealing with those nasty Elites. Give me the [%dic:STR_DIC_I_QUEST_37005A], and get some rest.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"It sparkles so prettily."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No, I wasn't teasing. If you want to graduate, you need to work it.</p>
+          <p> </p>
+          <p>Go get a Mentor and collect [%dic:STR_DIC_I_QUEST_37005A] from the [%dic:STR_DIC_M_37005all].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Yes, sir."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Isn't it just gorgeous?</p>
+          <p> </p>
+          <p>You take this reward, sunshine, and keep it up!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">With a [%dic:STR_DIC_E_Mentor], defeat [%dic:STR_DIC_M_37005all] and collect their ore for [%dic:STR_DIC_N_Vespasianus].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Academy Instructor Zentern instructed you to defeat Kaidan Elites for their Kaidan Ore.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Academy Instructor Zentern instructed you to steal Kaidan Ore from Kaidan Elites.</p>
+          <p> </p>
+          <p>You and your Mentor successfully completed the assignment, and Zentern rewarded you.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

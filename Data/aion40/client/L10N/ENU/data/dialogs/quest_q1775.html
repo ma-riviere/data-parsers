@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Legends say that the ancient people of Atreia had many wonderful powers, including the miraculous ability to grant life to stone.</p>
+          <p> </p>
+          <p>The proof is right here in the Ruins of Roah. It is a truly astounding sight!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Yes, astounding!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>And the most astonishing sight of all? That colossal structure in the middle of Krotan Rock--a massive, ancient weapon!</p>
+          <p> </p>
+          <p>But not all of Roah lies dead. The Garcikhans, those artificial creatures, still move.</p>
+          <p> </p>
+          <p>More than move, they reproduce and spread, long after their creators have turned to dust.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"That could present a problem."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes, a big problem. If Garcikhans can create more Garcikhans, then soon the whole Ruins will be overrun.</p>
+          <p> </p>
+          <p>They are not a danger in small numbers, though, and culling their ranks from time to time will keep their population in check.</p>
+          <P> </P>
+          <p>If you would help [%username], it would be but a small burden on your busy schedule.</p>
+          <p> </p>
+          <p>Things will be much easier if you help me, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent, this should prove a great help.</p>
+          <P> </P>
+          <P>You can find [%dic:STR_DIC_M_Ab1_1211_GargoyleB_32_An]s and [%dic:STR_DIC_M_Ab1_1211_GargoyleC_33_An]s in the Ruins of Roah.</P>
+          <p> </p>
+          <p>Fly between the fragments of the once-underground temple, and thin the numbers of the Garcikhans. That should slow their expansion.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I will return. Faith and arms."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Perhaps you think you can return to help later? But then, perhaps there is no later.</p>
+          <p> </p>
+          <p>It is simple mathematics. If each Garcikhan can make, shall we say, two more, and each one of them makes two more still, then in no time at all...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Mathematics bores me. Goodbye."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I have already slain my quota of Garcikhans for the day. What about you, [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I have slain my share."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Fine work. Should everyone pitch in and slay Garcikhans, maybe we can drive them back.</p>
+          <p> </p>
+          <p>But you have slain your share now, and I offer my gratitude.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get rid of the Garcikhans in the Ruins of Roah.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Ab1_1211_GargoyleB_32_An] ([%2]/5)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Ab1_1211_GargoyleC_33_An] ([%5]/5)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report the result to [%dic:STR_DIC_N_Mercus].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Help Mercus keep the Garcikhan population down in the Ruins of Roah.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Mercus said the Garcikhans in the Ruins of Roah were constantly reproducing. If they weren't kept in check, they could overrun the whole area.</p>
+          <p> </p>
+          <p>You slew your fair share of Garcikhans to help, and Mercus thanked you.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

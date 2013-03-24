@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], I hate to ask it of you, but can you get the Kerubian Weapons that Coeus needs?</p>
+          <p> </p>
+          <p>I owe him a favor, and as you've seen, he's somewhat hard to deal with.</p>
+          <p> </p>
+          <p>Plus, there's nobody else I can ask to go all the way to Sanctum.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I can help, sure."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Before you commit yourself, you should know that not all Kerubians carry the weapons he wants.</p>
+          <p> </p>
+          <p>You might have to battle many well-armed Kerubian Fighters to complete this task.</p>
+          <p> </p>
+          <p>Is this to much to ask? Can you help me help Coeus?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I was right. I knew that you would see the work through to the end.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_Cherubim2Wp_24_n]s in the Putrid Mire will be most likely to carry [%dic:STR_DIC_I_QUEST_1480a].</p>
+          <p> </p>
+          <p>When you get one, don't waste time running back to me. Deliver it directly to [%dic:STR_DIC_N_Coeus].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Don't give it another thought."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh...did something more urgent come up?</p>
+          <p> </p>
+          <p>I understand, but Coeus....</p>
+          <p> </p>
+          <p>This won't be easy. But I'll find some way to make everyone happy.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Good luck with that."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, you are the one I sent to get [%dic:STR_DIC_I_QUEST_1480a]. </p>
+          <p> </p>
+          <p>Did you get one?</p>
+          <p> </p>
+          <p>Hand it over, I'm a busy Daeva.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"So am I!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>If you're here in Sanctum on other business, you should be about it and stop wasting my time.</p>
+          <p> </p>
+          <p>I thought that you'd brought the Kerubian weapon. My study is at a standstill without it. </p>
+          <p> </p>
+          <p>You are planning to bring it, aren't you?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I made a promise, I will bring it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>So this one of the weapons those Kerubians use? This sword is elaborate: the pattern detailed, the blade razor sharp. </p>
+          <p> </p>
+          <p>They may be more advanced than I had thought. It deserves more study.</p>
+          <p> </p>
+          <p>You're not completely useless after all. Thank you for bringing this to me.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Retrieve a weapon from a [%dic:STR_DIC_M_Cherubim2Wp_24_n] and take it to [%dic:STR_DIC_N_Coeus].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">You promised to defeat a Kerubian Fighter in the Putrid Mire and take its weapon to Coeus in Sanctum.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Coeus wanted a Kerubian Weapon, but when Memnes explained that not all Kerubians carried weapons, you hunted down a Kerubian Fighter in the Putrid Mire.</p>
+          <p> </p>
+          <p>You took the weapon to Coeus in Sanctum, so that he could continue his studies.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

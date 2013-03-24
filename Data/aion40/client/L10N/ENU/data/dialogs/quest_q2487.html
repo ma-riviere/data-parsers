@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Clearly we must go to Elysea to discover more about Pretors.</p>
+          <p> </p>
+          <p>If Micorunerk told us the truth, the Lepharist Bastion in Eltnen is where we'll find out.</p>
+          <p> </p>
+          <p>It will be very dangerous....</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What is your plan?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's all about you, [%username]?</p>
+          <p> </p>
+          <p>Head to Eltnen in Elysea through the rift and carry out the mission.</p>
+          <p> </p>
+          <p>Since you have already seen a Pretor at the Lepharist Citadel, you are the best candidate.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The rift appears frequently around [%dic:STR_DIC_W_DF2_SUB_D3].</p>
+          <p> </p>
+          <p>When you get to Eltnen, get a sample of Pretor's Cell Tissue in the [%dic:STR_DIC_W_LF2_SZ_J]. Also, try to get a hold of a Pretor Research Diary.</p>
+          <p> </p>
+          <p>Once you collect [%dic:STR_DIC_I_QUEST_2487a] and [%dic:STR_DIC_I_QUEST_2487b], take them to Captain [%dic:STR_DIC_N_Kvasir]. Nobody here can analyze them properly.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"The task is mine."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, you don't want to go to Elysea, do you?</p>
+          <p> </p>
+          <p>I understand. I would hesitate too if I were you.</p>
+          <p> </p>
+          <p>I will get someone else.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Farewell."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ahh, [%username].</p>
+          <p> </p>
+          <p>Did you set up a plan with Mirka and complete your mission?</p>
+          <p> </p>
+          <p>Report!</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Our plan is in motion."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You came back with nothing? Did Mirka not tell you to gather information? Or did you just fail?</p>
+          <p> </p>
+          <p>Mirka always comes up with a plan....</p>
+          <p> </p>
+          <p>You should honor our concerns. We have the future of Asmodae to think of.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll not fail you again."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This is the sample you retrieved from Elysea? Hm...I should send it to someone who can properly investigate this.</p>
+          <p> </p>
+          <p>These research notes are similarly interesting. We can now confirm the Pretor is a creature created by Lepharist Revolutionaries in Elysea.</p>
+          <p> </p>
+          <p>Well done. We have a lot of good information on those sun-cursed monstrosities now, thanks to you.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect [%dic:STR_DIC_I_QUEST_2487a] and [%dic:STR_DIC_I_QUEST_2487b], and take them to [%dic:STR_DIC_N_Kvasir].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Mirka said that you should go to Elysea to collect information about Pretors. Head to the Lepharist Bastion in Eltnen.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Mirka received orders from Kvasir regarding Pretors, and decided to send someone to Elysea for more information.</p>
+          <p> </p>
+          <p>You went to the Lepharist Bastion in Eltnen to get Pretor Cell Tissue and a Research Diary, and then delivered them to Kvasir in Pandaemonium.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], 왠지 자네의 운명은 순탄치만은 않을 것 같구먼.</p>
+          <p> </p>
+          <p>사실 자네를 처음 본 순간부터 느껴지던 기운이네만... 괜히 기분만 나빠질 것 같아 말은 안 했네.</p>
+          <p> </p>
+          <p>하지만 걱정하지 말게. 꾸준히 스킬을 수련하고 실전 경험을 쌓아 올린다면 시련 쯤은 분명 이겨낼 수 있을 거요.</p>
+          <p> </p>
+          <p>마침 좋은 기회가 있는데 신성력 시험에 참여해 보는 건 어떤가?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"신성력 시험이요?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>역시 모르고 있구먼.</p>
+          <p> </p>
+          <p>데바들만이 신성력 스킬을 사용할 수 있단 사실은 알고 있는가?</p>
+          <p> </p>
+          <p>신성력 스킬은 다른 스킬과 달리 제약이 많아 자주 사용하기 어렵네. 그래서인지 신성력 스킬을 다룰 줄 모르거나 매우 미숙한 사람들이 많은 게 현실이네.</p>
+          <p> </p>
+          <p>총사령관님께서 이런 문제를 해결하기 위해 내놓은 장려책이 바로 신성력 시험이지.</p>
+          <p> </p>
+          <p>이름은 시험이지만 정해진 스킬을 10번만 사용면 끝나는 일종의 수련이라네.</p>
+          <p> </p>
+          <p>신성력 시험에 참여해 보겠는가?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>음유성이라면 파괴의 환상곡는 사용해 보았는가?</p>
+          <p> </p>
+          <p>이번 신성력 시험 과제는 그 스킬이라네. 가서 [%dic:STR_DIC_E_DP_Ba]%을 10번 사용하고 돌아오게.</p>
+          <p> </p>
+          <p>전투를 통해 신성력을 쌓아도 좋고, 힘들면 오드 젤리를 이용해도 무방하다네.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아무리 좋은 수련 기회라도 싫으면 도리가 없지.</p>
+          <p> </p>
+          <p>하지만 생각이 바뀌면 언제라도 오게. 시험은 당분간 계속 될 거네. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+    <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>벌써 돌아왔는가?</p>
+          <p> </p>
+          <p>생각했던 것 보다 빨리 왔군.</p>
+          <p> </p>
+          <p>어디, [%dic:STR_DIC_E_DP_Ba]%을 10번 이상 사용했는지 확인해 볼까? 이리 가까이 와 보게.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">가까이 다가간다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(머리에 손을 올리고) 이렇게 빨리 해내다니 정말 놀랍군.</p>
+          <p> </p>
+          <p>(머리에서 손을 떼고) 신성력 시험은 통괄세, 축하하네!</p>
+          <p> </p>
+          <p>어떤가, 이제 [%dic:STR_DIC_E_DP_Ba]%쯤은 눈 감고도 사용할 수 있겠지? 이번 일은 앞으로 다가올 시련을 대비하는데 큰 도움이 될 걸세.</p>
+          <p> </p>
+          <p>이건 시험을 통과한 사람에게 주는 포상이라네. 앞으로도 열심히 수련에 임하길 바라네.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_E_DP_Ba]%을 사용하라([%2]/10)</font></p></step>               
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_N_DC1_Brinhild_M]에게 결과를 보고하라</font></p></step>               
+    </steps>
+          <p><font font_xml="quest_summary">총사령관 주최로 신성력 시험이 진행 중이라고 한다. 신성력 스킬인 파괴의 환상곡 I을 10번 사용해 신성력 시험을 통과하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>브린힐드는 신성력 사용에 미숙한 데바들의 수련을 위해 신성력 시험을 진행하고 있다며 참여를 권유했다.</p>
+          <p> </p>
+          <p>브린힐드가 지시한 대로 파괴의 환상곡 I을 10번 사용하고 돌아가자 시험에 합격한 걸 축하해 주었다.</p>
+	</body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

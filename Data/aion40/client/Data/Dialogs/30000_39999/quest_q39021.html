@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q39021</QuestId>
+    <QuestName>페렌토의 지령</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p> - 긴급 명령서 - </p>
+          <p></p>
+          <p> 1. 발신 : 가디언 군단장 페렌토</p>
+          <p></p>
+          <p> 2. 수신 : [%username]</p>
+          <p></p>
+          <p> 3. 명령 : 시공의 균열이 열려 있는 동안 인테르디카로 침입한 마족을 처치하라!</p>
+          <p></p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">의뢰를 수행한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>자네를 믿고 있지만 마족의 움직임이 심상치 않아 불안하군.</p>
+          <p> </p>
+          <p>하지만 그 동안 많은 성과를 보여주었으니 일단 자네에게 결과를 듣기 전에는 쉽게 판단하지 않겠네.</p>
+          <p> </p>
+          <p>시공의 균열을 넘어 침입한 마족을 처치했는가?</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>잘했네, 정말 잘했어!</p>
+          <p> </p>
+          <p>휴우, 일단은 마족의 침입을 잘 물리쳤군.</p>
+          <p> </p>
+          <p>다 자네 덕분이네.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">인테르디카를 습격한 마족을 처치하라([%2]/5)</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_N_Perento]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">긴급 명령: 시공의 균열이 열려 있는 동안 인테르디카에 침투한 마족을 처치하고 페렌토에게 보고하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>마족이 시공의 균열을 이용해 인테르디카에 침공하였다. 침공한 마족들을 소탕하고 페렌토에게 보고하였다.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

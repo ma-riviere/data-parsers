@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Now all I need to do is to deliver this Platinum Ore to Sanctum.</p>
+          <p> </p>
+          <p>Only, I have some concerns...I originally planned to send it via the Shugo Express Mail, but I am...well, I'm out of cash.</p>
+          <p> </p>
+          <p>I discovered that I needed Adamantium as well as Platinum. </p>
+          <p> </p>
+          <p>It's very hard to get Adamantium here. It cost me quite a bit more than I expected. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"That does sound expensive."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I know you've helped me out already, so once more won't hurt, will it, [%username]?</p>
+          <p> </p>
+          <p>If you're going that way, could you deliver this package to [%dic:STR_DIC_N_Vulcanus]. </p>
+          <p> </p>
+          <p>I've been bombarding him with messages about the armor, so he's probably waiting for this.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you for accepting my request. </p>
+          <p> </p>
+          <p>You just need to take it to [%dic:STR_DIC_N_Vulcanus], the Master Armorsmith in Sanctum.</p>
+          <p> </p>
+          <p>I'm sure he's anxious to get going on my order. It's such a relief to know I will soon have my armor.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I better get going."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], you brought me the Platinum Ore, but I still have no way to deliver it to Sanctum. I really don't know what to do.</p>
+          <p> </p>
+          <p>Even if I wanted to use the Shugo Express Mail, I couldn't afford it....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll think about it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What? What is it? I'm a busy Armorsmithing Expert, you know.</p>
+          <p> </p>
+          <p>It's a challenge every day just to fill the orders I get. I have to make offerings to Empyrean Lords, send items to the Abyss, and still find time to fill the personal orders.</p>
+          <p> </p>
+          <p>Why am I even telling you this when I'm so busy?!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I've brought you some materials from Tanis."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, the Soul Healer in Eltnen finally got these, eh? He's been begging me for his armor, but he wants some very eccentric decorations, so I had to ask him to provide the materials.</p>
+          <p> </p>
+          <p>If he wants his armor this badly, I cannot put it off. Anything to shut him up. I'll start crafting it now.</p>
+          <p> </p>
+          <p>Thank you for delivering this, [%username]. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Deliver the materials for the armor to [%dic:STR_DIC_N_Vulcanus].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Tanis has asked you to deliver the materials for his armor to Vulcanus.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Tanis had no money to send his Platinum Ore to Sanctum via the Shugo Express Mail.</p>
+          <p> </p>
+          <p>You went on his behalf and delivered the armor materials to Vulcanus.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

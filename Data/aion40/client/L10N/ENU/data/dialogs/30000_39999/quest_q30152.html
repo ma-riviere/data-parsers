@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ever heard of the Petraliths, [%username]?</p>
+          <p> </p>
+          <p>They were an ancient weapon created to combat the Balaur. You might have seen the remains of one at the Grave of Claws in Reshanta.</p>
+          <p> </p>
+          <p>But I'll bet you haven't heard that the Petraliths were first assembled at a Jotun Studio here in Gelkmaros. Historians have said that Silentera Canyon is a sunken Jotun Studio, and that's why there are Jotun Relics scattered throughout the canyon.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"That's fascinating."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I thought so too.</p>
+          <p> </p>
+          <p>I've sent Daevas to collect the relics in Silentera in the past, and while some are useful, most are not. However, a number of Daevas I sent also come back empty handed because the Elyos snatch up the relics first.</p>
+          <p> </p>
+          <p>We can't let those relics fall into Elyos hands, especially if they're related to the Petraliths.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"How can we stop them?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, I'm sure you can tell where I'm going with this.</p>
+          <p> </p>
+          <p>I we need to get down there and grab those Jotun Relics before the Elyos can get their hands on them.</p>
+          <p> </p>
+          <p>Are you willing to lend me your claws, [%username]? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I knew you wouldn't turn me down, [%username].</p>
+          <p> </p>
+          <p>The [%dic:STR_DIC_I_QUEST_30052a] are scattered throughout Silentera Canyon. I need you to collect them and take them to Centurion [%dic:STR_DIC_N_Gelastra] at Gelkmaros Defense Base.</p>
+          <p> </p>
+          <p>If we can find the relics related to the Petraliths, Asmodae will have a powerful weapon with which to crush our enemies.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"The task is mine."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You do know what Petraliths represents to Asmodae, don't you, [%username]?</p>
+          <p> </p>
+          <p>Asmodae will crush the Balaur and the Elyos if we can unlock the secret to that kind of power.</p>
+          <p> </p>
+          <p>We have to get those Jotun Relics. If you won't do it, I'll just have to find someone else.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I've got other things to do."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've been expecting you, [%username].</p>
+          <p> </p>
+          <p>Rueur told me that you would be bringing Jotun Relics from the Silentera Canyon.</p>
+          <p> </p>
+          <p>I just hope that some of the relics you found are related to the Petraliths...otherwise this was a wasted effort.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here's what I found."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You weren't able to find any Jotun Relics?</p>
+          <p> </p>
+          <p>They're all over Silentera Canyon. The relics themselves shouldn't be hard to find. The trick is identifying relics that are related to the Petraliths, which is my job. </p>
+          <p> </p>
+          <p>You have the easier job, [%username]. I'd appreciate you getting to Silentera Canyon and gathering the [%dic:STR_DIC_I_QUEST_30052a] so I can do mine.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm on my way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well done, [%username]. This is exactly what we've been looking for.</p>
+          <p> </p>
+          <p>I won't know if these relics are related to the Petraliths until I take a closer look, but you've done the legwork, at the least.</p>
+          <p> </p>
+          <p>It'd be great if you would continue to retrieve them for me.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect the [%dic:STR_DIC_I_QUEST_30052a] from inside Silentera Canyon and take them to [%dic:STR_DIC_N_Gelastra].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Some of the Jotun Relics in Silentera Canyon may have something to do with the Petraliths. Collect them and bring them to Centurion Gelastra.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Rueur thinks some of the Jotun Relics scattered throughout Silentera Canyon might be related to the Petraliths.</p>
+          <p> </p>
+          <p>You collected the relics and brought them to Centurion Gelastra, who thanked you and asked you to retrieve more. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

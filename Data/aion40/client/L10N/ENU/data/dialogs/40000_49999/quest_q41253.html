@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q41253</QuestId>
+    <QuestName>Floral Tribute</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select_none" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], while you were fighting the Balaur, I found myself lost in thought.</p>
+          <p> </p>
+          <p>I've already mentioned how my husband wasn't the best of spouses, but I've not held him dear since he passed either.</p>
+          <p> </p>
+          <p>Truth be told, I virtually forgot about him in the years since. This whole carving business has left me wanting to make amends. But I don't know how.</p>
+          <p> </p>
+          <p>Please, could you help me? Speak with a priest, find out what I must do to pay my respects to my husband? Try [%dic:STR_DIC_N_Ulstia].</p>
+ </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I know why you're here; I heard all about the situation. The truth is, the dead do not care if they are honored or not. They are dead.</p>
+          <p> </p>
+          <p>However, that does not mean that the act of honoring them is pointless. It heals those that are left behind, and reconnects children to their elders.</p>
+          <p> </p>
+          <p>My suggestion? Place something at Pytean's grave. The [%dic:STR_DIC_I_Q41253b] is a common choice, and can be bought from [%dic:STR_DIC_N_Aughoetia]. If you do buy one, bring it here so I can bless it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"I'll go now."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+         <p>Did you bring the [%dic:STR_DIC_I_Q41253b]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">"I did. Here."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_ok">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Then it is time to go to Pytean's grave. Leave now for [%dic:STR_DIC_W_LDF4a_SZ_D_03]. Pytean was buried at its highest point. </p>
+          <p> </p>
+          <p>Keep your eyes peeled for an [%dic:STR_DIC_ILDF4a_Tomb_Q41253]. Most of the others have been weathered to nothing, but such was Pytean's fame that his apprentices still maintain his grave.</p>
+          <p> </p>
+          <p>Once you find it, place the [%dic:STR_DIC_I_Q41253a_flaower] on it. Then Moraitia will be ready to get back to her life.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Thank you for your help."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_fail">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You return, and without the [%dic:STR_DIC_I_Q41253b]? It is a simple request; if you are too busy to help me, please just say so.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_N_Aughoetia] sells the flowers.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm sorry. I'll return with the bloom."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select3">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(The gravestone lies proudly, looking down on the world below. Even dead, you still feel Pytean's strength emanating from beneath you.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SET_SUCCEED">"Rest easy, Pytean."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]! Did you speak to Ulstia? What did she say?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Well..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Then it is done! Oh... thank you!</p>     
+          <p> </p>     
+          <p>I'll remember your work for me, friend. More importantly, I'll keep my husband's memory closer to my heart too. Again, thank you.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk to [%dic:STR_DIC_N_Ulstia].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Buy a [%dic:STR_DIC_I_Q41253b] from [%dic:STR_DIC_N_Aughoetia], and return to [%dic:STR_DIC_N_Ulstia].</font></p>[%collectitem]</step>
+               <step><p visible="[%6]"><font color="[%7]">Lay your [%dic:STR_DIC_I_Q41253a_flaower] on the [%dic:STR_DIC_ILDF4a_Tomb_Q41253] in [%dic:STR_DIC_W_LDF4a_SZ_D_03].</font></p></step>
+               <step><p visible="[%9]"><font color="[%10]">Return to [%dic:STR_DIC_N_Moraytia].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Moraitia wishes to make amends with her husband. Find out if it's possible.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Moraitia had essentially forgotten to pay her respects to her dead husband for years. After seeing the carving that he had made for her before his death, she was filled with regret, and wanted to find out if it was still possible to make amends.</p>
+          <p> </p>
+          <p>You left and met with a priest named Ulstia, who said a simple bouquet on his grave would symbolize her love for him.</p>
+          <p> </p>
+          <p>So you went to Sabat's End Cemetary and placed a bouquet of flowers. When you came back, Moraitia thanked you for your gesture and told you that she'd never forget her husband again.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>- 긴급 지원 요청 -</p>
+          <p> </p>
+          <p>1. 발신: 카탈람 토벌군 소속 [%dic:STR_DIC_N_LDF5A_Balbrin_E]</p>
+          <p> </p>
+          <p>2. 수신: [%username]</p>
+          <p> </p>
+          <p>3. 명령: 초소 근처에 숨어있는 브리트라 정보부 [%dic:STR_DIC_M_LDF5A_B2_Vritra_As_Br_62_An]을 처치하라.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">요청을 수행한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>추측이 난무하고 있는 실정인지라 확실한 정보가 필요하다오.</p>
+          <p> </p>
+          <p>어설픈 정보는 어설픈 판단으로 이어져 한 조직을 망치기 쉽기 때문이오.</p>
+          <p> </p>
+          <p>[%username], 뭔가 보고할 게 있는 눈치인데 뜸 들이지 마시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">폭발 진상 조사병을 처치한 일을 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정보부가 주변을 살피고 다니고 있었다니... 지원 요청을 했지만 그들이 현재 뭘하고 있는지는 몰랐다오.</p>
+          <p> </p>
+          <p>브리트라군에서 일반 군부와 정보부는 거의 별개의 조직이라고 봐도 무방할 것 같소.</p>
+          <p> </p>
+          <p>그렇지 않고서야 그렇게 숨어서 움직일리 없소.</p>
+          <p> </p>
+          <p>어쨌든 임무를 잘 수행했을 뿐만 아니라 유용한 정보를 가져다 줘서 고맙구려.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">브리트라 정보부 [%dic:STR_DIC_M_LDF5A_B2_Vritra_As_Br_62_An]을 처치하라([%2]/5)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_LDF5A_Balbrin_E]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">긴급 지령: 이드겔 폭발을 조사하는 폭발 진상 조사병을 처치하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>긴급 지원 요청에 따라 초소 근처 덤불에 숨어있는 브리트라 정보부 폭발 진상 조사병을 처치했다.</p>
+          <p> </p>
+          <p>발브린에게 보고하자 직접 처리하고 보고해줘서 고맙다고 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>인테르디카의 밀림에서 고대 문명의 잔해를 보신 적이 있으십니까?</p>
+          <p> </p>
+          <p>이끼와 진흙에 덮여서 형체를 알아볼 수 없는 것도 있지만 아름다운 것도 많이 남아있지요.</p>
+          <p> </p>
+          <p>하지만 가시뿌리 펠리알이 그 위에 진을 치고 있어서 얼마 남지 않은 유적도 사라지게 생겼습니다.</p>
+          <p> </p>
+          <p>조사원들은 [%dic:STR_DIC_M_FellialRE_36_An]이 연구 대상이라면서 잡지 못하게 하지만, 그것도 어지간해야지요. 안 그렇습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">고개를 끄덕인다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>유적 위에 뿌리를 내리는 것은 고사하고 그 근처를 지나가는 사람들에게 무차별 공격을 퍼붓습니다.</p>
+          <p> </p>
+          <p>시찰을 나갔던 조사원도 가시뿌리 펠리알에게 호되게 당하는 일이 많습니다.</p>
+          <p> </p>
+          <p>그런데도 잡지 못하게 하는 걸 보면 착한 사람들이지요. 부상을 입고 돌아오는 걸 보면 안타깝습니다.</p>
+          <p> </p>
+          <p>마음 같아서는 제가 나가서 싹 처치해버리고 싶지만 조사원들의 눈치도 있으니 저를 대신해서 [%dic:STR_DIC_M_FellialRE_36_An]을 처치해주실 수 있겠습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정말 감사합니다.</p>
+          <p> </p>
+          <p>길가에 있는 [%dic:STR_DIC_M_FellialRE_36_An]을 중점적으로 처치해주세요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>바쁘신가봅니다.</p>
+          <p> </p>
+          <p>할 수 없죠. 제가 직접 나서서 방법을 찾아 보겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>조금 전에도 가시뿌리 펠리알에게 공격 당한 사람이 들것에 실려왔습니다.</p>
+          <p> </p>
+          <p>[%username] 님은 괜찮으신가요?</p>
+          <p> </p>
+          <p>지쳐 보이시네요. 그래도 무사히 돌아오셔서 다행입니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>고생하셨습니다.</p>
+          <p> </p>
+          <p>[%username] 님 덕분에 당분간은 사람들이 다칠 일은 없겠네요.</p>
+          <p> </p>
+          <p>그럼 살펴가십시오.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">조사원을 공격하는 [%dic:STR_DIC_M_FellialRE_36_An]을 처치하라([%2]/10)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Prokopios]와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">조사원을 공격하는 가시뿌리 펠리알을 처치하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>프로코피오스는 가시뿌리 펠리알이 지나가는 사람들을 공격하고 있다며 걱정을 했다.</p>
+          <p> </p>
+          <p>사람들이 자주 다니는 길가에 있던 가시뿌리 펠리알을 정리해 주고 돌아갔더니 매우 고마워했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

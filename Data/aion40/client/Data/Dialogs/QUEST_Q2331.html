@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>켄타릭을 처치하는 건 솔직히 별로 마음에 내키는 일이 아닙니다.</p>
+          <p> </p>
+          <p>수백 년 전의 이야기라고 해도 그들이 마족이었던 건 변하지 않는 사실이니까요.</p>
+          <p> </p>
+          <p>오래 전의 전설이라고 믿지 않는 사람도 있지만 전 그들이 천족을 도왔다가 주신의 저주를 받았다는 게 사실이라고 생각합니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">얘기를 계속 듣는다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>하지만 그건 개인적인 생각이고 아칸으로서는 요새나 판데모니움의 명령을 따를 수밖에요.</p>
+          <p> </p>
+          <p>켄타릭을 효과적으로 처치하기 위해 우두머리인 [%dic:STR_DIC_M_TauricDNamedQ_29_An]%을 처치하라는 명령을 받았습니다.</p>
+          <p> </p>
+          <p>전설에 따르면 저주를 받았을 때 그 마을의 촌장이었다고 하더군요.</p>
+          <p> </p>
+          <p>하지만 설마 그때의 촌장이 지금까지 살아있겠습니까? 새로운 우두머리겠지요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_M_TauricDNamedQ_29_An]를 처치하라는 명령을 받기는 했지만 아무래도 제 손으로 수행하기가 꺼림칙합니다.</p>
+          <p> </p>
+          <p>저 대신 [%username] 님이 좀 처리해 주시면 안 될까요?</p>
+          <p> </p>
+          <p>켄타릭이 마족이었다는 것에 별로 신경 쓰지 않는 것 같아서 드리는 부탁입니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>부탁을 들어주셔서 정말 감사합니다.</p>
+          <p> </p>
+          <p>그럼 [%dic:STR_DIC_W_DF2_SUB_B2]으로 가서 [%dic:STR_DIC_M_TauricDNamedQ_29_An]를 처치해 주십시오. </p>
+          <p> </p>
+          <p>유독 덩치가 크고 검은 털을 가졌으니 찾기 어렵지는 않을 겁니다. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님도 저처럼 그들이 마족이었다는 걸 믿는 모양이로군요.</p>
+          <p> </p>
+          <p>그렇다면 강요할 수는 없지요.</p>
+          <p> </p>
+          <p>알겠습니다. 전설 같은 것은 신경 쓰지 않는 다른 데바에게 부탁하겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>돌아오셨군요.</p>
+          <p> </p>
+          <p>족장 프로마키스는 처치하고 오신 겁니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정말 고맙습니다.</p>
+          <p> </p>
+          <p>명령대로 우두머리를 처치했으니 요새에서도 만족할 겁니다.</p>
+          <p> </p>
+          <p>이건 제가 드리는 감사의 표시입니다. 받아주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_M_TauricDNamedQ_29_An]를 처치하라([%2]/1)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Jorund]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">요룬드를 대신하여 켄타릭 부락의 우두머리인 족장 프로마키스를 처치해 주자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>요룬드는 켄타릭 부락의 우두머리인 족장 프로마키스를 처치하라는 명령을 받았지만 과거 마족이었던 켄타릭을 처치하기가 꺼림칙하다고 했다.</p>
+          <p> </p>
+          <p>그래서 요룬드를 대신하여 족장 프로마키스를 처치해 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

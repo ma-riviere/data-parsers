@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]! Thank Aion you're still here.</p>
+          <p> </p>
+          <p>Come closer, I don't want anyone to overhear this.</p>
+          <p> </p>
+          <p>Brigade General Nerita has an urgent message for you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What's the message?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It reads as follows: "I have read Bridget's report about your experiences with Kromede's Trial. What she had to say was very disturbing indeed."</p>
+          <p> </p>
+          <p>"But I must be certain that it was Shadow Judge Kaliga you encountered, and whose manor you entered. This is very important."</p>
+          <p> </p>
+          <p>"I request that you enter the [%dic:STR_DIC_W_IDCromede] once more and confirm Kaliga's identity for me." What should I tell the Brigade General? That you accept?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Understood. I'll report to Brigade General Nerita at once, then.</p>
+          <p> </p>
+          <p>If you don't mind me saying so, this whole [%dic:STR_DIC_W_IDCromede] thing is a bit over my head. But then, I'm not in charge here.</p>
+          <p> </p>
+          <p>Anyway, let me know what you find out, and I'll pass it on to the Brigade General.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll do that."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Understood. I'll report to Brigade General Nerita at once, then.</p>
+          <p> </p>
+          <p>From what I've heard about Kromede's Trial, I really don't blame you for not wanting to go back.</p>
+          <p> </p>
+          <p>But I should tell you that I have an item to give you for completing the Brigade General's request, should you change your mind.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Really? Hmm."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I saw you sleeping in one of those tents earlier. You seemed peaceful enough, but now that I know what you went through....</p>
+          <p> </p>
+          <p>You're a braver Daeva than me, [%username]. I would've thought twice about going in there, Brigade General or no.</p>
+          <p> </p>
+          <p>Speaking of whom, do you have anything for me to report to her?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I have confirmation."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Understood. Shadow Judge Kaliga has been confirmed as the chief judge in Kromede's Trial, and has been defeated.</p>
+          <p> </p>
+          <p>I'm still not sure what's going on; all I've heard are rumors and random bits. Still, I understand enough to know this is quite a feat.</p>
+          <p> </p>
+          <p>The Brigade General appreciates the service you've done her. She gave me this to give you on completion of your mission.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Enter [%dic:STR_DIC_W_IDCromede] and terminate [%dic:STR_DIC_M_IDCromede_Named_Judge_38_An].([%2]/1)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk to [%dic:STR_DIC_N_Geirod].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Brigade General Nerita wishes you to confirm that the figure you encountered at Kromede's Trial is indeed Shadow Judge Kaliga.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Geirod brought you a request from Brigade General Nerita to confirm Kaliga's involvement in Kromede's Trial.</p>
+          <p> </p>
+          <p>You reentered the nightmarish Kromede's Trial and defeated Kaliga. You then reported back to Geirod, who gave you a coin on behalf of Brigade General Nerita.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

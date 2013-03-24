@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>How are you...enjoying your stay in Arbolu's...Haven?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_NONE_1">"It's very peaceful."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_none_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes, peaceful...on the surface...but in grave danger.</p>
+          <p> </p>
+          <p>Humans and Elim...alike suffer. The corruption in the land...makes food scarce.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Well, I'm here to help."</Act>
+    </Selects>
+  </HtmlPage>
+
+   <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You can...venture into the Deathsong Forest. Even in death...new life grows.</p>
+          <p> </p>
+          <p>Find...[%dic:STR_DIC_I_QUEST_1573a]s growing from old trees. They will feed...the Humans.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Five...[%dic:STR_DIC_I_QUEST_1573a]s will feed them...a while longer. </p>
+          <p> </p>
+          <p>Please...bring them...to me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Take care, noble Elim."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You said...you would help.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I meant later."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>If I had...fruit to give...I would give it to the...Humans.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Hopefully you won't need to."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_ok">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You must wash the corruption...from their skin. Cleanse them in the waters...that flow from the pure heart of Arbolu.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Consider it done."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_fail">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Without the mushrooms...I may indeed need to.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll get them."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did you wash...the mushroom...clean?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Clean as a whistle."</Act>
+    </Selects>
+  </HtmlPage>
+  
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Humans...shall eat well tonight. But tomorrow...who knows?</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect 5 [%dic:STR_DIC_I_QUEST_1573a]s and take them to [%dic:STR_DIC_N_Tree_Move_Terba].</font></p>[%collectitem]</step>
+               <step><p visible="[%3]"><font color="[%4]">Purify the [%dic:STR_DIC_I_QUEST_1573a] in the [%dic:STR_DIC_I_start_spring].</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Take the purified mushroom to [%dic:STR_DIC_N_Tree_Move_Terba].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Collect mushrooms from the Deathsong Forest to feed the people of Arbolu's Haven.</font></p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <notifies>
+      <notify progress="2" pos="2" fontsize="16" showframe="true" time="5" color="yellow">The mushroom is cleansed of all corruption.</notify>
+    </notifies>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Terba, an Elim, wanted to make sure the Humans in Arbolu's Haven stayed fed. You brought mushrooms from the Deathsong Forest to him.</p>
+          <p> </p>
+          <p>He had you clean them of contamination in the Genesis Spring before he fed them to anyone.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

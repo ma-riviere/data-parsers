@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Tanar is such a fool sometimes, even if his heart is in the right place.</p>
+          <p> </p>
+          <p>I told him that I was planning to go to the Dragonrest to pick up some bone specimens, and he was furious. He kept telling me how dangerous it was, and then last night he went himself!</p>
+          <p> </p>
+          <p>He said it was to protect me, and honestly, he came back with plenty of bones...but he was also half dead. If I'd gone myself, I would have returned safely.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Siblings can be such a pain."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Tell me about it, [%username]. Do you have any brothers or sisters? I just can't imagine anyone else being as stubborn as Tanar....</p>
+          <p> </p>
+          <p>In any case, Tanar's still my brother, and it was hard to watch him suffering after he risked his life for me. But I do need to keep collecting bones, and I don't want this to happen again.</p>
+          <p> </p>
+          <p>Would you mind venturing to the Dragonrest and dispatching some of the creatures there so that it's safer?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thanks, [%username]. This isn't about avenging my brother at all...more about keeping him from hurting himself. </p>
+          <p> </p>
+          <p>If you could kill the [%dic:STR_DIC_M_DF4_Bonedrake_DR_54_An]s that surround the bone piles, that would be a big help. </p>
+          <p> </p>
+          <p>And...don't tell Tanar about this. If he knows you're doing this for me, he'll try to do it himself. I don't want to think what would happen if he actually tried to fight an Ancient Acheron Drake, not just run away from it....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"There would be another bone pile."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, forget it, [%username].</p>
+          <p> </p>
+          <p>This is my problem. You shouldn't have to deal with Tanar's foolishness.</p>
+          <p> </p>
+          <p>Take care.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"You too."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's hard to classify all these bones that Tanar brought back. I have no idea if they're from the same pile, multiple piles, or what other bones were nearby. I think he just ran in there and scooped up whatever he could before fleeing....</p>
+          <p> </p>
+          <p>Oh well, at least he brought them back.</p>
+          <p> </p>
+          <p>What about you, [%username]? Did you have any luck slaying the Ancient Acheron Drakes?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"They're dead."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Wow, you killed that many? Thanks, [%username]. Tanar thanks you too...even if he doesn't know it.</p>
+          <p> </p>
+          <p>I'm sure he'll sneak back in there at some point when I let slip that I need more bones. At least next time he'll come back in one piece.</p>
+          <p> </p>
+          <p>Here, take this as a token of my gratitude.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Kill the [%dic:STR_DIC_M_DF4_Bonedrake_DR_54_An]s in the Dragonrest ([%2]/15)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_N_Itar].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Kill the Ancient Acheron Drakes in the Dragonrest for Itar.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Itar said his older brother Tanar went to the Dragonrest to collect bone specimens and returned hurt after getting mauled by Ancient Acheron Drakes.</p>
+          <p> </p>
+          <p>To ensure Tanar isn't hurt again, you disposed of all the Ancient Acheron Drakes in the area. When you returned, Itar he thanked you for your help.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

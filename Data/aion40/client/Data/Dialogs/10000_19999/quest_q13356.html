@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p> - 긴급 지령서 - </p>
+          <p></p>
+          <p> 1. 발신 : 카탈람 파견대, [%dic:STR_DIC_W_LDF5b_D1_v16]의 [%dic:STR_DIC_N_LDF5_Village_Guard16_L]</p>
+          <p></p>
+          <p> 2. 수신 : [%username]</p>
+          <p></p>
+          <p> 3. 명령 : 남부 카탈람 [%dic:STR_DIC_W_LDF5b_SZ_D1_1]에 침투한 마족 1명을 처치할 것.</p>
+          <p></p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">의뢰를 수행한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+   <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>파견대에서 제때에 연락을 드린 것 같군요.</p>
+          <p> </p>
+          <p>치열한 전투가 벌어지는 지역이라 저희만으로 부족하여 지원 요청을 드린 것입니다.</p>
+          <p> </p>
+          <p>물론 저희에게 [%username] 님같은 유능한 데바님이 계시니 마족을 치입을 무서워 할 필요는 없을 것 같군요.</p>
+          <p> </p>
+          <p>침입자의 처리는 잘 마무리되었지요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>역시 [%username] 님에게서는 언제나 좋은 소식만 듣게 되는군요.</p>
+          <p> </p>
+          <p>이 곳 바센 분지 방어전에 큰 도움이 되었습니다.</p>
+          <p> </p>
+          <p>다음 번에도 잘 부탁드립니다.</p>
+          <p> </p>
+          <p></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">남부 카탈람 [%dic:STR_DIC_W_LDF5b_SZ_D1_1]에 침투한 마족을 처치하라([%2]/1)</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_N_LDF5_Village_Guard16_L]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">긴급 지령: 남부 카탈람 바센 분지의 바센 수원지에 침투한 마족을 처치하고 킬론에게 보고하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>마족이 남부 카탈람 바센 분지의 바센 수원지를 노리고 침투해왔다.</p>
+          <p> </p>
+          <p>침투한 마족들을 소탕하고 킬론에게 보고하였다.</p>
+          <p> </p>
+          <p></p>
+          <p> </p>
+          <p></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

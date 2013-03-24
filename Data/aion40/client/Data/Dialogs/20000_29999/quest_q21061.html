@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(두루마리에 빛나는 글자가 떠올랐다.)</p>
+          <p> </p>
+          <p>('잉기스온에서 마족의 입지를 확보하라.')</p>
+          <p> </p>
+          <p>('고대 용의 신전과 탐욕의 제단을 지키는 [%dic:STR_DIC_M_LF4_C1_Golem_Named_55_Al]을 처치하라.')</p>
+          <p> </p>
+          <p>('[%dic:STR_DIC_N_Kirhua]가 그대를 도울 것이다.')</p>
+          <p> </p>
+          <p>(빛나는 글자가 사라졌다.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">살펴보기를 그만둔다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>고대 용의 신전에는 무슨 일이십니까?</p>
+          <p> </p>
+          <p>임무를 수행하다가 잠시 들르신 거면 편히 쉬어가십시오.</p>
+          <p> </p>
+          <p>오래 머무를 생각이면 이곳의 일을 돕는 것도 좋을 겁니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">두루마리를 보인다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_M_LF4_C1_Golem_Named_55_Al]을 처치한다고 하셨습니까? 녀석에 대해서 알고는 있는 거겠죠?</p>
+          <p> </p>
+          <p>뭐, 이미 파드마샤까지 토벌한 경험이 있으시니 두말하진 않겠습니다.</p>
+          <p> </p>
+          <p>녀석은 아주 성가십니다. 요새를 점령한 우리 군단도 아직 손을 못 대고 있지요.</p>
+          <p> </p>
+          <p>공격이 강력한데다 단단하고 성가신 소환수를 불러냅니다. 발론을 쓰러뜨리려면 각오를 해 두는 것이 좋겠습니다.</p>
+          <p> </p>
+          <p>녀석은 고대 용의 신전과 탐욕의 제단 주변에 나타나니 잘 살펴보십시오. 그럼, 행운을 빕니다! </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>주변이 소란스럽더군요.</p>
+          <p> </p>
+          <p>밖으로 나가지는 않았지만 벌판에 들리는 사람들의 함성 소리는 들을 수 있었습니다.</p>
+          <p> </p>
+          <p>당신의 포스가 들판을 가로지르는 소리를 들었고, 그대들이 돌아온 것 역시 알 수 있었습니다.</p>
+          <p> </p>
+          <p>무사히 돌아온 것을 보니 [%dic:STR_DIC_M_LF4_C1_Golem_Named_55_Al]은 처치한 겁니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 말한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>역시 성공했군요!</p>
+          <p> </p>
+          <p>마르쿠탄 주신의 명 때문이 아니라, 순수하게 당신에게 감탄했습니다.</p>
+          <p> </p>
+          <p>우리 운명의 천칭조차도 버거워했던 일을 당신 덕분에 쉽게 이룰 수 있었군요. 당신은 큰일을 해낸 겁니다.</p>
+          <p> </p>
+          <p>이로써 잉기스온에서 마족의 입지는 더욱 강해질 겁니다. 모두 당신의 공이죠!</p>
+          <p> </p>
+          <p>하지만 마르쿠탄 주신의 명은 이게 끝이 아닐 겁니다. 두루마리를 다시 살펴 보십시오.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_Kirhua]와 대화하라</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_M_LF4_C1_Golem_Named_55_Al]을 처치하라[%5]</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">[%dic:STR_DIC_N_Kirhua]에게 보고하라</font></p></step>          
+    </steps>
+          <p><font font_xml="quest_summary">빛나는 두루마리에 새로운 지령이 내려왔다. 키르후아에게 가 수호자 발론을 처치하기 위한 조언을 듣자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>빛나는 두루마리는 키르후아의 도움을 받아 잉기스온의 수호자 발론을 처치하라고 명했다.</p>
+          <p> </p>
+          <p>일을 완수한 후 키르후아에 돌아가자 감탄하며 다음 임무를 행하라고 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(The pamphlet claims anyone who wants to become a Daeva, can do so.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I bet Aegir will want to see this."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What's wrong, [%username]? By the look on your face, it must be serious.</p>
+          <p> </p>
+          <p>All right, let me have it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="PLAYEMOTION_surprise;HACTION_SELECT2_1">"I found this pamphlet."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What? What are they claiming? Anyone can become a Daeva... utter nonsense! Impossible...</p>
+          <p> </p>
+          <p>But if it's true...there's no time to waste. Head to Pandaemonium right now and deliver this pamphlet to [%dic:STR_DIC_N_Kushar]. He's the expert on Lepharist Revolutionaries.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"On my way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What brings you to this dark corner of the library?</p>
+          <p> </p>
+          <p>Have you come to get information about the Lepharist Revolutionaries?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I might have information for you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What? They claim to turn Humans into Daevas?</p>
+          <p> </p>
+          <p>We must find out if this is true! I know people in the Shadow Court and Archon Headquarters who might get to the bottom of this.</p>
+          <p> </p>
+          <p>It may just be a lie to swell their numbers. Thank you for bringing this to me. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Bring the pamphlet to [%dic:STR_DIC_N_Aegir].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Deliver the pamphlet to [%dic:STR_DIC_N_Kushar] in Pandaemonium.</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">The pamphlet you found is suspicious. Show it to the Brigade General.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The pamphlet you found said that anyone who wanted to could become a Daeva.</p>
+          <p> </p>
+          <p>You showed the pamphlet to the Brigade General and an expert on the Lepharist Revolutionaries. The expert said that he would report it to the Shadow Court and Archon Headquarters for investigation.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

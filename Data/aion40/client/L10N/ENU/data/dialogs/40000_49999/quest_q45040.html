@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Field Warden:</p>
+          <p> </p>
+          <p>A recent disruption of our supply chain has forced the Field Wardens to dip into our food stocks. While we sort out this minor issue, we ask that all Wardens contribute by gathering food and contributing the excess to the common cause. We must be prepared!</p>
+          <p> </p>
+          <p>In particular, quantities of [%dic:STR_DIC_G_QUEST_45040_a], [%dic:STR_DIC_G_QUEST_45040_b], and [%dic:STR_DIC_G_QUEST_45040_c] are in high demand, as these foodstuffs can be stored for a lengthy period of time without spoiling.</p>
+          <p> </p>
+          <p>Any and all contributions can be brought to the [%dic:STR_DIC_E_45014] for cataloguing and redistribution.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Now I'm hungry...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Daevas may not be particularly troubled by lack of food, but an extended fast deteriorates even THEIR combat efficiency. Sad to say, we could very well be facing such a situation soon.</p>
+          <p> </p>
+          <p>I don't really know how our supplies got so low without anyone noticing. I suppose what matters is that we do something about it. Now.</p>
+          <p> </p>
+          <p>I was told the mission to get provisions was under way, but haven't seen a soul bring anything yet. Are you on the job?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"About that..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Really? You have nothing to show, Field Warden? We don't ask much of you--just a single task each day.</p>
+          <p> </p>
+          <p>Have you forgotten your obligation to the other Field Wardens? Or did the task just slip your mind?</p>
+          <p> </p>
+          <p>Maybe you have more important things to do....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I was getting to it...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+        <p>Ah, excellent, [%username]. These ingredients rarely go bad--I've seen them last for months and months. They're quite popular on the battlefield for just that reason.</p>
+        <p> </p>
+        <p>Of course, when there's a battle brewing, they rarely last as long as they should, so they're most valuable when they're least needed. Hmmm...there's a lesson in that, somewhere.</p>
+        <p> </p>
+        <p>But enough of that. Here, please take this token for your time.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect [%dic:STR_DIC_G_QUEST_45040_a], [%dic:STR_DIC_G_QUEST_45040_b], and [%dic:STR_DIC_G_QUEST_45040_c], and take them to [%dic:STR_DIC_N_Alaum].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">A letter has arrived from the Field Wardens. Follow its instructions.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>A letter from the Field Wardens states that food supplies are low, and must be replenished. Your assistance is required in this effort.</p>
+          <p> </p>
+          <p>You collected food supplies and brought them to the Brusthonin Field Agent, who rewarded you for your time.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

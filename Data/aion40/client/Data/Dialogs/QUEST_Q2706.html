@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이번 임무가 당분간 내가 주는 마지막 임무가 될 거요. 그동안 수고해 줘서 정말 고맙소.</p>
+          <p> </p>
+          <p>마지막 임무이니만큼 지금까지 수행한 것보다 어려운 임무라오.</p>
+          <p> </p>
+          <p>그래도 [%username]의 실력이라면 문제없이 수행할 거라고 믿소.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">고개를 끄덕인다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>임무가 점점 더 어려워져서 미안한 마음이 드는구려. 이번에는 상대할 것은 [%dic:STR_DIC_E_Lgrade5]이오.</p>
+          <p> </p>
+          <p>지금까지 상대했던 천족들에 비하면 전투 능력이 훨씬 뛰어날 거요.</p>
+          <p> </p>
+          <p>하지만 그대는 놈들보다 훨씬 뛰어난 능력을 지녔으니 문제없이 처치할 수 있을 거요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그럼 마족의 승리를 가로막는 [%dic:STR_DIC_E_Lgrade5]을 보이는 대로 처치해 주시오.</p>
+          <p> </p>
+          <p>놈들을 처치할 때마다 우리 마족의 사기가 오를 거요.</p>
+          <p> </p>
+          <p>참, 처치할 놈들은 [%username]%과 실력이 엇비슷해야 하오. 실력이 너무 떨어지는 놈들은 처치해 봤자 아무 소용이 없으니까. </p>
+          <p> </p>
+          <p>그럼 무사히 놈들을 처치하고 돌아오길 빌겠소.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그동안의 전투에 지친 모양이구려.</p>
+          <p> </p>
+          <p>쉴 새 없이 달려왔으니 그럴 때도 된 것 같소.</p>
+          <p> </p>
+          <p>하지만 조금 쉬고 나면 다시 손이 근질근질해질 거요. </p>
+          <p> </p>
+          <p>그때 다시 돌아와서 임무를 수행해 주시오. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>무사히 돌아왔구려, [%username].</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_E_Lgrade5]은 모두 처치했소? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">전투 결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이번에도 훌륭하게 잘 수행해 주었구려.</p>
+          <p> </p>
+          <p>그동안 임무를 열심히 수행해 줘서 정말 고맙소, [%username].</p>
+          <p> </p>
+          <p>그대 덕분에 우리 군단병들이 임무를 수행하는데 많은 도움을 받았소.</p>
+          <p> </p>
+          <p>이건 그동안 성실하게 임무를 수행해 준 보답이오.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_E_Lgrade5]과 전투하여 승리하라([%2]/10)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Lasanya]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">어비스 전장에서 마족의 승리를 위해 천군 5급병과 싸워 이겨야겠다.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>라사냐는 마지막 임무라면서 천군 5급병을 처치하라고 했다.</p>
+          <p> </p>
+          <p>명령대로 전장을 돌며 천군 5급병을 처치하고 돌아가자 그동안 훌륭하게 임무를 수행해 줬다면서 고마워했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

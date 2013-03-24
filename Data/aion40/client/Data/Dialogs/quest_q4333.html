@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q4333</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>미입력</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>잠시 제 얘기 좀 들어주시겠어요?</p>
+          <p> </p>
+          <p>일분일초도 아까운 이 마당에 자꾸 아궁이의 불씨가 꺼져버리네요.</p>
+          <p> </p>
+          <p>칸나비스 잎을 쪄서 팔아야 겨우 한 달 생활비가 나오는데 이래서는 쫄쫄 굶게 생겼지 뭐예요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>살릭스 나무를 장작으로 쓰면 불이 잘 안 꺼지지만 그러기엔 너무 비싸서 말이에요.</p>
+          <p> </p>
+          <p>그래서 말인데요, 데바님.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_FireFungyRe2D_34_An]를 잡아 놈의 심장을 가져다 주지 않겠어요?</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_I_QUEST_4333A]이 있으면 불씨가 삼일 밤낮으로도 꺼지지 않아요. 몇 개만 있어도 아주 좋을 텐데 말이죠.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>고마워요, 데바님.</p>
+          <p> </p>
+          <p>녀석들은 [%dic:STR_DIC_W_DF2_SUB_C4] 주변에 있어요.</p>
+          <p> </p>
+          <p>뜨거운 녀석들이니 조심하셔야 해요.</p>
+          <p> </p>
+          <p>그럼 기다릴게요. 서둘러 주세요. 불씨가 곧 꺼질 것 같아요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그렇죠...</p>
+          <p> </p>
+          <p>이렇게 보잘 것 부탁을 데바님이 들어줄 시간은 없으시겠죠...</p>
+          <p> </p>
+          <p>괜찮아요... 이번 달은 하루에 한 끼만 먹으면 되니까요...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>어머! 돌아오셨어요?</p>
+          <p> </p>
+          <p>지금 곧 불씨가 꺼질 것 같아요. </p>
+          <p> </p>
+          <p>[%dic:STR_DIC_I_QUEST_4333A]을 어서 저에게 주세요. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">화염 펑기의 심장을 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>어쩌면 좋죠?</p>
+          <p> </p>
+          <p>건네 주신 것으로는 불충분해요.</p>
+          <p> </p>
+          <p>큰일이군요. 시간이 별로 없네요. 서둘러 주세요!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>역시 화염 펑기의 심장이네요!</p>
+          <p> </p>
+          <p>위험한 지역까지 가서 구하시느라 얼마나 힘이 드셨어요?</p>
+          <p> </p>
+          <p>데바님, 덕분에 앞으로 몇 달간은 걱정 없겠네요.</p>
+          <p> </p>
+          <p>정말 감사합니다. 별것 아니지만 제 마음이니 받아 주세요.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_I_QUEST_4333A]을 모아 [%dic:STR_DIC_N_Dezaren]에게 가져가라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">드자렌이 아궁이의 불씨를 꺼트리지 않도록 화염 펑기의 심장을 구해다 주자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>드자렌은 칸나비스 잎을 쪄 생계를 꾸리는데 장작이 부족해서 아궁이의 불씨가 곧 꺼질 것 같다고 걱정했다.</p>
+          <p> </p>
+          <p>화염 펑기의 심장이 있으면 불씨를 꺼트리지 않을 수 있다며 구해다 줄 것을 부탁했다. 그래서 비행선 추락지로 가서 화염 펑기를 처치하고 심장을 가져다 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

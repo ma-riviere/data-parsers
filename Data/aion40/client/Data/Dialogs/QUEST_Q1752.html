@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q1752</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+       <p>저기, [%username] 지금 다른 일이 있나요?</p>
+       <p> </p>
+       <p>급한 일이 없다면 당분간 날 좀 도와줬으면 좋겠는데.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">무슨 일인지 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_M_Ab1_1141_XipetoB_28_An]%와 [%dic:STR_DIC_M_Ab1_1141_AgrintB_29_An]%을 좀 처치해 줘요. 저놈들 때문에 연구 표본을 구하기가 힘들어 그래요.</p>
+          <p> </p> 
+          <p>한두 마리라면 내가 어찌해 볼 텐데 워낙 수가 많아서 힘드네요.</p>  
+          <p> </p> 
+          <p>연구 표본을 구해다 준 실력이라면 저놈들 정도는 식은 죽 먹기일 것 같은데.</p>
+          <p> </p>
+          <p>어때요, 한번 도전해 보겠어요?</p>     
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>역시! 허락할 줄 알았어요.</p>
+          <p> </p>
+          <p>그럼 바로 [%dic:STR_DIC_M_Ab1_1141_XipetoB_28_An]%와 [%dic:STR_DIC_M_Ab1_1141_AgrintB_29_An]%을 처치해 줘요.</p>
+          <p> </p>
+          <p>각각 3마리, 7마리 정도 처치해 주시면 큰 도움이 되겠어요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아, 모처럼 실력 있는 사람을 만났다고 좋아했건만...</p>
+          <p> </p>
+          <p>혹시 내가 처음에 무례하게 굴어서 그런 건가요?</p>
+         <p> </p>
+         <p>그렇다면 정중히 사과할 테니 생각을 바꿔 주세요.</p>
+         <p> </p>
+         <p>도와주면 적당히 사례도 할게요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이번에도 눈 깜짝할 사이에 다녀오셨군요.</p>  
+         <p> </p>
+         <p>메마른 뿌리 정찰수와 괴성의 나무 감시자는 모두 처치했나요?</p>       
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아, 정말 고마워요.</p>
+          <p> </p>          
+          <p>덕분에 연구를 하기가 훨씬 수월해지겠네요.</p>   
+          <p> </p>   
+          <p>[%username] 님 덕분에 뿌리 정찰수와 나무 감시자의 수가 많이 줄긴 했지만 한 번으로 다 없애기는 힘들 테니 앞으로도 계속 도와줬으면 좋겠어요. </p>
+          <p> </p>  
+          <p>물론 그때마다 보답할게요. </p>               
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">뿌리 정찰수와 나무 감시자를 처치하라</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Ab1_1141_XipetoB_28_An]([%2]/3)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Ab1_1141_AgrintB_29_An]([%5]/7)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Nemea]%와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">네메아는 뿌리 정찰수와 나무 감시자 때문에 연구에 지장이 많다고 한다. 네메아가 안심하고 연구할 수 있게 메마른 뿌리 정찰수와 괴성의 나무 감시자를 처치해 주자.</p>
+          <p></font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>네메아는 뿌리 정찰수와 나무 감시자가 계속 연구를 방해하고 있다며 도와준 김에 메마른 뿌리 정찰수와 괴성의 나무 감시자를 처리해 달라고 부탁했다.</p>
+          <p> </p> 
+          <p>부탁받은 대로 뿌리 정찰수와 나무 감시자를 소탕하고 돌아가자 수고했다며 고마워했다.</p> 
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Parser" default="dist" basedir=".">
+	<description>
+		Parser Build File
+	</description>
+	<property name="jre" location="${java.home}/lib"/>
+	<property name="src" location="src"/>
+	<property name="libs" location="libs"/>
+	<property name="libs.commons" location="${libs}/commons"/>
+	<property name="libs.client" location="${libs}/client"/>
+	<property name="libs.server" location="${libs}/server"/>
+	<property name="libs.parser" location="${libs}/parser"/>
+	<property name="build" location="build"/>
+	<property name="build.classes" location="${build}/classes"/>
+	<property name="build.dist" location="${build}/dist"/>
+	<property name="build.dist.parser" location="${build.dist}/Parser"/>
+	<path id="classpath">
+		<fileset dir="${libs}">
+			<include name="*.jar"/>
+		</fileset>
+		<fileset dir="${libs.commons}">
+			<include name="*.jar"/>
+		</fileset>
+		<fileset dir="${libs.client}">
+			<include name="*.jar"/>
+		</fileset>
+		<fileset dir="${libs.server}">
+			<include name="*.jar"/>
+		</fileset>
+		<fileset dir="${libs.parser}">
+			<include name="*.jar"/>
+		</fileset>
+	</path>
+	<target name="clean" description="Removes build directory.">
+		<delete dir="${build}"/>
+	</target>
+	<target name="init" description="Create the output directories.">
+		<mkdir dir="${build}"/>
+		<mkdir dir="${build.classes}"/>
+	</target>
+	<target name="compile" depends="init" description="Compile the source.">
+		<javac destdir="${build.classes}" optimize="on" debug="on" nowarn="off" source="1.7" target="1.7" includeantruntime="false">
+			<src path="${src}"/>
+			<classpath refid="classpath"/>
+		</javac>
+	</target>
+	<target name="jar" depends="compile" description="Create the jar file">
+		<jar destfile="${build}/Parser.jar">
+			<fileset dir="${build.classes}"/>
+			<!--<manifest>
+				<attribute name="Main-Class" value="parser.Parser"/>
+			</manifest>-->
+		</jar>
+	</target>
+	<target name="dist" depends="jar">
+		<mkdir dir="${build.dist}"/>
+		<mkdir dir="${build.dist.parser}"/>
+		<mkdir dir="${build.dist.parser}/libs"/>
+		<copy todir="${build.dist.parser}">
+			<fileset dir="${build}">
+				<include name="Parser.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="${build.dist.parser}/libs">
+			<fileset dir="${libs}">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${libs.commons}">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${libs.client}">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${libs.server}">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${libs.parser}">
+				<include name="*.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="${build.dist.parser}">
+			<fileset dir="dist">
+				<include name="*.*"/>
+			</fileset>
+		</copy>
+		<zip destfile="${build}/Parser.zip" basedir="${build.dist}"/>
+	</target>
+</project>

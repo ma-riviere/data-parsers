@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah [%username]! Asmodae is in your debt. I was able to conduct my research with those Lava Barghests out of the way, but the stubborn beasts are back.</p>
+          <p> </p>
+          <p>We're on the verge of a breakthrough, and we just need to find one more important clue to solve this puzzle. If only I could discover the missing piece...it's driving me mad.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What's the missing piece?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm not sure...I have an idea, but I can't mention it. I've been looking all over this area for clues, and....</p>
+          <p> </p>
+          <p>Come closer, [%username]. Keep this to yourself, but this investigation is being closely monitored by Lord Azphel himself.</p>
+          <p> </p>
+          <p>All of Asmodae will be in trouble if the [%dic:STR_DIC_M_HellhoundD_28_An]s ruin this investigation. Can you give me a hand? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The [%dic:STR_DIC_M_HellhoundD_28_An]s roam this entire area. The stupid beasts dig up the ground, and eliminate all traces of the clues I am seeking.</p>
+          <p> </p>
+          <p>If you can slay 15, I'll be able to continue my research in peace.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I will slay them."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Come closer, [%username]....</p>
+          <p> </p>
+          <p>You surely understand that Lord Azphel's involvement makes this a matter of the utmost importance. This is not just for me, this is for all of Asmodae. Please return if you have time.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll see what I can do."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did you get rid of the [%dic:STR_DIC_M_HellhoundD_28_An]s, [%username]? </p>
+          <p> </p>
+          <p>I'm not allowed to discuss the investigation, but there is nothing of higher importance at the moment.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"The beasts are dead."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent, now I can focus on the investigation. The missing piece of the puzzle should have appeared by n.... Ah, forget what I just said, that's a secret.</p>
+          <p> </p>
+          <p>Take this as a reward, and mention helping me to no one.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get rid of [%dic:STR_DIC_M_HellhoundD_28_An]s([%2]/15).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_N_Utgar].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Kill Lava Barghests so that Utgar can finish his investigation.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Utgar said that Lava Barghests are hindering his investigation. He wanted you to slay the beasts so he could continue his work. </p>
+          <p> </p>
+          <p>You killed the Barghests so that Utgar could work in peace.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>비어 있는 이드겔 큐브를 보셨습니까?</p>
+          <p> </p>
+          <p>이드겔 큐브는 비어 있다고 해도 여전히 위험한 물건입니다.</p>
+          <p> </p>
+          <p>[%username] 님이 [%dic:STR_DIC_W_LDF5b_SZ_B2]에 남아 있는 [%dic:STR_DIC_N_LDF5b_FOBJ_B2_EmptyIdgel]%을 파괴해 주실 수 있겠습니까?</p>
+          <p> </p>
+          <p>조사에 필요한 분량은 이미 챙겨 놓았으니 오염이 더 퍼지는 것이라도 막아야겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>원래 이런 위험한 물건은 사용하고 나서 제대로 수거해 폐기하는 것이 원칙입니다.</p>
+          <p> </p>
+          <p>오염 지역의 상황을 보니 사용한 뒤에 수습할 시간도 없이 급히 버리고 간 것 같군요.</p>
+          <p> </p>
+          <p>이런 위험한 쓰레기들이 버려진 걸 보면 이곳에서 계속 오염이 발생하는 것은 당연한 일이다 싶습니다.</p>
+          <p> </p>
+          <p>비어 있는 이드겔 큐브 처리 작업은 잘 진행되고 있습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>수고하셨습니다.</p>
+          <p> </p>
+          <p>[%username] 님 덕분에 오염이 번지는 것은 막을 수 있게 됐습니다.</p>
+          <p> </p>
+          <p>더 이상 이상한 일이 일어나지 않았으면 좋겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">오염 지역에 버려진 [%dic:STR_DIC_N_LDF5b_FOBJ_B2_EmptyIdgel]%을 파괴하라([%2]/6)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_LDF5b_Sulis_E]%와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">오염 지역 인근에 버려진 비어 있는 이드겔 큐브를 파괴하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>술리스의 부탁으로 오염 지역 인근에 버려진 이드겔 큐브를 파괴해 오염이 번지를 것을 막았다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

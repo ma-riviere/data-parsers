@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>To survive in the desert, all must depend on one another.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Yes?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Memnes, the Guardian, has always helped us.</p>
+          <p> </p>
+          <p>Now I hear he needs help in return, but we have nothing to offer.</p>
+          <p> </p>
+          <p>Would you help [%dic:STR_DIC_N_Memnes] on our behalf?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you, Daeva. Your kindness will not be forgotten.</p>
+          <p> </p>
+          <p>Go to the Eltnen Fortress and meet [%dic:STR_DIC_N_Memnes].</p>
+          <p> </p>
+          <p>Please do what he asks, no matter how difficult. He has never asked before, and has helped us greatly.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I shall do as he asks."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Perhaps you do not see the importance of helping others.</p>
+          <p> </p>
+          <p>The land you grew up in must have been rich and fertile. I can see how it would make you soft.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"That's not it at all."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hello! [%username], right?.</p>
+          <p> </p>
+          <p>What business have you with me?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">"Demro sent me to aid you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>When I asked for help, I wasn't sure Demro understood my request. But here you are. You are truly honorable, to help out like this.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_N_Coeus], a weapon researcher from Sanctum, asked me to find someone familiar with Eltnen.</p>
+          <p> </p>
+          <p>Why? I cannot say. You will do nicely, though, so please go to him.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"I do this for Demro."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select3">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>A visitor? I haven't the time to give advice for free.</p>
+          <p> </p>
+          <p>My research will not wait.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT3_1">"Memnes sent me."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select3_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, Memnes sent you, did he? This changes things.</p>
+          <p> </p>
+          <p>Sapiens are my field of study. Some have surprisingly sophisticated weapons. </p>
+          <p> </p>
+          <p>I need someone familiar with the Eltnen tribes to bring me Kerubian weapons.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO2">"...I'll tell Memnes."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>So, what did Coeus say? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"He wants Kerubian weapons."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What? Why didn't he....</p>
+          <p> </p>
+          <p>There was no point in sending you to far-off Sanctum; he could have just told me what he desired.</p>
+          <p> </p>
+          <p>I'm sorry to have wasted your time.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk with [%dic:STR_DIC_N_Memnes].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Go to Sanctum and talk with [%dic:STR_DIC_N_Coeus].</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Talk with [%dic:STR_DIC_N_Memnes].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Demro wants you to help out Memnes.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Demro was much indebted to Sentinel Memnes in the Eltnen Fortress, and wanted to help him with his work.</p>
+          <p> </p>
+          <p>When you went to meet Memnes, he told you to go to see weapon researcher Coeus in Sanctum because it was Coeus, not Memnes, who needed help.</p>
+          <p> </p>
+          <p>But what Coeus wanted was Kerubian weapons. Coeus asked you to procure some of them.</p>
+          <p> </p>
+          <p>You returned to Memnes and conveyed Coeus' message.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

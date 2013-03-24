@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Come here, young Daeva.</p>
+          <p> </p>
+          <p>I wish to speak to you about a poison seeping through our society. A danger that threatens everything we hold dear.</p>
+          <p> </p>
+          <p>I speak, of course, of the Lepharist Revolutionaries.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Who?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>      
+          <p>Ugh, child! "Who" indeed!</p>    
+          <p> </p>
+          <p>The "revolutionaries" that would destroy us! So ethereal that when you catch a glimpse of them and reach into the darkness, you return with little more than shadows and dust.</p>
+          <p> </p>
+          <p>I need help, [%userclass].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage> 
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>My thanks.</p>
+          <p> </p>
+          <p>The Lepharist Revolutionaries infest the Verteron region. They seem to base themselves at [%dic:STR_DIC_FLA24], so it would be wise to start there.</p>
+          <p> </p>   
+          <p>Defeat them and return with any [%dic:STR_DIC_I_junk_v_s_09d]s you find. And keep this between us.</p>  
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I will."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I see....</p>
+          <p> </p>
+          <p>Apathy has infected you as well.</p>
+          <p> </p>
+          <p>Be on your way, then. If you happen across our corpses later, maybe you'd be kind enough to toss them in the lake?</p>  
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Someone will help, I'm sure...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Wait a minute, [%userclass]. I just need to...to...</p>
+          <p> </p>
+          <p>Oh, you! I was trying to remember where I had last seen your face. You were the one I sent out to uproot the Lepharists!</p> 
+          <p> </p> 
+          <p>Did you bring the crest I asked for? Did you find out anything about their intentions?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Well...I have the crest you wanted."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What? Is this a joke? Are you in league with them?</p>
+          <p> </p>
+          <p>Oh, forgive me, [%username]. I'm just so tense....</p>
+          <p> </p>
+          <p>Please, you must get the crest. It's so important.</p> 
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I apologize...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, yes! This is what I was hoping to see...hoping to feel in my hands....</p>
+          <p> </p>
+          <p>This is a genuine [%dic:STR_DIC_I_junk_v_s_09d]. I have waited so long to smell Lepharist blood on one of these.</p> 
+          <p> </p>
+          <p>If you ever wish to do more for this city, then see me again. You will always be welcome here, friend.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Defeat the Lepharist Revolutionaries at Belbua's Farm, then collect evidence of your actions and take it to [%dic:STR_DIC_N_Xenophon].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Xenophon believes that Sanctum and its inhabitants must root out the Lepharist Revolutionaries before they expand their power. Defeat the Lepharists occupying [%dic:STR_DIC_FLA24] and bring the evidence of your deed to him.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Xenophon believes that the Lepharists may be more dangerous than the Krall. He sought people to help root them out before they could expand their sphere of influence.</p>
+          <p> </p>
+          <p>You defeated the Lepharists occupying Belbua's Farm, acquired a Lepharist Crest, and took it to Xenophon.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

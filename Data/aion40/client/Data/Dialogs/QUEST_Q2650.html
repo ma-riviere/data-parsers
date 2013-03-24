@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아는지 모르겠지만 용족도 훈련을 받고 전투에 투입됩니다.</p>
+          <p> </p>
+          <p>그들을 지칭할 때 앞에 붙이는 숫자도 군단을 의미하는 것으로 꽤 체계적인 조직을 가지고 있지요.</p>
+          <p> </p>
+          <p>그래서 겉보기엔 다 비슷비슷해 보여도 드라코뉴트 병사들도 전문적인 분야가 있습니다.</p>
+          <p> </p>
+          <p>자세히 살펴보면 칼을 든 놈, 활을 든 놈, 철퇴를 든 놈이 따로 있고 방어구도 조금씩 다릅니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>살성이 치고 빠지기에 능한 것처럼 놈들도 그런 일에 특화된 드라코뉴트가 있습니다.</p>
+          <p> </p>
+          <p>그놈들을 미리 처치해 놔야 바카르마 군단과 일전을 벌일 때 우리 측에 부담이 없을 겁니다.</p>
+          <p> </p>
+          <p>게다가 [%username] 님에게도 좋은 훈련이 될 겁니다. 용족이 어떤 식으로 전투를 하는지 파악할 수 있을 테니까요.</p>
+          <p> </p>
+          <p>어떻습니까? 놈들을 처치하는 임무를 수행해 보시겠습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>서리눈썹 전초기지로 가서 암살 임무를 맡은 제47 부대의 드라코뉴트를 처치해 주십시오.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_Atk_LizardasD_43_An_Tune], [%dic:STR_DIC_M_AeA_LizardAsD_43_An_tune], [%dic:STR_DIC_M_AnA_LizardAsD_43_An_tune]%을 처치하면 됩니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아직은 적진으로 갈 준비가 안 된 모양이군요.</p>
+          <p> </p>
+          <p>괜찮습니다. 능력이 안 되는 임무를 무모하게 맡는 것보다 오히려 나으니까요.</p>
+          <p> </p>
+          <p>하지만 실력을 조금 더 갈고닦아 자신이 생기면 다시 오십시오.</p>
+          <p> </p>
+          <p>언젠가 한번쯤은 수행해야 할 임무니까요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>돌아오셨군요, [%username] 님.</p>
+          <p> </p>
+          <p>서리눈썹 전초기지는 어떻던가요? 드라코뉴트와 드레이크가 득시글거리죠?</p>
+          <p> </p>
+          <p>제가 부탁한 대로 암살 임무를 맡은 제47 드라코뉴트는 처치했습니까? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>수고하셨습니다. 생각했던 것보다 훨씬 빠른 시간에 훌륭하게 처리하셨네요.</p>
+          <p> </p>
+          <p>이 정도 실력이라면 어떤 임무를 맡겨도 성공적으로 수행하겠군요.</p>
+          <p> </p>
+          <p>벨루스란에서 용족을 몰아내는 데 큰 도움이 될 것 같습니다.</p>
+          <p> </p>
+          <p>앞으로도 잘 부탁드립니다. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">암살 임무를 맡은 제47 드라코뉴트를 처치하라</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_AeA_LizardAsD_43_An_tune]([%2]/2)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_AnA_LizardAsD_43_An_tune]([%5]/4)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Atk_LizardasD_43_An_Tune]([%8]/4)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Betoni]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">베토니는 암살 임무를 맡은 드라코뉴트를 처치하면 용족의 전투 방식도 파악할 수 있고 나중에 바카르마 군단과 일전을 벌이는 데 도움이 될 것이라고 했다. 서리눈썹 전초기지로 가서 제47 드라코뉴트를 처치하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>베토니는 용족도 전문적인 전투 분야가 있다면서 암살 임무를 맡은 드라코뉴트를 처치하는 임무를 맡아 보는 게 어떻겠느냐고 했다.</p>
+          <p> </p>
+          <p>놈들을 처치하면 용족의 전투 방식을 파악할 수 있고 나중에 바카르마 군단과 전면전을 벌일 때 암습 병력이 줄어 마족에 도움이 될 것이라고 했다.</p>
+          <p> </p>
+          <p>그래서 서리눈썹 전초기지로 가서 제47 드라코뉴트 강습병, 제47 드라코뉴트 척살병, 제47 드라코뉴트 은신병을 처치했다.</p>
+          <p> </p>
+          <p>보고를 받은 베토니는 이 정도 실력이면 어떤 임무든 맡길 수 있겠다며 앞으로도 잘 부탁한다고 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

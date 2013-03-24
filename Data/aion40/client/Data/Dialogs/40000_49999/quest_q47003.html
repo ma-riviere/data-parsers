@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>수신: [%username]</p>
+          <p>발신: 판데모니움 예비 템페르, [%dic:STR_DIC_N_Titorea] </p>
+          <p>과제: 경비 마법구 이상 확인</p>
+          <p> </p>
+          <p>모르헤임 얼음요새 주위에 배치한 [%dic:STR_DIC_OBJ_Q47003]에 이상이 발견됐습니다.</p>
+          <p>마법구가 제대로 작동하지 않는 이유를 찾아 그 원인을 제거하는 것이 이번 임무입니다.</p>
+          <p>마법구는 혼자 확인할 수 없으니 반드시 도우미를 찾아서 파티를 맺은 후 함께 임무를 수행하십시오.</p>
+          <p>또 [%dic:STR_DIC_E_Mentor]와 너무 멀리 떨어져 있으면 과제를 수행한 것으로 인정하지 않으니 항상 함께 다니시는 게 좋습니다.</p>
+          <p>마법구의 이상 원인을 제거한 후에는 저에게 돌아와 보고해 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>오셨군요, [%username] 님.</p>
+          <p> </p>
+          <p>모르헤임 경비 마법구는 확인해 보셨습니까?</p>
+          <p> </p>
+          <p>제대로 작동하지 않은 이유가 뭐였습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그랬군요. 슬라임이 마법구의 에너지를 빨아들이고 있었으니 제대로 작동할 리가 없었겠네요.</p>
+          <p> </p>
+          <p>[%username] 님 덕분에 이제는 제대로 작동하겠지요.</p>
+          <p> </p>
+          <p>모르헤임 요새 측에도 도움이 됐겠지만 [%username] 님의 성장에도 이번 경험이 큰 도움이 됐을 거라고 생각합니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_E_Mentor]%와 함께 [%dic:STR_DIC_OBJ_Q47003]의 이상을 제거하라([%2]/5)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Titorea]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">판데모니움 예비 템페르에서 공문이 왔다. 도우미를 찾아 모르헤임 경비 마법구를 확인하고 이상 원인을 제거하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>판데모니움 예비 템페르에서 모르헤임 경비 마법구가 이상하니 원인을 찾아내 제거하라는 공문이 왔다.</p>
+          <p> </p>
+          <p>도우미와 함께 마법구의 상태를 확인한 후 마법구의 에너지를 빨아들이고 있는 슬라임을 처치했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님도 조사 임무에 합류해 주십시오.</p>
+          <p> </p>
+          <p>드레드기온이 왜 추락했을지 밝혀내기 위한 조사입니다.</p>
+          <p> </p>
+          <p>그 커다란 전함이 그냥 추락했을리는 없지 않겠습니까?</p>
+          <p> </p>
+          <p>드레드기온 추락은 이 지역의 변이와도 크게 연관이 있어 중요한 사항입니다.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_W_LDF5a_SensoryArea_Q12829]으로 가서 뭐라도 단서가 될 만한 게 있는지 샅샅이 뒤져봐 주시면 됩니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(심하게 부서져 있는 이드겔 큐브이다.)</p>
+          <p> </p>
+          <p>(복구가 불가능할 정도로 손상되어 있다.)</p>
+          <p> </p>
+          <p>(아무래도 추락한 드레드기온에 실려있던 것 같다.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SET_SUCCEED">살펴보기를 그만둔다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>드레드기온이 추락한 이유를 밝히면 이 지역이 왜 이렇게 변이되었는지도 알 수 있을 겁니다.</p>
+          <p> </p>
+          <p>때문에 상부에서도 가장 큰 관심을 두고 있는 주제이지요.</p>
+          <p> </p>
+          <p>저 역시도 매우 궁금합니다.</p>
+          <p> </p>
+          <p>부탁 드린 조사는 마치셨습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">보고 온 것을 말한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>추락한 드레드기온은 이드겔 큐브를 운반하고 있던 것 같단 말씀이십니까?</p>
+          <p> </p>
+          <p>그게 사실이라면 추락한 이유도 아마 이드겔 큐브와 연관되어 있을 가능성도 있겠습니다.</p>
+          <p> </p>
+          <p>그 말은 용족도 이드겔과 연관되어 있단 얘긴데...</p>
+          <p> </p>
+          <p>위험한 사태가 일어나고 있습니다.</p>
+          <p> </p>
+          <p>아직 확실한 건 아무것도 없으니 입에 섣불리 담을 수가 없군요.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_W_LDF5a_SensoryArea_Q12829]으로 가 주변을 살펴보라</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_E_LDF5a_FOBJ_BrokenIdgel]를 조사하라</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">[%dic:STR_DIC_N_LDF5_Village_Guard06_L]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">드레드기온이 추락한 원인을 밝히기 위해 드레드기온 추락 지점을 샅샅이 조사하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>모린은 드레드기온이 왜 추락했는지 밝혀내기 위한 조사를 부탁했다.</p>
+          <p> </p>
+          <p>조사에 나서자 추락한 드레드기온에 실려있던 것으로 추정되는 부서진 이드겔 큐브를 발견했다.</p>
+          <p> </p>
+          <p>모린에게 보고하자 드레드기온이 이드겔 큐브를 운반중이었던 것 같다며 브리트라 군단도 이드와 연관되어 있을 거라고 말해줬다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

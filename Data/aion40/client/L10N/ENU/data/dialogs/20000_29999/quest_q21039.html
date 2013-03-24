@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Pssst. Hey, [%username], if you have some spare time I've, uh, got a job for you. It'll earn you a Mithril Coin.</p>
+          <p> </p>
+          <p>I need to extract some Aether from some creatures in Balaurea--Strigiks. Heard of them? Quite dangerous, but the same might be said of everything in Gelkmaros, no?</p>
+          <p> </p>
+          <p>Regardless, there are a lot of Strigiks, and the Aether I can extract from them is of very high quality.</p>          
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What's this Aether for?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That's not important. What matters is I need it right away. If you want to earn the coin, head to the Strigik Forest and bring me 50 [%dic:STR_DIC_I_QUEST_21039a]s. That should be enough to get some quality Aether.</p>
+          <p> </p>
+          <p>Oh, also, In order to extract the stuff, you'll need a Disposable Aether Refining Device, which I'd also like to have when you're done. You'll probably have to buy one of those, since mine was...confiscated. But I don't want to talk about that.</p>
+          <p> </p>
+          <p>Are you interested?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Remember, the Strigiks inhabiting the Strigik Forest are quite vicious and tough. I'd suggest taking a few other Daevas with you. I'd go with you myself but I'm...not feeling well.</p>
+          <p> </p>
+          <p>50 [%dic:STR_DIC_I_QUEST_21039a]s! Good luck!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"The Strigiks will need it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hey, if you don't want a Mithril coin, who am I to argue?</p>
+          <p> </p>
+          <p>There are lots of Daevas around who appreciate the value of Aether. I can find someone else to give it to.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Go do it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're back! Did you bring the goods? Remember, I need 50 Strigik Beaks and a Disposable Aether Refining Device.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here's what I have."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Sorry [%username], but I'm not giving you your Mithril coin yet. There's no leeway here--you have to bring me 50 [%dic:STR_DIC_I_QUEST_21039a]s and a [%dic:STR_DIC_I_junk_d_redeem_jewelry_02a]. Otherwise I can't extract enough Aether to...use. For my...project.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good work. The Aether refined from these [%dic:STR_DIC_I_QUEST_21039a]s will go a long way towards...supporting the Asmodian efforts here in Gelkmaros. I'll personally handle this particular extraction.</p>
+          <p> </p>
+          <p>Here's your Mithril Coin. Be sure to visit me again if you want to earn more. Just keep quiet about it, okay?</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Bring 50 [%dic:STR_DIC_I_QUEST_21039a]s and a [%dic:STR_DIC_I_junk_d_redeem_jewelry_02a] to [%dic:STR_DIC_N_Nordin].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">To receive a Mithril Coin, bring 50 Strigik Beaks and a Disposable Aether Refining Device to Nordin.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Nordin asked you to hunt Strigiks in the Strigik Village for their beaks, from which he wishes Aethertap. He also asked you to purchase a Disposable Aether Refining Device.</p>
+          <p> </p>
+          <p>When you brought the beaks and refining device to Nordin, he rewarded you with a Mithril coin.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

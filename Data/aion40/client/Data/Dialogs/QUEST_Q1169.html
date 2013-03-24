@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>사실 마을의 골칫거리는 크랄이 아니라 브라우니입니다.</p>
+          <p> </p>
+          <p>다리 하나 사이라 그런지 툭하면 쳐들어 옵니다. </p> 
+          <p> </p>
+          <p>그나마 제가 자경단장이라 이 정도지 그전에는 놈들의 습격 때문에 일을 할 수 없을 지경이었습니다. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">얘기를 계속 듣는다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+        <p>놈들 중에서도 [%dic:STR_DIC_MLA23]%가 가장 큰 문제입니다. </p>          
+          <p> </p>
+          <p>'번개발'이라는 별명이 붙을 정도로 재빠르고 강한 놈이죠. 게다가 놈을 따르는 브라우니가 많아서 놈이 오면 피해가 이만저만이 아닙니다.</p>
+          <p> </p>
+          <p>얼마 전에도 놈이 마을을 습격해 포구스를 모두 잡아갔습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>투카만 없애면 나머지는 쉽게 처리할 수 있을 텐데...</p>
+          <p> </p>
+          <p>저, 데바님이 놈을 처치해 주시겠습니까?</p>
+          <p> </p>
+          <p>물론 직접 처리할 수도 있지만 절 필요로 하는 데가 워낙 많아서요.</p>     
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>감사합니다. 다른 데바님은 이렇게 작은 마을의 문제는 잘 신경쓰지 않는데 [%username] 님은 다르군요.</p>
+          <p> </p>      
+          <p>[%dic:STR_DIC_MLA23]%은 마을에서 [%dic:STR_DIC_FLA13]으로 가는 길목에서 어슬렁거리고 있을 겁니다.</p>
+          <p> </p>
+          <p>꼭 좀 잡아 주십시오.</p>     
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님도 다른 데바와 똑같군요.</p>
+          <p> </p>
+          <p>알았습니다. 크랄 때문에 바쁠 텐데 가 보십시오. 여기 일은 제가 알아서 처리하겠습니다.</p>   
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>벌써 [%dic:str_dic_mla23] 녀석을 잡은 겁니까?</p>
+          <p> </p>
+          <p>브라우니라도 만만치 않았을텐데요.</p>       
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="PLAYEMOTION_laugh;HACTION_SELECT_QUEST_REWARD">결과를 말한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정말로 투카를 잡았군요!</p>
+          <p> </p>
+          <p>뭐, 제가 처리할 수도 있었지만 데바님이 직접 나서주셨으니 성의를 보여야겠죠.</p>
+          <p> </p>
+          <p>저희 마을에서 감사의 뜻으로 준비한 것입니다. 받아 주십시오.</p> 
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">마을을 습격하는 [%dic:STR_DIC_MLA23]를 처치하라([%2]/1)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_LA24]%와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">자경단장 아볼로스가 브라우니의 우두머리 번개발 투카를 처치해 달라고 한다. 두카키 채굴장으로 가는 길목에 있는 번개발 투카를 처치하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>톨바스 마을의 자경단장인 아볼로스가 번개발 투카 때문에 골치라고 했다.</p>
+          <p> </p>
+          <p>그의 부탁대로 두카키 채굴장으로 가는 길목에 있는 번개발 투카를 처치했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

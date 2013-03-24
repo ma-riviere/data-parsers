@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p> - WANTED - </p>
+          <p> </p>
+          <p> </p>
+          <p> </p>
+          <p> </p>
+          <p> </p>
+          <p> </p>
+          <p> </p>
+          <p> </p>
+          <p> </p>
+          <p> </p>
+          <p>Sinis (aka, "The Black Widow") is wanted for the following crimes:</p>
+          <p> </p>
+          <p> 1. Marriage fraud: She entered into marriages under false pretenses.</p>
+          <p> </p>
+          <p> 2. Homicide: She married and then poisoned four men.</p>
+          <p> </p>
+          <p> 3. Flight from Prosecution: Having been convicted of these crimes and sentenced to death, she escaped from custody.</p>
+          <p> </p>
+          <p>A reward is offered for any information leading to [%dic:STR_DIC_M_CriminalLightWiNamedQ_24_An]'s location and arrest. A further reward is offered for her elimination. A lock of her hair is required as evidence of her demise.</p>
+          <p> </p>
+          <p>Posted by [%dic:STR_DIC_N_Crios], Bounty Hunter</p>
+        </body>
+        </html>
+    </Contents>
+    <Background name="Doc_bg_q3019"/>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"I can catch the Black Widow." </Act>
+      <Act href="HACTION_FINISH_DIALOG">"I'll leave this to pros."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I was never very interested in marriage, but now I'm even less so. Sinis the Black Widow killed four of her husbands to steal their assets. Dreadful, isn't it?</p>
+          <p> </p>
+          <p>She was really meticulous. She flavored her stew with a poisonous mushroom, but not enough to kill right away. She fed it to her husbands every day. They became sick over time and eventually died, but it just looked like they'd been ill, not poisoned.</p>
+          <p> </p>
+          <p>So, what brings you here?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Her hair is proof, right?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_fail">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes, if you have her hair, you can claim the reward. We have ways of making sure it's really hers.</p>
+          <p> </p>
+          <p>If you manage to do it, come here right away.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I will."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Is that her hair? Let me see!</p>
+          <p> </p>
+          <p>Amazing! Do you know how many people have tried to catch her? You've earned this reward.</p>
+          <p> </p>
+          <p>Don't buy any stew, though. Ha!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get rid of [%dic:STR_DIC_M_CriminalLightWiNamedQ_24_An], get the evidence, and take it to [%dic:STR_DIC_N_Crios].</font></p>[%collectitem]</step>        
+    </steps>
+          <p><font font_xml="quest_summary">Get rid of Sinis the Black Widow, cut Sinis's hair, and take it to Crios for a reward.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+        <p>You got rid of Sinis the Black Widow, wanted for homicide of four husbands using poison, and took Sinis's Hair to Crios as evidence for the reward.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

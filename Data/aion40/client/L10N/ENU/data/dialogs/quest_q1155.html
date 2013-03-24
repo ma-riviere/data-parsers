@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I need to ask you a favor, [%username]. But this has to stay between us. Centurion Leto must never know.</p>
+          <p> </p>
+          <p>Do you remember when you brought some supplies over to us? The ones William told you about?</p>
+          <p> </p>
+          <p>Well, they've been stolen. It's been happening more and more lately.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Do you know who's behind it?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, yes. The Dukaki Kobolds. They haven't even tried to cover their tracks.</p>
+          <p> </p>
+          <p>They took odds and ends at first, things they could eat or use. Shiny objects. Now they've broken into the Watch storehouse.</p>          
+          <p> </p>
+          <p>If William knew the weapons he sent have ended up in Kobold hands...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"You need to guard your storehouse better."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I know. I'm having the doors reinforced and I've put a guard in place round the clock, but we're still down an entire delivery's worth of supplies! Someone needs to go to the [%dic:STR_DIC_FLA12] and fetch them back.</p>         
+          <p> </p>
+          <p>Could you do this for us?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you. If the Watch is going to work at all, the members need to feel like they can get things done. </p>
+          <p> </p>
+          <p>If they knew the Kobolds were stealing their supplies and laughing at them, they might be tempted to give up.</p>
+          <p> </p>
+          <p>The Kobolds usually stash their goods in crates. Try searching those, if you see any.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"On my way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, so much for the Tolbas Watch. It was great while it lasted.</p>
+          <p> </p>
+          <p>Maybe if I rally everyone together for one big raid on the mine. We might succeed. But I don't think I could live with myself if there were casualties.</p>
+          <p> </p>
+          <p>Daeva, in the name of mercy, I'm begging you to reconsider.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll think about it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did you find the stolen supplies in the [%dic:STR_DIC_FLA12]?</p>
+          <p> </p>
+          <p>Leto's been asking lots of questions. She's trying to play it down, but I'm sure she suspects something.</p>
+          <p> </p>
+          <p>If she finds out about this, I'm finished.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here, take this."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What happened? Did the sentries at the [%dic:STR_DIC_FLA12] scare you off?</p>
+          <p> </p>
+          <p>I know this is a tough job, but please keep trying!</p>
+          <p> </p>
+          <p>Maybe you could take some friends with you? Strength in numbers, and all?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll head back out."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes, yes...it's all here! All accounted for! I knew you wouldn't let us down!</p>
+          <p> </p>
+          <p>I'll be able to look Centurion Leto in the eye again now.</p>
+          <p> </p>
+          <p>Thank the Five you were able to get these back before the Kobolds could use them. Can you imagine if we'd found one of our men with our own weapons stuck in him?</p>          
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Find the supplies in the [%dic:STR_DIC_FLA12] and bring them to [%dic:STR_DIC_LA24].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">The Dukaki Kobolds have stolen supplies from the village. Go to the Dukaki Mine, find the stolen supplies, and bring them to Abolos.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Dukaki Kobolds were stealing goods from the village, including vital armor and weapons.</p>
+          <p> </p>
+          <p>You went to the Dukaki Mine, retrieved the stolen goods, and brought them back to Abolos, the Watch Leader.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

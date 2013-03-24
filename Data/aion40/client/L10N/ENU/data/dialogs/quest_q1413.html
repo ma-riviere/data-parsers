@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], [%username], [%username]....</p>
+          <p> </p>
+          <p>Your name echoes around these halls unlike any other, you know.</p>
+          <p> </p>
+          <p>Although, you should be prepared. The fact that you were so successful in your previous tasks has only given me reason to test you further than you have been tested thus far.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I am ready, General."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Your mind is ready, perhaps. But your body, still so young and fragile may not stand up to the rigors I am about to send you to. Time will tell, [%userclass]. Time will tell....</p>
+          <p> </p>
+          <p>I want you to infiltrate the Kaidan Krall headquarters.</p>
+          <p> </p>
+          <p>Do you accept this challenge?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Very good. Just remember that I have warned you twice now about the nature of this task.</p>
+          <p> </p>
+          <p>Now, you must travel to the Eltnen Observatory and speak with [%dic:STR_DIC_N_Aeolus]. He will tell you what is required.</p>
+          <p> </p>
+          <p>Faith and arms, [%userclass].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Faith and arms, General."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>So be it. A Daeva who is aware of their limits is a Daeva who will not overstep them.</p>
+          <p> </p>
+          <p>I will convene again with Sanctum, and organise a Legion offensive again the Kaidan Krall Headquarters. You are excused, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Thank you, General."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>So you are the one General Telemachus sent. [%username]. Yes, the name fits.</p>
+          <p> </p>
+          <p>I hope you are prepared.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I am."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This task will require you to infiltrate the Kaidan Krall Headquarters. It is a nightmarish place, and entering alone is virtual suicide.</p>
+          <p> </p>
+          <p>Take only those you trust fully, [%username]. Those you would trust with your life.</p>
+          <p> </p>
+          <p>Now if you are ready, we can begin.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Go to [%dic:STR_DIC_N_Aeolus] and learn the details of the operation.</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">You have been tasked with infiltrating the Kaidan Krall Headquarters. Speak with Tumblusen to find out the mission details.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Telemachus ordered you to infiltrate the Kaidan Krall Headquarters. You agreed to take the mission, then were sent to Tumblusen for details.</p>
+          <p> </p>
+          <p>Tumblusen warned you that the mission would be very challenging, and advised you to bring well-seasoned colleagues with you.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

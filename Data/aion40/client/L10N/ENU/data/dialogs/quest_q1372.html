@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I envy you, [%username]. You can leave any time you want. I can't leave without orders from my superiors.</p>
+          <p> </p>
+          <p>If I became a Guardian, I'd have a comfortable job in Sanctum with a soft bed...oh and baths, lovely hot baths. Look where I am! Staring at dusty, dry roads and waiting for the next assault.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"It could be worse. Trust me."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], you don't know how bad the situation is here! What do you know anyway? You're just passing through.</p>
+          <p> </p>
+          <p>I'm not complaining about protecting the residents from Lepharist Revolutionaries; that's the duty of a Guardian. But they also expect me to find food for them.</p>
+          <p> </p>
+          <p>Lepharists, desertification, and even food problems.... It's just all too much!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I'll help you out."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Are you serious? Promise me that you won't change your mind?</p>
+          <p> </p>
+          <p>Well, we could use a ton of Tipolid meat. That ought to last for several days.</p>          
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="PLAYEMOTION_angry;HACTION_QUEST_REFUSE_1">"Nah, I'd rather pick flowers." </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hunt for [%dic:STR_DIC_I_QUEST_1372a] near the brook in front of the village.</p>
+          <p> </p>
+          <p>There are many [%dic:STR_DIC_M_hippolizardCh_31_An]s there. We only use the hip meat. The rest of those beasts are inedible.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Tipolid hips--you want potatoes with that?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hey, you promised me your help, but now you're saying you won't do it?</p>
+          <p> </p>
+          <p>Are you testing my patience? Forget it! I don't want help from the likes of you anyway.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Sorry."</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Took you long enough. We're starving! You did bring only the hip meat, right?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Even the hip meat looks chewy to me."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What is this? You promised to bring five pieces of [%dic:STR_DIC_I_QUEST_1372a]!</p>
+          <p> </p>
+          <p>If you were gonna do it half-heartedly, you shouldn't have agreed to help me.</p>
+          <p> </p>
+          <p>Right now we don't even have enough food for tomorrow morning! Go get more.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Right away!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+           <p>It's still warm! Fresh meat is always best. Good job.</p>
+          <p> </p>
+          <p>We won't need to worry about food for at least two days. Here, take this token of my thanks. Maybe I can finally get some sleep.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect [%dic:STR_DIC_I_QUEST_1372a] and take it to [%dic:STR_DIC_N_Beramones].</font></p>[%collectitem]</step>              
+    </steps>
+          <p><font font_xml="quest_summary">You were told that Agairon Village doesn't have enough food. Gather Tipolid Hip Meat and take it to Beramones.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Beramones complained that not only does she have to protect the locals from Lepharist Revolutionaries, but she must also feed them.</p>
+          <p> </p>
+          <p>You caught Mottled Tipolids and brought their hip meat to Beramones to help her.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

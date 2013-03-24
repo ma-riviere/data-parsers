@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q41154</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님은 아마도 카마르에 오랜 시간 동안 머무르시겠죠?</p>
+          <p> </p>
+          <p>그러면 저 같은 사람 보다 더 도움이 될 만한 분을 만나시는 게 좋을 것 같습니다.</p>
+          <p> </p>
+          <p>먼저 전투에 필요한 약품을 판매하고 있는 [%dic:STR_DIC_N_Gachuia]와 인사를 나눠 보십시오.</p>
+          <p> </p>
+          <p>또 연족 재료 상인인 [%dic:STR_DIC_N_Mirdinia]도 아마 자주 마주치게 될 테니 인사를 해 두시고요.</p>
+          <p> </p>
+          <p>마지막으로 카마르의 그림자단에서 무기 보상을 담당하고 있는 [%dic:STR_DIC_N_Iskadar]를 만나 보시면 될 겁니다.</p>
+          <p> </p>
+          <p>필요할 땐 반드시 도움을 주실만 한 분들이니 꼭 친하게 지내도록 하십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아, 안녕하세요? [%username] 님에 대한 얘기는 울스티아 님께 벌써 들었습니다.</p>
+          <p> </p>
+          <p>약품이 필요하실 땐 언제든지 제게 와 주세요.</p>
+          <p> </p>
+          <p>최대한 저렴한 가격으로 좋은 품질의 약품을 제공해 드릴 테니까요.</p>
+          <p> </p>
+          <p>비록 직접적인 전투에는 참여할 수 없지만 이런 식의 간접적인 도움도 꽤나 큰 힘이 될 거라고 믿습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select3">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>반갑습니다. [%username] 님.</p>
+          <p> </p>
+          <p>비록 종족은 다르지만 우리의 목적은 한 가지 아니겠습니까? 용족 분쇄!</p>
+          <p> </p>
+          <p>모두가 힘을 합친다면 용족의 씨가 마를 날도 머지 않았을 겁니다.</p>
+          <p> </p>
+          <p>저도 항상 도움을 드릴 수 있는 상인이 되도록 노력하겠습니다. 힘내세요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO2">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>안녕하십니까. 저는 [%dic:STR_DIC_I_Karuncoin]%을 각종 무기로 교환해 드리고 있습니다.</p>
+          <p> </p>
+          <p>필요한 물건이 생기면 바로 보상품으로 교환해 가시는 게 좋습니다.</p>
+          <p> </p>
+          <p>증표를 명예라고 생각하는 분들도 계시지만 증표는 그저 보상을 위해 발행한 물건에 불과하니까요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">대화를 나눈다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>카마르의 그림자에서 드리는 임무를 수행하시는 분들에게는 언제나 공정한 보상을 드리도록 노력하겠습니다.</p>
+          <p> </p>
+          <p>천족과 마족을 가리지 않고 말입니다.</p>
+          <p> </p>
+          <p>앞으로 카룬의 증표를 보시면 저를 떠올려 주시길 바랍니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_Gachuia]와 대화하라</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_N_Mirdinia]와 대화하라</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">[%dic:STR_DIC_N_Iskadar]와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">살로모네는 카마르에서 꼭 만나 봐야 할 이들을 말해 주었다. 그들을 모두 만나보자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>살로모네는 카마르에서 꼭 만나봐야 하는 사람들의 이름을 말해 주었다.</p>
+          <p> </p>
+          <p>약품 상인 가츄이아와 재료 상인 미르딘니아, 카마르의 그림자 무기 보상관 이스카다를 만나 인사를 나누었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

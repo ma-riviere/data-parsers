@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p align="center"> - 현상 수배 - </p>
+          <p> </p>
+          <p>타락한 셀로도스를 아래의 죄목으로 현상수배하는 바이다.</p>
+          <p></p>
+          <p>현상금 사냥꾼 협회원은 다음 내용을 숙지하고 지시에 따라 주기 바란다. </p>
+          <p> </p>
+          <p> 1. 이름: [%dic:STR_DIC_M_LF4_DayQ_AncientClanFi_52_An] </p>
+          <p></p>
+          <p> 2. 죄목: 환경 오염</p>
+          <p></p>
+          <p> 3. 상세: 타락한 연족의 망령으로 죽어서도 카스파의 숲을 떠나지 않고 오염물을 퍼트리고 있음, 신속히 처치가 필요함.</p>
+          <p> </p>
+          <p>카스파의 숲에 설치해 둔 [%dic:STR_DIC_OBJ_LF4_FOBJ_Q36505]를 이용하면 타락한 셀레도스를 부를 수 있음. 가장 먼저 처치하는 자에게 후사하겠음.</p>
+          <p> </p>
+          <p>- 현상금 사냥꾼 협회, [%dic:STR_DIC_E_36500] 백</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">전단지를 접어 넣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+   <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이번 현상금을 의뢰한 사람은 생명의 데바 분들입니다.</p>
+          <p> </p>
+          <p>대체 무슨 원한이 있어서 죽어서까지 카스파의 숲에 오염물을 퍼트리는 걸까요?</p>
+          <p> </p>
+          <p>뭐, 이유가 중요하겠습니까? 저희는 의뢰를 완수하고 현상금만 받으면 그만이죠.</p>
+          <p> </p>
+          <p>어떻습니까? [%username] 님이 이미 해결하셨나요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>유령도 현상금 사냥꾼의 손에 걸리면 어쩔 수 없군요!</p>
+          <p> </p>
+          <p>벌레나 동물이 숲을 더럽히는 경우는 봤지만 유령이 숲을 더럽히다니...</p>
+          <p> </p>
+          <p>녀석이 쓰러졌으니 이제 카스파의 숲은 안심해도 되겠죠?</p>
+          <p> </p>
+          <p>수고많으셨습니다, [%username] 님.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_OBJ_LF4_FOBJ_Q36505]%를 이용해서 [%dic:STR_DIC_M_LF4_DayQ_AncientClanFi_52_An]를 불러내 처치하라([%2]/1)</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_E_36500]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">현상금 사냥꾼 협회에서 현상 수배 전단지가 왔다. 지시에 따르자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>현상금 사냥꾼 협회에서 현상 수배 전단지가 왔다.</p>
+          <p> </p>
+          <p>카스파의 숲을 오염시킨 죄목으로 수배된 타락한 셀레도스를 처치하고  잉기스온 현상금 관리인에게 보고하자 수고했다며 사례를 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], have you ever been to Taran's Cavern?</p>
+          <p> </p>
+          <p>It is a place of unrelenting heat and fire! With seething lava that melts everything it touches! The boiling, scorching, molten heart of the very world itself! Laid bare before the...er...</p>
+          <p> </p>
+          <p>Well anyway, the cave. I've heard that the cave isn't filled with just lava and Klaws... but something...shiny.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"I almost hate to ask..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>But you must ask! Because you are hungry for knowledge of the vast world which stretches far before you. Calling to have its secrets revealed in a...</p>
+          <p> </p>
+          <p>Ah yes, Amethysts! Valuable, of course, but also rumored to be stones of bad luck.</p>
+          <p> </p>
+          <p>The only reason those Amethysts are still untouched is that no one wants a curse following them around. But you don't believe in that sort of thing, do you, [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Not if there's treasure to be had."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That's what I thought. You see I'm getting old and I'm not in any shape to chase after those stones. I cough a lot and I'm more tired than I should be. I should improve my diet to regain my health but I can't afford good food....</p>
+          <p> </p>
+          <p>But if you could recover those [%dic:STR_DIC_I_QUEST_2353a]s and sell them to the Black Cloud Traders, we could split the profit and I could buy some decent food!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>An equitable arrangement!</p>
+          <p> </p>
+          <p>Go to Taran's Cavern in the Musphel Volcanic Region and fetch those [%dic:STR_DIC_I_QUEST_2353a]s. I've heard they're hidden deep inside the cave.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Don't worry. I'll find them."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Cough, cough... Well, I suppose I'm too old for these crazy schemes... Even nutritious food may not help at this point.</p>
+          <p> </p>
+          <p>All I can do now is wait for death. But don't worry about me--I'm just an old man. You have your own life.</p>
+          <p> </p>
+          <p>Best to die with some dignity, right? You go on your way now. Go on. Leave me here. I'll probably be dead when you come back.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Um...goodbye."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, you've come back.</p>
+          <p> </p>
+          <p>You are very brave!</p>
+          <p> </p>
+          <p>Did you find the [%dic:STR_DIC_I_QUEST_2353a]s?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"See for yourself."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You think you can pull one over on me? Go right now to Taran's Cavern and get those Amethysts.</p>
+          <p> </p>
+          <p>Aren't you supposed to keep your promises? Wait! I see what you're doing! You're taking your time, hoping I'll die before you get back so you can have all the Amethysts for yourself!</p>
+          <p> </p>
+          <p>Oh, it's my fault for trusting you. I'm doomed for certain!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Um...I'll be right back. Really."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>So...these are the famous Amethysts. They're really something, aren't they?</p>
+          <p> </p>
+          <p>I knew you would come through. All my worries were just folly. Like that time I tried to drill a hole in my head....</p>
+          <p> </p>
+          <p>But never mind about that! I received prepayment from the Shugos, so I can give you your share. Take it.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect the Amethysts in the [%dic:STR_DIC_E_OBJ_DF2_FOBJ_Crystal_Q2353] and take them to [%dic:STR_DIC_N_Gundalpun].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Collect the Amethysts in Taran's Cavern and take them to Kellan. </font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Kellan suggested you collect Amethysts in Taran's Cavern. </p>
+          <p> </p>
+          <p>You collected the Amethysts and delivered them to him. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

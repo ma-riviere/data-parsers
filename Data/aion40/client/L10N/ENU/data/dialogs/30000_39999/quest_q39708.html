@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p align="center"> - A Letter of Greenery -</p>
+          <p> </p>
+          <p>We hope everything is well and good with the members of the Green Hat Unit.</p>
+          <p> </p>
+          <p>This time, we'll be leaving for the Ancient Bulwark to volunteer.</p>
+          <p> </p>
+          <p>Silverine is dumping garbage, polluting the area near the bulwark. Collect the garbage and deliver them to the North Katalam Branch of the Green Hat Unit.</p>
+          <p> </p>
+          <p>Always remember, nature precedes our existence.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">Fold the letter and put it away.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(Pinching his nose) This must be the garbage collected from the bulwark.</p>
+          <p> </p>
+          <p>What in the world did they throw away to cause this putrid stench?</p>
+          <p> </p>
+          <p>(Opening the sack) Discard the garbage here.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">Hand over the Stinking Garbage.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What about the garbage? You came back empty-handed?</p>
+          <p> </p>
+          <p>Garbage left at the bulwark will gradually seep into the soil.</p>
+          <p> </p>
+          <p>It's difficult, I know, but please collect the Stinking Garbage.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">End dialog.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(Closing the sack) Ah, it's much better now.</p>
+          <p> </p>
+          <p>This should be incinerated before it gets even worse.</p>
+          <p> </p>
+          <p>It was tough, so I thank you.</p>
+          <p> </p>
+          <p>The Green Hat Unit is always thankful for your hard work, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect the Stinking Garbage near the Ancient Bulwark and take them to the North Katalam Branch of the Green Hat Unit.</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">You received a Letter of Greenery from the Green Hat Unit. Read the letter and perform the mission.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You received a Letter of Greenery from the Green Hat Unit.</p>
+          <p> </p>
+          <p>After you collected Silverine's Stinking Garbage near the Ancient Bulwark, you took them to the North Katalam Branch of the Green Hat Unit, You were complimented for your hard work.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

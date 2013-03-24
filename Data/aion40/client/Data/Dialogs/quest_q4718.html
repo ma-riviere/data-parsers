@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>용족과의 전투에서 가장 중요한 것이 있다면 그건 바로 틈을 주면 안 된다는 거요.</p>
+          <p> </p>
+          <p>놈들이 전열을 정비할 틈이 없도록 끊임없이 타격을 가해야 한다는 것이지.</p>
+          <p> </p>
+          <p>그걸 위해서는 많은 데바의 협조가 필요하오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그래서 [%username]에게도 임무를 부탁하려고 하오.</p>
+          <p> </p>
+          <p>힘든 임무는 아니니까 열정만 있다면 어렵지 않게 수행할 수 있을 거요.</p>
+          <p> </p>
+          <p>한번 수행해 보겠소, [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>우선 해야 할 것은 드레드기온에 침투해서 끝까지 전투를 계속하는 것이오.</p>
+          <p> </p>
+          <p>세 번 정도 수행한다면 용족 놈들에게 타격도 주고, [%username]의 열정도 증명할 수 있을 거요.</p>
+          <p> </p>
+          <p>그리고 간 김에 [%dic:STR_DIC_M_IDAb1_Dreadgion_NagaPr_50_Ae]도 처치해 주시오. 치유사를 처치하는 건 어디서나 통하는 작전이니 말이오.</p>
+          <p> </p>
+          <p>그럼 부탁하오!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>설마 이 임무가 힘들다고 생각하는 거요?</p>
+          <p> </p>
+          <p>드레드기온에 침투하기만 하면 누구나 무난하게 수행할 수 있는 임무라고 생각했는데...</p>
+          <p> </p>
+          <p>내 생각이 틀렸나 보구려.</p>
+          <p> </p>
+          <p>[%username] 말고 하겠다는 데바가 있을 테니 그 사람을 찾아봐야겠소.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>기다리고 있었네, [%username]!</p>
+          <p> </p>
+          <p>헤니르의 말로는 중요한 임무를 수행하러 갔다고 하던데.</p>
+          <p> </p>
+          <p>어떻게 됐는지 결과를 알려 주게.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>수고 많았군, [%username].</p>
+          <p> </p>
+          <p>[%username]도 각성한 지 꽤 된 걸로 아는데. 그런데도 한결같이 열정을 유지하는 걸 보니 역시 보통 데바가 아닌 게 분명해.</p>
+          <p> </p>
+          <p>자, 받게나. 성실하고 열정적으로 임무를 수행해 준 것에 대한 보답일세.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">드레드기온에서 전투를 수행하며 치유사를 처치하라</font></p>
+                     <p visible="[%0]"><font color="[%1]">  드레드기온 전투 ([%2]/3)</font></p>
+                     <p visible="[%3]"><font color="[%4]">  [%dic:STR_DIC_M_IDAb1_Dreadgion_NagaPr_50_Ae]([%5]/8)</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">[%dic:STR_DIC_N_Votan]%와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">드레드기온에 지속적인 타격을 주기 위해 계속하여 전투를 수행하며 나가 정예 치유사를 처치하기로 했다.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>헤니르는 드레드기온에 타격을 주려면 끊임없이 공격을 계속해야 한다고 했다.</p>
+          <p> </p>
+          <p>그래서 드레드기온에서 전투를 계속하며 그의 부탁대로 나가 정예 치유사를 처치했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

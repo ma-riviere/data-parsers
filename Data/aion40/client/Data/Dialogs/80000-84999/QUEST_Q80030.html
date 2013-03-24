@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님, 가방에 대체 뭘 갖고 계신거요?</p>
+          <p> </p>
+          <p>혹시 일전에 드린 상자에서 나온 [%dic:STR_DIC_I_WORLD_EVENT_LUNAR_SCROLL_SHIELD_ALL_20A] 점괘가 맞는게요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">고개를 끄덕인다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이런! 그 점괘를 얻을 수 있는 데바는 그다지 많지 않소.</p>
+          <p> </p>
+          <p>아무래도 [%username] 님은 정말 특별한 데바인 것 같소이다.</p>
+          <p> </p>
+          <p>잠시 [%username] 님의 손바닥을 살펴보았으면 하는데 괜찮겠소?</p>
+          <p> </p>
+          <p>그리고 지금 가방에 있는 그 [%dic:STR_DIC_I_WORLD_EVENT_LUNAR_SCROLL_SHIELD_ALL_20A] 점괘도 필요하오.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">흉 점괘와 손을 내민다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">그냥 간다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>흠... 역시 예상한대로구먼.</p>
+          <p></p>
+          <p>(아주 작은 소리로) 뒤로 넘어져도 코가 깨지는... 쯧쯧!</p>
+          <p></p>
+          <p>(깜짝 놀라 잡고 있던 손을 뿌리치며) 지,지금 건 그냥 혼잣말이오!</p>
+          <p></p>
+          <p>점괘 뽑기는 어디까지나 재,재,재미로 하는 거니까 신경쓰지 마시게나.</p>
+          <p></p>
+          <p>이러고 있을 때가 아니지.</p>
+          <p></p>
+          <p>줄 게 하나 있소. 잠시만 기다리시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">잠시 기다려준다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>점괘 때문에 기분이 별로 좋지 않은 것 같구려.</p>
+          <p> </p>
+          <p>나중에라도 기분이 풀리면 다시 찾아오시게나.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>자, 이걸 받으시오.</p>
+          <p> </p>
+          <p>특별히 [%dic:STR_DIC_I_WORLD_EVENT_LUNAR_SCROLL_SHIELD_ALL_20A] 점괘를 받은 데바님들을 위해 준비한 것이오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">두 손을 내민다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>어라? [%dic:STR_DIC_I_WORLD_EVENT_LUNAR_SCROLL_SHIELD_ALL_20A] 점괘가 없는 것 같소.</p>
+          <p></p>
+          <p>가방을 한 번 더 확인해보는 게 어떻겠소?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">가방을 확인해보고 다시 온다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>모든 일은 마음 먹기에 달렸다오.</p>
+          <p> </p>
+          <p>괜히 점괘에 연연하지 말고 앞을 보고 나아가시오.</p>
+          <p> </p>
+          <p>그리고 방금 건넨 그 선물 버리지 말고 꼭 사용해보시오.</p>
+          <p> </p>
+          <p>모든 데바들의 탄성을 자아낼 것이오. 여러가지 의미의 탄성이겠지만.</p>
+          <p> </p>
+          <p>아무쪼록 행운이 함께 하길 빌겠소.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_event_Lotus]에게 [%dic:STR_DIC_I_WORLD_EVENT_LUNAR_SCROLL_SHIELD_ALL_20A]%을 건네고 특별한 선물을 받아라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">로투스를 찾아가면 다른 데바들의 탄성을 자아내는 선물을 받을 수 있다고 한다.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>로투스에게 흉 점괘를 건네주고 손바닥을 보여줬더니, 다른 데바들의 탄성을 자아낸다는 이상한 선물을 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

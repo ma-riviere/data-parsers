@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q30765</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What's this you've brought me? Hmm.</p>
+          <p> </p>
+      	  <p>I'm not especially familiar with [%dic:STR_DIC_W_IDLF1]. I think [%dic:STR_DIC_N_Litzof] at Rancora Fortress is more of an expert than I. He used to work at Beluslan Fortress, and will know how to deal with this information.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Dark Poeta? Of course I know about it. There's no one who spent time at Beluslan Fortress who doesn't know about what happened in Dark Poeta.</p>
+          <p> </p>
+          <p>But why are you asking about it now?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">"I found these orders."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What? These are obviously connected to the incident that causes Dark Poeta. Anuhart is the future Brigade General of Dark Poeta, and these are the orders promoting him and sending him there!</p>
+          <p> </p>
+          <p>You need to report this to [%dic:STR_DIC_N_Asraphis] immediately! We might be able to change history.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"On my way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select3">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>These are Anuhart's orders to Dark Poeta? What was Kronos thinking, wasting time sending you running around like that?</p>
+          <p> </p>
+          <p>Every second is going to count now!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT3_1">"Where do I come in?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select3_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Anuhart is an exceptional leader. In Dark Poeta he nearly defeated the forces arrayed against him.</p>
+          <p> </p>
+          <p>But if he were to die now, in Tiamat Stronghold...</p>
+          <p> </p>
+          <p>[%username]. We can't afford further delays. Go to [%dic:STR_DIC_W_IDTiamat_SZ_R1] and kill [%dic:STR_DIC_M_IDTiamat_Anuhart_Named_60_Ah]!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO2">"The task is mine."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, you took your time getting back here. Was Luchis busy, or did you just stop for a nap?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I killed Anuhart."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You did what?! And to think I doubted you!</p>
+          <p> </p>
+          <p>Asraphis is going to chew me out for wasting time instead of just telling you to do that immediately, but I'm glad your action prevented a huge mistake on my part.</p>
+          <p> </p>
+          <p>Here, [%username], please take this reward for your efforts.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get information from [%dic:STR_DIC_N_Litzof].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Report to [%dic:STR_DIC_N_Asraphis] about the orders.</font></p></step>
+               <step><p visible="[%9]"><font color="[%10]">Go to [%dic:STR_DIC_W_IDTiamat_SZ_R1] and kill [%dic:STR_DIC_M_IDTiamat_Anuhart_Named_60_Ah] ([%11]/1).</font></p></step>
+               <step><p visible="[%24]"><font color="[%25]">[%dic:STR_DIC_N_Kroh] is calling you. Talk with him.</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Ask Kronos what to do now.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Kronos said he didn't know much about Dark Poeta and sent you to Luchis for more information.</p>
+          <p> </p>
+          <p>Luchis sent you to Asraphis, who told you to stop wasting time and immediately go kill Adjutant Anuhar.</p>
+          <p> </p>
+          <p>You killed Adjutant Anuhart and reported back to Kronos.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

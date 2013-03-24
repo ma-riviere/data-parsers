@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q41526</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>Not entered</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select_none" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This area is littered with interesting [%dic:STR_DIC_OBJ_LDF4B_FOBJ_LavaRock1]s. I'm sure you've seen them--they're the exploding rocks.</p>
+          <p> </p>
+          <p>It's a fascinating new phenomenon. I think what's happening is that the power emanating from the Heart of Wrath is collecting within the porous rock. Then, if the rock is disturbed, it combusts.</p>
+          <p> </p>
+          <p>I'd really like to study the energy sent off by the Heart of Wrath. Could you use this Wave Orb on the Pyroclasts to bring me a sample?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], back in one piece.</p>
+          <p> </p>
+          <p>That's good. I always worry that those Pyroclasts are going to explode and take me out with them.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here's the sample. Careful not to drop it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_fail">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You didn't get it? Did the Wave Orb not work with the [%dic:STR_DIC_OBJ_LDF4B_FOBJ_LavaRock1]s?</p>
+          <p> </p>
+          <p>It's not that hard to do.</p>
+          <p> </p>
+          <p>I'd do it myself, but I have bad luck with those Pyroclasts. Last time I got near one it almost blew my leg off.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Fine, but if I lose a limb I'm taking one of yours."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Great, thanks, [%username].</p>
+          <p> </p>
+          <p>By understading the way the Heart of Wrath effects the landscape, I hope to isolate a way to weaken Tiamat's power.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect samples from [%dic:STR_DIC_OBJ_LDF4B_FOBJ_LavaRock1]s with the Wave Orb and bring them to [%dic:STR_DIC_N_Viaus].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">The Pyroclasts around the Fields of Fire could provide information about how to subvert Tiamat's Power of Wrath.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Viaus asked you to collect samples of the energy emanating from the Heart of Wrath.</p>
+          <p> </p>
+          <p>You used the Wave Orb to sample the energy from Pyroclasts, which you delivered to Viaus.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

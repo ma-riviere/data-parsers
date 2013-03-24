@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p> - WANTED - </p>
+          <p> </p>
+          <p>Fork Ear Rokes is wanted on the following charges:</p>
+          <p> </p>
+          <p> 1. Impersonating a warehouse keeper for the purpose of theft of money and goods.</p>
+          <p> </p>
+          <p> 2. Forgery of official documents including land-books and others.</p>
+          <p> </p>
+          <p> 3. Real estate fraud, selling land in the Abyss.</p>
+          <p> </p>
+          <p>A reward is offered to anyone who can capture or kill [%dic:STR_DIC_M_CriminalLightAsNamedQ_23_An]. You must provide his Necklace as evidence of the deed.</p>
+          <p> </p>
+          <p>Posted by [%dic:STR_DIC_N_Crios], Bounty Hunter</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"I can catch a guy named 'Fork Ear'." </Act>
+      <Act href="HACTION_FINISH_DIALOG">"No way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hello, Daeva.</p>
+          <p> </p>
+          <p>What brings you here?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"You looking for Rokes?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_fail">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Sure. You may have seen the Wanted poster about [%dic:STR_DIC_M_CriminalLightAsNamedQ_23_An].</p>
+          <p> </p>
+          <p>He's pretty hard to find, I guess.</p>
+          <p> </p>
+          <p>If you do get rid of him, take his necklace as evidence. Bring it to me for a reward. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Good to know."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Of course I am! He's a wanted criminal.</p>
+          <p> </p>
+          <p>Wait...is that what I think it is? The Necklace of Fork Ear Rokes?!</p>
+          <p> </p>
+          <p>Impressive! It must have been hard to catch that guy. He's slippery.</p>
+          <p> </p>
+          <p>Well, thanks for delivering that. Here's the reward, as promised.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get rid of [%dic:STR_DIC_M_CriminalLightAsNamedQ_23_An], and take the evidence to [%dic:STR_DIC_N_Crios].</font></p>[%collectitem]</step>        
+    </steps>
+          <p><font font_xml="quest_summary">Get rid of Fork Ear Rokes, a wanted criminal, and take Rokes' Necklace to Crios for a reward.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You got rid of Fork Ear Rokes, a thief and con-man, and took Rokes' Necklace to Crios as evidence. Crios gave you the reward.</p>         
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

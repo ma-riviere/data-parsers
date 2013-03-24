@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Loyal Field Warden:</p>
+          <p> </p>
+          <p>Every day we do our best to guard the Aetheric Field, but we cannot grow complacent. The field's strength is ever-shifting.</p>
+          <p> </p>
+          <p>In recent days, we commissioned the Pandaemonium Research Center to create yet another Aetheric Field Monitor to watch the situation in Brusthonin.</p>
+          <p> </p>
+          <p>Bring the Monitor Record from an [%dic:STR_DIC_OBJ_FOBJ_Q45014] in Brusthonin to the [%dic:STR_DIC_E_45014].</p>
+          <p> </p>
+          <p>Only through vigilance will Asmodae prosper.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">(Put the letter away.)</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Blood for blood, Warden.</p>
+          <p> </p>
+          <p>Do you bring news from elsewhere in Brusthonin, by chance?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I've brought you something."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I was under the impression you were not here to waste my time. If you don't have the latest Monitor Record for me, be off.</p>
+          <p> </p>
+          <p>Shards! The Field Wardens are accepting anyone lately, aren't they?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"No, but everyone makes mistakes."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Let's see.... What does your letter say? Hmmm...yes, it appears this is... It seems there was a...small flux in the Aetheric Field related to the...Eye of Reshanta, but I don't think it's anything serious.</p>
+          <p> </p>
+          <p>I'll report this to the other Field Wardens, [%username]. Your job is done here.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Recover data from an [%dic:STR_DIC_OBJ_FOBJ_Q45014] and bring it to the [%dic:STR_DIC_E_45014].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">A letter has arrived from the Field Wardens. Follow its instructions.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>According to a letter from the Field Wardens, an Aetheric Field Monitor in Brusthonin is being used to monitor and record the status of the Aetheric Field.</p>
+          <p> </p>
+          <p>You located the tower and brought the Monitor Record to the Brusthonin Field Agent, who said the small flux was nothing to be concerned about.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

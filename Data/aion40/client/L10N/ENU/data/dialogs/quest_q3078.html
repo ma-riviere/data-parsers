@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I thought...I really though it would be one of these feathers.</p>
+          <p> </p>
+          <p>Will I be out here ten more years searching? Twenty? Thirty?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"There must be someplace else to look."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>There are a few places I haven't checked yet. I'm almost afraid to...what if I don't find the killer there?</p>
+          <p> </p>
+          <p>Will you investigate for me, [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>There are said to be [%dic:STR_DIC_M_LF2A_Griffon_45_An]s at the Dirmoi Pass. It could have been one of them.</p>
+          <p> </p>
+          <p>If you bring me back their feathers...then I'll know for sure.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll return, feathers in hand."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Of course it's not your problem, is it?</p>
+          <p> </p>
+          <p>The killer's probably long dead by now, but I can't give up.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Ariel grant you peace."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Let me see. I have to know.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I took these from their corpses."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I have to know for sure.</p>
+          <p> </p>
+          <p>Get back out there and bring me the feathers.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll return."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>None of these. None of these! Ten years, and still! No! Leads!</p>
+          <p> </p>
+          <p>But I can't give up. I have to know. I have to know my son's killer is dead.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect the feathers of [%dic:STR_DIC_M_LF2A_Griffo_45_n]s and [%dic:STR_DIC_M_LF2A_Griffon_45_An]s, and bring them to [%dic:STR_DIC_N_Elektra].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">The first feathers you brought didn't match those of the killer. Bring the feathers of Steel Beak Griffons and Steel Beak Griffos to Carmen.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Carmen asked you to go back out and collect more feathers. You brought her Griffon Feathers, but, again, none of them belonged to her son's killer.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

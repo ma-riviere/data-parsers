@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've hiked across half the Sulfur Archipelago for most of my scouting mission, but...I still just cannot get used to this environment!</p> 
+          <p> </p>
+          <p>You can't fly through the sulfur fumes, and you can cough up a lung just from standing in the wrong spot....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Yeah, I've noticed that."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Environment aside, there are all the hungry critters living here. Everything that draws breath here wants a taste of me, but I'm just trying to scout the area for the glory of Pandaemonium!</p> 
+          <p> </p>
+          <p>The [%dic:STR_DIC_M_Ab1_1141_Worm_28_An]s and [%dic:STR_DIC_M_Ab1_1141_WormB_29_An]s are particularly pernicious. They lie low and keep still, then when I think I'm safe, BAM.</p>
+          <p> </p>
+          <p>I've got fang-marks all down my butt. I'd appreciate some help.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thanks. It's hard to observe silently with a giant maggot gnawing your neck.</p>
+          <p> </p>
+          <p>Eliminate the [%dic:STR_DIC_M_Ab1_1141_Worm_28_An]s and [%dic:STR_DIC_M_Ab1_1141_WormB_29_An]s.</p> 
+          <p> </p>
+          <p>They live everywhere in the Archipelago, but the Sulfur Swamp and the Sulfur Flow are crawling with them.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Be right back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It seems trivial, but seriously, they make it impossible to stay hidden while scouting.</p>
+          <p> </p>
+          <p>I'll not pressure you, but if I can't track our enemies, people die.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Sorry, friend."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Have you gone through the swamps and done as I asked?</p>
+          <p> </p>
+          <p>I've been held up too long.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I have."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you, [%username].</p>
+          <p> </p>
+          <p>At last I can scout without fear! What you've done safeguards Asmodian lives.</p>
+          <p> </p>
+          <p>Please take this for your trouble.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get rid of Cannibal Worms that hamper scouting.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Ab1_1141_Worm_28_An] ([%2]/5)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Ab1_1141_WormB_29_An] ([%5]/3)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report the result to [%dic:STR_DIC_N_Gagnrad].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Gagrad says the Sulfur Worms make proper scouting impossible. Kill the Sulfur Worms and the Sticky Sulfur Worms.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Gagrad said Sulfur Worm attacks keep him from stealthily scouting.</p>
+          <p> </p>
+          <p>To help him, you eliminated Sulfur Worms and Sticky Sulfur Worms in the Sulfur Archipelago.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_W_LF2B_SZ_B2]에 버려진 아티팩트가 있다고 해서 몇 번이나 가디언을 보냈는데 케루비엘 때문에 번번히 조사에 실패했다오.</p>
+          <p> </p>
+          <p>어째서 케루비엘들이 아티팩트의 곁을 떠나지 않는지 모르겠소.</p>
+          <p> </p>
+          <p>테오보모스에서 아티팩트가 발견된 건 정말 큰 사건인데... 엘리시움에서도 그 아티팩트에 지대한 관심을 보이고 있다오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">고개를 끄덕인다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>케루비엘만 처리하면 일단 조사는 시작할 수 있을 것 같은데 지금까지 보낸 가디언들은 번번히 실패하고 돌아왔다오. </p>
+          <p> </p>
+          <p>그래서 말인데 [%username], 당신이 도와주면 안 되겠소?</p>
+          <p> </p>
+          <p>아티팩트 주변을 맴도는 [%dic:STR_DIC_M_LF2A_Cherubim3_46_An]%와 [%dic:STR_DIC_M_LF2A_Cherubim4_46_An]%을 소탕해 주시오.</p>          
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아티팩트는 [%dic:STR_DIC_W_LF2B_SZ_B2]에 있소.</p>
+          <p> </p>
+          <p>이전에 조사를 나갔던 가디언 말로는 아티팩트에서 심상치 않는 기운을 느꼈다고 하더구려. </p>
+          <p> </p>
+          <p>뭔가 큰 힘을 지닌 것 같은데 모쪼록 주변의 케루비엘을 소탕해서 아티팩트 조사를 시작할 수 있게 도와주시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>여기에 가디언들이 있기는 하지만 지역에 비해 인원이 터무니없이 부족하다오.</p>
+          <p> </p>
+          <p>오죽하면 [%username], 당신에게 도움을 청하겠소?</p>
+          <p> </p>
+          <p>그러니 내 부탁을 다시 한번 생각해 주시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>갔던 일은 어떻게 됐소?</p>
+          <p> </p>
+          <p>케루비엘 감시꾼과 아크 케루비엘 파수꾼들이 아티팩트를 둘러싸고 있었을 텐데 아티팩트를 찾기 어렵진 않았소?</p>                 </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>고맙소. 이로써 조사를 방해하는 케루비엘의 기세도 한 풀 꺾였겠구려.</p>
+          <p> </p>
+          <p>이젠 맘 편히 아티팩트 조사를 할 수 있겠소.</p>
+          <p> </p>
+          <p>다른 지역에서도 결계 수호를 한 적이 있지만 아티팩트를 발견한 건 처음이라 흥분이 되는구려.</p>
+          <p> </p>
+          <p>중요한 임무를 도와줘서 정말 고맙소.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">아티팩트를 지키는 케루비엘을 처치하라</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_LF2A_Cherubim3_46_An]([%2]/7)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_LF2A_Cherubim4_46_An]([%5]/5)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Atropos]와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">라그도스 해안에서 아티팩트가 발견됐다고 한다. 아트로포스가 아티팩트를 조사할 수 있게 아티팩트 주변의 케루비엘을 처치해 주자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아트로포스는 테오보모스에서 아티팩트가 발견된 것에 크게 흥분하고 있었다.</p>
+          <p> </p>
+          <p>아티팩트가 테오보모스를 재건하는 데 도움이 될 지도 모른다는 희망까지도 품고 있었다.</p>
+          <p> </p>
+          <p>그의 부탁으로 조사에 가장 큰 걸림돌인 케루비엘과 아크 케루비엘 처치를 도와주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

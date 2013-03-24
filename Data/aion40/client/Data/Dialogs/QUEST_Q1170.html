@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(신비한 느낌이 드는 오래된 석상이다.)</p>
+          <p> </p>
+          <p>(뭔가 사연이 있어 보인다.)</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">석상을 만진다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(손을 대자 석상이 부르르 떨린다.)</p>
+          <p> </p>
+          <p>(단순한 석상이 아닌 것 같다.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">자세히 살펴본다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(위를 올려다 보니 석상에 머리가 없다.)</p>
+          <p> </p>
+          <p>(짤린 목 부분을 바라보자 석상이 더욱 심하게 떤다.)</p>
+          <p> </p>
+          <p>(머리가 없어 답답해 하는 느낌이다.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">머리를 찾아 준다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">내버려 둔다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(석상에서 온기가 느껴진다. 고마워하는 것 같다.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">살펴보기를 그만둔다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(석상에서 한기가 올라온다. 화가 난 것 같다.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">살펴보기를 그만둔다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(석상이 심하게 덜그럭 거린다. 머리를 올려 달라는 것 같다.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">석상에 머리를 얹는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">석상의 머리를 찾아라</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">석상 머리를 석상 위에 올려 놓아라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">[%dic:str_dic_fla18]%로 가는 길에 머리 없는 석상을 발견했다. 석상의 머리를 찾아 주자.</p>
+          <p></font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:str_dic_fla18]%로 가는 길에 머리가 없는 석상을 발견했다.</p>
+          <p> </p>
+          <p>사연이 있어 보여 석상을 만졌더니 석상이 부르르 떨면서 뭔가를 바라는 눈치였다.</p>
+          <p> </p>
+          <p>머리를 찾아서 석상에 올려 줬더니 석상이 말을 하기 시작했다.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q4330</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>Not entered</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Have a look at this note, [%username].</p>
+          <p> </p>
+          <p>One of the villagers brought it to me. Said they found it on the tail of a dead Worg.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">It just says, "HUMAN DIE!"?</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Eloquent, eh? Still, we have to take all threats seriously these days.</p>
+          <p> </p>
+          <p>I want you to take the note to Centurion [%dic:STR_DIC_N_Mirka]. She's in charge of the defenses and would know most about likely threats.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thanks for helping out, [%username].</p>
+          <p> </p>
+          <p>You'll find Mirka in front of the village's Nobelium. I have no idea if she'll take the threat seriously or not, but best to be safe in these circumstances, eh?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Definitely."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh well, it's probably some illiterate kids playing a prank.</p>
+          <p> </p>
+          <p>Either that or we're about to crushed into the ground like Elyos flowers under Asmodian rain. We'll find out soon!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll help out when I have time."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes? Can I help you?</p>
+          <p> </p>
+          <p>Come on. I have things that need doing.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="PLAYEMOTION_otl;HACTION_SELECT_QUEST_REWARD">"You need to see this."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh no!</p>
+          <p> </p>
+          <p>Everyone knows that the Spriggs are getting more aggressive. They've been seen all around Alsig recently, and actually stood up to us the last time I sent a scouting party out!</p>
+          <p> </p>
+          <p>But this? Could they really have eyes for the village itself?</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Hand the death threat to [%dic:STR_DIC_N_Mirka].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">A note threatening the villagers of Alsig was found attached to a dead Worg. Deliver it to Centurion Mirka.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Adhis came across a letter threatening the residents of Alsig village. You were asked to take it to Centurion Mirka.</p>
+          <p> </p>
+          <p>Mirka was horrified by the letter's contents.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

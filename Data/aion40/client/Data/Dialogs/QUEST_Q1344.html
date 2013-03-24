@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>먼곳으로 보내야 하는 서신이 있는데 부탁을 드려도 될까요, [%username]?</p>
+          <p> </p>
+          <p>그동안 우리 사막 정찰대의 임무를 많이 수행해 주셔서 정말 큰 도움이 됐습니다.</p>
+          <p> </p>
+          <p>그런데도 끝까지 도움을 요청하려니 제가 좀 면목이 없습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">무슨 도움이 필요한지 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그동안 사막 정찰기지에서 수행한 임무를 보고서로 작성했습니다.</p>
+          <p> </p>
+          <p>요새에야 당연히 전달하겠지만 제 생각에는 에라쿠스 전초기지에서 임무를 수행하고 있는 황금가지 군단에게도 도움이 될 정보 같아서 말입니다.</p>
+          <p> </p>
+          <p>그래서 이 보고서를 황금가지 군단장인 [%dic:STR_DIC_N_Castor] 님에게 좀 전해 주셨으면 합니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>마지막까지 정말 고맙습니다.</p>
+          <p> </p>
+          <p>그럼 이 보고서를 에라쿠스 전초기지에 있는 [%dic:STR_DIC_N_Castor] 님에게 전해 주십시오.</p>
+          <p> </p>
+          <p>가디언과 황금가지 군단, 생명의 데바가 모두 열심히 노력하고 있지만 과연 엘테넨의 사막화를 막을 수 있을지 의구심이 드는군요.</p>
+          <p> </p>
+          <p>아직까지 눈에 띄는 노력의 결과물이 없어서겠지요. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>바쁘다니 어쩔 수 없군요.</p>
+          <p> </p>
+          <p>그동안 열심히 일해 주셔서 부탁을 거절해도 조금도 섭섭하지 않습니다.</p>
+          <p> </p>
+          <p>그동안 정말 고생하셨습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>어째 지쳐 보이는 모습이로군, [%username].</p>
+          <p> </p>
+          <p>고작 이 정도 더위에 맥이 빠진 건 아니겠지?</p>
+          <p> </p>
+          <p>그래, 내겐 무슨 볼일인가?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">정찰대의 보고서를 전한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(보고서를 읽으며) 고맙게도 정찰대의 보고서를 우리에게 보내 주었군.</p>
+          <p> </p>
+          <p>흐음... 이런 일도 있었단 말인가.</p>
+          <p> </p>
+          <p>보고서를 전달해 줘서 정말 고맙네. 이렇게 좋은 정보를 줬으니 데모크리토스에게도 감사를 표해야겠군.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_Castor]에게 정찰대 보고서를 전하라 </font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">정찰대 보고서를 황금가지 군단장인 [%dic:STR_DIC_N_Castor]에게 전하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>데모크리토스는 정보 공유 차원에서 정찰대 보고서를 황금가지 군단에 보내고 싶어했다.</p>
+          <p> </p>
+          <p>그래서 카스토르에게 보고서를 가져다 줬더니 중요한 정보라면서 매우 고마워했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

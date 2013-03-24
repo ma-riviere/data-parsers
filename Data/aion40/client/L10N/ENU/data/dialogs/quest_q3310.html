@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Arieluma, [%username]. It seems I have a problem.</p>
+          <p> </p>
+          <p>I've been administering the new High-level Flight Skill Test, and almost no Daevas are passing it. I thought most would pass on their first or second try, but...I think I made the test too hard.</p>
+          <p> </p>
+          <p>It's too late to change the flight path, but I need to do something to make the test easier. It should be an appropriate challenge, but not impossible.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What do you propose?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I happen to know that you can increase your flight speed with a special mixture of alchemical materials and dried Fangwing Wings.</p>
+          <p> </p>
+          <p>Fortunately, Fangwings are easily found around the temple.</p>
+          <p> </p>
+          <p>Will you bring me some? You can always use the opportunity to practice your flying, too.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Have a look around the [%dic:STR_DIC_W_LF2_SZ_C3] and you'll find plenty of them.--[%dic:STR_DIC_M_0C_Vivre_28_An]s, [%dic:STR_DIC_M_1C_Vivre_28_Ae]s, [%dic:STR_DIC_M_2C_Vivre_29_Ae]s, [%dic:STR_DIC_M_2C_VivrePath_29_Ae]s, and [%dic:STR_DIC_M_7C_Vivre_31_Ae]s. I'll need lots of different kinds to test out.</p>
+          <p> </p>
+          <p>Hurry back!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be quick."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You have an important mission elsewhere, I suppose?</p>
+          <p> </p>
+          <p>Well, I'll just continue to give the test as it is, then. Let me know if you can help out later.</p>
+          <p> </p>
+          <p>Faith and arms.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Faith and arms."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You killed all those Fangwings already?</p>
+          <p> </p>
+          <p>That's very impressive.</p>
+          <p> </p>
+          <p>Got the wings?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"See for yourself."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I know I asked you to get several different kinds of Fangwing Wings from the [%dic:STR_DIC_W_LF2_SZ_C3].</p>
+          <p> </p>
+          <p>I mentioned [%dic:STR_DIC_M_0C_Vivre_28_An]s, [%dic:STR_DIC_M_1C_Vivre_28_Ae]s, [%dic:STR_DIC_M_2C_Vivre_29_Ae]s, [%dic:STR_DIC_M_2C_VivrePath_29_Ae]s, and [%dic:STR_DIC_M_7C_Vivre_31_Ae]s.</p>
+          <p> </p>
+          <p>Don't forget any of them, okay?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll return soon."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, very nice. Each type of wing is supposed to produce a different sort of effect.</p>
+          <p> </p>
+          <p>I don't want to give the students too much of an advantage, after all, so I'll do a few sample batches and see which one offers the right amount of enhancement.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Hunt [%dic:STR_DIC_E_Vivre]s, collect their wings, and bring them to [%dic:STR_DIC_N_Marana].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Flying Instructor Marana worries that too many Daevas are failing the High-level Flight Test. Help her make a performance-enhancing solution by gathering wings from Fangwings.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Flying Instructor Marana said that too many Daevas were failing the High-level Flight Skill Test, so she wanted to help the applicants.</p>
+          <p> </p>
+          <p>She asked you to gather Fangwing Wings to make an alchemical solution for increasing the students' flight speed.</p>
+          <p> </p>
+          <p>You gathered wings from the Fangwings living in the Eracus Temple Cavern and returned to her. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

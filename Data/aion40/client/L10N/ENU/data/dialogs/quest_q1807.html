@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've heard a lot about you, [%username]. </p>
+          <p> </p>
+          <p>You have not been a Daeva for long, yet you have distinguished yourself greatly in Elysea.</p>
+          <P> </P>
+          <p>Perhaps you could put your talents to use here?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"What do you need?"</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You must have heard that we lost the Asteria Fortress.</p>
+          <p> </p>
+          <p>It's a blow, but we must pull out of our dive and retake it, as we have before.</p>
+          <p> </p>
+          <p>The main hurdle is our lack of troops, so we need to develop a strategy to overcome that.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What kind of strategy?"</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It involves surprise attacks. We believe it will be more effective than a mass assault.</p>
+          <p> </p>
+          <p>The Asmodians have Dredgion support, so we don't want to give them a troop concentration to focus their firepower on.</p>
+          <p> </p>
+          <p>We'll launch several raids at once, with small nimble squads. The goal is to throw the Asmodians into total confusion. I think you could play a key role in this plan.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good. We've got a good plan, but with your help, I'm even more confident of success.</p>
+          <p> </p>
+          <p>While we'll certainly kill some Asmodians, the primary goal is to demoralize them. If we can reduce their will to fight, our smaller numbers can still win the day.</p>
+          <p> </p>
+          <p>You role will be to defeat [%dic:STR_DIC_M_1807_all]s inside and take their [%dic:STR_DIC_I_QUEST_1807a]s. You must leave when the fortress is in the Vulnerable State and the battle is in progress. We must attack all at once.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"This plan is sheer elegance in its simplicity!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Really?</p>
+          <p> </p>
+          <p>I expected better from you, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I wish you good fortune."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've been waiting for your return.</p>
+          <p> </p>
+          <p>That could not have been easy.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I have what you asked for."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I agree. Have some rest before you set off, then.</p>
+          <p> </p>
+          <p>We don't want to jeopardize this mission.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Thank you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm very impressed with your performance, [%username].</p>
+          <p> </p>
+          <P>You're quite deserving of this reward.</P>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Wipe out the [%dic:STR_DIC_M_1807_all]s, take their weapons and return to [%dic:STR_DIC_N_Sione].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">To retake the Asteria Fortress, it is important to raid the fortress while it is occupied by the Asmodians. Defeat the Asmodian garrison while the fortress is in the Vulnerable State, and return to Sione with the weapons taken from them.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Sione said they are sending small raids as the lack of troops prevent them from going all out. She asked you to join them.</p>
+          <p> </p>
+          <p>When you defeated the Asmodian garrison in the Asteria Fortress and returned with the weapons, Sione thanked you for your efforts and gave you a reward.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

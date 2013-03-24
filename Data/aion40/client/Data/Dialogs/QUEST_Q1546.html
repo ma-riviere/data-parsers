@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>트릴리언에게서 당신 얘기를 들었소. 예전에 당신이 사막의 뉴트를 무찔러 주었다고 하기에 이쪽에 오게 되면 부탁하려고 생각하고 있었다오.</p>
+          <p> </p>
+          <p>다들 용족과 레파르 혁명단에게 정신이 팔려 있는 것 같은데 내가 보기엔 뉴트도 경계해야 할 대상이오.</p>
+          <p> </p>
+          <p>곤충처럼 생겨서 얕잡아 보는 이들이 많소만 알고 보면 무척 똑똑한 놈들이라오.</p>
+          <p> </p>
+          <p>게다가 동족 의식까지 있어서 아무것도 모르고 놈들에게 덤볐다가 쓰러진 사람이 한 둘이 아니오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>놈들의 세력이 더 커지기 전에 수를 좀 줄여 놔야 할 텐데 보다시피 싸울 만한 사람이 부족해서 말이오.</p>
+          <p> </p>
+          <p>당신은 엘테넨에서의 경험이 있으니 뉴트에 대해서 훤할 것 같은데 좀 도와주지 않겠소? </p>
+          <p> </p>
+          <p>물론 시간이 허락한다면 말이오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>뉴트의 둥지는 인테르디카 북부통로 쪽에 있소만 거기 말고도 놈들은 밀림 전역에 퍼져 있소.</p>
+          <p> </p>
+          <p>어디든 가서 [%dic:STR_DIC_M_NeutH1_38_An]%와 [%dic:STR_DIC_M_NeutL1_37_An]%을 제거해 주시오.</p>
+          <p> </p>
+          <p>각각 5마리를 처치하면 될 것 같소. 부탁하겠소.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>시간이 없나 보구려.</p>
+          <p> </p>
+          <p>하긴, 당신처럼 실력이 뛰어난 데바가 한가할 리는 없겠지.</p>
+          <p> </p>
+          <p>나중에라도 시간이 나거든 도와주시오. 부탁하겠소.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아니, 이게 누구요? [%username]%이 아니오?</p>
+          <p> </p>
+          <p>날 찾아온 걸 보니 부탁드린 일을 마쳤나 보구려.</p>
+          <p> </p>
+          <p>뉴트와의 전투는 성공적이었소?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>수고 많았소. 적지 않은 숫자인데 빨리 처리했구려.</p>
+          <p> </p>
+          <p>그 만큼 처치했으니 당분간은 놈들 걱정을 하지 않아도 되겠소.</p>
+          <p> </p>
+          <p>자, 이건 내 마음이오. 받아 주시오.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">포이에 밀림에 있는 뉴트를 처치하라</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_NeutH1_38_An]([%2]/5)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_NeutL1_37_An]([%5]/5)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Zeuclid]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">뉴트의 번식 속도를 늦춰야 한다. 포이에 밀림의 뉴트를 처치하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>제우클리드는 뉴트가 언젠가 천계를 위협하는 요소가 될 것이라며 그들을 견제할 필요가 있다고 강조했다.</p>
+          <p> </p>
+          <p>그는 이미 엘테넨에서 뉴트와 전투를 한 경험이 있는 내게 도움을 요청했고, 그의 요청에 따라 뉴트를 제거했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

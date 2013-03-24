@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(This book is worn from use. There could be something important in here, so you should read it.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I'll only look at the articles."</Act>
+    </Selects>
+  </HtmlPage>
+ 
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(It's filled with incomprehensible calculations and diagrams. One of these pages has a diagram of the ship.)</p>
+          <p> </p>
+          <p>(You know some Shugos that might be interested in this.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(You should take it to someone who knows ships, such as Shipyard President [%dic:STR_DIC_N_Shugo_c18].)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">Put the page in your cube.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(You don't have time to deal with little sheets of paper. Time do deal with these wretched scum!)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'd hate to damage the tome."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Kunberunerk know everything about ships! I'm Shipyard President!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">"Tell me about this drawing."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Looks like blueprint for ship, yes, very large ship. Where Daeva find it?</p>
+          <p> </p>
+          <p>Cannot tell much more about it. Why does Daeva look at me like that? I don't know everything about ships.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_N_Vatonia] is Living Encyclopedia, though! She knows everything.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"I'll ask her, then."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select3">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Daevas may be eternal, but our memories are not. That is why I write down everything that I have learned, everything I've known.</p>
+          <p> </p>
+          <p>Don't think you're immune. Oblivion will not make an exception of you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT3_1">"I won't forget it. Now about this..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select3_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It has some strangely outdated vocabulary...almost pre-Cataclysm language, but it's obviously recent.</p>
+          <p> </p>
+          <p>It's a diagram of the Steel Rake, right? Looks like the Shulacks have a lot of devices on here I've never seen.</p>
+          <p> </p>
+          <p>You know, [%dic:STR_DIC_N_Shugo_LC1_25] of the Black Cloud would probably be interested in seeing this. He's been trying to look up Shulack design secrets in here, but we don't have much.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO2">"I'll talk to him."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Steel Rake are constant burr in our fur! Have plundered many Black Cloud ships!</p>
+          <p> </p>
+          <p>If Daeva know anything about them, let me know at once.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I have this diagram."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This is fantastic, akakak! Where Daeva get this?</p>
+          <p> </p>
+          <p>Will be big help in fighting Steel Rake. Here is reward!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk with [%dic:STR_DIC_N_Shugo_c18].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Talk with [%dic:STR_DIC_N_Vatonia].</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Talk with [%dic:STR_DIC_N_Shugo_LC1_25].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">You found a strange diagram in one of the Steel Rake's books. Go to show it to Kunberunerk.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You found a strange diagram in one of the Steel Rake's books. When you showed it around, you discovered that it was a diagram of the ship with a lot of useful information. You gave it to the Black Cloud Traders.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

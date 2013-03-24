@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q49612</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p align="center">- 업무 지시서 -</p>
+          <p> </p>
+          <p>1. 수신자: 직원 [%username]</p>
+          <p> </p>
+          <p>2. 업무: 늪지 코딜누스 때문에 늪수 정화 작업이 지연되고 있다고 합니당. [%dic:STR_DIC_W_LDF5b_SZ_G1]로 가서 [%dic:STR_DIC_M_LDF5B_G_Alligator_65_An]%을 처치하고 담당 지부에 보고해 주시기 바랍니다냥.</p>
+          <p> </p>
+          <p>3. 담당 지부: [%dic:STR_DIC_E_LDF5b_Silverlin_BA]</p>
+          <p> </p>
+          <p>위 업무를 완수하면 보상이 있으므로 성실히 임해 주시기 바랍니다냥.</p>
+          <p> </p>
+          <p>- 실버린 주식회사, 인사담당자 두무링 백</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">업무 지시서를 접어 넣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>늪지 코딜누스는 모두 처치했습니까냥? </p>
+          <p> </p>
+          <p>놈들이 저수조에 연결된 호스를 물어뜯어서 망가트리고 있다고 합니당. 덕분에 며칠 동안 늪수를 퍼 올리지 못해 차질이 큽니당.</p>
+          <p> </p>
+          <p>더 이상 방치해선 안 됩니당, 갸릉.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 전한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>호스를 물어뜯는 놈들을 처리했다니 다행입니당.</p>
+          <p> </p>
+          <p>저수조 안으로 들어간 녀석들도 있다고 하는데 거기까진 어쩔 수 없지용. 밀린 늪수 정화 작업부터 다시 시작해야겠습니다냥.</p>
+          <p> </p>
+          <p>[%username], 수고했습니당!</p>
+          <p> </p>
+          <p>이번 업무도 훌륭히 완수했다고 보고하겠습니당, 갸릉.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">저수조의 호스를 물어뜯는 [%dic:STR_DIC_M_LDF5B_G_Alligator_65_An]%을 소탕하라([%2]/10)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_E_LDF5b_Silverlin_BA]%에 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">실버린 주식회사에서 업무 지시서가 왔다. 업무를 확인하고 수행하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>실버린 주식회사에서 업무 지시서가 왔다.</p>
+          <p> </p>
+          <p>저수조의 호스를 물어뜯는 늪지 코딜누스를 소탕하고 실버린 남부 카탈람 지부에게 전하자 수고했다며 사례를 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, er...hold it, [%userclass]. I'm afraid I can't let you through.</p>
+          <p> </p>
+          <p>The Hidden Library contains some of the rarest and most sought-after books in all Atreia. The documents within these walls predate the Cataclysm--works of antiquity found nowhere else.</p>
+          <p> </p>
+          <p>They're irreplaceable and only accessible by our most learned scholars or the distinguished servants of Sanctum.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Am I not distinguished enough?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm not the judge of your worth, [%userclass]. To access the Library, you must procure a letter of recommendation from the Brigade General.</p>
+          <p> </p>
+          <p>If you can bring me such a letter, then access to the Hidden Library is yours.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Brigade General [%dic:STR_DIC_N_Spatalos] is in [%dic:STR_DIC_FLA09].</p>
+          <p> </p>
+          <p>Bring me the recommendation quickly.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll bring it right back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You can't be troubled to get a recommendation?</p>
+          <p> </p>
+          <p>Well then, I can't be bothered to let you in. Have a nice day, [%userclass].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I will, thanks."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, [%username]--good to see you. Verteron may sleep more soundly knowing that you are here.</p>
+          <p> </p>
+          <p>What brings you this way?</p>
+         </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"I need a letter of recommendation."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, you seek entrance to the Hidden Library.</p>
+          <p> </p>
+          <p>Your service to Verteron is greater currency than any amount of Kinah, [%username]. Give me a moment and you'll have your letter.</p>
+          <p> </p>
+          <p>Almost...cross the "t"...and there it is. Take this to the Library and you're sure to gain entrance.</p>
+         </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SET_SUCCEED">"Thank you, sir."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I can't write a recommendation letter until you've completed the assignment I gave you.</p>
+          <p> </p>
+          <p>You understand, of course? If I have no proof of your skills, I'm putting my name on speculation and calling it fact.</p>
+          <p> </p>
+          <p>Return to me when you've completed the task and I'll be glad to write your recommendation. On my second-finest paper, no less!</p>
+         </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"How...charming."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], good to see you again.</p>
+          <p> </p>
+          <p>Do you have a letter for me?</p>
+         </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I do. It's right here."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This letter gives you high praise. Clearly all the stories about you are true.</p>
+          <p> </p>
+          <p>I'm happy to grant you entrance to the Hidden Library from this moment on.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Obtain the letter of recommendation from [%dic:STR_DIC_N_Spatalos].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Speak with [%dic:STR_DIC_N_Latri].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">A letter of recommendation is required to enter the Hidden Library. Speak to Brigade General Spatalos in Verteron to obtain the letter of recommendation.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Latri told you that entry to the Hidden Library requires a letter of recommendation proving that you have performed great deeds in service of Sanctum.</p>
+          <p> </p>
+          <p>You obtained the letter of recommendation from Brigade General Spatalos in Verteron, and were given permission to enter the Hidden Library.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Impressive, [%username], very impressive.</p>
+          <p> </p>
+          <p>Just yesterday you were groaning under a load of heavy steel ingots--but look at you now! You must have a special talent for Weaponsmithing.</p>
+          <p> </p>
+          <p>I want to find out just how good you are.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I like a challenge."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>How about making Logi's Noble Greatsword for me?</p>
+          <p> </p>
+          <p>You'll need more than talent to do that--you'll need ceaseless effort and perseverance.</p>
+          <p> </p>
+          <p>If you agree to train for Weaponsmithing Expert, you can't be in training to be an Expert in other fields. Think carefully before you answer.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Then make Logi's Noble Greatsword and bring it to me. [%dic:STR_DIC_N_Mime] has the design. You can usually find it on the top shelf, near the [%dic:STR_DIC_E_Q2972] design.</p>
+          <p> </p>
+          <p>You should have no problem making a perfect Logi's Noble Greatsword.</p>
+          <p> </p>
+          <p>It's not easy, but I'm sure you'll succeed.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll get right on it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>A little intimidating, eh?</p>
+          <p> </p>
+          <p>I was glad to find a gifted Daeva like you. I was going to train you to be an expert, but...I might have expected too much.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"It's a lot of work."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Azphelumbra, [%username]!</p>
+          <p> </p>
+          <p>All that hammering--sounds like you're hard at work.</p>
+          <p> </p>
+          <p>Did you make Logi's Noble Greatsword?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here it is!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hmm. Maybe I shouldn't have pushed you. Please forgive me. Maybe it's just too soon.</p>
+          <p> </p>
+          <p>I still believe you can make Logi's Noble Greatsword, [%username]. Give it another shot.</p>
+
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll try again."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Now THIS is a nice sword! Well done.</p>
+          <p> </p>
+          <p>I'm pleased to know you're passionate about Weaponsmithing, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select10">
+    <Contents cdata="true">
+        <html>
+        <body>
+         <p>Oh, I'm sorry. I thought you had already attained Expert level in another field, [%username].</p>
+         <p> </p>
+         <p>To be an Expert in two fields, you must first complete your study of the other field. After that, we can talk.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Okay then. I'll be back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select10_2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You may be too ambitious, [%username]. You can become an Expert in only one craft at a time.</p>
+          <p> </p>
+          <p>If you are working toward Expert level in another field, please complete that course first, then come see me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Will do."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select10_3">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh! Aren't you an Expert in Weaponsmithing already?</p>
+          <p> </p>
+          <p>If so, then you've come to the wrong master.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Sorry to disturb you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Make Logi's Noble Greatsword and take it to [%dic:STR_DIC_N_Logi].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Logi, who wanted to check your Weaponsmithing skills, asked you to make Logi's Noble Greatsword.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Impressed with your progress, Logi wanted to test your Weaponsmithing skills.</p>
+          <p> </p>
+          <p>When you made Logi's Noble Greatsword as he requested, he was pleased not only with your talent but with your passion as well.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We've lost the Sulfur Fortress. I blame myself, though we struggled hard to defend the walls.</p>
+          <p> </p>
+          <p>I must do whatever I can to reclaim it. But each time I send men against the Elyos garrison, the Balaur attack us.</p>
+          <p> </p>
+          <p>You don't think the Elyos and the Balaur have joined forces, do you?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What are you planning?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+		      <p>Right, well, a fortress in Vulnerable State is vulnerable to attacks, so the Elyos are moving in elite troops while they can.</p>
+          <p> </p>
+          <p>That [%dic:STR_DIC_M_2806_all] worries me. I need them beaten, but I can't risk another battle on two fronts.</p>
+          <p> </p>
+          <p>So, [%username]? You strike the garrison, my men fend off the Balaur?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Perfect! Start mapping troop movement at Sulfur Fortress. When the fortress is vulnerable, attack.</p>
+		      <p> </p>
+		      <p>You must cripple the elite fighters, elite archers, elite mages, and elite priests of the Elyos, even the novice warriors.</p>
+          <p> </p>
+          <p>To prove the [%dic:STR_DIC_M_2806_all]'s defeat, bring their [%dic:STR_DIC_I_QUEST_2806a]s back with you. </p>
+        </body>
+        </html>
+    </Contents>
+
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"On my way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Do what you need to do, Daeva, but I thought you and I understood each other.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Farewell."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I received word the [%dic:STR_DIC_M_2806_all] has fallen, [%username].</p>
+          <p> </p>
+			    <p>I'm pleased to see you safe.</p>
+          <p> </p>
+          <p>Please give me the [%dic:STR_DIC_I_QUEST_2806a]s.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here...the Heirophant Weapons."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I know you have others missions, [%username].</p>
+          <p> </p>
+          <p>Even so, I hoped this would be first priority.</p>
+          <p> </p>
+          <p>Please don't delay. When the Sulfur Fortress next becomes vulnerable, defeat the Elyos [%dic:STR_DIC_M_2806_all] and bring the [%dic:STR_DIC_I_QUEST_2806a]s to me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"On my way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], quite a victory!</p>
+          <p> </p>
+          <p>You've cleared our path to reclaim the fortress.</p>
+          <p> </p>
+          <p>I will note your contribution when I send my report to the Primum Fortress.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Destroy the [%dic:STR_DIC_M_2806_all] and take the proof to [%dic:STR_DIC_N_Asynja].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">The Elyos must be shaken up in order to recapture the Sulfur Fortress. Defeat the elite Elyos garrison that appears when the fortress enters the Vulnerable State, and return with the Heirophant Weapons.</font></p>
+
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+
+          <p>Sinjah said simultaneous battles with the Elyos and the Balaur are hampering attempts to reclaim the Sulfur Fortress, and asked you to take the Elyos while he fights the Balaur.</p>
+          <p> </p>
+          <p>After killing the elite fighters, elite archers, elite mages and elite priests of the Elyos, you returned to Sinjah with their Heirophant Weapons as proof.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

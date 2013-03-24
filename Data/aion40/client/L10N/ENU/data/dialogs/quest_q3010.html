@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've made up my mind. I need to ask for Sanctum's help.</p>
+          <p> </p>
+          <p>I dislike collaboration--too many Shugos in the deal, you understand. That said, the situation in The Scorchlands is serious.</p>
+          <p> </p>
+          <p>But I need more information first.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What do you need?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+        <p>Flame Crystals hold concentrated Balaur energy. I've been told they're the source of Molten Blade Spirits. If that's true, it's.... Well, I have to examine their Flame Essences to be sure.</p>
+         <p> </p>
+         <p>I'm no warrior--I admit it. But the only way to get what I need is to go to The Scorchlands.</p>
+          <P> </P>
+         <P>Would you help me? You'd have to extinguish Molten Blade Spirits and bring their Flame Essences to me.</P>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_M_ElementalFire2_23_An]s carry Flame Essences, but they won't be carrying much. Destroy as many as you can--the more [%dic:STR_DIC_I_QUEST_3010a]s you take, the better.</p>
+          <p> </p>
+          <p>You've been to [%dic:STR_DIC_W_LF2A_SZ_01] before so you know the perils you face.</p>
+          <p> </p>
+          <p>You have my gratitude, [%username]. May Ariel protect you!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"And you, also."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>There's nothing more important than this now!</p>
+          <p> </p>
+          <p>So much depends upon my research! How could you say no without even thinking about it?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I have other tasks."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]! Excellent!</p>
+          <p> </p>
+          <p>I've just finished summarizing my research results. It's the only work of its kind--and the information we glean from Flame Essences will make it a definitive work.</p>
+          <p> </p>
+          <p>So--were you successful? Did you get any [%dic:STR_DIC_I_QUEST_3010a]s?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"More than you need."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're looking remarkably soot-free, Daeva.</p>
+          <p> </p>
+          <p>You haven't been to The Scorchlands, have you?</p>
+          <p> </p>
+          <p>My work is urgent! Please go, get rid of the [%dic:STR_DIC_M_ElementalFire2_23_An]s, and bring their [%dic:STR_DIC_I_QUEST_3010a]s to me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"My apologies. I'm off."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This is exactly what I need.</p>
+          <p> </p>
+          <p>Thank you so much for your help!</p>
+          <p> </p>
+          <p>This, your reward, comes from my research budget from Sanctum. If the research garners rewards later, I'll give you more.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get Flame Essences from [%dic:STR_DIC_M_ElementalFire2_23_An], and take it to [%dic:STR_DIC_N_Ankises].</font></p>[%collectitem]</step> 
+    </steps>
+          <p><font font_xml="quest_summary">Eliminate Molten Blade Spirits in The Scorchlands and collect Flame Essences for Ankises' research.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Fire Spirits have showed up in The Scorchlands. Ankises believed he couldn't complete his research alone and wanted to ask for Sanctum's help.</p>
+          <p> </p>
+          <p>To do that, he needed to ensure that his information was correct: that Molten Blade Spirits really came from Flame Crystals. He asked you to kill some Spirits and get their Flame Essences for him.</p>
+          <p> </p>
+          <p>When you got the Flame Essences as he requested, he thanked you and paid you from his research budget. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

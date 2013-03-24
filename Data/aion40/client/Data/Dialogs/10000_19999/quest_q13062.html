@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>도대체 어떻게 된 것인지 모르겠군요.</p>
+          <p> </p>
+          <p>시급한 군수 물자 보급 때문에 오피링에게 요청을 해두었는데, 전혀 도착할 기미가 없습니다.</p>
+          <p> </p>
+          <p>지연되고 있으면 언제까지 지연될 것인지 말이라도 있어야 하는데, 전혀 연락이 없어요.</p>
+          <p> </p>
+          <p>현재 있는 물자는 떨어져가고, 언제 다음 물자가 도착할지 기약도 없는데 말입니다.</p>
+          <p> </p>
+          <p>죄송하지만 현재 있는 물자를 관리해야 해서 제가 움직일 수는 없으니, 대신 [%dic:STR_DIC_N_LDF5b_Offiring_E]%을 찾아가서 상황을 파악해주십시요. 부탁드립니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>오피링은 한가하지 않습니다당. 언제나 바쁩니다냥!</p>
+          <p> </p>
+          <p>아, 데바가 부탁한 군수 물자라면 창고담당인 스토링에게 말해두었습니다냥, 갸릉 </p>
+          <p> </p>
+          <p>스토링이 게을러서 일처리를 지연시키고 있는 것일 수도 있습니다냥.</p>
+          <p> </p>
+          <p>따질 거라면 [%dic:STR_DIC_N_LDF5b_Storing_E]에게 가서 따지시길 바랍니다냥. 갸릉.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select3">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>음? 무슨 소리입니까냥! 그런 이야기는 듣지 못했습니다냥!</p>
+          <p> </p>
+          <p>오피링은 매번 이 스토링에게 책임전가를 합니다냥!</p>
+          <p> </p>
+          <p>공식적인 요청 서류도 없으니 도와주지 않아도 되지만 스토링 친절합니다냥.</p>
+          <p> </p>
+          <p>스토링을 귀찮게 하는 [%dic:STR_DIC_M_LDF5B_E_NeutFly_64_n]%을 처리해주면 [%dic:STR_DIC_N_LDF5b_Storing_E] 도와드리겠습니다냥.</p>
+          <p> </p>
+          <p>약속입니다냥.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO2">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>군수 물자가 빨리 도착해야 하는데, 걱정입니다.</p>
+          <p> </p>
+          <p>최소한의 응급약 정도 밖에 없으니 원...</p>
+          <p> </p>
+          <p>어떻게 되었습니까? 오피링이 약속을 지키던가요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">보상을 요구한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그럴 수가! </p>
+          <p> </p>
+          <p>군수품을 요청한지가 언제인데 이제서야 보내주겠다니...도대체가!</p>
+          <p> </p>
+          <p>역시 고참들의 말이 틀린게 없는 것 같습니다. 슈고의 말을 믿다가 굶어죽는다더니 사실이군요.</p>
+          <p> </p>
+          <p>늦게라도 [%username] 님 덕분에 물자를 공급받을 수 있다니 정말 다행입니다. 감사합니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_LDF5b_Offiring_E]%와  대화하라</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_N_LDF5b_Storing_E]%와 대화하라</font></p></step>
+               <step><p visible="[%9]"><font color="[%10]">[%dic:STR_DIC_M_LDF5B_E_NeutFly_64_n]%을 처치하라([%11]/9)</font></p></step>
+               <step><p visible="[%24]"><font color="[%25]">[%dic:STR_DIC_N_LDF5b_Klonis_E]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">골드린 주식회사의 담당자를 만나 약속된 군수 물자에 대해 확인하라.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>클로니스는 골드린과 약속된 군수 물자가 도착하고 있지 않다며 확인을 요청했다.</p>
+          <p> </p>
+          <p>골드린 주식회사의 담당자 오피링과 스토링에게 확인하니 서러 책임을 회피하고 있었고, 결국 스토링의 부탁을 들어주자 간신히 물자를 공급받을 수 있었다. </p>
+          <p> </p>
+          <p>일을 마치고 상황을 전달하자 클로니스는 역시 슈고는 믿을 수 없지만, 도와줘서 고맙다고 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

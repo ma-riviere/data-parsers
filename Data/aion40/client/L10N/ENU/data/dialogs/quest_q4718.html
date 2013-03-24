@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q4718</QuestId>
+    <QuestName>[Group] Continuous attack</QuestName>
+    <QuestType>Script quest</QuestType>
+    
+  </QuestInfo>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>When battling the Balaur, it's crucial that you don't ever let up your attack. If they get the time to put their battle line in order and mend their wounds.... Well, things go badly. For us.</p>
+          <p> </p>
+          <p>I have a plan of attack, but I need your help.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I am at your command."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Are you sure, [%username]? I know you're quite skilled, but for this mission I need dedication and passion.</p>
+          <p> </p>
+          <p>It's not enough to just THINK you're with me. You must be with me.</p>
+          <p> </p>
+          <p>Are you with me, [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent. Here's the plan. First, infiltrate the Dredgion. You must press the attack, and never give up ground. Keep fighting, keep pushing, keep them on the defensive.</p>
+          <p> </p>
+          <p>During the conflict, do your best to focus on the [%dic:STR_DIC_M_IDAb1_Dreadgion_NagaPr_50_Ae]s. If they can't heal, they can't fight.</p>
+          <p> </p>
+          <p>Votan would like to hear a report on this tactic, [%username], but I don't know that we can draw conclusions from just one attempt. How about you try it three times, and then report in to him?</p> 
+          <p> </p>
+          <p>You'll cause the Balaur serious damage, and prove your passion at the same time.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Blood for blood!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, unless you're sure, I don't want you to participate. I need someone who can dedicate some time to this plan.</p>
+          <p> </p>
+          <p>If you have plans to infiltrate the Dredgion anyway, it shouldn't be a problem. Maybe I'm wrong....</p>
+          <p> </p>
+          <p>If you know of any other Daeva who might be interested, [%username], send them my way.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll do that."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've been waiting for your report, [%username].</p>
+          <p> </p>
+          <p>Henir said you went to carry out an important mission. Tell me what happened, in detail.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"First, we boarded the Dredgion..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well done, [%username]. It sounds like this tactic might very well work for us. I'll spread the word.</p>
+          <p> </p>
+          <p>I know it's been quite a while since you ascended, and I'm pleased that you're still so passionate. You are a truly extraordinary Daeva. This should be a worthy reward for your diligence and dedication.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Assault the Dredgion and eliminate the enemy healers.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  Dredgion battle ([%2]/3)</font></p>
+                     <p visible="[%3]"><font color="[%1]">  [%dic:STR_DIC_M_IDAb1_Dreadgion_NagaPr_50_Ae] ([%5]/8)</font></p></step>
+               <step><p visible="[%6]"><font color="[%16]">Talk with [%dic:STR_DIC_N_Votan].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">You agreed to assault the Dredgion and eliminate Baranath Fleshmenders.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Henir said a continuous attack is required to cause damage to the Dredgion.</p>
+          <p> </p>
+          <p>You assaulted the Dredgion and eliminated the Baranath Fleshmenders as he asked, demonstrating your dedication to Asmodae.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

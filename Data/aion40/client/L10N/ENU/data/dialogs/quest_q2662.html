@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That Lepharist just brought me some food. I've been friendly with him ever since I infiltrated their ranks.</p>
+          <p> </p>
+          <p>He doesn't know it, but he's been a big help to me in gathering information. He talks a lot. Even if his stories sometimes don't make sense, I can glean good intelligence from them.</p>
+          <p> </p>
+          <p>But this time, he told me something rather worrisome. According to him, some of their Elite Soldiers were asking about me....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Think they're on to you?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, I'm nervous.</p>
+          <p> </p>
+          <p>Not long ago, I think I was seen talking to a chatty Daeva--you know, the fish-faced guy? I tried to get the Daeva to move on but he just kept talking.</p>
+          <p> </p>
+          <p>I'm afraid the Lepharists might suspect something.... I need to take action before things get worse and my cover is really blown. Would you help me?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>My first priority is to silence that Lepharist. I only glimpsed him from a distance, his uniform was either that of a [%dic:STR_DIC_M_KeB_LehparKnD_42_Ae], a [%dic:STR_DIC_M_AeB_LehparAsD_42_Ae], or a [%dic:STR_DIC_M_WeA_LehparWiD_42_Ae].</p>
+          <p> </p>
+          <p>Since word about me already spread, it's probably safer to elimate the entire group rather than to find and kill just the sneaky squealer.</p>
+          <p> </p>
+          <p>By doing so, we can prevent word from spreading any further as well as divert their attention to something else.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Right! Squealers, silenced like a porgus."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What?! How can you ignore the danger I'm in?</p>
+          <p> </p>
+          <p>Spies like me risk our lives for Asmodians like you.</p>
+          <p> </p>
+          <p>You refuse my request even knowing this? For shame!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I don't want to risk my own neck."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Work with the Lepharists while hiding my hatred towards them is making me a little crazy.</p>
+          <p> </p>
+          <p>I do it for the sake of Pandaemonium.</p>
+          <p> </p>
+          <p>Well, how did you fare? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Your secret is safe for now."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you, [%username]!</p>
+          <p> </p>
+          <p>From now on, I must be more careful. Now if we could just agree on a password....</p>
+          <p> </p>
+          <p>Take this. It's a reward for keeping my identity secret.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Eliminate the Elite Soldiers.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_KeB_LehparKnD_42_Ae] ([%2]/7)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_AeB_LehparAsD_42_Ae] ([%5]/7)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_WeA_LehparWiD_42_Ae] ([%8]/7)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report the result to [%dic:STR_DIC_N_Dewi].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">A group of Elite Soldiers in the Chaos Brambles suspect Dewi. For his safety, eliminate them.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Dewi, who infiltrated the Lepharist Revolutionaries as a spy, said that some of the Elite Soldiers suspected him.</p>
+          <p> </p>
+          <p>Before they found out who Dewi is, you killed the Watch Footsoldiers, Deathblades, and Archmages, and thus diverted the Lepharist attention.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

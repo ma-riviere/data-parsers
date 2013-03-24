@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q3536</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>Not entered</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hey [%username]. How's the wild life of a traveling Daeva treating you?</p>
+          <p> </p>
+          <p>Sounds like you've been seeing quite a bit of action.</p>
+          <p> </p>
+          <p>It's been quiet here lately, which is good, since we're woefully understaffed right now.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Staff in transit?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes. We're hoping to get some backup troops in soon, hopefully BEFORE anyone decides to attack. Time will tell.</p>
+          <p> </p>
+          <p>Meanwhile, take a look at this. Aren't these daggers brilliant? The local Kerubiels carry them. I'm not sure what they're made of, but they're extremely light and virtually unbreakable.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Interesting."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm thinking of recommending those daggers to those backup Legionaries when they arrive.</p>
+          <p> </p>
+          <p>They should be easy enough to get...the Kerubiels swarm like bees around here.</p>
+          <p> </p>
+          <p>Now, I can't leave the Observatory to go on a wild dagger hunt, but you could? Hmm? Feel like gathering some [%dic:STR_DIC_I_QUEST_3536A]s, [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I knew you wouldn't be able to resist!</p>
+          <p> </p>
+          <p>Just follow the road down the hill. You can't help but trip over a [%dic:STR_DIC_M_Cherubim4_33_An] or twelve.</p>
+          <p> </p>
+          <p>Bring me back a pile of those [%dic:STR_DIC_I_QUEST_3536A]s, huh? They're going to make awesome daggers for the backups when they get here.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll bury you in daggers!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Aww. Come on. Show some interest. These daggers are awesome.</p>
+          <p> </p>
+          <p>Have you seen the daggers they've been issuing recruits lately? These things could save a lot of lives....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm sure you'll persevere."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Welcome back, [%username]. How'd it go? Did you get them?</p>
+          <p> </p>
+          <p>I already have a queue of fighters simply drooling to get their hands on these [%dic:STR_DIC_I_QUEST_3536A]s.</p>
+           <p> </p>
+          <p>I might not have any left for the backups! Heck, I may even sneak off a few for my personal collection....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Careful, drool might rust them."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Surely you can get more than this. Those [%dic:STR_DIC_M_Cherubim4_33_An]s are impossible to avoid.</p>
+          <p> </p>
+          <p>I've already got a waiting list for those [%dic:STR_DIC_I_QUEST_3536A]s, so the sooner the better.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"It's on my to-do list."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Nice! They're so light, and the workmanship. Impressive. I'm just can't believe that Kerubiels crafted these. Weird.</p>
+          <p> </p>
+          <p>The Legionaries are going to be thrilled with these. Thanks!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect [%dic:STR_DIC_I_QUEST_3536A]s and bring them to [%dic:STR_DIC_N_Klaus].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">You agreed to gather some Kerubiel Daggers that are apparently very well-made. Kill Kerubiel Looters for their daggers.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Klaus raved on about how fabulous Kerubiel Daggers are, which amused you.</p>
+          <p> </p>
+          <p>So you hunted Kerubiel Looters and collected daggers for him.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

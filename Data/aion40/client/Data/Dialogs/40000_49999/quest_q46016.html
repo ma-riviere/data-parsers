@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p align="center"> - 의뢰장 - </p>
+          <p> </p>
+          <p>연족이 오래 전에 잃어버린 유물을 찾아달라는 의뢰를 요청했다.</p>
+          <p></p>
+          <p>찰리룽 흥신소 조직원들은 다음 내용을 숙지하고 지시에 따라 주기 바란다. </p>
+          <p> </p>
+          <p> 1. 목표: [%dic:STR_DIC_OBJ_FOBJ_Q46016a]</p>
+          <p></p>
+          <p> 2. 위치: [%dic:STR_DIC_W_SZ_DF4_B6]</p>
+          <p></p>
+          <p> 3. 상세: 한때 연족의 것이었으나 지금은 숭배자의 소유가 된 고대 유물을 담은 상자임. 금은보화부터 고대 주신의 유물까지 다양한 유물이 들어 있다고 함.</p>
+          <p> </p>
+          <p>저주받은 지하도시에서 황금 유물함을 찾아오는 자에게 의뢰대금을 후하게 지급할 것임.</p>
+          <p> </p>
+          <p>- 찰리룽 흥신소, [%dic:STR_DIC_E_46500] 일동 -</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">의뢰장을 접어 넣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>오늘 의뢰는 잘 되고 있냥?</p>
+          <p> </p>
+          <p>아까 보니 데바 여럿이 지하도시 쪽으로 가던데...</p>
+          <p> </p>
+          <p>무사히 유물함은 찾았는지 모르겠당, 냥냥.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">주신의 조각상을 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+  
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>지하도시에서 발견된 유물이라면 못해도 대파국 이전의 물건이당, 냥냥.</p>
+          <p> </p>
+          <p>그 값어치는 데바도 잘 알 거당.</p>
+          <p> </p>
+          <p>그러니 서둘러 [%dic:STR_DIC_W_SZ_DF4_B6]%로 가 황금 유물함을 잘 찾아 봐랑, 냥냥.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(무게에 깜짝 놀라며) 아이쿠, 조각상 왜 이렇게 무겁냥?</p>
+          <p> </p>
+          <p>상자만 황금인 게 아닌 모양이당, 갸릉.</p>
+          <p> </p>
+          <p>황금 유물함에서 보물을 무사히 찾아 왔으니 의뢰대금을 주겠당. 보수가 너무 적다고 한탄해도 소용없다냥, 갸릉.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_W_SZ_DF4_B6]에서 [%dic:STR_DIC_OBJ_FOBJ_Q46016a]을 찾아 [%dic:STR_DIC_E_46500]에게 가져가라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">찰리룽 흥신소에서 의뢰장이 왔다. 의뢰를 수행하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>찰리룽 흥신소에서 겔크마로스의 귀한 보물을 찾아 달라는 내용의 의뢰장을 받았다.</p>
+          <p> </p>
+          <p>저주받은 지하도시에서 황금 유물함을 찾아 겔크마로스 관리부 직원에게 보고하자 수고했다며 의뢰대금을 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

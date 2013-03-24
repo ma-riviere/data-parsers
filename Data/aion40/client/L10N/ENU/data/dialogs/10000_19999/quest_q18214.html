@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Not competing in the Coliseum, [%username]? Ah, perhaps you are training to improve your performance. We want things to go a little better than last time, no?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I didn't do that badly!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, I suppose if you have lowered expectations, anything seems like a success.</p>
+          <p> </p>
+          <p>Make no mistake, I expect better from those under my watch! Would you like some advice on how to improve? And perhaps then you can have another try in the arena.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>In my experience, the most effective in the Coliseum are those who go all out. Perhaps they have special, unusual skills. Perhaps they pour all their efforts into survival, tricks, and tactics. Perhaps they are unflinchingly brutal, or cow their opponent with psychological manipulation.</p>
+          <p> </p>
+          <p>It really doesn't matter. Results are what counts. Now, go and think about your approach, and come back to me when you've defeated five opponents.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll work on my strategy."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Coliseum contests are optional, of course, but personally I believe that any Daeva who expects to survive in Balaurea must put themselves through their paces.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Not right now."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well? How did it go? I'm assuming that you managed five kills in the arena? I think they make it too easy with the infinite resurrection.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Too easy? Yikes. But I did it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good job, I suppose.</p>
+          <p> </p>
+          <p>Molfus has convinced me that I shouldn't give you my next challenge. I was going to require you to get ten kills without dying yourself, but he says that's too big of a jump from the previous test.</p>
+          <p> </p>
+          <p>Perhaps you will try that on your own time? See it as a personal challenge.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get five kills in the [%dic:STR_DIC_W_IDArena_pvp_L] ([%2]/5).</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Talk to [%dic:STR_DIC_N_Junos].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Enter the Arena of Discipline, Chaos, or Harmony at the Crucible Coliseum and defeat your opponent.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Junos instructed you to defeat five opponents in the Arena of Discipline, the Arena of Chaos, or the Arena of Harmony.</p>
+          <p> </p>
+          <p>When you succeeded, she refrained from giving you her next test, which Molfus deemed too difficult, but challenged you to try on your own time to defeat ten opponents without dying.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

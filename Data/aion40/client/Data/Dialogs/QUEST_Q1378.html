@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님, 바쁘신가요? </p>
+          <p> </p>
+          <p>급한 일이 하나 있는데...</p>
+          <p> </p>
+          <p>바쁘지 않으시면 [%username] 님께 그 일을 부탁드리고 싶습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">무슨 일인지 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>화산지대 전초기지에 보급품을 전달해야 하는데 마땅한 사람이 없어서요.</p>
+          <p> </p>
+          <p>저나 베라모네스는 마을을 지켜야 해서 자리를 비울 수 없고 그렇다고 자경단에게 맡기자니 너무 위험해요.</p>
+          <p> </p>
+          <p>트롤과 레파르 혁명단이 우글거리는 곳에 인간들을 보낼 순 없잖아요.</p>
+          <p> </p>
+          <p>그러니 [%username] 님이 도와주시면 안 되겠습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>감사합니다. 덕분에 한시름 덜었습니다.</p>
+          <p> </p>
+          <p>사실 벌써 며칠 전에 전달했어야 하는 물건이거든요.</p>
+          <p> </p>
+          <p>자, 받으십시오. 보기보다 꽤 무거우니 조심하세요.</p>
+          <p> </p>
+          <p>이걸 [%dic:STR_DIC_N_Hylas]에게 전해 주면 됩니다. 지금쯤 목이 빠져라 기다리고 있을 테니 바로 출발해 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이를 어쩐다. 전에 보낸 보급품은 이제 거의 바닥났을 텐데.</p>
+          <p> </p>
+          <p>데바니 굶는다고 죽진 않겠지만 그래도 배가 든든해야 일을 제대로 할 수 있지 않겠습니까.</p>
+          <p> </p>
+          <p>알겠습니다. 바쁘시다니 어쩔 수 없죠. 제가 어떻게든 짬을 내서 가 보겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아니, 이렇게 외딴 곳까지 무슨 일이오?</p>
+          <p> </p>
+          <p>혹시 여기서 애인이라도 만나기로 한 거요?</p>
+          <p> </p>
+          <p>이크, 그렇게 째려보지 마시오. </p>
+          <p> </p>
+          <p>농담이요, 농담, 하하핫!</p>
+          <p> </p>
+          <p>(웃음을 멈추고 정색하며) 그건 그렇고 정말로 여긴 무슨 일이오?</p>
+          <p> </p>
+          <p>장난으로 올 만한 곳은 아닌데.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">보급품 꾸러미를 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아, 보급품을 가져오신 분이었구려.</p>
+          <p> </p>
+          <p>알아보지 못해서 미안하오.</p>
+          <p> </p>
+          <p>안 그래도 가지고 있던 식량이 다 떨어져서 난처해 하던 참이었다오.</p>
+          <p> </p>
+          <p>정말 고맙소. 여기까지 오느라 수고 많았을 텐데 이거라도 받으시오. 작지만 내 성의요.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_Hylas]에게 보급품을 전하라 </font></p></step>               
+    </steps>
+          <p><font font_xml="quest_summary">화산지대 전초기지로 가서 아르켈이 부탁한 보급품을 힐라스에게 전해야겠다.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아르켈은 화산지대 전초기지에 보급품을 전해야 하는데 마땅한 사람을 찾지 못해 걱정이라고 했다.</p>
+          <p> </p>
+          <p>보급품 꾸러미를 야영지의 힐라스에게 전하자 정말 고맙다며 사례를 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

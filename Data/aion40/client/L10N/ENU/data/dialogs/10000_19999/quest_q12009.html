@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q12009</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>Not entered</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've more things to do than I can count, [%username]. I've bounty letters, research assignments, tactical assessments, logistical shipments, and tributes to hand out, and absolutely no soldiers to help. If work is the lifeblood of the Elyos people, then I am drowning in it.</p>
+          <p> </p>
+          <p>Ah! You've been standing there long enough to not appear busy. How about a task? I need someone to travel to Edendell and pick some of the [%dic:STR_DIC_OBJ_LDF4B_FOBJ_T2_Flower]s there. Sounds simple enough, right? And you get to walk through the private gardens of one of the Dragon Lords!</p>
+          <p> </p>
+          <p>So, what do you think?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, my rock-crusher ext... no, my flower-picker extraordinnaire!</p>
+          <p> </p>
+          <p>How did you get on?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">"I gathered these."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hmm... yes, yes. These should do nicely.</p>
+          <p> </p>
+          <p>I'll have these wrapped and sent to Sanctum. I have no idea what they intend to do with a couple of flowers, but you know military life: orders are orders.</p>
+          <p> </p>
+          <p>Thank you so much, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Pick [%dic:STR_DIC_OBJ_LDF4B_FOBJ_T2_Flower]s in Edendell garden and take them to Acacia.</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">You're needed in Edendell for a flower picking mission. Hurry.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Acacia told you how she was swamped with work, and in desperate need of help. You, having listened for far too long, were encumbered with an assignment, and sent to Edendell to pick flowers. You did as she asked, and returned to a fair reward.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Tiamat's laboratory appears to be occupied by the Beritra Legion for now.</p>
+          <p> </p>
+          <p>They definitely know that the fortress in the plain is occupied by us, but they stay put. There must be something important in there.</p>
+          <p> </p>
+          <p>I've found a book that the Tiamat Legion left in the fortress, in fact... </p>
+          <p> </p>
+          <p>If you promise to keep it to yourself, I will only tell you what it's about, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">Nod.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It appears that the Beritra are carrying out their research on Tiamat as they planned.</p>
+          <p> </p>
+          <p>But that's my guess. I couldn't confirm the details.</p>
+          <p> </p>
+          <p>Why don't you do that for me, [%username]?</p>
+          <p> </p>
+          <p>Since you can eliminate the cause of the screams and carry out Centurion Tenitian's request, it's like killing two birds with one stone.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Two things need to be done inside.</p>
+          <p> </p>
+          <p>The first objective? Find out the situation of Tiamat's laboratory. Eliminating the remaining Beritra researchers is the second objective.</p>
+          <p> </p>
+          <p>The screams come from the Beritra researchers' bio-experiments. So if you get rid of them, the screams will go away. </p>
+          <p> </p>
+          <p>Oh, please don't forget to report to Centurion Tenitian the details regarding the Beritra researchers.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">End dialog.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hmm. I thought you would help me and even told you what the book was about, [%username].</p>
+          <p> </p>
+          <p>I understand. I can't force you.</p>
+          <p> </p>
+          <p>But please keep quiet about what I've just told you, then.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">End dialog.</Act>
+    </Selects>
+  </HtmlPage>
+
+
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Have you met Gadoron?</p>
+          <p> </p>
+          <p>Have you told him my story? Did he say I was right?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">Report the result.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It was more serious than I thought.</p>
+          <p> </p>
+          <p>I just thought some Balaur members were hiding, but didn't think they were even carrying out their research. </p>
+          <p> </p>
+          <p>Thanks to you, the unpleasant screams are gone and Beritra's research was also stopped.</p>
+          <p> </p>
+          <p>Well done, [%username]. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Eliminate the Beritra researchers ([%2]/1).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_N_LDF5b_Tenisian].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Investigate Tiamat's laboratory and eliminate the Beritra researchers as Gadoron requested.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Gadoron said that the remaining Beritra members have taken over Tiamat's laboratory and asked you to go into the laboratory to find out the situation and to solve the source of the screams. </p>
+          <p> </p>
+          <p>You went to Tiamat's laboratory and eliminated the Beritra researchers who were working on the bio-experiment with the Reian Tribe. When you reported it to Centurion Tenitian, he complimented your work. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

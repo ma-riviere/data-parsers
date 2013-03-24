@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Last time when we went out to get some firewood, Benyar of the Watch said something that made me think.</p>
+          <p> </p>
+          <p>He asked if we'd stay here and protect them until they grow old and die. He said we're making them too dependent on us.</p>
+          <p> </p>
+          <p>I felt insulted at first, but what he said wasn't wrong. We might have to leave at any time if our superiors order it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What would they do?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've been thinking about that. We need to find ways to push the Humans toward living more independently. I teach them how to fight whenever I have time, and send the Watch members to less dangerous places on their own.</p>
+          <p> </p>
+          <p>But now they want to go to the harbor to check the state of the ships and forage. I think it's too dangerous, but I don't want to crush their spirit.</p>
+          <p> </p>
+          <p>So I was wondering, would you be willing to go there in advance and make the area safer, [%username]? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I knew I could count on you, [%username]. Go to the Anair Harbor and clear the area of [%dic:STR_DIC_M_WaterwormIceD_37_An]s and [%dic:STR_DIC_M_WaterwormIceD_39_An]s.</p>
+          <p> </p>
+          <p>Without them around it will be much easier for the Watch, and they'll gain even more confidence when they return safely.</p>
+          <p> </p>
+          <p>Please keep this to yourself. The Watch members would be humiliated if they ever learned of this.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"It's our secret."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, I see. If you have other things to take care of, I understand.</p>
+          <p> </p>
+          <p>I can always ask another Daeva, or go there myself if all else fails.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Good luck." </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Welcome back, [%username]. Have you been to the harbor? </p>
+          <p> </p>
+          <p>Did you do the thing that I asked of you? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Yes, I did."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Perfect.</p>
+          <p> </p>
+          <p>I'll tell Vonduca that now would be a good time to take a party down to the harbor.</p>
+          <p> </p>
+          <p>Thank you for keeping this between us.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Eradicate the Waterworms in the Anair Harbor.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_WaterwormIceD_37_An] ([%2]/7)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_WaterwormIceD_39_An] ([%5]/10)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_N_Noarynt].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Eradicate the Waterworms in advance so the Watch can return from the Anair Harbor safely.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Noarynt wants to support the effort of Humans to become independent, and asked you to secretly make the area around the harbor safe for the Humans to explore and forage.</p>
+          <p> </p>
+          <p>So you went and eradicated the Lake Waterworms and Ice Waterworms without the Humans knowing.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

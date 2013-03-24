@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--Tightening pass 16 Apr by Dave-->
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You'll have seen the [%dic:STR_DIC_M_SpriggD_1_n]s around here. They grew braver as Asmodae paid them less attention. They're pack creatures, so as their numbers swell, so does their confidence.</p>
+          <p> </p>
+          <p>Just look around. The Spriggs ain't exactly shy now, are they?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Not exactly."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I want you to join the other raiders and take them down a few notches, [%username].</p>
+          <p> </p>
+          <p>Their huts are already burning. Put some bodies on the ground.</p>
+          <p> </p>
+          <p>That'll remind the Spriggs that they may live in Ishalgen, but we own it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good. I knew you'd want to save face after passing out.</p>
+          <p> </p>
+          <p>Go out into the basin and kill four [%dic:STR_DIC_M_SpriggD_1_n]s. Return to me as soon as you're done.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Consider it done."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You lazy coward!</p>
+          <p> </p>
+          <p>We waited for you in these wretched conditions, even when the Asmodian Code tells us to leave stragglers behind! You have a chance to repay our kindness, but you slap us in the face?</p>
+          <p> </p>
+          <p>Raiders work together, [%userclass]. That's what separates us from mere bandits.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I see."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Back so soon? You don't look hurt...</p>
+          <p> </p>
+          <p>You finished the mission already?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I've slain the Spriggs."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>A bloody task done well. You've fully recovered from your collapse.</p>
+          <p> </p>
+          <p>Here's your reward, [%username]. Take it.</p>
+          <p> </p>
+          <p>And no more falling to the ground!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get rid of the [%dic:STR_DIC_M_SpriggD_1_n]s who have recently started attacking the Ulgorn Raiders ([%2]/4).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_N_Vandarnt].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Get rid of the Spriggs as Vandar ordered.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Vandar was becoming frustrated with the increasingly aggressive Spriggs, and asked you to cut their numbers.</p>
+          <p> </p>
+          <p>You got rid of Spriggs and, after reporting in to Vandar, received your reward.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

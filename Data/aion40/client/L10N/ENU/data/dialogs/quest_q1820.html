@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>How does one defend without weapons, I ask? Difficult, isn't it?</p>
+          <p> </p>
+          <p>We put in a request for a new supply of weapons weeks ago, yet we have nothing to show for it! The logistics officers at Teminon are dragging their feet. Presumably, they expect us to fight off the Asmodians with sticks and stones.</p>
+          <p> </p>
+          <p>It's pitiful, I tell you. Out of desperation, we've begun crafting our own weapons.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Have you found suitable materials?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, that's the one ray of sunlight actually....</p>
+          <p> </p>
+          <p>We're looking at the Tricos. Their horns are incredibly strong and can be adapted into weapons with the right tools. All we need now is the horns themselves....</p>
+          <p> </p>
+          <p>Would you be willing to get us some [%dic:STR_DIC_I_QUEST_1820a]s? I would ask the other Daevas here, but they're standing guard at the moment with the few weapons we have left.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I knew you would help! I knew it the moment I laid eyes upon you.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_Ab1_1251_Trico_31_An]s can be found all over the Clocktower Plains near the fortress. It's difficult to miss them.</p>
+          <p> </p>
+          <p>Collect five [%dic:STR_DIC_I_QUEST_1820a]s. That should be enough for our soldiers to start working on.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm on it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No? Then why did you feign interest when we spoke?</p>
+          <p> </p>
+          <p>Shadows take you, [%username]! This is no place for those who play games and waste time.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Sorry."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Have you collected all the horns? Already?</p>
+          <p> </p>
+          <p>You can't be that fast, [%username]. I'll wager good Kinah a number of the horns are broken.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Well, have a look."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes, see here? Cracked. These are useless.</p>
+          <p> </p>
+          <p>I need [%dic:STR_DIC_I_QUEST_1820a]s, and I need them in one piece. No more delays, please. We're in desperate need of weapons.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be right back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, I take it back! These are perfect!</p>
+          <p> </p>
+          <p>Sorry for doubting you, [%username]. Clearly your reputation is well earned!</p>
+          <p> </p>
+          <p>I'll get these modified right away. If you find any more, please bring them to me. I'll reward you for them, of course. At this rate, the war will be over by the time Teminon bothers to resupply us....</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Kill [%dic:STR_DIC_M_Ab1_1251_Trico_31_An]s, collect their horns, and take them to [%dic:STR_DIC_N_Ab1_1251_Quest_Li].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">You heard that soldiers garrisoned at the Asteria Fortress were running out of weapons. Kill the Young Asteria Tricos and collect their intact horns, then bring them to Euridice so that new weapons can be crafted.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Euridice explained that the Asteria Fortress was running out of weapons, and asked you to procure materials so new ones could be crafted.</p>
+          <p> </p>
+          <p>You collected the horns of Young Asteria Trico and returned them to Euridice, who told you he'd reward you if you bring him more of the horns in the future.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

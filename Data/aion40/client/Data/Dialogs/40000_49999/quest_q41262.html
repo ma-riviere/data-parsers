@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q41262</QuestId>
+    <QuestName>시엘의 창 유물 수집</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이제껏 조사해 온 자료들이 사실이라면 사바트의 황혼에는 그것이 있어야만 합니다.</p>
+          <p> </p>
+          <p>(목소리를 낮춘다) [%dic:STR_DIC_I_QUEST_41262A] 말입니다.</p>
+          <p> </p>
+          <p>선대 [%dic:STR_DIC_E_spearofCiel] 레기온이 소수의 인원으로도 이 척박한 땅에 자리 잡을 수 있던 것을 생각해 보십시오</p>
+          <p> </p>
+          <p>그들의 유물에는 특별한 능력이 남아 있을 것이 분명합니다.</p>
+          <p> </p>
+          <p>당신도 유물에 숨겨진 힘이 궁금하다면 [%dic:STR_DIC_W_LDF4a_SZ_D] 지역을 수색해 주시지 않겠습니까?</p>
+          <p> </p>
+          <p>만약 [%dic:STR_DIC_I_QUEST_41262A]을 찾게 된다면 제게로 가져오시면 됩니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님? </p>
+          <p> </p>
+          <p>그 표정은... 설마!</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_I_QUEST_41262A]을 찾아 내신 겁니까?</p>
+          <p> </p>
+          <p>자료들이 신빙성이 약간 떨어지는 것들이라 설마 했었는데... </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">유물을 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>오오! 이 문양은...!</p>
+          <p> </p>
+          <p>선대 시엘의 창 레기온이 쓰던 것이 확실합니다!</p>
+          <p> </p>
+          <p>어쩌면 티아마트와 대적할 강력한 수단이 탄생할 지도 모릅니다.</p>
+          <p> </p>
+          <p>[%username] 님이 도와주신 덕분에요!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_I_QUEST_41262A]을 찾아 [%dic:STR_DIC_N_Sotuon]에게 전해줘라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">선대 시엘의 창 레기온이 사용했던 유물을 찾아보자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>소투온은 선대 시엘의 창 레기온이 사용하던 유물에는 강력한 힘이 담겨져 있을 것이라고 말했다.</p>
+          <p> </p>
+          <p>유물을 이용해 티아마트와 대적할 무기를 만들어 낼 것이라는 그를 위해 시엘의 창 유물을 찾아다 줬다.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]! I'm glad you're back.</p>
+          <p> </p>
+          <p>Heiron is treating you well, I trust?</p>
+          <p> </p>
+          <p>We could use your help. We've got a...situation.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"A situation?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You've already heard about the Balaur Legion holed up deep inside the Kishar village.</p>
+          <p> </p>
+          <p>Even though they won't--and probably can't--leave their barracks, they're still a problem. We're fighting the Kishar Krall, but with the Balaur at their backs, they can retreat without fear.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"How many troops are you using?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Not enough! I've asked New Heiron Gate, Eltnen Fortress, and even Sanctum for reinforcements.</p>
+          <p> </p>
+          <p>Nothing. Just more orders to keep the pressure up. I see the writing on the wall--it's only a matter of time before we're on the defensive.</p>
+          <p> </p>
+          <p>[%username], you don't want the Balaur to destroy Heiron, do you? Please help us!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you! I'd like you to get rid of [%dic:STR_DIC_M_LF3E3_FeB_LizardFi_43_Ae_Tune]s and [%dic:STR_DIC_M_LF3E3_FeC_LizardFi_44_Ae_Tune]s in the Indratu Barracks.</p>
+          <p> </p>
+          <p>Those are the main forces of the Indratu Legion. Without them as a strategic reserve, we'll defeat the Krall. It'll also get us closer to the Nute Warrens where the Balaur leadership is.</p>
+          <p> </p>
+          <p>May Ariel light your path, [%username]. We're all counting on you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Faith and arms!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>If we can't rely on the Daevas to protect us, who can we rely on?</p>
+          <p> </p>
+          <p>We'll continue the fight then, and hope that reinforcements arrive.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Farewell, Piros."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's [%username]! You came back safe!</p>
+          <p> </p>
+          <p>You were away long enough that we were worried. How did things go in the Indratu Barracks?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"The Draconutes are no longer a problem."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Seraphim Lords must have blessed you indeed.</p>
+          <p> </p>
+          <p>Now we can push harder against the Krall, and they can't just hide behind the Balaur.</p>
+          <p> </p>
+          <p>Take this. Consider it a token of my appreciation.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get rid of the Balaur guarding the Indratu Barracks.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_LF3E3_FeB_LizardFi_43_Ae_Tune] ([%2]/60)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_LF3E3_FeC_LizardFi_44_Ae_Tune] ([%5]/30)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report the result to [%dic:STR_DIC_N_Piros].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Eliminate Indratu Grunts and Crusaders to secure the path to Nute Warrens.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Piros was worried. No matter how hard his soldiers attacked the Kishar Krall, he couldn't break them because of the Balaur Legion supporting them.</p>
+          <p> </p>
+          <p>Weary of waiting for reinforcements, Piros asked for your help. You eliminated Indratu Grunts and Crusaders, clearing the path to the Nute Warrens.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I am Lukmann. I've travelled Asmodae for decades, looking to right the wrongs that have been committed against our people.</p>
+          <p> </p>
+          <p>Here though...here I have found one of Atreia's greatest tragedies.</p>
+          <p> </p>
+          <p>I have a story to tell you, [%username]. Have you time to listen to it?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"I do."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Adma Stronghold is a horrific place. It crawls with the diseased, the dead, and the dying, because of one woman--[%dic:STR_DIC_M_Adma_PricessNamed_50_Ah].</p>
+          <p> </p>
+          <p>She was thoughtless, vain beyond belief, and spent Kinah on elaborate parties without regard for her family's dwindling wealth.</p>
+          <p> </p>
+          <p>And yet, she was blessed with such beauty that men courted her day and night, happily ignoring her despicable nature. Eventually, she  met the Lord of Adma Castle, and not long after that, his wife died....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"And she became a Princess...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes, and when Brusthonin was struck by a terrible epidemic, Princess Karemiwen ordered the castle gates shut.</p>
+          <p> </p>
+          <p>Hundreds flocked to the castle--all were refused. None were sick, but even after she knew that, Karemiwen refused to open the gates. One by one they were taken by slow and agonizing starvation, betrayed by those to whom they had sworn fealty.</p>
+          <p> </p>
+          <p>Princess Karemiwen still lives, [%username]. I have passed judgment on her, and must avenge those who died through her actions. Will you help me?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you, [%username]. She has been judged, and today Asmodae will be rid of her.</p>
+          <p> </p>
+          <p>Bring me her [%dic:STR_DIC_I_QUEST_4092a] as proof of your actions. It was the most valued of her belongings, a treasure given to her by one of her many rejected suitors.</p>
+          <p> </p>
+          <p>Blood for blood!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Blood for blood!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No? I am surprised.</p>
+          <p> </p>
+          <p>[%username], when the good do nothing, the corrupt prevail. Inaction is evil in itself--you must change your mind. The Princess must be punished.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll think about it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Is your work done, [%username]? Has judgment been satisfied?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"It has."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Perhaps, but I need proof remember? Her [%dic:STR_DIC_I_QUEST_4092a]--the treasure she wore on her thoughtless head must be brought to me.</p>
+          <p> </p>
+          <p>Go back [%username]. Find the crown, or kill her if your task hasn't yet been completed.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Wait here."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Look at it! Such a beautiful creation, and yet for so long it rested on such a despicable head.</p>
+          <p> </p>
+          <p>I'll have it sent to Pandaemonium. The money raised from its sale should be put towards restoring the region. Yes...that would be fitting.</p>
+          <p> </p>
+          <p>Here is your reward, [%username]. You have done well. You have acted as the Asmodian that you are.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Kill [%dic:STR_DIC_M_Adma_PricessNamed_50_Ah] and take proof of your deed to [%dic:STR_DIC_N_Lukmann].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Kill Princess Karemiwen in the Adma Stronghold and take proof of her death to Lukmann.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>A Daeva of Justice named Lukmann told you the story about Princess Karemiwen, and how he had travelled to Brusthonin to see her punished for her wrongdoings.</p>
+          <p> </p>
+          <p>You agreed to help, and killed the Princess, taking her Pearl Crown as proof to Lukmann. He appreciated your help and promised to donate the Princess's crown towards the restoration of Brusthonin.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

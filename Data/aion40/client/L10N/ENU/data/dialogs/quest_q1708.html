@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q1708</QuestId>
+    <QuestName>Rank 3 Asmodian Soldier</QuestName>
+    <QuestType>Not entered</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent job on that last mission, [%username].</p>
+          <p> </p>
+          <p>It tells me that I can trust you for even more difficult tasks.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Do you have another task in mind?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I do. It's the [%dic:STR_DIC_E_Dgrade3]s this time.</p>
+          <p> </p>
+          <p>I think you've the experience to handle them now. Do you agree?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I knew your bravery would show through.</p>
+          <p> </p>
+          <p>Go hunt the [%dic:STR_DIC_E_Dgrade3]s right away. The ones that present a challenge, that is. If you can kill them with little effort, then so can anyone. We send our best to fight their best.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm on it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Afraid? I should have known.</p>
+          <p> </p>
+          <p>You looked a little too scrawny to handle anything beyond the last task. Go back to the land of those who are afraid like you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Um...all right."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What happened with the [%dic:STR_DIC_E_Dgrade3]s?</p>
+          <p> </p>
+          <p>Tell me every detail.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I handled the situation."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well done, [%username].</p>
+          <p> </p>
+          <p>I expect you to keep up the good work.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Destroy [%dic:STR_DIC_E_Dgrade3]s ([%2]/10).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report the result to [%dic:STR_DIC_N_Sakmis].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">To weaken the power of the Asmodians, get rid of the Level 3 Asmodian Soldiers.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Sakmis told you she trusted you enough to give you a more difficult mission.</p>
+          <p> </p>
+          <p>She asked you to get rid of the Level 3 Asmodian Soldiers, which you did.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

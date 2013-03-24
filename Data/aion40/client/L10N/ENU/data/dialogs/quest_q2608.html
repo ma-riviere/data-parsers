@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>A detachment of Archons from Beluslan Fortress went to Besfer recently. Their report...frankly, it wasn't good. Not at all.</p>
+          <p> </p>
+          <p>All our efforts to save the village may be in vain, not to mention the rest of this region. Aion help us all if the report is true.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What did they say?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>One of them saw a herd of Odd Granker drinking contaminated water flowing in Besfer Village. The same water that will turn a weakling into a powerful undead with a single drop.</p>
+          <p> </p>
+          <p>I ran to Besfer as soon as I heard, but the Granker had scattered by then. Worse yet, they're highly migratory. They could spread the contamination across the region within weeks.</p>
+          <p> </p>
+          <p>We're working on a better solution, but for now, all we can do is kill Odd Granker before the worst happens. Can you do this for us?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>So far, none of the contaminated Granker have become undead, but that could change any day now.</p>
+          <p> </p>
+          <p>It was [%dic:STR_DIC_M_BighorndeerMinerD_35_n]s and [%dic:STR_DIC_M_BighorndeerD_35_An]s that were seen drinking the water.</p>
+          <p> </p>
+          <p>They are innocent creatures, but this is for Beluslan. Azphel guide you on this endeavor.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I will succeed."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You don't seem to grasp just how serious this situation is.</p>
+          <p> </p>
+          <p>Think of what you saw in Besfer. Now think of it happening at Beluslan Fortress, at all the Mau villages, everywhere!</p>
+          <p> </p>
+          <p>Can't you spare a few moments to help all these potential victims?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"You'll find someone else."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>May the Shedim Lords guide us in our hour of need....</p>
+          <p> </p>
+          <p>Beluslan Fortress is demanding regular updates from us. They must see just how serious this situation is.</p>
+          <p> </p>
+          <p>How did you do? Did you kill the Odd Grankers</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I have."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That's a huge relief, [%username]. But our troubles aren't over yet.</p>
+          <p> </p>
+          <p>Grankers are mobile creatures. We plan to watch their movements carefully, not to mention set up guards to keep any more from drinking the Besfer water.</p>
+          <p> </p>
+          <p>I'll be sure your superiors know that you stepped up in this time of crisis.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Terminate Grankers that drank the contaminated water.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_BighorndeerMinerD_35_n]([%2]/6)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_BighorndeerD_35_An]([%5]/10)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Speak to [%dic:STR_DIC_N_Alfgeir].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Odd Grankers have been seen drinking the contaminated water in Besfer Ghost Village. Terminate Grankers before the contamination spreads.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Alfgeir told you that Odd Grankers drank the contaminated water in Besfer Ghost Village. He asked you to hunt them down to keep the contamination from spreading.</p>
+          <p> </p>
+          <p>You successfully killed many Odd Grankers and Young Odd Grankers. Alfgeir expressed his gratitude and gave you your expected reward.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

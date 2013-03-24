@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>For some, the future's hearth is warm, surrounded by familiar faces. For you, though...I see hardship and danger. There is...some hope, but it's difficult to see.</p>
+          <p> </p>
+          <p>Intuition is a double-edged sword. Why see the future if you can't do anything about it? I'd far rather be out in the Abyss, tearing through Elyos feathers.</p>
+          <p> </p>
+          <p>You're a Daeva now, and like the rest of us, you must walk your path, no matter how rocky it becomes.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Is there no way to change my fate?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I can only tell you what I have seen. There is someone who may be able to help, though.</p>
+          <p> </p>
+          <p>Destiny is a shrewd merchant, but like all merchants, its palm can be greased. You should seek out [%dic:STR_DIC_N_Agamo], Daeva of Music. He's the source of most of the grease in this city, after all.</p>
+          <p> </p>
+          <p>But his talent is undeniable. With his songs, he might be able to call upon the divine power needed to sway your fortunes.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You'll find [%dic:STR_DIC_N_Agamo] by the pond in Pandaemonium Plaza. He likes to gaze into its waters, though what he sees beyond his own reflection I couldn't say!</p>
+          <p> </p>
+          <p>Ask him to sing the song of blessing for you. It shouldn't take too much persuading. If you do receive it, it may improve your luck.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Thanks for your time."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I see. I have to say, I admire your courage.</p>
+          <p> </p>
+          <p>There aren't many who would welcome suffering as if it were their closest friend.</p>
+          <p> </p>
+          <p>You're the first Daeva I've met who would happily lend their sword to danger, so that it may cleave from them their empty head! Congratulations--I wish you the best of luck!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Er...Right."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, well met.</p>
+          <p> </p>
+          <p>If you're hoping for one of my famous songs, I'm afraid you're out of luck. People have come to treat my talent as a hammer for all nails. It's unthinkable.</p>
+          <p> </p>
+          <p>My songs have been empowered by the Shedim Lords themselves. To use them wantonly would be...a crime against Asmodae!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">"Grimhild sent me."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Grimhild, eh? That's different. And you do look...how shall I put it? Awful. You're going to need all the help you can get.</p>
+          <p> </p>
+          <p>I do like a genuine reason for the song of blessing, so choose your blessing carefully. What takes your fancy--power or wealth?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="PLAYEMOTION_comfort;HACTION_SETPRO1">"Power would be of most use."</Act>
+      <Act href="PLAYEMOTION_comfort;HACTION_SETPRO2">"Wealth. I desire wealth."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(Agamo bursts into song, his voice a powerful torrent of sound that at first threatens to overwhelm you. Though the words are not clear, you feel as though part of you understands them, and is strangely fortified by their meaning.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Voice file="q2911_powersong.ogg"/>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(Agamo's voice pierces the air, gentle melodies switching and weaving as they build into a brilliant, ringing cascade. You are left with fleeting impressions of moving water, streams that babble and glint metallically.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Voice file="q2911_goldsong.ogg"/>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk to [%dic:STR_DIC_N_Agamo].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">According to Grimhild, your future will be filled with hardship and danger. Go to Agamo and listen to his song of blessing so that it might help improve your fortunes.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Grimhild said that your future will be filled with hardship and danger. She told you to meet Agamo and listen to his song of blessing so that it might bring you good luck.</p>
+          <p> </p>
+          <p>You told Agamo what Grimhild said, and he asked you to choose between the blessing of power and and the blessing of wealth. After you made your choice, he sang the song of blessing for you.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

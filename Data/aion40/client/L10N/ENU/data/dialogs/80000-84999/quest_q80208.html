@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], don't you think that Suike is the most beautiful girl in the village?</p>
+      	  <p> </p>
+          <p>She's like sunshine to me, and she keeps looking over here. Do... do you think she likes me?</p>
+          <p> </p>
+          <p>I have to know. But what if she doesn't? Maybe, maybe you could give her something. From me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What kind of something?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I have this emerald ring that would be perfect for her.</p>
+          <p> </p>
+          <p>It... it is perfectly normal to give rings to girls to find out if they like you.... right?</p>
+          <p> </p>
+          <p>Isn't that what you do? Anyway, will you take this to her?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thanks!</p>
+          <p> </p>
+          <p>I'm sure I'll be able to help you in return sometime.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Goodbye."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>"No?" What do mean "I'm not normal"?</p>
+          <p> </p>
+      	  <p>See, [%username], I bet this is why you're single. You don't understand people like I do.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Thank Lady Siel for that."</Act>
+    </Selects>
+  </HtmlPage>
+
+<HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hello. Do I know you?</p>
+          <p> </p>
+          <p>Oh, Winton gave you something for me? What is it?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">"He wants you to have this ring."</Act>
+    </Selects>
+  </HtmlPage>
+
+<HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>A ring? That's crazy. I don't like him like that at all.</p>
+          <p> </p>
+          <p>And I wasn't looking at him - I was looking at his ugly shirt! Tell him I'd sooner kiss a Krall than go out with him.</p>
+          <p> </p>
+          <p>The ring certainly is pretty though. I think I'll keep it anyway. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"Wow."</Act>
+    </Selects>
+  </HtmlPage>
+
+<HtmlPage name="select3">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>How did it go? She's my future wife, I just know it!</p>
+          <p> </p>
+          <p>We're going to have a house in Oriel and raise six children.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT3_1">"I think... she... likes someone else."</Act>
+    </Selects>
+  </HtmlPage>
+
+<HtmlPage name="select3_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What? How could she possibly like someone else more?</p>
+          <p> </p>
+          <p>Oh well. Women are like teleports: miss one and another will be along any moment.</p>
+          <p> </p>
+          <p>So how about taking another gift to Sharine in [%dic:STR_DIC_W_DF1A_1]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO2">"Okay, but no more after this."</Act>
+    </Selects>
+  </HtmlPage>
+
+<HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes. I'm Sharine.</p>
+          <p> </p>
+          <p>A gift from Winton? What could he possibly be giving me?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"How does a ring sound?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+         <p>Oh. That's very sweet of him. It's just... I'm really not interested in him.</p>
+          <p> </p>
+          <p>Someone should really tell him that giving rings to strange women is kind of creepy.</p>
+          <p> </p>
+	        <p>But I can sell this ring and buy some new shoes now! Thanks [%username], here's a little reward for you too.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Take Winton's Emerald ring to Suike.</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Tell Winton she doesn't like him.</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Take Winton's Sapphire Ring to Sharine at [%dic:STR_DIC_W_DF1A_1].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Winton asked you to deliver presents to the pretty girls in the village. You decide to help him for now.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Winton asked you to deliver presents to the girls he likes.</p>
+          <p> </p>
+          <p>It didn't go well for him.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Greetings, [%username]. I have a quest and I need a skilled Daeva to accomplish it.</p>
+          <p> </p>
+        <p>Priest Sulates in the fortress contacted me, praising your abilities. He said you would be able to help me kill Bollvig.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Kill him? But his weapon is destroyed."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We must. The Storm Circle has fallen completely into his hands, and while he cannot now turn our people into his minions, he still commands an army of Undead. We must strike now before he can rebuild the Obelisk.</p>
+          <p> </p>
+          <p>We cannot send just anyone to fight him. His minions are legion and very dangerous, and we can't risk any more of our soldiers than necessary. It takes someone with your talents, [%username], to succeed in a mission like this.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1_1">"Where can I find him?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>According to our investigation, Bollvig is always on the floating island, surveying his troops. Once inside The Storm Circle, you will need to fly to the island and attack him there. This is dangerous, of course, but there is no alternative.</p>
+          <p> </p>
+          <p>Bollvig is strong--possibly stronger than anyone you've faced. I urge you to find companions you can trust to assist you--even with your skills, it isn't something to attempt alone. And check with Quartermaster [%dic:STR_DIC_N_Ekseus]. He has something for you that may be useful.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"Faith and arms, Admiral."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>So you're [%username]? Faith and arms, but you're in for a fight. You know, Bollvig's the whole reason the Blue Fleet came here in the first place. Still haven't been able to do it...tweaks the admiral proper, it does. </p>
+          <p> </p>
+          <p>Not sure where you'll be able to succeed where the Blue Fleet failed, but it's not my place to question the admiral. If you're going to pull this off, though, you'll need some help.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">"What do you have for me?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Here--this will increase your defenses. I'm not sure how much it will help you, but it can't hurt, right? You have to time it just right. If you can kill Bollvig, bring [%dic:STR_DIC_I_QUEST_1060b] back to Admiral Gorgos. We'll be on the lookout for you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO2">"Faith and Arms, Ekseus."</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="select3">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], good to see you back. What news?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Bollvig is dead, Admiral."</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="check_user_item_ok">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This...this is his Stigma. It's true. Aion's Tower, I can't believe it. You succeeded.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"You're surprised, Admiral?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No! I mean, yes, but no. Your reputation is well deserved, [%username], and I never doubted your ability. But others before you have been skilled and Aion-favored as well, only to join Bollvig's Undead army.</p>
+          <p> </p>
+          <p>It is quite a thing to live to witness a victory that has long eluded us. Your deeds shine brightly this day, [%username], and Elysea owes you a great debt. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Aion blessed us, Admiral. No more."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Your humility becomes you, but the Blue Fleet will always know the truth. You have accomplished what we could not, and we won't forget it.</p>
+          <p> </p>
+          <p>Your memory will be held in honor among us, [%username]. Aion's blessings upon you.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk with [%dic:STR_DIC_N_Gorgos].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Talk with [%dic:STR_DIC_N_Ekseus].</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Kill [%dic:STR_DIC_M_lasberg_monster] and bring the evidence to [%dic:STR_DIC_N_Gorgos].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Admiral Gorgos has asked you to take the final step and put an end to Bollvig, once and for all.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Admiral Gorgos of the Blue Fleet ordered you to kill Bollvig. You collected a potion to enhance your defenses and then went to find Bollvig.</p>
+          <p> </p>
+          <p>He was a formidable enemy, but with the help of your companions you killed Bollvig and brought his Stigma to Admiral Gorgos.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>Mission Progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

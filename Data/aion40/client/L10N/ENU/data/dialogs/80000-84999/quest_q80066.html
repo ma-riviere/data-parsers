@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Azphelumbra, good [%userclass]! I assume you're here to entrust items to us Brokers?</p>
+          <p> </p>
+          <p>No? Then...perhaps you know my cousin Minya in Beluslan?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"She has rainbow feet and a Poroco's bearing."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hmmm, I thought so. There was just something about you that made me suspect you were working for them.</p>
+          <p> </p>
+          <p>At any rate, you want a letter, yes? Unfortunately for you, you have to suffer for the cheapness of your bosses.</p>
+          <p> </p>
+          <p>See, I'm not a paid operative--just a freelancer. And they've been...slow to pay me lately. So if you want the letter, you'll have to do me a favor first.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Very smart. Don't worry, though--helping me out will also make future assignments run more smoothly.</p>
+          <p> </p>
+          <p>I need [%dic:STR_DIC_I_QUEST_80066A]. It has special properties that allow me to...well, I'd probably bore you going on about them.</p>
+          <p> </p>
+          <p>Get some from [%dic:STR_DIC_M_MosbearS_14_An]s, and I'll trade for the letter. I think that's more than fair with what's at stake here.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Then I'll do what I must."</Act>
+    </Selects>
+
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hey, it makes no matter to me...nor yourself, I suspect. It's only your handlers, and maybe the rest of Asmodae, who'll suffer.</p>
+          <p> </p>
+          <p>Don't look at me like that. I want victory too! But I won't be able to enjoy it if I get squeezed dry before then!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"How practical of you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I hope you didn't find my little request too troublesome. I just don't have the time to do it myself.</p>
+          <p> </p>
+          <p>But the letter you need is still in my hot little claws. You know what I want for it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I do. And here it is."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ahhh, top quality stuff.</p>
+          <p> </p>
+          <p>And here is the letter. Let it never be said that I'm not a man of my word.</p>
+          <p> </p>
+          <p>Between you and me, though, I have some advice: quit the spy business. It's not all it's cracked up to be.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Do you know what your new bosses do to agents who disappoint them?</p>
+          <p> </p>
+          <p>Unless you get me [%dic:STR_DIC_I_QUEST_80066A] from [%dic:STR_DIC_M_MosbearS_14_An]s, you might find out the hard way.</p>
+          <p> </p>
+          <p>But it's none of my business. Maybe you're one of those types who enjoy pain...?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Only when I inflict it on snakes like you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get [%dic:STR_DIC_I_QUEST_80066A] from [%dic:STR_DIC_M_MosbearS_14_An]s and give it to [%dic:STR_DIC_N_event_Schnitten].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Get some Faded Parchment and give it to Schnitten.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You met your contact at the Trade Brokerage, Schnitten.</p>
+          <p> </p>
+          <p>Always low on supplies, he wanted Faded Parchment in exchange for the letter you're looking for.</p>
+          <p> </p>
+          <p>You retrieved some, and traded it for the letter that you needed.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

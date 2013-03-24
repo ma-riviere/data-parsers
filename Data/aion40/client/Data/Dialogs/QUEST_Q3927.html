@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>어서 오시오, [%username].</p>
+          <p> </p>
+          <p>그래, 훌륭한 정령성이 되기 위한 훈련은 꾸준히 하고 있소? </p>
+          <p> </p>
+          <p>정령을 소환하는 것부터 능수능란하게 부릴 수 있을 때까지, 그 누구보다 많은 노력이 필요한 것이 바로 정령성이라오.</p>
+          <p> </p>
+          <p>나도 그대만 할 때는 밥 먹고 잠자는 시간까지 아껴서 훈련하곤 했다오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그러고 보니 그동안 실력이 얼마나 늘었는지 확인해 볼 때도 된 것 같구려.</p>
+          <p> </p>
+          <p>어떻소, [%username]. [%dic:STR_DIC_E_DP_El]%을 10회 반복 사용해 보는 과제를 주면 한번 도전해 볼 생각이 있소?</p>
+          <p> </p>
+          <p>당신이 실력 있는 정령성이라면 과제를 잘 끝낼 수 있을 테고, 실력이 부족하더라도 기술을 완전히 익힐 수 있는 좋은 기회가 될 거요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이 과제는 끈기와 인내심이 없으면 무사히 완수할 수 없소.</p>
+          <p> </p>
+          <p>다행히 신성력을 보충해 주는 젤리가 있으니 필요할 때 적절히 사용하면 도움이 될 거라오.</p>
+          <p> </p>
+          <p>만에 하나 중간에 포기하고 싶은 생각이 들거든 내가 왜 이 과제를 냈을까 생각해 보길 바라오.</p>
+          <p> </p>
+          <p>그 답을 찾는다면 그대는 훌륭한 정령성이 될 자격이 충분히 있으니까.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아직도 주문 암기에 곤란을 겪고 있다니 난감하구려.</p>
+          <p> </p>
+          <p>하지만 재촉은 하지 않겠소.</p>
+          <p> </p>
+          <p>스승의 재촉은 제자를 당황하게 만들고, 당황한 제자는 쉬운 주문조차도 실패하기 마련이니까.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+    <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>표정을 보니 기쁜 소식을 가져온 모양이구려.</p>
+          <p> </p>
+          <p>혹시 지난번에 준 기술 연마 과제의 결과 아니오? </p>
+          <p> </p>
+          <p>그래, [%dic:STR_DIC_E_DP_El]%을 완전히 몸에 익혔소? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 알려 준다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>생각보다 빨리 과제를 완수했구려! </p>
+          <p> </p>
+          <p>자네한테는 어떤 어려움이 있어도 꿋꿋히 정령성의 길을 가겠다는 의지가 보이오.</p>
+          <p> </p>
+          <p>[%username], 꾸준히 실력을 닦길 바라오. 그러다 보면 언젠가 정령성의 진가가 빛을 발할 날이 올 거요.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_E_DP_El]%을 사용하라([%2]/10)</font></p></step>               
+               <step><p visible="[%3]"><font color="[%4]">마도성과 정령성의 스승 [%dic:STR_DIC_N_Hecate]에게 보고하라</font></p></step>               
+    </steps>
+          <p><font font_xml="quest_summary">헤카테가 준 과제를 완료하고 돌아가 보고하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>헤카테는 정령성으로서의 실력을 확인해 보겠다며 마법 강탈 I을 10회 사용하는 과제를 주었다.</p>
+          <p> </p>
+          <p>과제를 완료하고 헤카테에게 보고하자 앞으로도 더욱 실력을 쌓으라며 격려를 했다.</p>
+	</body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

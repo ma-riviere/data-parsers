@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Field Warden:</p>
+          <p> </p>
+          <p>Recent efforts have rapidly depleted our stock of [%dic:STR_DIC_G_QUEST_45048a], which is a crucial component in the manufacture of several essential substances, including healing potions and serums.</p>
+          <p> </p>
+          <p>All Wardens are hereby tasked with collecting this substance. All [%dic:STR_DIC_G_QUEST_45048a] gathered should be brought to either [%dic:STR_DIC_N_Amphibia] or [%dic:STR_DIC_N_Mollusca].</p>
+          <p> </p>
+          <p>This matter is highly confidential, so please destroy this letter after reading it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">(Pour acid on the letter.)</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_G_QUEST_45048a] is an important ingredient in a number of potions. If gathered fresh and distilled promptly, it can create some of the most potent healing serums around.</p>
+          <p> </p>
+          <p>Fortunately there's plenty to be found in Gelkmaros. Have you gathered any for me?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here is what I have for you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Quite amusing, [%username]. Now will you please go get the [%dic:STR_DIC_G_QUEST_45048a] you were asked to gather?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Fine, fine."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you for bringing this so quickly, [%username]. As I said, this herb can only be used to create healing potions and serums when it is distilled right after gathering. If it is left to dry too long, it becomes a deadly toxin.</p>
+          <p> </p>
+          <p>Please, take this token as a sign of the Field Wardens' thanks.</p>
+          <p> </p>
+          <p>Now if you'll excuse me, I have to...store something in our warehouse.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect [%dic:STR_DIC_G_QUEST_45048a] and bring it to either [%dic:STR_DIC_N_Amphibia] or [%dic:STR_DIC_N_Mollusca].</font></p>[%collectitem]</step>
+    </steps>
+        <p><font font_xml="quest_summary">A letter has arrived from the Field Wardens. Follow its instructions.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>A letter from the Field Wardens asked you to gather ingredients for potions, and take them to Rebbina or Wakir.</p>
+          <p> </p>
+          <p>You brought the herbs as requested, and were rewarded for your time.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

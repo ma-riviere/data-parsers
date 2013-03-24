@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Whoa! Business is booming! Soon I'll even stock Odella Liquor.</p>
+          <p> </p>
+          <p>Hey! [%userclass]! Good buddy! Loyal patron of the Apellbine! Friend of mine! Can I ask you a favor?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What sort of favor?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm snowed under with customers--which is good, obviously--but I don't have enough help! What am I supposed to say to the customers? "Sorry, no grub at the famous Apellbine Tavern because Daevas consider cooking beneath them."</p>
+          <p> </p>
+          <p>Is there a chance, any chance, you could rustle up some [%dic:STR_DIC_I_shell_d_n_c_10a]s and roast a batch for this hungry crew? If you can I'll make it well worth your time.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Terrific! Roast Conide is an Asmodian favorite...and it keeps the customers thirsty. And not only don't I have staff to cook it, I'm out of the primary ingredients.</p>
+          <p> </p>
+          <p>There are plenty of [%dic:STR_DIC_I_shell_d_n_c_10a]s in Altgard. You'll need salt. You can use the [%dic:STR_DIC_E_LF3_Cook_production] in the Temple of Artisans. Just don't get on Lainita's bad side...she'll pluck you, stuff you, and roast you...possibly in that order.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Keep my chair warm."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, come on! I'm not asking much, and I'll pay you well!</p>
+          <p> </p>
+          <p>Isn't this place like a second home to you? Don't you want to help out your friends?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll think about it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're back! I've been going crazy waiting for you.</p>
+          <p> </p>
+          <p>Did you make Roast Conides? Please say yes. I'm swamped with orders!</p>
+          <p> </p>
+          <p>Just set it down on the bar there.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Yes. I have them here."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Aaaargh! What part of cooking the food and bringing it here didn't you understand? Are you trying to sabotage my business? Opening up a place of your own, is that it?</p>
+          <p> </p>
+          <p>Please...just dig them up, roast them, and bring them here before my customers eat me alive.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"My mistake."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, you've saved my life. Everyone's drinking to Lord Azphel's health, and the story goes he likes a good Roast Conide, so suddenly everyone wants it.</p>
+          <p> </p>
+          <p>Take this for your trouble. I doubt anyone's ever paid so high a price for Roast Conide, but you've earned it.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Roast [%dic:STR_DIC_I_shell_d_n_c_10a]s and take it to [%dic:STR_DIC_N_Genpels].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Jeckrow was lacking both kitchen staff and food. Thus, you need to collect Conides in Altgard, make Roast Conides in the Temple of Artisans in Pandaemonium, and deliver the dish to him.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Saying that he was short-handed, Jeckrow asked you to make some food.</p>
+          <p> </p>
+          <p>You cooked up some Roast Conides and brought them to him. He thanked and rewarded you.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

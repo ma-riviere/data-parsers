@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Arieluma, [%username]. It looks like our strategy against the Lepharists is working well. My reports indicate they're having trouble even coordinating their guard rotations.</p>
+          <p> </p>
+          <p>This mission is punitive. There are a couple of Lepharists we want to...punish.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Punishing the wicked? I'm in."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You may be aware that there have been a lot of kidnappings in Eltnen lately. We've traced most of them to the citadel. They're worked to death, and if they get injured they're used as test subjects.</p>
+          <p> </p>
+          <p>Victims who have escaped identify the man in charge as [%dic:STR_DIC_M_LF2_LehparRaNamedQ_40_Ae]. He's committed unpardonable atrocities, and it's time for him to face justice.</p>
+          <p> </p>
+          <p>I need you to get in there and kill the Supervisor.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>There's a second target too--[%dic:STR_DIC_M_LF2_LehparKnNamedQ_40_Ae]. He was once a faithful Guardian and defended a remote village, but joined the Lepharist Revolutionaries for unknown reasons.</p>
+          <p> </p>
+          <p>Truthfully, I don't care why he joined. He's now the right-hand man of Head Supervisor Panteros and is a clear obstacle in our plans.</p>
+          <p> </p>
+          <p>Show everyone what we do to to traitors, and kill Luitra.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"They're both good as dead."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Why're you doing this now?</p>
+          <p> </p>
+          <p>You've been a key player in all of this, and I can't believe you'd walk away with the job half-done.</p>
+          <p> </p>
+          <p>That's not like you, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Let me consider it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've been getting conflicting reports, [%username].</p>
+          <p> </p>
+          <p>Quick, give me the news. Did you kill [%dic:STR_DIC_M_LF2_LehparRaNamedQ_40_Ae] and [%dic:STR_DIC_M_LF2_LehparKnNamedQ_40_Ae]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"They're dead."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good work, [%username].</p>
+          <p> </p>
+          <p>You're like a fine scalpel cutting out the heart of our enemy.</p>
+          <p> </p>
+          <p>Here, take this. You've earned it!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Eliminate the kidnapper and the betrayer.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_LF2_LehparRaNamedQ_40_Ae] ([%2]/1)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_LF2_LehparKnNamedQ_40_Ae] ([%5]/1)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report back to [%dic:STR_DIC_N_Elram].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Eliminate Supervisor Gravi and Captain Luitra as part of Elram's operation against the Lepharists.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Elram asked you to murder Supervisor Gravi, who has been responsible for kidnapping and torturing people, and Captain Luitra, a former Guardian who betrayed Elysea to join the Lepharist Revolutionaries.</p>
+          <p> </p>
+          <p>You did as you were asked, then reported back to Elram. He rewarded you and praised your skills.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

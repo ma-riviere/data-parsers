@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What should I do? What should I do? Commander Gorgos ordered me back to Stenon Bay to retrieve the supply box.</p>
+          <p> </p>
+          <p>I thought I was fine...but once I heard him say Stenon Bay, all the fear came back. What should I do?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Why are you so afraid?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I...I'm afraid of everything...everything in Stenon Bay. It's a horrible place!</p>
+          <p> </p>
+          <p>My legion got sent there to destroy Bollvig, but my comrades were all killed...and they never resurrected. They're still wandering there...undead and wandering.</p>
+          <p> </p>
+          <p>Please help me, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Could you go ahead and kill [%dic:STR_DIC_M_WaterWorm_44_An]s for me? I would be in your debt.</p>
+          <p> </p>
+          <p>They blend in with the water, then attack when you least expect it.</p>
+          <p> </p>
+          <p>For the honor of all Daevas, and as a sailor with the Blue Fleet, I must return to Stenon Bay and do my duty, but I lost a lot of friends because of those creatures.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"They won't bother you when I'm through."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, [%username]. I don't know what to do! How will I ever make it to Stenon Bay without...without...</p>
+          <p> </p>
+          <p>Please, don't tell anyone of my cowardice. I'd be the end of me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"You have good reason to fear."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>How did it go? Are they gone? Is it safe?</p>
+          <p> </p>
+          <p>You don't know how worried I was that I was going to have to do this all by myself.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"It's safe enough for you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you for helping me. I couldn't stand the thought of those creatures next to me.</p>
+          <p> </p>
+          <p>Here, it's not much but take this. This is my reward to thank you. Put it away...people are watching.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Destroy the [%dic:STR_DIC_M_WaterWorm_44_An]s in Stenon Bay ([%2]/10).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report back to [%dic:STR_DIC_N_Alexius].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Destroy the Sandbank Waterworms so Rexius can safely retrieve the supply box that has drifted down to Stenon Bay.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Rexius was ordered to retrieve a supply box from Stenon Bay, but he was still traumatized from seeing his legion destroyed there.</p>
+          <p> </p>
+          <p>To help him out, you killed the Sandbank Waterworms hiding in the sea.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

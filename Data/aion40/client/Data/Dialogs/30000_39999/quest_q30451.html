@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q30451</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>미입력</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>고르테아라는 마법사가 겔름을 개조해서 용족을 물리칠 방법을 찾겠다고 라디스 숲에 있는 도르겔 저택에서 연구를 하고 있었소.</p>
+          <p> </p>
+          <p>그런데 얼마 전부터 소식이 없더니 저택에 어둠의 마법사 쟈드라라는 드라칸 마법사가 침입해서 고르테아를 가두고 모든 겔름을 장악했다지 뭐요.</p>
+          <p> </p>
+          <p>게다가 쟈드라가 마법을 걸어 저택에 들어갈 수 없게 됐다오.</p>
+          <p> </p>
+          <p>그래서 고르테아를 구하고 겔름을 되찾으려고 [%dic:STR_DIC_N_Brenon]을 [%dic:STR_DIC_W_ZONE_NAME_IDElemental_1]으로 보냈는데 안타깝게도 아직은 성과가 없소.</p>
+          <p> </p>
+          <p>[%username]%이 라디스 숲으로 가서 좀 도와주시구려.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>라우에스 님이 보낸 분이군요.</p>
+          <p> </p>
+          <p>혼자 힘으로는 도저히 어떻게 할 방법이 없었는데 이제 좀 마음이 놓입니다.</p>
+          <p> </p>
+          <p>그럼 현재 상황을 설명해 드리고 도르겔 저택으로 들어갈 수 있는 방법을 알려 드리겠습니다. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">얘기를 계속 듣는다.</Act>
+    </Selects>
+    <CutScene id="466"/>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>라디스 숲 안쪽에 고르테아가 겔름을 연구하는 도르겔 저택이 있습니다. 현재는 어둠의 마법사 쟈드라가 쳐 놓은 마법의 방어막 때문에 들어갈 수 없는 상태지요.</p>
+          <p> </p>
+          <p>게다가 [%dic:STR_DIC_M_IDElementalN_Nmd_Farmer_60_Al]라는 놈이 저택 앞을 지키며 헤트겔름이 빛의 나무에서 힘을 모으는 걸 감시하고 있고요.</p>
+          <p> </p>
+          <p>원래는 고르테아가 만들었던 겔름인데 지금은 완전히 쟈드라의 뜻대로 움직이고 있습니다.</p>
+          <p> </p>
+          <p>그놈을 처치하면 방어막의 힘을 무력화시키는 [%dic:STR_DIC_I_QUEST_30401A]을 구할 수 있을 겁니다.</p>
+          <p> </p>
+          <p>그러니 우선 마법의 돌을 구하십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>기다리고 있었소, [%username].</p>
+          <p> </p>
+          <p>이제 돌아올 때가 됐다는 예감이 강하게 들어서 말이오. 역시 내 예감이 맞았군.</p>
+          <p> </p>
+          <p>도르겔 저택으로 들어갈 방법은 찾아왔소?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">마법의 돌을 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>됐소! 이게 있으니 이제 무사히 도르겔 저택으로 들어갈 수 있겠구려.</p>
+          <p> </p>
+          <p>자, 이 마법의 돌에 깃든 힘을 [%username]에게 불어넣어 주겠소.</p>
+          <p> </p>
+          <p>이제는 고르테아를 구하는 일만 남았구려.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_Brenon]과 대화하라</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_I_QUEST_30401A]을 구해 [%dic:STR_DIC_N_Raues]에게 가져가라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">고르테아를 구하려면 먼저 저택에 걸린 마법을 풀 수 있는 물건이 필요하다고 한다. 브레논을 만나 저택으로 들어갈 방법을 알아보자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>라우에스는 라디스 숲에서 겔름을 연구하던 고르테아가 어둠의 마법사 쟈드라라는 드라칸에게 잡혀 있다고 했다.</p>
+          <p> </p>
+          <p>라디스 숲으로 간 브레논을 만나 저택으로 들어갈 방법을 찾아보라고 했다. </p>
+          <p> </p>
+          <p>브레논을 만나니 철저한 감시자 투알리를 처치하면 된다고 해서 그를 처치하고 마법의 돌을 구했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q3725</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>미입력</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>솔직히 드레드기온은 골치 아픈 존재지요. </p>
+          <p> </p>
+          <p>한동안은 아무런 타격을 입힐 수 없는 무적의 존재였고 말입니다.</p>
+          <p> </p>
+          <p>지금이야 드레드기온 내부에서 여러 가지 전략을 펼치면서 다양한 타격을 주고 있지만요. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>다양한 전략도 중요하지만 가장 중요한 것은 꾸준하게 타격을 주는 것입니다.</p>
+          <p> </p>
+          <p>용족이 피해를 수습할 시간을 주지 않는 것이 중요하니까요.</p>
+          <p> </p>
+          <p>그러기 위해서는 많은 데바의 도움이 필요합니다. </p>
+          <p> </p>
+          <p>[%username] 님은 실력이 출중한 분이니까 도와주신다면 큰 힘이 될 겁니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님께 부탁할 일은 두 가지입니다.</p>
+          <p> </p>
+          <p>첫째는 드레드기온에 지속적으로 침투해서 전투를 계속해 달라는 겁니다. </p>
+          <p> </p>
+          <p>계속적으로 드레드기온에 타격을 가하는 것이 무엇보다 중요합니다.</p>
+          <p> </p>
+          <p>두 번째는 찬트라 드레드기온에 있는 [%dic:STR_DIC_M_IDDreadgion_02_DrakanFiHigh_55_Ae]%을 사냥하는 것입니다.</p>
+          <p> </p>
+          <p>중심 전투 병력이니 놈들을 처치하면 앞으로의 전투에도 크게 도움이 될 겁니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님이 거절하시다니 의외로군요.</p>
+          <p> </p>
+          <p>솔직히 말해서 그리 어려운 임무도 아니지 않습니까.</p>
+          <p> </p>
+          <p>드레드기온에 꾸준히 침투하기만 하면 되는 임무인데...</p>
+          <p> </p>
+          <p>정 싫다면 어쩔 수 없지요. 다른 분을 찾아볼 수밖에.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>보고하러 왔나 보군, [%username].</p>
+          <p> </p>
+          <p>야니스에게 얘기는 들었어. </p>
+          <p> </p>
+          <p>드레드기온에 지속적으로 침투하는 작전을 수행하기로 했다면서.</p>
+          <p> </p>
+          <p>어떻게 됐는지 한번 보고해 봐.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그 정도면 꽤 많이 노력한 것 같군.</p>
+          <p> </p>
+          <p>어쨌거나 고생 많았어.</p>
+          <p> </p>
+          <p>수고했으니 그에 상응하는 보상을 해야겠지?</p>
+          <p> </p>
+          <p>자, 이거 받으라고. 유용하게 썼으면 좋겠어.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">드레드기온에서 전투를 수행하며 [%dic:STR_DIC_M_IDDreadgion_02_DrakanFiHigh_55_Ae]%을 처치하라</font></p>
+                         <p visible="[%0]"><font color="[%1]">  드레드기온 전투([%2]/6)</font></p>
+                         <p visible="[%3]"><font color="[%4]">  제51 드라칸 정예 전투사관 ([%5]/15)</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">[%dic:STR_DIC_N_Yulia]%와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">드레드기온에 지속적인 타격을 주기로 했다. 계속해서 전투를 수행하며 제51 드라칸 정예 전투사관을 처치하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>야니스는 드레드기온에 여러 가지 작전을 수행하고 있지만 가장 중요한 것은 지속적으로 타격을 가하는 것이라고 했다.</p>
+          <p> </p>
+          <p>그래서 지속적으로 드레드기온에서 전투를 수행하며 제51 드라칸 정예 전투사관을 처치했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>미션 진행: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Greetings, [%username]. It seems the Manastone Removers Association has some competition out there.</p>
+          <p> </p>
+          <p>A traveling caravan of Shugos have been selling used manastones just outside of the city limits...for cheap, too. So, the union is going to pay them a little visit one of these nights.</p>
+          <p> </p>
+          <p>Shugos took a lot of my business, so my quota is way down. Any chance you could find me bundles of MP +50, Evasion +10, and Parry +18 manastones? 10 of each? There's a reward in it!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Great to hear, [%username]! The union Regional Manager will bring holy Nezekan down on my hide if I don't reach my monthly quota.</p>
+          <p> </p>
+          <p>You don't happen to have the manastones on you, do you? Maybe in your cube or warehouse?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here's what I have."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Why? I'll treat you well. I'll give you some of my best manastones as payment for your services.</p>
+          <p> </p>
+          <p>Well, I guess my luck had to run out some time. I'll be getting an ear-full from the manager this week.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"At least they can't fire you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Back so soon, Daeva? I hope that's a good sign.</p>
+          <p> </p>
+          <p>Do you have the manastones?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here they are."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, come on, [%username]! I was counting on you!</p>
+          <p> </p>
+          <p>There's like...half the manastones we agreed upon here! I need 30 of them total, 10 of each kind.</p>
+          <p> </p>
+          <p>You're almost there. Union rules say I can't accept partial orders on this, so if you want this reward, I suggest you get back out there and finish this order!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I thought I had more."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You've kept your promise, Daeva. And now I shall keep mine.</p>
+          <p> </p>
+          <p>These manastones I'm giving you are some of the rarest you will find in all Heiron...at least legally. That's not to say those Shugos won't be bringing in a wagon-load of these soon.</p>
+          <p> </p>
+          <p>But for now, they're as rare as you are going to find. Thank you, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect manastones and take them to Atera.</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Collect 3 bundles of 10 MP +50, Evasion +10, and Parry +18 manastones as requested by Atera, on behalf of the Manastone Removers Association.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Atera said she needed more manastones to reach the Manastone Removers Association's quota. She offered to reward you with some powerful new manastones if you brought her the old ones she needed.</p>
+          <p> </p>
+         <p>When you delivered on your promise, Atera gave you the agreed-upon manastones as payment.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

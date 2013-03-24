@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I guess I underestimated them....</p>
+          <p> </p>
+          <p>Oh, sorry [%username], I didn't see you there. I was thinking about the animals in Sudorville. </p>
+          <p> </p>
+          <p>I can't seem to diminish their numbers, and it seems like the last attack only made them angrier. I should have improved our defenses before trying to hunt them.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Anything I can do to help?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Absolutely. If you've got the time, and you'd like to hunt some wild animals, I won't turn down help from a mighty Daeva.</p>
+          <p> </p>
+          <p>Of course, there's Kinah in it for you as well, maybe enough to compensate you for your time. What do you say?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I really appreciate the help, [%username]. With your experience, it'll be easier and safer for you than the others.</p>
+          <p> </p>
+          <p>I'd recommend that you focus your efforts on hunting 20 [%dic:STR_DIC_M_DF2A_CuresSpotD_45_An]s and 30 [%dic:STR_DIC_M_DF2A_KalnifSpotD_45_An]s in Sudorville.</p>
+          <p> </p>
+          <p>If we can thin their numbers some more, we might stand a chance. Good hunting!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Blood for blood."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm....sorry to hear that, [%username]. I thought you'd offered to help. I guess maybe someone else is more in need of your assistance.</p>
+          <p> </p>
+          <p>I understand. Who wouldn't want help from a skilled individual like you?</p>
+          <p> </p>
+          <p>I won't trouble you any longer. You look quite busy. I hope I didn't waste too much of your time.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Guilt trip, eh?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That was fast. Some of the hunters who left before you haven't come back yet. I hope they didn't get eaten.</p>
+          <p> </p>
+          <p>What happens to a Daeva who gets eaten alive, anyay? Do you appear back at an Obelisk right away? Or do you digest for a while first?</p>
+          <p> </p>
+          <p>Not that I'm suggesting you try that, of course....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"About that reward...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Of course, [%username]. Well-earned, too. I told you it wouldn't be hard for you.</p>
+          <p> </p>
+          <p>I hope the others come back with good news. It would be a shame to lose them. I might have to send you after them if they're not back soon.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get rid of animals threatening Baltasar Hill Village.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_DF2A_CuresSpotD_45_An] ([%2]/20)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_DF2A_KalnifSpotD_45_An] ([%5]/30)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_N_Bielia].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">As per Bielia's request, slay Spotted Kurins and Pale Karnifs threatening Baltasar Hill Village.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Bielia said that the Kurins and Karnifs are growing more aggressive, and need to be hunted down.</p>
+          <p> </p>
+          <p>You joined in Bielia's hunting operation and killed Spotted Kurins and Pale Karnifs. When you returned, she rewarded you for your time.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

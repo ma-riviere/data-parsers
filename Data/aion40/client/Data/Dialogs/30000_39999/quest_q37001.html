@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>수신: [%username]</p>
+          <p>발신: 엘리시움 예비 템페르, [%dic:STR_DIC_N_Ammianus]</p>
+          <p> </p>
+          <p>엘리시움 예비 템페르에서 알립니다. 오늘의 임무는 [%dic:STR_DIC_I_QUEST_37001A]%을 구해 오는 것입니다.</p>
+          <p> </p>
+          <p>투르신의 불꽃은 베르테론의 투르신 전초기지에서 구할 수 있으며, [%dic:STR_DIC_M_37001all]%을 제압해야만 얻을 수 있으니 꼭 도우미와 함께 임무를 수행하세요.</p>
+          <p> </p>
+          <p>엘리시움의 축복이 있기를.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>투르신의 불꽃이란 투르신 전초기지에 있는 상급 크랄에게서만 얻을 수 있는 증표입니다.</p>
+          <p> </p>
+          <p>도우미의 도움을 받으라고 한 건 섣불리 덤볐다가 크랄의 생명이 완전히 끊기면 투르신의 불꽃이 사라질 수 있기 때문입니다.</p>
+          <p> </p>
+          <p>도우미와의 호흡은 어땠나요? [%dic:STR_DIC_I_QUEST_37001A]%은 구했습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">투르신의 불꽃을 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>투르신의 불꽃을 얻지 못한 이유를 물어봐도 될까요?</p>
+          <p> </p>
+          <p>좋은 도우미를 만나지 못해서 인가요? 아니면 아직 투르신 전초기지에 가지 않은 건가요?</p>
+          <p> </p>
+          <p>예비 템페르의 임무는 그날 안으로 완수를 해야 합니다. 시간이 지나면 아무런 소용이 없죠.</p>
+          <p> </p>
+          <p>그러니 어서 도우미와 함께 투르신 전초기지로 가서 [%dic:STR_DIC_I_QUEST_37001A]%을 모아 오세요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아직도 뜨겁게 타고 있군요. 투르신의 불꽃!</p>
+          <p> </p>
+          <p>도우미와의 사냥은 어땠나요? [%username] 님에게도, 도우미가 되셨던 분께도 유익한 시간이었길 바랍니다.</p>
+          <p> </p>
+          <p>그리고 이 투르신의 불꽃은 유익한 일에 쓰겠습니다.</p>
+          <p> </p>
+          <p>앞으로도 매일의 임무를 적극적으로 임해주시길 바랍니다. 이것은 이번 임무에 대한 보상입니다.</p>
+          <p> </p>
+          <p>빛나는 내일이 함께하기를.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_E_Mentor]와 함께 [%dic:STR_DIC_M_37001all]에게서 [%dic:STR_DIC_I_QUEST_37001A]%을 모아 [%dic:STR_DIC_N_Ammianus]에게 가져가라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">엘리시움 예비 템페르의 암미아누스에게서 편지가 왔다. 지시대로 도우미와 함께 투르신 전초기지로 가서 투르신의 불꽃을 구해 가자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>엘리시움 예비 템페르에서 베르테론으로 가서 임무를 수행하라는 편지가 왔다.</p>
+          <p> </p>
+          <p> </p>
+          <p>편지에 적힌 대로 도우미와 함께 투르신 전초기지로 가서 투르신 상급병을 처치하고 투르신의 불꽃을 모아가자 암미아누스가 보상을 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

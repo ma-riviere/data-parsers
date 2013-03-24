@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This canyon is the one place I can collect [%dic:STR_DIC_I_quest_2241a]s. In daylight, they're quite plain, but at night, they have a ghostly shine to them--hence the name.</p>
+          <p> </p>
+          <p>They're delicious, but more than that, they're curative. Mix them into a poultice, and a wound that might fester for weeks knits in a day or two!</p>
+          <p> </p>
+          <p>Very useful, very rare! I'm lucky to find even one in three days of searching.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"That's a lot of time spent searching!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, I think I know why--I'm not the only one who's picking them!</p>
+          <p> </p>
+          <p>I see [%dic:STR_DIC_M_SpriggD_15_n]s here in Gribade every day, digging up grubs to eat. But yesterday, one of them stopped his foraging and started dancing like a drunk!</p>
+          <p> </p>
+          <p>You've never seen anything so strange in your life. And what had he been gobbling--Glowing Mushrooms!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Very clever!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>These mushrooms are much sought after, you know. Gourmets pay handsomely, and soldiers and scouts do as well.</p>
+          <p> </p>
+          <p>I've picked the place clean, I think. I haven't seen one for several days. But if the Spriggs are collecting them, they may still have some.</p>
+          <p> </p>
+          <p>If you'll kill some [%dic:STR_DIC_M_SpriggD_15_n]s and bring me any [%dic:STR_DIC_I_quest_2241a]s you find, we'll split the profits!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Perfect! I'll pay extra; the [%dic:STR_DIC_M_SpriggD_15_n]s hereabouts are vicious!</p>
+          <p> </p>
+          <p>They collect trinkets, so they probably hoard [%dic:STR_DIC_I_quest_2241a]s too.</p>
+          <p> </p>
+          <p>Good luck. And watch your fingers!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"See you soon."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No interest in money? I can pay generously.</p>
+          <p> </p>
+          <p>Well, I can't blame you. The Spriggs here bite hard.</p>
+          <p> </p>
+          <p>I'll just wait for the next rain for a new crop.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll consider it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did you search the [%dic:STR_DIC_M_SpriggD_15_n]s?</p>
+          <p> </p>
+          <p>Was I right about the [%dic:STR_DIC_I_quest_2241a]s?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Yes, you were."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No luck?</p>
+          <p> </p>
+          <p>Listen, they'll collect anything. They must have some Glowing Mushrooms!</p>
+          <p> </p>
+          <p>Please search a few more [%dic:STR_DIC_M_SpriggD_15_n]s. One of them's bound to have [%dic:STR_DIC_I_quest_2241a]s.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I will."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Glowing Mushrooms!</p>
+          <p> </p>
+          <p>I was worried the Spriggs might damage them, but these look fine!</p>
+          <p> </p>
+          <p>Well done, my friend. Here's your share of the profits. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Take [%dic:STR_DIC_I_quest_2241a]s from [%dic:STR_DIC_M_SpriggD_15_n]s and bring them to [%dic:STR_DIC_N_Vovetirn].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Vovetirn says that Spriggs collect valuable Glowing Mushrooms. You promised to steal some and bring them to Vovetirn to sell.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Vovetirn wondered if Spriggs might be hoarding Glowing Mushrooms, a rare and valuable plant he collects.</p>
+          <p> </p>
+          <p>So you robbed some Spriggs for Vovetirn and brought him extra mushrooms.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p align="center">-  업무 지시서 -</p>
+          <p> </p>
+          <p>1. 수신자: 직원 [%username]</p>
+          <p> </p>
+          <p>2. 업무: ***에서 정화의 돌 5개를 구해 담당 지부에 납부해 주시기 바랍니다냥.</p>
+          <p> </p>
+          <p>3. 담당 지부: 실버린 남부 카탈람 지부</p>
+          <p> </p>
+          <p>위 업무를 완수하면 보상이 있으므로 성실히 임해 주시기 바랍니다냥.</p>
+          <p> </p>
+          <p>- 실버린 주식회사, 인사담당자 두무링 백</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">업무 지시서를 접어 넣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이번 업무가 정화의 돌을 구해오는 거였다면서용?</p>
+          <p> </p>
+          <p>윗분들도 참 답답한 것 같습니다냥.</p>
+          <p> </p>
+          <p>지금껏 정화의 돌을 가져오는데 성공한 이가 하나도 없는데 또 지시를 내리다니 말입니당, 갸릉.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">정화의 돌을 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>역시 생각대로군요, 갸릉.</p>
+          <p> </p>
+          <p>괜찮습니다냥, 어차피 성공할 거라고 생각하고 내린 업무가 아니니까 말입니당.</p>
+          <p> </p>
+          <p>지금까지 정화의 돌을 집는데 성공한 이가 하나도 없었거든용.</p>
+          <p> </p>
+          <p>이제와서 하는 얘기지만 만지기만 해도 기절을 해서 우리끼리는 기절의 돌이라고 부른답니당.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정말 이게 정화의 돌이란 말입니까냥?</p>
+          <p> </p>
+          <p>(주머니 입구를 벌리며) 여기, 여기에 직접 넣어 주시기 바랍니당. 괜히 만졌다가 기절하면 곤란하지 말입니당.</p>
+          <p> </p>
+          <p>*** 호수의 물이 깨끗한 건 이 정화의 돌 때문이랍니당.</p>
+          <p> </p>
+          <p>늪수 정화 작업을 하는데 돈을 많이 쓴다고 한소리 들었는데 잘됐습니당.</p>
+          <p> </p>
+          <p>이참에 농땡이 치는 무글 녀석들 좀 정리해야겠습니당, 갸릉.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">정화의 돌을 구해 실버린 남부 카탈람 지부에 납부하라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">실버린 주식회사에서 업무 지시서가 왔다. 업무를 확인하고 수행하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>실버린 주식회사에서 업무 지시서가 왔다.</p>
+          <p> </p>
+          <p>*** 호수에서 정화의 돌을 구해 실버린 남부 카탈람 지부에게 전하자 수고했다며 사례를 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>네빌림이 룬족과 연관이 있다면 룬족을 조사하는 게 맞겠지요.</p>
+          <p> </p>
+          <p>멸망한 룬족을 무슨 수로 조사하냐고 하시겠지만 방법이 아예 없는 건 아니에요.</p>
+          <p> </p>
+          <p>마침 룬족의 흔적을 발견했다는 조수 연구원을 찾았거든요.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_W_LDF5a_E7]으로 가서 [%dic:STR_DIC_N_LDF5a_Sopocles_E]를 만나세요.</p>
+          <p> </p>
+          <p>그에게 이야기를 물어 보면 뭔가 나오지 않을까 싶네요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>소식을 듣고 오셨겠군요.</p>
+          <p> </p>
+          <p>제가 룬족의 흔적을 발견했습니다.</p>
+          <p> </p>
+          <p>척 봐도 오랜 세월이 느껴지는 [%dic:STR_DIC_E_LDF5a_FOBJ_E_RuneDiary]입니다.</p>
+          <p> </p>
+          <p>그런데 발견하자마자 주변의 괴물들에게 쫓겨서 부랴부랴 도망쳐야 했죠.</p>
+          <p> </p>
+          <p>저 대신 가서 [%dic:STR_DIC_E_LDF5a_FOBJ_E_RuneDiary]을 찾아와 주시지 않겠습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select3">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(오래된 책이다.)</p>
+          <p> </p>
+          <p>(겉표지를 살짝 들어보니 룬이라는 글자가 적혀 있다.)</p>
+          <p> </p>
+          <p>(증거로 가지고 가야겠다.)</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO2">살펴보기를 마친다.</Act>
+    </Selects>
+  </HtmlPage>  
+  
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>룬족의 오래된 기록을 찾으셨습니까?</p>
+          <p> </p>
+          <p>[%username] 님이 돌아오시길 계속 기다리던 참입니다.</p>
+          <p> </p>
+          <p>어떤 내용이 담겨있는지 보지도 못하고 도망쳤던 기억이 떠올라서 부끄럽고 그렇습니다.</p>
+          <p> </p>
+          <p>중요한 자료니 찾아오셨다면 제게 건네주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">에레미온의 기록를 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이제까지 남아있는 룬족의 문서라니 굉장한 자료가 될 것 같습니다.</p>
+          <p> </p>
+          <p>이걸 연구하면 룬족이 멸망한 이유에 대해서도 알 수 있으리라 생각됩니다.</p>
+          <p> </p>
+          <p>언뜻 내용을 봤을 땐 엄청난 규모의 사고가 있었던 걸로 추정되는데 지금은 그 정도 밖에 말씀 드릴 수 없겠군요.</p>
+          <p> </p>
+          <p>정확한 내용을 말할 단계가 될 때까지 이 문서를 잠시 저에게 맡겨 주시지 않겠습니까?</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_W_LDF5a_E7]으로 가서 [%dic:STR_DIC_N_LDF5a_Sopocles_E]를 만나 이야기를 들어라</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_E_LDF5a_FOBJ_E_RuneDiary]을 찾아 [%dic:STR_DIC_I_doc_quest_12565a]을 획득하라</font></p></step>
+			   <step><p visible="[%6]"><font color="[%7]">[%dic:STR_DIC_N_LDF5a_Sopocles_E]에게 돌아가라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">룬족의 흔적을 발견했다는 소포클레스를 만나 이야기를 들어보자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아카이아는 네빌림이 룬족과 연관되어 있다면 룬족을 조사해야 하니 룬족의 흔적을 발견했다는 조수 연구원 소포클레스를 만나보라고 권했다.</p>
+          <p> </p>
+          <p>소포클레스에게 이야기를 듣고 에레미온의 기록을 찾아 가져가자 중요한 문서니 잠시 맡겨 달라고 했다.</p>
+          <p> </p>
+          <p></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

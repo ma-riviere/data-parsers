@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>판데모니움에서는 아트레이아 곳곳에 새로운 마을을 세우고 주민을 이주시키려는 계획을 갖고 있습니다.</p>
+          <p> </p>
+          <p>그런 점에서 켄타릭 부락은 괜찮은 장소입니다.</p>
+          <p> </p>
+          <p>원래 인간이 살던 마을이었고 근처에 상수원도 있으니까요.</p>
+          <p> </p>
+          <p>이랄시그 마을처럼 농사를 지을 수는 없겠지만 사냥으로 생계를 꾸리면 될 테고요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>하지만 문제는 그곳에 살고 있는 켄타릭이죠.</p>
+          <p> </p>
+          <p>놈들을 없애지 않으면 사람들이 이주해서 살 수가 없을 테니까요.</p>
+          <p> </p>
+          <p>그래서 제가 데바들에게 켄타릭을 처치하라는 임무를 주고 완수하면 동주화를 지급하고 있습니다.</p>
+          <p> </p>
+          <p>[%username] 님도 한번 수행해 보시죠?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그럼 [%dic:STR_DIC_W_DF2_SUB_B2]으로 가서 [%dic:STR_DIC_M_TauricReBD_27_An]%와 [%dic:STR_DIC_M_TauricReAD_27_An]을 처치하십시오.</p>
+          <p> </p>
+          <p>만만한 일은 아니지만 [%username] 님 정도의 실력이라면 거뜬히 수행할 수 있을 겁니다.</p>
+          <p> </p>
+          <p>그럼 수고하십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>주화를 지급받는 임무는 꽤 힘들다는 걸 아시는 모양이군요.</p>
+          <p> </p>
+          <p>하긴 켄타릭을 처치한다는 게 쉬운 일은 아니죠.</p>
+          <p> </p>
+          <p>게다가 먼 옛날에 인간이었다는 이유로 처치하길 꺼리는 데바들도 있고요.</p>
+          <p> </p>
+          <p>알겠습니다. [%username] 님 말고도 임무를 수행하고 싶어하는 사람은 많으니까 괜찮습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_M_TauricReBD_27_An]%와 [%dic:STR_DIC_M_TauricReAD_27_An]%을 제가 지정한 숫자만큼 처치하셨습니까?</p>
+          <p> </p>
+          <p>하긴 그러니까 저에게 오셨겠죠?</p>
+          <p> </p>
+          <p>어떻게 됐는지 보고해 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정말 수고하셨습니다.</p>
+          <p> </p>
+          <p>시간이 꽤 많이 걸렸을 텐데 충실하게 임무를 수행해 주셨군요.</p>
+          <p> </p>
+          <p>약속한 주화입니다. 잘 모아서 유용하게 쓰십시오.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">켄타릭을 처치하라</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_TauricReBD_27_An]([%2]/6)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_TauricReAD_27_An]([%5]/4)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Fulla]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">켄타릭 부락에 주민들이 거주할 수 있도록 켄타릭을 처치하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>행정관인 훌라는 판데모니움에서 세운 이주 계획의 일환으로 켄타릭 부락에 주민들이 이주할 수 있도록 켄타릭을 처치하는 중이라고 했다.</p>
+          <p> </p>
+          <p>그래서 켄타릭 싸움꾼과 파수꾼을 처치하고 동주화를 받았다. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

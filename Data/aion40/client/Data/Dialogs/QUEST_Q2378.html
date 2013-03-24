@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그동안 많이 도와줬으니 좋은 것을 알려 주겠다.</p>
+          <p> </p>
+          <p>불의 신전 안에는 [%dic:STR_DIC_M_DFlame_GargoyleDarkD_36_Ae]과 [%dic:STR_DIC_M_DFlame_GargoyleDarkD_34_Ae]이라는 놈들이 있다. </p>
+          <p> </p>
+          <p>수호상의 몸속에는 [%dic:STR_DIC_I_QUEST_2378a]이 있다.</p>
+          <p> </p>
+          <p>그 화염석에는 놀라운 힘이 있다. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>불의 신전으로 가서 [%dic:STR_DIC_I_QUEST_2378a]을 구해 오겠는가?</p>
+          <p> </p>
+          <p>화염석을 구해 온다면 좋은 것을 만들어 주겠다.</p>
+          <p> </p>
+          <p>내가 보답할 수 있는 방법은 이것뿐이다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>불의 신전 깊숙이 들어가 [%dic:STR_DIC_M_DFlame_GargoyleDarkD_36_Ae]과 [%dic:STR_DIC_M_DFlame_GargoyleDarkD_34_Ae]을 처치하라.</p>
+          <p> </p>
+          <p>수호상을 처치하면 [%dic:STR_DIC_I_QUEST_2378a]을 얻을 수 있을 것이다.</p>
+          <p> </p>
+          <p>알고 있겠지만 불의 신전은 혼자 갈 수 없다.</p>
+          <p> </p>
+          <p>동료를 모아서 함께 가라. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이건 내가 베풀 수 있는 유일한 호의이다.</p>
+          <p> </p>
+          <p>거절한다면 나도 더 이상은 보답할 방법이 없다.</p>
+          <p> </p>
+          <p>그럼 이만 가 보라, 데바여.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>돌아왔는가, 데바여.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_I_QUEST_2378a]을 가져왔다면 이리 달라.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">화염석을 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>화염석이 없다면 나로서는 보답할 방법이 없다.</p>
+          <p> </p>
+          <p>수호상을 처치하고 [%dic:STR_DIC_I_QUEST_2378a]을 구해 오라.</p>
+          <p> </p>
+          <p>결코 후회하지 않을 것이다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그럼 잠시만 기다리라.</p>
+          <p> </p>
+          <p>(화염석에 기를 불어 넣는다)</p>
+          <p> </p>
+          <p>자, 받으라. 나와 아그니타 님을 위해 힘써 준 보답이다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_M_DFlame_GargoyleDarkD_36_Ae]과 [%dic:STR_DIC_M_DFlame_GargoyleDarkD_34_Ae]에게 돌을 구해 [%dic:STR_DIC_N_Bulagan]에게 가져가라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">불라간은 도와준 것에 대한 보답을 하겠다며 불의 신전 안에서 구할 수 있는 화염석에 놀라운 힘이 숨어 있다고 했다. 웅크린 화염석 수호상과 화염석 수호상을 처치하고 화염석을 모아 가자.  </font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>불라간은 그동안 도와준 데 대한 보답을 하겠다며 웅크린 화염석 수호상과 화염석 수호상에서 구할 수 있는 화염석에 놀라운 힘이 숨어 있다고 했다.</p>
+          <p> </p>
+          <p>불의 신전으로 들어가 수호상을 처치하고 화염석을 구해 가자 불라간은 기를 불어 넣어 좋은 물건을 만들어 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

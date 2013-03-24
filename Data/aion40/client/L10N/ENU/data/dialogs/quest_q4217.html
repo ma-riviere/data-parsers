@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hey you! Over here! You're supposed to rescue me!</p>
+          <p> </p>
+          <p>By Azphel's shadow, I am glad to see you!</p>
+          <p> </p>
+          <p>Get me out of here!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"This is awkward..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, Sprigg-berries! I really thought you were my rescue party.</p>
+          <p> </p>
+          <p>I can't just wait around like this... Perhaps you can still do me a favor.</p>
+          <p> </p>
+          <p>Would you please kill that Elyos over there? I'd do it but...you know.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Every time I try to escape, that [%dic:STR_DIC_M_IDShip_Lprisoner1_44_Ae] stops me.</p>
+          <p> </p>
+          <p>He watches for me to try, then he shouts and makes a racket to rouse the Krall guard.</p>
+          <p> </p>
+          <p>Please do me this favor. Kill the Elyos and bring me his possessions.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Perhaps he needs a long, eternal nap."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We're on the same side! You have to help me. It's not my fault I was captured.</p>
+          <p> </p>
+          <p>These sun-blasted Shulacks are in league with the Balaur!</p>
+          <p> </p>
+          <p>Don't leave me here. I'm not asking you to break me out--just kill the noisemaker!</p>
+         </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll see if I can squeeze it into my schedule."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>...by order of the Empyrean...</p>
+          <p> </p>
+          <p>Ah, you came! No that was nothing. A letter from my mother.</p>
+         </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here's the songbird's belongings."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_ok">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Splendidly done! If you're heading to Pandaemonium, might I ask one small favor?</p>
+          <p> </p>
+          <p>Do you know [%dic:STR_DIC_N_Anita] in the Shadow Court? Please tell her that I escaped safely.</p>
+          <p> </p>
+          <p>Now that the blasted Ellie's dead, I can make my own way out. I don't need her to send anyone after me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SET_SUCCEED">"I'll do it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_fail">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're not bloody, and I don't see a package.</p>
+          <p> </p>
+          <p>There's supposed to be an Ellie-ending scream, and a little package!</p>
+          <p> </p>
+          <p>It's just one little Ellie. You're tough.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Fine...I'll be back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Parten was captured aboard Steel Rake? That's news to me.</p>
+          <p> </p>
+          <p>Fear not--I wasn't planning a rescue mission.</p>
+          <p> </p>
+          <p>Delighted she escaped, but what gave her the impression I was sending someone after her?</p>
+         </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"She bribed a Shulack to pass on a message..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Stupid Parten! I wouldn't trust a Shulack Pirate if he told me he was going to rob me.</p>
+          <p> </p>
+          <p>Parten may need some further training...as a clerk.</p>
+          <p> </p>
+          <p>Well, thank you for your efforts on her behalf. Take this for your trouble.</p>
+         </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get an old package from [%dic:STR_DIC_M_IDShip_Lprisoner1_44_Ae] and take it to [%dic:STR_DIC_N_Parten].</font></p>[%collectitem]</step>
+               <step><p visible="[%3]"><font color="[%4]">Talk with [%dic:STR_DIC_N_Parten].</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Talk with [%dic:STR_DIC_N_Anita].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Kill the Elyos prisoner hindering Parten's escape, and take his belongings to Parten.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Parten is trying to escape from the Steel Rake but is being hindered by an Elyos prisoner.</p>
+          <p> </p>
+          <p>When you killed the Elyos prisoner and brought what you found on his body to Parten, she checked the package and asked you to report to her superiors that she had escaped safely.</p>
+          <p> </p>
+          <p>When you went to see Jylla in Pandaemonium and delivered the message that her agent had escaped safely, she rewarded you...and derided Parten.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

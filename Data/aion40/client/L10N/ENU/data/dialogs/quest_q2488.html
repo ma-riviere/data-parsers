@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Daeva, while you were speaking to Mirka I received some unsettling new information.</p>
+          <p> </p>
+          <p>Kushar reports that Pretors have been sighted in Beluslan.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"So the threat is spreading."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I sent the information to an expert, but the investigation must continue--travel to Beluslan is imperative.</p>
+          <p> </p>
+          <p>You've studied this matter, so I want you to handle the investigation.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Go to [%dic:STR_DIC_W_DC1_12] and meet [%dic:STR_DIC_N_Kushar]. </p>
+          <p> </p>
+          <p>Ask him where he got the information about the Pretors in Beluslan. If necessary, go to Beluslan to verify the report.</p>
+          <p> </p>
+          <p>[%username], I trust you'll track down the truth of this.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"My wings are yours to command."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I thought you'd see this through to the end. That's what honorable Daevas would do.</p>
+          <p> </p>
+          <p>Well, we don't need your apathy here--leave me to my work.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Goodbye."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We meet again, [%username].</p>
+          <p> </p>
+          <p>You heard the news that Pretors have been seen in Beluslan?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">"What have you learned?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Brigade General Nerita, the Fortress Commander of Beluslan, sent the report herself. She saw Lepharist Revolutionaries with strange animals, and requested intelligence on the creatures.</p>
+          <p> </p>
+          <p>According to the information you collected from Elysea, Lepharist Revolutionaries created Pretors...but to what end? </p>
+          <p> </p>
+          <p>I think you'd better go to Beluslan to investigate. Go meet Brigade General [%dic:STR_DIC_N_Nerthus] to get the details.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"Blood for blood."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Welcome, [%username].</p>
+          <p> </p>
+          <p>What word have you?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I'm here to investigate Pretors."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Of course, I told Kushar that the Lepharist Revolutionaries have strange animals with them. So you are the investigator from Pandaemonium?</p>
+          <p> </p>
+          <p>I have an important assignment regarding the Pretors.</p>
+          <p> </p>
+          <p>You've come a long way. Please rest before we get started. You must be exhausted. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk with [%dic:STR_DIC_N_Kushar].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Talk with [%dic:STR_DIC_N_Nerthus].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">There is new information about Pretors. Go to the Temple of Knowledge to meet Kushar.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Kvasir said he had new information that Pretors had appeared in Beluslan, and told you to go to Kushar to get details.</p>
+          <p> </p>
+          <p>Kushar said the information was from Brigade General Nerita, the Fortress Commander of Beluslan. You went to Beluslan to meet with her.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

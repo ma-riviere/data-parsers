@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q39022</QuestId>
+    <QuestName>Tillen's Orders</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p> - Emergency Order - </p>
+          <p> </p>
+          <p> 1. From: Sanctum Expedition Centurion Tillen</p>
+          <p> </p>
+          <p> 2. To: [%username]</p>
+          <p> </p>
+          <p> 3. Order: Asmodians have infiltrated Inggison through a Rift! Kill them immediately!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Balaurea bound..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I could feel your presence before I could see it, [%username]. Such an aura attracts a great deal of the Aether which I am attuned to.</p>
+          <p> </p>
+          <p>Can I help you?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"The Asmodians you wanted killed are dead."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh excellent. I had hoped that someone capable would have handled the task.</p>
+          <p> </p>
+          <p>With them gone, the Illusion Fortress is safe again. I'll order the guards to ease their shifts.</p>
+          <p> </p>
+          <p>Thank you, [%username]. You've lifted a burden from my shoulders.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Kill the Asmodians attacking Inggison ([%2]/5).</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Report to [%dic:STR_DIC_N_Leah].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Emergency Order: Kill the Asmodians who infiltrated Inggison while the Rift was open, and report to Tillen.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Asmodians used a Rift to infiltrate Inggison. You eliminated them before reporting to Tillen.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

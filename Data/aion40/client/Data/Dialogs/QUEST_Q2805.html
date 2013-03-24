@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>유황 나무 요새를 적에게 빼앗긴 건 우리에게 정말 큰 타격이예요.</p>
+          <p> </p>
+          <p>무슨 수를 써서라도 놈들에게서 되찾아야지요.</p>
+          <p> </p>
+          <p>그러려면 일단 놈들의 요새 주둔군을 처치해 방어 체계에 타격을 입힐 필요가 있습니다.</p>
+          <p> </p>
+          <p>하지만 요새가 안정되어 점령이 불가능한 때에 공격을 하는 것은 의미가 없죠.</p>
+          <p> </p>
+          <p>점령이 가능한 상태가 될 때가 공격을 할 가장 좋은 기회입니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>지금 놈들은 많은 주둔군을 파견해 유황 나무 요새를 지키고 있습니다.</p>
+          <p> </p>
+          <p>그 병력을 처치하는 것이 놈들에게 타격을 줄 수 있는 좋은 방법입니다.</p>
+          <p> </p>
+          <p>용족이야 저희가 항상 견제하고 있지만 적이 천족일 경우에는 도움이 필요할 것 같군요.</p>
+          <p> </p>
+          <p>[%username] 님이 그 일을 좀 도와주시겠습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>유황 나무 요새를 천족이 차지하면 [%username] 님은 때를 기다리다가 점령이 가능해졌다는 신호가 들리면 임무를 수행하십시오.</p>
+          <p> </p>
+          <p>요새를 지키고 있는 천족 전투병과 궁병, 법사, 사제로 구성된 [%dic:STR_DIC_M_2805_all]%을 처치해 주시면 됩니다. 상급이든 중급이든 하급이든 상관없습니다.</p>
+          <p> </p>
+          <p>그리고 놈들을 처치했다는 증거로 [%dic:STR_DIC_I_QUEST_2805a]%을 가지고 오십시오. </p>
+          <p> </p>
+          <p>아시겠지만 적의 요새에 침투하는 것은 위험한 임무입니다. 각별히 조심하십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>너무 위험한 일이라 선뜻 나서기 힘든가 보군요.</p>
+          <p> </p>
+          <p>이해합니다. 천족 한두 명과 겨루는 것이 아니라 놈들이 점령하고 있는 요새로 가는 일이니까요.</p>
+          <p> </p>
+          <p>하지만 이 임무는 누군가는 꼭 수행해야만 하는 중요한 일입니다.</p>
+          <p> </p>
+          <p>나중에라도 마음이 바뀌면 다시 돌아오십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>무사히 돌아오셨군요, [%username] 님.</p>
+          <p> </p>
+          <p>유황 나무 요새에는 갔다 오셨습니까?</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_2805_all]%을 처치하고 [%dic:STR_DIC_I_QUEST_2805a]%을 가져오셨겠죠?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">가디언의 무기를 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아직 다녀오지 않으셨군요.</p>
+          <p> </p>
+          <p>[%username] 님의 임무는 우리가 유황 나무 요새를 되찾기 위해 매우 중요합니다.</p> 
+          <p> </p>
+          <p>그러니 요새에 대한 감시를 소홀히 하지 마시고, [%dic:STR_DIC_M_2805_all]%을 처치하고 [%dic:STR_DIC_I_QUEST_2805a]%을 가져오십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>약속한 대로 놈들을 처치하고 무기를 가져오셨군요.</p>
+          <p> </p>
+          <p>점령하고 있는 요새에서 이런 일이 생겼으니 놈들도 간담이 서늘해졌을 겁니다.</p>
+          <p> </p>
+          <p>정말 수고하셨습니다. 우리가 다시 유황 나무 요새를 점령하게 된다면 그건 모두 [%username] 님의 덕일 겁니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_M_2805_all]%을 처치한 증표를 [%dic:STR_DIC_N_Glati]에게 가져가라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">유황 나무 요새를 되찾기 위해 주둔군을 처치해야 한다. 요새가 점령 가능한 상태가 될 때 나타나는 천족의 주둔군을 처치하고 가디언의 무기를 모아 가자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>글라티는 적에게 빼앗긴 유황 나무 요새를 되찾으려면 요새를 지키고 있는 주둔군을 처치하는 일이 중요하다고 했다.</p>
+          <p> </p>
+          <p>그는 천족이 요새를 차지한 상태에는 도움이 필요하다고 하였다.</p>
+          <p> </p>
+          <p>그래서 천족 요새 주둔군을 처치하고 가디언의 무기를 모아서 가져다 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>결계 수호단 일동 보시오.</p>
+          <p> </p>
+          <p>최근 대기 중의 오드 비율이 급격히 감소하는 사건이 있어서 수호단 내부가 소란스러웠던 일이 있었소.</p>
+          <p> </p>
+          <p>때문에 대기 중의 오드를 비롯한 각종 물질을 검출하여 조사하기로 하였소.</p>
+          <p> </p>
+          <p>판데모니움 연구소의 협조를 얻어 벨루스란 주요 지역에 검출 마법석을 설치해 두었으니 검출 결과를 회수할 인력이 부족한 상태라오.</p>
+          <p> </p>
+          <p>모든 수호단원은 서둘러 [%dic:STR_DIC_OBJ_FOBJ_Q45008]을 조사하여 검출 결과를 회수해 [%dic:STR_DIC_E_45007]%에게 가져가시오.</p>
+          <p> </p>
+          <p>시간이 지체되면 검출 물질은 쓸모가 없게 될 것이니 서둘러 주기 바라오.</p>
+          <p> </p>
+          <p>모든 단원에게 아이온 탑의 가호가 있기를!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">편지를 접어 넣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>요즘 세간에 도는 소문이 흉흉합니다.</p>
+          <p> </p>
+          <p>(낮은 소리로) 주신께서 용계 진출을 서두르신 이유가 오드가 급격히 줄어들어서라는 말도 있지요.</p>
+          <p> </p>
+          <p>그래, 벨루스란 검출 물질은 회수해 오신 겁니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">검출 물질을 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>보지 못했다는 말씀입니까?</p>
+          <p> </p>
+          <p>벨루스란 검출 마법석은 아마 벨루스란 곳곳에 설치되어 있을 겁니다.</p>
+          <p> </p>
+          <p>발품을 팔아야 하는 일이지만 별로 어려운 임무는 아닙니다.</p>
+          <p> </p>
+          <p>어서 검출 물질을 회수해 오십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(검출 물질을 상자에 넣으며) 이 물질은 밀봉해 두지 않으면 금세 못쓰게 되어버리죠.</p>
+          <p> </p>
+          <p>[%username] 님이 가져온 물건은 상부에 전달하겠습니다.</p>
+          <p> </p>
+          <p>자, 받으십시오. [%username] 님께 드리는 사례금입니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_OBJ_FOBJ_Q45008]에서 검출된 물질을 회수해 [%dic:STR_DIC_E_45007]에게 가져가라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">결계 수호단에서 편지가 왔다. 지시에 따르자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>결계 수호단에서 온 편지에 따르면 오드의 비율이 감소했다며 원인을 찾기 위해 벨루스란 주요 지역에 검출 마법석을 설치했다고 한다.</p>
+          <p> </p>
+          <p>검출 마법석을 찾아 검출 물질을 회수해 벨루스란 지부 단원에게 가져가자 결계 수호단에 전하겠다며 사례를 하였다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

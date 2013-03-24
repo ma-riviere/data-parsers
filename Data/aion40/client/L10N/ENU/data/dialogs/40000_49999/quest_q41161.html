@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q41161</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hmm. Those Bristlewhisker Hornskulls are still thriving as much as ever. It looks like your previous hunt wasn't enough.</p>
+          <p> </p>
+          <p>But trying again may be futile if we don't attack the root of the problem, which is, I believe, the [%dic:STR_DIC_M_LDF4A_A1_SalivadoRedQ_57_Ae]. It appears to be some kind of mutant, stronger and smarter than its fellows. It's established itself as a sort of leader--an alpha, if you will.</p>
+          <p> </p>
+          <p>It won't be easy to locate. But [%dic:STR_DIC_N_Werenne] said he had an idea. Please help him in whatever way he requires.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, Varzeni sent you? Good timing. I think I can help with your Hornskull problem.</p>
+          <p> </p>
+          <p>I'm an avid hunter, you see. I believe I can create a bait that will lure in the Redscale Hornskull even at its wariest.</p>
+          <p> </p>
+          <p>But I'll need some [%dic:STR_DIC_I_QUEST_41161A]--their preferred food. You can cut it out of [%dic:STR_DIC_M_LDF4A_A1_Brax_DR_56_n]es in the south meadow of the [%dic:STR_DIC_W_LDF4a_SZ_A1].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"I think I've seen those Brax."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm fairly confident my bait will work. Even if it's a mutant, the Redscale Hornskull is still a Hornskull.</p>
+          <p> </p>
+          <p>And I haven't met the Hornskull yet that can resist the lure of this particular mix. They find it particularly savory.</p>
+          <p> </p>
+          <p>All I need is the [%dic:STR_DIC_I_QUEST_41161A]. Do you have it?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">"Yes. I'm getting hungry, though."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Heh heh, that's natural. Hornskull food tastes are surprisingly close to those of Humans.</p>
+          <p> </p>
+          <p>Now, then. A quick sear, and some spices....</p>
+          <p> </p>
+          <p>There! This should do it! The Redscale Hornskull won't be able to resist... but now I'm getting hungry too.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk to [%dic:STR_DIC_N_Werenne].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Hunt [%dic:STR_DIC_M_LDF4A_A1_Brax_DR_56_n]es in the south of [%dic:STR_DIC_W_LDF4a_SZ_A1] and bring [%dic:STR_DIC_I_QUEST_41161A] to [%dic:STR_DIC_N_Werenne].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">You must kill the Redscale Hornskull to get rid of the rest. Talk to Werenne and see what he needs to make this happen.</font></p>
+        </body>
+
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Varzeni told you that the Redscale Hornskull, a mutant "alpha," needed to be killed to scatter the rest.</p>
+          <p> </p>
+          <p>You consulted General Goods Merchant Werenne on a way to lure out this wily beast. He needed some ingredients to make his special bait, though.</p>
+          <p> </p>
+          <p>You brought him tough Brax meat. Werenne was then able to make his bait, which smelled good even to you.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

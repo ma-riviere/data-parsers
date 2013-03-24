@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p align="center"> - Work Order -</p>
+          <p> </p>
+          <p>1. To: Temp Worker [%username]</p>
+          <p> </p>
+          <p>2. Job Details: We need more *** for crafting weapons. Get 5 lumps of Greater Steel in the *** Mine and submit them to the supervising branch.</p>
+          <p> </p>
+          <p>3. Supervising Branch: Silverine South Katalam Branch </p>
+          <p> </p>
+          <p>The above mission will be considered in the evaluation process for hiring you as a full-time worker. Additional points may be added depending on the result. Do your best, nyerk.</p>
+          <p> </p>
+          <p>- Danurinerk, Recruiter of Silverine Limited</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">Fold the work order and put it away.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This mission was quite simple, wasn't it?</p>
+          <p> </p>
+          <p>All you needed to do was to pick up the steel that the Skurvs collected in their cart.</p>
+          <p> </p>
+          <p>Please give me what you've gathered, nyerk.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">Hand over the lumps of steel.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What is this? What have you been doing all this time?</p>
+          <p> </p>
+          <p>Don't you want to become a regular employee? This means negative points for you!</p>
+          <p> </p>
+          <p>I'll cut you some slack this time. Get 5 lumps of Greater Steel per the instructions, nyerk.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">End dialog.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Let's see. This is steel with negligible impurities, all right.</p>
+          <p> </p>
+          <p>Arrowheads made of this steel should draw in more customers.</p>
+          <p> </p>
+          <p>A Skurv? No need to worry about them.</p>
+          <p> </p>
+          <p>We can press forward without several of them mining.</p>
+          <p> </p>
+          <p>Actually, many more Skurvs came by ferry today, from Morheim, nyerk.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get the steel from the ore cart in *** and submit them to the Silverine South Katalam Branch.</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">You received a work order from Silverine Limited. Check the work details and perform the mission.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You received a work order from Silverine Limited.</p>
+          <p> </p>
+          <p>After you collected and submitted the Greater Steel to the Silverine South Katalam Branch, you were rewarded for your hard work.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

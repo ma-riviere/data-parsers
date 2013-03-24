@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], 그대는 이미 [%dic:STR_DIC_W_ZONE_NAME_IDCatacombs]에 다녀온 적이 있지 않는가?</p>
+          <p> </p>
+          <p>파슈만디르 사원에서의 네 경험이 필요한 일이 있느니라.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">무슨 일이냐고 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_E_IDCatacombsN_Drakan_Guard]로 불리는 수많은 용족이 [%dic:STR_DIC_W_ZONE_NAME_IDCatacombs]을 지키고 있다.</p>
+          <p> </p>
+          <p>지금은 그저 파슈만디르 사원을 지키고 있을 뿐이지만, 우리 주력군이 용제 티아마트를 공격하기 위해 나서면 그들이 우리의 뒤를 노릴 것이 분명하다.</p>
+          <p> </p>
+          <p>그렇게 되기 전에 파슈만디르 사원 입구와 영웅의 묘실, 그리고 영원의 주랑에 있는 파슈만디르 용족 수호자들을 제거해 달라.</p>
+          <p> </p>
+          <p>[%username], 그대가 이 일을 맡아 준다면 내 근심이 하나 줄어들 것 같군.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그대를 믿겠다.</p>
+          <p> </p>
+          <p>파슈만디르 사원으로 가서 [%dic:STR_DIC_E_IDCatacombsN_Drakan_Guard]들을 남김 없이 처치하고 보고하도록 하라.</p>
+          <p> </p>
+          <p>임무에 성공하고 돌아오면 내 큰 상급을 내리도록 하겠다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그대라면 내 말뜻을 알아 듣고 행동해 줄거라 생각했는데...</p>
+          <p> </p>
+          <p>실망스럽구나, [%username].</p>
+          <p> </p>
+          <p>내 앞에서 물러가도록 하라.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>파슈만디르 용족 수호자들은 모두 처치하였느냐?</p>
+          <p> </p>
+          <p>그대가 모든 임무를 완수하는 날이 우리 마족의 군사들이 티아마트의 소굴로 진격하는 날이 될 것이다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 덕분에 우리 주력군의 후방이 안전해졌구나.</p>
+          <p> </p>
+          <p>이제 남은 것은 티아마트를 물리치고 시엘과 이스라펠 주신의 복수를 하는 것뿐이다.</p>
+          <p> </p>
+          <p>이 공훈 증명서를 줄 터이니 나중에 필요한 상급과 교환하도록 하거라.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">파슈만디르 용족 수호자를 처치하라</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_IDCatacombsN_Drakan_Guard_Entrance] ([%2]/20)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_IDCatacombsN_Drakan_Guard_tomb] ([%5]/10)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_IDCatacombsN_Drakan_Guard_priest] ([%8]/40)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Hler]%와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">흘레르가 파슈만디르 사원에서 파슈만디르 용족 수호자들을 처치하여 자신의 고민을 해결하여 줄 것을 부탁했다.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>흘레르는 파슈만디르 사원을 지키고 있는 용족 세력이 유사시에 마족 주력군의 후방을 기습할 것을 염려했다.</p>
+          <p> </p>
+          <p>파슈만디르 사원으로 가서 용족 수호자들을 처치하여 흘레르의 근심을 해결했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

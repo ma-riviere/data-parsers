@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Not so close--please!</p>
+          <p> </p>
+          <p>I mean, don't you think it's rather stuffy in here?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Your pardon, sir."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>There. That's better!</p>
+          <p> </p>
+          <p>Right. [%username], I have a task for you. The work is easy enough, but it requires a journey to Lake Asteria.</p>
+          <p> </p>
+          <p>Given your background, I thought such a jaunt would suit you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm taking my troops there shortly, and reports haven't been forthcoming. Lake Asteria's teleporters and guardians have been scouting the area, or at least I think they have.</p>
+          <p> </p>
+          <p>Remind them to send their reports. Just tell them you're under orders from Governor Michalis. That'll light a fire under them!</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_N_Septimus], at the lower layer of the Eastern Shard of Latesran, is the nearest one.</p>
+                 </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll find him, sir."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p> </p>
+          <p>We have no other suitable messenger, so it's you or nobody. If we go to battle unprepared, it'll be on your head.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Let me consider it, sir."</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Are you going to the upper layer of the ridge?</p>
+          <p> </p>
+          <p>Be careful! Theon, the teleporter there, says the Flame Tribe are restless.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">"You've been scouting, right? Right?!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Centurion Soniksius needs my report?</p>
+          <p> </p>
+          <p>Nothing surprising so far, just small parties of Asmodians.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"Just send it in."</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="select3">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Keep your head down, Daeva.</p>
+          <p> </p>
+          <p>Some clumsy idiot's always catching the attention of an Asmodian raiding party.</p>
+          <p> </p>
+          <p>Fighting's exhausting, so I became a teleporter, but now I have to transport troops and battle Asmodians as well! It's the worst of both worlds.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT3_1">"Do you prefer paperwork?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select3_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No. These reports are the worst! I should have stayed in Sanctum and been an instructor.</p>
+          <p> </p>
+          <p>I did prepare one, though.</p>
+          <p> </p>
+          <p>And Soniksius should know the movements of the Flame Tribe have been suspicious lately. I'll put that in the report.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO2">"And send it soon, thank you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>How did you find me? Few people know we're gathering Aether here.</p>
+          <p> </p>
+          <p>Anyway, since you came this far, you must have urgent business. What is it?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Soniksius needs a report."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Soniksius forgets he's a Nezekan's Shield Centurion, not the Protector of Teminon.</p>
+          <p> </p>
+          <p>Still, if it comes from Governor Michalis.... Orders are orders.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Deliver Soniksius's message to [%dic:STR_DIC_N_Septimus].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Urge [%dic:STR_DIC_N_Theon] to send in a report.</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Request the last report from [%dic:STR_DIC_N_Garpedo].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Soniksius's legion will be fighting soon at Lake Asteria. Tell Septimus, Theon, and Garpedo to make their scouting reports.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Centurion Soniksius, planning an attack near Lake Asteria, gave you a list of teleporters and guardians who have been scouting the area. </p>
+          <p> </p>
+          <p>You delivered an order to Septimus, Theon, and Garpedo to send their reports to Soniksius.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q49020</QuestId>
+    <QuestName>아에기르의 지령</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p> - 긴급 명령서 - </p>
+          <p></p>
+          <p> 1. 발신 : 아칸 군단장 아에기르</p>
+          <p></p>
+          <p> 2. 수신 : [%username]</p>
+          <p></p>
+          <p> 3. 명령 : 시공의 균열이 열려 있는 동안 모르헤임으로 침입한 천족을 처치하라!</p>
+          <p></p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">의뢰를 수행한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>모르헤임의 미래는 자네의 두 어깨에 달려 있네.</p>
+          <p> </p>
+          <p>무슨 일이 있어도 이번 임무를 실패해서는 안 되네.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>예전부터 자네는 나를 실망시키지 않았지.</p>
+          <p> </p>
+          <p>아스펠의 가호가 자네를 지켜주고 있는 것 같네.</p>
+          <p> </p>
+          <p>수고했네.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">모르헤임을 습격한 천족을 처치하라([%2]/5)</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_N_Aegir]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">긴급 명령: 시공의 균열이 열려 있는 동안 모르헤임에 침투한 천족을 처치하고 아에기르에게 보고하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>천족이 시공의 균열을 이용해 모르헤임에 침공하였다. 침공한 천족들을 소탕하고 아에기르에게 보고하였다.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

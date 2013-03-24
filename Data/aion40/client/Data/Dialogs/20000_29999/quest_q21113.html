@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(인공오드 생성기 쪽을 살피며) 또 몰려들었군 그래. </p>
+          <p> </p>
+          <p>뭐 먹을 게 있다고 자꾸 모여드는지 모르겠군.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">무슨 일이냐고 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>인공오드 생성기 말입니다.</p>
+          <p> </p>
+          <p>웬 일인지 자꾸 짐승들이 꼬이네요.</p>
+          <p> </p>
+          <p>쫓아내고 돌아서면 다시 몰려들어 있으니, 원.</p>
+          <p> </p>
+          <p>장치가 잘 작동하는지 확인하라고 했는데 심히 방해가 됩니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">고개를 끄덕인다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>섬광 때문이겠죠?</p>
+          <p> </p>
+          <p>그 외엔 달리 이유를 모르겠거든요.</p>
+          <p> </p>
+          <p>주변의 에너지를 흡수하면서 생기는 섬광이 짐승을 끌어들이는 것 같아요.</p>
+          <p> </p>
+          <p>그렇다면 생성기가 작동하는 이상, 어쩔 수 없을 테지요. 틈틈이 몰려든 짐승을 없애는 수밖에요.</p>
+          <p> </p>
+          <p>이럴 게 아니라, 당신이 좀 없애 주시겠습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>인공오드 생성기를 살피러 갈 때마다 힘을 썼더니 지치기도 하고, 저쪽에 걸어 다니는 석인들도 치워야 하거든요.</p>
+          <p> </p>
+          <p>당신이라면 금방 처치할 수 있을 것 같으니 부탁합니다.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_DF4_Hellhound_Wolf_53_An], [%dic:STR_DIC_M_DF4_BAT_DR_53_n]만 없애 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>갈 길이 바쁘다니 어쩔 수 없군요.</p>
+          <p> </p>
+          <p>그럼 어서 가 보십시오.</p>
+          <p> </p>
+          <p>저도 일이나 해야겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그나저나 유적 발굴은 언제 끝나는 걸까요?</p>
+          <p> </p>
+          <p>마르티네즈가 요새로 복귀하든 제가 복귀하든, 저 잘난 척 좀 그만 봤으면 좋겠군요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(인공오드 생성기 쪽을 살피며) 확실히 몰려든 짐승이 줄었군요.</p>
+          <p> </p>
+          <p>수고하셨습니다, 이거라도 받으십시오.</p>
+          <p> </p>
+          <p>전 이만 생성기를 살펴보러 가야겠군요.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">인공오드 생성기 주변에 몰려든 짐승을 처치하라</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_DF4_Hellhound_Wolf_53_An]([%2]/5)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_DF4_BAT_DR_53_n]([%5]/5)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_reptilia]%와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">렙틸리아가 인공오드 생성기를 살펴볼 수 있도록 위험 요소를 제거하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>렙틸리아는 인공오드 생성기로 인해 발생된 섬광을 보고 몰려든 짐승 때문에 주변이 위험하다고 했다.</p>
+          <p> </p>
+          <p>그가 인공오드 생성기의 작동을 점검할 수 있도록 몰려든 짐승을 처치해 주자 고맙다며 사례를 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

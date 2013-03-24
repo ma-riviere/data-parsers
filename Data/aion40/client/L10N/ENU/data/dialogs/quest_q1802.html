@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Losing Siel's Eastern Fortress to the enemy was an unfortunate humiliation for us.</p>
+          <p> </p>
+          <p>If those fools of the Nezekan's Shield were a little smarter, it would never have happened, but there's no use pointing fingers now.</p>
+          <p> </p>
+          <p>Now all that matters is that we retake the fortress.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"How?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>the enemy--whether that be Asmodians or the Balaur--will dispatch a large force to defend the Fortress.</p>
+          <p> </p>
+          <p>If we defeat the elite Asmodian troops in combat while the fortress is in the Vulnerable State, however, they might not get that chance.</p>
+          <p> </p>
+          <p>I presume I can trust you with this mission, [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Go to the fortress when it is in the Vulnerable State, and wipe out the [%dic:STR_DIC_M_1802_all]--Asmodian Elite Fighters, Asmodian Elite Archers, Asmodian Elite Mages, and Asmodian Elite Priests. It doesn't matter if they are Veterans, Experienced or Novices.</p>
+          <p> </p>
+          <p>Bring their [%dic:STR_DIC_I_QUEST_1802a]. We'll use them to our advantage.</p>
+          <p> </p>
+          <p>Return safely--I don't want to see you next to the Obelisk gasping for breath.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"The task is mine."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I didn't expect you to show this lack of confidence. I suppose having a high reputation doesn't necessarily mean you're brave.</p>
+          <p> </p>
+          <p>I'll entrust the mission to someone else. You should go back to Teminon Fortress, where it's safe.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Good-bye."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You have returned, [%username].</p>
+          <p> </p>
+          <p>I presume you've completed your mission.</p>
+          <p> </p>
+          <p>Hand me the Insignias.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here they are."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What have you been doing all this time?</p>
+          <p> </p>
+          <p>It is not my business what you do with your time, [%username], but I need you to carry out the mission properly.</p>
+          <p> </p>
+          <p>Hurry and return with the [%dic:STR_DIC_I_QUEST_1802a]s.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"On my way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I knew you'd have no trouble.</p>
+          <p> </p>
+          <p>Great job. We'll use this as a foothold to recapture Siel's Eastern Fortress. Thank you.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Wipe out the [%dic:STR_DIC_M_1802_all] and take the proof to [%dic:STR_DIC_N_Laius].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">To reclaim Siel's Eastern Fortress, the Asmodians must be struck a blow while the fortress is in the Vulnerable State. Go to the fortress to defeat the defenders and return with the Insignias of Reshanta.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Laius said in order to recapture Siel's Eastern Fortress, you should defeat the elite Asmodian troops while the fortress is in the Vulnerable State.</p>
+          <p> </p>
+          <p>So after defeating the elite Asmodian fighters, archers, mages and priests, you returned to Laius with their Insignias as proof.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

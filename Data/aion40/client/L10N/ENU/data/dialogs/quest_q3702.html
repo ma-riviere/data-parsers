@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Are you ready then?</p>
+          <p> </p>
+          <p>Don't take this lightly, [%username]. Those Balaur might still be learning to fight properly, but they were born strong and smart. Can't build a castle on marshland--can't make a Balaur warrior from a wimp.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_none_1">"I know. I'm no fool."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_none_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No, no. That wasn't my implication.</p>
+          <p> </p>
+          <p>I just want to make sure you're fully prepared for the challenge ahead. It would be remiss of me to send you into a maelstrom without fair warning.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Fair enough."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Now, the place is called the Nochsana Training Camp, and it's central to the Balaur war preparations.</p>
+          <p> </p>
+          <p>To get into the camp you'll have to destroy the [%dic:STR_DIC_M_Mini_Castle_Door_Dr]. I want you to find and kill the [%dic:STR_DIC_M_Mini_Castle_DrakanFi_27_Ah], and anything that gets in your way. Then take flight and return to me for your reward.</p>
+          <p> </p>
+          <p>Is everything clear? Are you ready?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good. The best way to get to the Training Camp is to approach the [%dic:STR_DIC_OBJ_AB1_Corridor_Q3702] our archaeologists are still uncovering. That's to the west of Teminon Landing.</p>
+          <p> </p>
+          <p>Once you're in the compound, move fast. Stay in one place too long, and you'll be surrounded. You'll need to activate the Shield of Compassion artifact, then take down the Fortress Gate.</p>
+          <p> </p>
+          <p>Use whatever means you can--just be fast, all right? I don't want to lose you in there.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be fine. Faith and arms!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You come all the way here to refuse the work? You're worse than a fool--you're a time-wasting fool.</p>
+          <p> </p>
+          <p>Day after day, that camp churns out terrors that tear into our legions, leaving them staggering for balance. Now you would delay our operations just to say no my face?</p>
+          <p> </p>
+          <p>Better to have refused Rentia, [%username]. At least then she could have found a suitable replacement.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm sorry."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, how did you get on? Did you go to the Nochsana Training Camp?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"All that you wanted done is done."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good! Good....</p>
+          <p> </p>
+          <p>Now we've granted our brothers and sisters a moment's respite in this eternal war. No doubt you have learned valuable information from your excursion, too.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Infiltrate the [%dic:STR_DIC_W_IDAb1_MiniCastle_SZ_All] and destroy the [%dic:STR_DIC_M_Mini_Castle_Door_Dr] with the siege weapon.</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Kill [%dic:STR_DIC_M_Mini_Castle_DrakanFi_27_Ah] ([%5]/1).</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Report back to [%dic:STR_DIC_N_Nereus].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Go to the Nochsana Training Camp, destroy the fortress gate, and defeat the Nochsana General.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Centurion Nereus asked you to go to the Balaur's Nochsana Training Camp, destroy the Fortress Gate, and kill the Nochsana General.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

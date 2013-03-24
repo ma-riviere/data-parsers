@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Have you ever heard of Udas Temple, [%username]?</p>
+          <p> </p>
+          <p>It's an ancient Balaur temple held by the Dragonbound. It's located near Undirborg.</p>
+          <p> </p>
+          <p>It is our next best hope of finding the information we need.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What needs to be done there?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It is said that the first Dragonbound built it during the Millenium War, and that it housed a vast trove of tomes and scrolls.</p>
+          <p> </p>
+          <p>My studies have confirmed these legends, though we don't yet know if any of the Temple's libraries have survived.</p>
+          <p> </p>
+          <p>Your task would be to go there and see for yourself if knowledge still lies within.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Inside [%dic:STR_DIC_E_IDTemple_DF4], there is a corridor called the Path of Reflection. There you will find the Path of Wisdom.</p>
+          <p> </p>
+          <p>I think that's where the ancient libraries once were. Look for [%dic:STR_DIC_OBJ_IDTemple_AncientDocu_Q30206]s.</p>
+          <p> </p>
+          <p>Almost everything of value was probably destroyed when Siel's Spear Legion attacked the Temple, but it's worth a try.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll see what I can find."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes, this might be another wild qooqoo chase, as with the memorial towers.</p>
+          <p> </p>
+          <p>Still, searching it offers only the chance of failure. Not searching it at all turns that chance into a certainty.</p>
+          <p> </p>
+          <p>Do not fall into despair, [%username]. Please return once you have gathered anew your courage and resolve.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"My courage and resolve are fine."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I almost envy you. You have walked the halls of a place only whispered of in generations of myth.</p>
+          <p> </p>
+          <p>But this is no time for wistful musings. Did you find any Ancient Dragonbound Documents?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Is this what you sought?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I know how difficult it must be to penetrate Udas Temple, especially with the Dragonbound guarding the place.</p>
+          <p> </p>
+          <p>But we have little choice. If this fails, I don't have many more promising leads.</p>
+          <p> </p>
+          <p>Please find at least one [%dic:STR_DIC_OBJ_IDTemple_AncientDocu_Q30206]. That way I can tell if the effort truly is fruitless.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"All right, I'll try again."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Fascinating.... Oh, is that...? But...hmmm....</p>
+          <p> </p>
+          <p>Well, this does mention something called "Stormwing" being sealed deep inside Beshmundir Temple. But it's just that one reference. Not even a hint of what "Stormwing" is, or why he, she, or it was sealed.</p>
+          <p> </p>
+          <p>But wait...! Ah! Now here's something we can work with!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Find an [%dic:STR_DIC_OBJ_IDTemple_AncientDocu_Q30206] and bring it to [%dic:STR_DIC_N_Herka].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Go to the Path of Wisdom in Udas Temple and find an Ancient Dragonbound Document.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Herka suggested that Udas Temple might hold the information you need.</p>
+          <p> </p>
+          <p>You brought an Ancient Dragonbound Document from the Path of Wisdom. Herka found that it mentioned something called "Stormwing" sealed within Beshmundir Temple.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

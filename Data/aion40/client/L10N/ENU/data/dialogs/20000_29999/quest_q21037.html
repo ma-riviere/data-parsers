@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Your cube is full of manastones, isn't it?</p>
+          <p> </p>
+          <p>It can be hard to decide which ones to use. Should you select manastones that enhance your strengths, or supplement your weaknesses?</p>
+          <p> </p>
+          <p>So many decisions. So many options....</p>          
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"You have a solution?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>If my guess is right, your cube is filled with manastones you don't have much use for. Otherwise you'd have used them by now.</p>
+          <p> </p>
+          <p>If you have certain types of common manastones (HP +70, Accuracy +22, and Block +22 manastones), I'd be happy to exchange them for you.</p>
+          <p> </p>
+          <p>Interested?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Pandaemonium believes this manastone exchange program will help boost Asmodian morale.</p>
+          <p> </p>
+          <p>I don't know about all that, but you should still take advantage of the opportunity while you can. The policy might very well change again.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll keep that in mind."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's up to you. Remember, though, if you ever have any spare manastones (HP +70, Accuracy +22, and Block +22), I'll exchange them for you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll keep that in mind."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Would you like me to remove your manastones? </p>
+          <p> </p>
+          <p>Or do you have manastones to trade in?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I'd like to trade in."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hmmmm...these don't look quite right.</p>
+          <p> </p>
+          <p>I can only exchange certain manastones (HP +70, Accuracy +22, and Block +22). I don't make the policy, you understand.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"My mistake."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Let's see.... The proper type and amount.... Everything seems to be in order.</p>
+          <p> </p>
+          <p>I'll be happy to exchange these for new manastones.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select9">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I can exchange as many manastones as you like, as long as they're the right sort (HP +70, Accuracy +22, and Block +22).</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I've got some more."</Act>
+      <Act href="HACTION_FINISH_DIALOG">"I'm finished for now."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select10">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hmmmm...these don't look quite right.</p>
+          <p> </p>
+          <p>I can only exchange certain manastones (HP +70, Accuracy +22, and Block +22). I don't make the policy, you understand.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"My mistake."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Gather unused manastones and take them to [%dic:STR_DIC_N_Mexes].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Take any manastones you don't need to Greger and exchange them for new ones.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Greger offered to exchange manastones you don't need for others.</p>
+          <p> </p>
+          <p>You traded in some HP +70, Accuracy +22, and/or Block +22 manastones.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

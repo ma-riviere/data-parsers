@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Krall are curious beasts, don't you think, [%username]?</p>
+          <p> </p>
+          <p>They squabble amongst themselves day and night. Fights are common among the low ranks, presumably as peons make names for themselves. Even so, they are capable, highly skilled aggressors when properly organized.</p>
+          <p> </p>
+          <p>It seems another attack is brewing, actually....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"How can you tell?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I know some Krallic, enough to work out their mood and some of the orders. It's a curious language, blunt and coarse. They have many terms where we would have one, or one term where we'd use several.</p>
+          <p> </p>
+          <p>In any case, I have a proposal. I think we should change tactics and attack the Outpost. If my theory is correct, the Krall only attack when they have sufficient numbers.</p>
+          <p> </p>
+          <p>By attacking, we could constantly thin their own numbers, thereby ending these raids on the citadel!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"We'd choose the battlefield...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What do you think, [%userclass]? Are you willing to stir up some Krall? I'll watch their movements to see your attack disrupts their raids.</p>   
+          <p> </p>
+          <p>Given their numbers, ten [%dic:STR_DIC_MLA60]s killed, and the same number of [%dic:STR_DIC_MLA27_1]s should tip the scale.</p>  
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent! Now, this is more than one soldier's work. I would advise against going in alone. Round up other Daeva looking to test their abilities. If you are a member of a Legion, all the better. This is a good chance to learn how to work in a squad.</p>
+          <p> </p>
+          <p>A squad of Daeva working together are more than the sum of their parts, [%username]. Your talents blend together, and you guard each other's weaknesses.</p>
+          <p> </p>
+          <p>Hurry, gather your allies. You must strike before the Krall do, or we'll have to wait for their forces to build up again!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Thank you. Faith and arms!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I understand--it's a lot to ask.</p>
+          <p> </p>
+          <p>If you change your mind, then please return to me. The Krall aren't leaving. If you want to rise to command, this is a great chance to learn the tactics that turn a mob of soldiers into an army!</p>   
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I won't forget...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">   
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Back so soon, and still breathing?</p>
+          <p> </p>
+          <p>You and your allies struck the Krall outpost, [%username]? Did you complete the task I set you?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I did, though the challenge was great...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That's why I chose you to help me with my research!</p>
+          <p> </p>
+          <p>I'd heard of your exploits from associates both here and in Sanctum. When you arrived here, I knew I had to call on you. You've lived up to the rumors: you're a gifted [%userclass] indeed. Ariel herself smiles on such devotion and valor, and you have my gratitude, too. </p>
+          <p> </p>
+          <p>I think Verteron Citadel can breathe easier for a little while; the Krall need time to replace those you've slain. If this quiets them, as I expect, I'll put my case to Sanctum to change our standing orders. Faith and arms!</p>   
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Eliminate the Krall in the [%dic:STR_DIC_FLA22].</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_MLA60]([%2]/10)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_MLA27_1]([%5]/10)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_LA39].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">The Tursin Krall are gathering sufficient numbers to assault Verteron Citadel. Kill Krall in the Tursin Outpost to thin their numbers.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Meteina believes Krall attack whenever their camps are overcrowded. To prevent raids on the citadel, she wants to mount her own attack on Tursin Outpost.</p>          <p> </p>
+          <p>You gathered allies, raided the Krall as Meteina suggested, and received a special reward.</p>  
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

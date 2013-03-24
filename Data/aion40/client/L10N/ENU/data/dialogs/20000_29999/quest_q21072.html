@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hmm. But if you can't go to Gelkmaros Falls by Air Line, then I have a bit of a problem.</p>
+          <p> </p>
+          <p>I'm not allowed to leave the fortress. You see, I'm Human.</p>
+          <p> </p>
+          <p>I was only able to come to Gelkmaros because of Master Svasuth's name!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"It's for your own protection."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I know. But it does make it difficult for me to do my job. Of course, Master Svasuth does THAT all by himself.</p>
+          <p> </p>
+          <p>But you're a Daeva.... Could I ask one more favor of you?</p>
+          <p> </p>
+          <p>Could you go to [%dic:STR_DIC_W_SZ_DF4_A3] and search for Master Svasuth?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That's extremely kind of you. I wish Master Svasuth could be so considerate.</p>
+          <p> </p>
+          <p>Oh, don't get me wrong. He's quite kind and treats me very well. He's just...free-spirited in the extreme.</p>
+          <p> </p>
+          <p>He should be near the base of the waterfall. If not, look for his suitcase. It might have clues...or at least lure him back here when he can't change clothes or eat.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"You're a patient man."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hmm. I understand. You have bosses of your own to satisfy.</p>
+          <p> </p>
+          <p>But this does leave me in a tight spot. What should I do?</p>
+          <p> </p>
+          <p>Ask another Daeva? Contact Master Svasuth's patron? Oh, but she'll be so angry....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Sorry, can't help you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're back...but I don't see Master Svasuth anywhere.</p>
+          <p> </p>
+          <p>So, he wasn't at Gelkmaros Falls, was he? Of course not.... He'd never make it so easy for me.</p>
+          <p> </p>
+          <p>Did you find anything of his there? Anything at all?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Well..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Nothing? That can't be. Master Svasuth isn't a Ranger...he can't survive in the wild without something of civilization!</p>
+          <p> </p>
+          <p>Besides which, he's more forgetful than an Elyos with a head wound.</p>
+          <p> </p>
+          <p>I can't imagine he wouldn't leave SOMETHING behind. His suitcase is the best bet. Please look again.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm starting to dislike Svasuth."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, at least Master Svasuth is alive...or was at that point, and we know where he's been.</p>
+          <p> </p>
+          <p>Anyway, when he finds he's missing his suitcase, he'll return sooner or later.</p>
+          <p> </p>
+          <p>Now all I can do is wait. Thanks for doing this for me.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Find some [%dic:STR_DIC_OBJ_DF4_Q21072] in Gelkmaros and bring it to [%dic:STR_DIC_N_Skilving].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Search Gelkmaros Falls for some sign of Svasuth.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Skilving cannot go outside the fortress because he's Human. He asked you to locate Svasuth for him.</p>
+          <p> </p>
+          <p>You went to Gelkmaros Falls to search for Svasuth, but only found his suitcase.</p>
+          <p> </p>
+          <p>You brought that suitcase to Skilving, who hoped that his master would return soon now that he was without his belongings.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q22031</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>미입력</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select_none" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>표시의 결정을 가지고 [%dic:STR_DIC_W_TDown_ItemUseArea_Q22031A]로 가시오.</p>
+          <p> </p>
+          <p>거기서 표시의 결정을 사용하면 티아마트 성채로 가는 길이 나타날 거요.</p>
+          <p> </p>
+          <p>그럼 그 표시를 쫓아가서 티아마트 성채 입구가 어디에 있는지 위치를 알아내 주시오.</p>
+          <p> </p>
+          <p>중요한 일이니 무슨 일이 있어도 성공해야 하오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>기다리고 있었소, [%username].</p>
+          <p> </p>
+          <p>티아마트 성채 입구가 어디인지는 알아냈소?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>티아마란타의 눈 북쪽에 티아마트 성채 입구가 있다는 거요?</p>
+          <p> </p>
+          <p>그곳을 통해 위쪽에 떠 있는 티아마트 성채로 이동할 수 있겠구려.</p>
+          <p> </p>
+          <p>티아마트 성채의 위치를 알아냈으니 티아마트를 처치하기 위한 준비 하나는 마친 셈이구려.</p>
+          <p> </p>
+          <p>하지만 용제를 처치하기 위해서는 아직도 준비할 것이 많을 거요.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_W_TDown_ItemUseArea_Q22031A]로 가서 표시의 결정을 사용하라[%2]</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">빛을 따라가 티아마트 성채 입구를 찾아라[%5]</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">[%dic:STR_DIC_N_Trois]에게 결과를 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">표시의 결정을 사용하여 티아마트 성채의 입구를 알아내야 한다. 신비의 길로 가서 표시의 결정을 사용하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>트로이스스는 신비의 길로 가서 표시의 결정을 사용하라고 했다. </p>
+          <p> </p>
+          <p>표시의 결정을 사용하자 티아마트 성채 입구로 가는 길이 나타났고, 그 길을 따라가자 티아마란타의 눈 북쪽에 있는 티아마트 성채 입구를 발견할 수 있었다.</p>
+          <p> </p>
+          <p>트로이스에게 돌아가서 결과를 보고하자 용제를 처치할 첫 번째 준비를 마쳤다며 기뻐했다. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

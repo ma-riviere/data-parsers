@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+           <p>Hey–-you!</p>
+           <p> </p>
+           <p>Come here!</p>
+           <p> </p>
+           <p>I have something important to tell you!</p>
+           <p> </p>
+          </body>
+        </html>
+    </Contents>
+    <Selects>
+    <Act href="HACTION_ASK_QUEST_ACCEPT">"What is it?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You are a mercenary, yes? Clever Minalinerk has a job for you!</p>
+          <p> </p>
+          <p>There are Kerubs all over, yes? At [%dic:STR_DIC_FLA209], the farmhands fled and left their things behind. Whoever collects them can keep them, no questions asked!</p>
+          <p> </p>
+          <p>The goods are worth a small fortune! But Minalinerk cannot leave this shop unattended. So maybe if a strong [%userclass] brought the goods to him, yes? Half the value for each of us!</p>        
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Akakakak! Knew it! A true mercenary!</p>
+          <p> </p>
+          <p>There are barrels scattered across the farm, with bottles of wine inside. The wine is so good that [%dic:STR_DIC_ELA07] requires it as part of the [%dic:STR_DIC_ELA20]! There's plenty profit to be had.</p>
+          <p> </p>
+          <p>Go, quickly, before others discover what we know!</p>          
+         </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll get the wine for you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+         <p>You say no? Well then.</p>
+         <p> </p>
+         <p>It's your loss, silly [%userclass]. The other mercenaries are happy enough to make extra Kinah!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Perhaps, but not like this."</Act>
+    </Selects>
+  </HtmlPage>
+
+   <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You brought the stuff, yes? Quickly--show Minalinerk!</p>            
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here, all I could find."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This is not right!</p>
+          <p> </p>
+          <p>Clever Minalinerk needs at least three bottles to sell! You must go back before they're all taken!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Stop pushing me--I'm going."</Act>
+    </Selects>
+  </HtmlPage>
+
+    <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Akakakakakakak!</p>
+          <p> </p>
+          <p>Perfect! There's no need for the farmers to know.... Clever Minalinerk will say Kerubs stole them! Akakakak! Clever Minalinerk!</p>
+          <p> </p>
+          <p>This is for you, [%username]! Half the value, as promised! Our secret, yes.</p>         
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect wine from [%dic:STR_DIC_FLA209] and bring the bottles to [%dic:STR_DIC_LA70].</font></p>[%collectitem]</step>               
+    </steps>
+          <p><font font_xml="quest_summary">[%dic:STR_DIC_LA70], a Shugo merchant, made you a secret offer. Go to [%dic:STR_DIC_FLA209], on the west side of [%dic:STR_DIC_FLA03], collect wine from the abandoned [%dic:STR_DIC_E_LIQUID_BARREL]s, and bring it to him.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>A Shugo merchant gave you a secret job on the side.</p>
+          <p> </p>
+          <p>You collected wine from the abandoned barrels in [%dic:STR_DIC_FLA209]%. Minalinerk gave you half the value of the goods as a reward.</p>
+          </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

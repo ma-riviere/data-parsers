@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q16950</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아, [%username]님! 때마침 와 주셔서 얼마나 반가운지 모르겠네요.</p>
+          <p> </p>
+          <p>예전에 신세를 졌던 어느 회사의 비밀 요원이 은밀하게 사람을 하나 구해달라고 하지 뭡니까. 그런데 다들 바빠서 부탁을 드릴 수가 있어야지요.</p>
+          <p> </p>
+          <p>의뢰인은 [%dic:STR_DIC_W_LDF5b_SZ_E3]에 있는 [%dic:STR_DIC_N_LDF5b_Huwooring_E]입니다.</p>
+          <p> </p>
+          <p>혹시 지금 바쁘지 않다면, 그녀를 한 번 만나러 가 보지 않으시겠습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>쉿! 목소리 낮추십시옹! 전 골드린 주식회사의 높으신 분의 명을 받고 비밀 조사를 담당하게 된 후우링이라고 합니다냥.</p>
+          <p> </p>
+          <p>골드린 주식회사의 높으신 분은 몇 차례나 강철장미 호의 해적의 암습을 받았습니다냥! 우린 그 암습이 해적들과 손을 잡은 회사 내부 배신자의 소행이라고 생각합니다냥.</p>
+          <p> </p>
+          <p>지금까지의 조사에 의하면 강철장미 호의 보사라키는 비밀리에 배신자로부터 어떤 문서를 받은 모양입니다냥. 그녀를 처치하고 문서를 회수하면 배신자의 정체를 알 수 있을 겁니당, 갸릉!</p>
+          <p> </p>
+          <p>지금 당장 [%dic:STR_DIC_W_IDShulackShip_02_SZ_1F]으로 가서 [%dic:STR_DIC_I_quest_16950a]를 회수해 오시길 바랍니다냥.</p>
+          <p> </p>
+          <p>강철장미 호로 갈 준비가 되면 판다룽스에서 유카룽을 찾으십시옹. [%dic:STR_DIC_N_IDShulack_Rose_Ent_1F_E], 길 알고 있습니당, 갸릉!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>높으신 분의 암습을 계획한 배후를 알아내면 강철장미 해적단이 우릴 배신했다는 것을 밝혀낼 증거가 될 수 있을 겁니다냥.</p>
+          <p> </p>
+          <p>조사에 의하면 강철장미 호의 보사라키에게 암습의 배후로부터 전달 된 물건이 있다고 합니다냥.</p>
+          <p> </p>
+          <p>매혹의 보사리키에게서 배신의 증거를 빼앗아 와야만 합니당, 갸릉!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">증거들을 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>보사리키로부터 증거를 회수해 오셨습니까냥?</p>
+          <p> </p>
+          <p>이 명령서는 회사의 배신자의 정체를 나타내는 피할 수 없는 증거! 전 이걸 정리해서 높으신 분께 보낼겁니다냥.</p>
+          <p> </p>
+          <p>부디 마음 약한 우리 여주인님이 이 사실로 인해 상처받지 않으시길 바래야겠습니다냥…</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    	    <steps>
+               <step><p visible="[%0]"><font color="[%1]">판다룽스의 [%dic:STR_DIC_N_LDF5b_Huwooring_E]과 대화하라</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_I_quest_16950a]를 회수한 후 [%dic:STR_DIC_N_LDF5b_Huwooring_E]에게 보고하라</font></p>[%collectitem]</step>
+    	    </steps>
+          <p><font font_xml="quest_summary">강철장미 호 선창에서 보사라키를 처치하고 배신의 증거를 회수하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>강철장미 호에 잠입하여 매혹의 보사라키를 처치하고 배신의 증거를 수집했다.</p>
+          <p> </p>
+          <p>후우링은 배신의 증거를 회사의 높으신 분에게 전달하고 추후 강철장미 호와의 관계에 대해 다시 생각할 기회를 갖기로 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

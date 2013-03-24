@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(The statue is unresponsive, and seems to be missing a piece.) </p>
+          <p> </p>
+          <p>(You might be able to fix it when you find [%dic:STR_DIC_I_QUEST_1640a].) </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"Now to find the missing piece." </Act>
+      <Act href="HACTION_FINISH_DIALOG">Finish Examining</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(The part seems to be a match to the missing piece of the statue.) </p>
+          <p> </p>
+          <p>(It should work if reassembled.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO2">"Looks like this fits right...there!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(The statue remains unresponsive.)</p>
+          <p> </p>
+          <p>(It probably won't work without the missing section.) </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">Finish Examining</Act>
+    </Selects>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get rid of [%dic:STR_DIC_M_Graveknight_45_Ae] and find [%dic:STR_DIC_I_QUEST_1640a] to fix the Stone Statue.</font></p>[%collectitem]</step>        
+    </steps>
+          <p><font font_xml="quest_summary">To gain access to the rest of the Temple, you must repair the Teleport Statue on the first floor of the Drake Temple Ruins. The Graveknight Crusader has the missing piece.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>On the first floor of the Drake Temple Ruins is a broken Teleport Statue.</p>
+          <p> </p>
+          <p>The missing piece was hidden and protected by an Graveknight Crusader. </p>
+          <p> </p>
+          <p>Reuniting the missing piece with the statue allowed you to access the second floor of the temple. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

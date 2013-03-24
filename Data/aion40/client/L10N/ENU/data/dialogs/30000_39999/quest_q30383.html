@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], would you be interested in helping me create a new type of armor?</p>
+          <p> </p>
+          <p>You know about the Unstable Abyssal Splinter, right? Supposedly the creatures inside can effect the flow of Aether by their very existance.</p>
+          <p> </p>
+          <p>I need you to kill the [%dic:STR_DIC_M_IDAbRe_Core_02_SilikaCannon_Ra_60_Ah] and some [%dic:STR_DIC_M_IDAbRe_Core_02_Millipede_Sc_60_An]s, and see if their deaths change the Aether flow. Even if nothing changes, I need to know that too.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, welcome back! What kind of changes did you see? I can't continue my research without your results. Imagine, an armor that could use the flow of Aether to help divert attacks!</p>
+          <p> </p>
+          <p>Of course, all you can do right now is imagine it, but if my research is successful... Anyway, tell me what you saw!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I didn't notice a thing."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, nothing at all. That's too bad. back to the drawing board for me, I guess.</p>
+          <p> </p>
+          <p>I thought for sure you'd notice something, anyway.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Kill the Aether creatures.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_IDAbRe_Core_02_SilikaCannon_Ra_60_Ah] ([%2]/3).</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_IDAbRe_Core_02_Millipede_Sc_60_An] ([%5]/10).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report to [%dic:STR_DIC_NPC_Darkhum].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Kill the Aether creatures and find out if there's any change in the Aetheric flow.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Armor merchant Darkhum needed information for his armor research and asked you to go to the Unstable Abyssal Splinter, kill the Aether creatures, and see if there's any change in the Aetheric flows.</p>
+          <p> </p>
+          <p>You saw no change while killing Unstable Holy Orkanimum and Unstable Flash Lapilimos, and reported that to Darkhum. He was disappointed and said he needed to go back and test some other ideas.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

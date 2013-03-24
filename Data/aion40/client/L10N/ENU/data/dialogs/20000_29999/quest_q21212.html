@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Blast those clumsy Archons! How is a scholar supposed to get any work done with them trampling all my specimens!</p>
+          <p> </p>
+          <p>I have so much to do, and so little time--now more than ever with the Balaur and Elyos breathing down my neck.</p>
+          <p> </p>
+          <p>I don't suppose you're willing to help out, are you, [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I'm listening."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I knew you would recognize the importance of my research.</p>
+          <p> </p>
+          <p>Now then...when the Archons first raged through Vorgaltem Battlefield, they smashed the Balaur bulwark.</p>
+          <p> </p>
+          <p>I will admit it was a spectacular sight to behold. But after the battle was over the Archons milled about the decimated bulwark and trampled all kinds of rare materials I could have used for my research.</p>
+          <p> </p>
+          <p>I need those materials...before they're ruined. Can you help me out, [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent! Now then, this should be simple.</p>
+          <p> </p>
+          <p>I need you to head to the edge of Vorgaltem Battlefield and inspect the [%dic:STR_DIC_OBJ_DF4_Trash_Q21212]s scattered around the collapsed wall.</p>
+          <p> </p>
+          <p>They might seem like useless rocks, but to a scholar, they're valuable research material. I'm counting on you, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I won't let you down."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Come come now, [%username]!</p>
+          <p> </p>
+          <p>This is for my research! Can you think of a worthier cause?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I can think of a few...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>My little brother Itar and I might conduct our research in different fields, but we share the same passion for knowledge.</p>
+          <p> </p>
+          <p>I know, I know, I look like the smart one in the family, but Itar is actually quite intelligent. Though I do worry about him...he's always so bold when it comes to conducting research. That boldness could be the end of him one day.</p>
+          <p> </p>
+          <p>Well then, did you bring what I asked?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here are your...rocks."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I guess you didn't find what I was looking for....</p>
+          <p> </p>
+          <p>This is most disappointing, [%username].</p>
+          <p> </p>
+          <p>I must have those specimens for my research! Please hurry, for the sake of knowledge!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm going, I'm going."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah yes, this is it, [%username].</p>
+          <p> </p>
+          <p>No, it's not just trash! This is a rare and valuable specimen!</p>
+          <p> </p>
+          <p>By studying this specimen I will be able to learn more about the Balaur, and knowledge is half the battle, my friend. Thank you for your help--please take this.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Gather material from [%dic:STR_DIC_OBJ_DF4_Trash_Q21212]s and bring it to [%dic:STR_DIC_N_Tanar].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Search for useful material near the Bulwark Wrecks on the outskirts of the Vorgaltem Battlefield. Bring what you find to Tanar.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Tanar asked you to bring him the remains of the bulwark on the edge of the Vorgaltem Battlefield so he can conduct research on the Balaur.</p>
+          <p> </p>
+          <p>You brought the seemingly worthless broken Balaur material to Tanar, and he was quite happy.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

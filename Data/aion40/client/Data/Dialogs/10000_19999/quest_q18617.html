@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아직 여기에 계셨군요. 다행입니다.</p>
+          <p> </p>
+          <p>페렌토 군단장님께 명령서가 내려왔는데 [%username]  님을 보면 긴히 전하라는 내용이 있었습니다.</p>
+          <p> </p>
+          <p>지금 말씀드려도 되겠습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">고개를 끄덕인다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그럼 읽겠습니다.</p>
+          <p> </p>
+          <p>'자네가 본 악몽에 대한 얘기는 라니니아를 통해 잘 보고 받았네.</p>
+          <p> </p>
+          <p>그런데 꿈속의 배경이 침묵의 심판관 저택이 확실한가? </p>
+          <p> </p>
+          <p>크로메데가 나온 것도 그렇고, 침묵의 심판관과 집행자가 나온 걸로 봐선 가짜 스티그마의 출처가 마계인 것 같군.</p>
+          <p> </p>
+          <p>미안하지만 다시 [%dic:STR_DIC_W_IDCromede] 속으로 들어가 그곳의 배경을 좀더 자세히 확인해 주게'</p>
+          <p> </p>
+          <p>페렌토 군단장님이 전하는 내용은 이게 끝입니다. 군단장님께 뭐라고 전할까요? 수락하셨다고 할까요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>네, 군단장님께 그렇게 전하겠습니다.</p>
+          <p> </p>
+          <p>그럼 지금 바로 악몽 속으로 들어가실 겁니까?</p>
+          <p> </p>
+          <p>라니니아에게 들으니 그 악몽은 칼리가인가 하는 마족을 쓰러뜨려야 끝난다고 하더군요. 그러니 [%dic:STR_DIC_W_IDCromede] 속으로 들어가거든 무슨 수를 쓰더라도 [%dic:STR_DIC_M_IDCromede_Named_Judge_38_An]를 없애십시오. </p>
+          <p> </p>
+          <p>일이 끝나면 제게 보고를 해 주시고요.</p>
+          <p> </p>
+          <p>[%username] 님이 일을 끝내면 주화를 지급하라고 페렌토 군단장님께서 지시를 하셨답니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>알겠습니다. </p>
+          <p> </p>
+          <p>군단장님께는 [%username] 님이 거절하셨다고 전하겠습니다.</p>
+          <p> </p>
+          <p>그럼 안녕히 가십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>페렌토 군단장님의 지시를 전했던 걸로 기억하는데 다 끝난 건가요?</p>
+          <p> </p>
+          <p>어떻게 됐는지 결과를 알려 주십시오.</p>
+          <p> </p>
+          <p>군단장님께 보고를 드려야 하니 최대한 자세한 설명 부탁 드립니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>가짜 스티그마가 보여주는 악몽의 배경이 마계가 확실하단 거죠?</p>
+          <p> </p>
+          <p>그랬었군요. 어쨌거나 칼리가를 쓰러트리고 악몽에서 빠져나오셨으니 됐습니다.</p>
+          <p> </p>
+          <p>받으세요. 페렌토 군단장님이 약속한 주화입니다.</p>
+          <p> </p>
+          <p>피곤할 텐데 가서 좀 쉬십시오. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_W_IDCromede]으로 들어가 [%dic:STR_DIC_M_IDCromede_Named_Judge_38_An]를 쓰러트려라([%2]/1)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Serdy]와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">페렌토 군단장이 악몽 속의 배경에 대해 궁금해 한다고 한다. 악몽 속 배경이 마계가 맞는지 다시 확인해 보자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>세르디는 페렌토 군단장의 명령이라며 악몽 속의 배경이 마계가 확실한지 확인해 달라고 했다.</p>
+          <p> </p>
+          <p>악몽 속으로 다시 들어가 칼리가를 처치하고 세르디에게 악몽 속에서 겪은 일을 들려주자 군단장이 내린 포상이라며 주화를 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

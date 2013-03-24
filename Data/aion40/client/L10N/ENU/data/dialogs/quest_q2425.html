@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+
+          <p>I chose that spot for my laboratory because it was quiet and remote, a place where only Spirits lived.</p>
+          <p> </p>
+          <p>And then they attacked! I had to leave all my research behind, my tools, my notes! But I can't give up now....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What do you need to begin again?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, it's always best to start simply.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_I_QUEST_2425a], which is basic for much of my work, is everywhere.</p>
+          <p> </p>
+          <p>All my tools are back at the lab, though, so I'm in no position to gather it. [%username], will you please help me?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you so much.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_OctasideD_23_An]'s poison is a very effective medicinal substance. Fortunately, it's abundant locally.</p>
+          <p> </p>
+          <p>Please bring me as much [%dic:STR_DIC_I_QUEST_2425a] as you can get.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be back before you can say 'Arachna.'"</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, well, you may be right.</p>
+          <p> </p>
+          <p>There's little chance I can resume my research anyway. Perhaps I should give up.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Good luck, Kistig."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've been listing what I need to restart my research. The list is longer than I realized.</p>
+          <p> </p>
+          <p>Did you get the [%dic:STR_DIC_I_QUEST_2425a]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here you go. Nasty critters, Arachnas."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Haven't you left to get the Poison yet?</p>
+          <p> </p>
+          <p>You don't understand, do you? Arachna Poison is crucial to my work! If I invent a medicine that can increase flight time dramatically...you can imagine the benefits! </p>
+          <p> </p>
+          <p>Please hunt those [%dic:STR_DIC_M_OctasideD_23_An]s and bring me the [%dic:STR_DIC_I_QUEST_2425a].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I didn't understand. On my way!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Nasty? They are indeed.</p>
+          <p> </p>
+          <p>Yes! This is the Arachna Poison I need! Thank you for procuring it so quickly!</p>
+          <p> </p>
+          <p>It will be useful to you someday, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Hunt [%dic:STR_DIC_M_OctasideD_23_An]s and take their poison to [%dic:STR_DIC_N_Kistig].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Kistig had to leave the laboratory because of the Spirits, but now he wants to restart his research. Hunt Grove Arachnas and take the Poison to him so that he can continue his research. </font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Kistig had to leave his laboratory and seek shelter elsewhere because of aggressive Spirits. </p>
+          <p> </p>
+          <p>Although he wanted to restart his research, he had difficulty in procuring research materials and ingredients. He decided to collect the easily available ingredients first and asked you to bring him Arachna Poison.</p>
+          <p> </p>
+          <p>You hunted Grove Arachnas and took the Poison to him. He thanked you for helping him restart his research.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

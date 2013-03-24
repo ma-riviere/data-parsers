@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q4712</QuestId>
+    <QuestName>[Party] Rescue Captives from the Balaur</QuestName>
+    <QuestType>Not entered</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You've distinguished yourself, [%username], and displayed exactly the skills I need--so I have another mission for you.</p>
+          <p> </p>
+          <p>Much of what we know about the Dredgion we owe to a small band of scholars and the Archons protecting them.</p>
+          <p> </p>
+          <p>They've risked their lives time and again--their work made it possible for you to infiltrate the ship for us.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Their work does Asmodae proud."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It does indeed, and it puts us in their debt.</p>
+          <p> </p>
+          <p>Even as you were sabotaging the Dredgion, we learned that several scholars and Archons have been captured and are now being held prisoner there. We're told they've gathered new information since their last report, so that must be recovered as well.</p>
+          <p> </p>
+          <p>Are you willing to rescue the [%dic:STR_DIC_N_IDAB1_Dreadgion_prisoner_dark]s from the Dredgion?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What makes the job particularly difficult is that we have no information about where the captives are being held.</p>
+          <p> </p>
+          <p>You'll have to search the ship and learn as much as possible.</p>
+          <p> </p>
+          <p>Do whatever you can--whatever you must--to rescue those captives. They're indispensible!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Blood for blood!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Facing the Balaur again a little too much for you? I understand. They're formidable foes.</p>
+          <p> </p>
+          <p>You've done good work, [%username].</p>
+          <p> </p>
+          <p>I worry for the lives of those captives.... We'll find someone to get them out.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Walk in Azphel's shadow."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We were in utter terror, [%username]. We feared what the Balaur might do with us.</p>
+          <p> </p>
+          <p>And now, everything we've done will be in vain unless we deliver the information we've collected to the Governor. I have a Scroll but couldn't use it--I suspect the holding room doors are under a spell.</p>
+          <p> </p>
+          <p>You saved my life, [%username]. I am in your debt. I will return to Primum Fortress now.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"May Azphel's shadow protect you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I just heard that the captives have returned safely to the fortress. They were all exhausted from imprisonment, so it may take a while for them to be debriefed.</p>
+          <p> </p>
+          <p>What can you tell me of the situation inside the Dredgion, [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"There were a couple of surprises...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Elyos scholars and Guardians were being held prisoner as well? Now that's news.</p>
+          <p> </p>
+          <p>The Elyos must have figured out how to infiltrate the Dredgion, too. I sense  we'll be running into each other more often from now on.</p>
+          <p> </p>
+          <p>You have done well, [%username]. I thank you on behalf of the captives and the Governor.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Open the [%dic:STR_DIC_E_Dreadgion_Prison_Door] and talk with [%dic:STR_DIC_N_IDAB1_Dreadgion_prisoner_dark].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Report the result to [%dic:STR_DIC_N_Henir].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Some scholars and Archons have been caught while investigating the Dredgion and are being held prisoner. Go and rescue them</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Henir said some scholars and Archons have been captured by the Balaur while investigating the Dredgion, and asked you to rescue them.</p>
+          <p> </p>
+          <p>When you reported the result to Henir after infiltrating the Dredgion and freeing the captives, he was surprised that there were also Elyos captives currently held.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], I know we've asked a lot of you, but there's one more thing.</p>
+          <p> </p>
+          <p>I promise, this is my last request.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What is it?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Please, kill the Klaws in Klawtan's Wallow.</p>
+          <p> </p>
+          <p>With King Klawtan dead they're in disarray, but a new king will emerge soon. Then things might get worse than before.</p>
+          <p> </p>
+          <p>We need to kill them all before that happens.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Very good. Then go to Klawtan's Wallow and kill as many as you can. This is one of the simpler missions you've had, I should think.</p>
+          <p> </p>
+          <p>Just kill Klaws. Kill a lot of them.</p>
+          <p> </p>
+          <p>Be careful, of course.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Kill Klaws. Got it." </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That's fair. You've done your share.</p>
+          <p> </p>
+          <p>Of course that won't matter when the Klaws show up and murder us all.</p>
+          <p> </p>
+          <p>But you'll have the satisfaction of knowing you didn't do any extra work. I'm sure that will be a comfort as you survey the carnage here.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm sure it will."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well? What happened? Did you go to Klawtan's Wallow?</p>
+          <p> </p>
+          <p>Did you succeed in killing the Klaws there?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Here's what happened...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Very impressive!</p>
+          <p> </p>
+          <p>I'm glad you did it, but I have to admit I wasn't totally sure you'd be able to. I gave you a 60% chance of success, 30% you'd be killed, and 10% that you'd fail but escape alive.</p>
+          <p> </p>
+          <p>When I get back to Sanctum I'll speak highly of you to my superiors, [%username]. Well done, and thank you.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get rid of Klaws in Klawtan's Wallow.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_NeutH1_38_An]([%2]/10)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_NeutH2_38_An]([%5]/10)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_NeutL1_37_An]([%8]/10)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_NeutL2_37_An]([%11]/10)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report back to [%dic:STR_DIC_N_Senemonea].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Kill Klaws in Klawtan's Wallow before new king emerges.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Senea asked you to kill the rest of the Klaws in Klawtan's Wallow.</p>
+          <p> </p>
+          <p>You got rid of Klaw Defenders, Watchmen, Gatherers and Patrols and reported back to Senea. She praised your talent and promised to speak well of you to her superiors in Sanctum.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

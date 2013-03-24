@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-16"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>환영합니다.[%username]님.</p>
+          <p> </p>
+          <p>이제 저희 축복의 신관들의 축복을 받으실 날도 얼마 남지 않았군요.</p>
+          <p> </p>
+          <p>이미 충분히 스스로 운명을 개척하실 만큼 성장하신 것 같습니다.</p>
+	  <p> </p>
+          <p>마지막 남은 임무를 완료하시면 우리 축복의 신관들이 [%username]님을 위해 정성껏 준비한 작별의 선물을</p>
+	  <p> </p>
+          <p>하나씩 드리도록 하겠습니다. 준비되셨나요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">네.준비됐습니다.</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>암흑의 포에타에 대해 익히 들어 알고 계실 줄로 압니다.</p>
+          <p> </p>
+          <p>그곳에는 [%dic:STR_DIC_M_IDLF1_H_DrakanFiName_50_Ah]를 처단해주십시오.</p>
+          <p> </p>
+          <p>[%username]님의 마지막 임무에 적합한 곳이라고 생각합니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_M_IDLF1_H_DrakanFiName_50_Ah]를 한번 씩 처단하실 때마다</p>
+          <p> </p>
+          <p>저희가 드릴 수 있는 선물도 늘어날 수 있습니다.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_IDLF1_H_DrakanFiName_50_Ah]를 1번 처치하시게 되면 [%username]님에게 가장 필요한 것으로 보답하겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>부디 저희의 축복이 많은 도움이 되셨길 바랍니다.</p>
+          <p> </p>
+          <p>마지막까지 [%username]님에게 좋은 축복과 선물을 줄 수 있도록 허락해주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_M_IDLF1_H_DrakanFiName_50_Ah]를 처단하셨습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 얘기한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>암흑의 포에타에서 이토록 건장히 돌아온 분은 없었습니다.</p>
+          <p> </p>
+          <p>언제나 축복하겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">암흑의 포에타에 있는 [%dic:STR_DIC_M_IDLF1_H_DrakanFiName_50_Ah]를 처치하라([%2]/1) </font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">카르잔케와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">카르잔케가 [%dic:STR_DIC_M_IDLF1_H_DrakanFiName_50_Ah]를 처치 하라고 한다. 암흑의 포에타에 가서 [%dic:STR_DIC_M_IDLF1_H_DrakanFiName_50_Ah]를 처치하자.</font></p>
+		<p><font font_xml="quest_summary">암흑의 포에타는 [%dic:STR_DIC_W_STR_DF3_SZ_G2_3]에 있다.</font></p>
+          <p></font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>카르잔케는 [%dic:STR_DIC_M_IDLF1_H_DrakanFiName_50_Ah]를 처치 하라고 했다..</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_IDLF1_H_DrakanFiName_50_Ah]를 간단히 처치 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

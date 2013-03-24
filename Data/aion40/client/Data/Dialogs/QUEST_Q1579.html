@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>메데우스 장원은 완전히 언데드 소굴로 변하고 말았소.</p>
+          <p> </p>
+          <p>선량하던 주민들이 그렇게 변한 건 가슴 아픈 일이지만 언제까지나 그렇게 둘 수도 없는 일이오.</p>
+          <p> </p>
+          <p>그러니 그렇게 변한 이유를 찾는 게 지금으로서는 가장 시급한 일 아니겠소?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">고개를 끄덕인다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그런데 메데우스 장원 서부에 [%dic:STR_DIC_I_QUEST_1579a]%이 있는 걸 발견했소.</p>
+          <p> </p>
+          <p>뼈야 오래되면 변색이 되는 법인데, 그 유골은 뭐랄까... 자연적으로 뼈가 썩으면서 변하는 색이라고 하기에는 인위적인 색으로 보였다오.</p>
+          <p> </p>
+          <p>조사해 보면 주민들이 언데드로 변한 이유를 알아낼 수 있을지도 모르겠소. [%username] 님이 그걸 좀 모아다 주겠소?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_I_QUEST_1579a]%은 메데우스 장원에 있는 건물 주위에 있소.</p>
+          <p> </p>
+          <p>5개 정도 모아 오시면 충분히 조사할 수 있을 것 같소.</p>
+          <p> </p>
+          <p>그럼 부탁드리겠소.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>언데드로 변한 사람들이 가엽지도 않으시오?</p>
+          <p> </p>
+          <p>당신은 데바로서의 소명과 동정심이 전혀 없는 모양이오.</p>
+          <p> </p>
+          <p>알겠소, 냉혈한에게 더 부탁해 봤자지.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>돌아왔구려.</p>
+          <p> </p>
+          <p>변색된 유골은 가져왔소?</p>
+          <p> </p>
+          <p>그게 있어야 사람들이 언데드로 변한 이유를 조사할 수 있을 텐데 말이오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">변색된 유골을 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>내가 실없는 농담을 좋아하는 건 사실이지만 이건 좀 심하지 않소?</p>
+          <p> </p>
+          <p>농담은 농담이고 임무는 임무요.</p>
+          <p> </p>
+          <p>어서 가서 변색된 유골을 가져오시오!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>부탁한 것을 잘 가져왔구려.</p>
+          <p> </p>
+          <p>엘리시움에 보내 사람들의 변화와 어떤 관련이 있는지 조사해 봐야겠소.</p>
+          <p> </p>
+          <p>수고해 줘서 고맙소.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_I_QUEST_1579a]%을 모아 [%dic:STR_DIC_N_Edoras]에게 가져가라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">사람들이 언데드로 변한 이유를 조사하기 위해서는 변색된 유골이 필요하다고 한다. 메데우스 장원 서부로 가서 구해 오자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>에도라스는 주민들이 언데드로 변한 이유를 밝혀내기 위해 변색된 유골이 필요하다고 했다. 그래서 메데우스 장원 서부로 가서 구해다 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

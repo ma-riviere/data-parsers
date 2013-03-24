@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>하아, 그런데 제가 샐러드를 맛있게 만들 수 있을까요?</p>
+          <p> </p>
+          <p>야채만 넣은 간단한 샐러드는 만들어 본 적은 있지만 고기를 구워 본 적은 없어서 말입니다.</p>
+          <p> </p>
+          <p>크레스틀리치 가슴살을 우유와 적정량의 향신료에 재워 놨다가 구우라는데 재우는 건 뭐죠? 그리고 적정량은 도대체 얼만큼이죠?</p>
+          <p> </p>
+          <p>무슨 요리법을 이렇게 대충 써 놓은 건지!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아, 아무래도 안 되겠어요. 괜히 요리를 망쳐 암마에게 잔소리 듣느니 전문가에게 맡기는 게 안전하겠어요.</p>
+          <p> </p>
+          <p>[%username] 님, 재료를 드릴 테니까 이걸 식품 상인에게 가져가서 요리해 달라고 부탁해 주시면 안 될까요?</p>
+          <p> </p>
+          <p>저는 할 일이 많아서 말입니다. 머리도 빗어야 하고, 옷도 갈아입어야 하고, 식탁도 꾸며야 해요.</p>
+          <p> </p>
+          <p>급해서 그러니 제발 좀 부탁합니다!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>고맙습니다. [%username] 님은 제 열세 번째 주신이세요.</p>
+          <p> </p>
+          <p>그럼 이 요리 재료를 식품 상인인 [%dic:STR_DIC_N_Aurvandil]에게 가져다 주세요.</p>
+          <p> </p>
+          <p>크레스틀리치 가슴살을 얹은 샐러드 정도는 순식간에 만들 겁니다.</p>
+          <p> </p>
+          <p>아우르반딜이 다 만들고 나면 식기 전에 가져와 주세요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이거 야단났군요.</p>
+          <p> </p>
+          <p>아무래도 요리를 직접 만드는 건 포기해야겠어요.</p>
+          <p> </p>
+          <p>요리도 잘 못하면서 암마에게 손수 만든 요리를 먹여 주겠다고 큰소리친 것부터가 잘못이었나 봅니다.</p>
+          <p> </p>
+          <p>아, 또 얼마나 핀잔을 들을지...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>여자들이 좋아하는 건 잘생긴 외모일까요, 아니면 맛있는 요리를 손수 만들어 주는 자상함일까요?</p>
+          <p> </p>
+          <p>과연 어느 쪽인지 궁금해서 여자들에게 물으면 대답이 늘 한결같더군요.</p>
+          <p> </p>
+          <p>'잘생긴 얼굴에 요리까지 잘하는 [%dic:STR_DIC_N_Aurvandil] 님이 제일 좋지요.'라고요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">재료를 주며 아이의 사정을 말한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아이는 여자의 환심을 사려면 아직 멀었군요.</p>
+          <p> </p>
+          <p>외모가 별로면 여자의 마음을 확 사로잡는 매력이라도 있어야지요. </p>
+          <p> </p>
+          <p>요즘 여자들은 요리 잘하는 남자를 좋아하는데 샐러드 하나 만들지 못하다니...</p>
+          <p> </p>
+          <p>(석쇠에 크레스틀리치 가슴살을 구우면서) 이렇게 간단한데 말입니다.</p>
+          <p> </p>
+          <p>자, 여기 크레스틀리치 가슴살 샐러드 대령입니다!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>어서 오십시오, [%username] 님!</p>
+          <p> </p>
+          <p>왜 아직 안 오시나 불안해하던 참이었습니다.</p>
+          <p> </p>
+          <p>요리는 완성해 오셨겠죠?</p>
+          <p> </p>
+          <p>식은 건 암마가 싫어하니까 식기 전에 어서 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">크레스틀리치 가슴살 샐러드를 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정말 먹음직스럽군요! 냄새도 아주 좋구요. </p>
+          <p> </p>
+          <p>암마도 틀림없이 좋아할 거예요. 정말 감사합니다.</p>
+          <p> </p>
+          <p>그런데 죄송하지만 암마가 오기 전에 가주시겠어요?</p>
+          <p> </p>
+          <p>암마에게는 제가 직접 만들었다고 할 생각이거든요.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">요리 재료를 [%dic:STR_DIC_N_Aurvandil]에게 가져가라</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">완성된 요리를 [%dic:STR_DIC_N_Ai]에게 가져가라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">재료를 모두 모았지만 아이는 요리를 해본 적이 없어 곤란해하고 있다. 식품 상인인 아우르반딜에게 가서 대신 요리해 달라고 부탁해 주자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>요리 재료는 모두 준비됐지만 아이는 고기를 한 번도 구워 본 적이 없다며 제대로 할 자신이 없다고 곤란해했다.</p>
+          <p> </p>
+          <p>전문가에게 맡기는 것이 나을 것 같다며 아우르반딜에게 요리를 부탁해 달라고 했다.</p>
+          <p> </p>
+          <p>아우르반딜이 만든 크레스틀리치 가슴살 샐러드를 전해 주자 고마워하면서도 암마에게 직접 만들었다고 말하고 싶으니 어서 가 달라고 부탁했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

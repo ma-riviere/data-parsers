@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You've made a good start of it, [%username], but you must now go to the upper layer of Reshanta.</p>
+          <p> </p>
+          <p>Hidden in there are two other blade fragments, the lower part of the sword.</p>
+          <p> </p>
+          <p>They are the [%dic:STR_DIC_I_quest_ab1_04] and [%dic:STR_DIC_I_quest_ab1_05]. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I always enjoy Reshanta..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Dragon Sword is infused with the essences of both death and rebirth. That dualism reflects the philosophy that guides all true warriors--train for war to ensure peace.</p>
+          <p> </p>
+          <p>Hurry to the Chamber of Roah and the Asteria Chamber in the Reshanta upper layer, but be careful. If the Balaur spot you, they may conceal the fragments.</p>
+          <p> </p>
+          <p>Make haste, [%username]. Your destiny awaits.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It won't be long before the flow of Aether reaches its zenith. Do not tarry!</p>
+          <p> </p>
+          <p>Once you've recovered the Destruction and Rebirth Fragments, you'll only have three more to go.</p>
+          <p> </p>
+          <p>And don't forget to bring me some Kinah!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Soar in the light."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're giving up when you've already collected three fragments?</p>
+          <p> </p>
+          <p>How bizarre.</p>
+          <p> </p>
+          <p>There may never be another opportunity to restore the Dragon Sword! You mustn't squander this one!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll think on it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Were the [%dic:STR_DIC_I_quest_ab1_04] and [%dic:STR_DIC_I_quest_ab1_05]  actually in Reshanta's upper layer? You know how vague legends and prophecy can be.</p>
+          <p> </p>
+          <p>Imagine how sweet your success will be when you claim the sword, in spite of all the obstacles!</p>
+          <p> </p>
+          <p>How was your latest foray into the Abyss?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"The Balaur missed me. Often, fortunately."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What are you doing here? Search the Chamber of Roah and Asteria Chamber until you find the blade fragments.</p>
+          <p> </p>
+          <p>If you are short of Kinah, why don't you borrow some?</p>
+          <p> </p>
+          <p>You can't expect me to produce a legendary sword if you can't even come up with 3.6 million Kinah.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I have the Kinah...but not the fragments."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>So you managed to get the fragments of Rebirth and Destruction. Well done!</p>
+          <p> </p>
+          <p>Let me see the shards.</p>
+          <p> </p>
+          <p>Ariel's light! I can feel the power coming off of these fragments!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Find the [%dic:STR_DIC_I_swordM2] of the Dragon Sword hidden in the Chamber of Roah and Asteria Chamber and bring them, along with 3.6 million Kinah, to [%dic:STR_DIC_N_Anusis].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Two other blade fragments are needed to restore the legendary Dragon Sword. Go search for the two fragments said to be hidden in Reshanta's upper layer.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Anusis said that the blade fragments of Rebirth and Destruction are needed to restore the legendary Dragon Sword.</p>
+          <p> </p>
+          <p>The two fragments are said to be hidden in the Chamber of Roah and Asteria Chamber in Reshanta's upper layer.</p>
+          <p> </p>
+          <p>When you returned after gathering both fragments, Anusis said that he could sense the limitless power of the Dragon Sword.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

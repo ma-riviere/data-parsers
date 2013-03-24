@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hail Daeva! A moment ago I received a message from Sinjah who is carrying out a scouting mission in the Krakon.</p>
+          <p> </p>
+          <p>She requests reinforcement as she has just three troops to scout and guard the bind point. She specifically asked for Mokkurkalfi, an ex-Legionary. Sinjah wants him to provide back up for her troops.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"How may I help?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Once, Mokkurkalfi was the best of the Legionaries. Single-handedly he could take out five or six Elyos and never leave a trace. Not only was he excellent in combat but he was also our top scout and assassin.</p>
+          <p> </p>
+          <p>However, he was...ahem...difficult. He kept starting fights with other Legionaries--eventually he left the legion.</p>
+          <p> </p>
+          <p>Since he went rogue, he has been wandering alone in Reshanta, assassinating major Elyos. He's become their personal bogeyman. [%username], would you try to find [%dic:STR_DIC_N_Mokkurkalfi] and persuade him to help Sinjah out?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you. [%dic:STR_DIC_N_Mokkurkalfi] was last seen on Solitary Island to the southwest of the Primum Landing.</p>
+          <p> </p>
+          <p>Please try to convince him to help us for old time's sake. Sinjah was one of the few who kept on good terms with him. Mention her, and Mokkurkalfi just may agree to help.</p>
+          <p> </p>
+          <p>Report back to Sinjah. If you fail to persuade Mokkurkalfi, she may need your help, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm on my way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Sinjah would not have asked if she were not in a desperate situation.</p>
+          <p> </p>
+          <p>She asked for Mokkurkalfi because we are desperate.</p>
+          <p> </p>
+          <p>Now even you have turned her down, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm sorry."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Go away, you bother me.</p>
+          <p> </p>
+          <p>You must be green, or you'd know that I work alone. And I'm always working.</p>
+          <p> </p>
+    	    <p>Get out of here and stop breathing my air.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">"Hisui sent me, Sinjah needs your help."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hmm...the Red Hasia Legion must be in serious trouble if they are sending for me. Old fancy winged Hisui never cut me any slack. I'm sorry that Sinjah is in such straights. She's a good kid, but it's not my problem. I'll never go back to the Red Hasia Legion.</p>
+          <p> </p>
+          <p>I might help Sinjah personally though, if she asks nicely.</p>
+          <p> </p>
+          <p>So...time for you to get gone.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"I'm sorry to have bothered you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I received a message from Brigade General Hisui saying that you went to plead our case to Mokkurkalfi.</p>
+          <p> </p>
+          <p>Did you convince him? Did he agree to return to the legion?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Mokkurkalfi said..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ahh, I expected as much.... Mokkurkalfi has never been suited to military life, but I hoped he'd reconsider if both the Brigade General and I asked him.</p>
+          <p> </p>
+          <p>At least he's open to helping me. There's some hope in that. Thank you for trying.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk with [%dic:STR_DIC_N_Mokkurkalfi].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Talk with [%dic:STR_DIC_N_Asynja].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Sinjah who is in charge of scouting the Krakon has asked for reinforcement. Go see Mokkurkalfi and persuade him to return to the legion.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hisui, the Red Hasia Brigade General said that Sinjah asked for reinforcements.</p>
+          <p> </p>
+          <p>However, Hisui had no reserves to send. So Hisui asked you to persuade Mokkurkalfi to return to the legion.</p>
+          <p> </p>
+          <p>Mokkurkalfi, who is an excellent fighter but also a misfit, flatly refused.</p>
+          <p> </p>
+          <p>Sinjah was disappointed but heartened that Mokkurkalfi promised to help her personally.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

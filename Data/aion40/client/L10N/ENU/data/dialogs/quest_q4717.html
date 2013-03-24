@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q4717</QuestId>
+    <QuestName>[Group] Assassinate key figures in the Dredgion</QuestName>
+    <QuestType>Item Collecting</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>By order of Commander Votan, we are to attack the Dredgion as soon as possible. We must drive it away from Reshanta.</p>
+          <p> </p>
+          <p>Are you with me?</p>          
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What do you need me to do?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], during the attack I want you to focus on killing key figures inside the Dredgion.</p>
+          <p> </p>
+          <p>Others will focus on damaging various parts of the ship itself, but you need to focus on specific crew members.</p>
+          <p> </p>
+          <p>Does this sound like a challenging mission?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>First of all, you must target its commanding officers and secondary officers. Bring back the [%dic:STR_DIC_I_quest_3714b]s and [%dic:STR_DIC_I_quest_3714a]s they carry.</p>
+          <p> </p>
+          <p>You must also slay Auditor Nirshaka and Quartermaster Vujara. Bring [%dic:STR_DIC_I_quest_3714c] and [%dic:STR_DIC_I_quest_3714d] from their corpses.</p>
+          <p> </p>
+          <p>If you manage to collect all these items, take them to Governor [%dic:STR_DIC_N_Votan]. He wishes to see how our efforts are faring, and what information can be gleaned from the evidence. Good luck, [%username]!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Blood for blood!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm shocked. Are you saying this mission is beyond your capabilities? Surely not.</p>
+          <p> </p>
+          <p>But I won't argue with you. I'll simply look for a Daeva who appreciates the importance of this mission, and isn't afraid of a little challenge....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Look, it's just that I...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Azphelumbra, [%username].</p>
+          <p> </p>
+          <p>I heard that you were part of a recent attack on the Dredgion. Henir said you might have some items for me to look at.</p>
+          <p> </p>
+          <p>Did you finish the job?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here's what I have to show."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], you are better than this. Perhaps you've had a bad day? Understandable, but you must try again.</p>
+          <p> </p>
+          <p>Go, infiltrate the Dredgion and kill those you were sent to kill. Its commanding officers, secondary officers, Auditor Nirshaka, and Quartermaster Vujara are the figures I believe Henir mentioned.</p>
+          <p> </p>
+          <p>Do not return until you can bring me the [%dic:STR_DIC_I_quest_3714all].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"The task is mine."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well done, [%username]. If we keep attacking them, the Balaur will lose their power in Reshanta.</p>
+          <p> </p>
+          <p>I trust that this reward will amply compensate you for your time and effort.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect [%dic:STR_DIC_I_quest_3714all] in the Dredgion and take it to [%dic:STR_DIC_N_Votan].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Infiltrate the Dredgion and kill key figures on board, collecting evidence along the way.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Henir indicated a need to target key figures aboard the Dredgion.</p>
+          <p> </p>
+          <p>You removed these important crew members as asked, and brought evidence of their demise to Commander Votan.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

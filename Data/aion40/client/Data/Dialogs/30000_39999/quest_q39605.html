@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p align="center">- 업무 지시서 -</p>
+          <p> </p>
+          <p>1. 수신자: 직원 [%username]</p>
+          <p> </p>
+          <p>2. 업무: 막사 건축에 필요한 목재가 부족하다고 합니당. 사파링 벌목장에서 [%dic:STR_DIC_I_quest_39605a]%을 구해 담당 지부에 납부해 주시기 바랍니다냥.</p>
+          <p> </p>
+          <p>3. 담당 지부: [%dic:STR_DIC_E_LDF5a_Silverlin_BL]</p>
+          <p> </p>
+          <p>위 업무를 완수하면 보상이 있으므로 성실히 임해 주시기 바랍니다냥.</p>
+          <p> </p>
+          <p>- 실버린 주식회사, 인사담당자 다누링 백</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">업무 지시서를 접어 넣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이번 업무는 참 간단하지 않았습니까냥?</p>
+          <p> </p>
+          <p>벌목장에 베어 놓은 나무를 주워 오기만 하면 되니까 말입니당.</p>
+          <p> </p>
+          <p>어디 가져온 나무를 확인해 볼까용?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">단단한 나무를 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아니, 지금까지 뭘 한 겁니까냥?</p>
+          <p> </p>
+          <p>나무를 직접 베어오라는 것도 아니고 베어 놓은 나무를 주워 오란 건데용.</p>
+          <p> </p>
+          <p>[%username] 실망입니다냥.</p>
+          <p> </p>
+          <p>신용을 더 잃고 싶지 않으면 빨리 사파링 벌목장으로 가서 [%dic:STR_DIC_I_quest_39605a]%을 가져오십시옹.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>단단하기가 철판 같습니다냥.</p>
+          <p> </p>
+          <p>이 정도 품질의 목재라면 골드린이나 데바 납품용으로 써도 손색이 없을 것 같습니당.</p>
+          <p> </p>
+          <p>[%username] 맞습니까냥? 장부에 잘 기록해 두겠습니당.</p>
+          <p> </p>
+          <p>이건 이번 일당이니 받아 가십시옹.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_W_LDF5a_G3]에서 [%dic:STR_DIC_I_quest_39605a]를 모아 [%dic:STR_DIC_E_LDF5a_Silverlin_BL]%에 납부하라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">실버린 주식회사에서 업무 지시서가 왔다. 업무를 확인하고 수행하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>실버린 주식회사에서 업무 지시서가 왔다.</p>
+          <p> </p>
+          <p>사파링 벌목장에서 단단한 나무를 모아 실버린 북부 카탈람 지부에게 전하자 수고했다며 사례를 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You used to be able to journey to Alukina's Palace. The sea itself floated in the air!</p>
+          <p> </p>
+          <p>Anair Lighthouse lit the path for Daevas to wing their way there.</p>
+          <p> </p>
+          <p>Sadly, the Quartz Lens disappeared from the lighthouse and the way has been lost. It's heartbreaking, really.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"How did it disappear?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Pirates. Only scum like that would sink so low.</p>
+          <p> </p>
+          <p>They stole it and buried it in their den or some other hidden retreat.</p>
+          <p> </p>
+          <p>If only we could find the lens... We're hampered by the fact that most of those pirates are long dead.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1_1">"And the dead are rarely chatty."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>There might yet be a way. I've heard some rumors that might point you in the right direction.</p>
+          <p> </p>
+          <p>Years ago, before ...well...before this was a frozen waste, [%dic:STR_DIC_N_Baugi] was a pirate. To his credit, he's worked hard to make up for it.</p>
+          <p> </p>
+          <p>He might know something that could help. Ask Baugi about the lens--see what he knows.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+       <Act href="HACTION_SETPRO1">"I'll speak to him at once."</Act>
+    </Selects>
+    <Voice file="Q2054-1.ogg"/>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes, it's true--I used to be a pirate. I was young and I needed the work.</p>
+          <p> </p>
+          <p>It wasn't like a career. I never even bloodied my sword.</p>
+          <p> </p>
+          <p>Mostly I swabbed decks and stayed out of everyone's way.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">"Do you remember the Quartz Lens?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Quartz Lens...I heard rumors, but I never saw it myself.</p>
+          <p> </p>
+          <p>If I had to name names, I'd bet that Captain Hinden was involved. He met a pirate's end, but I hear his spirit still gives orders...</p>
+          <p> </p>
+          <p>Go to the shipwreck in Anair Harbor. If you can find [%dic:STR_DIC_M_UndeadDarkAsNamedDQ_38_An], you might find your next clue.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+       <Act href="HACTION_SETPRO2">"This should be fun..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select4">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(This might be the one.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO4">"Let's see if I can open it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select4_2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(This time for sure.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+       <Act href="HACTION_SETPRO5">"Let's see if I can open it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Dear [%username]!</p>
+          <p> </p>
+          <p>As I saw the Anair Lighthouse shining brightly again, I knew you'd found the Quartz Lens.</p>
+          <p> </p>
+          <p>You've really come through for me, [%username]. Wherever did you find the Quartz Lens?</p>
+         </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Ever hear of Captain Hinden?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That light-blasted Hinden! I told you pirates stole it!</p>
+          <p> </p>
+          <p>Haha! Serves him right to linger as a ghost. All that mischief he caused....</p>
+          <p> </p>
+          <p>Thanks to you, the way to Alukina's Palace is clear once more.</p>
+         </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk with [%dic:STR_DIC_N_Sleipnirr].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Talk with [%dic:STR_DIC_N_Baugi].</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Get a clue from [%dic:STR_DIC_M_UndeadDarkAsNamedDQ_38_An] to find the Quartz Lens.</font></p>[%collectitem]</step>
+               <step><p visible="[%9]"><font color="[%10]">Find the treasure chest and obtain [%dic:STR_DIC_I_QUEST_2054b].</font></p></step>
+               <step><p visible="[%12]"><font color="[%13]">Quartz Lens found! Install the lens in the Anair [%dic:STR_DIC_OBJ_DF3_LighthouseCore_Q2054].</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report the result to [%dic:STR_DIC_N_Sleipnirr].</font></p></step>
+    </steps> 
+          <p><font font_xml="quest_summary">Order: The Quartz Lens of Anair Lighthouse used to light the way to Alukina's Palace. Meet Sleipnir and hear its story.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Quartz Lens of Anair Lighthouse disappeared long ago, taking with it the way to Alukina's Palace. Sleipnir believed that pirates stole the Quartz Lens, and asked you to interrogate Baugi, a former pirate.</p>
+          <p> </p>
+          <p>Baugi told you that Captain Hinden, a notorious pirate, was almost certainly the culprit and suggested you look for him. When you defeated the ghost of Captain Hinden, you found a letter with a clue to the location of the Quartz Lens. You found the Quartz Lens and re-lit the lighthouse, thrilling Sleipnir.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>Mission Progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

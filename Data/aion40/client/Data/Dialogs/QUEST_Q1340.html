@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>다른 곳에 바쁜 일이 없다면 임무를 하나 더 부탁드려도 될까요?</p>
+          <p> </p>
+          <p>요즘 바실리스크가 자꾸 천막 주변으로 접근해서 문제입니다.</p>
+          <p> </p>
+          <p>생김새는 온순해 보이지만 절대 순한 짐승이 아닙니다.</p>
+          <p> </p>
+          <p>평소에는 느릿느릿 움직이지만 사람을 공격할 때는 엄청난 속도로 달려와서 온몸을 부딪혀 공격하지요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>가디언 파수병들이 임무에 집중할 수 있도록 [%dic:STR_DIC_M_Basilisk_28_An]를 좀 처치해 주십시오.</p>
+          <p> </p>
+          <p>직접 할 수도 있지만 바실리스크를 상대하다가는 다른 일은 하나도 못하고 하루가 다 갈 겁니다.</p>
+          <p> </p>
+          <p>한두 마리가 아니니 아무리 잡아도 끝이 없어서 말입니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>감사합니다. 시간이 없다고 거절할까 봐 걱정했습니다.</p>
+          <p> </p>
+          <p>그럼 에라쿠스 사막에 있는 [%dic:STR_DIC_M_Basilisk_28_An]를 7마리만 처치해 주십시오.</p>
+          <p> </p>
+          <p>감사 표시는 섭섭지 않게 하겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>제가 무리하게 부탁하긴 했네요. 혼자서 다 처리하긴 힘들어서 [%username] 님께 부탁드린 건데...</p>
+          <p> </p>
+          <p>어쩌겠습니까, 힘들어도 제가 시간을 쪼개서 처치해야지요.</p>
+          <p> </p>
+          <p>다 가디언의 팔자려니 하고 마음 편하게 먹으렵니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아니, 그새 다 처치하고 온 겁니까?</p>
+          <p> </p>
+          <p>정말 놀라운 솜씨군요. 가디언인 저보다도 훨씬 실력이 좋은 것 같습니다.</p>
+          <p> </p>
+          <p>어떻게 처치했는지 얘기 좀 해 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="PLAYEMOTION_clap;HACTION_SELECT_QUEST_REWARD">결과를 보고한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>지난번에도 그랬지만 [%username] 님의 실력에는 갈수록 놀라게 됩니다.</p>
+          <p> </p>
+          <p>게다가 무리한 부탁을 몇 번이나 했는데 싫은 소리 없이 모두 들어주셔서 얼마나 고마운지 모릅니다.</p>
+          <p> </p>
+          <p>이건 약소하지만 제 성의 표시이니 거절하지 마시고 받아 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">에라쿠스 사막에서 [%dic:STR_DIC_M_Basilisk_28_An]를 처치하라([%2]/7)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Kalikrates]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">가디언들이 방해받지 않고 임무를 수행할 수 있도록 바실리스크를 처치하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>칼리크라테스는 바실리스크 때문에 가디언들이 본연의 임무를 수행하지 못하고 있다고 했다.</p>
+          <p> </p>
+          <p>그래서 정찰병들이 본연의 임무를 수행할 수 있도록 바실리스크를 처치해 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

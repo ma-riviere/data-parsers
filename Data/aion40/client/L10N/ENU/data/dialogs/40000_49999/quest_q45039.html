@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Field Warden:</p>
+          <p> </p>
+          <p>Our supplies of Aether have dwindled unexpectedly. Without ample supplies, we will be unable to achieve many of our goals in the coming days.</p>
+          <p> </p>
+          <p>While the Aetheric Field is obviously an excellent and ready source of Aether, we cannot simply extract from it for our own uses. Though many have tried....</p>
+          <p> </p>
+          <p>Securing raw Aether is crucial and central to our policy direction, and all Wardens must participate in this effort if we are to be successful. Therefore, you are directed to locate a source of available [%dic:STR_DIC_G_QUEST_45039_a], extract it, and bring it to [%dic:STR_DIC_N_Alaum], who will see to it that it is properly stored for future use.</p>
+          <p> </p>
+          <p>Please destroy this letter after reading it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">(Crumple the letter.)</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've been with the Field Wardens for a long time, but I haven't seen our Aether supply so low since, oh, I really don't know...I'm bad at math. But it's pretty low right now.</p> 
+          <p> </p>
+          <p>I don't know where it's gone--I hope to some useful cause. Like the Aetheric Field, of course. All I know is that we need more of it, and fast.</p>
+          <p> </p>
+          <p>Did you stumble across any Aether on your way here? I suppose if you managed to stumble over Aether there'd be quite a tale, wouldn't there? Like tripping on the wind....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"It would be easier if I had an Aether basket."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+        <p>Really? Nothing? Don't think you can pull the old "really, there's Aether in there, it's just invisible" trick. I won't fall for that. Twice.</p>
+        <p> </p>
+        <p>You know, if you feel you're somehow an exception to the rules, perhaps that's something you should discuss with Deryk. He'll be happy to review your contract and discuss termination proceedings. Just saying--I'd hate to see you leave.</p>
+        <p> </p>
+        <p>Except now. Right now you can leave. Go. Shoo.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll make like a tree and get out of here..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Your help is much appreciated, Warden. This may not seem like a lot of Aether, but if every Warden were to contribute this amount, we'd have our stocks back up to normal levels quite quickly.</p>
+          <p> </p>
+          <p>Just in time, too....</p>
+          <p> </p>
+          <p>Just in time for what? That's not important. What's important is that you deserve a reward!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Gather [%dic:STR_DIC_G_QUEST_45039_a] and take it to [%dic:STR_DIC_N_Alaum].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">A letter has arrived from the Field Wardens. Follow its instructions.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>A letter from the Field Wardens indicates that their supply of Aether is low. All Wardens are called upon to help replenish the supply.</p>
+          <p> </p>
+          <p>You collected Aether and brought it to the Brusthonin Field Agent, who rewarded you for your time.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

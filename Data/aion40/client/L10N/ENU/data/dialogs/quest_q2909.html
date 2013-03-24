@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The basic principle of alchemy is "You can't make a sobi purse out of a sow's ear." Or, "Garbage in, garbage out."</p>
+          <p> </p>
+          <p>Every so often, some witless Daeva decides it's possible to make gold with alchemy. Suddenly everyone wants to study it.</p>
+          <p> </p>
+          <p>Speaking as a qualified alchemist who's made a study of herbs, their properties, and how they interrelate, I haven't time for such nonsense.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"I'm sure you don't."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you. You don't have the wide-eyed slack-jawed look of a gold-seeker, so perhaps you are a serious student. If so, I welcome you with open arms.</p>
+          <p> </p>
+          <p>Beginners need one thing more than anything else--practice! Grind away like a pestle and mortar, and you'll find alchemy reveals her secrets to you a little at a time.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What should I do?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Start with basic elements and work on transforming them. [%dic:STR_DIC_I_QUEST_2909a] is one of the most basic alchemical ingredients.</p>
+          <p> </p>
+          <p>So gather a good quantity and use the [%dic:STR_DIC_E_LF3_Alchemy_production] next to me to make [%dic:STR_DIC_I_QUEST_2909b]. That'll give you a good basic grounding in alchemy.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_I_QUEST_2909a]'s not hard to find. Just hunt Lobnites, Crasaur, and Sparkies in the Altgard Ice Lake.</p>
+          <p> </p>
+          <p>Once you've got the bits, the equipment's all right here to brew up some [%dic:STR_DIC_I_QUEST_2909b]. Say--what's a nice round number--fifteen units.</p>
+          <p> </p>
+          <p>When you're just starting out, it's a good idea to bring more ingredients than you expect to use. Novices make mistakes, and mistakes use up resources.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Thanks. I'll be back later."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Perhaps I forgot to explain the part where you need to LEARN alchemy before practising it. You won't be able to work even the simplest transformations without a grasp of the basic skills involved.</p>
+          <p> </p>
+          <p>If you don't agree, I won't waste my breath trying to talk you around.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"As you will."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>How's it going? Did you make the [%dic:STR_DIC_I_QUEST_2909b]?</p>
+          <p> </p>
+          <p>It's tricky to do. You shouldn't be upset if you couldn't manage it. Don't dwell on failure! Rise from the ashes with new vigor! That's what an alchemical master would do!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here's the Lesser Elemental Water."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Um. I don't know what you think that is, but it's not [%dic:STR_DIC_I_QUEST_2909b].</p>
+          <p> </p>
+          <p>What seems to have gone wrong? Did you forget to gather the materials?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll, er...be back soon."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes...the clarity is excellent, the purity flawless. I think that is enough practice for now.</p>
+          <p> </p>
+          <p>Do you know, when I first started, it took me weeks to perform that transformation? All I could produce was a sort of orange phlegm. But now I'm a master. If I can succeed, then you certainly can,[%username].</p>
+          <p> </p>
+          <p>Keep up the hard work, and don't be distracted by thoughts of the reward.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Make elemental water with [%dic:STR_DIC_I_QUEST_2909a] and take it to [%dic:STR_DIC_N_Honir].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Honir advised that practice is essential to mastering alchemy. Follow his instructions and obtain Lesser Elemental Stones by hunting Lobnites, Crasaur, and Sparkies in the Altgard Ice Lake, then make Lesser Elemental Water.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Honir explained that repeated practice is the basis of eventual mastery in alchemy. Following his instructions, you made Lesser Elemental Water by processing Lesser Elemental Stones, and gave it to Honir to judge.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

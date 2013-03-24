@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--Tightening pass 17 Apr by Dave-->
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Children these days...no respect for anything or anyone. When I was young, I helped everyone I could. Especially the village elders, who worked themselves to the bone so we could survive and eventually prosper.</p>
+          <p> </p>
+          <p>But then I'm sent out here, and everyone is so busy with their "glorious" raiding that they don't give a moment's thought to their elders.</p>
+          <p> </p>
+          <p>I know you're new here. Are you chasing the fleeting glories of a raider's life like everyone else?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Are you saying I don't respect my elders?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Aha! Struck a little close to home, did I?</p>
+          <p> </p>
+          <p>I'm more perceptive than you think, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"So you know my name."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Not just your name, child. I know all sorts of things.</p>
+          <p> </p>
+          <p>Anyway, as I said a minute ago, I helped my elders when I was young, and now I need help. The leader of your little gang wants quilted garments to wear under his armor. In itself, that isn't a problem: I am a tailor, after all.</p> 
+          <p> </p>
+          <p>But I need the materials: feathers from several [%dic:STR_DIC_M_HiivD_3_n]s. They can be found all around the [%dic:STR_DIC_W_DF1_3].</p>
+          <p> </p>
+          <p>What do you say, [%username]? How deep does your respect for elders go?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Very good. I see my initial judgment of you was accurate.</p>
+          <p> </p>
+          <p>Hunt the [%dic:STR_DIC_M_HiivD_3_n]s and bring me their [%dic:STR_DIC_I_2112a]s. Be careful, [%username]. When angered, the Airon is a strong and powerful creature--more dangerous than it looks.</p>
+          <p> </p>
+          <p>Now go. I'll await your return.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"The task is mine."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Perhaps these senses of mine...are finally starting to fail me...</p>
+          <p> </p>
+          <p>Or perhaps...you don't yet realize the implications of what you do here in Ishalgen.</p>
+          <p> </p>
+          <p>Wear your mask of indifference if you must, [%username]. But I know it's a mask, and you can't wear it forever.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Farewell."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I take it you've gathered all the feathers I need to make the garment. Or have you just come to pay your respects with empty words?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Will these feathers do?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You have not yet hunted enough [%dic:STR_DIC_M_HiivD_3_n]s, [%userclass].</p>
+          <p> </p>
+          <p>Remember who is ultimately waiting on the feathers. It is not just this frail old woman before you.</p>
+          <p> </p>
+          <p>Hurry and bring me the [%dic:STR_DIC_I_2112a]s, or I won't shoulder the blame alone.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"On my way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes, these will be more than adequate, young [%userclass].</p>
+          <p> </p>
+          <p>I'll mention your name when Ulgorn receives his finished product.</p>
+          <p> </p>
+          <p>Here, take this. Though my reward is small, take it as a sign of my gratitude--and maybe a glimmer of hope for your generation.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Obtain [%dic:STR_DIC_I_2112a]s and bring them to [%dic:STR_DIC_N_Urd].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">A tailor in Aldelle Village named Urd is making quilted clothes for Ulgorn to wear under his armor. She needs Airon feathers and asked you to fetch them for her.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Urd was asked to make quilted clothes for Ulgorn.</p>
+          <p> </p>
+          <p>She needed Airon feathers to make the clothes, so you agreed to hunt Blackbeak Airons and brought their feathers to her.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>마르쿠탄 형제회의 소중한 가족이여!</p>
+          <p> </p>
+          <p>운명의 신탁이 전하는 말씀을 들으러 이곳에 오신 것입니까?</p>
+          <p> </p>
+          <p>[%username] 님께 내려온 신탁의 말씀을 전해 드리니 잘 들으십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">고개를 끄덕인다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>운명의 신탁이 [%username] 님이 갈 곳이 강철갈퀴 호라고 말씀해 주셨습니다.</p>
+          <p> </p>
+          <p>그곳에 가면 [%dic:STR_DIC_E_Da_45]%를 만나게 될 것이니, 그들은 [%username] 님의 운명에 연결된 자요, 우리 마르쿠탄 형제회에서 관심을 가져야 할 자입니다.</p>
+          <p> </p>
+          <p>그러니 그들의 [%dic:STR_DIC_E_Mentor]가 되어 [%dic:STR_DIC_M_IDShip_ShulackAsFirstmateKnmd_45_Ae], [%dic:STR_DIC_M_IDShip_ShulackRaAtilleryChKnmd_45_Ah], [%dic:STR_DIC_M_IDShip_ShulackCaptainNmd_46_Ah]을 처치해 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>무사히 일을 마친 후 제게 결과를 보고해 주십시오. </p>
+          <p> </p>
+          <p>그러면 마르쿠탄 형제회의 보상을 받게 될 것입니다. </p>
+          <p> </p>
+          <p>아트레이아의 모든 운명을 바른 길로 인도하는 것이 우리의 임무임을 잊지 마십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>신탁의 말씀을 따르지 않겠단 것입니까?</p>
+          <p> </p>
+          <p>믿을 수가 없군요. [%username] 님이 이럴 줄은 상상도 못했습니다.</p>
+          <p> </p>
+          <p>부디 아트레이아의 모든 운명을 바른 길로 인도하는 것이 우리의 임무임을 잊지 마십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>목소리를 낮추어 주십시오.</p>
+          <p> </p>
+          <p>이곳은 경건한 주신과 주신을 따르는 신관들이 있는 장소니까요.</p>
+          <p> </p>
+          <p>마르쿠탄 형제회에 관련해 할 말이 있으면 서둘러 말씀해 주시길 바랍니다. 목소리는 작게 말이죠.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 얘기한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>악명이 높은 강철갈퀴 호를 다녀오셨군요.</p>
+          <p> </p>
+          <p>저도 다녀와 봤지만 그 작은 슈라크 녀석들이 얼마나 독하던지 큰 고생을 했었지요.</p>
+          <p> </p>
+          <p>뭐, 임무를 무사히 마치신 걸 보니 별 일은 없었을 것 같군요.</p>
+          <p> </p>
+          <p>운명이 [%username] 님의 길을 인도하길!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_E_Da_45]%의 [%dic:STR_DIC_E_Mentor]가 되어 강철갈퀴 호의 적을 처치하라</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_IDShip_ShulackAsFirstmateKnmd_45_Ae]([%2]/1)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_IDShip_ShulackRaAtilleryChKnmd_45_Ah]([%5]/1)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_IDShip_ShulackCaptainNmd_46_Ah]([%8]/1)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Geismar]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">강철갈퀴 호 수행원의 도우미가 되어 슈라크 해적 우두머리를 처치하고 결과를 마르쿠탄 형제회에 보고하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>게스마르 형제는 강철갈퀴 호로 가서 형제회의 임무를 수행하라는 운명의 신탁을 전했다.</p>
+          <p> </p>
+          <p>신탁의 말씀대로 강철갈퀴 호 수행원과 함께 슈라크 해적 우두머리를 처치한 후 돌아가자 보상을 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

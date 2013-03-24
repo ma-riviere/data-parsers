@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(가져다 준 재료를 가지고 요리를 만든다.)</p>
+          <p> </p>
+          <p>(다듬은 재료를 꼬챙이에 끼워 불에 굽는다.)</p>
+          <p> </p>
+          <p>(양념을 발라 가며 이리저리 돌려서 굽고 있다.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">요리하는 것을 지켜본다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이 정도면 다 된 것 같군요.</p>
+          <p> </p>
+          <p>냄새가 아주 그럴싸한데요?</p>
+          <p> </p>
+          <p>이걸 붐붐 콩에게 가져다 주면 아주 좋아할 거예요.</p>
+          <p> </p>
+          <p>안개갈기 라이칸들에게 쫓기느라 힘들게 지냈을 텐데... 얼른 갖다 주고 싶네요.</p>
+          <p> </p>
+          <p>하지만 지금 당장은 너무 바빠서... 내일이나 시간이 나려나 아님 모레까지 기다려야 하려나...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">도와주겠다고 말한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님께서 도와주신다면 정말 고맙죠.</p>
+          <p> </p>
+          <p>이 페슬롯 꼬치구이를 차이카타의 은신처에 있는 [%dic:STR_DIC_N_DF2_NPC_BumbumKong]에게 가져다 주시겠어요?</p>
+          <p> </p>
+          <p>은빛갈기 라이칸과 함께 있을 텐데 은빛갈기 부족은 마족에게 우호적이니 걱정하실 거 없습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>네프라 갈퀴나무길과 은빛갈기 부락을 지나가면 [%dic:STR_DIC_W_DF2_SUB_E2_1]가 나옵니다.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_N_DF2_NPC_BumbumKong]은 그곳에 있을 거예요.</p>
+          <p> </p>
+          <p>맛있게 먹고 건강하게 잘 지내라고 전해 주세요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>다른 바쁜 일이 있으신 모양이로군요.</p>
+          <p> </p>
+          <p>알겠습니다. 내일이나 모레쯤엔 저도 시간이 날 테니 그때 가져다 주지요.</p>
+          <p> </p>
+          <p>서늘한 곳에 보관하면 상하지 않을 거예요.</p>
+          <p> </p>
+          <p>붐붐 콩이 좋아하는 모습을 직접 볼 수 있으니 그건 좋네요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>붐붐 콩한테 무슨 일이냐?</p>
+          <p> </p>
+          <p>붐붐 콩 잘못한 거 없다, 뮤뮤.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">꼬치구이와 굴베이그의 말을 전한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>굴베이그가 만들어 줬다고?</p>
+          <p> </p>
+          <p>꼬치구이 만들어 줘서 굴베이그 고맙다.</p>
+          <p> </p>
+          <p>이거 가져다 줘서 데바도 고맙다, 뮤뮤.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_DF2_NPC_BumbumKong]에게 페슬롯 꼬치구이를 전하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">굴베이그가 붐붐 콩을 위해 만든 요리를 전해 달라고 부탁했다. 차이카타의 은신처까지 가서 페슬롯 꼬치구이를 전해 주자. </font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>굴베이그는 실의에 빠졌을 붐붐 콩을 위해 페슬롯 꼬치구이를 만들었지만 너무 바빠서 전해 줄 수 없는 상황이었다.</p>
+          <p> </p>
+          <p>그래서 대신 차이카타의 은신처까지 가서 꼬치구이를 전해 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

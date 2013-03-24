@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Have you looked out to the shore lately?</p>
+          <p> </p>
+          <p>Lepharists! Just saunterin' about, like they were here first, not us.</p>
+          <p> </p>
+          <p>I don't know what they're up to, but it's making me nervous. I need someone to get into their midst and poke around some....</p>        
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What are you looking for?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Anything that will tell me why they landed here.</p>
+          <p> </p>
+          <p>Say, why don't you head down there? Take out a few [%dic:STR_DIC_M_LehparAsD_5_An]s and [%dic:STR_DIC_M_LehparWaD_5_An]s and search the bodies for a clue.</p>
+          <p> </p>
+          <p>Think you're up for it?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good stuff.</p>
+          <p> </p>
+          <p>I suggest takin' them one at a time--it'll do ya no favors to get a group of 'em at once. Take care of yourself, but don't come back without knowin' why they're here!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"On my way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>A nap?!</p>
+          <p> </p>
+          <p>Oh, a fine raider you are! Off with ya, then. I'll just do it myself. Only way to get a job done properly, anyway.</p>
+          <p> </p>
+          <p>What are you still doing here? Clear off, ya weak excuse.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Farewell, Derot."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Find anythin', [%userclass]?</p>
+          <p> </p>
+          <p>I hope you've got something can quell the rumors running 'round this place. I'm 'bout sick of listenin' to 'em.</p> 
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I found this..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You found what? Air?</p>
+          <p> </p>
+          <p>You trying to dupe me, kid?</p>
+          <p> </p>
+          <p>Enough goofin' off! Go find me a clue before I get sick from the rumor-mongering around here.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"On my way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+           <p>What you got there?</p>
+          <p> </p>
+          <p>Looks like a logbook. Let's take a gander at the most recent entry, shall we?</p>
+          <p> </p>
+          <p>"Day 76: The search for the Black Opal nears its end. We're ready to disembark onto the Ishalgen Cliffs and face whatever menace resides there..."</p>
+          <p> </p>
+          <p>Hmph. It says here the Black Opal can change your future, "the stuff dreams are made of," it says. Wonder what that means--besides treasure, of course!</p>
+          <p> </p>
+          <p>No matter. You did well--take this.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Search the bodies of the [%dic:STR_DIC_M_LehparAsD_5_An]s and [%dic:STR_DIC_M_LehparWaD_5_An]s to find out why the strangers have landed in Ishalgen. Once you find a clue, bring it to [%dic:STR_DIC_N_Derot].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Derot is curious why a strange ship is anchored just off the coast. Find some clues to uncover the newcomers' intentions.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Derot asked you to find a clue that explains why the ship and its crew are in Ishalgen. You found the ship's logbook and brought it to him.</p>
+          <p> </p>
+          <p>The logbook mentions the Black Opal, with which a person can change his future. It's the stuff dreams are made of...</p>          
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

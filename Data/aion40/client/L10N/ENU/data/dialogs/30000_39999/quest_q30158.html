@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Just in time, [%username]. I've got an investigative mission with your name all over it.</p>
+          <p> </p>
+          <p>I could theoretically send anyone, but there's not enough Legionaries to protect this area as it is.</p>
+          <p> </p>
+          <p>If I send you, I won't need to send an entire army.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What's the mission?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>There's an unexplored area in the Silentera Canyon, guarded by Jotuns.</p>
+          <p> </p>
+          <p>We know nothing about what's beyond, and it's about time we changed that. Information is power, especially in times of war.</p>
+          <p> </p>
+          <p>Think you can do a little scouting for me, [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_E_Underpass_SensoryArea_Q30057] is the area that needs investigating. If you walk towards the northern part of Jotun Square, you'll see where you need to go.</p>
+          <p> </p>
+          <p>Find out where that passage leads, what it's connected to, and what's at the end.</p>
+          <p> </p>
+          <p>Blood for blood, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Blood for blood."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I guess it was too much to ask.</p>
+          <p> </p>
+          <p>I suppose it can wait. When the situation here is more stable, I'll send some of my Legionaries.</p>
+          <p> </p>
+          <p>If nothing else, I can ask the Brigade General for help.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Lots of options."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Azphelumbra, [%username].</p>
+          <p> </p>
+          <p>How did things go? Did you manage to explore the passage north of Jotun Square?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"There was a door, and..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Curious. A huge door with something behind it. As long as it stays there, I suppose I'm satisfied with that.</p>
+          <p> </p>
+          <p>We'll have to go through the door eventually, but as long as it's not a rift from Elysea, I'm happy.</p>
+          <p> </p>
+          <p>You've done well, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Patrol [%dic:STR_DIC_E_Underpass_SensoryArea_Q30057][%2].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Report the result to [%dic:STR_DIC_N_Vergelan].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Patrol the unknown area in the Silentera Canyon north of Jotun Square.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Vergelan said there was an unexplored area in the Silentera Canyon. He asked you to patrol it.</p>
+          <p> </p>
+          <p>As requested, you went to the area north of Jotun Square. You found a huge door, tightly closed, with something screaming behind it.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>Mission Progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

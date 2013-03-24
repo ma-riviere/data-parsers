@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Though I think you can be a weaponsmithing Expert, I don't know how good you really are, [%username].</p>
+          <p> </p>
+          <p>You need to be able to make a rare item to receive the 'Expert' title.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I see your point."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I want you to make Fasimedes' Noble Greatsword.</p>
+          <p> </p>
+          <p>It's a rare item, and difficult to craft. Crafting this will definitely prove your talent, [%username].</p>
+          <p> </p>
+          <p>Are you up to the challenge?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>To make Fasimedes' Noble Greatsword you'll need to buy the design from [%dic:STR_DIC_N_Nakia].</p>
+          <p> </p>
+          <p>It's a more complex design than [%dic:STR_DIC_E_Q1973], but I know you're good enough, [%username].</p>
+
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I know it too!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+
+          <p>I thought you were good enough to make a rare weapon.</p>
+          <p> </p>
+          <p>I still think so. Someday you'll agree to do it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"But not today."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Every Daeva offers something of themselves for the land and people, and each sacrifice differs. I serve Atreia by making great weapons.</p>
+          <p> </p>
+          <p>I'm pleased to see you serve by doing more than fighting, [%username]. Did you make Fasimedes' Noble Greatsword?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I did."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This is not Fasimedes' Noble Greatsword.</p>
+          <p> </p>
+          <p>You must have been busy. I'll be waiting.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll get it done."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Congratulations! You've made a great weapon!</p>
+          <p> </p>
+          <p>On the strength of this accomplishment, I'm pleased to call you a Weaponsmithing Expert.</p>
+
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Make Fasimedes' Noble Greatsword, and take it to [%dic:STR_DIC_N_Anteros].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Anteros says that you should be able to make a rare weapon to receive the title of Weaponsmithing Expert. Make Fasimedes' Noble Greatsword.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Anteros said that you should be able to make a rare weapon to receive the title of Weaponsmithing Expert.</p>
+          <p> </p>
+          <p>You made Fasimedes' Noble Greatsword and took it to him. He was pleased and congratulated you.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

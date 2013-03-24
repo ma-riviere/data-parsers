@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well met, Daeva. I'm glad to see you around here. I worry sometimes that everyone has forgotten that we exist out here.</p>
+          <p> </p>
+          <p>It seems I've got no shortage of things to worry over lately. I've been concentrating on the Kaidan Krall problem, but Dionera pointed out that we've now got a serious issue with Tigrics.</p>
+          <p> </p>
+          <p>Locals have been coming to her with report of Tigrics to the southwest of the Observatory. I need the locals to be my eyes and ears out there, and if they're hiding in their homes, it means the movements of the Krall and Lords know what else is going unseen.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Why are the Tigrics such a problem?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What? Don't you know about the cursed Tigrics?</p>
+          <p> </p>
+          <p>The locals believe that Tigrics are portents of ill omen. Everywhere they appear, bad things happen. An epidemic crops up, herds of livestock die mysteriously...</p>
+          <p> </p>
+          <p>I know there's nothing to it. Tigrics are just animals. But the locals believe it, and that's enough to keep them in their homes.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Why don't you kill the Tigrics?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's a real bind for me. If we leave the post to go hunt down the Tigrics, the Krall might attack while we're gone. If we do nothing, it lets the Krall move around at will, so they can mass for an attack without us knowing it.</p>
+          <p> </p>
+          <p>The only real solutions are for us to get more reinforcements, or for us to hire someone to do the job. I heard that you used to be a mercenary before you ascended, [%username]...</p>
+          <p> </p>
+          <p>Would you be willing to thin out the  [%dic:STR_DIC_M_TauricRe_36_An]s in return for a reward?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That's welcome news. It'll be more than worth it to us if you can solve this problem.</p>
+          <p> </p>
+          <p>Please eliminate the [%dic:STR_DIC_M_TauricRe_36_An]s around the entrance of the Observatory.</p>
+          <p> </p>
+          <p>Watch out for their claws; they're pretty vicious.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Don't worry. I'll handle it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>People are already panic-stricken about the conditions here. If we leave the Tigric to multiply, and another problem occurs, we wouldn't be able to handle it. </p>
+          <p> </p>
+          <p>Please reconsider.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I hope things work out for you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did you get rid of the Tigrics?</p>
+          <p> </p>
+          <p>The power of the mind is not to be dismissed lightly. Fear can motivate people to do foolish things. This will make everyone rest easier.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"There's nothing to be afraid of now."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you.</p>
+          <p> </p>
+          <p>People can relax now.</p>
+          <p> </p>
+          <p>I have a small fund for paying those who help us, and you've earned this reward.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get rid of the [%dic:STR_DIC_M_TauricRe_36_An]s near the entrance of the Observatory ([%2]/7).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_N_Kibelle].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">It is said that Tigrics are an omen of misfortune, and they have recently been spotted around the Observatory. Make people feel safer by eliminating the Tigric Sentinels.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Kibelle was worried that Tigrics, said to be a bad omen, were seen near the entrance of the Observatory. You hunted Tigric Sentinels, and received a reward. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

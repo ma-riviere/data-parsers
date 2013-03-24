@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q3722</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>Script quest</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>General Yulia was very pleased by how you've handled things so far, [%username]. She urged me to ask for your help once more.</p>
+          <p> </p>
+          <p>I assume you're familiar with Drana, yes? Come in a little closer.... Sanctum has assembled a new device from some Drana they collected in Dark Poeta.</p>
+          <p> </p>
+          <p>They want you to test it out...see if it works.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Is it some sort of weapon?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Shhhh! Yes, [%username], yes, it's a weapon. Very hush-hush.</p>
+          <p> </p>
+          <p>It's specifically geared to work on dredgions. They want you to test it out in the field.</p>
+          <p> </p>
+          <p>They want to know if it has a permanent place on the battlefield or not. You up for the task?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I knew you were the right Daeva for the mission!</p>
+          <p> </p>
+          <p>Take the [%dic:STR_DIC_I_QUEST_3722a] and get it up to the Chantra Dredgion. Install it wherever it won't be noticed...maybe near some machinery.</p>
+          <p> </p>
+          <p>Take some damn good notes up there, too! Sanctum is keeping a close eye on this one, so perform at your best, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"As if Ariel herself guides me."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I understand your hesitation at using an untested weapon, [%username], but that's no excuse for turning your back on this mission.</p>
+          <p> </p>
+          <p>This new device might be the sole thing that wins this war for us. But now we'll never know, will we?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm done with dredgions."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Shhh, keep your voice down....</p>
+          <p> </p>
+          <p>How did it go? Did the Shockwave Emitter perform well out there?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"A little shoddy, but it works."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Lady of Light, that is great to hear! This could save a lot of lives on the battlefield, [%username].</p>
+          <p> </p>
+          <p>I'll inform Sanctum of the good news...and I'll let them know it may still need a bit of fine-tuning before it goes into wide use.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Test the [%dic:STR_DIC_I_QUEST_3722a] aboard the Chantra Dredgion[%2].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Report the results to [%dic:STR_DIC_N_Yannis].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Yannis said that Sanctum had created a new weapon to fight the dredgions. Test the performance of the Shockwave Emitter.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yannis said that Sanctum had created a new weapon to fight the Balaur's dredgions. He asked you to test the performance of the new Shockwave Emitter.</p>
+          <p> </p>
+          <p>When you reported that the new weapon works, he thanked you and said he would relay the good news.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

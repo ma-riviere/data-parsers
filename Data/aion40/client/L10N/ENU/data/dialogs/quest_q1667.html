@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I visited the city not so long ago [%username], and the people there spoke highly of your abilities.</p>
+          <p> </p>
+          <p>That's why I'd like to entrust you with a mission.</p>
+          <p> </p>
+          <p>It won't be easy, but if you're anything like they say, you're our best hope.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"If I can help, I will."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We have need of a Daeva to hunt [%dic:STR_DIC_M_Vapor_43_An]s and [%dic:STR_DIC_M_Skeleton_43_An]s in the Nolantis Relics.</p>
+          <p> </p>
+          <p>In addition to being tough themselves, they surround themselves with Undead of all stripes. Killing them will be no mean feat.</p>
+          <p> </p>
+          <p>What do you think? I'll reward you with a gold coin if you come back alive.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Fine, fine. Head over to the Nolantis Relics and destroy [%dic:STR_DIC_M_Vapor_43_An]s and [%dic:STR_DIC_M_Skeleton_43_An]s.</p>
+          <p> </p>
+          <p>Come back for your gold coin. Good luck!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Thanks. See you soon."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Taking on Windwisps and Anubite Fighters is certainly no easy task. I understand your hesitation.</p>
+          <p> </p>
+          <p>Please visit me again when you're...up to the challenge.</p>
+          <p> </p>
+          <p>Good day.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Thank y...hey!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]! You returned safely.</p>
+          <p> </p>
+          <p>How did you do against the Windwisps and Anubite Fighters?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I did just fine, thanks."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Magnificent! Now the Nolantis Relics will be peaceful for a time.</p>
+          <p> </p>
+          <p>My heart is filled with peace...and yours should be filled with pride.</p>
+          <p> </p>
+          <p>Here is the gold coin I promised.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Defeat the Undead in the Nolantis Relics.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Vapor_43_An]([%2]/10)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Skeleton_43_An]([%5]/20)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Return to [%dic:STR_DIC_N_Yujinius] for your reward.</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Yujinius will give you a gold coin for destroying the Undead in the Nolantis Relics.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yujinius was worried about undead in the Nolantis Relics, and offered you one gold coin for eradicating Windwisps and Anubite Fighters.</p>
+          <p> </p>
+          <p>You did as he asked, and on your return, he gave you a gold coin as promised.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

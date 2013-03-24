@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Listen, I'm putting together an ambitious plan, and you're one of the people I'd like to recruit.</p>
+          <p> </p>
+          <p>The Kysis Fortress is a key choke point on the path to the Eye of Reshanta. We can't leave it enemy hands, as it is now.</p>
+          <p> </p>
+          <p>We're building towards a counterattack to re-take it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Good! We need a clear route."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>While we lay the groundwork, our Guardians and Daevas are raiding enemy territory.</p>
+          <p> </p>
+          <p>We need the enemy off balance so that when the main attack comes we can catch them out of position. The less it costs us to get the fortress, the stronger our hold on it will be.</p>
+          <p> </p>
+          <p>I'm sending volunteers on diversionary missions today, running the Asmodians ragged. Would you like one, [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Spirited! I like that.</p>
+          <p> </p>
+          <p>As I said, my aim is to disrupt the Asmodians while they're consolidating their hold on the fortress.</p>
+          <p> </p>
+          <p>Watch the situation, and set out for the Kysis Fortress when it switches to the vulnerable state. Engage the [%dic:STR_DIC_M_1813_all] and take away their [%dic:STR_DIC_I_QUEST_1813a]. That should throw them off nicely.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll sow chaos."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I had hoped you would be enthusiastic, like my dear Bliss. You're not a guardian, so this isn't directly your fight, but I'd hoped you would be more excited at the chance to put sword to throat.</p>
+          <p> </p>
+          <p>The sooner we break these Asmodians, the sooner we can rebuild.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll fight my own way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], I heard the Asmodian guards raise the alarm.</p>
+          <p> </p>
+          <p>Our scouts told the Centurion that someone had them astir.</p>
+          <p> </p>
+          <p>Were you the one who so vexed them? Give me the [%dic:STR_DIC_I_QUEST_1813a] you brought, if so.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"They won't soon forget me."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Aaah, but where are their [%dic:STR_DIC_I_QUEST_1813a]?</p>
+          <p> </p>
+          <p>Where's the proof that you killed tens of [%dic:STR_DIC_M_1813_all]? Your word's worth a lot, but I'd prefer proof, please. Go back and retrieve them.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"On my word I will."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're a deadly opponent, Daeva. The Asmodian garrison must be smarting from this blow.</p>
+          <p> </p>
+          <p>I'm sure you're exhausted. Go rest, while I tally up our successes this day.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Defeat [%dic:STR_DIC_M_1813_all], collect proof, and take it to [%dic:STR_DIC_N_Vergil].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">In order to recapture the Kysis Fortress, you should strike the Asmodian garrison while they occupy it. Attack the garrison's soldiers when the fortress switches to the vulnerable state, then report to Vergilius.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Vergilius recruited you to help weaken Kysis Fortress through constant sneak attacks.</p>
+          <p> </p>
+          <p>As he asked, you entered the fortress and fought the Asmodian garrison. When you returned, Vergilius was pleased, and put plans in place at once to build on what you started.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

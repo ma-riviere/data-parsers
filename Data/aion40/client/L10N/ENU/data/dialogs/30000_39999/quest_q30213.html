@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm glad you're back, [%username]. I've been going through all my research papers trying to dig up whatever I can on ancient Balaur energy sources.</p>
+          <p> </p>
+          <p>And it seems there was an ancient creature that provided much of their energy.</p>
+          <p> </p>
+          <p>You said there were Acheron Drakes in the Forgotten Storeroom, right? Well, according to my notes, it's these drakes that were their energy source.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I remember seeing them there."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The hearts of these Acheron Drakes hold Magical Essence. Actually, almost any big drake in that place may have the essence as well.</p>
+          <p> </p>
+          <p>This may be our last attempt, [%username], so let's make it count!</p>
+          <p> </p>
+          <p>Can you get the Magical Essence and try activating the Rift Orb once more?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Then return to the Beshmundir Temple and hunt [%dic:STR_DIC_E_IDCatacombsN_BonedrakeNmd_55_Ah] in the Forgotten Storeroom.</p>
+          <p> </p>
+          <p>Its essence should be particularly powerful. When you get the Magical Essence, combine it with the Quartz Rod to activate the Rift Orb.</p>
+          <p> </p>
+          <p>The [%dic:STR_DIC_OBJ_IDCatacombs_BigOrb_Q30211] should then activate and teleport you to where Stormwing is sealed. If you decide to fight it right then and there--and you don't have to--I don't suggest trying it alone.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll see how big it is first."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>But I know this will work, [%username]! I truly know it--honest to Ariel! This has to work!</p>
+          <p> </p>
+          <p>How can you give up on me now? We've come so far....</p>
+          <p> </p>
+          <p>Wait, wait, wait...you're tired, you're not thinking straight. Take a little break and come back. We'll try again later.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll come back later."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(The orb begins to glow brightly.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Great Siel, it's working!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_ok">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(The orb glows more brightly than ever before.)</p>
+          <p> </p>
+          <p>(An Abyss Gate opens leading to the Prison of Ice.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"It's now or never."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_fail">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(The light suddenly goes out from the orb.)</p>
+          <p> </p>
+          <p>(It seems you need the Magical Essence to activate the Orb.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Hmmm, should find the essence."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're back. Pilomenes has given me a report. This Stormwing certainly sounds like a danger to us all.</p>
+          <p> </p>
+          <p>Did you succeed in activating the Rift Orb? Is the way to the Prison of Ice open?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"It is...perhaps unfortunately."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hmm, yes, I see what you mean. Yet at least we know what's down there. We can muster our strength to fight it before it's fully loose.</p>
+          <p> </p>
+          <p>If we had not pursued this, it could've gotten free on its own, and we never would've known...until it was too late.</p>
+          <p> </p>
+          <p>If you feel confident, you should consider being the one to slay Stormwing. Until then, take this reward for your service to Elysea.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Defeat [%dic:STR_DIC_E_IDCatacombsN_BonedrakeNmd_55_Ah] to obtain the Magical Essence and activate the [%dic:STR_DIC_OBJ_IDCatacombs_BigOrb_Q30211].</font></p>[%collectitem]</step>
+               <step><p visible="[%3]"><font color="[%4]">Talk to [%dic:STR_DIC_N_Cainus].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Obtain the Magical Essence and activate the Rift Orb.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Pilomenes found another way to recharge the Quartz Rod.</p>
+          <p> </p>
+          <p>Following his instructions, you defeated Thurzon the Undying in the Forgotten Storeroom and obtained the Magical Essence.</p>
+          <p> </p>
+          <p>When you used the Magical Essence together with the Quartz Rod, the Rift Orb was activated, allowing entrance to the Prison of Ice where Stormwing is sealed.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

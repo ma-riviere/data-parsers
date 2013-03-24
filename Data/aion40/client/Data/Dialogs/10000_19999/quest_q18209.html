@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>제2 템페르 훈련소 문제를 일단 상부에 보고는 했지만 걱정이다.</p>
+          <p> </p>
+          <p>티아마트의 용족이 계속 침입을 시도할 텐데 말이다.</p>
+          <p> </p>
+          <p>제군이 다녀온 동안에도 용족에게 공격을 받아 크게 다친 제군들이 여럿 있었다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">훈련소를 폐쇄하는 게 어떻겠냐고 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그깟 용족 놈들 때문에 카이시넬 주신께서 만드신 훈련소를 폐쇄하다니! 절대 있을 수 없는 일이다. </p>
+          <p> </p>
+          <p>그건 상부에서도 같은 생각일 것이다.</p>
+          <p> </p>
+          <p>(팔짱을 끼고 골똘히 생각하다 갑자기 손뼉을 치며) 하하하, 제군을 앞에 두고 괜한 고민을 했군.</p>
+          <p> </p>
+          <p>단도직입적으로 묻지.</p> 
+          <p> </p>
+          <p>제군! 제2 템페르 훈련소의 문제를 해결하는데 협조하겠나? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>시원시원한 게 맘에 드는군!</p>
+          <p> </p>
+          <p>제군이 협조해 줄 일은 간단하다.</p>
+          <p> </p>
+          <p>잉그릴을 도왔던 것처럼 제2 템페르 훈련소에 [%dic:STR_DIC_E_IDArena_Solo_Bonus_In]이 생기는지 감시하고, 템페르의 침입자가 넘어오기 전에 먼저 찾아내 처단하면 된다.</p>
+          <p> </p>
+          <p>그럼 제군만 믿겠다, 이상!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>의외군. 제군은 당연히 협조할 줄 알았는데.</p>
+          <p> </p>
+          <p>안타깝지만 템페르 훈련생 중엔 제군처럼 티아마트의 용족을 손쉽게 제압할 수 있는 실력자가 많지 않다.</p>
+          <p> </p>
+          <p>그들이 빨리 실력을 키울 수 있게 제군이 보호해 주었으면 했는데 무척 실망이다.</p>
+          <p> </p>
+          <p>혹시라도 생각이 바뀌면 다시 오도록!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>제군은 [%username]%이 아닌가?</p>
+          <p> </p>
+          <p>맡긴 임무는 어떻게 됐나?</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_E_IDArena_Solo_Bonus_In]을 또 찾아냈나?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>흠, 제군 말고 다른 제군에게도 협조를 요청했는데 용족이 아닌 마족을 봤다는 보고가 있었다. </p>
+          <p> </p>
+          <p>자세한 건 잉그릴에게 확인해야겠지만 결계가 불안정해지면서 균열이 템페르 내부가 아닌 다른 공간으로 연결되는 경우도 있는 것 같다. </p>
+          <p> </p>
+          <p>아무튼 수고 많았다, 제군.</p>
+          <p> </p>
+          <p>이것은 카이시넬 템페르 훈련소에서 마련한 특별 포상이다.</p>
+          <p> </p>
+          <p>앞으로도 계속해서 협조해 주길 바란다, 이상!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">제2 템페르 훈련소의 최종 훈련 상대인 [%dic:STR_DIC_E_IDArena_Solo_S6_VanqJr_55_An]를 쓰러트려라([%2]/5) </font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_E_IDArena_Solo_Bonus_In] 너머로 가서 [%dic:STR_DIC_M_quest_18208a]를 처치하라([%5]/1)</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">[%dic:STR_DIC_N_Molfus]%와 대화하라 </font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">제2 템페르 훈련소의 균열을 조사하고 몰푸스 전투교관에게 보고하자. </font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>몰푸스 전투교관은 상부에서 지시가 내려올 때까지 제2 템페르 훈련생을 보호해 달라고 했다.</p>
+          <p> </p>
+          <p>부탁대로 템페르의 균열이 생기는 즉시 침입자를 처단하고 보고하자 수고했다며 특별 포상을 지급했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

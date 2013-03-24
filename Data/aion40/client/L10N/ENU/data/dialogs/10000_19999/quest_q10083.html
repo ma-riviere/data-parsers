@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q10083</QuestId>
+    <QuestName>Reason for Removed Restraint</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Talk with the captain of the 1st occupation troop in Katalam</p>
+          <p> </p>
+	  <p>He tells you to find out why Kahrun's Will is removed, since the war between the Elyos and the Asmodians began as the restraint was removed.</p>
+          <p> </p>
+	  <p>You're led to the nearby Reian Tribe.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">Say Yes.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Talk with the Kahrun booster mechanic Ilium</p>
+          <p> </p>
+	  <p>He says Kahrun's Will was removed probably because the booster was broken by the Balaur Followers. He says if you kill them and go see the chief of the Reian Tribe, you will be rewarded.</p>
+          <p> </p>
+	  <p>You're led to Balaur Follower Named Hunting</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO2">Say yes.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select3">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Talk with Gurd, the chief of the Reian Tribe</p>
+          <p> </p>
+          <p>What brought you here, [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">Hand over the Balaur Follower Director's Belt.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_ok">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>He thanks you for killing the Balaur Followers. However, in reality, the booster is not broken and Kahrun disappeared.</p>
+          <p> </p>
+          <p>However, he says as long as Kahrun's booster is in motion, Kahrun is still alive. He asks you if you could help although they sent out the Search Squad.</p>
+          <p> </p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO3">Say yes.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_fail">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What is it?</p>
+          <p> </p>
+          <p>I'm sorry but please escape from here since our current situation is not good.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">End dialog.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Talk with Nauni, the Reian Tribe Protector</p>
+          <p> </p>
+	  <p>She says she saw Kahrun moving towards the Wasteland with several bodyguards.</p>
+          <p> </p>
+	  <p>She gives you a request.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SET_SUCCEED">Say yes.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Report: Talk with Loras, the Scout Post Centurion of the Katalam Dispatched Troop</p>
+          <p> </p>
+	  <p>He says he heard it from the Reian Tribe.</p>
+          <p> </p>
+	  <p>He asks why Kahrun's Will was removed.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">Report the result.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I see. You're saying it's because Kahrun disappeared.</p>
+          <p> </p>
+	  <p>If so, the restraint can be revived.</p>
+          <p> </p>
+	  <p>Good job.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk with the captain of the occupied area.</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Talk with Ilium.</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Defeat the Balaur Follower Director and give the proof to Gurd.</font></p>[%collectitem]</step>
+               <step><p visible="[%9]"><font color="[%10]">Find Nauni the witness.</font></p></step>
+               <step><p visible="[%12]"><font color="[%13]">Talk with Nauni.</font></p></step>        
+               <step><p visible="[%15]"><font color="[%16]">Report to Loras.</font></p></step>          
+    </steps>
+          <p><font font_xml="quest_summary">Order: Ask the captain why the war suddenly began.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The content after completion</p>
+          <p> </p>
+          <p>to be written</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>Mission Progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

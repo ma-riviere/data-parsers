@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p align="center"> - Work Order -</p>
+          <p> </p>
+          <p>1. To: Temp Worker [%username]</p>
+          <p> </p>
+          <p>2. Job Details: Deliver the enclosed ledger to *** in Goldrine Village, then bring the delivery note to the supervising branch.</p>
+          <p> </p>
+          <p>3. Supervising Branch: Silverine South Katalam Branch </p>
+          <p> </p>
+          <p>The above mission will be considered in the evaluation process for hiring you as a full-time worker. Additional points may be added depending on the result. Do your best, nyerk.</p>
+          <p> </p>
+          <p>- Danurinerk, Recruiter of Silverine Limited</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">Fold the work order and put it away.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What brings you here?</p>
+          <p> </p>
+          <p>Are you looking for anything?</p>
+          <p> </p>
+          <p>(Rubbing his palms together) As long as the deal is right, I can get you what you need. </p>
+          <p> </p>
+          <p>Anything, nyerk.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">Hand over the enclosed ledger.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Nyerk, you're running errands for Silverine Limited.</p>
+          <p> </p>
+          <p>(Turning up his mustache) You haven't read the ledger, have you?</p>
+          <p> </p>
+          <p>You may leave if you are done here. Aha, the delivery note?</p>
+          <p> </p>
+          <p>Here it is, nyerk.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">End dialog.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>People from up top must be quite impressed with you, [%username].</p>
+          <p> </p>
+          <p>Delivering ledgers is a big deal. Definitely so if the ledgers are headed to Goldrine Limited. </p>
+          <p> </p>
+          <p>Did you make the deliveries?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">Hand over the delivery note.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That's the signature of the Goldrine executive, all right.</p>
+          <p> </p>
+          <p>You must keep this to yourself. Tell nobody. You've been warned.</p>
+          <p> </p>
+          <p>Anything about ledger deliveries, or meeting with the Goldrine executive.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk with the Goldrine Executive.</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Hand over the delivery note to the Silverine South Katalam Branch.</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">You received a work order from Silverine Limited. Check the work details and perform the mission.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You received a work order from Silverine Limited.</p>
+          <p> </p>
+          <p>After you delivered the enclosed ledger to the Goldrine Executive and the delivery note to the Silverine South Katalam Branch, you were rewarded for your hard work.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

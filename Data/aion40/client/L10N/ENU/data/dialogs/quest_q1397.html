@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>According to official policies we should have several Guardians stationed here, but look around. Not one!</p>
+          <p> </p>
+          <p>We're dangerously understaffed. We need some backup, blast it!</p>
+          <p> </p>
+          <p>All I can do is ask any Daeva passing through to lend a hand.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I see...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>There was a time when I'd have rather clipped my own wings than beg for help. But the days when I could afford that kind of arrogance are far behind me.</p>
+          <p> </p>
+          <p>We need your help, [%username].</p>
+          <p> </p>
+          <p>Those infernal Lepharists have become a force to be reckoned with. Their [%dic:STR_DIC_M_LehparFiSoldier_38_An]s and [%dic:STR_DIC_M_AeC_LehparAsSoldier_39_An]s act as though they own this area, and if you don't help us stop them, I suppose they do.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I humbly thank you for your offer, Daeva.</p>
+          <p> </p>
+          <p>I would be grateful if you could eliminate 10 [%dic:STR_DIC_M_LehparFiSoldier_38_An]s and 10 [%dic:STR_DIC_M_AeC_LehparAsSoldier_39_An]s.</p>
+          <p> </p>
+          <p>Light go with you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"And with you, my friend."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Wh-what? You must be on your way someplace very important, I suppose.</p>
+          <p> </p>
+          <p>Well, ahem. Please come back when you have more time.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Light and fortune to you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've been waiting for you.</p>
+          <p> </p>
+          <p>You don't seem to be hurt. Did you complete your mission without any trouble?</p>
+          <p> </p>
+          <p>Please, tell me about it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"It was well within my abilities."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It is as I expected.</p>
+          <p> </p>
+          <p>Thank you for getting rid of those Lepharists. I don't know what we would have done if you hadn't stepped in to help.</p>
+          <p> </p>
+          <p>Still, it'll take more than this to win us the war, so please continue to help when you can.</p>
+          <p> </p>
+          <p>Here's a token of my thanks. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Destroy Lepharists in the Lepharist Bastion.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_LehparFiSoldier_38_An] ([%2]/10)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_AeC_LehparAsSoldier_39_An] ([%5]/10)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report to [%dic:STR_DIC_N_Elram].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Fighters and Outriders from the Lepharist Bastion are running amok in this area. Get rid of them.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Lepharists were threatening the public order of Eltnen. You went to the Lepharist Bastion and eliminated Lepharist Fighters and Outriders.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

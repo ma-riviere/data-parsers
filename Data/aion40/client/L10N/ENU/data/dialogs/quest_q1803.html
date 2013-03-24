@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>How could we have managed to lose Siel's Western Fortress?! I thought we had everything covered!</p>
+          <p> </p>
+          <p>We must recover it! We must!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Okay, we will. Calm down."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I can't calm down! This is too important to approach calmly!</p>
+          <p> </p>
+          <p>Look, we need to strike at their defenses. That's the only way to win the fortress back!</p>
+          <p> </p>
+          <p>Will you help, [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The best time to attack is when the Asmodians have control--they're much easier to fight than the Balaur. There will be a battle during the Vulnerable State.</p>
+          <p> </p>
+          <p>You must go to the fortress then and wipe out the [%dic:STR_DIC_M_1803_all]--Asmodian Fighters, Asmodian Archers, Asmodian Mages, and Asmodian Priests. It doesn't matter if they are Veterans, Experienced or Novices.</p>
+          <p> </p>
+          <p>Bring back their [%dic:STR_DIC_I_QUEST_1803a]s, too. Please, hurry! We must get control back as soon as possible!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm on it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I know that this is dangerous, but we need your help!</p>
+          <p> </p>
+          <p>You must change your mind!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Perhaps if you calm down..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]! You're back!</p>
+          <p> </p>
+          <p>Did you defeat the [%dic:STR_DIC_M_1803_all]? And bring back the [%dic:STR_DIC_I_QUEST_1803a]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Yes, here."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You haven't gone yet?! You don't understand the danger we face!</p>
+          <p> </p>
+          <p>Go to Siel's Western Fortress when it is in the Vulnerable State and defeat the [%dic:STR_DIC_M_1803_all]! Return with the [%dic:STR_DIC_I_QUEST_1803a]!</p>
+          <p> </p>
+          <p>Quickly, quickly, go go go!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh! Oh thank the many blessings of Ariel, you've defeated them and brought the insignias, just as you promised.</p>
+          <p> </p>
+          <p>Oh, it should be much easier to take back the fortress now. Thank you, Daeva. Thank you so much.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Wipe out the [%dic:STR_DIC_M_1803_all] and take the proof to [%dic:STR_DIC_N_Liber].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">You must strike a blow on the Asmodians that have taken Siel's Western Fortress. When the fortress is in the Vulnerable State and a battle is under way, defeat the enemy garrison and return with the Insignias of Fortress.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Liber said that in order to recapture the Siel's Western Fortress, a significant blow must be inflicted on the enemy using a small force and asked you to defeat the Asmodian garrison defending the fortress.</p>
+          <p> </p>
+          <p>So after defeating the Asmodian fighters, archers, mages and priests, you returned to Liber with their Insignias.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p> - Emergency Operation Order - </p>
+          <p> </p>
+          <p>From: Pandaemonium Operations Headquarters</p>
+          <p> </p>
+          <p>To: [%username]</p>
+          <p> </p>
+          <p>Order: Kill [%dic:STR_DIC_NPC_DF2a_Nevma_G_LHM], Brigade General of the Griffon's Claw.</p>
+          <p> </p>
+          <p>Report to [%dic:STR_DIC_N_Sala] at Marchutan Priory once your mission is complete.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Time to be on my way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+        	<p>It took you long enough to get back this time.</p>
+        	<p> </p>
+        	<p>HQ said they'd sent you on a special assignment. A take it your presence here means it was a success?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Brigade General Nevma eliminated."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+        	<p>Ha! Excellent work. Your reputation as one of the greatest [%userclass]s in all Asmodae is well deserved.</p>
+        	<p> </p>
+        	<p>Courtesy of HQ, I have a reward for your efforts in repelling the Ellie invasion of Brusthonin.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Kill [%dic:STR_DIC_NPC_DF2a_Nevma_G_LHM], a Brigade General in the Griffon's Claw ([%2]/1).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report to [%dic:STR_DIC_N_Sala].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Emergency Order: Kill Nevma, a Brigade General of the Griffon's Claw. Report to Salla when complete.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You received an emergency order from the Pandaemonium Operations Headquarters, telling you to kill Nevma, the Brigade General of the Griffon's Claw. You completed the high priority mission as ordered.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

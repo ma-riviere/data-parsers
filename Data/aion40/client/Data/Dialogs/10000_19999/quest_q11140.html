@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>보석 캐는데 살리바도가 덤볐당.</p>
+          <p> </p>
+          <p>샤오룬 숫자 계산 잘 못하지만 곡괭이질은 잘한당, 갸릉.</p>
+          <p> </p>
+          <p>곡괭이 마구 휘둘러서 살리바도 다 쫓아냈당.</p>
+          <p> </p>
+          <p>그런데 실컷 혼내준 후 돌아와보니 캐 놓은 보석을 깜빡하고 그냥 왔지 뭐냥?</p>
+          <p> </p>
+          <p>부랴부랴 다시 돌아갔지만 이미 누가 가져갔는지 잃어버리고 말았당, 냥냥.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그래서 메이닌한테 또 혼났당.</p>
+          <p> </p>
+          <p>없어진 보석 찾느라 계곡 다 뒤졌당. 살리바도 배설물까지 다 뒤졌지만 찾을 수 없었당.</p>
+          <p> </p>
+          <p>이건 다 [%dic:STR_DIC_M_LF4_B_Salivado_53_An] 때문이당.</p>
+          <p> </p>
+          <p>우리 어머니가 슈고라면 당한 만큼 갚아줘야 한다고 했당. 살리바도한테 복수 꼭 해야겠당.</p>
+          <p> </p>
+          <p>나는 보석 계속 찾아봐야 하니 데바가 복수 도와주지 않겠냥?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>빨리 보석 찾지 못하면 메이닌한테 혼날 텐데 이거 어쩌냥...</p>
+          <p> </p>
+          <p>메이닌한테 혼나면 또 복수할 거당!</p>
+          <p> </p>
+          <p>메이닌한테 혼나면 또, 또 복수할 거당!</p>
+          <p> </p>
+          <p>그럼 부탁한당! 내 원수는 [%dic:STR_DIC_M_LF4_B_Salivado_53_An]당. 반드시 아프게 때려줘랑.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>데바는 슈고 부탁 잘 들어준다고 했는데, 갸릉.</p>
+          <p> </p>
+          <p>메이닌이 나한테 거짓말 한 거냥?</p>
+          <p> </p>
+          <p>어떻게 하지, 냥냥!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>메이닌은 샤오룬 만날 구박만 한당.</p>
+          <p> </p>
+          <p>샤오룬 키나 계산은 못 해도 힘 쓰는 건 자신 있는데, 갸릉.</p>
+          <p> </p>
+          <p>곡괭이질도 자신있당, 냥냥.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 말한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>샤오룬의 복수를 해 줬다니, 정말 고맙당!</p>
+          <p> </p>
+          <p>그런데 아직도 보석을 못 찾았당...</p>
+          <p> </p>
+          <p>대체 보석은 어디 간 걸까... 그러고 보니 메이닌 주머니에서 뭔가 반짝이는 걸 본 것 같은데, 갸릉.</p>
+          <p> </p>
+          <p>냥, 이럴 때가 아니당. 샤오룬은 다시 보석 찾으러 가 봐야겠당!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_M_LF4_B_Salivado_53_An]를 처치하라([%2]/10)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Shugo_LF4_6]%와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">계곡 살리바도를 쫓아내다가 보석을 잃어버렸다는 샤오룬의 복수를 돕자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>샤오룬은 계곡 살리바도를 쫓아내다가 캔 보석을 잃어버렸다며 복수해 줄 것을 요청했다.</p>
+          <p> </p>
+          <p>그래서 계곡 살리바도를 처치한 후 돌아가자 샤오룬은 감사를 표했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

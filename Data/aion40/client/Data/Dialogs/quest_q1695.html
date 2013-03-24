@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그런데, [%username] 님! 이렇게 무사히 돌아오신 것을 보니 염치없는 줄은 알지만 조금 더 부탁을 드리고 싶군요.</p>
+          <p> </p>
+          <p>사실 다른 분들에게도 몇 번 부탁을 드렸지만 부상을 입으시거나 중간에 포기하시는 분들이 많았거든요.</p>
+          <p> </p>
+          <p>휴... 혁명단 놈들이 지독하다는 거야 익히 알고 있었지만 그 정도일 줄은 몰랐어요.</p>
+          <p> </p>
+          <p>들으니 모두 잘 훈련 받은 자들이라 상대하기 까다롭다고 하더군요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>하지만 우리를 우습게 보다가는 큰 코 다칠 겁니다.</p>
+          <p> </p>
+          <p>특히 [%username] 님 같은 용감한 분들이 나서주시면 그 녀석들도 더 이상 제멋대로 굴지는 못하겠죠.</p>
+          <p> </p>
+          <p>선량한 데바를 위협하는 혁명단 놈들에게 매운 맛을 보여주고 싶은데... 도와주시겠습니까!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>역시! [%username] 님이라면 허락해 주실 줄 알았습니다.</p>
+          <p> </p>
+          <p>가서 [%dic:STR_DIC_M_LehparWa3_33_An]%와 [%dic:STR_DIC_M_LehparKnight_33_An] 녀석들을 처치해 주십시오.</p>
+          <p> </p>
+          <p>이 주변이 자기들 땅이라도 되는 양 거들먹 거리는 꼴을 더 이상은 봐 줄 수가 없습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>괜찮습니다. 제가 너무 무리한 부탁을 드린 것 같군요.</p>
+          <p> </p>
+          <p>하지만 조금은 실망입니다. 흔쾌히 들어주실 줄 알았는데요.</p>
+          <p> </p>
+          <p>아... 오늘도 다리 뻗고 자기는 어렵겠군요.</p>
+          <p> </p>
+          <p>마음이 바뀌면 언제든 다시 말씀해 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>진정한 데바라면 강한 적 앞에서도 움츠러들지 않는 법이죠.</p>
+          <p> </p>
+          <p>빛나는 지혜와 단단한 용기, 거기에 운까지 따라준다면 어떤 적이든 상대할 수 있을 겁니다.</p>
+          <p> </p>
+          <p>제가 보기에는 당신도 영웅이 될만한 자질을 갖추고 있군요. 하지만 방심은 금물입니다.</p>
+          <p> </p>
+          <p>참, 이번 임무는 무사히 마치셨나요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>기대 이상이군요. 정말 그들을 물리치고 돌아오셨단 말입니까?</p>
+          <p> </p>
+          <p>아쉽군요. 그 자리에 제가 있었어야 하는데...</p>
+          <p> </p>
+          <p>나중에 어떻게 싸우셨는지 좀 알려주십시오. 다른 데바들에게 귀띔이라도 해 주려고요.</p>
+          <p> </p>
+          <p>자, 이건 제 작은 성의입니다. 받아두세요. 그리고 언제든 다시 들러주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">레파르 혁명단을 처치하라</font></p>
+                     <p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_M_LehparWa3_33_An]([%2]/9)</font></p>
+                     <p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_M_LehparKnight_33_An]([%5]/5)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Iorene]%와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">이오레네의 부탁대로 레파르 혁명단을 처치하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이오레네는 혁명단의 위협이 계속되고 있다며 도움을 요청했다.</p>
+          <p> </p>
+          <p>레파르 혁명단을 처치한 뒤 돌아가자 매우 감탄 하며 언제든 다시 들러달라고 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

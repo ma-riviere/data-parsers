@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, the box looks sound. Let's hope the items fared as well from the water. </p>
+          <p> </p>
+          <p>Shards! Balaur take you, you Shade-cursed knuckle-dragging--</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Hey!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, not you, [%username]. It's the supplies, they're that rusted with all the seawater. I couldn't cut up a Qooqoo with even one of them.</p>
+          <p> </p>
+          <p>These won't do, but Lantis told me there are  [%dic:STR_DIC_I_OBJ_LF3_AncientWeapon_Q1624]s and [%dic:STR_DIC_I_OBJ_LF3_AncientArmor_Q1624]s lying all over the Patema Ruins. The Abyss War raged hot there, and the battlefield still holds its treasure. They would serve the purpose until new items could be shipped or made. </p>
+          <p> </p>
+          <p>Would you be willing, [%username], to help the fleet and bring back some swords and shields? I'd reward you handsomely for the work.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I admit, paying you this much galls me, but I'm that desperate to get it done. Don't let the Specters or Ghosts get you, and bring back 3 [%dic:STR_DIC_I_OBJ_LF3_AncientWeapon_Q1624]s and 3 [%dic:STR_DIC_I_OBJ_LF3_AncientArmor_Q1624]s. Aion watch over you, friend.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll return, Ekseus."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Aye...well, I can't be too angry. You already brought the supplies you found.</p>
+          <p> </p>
+          <p>I'll take care of it myself when I get the time. Don't worry, [%username]. We'll manage well enough. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Thank you, Ekseus."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, there you are. I've been waiting to see what you might find. Were the shields and swords there as Lantis said, or was he blowing smoke up my porthole? Let's see it, now.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here you are, as promised."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You didn't find them? Did you not go, or did Lantis lie to me? If he did...well, I won't be held responsible for my actions.</p>
+          <p> </p>
+          <p>Will you be so kind as to look again, before I'm brought up on charges for murdering a fellow soldier? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Er...sure. I'll be back soon."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Will you look at these! Beautiful, even after lying on the cold ground for so long. They're sharp too.  </p>
+          <p> </p>
+          <p>Yes, these will do nicely. Perhaps even set the fashion back in Sanctum, aye?</p>
+          <p> </p>
+          <p>Here, take this and my thanks. Faith and arms, friend.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get [%dic:STR_DIC_I_OBJ_LF3_AncientWeapon_Q1624]s and [%dic:STR_DIC_I_OBJ_LF3_AncientArmor_Q1624]s, and take them to [%dic:STR_DIC_N_Ekseus].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">The supplies you found were ruined, so Ekseus asked you to retrieve ancient swords and shields from the Patema Ruins. </font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>When Ekseus opened the Supply Box from the sea, the weapons and armor were ruined by the seawater. He  asked you to go find the ancient arms and armor from the Patema Ruins in hopes of using them instead. When you retrieved the swords and shields, he thanked you and gave you a reward.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

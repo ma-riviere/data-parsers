@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], your work these days is really quite outstanding. It seems like just yesterday you first learned your basic skills, and here you are producing work to rival a Master's.</p>
+          <p> </p>
+          <p>Alas, my work is done. I can teach you no more.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What do I do now then?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It is customary in Pandaemonium for experts to be recognized as such. It's both a mark of honor and a certification of competence.</p>
+          <p> </p>
+          <p>Those who've achieved the greatest expertise in Tailoring are granted the formal title of 'Tailoring Expert.' That's the title I propose you should be granted, [%username].</p>
+          <p> </p>
+          <p>Will you accept it?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>In order to receive the title, you need approval from Governor [%dic:STR_DIC_N_Vidar].</p>
+          <p> </p>
+          <p>I'll write you a letter of recommendation. Go to Vidar and receive your title, then attend the appointment ceremony.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Thank you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>If you refuse this honor for yourself, you refuse it for all those who follow our trade. Don't you think we cloth armor crafters are looked down upon enough?</p>
+          <p> </p>
+          <p>There is a time for modesty, and a time for celebration. You have made spectacular progress, so have the good grace to take credit for it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I understand."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], isn't it? Is this an urgent matter? I have much to do.</p>
+          <p> </p>
+          <p>Unless you require my personal attention, please take your request to Skadi or Kvasir.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I have a letter from Zyakia...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hmm! Well done, [%username]. Well done indeed. Many Daeva will have cause to bless you, even if they never meet you or learn your name, for the armor that keeps them safe from harm.</p>
+          <p> </p>
+          <p>Think of them as you work--your comrades in the field. Let their bravery inspire you. May the Five bless every stitch you take.</p>
+          <p> </p>
+          <p>Now return to to [%dic:STR_DIC_N_Zyakia] as an Expert. I approve of her recommendation.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Attend the Expert appointment ceremony held by [%dic:STR_DIC_N_Vidar].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Zyakia, a Tailoring Master, recommended that you receive the title of Expert. Go to Governor Vidar and attend the appointment ceremony.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Zyakia, a Tailoring Master, said that she had nothing left to teach you--you had attained the level of Expert.</p>
+          <p> </p>
+          <p>So you received her recommendation letter. Then you went to Governor Vidar and received the title of Expert from him.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

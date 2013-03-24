@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You! [%username]! I have a favor to ask of you.</p>
+          <p> </p>
+          <p>I dispatched a spy recently, but he hasn't made his report.</p>
+          <p> </p>
+          <p>I fear he's been compromised, or worse.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Is there a way I can help?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I received word of Lepharist movements recently. I was reluctant to dispatch Dewi, but he was confident he'd accomplish the mission.</p>
+          <p> </p>
+          <p>It's been some time, however, and I admit to being nervous.</p>
+          <p> </p>
+          <p>I'd like to think nothing's wrong, or else he has nothing to report. I cannot, however, gamble on that.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"You need someone to locate Dewi."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Quite so.</p>
+          <p> </p>
+          <p>Could you go to the Hoarfrost fortress and look for [%dic:STR_DIC_N_Dewi]?</p>
+          <p> </p>
+          <p>Confirm his status and render any assistance he may require. This is important.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The area around Hoarfrost Fortress is still quite dangerous. Balaur patrol with annoying frequency.</p>
+          <p> </p>
+          <p>I'd feel better if you were a trained operative, but you'll do.</p>
+          <p> </p>
+          <p>If you find [%dic:STR_DIC_N_Dewi], tell him to come back for now. This mission is too dangerous for him to do alone.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"On my way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I guess I asked too much. If you got caught by Balaur or the Lepharists, you'd pose a threat to our operations. </p>
+          <p> </p>
+          <p>I'll find a person who is more suitable for the mission.</p>
+          <p> </p>
+          <p>You may return to your other tasks, Daeva. Farewell.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Sorry I couldn't help."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Sh! Keep quiet, please.</p>
+          <p> </p>
+          <p>I've been waiting in this shack forever. Do you know what snow tastes like the ninetieth time?</p>
+          <p> </p>
+          <p>Try not to make a ruckus and give away my position, if you please. I don't really feel up to a run.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">"Siegfried sent me after you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I know I should have reported in sooner. Sadly, I haven't found much to report.</p>
+          <p> </p>
+          <p>Why don't you run back and tell [%dic:STR_DIC_N_Siegfried] my mission isn't finished?</p>
+          <p> </p>
+          <p>Tell him I'm making progress and if he sends another messenger, make sure they bring some food.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"On my way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Not that I'm not glad to see you, [%username], but I don't see Dewi with you. Where is he?</p>
+          <p> </p>
+          <p>I should have expected him to try to stick it out. Stubborn fool. Did he at least have something to report?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Yes. 'Asmodian spy needs food badly.'"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Dewi's an excellent operative but sometimes I want to strangle him.</p>
+          <p> </p>
+          <p>Very well, I'll give him the time he needs. I just hope this isn't for naught.</p>
+          <p> </p>
+          <p>Thank you for your assistance. Walk in Azphel's shadow.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk with [%dic:STR_DIC_N_Dewi].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Deliver Dewi's message to [%dic:STR_DIC_N_Siegfried].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Siegfried hasn't received any news from his spy. Go to the Abandoned Campsite near the Hoarfrost Fortress and check on Dewi.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Siegfried said he hadn't received any report from Dewi, the spy he sent, and asked you to investigate.</p>
+          <p> </p>
+          <p>You went to the Abandoned Campsite and met Dewi. Dewi said had nothing to report and that he wasn't going back empty handed.</p>
+          <p> </p>
+          <p>You delivered Dewi's message to Siegfried, who said he'd try to be patient.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

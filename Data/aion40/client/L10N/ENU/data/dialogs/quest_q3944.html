@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've watched many Daevas, and you have a special talent for armorsmithing, [%username].</p>
+          <p> </p>
+          <p>I've never seen a Daeva progress so far, so fast.</p>
+          <p> </p>
+          <p>I want to see how good you are. Will you take my test? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Challenge me."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Make Vulcanus' Noble Breastplate and bring it to me.</p>
+          <p> </p>
+          <p>You'll need more than talent to make it, it will take hard work and perseverance.</p>
+          <p> </p>
+          <p>But if you become an Armorsmithing Expert, you cannot then train to be an Expert in another field. Think carefully before you answer. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Keep focused on the task and you will be able to make Vulcanus' Noble Breastplate. It's more difficult than making [%dic:STR_DIC_E_Q1974]s, but not so much as to be beyond your skills.</p>
+          <p> </p>
+          <p>It's not easy, but I know you'll succeed, [%username].</p>
+          <p> </p>
+          <p>I'll be waiting.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll succeed."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I though you were passionate about armorsmithing, [%username].</p>
+          <p> </p>
+          <p>Was I wrong?</p>
+
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Maybe next time."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Welcome, [%username]! I've been expecting you.</p>
+          <p> </p>
+          <p>Did you craft Vulcanus' Noble Breastplate?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I did."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This is not Vulcanus' Noble Breastplate.</p>
+          <p> </p>
+          <p>I guess you're busy with other things. Come back when you craft Vulcanus' Noble Breastplate.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent work, [%username]. I knew I could count on you.</p>
+          <p> </p>
+          <p>You're a credit to armorsmithing.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select10">
+    <Contents cdata="true">
+        <html>
+        <body>
+         <p>I was confused for a moment--I thought you were an Expert in another field.</p>
+         <p> </p>
+         <p>In order to be an Expert in two fields, you must complete your training in the first.</p>
+         <p> </p>
+         <p>Talk to me when you're an Expert in your other field.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I was impatient."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select10_2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You are too ambitious, [%username]. You can become only one type of Expert at a time.</p>
+          <p> </p>
+          <p>If you're training as an Expert in another field, you can't become an Armorsmithing Expert at the same time.</p>
+          <p> </p>
+          <p>Talk to me when you're an Expert in your other field.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"OK. I'll be back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select10_3">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Aren't you already an Expert in armorsmithing?</p>
+          <p> </p>
+          <p>Perhaps there's someone else you need to see.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I took a wrong turn."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Make Vulcanus' Noble Breastplate, and take it to [%dic:STR_DIC_N_Vulcanus].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Vulcanus saw you had talent for armorsmithing, and asked you to make Vulcanus' Noble Breastplate. </font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Vulcanus said you had a special talent in armorsmithing, and wanted to test you.</p>
+          <p> </p>
+          <p>When you made Vulcanus' Noble Breastplate as he requested, he was pleased.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm so worried about my husband.</p>
+          <p> </p>
+          <p>He's all alone, in Sanctum, and in his last letter he said that he wasn't feeling well. Then...nothing. No more mail.</p>
+          <p> </p>
+          <p>I know I shouldn't worry, but it's been two whole days!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Two days, huh?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes! Two days! I write to him every morning, and every evening...and he always, well usually...mostly, writes back!</p>
+          <p> </p>
+          <p>I should be there, looking after him. I knew it was a bad idea for him to accept that post in Sanctum.</p>
+          <p> </p>
+          <p>Do you think he's all right?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I'm pretty sure he's fine."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That's nice of you to say, but I'm still so worried! I'd better send him a cold remedy.</p>
+          <p> </p>
+          <p>Yes. That will help. I'll send him medicine. I know this great recipe I learned from an apothecary in Verteron.</p>
+          <p> </p>
+          <p>Would you help me collect the ingredients? I need to make it quickly...I just know he needs it!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The main ingredient is Monitor's Tails. It's great stuff, not just for colds.</p>
+          <p> </p>
+          <p>It's also good for weakness, heart palpitations, shortness of breath, hair loss, and all sorts of other things. I'm sure it'll help.</p>
+          <p> </p>
+          <p>I'll need [%dic:STR_DIC_I_QUEST_3537A]s from [%dic:STR_DIC_M_Varanus_33_An]s and [%dic:STR_DIC_I_QUEST_3537B]s from [%dic:STR_DIC_M_Varanus_34_An]s.</p>
+          <p> </p>
+          <p>It should be easy to get those. The Monitors all congregate in the Gloomy Mire down from the Aetheric Field Observatory.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll get the tails. You, stay calm."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I suppose my husband might be better by now. But, no, he would have written.</p>
+          <p> </p>
+          <p>Aaaa! I can't just stand here doing nothing knowing he's dying!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"You may be overreacting a tad...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Finally! I've been waiting for you.</p>
+          <p> </p>
+          <p>I've got everything ready so I could whip up the medicine as soon as you got back, [%username].</p>
+          <p> </p>
+          <p>Do you have the tails?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Tails, as requested."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What? This isn't nearly enough!</p>
+          <p> </p>
+          <p>My husband might be at the brink of death, and you're just toodling around doing what? Hmm?</p>
+          <p> </p>
+          <p>Please! Bring me [%dic:STR_DIC_I_QUEST_3537A]s and [%dic:STR_DIC_I_QUEST_3537B]s, so I can make my the medicine.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Touchy, aren't we?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, thank you! Thank you so much, [%username]!</p>
+          <p> </p>
+          <p>I'll make the remedy now. I just KNOW it will help!</p>
+          <p> </p>
+          <p>I'll ship it by Express Mail as soon as it's ready. I only hope it's in time to save my love!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Obtain [%dic:STR_DIC_I_QUEST_3537A]s and [%dic:STR_DIC_I_QUEST_3537B]s, and bring them to [%dic:STR_DIC_N_Panaita].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Hunt Stonescale Monitors and Mottled Monitors, and bring their tails to Panaita so she can make some special medicine for her husband.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Panaita was...a touch worried about her sick husband in Sanctum and wanted to make some medicine for him.</p>
+          <p> </p>
+          <p>To calm her, you brought her the Iron Tails and Mottled Tails she needed for the recipe.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

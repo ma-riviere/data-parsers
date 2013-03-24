@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p> - Emergency Operation Order - </p>
+          <p> </p>
+          <p>From: Pandaemonium Operations Headquarters</p>
+          <p> </p>
+          <p>To: [%username]</p>
+          <p> </p>
+          <p>Order: Terminate the [%dic:STR_DIC_NPC_LF2A_DirectPortal_Guard_Li_Eh]. The defensive emplacements are currently blocking the path of our operation.</p>
+          <p> </p>
+          <p>Report to [%dic:STR_DIC_N_Sala] in the Marchutan Priory once you're done.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I should get this done."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Welcome back, [%username].</p>
+          <p> </p>
+          <p>I heard that you cleared a path for us in Theobomos.</p>
+          <p> </p>
+          <p>Well done. Can you give me an official report?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Here's what happened."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That confirms mission complete then.</p>
+          <p> </p>
+          <p>Here is the promised reward.</p>
+          <p> </p>
+          <p>Blood for blood!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Kill [%dic:STR_DIC_NPC_LF2A_DirectPortal_Guard_Li_Eh]s ([%2]/2).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report to [%dic:STR_DIC_N_Sala].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Emergency Order: Kill the Jamanok Siege Supplier.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You received an emergency order from the Pandaemonium Operations Headquarters, telling you to kill the Jamanok Siege Supplier. Your mission was successful.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

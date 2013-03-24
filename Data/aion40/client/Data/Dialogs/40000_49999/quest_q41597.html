@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q41597</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>미입력</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>사람의 마음이라는 게 정말 욕심이 끝이 없는 것 같습니다.</p>
+          <p> </p>
+          <p>[%username] 님이 무기 재료를 구해다 주셨지만 이왕이면 놈들의 무기를 손에 넣는 게 낫겠다 싶거든요.</p>
+          <p> </p>
+          <p>버림받은 아바드 마을에는 아마 용신도가 쓰는 무기가 많을 겁니다.</p>
+          <p> </p>
+          <p>그러니까 마을 곳곳에 있는 [%dic:STR_DIC_OBJ_LDF4b_FOBJ_Q41597A]를 뒤져서 [%dic:STR_DIC_I_quest_41597a]를 좀 구해다 주세요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>사실 전 제가 티아마란타까지 오게 될 줄은 몰랐습니다.</p>
+          <p> </p>
+          <p>아무리 좋게 봐줘도 좋은 전사라고 할 수는 없으니까요.</p>
+          <p> </p>
+          <p>하지만 창고를 관리하는 일로라도 전투에 기여하게 되어 기쁩니다.</p>
+          <p> </p>
+          <p>참, 용신도의 무기는 모아 오셨나요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">용신도의 무기를 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>우리가 쓰는 무기랑 비슷한 것 같으면서도 어딘가 다르네요.</p>
+          <p> </p>
+          <p>좋은 재료로 만든 무기니까 분명히 성능도 좋을 거예요.</p>
+          <p> </p>
+          <p>용신도의 무기를 손에 넣게 도와주셔서 정말 감사합니다, [%username] 님.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_I_quest_41597a]를 구해 [%dic:STR_DIC_N_Sephira]에게 가져가라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">세피라는 용신도의 무기를 손에 넣고 싶어 한다. 버림받은 아바드 마을로 가서 용신도 무기 상자에서 무기를 꺼내자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>세피라는 무기 재료도 좋지만 용신도의 무기를 직접 손에 넣는 게 나을 것 같다고 했다.</p>
+          <p> </p>
+          <p>그래서 버림받은 아바드 마을로 가서 용신도의 무기 상자를 뒤져 무기를 구해다 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

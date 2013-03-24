@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>When I decided to become a Daeva of Herbs, I never realized my studies would be so important to battle.</p>
+          <p> </p>
+          <p>I trust you're thoroughly familiar with Silentera Canyon by now? Then you know how many poisonous creatures lurk there.</p>
+          <p> </p>
+          <p>More and more Daevas are returning with toxic injuries, and the supply of antidote is running out.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"So you need antidote ingredients?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Not exactly. I already have others out gathering those, but it'll take some time to get enough.</p>
+          <p> </p>
+          <p>In the meantime, the attacks are continuing. We need to at least keep the number of injured from growing any more and straining our remaining supplies.</p>
+          <p> </p>
+          <p>In short, we need someone to reduce the number of poisonous creatures in Silentera Canyon.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The most poisonous creatures are the [%dic:STR_DIC_M_Underpass_Sheluk_55_Ae]s, [%dic:STR_DIC_M_Underpass_Octacide_55_Ae]s, and [%dic:STR_DIC_M_Underpass_Scorpion_55_Ae]s.</p>
+          <p> </p>
+          <p>These kinds of creatures tend to congregate and attack in swarms, so be prepared.</p>
+          <p> </p>
+          <p>Don't forget that the Elyos may be lurking there as well.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"They're more poisonous than Sheluks."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I have to say I'm surprised. Do you think these creatures are beneath your abilities?</p>
+          <p> </p>
+          <p>That may be so, but that doesn't mean this isn't important. As with poison, even the tiniest scratch can lead to fatalities.</p>
+          <p> </p>
+          <p>I don't have time to waste trying to convince you. Excuse me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Fate will work things out."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You know, perhaps this crisis is a warning sign. We were having to use more antidote than normal to treat injured Daevas.</p>
+          <p> </p>
+          <p>This isn't Asmodae, after all. Perhaps this is the opportunity to create an entirely new antidote just for Gelkmaros.</p>
+          <p> </p>
+          <p>But first the immediate problem. How went the trip to Silentera Canyon?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Very well, actually!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good, good! But that brings up a very interesting question--if you had such an easy time, why are so many Daevas becoming poisoned?</p>
+          <p> </p>
+          <p>The more I think about it, the more strange it becomes. I'll have to look into this further.</p>
+          <p> </p>
+          <p>But you did well. We should have time to bring antidote stores up now. I'm sure Asmodae thanks you.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Eliminate poisonous insects in Silentera Canyon.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Underpass_Sheluk_55_Ae]([%2]/5)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Underpass_Octacide_55_Ae]([%5]/5)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Underpass_Scorpion_55_Ae]([%8]/5)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk to [%dic:STR_DIC_N_Sulbanyer].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">More and more Daevas are being injured by poisonous insects inside Silentera Canyon. Go there and hunt Stinging Sheluks, Brown Arachnas, and Blackclaw Scolopens.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Sulbanyer needed time to restore depleted supplies of poison antidote. He asked you to kill the poisonous creatures of Silentera Canyon to buy that time.</p>
+          <p> </p>
+          <p>You easily dealt with the threat. As he thanked you, Sulbanyer said that he found the whole situation odd, given the number of poisonings he's treated.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p> - 긴급 지령서 - </p>
+          <p></p>
+          <p> 1. 발신 : 카탈람 파견대, [%dic:STR_DIC_W_LDF5b_F4_v18]의 [%dic:STR_DIC_N_LDF5_Village_Guard18_L]</p>
+          <p></p>
+          <p> 2. 수신 : [%username]</p>
+          <p></p>
+          <p> 3. 명령 : 남부 카탈람 [%dic:STR_DIC_W_LDF5b_SZ_F4_2]에 침투한 마족 1명을 처치할 것.</p>
+          <p></p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">의뢰를 수행한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+   <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>프라데스 초원은 아시다시피 프라데스 요새라는 요충지가 존재합니다.</p>
+          <p> </p>
+          <p>마족도 필시 이 요새를 중심으로 세력을 전개하기 위해 정찰을 강행하는 것 같습니다.</p>
+          <p> </p>
+          <p>항시 경계를 늦추어서 안될 것입니다.</p>
+          <p> </p>
+          <p>침입자들의 처리는 어떻게 되었습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>언제나 이렇게 도움을 주셔서 감사합니다.</p>
+          <p> </p>
+          <p>프라데스 초원을 잘 지키는 것은 저희 데바들의 할 일이겠지요.</p>
+          <p> </p>
+          <p>다음 번에도 잘 부탁드립니다.</p>
+          <p> </p>
+          <p></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">남부 카탈람 [%dic:STR_DIC_W_LDF5b_SZ_F4_2]에 침투한 마족을 처치하라([%2]/1)</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_N_LDF5_Village_Guard18_L]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">긴급 지령: 남부 카탈람 프라데스 초원의 초원 보급로에 침투한 마족을 처치하고 크네무스에게 보고하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>마족이 남부 카탈람 프라데스 초원의 초원 보급로를 노리고 침투해왔다.</p>
+          <p> </p>
+          <p>침투한 마족들을 소탕하고 크네무스에게 보고하였다.</p>
+          <p> </p>
+          <p></p>
+          <p> </p>
+          <p></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

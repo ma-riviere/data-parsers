@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q21518</QuestId>
+    <QuestName>칼리돈 그림 문자</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_W_LDF4a_SZ_A4_03]은 겉으로 보기에는 야만적이고 엉성하게 만들어진 것처럼 보일 수도 있어요.</p>
+          <p> </p>
+          <p>하지만 조금만 자세히 뜯어보면 굉장히 효율적으로 다수의 병력을 수비할 수 있는 구조로 만들어 졌다는 것을 알 수 있죠.</p>
+          <p> </p>
+          <p>[%username] 님. [%dic:STR_DIC_W_LDF4a_SZ_A4_01]의 안전을 위해 부탁을 들어주실 수 있겠습니까?</P>
+          <p> </p>
+          <p>[%dic:STR_DIC_W_LDF4a_SZ_A4_03]을 잘 뒤져보면 놈들이 지도로 쓰는 [%dic:STR_DIC_I_QUEST_21518A]들이 있을 겁니다. 그것을 제게 가져다 주세요.</p>
+          <p> </p>
+          <p>그중에서 주둔지의 구조가 그려진 것을 찾아낼 수만 있다면 놈들의 취약점을 한눈에 알아낼 수 있을 거예요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>돌아오셨군요.</p>
+          <p> </p>
+          <p>훔나즈 주둔지의 구조에 대한 이해가 없다면 백 번을 쳐들어 가더라도 패배할 수 밖에 없을 겁니다.</p>
+          <p> </p>
+          <p>그래, [%dic:STR_DIC_I_QUEST_21518A]들 중에 서부 훔나즈 주둔지의 구조가 그려진 석판은 있던가요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">석판들을 건네주며 모르겠다고 답한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>에... 어디보자... (석판을 살펴본다.)</p>
+          <p> </p>
+          <p>아! 다행입니다. 두 장이나 있네요!</p>
+          <p> </p>
+          <p>이걸 상부에 가지고 가면 보상을 짭짤하게 받을 수 있겠... 어흠, 흠...</p>
+          <p> </p>
+          <p>이 석판은 동부 봉인지의 수호에서 그치지 않고 사르판 전체의 안전을 수호하는 데 이바지할 수 있을 겁니다.</p>
+          <p> </p>
+          <p>여기, 수고비로 받아주시고 얼른 돌아가 주세요. 수고하셨습니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_W_LDF4a_SZ_A4_03]에서 [%dic:STR_DIC_I_QUEST_21518A]을 모아 [%dic:STR_DIC_N_Estotia]에게 가져가라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">에스토티아에게 서부 훔나즈 주둔지를 함락시킬 열쇠를 찾아다 주자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>에스토티아는 서부 훔나즈 주둔지의 수비체계를 뚫으려면 주둔지의 구조에 대해서 잘 알아야 한다고 했다.</p>
+          <p> </p>
+          <p>칼리돈들이 지도로 사용하는 칼리돈 석판을 구해 돌아가니 에스토티아는 사르판의 평화 수호를 위해 큰 일을 해낸 것이라며 기뻐했지만, 순수한 마음이라고 보기에는 조금 미심쩍은 면이 있었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

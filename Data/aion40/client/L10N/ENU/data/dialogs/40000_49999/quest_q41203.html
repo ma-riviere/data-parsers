@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q41203</QuestId>
+    <QuestName>Play Nice with Your Toys</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Okay, this time I'm sure I know what went wrong. But I need your help again. Can you collect samples from the broken-down Petrahulks around the [%dic:STR_DIC_W_LDF4a_SZ_B1]?</p>
+          <p> </p>
+          <p>Why didn't I think of that before? I know, I know, I've been doing a lot of acting without thinking lately.</p>
+          <p> </p>
+          <p>The [%dic:STR_DIC_I_QUEST_41203A]s should be scattered on the ground around the Anaz Forest. Five should be enough.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm so sorry that I made a busy Daeva like you run around like this, cleaning up my mess. Believe me, I've learned my lesson.</p>
+          <p> </p>
+          <p>You've saved me and my reputation. And think of all the people who might've gotten hurt if you decided not to help me!</p>
+          <p> </p>
+          <p>Did you find the [%dic:STR_DIC_I_QUEST_41203A]s?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">"Here. You're absolutely certain this time?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm positive that this will work, [%username].</p>
+          <p> </p>
+          <p>If I perform a reverse extraction from the magic in these samples, I can find out exactly where the energy resonated wrong. I just need to slow down and think about what I'm doing.</p>
+          <p> </p>
+          <p>So, let's see here...</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Find [%dic:STR_DIC_I_QUEST_41203A]s in the [%dic:STR_DIC_W_LDF4a_SZ_B1] and take them to [%dic:STR_DIC_N_Feityios].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Feyos needs Petrahulk Specimens to fix her spell.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Feyos said she'd figured out where the problem in her spell came from and needed some final items to complete the reversal spell.</p>
+          <p> </p>
+          <p>You collected Petrahulk Specimens in the Anaz Forest and took them to her.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Frankly, I'm amazed at all you've done here, [%username].</p>
+          <p> </p>
+          <p>If you had achieved half of these missions, I would have still been impressed.</p>
+          <p> </p>
+          <p>I would like you to take my report to Brigade General Telemachus in person.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Brigade General?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You deserve the chance to meet him. Go back to Eltnen Fortress and deliver this report on all your missions to Brigade General [%dic:STR_DIC_N_Telemachus].</p>
+          <p> </p>
+          <p>He will be most satisfied with your work, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Then, go to the Fortress right now and meet General [%dic:STR_DIC_N_Telemachus].</p>
+          <p> </p>
+          <p>I let him know you'd be coming, so he will be waiting for you.</p>
+          <p> </p>
+          <p>Your work here has saved many lives. Thank you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I was only doing my duty."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Don't you want to report this remarkable work to the General?</p>
+          <p> </p>
+          <p>Though I gave him a summary, Telemachus would like to hear from you in person.</p>
+          <p> </p>
+          <p>Modesty is all very well, but too much is as bad as too little. Please think it over again.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I appreciate the offer."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]! I've heard only a brief report from Tumblusen, but the whole story must be fascinating. The reports from that area have been so depressing lately that I didn't even want to read them!.</p>
+          <p> </p>
+          <p>Tell me of your remarkable achievements in full.</p>
+          <p> </p>
+          <p>I must know how you've become so formidable! Perhaps we should give all of our Daevas amnesia! Ha!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I've brought a detailed report."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I look forward to reading it completely, thank you! I cannot praise you too much.</p>
+          <p> </p>
+          <p>There are many people who say that peace in Eltnen has been restored thanks to you. It may not last, but we're glad of this respite, and one of the things we're running low on these days...is heroes.</p>
+          <p> </p>
+          <p>I'm proud to reward you for your efforts.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Go to the Fortress and report to [%dic:STR_DIC_N_Telemachus].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Brigade General Telemachus is waiting for you. Go to Eltnen Fortress and report to him.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Tumblusen told you to go back to the Fortress and report to Brigade General Telemachus that you had completed all the missions successfully.</p>
+          <p> </p>
+          <p>Telemachus heaped praise on you for restoring peace in Eltnen.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

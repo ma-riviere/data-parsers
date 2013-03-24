@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q41517</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>미입력</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_W_LDF4b_SZ_T2_S1]에서 도움을 요청하는 전갈이 왔소.</p>
+          <p> </p>
+          <p>그쪽에 여러 가지 일이 많이 생겨서 도움이 필요한 것 같은데 이곳도 일손이 부족해서 말이오.</p>
+          <p> </p>
+          <p>일단 노투스 전초기지로 가서 [%dic:STR_DIC_N_Aesty]를 만나 보시오.</p>
+          <p> </p>
+          <p>무슨 일로 도움이 필요한지 말해 줄 거요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>티아마란타 여기저기에 티아마트의 힘이 발현된 곳이 있다는 건 아마 아실 거예요.</p>
+          <p> </p>
+          <p>시공의 우물도 그런 곳 가운데 하나죠.</p>
+          <p> </p>
+          <p>그곳을 철저하게 조사해야 하는데 지금으로선 일손이 너무 부족합니다. </p>
+          <p> </p>
+          <p>[%username] 님이 [%dic:STR_DIC_W_LDF4b_SZ_T2_S2]로 가서 보탬이 돼 주세요.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_N_Winbrey]에게 도우러 왔다고 하면 아마 굉장히 기뻐할 겁니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>혹시 애스티 님이 보내서 오신 겁니까?</p>
+          <p> </p>
+          <p>도우러 올 사람을 애타게 기다리고 있었습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">도우러 왔다고 한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정말 다행입니다.</p>
+          <p> </p>
+          <p>이것저것 조사할 것은 많은데 몸이 하나다 보니 미처 다 살펴볼 틈이 없습니다.</p>
+          <p> </p>
+          <p>[%username] 님이 오셨으니 이제 미뤄 둔 일을 할 수 있겠네요.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">노투스 전초기지로 가서 [%dic:STR_DIC_N_Aesty]%와 대화하라</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">시공 조사대 야영지로 가서 [%dic:STR_DIC_N_Winbrey]%와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">노투스 전초기지에서 도와 달라는 요청이 왔다고 한다. 가서 애스티를 만나 보자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>자스는 노투스 전초기지에서 도와 달라는 요청이 왔지만 파견할 인력이 없다고 했다. </p>
+          <p> </p>
+          <p>그래서 노투스 전초기지로 가서 애스티를 만났더니 시공 조사대 야영지에 일손이 부족하다고 했다.</p>
+          <p> </p>
+          <p>그곳으로 가서 윈브레이에게 도우러 왔다고 하자 미뤄 둔 일을 할 수 있게 됐다며 기뻐했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

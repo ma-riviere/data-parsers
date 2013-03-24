@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You been to Aldelle Village recently? I haven't been there in a long time, and you know why? It's that [%dic:STR_DIC_N_Tobu]; he hates my guts.</p>
+          <p> </p>
+          <p>Can you believe he sent me out here--the middle of nowhere--to dig up [%dic:STR_DIC_I_herb_n_c_10a2]?! Me, Alfrigh, former weapons trainer, now clawing his way through rocks lookin' for ore!</p>
+          <p> </p>
+          <p>I'd laugh, except it really isn't all that funny.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Why doesn't he like you?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well...there was that one time I hit him....</p>
+          <p> </p>
+          <p>See, one day Tobu was barking orders at me. I went to do what he asked, but then Ulgorn came by and asked me to do somethin' for him. 'Course, he's the boss--his order took precedence.</p>
+          <p> </p>
+          <p>So I'm doing what Ulgorn asked when suddenly Tobu comes waddlin' over, spouting fire and brimstone 'cos I ain't done his job. Well...I'm not known for having the longest fuse, so I started shoutin' back...and then I hit him. He stormed off, I stormed off...and I thought that was the end of it.</p>
+          <p> </p>
+          <p>The next day, I got word I'd been assigned a "special job"....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"And now you're here."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yep! I've been here for a couple of days now, and I still have no [%dic:STR_DIC_I_herb_n_c_10a2] to show for it.</p>
+          <p> </p>
+          <p>I've heard there's a bunch of it at the [%dic:STR_DIC_W_DF1_8], but I can't just prance in there and ask the Mau for it! They'd shred me to pieces!</p>
+          <p> </p>
+          <p>How about you? Think you might be able to help me out? I'll pay you well....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You better get going, then. Tobu wants that [%dic:STR_DIC_I_herb_n_c_10a2] right away. If I get the ore to him quickly enough, maybe it'll impress him and he'll assign me a better post!</p>
+          <p> </p>
+          <p>Remember, the ore can be found at the [%dic:STR_DIC_W_DF1_8], though I've heard they have it at [%dic:STR_DIC_W_DF1_9] too, if you don't have much luck.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm on it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, for the love of....</p>
+          <p> </p>
+          <p>Okay, fine. I see how it is. I'll get someone else to help. But don't think I'll forget this!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Good luck with that."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You done already?</p>
+          <p> </p>
+          <p>I hope the Mau weren't giving you too much trouble out there. They can be pretty aggressive when they want somethin'. You got the [%dic:STR_DIC_I_herb_n_c_10a2] I asked for?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here, have a look."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What? Where's all the ore?</p>
+          <p> </p>
+          <p>Come on pal, the whole reason you went there was to collect the [%dic:STR_DIC_I_herb_n_c_10a2]! Now get back out there and give it another try!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll get it this time."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This is it! Perfect!</p>
+          <p> </p>
+          <p>Nice one, [%userclass]. This'll get Tobu's back up, for sure! He thought I'd be out here for weeks lookin' for the ore. I'll send these back to the village now. Here's your money!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Mine [%dic:STR_DIC_I_herb_n_c_10a2] and take it to [%dic:STR_DIC_N_Alfrigh].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Head to the Odella Plantation or Dubaro Vine Canyon and mine pieces of [%dic:STR_DIC_I_herb_n_c_10a2]. Then return them to Alfrigh.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>After an argument the two had, Tobu ordered Alfrigh to procure Iron Ore out near the Odella Plantation. You helped Alfrigh by gathering pieces of the ore, and returning them to him.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

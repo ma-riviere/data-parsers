@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], 부탁할 일이 있었는데 마침 잘 왔소.</p>
+          <p> </p>
+          <p>어려운 일은 아니고, 수호자의 전당에 있는 아니테 님께 책을 전하기만 하면 된다오.</p>
+          <p> </p>
+          <p>공간의 신전에 내려오는 책으로 사격성의 스킬에 관한 일종의 비전서요.</p>
+          <p> </p>
+          <p>현재 아니테 님께서 비전서를 보관하고 있는데 그 가운데 한 권을 빌린 거라오.</p>
+          <p> </p>
+          <p>책을 돌려 드려야 할 때가 됐는데 귀중한 비전서를 아무에게나 맡길 수는 없지 않소? </p>
+          <p> </p>
+          <p>믿을 만한 [%userclass]인 [%username] 님이라 부탁하려는 거요.</p>   
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>책을 보면 알겠지만 [%username] 님이 이미 다 배운 내용이라오.</p>
+          <p> </p>
+          <p>[%username] 님이 필요한 것은 아마 비전서 2권부터일 것이오.</p>
+          <p> </p>
+          <p>하지만 안타깝게도 내가 2권부터는 가르칠 실력이 안 된다오. 하지만 아니테 님은 나보다 훨씬 뛰어난 분이시라오.</p>
+          <p> </p>
+          <p>자, 비전서 1권을 드릴 테니 아니테 님께 돌려 드리시오. 잘 보았다는 말도 전해 주시오.</p>
+          <p> </p>
+          <p>그리고 앞으로 [%userclass]의 스킬을 더 수련하고 싶으면 아니테 님께 가는 게 좋을 거요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>어떤 걸 안다고 해서 그걸 다른 사람에게 가르칠 수 있는 건 아니오.</p>
+          <p> </p>
+          <p>나는 비전서 2권의 내용을 가르칠 만한 능력은 아니라오. 설령 비전서 다음 권을 가지고 있다고 해도 가르칠 수는 없을 거요.</p>
+          <p> </p>
+          <p>[%username] 님은 비전서 2권의 내용을 익힐 자격이 충분하오.</p>
+          <p> </p>
+          <p>이 비전서를 가지고 수호자의 전당에 있는 [%dic:STR_DIC_N_LC1_Anyte_M] 님께 가면 도움이 될 만한 말을 해 주실 거요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>내 부탁을 대수롭지 않은 일이라고 생각하는 것 같구려.</p>
+          <p> </p>
+          <p>내가 비전서를 돌려 주는 사람으로 [%username] 님을 택한 건 단순한 부탁이 아니오.</p>
+          <p> </p>
+          <p>아니테 님께 추천한다는 의미도 있는 거요.</p>
+          <p> </p>
+          <p>하지만 본인이 싫다면 어쩔 수 없지.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], 무슨 일입니까?</p>
+          <p> </p>
+          <p>공간의 진리에 대해 알고 싶은 것이 있습니까?</p>
+          <p> </p>
+          <p>아니면 그저 스킬 교본을 구하러 온 것입니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">비전서를 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>다모클레스가 부탁한 이 비전서는 아무에게나 건네는 책이 아닙니다.</p>
+          <p> </p>
+          <p>그대에게 이 책을 들려 보낸 것은 다모클레스가 그대를 인정했으며 내게 그대를 부탁한다는 뜻입니다.</p>
+          <p> </p>
+          <p>[%username]%이 촉망받는 데바라는 것은 잘 알고 있지만 진정한 사격성이 되려면 아직도 배워야 할 것이 많습니다.</p>
+          <p> </p>
+          <p>비전서의 다음 부분을 배우는 일은 내가 돕겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_LC1_Anyte_M]%와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">다모클레스가 건네 준 비전서를 아니테에게 전하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>다모클레스는 사격성의 비전이 담긴 책을 아니테에게 되돌려 주는 일을 부탁했다.</p>
+          <p> </p>
+          <p>비전서를 받은 아니테는 비전서의 다음 내용을 익힐 때가 되었다며 가르침을 주겠다고 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

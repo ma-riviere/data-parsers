@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Do you know about Iron Coins, [%username]?</p>
+          <p> </p>          
+          <p>There are several tasks that our Guardians are unable to complete, usually due to time constraints. These tasks get assigned Iron Coin status, meaning that the reward for the tasks is not ordinary Kinah or supplies, but one of these coins instead.</p>
+          <p> </p>
+          <p>Our Daevas can then complete several of these tasks, collect Iron Coins, then hand them in for rewards.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"You have a task for me?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I do. It involves the Holy Ground here. The spirits that inhabit this haven of Aether have recently changed. They have become aggressive when before they were peaceful and calm.</p>
+          <p> </p>
+          <p>Something must be done. We have sent Guardians who successfully eliminated many of the spirits, but still the spirits return.</p>
+          <p> </p>
+          <p>Sanctum finally agreed that the situation warrants Iron Coin status. Perhaps this is work you'd be interested in, [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"How many would I need to kill?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Let's say you need to kill fourteen Sky Spirits and eight Frost Wind Spirits before I'll hand you a coin.</p>
+          <p> </p>
+          <p>What do you say?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Very good.</p>
+          <p> </p>
+          <p>If it makes you feel any better, consider the fact that you're helping the locals here, and not just yourself.</p>
+          <p> </p>
+          <p>Now, get to it. Remember, I need 14 [%dic:STR_DIC_M_AElemental1st_18_An]s and 8 [%dic:STR_DIC_M_ElementalAir2_19_An]s dead before I can reward you. Faith and arms!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Faith and arms."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No? Are you sure? Your armor is looking a little tattered...and that [%mainslotitem]...well, I don't think anything needs to be said there.</p>
+          <p> </p>
+          <p>The choice is yours, of course. If you're happy enough as you are, I shan't waste my time preaching to you.</p>
+          <p> </p>
+          <p>What is that phrase again? The one about bliss and ignorance? I'm sure you know it....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm going...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, there you are.</p>
+          <p> </p>
+          <p>You know you should really try to work a little faster if you want to get your hands on our best equipment.</p>
+          <p> </p>
+          <p>Did you do as I asked?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I did."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent!</p>
+          <p> </p>
+          <p>I heard some stories of some wicked young [%userclass] tearing through the Holy Grounds. I suppose now that must have been you.</p>
+          <p> </p>
+          <p>In turn, here's your Iron Coin. Remember, we have work and plenty of coins. Come back if ever you want to earn more.</p>
+          <p> </p>
+          <p>Faith and arms!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Hunt the Spirits that have recently turned violent.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_AElemental1st_18_An]([%2]/14)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_ElementalAir2_19_An]([%5]/8)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_N_Anontrite].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Officer Anontrite promised to give you an Iron Coin if you were able to kill Sky Spirits and Frost Wind Spirits.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Administration Officer Anontrite said the local Spirits have become violent, and asked you to get rid of them.</p>
+          <p> </p>
+          <p>You defeated Spirits and received an Iron Coin.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

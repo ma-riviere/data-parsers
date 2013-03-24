@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q3723</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>Item Collection Type</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], it's vital that we deprive the Balaur of their weapons and supplies...but I've been toying with another plan.</p>
+          <p> </p>
+          <p>Instead of simply destroying their arms, I'd like to steal them...send them to Sanctum for research, maybe give some to our troops.</p>
+          <p> </p>
+          <p>That would kill two crows with one arrow, right? Take from them, give to us....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"A good plan, but a difficult one."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes, I would agree with you there. But you've pulled off every task assigned to you thus far.</p>
+          <p> </p>
+          <p>Since you're headed to the Chantra Dredgion, see if it's a possibility. See if you can snatch some of their supplies in the process.</p>
+          <p> </p>
+          <p>Can you handle it, [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm not asking you to bring back their entire arsenal, Daeva. Try and get your hands on those [%dic:STR_DIC_OBJ_IDDreadgion_02_Drakanbox_Q3723] of theirs.</p>
+          <p> </p>
+          <p>You can destroy everything else, but bring back those supplies! They should be in the Supply Warehouse...or check the Shulack Workers. It's there somewhere.</p>
+          <p> </p>
+          <p>I realize you'll have your hands full with fighting those savages, but just see what you can do.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"It shouldn't be a problem, Yannis."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I know, I know, it's a tall order.</p>
+          <p> </p>
+          <p>Most Daevas wouldn't be able to pull this off. I just hoped that you might have been able to.</p>
+          <p> </p>
+          <p>You've done enough for our cause, [%username]. Faith and arms!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Sorry, Yannis. Faith and arms."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I never thought I'd live to see the days when our enemies had something like a dredgion.</p>
+          <p> </p>
+          <p>Tough beasts, aren't they? But at least we now know they aren't unbeatable! Thanks to you, that is.</p>
+          <p> </p>
+          <p>How did the operation go? Did you bring back the Balaur Supplies?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Went well. Here are the supplies."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This is a tough operation, [%username], and I understand your hesitation. But you must do this, and you must do it now.</p>
+          <p> </p>
+          <p>I've already issued my report to Sanctum informing them of what you're doing on the dredgion, so I wouldn't waste any more time.</p>
+          <p> </p>
+          <p>Ruffle your wings and get those [%dic:STR_DIC_OBJ_IDDreadgion_02_Drakanbox_Q3723]!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm headed there now."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Strange-looking weapons, aren't they? How do they fight with these things?</p>
+          <p> </p>
+          <p>Well, I'll send them off to Sanctum in the morning...see what they make of them.</p>
+          <p> </p>
+          <p>You are undoubtedly one of the finest Daevas I've ever had the pleasure of working with, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect the [%dic:STR_DIC_OBJ_IDDreadgion_02_Drakanbox_Q3723] and bring them to [%dic:STR_DIC_N_Yannis].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">An operation has been set up to destroy the Chantra Dredgion and take the Balaur Supplies.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yannis said it might be a good idea to steal some Balaur Supplies before destroying the majority of them.</p>
+          <p> </p>
+          <p>So you brought Balaur Supplies back to Yannis, and he thanked you, saying he'll send them to Sanctum for research.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

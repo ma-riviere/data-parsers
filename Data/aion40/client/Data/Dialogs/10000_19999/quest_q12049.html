@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q12049</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>미입력</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>힘의 근원을 점령하는 일이 왜 중요한지는 잘 알고 계실 거라 믿습니다.</p>
+          <p> </p>
+          <p>티아마트와 결전을 벌이는 첫 번째 걸음이니까요.</p>
+          <p> </p>
+          <p>티아마트의 현신을 쓰러트려야 하니 점령전에는 많은 병력이 필요합니다. </p>
+          <p> </p>
+          <p>[%username] 님도 점령전에 참가해서 [%dic:STR_DIC_M_Q12049]을 처치해 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>돌아왔군요, [%username].</p>
+          <p> </p>
+          <p>부탁한 일은 잘 처리했습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 덕에 힘의 근원을 수월하게 차지한 것 같군요.</p>
+          <p> </p>
+          <p>침묵의 비수를 대표해서 감사를 표합니다.</p>
+          <p> </p>
+          <p>앞으로 더욱 큰 공훈을 세우길 바랍니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_M_Q12049]을 처치하라([%2]/15)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Erasmus]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">힘의 근원을 점령하는 데 힘을 보태라고 한다. 점령전 드라칸을 처치하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>에라스무스는 힘의 근원을 점령하는 일이 중요하다면서 점령전에 참가하라고 했다.</p>
+          <p> </p>
+          <p>그래서 힘의 근원을 지키는 점령전 드라칸을 처치했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

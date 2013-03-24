@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q4714</QuestId>
+    <QuestName>[Group] Stalk the Auditor</QuestName>
+    <QuestType>Not entered</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The attacks on the Dredgion are paying off.</p>
+          <p> </p>
+          <p>The commander of the Baranath Legion has dispatched an auditor to the ship to investigate the situation.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"They're in trouble and they know it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, that's true. But it's also a problem.</p>
+          <p> </p>
+          <p>If the auditor discovers how we've been infiltrating the Dredgion and comes up with a countermeasure, we'll lose our advantage.</p>
+          <p> </p>
+          <p>The auditor is our next target. He's not the only one who can learn our secret, but he's the most likely. [%username], will you handle this for us?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I knew I could rely on you.</p>
+          <p> </p>
+        	<p>[%dic:STR_DIC_M_IDAb1_Dreadgion_DrakanRAInspector_50_Ah] may investigate the whole ship, but he must go to The Bridge to report to his superiors. That's where you're most likely to find him.</p>
+          <p> </p>
+          <p>I know, I know--attacking a Balaur auditor in The Bridge of a war ship won't be easy. But we don't have a choice if we want to preserve our advantage.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"The task is mine!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Why are you reluctant now? You've faced the Balaur before.</p>
+          <p> </p>
+          <p>All our efforts will have been in vain if Auditor Nirshaka discovers how we get into the Dredgion.</p>
+          <p> </p>
+          <p>Please think it over and come back.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll consider it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm impressed, [%username]. I don't think anyone's ever survived so many missions to the Dredgion.</p>
+          <p> </p>
+          <p>And was it successful?</p>
+          <p> </p>
+          <p>Did you eliminate Auditor Nirshaka?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Nirshaka won't be making a report...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That's what I wanted to hear! Excellent work!</p>
+          <p> </p>
+          <p>Here's a reward for your efforts--you've more than earned it.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Eliminate [%dic:STR_DIC_M_IDAb1_Dreadgion_DrakanRAInspector_50_Ah] ([%2]/1).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report the result to [%dic:STR_DIC_N_Henir].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Auditor Nirshaka was dispatched to the Dredgion to discover the source of recent attacks. You were sent to intercept him before he could learn and report on how you were getting on the ship.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Henir told you that the Baranath Legion dispatched Auditor Nirshaka to find out why the Dredgion was attacked and how to address the issue.</p>
+          <p> </p>
+          <p>You eliminated the auditor to prevent him from discovering and reporting on how you were getting on the ship</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

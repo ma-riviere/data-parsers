@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>하아... 가디언이 된 건 어머니 때문이었습니다. 데바로 각성하자마자 가디언이 되라고 하셨죠.</p>
+          <p> </p>
+          <p>집이 어려운 형편이라서 바로 월급을 타서 보탬이 돼야 했거든요.</p>
+          <p> </p>
+          <p>유스티엘 주신 아래서 생명의 데바가 됐더라면 이런 고민은 없었을 텐데... </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">무슨 고민인지 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이번에는 요새에서 베스파와 부식토 정령을 처치하라는 명령이 내려왔습니다.</p>
+          <p> </p>
+          <p>자연의 조화와 아름다움을 추구하는 제게 이건 너무 가혹한 명령이라고요.</p>
+          <p> </p>
+          <p>빨리 집안 형편이 나아져야 가디언을 그만둘 수 있을 텐데 말입니다. 어차피 계속해 봐야 백부장이 되기도 글렀고요.</p>
+          <p> </p>
+          <p>[%username] 님이 도와주시면 안 될까요? 저 대신 베스파와 부식토 정령을 좀 처치해 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>고맙습니다!</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_W_LF2_SZ_OP] 주변의 숲에서 [%dic:STR_DIC_M_Vespa_21_n]와 [%dic:STR_DIC_M_ElementalEarth2_21_An]을 사냥해 주십시오.</p>
+          <p> </p>
+          <p>베스파와 정령이 내는 비명이 제 가슴을 찢겠지만 어쩌겠습니까. 그 정도는 참아야지요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님도 저처럼 베스파와 정령이 죽어가는 걸 볼 수 없는 거로군요.</p>
+          <p> </p>
+          <p>하긴 그 비명 소리를 생각하면 칼을 잡은 손에 힘이 풀리는 것은 당연한 일이죠.</p>
+          <p> </p>
+          <p>알겠습니다. 저에게도 힘든 일을 [%username] 님에게 강요하진 않겠습니다.</p>
+          <p> </p>
+          <p>자연의 아픔에 무감각한 좀더 무정한 데바를 찾으면 되니까요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>생각보다 금세 돌아왔군요!</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_Vespa_21_n]와 [%dic:STR_DIC_M_ElementalEarth2_21_An]을 잡는데 이 정도밖에 시간이 안 걸리다니!</p>
+          <p> </p>
+          <p>역시 저와는 많이 다른 분이로군요.</p>
+          <p> </p>
+          <p>설마 그냥 돌아온 건 아니겠죠?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">모두 처치했다고 한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정말 감사합니다!</p>
+          <p> </p>
+          <p>이 정도라면 당분간 요새에서도 다른 명령을 안 내리고 잠잠할 겁니다.</p>
+          <p> </p>
+          <p>그런데 혹시 많이 바쁘지 않다면 다시 와 주시겠습니까?</p>
+          <p> </p>
+          <p>사례는 충분히 하겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">숲을 어지럽히는 베스파와 정령을 사냥하라</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Vespa_21_n]([%2]/5)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_ElementalEarth2_21_An]([%5]/5)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Androkles]와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">안드로클레스를 위해 수풀 베스파와 부식토 정령을 사냥하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>안드로클레스는 요새에서 수풀 베스파와 부식토 정령을 잡으라는 명령이 내려왔다며 괴로워했다.</p>
+          <p> </p>
+          <p>그래서 대신 사냥해 줬더니 매우 기뻐하면서 앞으로도 같은 임무를 받을 테니 시간이 나면 돌아와서 다시 도와달라고 부탁했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

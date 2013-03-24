@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Tell me, [%username]--how long has it been since you ascended?</p>
+          <p> </p>
+          <p>It's not really important, but of all the Daevas here, I am the oldest.</p>
+          <p> </p>
+          <p>I've learned quite a few things in that time. How to earn some extra Kinah, for instance.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Really? I'm listening."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's like this. Every posting has at least one or two specialty goods that can be sold at a higher price somewhere else.</p>
+          <p> </p>
+          <p>Here, It's [%dic:STR_DIC_I_QUEST_1402a]. The hides of Granite Gorgons sell very well in Sanctum as an ideal armor material.</p>
+          <p> </p>
+          <p>They don't burn so easy, see?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Tell me more."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're a curious sort, aren't ya? What more do you need to know besides Kinah, [%username]?</p>
+          <p> </p>
+          <p>I would think you need a lot to keep you in all that fancy armor and weapons.</p>
+          <p> </p>
+          <p>Just head up to the Geroch Caldera and bring me Granite [%dic:STR_DIC_I_QUEST_1402a]s. I'll make sure you're taken care of--you can trust old Makis in matters of Kinah.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Great. Two things to remember:</p>
+          <p> </p>
+          <p>First, the Granite Gorgon has a huge horn. Never take your eyes off it, and you shouldn't have any problems.</p>
+          <p> </p>
+          <p>Second, the deal is for three [%dic:STR_DIC_I_QUEST_1402a]s. I'm not so old I can't count, and three's what it takes to make a sale.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I understand."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I guess you must have enough Kinah already. I can make more profit if I do it myself anyway.</p>
+          <p> </p>
+          <p>Come back after those wings of yours dry, you'll see that Makis was right.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I do fine on my own."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>One thing I'll tell you for free: don't ever think of cheating me.</p>
+          <p> </p>
+          <p>I can tell whether it's the hide of a Granite Gorgon by smell alone.</p>
+          <p> </p>
+          <p>Let me see what you have brought.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here's what I have...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Look. Either you're deaf or I've lost my voice. This is not what I need.</p>
+          <p> </p>
+          <p>I pay for genuine hides only. Hides, plural.</p>
+          <p> </p>
+          <p>Go back and get three [%dic:STR_DIC_I_QUEST_1402a]s. Do you understand? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"No need to be rude about it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, the smell of sulfur! Real Granite Gorgon hide.</p>
+          <p> </p>
+          <p>And in good shape, at that. </p>
+          <p> </p>
+          <p>Here, take this. It's a fair market price. Not bad money for a quick side job, eh?</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Hunt [%dic:STR_DIC_M_Gorgon_35_An]s and bring their hides to [%dic:STR_DIC_N_Makis].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Makis will pay you good Kinah if you bring him some Granite Gorgon hides. They can be found in the Geroch Caldera.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Makis told you he earns some extra income by selling Granite Gorgon hides.</p>
+          <p> </p>
+          <p>You brought him three pieces of Gorgon Leather, and he gave you a fair market price for it.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

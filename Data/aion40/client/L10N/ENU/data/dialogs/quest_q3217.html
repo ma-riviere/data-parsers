@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>An Elyos! Oh, praise the Seraphim Lords, it's good to see a friendly face!</p>
+          <p> </p>
+          <p>I'm a Guardian under Commander Lavrintos. Well, I was, anyway...I got captured on a scouting mission and I've been in here for weeks.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Let's get you out of here!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Not yet. I still have my duty to think about. I was carrying some very important documents, and I'm afraid...I lost them.</p>
+          <p> </p>
+          <p>That blasted Asmodian! He stole them from me! I must get them back before I leave.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You have to kill that [%dic:STR_DIC_M_IDShip_Dprisoner1_44_Ae] and get the documents back before he can escape!</p>
+          <p> </p>
+          <p>I'd do it myself, but I think my arm's been broken....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll handle that scum."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>If you're not going to do it, I'll just have to do it myself.</p>
+         </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Nezekan be with you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I suppose I should feel some empathy for him, being a fellow prisoner and all that, but I can't bring myself to feel sorry for those brutes.</p>
+         </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here's your papers back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_ok">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'll make my own way back, but this report absolutely has to get to [%dic:STR_DIC_N_Lavirintos]. Can you take it back for me?</p>
+          <p> </p>
+          <p>Tell him that I've been captured by Shulacks, but I'm on my way back.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SET_SUCCEED">"Nezekan be with you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_fail">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What are you doing, standing around? If you can get in here, that blasted Asmodian can escape the same way!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm on my way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hail, [%username]. What business have you?</p>
+         </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I bear a message from Nasuri..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I would've thought Nasuri could escape from anything. Those blasted Shulacks must be more of a threat than we thought.</p>
+          <p> </p>
+          <p>I can tell they're going to be a thorn in our side, but that is a matter for another day. Now is the time to reward those who have served Sanctum with honor.</p>
+         </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Take back the [%dic:STR_DIC_I_quest_3217a] from the [%dic:STR_DIC_M_IDShip_Dprisoner1_44_Ae] and take it to [%dic:STR_DIC_N_Nasuri].</font></p>[%collectitem]</step>
+               <step><p visible="[%3]"><font color="[%4]">Talk with [%dic:STR_DIC_N_Nasuri].</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Talk with [%dic:STR_DIC_N_Lavirintos].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Nasuri lost a confidential document to an Asmodian prisoner locked up in the next cell. Kill the fiend and take the documents back.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Nasuri, an Elyos prisoner you encountered on the Steel Rake, said he lost a confidential document to an Asmodian prisoner on the ship. You killed the Asmodian, got the document back, then freed Nasuri.</p>
+          <p> </p>
+          <p>He said he'd make his own way back, but he wanted to be sure you delivered the document to Lavrintos. You did, and Lavrintos rewarded you.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

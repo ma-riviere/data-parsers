@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I don't think we've seen the whole scope of the Lepharists' plan, [%username].</p>
+          <p> </p>
+          <p>I need more information. Normally I'd dispatch a spy but we're shorthanded.</p>
+          <p> </p>
+          <p>On the other hand, I do have an idea...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"My mission, should I decide to accept..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I don't think we've seen the whole scope of the Lepharists' plan, [%username].</p>
+          <p> </p>
+          <p>I need more information. Normally I'd dispatch a spy but we're shorthanded.</p>
+          <p> </p>
+          <p>On the other hand, I do have an idea...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"My mission, should I decide to accept..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I need you to capture a Lepharist [%dic:STR_DIC_M_LehparKnightQ_40_An]. That should help us get a clear picture of their plot quickly.</p>
+          <p> </p>
+          <p>I know we risk tipping our hand to the Lepharists but there's no choice, really.</p>
+          <p> </p>
+          <p>Are you ready to take them on once more?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Naturally, this won't be easy. Your targets aren't fools so this will take a bit of patience.</p>
+          <p> </p>
+          <p>Find a [%dic:STR_DIC_M_LehparKnightQ_40_An] and bruise him up a bit. He'll get angry enough to follow you.</p>
+          <p> </p>
+          <p>Just don't kill him. Remember, dead men tell no tales.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll bring him back alive."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Frankly you're the only person qualified for this mission, [%username].</p>
+          <p> </p>
+          <p>You've already visited the Research Center before, you've fought the Lepharists, and you know the layout. </p>
+          <p> </p>
+          <p>Think it over. We really do need this information.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll think about it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I was worried this wouldn't work, [%username].</p>
+          <p> </p>
+          <p>His health is most precarious, yet he's able to answer questions.</p>
+          <p> </p>
+          <p>Well done! Thank you for bringing him to me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="PLAYEMOTION_no;HACTION_SELECT_QUEST_REWARD">"It's nothing."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No, it's something! I couldn't have done it, [%username].</p>
+          <p> </p>
+          <p>Please accept this token of gratitude for your assistance. I wish it was something more substantial but we're in the middle of a jungle.</p>
+          <p> </p>
+          <p>Now, if you'll excuse me, I have an interrogation to conduct.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Cut the HP of a [%dic:STR_DIC_M_LehparKnightQ_40_An] by half and bring him to [%dic:STR_DIC_N_Hestonos].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Talk with [%dic:STR_DIC_N_Hestonos].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Detailed information on the Lepharist Research Center is required. Capture a Snoop, and take him to Riley.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Riley asked you to capture a Spy alive and bring him back.</p>
+          <p> </p>
+          <p>Riley was overjoyed by your success and rewarded you.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

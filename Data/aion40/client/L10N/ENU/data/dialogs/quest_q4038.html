@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>One of my men just returned from Baltasar Cemetery with a report of a strange skull that's talking to anyone living who passes by.</p>
+          <p> </p>
+          <p>It claims its name is Groznak and asks for help.</p>
+          <p> </p> 
+          <p>I knew a Human named Groznak once, before I ascended. What are the odds this could be the same person? And yet...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"You're wondering, aren't you?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Of course I wonder. A talking skull with the same name? Who could invent such a thing?</p>
+          <p> </p>
+          <p>I'd go myself, but we're so shorthanded, neither I nor any of my troops can be spared to investigate.</p>
+          <p> </p>
+          <p>[%username], would you please find [%dic:STR_DIC_OBJ_NPC_DF2a_NPC_SleeplessSkull] and see what it wants? Let's put this corpse to rest.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thanks, [%username]. Blood for blood!</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_OBJ_NPC_DF2a_NPC_SleeplessSkull] is at Baltasar Cemetery. If it's as chatty as reported, you should have no problem finding it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Blood for blood indeed."</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No? That's not a word I often hear. Still, you have your own destiny to meet.</p>
+          <p> </p>
+          <p>In truth, it isn't as though the skull will be going anywhere. I'll look into this myself in time.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Another time, Surt."</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Daeva! Azphelumbra, Daeva! I beg you, help me!</p>
+          <p> </p>
+          <p>You are surprised, but I am in earnest. I am trapped and desperate.</p>
+          <p> </p>
+          <p>I died...so long ago. Yet I cannot pass on into the flow of Aether and I long for release. Will you help me?</p> 
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"What is it you want?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>My name is--was--Groznak. I met my destiny bravely, if I may flatter myself. My death came suddenly, however, and there was no one left to care for me. </p>
+          <p> </p>
+          <p>I had no burial. My body is missing a few essential parts and without it I am trapped here, disgraced and forgotten. I fear that the evil of this place will eventually corrupt my mind.</p>
+          <p> </p>
+          <p>I can't expect that you would find my own limbs, Daeva. But even a mismatched body would be a release I can only imagine. Look to the southeast throughout the cemetery and see what you can find. A few bones from the [%dic:STR_DIC_OBJ_DF2A_Corpse_Q4038A], the [%dic:STR_DIC_OBJ_DF2A_Corpse_Q4038B], and the [%dic:STR_DIC_OBJ_DF2A_Corpse_Q4038C] might suit me. My gratitude will be eternal.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"I will try."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Daeva, did you find the bones? I am so weary of waiting. The wind whistles through this old skull and drives me mad.</p>
+        <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"The bones are here."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_fail">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Daeva! You returned...empty handed? What have you been doing? It's not like there isn't a cemetery close at hand.</p>
+          <p> </p>
+          <p>Let me say it again, and this time I'll speak slowly, so you can understand. Bring...me...bones from the [%dic:STR_DIC_I_QUEST_4038a], the [%dic:STR_DIC_I_QUEST_4038b] and the [%dic:STR_DIC_I_QUEST_4038c]. Forgive my temper, but surely you can understand.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Of course...I'll find those for you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_ok">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes, yes....these will suffice. Chest, legs, and arms...all that I could require.</p>
+          <p> </p>
+          <p>I must ask for another favor.... Would you assemble the body for me? I cannot move to do it myself....</p>
+          <p> </p>
+          <p>Oh, shades, I'm so close....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT3">"I'll do it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select3">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes! Shades and stars, yes. Thank you, [%userclass]! With this body, I could live forever!</p>
+          <p> </p>
+          <p>Everything is finally in place. Well, almost everything.</p>
+          <p> </p>
+          <p>Stay still, Daeva. There is just one more item I need--your soul!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO3">"Azphel's Shade!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], you've returned. Have you investigated the talking skull? If not, then...</p>
+          <p> </p>
+          <p>Ah, never mind. I see grave dirt upon your shoes. You've been to Baltasar Cemetery.</p>
+          <p> </p>
+          <p>I'm relieved to see you safe. I feared your task might have been more dangerous than we realized.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Groznak tried to kill me."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Azphel's shadow, it's true! The Groznak I knew was an creepy old shaman who lived in the area. He disappeared decades ago.</p> 
+          <p> </p>
+          <p>It seemed he was attempting to become undead in order to live forever, possibly even trying to become a Lich. Your death would have given him the last ingredient to complete his transformation.</p>
+          <p> </p>
+          <p>Your strength does you credit. I'll see that you're repaid for the peril.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk with [%dic:STR_DIC_OBJ_NPC_DF2a_NPC_SleeplessSkull].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Obtain bones from the [%dic:STR_DIC_OBJ_DF2A_Corpse_Q4038A], the [%dic:STR_DIC_OBJ_DF2A_Corpse_Q4038B] and the [%dic:STR_DIC_OBJ_DF2A_Corpse_Q4038C], and take them to [%dic:STR_DIC_OBJ_NPC_DF2a_NPC_SleeplessSkull].</font></p>[%collectitem]</step>
+               <step><p visible="[%6]"><font color="[%7]">Talk with [%dic:STR_DIC_OBJ_NPC_DF2a_NPC_SleeplessSkull].</font></p></step>
+               <step><p visible="[%9]"><font color="[%10]">Talk with [%dic:STR_DIC_N_Surt].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Investigate the reports of a talking skull named Groznak at the Baltasar Cemetery.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Surt asked you to investigate a report of a talking skull at Baltasar Cemetery.</p>
+          <p> </p>
+          <p>When you found it, it introduced itself as Groznak and begged you to assemble a body for it so that it could return to the flow of Aether.</p>
+          <p> </p>
+          <p>You found chest, leg, and arm bones and brought them to the skull, assembling a body for it. It then went mad and summoned an undead to attack you. </p>
+          <p> </p>
+          <p>When you returned to Surt, he explained that Groznak was a shaman who was trying to become a Lich. He expressed relief that you defeated the evil undead and offered to pay you for the inconvenience.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

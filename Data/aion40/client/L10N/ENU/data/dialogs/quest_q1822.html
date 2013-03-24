@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I was just about to contact you. I have a favor to ask.</p>
+          <p> </p>
+          <p>As you can tell, Krotan Rock is very hot. In fact, this area is known as the Sea of Lava. </p>
+          <p> </p>
+          <p>The heat is causing a problem. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What kind of trouble?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, it drains the energy out of our soldiers, but more importantly, bends weapons.</p>
+          <p> </p>
+          <p>As you know, [%username], weapons can be very sensitive to heat. Any slight deformation can cause big problems.</p>
+          <p> </p>
+          <p>There is a solution, but neither my soldiers nor I can leave our posts now to make it happen. Can you help?</p>          
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>          
+          <p>All right! We caught this Asmodian scout sneaking around the fortress, and his sword was intact.</p>
+          <p> </p>
+          <p>We interrogated him and found out that the sword was made by mixing [%dic:STR_DIC_I_QUEST_1822a] into the metal. Apparently it's highly resistant to fire and doesn't melt--even in the lava.</p>
+          <p> </p>
+          <p>So, if you could defeat [%dic:STR_DIC_M_Ab1_1221_Pretor_38_An]s around here and bring me their hearts, I'd be grateful.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"It will be done."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>          
+          <p>Sigh...[%username], you disappoint me. </p>
+          <p> </p>
+          <p>Sorry to have bothered you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Goodbye."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>How did it go?</p>
+          <p> </p>
+          <p>Did you bring the [%dic:STR_DIC_I_QUEST_1822a]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here are your hearts."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I thought this job would be a piece of cake for a someone like you, [%username]. Did I expect too much?</p>
+          <p> </p>
+          <p>Come on, be quick: go and fetch [%dic:STR_DIC_I_QUEST_1822a].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Be right back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Amazing. I thought they'd be hot, but they're as cold as ice.</p>
+          <p> </p>
+          <p>I know that it's best to melt them into the weapons as you make them, but I just don't have the time. I'm going to try melting them and coating the weapons--ought to be better than nothing.</p>          
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Defeat [%dic:STR_DIC_M_Ab1_1221_Pretor_38_An]s and take their hearts to [%dic:STR_DIC_N_Ab1_1221_Quest_Li].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Collect Ravenous Pretor Hearts and give them to Moirai so that he can make heat-resistant weapons.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Moirai was worried that weapons were being deformed by the heat of Krotan Rock.</p>
+          <p> </p>
+          <p>At his request, you defeated the Ravenous Pretors and took their hearts to him. Moirai said he would melt the hearts and coat the weapons as a temporary solution.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

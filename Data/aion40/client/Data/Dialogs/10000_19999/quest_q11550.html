@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q11550</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님을 지켜본 결과, 이제 하나의 상급 스티그마를 더 다루셔도 좋을 것 같다는 생각이 들었습니다.</p>
+          <p> </p>
+          <p>하지만... 잘 아시다시피 상급 스티그마는 아주 강력한 힘이지요.</p>
+          <p> </p>
+          <p>새로운 힘은 그 힘을 감당해낼 수 있는 자격이 없는 자에게 주어지면 굉장히 위험합니다. 용족을 보시면 알 수 있으실 겁니다.</p>
+          <p> </p>
+          <p>그러니 티아마란타에서 벌어지는 [%dic:STR_DIC_E_LDF4B_Occupation_Combat]에 참여하거나 [%dic:STR_DIC_W_IDArena_pvp_L]로 가셔서 강력한 힘을 다룰 자격이 있음을 증명해 보이십시오.</p>
+          <p> </p>
+          <p>사냥을 통해 전투력을 증명하시는 방법도 있습니다.</p>
+          <p> </p>
+          <p>마음에 드는 곳을 골라 제게 알려주시면 됩니다. 그러면 [%dic:STR_DIC_I_Q11550_stigma]를 이용해 스티그마 슬롯을 확장시켜드리겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>자, 제가 드린 [%dic:STR_DIC_I_Q11550_stigma]를 이리 주십시오.</p>
+          <p> </p>
+          <p>[%username] 님이 다녀오신 곳이 [%dic:STR_DIC_E_LDF4B_Occupation_Combat]이었습니까?</p>
+          <p> </p>
+          <p>아니면 [%dic:STR_DIC_W_IDArena_pvp_L]였던가요...?</p>
+          <p> </p>
+          <p>마코리를 사냥하신다고 했던 것 같기도 하군요.</p>
+          <p> </p>
+          <p>어쨌든 제게 신비로운 스티그마를 주시면 스티그마에 새겨진 [%username] 님의 기운을 통해 상급 스티그마 슬롯을 한 칸 확장시켜 드리겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">신비로운 스티그마를 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>좋습니다. 이제 상급 스티그마 슬롯이 한 칸 더 확장되었으니 확인해 보십시오.</p>
+          <p> </p>
+          <p>앞으로도 티아마트와 용제들을 무릎꿇게 만들 그날까지 연족과 함께해 주시길 바랍니다.</p>
+          <p> </p>
+          <p>그럼, 조심히 가십시오.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">자격이 있음을 증명하고 [%dic:STR_DIC_N_Bariunos]에게서 [%dic:STR_DIC_I_Q11550_stigma]%을 받아라</font></p>[%collectitem]</step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Bariunos]%에게 [%dic:STR_DIC_I_Q11550_stigma]%을 돌려줘라</font></p></step>             
+    </steps>
+          <p><font font_xml="quest_summary">티아마란타의 점령전이나 제3 템페르 훈련소, 마코리 언덕 중 한 곳에서 상급 스티그마를 사용할 자격이 있음을 증명하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>바리우노스는 이제 상급 스티그마를 한 개 더 다뤄도 좋을 것 같다고 말했다.</p>
+          <p> </p>
+          <p>하지만 강력한 힘을 가지려면 그것을 다룰만한 자격이 있어야 한다며 점령전이나 제3 템페르 훈련소, 마코리 언덕 중 한 곳으로 가서 자격을 증명해 보이라고 했다.</p>
+          <p> </p>
+          <p>별로 힘들이지 않고 자격을 증명해 보이니 신비로운 스티그마를 통해 스티그마 슬롯을 확장시켜 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

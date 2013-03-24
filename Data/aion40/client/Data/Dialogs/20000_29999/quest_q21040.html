@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>특별히 [%username] 님에게 적합한 임무가 있어서 꼭 부탁 드리고 싶습니다.</p>
+          <p> </p>
+          <p>[%username] 님과는 인연이 깊은 카스파에 대한 거죠.</p>
+          <p> </p>
+          <p>최근 오드 수신 장치의 오작동 때문에 판데모니움에서는 매우 긴장하고 있더군요.</p>
+          <p> </p>
+          <p>그 오작동의 원인이 카스파의 전령이라고 밝혀지면서 몇몇 엘림과 친밀한 데바들이 카스파를 회유했지만 소용 없었습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>더 잘 아시겠지만 엘림이란 미묘한 존재죠. 데바들과 인연을 맺은 세월도 길고...</p>
+          <p> </p>
+          <p>결국 그들을 도와줄 수 밖에는 없는 거예요.</p>
+          <p> </p>
+          <p>어차피 카스파의 전령은 환영일 뿐이니 우리가 어떻게 할 수 있는 것도 아니고 말입니다.</p>
+          <p> </p>
+          <p>카스파의 내부에서 카스파를 괴롭히는 모든 생명체를 처치해야만 전령이 내뿜는 오드의 왜곡된 흐름을 막을 수가 있습니다.</p>
+          <p> </p>
+          <p>카스파 내부에 있는 모든 사악한 생명체를 없애는 것, 이것이 미스릴 주화 보상 임무입니다.</p>
+          <p> </p>
+          <p>도전하시겠습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>도전하실 줄 알았습니다. 카스파 내부에 들어가실 수 있는 몇 안 되는 분인데 거절하실 리가 없지요.</p>
+          <p> </p>
+          <p>이번 임무를 수행하고 오시면 미스릴 주화를 드리겠습니다.</p>
+          <p> </p>
+          <p>무사히 돌아오시기를 기원하고 있겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>거절하시다니 의외로군요. 미스릴 주화가 탐나지 않나요?</p>
+          <p> </p>
+          <p>카스파 내부에는 아무나 들어갈 수 있는 것이 아니기 때문에 임무를 맡아주실 수 있는 분이 많은 것도 아닌데 걱정이로군요.</p>
+          <p> </p>
+          <p>카스파의 전령 때문에 대기에 오드 함량이 미달되거나 인공오드 생성기가 고장 나기라도 한다면 겔크마로스는 위험해질 거예요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>한 시간이 채 안 되었어요. 카스파 내부에 있는 모든 생명체를 처치하고 오신 건가요?</p>
+          <p> </p>
+          <p>벌레 한 마리라도 남아있다면 미스릴 주화를 드릴 수가 없는데...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>대단하시군요. 잘 해낼 거라고 생각했지만 역시 [%username] 님의 실력은 최고입니다.</p>
+          <p> </p>
+          <p>여기 약속 드렸던 미스릴 주화입니다.</p>
+          <p> </p>
+          <p>카스파의 전령도 고마워하고 있을 겁니다.</p>
+          <p> </p>
+          <p>카스파 내부에는 금세 생명체가 생겨나니까 언제든 다시 도와주시면 미스릴 주화를 드리겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">카스파 내부의 모든 기생 생명체를 없애라</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_E_Q11048_1F]([%2]/329)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_E_Q11048_2F]([%5]/231)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_E_Q11048_3F]([%8]/77)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Flores]%와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">카스파 내부에 있는 모든 생명체를 처치하면 미스릴 주화를 얻을 수 있다고 한다. 도전하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>주화 행정관 플로레스는 카스파 내부에 있는 모든 생명체를 처치하면 미스릴 주화를 얻을 수 있다고 했다.</p>
+          <p> </p>
+          <p>카스파 내부에 들어가서 모든 생명체를 처치하고 돌아가자 플로레스는 미스릴 주화를 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

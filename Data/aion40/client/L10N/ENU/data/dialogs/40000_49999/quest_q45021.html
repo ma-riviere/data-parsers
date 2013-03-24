@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Honorable Field Warden:</p>
+          <p> </p>
+          <p>Until recently, the Aetheric Field has been stable in Gelkmaros--good news, as we prepare to raise an Aetheric Field over all of Balaurea.</p>
+          <p> </p>
+          <p>However, Gelkmaros atmospheric movement is showing signs of increased intensity and we must monitor the situation more closely.</p>
+          <p> </p>
+          <p>Immediately proceed to Gelkmaros and retrieve the Monitor Record from an [%dic:STR_DIC_OBJ_FOBJ_Q45021], then bring it to a [%dic:STR_DIC_E_45021].</p>
+          <p> </p>
+          <p>Nothing must stand in your way.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"And nothing will."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>There is much more to protecting Asmodae than monitoring the Aetheric Field, but we have to start somewhere. I wonder if raising an Aetheric Field over all Balaurea is even possible. Unless we can secure enough Aether, it might be futile.</p>
+          <p> </p>
+          <p>Do you bring news?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I think this may be of interest to you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What? You've nothing to hand me, Warden.</p>
+          <p> </p>
+          <p>The Field Wardens have a great interest in the situation in Balaurea, [%username]. If you are here it means you received a letter to that effect, requesting the retrieval of certain Monitor Records? No?</p>
+          <p> </p>
+          <p>Perhaps I am mistaken.... Perhaps I am waiting for some other, more honor-bound Field Warden.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"My apologies. I'll be back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Is that the exact data your letter requested? Let me see what it says. Accuracy is essential....</p>
+          <p> </p>
+          <p>Well, I guess it isn't time. There doesn't seem to be any major change in Gelkmaros yet. You may go, [%username]. The remainder of this task is mine.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Recover the Record from an [%dic:STR_DIC_OBJ_FOBJ_Q45021] and bring it to the [%dic:STR_DIC_E_45021].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">A letter has arrived from the Field Wardens. Follow its instructions.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>According to a letter from the Field Wardens, an Aetheric Field Monitor in Gelkmaros is being used to monitor and record the status of the Aetheric Field.</p>
+          <p> </p>
+          <p>You located the device and brought the Monitor Record to a Gelkmaros Field Agent, who said the situation remained unchanged.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>
