@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>바쁜 일이 없으면 여기서 임무를 수행해 보시겠습니까? </p>
+          <p> </p>
+          <p>자세한 내막은 모르겠지만 돌문 너머에 여전히 용족 놈들이 남아 있다는군요.</p>
+          <p> </p>
+          <p>저 같은 말단이 윗분들 생각을 짐작하기는 어렵지만 뭔가 심상치 않은 일인가 봅니다.</p>
+          <p> </p>
+          <p>되도록 많은 데바를 보내라는 걸로 봐서요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>임무는 [%dic:STR_DIC_W_IDAbRe_Up3_LaMiren_SZ_All]에 있는 용족을 될 수 있는 한 많이 처치하는 겁니다.</p>
+          <p> </p>
+          <p>놈들이 문을 뚫고 나오기 전에 우리가 먼저 공격을 하는 거지요.</p>
+          <p> </p>
+          <p>특히 우두머리인 [%dic:STR_DIC_M_Lamiren_DrakanNamed_45_Ah]는 아주 위험한 녀석이라고 하니 반드시 없애야 합니다.</p>
+          <p> </p>
+          <p>어떠십니까, [%username] 님? 이 임무를 수행하시겠습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>어이쿠, 고맙습니다! 설득력이 부족해서 그런지 흔쾌히 수락하는 분들이 없었거든요.</p>
+          <p> </p>
+          <p>아참, 그런데 [%dic:STR_DIC_W_IDAbRe_Up3_LaMiren_SZ_All]에 들어 가면 무슨 마법진이 작동한다고 하더군요.</p>
+          <p> </p>
+          <p>시간이 지나면 보물 상자가 사라진다니까 서두르는 게 좋을 겁니다.</p>
+          <p> </p>
+          <p>용족을 처치하는 김에 보물 상자라도 몇 개 챙겨 나오면 좋지 않겠습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>휴, [%username] 님도 거절입니까... </p>
+          <p> </p>
+          <p>아무래도 사람을 설득하는 법이라도 배워야 할까 봅니다.</p>
+          <p> </p>
+          <p>부탁만 드리면 번번이 거절들을 하시니.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>어서 오십시오, [%username] 님. </p>
+          <p> </p>
+          <p>안 그래도 언제 오시나 기다리고 있었습니다.</p>
+          <p> </p>
+          <p>문 너머로 소리도 안 들리고, 얼마나 초조하던지요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정말 수고 많으셨습니다.</p>
+          <p> </p>
+          <p>보세요, 보상도 미리 준비해 놓았습니다.</p>
+          <p> </p>
+          <p>임무를 수락해 주신 게 정말 고마웠거든요.</p>
+          <p> </p>
+          <p>다음에도 또 와서 도와주십시오. 꼭 부탁드립니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_W_IDAbRe_Up3_LaMiren_SZ_All]의 용족을 모두 처치하라</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_E_Up3_LaMiren]([%2]/80)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Lamiren_DrakanNamed_45_Ah]([%5]/1)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Ab1_1241_TreasureGate_Li]%와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">포이아스가 부탁한 대로 라 미렌 지하요새의 용족을 처치하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>포이아스는 라 미렌 지하요새를 차지한 용족을 없애 달라고 했다.</p>
+          <p> </p>
+          <p>라 미렌 지하요새로 가서 심연의 수호자 베르쉬나크와 나머지 용족을 처치한 후 돌아가자 포이아스는 감사의 표시로 포상을 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

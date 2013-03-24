@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님, 잠시 시간 괜찮겠습니까? 안내해 드릴 것이 있습니다.</p>
+          <p> </p>
+          <p>상부에서 새로운 명령이 내려왔습니다.</p>
+          <p> </p>
+          <p>라 미렌 요새와 연결되어 있는 라 미렌 지하요새의 적을 처치해야 합니다.</p>
+          <p> </p>
+          <p>용기 있고 유능한 마족이 있으면 임무 수행을 권하라는 명령을 받았습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님이라면 이 임무에 적합할 것 같습니다.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_W_IDAbRe_Up3_LaMiren_SZ_All]로 가서 요새를 더럽히는 용족을 처치해 주십시오.</p>
+          <p> </p>
+          <p>보이는 적을 모두 처치한 뒤에 우두머리인 [%dic:STR_DIC_M_Lamiren_DrakanNamed_45_Ah]까지 쓰러뜨려야 합니다.</p>
+          <p> </p>
+          <p>지하요새에 있는 용족의 보물은 임무를 수행하는 자가 처분해도 좋다는 허가도 받았습니다.</p>
+          <p> </p>
+          <p>어떻습니까, [%username] 님? 이 임무를 수행하시겠습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>저쪽 벽에 있는 문을 두드리면 [%dic:STR_DIC_W_IDAbRe_Up3_LaMiren_SZ_All]로 갈 수 있습니다.</p>
+          <p> </p>
+          <p>그곳에 있는 용족을 될 수 있는 한 많이 처치해 주십시오.</p>
+          <p> </p>
+          <p>용족의 보물은 원하는 만큼 가져오셔도 됩니다. 하지만 보물 상자엔 시간이 지나면 사라지는 마법이 걸려 있으니 서둘러야 합니다.</p>
+          <p> </p>
+          <p>그럼 임무를 수행하고 오십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>잘 알았습니다.</p>
+          <p> </p>
+          <p>권유하라는 지시는 있었지만 강요하라는 지시는 없었습니다.</p>
+          <p> </p>
+          <p>그럼 안녕히 가십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>무슨 일인가요, [%username] 님? </p>
+          <p> </p>
+          <p>제게 문의할 것이 있으면 얼마든지 말씀하십시오.</p>
+          <p> </p>
+          <p>임무를 완수하신 거면 결과를 보고해 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 말한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>임무 완수 확인했습니다.</p>
+          <p> </p>
+          <p>수고 많으셨습니다, [%username] 님.</p>
+          <p> </p>
+          <p>보상은 바로 준비해 드리겠습니다. 불만 사항이 있으면 따로 말씀해 주십시오.</p>
+          <p> </p>
+          <p>다른 임무가 준비되면 다시 알려 드리겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_W_IDAbRe_Up3_LaMiren_SZ_All]의 적을 처치하라</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_E_Up3_LaMiren]([%2]/80)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Lamiren_DrakanNamed_45_Ah]([%5]/1)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Ab1_1241_TreasureGate_Da]%와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">헤르더가 부탁한 대로 라 미렌 지하요새의 적을 처치하라.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>헤르더는 라 마렌 요새에 연결되어 있는 라 미렌 지하요새의 적을 처치해 달라고 했다.</p>
+          <p> </p>
+          <p>그래서 라 미렌 지하요새로 가서 용족을 처치한 후 돌아가자 보상품을 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

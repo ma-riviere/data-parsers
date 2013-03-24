@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I have never seen a Daeva handle a loom as deftly as you, [%username].</p>
+          <p> </p>
+          <p>Did you learn the loom before you became a Daeva?</p>
+          <p> </p>
+          <p>I think you have some natural talent. In fact, I'd like to test you. It's very simple. I'm going to ask you to make a special item. Interested?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I love a challenge."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Then, make Daphnis' Noble Sash and bring it to me.</p>
+          <p> </p>
+          <p>You've done a lot of Tailoring, so you know it takes dedication to make such a sash. To make the finest goods, you must lavish care on them at every stage.</p>
+          <p> </p>
+          <p>There's one thing you should keep in mind. If you become a Tailoring Expert, you can only become an Expert in one other field, and even then you must wait until you've finished your studies. So please consider carefully before you answer. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You can buy the Daphnis' Noble Sash design from [%dic:STR_DIC_N_Proserpina]. Don't confuse it with the [%dic:STR_DIC_E_Q1982] design. They're similar, but [%dic:STR_DIC_E_Q1982] is a far less complex pattern.</p>
+          <p> </p>
+          <p>It might be best if you finish up your most urgent business before starting this. Once you begin, you won't have time to care about anything else. You know, I often forget to eat while I'm hard at work.</p>
+          <p> </p>
+          <p>When you finish, bring it to me. I'll be waiting for you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I won't disappoint you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], I thought you were really interested in Tailoring.</p>
+          <p> </p>
+          <p>I can't force you, of course. You have to want it. If you change your mind later, please come to me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Thank you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh hello, [%username]!</p>
+          <p> </p>
+          <p>I was just thinking of you.</p>
+          <p> </p>
+          <p>Did you make that Daphnis' Noble Sash?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"How does this look?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh... I just don't think this is Daphnis' Noble Sash.</p>
+          <p> </p>
+          <p>I thought you would have done it by now.</p>
+          <p> </p>
+          <p>I know you're probably busy, but please find the time to make that sash, and bring it to me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll keep at it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, I knew you could do it, [%username]!</p>
+          <p> </p>
+          <p>Just a few minutes of observation is enough for me to tell when someone's truly talented.</p>
+          <p> </p>
+          <p>I'm so happy to confirm my assessment of your skills!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select10">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I know it's restrictive, [%username], but you can work on only one type of Expert test at a time. If you are walking the path of an Expert in another field, you cannot become a Tailoring Expert.</p>
+          <p> </p>
+          <p>I'm afraid you can't progress any further for the time being.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I understand."</Act>
+    </Selects>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Make Daphnis' Noble Sash and bring it to [%dic:STR_DIC_N_Daphnis].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Daphnis says that you seem to have a talent for Tailoring, and asked you to make Daphnis' Noble Sash. </font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Daphnis said that you seemed to be adept at handling a loom, and asked if your passion lay in Tailoring.</p>
+          <p> </p>
+          <p>You brought her Daphnis' Noble Sash as she asked, and she was happy to have her assessment of you justified.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

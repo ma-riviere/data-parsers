@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>내가 이 사막 정찰기지에 파견 나온 것은 에라쿠스 사막에 위험한 짐승이 늘어나서라오.</p>
+          <p> </p>
+          <p>점점 늘어나는 짐승들을 처리할 병력이 없으니 엘리시움에서 주화를 제공해 문제를 해결하자는 것이지.</p>
+          <p> </p>
+          <p>조금 위험하기는 하지만 다른 곳에서 얻을 수 없는 방어구나 무기를 구할 수 있으니 임무를 수행하는 게 그다지 손해 나는 장사는 아닐 거요.</p>
+          <p> </p>
+          <p>어떻소? 관심이 가면 임무를 수행해 보겠소?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">고개를 끄덕인다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그럼 에라쿠스 사막에 있는 위험한 짐승들을 잡아 오시오.</p>
+          <p> </p>
+          <p>보상이 큰 만큼 임무도 힘들다오. 잡아야 하는 게 한두 마리가 아니니 말이오.</p>
+          <p> </p>
+          <p>그래도 이 임무를 맡겠소?</p>
+          <p> </p>
+          <p>임무를 맡겠다면 무슨 짐승을 잡아야 하는지 상세히 설명해 주겠소.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_M_Sheluk_30_An], [%dic:STR_DIC_M_MimicRe2_31_An], [%dic:STR_DIC_M_Catos_31_An]%을 잡으시오.</p>
+          <p> </p>
+          <p>에라쿠스 사막 여기저기에 있으니 놈들을 찾는 건 어렵지 않을 거요.</p>
+          <p> </p>
+          <p>그놈들을 모두 잡으려면 시간이 꽤 걸리겠지만 한번 열심히 해 보시오. 한 마리씩 잡다 보면 언젠가는 임무를 완수할 수 있겠지.</p>
+          <p> </p>
+          <p>그럼 무운을 빌겠소.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>실력도 안 되는 데바들이 주화를 얻겠다고 무모하게 도전하는데 최소한 그대는 무모하지는 않구려.</p>
+          <p> </p>
+          <p>그렇다고 그대를 칭찬하는 것도 아니오. 이 정도 배짱도 없어서야 어비스의 가혹한 전투에서 살아남을 수 있겠소?</p>
+          <p> </p>
+          <p>나중에 자신이 생기면 다시 와 보구려.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>역시 시간이 좀 걸렸구려.</p>
+          <p> </p>
+          <p>세 종류나 되는 동물을 처치해야 하니 당연한 일이지만...</p>
+          <p> </p>
+          <p>그래, 임무는 완수한 거요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>수고 많았소.</p>
+          <p> </p>
+          <p>쉬운 일이 아니었을 텐데 성실히 수행해 줘서 고맙소.</p>
+          <p> </p>
+          <p>자, 이건 약속한 보상이오.</p>
+          <p> </p>
+          <p>주화는 많이 준비돼 있으니 다음에도 임무를 수행하고 싶으면 다시 오시오.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">에라쿠스 사막에 있는 동물을 처치하라</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Sheluk_30_An]([%2]/4)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_MimicRe2_31_An]([%5]/3)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Catos_31_An]([%8]/3)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Sandinas]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">에라쿠스 사막의 위험한 생물을 처치하고 주화를 얻자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>행정관 샌디나스는 사막의 위험한 동물을 처치하면 엘리시움에서 준비한 주화를 받을 수 있는 임무가 있다고 했다.</p>
+          <p> </p>
+          <p>그래서 그가 지정한 동물을 처치하고 주화를 얻었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

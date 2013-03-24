@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>후아, 정말 덥군요.</p>
+          <p> </p>
+          <p>엘테넨이 사막으로 변하는 것도 큰 걱정이지만 날이 갈수록 이렇게 더워지는 것도 문제에요.</p>
+          <p> </p>
+          <p>그나마 요새는 돌로 만든 데다 숲 속에서 있어서 시원한 편인데도 이 지경이니...</p>
+          <p> </p>
+          <p>사막에서 근무하는 가디언이나 신관은 오죽 덥겠습니까.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님, 혹시 사탈로카의 무덤으로 갈 일이 없으신가요? 아니면 근처를 지나갈 일이라도요.</p>
+          <p> </p>
+          <p>그렇다면 부탁드리고 싶은 일이 있는데요.</p>
+          <p> </p>
+          <p>거기서 일하시는 [%dic:STR_DIC_N_Radamanthys] 님에게 좀 전하고 싶은 게 있어서요.</p>
+          <p> </p>
+          <p>저 대신 전해 주시겠습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>부탁을 들어주신다니 정말 고맙습니다.</p>
+          <p> </p>
+          <p>이건 제가 특별히 만든 음료수입니다. 갈증을 덜어 주고 기력을 보충해 주는 음료지요.</p>
+          <p> </p>
+          <p>스승이신 라다만티스 님은 더운 곳에서 힘들게 일하시는데 제자인 저는 시원한 곳에 있으니... 송구스러운 마음에 준비한 겁니다.</p>
+          <p> </p>
+          <p>사탈로카의 무덤에 계신 [%dic:STR_DIC_N_Radamanthys] 님께 전해 주십시오.</p>
+          <p> </p>
+          <p>무더운 날씨에 더위 먹지 말고 기운 차리시라는 말도 함께 전해 주세요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아, 그곳으로 가실 일이 없으신가 보군요.</p>
+          <p> </p>
+          <p>그럼 어쩔 수 없지요. 저 때문에 괜히 가던 길을 돌아서 가게 할 수는 없으니까요. </p>
+          <p> </p>
+          <p>다른 방법을 찾아보겠습니다. 돈이 좀 들더라도 제피르 특급 우편을 부르든지요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>사탈로카의 무덤에는 웬일입니까?</p>
+          <p> </p>
+          <p>극성스러운 아케론 드레이크 때문에 웬만한 일이 아니고서는 오는 사람이 없는데 말입니다.</p>
+          <p> </p>
+          <p>저에게 특별한 볼일이라도 있는 겁니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">음료와 마카온의 말을 전한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>마카온이 이걸 보냈다고요? 이런 고마울 데가... </p>
+          <p> </p>
+          <p>잠시 가르친 것뿐인데 항상 깍듯하게 스승으로 대접하니 얼마나 고마운지 모르겠습니다.</p>
+          <p> </p>
+          <p>[%username] 님도 힘들게 여기까지 전하러 와 주셔서 정말 감사합니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_Radamanthys]에게 음료수를 전하라 </font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">사탈로카의 무덤에 있는 라다만티스에게 마카온이 만든 음료수를 전해 주자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>요새의 영혼치유사 마카온은 사탈로카의 무덤에서 일하는 스승 라다만티스가 더울까 봐 걱정된다고 했다.</p>
+          <p> </p>
+          <p>그래서 그의 부탁을 받아 특별히 만든 음료수를 라다만티스에게 전해 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

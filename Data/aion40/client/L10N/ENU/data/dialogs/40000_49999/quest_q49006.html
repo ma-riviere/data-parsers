@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p> - Emergency Operation Order - </p>
+          <p> </p>
+          <p>From: Pandaemonium Operations Headquarters</p>
+          <p> </p>
+          <p>To: [%username]</p>
+          <p> </p>
+          <p>Order: Terminate Elyos currently blocking Theobomos operations..</p>
+          <p> </p>
+          <p>Report to [%dic:STR_DIC_N_Sala] in the Marchutan Priory one you're done.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I should get this done."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+        	<p>I was told that there were Elyos working alongside Jamanok. I can't imagine how they were convinced to work with an Asmodian.</p>
+        	<p> </p>
+        	<p>No matter. What's important is that they be eliminated. What is your mission report?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I eliminated the threat."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well done, [%username].</p>
+          <p> </p>
+          <p>Here is your reward for another successful mission.</p>
+          <p> </p>
+          <p>Blood for blood!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Eliminate the Elyos threatening the Theobomos operation. ([%2]/5).</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Report to [%dic:STR_DIC_N_Sala].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Emergency Order: Terminate the Elyos the Theobomos operation, and report the result to Salla.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You received an emergency order from the Pandaemonium Operations Headquarters, telling you to get rid of the Elyos threatening the Theobomos Operation. You completed the mission successfully.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

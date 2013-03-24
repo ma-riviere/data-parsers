@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I know the Dragonbound are supposed to be servants of the Balaur, but I never trust hearsay without confirming for myself.</p>
+          <p> </p>
+          <p>I thought of a pretty clever way to find out....</p>
+          <p> </p>
+          <p>The items they carry!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I don't understand."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, if the Dragonbound are anything like the Balaur, they'll have symbols engraved onto their items. Subversive forces can't hide their nature.</p>
+          <p> </p>
+          <p>These symbols will tell me for sure what they really believe.</p>
+          <p> </p>
+          <p>Now that you've had some experience with them, would you go deeper into the temple and retrieve some of their items for me? Anything that has a symbol on it will do.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>During my research on the Lepharists, I learned that the more a culture values something, the more symbols representing it they inscribe on their items.</p>
+          <p> </p>
+          <p>If you can handle it, kill [%dic:STR_DIC_M_LF4_B6_FanaticKn_53_Ae]s and [%dic:STR_DIC_M_LF4_B6_FanaticWi_53_Ae]s and loot items from each of them.</p>
+          <p> </p>
+          <p>That should hopefully shed a little light on what they really do and think.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I can handle that."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's a lot to ask of you, I know.</p>
+          <p> </p>
+          <p>Even the strongest Daeva only has so many suicide missions in him.</p>
+          <p> </p>
+          <p>If you change your mind, come back. I could always use your help.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I may return soon."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>How did the slaying of [%dic:STR_DIC_M_LF4_B6_FanaticKn_53_Ae]s and [%dic:STR_DIC_M_LF4_B6_FanaticWi_53_Ae]s go?</p>
+          <p> </p>
+          <p>Did they have any items on them? Armor? Weapons? Artwork? Anything with emblems or symbols?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here's plenty for you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You must not have traveled deep enough into Undirborg...or maybe you didn't even go at all.</p>
+          <p> </p>
+          <p>[%username], I really need your help on this one.</p>
+          <p> </p>
+          <p>Please loot whatever the [%dic:STR_DIC_M_LF4_B6_FanaticKn_53_Ae]s and [%dic:STR_DIC_M_LF4_B6_FanaticWi_53_Ae]s have on them.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll handle it, Barus."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That's peculiar.... This symbol I recognize...it's a Balaur mark for death or murder.</p>
+          <p> </p>
+          <p>But this symbol here...it's unlike anything I've ever seen. It resembles their symbol for the afterlife, but there's more to it.</p>
+          <p> </p>
+          <p>Well, it looks like I have plenty of work to keep me busy now. Thank you, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect the items of [%dic:STR_DIC_M_LF4_B6_FanaticKn_53_Ae]s and [%dic:STR_DIC_M_LF4_B6_FanaticWi_53_Ae]s and bring them to [%dic:STR_DIC_N_Barus].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Barus said he wanted to research the items of the Dragonbound and asked you to collect some for him.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Barus wanted to confirm for himself the beliefs of the Dragonbound. Thus, he asked you to loot items carried by Apostate Warmongers and Apostate Conjurers.</p>
+          <p> </p>
+          <p>Barus found unusual symbols on the items you brought him. He wasn't sure what it was but knew it was something special. He thanked you and asked you to keep helping him with his research.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

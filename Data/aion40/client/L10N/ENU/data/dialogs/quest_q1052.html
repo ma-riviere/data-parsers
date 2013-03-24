@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>When first I came to Heiron, all the lands around here were lush, verdant forests.</p>
+          <p> </p>
+          <p>Since then I've watched the land succumb to decay.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"What's the cause?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've no idea. All my efforts go to maintaining the Aetheric Field.</p>
+          <p> </p>
+          <p>And since the Balaur managed to penetrate it somehow, I've had my hands full.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1_1">"Not an easy task."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Let's focus on the matter at hand. We need to study the problem.</p>
+          <p> </p>
+          <p>Bring me roots from [%dic:STR_DIC_M_Agrint_34_An]s and [%dic:STR_DIC_M_Rottentree_34_An]s. I'll try and determine the cause of the corruption.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"Very well."</Act>
+    </Selects>
+    <Voice file="Q1052-1.ogg"/>
+  </HtmlPage>
+
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Have you brought the samples I requested?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I have. They're rather strange."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_ok">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>These are...quite unhealthy-looking. Hmm...I'm afraid it's beyond my abilities to diagnose the problem.</p>
+          <p> </p>
+          <p>We'll need the expertise of an Elim. There's a town nearby, Arbolu's Haven, where Humans and Elim live side-by side.</p>
+          <p> </p>
+          <p>Take these roots to [%dic:STR_DIC_N_Tree_Move_Mersephon] there. He could tell you more.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I shall."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_fail">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This is not a small problem. If we neglect it--who knows what will happen.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll bring the roots."</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="select3">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Welcome...to Arbolu's Haven. You are...safe here.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT3_1">"What do you make of these?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select3_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You say they come...from Agrints and...Rotrons? This corruption...seems to have...artificial causes.</p>
+          <p> </p>
+          <p>Bring them to [%dic:STR_DIC_N_Tree_Nomove_Trajanus]. He is...the eldest among us.</p>
+          <p> </p>
+          <p>If it...has happened in the world...he has seen it before.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SET_SUCCEED">"Where can I find him?"</Act>
+    </Selects>
+    <Voice file="Q1052-2.ogg"/>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hail...honored Daeva.</p>
+          <p> </p>
+          <p>Arbolu's Haven...welcomes you with outstretched...branches.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Tell me about this corruption."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It is not...a natural occurrence.</p>
+          <p> </p>
+          <p>I hear whispers from the...trees of the Poya Jungle. Humans are doing...terrible things.</p>
+          <p> </p>
+          <p>They corrupt...even the trees.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+  
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk with [%dic:STR_DIC_N_Aphesius].</font></p></step>
+               <step><p visible="[%3]" ><font color="[%4]">Collect the roots of [%dic:STR_DIC_M_Agrint_34_An]s and [%dic:STR_DIC_M_Rottentree_34_An]s and then bring them to [%dic:STR_DIC_N_Aphesius]. </font></p>[%collectitem]</step>
+               <step><p visible="[%6]"><font color="[%7]">Talk with [%dic:STR_DIC_N_Tree_Move_Mersephon]. </font></p></step>
+               <step><p visible="[%9]"><font color="[%10]">Talk with [%dic:STR_DIC_N_Tree_Nomove_Trajanus]. </font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Order: It seems a strange thing is happening to the trees and the Elim. Let's hear the detailed story from Aphesius.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Aphesius told you that as the forest disappears the number of Agrint and Rotron increases. He asked you to investigate the cause of the problem. You collected the roots samples from the Decayed Grove and brought them to Aphesius. He told you to take them to the Elim.</p>
+          <p> </p>
+          <p>You showed the root samples to Mersephon and Trajanus, who told you that the roots didn't seem to have changed naturally, but as a result of Human intervention.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>Mission Progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Our Archons report there are more than a few Elyos in Brusthonin. We've got our work cut out for us.</p>
+          <p> </p>
+          <p>Neither Pandaemonium nor Reshanta can send us reinforcements. On the other hand, based on your report and the Archons' intelligence, the Elyos face a tough situation as well. There's no way to get supplies from Elysea. And the environment here is not optimal for self-sufficiency--at least not for light-softened Elyos.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"You're right about that."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>If we bring down their Commander, their numbers will scatter.</p>
+          <p> </p>
+          <p>I hope I can count on your help again, [%username]. We can't dispatch Archons--we need them to prepare for the Elyos' attack.</p>
+          <p> </p>
+        <p>Your skills are impressive and your stealth is our best chance to assassinate the Ellie in question. Will you help us?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You can approach this in one of two ways--by yourself, if you're confident your skills are up to the challenge, or with a team of your colleagues. A team could cause some serious chaos.</p>
+          <p> </p>
+          <p>I'm happy either way. As long as you get rid of [%dic:STR_DIC_M_LightDevaWiBossNmdD_25_Ae].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"The task is mine!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're afraid to fight the Centurion?</p>
+          <p> </p>
+          <p>Without your help, we could lose the Settlers Campsite to the enemy....</p>
+          <p> </p>
+          <p>Fine. Let it be on your wings, not mine.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I have other tasks to attend to."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This Elyos intrusion into Brusthonin worries me. It could be the first step to a larger effort.</p>
+          <p> </p>
+          <p>[%username], you look...refreshed. Did you assassinate Centurion Ikelus?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Ikelus is no more."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent work, [%username]! This will make the rest of our job fairly easy.</p>
+          <p> </p>
+          <p>The settlers asked me to thank you for your service. Their thanks come with my gratitude as well.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get rid of [%dic:STR_DIC_M_LightDevaWiBossNmdD_25_Ae] ([%2]/1).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report the result to [%dic:STR_DIC_N_Vinduer].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Go to the Vigrid Plains and get rid of Centurion Ikelus, the Elyos leader.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Vinduer said that they can bring the Elyos down easily if you get rid of their Commander.</p>
+          <p> </p>
+          <p>You went to the Vigrid Plains and got rid of Centurion Ikelus, their leader. When you came back, Vinduer and the villagers thanked you.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

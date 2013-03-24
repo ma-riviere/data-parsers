@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님!</p>
+          <p> </p>
+          <p>제가 잘못 본 게 아니라면 가지고 계신 게 시엘의 힘 장검 아닌가요?</p>
+          <p> </p>
+          <p>세상에... 그걸 손에 넣다니! </p>
+          <p> </p>
+          <p>소문은 익히 들었지만 [%username] 님은  실력이 정말 뛰어난 모양이네요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>시엘의 힘 장검을 좀 자세히 살펴봐도 되나요?</p>
+          <p> </p>
+          <p>(검을 찬찬히 훑어보며) 이런... 좋은 검인데 안타깝네요. 아무래도 이 검은 어딘가가 크게 훼손된 것 같아요.</p>
+          <p> </p>
+          <p>원래 상태로 되돌릴 수 있다면 훨씬 더 뛰어난 검이 될 텐데 말이에요. </p>
+          <p> </p>
+          <p>혹시 장검을 복원하는 데 관심이 있으세요? 그렇다면 제가 좀 도움을 드릴까요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>도움을 드린다고는 했지만 제가 직접 고쳐 드리겠다는 건 아닙니다. 안타깝지만 그만한 실력이 없거든요.</p>
+          <p> </p>
+          <p>대신 [%username] 님이 도움을 받을 수 있는 곳을 알려 드리죠.</p>
+          <p> </p>
+          <p>롬부스 피난민 마을로 가서 브라우니 대장장이인 [%dic:STR_DIC_N_DF4_NPC_Nehmatan]%을 만나 보세요. 브라우니이긴 하지만 모든 무기에 정통한 실력자거든요.</p>
+          <p> </p>
+          <p>무기를 향상시키는 일이라면 언제나 두 팔을 걷어붙이고 나서니 아마 도움을 받을 수 있을 거예요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>자신의 실력을 너무 과신하는 거 아닙니까? </p>
+          <p> </p>
+          <p>[%username] 님 정도 실력이면 무기 같은 건 별로 중요하지 않다는 거죠?</p>
+          <p> </p>
+          <p>관심이 없다면 굳이 권하지는 않겠습니다.</p>
+          <p> </p>
+          <p>좋은 검도 알아보는 사람에게나 가치가 있는 거니까요. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>데바, 무슨 일이냐?</p>
+          <p> </p>
+          <p>무기 때문에 왔냐? 원하는 거 말해라. </p>
+          <p> </p>
+          <p>브라우니 고쳐 준다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">시엘의 힘 장검을 복원하고 싶다고 한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>시엘의 힘 장검!</p>
+          <p> </p>
+          <p>연족의 시조 시엘의 창 레기온 사용했던 무기다.</p>
+          <p> </p>
+          <p>그런데 상태 엉망이다. 이대로라면 제대로 쓸 수 없다.</p>
+          <p> </p>
+          <p>브라우니 성능 되찾도록 도와주겠다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_DF4_NPC_Nehmatan]%와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">원래의 능력이 사라진 시엘의 힘 장검의 능력을 복원할 수 있다고 한다. 롬부스 피난민 마을로 가서 타타카를 만나 보자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>시엘의 힘 장검을 가지고 있는 걸 본 셉시는 좋은 무기지만 원래의 능력을 잃고 훼손됐다고 했다.</p>
+          <p> </p>
+          <p>그의 소개를 받아 브라우니 대장장이인 타타카에게  갔더니 무기를 복원시켜 주겠다고 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

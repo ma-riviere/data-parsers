@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q30711</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(피가 잔뜩 묻어 있는 이 단검은 예사롭지 않은 물건 같다.)</p>
+          <p> </p>
+          <p>(절대 만져서는 안 될 물건이라는 것이 본능적으로 느껴진다.)</p>
+          <p> </p>
+          <p>(이토록 강력한 원한을 품은 물건이라면 분명 누군가 관심을 가질 것 같다.)</p>
+          <p> </p>
+          <p>(우선 [%dic:STR_DIC_W_LDF4a_SZ_OP]에 있는 [%dic:STR_DIC_N_Garnon]에게 물어보는 것이 좋겠다.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>강력한 원한이 서린 단검이라...</p>
+          <p> </p>
+          <p>제가 [%username] 님께 전해 듣고 있기 때문일까요?</p>
+          <p> </p>
+          <p>아무래도 얼만큼 강력한 원한인지 감이 오질 않네요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그런 방면의 전문가라면... 아!</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_N_Uquini] 님이라면 분명 잘 알고 계실 거예요.</p>
+          <p> </p>
+          <p>예전에 유퀴니 님이 쓰신 연구서에서 감정의 물질화와 관련된 내용을 읽었던 기억이 나네요.</p>
+          <p> </p>
+          <p>제가 도움을 드리지 못한 것 같아 죄송해요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님?</p>
+          <p> </p>
+          <p>제가 뭔가를 부탁 드렸던 가요?</p>
+          <p> </p>
+          <p>기억에 없는 것 같은데...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">단검에 대해 말한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>맙소사!</p>
+          <p> </p>
+          <p> 단검을 티아마트 성채에서 발견하셨단 말이죠?</p>
+          <p> </p>
+          <p>맙소사... 맙소사!</p>
+          <p> </p>
+          <p>[%username] 님은 그 단검이 어떤 물건인지 전혀 예상치 못하시나보군요!</p>
+          <p> </p>
+          <p>그토록 강력한 원한이라면 분명합니다.</p>
+          <p> </p>
+          <p>용제 [%dic:STR_DIC_MLA52]가 전 용제였던 [%dic:STR_DIC_E_Apsu]를 암살할 때 사용했던 단검일 거란 말입니다! </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_W_LDF4a_SZ_OP]의 [%dic:STR_DIC_N_Garnon]에게 원한이 서린 단검에 대해 물어봐라</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_N_Uquini]에게 원한이 서린 단검에 대해 물어봐라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">티아마트 성채에서 발견한 단검에 대해 잘 알만한 사람을 찾아보자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>티아마트 성채에서 끔찍한 원한이 서린 단검을 발견했다.</p>
+          <p> </p>
+          <p>가르논에게 단검에 대해 이야기하니 유퀴니가 잘 알 것이라고 하여 유퀴니에게 단검에 대해 이야기해줬다.</p>
+          <p> </p>
+          <p>그러자 유퀴니는 매우 놀라며 그 단검은 분명 티아마트가 전 용제였던 아프수를 암살할 때 사용했던 단검일 거라고 말했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>요즘 어린 데바 사이에서 [%dic:STR_DIC_M_RM78]의 귀를 잘라오는 위험한 담력 훈련이 유행하고 있소.</p>
+          <p> </p>
+          <p>위험하다고 말려도 소용이 없으니 큰 일이오. 내가 동행할 수도 없는 일이니 걱정만 되는구려.</p>
+          <p> </p>
+          <p>호기심은 삶을 윤택하게 해주지만 도가 지나치면 오히려 삶을 피폐하게 만든다는 것을 아는 이가 적은 것 같소.</p>
+          <p> </p>
+          <p>나 정도의 능력을 가진 사람은 스스로를 억제할 수 있지만...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_M_RM78]%은 거듭되는 생체 실험을 통해 완성된 결과물이오.</p>
+          <p> </p>
+          <p>그 녀석은 데바를 연습용 모래 주머니 정도로 밖에 생각하지 않는다오.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_W_IDLF3LP_SZ_1]에서 상처 입은 데바가 업혀 나오는 모습은 더이상 보고 싶지 않소.</p>
+          <p> </p>
+          <p>그래서 [%dic:STR_DIC_M_RM78]%를 미리 처치하는 운동을 펼치고 있는데 동참해 줄 수 있겠소?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]%은 훗날 나와 같은 완벽한 데바가 될 것이오.</p>
+          <p> </p>
+          <p>지체할 시간이 없소.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_W_IDLF3LP_SZ_1]로 가서 건방진 [%dic:STR_DIC_M_RM78]%을 처치해주시오.</p>
+          <p> </p>
+          <p>건투를 빌겠소.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그릇이 그 정도밖에 안 되는 것이오?</p>
+          <p> </p>
+          <p>조금 실망했소.</p>
+          <p> </p>
+          <p>그래도 후일 다시 찾아온다면 난 언제든 [%username]%을 반길 준비가 되어있소.</p>
+          <p> </p>
+          <p>내 그릇은 세상을 담을 수 있을 정도로 넓으니까 말이오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>조금 전에도 어린 데바가 담력 훈련을 하겠다며 혁명단 비밀 연구소로 향했소.</p>
+          <p> </p>
+          <p>쯧쯧... 업혀서 나오는 것은 아닌지 걱정 되는구려.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">걱정할 것 없다고 한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]%이 그 녀석을 상대할 수 있으리라는 것을 한 눈에 알아 봤소.</p>
+          <p> </p>
+          <p>역시 나의 안목은 스스로도 두려울만큼 정확하구려!</p>
+          <p> </p>
+          <p>앞으로 어린 데바가 희생당하는 일이 없도록 종종 찾아 와서 도와주길 바라오.</p>
+          <p> </p>
+          <p>살펴 가시오.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_M_RM78]%을 처치하라([%2]/1)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Nerison]에게 결과를 알려라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">어린 데바를 훈련용 모래 주머니쯤으로 생각하는 RM-78c에게 쓴맛을 보여주고 네리손에게 보고하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>최근 어린 데바 사이에서 RM-78c의 귀를 잘라오는 담력 훈련이 유행하고 있다.</p>
+          <p> </p>
+          <p>네리손은 다쳐서 나오는 어린 데바가 많아지고 있어 걱정이니 방지 차원에서 RM-78c를 미리 처치하자고 했다.</p>
+          <p> </p>
+          <p>RM-78c를 처치하고 네리손에게 돌아가자 앞으로도 종종 도와달라고 했다.</p>
+          <p> </p>
+          <p></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

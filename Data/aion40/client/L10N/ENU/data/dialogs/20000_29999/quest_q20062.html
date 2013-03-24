@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q20062</QuestId>
+    <QuestName>Watching, Waiting</QuestName>
+    <QuestType>Not entered</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], I just heard back from my scientists. Unfortunately, as strong as the power cell you found was, it's not strong enough.</p>
+          <p> </p>
+          <p>They need more items if we're to monitor any of Tiamat's sources. I hate to ask you to help again, but...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"No, please. How can I help?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], you are a lifeline within a sea of apathy! Thank you!</p>
+          <p> </p>
+          <p>As I said, we need more materials to help power the monitors. This time, though, I know just the thing! The [%dic:STR_DIC_M_LDF4b_T1_Monster_M_Flyingeye]s in the Giant Crater are inherently magical beings, with [%dic:STR_DIC_I_QUEST_10060b]s that are packed full of energy for us to harness.</p>
+          <p> </p>
+          <p>What do you say? Will you help?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"Of course. It's the Asmodian way."</Act>
+    </Selects>
+    <Voice file="Q20062-1.ogg"/>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Back so soon? I'd be surprised, but I've known you for long enough to expect such speedy results.</p>
+          <p> </p>
+          <p>Oh! I'm not getting ahead of myself am I? Did you find the Oculazens?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I did. Here."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_ok">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Perfect! Now we just need to install the device.</p>
+          <p> </p>
+          <p>I've already placed a ward near the [%dic:STR_DIC_W_LDF4b_SZ_T3_S7]. That's where the monitor must be positioned, so please, take the Vigilance Core to the [%dic:STR_DIC_E_LDF4B_ItemUseArea_Q20062A], activate it, and you'll set everything we've planned in motion. Remember, the ward will appear as a blue ring on the ground, but it will be invisible to the Balaur.</p>
+          <p> </p>
+          <p>I'm counting on you, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Nothing stands before me."</Act>
+    </Selects>
+    <Voice file="Q20062-2.ogg"/>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_fail">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No, this isn't right.</p>
+          <p> </p>
+          <p>Please, hurry to the [%dic:STR_DIC_M_LDF4b_T1_Monster_M_Flyingeye]s and gather a [%dic:STR_DIC_I_QUEST_10060b] for us.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be right back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Is everything done?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Yes. The monitor was installed correctly."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good! Now all that we can do is wait while the monitor studies the Heart of Wrath. Wait, and steel ourselves.</p>
+          <p> </p>
+          <p>You've done excellently, [%username]. We'll notify you as soon as the Vigilance Core gives us something to go on.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Go to [%dic:STR_DIC_W_LDF4b_SZ_OP_A4], and talk with Garnon.</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Destroy one of the [%dic:STR_DIC_M_LDF4b_T1_Monster_M_Flyingeye]s in the Great Crater, and remove its [%dic:STR_DIC_I_QUEST_10060b] for Garnon.</font></p>[%collectitem]</step>
+               <step><p visible="[%6]"><font color="[%7]">Go to the [%dic:STR_DIC_W_LDF4b_SZ_T3_S7], and install the Vigilance Core inside one of the Magic Wards [%8].</font></p></step>
+               <step><p visible="[%9]"><font color="[%10]">Go to [%dic:STR_DIC_W_LDF4b_SZ_OP_A4], and report back to Garnon.</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Order: You need more information before you can assault the Heart of Wrath. See Garnon.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Garnon told you that the monitor needed yet more power, and tasked you with gathering an eyeball from an Oculazen. You did as she asked, then succesfully started the monitor up outside the Heart of Wrath. Now, as Garnon pointed out, all you can do is wait...</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>Mission Progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

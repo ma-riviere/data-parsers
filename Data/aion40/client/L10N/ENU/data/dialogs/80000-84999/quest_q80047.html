@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>When I was a kid, my parents would always tell me that those were the best days of my life. It seemed stupid, then. No wings, no control over my own life, and worst of all those sailor suits they used to put me in.</p>
+          <p> </p>
+          <p>Now that I'm a little older, I can see what they meant. I even sort of miss the sailor costumes...</p>
+          <p> </p>
+          <p>This summer, I had a plan. I was going to take advantage of the nice... well, nicER... weather, while I had the chance.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I'm guessing there's a wrench in the works?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes. See, I have this sailboat. A bit of a fixer-upper, but that was the best I could get. I was even excited about repairing it. Until the materials went missing.</p>
+          <p> </p>
+          <p>I had some [%dic:STR_DIC_I_QUEST_80047A]s being shipped across the Salintus Desert yesterday, and now they've gone missing.</p>
+          <p> </p>
+          <p>So... in the spirit of another great childhood tradition, I dare you to go to the Salintus Desert and get them back!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, that's a relief. It was the [%dic:STR_DIC_M_ShellizardD_25_An]s, [%dic:STR_DIC_M_merdionD_25_n]s, and [%dic:STR_DIC_M_ShellizardD_27_An]s that ate the [%dic:STR_DIC_I_QUEST_80047A]s.</p>
+          <p> </p>
+          <p>So when you're in Salintus Desert, you may need to kill these creatures and root around through their insides to find the boards.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Now there's a relaxing, summery thought."</Act>
+    </Selects>
+
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah. The dare bit was a bit too much, eh? Don't worry, I'll be all Serious Daeva Business next time I ask for anything.</p>
+          <p> </p>
+          <p>You'd think even a respected Daeva could loosen up once in a while.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Things to do, sorry."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Azphelumbra, [%username]! Did you find the [%dic:STR_DIC_I_QUEST_80047A]?</p>
+          <p> </p>
+          <p>My poor Ampreh Blossom... heh, that's what I called her. I want to get her ship-shape as soon as I can!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here are the Yellow Boards."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, yes, this should get us started!</p>
+          <p> </p>
+          <p>Now, for a reward... ah! Here you go. We aren't going sailing until she's fixed, but that's no reason for you not to have at least part of the sailor experience, right?</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I thought you'd be gone for quite some time, [%username]?</p>
+          <p> </p>
+          <p>Have you even left yet? The [%dic:STR_DIC_I_QUEST_80047A]s are probably scattered all over Salintus Desert by now. Oh, I'll never get the ship fixed.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"It's hardly my top priority."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Go to the Salintus Desert and retrieve [%dic:STR_DIC_I_QUEST_80047A]s for [%dic:STR_DIC_N_event_Olatis].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Go to the Salintus Desert and retrieve Yellow Boards for Olatis.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Olatis had planned some childlike festivities to recapture his youth, but the boards for repairing the sailboat were stolen by monsters.</p>
+          <p> </p>
+          <p>You recovered the boards, but it seems unlikely that the boat will be ready in time.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

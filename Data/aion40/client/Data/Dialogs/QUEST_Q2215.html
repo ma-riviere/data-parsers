@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]%은 인연을 믿나요?</p>
+          <p> </p>
+          <p>전 믿어요. </p>
+          <p> </p>
+          <p>아니, 얼마 전부터 믿게 됐습니다. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">무슨 일인지 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>제 고향은 여기에서 아주 먼 곳에 있습니다. 비행 이동사조차 없는 외딴 마을이죠.  </p>
+          <p> </p>
+          <p>15살에 데바로 각성하고 여기로 오게 됐습니다. 그게 벌써 10년 전이네요. </p>
+          <p> </p>
+          <p>그런데 얼마 전에 여기서 고향 사람을 만났습니다. 그것도 소꿉 친구를 말이에요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">누구인지 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그 친구는 마니르입니다. 나루터에 있는 낚시꾼말이에요.</p>
+          <p> </p>
+          <p>순찰을 하다가 마주쳤는데 너무 놀라서 아는 척도 하지 못했습니다.</p>
+          <p> </p>
+          <p>마니르가 서운해 하지 않을까 걱정되는데 그 뒤로 만날 시간이 안 나네요.</p>
+          <p> </p>
+          <p>부탁 하나만 드려도 되겠습니까? [%dic:STR_DIC_N_Manir]에게 제 얘기 좀 전해 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정말 감사합니다.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_N_Manir]를 찾으면 제가 무척 보고싶어하니 시간이 나면 초소로 한번 놀러 오라고 전해 주세요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>바쁜 일이 있나 보군요. </p>
+          <p> </p>
+          <p>그럼 어쩔 수 없죠.</p>
+          <p> </p>
+          <p>비번일 때까지 기다려야겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아, 데바님을 보니 이제 살 것 같군요. </p>
+          <p> </p>
+          <p>나루터에서 낚시를 하고 있는데 갑자기 저놈들이 들이닥쳐 절 위협하지 뭡니까!</p>
+          <p> </p>
+          <p>가까스로 도망쳤길 망정이지 그대로 있었으면 꼼짝없이 죽었을 겁니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">오코레냐의 말을 전한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아, 그때 본 데바가 오코레냐였군요. 하도 오랫만이라 긴가민가했거든요.</p>
+          <p> </p>
+          <p>오코레냐도 참, 인사 좀 못한 게 뭐 대수라고.</p>
+          <p> </p>
+          <p>소심한 건 예나 지금이나 똑같군요.</p>
+          <p> </p>
+          <p>아무튼 간만에 친구 소식을 들으니 반갑네요. 저 불한당 놈들 때문에 정신없이 지낸 지 좀 됐거든요.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_Manir]에게 오코레냐의 안부를 전하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">오코레냐 대신 마니르를 만나 안부 인사를 전하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>오코레냐는 오랫만에 만난 마니르에게 제대로 인사를 못했다며 안타까워하고 있었다. 바쁜 그녀 대신 마니르를 만나 오코레냐의 안부를 전했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

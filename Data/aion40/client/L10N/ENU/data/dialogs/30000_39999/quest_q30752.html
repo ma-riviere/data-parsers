@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q30752</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hello [%username]. I understand you may be leaving for the Tiamat Stronghold soon. Inside the stronghold is the [%dic:STR_DIC_W_IDTiamat_SZ_S3], where orders are given to both the Chantra and Terath Dredgions.</p>
+          <p> </p>
+          <p>We must know if there is an attack being planned. When you get to the Control Center, use the [%dic:STR_DIC_N_IDTiamat_FOBJ_Model] to find the route the Dredgions will take, and kill [%dic:STR_DIC_M_IDTiamat_Sardha_Named_60_Ah].</p>
+          <p> </p>
+          <p>Report your findings to [%dic:STR_DIC_N_Briet]. She'll reward you appropriately.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(Near the replica, you find the times and movement routes of the Dredgions.)</p>
+          <p> </p>
+          <p>(You better remember all these details.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"Maybe if I make a note..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]? What do you need? I'm very busy right now.</p>
+          <p> </p>
+          <p>I've been given orders to prepare defenses along the Terath Dredgion's routes, but I don't have reliable information on what those routes are.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I do. Here."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This is true? If Terath is dead, then we won't have to worry about those Dredgions for a while. Except...</p>
+          <p> </p>
+          <p>Those routes, are you sure about them? That would mean that the last Terath Dredgion has already departed, and will be here soon!</p>
+          <p> </p>
+          <p>I need to ensure that we prepare countermeasures immediately.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <steps>
+               <step><p visible="[%0]"><font color="[%1]">Go to the [%dic:STR_DIC_W_IDTiamat_SZ_S3] and study the [%dic:STR_DIC_N_IDTiamat_FOBJ_Model] to find out their plans.</font></p></step>
+               <step><p visible="[%9]"><font color="[%10]">Kill [%dic:STR_DIC_M_IDTiamat_Sardha_Named_60_Ah] ([%11]/1).</font></p></step>
+               <step><p visible="[%24]"><font color="[%25]">Report to [%dic:STR_DIC_N_Briet].</font></p></step>
+          </steps>
+          <p><font font_xml="quest_summary">Go to the Dredgion Control Center and find out the Balaur attack routes.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Briet was having a hard time with the Dredgions, so Sorus asked you to find their attack routes, kill Brigade General Terath, and bring the information to Briet.</p>
+          <p> </p>
+          <p>Briet was overjoyed that future Dredgions had been halted, but the last Terath Dredgion had already departed the base. Briet needed to make immediate battle plans for its arrival.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

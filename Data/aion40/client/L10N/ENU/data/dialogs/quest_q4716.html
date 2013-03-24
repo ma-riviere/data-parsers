@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q4716</QuestId>
+    <QuestName>[Group] Destroy main facilities</QuestName>
+    <QuestType>Hunting Type</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], if you're willing then, I have another mission for you.</p>
+          <p> </p>
+          <p>You probably know this, but killing the Captain isn't enough to completely incapacitate the Dredgion. To do that, we must damage the Dredgion itself--not just its crew.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I'm listening."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+        <p>My plan is to destroy certain key facilities aboard the Dredgion. Obviously, this will require infiltrating the Dredgion itself, which is quite perilous, as you already know.</p>
+        <p> </p>
+        <p>Knowing all that, are you interested in perpetrating some sabotage?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent! As far as I can tell, we should destroy the [%dic:STR_DIC_M_IDAb1_Dreadgion_Surkana_1] in the Weapon Warehouse and the [%dic:STR_DIC_M_IDAb1_Dreadgion_Surkana_4] in the Nuclear Control Room. Striking those two areas should cause the whole Dredgion to come to a standstill.</p>
+          <p> </p>
+          <p>That should create some delightful confusion!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"The task is mine."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I suppose we have some time to think about this, and I can't force you to go. But I do want you to carry out this mission if you have a plan to infiltrate the Dredgion anyway.</p>
+          <p> </p>
+          <p>I don't think it'll be a big burden for you, [%username]. I've heard tales of your prowess.</p>
+          <p> </p>
+          <p>Please, think it over and get back to me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll do that."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've been waiting for word, [%username]. Did you carry out the mission as I requested? </p>
+          <p> </p>
+          <p>Did you successfuly destroy the Weapon Warehouse and Nuclear Control Surkanas?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Just so."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That surely put the Dredgion into disarray! I'll await reports from the rest of my men and see what we can learn from this.</p>
+          <p> </p>
+          <p>I know this won't completely drive the Balaur away from Reshanta, but every step we take is one step closer to victory.</p>
+          <p> </p>
+          <p>Stay with me, [%username]. Victory will be ours yet!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Destroy the core facilities of the Dredgion.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_IDAb1_Dreadgion_Surkana_1] ([%2]/1)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_IDAb1_Dreadgion_Surkana_4] ([%5]/1)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report the result to [%dic:STR_DIC_N_Henir].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">You agreed to attack two core facilities of the Dredgion in order to paralyze its functions.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Henir realized that getting rid of its Captain is not enough to put the Dredgion out of commission.</p>
+          <p> </p>
+          <p>You destroyed a Weapon Warehouse Maintaining Surkana and a Nuclear Control Surkana as he suggested.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

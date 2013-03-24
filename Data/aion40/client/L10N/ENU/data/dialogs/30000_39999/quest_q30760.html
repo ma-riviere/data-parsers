@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q30760</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>Not entered</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select_none" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hakelan saved my life twice during the Millennium War. I'd like to repay my debt by doing him one last favor.</p>
+          <p> </p>
+          <p>Supposedly he died during an attack by the Tiamat Legion while investigating the stronghold's underground, but no one could locate his soul in the Aether. Tiamat must have stored him in the [%dic:STR_DIC_W_IDTiamat_SZ_S6], but I have no proof.</p>
+          <p> </p>
+          <p>[%username], I beg you, use this marble enchanted by Lord Marchutan to free Hakelan from the stone.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Are you returning from the Noble Garden?</p>
+          <p> </p>
+          <p>I have to know. Did you find Hakelan?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Partially."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What? His body is gone, but his soul has been encased in stone? That's horrible. Worse than death.</p>
+          <p> </p>
+          <p>I-I'm not crying, it's very dusty in here. Poor Hakelan.</p>
+          <p> </p>
+          <p>Thank you [%username]. Here's a reward for your efforts. Now I must go visit Hakelan's spirit. We must be able to free it somehow.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <steps>
+               <step><p visible="[%0]"><font color="[%1]">Go to the [%dic:STR_DIC_W_IDTiamat_SZ_S6] and destroy the [%dic:STR_DIC_N_IDTiamat_FOBJ_Da_Statue]. Then talk to [%dic:STR_DIC_N_Q30760_hero].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Report the result to [%dic:STR_DIC_N_Dragan].</font></p></step>
+          </steps>
+          <p><font font_xml="quest_summary">Go to the Noble's Garden and try to free Hakelan.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Dragan said Hakelan's soul is lost, and that he might be in the Noble's Garden, trapped in stone.</p>
+          <p> </p>
+          <p>You used Lord Marchutan's protection on the Asmodian Hero's Statue, and found that Hakelan's soul was there.</p>
+          <p> </p>
+          <p>When you told Dragan, he thanked you, and left to see if he could talk to Hakelan's spirit.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]...are you the [%userclass] who once was a raider and ascended? </p>
+          <p> </p>
+          <p>I've heard much about your talents. Hmm...since you are here, perhaps you can show that you deserve those wings, yes?</p>
+          <p> </p>
+          <p>We were sent here hastily to scout after Siel's Western Fortress fell into enemy's hands. However, we've run into some trouble.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Sounds serious."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Our top priority is to recapture the fortress. When we send in our scouts they come back...rather confused.</p>
+          <p> </p>
+          <p>Blasted [%dic:STR_DIC_M_Ab1_1131_Specter_27_An]s are the problem. They attack us when we are in disguise so we can't protect ourselves. Then, when our scout is helpless, they confuse the scout's memories making the entire operation useless!</p>
+          <p> </p>
+          <p>Asmodae needs you, [%username]. Will you help us?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Our mission requires absolute secrecy so we cannot attack them openly, lest the Ellies figure out what we're doing. You eliminate the [%dic:STR_DIC_M_Ab1_1131_Specter_27_An]s, we'll gather the intelligence needed to retake the fortress.</p>
+          <p> </p>
+          <p>Don't forget, Memory Reapers look for targets from the heights. You'd best fly to catch them.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Blood for blood!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We can exterminate the Memory Reapers ourselves but doing so will blow our cover.</p>
+          <p> </p>
+          <p>I asked you because I'd heard of your reputation, [%username]. You talk big but I guess you're still just a raider at heart.</p>
+          <p> </p>
+          <p>I'll ask a DAEVA for help. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Um, maybe later?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, back so soon?</p>
+          <p> </p>
+          <p>Did you defeat all the [%dic:STR_DIC_M_Ab1_1131_Specter_27_An]s as I asked?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Mission accomplished and memory intact, err Votan...I mean...Goeldag."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You have the thanks of the Red Hasia Legion. Now we can do our job in secrecy.</p>
+          <p> </p>
+          <p>Of course, there's still some Memory Reapers out there. Come back to help us when you have time.</p>
+          <p> </p>
+          <p>May the protection of Azphel be with you!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+        	<steps>
+
+               <step><p visible="[%0]"><font color="[%1]">Defeat [%dic:STR_DIC_M_Ab1_1131_Specter_27_An]s ([%2]/15).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report the result to [%dic:STR_DIC_N_Goeldag].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">The Memory Reapers are preventing the Red Hasia Legion from scouting Siel's Western Fortress. Remove them as Goeldag asked.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Goeldag said that the Red Hasia Legion was dispatched hastily to scout Siel's Western Fortress, which had fallen into enemy hands.</p>
+          <p> </p>
+          <p>Memory Reapers were preventing the Legionaries from scouting effectively.</p>
+          <p> </p>
+          <p>You defeated the Memory Reapers, and Goeldag thanked you for making their job easier.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

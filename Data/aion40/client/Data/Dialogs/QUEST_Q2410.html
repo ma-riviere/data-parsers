@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>혁명단 건축기지의 동태가 심상치 않아 걱정입니다.</p>
+          <p> </p>
+          <p>처음 제가 여기로 나왔을 때만 해도 규모가 작았는데 지금은 섣불리 건드릴 수 없을 만큼 규모가 커졌습니다.</p>
+          <p> </p>
+          <p>이대로 두면 큰일나겠다 싶어 요새에 보고했더니 일단 상황을 지켜보자더군요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>대신 혁명단 건축기지의 동태를 살피고 정기적으로 보고서를 보내라고 하는데 놈들의 경계가 심해서...</p>
+          <p> </p>
+          <p>입구에 있는 놈들만 없어도 정찰이 훨씬 수월할 것 같은데 여기 인원으로는 처리하기 힘들군요.</p>
+          <p> </p>
+          <p>[%username] 님, 모티르에게 들으니 실력이 굉장히 출중하다던데 그 일을 대신 처리해 주시지 않겠습니까?</p>
+          <p> </p>
+          <p>물론 그에 맞는 보상은 꼭 하겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>감사합니다. 지금까지 조사한 바로는 [%dic:STR_DIC_M_FeA_LehparFiD_38_An], [%dic:STR_DIC_M_ReB_LehparRngD_38_An], [%dic:STR_DIC_M_WeA_LehparWiD_38_An]%이 주로 입구를 지키더군요.</p>
+          <p> </p>
+          <p>전투 방식이 다른 놈들이니 미리 대처 방법을 생각하고 가시는 게 좋을 겁니다.</p>
+          <p> </p>
+          <p>그럼 몸 조심히 다녀오십시오. 아참, 이번 일을 무사히 끝내 주시면 은주화를 드리겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>휴, 바쁘시다면 어쩔 수 없지만 좀 안타깝군요.</p>
+          <p> </p>
+          <p>[%username] 님 같은 실력자를 다시 만나기도 힘들 텐데...</p>
+          <p> </p>
+          <p>혹시라도 생각이 바뀌면 오십시오. [%username] 님이라면 언제나 환영입니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>어디 다친 데는 없습니까? 혁명단 놈들이 만만치 않았을 텐데.</p>
+          <p> </p>
+          <p>특히 건축기지 법사는 멀리서부터 마법을 쓰는 통에 정신 차리지 않으면 바닥에 눕기 십상이죠.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>듣던 중 반가운 소식이로군요.</p>
+          <p> </p>
+          <p>역시 [%username] 님께 부탁드리길 잘했습니다.</p>
+          <p> </p>
+          <p>받으십시오. 약속한 은주화입니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">혁명단 건축기지 입구를 지키는 혁명단원을 처치하라</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_FeA_LehparFiD_38_An]([%2]/3)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_ReB_LehparRngD_38_An]([%5]/3)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_WeA_LehparWiD_38_An]([%8]/3)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Modgud]와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">혁명단 건축기지의 경계가 심해서 정찰을 할 수 없다고 한다. 모그구드를 도와 입구를 지키고 있는 건축기지 전투병, 건축기지 순찰병, 건축기지 법사를 처치하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>파수병 모그구드는 혁명단 건축기지의 경계가 심해서 정찰하기가 힘들다며 도와달라고 부탁했다.</p>
+          <p> </p>
+          <p>그를 위해 입구를 지키고 혁명단원을 처치하고 보고했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

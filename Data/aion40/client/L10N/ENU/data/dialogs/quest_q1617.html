@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, I have an idea!</p>
+          <p> </p>
+          <p>If the Test Subject and scientists came from Heiron to go to research lab in the north, they must need a key.</p>
+          <p> </p>
+          <p>Maybe the ordinary Alquimia researchers don't have keys to the lab, but a high-ranking Lepharist official might have one. Don't you think?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"It's possible."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Supervisor Wyrmirren holds a pretty high rank at Alquimia Stronghold. He oversees construction projects.</p>
+          <p> </p>
+          <p>I think you can definitely get a key from him. Are you game?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_M_LehparKnOfficerNamedDQ_45_Ae] is usually somewhere along the railroad supervising laborers.</p>
+          <p> </p>
+          <p>Don't take him on alone--he's tougher than he looks. Work with allies.</p>
+          <p> </p>
+          <p>I won't be able to help you. Be quick, quiet and deadly.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Consider him dead."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You came all this way for what? Nothing?</p>
+          <p> </p>
+          <p>You can't just go back without completing the mission, can you?</p>
+          <p> </p>
+          <p>Find your allies and return as soon as you can.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Be seeing you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I had to work so hard to get to this point--learning to pass as Asmodian and infiltrate this place.</p>
+          <p> </p>
+          <p>You made everything I went through worth it. I helped you complete your mission.</p>
+          <p> </p>
+          <p>Please tell me you got rid of [%dic:STR_DIC_M_LehparKnOfficerNamedDQ_45_Ae] and got your hands on a [%dic:STR_DIC_I_QUEST_1617a]. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I did. Here it is."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This isn't the right thing.</p>
+          <p> </p>
+          <p>Without the Research Center Key, we cannot complete the mission.</p>
+          <p> </p>
+          <p>Please get rid of [%dic:STR_DIC_M_LehparKnOfficerNamedDQ_45_Ae] and bring back a [%dic:STR_DIC_I_QUEST_1617a].</p>
+          <p> </p>
+          <p>I will watch their movements here.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll do it this time."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent job, [%username]. While you were doing that, I found the location of the Secret Laboratory!</p>
+          <p> </p>
+          <p>They call it the Alquimia Research Center, and access is strictly controlled.</p>
+          <p> </p>
+          <p>Now all we have to do is get in there and find out what they're up to.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get rid of [%dic:STR_DIC_M_LehparKnOfficerNamedDQ_45_Ae], get the key, and take it to [%dic:STR_DIC_N_NPC_Lethe].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Lethe said that a high ranking official of the Lepharist Revolutionaries in the Alquimia Stronghold might have the key to the research center in the Alquimia Stronghold. Get rid of Supervisor Wyrmirren and take his key to Lethe.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Lethe said that a high ranking official of Lepharist Revolutionaries might have the key to the Alquimia Research Center. </p>
+          <p> </p>
+          <p>She told you to get rid of Supervisor Wyrmirren and bring his key to her, saying that he always watches Laborers and the progress of construction projects. </p>
+          <p> </p>
+          <p>When you got the key to the lab, she said the only thing left was to expose the conspiracy.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 보시오.</p>
+          <p> </p>
+          <p>얼마 전 불미스러운 일이 있었소. 침묵의 심판관으로 추측되는 마족 몇 명이 고위 신성 수호회원을 습격해 회원 명단과 암호가 적인 문서를 탈취한 사건이 바로 그것이오.</p>
+          <p> </p>
+          <p>그 문서에는 승인되지 않는 자가 봉인을 열 경우 저절로 폭발하는 마법이 걸려 있어 다행이긴 하나 만약의 사태를 대비해 암호를 일괄 변경하기로 결정하였소.</p>
+          <p> </p>
+          <p>그러니 당장 잉기스온의 [%dic:STR_DIC_N_Kailaus] 신관을 만나 새 암호를 전달하시오.</p>
+          <p> </p>
+          <p>새 암호는 '산에 산에 셀라투, 들에 들에 드라코비'이며 카일라우스 신관에게 새 암호를 전달한 후엔 [%dic:STR_DIC_E_35021]에게도 동일한 암호를 전하여 주시오. </p>
+          <p> </p>
+          <p>명심하시오. 행동은 신속하게! 입은 무겁게! </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>무슨 일로 오신 겁니까?</p>
+          <p> </p>
+          <p>혹시 신성 수호...</p>
+          <p> </p>
+          <p>(작은 목소리로) 루필리니? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">새 암호를 전한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이제 루필리니, 붉은 깃털이란 말은 잊어야겠군요.</p>
+          <p> </p>
+          <p>산에 산에 셀라투, 들에 들에 드라코비! 맞습니까?</p>
+          <p> </p>
+          <p>이전 암호와 혼동하지 않도록 조심해야겠습니다.</p>
+          <p> </p>
+          <p>이제 가 보셔도 됩니다. (머리를 가리키며) 여기에 확실히 입력해 두었습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>카일라우스 님은 만났습니까?</p>
+          <p> </p>
+          <p>(은밀한 목소리로) 새 암호는 무엇인가요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">새 암호를 전한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>산에 산에 셀라투, 들에 들에 드라코비라고요?</p>
+          <p> </p>
+          <p>으음, 이번 암호는 꽤 길군요. 아마 이번에 일어난 일 때문이겠죠.</p>
+          <p> </p>
+          <p>어쨌거나 전 이만, 다른 회원에게 암호를 전하러 가야겠습니다.</p>
+          <p> </p>
+          <p>조심히 가십시오.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_Kailaus]%와 대화하라</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_E_35021]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">신성 수호회에서 의뢰서가 왔다. 지시에 따르자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>신성 수호회는 침묵의 심판관으로 추측되는 마족이 회원 명단과 암호가 적인 문서를 탈취해 갔다며 새로운 암호를 잉기스온에 있는 회원에게 전하라고 했다.</p>
+          <p> </p>
+          <p>그래서 카일라우스 신관과 테르산데르, 테를시코레에게 새 암호를 전했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

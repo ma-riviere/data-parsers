@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>다른 이들이 겪는 불행을 본인은 경험하지 않을 것이라 착각하는 데바들이 있죠.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_W_DF2_SUB_toDF2_DFlame]%을 다녀온 이들이 크게 다쳐 고생을 하는 것을 보면서도 신전 안으로 들어가는 데바를 보면 한심하기도 하고 안타깝기도 합니다.</p>
+          <p> </p>
+          <p>그런 태도를 용기라고 해야할지 무모함이라고 해야할지는 잘 모르겠지만 이대로 두고 볼 수는 없습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그래서 [%username] 님께 부탁드리고 싶은 것이 있습니다.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_W_DF2_SUB_toDF2_DFlame] 안쪽에 있는 심판관 크로메데를 찾아 처치해 주세요.</p>
+          <p> </p>
+          <p>물론 크로메데를 처치하려면 신전 안에 있는 다른 놈들부터 해결해야 하니 보통 일은 아니죠.</p>
+          <p> </p>
+          <p>그래도 한번 해 보시겠습니까? 성공하고 돌아오시면 주화를 드릴 생각입니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그러면 [%dic:STR_DIC_W_DF2_SUB_toDF2_DFlame]으로 가서 그 자와 싸워주세요.</p>
+          <p> </p>
+          <p>어려운 일이겠지만... 용기를 가지고 맞서 싸우시길 바랍니다.</p>
+          <p> </p>
+          <p>건투를 빕니다!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>역시... 너무 무리한 부탁이었던 것 같군요.</p>
+          <p> </p>
+          <p>그래도 언제든 도와주고 싶은 마음이 생기시면 와 주세요.</p>
+          <p> </p>
+          <p>여기에서 기다리고 있겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>돌아오셨군요!</p>
+          <p> </p>
+          <p>크로메데는 처치하셨습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님이라면 해내실 것이라 믿고 있었습니다.</p>
+          <p> </p>
+          <p>덕분에 당분간 불의 신전 쪽은 조용하겠군요.</p>
+          <p> </p>
+          <p>혹시 조금 더 힘을 빌려주실 수 있다면 언제든 말씀해 주세요.</p>
+          <p> </p>
+          <p>정말 수고하셨습니다. 여기 약속한 주화입니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_M_FireSanctuaryQueenBoss_37_Ae]%을 처치하라([%2]/1)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Schwaben]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">불의 신전에 있는 심판관 크로메데를 처치해 주면 주화를 준다는 슈바벤의 부탁을 들어주자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>슈바벤은 불의 신전에 갔던 데바들이 다쳐서 돌아오고 있다며 심판관 크로메데를 처치해 주면 주화를 주겠다고 했다.</p>
+          <p> </p>
+          <p>그래서 심판관 크로메데를 처치하고 돌아갔더니 약속대로 주화를 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

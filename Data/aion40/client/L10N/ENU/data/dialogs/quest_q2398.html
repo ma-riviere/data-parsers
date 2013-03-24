@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Alsig Village economy runs on Tripeed seeds. Most of the villagers are in the business, one way or another.</p> 
+          <p> </p>
+          <p>Tripeed are invaluable to Assassins and Rangers, so the Village has a strong, steady market. Pandaemonium regulates the trade and sends most of the supply off to the war.</p>
+          <p> </p>
+          <p>That's why I'm stationed here, to clear away impediments to the Tripeed farms.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Oh, a bureaucrat!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ahem, aah... I'm concerned about the wildlife. In particular, those Flame Fungies and Angry Kalgolems near The Crash Site. They're walking brush-fires waiting to happen!</p>
+          <p> </p>
+          <p>For years they've stayed clear of the Village. But I have a source who says they're spreading out.</p>
+          <p> </p>
+          <p>Past Red Lava Cliff, they'll be too close for comfort. I want this problem solved before it starts. Want some quick coin, [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Find The Crash Site and kill the [%dic:STR_DIC_M_FireFungyRe2D_34_An]s and [%dic:STR_DIC_M_SouledStoneAD_33_An]s.</p>
+          <p> </p>
+          <p>I think about 25 Flame Fungies and 9 Angry Kalgolems, for now.</p>
+          <p> </p>
+          <p>In exchange, I will give you a silver coin.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm on it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], do you use Tripeed seeds? Don't you support the soldiers at the front who do?</p>
+          <p> </p>
+          <p>Fine.</p>
+          <p> </p>
+          <p>Plenty of patriotic Daevas want silver coins.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Give them mine."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Think watering and tending are all you need for a successful farm? It doesn't end there.</p>
+          <p> </p>
+          <p>Farmers keep a ceaseless vigil for pests, weeds, and infestations. </p>
+          <p> </p>
+          <p>And they need our help!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I helped! I helped!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, I'm so relieved!</p>
+          <p> </p>
+          <p>Thank you, and...here is the silver coin I promised you. Use it wisely, [%username]. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Kill pests that threaten the Tripeed crop.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_FireFungyRe2D_34_An]([%2]/25)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_SouledStoneAD_33_An]([%5]/9)</font></p></step>               
+               <step><p visible="[%15]"><font color="[%16]">Report the result to [%dic:STR_DIC_N_Atotas].</font></p></step>               
+               
+    </steps>
+          <p><font font_xml="quest_summary">At The Crash Site, kill Flame Fungies and Angry Kalgolems.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Atotas wanted to prevent the foreseen damage to the Tripeed harvest.</p>         
+          <p> </p>
+          <p>You killed the Flame Fungies and Angry Kalgolems, and earned a silver coin. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

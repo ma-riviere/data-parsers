@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q30404</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>미입력</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>힘의 수정만 있으면 빛무리 정령의 힘을 자유자재로 쓸 수 있을 줄 알았는데... 제가 너무 쉽게 생각했나 봅니다. </p>
+          <p> </p>
+          <p>생각처럼 강력한 힘이 발산되지 않아요. 아무래도 뭔가 다른 방법을 찾아야 할 것 같습니다.</p>
+          <p> </p>
+          <p>정령을 생포하는 게 좋을 것 같은데 제 힘으로는 그 방법을 찾아낼 수가 없네요.</p>
+          <p> </p>
+          <p>카마르로 가서 [%dic:STR_DIC_N_Lumen] 님을 좀 만나 주십시오.</p>
+          <p> </p>
+          <p>대마법사이시니 루멘 님은 정령을 사로잡는 방법을 알고 계실 겁니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>빛무리 정령이라고 했소? </p>
+          <p> </p>
+          <p>라디스 숲에 있다는 얘기는 들었는데 일리오스가 그걸 이용할 생각을 한 모양이구려. </p>
+          <p> </p>
+          <p>마법의 우리가 있으면 빛무리 정령을 가둘 수 있을 것 같소.</p>
+          <p> </p>
+          <p>재료만 있으면 우리를 만드는 것이 어렵지 않으니 마코리 언덕에 있는 [%dic:STR_DIC_M_LDF4A_B1_LeafyManduriFi_57_An]를 처치해서 [%dic:STR_DIC_I_quest_30404a]을 구해 오면 우리를 만들어 주겠소.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>기다리고 있었소, [%username].</p>
+          <p> </p>
+          <p>마코리의 초롱불은 구해 왔소?</p>
+          <p> </p>
+          <p>그것만 있으면 바로  마법의 우리를 만들 수 있도록 만반의 준비를 다 해 놓았다오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">마코리의 초롱불을 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그럼 잠시만 기다리시오.</p>
+          <p> </p>
+          <p>지금 당장 이걸 가지고 마법의 우리를 만들겠소.</p>
+          <p> </p>
+          <p>일리오스의 생각대로 잘 됐으면 좋겠구려.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">카마르로 가서 [%dic:STR_DIC_N_Lumen]%와 대화하라</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_I_quest_30404a]을 모아 [%dic:STR_DIC_N_Lumen]에게 가져가라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">빛무리 정령을 사로잡는 방법을 알아내 달라는 부탁을 받았다. 연족의 대마법사인 루멘에게 가 보자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>일리오스는 힘의 수정이 별 소용이 없었다면서 빛무리 정령을 사로잡을 방법을 찾아봐야겠다고 했다.</p>
+          <p> </p>
+          <p>그래서 연족 대마법사인 루멘을 찾아갔더니 마법의 우리를 만들 수 있다고 했다.</p>
+          <p> </p>
+          <p>하지만 재료가 부족하다고 하기에 마코리 언덕으로 가서 마코리의 초롱불을 구해다 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

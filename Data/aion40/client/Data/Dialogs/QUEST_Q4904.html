@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님은 훌륭하게 운명의 뜻을 따르고 계시군요.</p>
+          <p> </p>
+          <p>데바로 각성한 후 많은 시험을 이겨내고 지금에 이르게 되었으니까요.</p>
+          <p> </p>
+          <p>하지만 운명을 따르기만 하는 것으로는 충분하지 않습니다.</p>
+          <p> </p>
+          <p>운명을 꿰뚫어 보기 위해서는 운명을 이겨내야 한다는 말이 있습니다.</p>
+          <p> </p>
+          <p>운명의 진정한 뜻을 알기 위해서 당신은 더 많이 배우고, 더 정진해야 합니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>하지만 제가 도와드릴 수 있는 일은 이제 없는 것 같군요.</p>
+          <p> </p>
+          <p>대신 중앙 의사당에 있는 프레이르 님에게 보낼 추천서를 써 드리죠.</p>
+          <p> </p>
+          <p>운명의 가르침에 능통한 분이랍니다. 저보다는 프레이르 님이 당신에게 도움이 될 겁니다.</p>
+          <p> </p>
+          <p>제가 드리는 추천서를 가지고 프레이르 님에게 가세요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이미 만났을지 모르겠지만 프레이르 님은 꽤 무뚝뚝한 분이죠.</p>
+          <p> </p>
+          <p>하지만 제 추천서를 가지고 가면 반갑게 맞이해 주실 겁니다.</p>
+          <p> </p>
+          <p>가능성 있는 데바를 아끼는 분이니까요.</p>
+          <p> </p>
+          <p>그럼 어서 가 보십시오. 프레이르 님은 중앙 의사당에 계십니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>굳이 추천서가 필요 없다고 하는 의중을 모르겠군요.</p>
+          <p> </p>
+          <p>제가 대단한 권위를 가진 건 아니지만 아무에게나 추천서를 써드리진 않습니다.</p>
+          <p> </p>
+          <p>정 원하지 않으면 어쩔 수 없지만 좀 서운하군요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>기다리고 있었다네, [%username].</p>
+          <p> </p>
+          <p>운명의 가르침을 따르는 자라면 반가운 손님이 오리란 것 정도는 알게 되는 법이지.</p>
+          <p> </p>
+          <p>스킬북을 구하는 것 말고 다른 용무가 있는 것 같은데 자, 자네가 가져온 걸 보여 주게나.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">추천서를 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>리퍄베르가가 직접 쓴 추천서로군. 그의 안목은 평소에도 높게 평가하고 있다네.</p>
+          <p> </p>
+          <p>[%username], 자네에게 가르침을 전할 수 있다니 기쁘군.</p>
+          <p> </p>
+          <p>지금보다 더욱 뛰어난 데바가 되기 위해 앞으로 많은 것을 배워야 할 걸세.</p>
+          <p> </p>
+          <p>[%userclass]의 길에 어려움이 있다면 언제든지 내게 오게나. 운명의 가르침이든 스킬북이든 필요한 도움을 주겠네.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_Freyr]에게 추천서를 가져가라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">리퍄베르가의 추천서를 프레이르에게 보이자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>리퍄베르가는 이제 가르칠 것이 없다며 추천서를 써 줄 테니 프레이르에게 가 보라고 했다.</p>
+          <p> </p>
+          <p>추천서를 본 프레이르는 뛰어난 데바가 되기 위해 앞으로도 배워야 할 것이 많을 거라며 가르침을 주겠다고 약속했다. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

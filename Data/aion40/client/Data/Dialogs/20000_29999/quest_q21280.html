@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>당신도 마석을 교환해 준다는 얘기를 듣고 온 겁니까?</p>
+          <p> </p>
+          <p>소문 빠르군요. 협회에서 새로운 공지가 온 지 얼마 되지도 않았는데...</p>
+          <p> </p>
+          <p>좋아요. 그럼 어떤 마석을 교환해 주는지 들어보시겠습니까?  </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>잘 들으십시오.</p>
+          <p> </p>
+          <p>교환은 정신력 +70, 회피 +14, 무기방어 +22 마석에 한해서 해 드립니다.</p>
+          <p> </p>
+          <p>그리고 마석 1종류당 10개씩을 가져오셔야 합니다. 개수가 하나라도 모자라면 교환이 안 돼요.</p>
+          <p> </p>
+          <p>자, 그럼 가서 해당 마석을 모두 챙겨 오십시오. 큐브와 창고를 전부 뒤져 보시라는 말입니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">마석을 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>당장 교환할 마석이 없다면 어쩔 수 없군요.</p>
+          <p> </p>
+          <p>하지만 나중에라도 정신력 +70, 회피 +14, 무기방어 +22 마석을 10개 모으게 되면 가져오십시오.</p>
+          <p> </p>
+          <p>얼마든지 새 마석으로 교환해 드릴 테니까요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>마석을 교환하러 오신 모양이군요.</p>
+          <p> </p>
+          <p>무거울 텐데 어서 건네 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">마석을 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아차차, 이거 뭔가 오해가 있었던 모양이군요.</p>
+          <p> </p>
+          <p>제가 교환해 드리겠다고 한 마석은 정신력 +70, 회피 +14, 무기방어 +22 입니다. 한 종류당 10개씩 총 30개 마석을 가져오셔야 하죠.</p>
+          <p> </p>
+          <p>종류와 수치, 하나라도 틀리면 교환이 안 된다고 분명히 그때 말씀드린 것 같은데...</p>
+          <p> </p>
+          <p>번거롭겠지만 다음에 다시 오십시오. 확실해 새 마석으로 교환해 드릴 테니까요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>어디 봅시다. 종류와 수치가... 정신력 +70, 회피 +14, 무기방어 +22 ... </p>
+          <p> </p>
+          <p>좋습니다. 새 마석으로 교환해 드릴 수 있겠군요.</p>
+          <p> </p>
+          <p>새 마석은 마음에 드실 겁니다.</p>
+          <p> </p>
+          <p>판데모니움에서 보급품으로 나온, 상태 좋은 마석이거든요.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">쓰지않는 마석을 모아 [%dic:STR_DIC_N_Mexes]에게 가져가라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">잘 사용하지 않는 마석을 멕세스에게 가져가서 새로운 마석으로 교환하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>맥세스는 마석 제거사 협회의 지시에 따라 쓸모없는 마석을 다른 마석으로 교환해 주고 있다고 했다.</p>
+          <p> </p>
+          <p>맥세스가 말한 마석을 10개씩 모아 가져갔더니 새로운 마석으로 교환해 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

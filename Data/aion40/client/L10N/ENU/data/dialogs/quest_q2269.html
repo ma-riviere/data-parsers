@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Have you heard? The wagons around here keep getting attacked.</p>
+          <p> </p>
+          <p>Urnir insists it's Peckus, but I suspect a different culprit.</p>
+          <p> </p>
+          <p>The Lepharist Revolutionaries are behind this. I'm sure of it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"How can you be so sure?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Surely you've noticed how remote we are out here.</p>
+          <p> </p>
+          <p>The only people who pass by this area are the Lepharist Revolutionaries.</p>
+          <p> </p>
+          <p>It can't be anyone else.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"So what's to be done?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I need to prove to Urnir that the Lepharist Revolutionaries are behind the attacks. For that, I'll need some physical proof. Will you help me?</p>
+          <p> </p>
+          <p>Go to the [%dic:STR_DIC_W_DF1A_29]. Bring back something that proves their guilt.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>If you go down along Calderon Hill, you will run into the [%dic:STR_DIC_W_DF1A_29].</p>
+          <p> </p>
+          <p>If you find something, I'll give you a handsome reward.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm on it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, not you too! Do you think that Peckus attacked the wagons?</p>
+          <p> </p>
+          <p>I suppose it might have been....</p>
+          <p> </p>
+          <p>But even so, those Lepharist Revolutionaries are awfully suspicious. I'll get someone over there to investigate...eventually.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Goodbye."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], how did you fare? Any proof?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I found this."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You haven't gone yet?</p>
+          <p> </p>
+          <p>If we can't nail down the cause, the wagons may be attacked again.</p>
+          <p> </p>
+          <p>Please hurry up!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"On my way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Shards! I can't understand a word of this--they used a cipher!</p>
+          <p> </p>
+          <p>It must be important, but I'll have to send it off to the fortress before anything else can be done about it.</p>
+          <p> </p>
+          <p>Thank you, [%username], for finding this!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Search the [%dic:STR_DIC_W_DF1A_29] for proof and bring it to [%dic:STR_DIC_N_Neifenmer].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Neifenmer believes that the Lepharist Revolutionaries attacked the wagons. You agreed to search their encampment to find proof and bring it to Neifenmer after hearing his request.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Neifenmer believed that the Lepharist Revolutionaries attacked the wagons.</p>
+          <p> </p>
+          <p>You were asked to search the Lepharist Encampment for evidence. You went there and discovered an operation order encrypted with a cipher, which you brought to Neifenmer.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

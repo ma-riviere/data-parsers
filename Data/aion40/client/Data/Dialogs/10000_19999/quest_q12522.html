@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q12522</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select_none" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+		  <p>상부에 군사 지원 요청을 해야할지 말아야할지 고민입니다.</p>
+		  <p> </p>
+          <p>글쎄 이 근처에 [%dic:STR_DIC_W_LDF5a_SensoryArea_Q12522]가 있더라고요.</p>
+		  <p> </p>
+		  <p>[%username]님께서 초소를 정찰해주시면 어떨까요?</p>
+		  <p> </p>
+		  <p>규모가 얼마나 되는지 알아봐 주시면 고맙겠습니다.</p>
+		  <p> </p>
+		  <p>혹시라도 갑자기 [%dic:STR_DIC_M_LDF5A_B8_Vritra]이 나타나면 반드시 처치해주십시오.</p>
+		  <p> </p>
+		  <p>한 번 나타났을 때 처치하지 않으면 두고두고 나타나는 끈질긴 놈들이니까요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>어떻습니까?</p>
+          <p> </p>
+          <p>브리트라군이 나타났습니까?</p>
+          <p> </p>
+          <p>지원군을 요청해야 할까요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">그 동안의 일을 말해준다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>규모가 그리 크지 않았다니 다행입니다.</p>
+		  <p> </p>
+		  <p>그래도 브리트라군이 진짜 나타날 줄이야...</p>
+          <p> </p>
+		  <p>보고서를 써서 지원을 요청해야겠습니다.</p>
+		  <p> </p>
+		  <p>감사합니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_W_LDF5a_SensoryArea_Q12522]를 탐색하라</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_M_LDF5A_B8_Vritra]을 처치해라([%5]/5)</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">[%dic:STR_DIC_N_LDF5A_Kaias_E]에게 보고해라</font></p></step>
+
+    </steps>
+          <p><font font_xml="quest_summary">급습한 브리트라군을 처치하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>브리트라군의 초소가 있어 정찰을 가보았는데 브리트라군이 갑자기 나타났다. 브리트라군을 처치하고 카이아스에게 돌아갔다. 카이아스는 지원 요청하겠다고 했다.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q10051</QuestId>
+    <QuestName>A Meeting with Lephar</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, [%username]. I have a message for you. It is... quite strange.</p>
+          <p> </p>
+          <p>A member of the [%dic:STR_DIC_E_12] just strolled into headquarters yesterday, bold as anything, claiming he carried a message for the Elyos. He would say only this: "[%dic:STR_DIC_N_Lephar] wishes to speak to [%username] in person." Yes, he used your name and everything.</p>
+          <p> </p>        
+          <p>I assume that he is mistaken. An honorable warrior like you would never have anything to do with the Lepharists... would you? Anyway, he left his name, [%dic:STR_DIC_N_Philmoi], and said he would be waiting for you in Garldar Village. Do with that information what you will. Perhaps you should ask someone trusted for advice first...?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"Like you say, he must be mistaken."</Act>
+    </Selects>
+    <Voice file="Q10051-1.ogg"/>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What? Lephar asked for you by name?</p>
+          <p> </p>
+          <p>Why would he want to speak to you personally? You haven't had dealings with the Lepharists before, have you?</p>
+         </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">"Only by killing them."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, I can't imagine why he would ask to speak to you, of all people. </p>
+          <p> </p>
+          <p>I had no idea he was even in Sarpan. I wonder... does he move against Tiamat as well? If he is, then our enemy's enemy could be our friend. It is worth hearing what he has to say.</p>
+          <p> </p>
+          <p>Or... it could also be a trap. Look into it, [%username], but do not let your guard down for a moment.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO2">"Right. Faith and arms."</Act>
+    </Selects>
+    <Voice file="Q10051-2.ogg"/>
+  </HtmlPage>
+
+  <HtmlPage name="select3">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You are [%username]? Ah, Lephar awaits you most anxiously.</p>
+          <p> </p>
+          <p>No, he is not here, but he left this [%dic:STR_DIC_ILDF4a_FOBJ_Q10051] so that you might reach him. Unfortunately, the [%dic:STR_DIC_M_LDF4A_A2_IronGolem_57_An]s stole the Orb's energy source, the [%dic:STR_DIC_I_QUEST_10051A]s, while I slept last night.</p>
+          <p> </p>          
+          <p>They can't have gone far, but I cannot operate the Orb without power.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO3">"Well, I guess I'll go get them, then."</Act>
+    </Selects>
+    <Voice file="Q10051-3.ogg"/>
+  </HtmlPage>
+
+  <HtmlPage name="select4">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did you find the [%dic:STR_DIC_I_QUEST_10051A]s, [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here. This had better be worth it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_ok">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Just one moment while the Orb activates. Ah... yes, here it goes.</p>
+          <p> </p>
+          <p>Simply touch the Orb of Passage and it will take you to Lephar. I assure you, it won't hurt one bit.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"That doesn't sound suspicious at all."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_fail">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm sorry, but I cannot reactivate the Orb of Passage without the [%dic:STR_DIC_I_QUEST_10051A]s.</p>
+          <p> </p>
+          <p>Surely you must be curious what Lephar has in mind for you. But the Orb won't run without power!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"This still seems kinda scaly to me."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes. I, [%dic:STR_DIC_N_Israphel], am hidden beneath the guise of Lephar. Just as something greater is hidden inside you, [%username].</p>
+          <p> </p>
+          <p>No, there is no time for questions, Daeva. Time runs very short. You must carry a message to your fellows. It is of utmost importance, and must be taken immediately.</p>
+          <p> </p>
+          <p>You have tasted Tiamat's power, like ash in your mouth. But that power is not the Dragon Lord's own entirely.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT5_1">"Then whose is it?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Tiamat carries Lady Siel's Relics. They are more than a weapon... they convey the blessing of the Lady herself.</p> 
+          <p> </p>
+          <p>She is the balance on which Atreia pivots. With her blessing, Tiamat cannot be defeated. You must wrest those relics away from Tiamat, whatever it takes. Your task is to convince your leaders to act. There is no time to waste.</p>
+          <p> </p>
+          <p>Hurry, Daeva. Your fate depends on this.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SET_SUCCEED">"I will bear the message, Israphel."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, [%username].</p>
+          <p> </p>
+          <p>You look apprehensive. Was it a trap after all?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"You will not believe it, but..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What? Lephar is Empyrean Lord Israphel? No, no... you must have been deceived!</p>
+          <p> </p>
+          <p>I cannot believe... If Lephar is lying, then he is an ambitious liar, that is for certain. But... if it's true, it does explain many of his actions. And it explains Tiamat's unprecedented power. Hmm... I do believe he spoke the truth about Siel's Relics. That makes sense. Yes, we must act on that immediately.</p>
+          <p> </p>
+          <p>But... truly, you spoke with Lord Israphel? Amazing...  this will throw Sanctum into complete turmoil...</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk with [%dic:STR_DIC_N_Kutos].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Ask [%dic:STR_DIC_N_Killios] for his advice.</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Find Philmoni in the [%dic:STR_DIC_W_LDF4a_SZ_A2_01].</font></p></step>
+               <step><p visible="[%9]"><font color="[%10]">Collect [%dic:STR_DIC_I_QUEST_10051A]s from [%dic:STR_DIC_M_LDF4A_A2_IronGolem_57_An]s and bring them to [%dic:STR_DIC_N_Philmoi].</font></p>[%collectitem]</step>
+               <step><p visible="[%12]"><font color="[%13]">Use the [%dic:STR_DIC_ILDF4a_FOBJ_Q10051] to meet Lephar.</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report what you have discovered to [%dic:STR_DIC_N_Killios].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Order: Lephar has asked for you by name. Talk with the Lepharist messenger, Philmoni, to find out why.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Kutos delivered a strange message given him by a Lepharist Revolutionary, Philmoni. It was from Lephar, who wants to speak to you personally.</p>
+          <p> </p>
+          <p>Philmoni sent you to meet Lephar using the Orb of Passage, but once there, you discovered something truly remarkable: Lephar is the Empyrean Lord Israphel, long thought dead.</p>
+          <p> </p>
+          <p>Israphel convinced you that Atreia would fall to Tiamat if the Dragon Lord was allowed to keep control of Siel's Relics. You immediately left for Killios. Shocked as he was, he agreed that Siel's Relics should not remain in Tiamat's possession.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>Mission Progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

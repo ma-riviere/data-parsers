@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(두꺼운 책을 들여다 보며) 가만 있자, 예민한 파드마샤가 알을 낳고 나서 하루, 이틀...</p>
+          <p> </p>
+          <p>이런, 오늘이 벌써 열흘째군. 빨리 손을 써야겠어.</p>
+          <p> </p>
+          <p>(보던 책을 덮고 뒤로 숨기며) 언제 온 겁니까? 기척이 없어서 왔는지 몰랐습니다.</p>
+          <p> </p>
+          <p>혹시 제가 했던 얘기를 다 들으셨습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">고개를 끄덕인다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>원래 아무나에게 알릴 수 있는 내용이 아닌데 다 들었다니 털어놓죠.</p>
+          <p> </p>
+          <p>조만간 파드마샤의 알이 부화될 겁니다. 네, 드라칸이 태어나는 거죠.</p>
+          <p> </p>
+          <p>드라마타가 알을 낳고 거기서 드라칸이 태어나는 게 뭐 그리 대수냐하겠지만 파드마샤의 경우는 좀 특별합니다.</p>
+          <p> </p>
+          <p>지금까지 살펴본 바로 파드마샤의 알에서는 높은 등급의 드라칸이 태어나더군요.</p>
+          <p> </p>
+          <p>네, 그래서 알의 부화를 막을 수 있도록 [%username] 님의 도움이 필요합니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>보통 사람이 잘 모르는 게 있는데 드라마타는 알만 낳을 뿐 부화를 시키는 건 수호자의 몫입니다.</p>
+          <p> </p>
+          <p>제가 파드마샤의 알을 빼낼 수 있도록 [%username] 님이 [%dic:STR_DIC_M_Q11293]의 시선을 돌려 주십시오.</p>
+          <p> </p>
+          <p>혼자서는 힘들 테고 꼭 마음 맞는 동료분과 함께 가십시오.</p>
+          <p> </p>
+          <p>예상이 맞다면 파드마샤의 알이 곧 부화될 겁니다. 그러니 좀 서둘러 주세요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>바쁜가 보군요. 그럼 할 수 없죠.</p>
+          <p> </p>
+          <p>금방 들은 얘기는 [%username] 님만 알고 계십시오.</p>
+          <p> </p>
+          <p>비밀까지는 아니지만 여러 사람이 알아봐야 좋은 것도 없으니까요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>생각보다 일찍 돌아왔군요.</p>
+          <p> </p>
+          <p>봤을지 모르겠지만 [%username] 님 일행이 동굴 안에서 수호자를 상대하고 있을 때 바로 뒤에 있었답니다.</p>
+          <p> </p>
+          <p>수호자 하나를 쓰러트리는 것까지만 보고 알을 집어 나왔는데 어떻게 됐습니까? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>수호자를 완벽하게 처리했다니 다행입니다.</p>
+          <p> </p>
+          <p>정말 감사합니다. </p>
+          <p> </p>
+          <p>덕분에 파드마샤의 알도 이렇게 가져올 수 있었네요.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_M_Q11293]를 처치하라([%2]/1)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Kimin]%와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">키민이 파드마샤의 알을 수거할 수 있도록 파드마샤의 수호자를 처치하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>키민은 예민한 파드마샤의 알이 곧 부화될 거라며 자신을 도와달라고 했다.</p>
+          <p> </p>
+          <p>그가 파드마샤의 알을 동굴에서 꺼낼 수 있도록 알을 돌보는 수호자를 처치해 주자 덕분에 무사히 일을 끝낼 수 있었다며 고마워했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

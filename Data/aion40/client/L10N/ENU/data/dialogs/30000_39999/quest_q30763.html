@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q30763</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's finished! Remodeling the Reverse Field Control Device was easier than I thought.</p>
+          <p> </p>
+          <p>Here, try using the [%dic:STR_DIC_I_quest_30713a] on the [%dic:STR_DIC_N_IDTiamat_FOBJ_Dagger]. Get [%dic:STR_DIC_N_Garnon]'s help, and she should be able to extract Apsu's Grudge into this glass bottle.</p>
+          <p> </p>
+          <p>Bring it back here when you're done. Just... make sure and get Garnon's permission first. I have to follow at least some rules.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(Once again, you are filled with a sense of malevolent dread as you use use the device.)</p>
+          <p> </p>
+          <p>(A malfunction could have terrible consequences, but you must trust Grais.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"Here goes..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]. I thought you were busy at Tiamat Stronghold. What brings you here?</p>
+          <p> </p>
+          <p>Is there something I can help you with?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I extracted this from a dagger..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Apsu's Grudge!</p>
+          <p> </p>
+          <p>That's far too dangerous! The Reian Elders need to be consulted before such a rash action can be taken.</p>
+          <p> </p>
+          <p>I am sorry, [%username], but I'll need to confiscate that item. You need to find somewhere else to be, or else the Elders will sanction you too. As it is, Grais is going to have a lot to answer for.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <steps>
+              <step><p visible="[%0]"><font color="[%1]">Use [%dic:STR_DIC_I_quest_30713a] and extract Apsu's Grudge from the [%dic:STR_DIC_N_IDTiamat_FOBJ_Dagger].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Get permission from [%dic:STR_DIC_N_Garnon] to carry Apsu's Grudge into the city.</font></p></step>
+          </steps>
+          <p><font font_xml="quest_summary">Extract Apsu's Grudge using the tools Grais made.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You used Grais's Remodeled Reverse Field Control Device to extract Apsu's Grudge.</p>
+          <p> </p>
+          <p>When you went to Garnon for permission to bring the extracted item into the city, she was angry, and told you that you had done something extremely dangerous.</p>
+          <p> </p>
+          <p>He took Apsu's Grudge from you and said Grais would have to answer for her actions.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>도대체 되는 일이 하나 없군요.</p>
+          <p> </p>
+          <p>요즘 라피오네 연구를 하고 있습니다. 결계 안과 밖의 차이를 가장 객관적으로 보여주는 지표식물이기 때문이죠.</p>
+          <p> </p>
+          <p>그런데 갈수록 그 수가 줄어들고 있습니다. 이유를 살펴보니 그 주변에 쉴룩이 알에서 깨어나 라피오네를 모조리 갉아먹었더군요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], 전 일분이라도 빨리 여기를 떠나고 싶은 사람입니다.</p>
+          <p> </p>
+          <p>밥 먹는 시간, 자는 시간을 줄여가며 오로지 연구에 매달리고 있죠.</p>
+          <p> </p>
+          <p>하지만 이래서야 제가 아무리 노력을 해도 소용이 없어요.</p>
+          <p> </p>
+          <p>제가 연구를 무사히 끝낼 수 있게 [%dic:STR_DIC_M_LF4_A_Sheluk_Worm_51_An]을 없애 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>괜찮다면 [%dic:STR_DIC_M_LF4_A_Kuillus_Feeler_51_An]도 부탁 드립니다.</p>
+          <p> </p>
+          <p>후각이 발달해서인지 표본을 구하러 다닐 때마다 아주 귀찮게 하더군요.</p>
+          <p> </p>
+          <p>이참에 [%dic:STR_DIC_M_LF4_A_Sheluk_Worm_51_An]과 함께 그것들까지 처리해 주시면 더욱 고마울 것 같아요.</p>
+          <p> </p>
+          <p>그럼 부탁드립니다. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아이온은 스스로 돕는 자를 돕는다는 말은 제겐 해당 사항이 없군요.</p>
+          <p> </p>
+          <p>좋습니다. 어차피 인생은 혼자 가는 거니까요.</p>
+          <p> </p>
+          <p>제 일은 제가 알아서 할 테니 그만 가 보십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(헝클어진 종이를 급하게 정리하며) 오셨습니까? 그동안 조사한 자료를 정리하고 있었습니다.</p>
+          <p> </p>
+          <p>이렇게 해야 나중에 보고서를 쓸 때 아주 편하지요.</p>
+          <p> </p>
+          <p>부탁한 일은 어떻게 됐습니까? 물, 물론 잘 해결됐겠지요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 얘기한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정말 수고 많으셨습니다.</p>
+          <p> </p>
+          <p>덕분에 안심하고 라피오네 연구를 할 수 있겠네요.</p>
+          <p> </p>
+          <p>이건 제 감사의 선물입니다. 좀더 좋은 걸 드리고 싶지만 지금으로선 드릴 수 있는 게 이것뿐이네요.</p>
+          <p> </p>
+          <p>그럼 전 마저 정리를 하러 가겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">연구를 방해하는 쉴룩과 클룩스를 처치하라</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_LF4_A_Sheluk_Worm_51_An]([%2]/3)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_LF4_A_Kuillus_Feeler_51_An]([%5]/7)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Ambrosini]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">암브로시니의 연구를 방해하는 쉴룩과 클룩스를 처치하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>암브로시니는 쉴룩과 클룩스 때문에 연구가 지체된다며 도와주기를 부탁했다.</p>
+          <p> </p>
+          <p>그가 연구를 빨리 끝낼 수 있도록 흉포한 쉴룩과 강철 클룩스를 처치해 주자 무척 고마워했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Losing Siel's Eastern Fortress to our enemies is humiliating.</p>
+          <p> </p>
+          <p>I knew those sun-addled Red Hasia weren't up to the task. Now we have to clean up their mess.</p>
+          <p> </p>
+          <p>The best time to attack a fortress is when it's in Vulnerable State, but our opponents aren't stupid. They'll summon elite troops for defense.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I'm listening."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I expect an elite garrison will guard their flank.</p>
+          <p> </p>
+          <p>They're no match for the Thunder Shout Legion, but I'd prefer your help. Keeping the Balaur in check has stretched our forces to the limit.</p>
+          <p> </p> 
+          <p>I want to trust you with this mission, [%username]. Will you accept it?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Then destroy the [%dic:STR_DIC_M_2802_all]. It doesn't matter if they are Veterans, Experienced, or Novices.</p>
+          <p> </p>
+          <p>Wait for your opportunity--be patient. They'll stay hidden until the fortress is in Vulnerable state.</p>
+          <p> </p>
+          <p>Bring back their [%dic:STR_DIC_I_QUEST_2802a] as proof of your success. Return victorious, [%username]. Blood for blood! </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Shadow protect you!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You hesitate?</p>
+          <p> </p>
+          <p>Balaur take you! You don't have the courage of a Kobold!</p>
+          <p> </p>
+          <p>Very well then, [%username]. On your way.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Farewell."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]! You look worse for the wear.</p>
+          <p> </p>
+          <p>I take it you're returning from Fortress. Have you got the [%dic:STR_DIC_I_QUEST_2802a]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here they are."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You haven't been to the fortress, have you?</p>
+          <p> </p>
+          <p>It's not my business what you do with your time, [%username], but you're delaying my mission.</p>
+          <p> </p>
+          <p>Get back to the fortress and crush the [%dic:STR_DIC_M_2802_all] as soon as possible, then bring me their [%dic:STR_DIC_I_QUEST_2802a].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">On my way.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Great job, [%username]. You've lived up to your reputation.</p>
+          <p> </p>
+          <p>We couldn't recapture Siel's Eastern Fortress without this advance work. I won't forget it.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Eliminate the [%dic:STR_DIC_M_2802_all] and take the proof to [%dic:STR_DIC_N_Amundi].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">The elite Elyos garrison must be dealt with in order to recapture Siel's Eastern Fortress. When the fortress enters the Vulnerable State, defeat the Elyos. Return with their Insignias of Light.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Siel's Eastern Fortress has been lost to the enemy. Amundi feels it's crucial to defeat the elite garrison posted there once the fortress reaches Vulnerable State.</p>
+          <p> </p>
+          <p>The Thunder Shout Legion could defeat an elite garrison alone, but Amundi wants fresh troops for the fortress assault.</p>
+          <p> </p>
+          <p>You ambushed the Elyos elites and returned to Amundi with Insignias of Light as your proof.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

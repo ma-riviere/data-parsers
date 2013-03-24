@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q30061</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Greetings, [%username]! Your timing is flawless, as always.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_N_Versetti] in [%dic:STR_DIC_W_LF4_SZ_OP] discovered something of interest in [%dic:STR_DIC_E_UnderPass_Li]. Unfortunately, the Wisplight Legion is busy fighting the Asmodians, and can't investigate it further.</p>
+          <p> </p>
+          <p>He requested the assistance of the Hushblade Legion, but we're fully engaged here in Sarpan. You're the best [%userclass] available, so can you go assist Versetti in this investigation?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I requested assistance from the Hushblade Legion. They sent you instead? Well, I suppose it doesn't matter much. Your reputation precedes you, [%username], and I'm sure you'll be able to accomplish the task at hand.</p>
+          <p> </p>
+	        <p>Have you heard of the [%dic:STR_DIC_E_Underpass_SensoryArea_Q30057] in Silentera Canyon? Our scouts reported a group of Drakan entering the canyon through a gate there.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">"Sounds like trouble."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Exactly. We were able to capture some of the Drakan, who revealed that they were part of the Laksyaka Legion when we interrogated them.</p>
+          <p> </p>
+      	  <p>Evidently, Laksyaka has been gathering relics in [%dic:STR_DIC_W_IDUnderpassRe_SZ], beyond that gate, in preparation for a rebellion against Tiamat. This explains why Laksyaka volunteered to guard Beshmundir Temple.</p>
+          <p> </p>
+          <p>With Tiamat gone, though, who knows what Laksyaka might do with those weapons? Your next stop should be to see [%dic:STR_DIC_N_Asinelli] and find out her plan for this situation.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"Faith and arms!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Versetti sent you? I told him this wasn't urgent, but... I suppose that the idea of all those Balaur weapons nearby makes him uneasy.</p>
+          <p> </p>
+          <p>If you ask me, though, we've got bigger problems right now than a few rogue Drakan with access to a Balaur weapons cache. We can deal with that later.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"What's your plan?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Once Tiamat Stronghold falls to us, Laksyaka will die anyway. Then, and only then, do we send soldiers into The Hexway.</p>
+          <p> </p>
+          <p>Until then, I can't spare anyone anyway. Those Asmodian troglodytes are still fighting us for control.</p>
+          <p> </p>
+          <p>I'm sorry you came all this way for nothing. I'll report back to Versetti that we'll proceed when the timing is right. Perhaps you'll be a part of the assault then.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Go to [%dic:STR_DIC_W_LF4_SZ_OP] and talk to Brigade General [%dic:STR_DIC_N_Versetti] of the Wisplight Legion.</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Go to the [%dic:STR_DIC_E_UnderPass_Li] and talk to [%dic:STR_DIC_N_Asinelli].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Versetti has intel on a new problem in Silentera Canyon. Go talk to him.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Crispin asked you to talk to Versetti, the Wisplight Brigade General. Versetti told you about The Hexway, Laksyaka's stolen weapons cache, hidden inside Silentera Canyon.</p>
+          <p> </p>
+          <p>Versetti asked you to go to Lania to proceed with the assault. However, Lania said she wasn't planning for an attack any time soon.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

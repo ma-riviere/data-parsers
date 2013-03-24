@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p align="center"> -  현상 수배 - </p>
+          <p> </p>
+          <p> </p>
+          <p> </p>
+          <p> </p>
+          <p> </p>
+          <p> </p>
+          <p> </p>
+          <p> </p>
+          <p> </p>
+          <p> </p>
+          <p>갈래귀 로크스를 아래의 죄목으로 현상 수배하는 바이다.</p>
+          <p></p>
+          <p> 1. 창고 관리인 사칭으로 거액의 금품 탈취 </p>
+          <p> 2. 토지 문서 외 각종 공문서 위조</p>
+          <p> 3. 어비스 토지 사기 분양 </p>
+          <p></p>
+          <p>[%dic:STR_DIC_M_CriminalLightAsNamedQ_23_An]에 대해 제보를 하거나 직접 처치하고 증거물인 로크스의 목걸이를 가져온 사람에게는 후사하겠음. </p>
+          <p></p>
+          <p>- 현상금 사냥꾼 [%dic:STR_DIC_N_Crios] 백</p>
+        </body>
+        </html>
+    </Contents>
+    <Background name="Doc_bg_q3018"/>
+
+    <Selects>
+      <Act href="HACTION_SETPRO1">갈래귀 로크스를 잡기로 한다. </Act>
+      <Act href="HACTION_FINISH_DIALOG">살펴보기를 그만둔다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%mainslotitem]%을 보니 실전 경험이 많은 것 같군요. 전문가끼리는 척 보면 알 수 있는 법이죠.</p>
+          <p> </p>
+          <p>그런데 저한테는 무슨 일로 온 겁니까?</p>
+          <p> </p>
+          <p>특별한 일이 없다면 현상범 사냥에 한번 도전해 보시죠.</p>
+          <p> </p>
+          <p>당신 정도의 실력이면 크게 힘 안 들여도 될 것 같은데...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">로크스의 목걸이를 건넨다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_fail">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>하하, 짖궂은 분이군요.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_CriminalLightAsNamedQ_23_An]에 대한 현상 수배 전단지를 본 모양인데 마침 잘 됐습니다.</p>
+          <p> </p>
+          <p>이참에 한번 도전해 보십시오.</p>
+          <p> </p>
+          <p>놈을 처치하고 증거로 목걸이를 가져오면 약속한 현상금을 드리겠습니다. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아니, 이건 로크스의 목걸이 아닙니까?</p>
+          <p> </p>
+          <p>설마 당신이 갈래귀 로크스를 처치한 겁니까?</p>
+          <p> </p>
+          <p>하도 유들유들한 놈이라 꼬리를 잡기가 쉽진 않았을 텐데... 역시 제가 사람 보는 눈은 있군요, 하하하.</p>
+          <p> </p>
+          <p>받으십시오. 약속한 현상금입니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_M_CriminalLightAsNamedQ_23_An]를 처치하고 증거물을 [%dic:STR_DIC_N_Crios]에게 가지고 가라</font></p>[%collectitem]</step>        
+    </steps>
+          <p><font font_xml="quest_summary">현상수배범 갈래귀 로크스를 처치하고 로크스의 목걸이를 크리오스에게 가져가 현상금을 받자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>악독한 사기꾼으로 수배된 갈래귀 로크스를 처치하고 증거로 로크스의 목걸이를 가져가서 크리오스에게 현상금을 받았다.</p>         
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

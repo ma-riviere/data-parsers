@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p align="center"> - Operation Order - </p>
+          <p> </p>
+          <p>From: The Blood Crusade</p>
+          <p> </p>
+          <p>To: Crusader [%username]</p>
+          <p> </p>
+          <p>The Blood Crusade has confirmed the presence of Elyos forces in Gelkmaros. The cowards are harassing our entrenched forces who are locked in battle with the Balaur. To help remedy the situation, the Blood Crusade has issued the following kill order:</p>
+          <p> </p>
+          <p>  1. Locate and eliminate at least five Elyos soldiers who have infiltrated [%dic:STR_DIC_W_ZONE_NAME_DF4].</p>
+          <p> </p>
+          <p>  2. Defeat the enemy using any means at your disposal--brutal tactics are approved for this mission. As ever, fight with pride; there is no honor in killing the weak.</p>
+          <p> </p>
+          <p>  3. Report to the [%dic:STR_DIC_E_45503] once the kills are confirmed and the enemies have lost the will to fight.</p>
+          <p> </p>
+          <p>May you walk in Azphel's shadow. Blood for blood!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">Fold up the order.</Act>
+    </Selects>
+  </HtmlPage>
+
+   <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good to see you here, [%username].</p>
+          <p> </p>
+          <p>It's hard enough fighting against the Balaur, but now those sun-blighted cowards have infiltrated Gelkmaros....</p>
+          <p> </p>
+          <p>I expect you've done your part thinning out their numbers, [%username]? Report in.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"All that was asked has been done."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good. I'm glad you were here to slay those scoundrels, [%username].</p>
+          <p> </p>
+          <p>Regardless of how far the Elyos advance, the Blood Crusade will keep them in check.</p>
+          <p> </p>
+          <p>Here is a reward from your fellow Crusaders. Blood for blood!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Eliminate the [%dic:STR_DIC_E_Daily_2] who have infiltrated [%dic:STR_DIC_W_ZONE_NAME_DF4] ([%2]/5).</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Report to the [%dic:STR_DIC_E_45503].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Eliminate the Elyos who infiltrated Gelkmaros and report back to the Gelkmaros Branch Agent.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Blood Crusade issued a kill order for the Elyos forces who had infiltrated Gelkmaros.</p>
+          <p> </p>
+          <p>You completed the mission and received your reward from the Gelkmaros Branch Agent.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+	 	  <HtmlPage name="select_acqusitive_quest_desc">
+	 	    <Selects>
+	 	      <Act>New quest: [%questname]</Act>
+	 	    </Selects>
+	 	  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

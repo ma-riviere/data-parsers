@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>지하 카탈람에 침공해 온 브리트라 군단 제5 부대를 막아야 해요!</p>
+          <p> </p>
+          <p>지금이야 조용하지만 진영을 수습하는 즉시 여기로 쳐들어 올 거예요.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_N_LDF5_Under_Oturu_E] 님께 가서 이 사실을 알리고 지원을 요청해 주시지 않겠어요?</p>
+          <p> </p>
+          <p>현재 인원으로 제5 부대를 막는 건 역부족이에요. 한시가 급하니 서둘러 주세요!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>뭔가 긴급한 용건이 있어 오셨습니까?</p>
+          <p> </p>
+          <p>[%username] 님의 거동에서 서두르는 기색이 느껴집니다.</p>
+          <p> </p>
+          <p>짐작해 보건대 좋은 일은 아닌 것 같군요.</p>
+          <p> </p>
+          <p>아군이 습격이라도 당한 겁니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">메르데의 요청을 전한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>브리트라 군단 제5 부대가!</p>
+          <p> </p>
+          <p>결국 주둔지를 꾸렸군요. 곧 있으면 쳐들어 오겠다는 선전포고겠지요.</p>
+          <p> </p>
+          <p>[%username] 님께서 [%dic:STR_DIC_W_ZONE_NAME_LDF5_SZ_R1]에 모여있을 [%dic:STR_DIC_M_LDF5_Under_VriTR_N_all]을 처치해 주십시오.</p>
+          <p> </p>
+          <p>잔당색출대란 제5 부대의 다른 이름입니다. 티아마트군 패잔병들이 브리트라군에 투항하면서 재편성된 부대이지요. </p>
+          <p> </p>
+          <p>같은 편이었던 티아마트군들을 색출하러 다니는 비겁한 부대이지만 그곳 인원으로는 상대하기 어려울 겁니다.</p>
+          <p> </p>
+          <p>가서 제5 부대를 막는 임무를 도와주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>잔당색출대 부대병은 처치하셨습니까?</p>
+          <p> </p>
+          <p>명색이 한때 티아마트군이었던 이들인데 잔당색출대라는 이름을 달고 아군이었을 패잔병들을 사냥하고 있다니 잔혹한 일이로군요.</p>
+          <p> </p>
+          <p>하긴 살기 위해서는 어쩔 수 없는 일이겠지요.</p>
+          <p> </p>
+          <p>저희에게는 어차피 둘 다 없애야 할 제거 대상에 불과합니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>제때 제5 부대를 막아서 다행입니다.</p>
+          <p> </p>
+          <p>당분간은 침공해올 여유가 없을 것 같군요.</p>
+          <p> </p>
+          <p>정말 잘해 주셨습니다.</p>
+          <p> </p>
+          <p>앞으로도 지금처럼 깔끔한 처리를 부탁 드립니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_LDF5_Under_Oturu_E]에게 [%dic:STR_DIC_N_LDF5_Under_Merde_E]의 요청을 전하라</font></p></step>
+               <step><p visible="[%9]"><font color="[%10]">[%dic:STR_DIC_W_ZONE_NAME_LDF5_SZ_R1]로 가서 [%dic:STR_DIC_M_LDF5_Under_VriTR_N_all]을 처치하라([%11]/9)</font></p></step>
+               <step><p visible="[%24]"><font color="[%25]">[%dic:STR_DIC_N_LDF5_Under_Oturu_E]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">메르데의 지원 요청을 오투르에게 전하러 가자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>메르데는 쳐들어 온 브리트라 군단 제5 부대를 막아야 하는데 현재 인원으로는 역부족이라며 오투르에게 지원 요청을 해달라고 했다.</p>
+          <p> </p>
+          <p>오투르에게 메르데의 요청을 전하자 라타군 1 주둔지로 가서 함께 잔당색출대 부대원을 처치해 주길 부탁했다. 잔당색출대 부대원을 처치하고 돌아가 결과를 보고하자 오투르는 흡족해 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

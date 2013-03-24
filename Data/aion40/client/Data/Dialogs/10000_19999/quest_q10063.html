@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q10063</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>미입력</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님이 티아마트의 힘이 깃든 물건을 구해 주신 덕에 마력 감시계에서 드디어 결정적인 정보를 얻었어요.</p>
+          <p> </p>
+          <p>근원이 위기에 처하면 티아마트의 현신이 나타나는데 그 현신을 처치하면 근원을 무력화시킬 수 있어요.</p>
+          <p> </p>
+          <p>처음에는 티아마트의 현신을 근원을 지키는 부대의 수장이라고만 생각했는데 그게 아니었어요.</p>
+          <p> </p>
+          <p>현신이 근원 그 자체였던 거죠.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>근원마다 현신이 있습니다. 균열의 근원에는 균열의 현신이 있고, 석화의 근원에는 석화의 현신이 있는 식이죠.</p>
+          <p> </p>
+          <p>[%username] 님이 모든 근원을 맡을 수는 없으니 석화의 근원을 맡아 주세요.</p>
+          <p> </p>
+          <p>다른 근원은 원정대원들을 파견해 놓았으니 걱정하지 마시고요. </p>
+          <p> </p>
+          <p>석화의 현신은 점령전이 시작될 때만 나타납니다. 혼자서 상대할 수는 없으니 많은 인원을 모아 함께 가세요.</p>
+          <p> </p>
+          <p>참, 침묵의 비수 백부장인 [%dic:STR_DIC_N_Betri] 님이 미리 가 계신다고 하더군요. 점령전이 일어날 때 그 분을 만나서 조언을 들으세요. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">대화를 마친다.</Act>
+    </Selects>
+    <Voice file="Q10063-1.ogg"/>
+  </HtmlPage>
+
+  <HtmlPage name="select3">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>조금 전에 석화의 현신이 나타났습니다.</p>
+          <p> </p>
+          <p>이제 본격적으로 점령전이 시작되는 겁니다. 잘 아시겠지만 우리 천족의 기여도가 더 높아야 합니다.</p>
+          <p> </p>
+          <p>그러니 [%username] 님도 [%dic:STR_DIC_M_LDF4b_T4_Tiamat_Crystal_Named_60_Af]%을 처치하는 데 한몫을 하셔야죠.</p>
+          <p> </p>
+          <p>석화의 현신을 처치하시면 증거로 [%dic:STR_DIC_I_QUEST_10063a]을 가르논 님께 가져가십시오.</p>
+          <p> </p>
+          <p>그럼 현신을 쓰러트리는 데 천족의 공헌이 컸다는 것을 인정해 주실 겁니다. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO3">대화를 마친다.</Act>
+    </Selects>
+    <Voice file="Q10063-2.ogg"/>
+  </HtmlPage>
+
+  <HtmlPage name="select4">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>기다리고 있었습니다, [%username] 님.</p>
+          <p> </p>
+          <p>석화의 근원에 가셨던 일은 어떻게 됐나요?</p>
+          <p> </p>
+          <p>석화의 현신은 처치하셨나요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">현신의 발톱을 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_ok">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그렇다면 석화의 근원이 무력화됐겠군요.</p>
+          <p> </p>
+          <p>다른 근원도 차례로 무력화될 테니 이제 곧 티아마란타의 눈으로 들어갈 수 있을 거예요. </p>
+          <p> </p>
+          <p>그동안 티아마란타의 근원을 무력화시키는 임무를 수행하느라 정말 고생 많으셨어요.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_N_Adela] 님께서 기다리고 계시니 먼저 그분을 만나 보세요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+    <Voice file="Q10063-3.ogg"/>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_fail">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>석화의 현신을 처치하지 않으신 건가요?</p>
+          <p> </p>
+          <p>석화의 현신을 처치하지 않으면 석화의 근원을 무력화시킬 수 없습니다.</p>
+          <p> </p>
+          <p>그리고 석화의 근원이 무력화되지 않으면 티아마란타의 눈으로 들어갈 수 없고요.</p>
+          <p> </p>
+          <p>그러니 점령전이 벌어질 때 석화의 현신을 처치하고 증거로 [%dic:STR_DIC_I_QUEST_10063a]을 가져다 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>가르논에게 보고는 받았네.</p>
+          <p> </p>
+          <p>그동안 도움을 많이 받았다고 하더군.</p>
+          <p> </p>
+          <p>특히나 석화의 현신을 처치하는 데 공이 아주 컸다고 칭찬을 하더군.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>석화의 현신에 뒤이어 다른 현신들도 쓰러트리고 있다네.</p>
+          <p> </p>
+          <p>현신이 쓰러지면 곧 티아마란타의 눈으로 들어갈 수 있게 되겠지. </p>
+          <p> </p>
+          <p>진정한 싸움은 그때부터 시작일세, [%username].</p>
+          <p> </p>
+          <p>지금까지도 잘 협조해 주었지만 앞으로도 가르논과 함께 더 많은 일을 해줘야 할 걸세.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_W_LDF4b_SZ_OP_A4]로 가서 가르논%와 대화하라</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_E_LDF4B_Occupation_Combat]이 일어날 때 [%dic:STR_DIC_W_LDF4b_SZ_T4_S6]으로 가라[%5]</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">[%dic:STR_DIC_N_Betri]%과 대화하라</font></p></step>
+               <step><p visible="[%9]"><font color="[%10]">[%dic:STR_DIC_M_LDF4b_T4_Tiamat_Crystal_Named_60_Af]을 처치하고 [%dic:STR_DIC_I_QUEST_10063a]을 가르논에게 가져가라</font></p>[%collectitem]</step>
+               <step><p visible="[%12]"><font color="[%13]">[%dic:STR_DIC_N_Adela]와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">지령: 근원을 무력화시킬 방법을 찾았다고 한다. 가르논과 대화하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>가르논은 석화의 현신을 처치하면 석화의 근원이 무력화될 것이라고 했다. </p>
+          <p> </p>
+          <p>그래서 석화의 현신을 처치하고 돌아갔더니 매우 기뻐하며 아델라를 만나 보라고 했다.</p>
+          <p> </p>
+          <p>아델라를 만났더니 이제 다른 근원도 무력화될 테니 곧 티아마란타의 눈으로 들어갈 수 있을 거라고 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>미션 진행: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

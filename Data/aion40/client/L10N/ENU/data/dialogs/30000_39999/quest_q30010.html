@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Dragonbound are coating their weapons with poison! Did you hear me?</p>
+          <p> </p>
+          <p>Try to pay attention.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"How do you know?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You have fought them, right, [%username]?</p>
+          <p> </p>
+          <p>Didn't you find their weapons tragically deadly?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Yes, but that doesn't mean--"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>And I found poison in some wounds I was cleaning, but only traces. I couldn't identify it from the small sample.</p>
+          <p> </p>
+          <p>If I hope to make an antidote, I need to know what it is.</p>
+          <p> </p>
+          <p>Someone needs to go to the Udas Temple and get their hands on some of the poison. Will you save lives and be that someone?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>If we can get that poison, it'll be very helpful for both my research and for safety in battle.</p>
+          <p> </p>
+          <p>I am sure they have a [%dic:STR_DIC_E_IDTemple_PoisonBottle_Q30010] or two in the Udas Temple.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"You're sure...or you hope?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Why wouldn't you help out? Don't you want to gain our Daevas an advantage over the Dragonbound?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"And subsidize your research? Hardly!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, you're back!</p>
+          <p> </p>
+          <p>More and more people have been wounded by the Dragonbound, and they don't have time for your dallying.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Quickly! Take these bottles of poison!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This? What is this?</p>
+          <p> </p>
+          <p>How can I save my patients without knowing what affects them?</p>
+          <p> </p>
+          <p>Hurry to the Udas Temple and find a [%dic:STR_DIC_E_IDTemple_PoisonBottle_Q30010] that they use on their weapons.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I've been busy with other things."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The poison must be quite potent to come in such small bottles.</p>
+          <p> </p>
+          <p>I should start by diluting this sample.</p>
+          <p> </p>
+          <p>Thank you, [%username]. I can start my experiments soon and hopefully find a cure.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get the [%dic:STR_DIC_E_IDTemple_PoisonBottle_Q30010] from the Udas Temple and take it to [%dic:STR_DIC_N_Steurios].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Steurios has discovered that the Dragonbound poison-coat their weapons. Go to the Udas Temple and collect glass bottles of their deadly poison.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Steurios said the Dragonbound's poison-coated weapons are deadly to injured Daevas.</p>
+          <p> </p>
+          <p>He thanked you for bringing him Glass Bottles Containing Poison from the Udas Temple so that he could hunt for an antidote.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

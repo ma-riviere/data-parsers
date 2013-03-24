@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Asustri keeps talking about you. He said you've helped out many times.</p>
+          <p> </p>
+          <p>We were able to send the contamination samples out in time, thanks to you, [%username]. I can't wait until Pandaemonium finds the cause of contamination. We'll really get to see progress then.</p>
+          <p> </p>
+          <p>I only wish we'd been here sooner.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Why is that?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Have you ever been to the Adma Plains? It's called that now because of all the [%dic:STR_DIC_M_DF2A_ZombieMiddleageD_49_An]s and [%dic:STR_DIC_M_DF2A_ZombieMiddleageFD_49_An]s around there. At first we killed all we encountered because we thought they would interrupt our work, but after knowing their stories, we had a change of heart.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What's their story?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Brusthonin was once a thriving land of farms and villages. When the Tower of Eternity exploded, the villagers fled to the castle hoping for protection. But the castle owner refused to open the gate.</p>
+          <p> </p>
+          <p>This area was hit the worst, and these poor people not only died, they became monsters. The best we can do for them now is send them back to the flow of Aether. Normally, the soul naturally returns to the flow of Aether when the body dies. But contamination has stopped that process for these poor souls.</p>
+          <p> </p>
+          <p>Will you help me, [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Great! I knew you would accept it.</p>
+          <p> </p>
+          <p>Just killing [%dic:STR_DIC_M_DF2A_ZombieMiddleageD_49_An]s and [%dic:STR_DIC_M_DF2A_ZombieMiddleageFD_49_An]s won't be enough. Take extra time to examining their lifeless forms and separate their souls from their bodies.</p>
+          <p> </p>
+          <p>If you bring me their [%dic:STR_DIC_I_QUEST_4090a]s and [%dic:STR_DIC_I_QUEST_4090b]s I'll get Pandaemonium to prepare the ritual to return them to the flow of Aether.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"On my way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's so heart-wrenching to see any soul kept from the flow of Aether.</p>
+          <p> </p>
+          <p>Still, I understand why you wouldn't want to spend your time with the unfortunate Undead residents.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I only said 'later.'"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Are you returning from the Adma Plains?</p>
+          <p> </p>
+          <p>It's so sad, those poor souls....</p>
+        </body>
+        </html>
+   </Contents>    
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here are the souls."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Don't give up now, I know they can't tell you so, but these souls are depending on you. I am depending on you.</p>
+          <p> </p>
+          <p>I know you can put these souls to rest by collecting their [%dic:STR_DIC_I_QUEST_4090a]s and [%dic:STR_DIC_I_QUEST_4090b]s.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"And so I will."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It feels odd to hold the souls of other beings in your hands, doesn't it [%userclass]? I wonder if this is how the Soul Healers at the Obelisks feel.</p>
+          <p> </p>
+          <p>I'll send these souls to the Temple of Pandaemonium. The Temple can clean evil energy from the souls and send them back to the flow of Aether.</p>
+          <p> </p>
+          <p>Thank you.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect the souls of [%dic:STR_DIC_M_DF2A_ZombieMiddleageD_49_An]s and [%dic:STR_DIC_M_DF2A_ZombieMiddleageFD_49_An]s and take them to [%dic:STR_DIC_N_Hristi].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Collect the souls of Undead wandering the Adma Plains.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hristi felt sorry for the Undeads wandering the Adma Plains and asked you to help send them back to the flow of Aether.</p>
+          <p> </p>
+          <p>As she instructed, you separated the souls of Undead villagers and refugees from their bodies and took them to her. Hristi said that she would send the souls to the Temple in Pandaemonium to remove malicious energy and then send them back to the flow of Aether.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

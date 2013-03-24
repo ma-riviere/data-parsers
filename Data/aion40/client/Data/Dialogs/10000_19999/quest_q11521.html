@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q11521</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이 위험한 곳까지 어떻게 왔냥?</p>
+          <p> </p>
+          <p>혹시 카룬의 증표가 필요해서 온 거냥?</p>
+          <p> </p>
+          <p>그런 거라면 잘 왔긴 하지만... 그냥은 줄 수 없당. 알고 있지?</p>
+          <p> </p>
+          <p>냥냥, [%dic:STR_DIC_I_COIN_HEADQUARTERS_01]를 내게 가져오면 [%dic:STR_DIC_I_Karuncoin]를 주겠당.</p>
+          <p> </p>
+          <p>여기는 데바에겐 위험하니까 빨리 가져오는 게 좋을 거당. 냥냥.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>지금 시세는 7 대 1이지만, 여기까지 왔으니 특별히 특수작전부 증표 6개를 주면 카룬의 증표 1개를 주겠당.</p>
+          <p> </p>
+          <p>이런 기회는 아무에게나 주는 게 아니니까 빨리 [%dic:STR_DIC_I_COIN_HEADQUARTERS_01] 6개를 쿠루링에게 줘랑.</p>
+          <p> </p>
+          <p>그러면 [%dic:STR_DIC_I_Karuncoin]를 줄테니까, 갸릉.</p>
+          <p> </p>
+          <p>이건 정말 쿠루링이 손해보는 장사당. 눈물이 날려고 한당. 갸르릉...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">특수작전부 증표를 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>고맙당. 흠집도 없고 새 것 같은 증표구낭.</p>
+          <p> </p>
+          <p>이 정도면 시장에 내다 팔면 이윤이 몇 배는 더... 아, 아니당.</p>
+          <p> </p>
+          <p>쿠루링이 찾던 게 바로 이런 거였당.</p>
+          <p> </p>
+          <p>여기, 말한 대로 카룬의 증표를 주겠당.</p>
+          <p> </p>
+          <p>쿠루링은 특수작전부 증표가 훨씬 더 많이 필요하니까 앞으로도 가지고 오면 카룬의 증표로 바꿔주겠당.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_I_COIN_HEADQUARTERS_01]%을 준비해라</font></p>[%collectitem]</step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Shugo_LDF4a_06]%와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">쿠루링은 특수작전부 증표를 모아오면 카룬의 증표를 주겠다고 한다. 특수작전부 증표를 모아가자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>동전 수집가 쿠루링은 자신이 가진 카룬의 증표를 특수작전부 증표와 교환해 주겠다고 했다.</p>
+          <p> </p>
+          <p>그래서 가지고 있던 특수작전부 증표를 쿠루링에게 주고 카룬의 증표로 교환했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

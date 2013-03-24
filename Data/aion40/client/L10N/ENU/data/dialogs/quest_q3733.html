@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hey, [%username]. How many Balaur does it take to change a glow bulb?</p>
+          <p> </p>
+          <p>Five: one to change it, and four to tell him how.</p>
+          <p> </p>
+          <p>I have a particular four in mind, as well: [%dic:STR_DIC_M_Mini_Castle_NagaWizardA_26_Ae], [%dic:STR_DIC_M_Mini_Castle_BoneDrake_26_Ae], [%dic:STR_DIC_M_Mini_CastleNagaPriest_26_Ae], and [%dic:STR_DIC_M_Mini_Castle_NagaWizardB_26_Ae]. They're the instructors in the Nochsana Training Camp, and without their know-how, the new recruits would be as blind as a vivel without a glow bulb. You want to help get rid of them?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You look like you have something good to tell me about the Nochsana Training Camp, yes?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Yes!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I knew it! You've never let me down yet.</p>
+          <p> </p>
+          <p>Haha, now that you've got rid of the instructors, maybe I'll let the fledglings get some target practice in on the rookie Balaur.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Kill the balaur Instructors in the Nochsana Training Camp.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Mini_Castle_NagaWizardA_26_Ae] ([%2]/1).</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Mini_Castle_BoneDrake_26_Ae] ([%5]/1).</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Mini_CastleNagaPriest_26_Ae] ([%8]/1).</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Mini_Castle_NagaWizardB_26_Ae] ([%11]/1).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report to [%dic:STR_DIC_N_LF2_Brando]. </font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Defeat the Balaur instructors who train Draconutes in the Nochsana Training Camp.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Instructor Brunto asked you to defeat the Balaur instructors in charge of the Draconute trainees. </p>
+          <p> </p>
+          <p>You were successful, which maybe means you'll have to listen to fewer of Brunto's bad jokes in the future.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, you're [%username]?</p>
+          <p> </p>
+          <p>I've heard stories about you--amazing talents, fierce battles....</p>
+          <p> </p>
+          <p>I've also heard that you help people in need.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Well some of that's true."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Do you think you could help me?</p>
+          <p> </p>
+          <p>It's such an easy task--I hope you won't think it's too minor for your attention. </p>
+          <p> </p>
+          <p>I need seven [%dic:STR_DIC_E_gb_source_tree_d_30a]s.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What are they for?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I take a certain amount of pride in my cooking and I want to treat Balom to a meal of Abex roasted over Salix Wood. It's one of his favorite foods.</p>
+          <p> </p>
+          <p>I intended to get it myself, but it's harvest season, so I'm busy getting the crop in. Will you gather the wood for me?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>If you head down the road you'll see a big tree. Look for the [%dic:STR_DIC_E_gb_source_tree_d_30a]s there.</p>
+          <p> </p>
+          <p>Seven should be enough for now.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"On my way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You ARE [%username], are you not?</p>
+          <p> </p>
+          <p>That's odd. I've heard the Daeva named [%username] never refuses a request.</p>
+          <p> </p>
+          <p>I guess you can't believe everything you hear.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Perhaps not."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, you're late! I've been waiting for you to return.</p>
+          <p> </p>
+          <p>Valumcus had fresh Abex meat for me. Now I just need the Salix Wood.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Where do you want these logs?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The stories about you don't seem to be entirely true.</p>
+          <p> </p>
+          <p>This really isn't enough [%dic:STR_DIC_E_gb_source_tree_d_30a]s to get a fire going.</p>
+          <p> </p>
+          <p>The meat will spoil if I don't get them soon!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll hurry."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ahh... Salix Wood always smells so nice.</p>
+          <p> </p>
+          <p>When I roast the Abex meat on it, the meat will soak up that wonderful fragrance. Balom will really like it, don't you think? Maybe he'll finally put me in charge of the Tripeeds.</p>
+          <p> </p>
+          <p>It makes me happy just thinking about it! Thank you so much.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect [%dic:STR_DIC_E_gb_source_tree_d_30a]s and take them to [%dic:STR_DIC_N_Virashak].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Collect Salix Wood and bring it to Virashak, so that he can cook Balom's favorite dish.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Virashak said that he wanted to cook the Abex dish that Balom likes, and asked you to bring Salix Wood.</p>
+          <p> </p>
+          <p>When you brought him the Salix trees, he thanked you.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

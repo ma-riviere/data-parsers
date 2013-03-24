@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>혹시 [%username] 님 아닙니까?</p>
+          <p> </p>
+          <p>이렇게 뵙다니 정말 영광입니다.</p>
+          <p> </p>
+          <p>[%username] 님의 무용담을 많이 들었거든요.</p>
+          <p> </p>
+          <p>제 친구가 베르테론 요새에 있는데 실력이 대단하다고 입에 침이 마르게 칭찬하더군요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>휴, 어떻하면 [%username] 님처럼 훌륭한 [%userclass]%이 될 수 있을까요?</p>
+          <p> </p>
+          <p>요즘 [%dic:STR_DIC_M_Troll_35_An]%와 [%dic:STR_DIC_M_Trollkin_35_An]의 행패가 심해서 놈들을 좀 처치해야 하는데 생각보다 일이 어렵군요.</p>
+          <p> </p>
+          <p>제가 좀 굼떠서요. 한 마리 잡는데 한 나절씩 걸린다고 힐라스 님께 잔소리를 들었습니다.</p>
+          <p> </p>
+          <p>오늘 중으로 20마리를 잡아야 하는데 아직 두어 마리 밖에 못 잡았네요.</p>
+          <p> </p>
+          <p>그래서 말인데 [%username] 님이 도와주시면 안 되겠습니까?</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정말 감사합니다.</p>
+          <p> </p>
+          <p>그럼 [%dic:STR_DIC_M_Troll_35_An] 7마리와 [%dic:STR_DIC_M_Trollkin_35_An] 3마리만 부탁합니다.</p>
+          <p> </p>
+          <p>포기해야겠다고 생각했는데 도와주겠다고 하니 힘이 나는군요.</p>
+          <p> </p>
+          <p>그럼 전 이만 가 보겠습니다. 나머지 녀석들을 처치하려면 일 분 일 초가 아까우니까요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>역시 무리한 부탁이었죠?</p>
+          <p> </p>
+          <p>죄송합니다, 이런 부탁을 드려서.</p>
+          <p> </p>
+          <p>마음은 급한데 몸이 안 따라주니 잠깐 정신이 어떻게 됐었나 봅니다.</p>
+          <p> </p>
+          <p>최선을 다해 보고 안 되면 어쩔 수 없죠. 뭐, 잔소리는 좀 듣겠지만요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>벌써 끝난 겁니까?</p>
+          <p> </p>
+          <p>전 이제 두 마리 잡았는데.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정말 대단하군요. </p>
+          <p> </p>
+          <p>실력이 좋단 얘기는 들었지만 이 정도일 줄은 몰랐습니다.</p>
+          <p> </p>
+          <p>덕분에 제 체면이 좀 섰군요.</p>
+          <p> </p>
+          <p>아참, 이번 일은 다른 사람에겐 비밀로 해 주십시오. 부끄럽지만 부탁드립니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">행패를 부리는 트롤과 트롤킨을 처치하라</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Troll_35_An]([%2]/7)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Trollkin_35_An]([%5]/3)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Paion]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">파이온을 무사히 명령을 수행할 수 있도록 트롤 무법자와 긴 팔 트롤킨을 처치해야겠다.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>파이온은 힐라스의 명령으로 트롤과 트롤킨을 처치하고 있는데 생각보다 일이 진척되지 않아 걱정이라고 했다.</p>
+          <p> </p>
+          <p>그가 무사히 일을 끝낼 수 있도록 트롤 무법자와 긴 팔 트롤킨을 처치해 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

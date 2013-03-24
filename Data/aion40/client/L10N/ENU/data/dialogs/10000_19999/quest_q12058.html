@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q12058</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>Not entered</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Heard of the Wandering Ruins, [%username]? It's an ancient place, so scarred that no one has been able to accurately date it, or even ascertain who built it! My guess is that the ruins are Reian, but I need confirmation before I can send off my report to Kamar.</p>
+          <p> </p>
+          <p>I want you to go there and destroy the [%dic:STR_DIC_M_LDF4b_T2_Gargoyle_58_An]s, [%dic:STR_DIC_M_LDF4b_T2_SouledStone_58_An]s, and [%dic:STR_DIC_M_LDF4b_T2_Sam_58_An]s. Collect whatever fragments you can from them, then bring them to me so I can study them.</p>
+          <p> </p>
+          <p>Go now, before the place is lost to the Balaur.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, you're back. Did you do as I asked?</p>
+          <p> </p>
+          <p>I know my request was strange coming from a simple Warehouse Keeper, but I want to help my people more directly, and this seemed like a way to do it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">"Yes. Here."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hmm. Interesting.</p>
+          <p> </p>
+          <p>See these pieces? They're clearly wings, but without the full sculpture, I can't tell if they're Reian wings. And these pieces here all seem to follow Reian architectural philosophies, but again... I cannot confirm.</p>
+          <p> </p>
+          <p>It seems I will need more help in this matter. Still, thank you for your time. Here's your payment.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect some [%dic:STR_DIC_I_Q12058all] and take them to [%dic:STR_DIC_N_Iali].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Iali wants to know whether the relics of the Wandering Ruins belong to the Reians. Destroy the Bronze Wing Gargoyles, Relic Kalgolems, and Ruins Mugolems there, and collect fragments of relics from them.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Iali wanted to know whether the relics of the Wandering Ruins belonged to the Reians, so sent you out to destroy the creatures there and collect the relics they had.</p>
+          <p> </p>
+          <p>Unfortunately, the relics gave no information, leaving Iali sorely disappointed.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

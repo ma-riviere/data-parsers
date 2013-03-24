@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It isn't as if I'm busy enough already, is it? Oh no!</p>
+          <p> </p>
+          <p>Listen to this. I send two scouts off to the Sulfur Archipelago to see if there are any Asmodians there, and before I know it, they've been returned to the Obelisk.</p>
+          <p> </p>
+          <p>They were killed, and do you know what got them?!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Not Asmodians, I assume?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Worms! They were killed by worms!</p>
+          <p> </p>
+          <p>In my soldiers' defense, these are no ordinary worms. They spit acid, and they can crush a man in seconds. They're lethal, and we need to make sure they don't interfere with our reconnaissance again.</p>
+          <p> </p>
+          <p>I need someone to go to the archipelago and obliterate these monstrosities. Will you undertake the task?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Only one of the unfortunate scouts has regained consciousness so far, and she tells us there are hundreds of [%dic:STR_DIC_M_Ab1_1141_Worm_28_An]s and [%dic:STR_DIC_M_Ab1_1141_WormB_29_An]s at the Sulfur Flow and Sulfur Swamp.</p>
+          <p> </p>
+          <p>Kill them, uproot them, then bring me their [%dic:STR_DIC_I_QUEST_1819a] as proof.</p>
+          <p> </p>
+          <p>And, one last thing. Their sap is incredibly acidic. Unless you want scarred hands for the rest of your life, handle them with care.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Thanks for the warning."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did I hear you correctly? You've refused the job?</p>
+          <p> </p>
+          <p>What kind of Daeva are you, [%username]? You should be ashamed of yourself.</p>
+          <p> </p>
+          <p>Since no other Daeva are available to help, I can only hope you reconsider.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll think about it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]! Why are you back so soon?</p>
+          <p> </p>
+          <p>You aren't hurt, are you? You look all right....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I'm fine. Here..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What? Has the acid corroded your mind?</p>
+          <p> </p>
+          <p>I need more sap, [%username]. Remember, both the [%dic:STR_DIC_M_Ab1_1141_Worm_28_An]s and [%dic:STR_DIC_M_Ab1_1141_WormB_29_An]s excrete it.</p>
+          <p> </p>
+          <p>Hurry now and bring me the [%dic:STR_DIC_I_QUEST_1819a].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Right."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oof! That stench! This sap certainly is potent, isn't it?</p>
+          <p> </p>
+          <p>I think I'll send it to Sanctum for testing. Perhaps our scientists can find a way to use the sap against those knuckle-dragging Asmodians....</p>
+          <p> </p>
+          <p>If you come across more of the sap, bring it to me and I'll send it on to Sanctum. And, of course, I shall reward you for it.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Defeat the [%dic:STR_DIC_M_Ab1_1141_Worm_28_An] and [%dic:STR_DIC_M_Ab1_1141_WormB_29_An], then collect their sap and take it to [%dic:STR_DIC_N_Ab1_1141_Quest_Li].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">You learned that the Cannibal Worms had spread throughout the Sulfur Archipelago, making it difficult to scout the island. Destroy as many of the Sulfur Worms and Sticky Sulfur Worms as you can, collect their sap, and take it to Pontus.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Pontus told you that two scouts were killed by Cannibal Worms, and he needed to eliminate the creatures from the Sulfur Archipelago to save future victims.</p>
+          <p> </p>
+          <p>At his request, you destroyed the Cannibal Worms, collecting their sap as evidence. When you returned the sap to Pontus, he rewarded you and promised to do so again if you brought him more of it.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

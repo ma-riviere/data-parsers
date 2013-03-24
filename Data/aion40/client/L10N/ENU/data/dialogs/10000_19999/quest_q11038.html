@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hey, you! Weird-looking thing!</p>
+          <p> </p>
+          <p>You a Reian?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"No, I'm an Elyos."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Elyos? Never heard of 'em. But I guess we gotta get new guys from somewhere.</p>
+          <p> </p>
+          <p>Creatures with legs are always roaming, am I right?</p>
+          <p> </p>
+          <p>By the way, do you eat Mookies? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Errr, no. Why do you ask?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, good. 'Cuz if you'd tried to eat me, I would've done something too. I was gonna stab you with a thorn. Shtunk!</p>
+          <p> </p>
+          <p>Can't be too careful since the Shulack refugees came to this area.</p>
+          <p> </p>
+          <p>Heeeey...you said you don't eat us. Can you help maybe? The blasted Shulacks are always after me and my kids.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Those Shulacks are getting fatter every day, and now I can't find all of my kids. My poor babies!</p>
+          <p> </p>
+          <p>Please get rid of the [%dic:STR_DIC_M_LF4_A5_ShulackAs_51_Ae]s and [%dic:STR_DIC_M_LF4_A5_ShulackWi_51_Ae]s.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"For the children."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I guess it's true what they say: the Elyos really are cold-hearted. Well, they don't say it yet because I'd never heard of you, but they will say it now!</p>
+          <p> </p>
+          <p>We're just like you guys, you know. We feel happy, and we feel sad. We have kids. We bleed when we're cut.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"But your blood is tastier."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What're you doing here, funny-looking? Shouldn't you be out there protecting Mookies from the dreaded Shulacks?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"It's safe for your kids to play now."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You must be stronger than a Balaur! I'm gonna tell my whole family--an Elyos saved the day!</p>
+          <p> </p>
+          <p>I like you.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Hunt Shulacks who eat young Mookies.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_LF4_A5_ShulackAs_51_Ae]s([%2]/13)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_LF4_A5_ShulackWi_51_Ae]s([%5]/10)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_N_Tuca_01].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Help Squip. She's having a hard time because Shulack refugees are eating her children.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Squip is sad because Shulack refugees are eating her babies.</p>
+          <p> </p>
+          <p>You got rid of Shulack elite soldiers for her, making the area safe for Mookie kind. She said she likes you.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

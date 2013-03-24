@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], I can restore your Siel's Supreme Dagger to its original strength...but it will be difficult. It's very heavily damaged...seen many battles.</p>
+          <p> </p>
+          <p>This is a weapon built of my people, so only true Reian skill can restore its power. True Reian hands along with true Reian materials...</p>
+          <p> </p>
+          <p>Because our enemy is the same as yours, I will repair this dagger for you if you obtain the materials I need.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I will find this Reian material."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What I need is unknown to your people...and almost forgotten by my own. An ore from a time when we were all still Humans.</p>
+          <p> </p>
+          <p>Only one Reian I know still possesses knowledge of this mineral...and may possibly still have some. You must find him and bring it back for me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You must find [%dic:STR_DIC_N_Honeus] and tell him of the bow you seek to repair.</p>
+          <p> </p>
+          <p>If you assist him in a task, he will surely give you the [%dic:STR_DIC_I_Insidium_01] we need. It's an ancient ore that was created when Lady Siel and Tiamat battled one another before the Cataclysm. The energy they produced was magnificent...turned coal into this ore.</p>
+          <p> </p>
+          <p>Only Honeus has Noxallon Ingots. Remember, you must do what he asks, and only then will he give it to you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll find Honeus."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I should have known better than to take an Elyos at his word.</p>
+          <p> </p>
+          <p>My people sometimes say that the Elyos are like the Kerubar...always reaping, reaping, reaping but never sowing.</p>
+          <p> </p>
+          <p>Perhaps you will hear these words and change...perhaps you will not.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Perhaps I'll break your nose!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You have taken your time, [%username]. But it's no matter...it gave the fire time to heat up.</p>
+          <p> </p>
+          <p>Hand me the Noxallon Ingot and your Siel's Supreme Dagger.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here's the dagger and ingot."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I don't know why I expected anything different from a Daeva, [%username]!</p>
+          <p> </p>
+          <p>If you want your dagger repaired, you must do as [%dic:STR_DIC_N_Honeus] asks of you to receive the [%dic:STR_DIC_I_Insidium_01]. And remember--the two components must be in your Cube when you approach me.</p>
+          <p> </p>
+          <p>There is no simple way to restore its power.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I have been busy, Reian."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, this ingot is perfect, just as I had hoped. This will only take but a minute, [%username].</p>
+          <p> </p>
+          <p>(He melts the Noxallon Ingot in a furnace and carefully applies the molten liquid to the dagger blade.)</p>
+          <p> </p>
+          <p>The ore ointment and herbs are mixing with the metals...it will absorb quickly. There, that should do it. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Obtain the [%dic:STR_DIC_I_QUEST_30030] and bring it to [%dic:STR_DIC_N_Gefeios].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Obtain the Noxallon Ingot, the material that can restore the powers of Siel's Supreme Dagger.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Gefeios said he needed a special material in order to restore the true powers of Siel's Supreme Dagger.</p>
+          <p> </p>
+          <p>You went to see Honeus and received the Noxallon Ingot after doing him a favor. With the ingot, Gefeios turned your dagger into Noble Siel's Supreme Dagger.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

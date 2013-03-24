@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Welcome to Verteron, [%username]. I see you've brought your own armor. That's a relief.</p>
+          <p> </p>
+          <p>Our local Guardians whine about theirs all the time. Too old, too ragged, doesn't fit properly... I know, I know--soldiers complaining about their kit, what else is new?</p>
+          <p> </p>
+          <p>But the fact is, they're right. By now, most of them are wearing pieces someone else died in. That's bad for morale. I ordered more, but it hasn't arrived yet.</p>            
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"What's the delay?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>         
+          <p>We're not sure. All our orders go through Sagirunerk.</p>
+          <p> </p>
+          <p>I've just started doing business with him, and so far his goods have always been acceptable.</p>
+          <p> </p>
+          <p>This time, though...the armor should have been here already.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"No wonder the Guardians are complaining."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Quite. This is unprecedented. Something must have gone wrong with the order.</p>
+          <p> </p>
+          <p>[%userclass], would you visit Sagirunerk and look into this for me?</p>         
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>My thanks. We're planning a raid on the Tursin Outpost soon, and if we had new armor before then, it would boost morale. And save lives.</p>
+          <p> </p>
+          <p>If [%dic:STR_DIC_N_Shugo_LF1a_01] doesn't know what you're talking about, show him this receipt. All the details are there in writing, signed and sealed.</p>
+          <p> </p>
+          <p>If that doesn't work, you can always mention his chances of doing business with us again.</p>          
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"On my way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Busy, eh? Can't be helped.</p>
+          <p> </p>
+          <p>I'll give it one more day. If Sagirunerk still hasn't come through, I'll pay him a visit.</p>               
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Good luck to you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What can Sagirunerk do for Daeva? No goods here for you just yet, nyerk.</p>
+          <p> </p>
+          <p>Can't open shop to general public now. Only importing high quality goods for Guardians!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">"Speaking of them, do you recognize this?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ack! Poor Sagirunerk lost sleep worrying over Hyacinte's order! Can't afford to lose business from big-spender Guardians when just starting out!</p>
+          <p> </p>
+          <p>Anyway, [%dic:STR_DIC_LA73] was supposed to make armor--we supply materials, wait, and nothing!</p>
+          <p> </p>
+          <p>Kind Daeva, will you go to Nadaelo and find out what happened? I have asked again and again...always nothing. Take this. This was agreement Nadaelo made with Sagirunerk. See? You take this, shove in his face, be big scary Daeva!</p> 
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"I'll see what I can do."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>See this, [%userclass]? This is armor made in the traditional Verteron style--Starturtle Shell and Starcrab Carapace on the outside, dense padding on the inside. You won't get through that with an ordinary blade.</p>
+          <p> </p>
+          <p>This set's not for sale, I'm afraid. I would make more, but I've got no decent materials. </p>
+          <p> </p>
+          <p>The Shugos keep pushing cracked shells and shoddy carapaces on me, pressuring me to work with them. There's nothing to be made from that junk, though.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Do you recognize this supply agreement?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, that's what brings you here.</p>
+          <p> </p>  
+          <p>I can't believe they sent a Daeva to deal with this. Don't you have more important things to do?</p>        
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk with [%dic:STR_DIC_N_Shugo_LF1a_01].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Talk with [%dic:STR_DIC_LA73].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Hyacinte ordered new armor from Sagirunerk, but has not received it yet. Find out what the hold-up is.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hyacinte was worried that his soldiers were using old, worn-out armor, so he placed an order with Sagirunerk for new armor.</p>
+          <p> </p>
+          <p>The delivery date has passed, and Hyacinte hasn't received a shipment. He asked you to see Sagirunerk and find out the reason for the delay.</p>
+          <p> </p> 
+          <p>Sagirunerk passed the blame to Nadaelo, who was contracted to make the armor. So you visited Nadaelo.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>엘리시움의 정책대로라면 이곳에도 가디언이 많이 있어야 하지요.</p>
+          <p> </p>
+          <p>그런데 이곳이 워낙 위험하기도 하고 인원도 부족하고 해서 가디언을 파견하지 못했습니다.</p>
+          <p> </p>
+          <p>그래서 제가 임무를 수행하는 틈틈이 지나는 데바들에게 치안 유지를 위한 부탁을 드리고 있습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이곳에서 치안 문제라고 한다면 당연히 레파르 혁명단을 제압하는 일이지요.</p>
+          <p> </p>
+          <p>혁명단 전투병과 척후병들이 활개를 치고 다닙니다.</p>
+          <p> </p>
+          <p>어떻습니까, [%username] 님?</p>
+          <p> </p>
+          <p>그 정도 실력이면 [%dic:STR_DIC_M_LehparFiSoldier_38_An]과 [%dic:STR_DIC_M_AeC_LehparAsSoldier_39_An]도 쉽게 처치할 수 있을 것 같은데.</p>
+          <p> </p>
+          <p>좀 도와주시지 않겠습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>잘 생각하셨어요. [%username] 님이 아니면 누가 놈들을 처치한단 말입니까.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_LehparFiSoldier_38_An]과 [%dic:STR_DIC_M_AeC_LehparAsSoldier_39_An]을 5명씩만 처치해 주시면 고맙겠습니다.</p>
+          <p> </p>
+          <p>그럼 어서 다녀오십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아니, 왜요?</p>
+          <p> </p>
+          <p>엘테넨의 치안을 위해서 그정도도 해주시기 어렵습니까?</p>
+          <p> </p>
+          <p>바쁜 일이 있어서 그러는 거라면 나중에 다시 오십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>기다리고 있었습니다.</p>
+          <p> </p>
+          <p>다친 데는 없어 보이는데 일은 무사히 끝냈나요?</p>
+          <p> </p>
+          <p>궁금하니 어서 말씀해 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>역시 기대했던 대로군요.</p>
+          <p> </p>
+          <p>골칫거리인 레파르 혁명단 놈들을 처치해 주셔서 감사합니다.</p>
+          <p> </p>
+          <p>자, 이건 감사의 표시입니다. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">혁명단 건설기지의 레파르 혁명단을 소탕하라</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_LehparFiSoldier_38_An]([%2]/5)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_AeC_LehparAsSoldier_39_An]([%5]/5)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Elram]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">혁명단 건설기지에 있는 혁명단 전투병과 혁명단 척후병들이 활개를 치고 있다고 한다. 놈들을 처치하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>엘테넨의 치안을 혁명단원들이 위협하고 있다고 한다. 그래서 혁명단 건설기지로 가서 혁명단 전투병과 척후병을 처치해 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

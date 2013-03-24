@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(There's a small jewelry box on the ground. It's in fine condition, so it's unlikely to have been deliberately thrown away.)</p>
+          <p> </p>
+          <p>(Someone must have has lost it. Perhaps the answer is inside.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I wonder what's inside."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(You open the box and find a delicate pendant inside. You look closer at the design, and notice an engraving of a woman's face etched into the metal.)</p>
+          <p> </p>
+          <p>(The pendant is clearly of value to someone. Maybe you should try to track down its owner.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>([%dic:STR_DIC_N_Tree_NoMove_Lodas] is nearby. See if he knows anything.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"This must belong to someone...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(The items seem personal, perhaps it's best to leave them. Some stones are better left unturned.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Maybe someone will come looking for it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ahhh...that box....</p>
+          <p> </p>
+          <p>I noticed it...just yesterday. What is...in it?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">"A small engraved pendant."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hmm....</p>
+          <p> </p>
+          <p>The only Daeva...I've seen recently was...[%dic:STR_DIC_N_Justachys]. And you, of course....</p>
+          <p> </p>
+          <p>Speak to him. Perhaps he can help....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"I will. Thank you, Lodas."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Where have I been? Where?? Novan hasn't seen it, nor has Heropres. Perhaps I should ask Telamone too.</p>
+          <p> </p>
+          <p>Sorry, [%username], but I don't have time to talk right now. I've lost something very important and I really have to find it.</p>
+          <p> </p>
+          <p>Maybe Lakaias knows! Hey, LAK...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"It wasn't this pendant, was it? Lodas sent me here."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes, yes it was! Oh thank Yustiel for Lodas!</p>
+          <p> </p>
+          <p>This pendant belonged to a good friend of mine, you see. He gave it to me before he left, asking me to safeguard it until he returned, or give it to his son if he didn't. That was several months ago now....</p>
+          <p> </p>
+          <p>Thank you, friend, and please thank Lodas for me. Now I can return to Sanctum, and carry out my duties...not as a Daeva, but as a friend.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Ask [%dic:STR_DIC_N_Tree_NoMove_Lodas] about the jewelry box.</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Hand the pendant to [%dic:STR_DIC_N_Justachys].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Find the owner of the pendant.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You found a jewelry box abandoned near Lodas. He suggested it might belong to Justachys, a Guardian Sentinel.</p>
+          <p> </p>
+          <p>So you took the pendant to Justachys. It soon emerged that the pendant was entrusted to him by a good friend who had been killed, and Justachys now had to take it to his friend's son. He had lost the box walking through the desert.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

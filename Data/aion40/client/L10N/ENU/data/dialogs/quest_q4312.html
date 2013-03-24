@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Bah! This letter isn't what I expected at all!</p>
+          <p> </p>
+          <p>Oh, this? It's a letter from Judge Anund. I'd expected it to be about my impending transfer to Pandaemonium, but it contains new mission orders. I'm to get rid of the protectors in the Sky Temple of Arkanis.</p>
+          <p> </p>
+          <p>It makes no sense. I'm collecting information about missing Daevas. Why are my superiors distracting me?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Is it important?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Sky Temple of Arkanis is inhabited by many brutal creatures--protectors created to guard it. They attack everyone who approaches the temple.</p>
+          <p> </p>
+          <p>My gut is telling me something's wrong, though. The Shadow Court never cares about things like...well, anyway. I'd like to continue to concentrate on my original task.</p>
+          <p> </p>
+          <p>Could you go to the Sky Temple of Arkanis and get rid of [%dic:STR_DIC_M_SAMD_30_Ae]s and [%dic:STR_DIC_M_MaidengolemD_30_Ae]s in my place?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good, good. That's one less concern. If you're taking care of the [%dic:STR_DIC_M_SAMD_30_Ae]s and [%dic:STR_DIC_M_MaidengolemD_30_Ae]s, I can keep trying to figure out why these Daevas are missing.</p>
+          <p> </p>
+          <p>The sky temple is in the western part of [%dic:STR_DIC_W_DF2_SUB_C2].</p>
+          <p> </p>
+          <p>I'm relying on you, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Don't worry. I've got it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Are you really rejecting my request? Have you forgotten that I'm an Shadow Executor?</p>
+          <p> </p>
+          <p>You may regret rejecting a request of the Shadow Court.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll keep that in mind."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>My goal is to be a Judge in Pandaemonium. Perhaps someday I will be, and you'll be glad to have me as a friend.</p>
+          <p> </p>
+          <p>Did you finish what I asked of you?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I did."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you for your hard work, [%username]. Getting rid of those Mugolems and Caryatids will free me to continue my investigation.</p>
+          <p> </p>
+          <p>I don't know why Judge Anund assigned me this mission, but I'm pleased to get it out of the way.</p>
+          <p> </p>
+          <p>Here's a reward for your effort.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get rid of the protectors of the Sky Temple of Arkanis.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_SAMD_30_Ae] ([%2]/5)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_MaidengolemD_30_Ae] ([%5]/5)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_N_Gangleri].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Help Gangleri the Shadow Executor get rid of Arkanis Mugolems and Ruins Caryatids, the protectors who guard the Sky Temple of Arkanis.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Gangleri said that he received an order from Anund to secure the Sky Temple of Arkanis, and he asked for your help.</p>
+          <p> </p>
+          <p>When you got rid of Arkanis Mugolems and Ruins Caryatids and returned to him, he expressed his gratitude.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

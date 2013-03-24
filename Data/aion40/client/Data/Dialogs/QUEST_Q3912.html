@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]도 이제 의젓한 [%userclass]이니 자신을 돌아볼 시간을 갖는 것이 좋을 것이오.</p>
+          <p> </p>
+          <p>생명의 템페르에서 왜 그런 과제를 제시하셨는지 생각해 보셨소?</p>
+          <p> </p>
+          <p>유스티엘 님은 치유성과 호법성이 생명의 뜻을 잊어가고 있는 것이 아닌지 걱정하고 계신다오. </p>
+          <p> </p>
+          <p>물론 나는 템페르의 제자들이 가르침을 잊었을 거라고 생각하지 않소.</p>
+          <p> </p>
+          <p>또한 지금처럼 파괴와 죽음이 난무하는 상황에서 제자들이 어려움을 겪고 있을 거라는 것도 잘 아오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>하지만 지금의 천계는 분노에 가득 차 있소.</p>
+          <p> </p>
+          <p>용족에 대한 분노, 마족에 대한 분노... 사람들은 생명의 가치에 대해 생각하지 않으려고 하지.</p>
+          <p> </p>
+          <p>이런 때야말로 우리 생명의 제자들이 나서야 하는 거요.</p>
+          <p> </p>
+          <p>[%username]! 유스티엘 주신님의 어린 제자여. </p>
+          <p> </p>
+          <p>임무를 행하던 곳으로 돌아가시오. 가서 쓰러진 동료에게 생명의 구원을 내리고 생명의 가르침을 전파하고 돌아오시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>쓰러진 동료에게 손을 내미시오.</p>
+          <p> </p>
+          <p>설령 아무런 관련이 없거나 심지어 미운 자라고 해도, 먼저 손을 내미는 것은 생명의 제자들의 자세라오.</p>
+          <p> </p>
+          <p>쓰러진 사람들을 보면 소생시키고 힘을 잃은 사람을 보면 기운이 나게 하시오.</p>
+          <p> </p>
+          <p>그대의 손에 의해 충분히 많은 사람들이 소생되면 내게 다시 찾아오시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], 스승의 말을 듣는 것이 좋소.</p>
+          <p> </p>
+          <p>템페르는 제자들에게 나쁜 것을 권하지 않소.</p>
+          <p> </p>
+          <p>생각을 바꿀 거라고 믿겠소.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+    <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>생명의 길을 따르는 자가 조심해야 할 것 중 하나는 자만심이오.</p>
+          <p> </p>
+          <p>상대의 생명을 손에 쥐고 있다는 자만심에 빠져선 절대 안 되오.</p>
+          <p> </p>
+          <p>그런 생각은 타락한 마족들이나 하는 거라오.</p>
+          <p> </p>
+          <p>그럼 [%username]은 어떻소? 내가 말한 일은 잘 수행하고 있소?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 말한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>쉬운 일이 아니었을 거요.</p>
+          <p> </p>
+          <p>아무리 유스티엘 님을 따르는 [%userclass]이라고 해도 이전에 번뇌를 가진 한 인간이니까.</p>
+          <p> </p>
+          <p>당신의 선행 덕에 생명의 가르침은 더욱 빛을 발하겠구려.</p>
+          <p> </p>
+          <p>정말 수고가 많았소.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_E_RESURRECT]을 사용하여 쓰러진 동료를 일으켜라([%2]/20)</font></p></step>               
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_N_Thrasymedes]와 대화하라</font></p></step>               
+    </steps>
+          <p><font font_xml="quest_summary">트라시메데스가 말한 대로 쓰러진 동료에게 소생 스킬을 사용하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>트라시메데스는 생명의 가르침이 잊혀지고 있는 것 같다며 가르침을 행하고 전파할 것을 청했다.</p>
+          <p> </p>
+          <p>그래서 쓰러진 자를 생명의 힘을 빌어 소생시키고 돌아가자 보상을 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

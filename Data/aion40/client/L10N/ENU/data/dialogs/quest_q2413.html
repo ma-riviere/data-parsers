@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's quite simple, [%username]. To help me, you'll need to wipe up Water Spirits along Fall Road.</p>
+          <p> </p>
+          <p>The task may not be as easy as you'd think.</p>
+          <p> </p>
+          <p>Water Spirits move in groups, so if you let down your guard for even a moment you'll find yourself surrounded.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I heard there are several kinds of Spirits."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Correct. Three types of Water Spirits lurk on Fall Road; [%dic:STR_DIC_M_ElementalWater2D_35_An]s, [%dic:STR_DIC_M_ElementalWater3D_36_An]s and [%dic:STR_DIC_M_ElementalWater4D_37_An]s.</p>
+          <p> </p>
+          <p>Lake Spirits are stronger than Water Spirits, and Mist Spirits are stronger than Lake Spirits. So you have to be careful.</p>
+          <p> </p>
+          <p>Kill all three kinds, and bring their Elemental Stones as evidence, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Each type of Water Spirit carries a different kind of Elemental Stone. </p>
+          <p> </p>
+          <p>You'll need three [%dic:STR_DIC_I_QUEST_2413a]s from the Water Spirits, two [%dic:STR_DIC_I_QUEST_2413b]s from Lake Spirits and a [%dic:STR_DIC_I_QUEST_2413c] from a Water Mist Spirit.</p>
+          <p> </p>
+          <p>I am responsible for this task, but I feel I can put my trust in you to complete it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"May I lose my wings if I fail!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What? Is this task harder than you expected?</p>
+          <p> </p>
+          <p>Water Spirits are difficult but not impossible to kill. A Daeva with your abilities, [%username]...I thought you would fly to the call. </p>
+          <p> </p>
+          <p>I'll give you more time to think about it. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll do that."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've been waiting for you. Were you injured? </p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_ElementalWater4D_all]s would not have given up the Elemental Stones without a fight...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"You were right, it wasn't easy."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No, this is not an easy task. Despite being made of water, the Spirits can really pack a punch.</p>
+          <p> </p>
+          <p>You can't stop now. The safety of others is resting on your wings.</p>
+          <p> </p>
+          <p>I will wait here for your return.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll not let you down." </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ahh good, you've gathered all of the Elemental Stones. </p>
+          <p> </p>
+          <p>Thanks to you, [%username], I won't need to worry about Water Spirits for a while.</p>
+          <p> </p>
+          <p>Take this, you deserve it. Tyr gave it to me, for the brave Daeva who helped me with my mission.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get rid of [%dic:STR_DIC_M_ElementalWater4D_all]s to gather three kinds of Elemental Stones. Bring the Stones to [%dic:STR_DIC_N_Gullveig].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Get rid of Water Spirits, Lake Spirits and Water Mist Spirits on Fall Road. Gather Elemental Stones and bring the Stones to Gullveig.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Gullveig explained about the dangers of Water Spirits along Fall Road, and asked you to hunt them and bring Water Spirit Stones, Lake Spirit Stones and Mist Spirit Stones as evidence.</p>
+          <p> </p>
+          <p>When you brought the Elemental Stones to her, she was pleased.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>혹시 [%dic:STR_DIC_LA53] 못 봤는가?</p>
+          <p> </p>
+          <p>이 녀석이 어딜 간 거지?</p>
+          <p> </p>
+          <p>고얀 놈 같으니. 먹여주고 재워주니 감히 도망을 가?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">뚜띠에 대해 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>내 애완 포구스라네.</p>
+          <p> </p>
+          <p>자식 대신 애지중지하며 키운 녀석인데 오늘 보니 갑자기 사라진게 아닌가!</p>
+          <p> </p>
+          <p>고얀 놈. 내가 얼마나 정성을 들여 키웠건만...</p>
+          <p> </p>
+          <p>잠깐... 자네 지금 시간이 있는가?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">고개를 끄덕인다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그럼 내 대신 [%dic:STR_DIC_LA53] 좀 찾아오게.</p>
+          <p> </p>
+          <p>그 녀석이 겉으로는 포구스로 보이지만 사람 손을 많이 타서 사람을 보면 반갑게 다가올걸세.</p>
+          <p> </p>
+          <p>요즘 따라 멀리 돌아다닌다 싶더니 이렇게 사라져 버렸군. 위험한 곳에라도 갔으면 큰일인데...</p>
+          <p> </p>
+          <p>어떤가, 도와주겠나?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>요즘 [%dic:STR_DIC_LA53] 그 녀석이 [%dic:STR_DIC_FLA07]에 관심이 많아서 그곳으로 간게 아닌가 걱정일세.</p>
+          <p> </p>
+          <p>일단 [%dic:STR_DIC_FLA07]으로 가서 뚜띠를 찾아보게나.</p>
+          <p> </p>
+          <p>만에 하나라도 그 녀석이 브라우니에게 잡아먹혔다면 어떡한다...</p>
+          <p> </p>
+          <p>어서 다녀오게나!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그깟 애완동물? 지금 그깟 애완동물이라고 했나?</p>
+          <p> </p>
+          <p>하긴 돈이나 밝히는 용병이 [%dic:STR_DIC_LA53]%이 얼마나 중요한 존재인지 알기나 하겠어.</p>
+          <p> </p>
+          <p>두 번 다시 자네에겐 부탁하지 않겠네!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그래, [%dic:STR_DIC_LA53]%은 찾았나?</p>
+          <p> </p>
+          <p>어디 있던가? 아니면 아직 못 찾은 겐가?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">통구이가 되었다고 전한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>뭐라고!</p>
+          <p> </p>
+          <p>몇 년동안 노력해서 키워온 자식같은 뚜띠가 브라우니의 뱃속으로 들어갔다고?</p>
+          <p> </p>
+          <p>그 많은 시간과 노력이 헛수고가 되다니...</p>
+          <p> </p>
+          <p>괘씸한 브라우니 놈들!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_FLA07]%으로 가서 [%dic:STR_DIC_LA53]의 흔적을 찾아라</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">임무 완료! [%dic:STR_DIC_LA12]%와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">페르노스가 아끼던 애완동물 뚜띠가 사라졌다고 한다. 뚜띠의 흔적을 추적하자.</p>
+          <p></font></p>
+        </body>
+        </html>
+    </Contents>
+    <notifies>
+      <notify state="succeed" progress="0" pos="2" fontsize="16" showframe="true" time="5" color="yellow">통구이가 된 뚜띠를 발견했습니다!</notify>
+    </notifies>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>페르노스가 수년 동안 애지중지하며 키운 애완동물인 뚜띠가 사라졌다.</p>
+          <p> </p>
+          <p>그래서 카바라 노천광산으로 가서 찾아오라는 부탁을 받았다.</p>
+          <p> </p>
+          <p>뚜띠의 흔적을 찾아갔지만 뚜띠는 이미 따끈한 통구이가 돼 있었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

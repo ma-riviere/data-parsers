@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Your timing is excellent.</p>
+          <p> </p>
+          <p>You must have heard that we lost the Asteria Fortress to the Asmodians.</p>
+          <p> </p>
+          <p>If we'd had just a few more troops, it never.... Well, there's no sense in looking backwards, right?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Victory lies ahead."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Very true. We must not let past failures hold us back.</p>
+          <p> </p>
+          <p>So, we are planning to recapture the fortress, and the first step is to wipe out the elite garrison the Asmodians have stationed there.</p>
+          <p> </p>
+          <p>Those troops are the backbone of the resistance. If they were defeated, the remaining Asmodians would be easy prey for our assault.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"And you want me to defeat them?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, [%username]... yes.</p>
+          <p> </p>
+          <p>As you know, not anyone can deal with the [%dic:STR_DIC_M_1808_all].</p>
+          <p> </p>
+          <p>Will you lend your strength for the good of Elysea?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm glad to hear it. First, you need to make your move when the Asmodians are occupying the fortress, the fortress is in the Vulnerable State, and there is a battle in progress.</p>
+          <p> </p>
+          <p>I'd recommend bringing a few allies as well. The Asmodians will not come at you just one at a time.</p>
+          <p> </p>
+          <p>Finally, obliterate the [%dic:STR_DIC_M_1808_all]s and return with the [%dic:STR_DIC_I_QUEST_1808a]s.</p>
+         </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"You make it sound so easy."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Perhaps you have another mission?</p>
+          <p> </p>
+          <p>Perhaps once your current mission is done, you could return?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Perhaps."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Do you have a report on your progress?</p>
+          <p> </p>
+          <p>If you were successful, I'll need those [%dic:STR_DIC_I_QUEST_1808a]s.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I have them right here."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It is all right. Taking on the [%dic:STR_DIC_M_1808_all]s is more difficult than you thought.</p>
+          <p> </p>
+          <p>Take a rest, and find more Daevas to assist you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Thank you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you for your efforts. It will help us greatly in retaking the fortress.</p>
+          <p> </p>
+          <p>Please take this as a token of appreciation for your efforts.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Wipe out the [%dic:STR_DIC_M_1808_all]s and bring the proof to [%dic:STR_DIC_N_Garpedo].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">The biggest obstacle in recapturing the Asteria Fortress is the presence of the elite Asmodian garrison. When the fortress is in the Vulnerable State, obliterate them and return to Garpedo with their Archon Insignias.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Garpedo said the elite Asmodian garrison is making it more difficult to recapture the Asteria Fortress, and asked you to wipe them out.</p>
+          <p> </p>
+          <p>You went to the Asteria Fortress as he asked, defeated the elite Asmodian garrison, and returned with the Insignias of Archon as proof.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

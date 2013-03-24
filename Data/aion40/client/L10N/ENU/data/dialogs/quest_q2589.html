@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, [%username]! I'm so glad to see you. I was just looking for a Daeva who could help me.</p>
+          <p> </p>
+          <p>I received a message that Pandaemonium will be dispatching inspectors to the Anair Harbor. They want to know if they can repair the facility for military purposes.</p>
+          <p> </p>
+          <p>Maybe the senior officers realized the situation here is more serious than they thought? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Perhaps." </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>They might send a proper Legion here if the harbor facilities could be used, and it'd sure be nice to have the resources of a full legion here.</p>
+          <p> </p>
+          <p>Anyway, they want me to gather Daevas in the area and get some preparatory work done. It involves destroying the spirits wandering in the area so the inspection can proceed quickly.</p>
+          <p> </p>
+          <p>It's an official duty so I've been authorized to reward you with gold coins. Are you interested? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good.</p>
+          <p> </p>
+          <p>Then please destroy [%dic:STR_DIC_M_UndeadDarkFiD_41_An]s, [%dic:STR_DIC_M_UndeadDarkWiD_41_An]s, and [%dic:STR_DIC_M_UndeadDarkRaD_40_An]s around Anair Harbor.</p>
+          <p> </p>
+          <p>Seems simple enough, eh?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Simple enough for me."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I thought I saw you standing around doing nothing but maybe it was a trick of the light.</p>
+          <p> </p>
+          <p>Yes, if you already have something to do then you should finish that task first.</p>
+          <p> </p>
+          <p>But perhaps you'll return when that work is done.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Perhaps I will."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I figure the contamination is the reason this area is crawling with so many ghosts. Even if they weren't exposed directly, they could have been affected through the air and soil.</p>
+          <p> </p>
+          <p>Nothing else can explain why the harbor and even the forest would be filled with so many ghosts.</p>
+          <p> </p>
+          <p>Anyway, what happened with the spirits? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I destroyed them."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent! I'm glad to reward you for your hard work.</p>
+          <p> </p>
+          <p>And there's still some time left before the inspectors arrive, if you want to dispose of more ghosts.</p>
+          <p> </p>
+          <p>I will reward you each time, of course. With gold coins again, of course.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Dispose of the ghosts in the Anair Harbor.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_UndeadDarkFiD_41_An] ([%2]/12).</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_UndeadDarkWiD_41_An] ([%5]/8).</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_UndeadDarkRaD_40_An] ([%8]/11).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_N_Coventina].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Dispose of the ghosts in Anair Harbor before the harbor facility inspectors arrive, and report to the administration officer Coventina.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Administration Officer Coventina said inspectors are being dispatched to observe the facilities of Anair Harbor. </p>
+          <p> </p>
+          <p>To prepare for the inspection, the spirits wandering in the harbor must be dealt with, so she asked you to do it.</p>
+          <p> </p>
+          <p>When you disposed of the ghosts in Anair Harbor as she instructed, she gave you a gold coin as a reward and asked you to keep destroying more ghosts until the inspectors arrive.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

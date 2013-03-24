@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p align="center"> - Work Order -</p>
+          <p> </p>
+          <p>1. To: Temp Worker [%username]</p>
+          <p> </p>
+          <p>2. Job Details: The swamp purification work is being delayed by the Swamp Slimes. Eliminate the Swamp Slimes in *** and report the result to the supervising branch.</p>
+          <p> </p>
+          <p>3. Supervising Branch: Silverine South Katalam Branch</p>
+          <p> </p>
+          <p>The above mission will be considered in the evaluation process for hiring you as a full-time worker. Additional points may be added depending on the result. Do your best nyerk.</p>
+          <p> </p>
+          <p>- Danurinerk, Recruiter of Silverine Limited</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">Fold the work order and put it away.</Act>
+    </Selects>
+  </HtmlPage>
+
+   <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did you get rid of all the Swamp Slimes? </p>
+          <p> </p>
+          <p>They have been blocking the hose connected to the watertank for days, so the swamp water couldn't be siphoned.</p>
+          <p> </p>
+          <p>Because of that, our water delivery has been on hold for days, nyerk.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">Tell him the result.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good to hear that you killed the monsters that were blocking the hoses.</p>
+          <p> </p>
+          <p>I think some of them went inside the tank, but there's nothing we can do about that.</p>
+          <p> </p>
+          <p>We now have to take care of the delayed deliveries first. </p>
+          <p> </p>
+          <p>Well done, [%username]. Anyway I'll report that you fulfilled the work order, nyerk.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Eliminate the Swamp Slime blocking the Silverine watertank hoses ([%2]/5).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report to Silverine South Katalam Branch.</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">You received a work order from Silverine Limited. Check the work details and perform the mission.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You received a work order from Silverine Limited.</p>
+          <p> </p>
+          <p>After you mopped up the Swamp Slimes blocking the hose to the Silverine Watertank and reported the result to the Silverine South Katalam Branch, you were rewarded for your hard work.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

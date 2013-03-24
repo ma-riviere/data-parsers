@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]! Where have you been!</p>
+          <p> </p>
+          <p>Governor Michalis sent an urgent message, asking for you by name!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What was the message about?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>He gave no details, only telling you to return to the Teminon Fortress and report to him.</p>
+          <p> </p>
+          <p>But the order came directly from the Governor, so it must be urgent, and very, very important.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You should hurry immediately. Did you bind yourself there? That would be fastest!</p>
+          <p> </p>
+          <p>I don't mean to pry. A Daeva's bind point is a personal matter, I know, but I would not wish you to be late.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll go as fast as I can, don't worry."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You would dare to disobey a direct order from the Governor?</p>
+          <p> </p>
+          <p>Most rude, and most stupid. I would have expected more of you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"The Governor can find someone else to do his busywork."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], you have arrived! It is good to see you again!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">"What is the matter, Governor?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+
+          <p>I will be blunt, there is no time for niceties. The Balaur have invaded Heiron.</p>
+          <p> </p>
+          <p>The Guardians of the fortress there are already at their limit with other problems. Without more aid, the Balaur will defeat them.</p>
+          <p> </p>
+          <p>And I regret that we have no aid to spare. None save you, of course. But if I know your skill, that may be enough.</p>
+          <p> </p>
+          <p>Go there, and report to Brigade General [%dic:STR_DIC_N_Perento].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"Faith and arms!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, you? You were all they could spare?</p>
+          <p> </p> 
+          <p>Does Governor Michalis really think you alone can turn the tide?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I can, and I shall."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oho, such overconfidence.</p>
+          <p> </p>
+          <p>I was hoping for the Guardians of the Protector of Teminon, or for Nezekan's Shield Legions.</p>
+          <p> </p>
+          <p>I suppose your aid is better than no aid at all, but still, it is an insult.</p>                                                                                                       </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk with Governor [%dic:STR_DIC_N_Taranis].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Talk with Brigade General [%dic:STR_DIC_N_Perento] of Heiron.</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Governor Michalis is looking for you urgently. Hurry to Teminon fortress and see the Governor.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Livius said Governor Michalis was urgently looking for you and told you to go to the Teminon Fortress immediately.</p>
+          <p> </p>
+          <p>Michalis ordered you to go to Heiron and support Brigade General Perento against the Balaur.</p>
+          <p> </p>
+          <p>When you told Brigade General Perento you were sent by the Governor, he seemed disappointed that you were the only reinforcement.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

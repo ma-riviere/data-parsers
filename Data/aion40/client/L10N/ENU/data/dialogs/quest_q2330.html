@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Rewrite Dave June 16 -->
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, I'm glad you're here, [%username]! I was just about to summon you.</p>
+          <p> </p>
+          <p>I received an order from the Temple of Wisdom, but it's actually an order for Randet, not me.</p>
+          <p> </p>
+          <p>It must have been delivered here by mistake. A lot of our best Daeva couriers are fighting in the Abyss War, and the replacements are finding Morheim...inhospitable to the traveler, I guess you could say.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Such hardships make us stronger!"</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Indeed they do--provided our couriers survive the tests that Morheim imposes. Apparently this last courier was too busy surviving to read the name on the orders. C'mon...."Bolverk" and "Randet" don't even look alike!</p>
+          <p> </p>
+          <p>In any case, [%dic:STR_DIC_N_Randet] is in Brusthonin. Could you head there and deliver it?</p>
+          <p> </p>
+          <p>While you're there, you should see if there's anything you can do to help them out. They're even more short-handed than we are.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Here you are. It's an order from the Temple of Wisdom. Routine stuff, probably.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_N_Randet] is at the Settlers Campsite in Brusthonin. Go there and deliver it.</p>
+          <p> </p>
+          <p>And unless you really crave a long journey, ask [%dic:STR_DIC_N_Orhe], the Teleporter, to send you to Brusthonin. Much faster that way.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm on my way!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm disappointed, [%username]. I chose you because you're so reliable, and now you refuse such a...routine request?</p>
+          <p> </p>
+          <p>Not only that, but this delivery was your chance to make a good impression on the Temple of Wisdom.</p>
+          <p> </p>
+          <p>And the Temple of Wisdom is better a friend than a rival...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Perhaps another time."</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're new here, right?</p>
+          <p> </p>
+          <p>Busy, busy place--what do you need?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Orders from the Temple of Wisdom."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hmm...a request for a status report. Maybe they'll devote some extra resources here.</p>
+          <p> </p>
+          <p>You come all the way here to deliver this to me? May Lady Lumiel smile on such dedication.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Deliver the order to [%dic:STR_DIC_N_Randet] in [%dic:STR_DIC_W_ZONE_NAME_DF2A].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">The order for Randet was mistakenly delivered to Bolverk in the Morheim Fortress. Deliver the order to Randet in Brusthonin.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Bolverk, a Protector of Divinity, said that an order from the Temple of Wisdom was mistakenly delivered to him. He asked you to deliver the order to Randet, the original recipient of the order.</p>
+          <p> </p>
+          <p>You delivered the order from the Temple to Randet at the Settlers Campsite in Brusthonin. She was very grateful.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>After seeing the Lepharist Citadel, I'm reconsidering my tactics. The sheer number of Lepharists is much higher than I'd guessed.</p>
+          <p> </p>
+          <p>The Revolutionaries are a large, well-funded paramilitary, not some confused rabble dissatisfied with Pandaemonium.</p>
+          <p> </p>
+          <p>Eventually we must destroy the Lepharist Revolutionaries. But for now, let's start small by disrupting their infrastructure.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Sabotage?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Got it in one. The Lepharist Citadel employs construction workers, with soldiers to protect them.</p>
+          <p> </p>
+          <p>Remove the guards, and the rest is easy.</p>
+          <p> </p>
+          <p>You should kill [%dic:STR_DIC_M_FeA_LehparFiD_39_Ae]s, [%dic:STR_DIC_M_KeB_LehparKnD_38_Ae]s and [%dic:STR_DIC_M_AeA_LehparAsD_39_Ae]s.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p> Well, then, pick a squad and go. Don't try it on your own. You'll need someone to keep them from swarming your flanks.</p>
+          <p> </p>
+          <p>Kill the [%dic:STR_DIC_M_FeA_LehparFiD_39_Ae]s, [%dic:STR_DIC_M_KeB_LehparKnD_38_Ae]s and [%dic:STR_DIC_M_AeA_LehparAsD_39_Ae]s.</p>
+          <p> </p>
+          <p>Then report back to me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Blood for blood!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Lost your nerve? True, this is more the sort of thing you'd find on the Abyss' battlefields.</p>
+          <p> </p>
+          <p>But we need to deal with this Base.</p>
+          <p> </p>
+          <p>As I said, find some stout soldiers and it'll be easy.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Easy? Right."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good to see you back and healthy, [%username].</p>
+          <p> </p>
+          <p>Been out to the Lepharist Citadel?</p>
+          <p> </p>
+          <p>Let's hear your report.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"We've cut their numbers."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Killing their soldiers opens the door.</p>
+          <p> </p>
+          <p>Next we hit the workers and buildings.</p>
+          <p> </p>
+          <p>Good work, Daeva. Important work, too. The rest's my problem!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Remove the Lepharist guards at the citadel.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_FeA_LehparFiD_39_Ae]([%2]/10)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_KeB_LehparKnD_38_Ae]([%5]/10)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_AeA_LehparAsD_39_Ae]([%8]/10)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report the result to [%dic:STR_DIC_N_Mirka].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Mirka asked you to clear the guards from the Lepharist Citadel. Go to the Base and strike hard.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Mirka plans to sabotage the Lepharist Citadel, and asked you to take out their guards as a first strike.</p>
+          <p> </p>
+          <p>You entered the Base and removed the Sergeants, Sentries, and Infiltrators.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

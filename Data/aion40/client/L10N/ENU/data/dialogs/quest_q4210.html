@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Old Haorunerk imprisoned in pirate ship? Sick, too? </p>
+          <p> </p>
+          <p>Voyage was his last before retiring...how sad, nyerk, nyerk.... </p>
+          <p> </p>
+          <p>Rescue mission must get underway fast!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Sounds like a good idea."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>But wait...Daeva was last to see Haorunerk...nyerk.</p>
+          <p> </p>
+          <p>Daeva has already been on Shulack ship, yes?</p>
+          <p> </p>
+          <p>Strong, brave, experienced...foolish.... Will Daeva go to Steel Rake and rescue Haorunerk?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Daeva sees Chantinerk over there? She is daughter of old Haorunerk. </p>
+          <p> </p>
+          <p>Perhaps best not to say anything to Chantinerk until father is rescued, yes? </p>
+          <p> </p>
+          <p>Ask [%dic:STR_DIC_N_Shugo_Shulack_02] for help to escape Steel Rake, Daeva. May blessings of large number of Asmodian lords and ladies go with you. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll take all the blessings I can get." </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Moorinerk understands Daeva is busy--flying here and there on important tasks, nyerk.</p>
+          <p> </p>
+          <p>But this is mission of mercy. This is chance to reunite father and daughter.</p>
+          <p> </p>
+          <p>Moorinerk hopes Daeva will change mind, yes?</p>
+         </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Perhaps I'll be back." </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(You recognize the lifeless form of Haorunerk.)</p>
+          <p> </p>
+          <p>(There's a piece of paper sticking out of his pocket.)</p>
+          <p> </p>
+          <p>(Perhaps it says something important.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"I'll read it and see."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(Bloodstains obscure some of the words.)</p>
+          <p> </p>
+          <p>("...destroy ship...defeat [%dic:STR_DIC_M_IDShip_KrallKeeperKnmd_44_Ae] and [%dic:STR_DIC_M_IDShip_ShulackEngineerNmd_45_Ah]....")</p>
+          <p> </p>
+          <p>("...then tell [%dic:STR_DIC_N_Shugo_Shulack_02].... Tell Chantinerk....Father loves her.")</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"I'd better get busy then."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Old Haorunerk is dead? He was aboard this ship?</p>
+          <p> </p>
+          <p>If only Rabinerk had known...would not have let him die alone.</p>
+         </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"He left us this note...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Rabinerk knows she's no match for Tantaka or Lahulahu. </p>
+          <p> </p>
+          <p>Poor dead Haorunerk found a Daeva to do the job.</p>
+          <p> </p>
+          <p>Thank you for avenging him, Daeva.</p>
+         </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Rescue [%dic:STR_DIC_N_Shugo_Shulack_01], who's on the [%dic:STR_DIC_E_Ship_Da].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Kill the pirates mentioned in Haorunerk's note.</font></p>
+                     <p visible="[%6]"><font color="[%7]"> [%dic:STR_DIC_M_IDShip_KrallKeeperKnmd_44_Ae] ([%8]/1)</font></p>
+                     <p visible="[%9]"><font color="[%10]"> [%dic:STR_DIC_M_IDShip_ShulackEngineerNmd_45_Ah] ([%11]/1)</font></p></step>
+               <step><p visible="[%12]"><font color="[%13]">Talk with [%dic:STR_DIC_N_Shugo_Shulack_02].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Find Haorunerk aboard the Steel Rake.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Moorinerk asked you to rescue Haorunerk, aboard the Steel Rake.</p>
+          <p> </p>
+          <p>You went to the Steel Rake only to find Haorunerk's dead body, and a note containing instructions to kill Warden Tantaka and Engineer Lahulahu.</p>
+          <p> </p>
+          <p>You went to Rabinerk after killing the warden and the chief engineer. She was happy you avenged Haorunerk.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

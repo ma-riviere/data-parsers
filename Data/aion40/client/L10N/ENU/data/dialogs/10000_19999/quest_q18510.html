@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I heard you handled Haramel extremely well, [%username].</p>
+          <p> </p>
+          <p>And you managed to make Hamerun disappear and leave his little Odium operation drifting on the wind? Impressive.</p>
+          <p> </p>
+          <p>I've sent some soldiers in to clear away some of the wreckage you left, but we still need to dismantle this situation from the ground up.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What were you thinking?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, Haramel is much bigger than I first thought. A lot of Kinah got poured into that operation. There's state-of-the-art equipment all over the place.</p>
+          <p> </p>
+          <p>My first thought was to kill off all the Dukakis and Skurvs there, but then anyone could come in, take the equipment, and start the operation someplace new.</p>
+          <p> </p>
+          <p>What we need to do is destroy the equipment! Destroy everything! Burn it to the ground. Can you handle that, [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good, good. This Flame Orb will help you. It'll burn anything, even items that have Aether in them.</p>
+          <p> </p>
+          <p>The first leg of this operation is to burn those Aether carts up, so they can't move anything from that location.</p>
+          <p> </p>
+          <p>The second part is to incinerate all that bad Odella. It's tainted...dangerous. It's of no use to us.</p>
+         </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"It'll go up in smoke."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>So you're just going to wash your hands of Haramel, then?</p>
+          <p> </p>
+          <p>Well, I guess you've already done quite enough, [%username], but we sure could use you out there.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll watch for the smoke from home."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank Aion you're back, [%username].</p>
+          <p> </p>
+          <p>Did Haramel burn like a funeral pyre? Any problems?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Haramel is out of business."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, that's grand news, [%username]. Grand news.</p>
+          <p> </p>
+          <p>If it was up to me, we would have burned that whole place to the ground. But I think Sanctum has something up their sleeve for the real estate.</p>
+          <p> </p>
+          <p>At least that bad Odella won't be hitting the streets now.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Destroy [%dic:STR_DIC_OBJ_IDNovice_Ore_cart]([%2]/3).</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Burn [%dic:STR_DIC_OBJ_IDNovice_Burning_Odella] with the Flame Orb([%5]/3).</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Report the result to [%dic:STR_DIC_N_Zephyros].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">As Zephyros requested, get rid of the Aether carts and processed Odella in Haramel.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Zephyros said the remaining facilities in Haramel should be destroyed so that bad Odella doesn't hit the streets.</p>
+          <p> </p>
+          <p>So you destroyed the Aether carts and burned the illegal Odella up. When you returned, he gave you a reward.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

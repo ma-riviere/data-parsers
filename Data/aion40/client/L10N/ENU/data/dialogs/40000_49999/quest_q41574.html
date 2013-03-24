@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q41574</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>Not entered</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>There's a soul connected to this crystal! It's not inside, but it is nearby. I've done some tests and consulted some colleagues. With a little magic, it turns out, you should be able to communicate with the soul. But that magic requires components. The nearby [%dic:STR_DIC_M_LDF4b_C2_Silika_59_Ae]s should be able to help us with that.</p>
+          <p> </p>
+          <p>Would you mind dispatching a few [%dic:STR_DIC_M_LDF4b_C2_Silika_59_Ae]s for their [%dic:STR_DIC_I_quest_41574a]?</p>
+          <p> </p>
+          <p>The magic part of this is a little outside my comfort zone, but I'm becoming quite the crystal expert. It's time to crack this Mamut Skull mystery wide open, [%username]!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've been looking forward to your return, [%username]! You've gotten my curiosity stirred, and I can't think of anything but that Mamut Skull! </p>
+          <p> </p>
+          <p>I'm dying to know what secrets it holds. I need to figure this out, or I'll never get anything else done. Ha!</p>
+          <p> </p>
+          <p>Did you bring the [%dic:STR_DIC_I_quest_41574a]?</p></body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">"Just like you asked!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Perfect! With this, we can find out about that Mamut. By Kahrun's Eyes, what an adventure!</p>
+          <p> </p>
+          <p>You know, [%username], I can surely find plenty of work for you if you'd like to come work for me. Ah, just think about it. Ha!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get [%dic:STR_DIC_I_quest_41574a], and return to [%dic:STR_DIC_N_Shumaron].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Dispatch Ancient Orkanimums to get [%dic:STR_DIC_I_quest_41574a] to identify the Mamut.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Shumaron explained that [%dic:STR_DIC_I_quest_41574a] was the key to identifying the Mamut.</p>
+          <p> </p>
+          <p>After eliminating some Ancient Orkanimums, you took their essence to him. He was pleased as his curiosity could now be satisfied.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

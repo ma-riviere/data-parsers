@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>To: [%username]</p>
+          <p>From: [%dic:STR_DIC_N_Ammianus], Academy Instructor</p>
+          <p> </p>
+          <p>'Luma, sparkles!</p>
+          <p> </p>
+          <p>For today's lesson, you'll be hunting down [%dic:STR_DIC_M_37002all]. Can't let the Krall go back to being masters of Atreia!</p>
+          <p> </p>
+          <p>To pass, you'll need to kill five (5) of these guys. So go grab a Mentor and get to work.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Daevas bow to no Krall!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>How's the assignment going?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I got my five Krall and am ready to fly."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Shiny spiny! Got to love your Mentor, right?</p>
+          <p> </p>
+          <p>You keep this up, and you be teaching soon too.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">With the aid of a [%dic:STR_DIC_E_Mentor], defeat [%dic:STR_DIC_M_37002all] ([%2]/5).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_N_Ammianus].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Academy Instructor Markos assigned you to work with a Mentor and defeat Elites at the Tursin Garrison.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Academy Instructor Markos assigned you to work with a Mentor and defeat Elites at the Tursin Garrison. You completed the work, and Markos rewarded you.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

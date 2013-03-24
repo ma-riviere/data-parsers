@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p align="center"> - 현상 수배 - </p>
+          <p></p>
+          <p>[%dic:STR_DIC_M_LF4_DayQ_Condor_Dr_55_An]%을 아래와 같은 이유로 현상수배하는 바이다.</p>
+          <p> </p>
+          <p>현상금 사냥꾼 협회원은 다음 내용을 숙지하고 지시에 따라 주기 바란다.</p>
+          <p> </p>
+          <p> 1. 이름: [%dic:STR_DIC_M_LF4_DayQ_Condor_Dr_55_An]</p>
+          <p></p>
+          <p> 2. 죄목: 진로 방해 및 상해</p>
+          <p></p>
+          <p> 3. 상세: 잉기스온의 심연을 흐르는 기류 근처에 잠복, 진로를 방해하고 지나가는 데바를 공격함.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_LF4_DayQ_Condor_Dr_55_An]의 행방에 대해 결정적인 제보를 하거나 직접 처치하여 증거물로 [%dic:STR_DIC_I_QUEST_36527a]%를 가져온 자에게 후사함.</p>
+          <p> </p>
+          <p>- 현상금 사냥꾼 협회, [%dic:STR_DIC_E_36500] 백</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">전단지를 접어 넣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>잉기스온의 심연을 가로지르는 기류를 타고 날아보신 적 있으십니까?</p>
+          <p> </p>
+          <p>이곳을 오가는 데바들 말로는 마치 자신이 바람의 일부가 된 것 같다고 하던데요.</p>
+          <p> </p>
+          <p>방해자만 없다면 완벽한 기류 비행을 즐길 수 있을 텐데 안타깝습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">방해꾼의 날개를 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_M_LF4_DayQ_Condor_Dr_55_An]의 목에 걸린 현상금이 걸려있다는 것을 모르시나요?</p>
+          <p> </p>
+          <p>다른 데바가 현상금을 차지하기 전에 [%username], 당신이 어서 가서 처치하십시오.</p>
+          <p> </p>
+          <p>잉기스온의 심연을 가로지르는 기류 근처에 나타난다고 합니다.</p>
+          <p> </p>
+          <p>행운을 빕니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아까 이쪽으로 오실 때 부터 알아봤습니다.</p>
+          <p> </p>
+          <p>아주 깨끗하게 잘라오셨군요.</p>
+          <p> </p>
+          <p>[%username]... 기류비행을 즐기는 데바들에게 잊혀지지 않을 이름이 될 겁니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_M_LF4_DayQ_Condor_Dr_55_An]%을 처치하고 증표를 [%dic:STR_DIC_E_36500]에게 가져가라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">현상금 사냥꾼 협회에서 현상 수배 전단지가 왔다. 지시에 따르자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>현상금 사냥꾼 협회에서 현상 수배 전단지가 왔다.</p>
+          <p> </p>
+          <p>기류의 흐름을 방해하던 방해꾼 캐리언을 처치하고 증거물로 날개를 잘라 잉기스온 현상금 관리인에게 가져가자 수고했다며 사례를 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

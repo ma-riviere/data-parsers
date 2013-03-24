@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>기다리느라 수고 많았습니다, [%username]. </p>
+          <p> </p>
+          <p>다행히 결과가 빨리 나왔답니다.</p>
+          <p> </p>
+          <p>워낙 잘 만들어서 길게 확인할 필요도 없겠더군요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">결과를 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>축하해요, [%username].</p>
+          <p> </p>
+          <p>카이시넬 주신전에 바쳐도 손색이 없을 만큼 아주 훌륭한 로브 허리띠더군요.</p>
+          <p> </p>
+          <p>[%username]%이 만든 빛나는 에르미티아의 로브 허리띠는 다른 천수품과 함께 카이시넬 주신전에 보낼 겁니다.</p>
+          <p> </p>
+          <p>이제 재봉 명인으로서의 자격을 충분히 갖추었으니 [%username]%에게 명인 칭호를 내리라고 요청할 때가 된 것 같군요.</p>
+          <p> </p>
+          <p>어떻습니까, 칭호를 받겠습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>명인 칭호를 받으려면 주신전의 허락을 받아야 합니다.</p>
+          <p> </p>
+          <p>[%username]%은 카이시넬 주신전에 천수할 로브 허리띠를 만들었으니 에르미티아 대신관님께 허락을 받는 게 좋겠습니다.</p>
+          <p> </p>
+          <p>이 추천서를 가지고 카이시넬 주신전의 [%dic:STR_DIC_N_Eremitia] 대신관님께 가 보세요. 명인 칭호를 내려주실 겁니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아니, 왜 이제 와서 싫다는 거죠?</p>
+          <p> </p>
+          <p>혹시 형식 같은 것에 구애되는 게 우습다고 생각하는 겁니까?</p>
+          <p> </p>
+          <p>내 보기에 [%username], 당신은 재봉에 대한 열정이 뛰어난 사람인 것 같습니다.</p>
+          <p> </p>
+          <p>명인이 되면 재봉에 대해 더 많이, 그리고 깊게 배울 수 있습니다. 그러니 불필요한 형식이라 생각말고 임명식을 거행하도록 하세요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>지금 나에게 말을 건 것이냐.</p>
+          <p> </p>
+          <p>주신의 대신관인 나에게 먼저 말을 건 걸 보면 뭔가 급박한 용무가 있나 보구나.</p>
+          <p> </p>
+          <p>어디 얘기를 한 번 들어보자. 날 보러 온 이유가 무엇이냐?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">다프니스의 추천서를 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이번에 내가 부탁한 로브 허리띠를 네가 만들었단 말이지? 어떤 것인지 크게 기대가 되는구나.</p>
+          <p> </p>
+          <p>부디 현재에 만족하지 말고 계속 정진하는 사람이 되도록 하여라.</p>
+          <p> </p>
+          <p>다시 한번 명인이 된 것을 축하한다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">카이시넬 주신전으로 가서 [%dic:STR_DIC_N_Eremitia] 대신관에게서 명인 임명식을 거행하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">재봉 명인 다프니스에게서 명인 임명을 받으라는 추천을 받았다. 추천서를 가지고 에르미티아 대신관에게 가서 임명식을 거행하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>재봉 명인인 다프니스는 최종 검증도 통과했다며 추천서를 가지고 에르미티아 대신관에게 가 보라고 했다.</p>
+          <p> </p>
+          <p>카이시넬 주신전의 에르미티아 대신관에게 다프니스의 추천서를 보이자 명인 임명식을 거행하고 칭호를 내려주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I have to admit, [%username].... This poison is completely stumping me.</p>
+          <p> </p>
+          <p>It's like nothing I've ever seen--too potent to be plant-based, too viscous to be animal-based, too pure to be artificial.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Then where'd it come from?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The only possibility left is that it was created with something native only to Gelkmaros.... Maybe even exclusive to Udas Temple.</p>
+          <p> </p>
+          <p>That means we'll need to go to the source. It's the only way to find out enough about it for an antidote.</p>
+          <p> </p>
+          <p>Are you willing to return to Udas one more time for me?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>My analysis indicates the poison is most similar to insect venom. Still nothing like it in Asmodae, though.</p>
+          <p> </p>
+          <p>The [%dic:STR_DIC_E_IDTemple_SensoryArea_Q30011] must be in Udas. It's the only way they could use so much without obvious transport.</p>
+          <p> </p>
+          <p>If you find it, destroy it. I'll send other Daevas to bring back samples from whatever remains.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"It's as good as gone."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes, I could send another Daeva, but you've already been to Udas Temple.</p>
+          <p> </p>
+          <p>There's too much at stake to risk inexperience causing the mission to fail.</p>
+          <p> </p>
+          <p>You're risking lives with your hesitation.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I can't help it, sorry."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>There's nothing left for me to do--that makes me feel weak and helpless.</p>
+          <p> </p>
+          <p>But I know wheels are turning. That keeps me on my toes.</p>
+          <p> </p>
+          <p>Did you find the source of the poison? What was it?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"An Arachna."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What? An Arachna? That can't be...</p>
+          <p> </p>
+          <p>Oh. That big? Really? That's incredible! It's the largest venomous insect I've ever heard of!</p>
+          <p> </p>
+          <p>I'll send some legionaries to the site. They'll bring me Kingspin's venom sacs. With those, an antidote is guaranteed.</p>
+          <p> </p>
+          <p>I'll take it from here, [%username]. On behalf of the afflicted, I thank you.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Find the [%dic:STR_DIC_E_IDTemple_SensoryArea_Q30011]. [%2].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Kill [%dic:STR_DIC_E_IDTemple_OctacideNamed_54_Ah] ([%5]/1).</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Report to [%dic:STR_DIC_N_Sulbanyer].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Sulbanyer needs to find the source of the poison used by the Dragonbound. Search Udas Temple for the poison source.</font></p>
+        </body>
+        </html>
+    </Contents>
+    <notifies>
+      <notify color="yellow" fontsize="16" pos="2" progress="1" showframe="true" time="5">You discovered Kingspin's Nest! Destroy Kingspin!</notify>
+    </notifies>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Sulbanyer told you that the poison was completely new to him. The only hope of an antidote was examining its source directly.</p>
+          <p> </p>
+          <p>Searching Udas Temple for the source, you discovered the Toxic Caverns. There you found Kingspin, a huge Arachna that was obviously the poison source.</p>
+          <p> </p>
+          <p>You exterminated Kingspin and returned to Sulbanyer. He promised to make an antidote from Kingspin's remains, and thanked you for your assistance.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

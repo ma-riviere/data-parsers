@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Rewrite by Dave 28 May -->
+<!-- Edit Pass by Fran 31 May -->
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Wait...doing arithmetic in my head...just a moment.</p>
+          <p> </p>
+          <p>There...54,211. Sorry to keep you waiting.</p>
+          <p> </p>
+          <p>If I lose track of the numbers, I have to get new parchment and start over.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What's on the parchment?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This? It's a master list of all war materiel we're requisitioning.</p>
+          <p> </p>
+          <p>And a big fortress requires a long list. Miss one thing, and--you never know--that one thing could turn the tide of battle.</p>
+          <p> </p>
+          <p>You know what would shorten my list, though...? A [%userclass] like yourself could bypass the whole requisition process and get certain items directly.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Rangers in the fortress have been asking for sulfur to spread on their arrowheads. It makes them burst into flame. Aah, the arrows, not the Rangers.</p>
+          <p> </p>
+          <p>And finding it...well, this is the Sulfur Archipelago, after all. You can find [%dic:STR_DIC_M_Ab1_1141_AgrintB_29_An]s and [%dic:STR_DIC_M_Ab1_1141_RottenTreeB_29_An] here. They will be perfect for this.</p>
+          <p> </p>
+          <p>Extract their [%dic:STR_DIC_I_QUEST_2819a]. It catches fire easily--just the thing to smear on an arrowhead.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Then I'll be off."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Why refuse? You aren't afraid of those tree monsters, are you?</p>
+          <p> </p>
+          <p>I guess I didn't figure self-interest into my calculations. Well, I'll return to my equations....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"They're what you're best at."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Let's see...first, outer, inner, last...right? Let me finish this calculation, and I'll be right with you.</p>
+          <p> </p>
+          <p>OK. If you brought Sulfur Sap for us, I can cross it off my list.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here you are."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What have you been doing all this time?</p>
+          <p> </p>
+          <p>Must I account for your idle ways, [%userclass]? Don't make me start over!</p>
+          <p> </p>
+          <p>Get the sap from [%dic:STR_DIC_M_Ab1_1141_AgrintB_29_An] and [%dic:STR_DIC_M_Ab1_1141_RottenTreeB_29_An]. You're doing your part for the war effort.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"On my way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Let's see...carry the one...round up...Ah yes, excellent!</p>
+          <p> </p>
+          <p>This is sufficient, but you know how Rangers are with fire arrows.</p>
+          <p> </p>
+          <p>Come back to me whenever you find Sulfur Sap. I'll compensate you on the spot.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect the sap from [%dic:STR_DIC_M_Ab1_1141_AgrintB_29_An]s and [%dic:STR_DIC_M_Ab1_1141_RottenTreeB_29_An], and take it to [%dic:STR_DIC_N_Ab1_1141_Quest_Da].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">The Sulfur Fortress has run out of sulfur. Collect Sulfur Sap needed to make fire arrows from Dry Embers and Screaming Treegards, and take it to Gudharten.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Gudharten prefers to acquire war supplies locally than requisition them. Sulfur Sap, for example, can be gathered on the spot, and it's useful to the Rangers guarding the fortress.</p>
+          <p> </p>
+          <p>When you returned with Sulfur Sap collected from Dry Embers and Screaming Treegards, Gudharten was pleased that he wouldn't have to worry about sulfur for a while.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

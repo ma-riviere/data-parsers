@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You don't look too busy. Can we talk for a moment?</p>
+          <p> </p>
+          <p>I'm taking a survey to gauge interest in a new product. Would you buy a portable lamp to light your way through the dark forests?</p>
+          <p> </p>
+          <p>We're talking about a projected price of 5,000 Kinah.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I'm somewhat interested."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That's good! So far the responses are mostly "somewhat interested" to "interested."</p>
+          <p> </p>
+          <p>Now all I need to do is make a prototype so I have something to show to potential investors. If you help me out, I'll give you some old products I've got lying around.</p>
+          <p> </p>
+          <p>All I need is [%dic:STR_DIC_I_quest_4105a] for the light source.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You can find [%dic:STR_DIC_M_DF2A_SalivadoSeaSideD_45_An]s in the Magaro Primeval Forest. They won't be hard to spot with those lights on their heads.</p>
+          <p> </p>
+          <p>I'll need enough Luciferin to do a few tests, so bring me a pretty large batch.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I understand if you've got more glorious things to do than help out a simple businessman.</p>
+          <p> </p>
+          <p>Please don't tell anyone about my plan, okay? Especially not the Shugos.</p>
+          <p> </p>
+          <p>I want to be the first to market with this.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"My lips are sealed."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Suttung said he's almost done with the lamp frame. You got the Luciferins?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I don't know what this is. I didn't ask for this.</p>
+          <p> </p>
+          <p>I did say Luciferin, right? Not loose ferns or something?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Oh! Luciferin! Okay."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>These glow pretty brightly. This should work out great.</p>
+          <p> </p>
+          <p>Here, take this. I'll let you know once my lamp project gets off the ground so you can be one of the first to buy it!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect [%dic:STR_DIC_M_DF2A_SalivadoSeaSideD_45_An] Luciferins and take them to [%dic:STR_DIC_N_Banes].</font></p>[%collectitem]</step> 
+    </steps>
+          <p><font font_xml="quest_summary">Get Hornskull Luciferins for Banes, so he can make a prototype portable lamp.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Banes, a general goods merchant, said market research looked good for the portable lamp he wanted to make.</p>
+          <p> </p>
+          <p>He got you to bring him Hornskull Luciferins for use in the prototype.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

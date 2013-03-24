@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No, we must do more. Can't just top and tail the Training Camp...we need to gut the place.</p>
+          <p> </p>
+          <p>I'm talking about the instructors, [%username]. They're smart enough to carry on without their General. They know what they're doing, and won't stop just because their recruits are lying dead at their feet.</p>
+          <p> </p>
+          <p>They'll recruit more. There are always more Balaur.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Well then, what are we waiting for?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You would help us again, [%username]? It wasn't my intention to ask you, not after the sterling work you've already done.</p>
+          <p> </p>
+          <p>But...I'd also be a fool to turn down your offer of help. Are you sure you're willing?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well then, let's get to it!</p>
+          <p> </p>
+          <p>The instructors are stationed near the artifact, the fortress gate, and near their bind points. We've identified four specific targets, and all will need to be killed before we deem the mission a success. You're looking for the [%dic:STR_DIC_M_Mini_Castle_NagaWizardA_26_Ae], the [%dic:STR_DIC_M_Mini_Castle_BoneDrake_26_Ae], the [%dic:STR_DIC_M_Mini_CastleNagaPriest_26_Ae], and the [%dic:STR_DIC_M_Mini_Castle_NagaWizardB_26_Ae].</p>
+          <p> </p>
+          <p>Get going, [%username]. Faith and arms!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Faith and arms!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, I see.</p>
+          <p> </p>
+          <p>I didn't think you'd be ready to help again, not after all the effort you've put in for us already.</p>
+          <p> </p>
+          <p>Rest up, take some time out, and come back when you're refreshed. You're excused, [%userclass].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Thank you, Nereus."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>And so the great hero [%username] returns again. Was your task a success? Are the instructors all dead?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Yes. It's done."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent! Let's see how quickly those fiends can replace their instructors, shall we?</p>
+          <p> </p>
+          <p>Your work has been so consistently sound, Daeva. I just wish others were as strong as you.</p>
+          <p> </p>
+          <p>Here's your reward. It's more than deserved.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Defeat the Balaur instructors.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Mini_Castle_NagaWizardA_26_Ae] ([%2]/1)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Mini_Castle_BoneDrake_26_Ae] ([%5]/1)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Mini_CastleNagaPriest_26_Ae] ([%8]/1)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Mini_Castle_NagaWizardB_26_Ae] ([%11]/1)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report back to [%dic:STR_DIC_N_Nereus]. </font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Defeat the instructors responsible for training the Balaur trainees.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Nereus asked you to defeat the instructors responsible for training the Balaur trainees.</p>
+          <p> </p>
+          <p>You did as he asked, and on your return were thanked sincerely.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

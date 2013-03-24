@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>몸이 으슬으슬 춥고 너무 아프당, 갸릉... </p>
+          <p> </p>
+          <p>병원에 가고 싶지만 돈이 없어 갈 수도 없당, 갸릉...</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_N_LDF5b_Nursringring_E]한테 혹시 싼 약이라도 좀 줄 수 없겠냐고 물어봐달랑, 냥냥...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>최고의 의료 서비스를 제공하는 골드린 병원에 오신 것을 환영합니다냥, 갸릉.</p>
+          <p> </p>
+          <p>어디가 아프십니까냥?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">일링의 사정을 정한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>안타까운 일입니다냥.</p>
+          <p> </p>
+          <p>하지만 너스링링은 약을 공짜로 줄 수는 없습니다냥, 냥냥...</p>
+          <p> </p>
+          <p>그래도 사정이 딱하니 공짜로 알려드리겠습니다냥.</p>
+          <p> </p>
+          <p>근처에 있는 [%dic:STR_DIC_M_LDF5B_E_Hiiv_64_n]%을 처치하면 [%dic:STR_DIC_I_QUEST_23565A]%을 구할 수 있습니다냥. 끓여 먹으면 차도가 있을 것입니다냥.</p>
+          <p> </p>
+          <p>일링은 아프다고 하니 데바 님이 좀 구해다 주시는 게 어떻겠습니까냥?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>콜록, 갸릉... </p>
+          <p> </p>
+          <p>너무 아프다냥.</p>
+          <p> </p>
+          <p>너스링링에게서 약은 받았냥?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">약을 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>황무지 야생 하이브에게서 구한 약재료라고 했냥?</p>
+          <p> </p>
+          <p>어쩔 수 없당 돈이 없으니 이런 거라도 먹어볼 수 밖에 없징...</p>
+          <p> </p>
+          <p>고맙당, 갸릉...</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_LDF5b_Nursringring_E]%와 대화하라</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_I_QUEST_23565A]%을 구해 [%dic:STR_DIC_N_LDF5b_Iring_E]%에게 전하라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">황무지 야생 하이브에게서 급조된 약을 구해 일링에게 전하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>돈이 없어 약값을 마련할 수 없는 일링을 도와 약을 구해다주었다.</p>
+          <p> </p>
+          <p>안타깝지만 그래도 차도가 있는 듯 하다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

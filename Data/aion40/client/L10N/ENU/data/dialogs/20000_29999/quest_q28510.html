@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You did good work exposing Haramel. It's too bad that its master managed to escape.</p>
+          <p> </p>
+          <p>I hear there's a lot going on behind the scenes to track him down, but the public face is that of a great victory...which it is, really.</p>
+          <p> </p>
+          <p>But as far as I'm concerned, Haramel is still a blight on this area. Pandaemonium thinks so too, so they've charged me with doing something about it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I thought you were...?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>In charge of rebuilding Impetusium? Yes. Now I'm handling Haramel too. I can do it, though. I think. I hope.</p>
+          <p> </p>
+          <p>Which is why I'm glad you're here. My main mission is to make Haramel as useless as possible for anyone who tries to use it. At least until we can destroy it permanently.</p>
+          <p> </p>
+          <p>Since you have experience in that place, I'm hoping that you can lend a hand to a fellow Asmodian...?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That's a huge relief. I'm still in charge of rebuilding Impetusium, but with Pandaemonium's expectations....</p>
+          <p> </p>
+          <p>Here's what you need to do: first destroy the Aether Carts in the Odium Refinery and Odium Strip Mine to keep anyone from efficiently moving ore.</p>
+          <p> </p>
+          <p>Then take this Flame Staff and burn the Processed Odella in the Odella Processing Plant. My troops will take care of the fresh stuff, but the processed version is just too toxic...and powerful.</p>
+         </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Smash and burn...got it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This is one reason I'm so overworked: there are Daevas out there who just won't take any sort of responsibility.</p>
+          <p> </p>
+          <p>What? No, I'm not talking about you. Of course not. Not at all....</p>
+          <p> </p>
+          <p>In between the six thousand duties I have trying to rebuild this place, of COURSE I have time to destroy Haramel. Don't worry about me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I won't, believe me."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>For all the concern Pandaemonium's expressing about Haramel, they sure aren't backing it up with action.</p>
+          <p> </p>
+          <p>I haven't seen a single reinforcement brigade anywhere near here. They expect me to do everything on my own, without more resources.</p>
+          <p> </p>
+          <p>Thank Azphel you're here, or this might not have gotten done at all.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Don't worry. It did."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good. There's more to do if we're going to bring down Haramel as a useful facility for good, but this is a start.</p>
+          <p> </p>
+          <p>You know, since you've been here, I feel...smarter. My stress is going down, and I'm able to think clearly for the first time in a long time.</p>
+          <p> </p>
+          <p>That alone is worth everything I can give you. Take this, with my thanks.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Destroy the [%dic:STR_DIC_OBJ_IDNovice_Ore_cart]s ([%2]/3).</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Burn the clumps of [%dic:STR_DIC_OBJ_IDNovice_Burning_Odella] with the Flame Staff. ([%5]/3)</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Report back to [%dic:STR_DIC_N_Gulkalla].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Destroy Aether Carts and Processed Odella in Haramel, so no one else can use them for evil.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Gulkalla has received orders to dismantle Haramel so that no one else can benefit from them.</p>
+          <p> </p>
+          <p>So you destroyed Aether Carts and burned the Processed Odella. When you returned, Gulkalla thanked you and gave you a reward.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

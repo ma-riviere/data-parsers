@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>In Heiron is tribe called Kishar. Kishar serve Balaur. Like Kaidan.</p>
+          <p> </p>
+          <p>But more stupid than Kaidan, hoho. Couldn't hold power of Aether.</p>
+          <p> </p>
+          <p>Kishar corrupted in body, crazy in head.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Sounds like a dangerous threat."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Threat to white wings, yes, very dangerous. See? Mabangtah is friend to white wings.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"I'd better tell Sarantus. Thanks."</Act>
+    </Selects>
+    <Voice file="Q1058-1.ogg"/>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I haven't any missions for you at the moment. What is it?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">"It's about the Kishar Krall...."</Act>
+    </Selects>
+  </HtmlPage>
+  
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This is quite a serious threat. You'd better go to the Kunpapa Outpost and kill all the [%dic:STR_DIC_M_KrallWarriorMMad_all].</p>
+          <p> </p>
+          <p>Bring me back the [%dic:STR_DIC_I_QUEST_1058a] in their body so we can determine what happened to them.</p>
+          <p> </p>
+          <p>Take out their leader, [%dic:STR_DIC_M_KrallFighterMadQ_42_Ae]. That way we can be sure they won't lead any raids against us.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO2">"Faith and arms."</Act>
+    </Selects>
+  </HtmlPage>
+  
+  <HtmlPage name="select3">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're back safely, I see. Did you deal with the Krall?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here's your answer."</Act>
+    </Selects>
+  </HtmlPage>
+  
+  <HtmlPage name="check_user_item_fail">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'd heard you were honest and capable. Was I confusing you with somebody else?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"No, I'm good for it.".</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Kabaltu's sword, you say? I doubt you just stole it from him while he was sleeping--you don't look the type.</p>
+          <p> </p>
+          <p>Bravery and initiative like yours deserves a reward.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk with [%dic:STR_DIC_N_NPC_Mabangta].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Talk with [%dic:STR_DIC_N_Sarantus].</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Kill [%dic:STR_DIC_M_KrallWarriorMMad_all]s and [%dic:STR_DIC_M_KrallFighterMadQ_42_Ae], and bring the evidence to [%dic:STR_DIC_N_Sarantus].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Order: Mabangtah sent a message asking for your assistance. Go to Eltnen and meet with him.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Mabangtah told you how the Kishar Krall couldn't handle the power of Aether and became insane monsters. You told Centurion Sarantus about the threat, and he had you go out and deal with it.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>Mission Progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+
+</HtmlPages>

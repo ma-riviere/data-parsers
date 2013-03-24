@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p> - 긴급 지령서 - </p>
+          <p></p>
+          <p> 1. 발신 : 카탈람 토벌군, [%dic:STR_DIC_W_LDF5b_F4_v19]의 [%dic:STR_DIC_N_LDF5_Village_Guard19_D]</p>
+          <p></p>
+          <p> 2. 수신 : [%username]</p>
+          <p></p>
+          <p> 3. 명령 : 남부 카탈람 [%dic:STR_DIC_W_LDF5b_SZ_F4_3]에 침투한 천족 데바 1명을 처치할 것.</p>
+          <p></p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">의뢰를 수행한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+   <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>혹시 방금 전에 보셨습니까? 천족 몇몇이 저 앞을 얼쩡거리는 것을 말입니다.</p>
+          <p> </p>
+          <p>요즘은 이런 일이 자주 있습니다. 천족들도 프라데스 초원의 중요성을 눈치챘나 봅니다.</p>
+          <p> </p>
+          <p>다행이 [%username] 님 같은 데바님이 곁에 있어 그나마 버티고 있습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>역시 [%username] 님이십니다!</p>
+          <p> </p>
+          <p>놈들에게는 가끔 이런 매운맛을 보여줘서 함부로 올 곳이 아니라는 걸 알려 줘야 합니다.</p>
+          <p> </p>
+          <p>몸이 근질근질하면 또 오십시오.</p>
+          <p> </p>
+          <p></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">남부 카탈람 [%dic:STR_DIC_W_LDF5b_SZ_F4_3]에 침투한 천족을 처치하라([%2]/1)</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_N_LDF5_Village_Guard19_D]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">긴급 지령: 남부 카탈람 프라데스 초원의 분쟁의 초원에 침투한 천족을 처치하고 롤프에게 보고하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>천족이 남부 카탈람 프라데스 초원의 분쟁의 초원을 노리고 계속 도발을 한다.</p>
+          <p> </p>
+          <p>침투한 천족들을 소탕하고 롤프에게 보고했다.</p>
+          <p> </p>
+          <p></p>
+          <p> </p>
+          <p></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

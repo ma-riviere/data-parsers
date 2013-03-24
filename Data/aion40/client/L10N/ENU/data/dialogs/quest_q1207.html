@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hi there [%username].</p>
+          <p> </p>
+          <p>Say, do you know how to mine [%dic:STR_DIC_I_metal_n_c_10a]? I have a rather pressing need for a small amount of it.</p>
+          <p> </p>
+          <p>It's too expensive to buy, and I can't mine it myself anymore because of all the Krall....</p>          
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Go on...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          
+          <p>There's a mercenary scout, a young man named [%dic:STR_DIC_N_Poa]. He's currently stationed just east of the abandoned Timolia Mine. </p>         
+          <p> </p>
+          <p>I heard he used to be an excellent craftsman.</p>
+          <p> </p>
+          <p>He still makes certain items for people, so I hear, and his music boxes are exquisite.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Where does the ore fit in?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>          
+          <p>Well, I asked Poa to make me one of his music boxes, and he said he could, but first he needed a sufficient quantity of [%dic:STR_DIC_I_metal_n_c_10a].</p>
+          <p> </p>
+          <p>The only way to get the ore is to dig some out of either the [%dic:STR_DIC_FLA08] or the [%dic:STR_DIC_FLA07] while avoiding the Krall.</p>
+          <p> </p>
+          <p>Do you think you might be able to gather some ore for me, and take it to [%dic:STR_DIC_N_Poa]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you! I was hoping to give the music box to someone very special. That's why I need the [%dic:STR_DIC_I_metal_n_c_10a].</p>
+          <p> </p>
+          <p>Remember, you can find the ore in either the [%dic:STR_DIC_FLA08] or the [%dic:STR_DIC_FLA07]. [%dic:STR_DIC_N_Poa] said he'd need three chunks to make a music box.</p>
+          <p> </p>
+          <p>Oh, you do know how to mine, right? If you've ever gathered Aria, you've already got the process down. You'll need enough skill, though....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Thanks for the tip." </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I see....</p>
+          <p> </p>
+          <p>You know, if you were in the middle of a mission for the Captain, you should have just said so. I can't expect personal favours to take precedence over mercenary contracts.</p>
+          <p> </p>
+          <p>You should head off and finish what Captain Kalio has asked of you--please do return to me when you have time, though.</p>          
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I will."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, you must be [%username].</p>
+          <p> </p>
+          <p>Tula told me you would be along soon.</p>
+          <p> </p>
+          <p>So, have you brought me the [%dic:STR_DIC_I_metal_n_c_10a]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I have--here."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No, this isn't right.</p>
+          <p> </p>
+          <p>I told Tula that I would need three pieces of ore in order to create the music box he requested.</p>   
+          <p> </p>
+          <p>Come back when you have everything I need, okay?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be back soon."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Let's have a look then....</p>
+          <p> </p>
+          <p>Good! These will do just fine, [%username].</p>
+          <p> </p>
+          <p>I'll deliver the music box to Tula myself once it is ready. Thanks for your work!</p>          
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Mine [%dic:STR_DIC_I_metal_n_c_10a] and take it to [%dic:STR_DIC_N_Poa].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Tula wants to give a music box to someone as a gift. Obtain three pieces of Iron Ore from either the [%dic:STR_DIC_FLA08] or the [%dic:STR_DIC_FLA07] and give them to Poa.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The scout [%dic:STR_DIC_N_Poa] is very talented at crafting things.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_N_Tula] has asked him to make a music box, but the lack of Iron Ore was making things difficult. You obtained Iron Ore for Tula and gave them to Poa.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

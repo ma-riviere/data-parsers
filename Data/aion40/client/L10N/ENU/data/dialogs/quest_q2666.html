@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm stymied, [%username]. Can you help me out?</p> 
+          <p> </p>
+          <p>I'm looking for a strong, hard-working Daeva. Do you think you could help?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Well, I guess I am rather strong."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You'll need your legs and back for this job, not your wings.</p>
+          <p> </p>
+          <p>I need a Daeva who can go to Alquimia Stronghold and push [%dic:STR_DIC_OBJ_DF3_OreCart_Q2666]. It's quite heavy and top secret.</p>
+          <p> </p>
+          <p>I asked others to push it, but they couldn't budge it. I hope you'll help me, [%username]. Will you?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Lepharists are infiltrating every corner of Atreia under the guise of explorers. Nobody suspects an explorer. That's smart tactics. Brax patties! I use it myself!</p>
+          <p> </p>
+          <p>The explorers are actually distributing orders by hiding them in places like the mine cart. These ore carts carry order scrolls with messages about targets--Asmodian targets.</p>
+          <p> </p>
+          <p>We can ruin the enemy's intelligence network if we search the mine cart and switch the order scrolls with false ones of our own design. If you push the [%dic:STR_DIC_OBJ_DF3_OreCart_Q2666] to a hidden corner I'll handle the rest.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Is there a new password?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You refuse? This is an important mission, [%username]!</p>
+          <p> </p>
+          <p>Please don't turn me down. Reconsider.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Maybe later. It's rather chilly."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(This must be the mine cart that Dewi told you to push to the end of the rail.)</p>
+          <p> </p>
+          <p>(You give it a push. It doesn't move at all.)</p>
+          <p> </p>
+          <p>(You take a deep breath.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"Heave! Arrrggh!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hmm, by Azphel's shadow! Those blasted Lepharists were spying on us!</p>
+          <p> </p>
+          <p>I must report to the Brigade General quickly.</p>
+          <p> </p>
+          <p>Oh, you're back. Phewww! You stink and are dripping in sweat.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Thanks... The ore cart is where you wanted."</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I watched you from a hidden corner. You pushed the cart with all your strength--you really put your claws into it! I wanted to help you but I had to stay hidden. I didn't want to blow my cover.</p>
+          <p> </p>
+          <p>Anyway, thanks to you, [%username], I succeeded in switching the order scrolls.</p>
+          <p> </p>
+          <p>Now we only need to set an ambush in the places we named in the false order scrolls and capture the Lepharists. Then the Lepharists' intelligence network will be destroyed. This plan is tighter than a Shugo's purse!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+                <step><p visible="[%0]"><font color="[%1]">Push [%dic:STR_DIC_OBJ_DF3_OreCart_Q2666] to the end of railway.</font></p></step>
+		<step><p visible="[%3]"><font color="[%4]">Report back to [%dic:STR_DIC_N_Dewi].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">You push the mine cart to the end of the railway so that Dewi can search the cart and switch the order scrolls with false ones.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Dewi said that the Lepharist spies were operating everywhere in Atreia and the Lepharists were hiding order scrolls in a mine cart in Alquimia Stronghold.</p>   
+          <p> </p>
+          <p>Dewi has a plan to ruin the Lepharists' intelligence network, but in order to carry out the plan, you needed to push the mine cart to the corner where nobody could see.</p>
+          <p> </p>
+          <p>When you returned after pushing the mine cart, he told you that he switched the scrolls successfully.</p>      
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

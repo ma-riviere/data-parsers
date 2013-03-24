@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q30712</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_E_Apsu]'s Hate... here, in our possession!</p>
+          <p> </p>
+          <p>We can learn so much from it, [%username]! But first we must tame the power in it, extract it into something more manageable. Luckily, I know exactly what we... you... need to do.</p>
+          <p> </p>
+          <p>Could you go to [%dic:STR_DIC_W_IDTiamat_SZ_R1] and get me a [%dic:STR_DIC_I_quest_30712a] from the [%dic:STR_DIC_M_IDTiamat_S2_StealthUnit_60_Ae]s there? Only then can I extract the hate, and hope to learn from the Balaur past.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]! Did it go okay?</p>
+          <p> </p>
+          <p>Did you get the [%dic:STR_DIC_I_quest_30712a]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">"Here."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Perfect!</p>
+          <p> </p>
+          <p>Now sadly this will take some time. The Balaur technology will take some time to control, and I'll have to do a fair bit of experimentation. Still, I'm confident that I can turn theory into practice and extract the information we need.</p>
+          <p> </p>
+	  			<p>Thank you. You've done very well!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get a [%dic:STR_DIC_I_quest_30712a] and bring it to [%dic:STR_DIC_N_Uquini].</font></p>[%collectitem]</step>
+  
+    </steps>
+          <p><font font_xml="quest_summary">Find the tool required to extract Apsu's Hate.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ulian told you that Apsu's Hate could be studied, and asked you to get him the tool needed to extract it.</p>
+          <p> </p>
+          <p>You returned to the Tiamat Stronghold and found the tool required, a Reverse Field Control Device. Ulian was pleased with your success and rewarded you well for your efforts.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

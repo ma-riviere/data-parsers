@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p align="center"> - 의뢰장 - </p>
+          <p> </p>
+          <p>측량사 말리카 다마를 처치해 달라는 의뢰를 요청받았다.</p>
+          <p></p>
+          <p>찰리룽 흥신소 조직원들은 다음 내용을 숙지하고 지시에 따라 주기 바란다. </p>
+          <p> </p>
+          <p> 1. 이름: [%dic:STR_DIC_M_DF4_DaQ_FanaticWi_54]</p>
+          <p> </p>
+          <p> 2. 위치: 저주받은 지하도시 내부</p>
+          <p> </p>
+          <p> 3. 상세: 온갖 수상한 술수를 부린다는 말리카 다마의 힘의 근원은 법봉이라고 함. 바람길을 따라다니며 은거한다는 다마의 법봉을 상처입히지 않고 온전한 형태로 구할 것을 요구하였음.</p>
+          <p> </p>
+          <p>측량사 말리카 다마를 추적하여 처치하고 나무 법봉을 가져온 자에게 의뢰대금을 지급함.</p>
+          <p> </p>
+          <p>- 찰리룽 흥신소, [%dic:STR_DIC_E_46500]일동 -</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">의뢰장을 접어 넣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>오늘은 어떤 의뢰를 완수했냥?</p>
+          <p> </p>
+          <p>(문서를 살피며) 오늘은 측량사 말리카 다마를 처치하는 의뢰장을 발송했구낭, 냥냥.</p>
+          <p> </p>
+          <p>일을 마쳤으면 의뢰품인 나무 법봉을 어서 보여 봐랑, 갸릉.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">가져온 법봉을 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>서둘러 줬으면 좋겠당, 냥냥.</p>
+          <p> </p>
+          <p>측량사 말리카 다마가 가진 법봉이 대체 어떤 물건인지는 모르겠지만 가지고 싶어하는 의뢰인이 많구낭, 냥냥.</p>
+          <p> </p>
+          <p>그 놈이 무슨 해를 끼쳤는지는 모르겠지만... 우리 찰리룽의 흥신소에 걸린 게 잘못이지, 갸릉.</p>
+          <p> </p>
+          <p>어쨌든 빨리 잡아 법봉을 구해 와랑, 냥냥.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이게 바로 그 나무 법봉이냥? 정말 눈에 띄게 길고 튼튼하구낭, 갸릉.</p>
+          <p> </p>
+          <p>(한번 휘둘러 본다. 너무 길어서 제대로 휘두르지 못한다.)</p>
+          <p> </p>
+          <p>너무 길어서 쓰기도 불편하구낭... 대체 이런 물건을 뭐에 쓰려고 그렇게들 가지고 싶어하는 걸까낭, 냥냥.</p>
+          <p> </p>
+          <p>어쨌든 수고했당. 의뢰대금을 줄 테니 다음에도 수고해 줘랑, 냥냥.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_M_DF4_DaQ_FanaticWi_54]를 처치하고 증거를 [%dic:STR_DIC_E_46500]에게 가져가라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">찰리룽 흥신소에서 의뢰장이 왔다. 의뢰를 수행하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>찰리룽 흥신소에서 측량사 말리카 다마의 법봉을 구해 달라는 내용의 의뢰장을 받았다.</p>
+          <p> </p>
+          <p>저주받은 지하도시에서 말리카 다마를 처치하고 법봉을 구해 겔크마로스 관리부 직원에게 보고하자 수고했다며 의뢰대금을 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

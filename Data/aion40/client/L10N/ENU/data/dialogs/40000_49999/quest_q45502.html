@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p align="center"> - Operation Order - </p>
+          <p> </p>
+          <p>From: The Blood Crusade</p>
+          <p> </p>
+          <p>To: Crusader [%username]</p>
+          <p> </p>
+          <p>The Blood Crusade has confirmed that a contingent of the Elyos army is threatening Asmodians in Reshanta. The force is small, but appears all over Reshanta at random intervals and wreaks havoc. The Blood Crusade wishes to stop their threat, and hereby issues a kill order to be enacted immediately.</p>
+          <p> </p>
+          <p>  1. Locate the Elyos forces as indicated on the Top and Core levels of [%dic:STR_DIC_W_AB1] and slay three or more of their soldiers.</p>
+          <p> </p>
+          <p>  2. Defeat the Elyos by any means possible--brutal tactics are authorized for this mission. However, they must be of relative strength. There is no honor in crushing the weak.</p>
+          <p> </p>
+          <p>  3. When the kills have been confirmed and the enemy has lost the will to fight, report to [%dic:STR_DIC_E_45502].</p>
+          <p> </p>
+          <p>May you walk in Azphel's shadow. Blood for blood!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">Fold up the order.</Act>
+    </Selects>
+  </HtmlPage>
+
+   <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], you've returned! Excellent!</p>
+          <p> </p>
+          <p>I heard the Elyos contingent recently ran into some...trouble. You wouldn't happen to know anything about that, would you?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Funnily enough, I just came back from Reshanta."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Haha! I knew it. The carnage in the reports had your name written all over it, [%username].</p>
+          <p> </p>
+          <p>I could use more like you, you know. Crusaders come and go every day, but few have your dedication.</p>
+          <p> </p>
+          <p>Here's your reward. Blood for blood!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get rid of the [%dic:STR_DIC_E_Daily_2] in the Top and Core levels of [%dic:STR_DIC_W_AB1]([%2]/3).</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Report back to [%dic:STR_DIC_E_45502].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Get rid of the Elyos wreaking havoc in Reshanta and report to a Reshanta branch agent when the task is complete.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Blood Crusade has issued a kill order on the Elyos contingent in Reshanta. </p>
+          <p> </p>
+          <p>After completing the mission, you visited a Reshanta branch agent and received a reward.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+	 	  <HtmlPage name="select_acqusitive_quest_desc">
+	 	    <Selects>
+	 	      <Act>New quest: [%questname]</Act>
+	 	    </Selects>
+	 	  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Orashunerk makes best food, so needs best ingredients, nyerk.</p>
+          <p> </p>
+          <p>Helper-Daeva! You're back!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Don't test my patience...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Bring fresh water! Fresh water from lake! Lake is in [%dic:STR_DIC_W_DF2_SUB_B1].</p>
+          <p> </p>
+          <p>Cannot make best food without freshest water!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Need bucket to carry water, akakak...where to find bucket? Ah!</p>
+          <p> </p>
+          <p>Find [%dic:STR_DIC_M_LehparWizardD_27_An] at lake! Hit on head, take [%dic:STR_DIC_I_QUEST_2333a].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Not the best way to get a bucket..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Stupid, stupid helper-Daeva! Don't you know to follow orders, nyerk?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Watch it, Shugo."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Helper-Daeva back, brings water?</p>
+
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here's your bucket."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_ok">
+    <Contents cdata="true">
+        <html>
+        <body>
+	        <p>Fresh lake water, fresh water to cook!</p>
+          <p> </p>
+          <p>Now to cook, yes, boil water....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll wait here."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_fail">
+    <Contents cdata="true">
+        <html>
+        <body>
+	        <p>No bucket, nyerk, no water? Stupid, lying helper-Daeva!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"You're really pushing it...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What? Aaah! Ribbit, ribbit in the water!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">"Throw it away."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No, mustn't! Shugos never, never hurt others! Ribbit will die away from lake....</p>
+          <p> </p>
+          <p>Take back to lake, helper-Daeva, help save little Ribbit!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO2">"Okay...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Helper-Daeva's back, and no Ribbit....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I dropped it back in the lake."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Helper-Daeva helps all, everything! Such a good Daeva!</p>
+          <p> </p>
+          ‎<p>Take reward for kindness, bonus pay, akakak.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Obtain a [%dic:STR_DIC_I_QUEST_2333a], draw water from the lake in [%dic:STR_DIC_W_DF2_SUB_B1] and bring it to [%dic:STR_DIC_N_Shugo_DF2_8].</font></p>[%collectitem]</step>
+               <step><p visible="[%3]"><font color="[%4]">Wait for [%dic:STR_DIC_N_Shugo_DF2_8] to make the food.</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Take the Ribbit back to the lake.</font></p></step>
+               <step><p visible="[%9]"><font color="[%10]">Talk with [%dic:STR_DIC_N_Shugo_DF2_8].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Orashunerk needs water to cook some food. Go to the Salintus Desert and draw water from the lake.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Orashunerk needs water from the lake in the Salintus Desert to cook with.</p>
+          <p> </p>
+          <p>You defeated a Lepharist in the area and drew water from the lake with his bucket. Orashunerk found a Ribbit in the bucket you brought back.</p>
+          <p> </p>
+          <p>You took the Ribbit back to the lake for Orashunerk, who didn't want to hurt it.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

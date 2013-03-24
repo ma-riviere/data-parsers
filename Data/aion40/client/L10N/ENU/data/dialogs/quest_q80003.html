@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Shards! The one day, the ONE day I miss a committee meeting, and BAM! I've "volunteered" to run Daeva's Day events!</p>
+          <p> </p>
+          <p>I don't hate Daeva's Day. I'd just rather be running things behind the scenes, or even, you know, celebrating it!</p>
+          <p> </p>
+          <p>Still, I'd better do a good job, or else I'll be "volunteered" again next year. So, would you like to participate in an event?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What sort of event?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's a scavenger hunt...of sorts. Except there's a little less searching and a little more battle.</p>
+          <p> </p>
+          <p>You look like you've seen a little combat, so it should be pretty simple for you.</p>
+          <p> </p>
+          <p>But you get a prize: a Heart Headband. Why not participate?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>All you have to do to get your prize is trade in 10 [%dic:STR_DIC_I_QUEST_80003a]s.</p>
+          <p> </p>
+          <p>You can find them attached to [%dic:STR_DIC_M_Cherubim2Wp_24_An]s, [%dic:STR_DIC_M_Skeleton_24_An]s, and [%dic:STR_DIC_M_DIC_M_DigCherubimL_24_n]s.</p>
+          <p> </p>
+          <p>I take back my complaint earlier; at least I didn't "volunteer" to do THAT job. Good luck!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Thanks."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>If you don't want to participate, that's okay. Just keep in mind you can't get Heart Headbands on any day except Daeva's Day.</p>
+          <p> </p>
+          <p>So if you're a collector, or just enjoy funny hats, you'd better take advantage of this opportunity.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Funny hats give me hives."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, you're one of the participants in the special Daeva's Day hunt, aren't you?</p>
+          <p> </p>
+          <p>If you collected all the coupons you need, you can turn them in for a Heart Headband.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here they are."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes, that's all the coupons. Here's your Heart Headband!</p>
+          <p> </p>
+          <p>You're lucky, you know; there's actually been a lot of demand for them. Guess the committee isn't wrong about EVERYTHING.</p>
+          <p> </p>
+          <p>Speaking of which, I have to plan my revenge against them...care to help?</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Sorry, this isn't enough [%dic:STR_DIC_I_QUEST_80003a]s. I have to be fair to everyone.</p>
+          <p> </p>
+          <p>If you fight enough [%dic:STR_DIC_M_Cherubim2Wp_24_An]s, [%dic:STR_DIC_M_Skeleton_24_An]s, and [%dic:STR_DIC_M_DIC_M_DigCherubimL_24_n]s, you should get all you need.</p>
+          <p> </p>
+          <p>I'll be here for a while longer, but obviously the sooner you turn them in, the better.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Gotcha."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect [%dic:STR_DIC_I_QUEST_80003a]s and take them to [%dic:STR_DIC_N_event_Kahlen].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Collect coupons for a Heart Headband and give them to Kahlen.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Kahlen, a member of the Event Staff, is giving away Heart Headbands in celebration of Daeva's Day. You collected coupons from monsters and turned them in for your Headband.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

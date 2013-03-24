@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Here is an Arena Ticket, [%username]. Each time you compete, you will need to present one of these tickets, and you can only receive one per day.</p>
+          <p> </p>
+          <p>Normally, you would speak with [%dic:STR_DIC_N_Reigar] to get your ticket, but I can give you your first one to start out.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Thank you, sir!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The best way to test whether you were paying attention is if I send you into the Coliseum and oversee a match or two.</p>
+          <p> </p>
+          <p>Defeat one opponent. Just one. Doesn't matter who, doesn't matter which arena, just one opponent.</p>
+          <p> </p>
+          <p>Think you can manage that?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Now, I know what you're thinking: I'll go right to the Arena of Chaos and show him what I'm made of. Better Daevas than you have thought the same way, and we just got done sponging them off the arena floor.</p>
+          <p> </p>
+          <p>I'm not going to stop you walking in there, though. I'm not your babysitter. Just be sure to check the name on the arena door before entering.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Blood for blood!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Dear oh dear. Well, it's better to be scared off now than to realize your mistake once you get in there.</p>
+          <p> </p>
+          <p>If you're not going to compete, get out of the way and stop wasting my time. I have plenty of other Daevas to oversee. We're building an army here. We don't need daru droppings like you holding us back.</p>
+          <p> </p>
+          <p>And they said you were a promising [%userclass]. I don't know...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Sorry, sir, I... never mind."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It lives.</p>
+          <p> </p>
+          <p>Well, I must say I am surprised to see you back here, but I'm capable of saying when I was wrong. But... what is it? Did something happen in there? Not another incident, please Lord Marchutan, don't let it be...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I did OK, but I found this."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Interesting. Let me take a look at that. It can't be...</p>
+          <p> </p>
+          <p>Oh, ah, yes. Well done and all that. You didn't end up a smear on the arena floor. I think I have something here to reward you with...</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Defeat one opponent in the [%dic:STR_DIC_W_IDArena_pvp_D] ([%2]/1).</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Take the Bloodied Insignia to [%dic:STR_DIC_N_Shinin].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Use the Arena Ticket to enter the Crucible Coliseum and defeat one opponent.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You proved to Instructor Shinin that you understand the rules of the Crucible Coliseum by defeating one opponent there.</p>
+          <p> </p>
+          <p>As you prepared to leave the arena, you found a Bloodied Insignia on the ground, which must have been dropped by your opponent.</p>
+          <p> </p>
+          <p>You showed the insignia to Shinin, and he seemed distracted and disturbed while he gave you your reward.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

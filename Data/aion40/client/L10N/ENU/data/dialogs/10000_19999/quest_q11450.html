@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We are in the deepest of troubles, [%username].</p>
+          <p> </p>
+          <p>Not only are the Balaur readying to resume their offensive, but dozens of our Legionaries are incapacitated with some strange illness.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Did the Balaur do it?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No, no, no...that would probably be easier to treat. This illness stems from some kind of insect bite from Taloc's Forest.</p>
+          <p> </p>
+          <p>I sent some soldiers out there to explore the forest, and they claim a swarm of bugs attacked them. They were fine when they got back, but they've been dropping one after the other since yesterday.</p>
+          <p> </p>
+          <p>I examined a few of them, and their bite marks had swollen up to the size of Kinah coins.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"When will they be ready for battle?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That's the problem... They're getting worse! They complain of fever and weakness. They also have fits of coughing.</p>
+          <p> </p>
+          <p>Getting inventive, I tried applying purified Aether water onto the wounds...but it did nothing. Then I heard from someone that crushed young Elim leaves might work.</p>
+          <p> </p>
+          <p>But, as you can see, I can't leave here.... Would you search for these leaves for me?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Atreia's too far from here...so please bring back [%dic:STR_DIC_I_quest_11450a] instead. It should work the same, since Taloc is from the Elim family as well.</p>
+          <p> </p>
+          <p>But Taloc's leaves...do you think there's a risk of catching some strange disease from its leaves? I've heard stories from passing Shugos about Taloc's...tainted danglings. That's what they call them, at least.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I guess we'll find out."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did you just tell me to go find them myself? These men are sick, [%username]! They need help.</p>
+          <p> </p>
+          <p>It's not that I'm afraid to go myself--it's just that no one else can watch over my comrades here like I can.</p>
+          <p> </p>
+          <p>Forget that I asked, Daeva. I hope you need my help someday. You'll never hear laughter as loud as you'll hear it that day!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm a soldier, not a leaf chaser."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body> 
+          <p>There's people coughing all over this ward.... I'm glad you made it back so soon, [%username].</p>
+          <p> </p>
+          <p>I don't know if it's my imagination, but I feel a little shaky and weak myself.... Pardon me. I pray to Ariel that I'm not coming down with this odd malady.</p>
+          <p> </p>
+          <p>Did you find the [%dic:STR_DIC_I_quest_11450a]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Yes, I did. Here they are."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You've come back without anything? What of these sick soldiers? How will we treat them?</p>
+          <p> </p>
+          <p>I really put a lot of faith in you, [%username]! This is so disappointing.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Other matters came up."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hmmm, these leaves look a little different from the Elim leaves in my village. It should be all right, don't you think?</p>
+          <p> </p>
+          <p>Still, I'll clean them thoroughly in purified Aether water before crushing them into paste.... Aether water will purify almost anything.</p>
+          <p> </p>
+          <p>Thank you for your help, [%username]. And if you should begin to feel...sick, please do come back.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Obtain leaves from [%dic:STR_DIC_OBJ_IDElim_Seed_Q11450] and bring them to [%dic:STR_DIC_N_Crosia].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Bring Young Taloc Leaves to the Guardians who fell ill after getting bitten by insects in the forest.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Crosia told you that Guardians went to investigate Taloc's Forest and were bitten by bugs. They developed a mysterious illness as a result.</p>
+          <p> </p>
+          <p>She heard from someone that young Elim leaves work wonders on such illnesses, and asked you to bring her some. When you did, she thanked you.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>얼마 전에 자경단장인 레툼 님과 마을 동쪽으로 순찰을 갔습니다.</p>
+          <p> </p>
+          <p>티포리드가 많기에 트리피드 밭에 문제를 일으킬까 봐 모조리 처치하고 왔지요.</p>
+          <p> </p>
+          <p>그런데 어제 마을 주민 하나가 와서 티포리드가 밭을 망쳐 놓았다고 하더군요.</p>
+          <p> </p>
+          <p>레툼 님은 이미 다 처치했으니 그럴 리가 없다고 하셨지요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아마도 처치하지 못하고 빠트린 놈이 있었나 봅니다. 하지만 레툼 님은 자기 실수를 인정하기 싫어하시거든요.</p>
+          <p> </p>
+          <p>그래서 부탁인데 [%username] 님이 티포리드를 좀 처치해 주시면 어떨까요?</p>
+          <p> </p>
+          <p>그리고 나서 제가 할라바나 노천탕 쪽에서 넘어온 놈이 있어서 처치했다고 말하는 겁니다. 그럼 문제도 해결되고 레툼 님의 자존심도 상하지 않으니 다행 아닙니까?</p>
+          <p> </p>
+          <p>이걸 기회로 제가 레툼 님의 신임을 받게 되면 그것도 좋은 일이고요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님은 첫인상대로 친절하신 분이로군요.</p>
+          <p> </p>
+          <p>그럼 할라바나 노천탕 쪽으로 가서 [%dic:STR_DIC_M_hippolizardReD_37_An]%을 처치해 주세요.</p>
+          <p> </p>
+          <p>모조리 처치하고 알려 주시면 제가 레툼 님께 잘 보고해서 점수 좀 따 보겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>레툼 님이 한번 신경질을 내면 저희 자경단원들은 모두 죽은 목숨입니다.</p>
+          <p> </p>
+          <p>그러니 다른 주민이 또 티포리드 때문에 문제가 생겼다고 찾아오기 전에 제발 좀 도와주십시오.</p>
+          <p> </p>
+          <p>좋은 게 좋은 거라 하지 않습니까? 그러니 다시 한번 생각해 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그렇지 않아도 기다리고 있었습니다.</p>
+          <p> </p>
+          <p>레툼 님 기분이 점점 안 좋아지는 것 같아서 지금이야말로 공로를 세운 걸 자랑할 기회라고 생각했거든요.</p>
+          <p> </p>
+          <p>제가 부탁한 대로 주걱꼬리 티포리드는 모두 처치하신 거겠죠?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 알려 준다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정말 고맙습니다. [%username] 님 덕분에 레툼 님에게 점수 좀 따게 생겼군요.</p>
+          <p> </p>
+          <p>이번 일로 자경단에서 한자리 차지할 수 있으면 더 좋겠지요.</p>
+          <p> </p>
+          <p>자, 이건 티포리드를 처치해 주신 보답입니다. </p>
+          <p> </p>
+          <p>참, 남들에게는 [%username] 님이 티포리드를 처치했다는 말은 하지 말아 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">트리피드 밭에 문제를 일으키는 [%dic:STR_DIC_M_hippolizardReD_37_An]%을 처치하라([%2]/10)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Mirmak]와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">미르마크의 부탁대로 할라바나 노천탕 쪽으로 가서 주걱꼬리 티포리드를 처치해 주자. </font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>미르마크는 티포리드 문제를 해결하고 자경단장인 레툼의 신임을 얻고 싶다고 했다.</p>
+          <p> </p>
+          <p>그래서 할라바나 노천탕으로 가서 주걱꼬리 티포리드를 처치해 줬더니 매우 고마워했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

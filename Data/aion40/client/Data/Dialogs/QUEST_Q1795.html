@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>입수한 정보에 따르면 적들은 라 미렌 요새를 점령한 것을 발판으로 어비스 곳곳에서 총공세를 벌일 계획을 세우고 있다고 합니다.</p>
+          <p> </p>
+          <p>그렇게 된다면 천족은 회복하기 힘들 정도로 타격을 입을 겁니다.</p>
+          <p> </p>
+          <p>하지만 우리 잿빛 바람 군단이 있는 한 절대로 그렇게 되도록 내버려두지 않을 겁니다.</p>
+          <p> </p>
+          <p>무슨 수를 써서라도 요새를 탈환해서 총공세를 차단하고 전세를 역전시킬 테니까요!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>상대는 경비 병력을 대대적으로 보충해서 요새를 방어하고 있습니다.</p>
+          <p> </p>
+          <p>그러니 우리가 집중 공격해야 할 대상이 누구인지는 분명하죠. 바로 주둔군입니다!</p>
+          <p> </p>
+          <p>하지만 워낙 숫자가 많아서 한 번에 타격을 입히기는 어렵습니다. 기습 공격을 반복해서 놈들을 약화시켜야지요.</p>
+          <p> </p>
+          <p>문제는 누가 적진을 뚫을 것인가 하는 것인데... 아무리 생각해도 일반 데바들의 지원 없이는 어려울 것 같습니다.</p>    
+          <p> </p>
+          <p>어떠세요, [%username] 님. [%dic:STR_DIC_M_Lamiren_Guard]을 처치하는데 앞장서 주시지 않겠습니까?</p>    
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>좋습니다. 그럼 동료들을 소집하여 라 미렌 요새로 가십시오. 그리고 [%dic:STR_DIC_M_Lamiren_Guard]을 해치우고 돌아오세요.</p>
+          <p> </p>
+          <p>적의 감시가 삼엄하니 은밀하게 움직여야 할 겁니다. 동료들은 반드시 [%username] 님과 실력이 비슷한 분들로 소집하시고요.</p>
+          <p> </p>
+          <p>기습 작전이 성공적으로 마무리되면 돌아와서 바로 보고해 주십시오.</p>
+          <p> </p>
+          <p>[%username] 님이 무사히 귀환하는 것을 확인하는 즉시 다음 작전에 돌입하겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>지금은 그 무엇보다 라 미렌 요새 탈환이 시급한 상황입니다.</p>
+          <p> </p>
+          <p>[%username] 님이라면 분명 우리 작전에 힘이 돼 주실 줄 알았는데...</p>
+          <p> </p>
+          <p>그러지 말고 다시 한번 생각해 보십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>기다리고 있었습니다, [%username] 님!</p>
+          <p> </p>
+          <p>라 미렌 요새 기습 작전은 성공했습니까?</p>
+          <p> </p>
+          <p>요새 주변의 상황은 어떤가요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>흐음, 생각보다 상황이 좋지 않군요.</p>
+          <p> </p>
+          <p>그래도 임무를 차질 없이 완수해서 작전을 수행하는 데는 문제가 없겠습니다.</p>
+          <p> </p>
+          <p>저는 부하들에게 바로 다음 작전을 지시해야겠습니다.</p>
+          <p> </p>
+          <p>엘리시움의 영광을 위해! </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_M_Lamiren_Guard]을 처치하라([%2]/10)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Monerva]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">라 미렌 요새를 탈환하기 위해 기습 작전을 준비 중인 미네르바를 도와 라 미렌 요새 주둔군을 처치해 주자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>미네르바는 적군에게 빼앗긴 라 미렌 요새를 다시 탈환하기 위해 기습 작전을 세우고 있었다. 요새를 지키고 있는 주둔군을 기습해서 적진을 교란시키는 것이 미네르바가 세운 작전이었다.</p>
+          <p> </p>
+          <p>부탁대로 라 미렌 요새 주둔군을 처치하고 갔더니 미네르바는 임무를 성공해서 다행이라며 부하들을 시켜 바로 다음 작전에 들어가겠다고 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

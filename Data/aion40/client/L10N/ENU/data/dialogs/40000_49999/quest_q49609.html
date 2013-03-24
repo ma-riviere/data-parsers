@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p align="center"> - Work Order -</p>
+          <p> </p>
+          <p>1. To: Temp Worker [%username]</p>
+          <p> </p>
+          <p>2. Job Details: Kill the Shulacks who've attacked the Silverine's Weapon Warehouse, then report to the supervising branch in charge.</p>
+          <p> </p>
+          <p>3. Supervising Branch: Silverine South Katalam Branch</p>
+          <p> </p>
+          <p>The above mission will be considered in the evaluation process for hiring you as a full-time worker. Additional points may be added depending on the result. Do your best nyerk.</p>
+          <p> </p>
+          <p>- Dumurinerk, Recruiter of Silverine Limited</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">Fold the work order and put it away.</Act>
+    </Selects>
+  </HtmlPage>
+
+   <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did you humiliate those Shulack thieves?</p>
+          <p> </p>
+          <p>Damn those Shulacks. How ungrateful they are, nyerk!</p>
+          <p> </p>
+          <p>They were desperate to get a job from us, but now they smuggle our products? That's unforgivable.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">Tell him the result.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Now that I think about it, they must have planned to ask for work here.</p>
+          <p> </p>
+          <p>They just wanted to sniff out where we keep the expensive items.</p>
+          <p> </p>
+          <p>Anyway, I'm glad you punished them. They'll never try that again, nyerk!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Kill the Shulack Thieves who attacked the Silverine Weapon Warehouse ([%2]/5).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report to Silverine South Katalam Branch.</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">You received a work order from Silverine Limited. Check the work details and perform the mission.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You received a work order from Silverine Limited.</p>
+          <p> </p>
+          <p>After you got rid of Shulack thieves attacking the Silverine Weapon Warehouse and reported the result to the Silverine South Katalam Branch, you were rewarded for your hard work.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

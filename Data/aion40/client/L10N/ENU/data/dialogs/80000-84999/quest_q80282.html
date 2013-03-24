@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Bring me the hair.</p>          
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">Say okay. </Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Will you do it?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="PLAYEMOTION_comfort;HACTION_QUEST_ACCEPT_1">Accept the proposal. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>All right.</p>
+          <p> </p>
+          <p>Now hurry and go.</p>                    
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">End dialog. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Now you're going to chicken out?</p>
+          <p> </p>
+          <p>Are you going to spend your life as a coward?</p>
+          <p> </p>
+          <p>If you're that scared, come back with some friends. We'll talk again.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">End dialog. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're back so fast. You really are a very impressive Daeva.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">Hand over the hair.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You haven't left yet?</p>
+          <p> </p>
+          <p>Hurry now, hurry!</p>
+          <p> </p>
+          <p>You're not scared, are you? Then get going, all right?</p>
+          <p> </p>         
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">End dialog. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You look beat up. I thought this would be a piece of cake for you. </p>
+          <p> </p>
+          <p>Well, you did good. The crafting association won't forget that, [%username].</p>
+          <p> </p>
+          <p>As a reward, this should be enough, right?</p>
+          <p> </p>
+          <p>The crafting association is having financial difficulties. See you next time.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Find the hair.</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Let's go find the hair.</font></p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Presteore is a scholar of the Crafting Association. He requested [%dic:STR_DIC_I_QUEST_80194a]s and [%dic:STR_DIC_I_QUEST_80194b]s to test your abilities.</p>
+          <p> </p>
+          <p>You went to [%dic:STR_DIC_FLA09], hunted Slinks and Lobnites, and brought him [%dic:STR_DIC_I_QUEST_80194a]s and [%dic:STR_DIC_I_QUEST_80194b]s.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

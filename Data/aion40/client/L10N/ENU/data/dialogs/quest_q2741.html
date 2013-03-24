@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I was barely in Reshanta long enough to wave at my Uncle Jebal when I was dispatched to guard this crazy Priest Ganglot.</p>
+          <p> </p>
+          <p>Honestly, I am a little nervous. I mean, shards! Look at all those Undead. I can't let my guard down for a minute!</p>
+          <p> </p>
+          <p>The Priest seemed pretty confident at first, but now he's shaking like a leaf, and sometimes he talks to no one I can see....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"That's not good."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No. We're overwhelmed by the vast number of Undead wandering about.</p>
+          <p> </p>
+          <p>I can't think of any solution except to keep fighting, but how am I to kill the dead? The Priest says killing them is not a permanent solution--he ordered me to protect him from immediate harm and leave the rest alone so he can exorcise them, but I also have to guard him against the Elyos. </p>
+          <p> </p>
+          <p>I wish I'd listened to my mother and stayed close to Uncle Jebal!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Is there something I can do?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, the biggest headache is the Soul Reapers. Whenever the priest begins an exorcism, the Soul Reapers appear out of nowhere and attack, hindering his work. I defeated them when I could, but there are just so many!</p>
+          <p> </p>
+          <p>I cannot hunt them down because that leaves Priest Ganglot open to assault by the sun-poxed Ellies.</p>
+          <p> </p>
+          <p>[%username], would you defeat [%dic:STR_DIC_M_Ab1_1132_Specter_25_An]s for me?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah thank you! Thank you for your help!</p>
+          <p> </p>
+          <p>Please eliminate [%dic:STR_DIC_M_Ab1_1132_Specter_25_An]s and bring me the [%dic:STR_DIC_I_QUEST_2741a]s as proof.</p>
+          <p> </p>
+          <p>I know you'll live up to your vow [%username], but I need the evidence to report to my superiors. Hopefully Uncle Jebal--I mean, the Brigade General--will send reinforcements when he knows what we're up against. I'm counting on you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Blood for blood!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thanks for nothing! I guess one Daeva and an old Priest don't mean anything to you.</p>
+          <p> </p>
+          <p>I will find someone else to help me.</p>
+          <p> </p>
+          <p>I'm sure Uncle Jebal will be happy to hear of your loyalty.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Good luck, kid."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're back [%username]!</p>
+          <p> </p>
+          <p>Did you exterminate the Soul Reapers?</p>
+          <p> </p>
+          <p>That's blasted good! Hand over the [%dic:STR_DIC_I_QUEST_2741a]s.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here you go."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm not trying to be pushy, but those Soul Reapers scare me! Could you hurry up and finish them off?</p>
+          <p> </p>
+          <p>Please, be quick to about it for the sake of Ganglot's sanity and mine.</p>
+          <p> </p>
+          <p>And please don't forget to collect the [%dic:STR_DIC_I_QUEST_2741a]s.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Just need a minute to rest."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Shade! That's a load off of my mind!</p>
+          <p> </p>
+          <p>Now that all the sinister Soul Reapers are gone, Priest Ganglot should be able to focus on purifying the Undead. I hope he can hold it together long enough to do his work.</p>
+          <p> </p>
+          <p>This is a small reward for your help. Thank you!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Defeat [%dic:STR_DIC_M_Ab1_1132_Specter_25_An]s and take proof to [%dic:STR_DIC_N_Gjalf].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Gjalf wants to defeat the Soul Reapers hindering Ganglot, but he cannot leave his place because the Elyos who might attack at any time. Defeat the Soul Reapers and take the Trace of Souls to Gjalf.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Gjalf was assigned the duty of guarding Priest Ganglot who is exorcising the Undead.</p>
+          <p> </p>
+          <p>She wanted to fight the Soul Reapers that hindered Ganglot, but could not leave her place because the Elyos might attack at any time.</p>
+          <p> </p>
+          <p>To help her, you defeated the Soul Reapers and took the proof to her as she requested.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

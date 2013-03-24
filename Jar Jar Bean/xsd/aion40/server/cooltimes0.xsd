@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ent_cool_time" type="xs:short"/>
+  <xs:element name="max_member_light" type="xs:byte"/>
+  <xs:element name="max_member_dark" type="xs:byte"/>
+  <xs:element name="enter_min_level_light" type="xs:byte"/>
+  <xs:element name="enter_min_level_dark" type="xs:byte"/>
+  <xs:element name="can_enter_mentor" type="xs:string"/>
+  <xs:element name="instance_cooltime">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ent_cool_time"/>
+        <xs:element ref="max_member_light"/>
+        <xs:element ref="max_member_dark"/>
+        <xs:element ref="enter_min_level_light" minOccurs="0"/>
+        <xs:element ref="enter_min_level_dark" minOccurs="0"/>
+        <xs:element ref="can_enter_mentor"/>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="race" use="optional"/>
+      <xs:attribute type="xs:int" name="worldId" use="optional"/>
+      <xs:attribute type="xs:byte" name="id" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="instance_cooltimes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="instance_cooltime" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

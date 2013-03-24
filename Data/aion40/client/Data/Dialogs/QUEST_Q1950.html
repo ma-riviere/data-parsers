@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이렇게 많은 편지를 쓴 걸 보니 메데아의 마계 생활이 그리 수월하지는 않은 것 같소.</p>
+          <p> </p>
+          <p>정보원 활동을 하는 것이니 당연하겠지만 말이오.</p>
+          <p> </p>
+          <p>자원한 일이라고는 하나 이렇게 고생하는 걸 보니 마음이 아프구려.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+       <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>마계로 간다고 할 때 말리지 못한 것이 두고두고 한이 되는구려.</p>
+          <p> </p>
+          <p>지금이라도 돌아왔으면 좋겠는데... 고집이 센 사람이니 쉽게 말을 듣지도 않을 테고...</p>
+          <p> </p>
+          <p>그래도 어떻게든 설득해 보고 싶소. 마계로 가서 내 편지를 [%dic:STR_DIC_N_Medea]에게 좀 전해 주겠소?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>잠시만 기다리시오. 지금 당장 편지를 쓰겠소.</p>
+          <p> </p>
+          <p>(급하게 편지를 쓴다.) 자, 다 됐소. [%dic:STR_DIC_N_Medea]에게 꼭 전해 주시오.</p>
+          <p> </p>
+          <p>그리고 이왕이면 [%username] 님도 메데아를 좀 설득해 주시오. 천계로 다시 돌아오라고 말이오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이제 막 마계에서 돌아온 사람에게 다시 가 달라고 부탁한 게 무리였던 것 같소.</p>
+          <p> </p>
+          <p>내 사정이 너무 급해서... 미안하오.</p>
+          <p> </p>
+          <p>메데아의 일은 가슴 아프지만 결국 우리 둘의 문제이니... 알겠소. 다른 방법을 알아보겠소.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>다시 돌아오셨군요, [%username] 님.</p>
+          <p> </p>
+          <p>저한테 급하게 전할 정보라도 있는 겁니까?</p>
+          <p> </p>
+          <p>무슨 일인지 말씀해 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">자이누스의 편지를 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>자이누스가 답장을 보냈군요!</p>
+          <p> </p>
+          <p>(편지를 읽은 후) 절 생각해 주는 마음은 고맙지만 지금 돌아갈 수는 없습니다.</p>
+          <p> </p>
+          <p>맡은 임무를 버리고 돌아갈 수는 없지요. 그리고 전 자이누스를 위해 희생하는 게 아닙니다.</p>
+          <p> </p>
+          <p>어쨌거나 자이누스의 마음은 잘 알았습니다. 그 마음만으로도 너무 고맙네요. </p>
+          <p> </p>
+          <p>그리고 [%username] 님도 편지를 전해 주셔서 감사합니다. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_Medea]%와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">모르헤임으로 돌아가 자이누스의 답장을 메데아에게 전해 주자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>자이누스는 메데아가 자신 때문에 희생하는 것 같다면서 돌아오라는 편지를 전해 달라고 했다.</p>
+          <p> </p>
+          <p>모르헤임으로 돌아가 메데아에게 편지를 전해 주자 마음은 고맙지만 임무를 팽개치고 돌아갈 수는 없다고 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

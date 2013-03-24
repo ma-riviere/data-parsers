@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I can't believe Denlavis is dead.</p>
+          <p> </p>
+          <p>I would have felt it! He was my...my...I would have known, I'm sure of it.</p>
+          <p> </p>
+          <p>He must still be alive....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"There's no way to know for sure."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>But...but there is. Perhaps you'd learn something where he was last seen? The [%dic:STR_DIC_E_Q1469_Zone], was it?</p>
+          <p> </p>
+          <p>I know this isn't a simple request. The risk is enormous and I'm a stranger to you. But I can't go myself--curse this Human body!</p>
+          <p> </p>
+          <p>You've already been so kind, but I must ask: Would you please try to find [%dic:STR_DIC_N_Denlavis] one more time?</p>
+
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you, [%username]! I've heard that there's a door in the basement of the Kyola Temple that leads to a temple in Asmodae. That temple could very well be the Fire Temple.</p>
+          <p> </p>
+          <p>Go through that door into the [%dic:STR_DIC_E_Q1469_Zone] and look for [%dic:STR_DIC_N_Denlavis], please.</p>
+          <p> </p>
+          <p>If he's not there...please don't give up. Anything you might find could be a clue.</p>
+          <p> </p>
+          <p>And please...be careful.</p>
+        </body>
+        </html>
+    </Contents>
+
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Arieluma, Hannet."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+
+          <p>You're sure--aren't you, Daeva--that Denlavis is dead?</p>
+          <p> </p>
+          <p>It means nothing! Just because he never returned from Asmodae.... It means nothing!</p>
+          <p> </p>
+          <p>It's all rumors. I know...I know he's alive somewhere....</p>
+        </body>
+
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Farewell, Lady Merchant."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+
+        <html>
+        <body>
+          <p>It's been a long time since I've seen an Elyos....</p>
+          <p> </p>
+          <p>You must be lost. What brings you here? Do you seek an escape route?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="PLAYEMOTION_surprise;HACTION_SELECT2_1">"The merchant Hannet seeks a Daeva called Denlavis."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What? Hannet? You've seen her? I...I never expected to hear her name again. She must be very old by now. I'm surprised she still remembers me.</p>
+          <p> </p>
+          <p>I'm...I'm sorry she remembers me. She was my wife. We had a child...stillborn. I ascended just afterward, and in my grief I fled. I couldn't stand Hannet's sadness. When I came here, I was entranced by the lady Kromede, her passion, her riches--and I stayed.</p>
+          <p> </p>
+          <p>Here, take this necklace. Both our names are inscribed on it. It will prove you were here. Tell her to forget me. Better yet, tell her I'm dead.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"There's no honor in lies, Denlavis, but I will."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+
+        <html>
+        <body>
+          <p>[%username]! I thought you'd never return!</p>
+          <p> </p>
+          <p>Did you find Denlavis? Have you seen him?</p>
+          <p> </p>
+          <p>Tell me!</p>
+
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="PLAYEMOTION_otl;HACTION_SELECT_QUEST_REWARD">"He's dead. I found this, and there's more...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Our marriage necklace! Twined in his bones, you say? Dead. Dead and gone then.</p>
+          <p> </p>
+          <p>And he stayed for this woman Kromede? Asmodian succubus! Faithless man! What a coward he was! </p>
+          <p> </p>
+	  			<p>Well, there's an end to it then. What more could be done? Thank you for your help, [%username]. Knowing the hard truth is better than knowing nothing at all. You have my gratitude.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Look for traces of [%dic:STR_DIC_N_Denlavis] in the [%dic:STR_DIC_E_Q1469_Zone].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Talk with [%dic:STR_DIC_N_Hagne].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Hannet wants you to go to Asmodae and look for some clue about Denlavis' fate. Go to the Fire Temple in Morheim and seek him there.</font></p>
+        </body>
+
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hannet couldn't believe that Denlavis was dead and asked you to go to Asmodae to look for him. You went to the Fire Temple in Morheim as she requested. Denlavis was alive but didn't want to leave.</p>
+          <p> </p>
+          <p>Denlavis gave you an engraved necklace and asked you to give it to Hannet. He asked you to tell her he was dead.</p>
+          <p> </p>
+          <p>You returned to Hannet, gave her the necklace, and told her that Denlavis had been Kromede's lover and that he was dead.</p>
+        </body>
+        </html>
+    </Contents>
+
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

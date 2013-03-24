@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님! 급히 부탁할 것이 있습니다.</p>
+          <p> </p>
+          <p>돌껍질 크셀리드와 돌껍질 크셀리키를 아십니까?</p>
+          <p> </p>
+          <p>등에 울퉁불퉁한 껍질을 얹고 돌아다니는 짐승 말입니다.</p>
+          <p> </p>
+          <p>요즘 돌껍질 크셀리드와 크셀리키 때문에 문제가 생겨서 급하게 조치를 취해야 할 것 같습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">얘기를 계속 듣는다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>원래 크셀리드나 크셀리키는 별로 위험한 짐승이 아닙니다. 건드리지만 않는다면 절대로 사람을 공격하지 않습니다.</p>
+          <p> </p>
+          <p>그런데 얼마 전에 사막을 지나던 주민들이 크셀리드와 크셀리키 무리에게 습격당하는 일이 생겼습니다.</p>
+          <p> </p>
+          <p>요새 쪽에서 조사하고는 있지만 아직 확실한 원인을 찾지 못했습니다.</p>
+          <p> </p>
+          <p>그렇다고 원인을 찾을 때까지 위험을 방치할 수도 없는 노릇 아닙니까. 그래서 [%username] 님의 도움이 필요합니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">도울 일이 뭔지 묻는다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_M_Shellizard_29_An]%와 [%dic:STR_DIC_M_ShellizardBaby_30_An]%을 처치해 주십시오.</p>
+          <p> </p>
+          <p>온순하던 녀석들이 갑자기 사나워진 이유는 알 수 없지만 다른 무엇보다 주민의 안전이 먼저입니다.</p>
+          <p> </p>
+          <p>놈들을 처치하고 증거물을 가져와 주십시오.</p>
+          <p> </p>
+          <p>한시가 급한 일이라 [%username] 님에게 요청하는 겁니다. 베르테론에서 했던 활약을 자세히 들었으니까요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>부탁을 들어주셔서 감사합니다.</p>
+          <p> </p>
+          <p>지금 당장 [%dic:STR_DIC_M_Shellizard_29_An]%와 [%dic:STR_DIC_M_ShellizardBaby_30_An]%을 잡아서 증거물로 [%dic:STR_DIC_I_QUEST_1342a] 10개를 가지고 오십시오.</p>
+          <p> </p>
+          <p>요새에 [%username] 님의 활약을 보고할 때 증거물이 있으면 더 좋으니까요.</p>
+          <p> </p>
+          <p>원인이 빨리 밝혀 지면 좋겠지만 그때까지 기다릴 수는 없는 노릇이지요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>힘든 일을 마다하지 않는다고 들었는데 제가 잘못 알고 있었던 겁니까?</p>
+          <p> </p>
+          <p>사람들이 위험에 처했는데 이렇게 모른 척할 수 있는 겁니까?</p>
+          <p> </p>
+          <p>정말 실망입니다. 스피로스 얘기를 무조건 믿은 제가 잘못이로군요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_M_Shellizard_29_An]%와 [%dic:STR_DIC_M_ShellizardBaby_30_An]%은 처치하셨습니까?</p>
+          <p> </p>
+          <p>크셀리드의 등갑도 잊지 않고 모아 왔겠죠?</p>
+          <p> </p>
+          <p>그럼 이리 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">크셀리드의 등갑을 건넨다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_I_QUEST_1342a]을 모으는 걸 잊으신 모양이로군요.</p>
+          <p> </p>
+          <p>이왕이면 활약을 보고할 때 증거물이 있는 게 좋지 않겠습니까?</p>
+          <p> </p>
+          <p>어서 가서 등갑을 모아 오십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>수고 많으셨습니다.</p>
+          <p> </p>
+          <p>그런데 요새에서 원인을 찾았다는 연락을 받았습니다.</p>
+          <p> </p>
+          <p>연락이 조금만 빨리 왔더라면 굳이 크셀리드와 크셀리키를 죽이지 않아도 됐을 텐데 안타깝군요.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_M_Shellizard_29_An]%와 [%dic:STR_DIC_M_ShellizardBaby_30_An]%을 처치한 증표를 [%dic:STR_DIC_N_Alexis]에게 가져가라 </font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">갑자기 난폭해진 크셀리드와 크셀리키를 처치하고 등갑을 모아 알렉시스에게 가져가자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>알렉시스는 크셀리드와 크셀리키가 갑자기 난폭해 졌다면서 주민의 위험을 방지하기 위해서 크셀리키와 크셀리드를 처치하고 등갑을 증거로 가져오라고 했다.</p>
+          <p> </p>
+          <p>그의 부탁대로 등갑을 가져가자 그들이 난폭해진 원인을 이제야 찾았다면서 원인 발견이 늦은 것을 안타까워했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

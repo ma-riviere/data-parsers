@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>안개갈기 놈들 때문에 마음 놓고 사냥을 갈 수가 없다, 크엉.</p>
+          <p> </p>
+          <p>그래서 안 그래도 식량 사정이 안 좋은데 칼니프 때문에 더 문제가 많다.</p>
+          <p> </p>
+          <p>놈들이 우리가 사냥할 때마다 방해를 하고 있다, 크흐으.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">고개를 끄덕인다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그래서 그놈들을 좀 처치해 줬으면 한다, 크엉.</p>
+          <p> </p>
+          <p>우리는 안개갈기 부족 때문에 함부로 움직일 수 없다.</p>
+          <p> </p>
+          <p>해 줄 수 있는가, 크흐으?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>다리를 두 번 건너가면 칼니프가 많다.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_KalnifNmD_37_An]와 [%dic:STR_DIC_M_KalnifD_37_An]를 처치해 달라, 크엉!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>사냥을 할 때마다 칼니프와도 싸워야 한다.</p>
+          <p> </p>
+          <p>그놈들은 껍질이 딱딱해서 먹기도 힘들고 노린내도 심하다, 크엉!</p>
+          <p> </p>
+          <p>잡아 봤자 힘만 들고 먹을 수도 없다. </p>
+          <p> </p>
+          <p>그러니 우리 은빛갈기 부족을 위해 다시 생각해 달라. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>사냥을 방해하는 칼니프를 잡았는가, 크엉?</p>
+          <p> </p>
+          <p>어떻게 됐는지 얘기해 달라.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>고맙다, 크엉 크엉!</p>
+          <p> </p>
+          <p>이제 사냥할 때 칼니프 때문에 사냥감을 놓치는 일은 없겠다.</p>
+          <p> </p>
+          <p>우리 은빛갈기 부족을 도와줘서 정말 고맙다, 크흐으.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">사냥을 방해하는 칼니프를 처치하라</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_KalnifNmD_37_An]([%2]/4)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_KalnifD_37_An]([%5]/6)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_DF2_NPC_Kuriuta]와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">칼니프가 은빛갈기 부족이 사냥하는 걸 방해한다고 한다. 칼니프를 대신 처치해 주는 게 좋겠다.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>쿠리우타는 사냥할 때 칼니프가 방해를 한다면서 귀찮아했다.</p>
+          <p> </p>
+          <p>그래서 대신 칼니프 처치해 줬더니 사냥하기 쉬워졌다며 고마워했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

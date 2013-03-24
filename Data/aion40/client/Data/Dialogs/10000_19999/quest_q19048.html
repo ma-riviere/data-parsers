@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(아무 말도 하지 않는다.)</p>
+          <p> </p>
+          <p>(하지만 손짓과 눈빛에서 무언가를 느낄 수 있다.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">할 말이 있냐고 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>전해졌소? 내 마음이?</p>
+          <p> </p>
+          <p>아무리 명쾌하고 숙련되고 절제된 감정 표현을 익혀도 겉으로만 드러나는 것과 내면에서 우러나오는 것은 다르오.</p>
+          <p> </p>
+          <p>의식하지 않은 상태에서 드러나는 동작이 진정한 표현인 것이오.</p>
+          <p> </p>
+          <p>[%username]%이 원한다면 그 비법을 전수해 주겠소.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>내가 직접 쓴 교본을 빌려 줄 테니 그걸 읽으시오.</p>
+          <p> </p>
+          <p>표지만 훑어보지 말고 내용을 꼭 확인하시오!</p>
+          <p> </p>
+          <p>그것을 보면 내 가르침을 얻을 수 있소.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아아... 정말 슬프다오!</p>
+          <p> </p>
+          <p>내 진심이 [%username]%에게 전해지지 않는단 말이오!</p>
+          <p> </p>
+          <p>모두에게 진심을 통하게 할 감정 표현이 가능해 질 때까지 수련을 더 해야겠소.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정말 다 읽었소?</p>
+          <p> </p>
+          <p>1번째 줄만 훑어본 건 아니겠지? 내가 [%username]%을 믿어도 되겠소?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">고개를 끄덕인다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>충분히 익힌 것 같으니 모션을 익힐 수 있는 선물을 주겠소.</p>
+          <p> </p>
+          <p>더 깊은 가르침을 원한다면 소정의 대가를 지불해야 할 것이오.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">큐브 안에 있는 [%dic:STR_DIC_I_Q19048A]을 사용하라[%2]</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_N_Andreas]%와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">안드레아스의 교본을 읽고 모션에 대한 가르침을 얻자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>감정 표현의 스승 안드레아스는 무의식 중의 표현이 더욱 중요하다며 가르침을 주겠다고 했다.</p>
+          <p> </p>
+          <p>그래서 안드레아스의 교본을 읽고 모션에 대한 가르침을 획득했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

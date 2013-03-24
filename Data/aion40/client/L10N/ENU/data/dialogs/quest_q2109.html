@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--tightening pass 17 Apr by Dave-->
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did you know that every year here in [%dic:STR_DIC_W_DF1_3], the most precious and beautiful flower blooms? Gaze upon the lake and you'll see the [%dic:STR_DIC_E_3], one of Ishalgen's few things of beauty.</p>
+          <p> </p>
+          <p>That's not the only remarkable thing about this place, though. Look to the south, over there on the dock.</p>
+          <p> </p>
+          <p>There are other beauties here, too...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"The girl on the dock?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes, more beautiful than any flower. Her name is [%dic:STR_DIC_N_Negi]. You know, I only joined Ulgorn's Raiders so that I might be closer to her. I'm not exactly fighting material.</p>
+          <p> </p>
+          <p>She's right there, and I'm a wreck! Every time I try and talk to Negi, I mumble some nonsense, I panic, or I freeze. Last time I got tangled up in my own fishing line and fell in the lake! She probably thinks I'm an idiot. But what can I do?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="PLAYEMOTION_otl;HACTION_ASK_QUEST_ACCEPT">"Give her a gift, perhaps?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The only fitting gift for someone as beautiful as [%dic:STR_DIC_N_Negi] would be a bouquet of [%dic:STR_DIC_I_2109a]s. But I'm too scared to go into the lake. I got bit by a Slink last week, and those Airons always run toward me like they're going to peck my eyes out.</p>
+          <p> </p>
+          <p>Like I said, I'm not much of a raider. Shame on me, right?</p>
+          <p> </p>
+          <p>You're braver than I am, though. Have pity on a fool in love...gather some flowers for me?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you! Please, hurry into the lake. Don't worry--it's shallow throughout.</p>
+          <p> </p>	
+          <p>Three [%dic:STR_DIC_E_3]s should be enough to make a bouquet for Negi. I'll see if I can find a ribbon or something to bind them together.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"On my way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, I see what you're saying.</p>
+          <p> </p>
+          <p>If I can't even gather the courage to walk into the lake to gather flowers for my love, then why would she accept my affections at all? I just wish I had more nerve.</p>
+          <p> </p>
+          <p>Thank you for listening to me anyway. I do appreciate it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I hope you find your courage."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've been standing here, mulling over what I should say to [%dic:STR_DIC_N_Negi] next time we speak.</p>
+          <p> </p>
+          <p>I don't want to get tongue-tied again. I think I'll mention fishing to her. Common interests are good, right?</p>
+          <p> </p>
+          <p>Oh, the bouquet! I'd nearly forgotten! Did you manage to gather enough [%dic:STR_DIC_I_2109a]s?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Will these do?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No, that's not enough.</p>
+          <p> </p>
+          <p>Please remember, I'm trying to impress her. I need to have three [%dic:STR_DIC_I_2109a]s to make a bouquet as beautiful as [%dic:STR_DIC_N_Negi].</p>
+          <p> </p>
+          <p>Keep looking! The flowers grow all around the lake, so you shouldn't have a problem collecting six.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be right back."</Act>
+    </Selects>
+  </HtmlPage>
+
+<HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>These are perfect...really, truly perfect!</p>
+          <p> </p>
+          <p>I hope Negi will see my devotion to her. But I'm so nervous! I can't concentrate on my fishing anymore!</p>
+          <p> </p>
+          <p>Thanks for all your help, friend.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Pick [%dic:STR_DIC_I_2109a]s and bring them to [%dic:STR_DIC_N_DF1_Fisher].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">You encouraged Bolir, a fisherman on the shore of Tunapre Lake, to express his love for Negi. He wants to give her [%dic:STR_DIC_I_2109a]s when he talks to her. Pick the flowers for him.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Bolir has fallen deeply in love with Negi, but is too nervous to approach her and tell her how he feels.</p>
+          <p> </p>
+          <p>You encouraged him and picked the Ampreh Flowers for him so that he could express his love to her.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

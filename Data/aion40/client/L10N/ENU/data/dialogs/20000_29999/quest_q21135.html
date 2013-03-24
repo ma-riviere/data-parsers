@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hmm.... What do I do now? I can't.... Ah, [%username]! Fate is on my side! You are the solution to a problem I have.</p>
+          <p> </p>
+          <p>I just received a report from one of my researchers that could be of the utmost importance.</p>
+          <p> </p>
+          <p>Unfortunately, I'm a bit shorthanded, and all of my own people are already occupied with pressing matters.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"So what do you need?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hmm.... Unfortunately, I can't tell you that. Your contact will, should you accept.</p>
+          <p> </p>
+          <p>I apologize for the mystery, but this is that important. I can't afford to risk it leaking out, especially not to....</p>
+          <p> </p>
+          <p>Well, I shouldn't say that either. I will tell you that it could mean the difference between victory and defeat here in Gelkmaros.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, excellent. Go to [%dic:STR_DIC_W_SZ_DF4_Tw] and meet with [%dic:STR_DIC_N_Skira].</p>
+          <p> </p>
+          <p>She'll know you're coming. Follow any order or request she may have of you.</p>
+          <p> </p>
+          <p>She will also tell you the purpose of all this. Then you'll understand the need for secrecy.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I hope so."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Fools rush in where Balaur fear to tread, eh? Don't want to take my word for it that it's that important?</p>
+          <p> </p>
+          <p>I can actually respect not wanting to go into a mission blind. Well, I'll find someone else to take it.</p> 
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Thanks for understanding."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, [%username]. I'd been told you were coming. Let me fill you in. You know that Nunglark Village was destroyed by the Balaur, right?</p>
+          <p> </p>
+          <p>Well, whatever power they wielded not only destroyed the village, but changed the very composition of the soil.</p>
+          <p> </p>
+          <p>This is very exciting. If we can get any information on the initial attack, we could unlock the secrets of Tiamat's power.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">"I see the importance now."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Indeed. Unfortunately, the villagers aren't of much help, what with the trauma and the usual difficulties of eyewitness accounts.</p>
+          <p> </p>
+          <p>However, one of them told me that there was a Shulack in the village who was a top-notch tinkerer. He created a bead that records images. If that bead was active during the attack, it could've captured the whole incident.</p>
+          <p> </p>
+          <p>Those images could be invaluable to us. Ask [%dic:STR_DIC_N_Gehlen]; he might know something of the matter. I'll continue my own investigations in the meantime.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"Will do."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Skira seems very active lately. And interested in what I have to say. Now you?</p>
+          <p> </p>
+          <p>If I didn't know better, I'd think there was some kind of conspiracy afoot.</p>
+          <p> </p>
+          <p>You seem excited. Am I about to find out what's going on?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I have a very important question..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, that story? Frankly, I didn't pay much attention. It seemed far-fetched to me.</p>
+          <p> </p>
+          <p>Still, it did stick with me.... Now who was it who told it to me...?</p>
+          <p> </p>
+          <p>Shards, I can't remember. There are so many refugees here they blur together after a while. Let me think about this for a while. I'll remember eventually.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk to [%dic:STR_DIC_N_Skira].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Talk to [%dic:STR_DIC_N_Gehlen].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Meet Skira in Rhonnam Refugee Village and find out the truth behind the mysterious mission you're on.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Vellun sent you to Rhonnam Refugee Village to help one of his researchers on a mysterious errand.</p>
+          <p> </p>
+          <p>That researcher was Skira, who told you that she might be on the brink of finding out the nature of Tiamat's powers.</p>
+          <p> </p>
+          <p>She sent you to talk to Gehlen, who had an important piece of the puzzle. But he needed time to remember what it was.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

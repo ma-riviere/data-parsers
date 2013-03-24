@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Field Warden:</p>
+          <p> </p>
+          <p>Recently there have been questions from certain...parties about our dedication to protecting the Aetheric Field. We trust that this has not resulted from any action of yours, but we nevertheless require your assistance.</p>
+          <p> </p>
+          <p>For the moment, we continue to receive support from Pandaemonium. However, it is imperative that our relationship remain strong, and this requires an overt demonstration of our commitment to our mission statement.</p>
+          <p> </p>
+          <p>Perhaps not coincidentally, our critics have mentioned the quantities of [%dic:STR_DIC_G_QUEST_45031_a]s even now scattered in the skies over Beluslan. We have told Pandaemonium that we will gather these fragments and use them to repair the Aetheric Field. We need to act promptly and publicly.</p>
+          <p> </p>
+          <p>As soon as possible, retrieve some of these [%dic:STR_DIC_G_QUEST_45031_a]s and take them to [%dic:STR_DIC_N_Columba], who will see to the matter from there.</p>
+          <p> </p>
+          <p>Please destroy this letter after reading it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">(Destroy the letter.)</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Azphelumbra, [%username]. It's been some time since we last spoke.</p>
+          <p> </p>
+          <p>What brings you here today? Does this have something to do with those pieces of crystallized Aether we're gathering as part of our Steadfast Dedication to protecting the Aetheric Field? Didn't I say the sky was falling? Didn't I?</p>
+          <p> </p>
+          <p>Anyway, I've had Wardens turn in quite a few bits so far, but we still need more to prove we're serious about our mission. Do you have anything to give me?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I don't see why this is so important...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Look, to be honest, neither do I. But right now gathering these gems is the highest priority for the Field Wardens.</p>
+          <p> </p>
+          <p>I don't have time to go into details. It's important, that's all.</p>
+          <p> </p>
+          <p>Now get up there and bring me, say...3 [%dic:STR_DIC_G_QUEST_45031_a]s and we'll call it done. Then you can get back to more...urgent business.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I guess I can manage that."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Look, everyone! See what [%username] just brought? These are exactly the gemsI was telling you about.</p>
+          <p> </p>
+          <p>Pretty soon we'll have this matter all cleared up. Your lives are safe in the hands of the Field Wardens!</p>
+          <p> </p>
+          <p>There, that should convince them. And as for you, [%username].... Here's the token you're expecting. Don't spend it all in one place.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Gather [%dic:STR_DIC_G_QUEST_45031_a]s and bring them to [%dic:STR_DIC_N_Columba].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">A letter has arrived from the Field Wardens. Follow its instructions.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>According to a letter from the Field Wardens, Pandaemonium would like the Wardens to gather Aether Gems with which to repair the Aetheric Field.</p>
+          <p> </p>
+          <p>You gathered several of these Aether Gems and gave them to the Beluslan Field Agent, who rewarded you for your time.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

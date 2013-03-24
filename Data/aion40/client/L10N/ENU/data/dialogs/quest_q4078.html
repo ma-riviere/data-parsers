@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>More and more Daevas are coming to Brusthonin to help in reclaiming the land.</p>
+          <p> </p>
+          <p>You're here to help too, I presume?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"In any way I can."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Then I've got something you can help with. The darkness in the Magaro Primeval Forest is dangerous even for Asmodians.</p>
+          <p> </p>
+          <p>There were once lamps along the roads that led through it, but they've been dark for centuries.</p>
+          <p> </p>
+          <p>If we could make them shine brightly once again...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Glad to have your help. Now, we'll need a more permanent light source.</p>
+          <p> </p>
+          <p>Fire burns out too quickly. What we need are [%dic:STR_DIC_M_DF2A_SpakyButterflyD_45_n]s.</p>
+          <p> </p>
+          <p>If I work a little enchantment on them, we can tie them to the lamp poles and they'll glow for a long time. Won't be happy about it, but...just knock some out and bring them to me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"The task is mine."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This may seem like a menial task, but it'll save many lives. There are a lot of swamp creatures lurking in the shadows.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Perhaps another time."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Are those Moskies in your cube, or are you just happy to see me?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Very funny. Here you go."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_fail">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Moskies must have woken up and flown away. Pay more attention next time!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"All that work, wasted..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_ok">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Let me see them. I'll just say a few words over them...mumble-murphle....</p>
+          <p> </p>
+          <p>The lamps are along the old road that leads west through the swamp...although it may have shifted, so try searching in the swamp if you don't see them.</p>
+          <p> </p>
+          <p>Just tie the Moskies to the lamps and let 'em glow!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Away I go..."</Act>
+    </Selects>
+   </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I saw the lights glowing in the swamp. Those Moskies should keep things well-lit for a while.</p>
+          <p> </p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"It's not much of a path..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes, well, even a few oases of illumination are safer than total darkness.</p>
+          <p> </p>
+          <p>Once the contamination's cleared from the forest, we can start repairing the road in earnest.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Knock [%dic:STR_DIC_M_DF2A_SpakyButterflyD_45_n]s unconscious and take them to [%dic:STR_DIC_N_Helmut].</font></p>[%collectitem]</step>
+               <step><p visible="[%3]"><font color="[%4]">Illuminate [%dic:STR_DIC_OBJ_DF2a_Light_Q4078A] [%5].</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Illuminate [%dic:STR_DIC_OBJ_DF2a_Light_Q4078B] [%8].</font></p></step>
+               <step><p visible="[%9]"><font color="[%10]">Illuminate [%dic:STR_DIC_OBJ_DF2a_Light_Q4078C] [%11].</font></p></step>
+               <step><p visible="[%12]"><font color="[%13]">Report to [%dic:STR_DIC_N_Helmut].</font></p></step>
+     </steps>
+          <p><font font_xml="quest_summary">Collect Grove Moskies and bring them to Helmut, then use them to light up the road in the forest.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Elder Daeva Helmut wanted to illuminate the dark Magaro Primeval Forest. You captured Grove Moskies for him.</p>
+          <p> </p>
+          <p>He enchanted them, then asked you to attach them to the light poles in the forest, which you did.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

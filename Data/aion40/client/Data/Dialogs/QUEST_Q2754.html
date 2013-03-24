@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님이 드라코뉴트를 처치했으니 용족 놈들도 겁을 좀 먹었을 겁니다.</p>
+          <p> </p>
+          <p>이럴 때 숨통을 바짝 조이고 쐐기를 박아야지요. 싸움이라는 건 어차피 기세가 중요한 거니까요.</p>
+          <p> </p>
+          <p>승기를 잡았을 때 계속 밀고 나가야 하는 겁니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>드라코뉴트에 이어 나가를 처치하면 놈들도 겁을 먹을 겁니다.</p>
+          <p> </p>
+          <p>하지만 워낙 위험한 곳이니 아무에게나 임무를 드릴 수가 없네요.</p>
+          <p> </p>
+          <p>이번에도 [%username] 님이 맡아 주시면 어떨까요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그럼 [%dic:STR_DIC_M_Ab1_1141_NagaWizard_28_An]를 처치하고 증거로 [%dic:STR_DIC_I_QUEST_2754a]을 가져오십시오.</p>
+          <p> </p>
+          <p>지난번에도 가 보셨으니까 알겠지만 놈들이 있는 곳은 유황 때문에 위험합니다.</p>
+          <p> </p>
+          <p>생명력에 큰 타격을 입을 수 있으니 각별히 조심하십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이왕 도와주신 거 끝까지 도와주시면 좋을 텐데...</p>
+          <p> </p>
+          <p>중요한 임무가 있는 모양인데 저만 도와달라고 우길 순 없지요.</p>
+          <p> </p>
+          <p>그럼 안녕히 가십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>벌써 다녀오셨나요?</p>
+          <p> </p>
+          <p>실력이 좋은 건 알고 있었지만 상상 이상인걸요.</p>
+          <p> </p>
+          <p>제30 나가 법사를 처치하고 오셨으면 [%dic:STR_DIC_I_QUEST_2754a]을 이리 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">나가의 법봉을 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아직 나가를 처치하러 가지 않은 겁니까?</p>
+          <p> </p>
+          <p>아니면 법봉을 챙겨 오는 걸 잊으셨나요.</p>
+          <p> </p>
+          <p>상부에 보고를 올리려면 증거가 필요합니다.</p>
+          <p> </p>
+          <p>그러니 [%dic:STR_DIC_M_Ab1_1141_NagaWizard_28_An]를 처치하고 꼭 [%dic:STR_DIC_I_QUEST_2754a]을 챙겨 오십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이게, 제30 부대의 나가가 사용하는 법봉이로군요.</p>
+          <p> </p>
+          <p>흠... 마족이 사용할 수도 있을까요?</p>
+          <p> </p>
+          <p>어쨌거나 도와주셔서 정말 감사합니다.</p>
+          <p> </p>
+          <p>[%username] 님 덕분에 크라티온 분쟁지에서 용족을 몰아낼 수 있을 것 같습니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_M_Ab1_1141_NagaWizard_28_An]를 처치하고 [%dic:STR_DIC_N_Asynja]에게 증거를 가져가라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">크라티온 분쟁지에서 용족을 몰아내기 위해 나가를 처치하기로 했다. 나가 법사를 처치하고 나가의 법봉을 아시냐에게 가져가자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아시냐는 크라티온 분쟁지에서 용족을 몰아내려면 드라코뉴트를 처치해서 용족이 타격을 받았을 때 계속 몰아쳐야 한다고 했다.</p>
+          <p> </p>
+          <p>그래서 용족에게 더 큰 타격을 주기 위해 나가 법사를 처치하고 증거로 나가의 법봉을 가져다 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

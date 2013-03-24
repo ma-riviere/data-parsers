@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님, 혹시 오시는 길에 피난민들을 못 봤습니까?</p>
+          <p> </p>
+          <p>산들바람 상인 말로는 여기서 좀 떨어진 곳에서 피난민들을 봤다고 하더군요.</p>
+          <p> </p>
+          <p>사막화 때문에 마을을 잃고 떠도는 무리인 것 같은데 걱정이 됩니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>듣자하니 그들이 있는 곳이 [%dic:STR_DIC_W_LF2_SZ_F2] 근처더군요.</p>
+          <p> </p>
+          <p>거기엔 레파르 혁명단이 진을 치고 있는 곳인데 잘못하다 놈들에게 잡히기라도 할까봐 걱정입니다.</p>
+          <p> </p>
+          <p>저희를 여기를 떠날 수 없어서 그런데 [%username] 님이 피난민들을 찾아 아게이론 마을로 데려가 주시겠습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>흔쾌히 허락하실 줄 알았습니다.</p>
+          <p> </p>
+          <p>그럼 서둘러 피난민에게 가 보세요. 산들바람 상인이 어제 아나스 신비샘 근처에서 봤다고 했으니 거기서 멀리 벗어나진 않았을 겁니다.</p>
+          <p> </p>
+          <p>거기 우두머리가 [%dic:STR_DIC_N_Turiel]이라 했으니 그 사람을 만나 보십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>사막의 낮은 용광로보다 뜨겁고 밤은 얼음보다 차갑습니다.</p>
+          <p> </p>
+          <p>우리 데바도 힘든데 하물며 인간은 어떻겠습니까!</p>
+          <p> </p>
+          <p>이대로 두면 사상자가 생길지도 모릅니다. 급한 일이 아니라면 생각을 바꿔 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>오! 아이온이시여, 감사합니다.</p>
+          <p> </p>
+          <p>데바님을 보니 안심이 되는군요.</p>
+          <p> </p>
+          <p>저 마에키 때문에 무서워 죽는 줄 알았습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">아게이론 마을로 가자고 한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>신경써 주셔서 감사합니다만 지금은 힘들 것 같아요.</p>
+          <p> </p>
+          <p>오랜 여정이 힘들었는지 탈이 난 사람이 많아서요. 이대로 출발하면 데바님이나 저희나 모두 힘들 겁니다.</p>
+          <p> </p>
+          <p>아무래도 저희는 당분간 여기 머물러야 할 것 같습니다.</p>
+          <p> </p>
+          <p>혹시라도 도움이 필요하면 꼭 데바님께 연락 드리겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_Turiel]과 대화하라 </font></p></step>               
+    </steps>
+          <p><font font_xml="quest_summary">[%dic:STR_DIC_W_LF2_SZ_F2] 주변을 떠도는 피난민들이 있다고 한다. 피난민을 찾아 아게이론 마을로 데려가야겠다.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>에사이어스는 산들바람 상인에게서 사막을 떠돌고 있는 피난민 얘기를 들었다며 그들을 아게이론 마을로 데려가 달라고 부탁했다.</p>
+          <p> </p>
+          <p>피난민을 이끄는 투리엘에게 이 얘기를 전하자 호의는 고맙지만 자신들의 힘으로 살아갈 테니 걱정하지 말라고 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

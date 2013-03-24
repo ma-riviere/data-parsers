@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아아.. 이런 큰일이야!</p>
+          <p> </p>
+          <p>그게 어떻게 구한 물건인데!!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+    <Act href="HACTION_ASK_QUEST_ACCEPT">어떤 일인지 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>실은 얼마전에 [%dic:STR_DIC_W_LF2_SZ_A1]%을 지나가다가,</p>
+          <p> </p>
+	  <p>어렵게 구한 진주 목걸이를 만두리들에게 빼앗겨 버렸습니다.</p>
+          <p> </p>
+          <p>뺏길 때 끈도 뜯어져, 산산히 흩어져 도저히 다 찾아올 수 없었습니다.</p>
+          <p> </p>
+          <p>[%username] 님이 진주라도 만두리들에게 다시 되찾아 와 주시겠습니까?</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정말 감사합니다.</p>
+          <p> </p>
+          <p>진주를 찾아와 주시면 그에 맞는 사례를 하겠습니다.</p>
+         </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+         <p>제가 사람을 잘 못 봤군요.</p>
+         <p> </p>
+         <p>아아.. 그게 얼마짜리 진주인데..</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+   <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>진주를 다 찾아 오셨나요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">목걸이용 진주를 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+   <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>진주는 이게 다였나요?</p>
+	  <p> </p>
+          <p>제가 잃어버린 진주는 훨씬 많습니다. 좀 더 찾아봐 주세요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+    <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정말 다 찾아오다니 대단하십니다!!</p>
+          <p> </p>
+          <p>제가 남은 재료로 [%username] 님을 위한 목걸이도 하나 만들어 드리지요.</p>
+          <p> </p>
+          <p>자, 여기 사양말고 받으세요!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+                     <step><p visible="[%0]"><font color="[%1]">목걸이용 진주 27개를 모아 켄트에게 가져가라.</font></p>[%collectitem]</step>      
+    </steps>
+          <p><font font_xml="quest_summary">켄트가 만두리에게서 잃어버린 진주를 찾아달라고 한다. 진주 27개를 모아 가져다 주자.</p>
+          <p></font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>켄트는 뛸듯이 기뻐하며 이니샤에게 줄 진주 목걸이를 만들기 시작했다.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

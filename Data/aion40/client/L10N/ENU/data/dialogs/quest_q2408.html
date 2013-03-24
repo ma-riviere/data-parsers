@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], I hear you've traveled all over. Have you ever seen Klaws?</p>
+          <p> </p>
+          <p>I just saw a Klaw for the first time recently. When my commander said to wipe them out, I thought "That looks easy."</p>
+        </body>
+        </html>
+    </Contents> 
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Famous last words."</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>True, true. They're fierce as Arachnas and smart as Kentari. What's worse, they breed like crazy.</p>
+          <p> </p>
+          <p>Mothir and I have little hope of wiping them out by ourselves. But if an able [%userclass] like you were to help us...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Great! The Klaw den's just east of here.</p>
+          <p> </p>
+          <p>There'll be [%dic:STR_DIC_M_NeutL1D_38_An]s and [%dic:STR_DIC_M_NeutL2D_38_An]s around there. Please hunt 17 peons and 7 sentinels, and report the results to me.</p>
+          <p> </p>
+          <p>[%username], if you give us a good head start, Mothir and I will finish them off.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"The task is mine."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I see. In that case, don't worry about it.</p>
+          <p> </p>
+          <p>We'll handle the Klaw problem ourselves.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Walk in Azphel's shadow."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Have you hunted [%dic:STR_DIC_M_NeutL1D_38_An]s and [%dic:STR_DIC_M_NeutL2D_38_An]s already?</p>
+          <p> </p>
+          <p>They're stronger than they seem, aren't they?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"They're tough, but I took 'em!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I thought it would take you longer--you did far better than I expected!</p>
+          <p> </p>
+          <p>We can handle the rest.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Help with the Klaw clean up.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_NeutL1D_38_An]([%2]/17)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_NeutL2D_38_An]([%5]/7)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_N_Modgud].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Hunt Klaw Peons and Sentinels so that Modgud can sweep up the rest.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Modgud requested help with the Klaw infestation nearby.</p>
+          <p> </p>
+          <p>You hunted Klaw Peons and Sentinels as he asked. He thanked you for your efforts.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

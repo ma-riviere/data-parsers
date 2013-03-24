@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p> - 긴급 명령서 - </p>
+          <p></p>
+          <p> 1. 발신 : 엘리시움 작전사령부의 기니키</p>
+          <p></p>
+          <p> 2. 수신 : [%username]</p>
+          <p></p>
+          <p> 3. 명령 : 마족이 테오보모스에 차원의 소용돌이를 열었다. 프레기온의 화염 남부에 열린 차원의 소용돌이 앞을 지키고 있는 [%dic:STR_DIC_E_Q39007]를 소탕하라.</p>
+          <p></p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">의뢰를 수행한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>마족 역시 균열을 이용하는데 성공한 것 같소.</p>
+          <p> </p>
+          <p>차원의 소용돌이가 테오보모스에 열리다니!</p>
+          <p> </p>
+          <p>일단 보급부대의 지원을 막아 더 이상의 피해가 없도록 해야 하오.</p>
+          <p> </p>
+          <p>결과는 어떻게 되었소?</p>
+          <p> </p>
+          <p></p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>수고했소.</p>
+          <p> </p>
+          <p>하지만 차원의 소용돌이가 열린 이상 마족의 공격은 지속적으로 이어질 것 같소.</p>
+          <p> </p>
+          <p>[%username]. 다음에도 부탁하겠소.</p>
+          <p> </p>
+          <p></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_E_Q39007]를 처치하라([%2]/15)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_NPC_Arena_Geniki_E_LHM]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">긴급 명령: 마족 보급부대를 처치하고 기니키에게 보고하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>마족이 차원의 소용돌이를 통해 테오보모스를 침공하였다. 차원의 소용돌이 입구를 지키고 있는 판데모니움 작전사령부 보급부대를 처치하고 기니키에게 보고하였다.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

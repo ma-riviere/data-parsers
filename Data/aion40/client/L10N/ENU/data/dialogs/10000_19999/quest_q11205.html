@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You have served the Elyos well, [%username]. The Inggison fortress is back in our hands again...and you fought bravely the entire battle.</p>
+          <p> </p>
+          <p>If we should lose it again we may not be so lucky....</p>          
+          <p> </p>
+          <p>The war grows day by day. The Balaur and Asmodians become fiercer with every one of our victories.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"And my blade grows sharper."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We may have the fortress again, but we cannot rejoice too soon. We must strengthen its defenses as soon as we can.</p>
+          <p> </p>
+          <p>The Balaur still roam around the Angrief Wastes--they are planning another attack. I can feel it. They watch us...just watch us, waiting for us to drop our guard for a mere second.</p>
+          <p> </p> 
+          <p>I know you just returned from battle, [%username], but will you thin out some of their remaining forces?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I hoped you would accept, [%username]. You are a virtuous Daeva, and I am proud to fight alongside you.</p>
+          <p> </p>
+          <p>Please hurry. Go to the Angrief Wastes and destroy the [%dic:STR_DIC_M_11205] and [%dic:STR_DIC_M_LF4_C2_Spaller_mini_55_An]s. That should slow the Balaur attack down.</p>
+          <p> </p>
+          <p>If you bring back Dracuni Claws and the remains of the Gathering Worms as proof, I will give you a reward.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Faith and arms, Keios!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes, yes, I know you are wounded. I just hoped...</p>
+          <p> </p>
+          <p>Do not give it another moment's thought, [%username]. You have done your service for today. Be well and rest up. There will be other battles.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"To other battles, Keios."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>There is a world that we don't know about hidden in the foothold of Inggison. The Balaur are smart...they knew the area was more than just a perfect defense stronghold.</p>
+          <p> </p>
+          <p>If we can capture both the Altar of Avarice and the Temple of Scales, the entrance to the Silentera Canyon will open up like a fresh wound on a warm day.</p>
+          <p> </p>
+          <p>What have you there in your hand, [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here's the claws and worm remains."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You haven't left yet? I asked you to destroy [%dic:STR_DIC_M_11205] and [%dic:STR_DIC_M_LF4_C2_Spaller_mini_55_An]s or we may lose the fortress again!</p>
+          <p> </p>
+          <p>Or did you? Every Daeva gives their word that they'll do what is asked of them. That's why I asked you to return with proof!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll get your proof!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I am amazed that you butchered the Dracunis and Crater Gathering Worms so quickly, [%username]! Your armor is barely scratched.</p>
+          <p> </p>
+          <p>I promised you a reward, and I am a Daeva who doesn't give his promises lightly. Thank you, and please accept this token of my gratitude.</p>
+          <p> </p>
+          <p>We can always use a dependable [%userclass] around here. Think about it. Faith and arms!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Destroy the [%dic:STR_DIC_M_11205] and [%dic:STR_DIC_M_LF4_C2_Spaller_mini_55_An]s and bring evidence to [%dic:STR_DIC_N_Keios].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">As Keios requested, destroy the remnants of the Balaur near the Angrief Wastes and collect evidence.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Keios said that with the Altar of Avarice captured, it now needed to be defended.</p>
+          <p> </p>
+          <p>You destroyed Dracunis and Gathering Worms near the fortress and brought back evidence. He thanked you and gave you a reward.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We just can't do it! It's impossible!</p>
+          <p> </p>
+          <p>Some of Sanctum's most high ranking officials are visiting us. Morale boosting, they call it. Thought they'd just saunter in after inspecting the Teminon Landing.</p>
+          <p> </p>
+          <p>The thing is, we aren't ready. Everyone has been running about like wingless Asmodians trying to get everything prepared. I've nearly screamed myself hoarse, and time is fast running out.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Need a hand with anything?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes, always my friend! I've been told to have the nearby Balaur gone for the visit, but have had trouble rounding up enough good soldiers.</p>
+          <p> </p>
+          <p>Would you be interested in helping out? We'll reward you well.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You might have just saved the day, [%username]! Now we can concentrate on getting this place ship-shape and you can concentrate on clearing out the Balaur.</p>
+          <p> </p>
+          <p>We've organized a few others to help out, but if you could kill seven [%dic:STR_DIC_M_Ab1_1231_NagaFighter_40_An]s, five [%dic:STR_DIC_M_Ab1_1231_NagaKnight_39_An]s, and three [%dic:STR_DIC_M_Ab1_1231_NagaWizard_39_An]s, then the others should have an easier time of it.</p>
+          <p> </p>
+          <p>Good luck, [%username]. With Ariel's grace the sun will light your path and blind your enemies. Faith and arms.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Faith and arms."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh no. Then what are we to do?</p>
+          <p> </p>
+          <p>There are just too many tasks that need completing! We still need to clean the site, polish our armor, sharpen our weapons, deal with the Balaur, make sure our logistics are in order, prepare the tribute....</p>
+          <p> </p>
+          <p>It's impossible! We desperately need your help, [%username]! Please reconsider!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Let me think about it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>...now the tribute has been prepared, we've set aside time for repairing and polishing our armor, and the Balaur are...are....</p>
+          <p> </p>
+          <p>Oh, [%username]! I was just tallying everything up. Is your work done?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"It is. My quotas have been met."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I knew you'd be up to the task, [%username]! I thought a [%userclass] of your stature would have no problem with those fiends.</p>
+          <p> </p>
+          <p>Now for the good news: it turns out the Sanctum officials aren't visiting after all. Funny how their visit was intended as a morale booster, yet it was the news that they weren't coming that cheered us up!</p>
+          <p> </p>
+          <p>Here's your payment. You still did the hard work, so it would be wrong not to reward you for it.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Eradicate the Balaur on the Kysis Isle.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Ab1_1231_NagaFighter_40_An] ([%2]/7)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Ab1_1231_NagaKnight_39_An] ([%5]/5)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Ab1_1231_NagaWizard_39_An] ([%8]/3)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_N_Luptinai].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Luptini was ordered to clear out the nearby Balaur. Help him.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Luptini told you how they were preparing to receive a visit from Sanctum. They wanted all the nearby Nagas and Nagarants destroyed.</p>
+          <p> </p>
+          <p>You helped her to eradicate the Nagas and Nagarants, and were well rewarded.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p align="center"> - Work Order -</p>
+          <p> </p>
+          <p>1. To: Temp Worker [%username]</p>
+          <p> </p>
+          <p>2. Job Details: My superiors need Empty Idgels, so please go to *** and collect 5 Empty Idgels and bring them to the supervising branch in charge.</p>
+          <p> </p>
+          <p>3. Supervising Branch: Silverine North Katalam Branch</p>
+          <p> </p>
+          <p>The above mission will be considered in the evaluation process for hiring you as a full-time worker. Additional points may be added depending on the result. Do your best nyerk.</p>
+          <p> </p>
+          <p>- Dumurinerk, Recruiter of Silverine Limited</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">Fold the work order and put it away.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Wasn't this an easy job, nyerk?</p>
+          <p> </p>
+          <p>You just needed to find 5 Empty Idgels.</p>
+          <p> </p>
+          <p>When I was where you are now, I had to mine 100 big diamonds, [%username], nyerk.</p>
+          <p> </p>
+          <p>Let's see the Idgels you brought.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">Hand over the Empty Idgels.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What is this? What have you been doing all this time?</p>
+          <p> </p>
+          <p>Don't you want to become a regular employee? This means negative points for you!</p>
+          <p> </p>
+          <p>I'll give you a pass this time, but you have to bring me 5 Empty Idgels, just as it says on the work order.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">End dialog.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Let's see... The item - check. The amount - check.</p>
+          <p> </p>
+          <p>You're [%username], right? If you keep it up like today, you'll soon become a regular employee of Silverine Limited.</p>
+          <p> </p>
+          <p>I really have no idea what my superiors want with such an item, nyerk.</p>
+          <p> </p>
+          <p>What would you need Empty Idgels for, nyerk?</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Gather Empty Idgels and bring them to Silverine North Katalam Branch.</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">You received a work order from Silverine Limited. Check the work details and perform the mission.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You received a work order from Silverine Limited.</p>
+          <p> </p>
+          <p>You gathered Empty Idgels and brought them to Silverine North Katalam Branch. They thanked you for the job and gave you your reward.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

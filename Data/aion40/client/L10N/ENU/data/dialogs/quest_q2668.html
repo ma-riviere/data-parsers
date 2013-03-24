@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You distinguished yourself in destroying the Lepharists' facilities. Of course, no good deed goes unrewarded--or perhaps unpunished.</p>
+          <p> </p>
+          <p>When I asked for someone to help me infiltrate the Alquimia Research Center, Archon command recommended you.</p>
+          <p> </p>
+          <p>I've no choice but to trust you with the mission. Do you know the password?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Let's skip the password."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Fine, no passwords.</p>
+          <p> </p>
+          <p>Not all parts of the research center were destroyed when the bomb was dropped. Although gutted, the frame was intact, so they repaired the building and resumed Human experiments. </p>
+          <p> </p>
+          <p>I've just discovered that Atla has been captured. She's the famous researcher who studies the Lepharists. We can't delay! Every second Alta is one step closer to...I can't even imagine! Will you do it? Will you save her?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you! I believe Atla has learned some vital new information--why else would they risk a kidnapping in Pandaemonium? </p>
+          <p> </p>
+          <p>They've taken her to one of the labs in the Alquimia Research Center. If she's there too long she may never return. Please, hurry!</p>
+          <p> </p>
+          <p>You'll have to kill any [%dic:STR_DIC_M_IDDF3LP1_FeB_LehparFiD_43_Ae]s and [%dic:STR_DIC_M_IDDF3LP2_WeA_LehparWiD_44_Ae]s who stand between you and [%dic:STR_DIC_N_Atla].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll leave now."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>All those people recommended you, [%username]...but you're turning me down?</p>
+          <p> </p>
+          <p>That last mission was sheer luck, right? Go! I'll find someone who'll fly to save her.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"It's probably too late anyway."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Saved!? I thought I'd meet my end here...like the others....</p>
+          <p> </p>
+          <p>One minute I was talking with Kushar near the Temple of Knowledge. Then I woke up here, locked in this...whatever it is.</p>
+          <p> </p>
+          <p>I thought I was going to die.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Are you Atla?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes, that's right. Yes, I'm Atla.</p>
+          <p> </p>
+          <p>How...how did you know I was kidnapped by Lepharists?</p>
+          <p> </p>
+          <p>It doesn't matter...thank you. Thank you for rescuing me.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Go to the Alquimia Research Center and kill the Lepharists.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_IDDF3LP1_FeB_LehparFiD_43_Ae] ([%2]/11)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_IDDF3LP2_WeA_LehparWiD_44_Ae] ([%5]/6)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Break the test tube and rescue [%dic:STR_DIC_N_Atla].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">You accepted a mission to rescue Atla who was captured by Lepharist Revolutionaries. Go to the Alquimia Research Center, kill Special Fighters and Expert Biologists, and rescue Atla.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Dewi was looking for somebody to infiltrate the Alquimia Research Center.</p>
+          <p> </p>
+          <p>Atla, a researcher who studies Lepharists, found something important. Then she was kidnapped and used as an experimental subject.</p>
+          <p> </p>
+          <p>You killed Special Fighters and Expert Biologists and rescued Atla.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

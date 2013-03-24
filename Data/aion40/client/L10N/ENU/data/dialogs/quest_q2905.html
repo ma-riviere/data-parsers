@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hmm...  Think. How best to handle this? Elgar needs a lesson, but I can't have him sulking...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Excuse me."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh... if you're placing orders, you're out of luck. All my steel ingots were melted to slag. Elgar over there, shade bless him, is the most claw-fisted Daeva of Flame this forge ever saw, and he didn't even notice it happen.</p>
+          <p> </p>
+          <p>He's not a bad lad. Last time he screwed up this badly, he pelted out of the workshop and disappeared till the next day. I can't afford for that to happen again.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"He needs thicker skin."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Others, I'd agree. But young Elgar has had a rough enough time. He's lost too many family members, though he puts on a brave face. Call me soft, but there's no point kicking him when he's down.</p>
+          <p> </p>
+          <p>Perhaps you'll serve, [%username]. Can you make [%dic:STR_DIC_I_recipe_d_ws_001]s? That way, work could go ahead, and Elgar would be... none the wiser.</p>
+          <p> </p>
+          <p>Steel ingots are simple. You need iron ore and briquette charcoal. If enough Daevas pitch in, I can replace the whole stock. You'd only need to make three. I can teach you how.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>There's plenty of iron ore in [%dic:STR_DIC_W_DF1A_3]. Dig out some ore, buy [%dic:STR_DIC_I_recipe_001]s from Mima there, and work it on my Weapon Forges. Easy [%dic:STR_DIC_I_recipe_d_ws_001]s!</p>
+          <p> </p>
+          <p>Best bring about three times as much iron ore as required. First time out, you'll botch one or two tries. Quick as you can, please? Elgar is dim, but I can't stall forever.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll grab my pack."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Huh. I should just tell him the truth, is that it?</p>
+          <p> </p>
+          <p>S'pose you're right, but it'll wreck him. I know it. He has skill, but his losses have dulled him. Grind a blade on enough hard stones, it takes forever to hone it back.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Do what you must."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did you make [%dic:STR_DIC_I_recipe_d_ws_001]s?</p>
+          <p> </p>
+          <p>I've kept Elgar running, so he's missed what's going on.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Take a look."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah. You forget something, [%username]?</p>
+          <p> </p>
+          <p>I don't see my steel ingots in there. Come on, it's not the hardest job in Atreia! We knock them out by the dozen making weapons!</p>
+          <p> </p>
+          <p>Let's have those [%dic:STR_DIC_I_recipe_d_ws_001]s!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll try again."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ach, an exemplary Asmodian. Thank you. I'd better get to work. And next time Elgar botches things, he'll feel the back of my hand.</p>
+          <p> </p>
+          <p>This isn't bad work, [%username]! Want to learn Weaponsmithing? I'd be willing to teach you.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Make 3 [%dic:STR_DIC_I_recipe_d_ws_001]s for [%dic:STR_DIC_N_Logi].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Logi's apprentice ruined his steel ingots. Find iron ore in Moslan Forest and make three ingots on the Weapon Forges.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Elgar overheated Logi's forge, ruining the stock of steel ingots. Logi worried that the shame would unbalance the boy.</p>
+          <p> </p>
+          <p>You mined iron ore, made steel ingots, and saved both Logi's work and Elgar's pride.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

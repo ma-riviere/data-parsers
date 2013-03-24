@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q41510</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>Not entered</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You've done well so far, [%username], but you still came too late.</p>
+          <p> </p>
+          <p>The Twisters scattered the [%dic:STR_DIC_OBJ_LDF4b_FOBJ_TankParts1] throughout the area. If they are not soon recovered, we will face lengthy delays as replacement parts are manufactured.</p>
+          <p> </p>
+          <p>Your untimeliness caused this. You can go out and fetch the parts.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did you find the Trebuchet Parts?</p>
+          <p> </p>
+          <p>Speak now, [%username]. I do not have time to waste.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">"I did. Here."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hmm. A little dusty, but there appears to be no damage.</p>
+          <p> </p>
+          <p>Well done, [%username]. You have redeemed yourself.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Find the [%dic:STR_DIC_OBJ_LDF4b_FOBJ_TankParts1] and take them to [%dic:STR_DIC_N_Debron].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Dust Twisters have blown the trebuchet parts everywhere. Bring them back so Debron can start their assembly.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Debron, slightly unfairly, blamed you for the Dust Twister's presence, even though it was you who destroyed them. He tasked you with collecting the trebuchet pieces which had been scattered by the twisters, and on your return, apparently earned Debron's forgiveness.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

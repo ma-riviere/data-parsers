@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I look at Medeus Manor and Orton Farm and I despair.</p>
+          <p> </p>
+          <p>I'm a Daeva of Life, but I couldn't protect the people.</p>
+          <p> </p>
+          <p>Now they wander even after death searching for peace that never comes.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"You do the best you can."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>My best isn't good enough. I want the undead to rest in peace.</p>
+          <p> </p>
+          <p>I can't bring them back to life. The only salvation for them is to help them return to the flow of Aether.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I agree."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm glad you see it my way, [%username].</p>
+          <p> </p>
+          <p>Sending them to eternal rest is the one mercy we can offer them them. Of course, as a Daeva of Life, I can't strike them down.</p>
+          <p> </p>
+          <p>Would you do the work on my behalf? [%dic:STR_DIC_M_Skeleton_42_An]s around Medeus Manor East and the Manor Cemetery concern me the most.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm so grateful, [%username]. Thank you.</p>
+          <p> </p>
+          <p>You'll find more [%dic:STR_DIC_M_Skeleton_42_An]s at Medeus Manor East.</p>
+          <p> </p>
+          <p>I should report this to my superiors, so please bring back [%dic:STR_DIC_I_QUEST_1585a]s  as evidence.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"My wings are yours!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Don't you pity the undead, roaming unconsoled?</p>
+          <p> </p>
+          <p>You're not a Daeva of Life--you cannot possibly understand.</p>
+          <p> </p>
+          <p>May Aion grant you mercy when death finds you at last.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Aion's blessings, Lady Daeva."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What news, [%username]? Were you able to help the Anubites?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"They've returned to the Aether flow."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I believe you, but I need Anubite Swords to show to my superiors.</p>
+          <p> </p>
+          <p>I'm not working alone, so I need to follow the rules.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll try again."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes...yes. You've done well, [%username]. Anubite Swords resonate differently when their masters have returned to the Aether flow. I can feel it even now.</p>
+          <p> </p>
+          <p>Thank you for giving them peace.</p>
+          <p> </p>
+          <p>Please accept this as a token of my gratitude. You've done a great service for us all.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get rid of [%dic:STR_DIC_M_Skeleton_42_An]s and take the evidence to [%dic:STR_DIC_N_Rusiridite].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Rusiridite pities the undead who cannot go back to the flow of Aether. She asks you to send them to their rest, and to bring her the evidence.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Rusiridite wanted to give peace to Anubites who wander about Atreia even after death. You eliminated a number of Anubites and brought her an Anubite's Sword as evidence.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

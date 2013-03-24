@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q30752</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]. 모두의 골칫거리인 찬트라 드레드기온과 사드하 드레드기온의 두뇌라고 할 수 있는 곳이 어딘 줄 아시오?</p>
+          <p> </p>
+          <p>바로 티아마트 성채 내부의 [%dic:STR_DIC_W_IDTiamat_SZ_S3]이라오.</p>
+          <p> </p>
+	  <p>혹시 드레드기온 관제실에서 작전을 수행할 계획이 있다면 제 부탁을 좀 들어줄 수 있겠소?</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_N_IDTiamat_FOBJ_Model]을 이용해 드레드기온의 이동 경로를 알아내는 일과 [%dic:STR_DIC_M_IDTiamat_Sardha_Named_60_Ah]를 처치하는 일이라오.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_N_Briet]라는 친구가 드레드기온 문제로 골치를 썩고 있던데... 일이 끝나고 그에게 보고하면 분명 충분히 사례를 할 거요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(모형 주변에 드레드기온들의 출항 시기와 중요 침투 작전, 이동 경로 등의 정보들이 빼곡히 적혀있다.)</p>
+          <p> </p>
+          <p>(모두 받아 적을 시간은 없으니 최대한 많이 외워두는 것이 좋겠다.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">살펴보기를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님?</p>
+          <p> </p>
+          <p>죄송하지만 나중에 대화를 하면 안 되겠습니까?</p>
+          <p> </p>
+          <p>상부에서 사드하 드레드기온의 이동 경로를 예측해서 제때 방어 태세를 갖출 수 있게 하라는 명령이 내려와서 말입니다.</p>
+          <p> </p>
+          <p>그동안의 기록들을 살펴보고 있는데... 알아내기가 쉽지 않군요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>맙소사, 그게 정말입니까?</p>
+          <p> </p>
+          <p>사드하가 죽었다면 당분간 사드하 드레드기온에 대한 걱정은 하지 않아도 되겠군요.</p>
+          <p> </p>
+          <p>아차! 아까 말씀해주신 경로가 사실입니까?</p>
+          <p> </p>
+          <p>그렇다면 이미 출항한 마지막 사드하 드레드기온이 곧 상공을 지나게 될 겁니다!</p>
+          <p> </p>
+          <p>빨리 대책을 세워야겠군요.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_W_IDTiamat_SZ_S3]로 가 [%dic:STR_DIC_N_IDTiamat_FOBJ_Model]을 이용해 이동 경로를 알아내라</font></p></step>
+               <step><p visible="[%9]"><font color="[%10]">[%dic:STR_DIC_M_IDTiamat_Sardha_Named_60_Ah]를 처치하라([%11]/1)</font></p></step>
+               <step><p visible="[%24]"><font color="[%25]">[%dic:STR_DIC_N_Briet]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">드레드기온 관제실로 가 드레드기온의 이동 경로를 알아내자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>소루스는 브리에트가 드레드기온 때문에 골치를 썩고 있었다며 드레드기온의 이동 경로를 알아내고 군단장 사드하를 처치한 후 브리에트에게 말해달라고 했다.</p>
+          <p> </p>
+          <p>두 가지 일을 끝낸 후 브리에트에게 말해주니 이제 사드하 드레드기온을 걱정하지 않아도 된다며 매우 기뻐했다.</p>
+          <p> </p>
+          <p>하지만 기록에 따르면 이미 출항한 마지막 사드하 드레드기온이 곧 상공을 지날 것이라며 빨리 대책을 마련해야겠다고 말했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

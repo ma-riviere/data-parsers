@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Kaidan Krall are a constant thorn in our side. We defeat them, and they rise again to plague us.</p> 
+          <p> </p>
+          <p>But the time for skirmishes is over, [%username]. I have a new plan.</p>
+
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"May I ask what it is, General?" </Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I want you to gather some allies and go to the Kaidan Headquarters.</p>
+          <p> </p>
+          <p>Your mission is to defeat [%dic:STR_DIC_M_KrallWarriorHKBoss_40_An], the chieftain of the Kaidan Krall. Would you find that a worthy challenge?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You'll have to penetrate deep inside the Kaidan Headquarters to find Saendukal. And when you find him, he'll be heavily guarded.</p>
+          <p> </p>
+          <p>Even if you defeat all of his bodyguards, you'll have Saendukal to deal with, so keep something in reserve.</p>
+          <p> </p>
+          <p>Ariel's light go with you. Faith and arms!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Faith and arms!" </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's not a suicide mission, but it won't be easy. I understand why you might turn it down.</p>
+          <p> </p>
+          <p>Without you, though, there is no plan. I'll have to come up with something else....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm sorry, General." </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, you're back. Good.</p>
+          <p> </p>
+          <p>Did you kill Saendukal? And do you have his mask?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I do." </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>When a Daeva accepts a mission, honor requires that it be done. Do you understand this, [%username]?</p>
+          <p> </p>
+          <p>Kill Grand Chieftain Saendukal, and bring me his mask.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="PLAYEMOTION_surprise;HACTION_FINISH_DIALOG">"I'm on it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>If all Daevas were like you, the Krall would pose no problem. You've done well.</p>
+          <p> </p>
+          <p>This is a small reward for your service to the light.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Defeat [%dic:STR_DIC_M_KrallWarriorHKBoss_40_An] and take the evidence to [%dic:STR_DIC_N_Telemachus].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Defeat Grand Chieftain Saendukal, the leader of the Kaidan Krall.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Telemachus felt the best way to completely subdue the Kaidan Krall would be to eliminate their leader.</p>
+          <p> </p>
+          <p>You and your allies defeated Grand Chieftain Saendukal in the Kaidan Headquarters, and brought his mask back to Telemachus. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

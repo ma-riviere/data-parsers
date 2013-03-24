@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Your appearance doesn't do your reputation justice, [%username]. I've seen many Daevas like you come and go...shooting stars, nothing more. They shine bright then fade out quickly.</p>
+          <p> </p>
+          <p>But they say you're one skilled Daeva! Maybe the most skilled [%userclass] in all of Inggison.</p>
+          <p> </p>
+          <p>So I'm asking you for your help.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What's the problem?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're probably already aware of this, but Inggison has many problems. It's Balaur land, so problems come naturally to this place.</p>
+          <p> </p>
+          <p>My Hushblade Legion doesn't have the manpower to deal with all the problems here. That's why you and I are talking, [%username].</p>
+          <p> </p>
+          <p>I don't care what you think about me, and I'm sure the feeling's mutual on your end. This is just business. You help us, I'll pay you. Interested?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I figured as much, [%username]. The only way to a Daeva's conscience is through his coin purse. Honor has a price these days.</p>
+          <p> </p>
+          <p>If you complete my assignments, I have a little reward for you. Okay, it's much more than "little."</p>
+          <p> </p>
+          <p>I need you to collect a [%dic:STR_DIC_I_QUEST_IDCatacombs_Certification_01] set and show them to me. I want to see how you handle yourself before I give you any big jobs.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"You'll see how a real Daeva works now!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I should have known as much, [%username]. I didn't say the magic word: Kinah.</p>
+          <p> </p>
+          <p>You recent Daevas have no sense of duty or honor...just a sense of entitlement.</p>
+          <p> </p>
+          <p>You may leave my sight any time you want.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Here's a plan--do your own work."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Not bad, Daeva, not bad. I had estimated you would take a little longer to complete the mission.</p>
+          <p> </p>
+          <p>It's good to be surprised sometimes.</p>
+          <p> </p>
+          <p>Let's see what you got...show me the Decrees of Valor.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Are these enough for you?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Are you kidding? I figured as much, [%username].</p>
+          <p> </p>
+          <p>Daevas these days are all talk. No sense of pride in their missions. Do you want to impress me?</p>
+          <p> </p>
+          <p>Then go complete important missions like the one I just ordered you to complete! Bring me the [%dic:STR_DIC_I_QUEST_IDCatacombs_Certification_01] set.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Important? Certificates?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm glad that I was wrong about you...the rumors are true. You're a damn good [%userclass].</p>
+          <p> </p>
+          <p>With this many Decrees of Valor, I have no choice but to acknowledge your services in Inggison.</p>
+          <p> </p>
+          <p>Here is your reward...it's a circlet. One of the finest you'll ever find.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect a [%dic:STR_DIC_I_QUEST_IDCatacombs_Certification_01] set and take them to [%dic:STR_DIC_N_Yulia].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Yulia, Hushblade Legion's Brigade General, promised to give you a fine reward if you completed important missions. Bring back Decrees of Valor for her.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yulia said her legion can't deal with all the problems in Inggison, and she promised to reward you if you completed important missions.</p>
+          <p> </p>
+          <p>After successfully completing enough missions, you gave her Decrees of Valor and received a circlet as a reward.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

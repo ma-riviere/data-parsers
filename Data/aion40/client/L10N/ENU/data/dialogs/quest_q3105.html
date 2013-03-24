@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hey, [%username]. Are you headed to the Latheron Coast? </p>
+          <p> </p>
+          <p>It used to be called the Latheron Straits, though there's nothing there now but sand and the ghost of a long-dead sea.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Have you ever been there?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes, once. It was beautiful then.</p>
+          <p> </p>
+          <p>Honestly, the only reason anyone ever goes there now is to get to Bab-el-Madeb. There's still some water there thanks to the geysers, though it's nothing like it once was.</p>
+          <p> </p>
+          <p>The Coast has become a dangerous place, full of ravening beasts who prey on any travelers they find. Even Daevas are not immune to the danger they represent.</p>
+          <p> </p>
+          <p>Now and then some worthy souls venture in to kill some of the predators and make the journey safer, but it's a thankless task. Only the truly blessed are chosen to try. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What would you ask of me?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Do you have the spirit of a true Guardian? I can't abandon my post, but our numbers are few and the need is great. Would you be willing to help clear the way? </p>
+          <p> </p>
+          <p>While most creatures on the coast are treacherous, the real dangers are Karnifs and Scolopens. [%dic:STR_DIC_M_LF2A_Kalnif_45_An]s slash with their sharp claws causing heavy wounds, while [%dic:STR_DIC_M_LF2A_ScorpionRough_45_An]s have a virulent poison that weakens even the strongest Daevas, leaving them helpless. </p>
+          <p> </p>
+          <p>There is little I can offer you but our thanks and the mention of your name in our blessings. You would be doing us a great service, though. Will you?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Faith and arms! You are truly Aion-blessed, and we will not forget you. </p>
+          <p> </p>
+          <p>If you truly are chosen to aid us, eliminate [%dic:STR_DIC_M_LF2A_Kalnif_45_An]s and [%dic:STR_DIC_M_LF2A_ScorpionRough_45_An]s on the Latheron Coast. Only Aion knows the number of lives you will save by ridding us of these threats.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I will return."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I see. You know, I've met Daevas like you before. You come here in search of power or glory.</p>
+          <p> </p>
+          <p>But being a Daeva is about more than just power. It's what we do that makes us who we are, not what we can gain.</p>
+          <p> </p>
+          <p>If you change your mind and decide to prove yourself worthy of Aion's blessing, you know where to find me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll remember."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Faith and arms, you've returned!</p>
+          <p> </p>
+          <p>The light seems to have shone brightly on you, [%userclass]. Have you ventured to the Latheron Coast?</p>
+          <p> </p>
+          <p>How many [%dic:STR_DIC_M_LF2A_Kalnif_45_An]s and [%dic:STR_DIC_M_LF2A_ScorpionRough_45_An]s did you slay?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"All that seemed needful."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Sun's blessings upon you, [%userclass]. Your work here shows you have the spirit of a true Guardian.</p>
+          <p> </p>
+          <p>The road to Bab-el-Madeb is now safer because of you, for which we here at the Observatory are grateful.</p>
+          <p> </p>
+          <p>A task done for its own merit is the best reward, but even Guardians must eat. Please accept this small reward as a token of our appreciation.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Hunt the creatures marauding across the Latheron Coast.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_LF2A_Kalnif_45_An] ([%2]/20)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_LF2A_ScorpionRough_45_An] ([%5]/20)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_N_Diokuroi].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Diokuroi said that he needed your help to get rid of Karnifs and Scolopens on the Latheron Coast. Hunt Karnifs and Scolopens to help make the area safer.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Diokuroi said that Daevas and Humans alike had problems crossing the Latheron Coast because of Karnifs and Scolopens.</p>
+          <p> </p>
+          <p>He asked for help getting rid of those creatures. To aid him, you traveled to the Latheron Coast and slew Karnifs and Scolopens, earning his gratitude.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

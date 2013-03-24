@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>수신: [%username]</p>
+          <p>발신: 마족 제작 조합</p>
+          <p> </p>
+          <p>그 놀라운 제작의 능력으로 상급 명인 칭호를 받은 조합원께 알려 드립니다.</p>
+          <p> </p>
+          <p>주신제에 천수할 물건이 필요하지만 그것을 제작할 수 있는 조합원이 매우 한정되어 있습니다.</p>
+          <p> </p>
+          <p>필요한 물건은 [%dic:STR_DIC_I_QUEST_47503A]입니다.</p>
+          <p> </p>
+          <p>마족 제작 조합에서 성스러운 아스펠의 봉헌물을 제작하는 데 성공하여 천수하게 된다면 매우 영광스러운 일이 될 것입니다.</p>
+          <p> </p>
+          <p>편지를 받으신 조합원께서는 지체 없이 나누즈나 베자쉬에게 도안을 구하셔서 제작에 착수해 주시고 물건이 완성되면 [%dic:STR_DIC_E_Quest_47500a]에게 전해 주시기 바랍니다.</p>
+          <p> </p>
+          <p>제작의 능률과 마족의 승리를 위하여!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">살펴보기를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>제작의 능률과 마족의 승리를 위하여!</p>
+          <p> </p>
+          <p>상급 명인의 칭호를 받은 조합원이시로군요. [%dic:STR_DIC_I_QUEST_47503A]에 대해서는 편지를 받으셨겠지요?</p>
+          <p> </p>
+          <p>조합에서는 그 성스러운 물건에 대한 기대가 큽니다.</p>
+          <p> </p>
+          <p>성스러움이란 조잡하게 꾸민 것이 아닌 상급 명인의 섬세한 손끝에서 탄생하는 운명적인 가치이지요.</p>
+          <p> </p>
+          <p>아스펠께 천수할 영광스러운 물건을 만들어 오셨습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">성스러운 아스펠의 봉헌물을 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_I_QUEST_47503A]을 완성하지 못하신 겁니까?</p>
+          <p> </p>
+          <p>물론 쉬운 일만은 아닐 것입니다. 하지만 누구나 만들 수 있는 물건이라면 굳이 [%username] 님께 의뢰하지 않았을 것입니다.</p>
+          <p> </p>
+          <p>성스러운 능력을 주신께 선보일 기회이니 최선을 다해 주시기 바랍니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이것이 바로 성스러운 아스펠의 봉헌물이로군요. 아스펠 주신의 성스러움을 표현하기에 적절한 물건입니다.</p>
+          <p> </p>
+          <p>이렇게 훌륭한 물건을 만나게 되어 영광입니다.</p>
+          <p> </p>
+          <p>상급 명인으로서의 능력으로 조합의 입지에 이바지하신 점을 높이 사겠습니다.</p>
+          <p> </p>
+          <p>작은 감사의 뜻으로 받아 주세요.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_I_QUEST_47503A]을 만들어 [%dic:STR_DIC_E_Quest_47500a]에게 건네라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">마족 제작 조합에서 편지가 왔다. 조합 상인에게 도안을 구해 물품을 제작하여 조합원에게 전해야겠다.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>성스러운 아스펠의 봉헌물을 제작하여 가지고 오라는 마족 제작 조합의 편지를 받았다.</p>
+          <p> </p>
+          <p>조합 상인에게 도안을 구입하여 물품을 제작하는 데 성공했고 그 물품을 조합원에게 전하자 보상을 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

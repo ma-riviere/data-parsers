@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q30612</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Since you're headed up into the Terath Dredgion anyway, you can make yourself useful and swipe some supplies from the Balaur.</p>
+          <p> </p>
+          <p>No, we don't want to use them. We just want to see what they've got.</p>
+          <p> </p>
+          <p>Grab [%dic:STR_DIC_I_quest_30602a] from Supplies Storage or one of the Shulack Drudges. Or are you too busy, precious?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well?</p>
+          <p> </p>
+          <p>Did you bring the supplies? Or just excuses?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">"Supplies!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent!</p>
+          <p> </p>
+          <p>Maybe you're smarter than you look. Heh.</p>
+          <p> </p>
+          <p>I'll send these on to Pandaemonium to look at. Blood for blood!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Obtain some [%dic:STR_DIC_I_quest_30602a] and bring them to [%dic:STR_DIC_N_Aluna].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Alluna insisted you swipe supplies from the Terath Dredgion for analysis.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Alluna asked you to steal supplies from the Terath Dredgion so Pandaemonium could see what the Balaur are up to.</p>
+          <p> </p>
+          <p>You brought them without complaint, and Alluna was impressed.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

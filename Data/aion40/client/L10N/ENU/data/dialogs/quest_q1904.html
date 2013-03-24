@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Cooking...my one true passion...</p>
+          <p> </p>
+          <p>You know what makes the biggest difference to a meal, [%username]? The ingredients or, rather, their condition. Take good care of your ingredients and they will reward you many times over in their taste, consistency, and texture. Store them badly or handle them brashly, and the flavor, texture, and appearance of your creations will suffer.</p>
+          <p> </p>
+          <p>So, before you delve deeply into cooking, I have a test for you. Do you know how to prepare ingredients properly?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Yes, I think so."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You think so? You're hardly instilling me with an overwhelming sense of confidence, [%userclass].</p>
+          <p> </p>
+          <p>We'll start with a basic method of cooking: roasting. But first, you'll need to gather a type of shellfish, [%dic:STR_DIC_I_GB_SOURCE_SHELL_10A]s. This is a relatively simple task, but roasting Inina can still go wrong. Undercook them and you'll poison all who eat them. Overcook them and they'll become bland and lose their nutritional value.</p>
+          <p> </p>
+          <p>Do well here and you'll have made a solid start to your cooking career.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good! Before long you'll be serving five-course meals and rocking the foundations of the culinary world here in Sanctum!</p>
+          <p> </p>
+          <p>Now, first you'll need to collect the [%dic:STR_DIC_I_GB_SOURCE_SHELL_10A]s. The best place for them has always been in and around [%dic:STR_DIC_FLA09]. I'd suggest heading there and looking near the water.</p>
+          <p> </p>
+          <p>Bring back as many Inina as possible. It's easy to ruin a few of them when starting out. When you've found enough, come back here and cook them using our facilities.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Your mouth will be watering in no time."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What?!</p>
+          <p> </p>
+          <p>Cooking is no mere hobby, [%username].</p>
+          <p> </p>
+          <p>The best meals can not only help our Daevas recover from injury, they can also enhance their abilities! For ages we've taken food into combat to augment our abilities as and when they are needed.</p>
+          <p> </p>
+          <p>No. Cooking is no hobby, and more the fool anyone who thinks otherwise.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Fair enough..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, you're back!</p>
+          <p> </p>
+          <p>So how did you get on? Not as easy as it first seems, is it?</p>
+          <p> </p>
+          <p>Remember, cooking is no simple task. More complicated dishes can yield fantastic results for both body and soul, and can even help our Daevas in combat.</p>
+          <p> </p>
+          <p>Now, as the saying goes, the proof is in the pudding. Let's see what you've cooked.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"May I present...Roast Inina."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What?! I send you out to cook Inina and you come back with nothing?!</p>
+          <p> </p>
+          <p>This is no joke, [%username]. Cooking is an art form and, like all art it deserves to be treated with the utmost respect. This may seem like an overly simple task for a Daeva, but I will not teach you the finer points of cooking until you have mastered the basics.</p>
+          <p> </p>
+          <p>Did you forget to collect the [%dic:STR_DIC_I_GB_SOURCE_SHELL_10A]s or forget to roast them? Dinner doesn't cook itself!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"My apologies."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Mmm.</p>
+          <p> </p>
+          <p>Oh...oh my! I thought the color was perfect, but the taste...the taste is just sublime! The texture is just right, too: not too soft, but without any hint of them being overdone. Perfection, if I may be so bold...</p>
+          <p> </p>
+          <p>You, [%username], are either extremely lucky, or have just ably demonstrated a gift that I have not seen in many, many years.</p>
+          <p> </p>
+          <p>I look forward to tasting what you come up with next!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Bring the [%dic:STR_DIC_I_GB_SOURCE_SHELL_10A]s you roasted in Sanctum to [%dic:STR_DIC_N_Hestia].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Hestia wants to test your culinary skills. Show off your abilities by gathering Inina from the Verteron Swamp and roasting them.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You decided to learn the art of cookery from Hestia, who has taught cookery in Elysea for many years. She told you that the most important aspect of cooking was to handle your ingredients well. She then asked you to demonstrate your abilities by roasting some Inina for her.</p>
+          <p> </p>
+          <p>You gathered and roasted the Inina as requested, greatly impressing Hestia with your skills.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

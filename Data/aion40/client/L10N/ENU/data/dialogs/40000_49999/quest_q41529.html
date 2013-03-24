@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q41529</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>Not entered</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select_none" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, [%userrace]. I was wondering if you could embark on a brief mission for us.</p>
+          <p> </p>
+          <p>A patrol spotted an [%dic:STR_DIC_OBJ_LDF4B_FOBJ_T3_Wagon] south of the Steam Springs. No civilians should be in the area, and none have been reported missing.</p>
+          <p> </p>
+          <p>Someone is doing something there, and we have no idea who or what. I need you to investigate. It could be nothing, but we need to know either way.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That was quick. But I'd expect nothing less of a Daeva of your capabilities.</p>
+          <p> </p>
+          <p>Report. What did you discover about the wagon?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"You were right to be concerned."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Dragonbound?! These are grave tidings indeed.</p>
+          <p> </p>
+          <p>Where you find a few Dragonbound, there are always more. They must have a village or base in the Steam Springs area.</p>
+          <p> </p>
+          <p>I must report to my superiors immediately. Thank you for your intelligence.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Investigate the [%dic:STR_DIC_OBJ_LDF4B_FOBJ_T3_Wagon] south of the Steam Springs [%2].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Report to [%dic:STR_DIC_N_Sirio].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">An Abandoned Wagon was spotted south of the Steam Springs. Investigate at once.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Sirio said an Abandoned Wagon was found south of the Steam Springs. He asked you to investigate.</p>
+          <p> </p>
+          <p>When you did, you encountered the Dragonbound. After defeating them, you reported to Sirio, who found their presence shocking and troubling.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

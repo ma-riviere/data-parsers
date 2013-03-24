@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good, good. You've arrived. Kaisinel's Agent Veille recommended you to me. She said she could not have turned back the dark ones without your help.</p>
+          <p> </p>
+          <p>So she wants me to give you an important new mission, [%username].</p>
+          <p> </p>
+          <p>If I say, "[%dic:STR_DIC_W_DF4_SZ_3011_A]" and "[%dic:STR_DIC_W_DF4_SZ_3021_A]," you can guess the mission, yes?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Whoa, whoa, whoa. I don't do guesses."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>First, let's talk rewards, yes? If you've got Laestrygos's Greatsword, I'm sure you've found it more than useful.</p>
+          <p> </p>
+          <p>Of course! All Laestrygos's goods are useful. But you know who is even better? Anusis! And when you successfully complete this mission, I'll ask Anusis to replace your greatsword with an even better one.</p>
+          <p> </p>
+          <p>Ready for action? For Veille? For Elysea? For improved weaponry?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Fierce battles rage in both the [%dic:STR_DIC_W_DF4_SZ_3011_A] and the [%dic:STR_DIC_W_DF4_SZ_3021_A], and the situation can only get worse.</p>
+          <p> </p>
+          <p>Veille believes we must reclaim those places now. You must go. Go to the Citadel and the Temple. Rid us of the vile Guardian Generals.</p>
+          <p> </p>
+          <p>We'll discuss the advanced version of Laestrygos's Greatsword when you return.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I look forward to our chat."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Crazy Daeva!</p>
+          <p> </p>
+          <p>Agent Veille wanted you for this mission. Yes, it is scary, but who cares? Don't you want to please the Agent?</p>
+          <p> </p>
+          <p>And what about the greatsword? I know something about swords, I think.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Not even for three greatswords."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select3">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>With the Vorgaltem Citadel and the Crimson Temple back in our possession, perhaps there will be peace in our time.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO3">"I sooo killed those guys you sent me for."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select4">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Effective Daeva! Agent Veille knew you would do well.</p>
+          <p> </p>
+          <p>Now, where is the sword I gave you last time? If you don't have Laestrygos's Greatsword, then I cannot improve it for you and there can be no reward.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"A job well done is all the reward I need."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>But why...?</p>
+          <p> </p>
+          <p>Why don't you hand me Laestrygos's Greatsword so that I can make it even better?</p>
+          <p> </p>
+          <p>Don't you have it?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'd like to get one. What do I need to do?"</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Here it is, your great reward. A Piece of Aegis.</p>
+          <p> </p>
+          <p>Have you heard of it?</p>
+          <p> </p>
+          <p>If you put the energy from a Piece of Aegis into a weapon, the weapon is transformed. For your work at Vorgaltem and Crimson, please take this gift.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Infiltrate enemy fortresses and kill their Guardian Generals.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  Guardian General of [%dic:STR_DIC_W_DF4_SZ_3011_A]([%5]/1).</font></p>
+                     <p visible="[%0]"><font color="[%1]">  Guardian General of [%dic:STR_DIC_W_DF4_SZ_3021_A]([%8]/1).</font></p></step>
+               <step><p visible="[%12]"><font color="[%13]">Talk with [%dic:STR_DIC_N_Laestrygos].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Kill the Guardian Generals at the enemy fortresses, and Laestrygos will enhance your greatsword.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Laestrygos promised to put amazing power into the greatsword he gave you before...if you killed the Asmodian Guardian Generals at the Vorgaltem Citadel and the Crimson Temple.</p>
+          <p> </p>
+          <p>When you returned to him in triumph, he gave you a Piece of Aegis to enhance the weapon's performance.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q11526</QuestId>
+    <QuestName>느빌림 처치</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님. 저는 얼마 전에 드바림 지하공방에 정찰을 임무를 나갔다가 천족의 정찰병 둘과 마주쳤습니다. </p>
+          <p> </p>
+          <p>그때 저는 본능적으로 그들에게 칼을 휘둘렀습니다만... 놀랍게도 그들은 제 칼을 맞고 쓰러져 버리더군요.</p>
+          <p> </p>
+          <p>무슨 말인지 알아들으시겠습니까? 드바림 지하공방에서는 카룬의 속박이 영향을 미치지 못한다는 말입니다!</p>
+          <p> </p>
+	<p>어떤 이유인지는 모르겠지만, 다행히도 아직 천족은 눈치채지 못한 것 같으니 이 기회를 살려 놈들에게 타격을 입힐 작정입니다. </p>
+          <p> </p>
+          <p>우선 [%dic:STR_DIC_W_LDF4a_SZ_B2_09]으로 가 [%dic:STR_DIC_M_LDF4A_B2_Nepilim_R_58_Ae]와 [%dic:STR_DIC_M_LDF4A_B2_Nepilim_M1_58_Ae]를 처치해 주시겠습니까?</p>
+          <p> </p>
+          <p>천족 놈들을 처치할 때 방해 받아서는 곤란하니 말입니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>카룬의 속박이 힘을 발휘할 수 없다라...</p>
+          <p> </p>
+          <p>대체 드바림 지하공방에는 무슨 일이 있었던 걸까요?</p>
+          <p> </p>
+          <p>따로 조사를 해볼 필요가 있겠군요...</p>
+          <p> </p>
+          <p>참, 느빌림 세공사와 느빌림 대장장이들은 처치하셨습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>수고 많으셨군요.</p>
+          <p> </p>
+          <p>이제 놈들의 방해 없이 천족 병사들을 습격할 수 있겠습니다.</p>
+          <p> </p>
+	<p>카룬의 속박이 해제된 것이 일시적일지 영구적일지는 모르겠지만, 어쨌든 앞으로 드바림 지하공방에 갈 일이 있다면 주의하시기 바랍니다.</p>
+          <p> </p>
+          <p>천족의 칼날이 [%username] 님의 등을 노릴지도 모르니까 말입니다.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+              <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_W_LDF4a_SZ_B2_09]의 느빌림들을 처치하라</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_LDF4A_B2_Nepilim_M1_58_Ae] ([%2]/3)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_LDF4A_B2_Nepilim_R_58_Ae] ([%5]/3)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Suwios]와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">천족을 습격하는 데 방해가 될 느빌림 일꾼들을 처치하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>스위오스는 드바림 지하공방에서 천족의 정찰별 두 명을 해치웠다고 말했다.</p>
+          <p> </p>
+	<p>이것은 곧 카룬의 속박이 그곳에서 힘을 발휘하지 않는다는 뜻이었는데, 그는 이를 이용해 천족에게 타격을 입히겠다는 계획을 세웠다.</p>
+          <p> </p>
+          <p>그가 계획을 실행할 수 있도록 드바림 지하공방으로 가 느빌림 일꾼들을 처치해줬다. </p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

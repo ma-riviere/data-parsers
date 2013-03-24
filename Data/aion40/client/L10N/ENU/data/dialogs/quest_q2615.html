@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Brigade General Thor has ordered me to find a new strategic foothold nearer the Balaur encampment. Red Mane Cavern is too far for effective spying, he says.</p>
+          <p> </p>
+          <p>He wants to establish a new bind point near the Hoarfrost Fortress.</p>
+          <p> </p>
+          <p>I do have a place in mind, but...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"But what?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>But the place I have in mind is the Fang Troll Encampment. It's in the perfect position.</p>
+          <p> </p>
+          <p>Of course, it's also full of Fang Trolls. But that's not necessarily an insurmountable problem.</p>
+          <p> </p>
+          <p>The real problem is not committing our forces to cleaning out the trolls while leaving ourselves open to Balaur attack.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"And your solution?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Destroy their houses. Make them retreat to a more remote location.</p>
+          <p> </p>
+          <p>That can be done with a much smaller force, possibly without attracting attention from the Balaur.</p>
+          <p> </p>
+          <p>I'm looking for someone who can handle the job. Are you interested, [%username]? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good. I probably don't have to tell you how stupid trolls are, but not so stupid that they won't run away when someone obliterates their houses.</p>
+          <p> </p>
+          <p>So get yourself to the [%dic:STR_DIC_W_STR_DF3_SZ_G1] and take down some [%dic:STR_DIC_OBJ_DF3_TrollHouse_Q2615]s, then report back to me. </p> 
+          <p> </p>
+          <p>I'm counting on you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"This shouldn't take long."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, a Daeva's duty can't be forced, it's true.</p>
+          <p> </p>
+          <p>Still, I rather thought I could count on you for help.</p>
+          <p> </p>
+          <p>I'll ask someone else then.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Perhaps you should."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Some people think we should just eliminate the Fang Trolls altogether.</p>
+          <p> </p>
+          <p>I'm not sure we should, and those weren't my orders from Brigade General Thor. I'm hoping my plan will fulfill our immediate objectives.</p>
+          <p> </p>
+          <p>How are things in the [%dic:STR_DIC_W_STR_DF3_SZ_G1]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"A bit underpopulated."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I hope they just go away now.</p>
+          <p> </p>
+          <p>But either way, you've earned your pay.</p>
+          <p> </p>
+          <p>Good job, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Destroy [%dic:STR_DIC_OBJ_DF3_TrollHouse_Q2615]s. ([%2]/5).</font></p></step>
+                      
+               <step><p visible="[%15]"><font color="[%16]">Report to [%dic:STR_DIC_N_Mostin].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">To secure a new strategic foothold, destroy the Fang Trolls' Houses and force them to move elsewhere.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Mostin said she was looking for a new strategic foothold for the fight against the Balaur. The Fang Troll Encampment seemed appropriate, but unfortunately occupied by Fang Trolls.</p>
+          <p> </p>
+          <p>At her suggestion, you destroyed the Fang Troll's Houses, hoping to drive them away.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

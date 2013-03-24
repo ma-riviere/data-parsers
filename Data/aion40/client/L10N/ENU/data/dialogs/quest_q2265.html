@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Have you heard Brigade General Suthran? He's always muttering about the "Sapien scum." He seems to think that offense is the best defense.</p>
+          <p> </p>
+          <p>He attacks them at every opportunity, far more frequently than our former general did.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"That sounds like a good plan."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I decided to patrol this area by myself, because all of the other watchmen went to the [%dic:STR_DIC_W_DF1A_13] to hunt the Mau.</p>
+          <p> </p>
+          <p>I couldn't just sit around and do nothing.... My original plan was to go near [%dic:STR_DIC_W_DF1A_15] and hunt just a few of them.</p>
+          <p> </p>
+          <p>I'm familiar with that place, so I thought it would be easy. The Mau attacked me in a large pack. I was lucky to have survived!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"You are a brave man."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, that's one word for it. The thing is, though, I lost my sword. It was torn from my hand by a Mau Warrior. I'm so ashamed. I'm an Archon, and I allowed a Sapien to take my sword!</p>
+          <p> </p>
+          <p>I got this hammer, but it just doesn't feel the same as ol' Swordy. Would you please go to Mahindel Swamp and recover my sword, [%username]? I'll make it up to you, I swear.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I think the Mau that took my sword was a Veteran Warrior. I was being set upon on all sides, so I didn't see him very well....</p>
+          <p> </p>
+          <p>Surely the Mau haven't gone far from the swamp. Kill the [%dic:STR_DIC_M_LycanFighterS_17_An]s you find there--one of them has to have my sword!</p>
+          <p> </p>
+          <p>Please return my [%dic:STR_DIC_I_quest_2265a] and my pride, with it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll recover it for you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>If I end up leaving my post, I'll have to tell the other Archons.... That's why I asked you, [%username].</p>
+          <p> </p>
+          <p>I won't beg you. I guess I should just save up my wages and ask [%dic:STR_DIC_N_Lunber] to make a new sword for me.</p>
+          <p> </p>
+          <p>Just forget I asked you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Will do."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did you find my [%dic:STR_DIC_I_quest_2265a]?</p>
+          <p> </p>
+          <p>If anyone finds out about this whole mess, I'll have to retire from my position as an Archon. I'm so ashamed....</p>
+          <p> </p>
+          <p>If you found my sword, please return it to me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here is your sword."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Haven't you found my [%dic:STR_DIC_I_quest_2265a] yet?</p>
+          <p> </p>
+          <p>I'm going to be in so much trouble if that sword isn't recovered.</p>
+          <p> </p>
+          <p>Please search for it once again.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll find it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That's it! That's my sword! [%dic:STR_DIC_I_quest_2265a]! Thank you so much.</p>
+          <p> </p>
+          <p>Hmm...the blade is nicked.... I'll have to have it sharpened.</p>
+          <p> </p>
+          <p>This is a token of my appreciation. Please keep it. And...could you just keep this between us?</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Reclaim the sword taken by the [%dic:STR_DIC_M_LycanFighterS_17_An] in [%dic:STR_DIC_W_DF1A_15] and bring it to [%dic:STR_DIC_N_Dellalont].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Reclaim Dellalont's sword that was taken by a Mau in Mahindel Swamp.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Dellalont went to Mahindel Swamp to hunt Mau but was attacked and lost his sword in the scuffle.</p>
+          <p> </p>
+          <p>At his request, you went to the Mahindel Swamp, killed the Feral Black Claw Warriors, and brought the sword back to Dellalont.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

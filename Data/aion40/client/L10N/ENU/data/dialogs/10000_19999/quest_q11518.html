@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q11518</QuestId>
+    <QuestName>Strigik Feather</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+        <p>Oh, Lady Siel! Why have you forsaken me?! My pen broke, [%username]! MY PEN!</p>
+        <p> </p>
+        <p>I cannot complete my report for [%dic:STR_DIC_N_Kahrun] without it, and if Kahrun has no report from me, he'll likely send troops. And what if those troops were needed elsewhere?! </p>
+        <p> </p>
+        <p>What if their absence allows our foes to crush our defenses? We could all die, and all because of my stupid, stupid pen!</p>
+        <p> </p>
+        <p>Please, please... get me a [%dic:STR_DIC_I_QUEST_11518A] from [%dic:STR_DIC_W_LDF4a_SZ_A3]! They should be dry enough to stay stiff when wet, and fine enough to write with! Please, [%username]--the fate of Atreia rests on your shoulders!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh thank goodness you're back! I was about to start sending smoke signals!</p>
+          <p> </p>
+          <p>Do you have the feather? Show me, please!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">"I really think you're overreact..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I AM NOT OVERREACTING! You're all so cocky!</p>
+          <p> </p>
+          <p>But every effect has its cause, [%username]! What if Lady Siel had voted for war instead of peace with the Balaur? The Dragon Lords would never have gained access to the Tower of Eternity, and Atreia would never have been split in two. All that, because of one simple vote!</p>
+          <p> </p>
+          <p>This may be one simple feather to you, my [%userrace] comrade, but to me, this is everything. You have saved us, my friend. You have saved us all.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Quick! Find a [%dic:STR_DIC_I_QUEST_11518A] in [%dic:STR_DIC_W_LDF4a_SZ_A3]! </font></p>[%collectitem]</step>
+               <step><p visible="[%15]"><font color="[%16]">Hurry and give the feather to [%dic:STR_DIC_N_Shuos]!</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Reports are urgently needed! Find a Strigik Feather so Shuos can write his report and save the world from destruction!</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Shuos, a very excitable Reian in the Refugee Camp, was terrified that his broken pen would somehow result in the world being lost forever. You decided you would go and calm his nerves by bringing him a replacement writing tool, and gathered a dried feather from the Strigik Forest.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

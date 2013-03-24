@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q41158</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], this attack is going to hinge upon our ability to get through the [%dic:STR_DIC_W_IDTiamat_SZ_R2].</p>
+          <p> </p>
+          <p>It is defended by the [%dic:STR_DIC_E_Q30718a]s, who are well positioned to hold our advance almost indefinitely.</p>
+          <p> </p>
+          <p>You and your allies are the only ones who will be able to break through their defenses. Can you handle that?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I knew they'd be desperate to hold that location.</p>
+          <p> </p>
+          <p>Did you kill the [%dic:STR_DIC_E_Q30718a]s? Otherwise our rear-guard will have trouble if they bring in reinforcements.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I got them all."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Then my worries were in vain.</p>
+          <p> </p>
+          <p>Now that we've broken through their defenses though, it's time for the real assault to begin. The enemies inside the Stronghold are of a completely different caliber than what you've faced out here.</p>
+          <p> </p>
+          <p>Be ready.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <steps>
+               <step><p visible="[%0]"><font color="[%1]">When the attack starts, kill the [%dic:STR_DIC_E_Q30718a]s ([%2]/12).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report to [%dic:STR_DIC_N_IDTiamat_Sorus] at [%dic:STR_DIC_W_IDTiamat_SZ_S1].</font></p></step>
+          </steps>
+          <p><font font_xml="quest_summary">Kill the forces defending the Stronghold Corridor.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Sorus said the Balaur will immediately counter when the attack starts, and asked you to kill the defenders.</p>
+          <p> </p>
+          <p>You killed the forces defending the access route. Sorus congratulated you, but warned that this was merely the beginning.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

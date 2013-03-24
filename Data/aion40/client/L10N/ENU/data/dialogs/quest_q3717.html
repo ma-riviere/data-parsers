@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q3717</QuestId>
+    <QuestName>[Group] Assassinate Agents Aboard the Dredgion</QuestName>
+    <QuestType>Item Collecting</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Our large-scale operation against the Dredgion surely strikes at the heart of these tenacious Balaur.</p>
+          <p> </p>
+          <p>But will the Brigade General's strategy be enough?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What can I do?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I have an important but very difficult mission picked out for you, [%username].</p>
+          <p> </p>
+          <p>It won't be easy, but I'm confident in your ability to eliminate a number of key figures in the Dredgion's command structure.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>First, you must eliminate the Dredgion's command staff and gather the [%dic:STR_DIC_I_quest_3714b]s and the [%dic:STR_DIC_I_quest_3714a]s as proof.</p>
+          <p> </p>
+          <p>Then continue on to the odious Auditor Nirshaka and Quartermaster Vujara, taking the [%dic:STR_DIC_I_quest_3714c] and the [%dic:STR_DIC_I_quest_3714d] as proof, of course.</p>
+          <p> </p>
+          <p>Bring your trophy collection to Governor Michalis for a generous reward. Good luck, [%username], and good hunting.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Faith and arms!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Do you consider this mission insignificant? Does fear grip your wings? Do I expect too much?</p>
+          <p> </p>
+          <p>I wish I could rely on just one Daeva without doubt or fear. Just one!</p>
+          <p> </p>
+          <p>Oh, don't listen to the dispirited grumbles of an old war Abex, child. You just go on your way.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm sorry to disappoint you, sir."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, yes. Yes! If we keep at them like this, we may yet drive out the Dredgion for good!</p>
+          <p> </p>
+          <p>Perhaps if we can attack before the Baranath Legion regroups....</p>
+          <p> </p>
+          <p>So, my apprentice, did they all fall to your skill? Let us see your death trophies from the Dredgion's agents.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Observe their effects, Governor."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm disappointed in you, [%username].</p>
+          <p> </p>
+          <p>I know you have the ability to eliminate the command staff aboard the Dredgion, as well as Auditor Nirshaka and Quartermaster Vujara.</p>
+          <p> </p>
+          <p>So I must wonder why you haven't carried out your mission and returned with the [%dic:STR_DIC_I_quest_3714all]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll make you proud!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well done, [%username]. The Baranath Legion will find regrouping difficult for a while.</p>
+          <p> </p>
+          <p>If we seize this opportunity, we may be able to weaken the power of the Balaur in Reshanta.</p>
+          <p> </p>
+          <p>Here, take this! It's a reward for your hard work in weakening the Dredgion.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Gather the [%dic:STR_DIC_I_quest_3714all] of the Dredgion and take them to [%dic:STR_DIC_N_Taranis].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">You've been given a difficult assignment to eliminate the Dredgion's command staff and gather proof of your success.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Maias believes the Dredgion must be under constant bombardment.</p>
+          <p> </p>
+          <p>You eliminated the ship's command staff and returned to Governor Michalis with proof of your successful mission.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

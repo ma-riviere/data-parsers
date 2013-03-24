@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q3118</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]! It just dawned on me...</p>
+          <p> </p>
+          <p>Do you think it would be possible for something to come through the rift in the opposite direction? Monsters from Adma Stronghold could come to the Observatory Village!</p>
+          <p> </p>
+          <p>What's worse, during my last trip through the rift, I ran across a Lord Lannok. He was extremely powerful, and I was lucky to escape. If he comes here, it would be disasterous.</p>
+          <p> </p>
+          <p>Would you be willing to enter the [%dic:STR_DIC_E_L_DF2a_entrance] and terminate him? I'm sure [%dic:STR_DIC_N_Atropos], will see that you're properly rewarded.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hello, [%username]!</p>
+          <p> </p>
+          <p>I'm starting to worry about that Giant Dimensional Rift. If any of the enemies beyond the rift were to come to the Observatory Village, it would be terrible.</p>
+          <p> </p>
+          <p>The worst would be if [%dic:STR_DIC_E_L_DF2a_Q3118] himself came through. He's one of the most powerful beings inside the Stronghold.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Funny you should mention him."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You already killed him? Rovilance must be smarter than he looks to put you onto that.</p>
+          <p> </p>
+          <p>I guess I can relax a little then.</p>
+          <p> </p>
+          <p>Thank you.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Go to [%dic:STR_DIC_E_L_DF2a_entrance] via the [%dic:STR_DIC_OBJ_Entrance_L_Adma] and kill [%dic:STR_DIC_E_L_DF2a_Q3118]. ([%2]/1)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report to [%dic:STR_DIC_N_Atropos].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Rovilance is concerned about monsters coming out of the rift. Kill Lord Lannok for the safety of the Observatory Village.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Rovilance was worried that the Observatory Village would be destroyed if Lord Lannok came through the rift.</p>
+          <p> </p>
+          <p>You went to Adma Stronghold, terminated Lord Lannok, reported it to Atropos, and were rewarded for your efforts.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

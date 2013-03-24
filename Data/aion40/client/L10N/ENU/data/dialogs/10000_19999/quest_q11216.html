@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+	        <p>(You hold brittle parchment with a star on each edge.)</p>
+	        <p> </p>
+	        <p>(Perhaps it's a map? Balaur expert [%dic:STR_DIC_N_Sulinia] may know.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"This is just her mug of Odella Juice."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Every day I make new discoveries about Balaur culture.</p>
+          <p> </p>
+          <p>While I love any news about the Balaur, be warned that if you ask me to fix a relic you've damaged, I'll throw you out. Don't think I can't!</p>
+          <p> </p>
+          <p>Anyway, you're about to tell me that you found a map.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Yes. Yes I did. How did you...? Any ideas?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Balaur base their directions on the Drakenfall. It's a very relativistic way of thinking.</p>
+          <p> </p>
+          <p>To read this map, you'll need to collect the Direction Symbols. If you go to the [%dic:STR_DIC_OBJ_LF4_FOBJ_Q11216A], the [%dic:STR_DIC_OBJ_LF4_FOBJ_Q11216B], the [%dic:STR_DIC_OBJ_LF4_FOBJ_Q11216C] and the [%dic:STR_DIC_OBJ_LF4_FOBJ_Q11216D], you will find a Direction Symbol at each place.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"I'm curious enough to do it."</Act>
+    </Selects>
+  </HtmlPage>
+
+   <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've been expecting you, and you're right on time.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"The symbols were where you said they'd be."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_ok">
+    <Contents cdata="true">
+        <html>
+        <body>
+        	<p>How exciting to see these in person! The sophisticated patterns are still evident.</p>
+        	<p> </p>
+        	<p>I've seen these before at Beshmundir Temple! That's where Stormwing is sealed.</p>
+        	<p> </p>
+        	<p>Perhaps the four Direction Symbols are related to Stormwing? I'll need to think on this.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Interesting hypothesis."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_fail">
+    <Contents cdata="true">
+        <html>
+        <body>
+        	<p>I know you don't have much sense of direction, [%username], but I didn't know you were this bad!</p>
+        	<p> </p>
+        	<p>Use a map to find the [%dic:STR_DIC_OBJ_LF4_FOBJ_Q11216A], the [%dic:STR_DIC_OBJ_LF4_FOBJ_Q11216B], the [%dic:STR_DIC_OBJ_LF4_FOBJ_Q11216C] and the [%dic:STR_DIC_OBJ_LF4_FOBJ_Q11216D] and acquire the Direction Symbols.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"How do you know so much about people?"</Act>
+    </Selects>
+  </HtmlPage>
+
+ <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes? Do you need something?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I was hoping there'd be, umm...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh! Of course!</p>
+          <p> </p>
+          <p>Sometimes I get so enmeshed in the relics that I forget to reward people. Let me rectify that.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk with [%dic:STR_DIC_N_Sulinia].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Find [%dic:STR_DIC_OBJ_LF4_FOBJ_Q11216A], [%dic:STR_DIC_OBJ_LF4_FOBJ_Q11216B], [%dic:STR_DIC_OBJ_LF4_FOBJ_Q11216C] and [%dic:STR_DIC_OBJ_LF4_FOBJ_Q11216D] and bring their Direction Symbols to [%dic:STR_DIC_N_Sulinia].</font></p>[%collectitem]</step>
+               <step><p visible="[%21]"><font color="[%24]">Talk with [%dic:STR_DIC_N_Sulinia].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">You found a map of a Balaur village by accident. Bring it to Sulinia.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You found an old map and brought it to Balaur expert Sulinia. She said it showed four Direction Symbols of a Balaur village, though you weren't sure what that meant.</p>
+	        <p> </p>
+	        <p>When you brought all the Direction Symbols, she got excited and said they might be related to Stormwing's worship.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q41466</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Infusing the Luminasiel weapon with essences of evil thoughts and actions gives it power. But for that power to be wielded by you, rather than upon you, the weapon must then be purified.</p>
+          <p> </p>
+          <p>Go to [%dic:STR_DIC_N_Salomone] in [%dic:STR_DIC_W_LDF4a_SZ_OP_11]. He'll tell you about the next step.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>A Luminasiel weapon? Then you're here for the [%dic:STR_DIC_I_Q41466a].</p>
+          <p> </p>
+          <p>It's a very rare material that is sometimes created while making [%dic:STR_DIC_I_Q41466b]s with DP. If you're serious, you'll need to buy the design from [%dic:STR_DIC_N_Safadorn]. Good luck.</p>
+          <p> </p>
+          <p>Collect a sufficient amount of Light of Innocence, then bring them to me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"Thank you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]. Welcome back.</p>
+          <p> </p>
+          <p>Were you able to create the Light of Innocence?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">"I have it right here."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Amazing! I'm sure you went to a lot of trouble to make this.</p>
+          <p> </p>
+          <p>I wish I could tell you that was the last thing needed for the Luminasiel weapon, but there's still more components needed.</p>
+          <p> </p>
+          <p>You'll have to go back to Kahrun again.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk with [%dic:STR_DIC_N_Salomone].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Take [%dic:STR_DIC_I_Q41466a] to [%dic:STR_DIC_N_Salomone].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Craft more materials for the Luminasiel weapon.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Kahrun sent you to Solomon for the next step in crafting the Luminasiel weapon.</p>
+          <p> </p>
+          <p>Solomon explained that the next step required the Light of Innocence, and explained how to make it. You returned with the materials, and Solomon sent you on to the next step.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

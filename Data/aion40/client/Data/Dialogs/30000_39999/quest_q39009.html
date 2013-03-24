@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p> - 긴급 명령서 - </p>
+          <p></p>
+          <p> 1. 발신 : 엘리시움 작전사령부, 기니키</p>
+          <p></p>
+          <p> 2. 수신 : [%username]</p>
+          <p></p>
+          <p> 3. 명령 : 테오보모스에 침투한 마족 선발 대장 [%dic:STR_DIC_N_dromik]를 처치하라.</p>          
+          <p></p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">의뢰를 수행다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>마족의 선발대장 드로미크는 자마노크의 소재를 파악해 암살하려고 왔다고 하오.</p>
+          <p> </p>
+          <p>자마노크는 마족의 고급 정보를 가지고 있소.</p>
+          <p> </p>
+          <p>그가 암살되는 것은 반드시 막아야 하오.</p>
+          <p> </p>
+          <p>자, 이제 말해 보시오.</p>
+          <p></p>
+          <p>드로미크는 어떻게 되었소?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>큰 일을 해냈소.</p>
+          <p> </p>
+          <p>드로미크를 처치함으로써 마족들은 천족이 결코 호락호락한 상대가 아니라는 것을 깨달았을 것이오.</p>
+          <p> </p>
+          <p>하지만 자마노크를 노리고 몇 번이고 침투할 수도 있소.</p>
+          <p> </p>
+          <p>그 때도 부탁하겠소.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step>
+               <p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_dromik]를 처치하라([%2]/1)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_NPC_Arena_Geniki_E_LHM]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">긴급 명령: 드로미크를 처치하고 기니키에게 보고하라</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>차원의 소용돌이를 통해 테오보모스에 침투한 마족 선발 대장이 드로미크라고 한다. 드로미크는 자마노크의 소재를 알아내고 암살할 계획으로 침투했다고 한다. 드로미크를 처치하고 기니키에게 보고하였다.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

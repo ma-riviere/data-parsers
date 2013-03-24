@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+           <p>여기 온 지 얼마 안 된 것 같은데 도움이 될 만한 얘기를 하나 해 주겠당.</p>
+           <p> </p>
+           <p>누가 들으면 안 되니까 가까이 와랑.</p>
+           <p> </p>
+           <p>귀 좀 이리 대 봐랑.</p> 
+          </body>
+        </html>
+    </Contents>
+    <Selects>
+    <Act href="HACTION_ASK_QUEST_ACCEPT">귀를 가까이 댄다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>혹시 부업할 생각 없냥?</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_FLA03] 서쪽에 [%dic:STR_DIC_FLA209]%이 있당. 거기 사람들이 케루빔 때문에 급하게 도망치느라 물건을 다 버리고 갔당.</p>
+          <p> </p>
+          <p>줍는 사람이 임잔데 난 장사 때문에 자리를 비울 수가 없으니 당신이 물건을 가져다 주겠냥? 수고비로 물건 값의 반을 주겠당.</p>        
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>잘 생각했당. 농장에 보면 버려진 술통이 있을 거당.</p>
+          <p> </p>
+          <p>그 술통에서 포도주를 꺼내 가져와랑.</p>
+          <p> </p>
+          <p>여기 포도주는 [%dic:STR_DIC_ELA07]에 [%dic:STR_DIC_ELA20]할 정도로 좋은 물건이니 다른 사람이 가져가기 전에 서둘러야 한당, 갸릉.</p>          
+         </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+         <p>나중에 후회할 텐데... 알았당.</p>
+         <p> </p>
+         <p>돈이라면 뭐든 하겠다는 사람은 많으니까, 냥냥.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+   <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>물건은 찾았냥? </p>   
+         <p> </p>
+         <p>하나라도 모자라면 수고비는 없당. </p>         
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">포도주를 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>장사꾼은 신용이 생명이당.</p>
+          <p> </p>
+          <p>앞으로 나와 계속 거래하려면 약속은 꼭 지켜야 한당. </p>
+          <p> </p>
+          <p>하나라도 빼지 말고 모두 찾아와랑. </p>                  
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+    <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>깨진 데도 없고 상태가 아주 좋구낭.</p>
+          <p> </p>
+          <p>자, 수고비당. 약속대로 물건 값을 둘로 나눈 거당.</p>
+          <p> </p>
+          <p>왜 그렇게 보는 거냥? 요즘 포도주 가격이 형편없어 그런거당. 오히려 내가 손해 본 거니 그만 돌아가랑.</p>         
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_FLA209]의 [%dic:STR_DIC_E_LIQUID_BARREL]에서 포도주를 찾아 [%dic:STR_DIC_LA70]에게 가져가라</font></p>[%collectitem]</step>               
+    </steps>
+          <p><font font_xml="quest_summary">슈고 상인 미나링에게 은밀한 부탁을 받았다. 아게르의 농장에 버려진 술통에서 포도주를 찾아 미나링에게 가져다 주자.</p>
+          <p></font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>마을의 슈고족 상인이 부업을 할 생각이 없냐며 은밀한 제안을 했다.</p>
+          <p> </p>
+          <p>아게르의 농장으로 가서 버려진 술통에서 포도주를 찾아다 주고 미나링에게서 물건 값의 절반을 수고비로 받았다.</p>
+          </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

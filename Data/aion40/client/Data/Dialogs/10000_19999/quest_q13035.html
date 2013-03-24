@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>용신도들이 요르문간드라는 정체 불명의 마물을 소환하려 하고 있습니다.</p>
+          <p> </p>
+          <p>소환 의식을 위한 주술에 매개체로 쓰이는 항아리를 준비하고 있다는데...</p>
+          <p> </p>
+          <p>혹시 [%username] 님 께서 [%dic:STR_DIC_N_LDF5b_FOBJ_D2_Pot]%을 파괴해주시면 안 되겠습니까?</p>
+          <p> </p>
+          <p>항아리를 파괴하면 용신도들도 이상한 술수를 부리지 못할 것입니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>사악한 용신도 같으니!</p>
+          <p> </p>
+          <p>마음대로 내버려 둘 줄 알고!</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_N_LDF5b_FOBJ_D2_Pot]%은 용신도들이 꽤 중요히 여기는 물건이었으니 분명 깨버리면 큰 타격을 입게 될 겁니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">보상을 요구한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>감사합니다.</p>
+          <p> </p>
+          <p>녀석들이 모아둔 항아리를 모두 파괴했으니 이제 소환 의식 같은 사술은 한동안 꿈도 못꿀 것입니다.</p>
+          <p> </p>
+          <p>덕택에 밤중에 이상한 괴물이 나타날까 걱정할 필요가 없어졌네요.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_LDF5b_FOBJ_D2_Pot]%을 파괴하라([%2]/6)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_LDF5b_Aphetos_E]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">요르문간드 소환 의식에 사용될 요르문간드의 항아리를 파괴하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아페토스의 요청으로 요르문간드 소환 의식을 준비하는 용신도의 은신처에 잠입하여 용신도의 항아리를 파괴했다.</p>
+          <p> </p>
+          <p>이로서 한동안 용신도는 소환 의식을 시도하지 못할 것이다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You think I'm insane, don't you?</p>
+          <p> </p>
+          <p>I'm not, you know. Those in the village cannot even imagine my power.</p>
+          <p> </p>
+          <p>If I made a key for my castle, then I could show you my abilities.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Yes, I've...heard of your castle."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Your tone of voice reflects your opinion, [%userclass].</p>
+          <p> </p>
+          <p>I'll show you the proof, though, if you'll only get me the material for the key.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What material is that?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Spirit Crystals! You can find them by hunting [%dic:STR_DIC_M_WElemental1stD_13_An]s.</p>
+          <p> </p>
+          <p>Will you do this so I can prove my sanity to you?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Fantastic! Hunt down [%dic:STR_DIC_M_WElemental1stD_13_An]s and bring me 3 Spirit Crystals!</p>
+          <p> </p>
+          <p>You won't regret it, oh no.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"All right, old timer. We'll see."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You don't believe me, do you?</p>
+          <p> </p>
+          <p>Or is it just that you're too weak to take on Lake Spirits?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Goodbye, Gornak."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent! You've returned!</p>
+          <p> </p>
+          <p>Quick! Hand me the material for the key!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here they are."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Come to taunt an old man?</p>
+          <p> </p>
+          <p>If you believed me, you would have brought me the Spirit Crystals.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be right back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What's this?</p>
+          <p> </p>
+          <p>I ask for Spirit Crystals to make a key to the castle...and you bring me this?</p>
+          <p> </p>
+          <p>If you think I can make such a special key with such low quality crystals as these, then you clearly think very little of the castle. Be gone, fiend!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Hunt [%dic:STR_DIC_M_WElemental1stD_13_An]s, obtain Spirit Crystals and bring them to [%dic:STR_DIC_N_Gor].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Gornak said that he needed the material for the key to open the castle. Hunt the Lake Spirits and take 3 Spirit Crystals to him.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Gornak said that he needed the material for the key to open the castle. He told you to hunt Lake Spirits for their Spirit Crystals.</p>
+          <p> </p>
+          <p>When you brought the Spirit Crystals to him, he got mad, claiming that you brought low quality crystals.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

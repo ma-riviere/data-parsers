@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>He said my mother had to die because of the Balaur?</p>
+          <p> </p>
+          <p>I cannot let this pass. I'll make them pay.</p>
+          <p> </p>
+          <p>I won't let anyone who attacked the Nunglark Village live any longer, awul.</p>
+          <p> </p>
+          <p>By the way, what's your name? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">Tell him your name.</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]? What a unique name.</p>
+          <p> </p>
+          <p>[%username], can you help me? </p>
+          <p> </p>
+          <p>I must revenge my mother by myself but have young offspring, awul.</p>
+          <p> </p>
+          <p>They still need care before they can fight for themselves.</p>
+          <p> </p>
+          <p>So, will you avenge my mother's death on the Balaur for me?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you so much.</p>
+          <p> </p>
+          <p>I'll never forget your favor.</p>
+          <p> </p>
+          <p>By the way, who are those Balaur left in the destroyed Nunglark Village?</p>
+          <p> </p>
+          <p>Are they [%dic:STR_DIC_M_DF4_DrakanFi_Re_B1_53_An] and [%dic:STR_DIC_M_DF4_DrakanPr_Re_B1_53_An]? Take 'em down. All of them, awul.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">End Dialog.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's okay, awul.</p>
+          <p> </p>
+          <p>I shouldn't have asked you to avenge my mother.</p>
+          <p> </p>
+          <p>I'm deeply grateful you let me know how my brother is doing.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">End Dialog.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're [%username], aren't you?</p>
+          <p> </p>
+          <p>Are you returning from the destroyed Nunglark Village?</p>
+          <p> </p>
+          <p>Have you revenged on the Balaur?</p>        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">Tell him the result.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you so much, Daeva.</p>
+          <p> </p>
+          <p>You saved my face and I can meet with my brother later, awul.</p>
+          <p> </p>
+          <p>Take this. I treasure this more than anything but you deserve it.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Wipe out the Balaur in the destroyed Nunglark Village.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_DF4_DrakanFi_Re_B1_53_An]([%2]/5)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_DF4_DrakanPr_Re_B1_53_An]([%5]/1)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_N_Owlau_DF4_01].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">You should take revenge on the Balaur who destroyed the Nunglark Village in place of Ulakin.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ulakin said he must avenge her mother's death as her son, but had to ask you to do it for him because he needs to take care of his young offspring.</p>
+          <p> </p>
+          <p>As requested, you wiped out the Balaur in the destroyed Nunglark Village and Ulakin said thanks and gave you something he treasures.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

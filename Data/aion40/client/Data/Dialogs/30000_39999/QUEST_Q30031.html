@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>잠깐만요, [%username] 님!</p>
+          <p> </p>
+          <p>갖고 계신 그 검이요, 시엘의 힘 전곤이 아닌가요?</p>
+          <p> </p>
+          <p>휘유, 그걸 갖고 계신 걸 보니 [%userclass] 님은 실력이 정말 뛰어난 모양이네요.</p>
+          <p> </p>
+          <p>실력 못지 않게 운도 좋고요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그런데 조금 아깝네요.</p>
+          <p> </p>
+          <p>시엘의 힘 전곤에 문제가 있는 것 같아서 말입니다. </p>
+          <p> </p>
+          <p>본래의 능력이 봉인된 것 같기도 하고, 크게 훼손된 것 같기도 하네요.</p>
+          <p> </p>
+          <p>원래 상태로 되돌릴 수 있다면 훨씬 더 뛰어난 전곤이 될 텐데 말입니다. </p>
+          <p> </p>
+          <p>관심이 있으면 전곤을 복원할 수 있는 방법을 알려 드릴까요? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>잘 생각하셨습니다. 무기란 건 원래의 능력을 발휘하지 못하면 죽은 거나 다름 없으니까요.</p>
+          <p> </p>
+          <p>제가 무기를 손봐 드릴 수 있으면 좋겠지만 전 그만한 실력이 없습니다.</p>
+          <p> </p>
+          <p>대신 도움이 될 만한 분을 소개해 드리겠습니다.</p>
+          <p> </p>
+          <p>소테리아 성소 마을에 있는 [%dic:STR_DIC_N_Gefeios] 님을 만나 보십시오. </p>
+          <p> </p>
+          <p>연족이긴 하지만 더 좋은 무기를 만드는 일이라면 다른 조건은 전혀 상관하지 않으니까요. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님의 실력이면 무기 따위는 전혀 상관없다는 건가요?</p>
+          <p> </p>
+          <p>실력이 뛰어나단 얘기를 듣긴 했지만... 그래도 굉장히 자신만만하시네요.</p>
+          <p> </p>
+          <p>본인이 필요없다고 한다면 굳이 권하지는 않겠습니다.</p>
+          <p> </p>
+          <p>좋은 전곤도 알아보는 사람에게나 가치가 있는 거죠. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그래, 무슨 일로 온 거유?</p>
+          <p> </p>
+          <p>날 찾아온 걸 보면 보나 마나 무기 때문이겠지만 말이우.</p>
+          <p> </p>
+          <p>원하는 게 뭔지 한번 말이나 해 보시우.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">시엘의 힘 전곤을 복원하고 싶다고 한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>시엘의 힘 전곤!</p>
+          <p> </p>
+          <p>이 무기의 연원을 알고 있수? 우리 연족의 시조인 시엘의 창 레기온이 사용했다는 무기라우.</p>
+          <p> </p>
+          <p>그런데 도대체 어디다 어떻게 보관을 했기에 이렇게 엉망이 된 거유?</p>
+          <p> </p>
+          <p>어쨌거나 잘 찾아왔수. 원래의 성능을 찾도록 최선을 다해서 도와주겠수. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_Gefeios]%와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">원래의 능력이 사라진 시엘의 힘 전곤의 능력을 복원할 수 있다고 한다. 게페이오스를 만나 보자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>시엘의 힘 전곤을 가지고 있는 걸 본 드레니아는 좋은 무기지만 원래의 모습을 잃고 훼손됐다고 했다.</p>
+          <p> </p>
+          <p>그의 소개를 받아 연족인 게페이오스에게  갔더니 잘 찾아왔다면서 최선을 다해 무기를 복원시켜 주겠다고 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

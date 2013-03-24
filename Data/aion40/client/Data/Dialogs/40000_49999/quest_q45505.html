@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p align="center"> - 작전 명령서 - </p>
+          <p></p>
+          <p>발신: 판데모니움 특수사령부</p>
+          <p></p>
+          <p>수신: [%username]</p>
+          <p></p>
+          <p>잉기스온의 전세가 불안하다는 정보를 특수사령부에서 확인하였다. 잉기스온으로 가 천족을 처치하여 아군을 도와야 한다.</p>
+          <p></p>
+          <p>이에 다음 명령을 내리니 즉시 시행하길 바란다.</p>
+          <p></p>
+          <p>  1. 실렌테라 회랑을 통해 [%dic:STR_DIC_W_ZONE_NAME_LF4]에 침투할 것.</p>
+          <p></p>
+          <p>  2. 잉기스온에 주둔한 천족을 5명 이상 처치할 것.</p>
+          <p></p>
+          <p>  3. 단, 너무 전력이 떨어지는 적에게는 자비를 베풀 것.</p>
+          <p></p>
+          <p>  4. 적이 전의를 잃은 것을 확인하면 [%dic:STR_DIC_E_45503]에게 보고할 것.</p>
+          <p></p>
+          <p>특수사령부 요원들에게 신의 가호가 있기를!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">명령서를 접어 넣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+   <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>오늘따라 싸움이 격렬하게 일어나는 것 같군요.</p>
+          <p> </p>
+          <p>잉기스온에 가기 위해 실렌테라 회랑으로 향하는 분들도 많았지요. 역시 방어보다는 공격이 우선이죠!</p>
+          <p> </p>
+          <p>[%username] 님도 무사히 임무를 완수하겠죠?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>임무 완수를 확인했습니다, [%username] 님.</p>
+          <p> </p>
+          <p>잉기스온에서는 정예 파티도 방심하면 전멸한다고 들었습니다. 하지만 저희 특수사령부 앞에서는 어쩔 수 없지요.</p>
+          <p> </p>
+          <p>저희는 오직 적의 허점을 노리고 적을 치기 위해 결성된 조직이니까요.</p>
+          <p> </p>
+          <p>그럼, 판데모니움 특수사령부에서 준비한 보상을 드리겠습니다.</p>
+          <p> </p>
+          <p>판데모니움의 영광을 위해!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_W_ZONE_NAME_LF4]에 잠입해 [%dic:STR_DIC_E_Daily_2]을 처치하라([%2]/5)</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_E_45503]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">일일 지령: 잉기스온에 잠입해 천족을 처치한 후 겔크마로스 지부 요원에게 보고하라</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>판데모니움 특수사령부에서 잉기스온에 있는 천족을 처치하라는 명령서가 내려왔다. </p>
+          <p> </p>
+          <p>임무를 완수한 후 겔크마로스 지부 요원에게 가서 보상을 받았다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

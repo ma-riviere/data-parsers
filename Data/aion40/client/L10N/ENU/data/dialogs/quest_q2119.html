@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Let's take a look at this map...</p>
+          <p> </p>
+          <p>Yep, that's Ishalgen. Look, here is the prison camp...and this is...wait, I've seen this map before.</p>
+          <p> </p>
+          <p>A woman named Kirtai came through here a couple months ago. She said she was looking for a gravesite and had a poorly drawn map.</p>
+          <p> </p>
+          <p>I told her to go to the graveyard if she was looking for a grave, but she insisted it was someplace else. For 200 Kinah I'd believe anything.</p>
+          <p> </p>
+          <p>We never found it and she never came back, but she left the map. I kept it handy in case I saw her again.</p>
+          <p> </p>
+          <p>Oh no...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Try comparing the two maps."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I can do better than that. This map is onionskin, so I can just lay it atop the other.</p>
+          <p> </p>     
+          <p>It lines up perfectly! The Black Opal--and the gravesite Kirtai was looking for--is in a cave just over the hill. The Lepharists are close, but their map isn't detailed enough to show exactly where to go.</p>
+          <p> </p>
+          <p>There's one problem, though: The cave isn't empty. You'll have to face [%dic:STR_DIC_M_KalnifNamed_8_An] to get to the Black Opal. We lost a lot of raiders trying to kill Carak, but I'm sure you can do it, [%username]! Imagine the treasure...the stuff dreams are made of!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes! We're going to be rich! Rich!</p>     
+          <p> </p>
+          <p>All right, quickly now! Nab that pearl! Hurry to the cave, defeat [%dic:STR_DIC_M_KalnifNamed_8_An], and bring back the treasure from the cave!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be back--I hope."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What?! But...we could be rich!</p>
+          <p> </p>
+          <p>You're the first [%userclass] capable of taking on [%dic:STR_DIC_M_KalnifNamed_8_An]! You can't just run away because of...er...what happened to the others!</p>
+          <p> </p>
+          <p>Oh, leave then! I'll get the treasure myself or die trying. Keep that on your conscience,[%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Good luck with that."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] returns, bearing unseemly amounts of treasure!</p>
+          <p> </p>
+          <p>Right? You killed the [%dic:STR_DIC_M_KalnifNamed_8_An] and brought me his treasure?</p>
+          <p> </p>
+          <p>Tell me!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here's what I found."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What?! You haven't gone yet?</p>
+          <p> </p>
+          <p>[%username], we're so close to being rich! I can taste the Kinah...not that I would eat it, you understand, just...</p>
+          <p> </p>
+          <p>Just get on with it, will ya?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll have it next time."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Give that here!</p>
+          <p> </p>
+          <p>What? This is it?!</p>
+          <p> </p>
+          <p>This is a fake! I couldn't sell this in Aldelle, never mind Pandaemonium. Where's the power? The power!</p>
+          <p> </p>
+          <p>All that trouble for nothing! I can't believe it. Keep the thing, [%username]--there's some residual magic in there. It's nothing to me.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Steal the treasure guarded by the [%dic:STR_DIC_M_KalnifNamed_8_An], then take it to [%dic:STR_DIC_N_Lidun].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">You found out that the spot marked on the treasure map was Carak's den. Enter the den, steal the treasure, and take it to Lidun.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Lidun told you that the spot marked on the treasure map was [%dic:STR_DIC_M_KalnifNamed_8_An]'s den. After entering the den, you killed Carak and brought the Black Opal back to the base.</p>
+          <p> </p>
+          <p>However, after examining the Black Opal, Lidun handed it back, saying that it was a fake with only minor magic within it.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

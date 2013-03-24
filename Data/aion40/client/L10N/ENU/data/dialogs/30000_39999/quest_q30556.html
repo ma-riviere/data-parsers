@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q30556</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>Not entered</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select_none" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm afraid I didn't know Merops personally. But I understand very few did.</p>
+          <p> </p>
+          <p>He certainly seems to be quite depressed, seemingly because of Kerran. I don't recognize the name, however. To solve this mystery, we need the missing text.</p>
+          <p> </p>
+          <p>The Balaur at [%dic:STR_DIC_W_ZONE_NAME_IDYun] likely have have the [%dic:STR_DIC_I_QUEST_30506A] by now, so it's vital that you find it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Merops was a very private individual. I don't even know if he had any family.</p>
+          <p> </p>
+          <p>Did you find the other half of the scroll?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">"Well, I found SOMETHING."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_ok">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes, this is it! Now to... oh. His entire family. It's hard to contemplate.</p>
+          <p> </p>
+          <p>No wonder his thoughts turned to despair. Such sacrifice is more than we can ask of any individual.</p>
+          <p> </p>
+          <p>Take this to Maios at once.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"I'm on my way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, [%username]. How goes the campaign at the Rentus Base?</p>
+          <p> </p>
+          <p>You certainly look serious today. Is there anything amiss?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Please read this."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hmm. I'd known about Merops's children but not about the depths of his despair. He kept his emotions hidden well.</p>
+          <p> </p>
+          <p>And he doesn't specify how much he told the Balaur. We'll have to find that out ourselves somehow.</p>
+          <p> </p>
+          <p>I hate not knowing more, but at least we have a better idea of our circumstances. This is for your hard work on our behalf.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Obtain the [%dic:STR_DIC_I_QUEST_30506A] and take it to [%dic:STR_DIC_N_Oreitia].</font></p>[%collectitem]</step>
+               <step><p visible="[%3]"><font color="[%4]">Talk to [%dic:STR_DIC_N_Maios].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">How much did Merops tell the Balaur? Find the Torn Scroll Piece on a Vasharti Mage.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oreitia needed the latter part of Merops's Diary to find out what information he gave to the Balaur... and why.</p>
+          <p> </p>
+          <p>You found the other half of the scroll, which revealed very personal motives. Still, it only hinted at what secrets he gave away.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

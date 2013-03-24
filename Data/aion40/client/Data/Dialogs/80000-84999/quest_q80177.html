@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+         <p>아버지의 편지를 읽고 나니 어머니 걱정으로 아무 일도 할 수가 없게 됐네.</p>
+         <p>엘리시움의 수호를 책임지는 몸이라 자리를 비울 수도 없고...</p>
+         <p> </p>
+         <p>그래서 자네의 도움을 받았으면 하는데..</p>
+         <p> </p>
+         <p>해줄 수 있겠나?</p> 
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"무슨 일인지 묻는다."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>직접 찾아 뵙지는 못하지만 어머니 병을 호전 시킬 수 있는 약이라도 전해드려야 맘이 놓일 것 같네.</p>
+         <p> </p>
+        <p>내가 주는 이 약을 아버지께 전해 줄 수 있겠나?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+        <p>자네는 정말 인정이 많은 데바군.</p>
+        <p></p>
+        <p>그럼 한 시가 급하니 출발해주게!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+       <p>아 그렇군.. 어쩔 수 없지. 자네도 해야 할일이 많을 테니.</p>
+       <p> </p>
+        <p>하지만 앞으로 밤 길은 조심하는게 좋을 거야...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>네탈리온가 보냈다고?</p>
+          <p> </p>
+          <p>이제서야 내 편지가 전달됐나 보군.</p>
+          <p> </p>
+          <p>아들을 걱정하게 만들려고 보낸 편지는 아니네만. 아내가 아들 녀석을 너무 그리워해서 말이야.</p>
+          <p></p>
+          <p>네탈리온가 뭐라던가? </p>
+          <p></p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">산삼을 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>오오.. 이것은 다 죽어가던 병자도 브레이크 댄스를 추게 만든다는 108년 묵은 산삼!! </p>
+          <p> </p>
+          <p>데바가 되었다더니 돈을 많이 벌었나 보구먼. 네탈리온의 얼굴을 보지 못하는 것은 아쉽지만 아내의 병을 낫게 하는데 큰 도움이 되겠어. </p>
+          <p> </p>
+          <p>그리고 자네가 우리 부부를 위해 큰 일을 해주는 구먼. 정말 고맙네.</p>
+          <p> </p>
+          <p>자네처럼 인정이 많은 데바가 이 곳 베르테론의 수호자가 되었으면 좋겠군,</p>
+          <p> </p>
+          <p>암튼 정말 고맙네.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_event_Nebrith]%를 만나 산삼을 전달하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">엘리시움의 네탈리온가 보낸 산삼을 네브리스에게 전달하라.</p>
+          <p></font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>네탈리온의 어머니의 병을 치료 할 수 있는 산삼을 네브리스에게 전달하였다.</p>         
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

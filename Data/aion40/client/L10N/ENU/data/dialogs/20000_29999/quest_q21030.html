@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(It's made of intricately woven grass.)</p>
+          <p> </p>
+          <p>(It's unusually large for an animal trap.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Let's take a closer look...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(Through the woven grass, you see a small animal writhing in the trap.)</p>
+          <p> </p>
+          <p>(Its struggles just make the trap pull tighter around it. It'll suffocate or starve soon.)</p>
+          <p> </p>
+          <p>(Perhaps you should free the animal and return the trap to its maker.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>([%dic:STR_DIC_N_feles] is the only one nearby who could need or make something like this.)</p>
+          <p> </p>
+          <p>(If nothing else, perhaps she knows something about it.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll take this to her."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(You leave it alone.)</p>
+         </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"It's none of my concern."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I may not be able to fight the Strigik, but I can use my brain.</p>
+          <p> </p>
+          <p>I created traps to ensnare them, so it would be easier to fight them or run, but it seems they know the forest too well to trigger them.</p>
+         </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Then this IS yours."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh! I...I thought I'd retrieved them all. Thank you.</p>
+          <p> </p>
+          <p>It pained me to see innocent wildlife trapped by my creations. The more the victim struggles, the more they constrict, you know.</p>
+          <p> </p>
+          <p>It was fine for the Strigik, but quite cruel for anything else. I'm glad these are all gone now.</p>
+         </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Take the Grass-woven Trap to [%dic:STR_DIC_N_feles].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">You found a trap with a small animal caught in it. Free the animal and take the trap to Feles, who may have created it.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You found an unusual trap in the Strigik Forest. There was a small animal caught in it, slowly being killed by it.</p>
+          <p> </p>
+          <p>You freed the animal and took the trap to Feles. She confirmed it was hers and thanked you, saying that her traps were originally made to snare Strigik, but were catching innocent wildlife instead.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

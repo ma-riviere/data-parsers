@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Pssst...[%username].... I need your help with something. This will require a little...tact.</p>
+          <p> </p>
+          <p>Here's the thing. My wife has been spending more and more time with those dolled-up prissies at the boutique in Pandaemonium...and it's driving me crazy!</p>
+          <p> </p>
+          <p>She keeps telling me I don't understand her...or something. I'm afraid I might lose her, but I heard of a little trick from a soldier who was having the same problem.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Where do I come in?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Shhh! Keep it down [%username]! This is the sensitive part....</p>
+          <p> </p>
+          <p>The soldier told me if I grind Ksellid teeth into a powder, it acts as a natural aphrodisiac...and drives women into a frenzy of passion.</p>
+          <p> </p>
+          <p>I'm ashamed that my wife prefers spending time with those sissies at the boutique, but if I could please her like that, I'm sure she'd never leave me.</p>
+          <p> </p>
+          <p>Can you help me out, [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The soldier told me that Gourd Ksellids and Laggard Ksellids have the largest teeth.</p>
+          <p> </p>
+          <p>The Ksellids are all over this area, so you should have no trouble finding them. I need at least 18 [%dic:STR_DIC_M_ShellizardD_25_An] teeth and 22 [%dic:STR_DIC_M_ShellizardD_27_An] teeth.</p>
+          <p> </p>
+          <p>Good luck. If anyone asks why you're killing Ksellids...make up some nonsense about securing the supply route from Pandaemonium.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Fine...I guess I'll have to find someone else.</p>
+          <p> </p>
+          <p>In the meantime, I'll probably lose my wife to some milksop who keeps a journal and likes to talk about his feelings.... </p>
+          <p> </p>
+          <p>Thanks for nothing, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Deal with it."</Act>
+    </Selects>
+  </HtmlPage>
+ 
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, how did it go?</p>
+          <p> </p>
+          <p>Did you manage to get the teeth?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">Hand over the Ksellid's Teeth.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This isn't enough teeth [%username].</p>
+          <p> </p>
+          <p>No, no, put those back in your cube! Don't let people see them! </p>
+          <p> </p>
+          <p>I can't do this alone. Please, come back with the rest.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes! This should be enough.</p>
+          <p> </p>
+          <p>Now just slip them into this pouch and smile...this is just a simple exchange. Yes...nothing odd about this.</p>
+          <p> </p>
+          <p>Thanks, [%username]. Take this as a reward, and make sure this stays between us! I'm sure I'll need more teeth if this works, so be sure to check in later. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Kill [%dic:STR_DIC_M_ShellizardD_25_An]s and [%dic:STR_DIC_M_ShellizardD_27_An]s and bring their teeth to [%dic:STR_DIC_N_Skataon].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Collect Ksellid teeth for Skatoan's discreet purpose.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Skataon asked for Ksellid teeth to use for a discreet purpose.</p>
+          <p> </p>
+          <p>You slew Gourd Ksellids and Laggard Ksellids, and brought him their teeth. He thanked you afterwards.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

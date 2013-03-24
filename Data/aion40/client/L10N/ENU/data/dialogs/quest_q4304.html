@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Fortress has been putting off dealing with the Lepharist Citadel. Between the Mau and Elyos traveling here through the rifts we had enough to deal with, and the threat seemed small.</p>
+          <p> </p>
+          <p>They decided we couldn't afford an all-out war with the Lepharists, but I think that was the wrong decision. They're expanding their territory daily, and we sit by and do nothing.</p>
+          <p> </p>
+          <p> The village representatives and the Brigade General have agreed to a compromise, but I'm still concerned. What do you think? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"How much of a threat are they?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's hard to say. Thus far we've mounted no concerted effort to stop them. That ends now. We can't mobilize the Archons of Morheim, but we can ask other Daevas for help. </p>
+          <p> </p>
+          <p>We need help with the [%dic:STR_DIC_E_HardR] in the citadel, and their written oaths as evidence--for the village and for Morheim. </p>
+          <p> </p>
+          <p>We've had special rings crafted in Pandaemonium as payment for assistance. Would you be interested? We sorely need your help.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you so much. Blood for blood, [%username]. You know, it's easy to overlook the Lepharist Revolutionaries. After all, they're Asmodian. They're our family and friends--they look, act, and speak like us while all the while working toward our downfall. </p>
+          <p> </p>
+          <p>It bothers me more than I can say to have them so close but not know what damage they're doing. Your willingness to help eases my mind. </p>
+          <p> </p>
+          <p>Don't forget to bring me the [%dic:STR_DIC_I_JUNK_D_LEHPAR_QUEST_01A]s. I'll need those.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"The task is mine."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You don't agree about the level of threat? I can't...I don't understand how you can say that. We desperately need your help, [%username]. For Asmodae. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll see what I can do."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, you're back! Were you able to slow them down a bit? We should have paid attention sooner.... </p>
+          <p> </p>
+          <p>It's too late for regrets now, I suppose. Show me the oaths you've collected, [%username]. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here they are."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I appreciate your efforts, but Morheim has set the rules--no oaths, no rings. Blood for blood, [%username]. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Blood for blood."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes, these are the written oaths. On behalf of Alsig Village and the Morheim Fortress, I'd like to express out gratitude. Please accept this ring as a token of our gratitude. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Defeat [%dic:STR_DIC_E_HardR]s in the Lepharist Citadel, collect the written oaths and take them to [%dic:STR_DIC_N_Mirka].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Collect the Lepharist Written Oaths and give them to Mirka to receive a ring.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Mirka wanted your help in eliminating the Lepharists in the Lepharist Citadel.</p>
+          <p> </p>
+          <p>You defeated the elite members in the Lepharist Citadel and collected their oaths. Mirka gave you a ring in reward for your help.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

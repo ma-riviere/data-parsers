@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p align="center"> - 의뢰장 - </p>
+          <p> </p>
+          <p>마계 도시의 부유한 상인에게 [%dic:STR_DIC_I_quest_46521a]%을 구해 달라는 의뢰를 받았다.</p>
+          <p></p>
+          <p>찰리룽 흥신소 조직원들은 다음 내용을 숙지하고 지시에 따라 주기 바란다.</p>
+          <p> </p>
+          <p> 1. 이름: [%dic:STR_DIC_M_DF4_DayQ_Condor_DR_52_An]</p>
+          <p></p>
+          <p> 2. 위치: [%dic:STR_DIC_W_SZ_DF4_A6] 주변을 배회하는 것을 보았다는 제보가 있음.</p>
+          <p></p>
+          <p> 3. 상세: 둥지를 지키고 있는 커다란 콘도르. 사나운 성질을 가지고 있으니 주의할 것.</p>
+          <p> </p>
+          <p>거대한 호글루를 처치하고 콘도르의 박제를 가져온 자에게 증표를 지급하겠음.</p>
+          <p> </p>
+          <p>- 찰리룽 흥신소, [%dic:STR_DIC_E_46500] 일동 -</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">의뢰장을 접어 넣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>바빠 보이는구낭, 냥냥.</p>
+          <p> </p>
+          <p>그래도 일거리가 있다는 건 좋은거당, 갸릉.</p>
+          <p> </p>
+          <p>부탁한 건 어떻게 되었는지 말해봐랑, 냥냥.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">가져온 콘도르 박제를 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아직 의뢰가 뭔지 잘 모르는 거냥?</p>
+          <p> </p>
+          <p>다시 천천히 잘 생각해 봐랑. 우리는 정확히 일을 마친 데바에게만 증표를 지급할 거당, 냥냥.</p>
+          <p> </p>
+          <p>대금을 받고 싶으면 빨리 움직여랑, 냥냥.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(콘도르 박제를 조심스럽게 살펴보며) 바로 이거당, 냥냥.</p>
+          <p> </p>
+          <p>상태가 깨끗해서 의뢰인도 만족할 거당, 갸릉.</p>
+          <p> </p>
+          <p>자, 이것은 의뢰를 완수한 증표당, 냥냥.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_I_quest_46521a]%을 입수해 [%dic:STR_DIC_E_46500]에게 가져가라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">찰리룽 흥신소에서 의뢰장이 왔다. 의뢰를 수행하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>찰리룽 흥신소에서 거대한 호글루를 처치한 뒤 콘도르 박제를 가져다 달라는 내용의 의뢰장을 받았다.</p>
+          <p> </p>
+          <p>크루그 분지에서 거대한 호글루를 처치한 뒤 겔크마로스 관리부 직원에게 콘도르 박제를 주자 수고했다며 증표를 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

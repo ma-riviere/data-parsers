@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>확실히 내가 요새 대장님의 눈 밖에 나긴 났나 보구려.</p>
+          <p> </p>
+          <p>신경은 많이 써야 하지만 일한 티는 안 나는 자질구레한 일은 전부 내게 떨어지는걸 보면.</p>
+          <p> </p>
+          <p>이번엔 요새 밖으로 파견 나간 아칸들의 장비 상황과 보충 요청을 취합해서 보내라는 명령을 받았소.</p>
+          <p> </p>
+          <p>파견 나간 곳이 한두 군데가 아닌데 언제 다 일일이 연락해서 보고서를 완성할지...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">얘기를 계속 듣는다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그래도 어떻게 대충 조사를 마쳤는데 모슬란 갈림길에 있는 초소에서 아직 보고가 없소.</p>
+          <p> </p>
+          <p>[%username], 혹시 모슬란 숲이나 바스펠트 마을에 볼일 없소?</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_N_Lovinja]에게 현재의 장비 상황과 새로 필요한 물품 목록을 빨리 정리해서 알려 달라고 전해 주시오.</p>
+        </body>
+        </html>             
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>고맙소. 모슬란 갈림길에 있는 초소로 가면 [%dic:STR_DIC_N_Lovinja]를 만날 수 있소.</p>
+          <p> </p>
+          <p>요즘 모슬란 숲에 칼니프가 들끊고 있다니 조심하시구려.</p>
+          <p> </p>
+          <p>급한 일이니 서둘러 출발해 주시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>급한 일이 있나 보구려.</p>
+          <p> </p>
+          <p>이를 어쩐다... 보고서 마감일이 얼마 남지 않았는데. </p>
+          <p> </p>
+          <p>그렇다고 내가 숲까지 갈 수는 없고.</p>
+          <p> </p>
+          <p>다른 사람을 찾아봐야겠구려. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>여기엔 무슨 일입니까?</p>
+          <p> </p>
+          <p>혹시 숲 너머에 있는 바스펠트 마을로 가는 길이라면 조심하세요.</p>
+          <p> </p>
+          <p>칼니프며 가르키온이 날뛰고 있거든요.</p>
+          <p> </p>
+          <p>원래 숲 깊은 곳에 살던 놈들인데 어찌된 일인지 요즘은 길가까지 나와 지나가는 사람을 공격하고 있습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">리온의 말을 전한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아! 보고서 때문에 오셨군요.</p>
+          <p> </p>
+          <p>안 그래도 보내려고 했는데 방어구와 무기 수량에 착오가 있는 것 같아서 조사하던 참이었습니다.</p>
+          <p> </p>
+          <p>원래 받은 수량과 현재 상황을 조사해서 리온에게 보고할 테니 걱정하지 마십시오.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_Lovinja]에게 [%dic:STR_DIC_N_Rion]의 말을 전하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">모슬란 갈림길에 있는 초소가 보고서를 보내지 않았다고 한다. 로비냐에게 리온의 요청을 전하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>장비 보충 요청 보고서를 작성하던 리온은 모슬란 숲의 초소에서 보고서가 오지 않았다며 가서 재촉해 달라고 부탁했다.</p>
+          <p> </p>
+          <p>로비냐에게 가서 리온의 말을 전하자 오류가 생겨 조사 중이라면서 나중에 직접 전달하겠다고 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

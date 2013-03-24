@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Welcome, [%username]. My friends in Pandaemonium have high praises for you. I'm glad to finally meet such an eminent Daeva.</p>
+          <p> </p>
+          <p>I assume you're here about the Twilight Drana Farm? Blasted place is a menace.</p>
+          <p> </p>
+          <p>You know.... Perhaps this is an opportunity for mutual cooperation.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I'm listening...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We're both after the same thing--victory against the Balaur. The Twilight Drana Farm stands in the way of that victory.</p>
+          <p> </p>
+          <p>We came here to observe, but we've received orders to also attack when able. But as you can see, I'm short on manpower at the moment.</p>
+          <p> </p>
+          <p>If you were to aid us in attacking the Twilight Drana Farm, I would pledge myself and my men to help you in return when the need arises.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent! I suggest we start with [%dic:STR_DIC_M_DF4_Spaller_55_An]s. You might have seen them in Dark Poeta.</p>
+          <p> </p>
+          <p>The Balaur use them to "mine" Drana. Ordinary tools aren't up to the task. If these worms were to be eliminated, it would set Drana production back severely.</p>
+          <p> </p>
+          <p>The Balaur also created an intelligent "foreman" for these worms called [%dic:STR_DIC_M_Spaller_NmdQ_55_An]. It is vital that it be destroyed as well.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I understand."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I see. I suppose it may not be in your best interests to get too entangled with other operations.</p>
+          <p> </p>
+          <p>If you're confident in your abilities, that may even be the best bet.</p>
+          <p> </p>
+          <p>Please return if you change your mind. Absent any deal, we are fellow Asmodians, and we could use a hand.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I certainly will."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>How did you like the Twilight Drana Farm? Vile place, isn't it?</p>
+          <p> </p>
+          <p>Here, please rest. I've sent for some food and drink--you look like you need it!</p>
+          <p> </p>
+          <p>Please report on your mission.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"An unqualified success."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Your reputation is entirely earned, as far as I'm concerned. Without Xalvius and those worms, the Balaur will be scrambling to meet their quotas.</p>
+          <p> </p>
+          <p>We have more that needs to be done--let me know when you're up to it. In the meantime, savor your victory.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Exterminate the Drana gathering worms in the Twilight Drana Farm.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_DF4_Spaller_55_An]([%2]/5)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Spaller_NmdQ_55_An]([%5]/1)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report the result to [%dic:STR_DIC_N_Geeze].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Stop the Balaur's Drana production by exterminating Drana gathering worms, including "leader" Xalvius, in the Twilight Drana Farm.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Vegrim offered mutual cooperation in exchange for completing missions for him.</p>
+          <p> </p>
+          <p>His first was to exterminate the Drana-gathering worms in the Twilight Drana Farm. The worms' "leader" Xalvius was also a threat to be targeted.</p>
+          <p> </p>
+          <p>You succeeded in destroying the worms, and returned to Vegrim's praises.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

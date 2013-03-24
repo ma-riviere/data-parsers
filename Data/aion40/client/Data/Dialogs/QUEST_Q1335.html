@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님, 앞으로 어디로 가실 예정인가요?</p>
+          <p> </p>
+          <p>바쁜 일이 없다면 제가 제안을 하나 해도 될까요?</p>
+          <p> </p>
+          <p>늘 일손이 부족한 곳이 있거든요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">어디인지 묻는다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>에라쿠스 사막에 가디언들이 나가 있는 사막 정찰기지가 있습니다.</p>
+          <p> </p>
+          <p>언제나 데바들의 도움이 필요한 곳이지요. 정찰할 곳도 많고, 주변에 항상 사나운 짐승들이 들끓고 있는데 파견된 가디언은 턱없이 부족하니 말입니다.</p>
+          <p> </p>
+          <p>[%username], 급한 임무가 없다면 에라쿠스 사막의 사막 정찰기지에 가서 [%dic:STR_DIC_N_Demokritos]%을 만나 보시겠습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님이 도우러 가면 아마 그곳 사람들도 기뻐할 겁니다.</p>
+          <p> </p>
+          <p>실력 있는 데바의 도움이 많이 필요한 곳이니까요.</p>
+          <p> </p>
+          <p>부탁을 들어주셔서 감사합니다.</p>
+          <p> </p>
+          <p>이왕 돕는 거 서둘러 주시면 더 고맙겠지요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>급한 일이라도 있으신가요?</p>
+          <p> </p>
+          <p>다른 임무가 있는데 일부러 그쪽으로 가라고 할 수는 없는 일이죠.</p>
+          <p> </p>
+          <p>거절하셔도 상관없습니다. 꼭 해야만 하는 임무도 아니니까요.</p>
+          <p> </p>
+          <p>하지만 나중에라도 시간이 나면 그쪽에 들러서 일손을 좀 거들어 주십시오. 모두들 고마워할 겁니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>여기는 무슨 일로 오셨습니까? 혹시 우리 사막 정찰대를 도우러 온 겁니까?</p>
+          <p> </p>
+          <p>그렇다면 정말 다행이군요.</p>
+          <p> </p>
+          <p>안 그래도 일손이 부족해서 다들 죽을 지경입니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">앤도가 보내서 왔다고 한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>시간이 나는 데바가 있으면 보내 주겠다고 하더니 고맙게도 약속을 지켰군요.</p>
+          <p> </p>
+          <p>앤도는 신관이긴 하지만 사탈로카의 무덤에서 힘든 일을 하고 있어서인지 우리 가디언의 고충을 아주 잘 이해하더군요.</p>
+          <p> </p>
+          <p>게다가 당신처럼 실력 있는 데바를 보내 줬으니 나중에 만나면 고맙다는 인사를 해야겠군요.</p>
+          <p> </p>
+          <p>어쨌든 도와주러 오셔서 정말 감사합니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">에라쿠스 사막에 있는 [%dic:STR_DIC_N_Demokritos]를 만나라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">에라쿠스 사막에 있는 사막 정찰기지로 가서 데모크리토스를 만나자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>앤도는 시간이 있으면 에라쿠스 사막에 있는 사막 정찰기지로 가서 일을 좀 도와주는 게 어떻겠냐고 권했다.</p>
+          <p> </p>
+          <p>그의 말대로 사막 정찰기지에 가서 데모크리토스를 만났더니 일손이 부족한데 마침 잘 왔다며 매우 반가워했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

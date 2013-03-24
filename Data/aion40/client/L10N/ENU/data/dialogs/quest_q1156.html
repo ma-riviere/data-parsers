@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The village is in trouble, Daeva. In times of conflict, symbols take on greater meaning. People cling to them.</p>
+         <p> </p>
+          <p>Unfortunately, under the cover of night, the Kobolds stole inside the Nobelium and swiped the Village Seal!</p>          
+          <p> </p>
+          <p>I've made my feelings clear to Abolos. His response was, as ever, "No comment."</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Is there anything we can do?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The seal isn't just a token. It has practical uses. All our official documents are branded with its signet.</p>
+          <p> </p>
+          <p>What of Sanctum? Without official correspondence, we'll be cut off. They can't just trust any papers that come their way.</p>         
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What's to be done?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I don't suppose you could return the seal for us? It would be a great help! I wouldn't ask otherwise, believe me.</p>
+          <p> </p>
+          <p>I'm certain it's somewhere in the Dukaki Mine. Kobolds have a tendency to stack all their loot in one place, so it shouldn't be too hard to find.</p>          
+          <p> </p>
+          <p>Will you help?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, this is marvelous! Thank you. I can't tell you how grateful I am.</p>
+          <p> </p>
+          <p>Please, go to the Dukaki Mine and find the stack of stolen items. The Village Seal will be within it somewhere. You just have to look, not get caught, and bring it back.</p>
+          <p> </p>
+          <p>Good luck, friend!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Thanks." </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I understand. I'm sure you have many important responsibilities.</p>
+          <p> </p>
+          <p>It's just...if we don't get the seal back, the entire village is in danger of being forgotten.</p>
+          <p> </p>
+          <p>Will you reconsider?</p>          
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll think about it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(This is a rather large stack of stolen items.)</p>
+          <p> </p>
+          <p>(Shining fragments of jewelry, precious stones, and trinkets lay scattered among the dirt and debris. Something catches your eye--something that looks as if it's only been put here recently.)</p>
+          <p> </p>
+          <p>(It must be the Village Seal.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">"Aha! I'll take that!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(You pull at it, but the seal won't budge.)</p>
+          <p> </p>
+          <p>(It seems that all the items are stuck fast.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"Hmmm...there must be another way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Stupid Daeva! what are you doing in this place?</p>
+          <p> </p>
+          <p>Kobolds not like trespassers!</p>
+          <p> </p>
+          <p>If I spotted you, anyone can!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I'm  here for the Village Seal."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, Village Seal. Sounds important, akakak!</p>
+          <p> </p>
+          <p>But you not get it like that. Kobolds stuck all shiny things together. I see. Sprayed some nasty stuff all over them they did.</p>
+          <p> </p>
+          <p>You listen to me. You won't pull it free. Better just go back home.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Go to the Dukaki Mine and find the village seal in the stack of items.</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Get advice from [%dic:STR_DIC_LA45].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Kobolds have stolen the Village Seal. The priest told you that no official documents can be made without the seal, so you promised to find it in the Dukaki Mine.</font></p>
+        </body>
+        </html>
+    </Contents>
+    <notifies>
+        <notify progress="1" pos="2" fontsize="16" showframe="true" time="5" color="yellow">The captive Shugo is pounding on the bars. It may be a good idea to talk to him.</notify>
+    </notifies>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Kobolds stole the Village Seal. Without the Seal, no official documents can be made.</p>
+          <p> </p>
+          <p>At Priest Santenius's request, you went to the Dukaki Mine and found the seal. Unfortunately, you could not get it unstuck from the stack of items.</p>
+          <p> </p>
+          <p>A Shugo locked up nearby told you that the Kobolds had stuck all the items together.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

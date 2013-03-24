@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>제군 이름이 뭔가?</p>
+          <p> </p>
+          <p>뭐라고? 목소리가 안 들린다!</p>
+          <p> </p>
+          <p>[%username]? 어디서 많이 들은 이름이군.</p>
+          <p> </p>
+          <p>제군이 밖에서 얼마나 잘 나갔을지 모르겠지만 여기선 일개 훈련생일 뿐이다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"명심하겠습니다!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>좋아, 태도는 마음에 드는군.</p>
+          <p> </p>
+          <p>본격적인 훈련에 앞서 몇 가지 사항을 알려 주겠다.</p>
+          <p> </p>
+          <p>하나, 제군은 제1 템페르 훈련소에서 훈련을 받을 것이다.</p>
+          <p> </p>
+          <p>둘, 제1 템페르 훈련소에서의 훈련은 모두 단체로 진행된다.</p>
+          <p> </p>
+          <p>셋, 훈련은 생존 방식이다. 제군이 모두 쓰러지거나 상대가 모두 쓰러질 때까지 전투를 멈춰선 안 된다.</p>
+          <p> </p>
+          <p>이래도 훈련을 받겠나?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>무슨 말인지 모두 이해했나? </p>
+          <p> </p>
+          <p>이 정도만 알면 훈련을 받는데 지장은 없을 것이다.</p>
+          <p> </p>
+          <p>그럼 함께할 동료를 구하는 대로  저기 제1 템페르 훈련소 출입문으로 들어가 훈련을 시작해라.</p>
+          <p> </p>
+          <p>그리고 3단계의 최종 상대인 불의 트란과 바람의 트란을 쓰러트린 후 내게 보고하도록!</p>
+          <p> </p>
+          <p>그럼 건투를 빌겠다!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+    <CutScene id="474"/>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>나가는 문은 저기 밖에 있다.</p>
+          <p> </p>
+          <p>제군처럼 약한 정신의 소유자는 우리 카이시넬 템페르도 원치 않는다.</p>
+          <p> </p>
+          <p>더 할 말이 없으면 이만 가 보도록!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>제군 이름이?</p>
+          <p> </p>
+          <p>그래, [%username]. 훈련은 열심히 하고 있나?</p>
+          <p> </p>
+          <p>불의 트란과 바람의 트란을 쓰러트리기로 했던 것 같은데 어떻게 됐나?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>축하한다, 제군!</p>
+          <p> </p>
+          <p>에뇨가 방금 확인을 마쳤다. </p>
+          <p> </p>
+          <p>지금까지 [%userclass]으로서 수련을 게을리하지 않았다면 이 정도 성과는 당연한 것이니 우쭐할 것 없다.</p>
+          <p> </p>
+          <p>제군에게 3단계를 완수했다는 칭호를 내리니 더욱더 훈련에 정진하길 바란다!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">3단계의 최종 훈련 상대를 쓰러트려라</font></p>
+                     <p visible="[%0]"><font color="[%1]">  불의 트란([%2]/1)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  바람의 트란([%5]/1)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Molfus]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">3단계의 최종 훈련 상대인 불의 트란과 바람의 트란을 쓰러트리고 몰푸스 전투교관에게 보고하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>카이시넬 템페르 훈련소의 전투교관인 몰푸스는 훈련소 규칙을 알려주며 3단계의 최종 훈련 상대를 쓰러트리면 보고하라고 했다.</p>
+          <p> </p>
+          <p>동료와 함께 불의 트란과 바람의 트란을 처치하고 몰푸스에게 보고하자 칭호를 내리며 훈련에 더욱더 정진하기를 당부했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

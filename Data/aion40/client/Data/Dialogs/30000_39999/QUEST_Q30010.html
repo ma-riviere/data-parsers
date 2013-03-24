@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님, [%username] 님! </p>
+          <p> </p>
+          <p>마침 잘 오셨습니다. 안 그래도 제가 부탁할 일이 있었거든요.</p>
+          <p> </p>
+          <p>다른 건 아니고 용신도 놈들이 쓰는 무기에 관련된... 음, 무기가 아닌가? 아니, 아니지. 무기에 바르는 거니까 결국은 무기에 관련된 거지! </p>
+          <p> </p>
+          <p>네, 무기에 관련된 겁니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">무슨 일인지 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님도 놈들과 싸운 경험이 있으시죠? </p>
+          <p> </p>
+          <p>그럼 놈들이 쓰는 무기가 이상하게 살상력이 높다는 생각 안 해 보셨습니까?</p>
+          <p> </p>
+          <p>아무래도 이상하다 싶어서 부상당한 데바들의 상처를 조사해 봤더니 거기서 독 성분이 검출됐습니다. </p>
+          <p> </p>
+          <p>이 상황을 종합적으로 고찰해 보면 놈들은 우리가 모르는 독을 무기에 발라 사용하고 있다는 결론이 나옵니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그런데 상처에서 검출된 독의 양이 너무 적어서 어떤 재료로 만든 독인지 알 수가 없습니다.</p>
+          <p> </p>
+          <p>효과적인 해독약을 만들려면 독을 만든 재료를 꼭 알아야만 합니다.</p>
+          <p> </p>
+          <p>그러니까 이 상황을 종합해 보면 누군가가 버려진 우다스 신전으로 가서 놈들이 사용하는 독을 입수해 와야 한다는 결론이 나옵니다.</p>
+          <p> </p>
+          <p>제가 이런 말씀을 드리는 이유는 아시겠죠? [%username] 님이 좀 구해다 주시면 안 될까요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아이고, 정말 감사합니다.</p>
+          <p> </p>
+          <p>놈들이 사용하는 독을 입수하면 제 연구뿐 아니라 다른 데바들의 안전에도 도움이 크게 될 겁니다.</p>
+          <p> </p>
+          <p>버려진 우다스 신전에는 분명히 용신도 놈들이 무기에 바르는 독을 담아 둔 병이 있을 겁니다.</p>
+          <p> </p>
+          <p>그러니 그 [%dic:STR_DIC_E_IDTemple_PoisonBottle_Q30010]를 좀 모아다 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아, 이거 참.</p>
+          <p> </p>
+          <p>[%username] 님만 꽉 믿고 있었는데 이거 좀 차질이 생기겠는데요...</p>
+          <p> </p>
+          <p>그럼 이걸 어쩐다... 허어, 어쩐다...</p>
+          <p> </p>
+          <p>아이고, 제가 또 혼잣말을 하고 있었네요. </p>
+          <p> </p>
+          <p>뭐, 할 수 없지요. [%username] 님은 그만 가 보십시오. </p>
+          <p> </p>
+          <p>독 항아리 일은 어떻게든 제가 알아서 처리할 테니까요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아이고, 돌아오셨습니까!</p>
+          <p> </p>
+          <p>그래, 제가 부탁한 독이 든 유리병은 모아 오셨나요?</p>
+          <p> </p>
+          <p>안 그래도 요새 용신도에게 다치는 사람들이 많아서 제가 아주 마음이 급합니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">독이 든 유리병을 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아니, 왜 빈손이십니까?</p>
+          <p> </p>
+          <p>아, 이거 참... 이제 드디어 놈들의 독을 손에 넣는구나 싶어서 잔뜩 기대를 하고 있었는데... 정말...</p>
+          <p> </p>
+          <p>제가 말씀드리지 않았습니까. 요새 놈들에게 다치는 사람들이 많아서 제가 마음이 급하다고요.</p>
+          <p> </p>
+          <p>그러니 얼른 버려진 우다스 신전으로 가서 용신도 놈들이 무기에 바르는 [%dic:STR_DIC_E_IDTemple_PoisonBottle_Q30010]를 구해다 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아이고, 정말 고생이 많으셨습니다.</p>
+          <p> </p>
+          <p>병이 생각보다 작은 걸 보니 독이 꽤 독한가 봅니다. 놈들도 조심하느라 그런 거겠죠.</p>
+          <p> </p>
+          <p>이제 놈들이 쓰는 독을 손에 넣었으니 얼른 분석해 봐야겠습니다.</p>
+          <p> </p>
+          <p>안 그래도 [%username] 님이 구해 오시기만 하면 얼른 실험해 보려고 각종 시약을 다 준비해 놓고 기다리고 있었거든요.</p>
+          <p> </p>
+          <p>진짜 다시 한번 감사드립니다. 진짜 큰 도움이 됐습니다.  </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">버려진 우다스 신전에서 [%dic:STR_DIC_E_IDTemple_PoisonBottle_Q30010]%을 모아 [%dic:STR_DIC_N_Steurios]에게 가져가라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">용신도들이 무기에 독을 발라서 사용하고 있다고 한다. 버려진 우다스 신전으로 가서 독이 든 유리병을 모으자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>스테우리오스는 용신도가 무기에 바르는 독 때문에 데바들의 부상이 더 심각해지고 있다면서 놈들의 독을 입수해 분석해 봐야겠다고 했다.</p>
+          <p> </p>
+          <p>그래서 버려진 우다스 신전으로 가서 독이 든 유리병을 구해다 주었더니 덕분에 큰 도움이 됐다며 고마워했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

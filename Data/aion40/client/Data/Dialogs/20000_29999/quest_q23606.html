@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님은 이디움에 대해 얼마나 알고 계시오?</p>
+          <p> </p>
+          <p>이디움에 대해 확실한 건 아직 밝혀지지 않았지만 강력한 힘이 응축되어 있는 게 확실하오. 그래서 다들 이디움을 주목하고 있는 것 같소.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_N_OBJ_LDF5_Under_FOBJ_Idium]에서 [%dic:STR_DIC_I_quest_23606a]을 수집해 [%dic:STR_DIC_N_LDF5_Under_Oturu_E]에게 가져가 주지 않겠소?</p>
+          <p> </p>
+          <p>지상에 있는 상부에서 지하의 이디움을 올려보내 달라는 명령이 왔는데 요구량이 약간 부족한 상태라오.</p>
+          <p> </p>
+          <p>급한 일이니 빨리 수행해 주실 수록 좋소.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이디움을 지상으로 보내야 할 기한이 얼마 남지 않았습니다.</p>
+          <p> </p>
+          <p>많은 양이 비는 것은 아니지만 딱 맞는 숫자를 채워야 아무 말이 없겠지요.</p>
+          <p> </p>
+          <p>상부도 그렇고 브리프 형님도 그렇고 말입니다.</p>
+          <p> </p>
+          <p>앗, [%username] 님 손에 그건 혹시 이디움 아닙니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">빛 어린 이디움을 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>빛 어린 이디움을 구해다 주셔서 고맙습니다.</p>
+          <p> </p>
+          <p>하마터면 기한을 지키지 못한 책임을 제가 물을 참이었거든요.</p>
+          <p> </p>
+          <p>직접 구하러 나서기라도 해야 하나 고민하며 발만 동동 구르고 있었다지요.</p>
+          <p> </p>
+          <p>이디움과 함께 지상으로 보낼 서신에 [%username] 님의 이름도 함께 올리도록 하겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_OBJ_LDF5_Under_FOBJ_Idium]에서 [%dic:STR_DIC_I_quest_23606a]을 수집하여 [%dic:STR_DIC_N_LDF5_Under_Oturu_E]에게 가져가라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">지상으로 보낼 빛 어린 이디움을 모아가자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>브리프는 이디움을 지상으로 올려보내 달라는 상부의 명령이 내려왔는데 요구량이 부족하다고 했다.</p>
+          <p> </p>
+          <p>브리프의 부탁대로 지하광맥 이디움에서 빛 어린 이디움을 수집하여 오투르에게 가져가자 고마워 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

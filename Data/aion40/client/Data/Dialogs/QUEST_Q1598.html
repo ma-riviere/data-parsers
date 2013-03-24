@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>죽음이 휩쓸고 간 이곳에 이런 모습을 하고 서 있는 게 얼마나 괴로운 일인지 모릅니다.</p>
+          <p> </p>
+          <p>하지만 언데드가 된 장원 식구들 모두가 안식을 얻을 때까지 전 여기를 떠날 수 없습니다.</p>
+          <p> </p>
+          <p>메데우스 장원에는 많은 일꾼들이 있었습니다. 대부분 다른 지역에서 온 오갈 데 없는 남자들이었지요.</p>
+          <p> </p>
+          <p>일은 힘들었지만 모두들 꿈을 가지고 열심히 일했습니다. 영주님께서 계약 기간이 끝나고 정착할 수 있게 토지를 나눠 주겠다고 약속하셨거든요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>하지만 그들 역시 크랄 전쟁 때 목숨을 잃었지요.</p>
+          <p> </p>
+          <p>그리고 지금도 이 메데우스 장원을 떠나지 못하고 일을 하고 있습니다.</p>
+          <p> </p>
+          <p>그들을 가엾게 여기신다면 [%dic:STR_DIC_M_UndeadfarmerLM_40_An]과 [%dic:STR_DIC_M_UndeadfarmerLF_40_An]에게 영원한 안식을 주세요.</p>
+          <p> </p>
+          <p>이제는 쉴 수 있게 말입니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>고맙습니다.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_UndeadfarmerLM_40_An]과 [%dic:STR_DIC_M_UndeadfarmerLF_40_An]들은 자신들이 언데드가 된 줄도 모르고 있습니다. 칼카스와 멤피온처럼 말입니다.</p>
+          <p> </p>
+          <p>그래서 아마 [%username] 님께 저항할지도 모릅니다. 다치지 않게 조심하십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>저 혼자선 언데드가 된 장원 식구들은 도울 수가 없습니다.</p>
+          <p> </p>
+          <p>부디 자비로 저희를 도와주세요.</p>
+          <p> </p>
+          <p>자신이 죽은 줄도 모르는 영혼들이 고통 속에 신음하고 있습니다. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>언데드 부역꾼과 언데드 노역꾼들은 모두 오드의 흐름 속으로 돌아갔나요?</p>
+          <p> </p>
+          <p>많이 고통스러워 하던가요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 말한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그 사람들을 생각할 때마다 마음이 아팠는데 이제 한시름 놓았습니다.</p>
+          <p> </p>
+          <p>산 자들은 알지 못합니다. 삶과 죽음의 경계인 이곳이 얼마나 고통스러운 곳인지 말입니다.</p>
+          <p> </p>
+          <p>언데드가 되었던 부역꾼과 노역꾼들도 [%username] 님께 감사할 겁니다. 제가 그들을 대표해서 감사드리지요.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">언데드가 된 장원 일꾼에게 안식을 주어라</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_UndeadfarmerLM_40_An]([%2]/6)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_UndeadfarmerLF_40_An]([%5]/4)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_UndeadManager_Kacias]에게 결과를 알려라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">메데우스 장원에서 고용한 일꾼들이 언데드가 된 지금도 계속 일을 하고 있다고 한다. 그들을 안타까워하는 집사 카시야스를 위해 언데드 부역꾼과 노역꾼을 오드의 흐름으로 보내주자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>집사 카시야스는 메데우스 장원에서 고용한 일꾼들이 언데드가 되어 떠도는 것을 매우 안타깝게 생각했다.</p>
+          <p> </p>
+          <p>그들이 편히 쉴 수 있도록 도와달라는 부탁을 받아 언데드 부역꾼과 언데드 노역꾼을 오드의 흐름 속으로 돌려보냈다.</p>
+          <p> </p>
+          <p>카시야스는 그들도 편히 쉬며 감사하고 있을 거라며 고마워했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

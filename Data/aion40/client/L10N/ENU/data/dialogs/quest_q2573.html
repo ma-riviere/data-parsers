@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Have you seen the Porguses wandering about the village?</p>
+          <p> </p>
+          <p>They used to be village livestock, but now they're undead. Undead porguses. It's almost laughable.</p>
+          <p> </p>
+          <p>But the problem is...some people are still treating them like pets or livestock, instead of the monsters they are.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Sounds like a bad idea."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It is. I've seen villagers actually trying to feed them. What if one of them got bitten? We'd have even more undead to plague us. </p>
+          <p> </p>
+          <p>I think it might be best for all concerned if we eliminate them.</p>
+          <p> </p>
+          <p>Would you be interested in the job, [%username]? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good. We've already slaughtered most of the ones that followed the villagers here. I'd like you to eradicate any [%dic:STR_DIC_M_UndeadPorgussD_36_An]es wandering about the Besfer Ghost Village.</p>
+          <p> </p>
+          <p>And while you're there, take care of the [%dic:STR_DIC_M_ZaifUndeadD_37_An]s as well. The Worgs that fed on the Porguses became undead themselves. Nasty business.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Blood for blood!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Perhaps you think it's acceptable to ignore your duties as a Daeva. </p>
+          <p> </p>
+          <p>I can ill-afford the services of Daevas who have forgotten what duty is.</p>
+
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I know my duty."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I take it you're back from Besfer Ghost Village?</p>
+          <p> </p>
+          <p>Battling undead Worgs and Porguses, right?</p>
+          <p> </p>
+          <p>How did it go?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"It wasn't easy."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well done.</p>
+          <p> </p>
+          <p>I'm sure I'll have more work for you soon.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Eradicate the undead Worgs and Porguses that threaten Human safety.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_ZaifUndeadD_37_An] ([%2]/6).</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_UndeadPorgussD_36_An] ([%5]/10).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report the result to [%dic:STR_DIC_N_Sleipnirr].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Eradicate the undead Worgs and Porguses in the Besfer Ghost Village.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Centurion Sleipnir asked you to eradicate undead porguses.</p>
+          <p> </p>
+          <p>He also asked you to kill undead Worgs while you were at the ghost village.</p>
+          <p> </p>
+          <p>You destroyed the undead Worgs and Porguses as the Centurion ordered, and when you returned he commended your effort and gave you a reward. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

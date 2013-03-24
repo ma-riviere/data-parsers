@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Kysis Fortress. Just one look at it tells you of its strength.</p>
+          <p> </p>
+          <p>The Ellies fought for nearly a week to take it from us, and we made sure they bled deeply for it all the while.</p>
+          <p> </p>
+          <p>It'll be twice as hard for us to take it back.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"We are Asmodians. We are strong enough."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Strength alone does not guarantee victory. We haven't the manpower to do what they did, to support a sustained frontal assault.</p>
+          <p> </p>
+          <p>But we have the cunning to go with another plan. We will strike them in many places at once, with small, fast squads.</p>
+          <p> </p>
+          <p>We already have a squad to deal with the Balaur garrison, and now we are looking for volunteers to handle the [%dic:STR_DIC_M_2813_all].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes. Your strength will serve Asmodae well.</p>
+          <p> </p>
+          <p>Go to Kysis Fortress. Wait for a signal indicating that the fortress is vulnerable.</p>
+          <p> </p>
+          <p>Then strike at the [%dic:STR_DIC_M_2813_all]. If you return with [%dic:STR_DIC_I_QUEST_2813a]s, I will even give you a reward.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Blood for blood."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>A true Asmodian warrior always thirsts for the blood of his enemies.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"My taste for blood is sated."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You have returned. What news of the situation at Kysis?</p>
+          <p> </p>
+          <p>I want to see proof of victory. Show me the [%dic:STR_DIC_I_QUEST_2813a]s you brought.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"The proof is here."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I am sure you have slaughtered many Elyos. But if you want payment, I need insignias.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I will return with the proof."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent. You are the first squad to return, but I'm quite confident the others will carry out their missions.</p>
+          <p> </p>
+          <p>After all, they're much stronger than you are.</p>
+          <p> </p>
+          <p>Here is the reward for your service.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Destroy the [%dic:STR_DIC_M_2813_all], gather the proof and return to [%dic:STR_DIC_N_Geri].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">You volunteered to join the raid to reclaim Kysis Fortress. Defeat the Elyos garrison that appears when the fortress enters the Vulnerable State, and gather the proof of your deed.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Geri said they were conducting raids to retake the Kysis Fortress, and asked you to join them.</p>
+          <p> </p>
+          <p>You accepted his request, and when you returned after defeating the Elyos garrison of Kysis Fortress he rewarded you.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

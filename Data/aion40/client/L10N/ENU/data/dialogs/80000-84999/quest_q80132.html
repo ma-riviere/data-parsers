@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Your name is [%username], is it not? My partner Craig and I have been told much about you. Yes...much.</p>
+          <p> </p>
+          <p>I know things about you that you don't know. It all concludes in one thing: someone I can count on.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Uh, count on for what?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I am part of a covert organization overseen by Lady Lumiel herself. We take on tasks across Atreia no one else will, or can, touch.</p>
+          <p> </p>
+          <p>But no one is perfect. My latest mission met with some problems that have thrown off my entire schedule.</p>
+          <p> </p>
+          <p>I need someone to fix these problems in my stead. I think you're the one.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Let me get right to the point: I need you to fight [%dic:STR_DIC_M_Branch_Event_ElementalFire2_DARK_99_n].</p>
+          <p> </p>
+          <p>Bring back the [%dic:STR_DIC_I_QUEST_80132A]s they stole from me. Be careful handling them.</p>
+          <p> </p>
+          <p>I'm sorry I can't tell you more, but the less you know, the safer it is for you. Good luck.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Hope I don't regret this...."</Act>
+    </Selects>
+
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Shards! I'll have to talk to some of my sources. Looks like their recon on you was flawed.</p>
+          <p> </p>
+          <p>Just don't go telling anyone we talked, or that we ever met. It's healthier for you that way.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Nice threat, there."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hmmm.... He definitely needs some persuasion.... If I can just get the iron hot enough...</p>
+          <p> </p>
+          <p>Oh! [%username]! I didn't see you. Can I assume that you got those herbs I need?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"They sure SEEM ordinary...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well done. Now give those to... Careful! Lucky we were both wearing gloves, or we'd...be sorry.</p>
+          <p> </p>
+          <p>You've certainly impressed me, [%username]. You're as good as they say.</p>
+          <p> </p>
+          <p>There's another task to be done, and you've just proved that you can handle it.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>And how would you know what [%dic:STR_DIC_I_QUEST_80132A]s are like? You've obviously not seen enough to tell.</p>
+          <p> </p>
+          <p>The [%dic:STR_DIC_M_Branch_Event_ElementalFire2_DARK_99_n] shouldn't be too horribly tough for a Daeva of your caliber.</p>
+          <p> </p>
+          <p>Nothing I've heard indicates you're a coward.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"And just what HAVE you heard about me...?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Find the [%dic:STR_DIC_I_QUEST_80132A]s and give them to [%dic:STR_DIC_N_event_Heloise].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Find the Sticky Herbs that the Star Debris stole and return them to Heloise.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>A circumspect Daeva named Heloise asked for your aid in retrieving special herbs stolen by Star Debris.</p>
+          <p> </p>
+          <p>You retrieved the herbs and returned them to Heloise, who felt enough confidence in you to make another request.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

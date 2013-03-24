@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What good news! They're sending a team to investigate the Havenjark Farm to the north, and Dehen wants me to keep them safe during their investigation. </p>
+          <p> </p>
+          <p>Dehen could have picked any of us. But he chose me, [%username]!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Blood for blood!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Indeed! But I'm a little worried--I've heard that the Havenjark Farm is swarming with Undead, and I'll be the only trained soldier out there.</p>
+          <p> </p>
+          <p>What if they attack all at once? I'd be overwhelmed!</p>
+          <p> </p>
+          <p>[%username], could you clear the Undead from the Havenjark Farm before I get there.?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You can help? Thank you--thank you so much!</p>
+          <p> </p>
+          <p>It is said that the [%dic:STR_DIC_M_BookieD_23_An]s and [%dic:STR_DIC_M_BansheeD_23_An]s are the most dreadful. But with the power of Aether behind a Daeva like you, I'm sure you'll obliterate them easily.</p>
+          <p> </p>
+          <p>One other thing: don't tell anyone I asked you to do this. It's no big deal to tell you that I'm worried, [%username], but I should put on a brave face so the civilian researchers don't worry.</p>
+           <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"The task is mine!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Too much to ask, I suppose. You must be busy with the duties of a Daeva.</p>
+          <p> </p>
+          <p>The research group will leave in several days, and I'll just have to protect them as best I can.</p>
+          <p> </p>
+          <p>Maybe it's the will of the Shedim Lords that I be tested at the farm. Adversity is the soil where strength grows, is it not?</p>        
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"It is indeed."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Could you lower your voice?</p>
+          <p> </p>
+          <p>Snill can hear a loud voice over the crackling of that fire, you know.</p>
+          <p> </p>
+          <p>Is the Havenjark Farm free of Undead?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"You don't need to worry anymore..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You eliminated the Banshees and Boggarts?</p>
+          <p> </p>
+          <p>What a relief! Now I can go to Havenjark Farm without worrying.</p>
+          <p> </p>
+          <p>Your strength has inspired me. If you can clear the farm of Undead, the least I can do is keep it safe from now on, eh?</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Eliminate the Undead at the Havenjark Farm.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_BookieD_23_An] ([%2]/20)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_BansheeD_23_An] ([%5]/15)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report the result to [%dic:STR_DIC_N_Dettil].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Eliminate Boggarts and Banshees wandering about the Havenjark Farm so that Dettil can guard the research group without fear.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Dettil was proud that Dehen chose her to watch over a group of researchers heading to Havenjark Farm.</p>
+          <p> </p>
+          <p>But her pride turned to concern when she learned about the Undead infesting the farm. She asked you to eliminate Snickering Boggarts and Wailing Banshees before the research group left for the farm.</p>
+          <p> </p>
+          <p>After defeating the Boggarts and Banshees, you reported back to her. Dettil promised to work just as hard to keep the farm free of Undead as you did to make it safe in the first place.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

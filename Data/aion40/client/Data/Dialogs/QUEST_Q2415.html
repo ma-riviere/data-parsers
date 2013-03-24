@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>여기로 올라오면서 보셨죠? 언덕 아래의 트롤과 트롤킨 말입니다. 요즘 놈들 때문에 골치가 이만저만 아픈 게 아닙니다.</p>
+          <p> </p>
+          <p>길목을 막고서 지나는 사람들을 공격하는 통에 보급품이며 중요한 서신을 제대로 못 받고 있어요.</p>
+          <p> </p>
+          <p>게다가 무섭게 숫자가 늘어나니 저러다가 결계탑이라도 쳐들어오는 건 아닌지 겁이 납니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그전에 미리 손을 쓰는 게 좋을 것 같은데 [%username] 님이 도와주시면 안 되겠습니까?</p>
+          <p> </p>
+          <p>보다시피 굴베이그와 전 결계탑에 매인 몸이라서요.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_TrollReD_36_An]과 [%dic:STR_DIC_M_TrollkinD_36_An]이 더는 활개를 치지 못하게 막아 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정말 감사합니다.</p>
+          <p> </p>
+          <p>그럼 [%dic:STR_DIC_M_TrollReD_36_An] 7마리와 [%dic:STR_DIC_M_TrollkinD_36_An] 3마리를 처치해 주세요. </p>
+          <p> </p>
+          <p>놈들이 우둔해 보인다고 얕보시면 안 됩니다. 무섭게 힘이 센 놈들이니까요.</p>
+          <p> </p>
+          <p>그럼 조심히 다녀오십시오. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>알겠습니다. 다른 분께 부탁을 드려야겠군요.</p>
+          <p> </p>
+          <p>하지만 [%username] 님만큼 실력이 좋은 분을 다시 만날 수 있을지 걱정이네요.</p>
+          <p> </p>
+          <p>트롤과 트롤킨의 기세는 점점 더 드세지고 있으니까요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>트롤과 트롤킨은 모두 처치했습니까?</p>
+          <p> </p>
+          <p>끈질긴 놈들이라 상대하기 힘들었을 텐데 어디 다친 데는 없고요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이제 사람들이 안심하고 결계탑으로 올 수 있겠네요.</p>
+          <p> </p>
+          <p>모두 [%username] 님 덕분입니다.</p>
+          <p> </p>
+          <p>그대의 앞길에 아스펠의 영광이 함께하길.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">결계탑으로 올라오는 길을 점령한 트롤과 트롤킨을 처치하라</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_TrollReD_36_An]([%2]/7)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_TrollkinD_36_An]([%5]/3)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Angrboda]와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">사람들이 안심하고 결계탑을 방문할 수 있도록 트롤과 트롤킨을 처치해야겠다.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>앙그르보다는 트롤과 트롤킨이 결계탑으로 오는 사람들을 공격한다며 그들을 처치해 달라고 부탁했다.</p>
+          <p> </p>
+          <p>일손이 부족한 결계 수호자를 대신해 트롤 산적과 트롤킨 도적을 처치하자 앙그르보다가 무척 고마워했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

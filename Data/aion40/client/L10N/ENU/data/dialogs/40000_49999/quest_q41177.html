@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q41177</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(It's a very old map. It's more ancient than anything you've ever seen.)</p>
+          <p> </p>
+          <p>(This part looks like [%dic:STR_DIC_W_LDF4a_sarpan_main], but the rest is a faded mess.)</p>
+          <p> </p>
+          <p>(You probably need a [%dic:STR_DIC_E_Q41177_yohar] to make heads or tails of it.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Might as well try."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, hello, [%username]. Care to join me for a... What's that? Map? Oh, sure, lemme take a look.</p>
+          <p> </p>
+          <p>Sheesh! This is old! But I thiiiiink I recognize this place. So that must be... And this should be...</p>
+          <p> </p>
+          <p>Here ya go. All nice 'n neat! You can trust my judgment, yessiree! So how 'bout a drink fer the road?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"No, thanks. Got a map to follow."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(It's an old box.)</p>
+          <p> </p>
+          <p>(You can't make out any markings to show ownership. It must've been buried here for a long time.)</p>
+          <p> </p>
+          <p>(It's quite heavy, which fuels your sense of expectation.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"C'mon, be something good...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(The chest opens. The musty scent of ages wafts out.)</p>
+          <p> </p>
+          <p>(You take a close look inside and see its contents.)</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Go to [%dic:STR_DIC_W_LDF4a_SZ_OP_17] and show the map to [%dic:STR_DIC_N_yohar].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Dig in the area the treasure map points to.</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Open the treasure box.</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">You obtained an old map. Take it to Yohar.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You found an old map, but it was so faded you could hardly read it.</p>
+          <p> </p>
+          <p>You showed it to Yohar, who managed to somehow decipher the map so you could read it.</p>
+          <p> </p>
+          <p>You dug the area the map indicated and found a treasure box!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

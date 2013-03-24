@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's hurting morale, having to sit and wait here like this. You may have heard rumblings among the men...</p>
+          <p> </p>
+          <p>Nevertheless, we must wait for reinforcements before we try anything.</p>
+          <p> </p>
+          <p>We just don't have the force to take them head-on.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I could be your reinforcements."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, would you? Not you alone of course, since I was going to ask you to kill elite troops, and they're no pushovers.</p>
+          <p> </p>
+          <P>But if you could get some friends to help you out, taking down those troops would be great for morale.</P>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Let me give you some advice: hit them when the fortress is vulnerable.</p>
+          <p> </p>
+          <p>Other than that, this should be simple, if your allies are as strong as you say.</p>
+          <p> </p>
+          <p>One more thing: if the [%dic:STR_DIC_M_2812_all] is carrying [%dic:STR_DIC_I_QUEST_2812a]s, could you bring them back to me? Trophies are great for morale.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Blood for blood."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Take your time. I certainly don't expect you to take on an elite garrison alone.</p>
+          <p> </p>
+          <p>If it were that easy, I'd do it myself.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I shall return."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <P>My men are getting impatient. Especially Lodurr.</P>
+          <p> </p>
+          <p>I don't think they'd be very happy if you returned empty-handed.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Will this cheer them up?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh no, that's not good. The men won't like it if you don't have something to show them.</p>
+          <p> </p>
+          <p>Get back out there and bring back those flags, or I'll be too busy quelling a mutiny to reward you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll bring back Elyos heads if I must."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes, that will do nicely. I'll call a meeting with my men shortly, and maybe you could tell them about the battle.</p>
+          <p> </p>
+          <p>We still have to keep our position here, but hearing stories of glorious battle can be almost as good as the real thing.</p>
+          <p> </p>
+          <p>Well, perhaps not...</p>
+          <p> </p>
+          <p>Oh yes, your reward. Here it is.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Destroy the [%dic:STR_DIC_M_2812_all], gather the proof and return to [%dic:STR_DIC_N_Rathgrid].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Defeat the elite Elyos garrison at Krotan Refuge when it is vulnerable and gather the Flags of Krotan Refuge.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Centurion Radgrid asked asked you to help his troops' morale by defeating the Elyos elite garrison at Krotan Refuge, and returning with their flags as trophies.</p>
+          <p> </p>
+          <p>When you returned with the Flags of Krotan Refuge after defeating the Elyos as the Centurion asked, he thanked you and said his men would appreciate it.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

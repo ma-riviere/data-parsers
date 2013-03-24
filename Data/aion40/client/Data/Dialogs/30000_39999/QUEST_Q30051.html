@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>잘 왔습니다, [%username] 님.</p>
+          <p> </p>
+          <p>이곳의 상황이 갈수록 어려워져 고민입니다. 마족이 생각보다 훨씬 활발하게 활동하고 있어서 말입니다.</p>
+          <p> </p>
+          <p>실렌테라 회랑의 중요성은 제가 따로 말씀드리지 않아도 잘 아시겠죠?</p>
+          <p> </p>
+          <p>그러니 상황이 어떻건 간에 우리 천족이 이곳의 주도권을 잡아야만 합니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">고개를 끄덕인다.</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>주도권을 잡으려면 마족 놈들에게 직접적으로 타격을 가하는 게 나을 겁니다.</p>
+          <p> </p>
+          <p>하지만 [%username] 님 못지 않게 실력이 뛰어난 놈들이라 우리 힘만으론 힘들군요.</p>
+          <p> </p>
+          <p>[%username] 님 같은 전문가가 도와주면 정말 큰 도움이 될 겁니다.</p>
+          <p> </p>
+          <p>실렌테라 회랑에서 마족을 처치하는 일에 힘을 보태 주시겠습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>마족이라고 해서 아무나 처치해서는 별로 도움이 되지 않을 겁니다.</p>
+          <p> </p>
+          <p>[%username] 님과 실력이 비슷하거나 조금 더 뛰어난 마족 데바를 처치해 주십시오.</p>
+          <p> </p>
+          <p>물론 이 실렌테라 회랑에서 말입니다.</p>
+          <p> </p>
+          <p>실렌테라 회랑에 있는 마족 놈을 모두 밀어내면 겔크마로스까지 점령할 수 있는 토대가 마련될 겁니다.</p>
+          <p> </p>
+          <p>그럼 수고해 주십시오! </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님이 이 일을 거절하실 줄은 몰랐습니다.</p>
+          <p> </p>
+          <p>이 임무에는 [%username] 님이 최고의 적임자라고 생각했는데 말입니다.</p>
+          <p> </p>
+          <p>제가 아무리 적임자라고 생각해도 [%username] 님이 그렇게 생각하지 않으면 아무 소용 없지요.</p>
+          <p> </p>
+          <p>다른 분을 찾아 임무를 부탁할 테니 [%username] 님은 그만 가 보십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>돌아오셨군요, [%username] 님.</p>
+          <p> </p>
+          <p>임무는 어떻게 됐습니까?</p>
+          <p> </p>
+          <p>실렌테라 회랑에 들어온 마족을 얼마나 처치했는지 아주 궁금하군요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>역시 [%username] 님은 이 방면의 전문가군요!</p>
+          <p> </p>
+          <p>힘든 임무인데 정말 수고 많았습니다.</p>
+          <p> </p>
+          <p>잘 알고 있겠지만 실렌테라 회랑에 아직 남아있는 마족이 많습니다. </p>
+          <p> </p>
+          <p>그러니 앞으로도 조금 더 부탁드리겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">실렌테라 회랑에서 [%dic:STR_DIC_E_Q30051]을 처치하라([%2]/7)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Asinelli]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">실렌테라 회랑에서 천족이 주도권을 장악하는 데 도움을 주기 위해 회랑 안에 있는 마족을 처치해 주기로 했다.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아시넬리는 실렌테라 회랑에 생각보다 마족이 많다면서 천족이 주도권을 잡으려면 놈들을 처치해야 한다고 했다.</p>
+          <p> </p>
+          <p>그래서 비슷한 실력을 지닌 마족을 처치하고 아시넬리에게 보고했더니 아직도 마족이 많다면서 앞으로도 잘 부탁한다고 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

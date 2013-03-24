@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]:</p>
+          <p> </p>
+          <p>For the Field Wardens to advance our mission further, we require more than Pandaemonium is able to provide directly.</p>
+          <p> </p>
+          <p>To this end we have been in contact with a fortress quartermaster named [%dic:STR_DIC_N_Inauke].</p> 
+          <p> </p>
+          <p>Meet privately with her and see if she has any updates, then bring any news to a [%dic:STR_DIC_E_45021].</p>
+          <p> </p>
+          <p>May the protection of the Aion Tower go with you, Warden.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">(Dip the letter in acid.)</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Can I help you, [%username]? We just received new supplies from Pandaemonium.</p>
+          <p> </p>
+          <p>See anything you like...Warden?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">"Good eyes."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+        	<p>Why thank you. Now listen.</p>
+        	<p> </p>
+          <p>The enemies of the Field Wardens are everywhere, yet I continue to do what I can to help, at great risk. However, I've found evidence that another spy has infiltrated one of the supply ships.</p>
+          <p> </p>          
+          <p>Until I know who the spy is, and where they are from, I must...hold off on my "assistance" for a while.</p>
+          <p> </p>
+          <p>Please deliver this message, with my condolences.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"Certainly. Goodbye."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You know, the Field Wardens don't seem to be a big organization, but we have many allies. Of course, with such ambitious goals we also have many enemies, so we should always be wary....</p>
+          <p> </p>
+          <p>[%username], did you have a message for me?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Yes..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes, I had heard of this. We think this spy is one of the Lepharist Revolutionaries. Fortuantely it was not who we thought, but Norrin is wise to remain cautious. We cannot allow our...relationship to be exposed.</p>
+          <p> </p>
+          <p>Thank you for your efforts--here is your just reward.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk with [%dic:STR_DIC_N_Inauke].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Talk with [%dic:STR_DIC_E_45021].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">A letter has arrived from the Field Wardens. Follow its instructions.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>A letter from the Field Wardens asked you to meet with a fortress quartermaster who is cooperating with the Wardens.</p>
+          <p> </p>
+          <p>You met Norrin and delivered her message to a Gelkmaros Field Agent, who gave you a reward.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

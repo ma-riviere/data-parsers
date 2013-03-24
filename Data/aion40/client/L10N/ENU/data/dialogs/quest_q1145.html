@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's useless, there's nothing I can do.</p>
+          <p> </p>
+          <p>Can't pick fruit in the forests because of the Frillnecks, can't get food from the farm because of the thieves. We've got to pick what we can from along the road.</p>
+          <p> </p>
+          <p>I told [%dic:STR_DIC_N_Eradis] in Tolbas Village I'd fetch him some [%dic:STR_DIC_I_vegetable_n_c_10a]. But it looks like I'm gonna have to go back empty-handed.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"What's Kukuru?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Only the tastiest vegetable in the world!</p>
+          <p> </p>
+          <p>Good and sweet, and mighty tasty with butter and pepper.</p>
+          <p> </p>
+          <p>Belbua was growing a small crop, but now those Lepharist thieves have taken over the farm.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Sounds like a bad situation."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Look, Daeva, I hate to presume, but would you help me keep my word to Eradis?</p>
+          <p> </p>
+          <p>He cooks for the whole village, and I don't want to see them go hungry.</p>
+          <p> </p>
+          <p>If you fight those thieves, you could bring me back some [%dic:STR_DIC_I_vegetable_n_c_10a].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Great! Go down to the field in [%dic:STR_DIC_FLA24], and you should find plenty of [%dic:STR_DIC_I_vegetable_n_c_10a].</p>
+          <p> </p>
+          <p>Four nice big ones should be enough.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be back with your Kukuru."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah.</p>
+          <p> </p>
+          <p>Aw, blast it. Looks like I'm gonna have to break my word.</p>
+          <p> </p>
+          <p>Guess we're gonna have to start eating grass and twigs.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Sorry."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Just keep looking...ignore the rumbling stomach...keep looking...</p>
+          <p> </p>
+          <p>Daeva! Did you find any [%dic:STR_DIC_I_vegetable_n_c_10a]?</p>
+          <p> </p>
+          <p>Those Lepharists haven't looted all of it, have they?</p>   
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I found some."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Is this a joke?</p>
+          <p> </p>
+          <p>I don't know if you heard me, but that village is counting on you.</p>
+          <p> </p>
+          <p>Please fetch some [%dic:STR_DIC_I_vegetable_n_c_10a].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm on it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+        	<p>Well done, [%username]!</p>
+          <p> </p>
+          <p>Leave them with me. I'll take them to Eradis when I'm done.</p>
+          <p> </p>
+          <p>Thanks for taking the time to help. You really made a difference.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect [%dic:STR_DIC_I_vegetable_n_c_10a] and bring it to [%dic:STR_DIC_N_Ondanius].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">[%dic:STR_DIC_N_Ondanius] asked you to harvest Kukuru. Go down to the field in Belbua's Farm and gather some.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ondanius had agreed to collect some Kukuru, but the Lepharists at the farm were stopping him.</p>
+          <p> </p>
+          <p>You gathered some Kukuru from Belbua's Farm and brought it to him.</p>  
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The girl! She's in danger! The murderer is someone inside the fortress! But...I don't know who.</p>
+          <p> </p>
+          <p>I must have been on my way to warn her.... I was taking an airship...I remember now. But it crashed.</p>
+          <p> </p>
+          <p>Oh... Oh! Everybody died. Including me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="PLAYEMOTION_think;HACTION_SELECT1_1">"So why didn't you return to the flow of Aether?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I must have unfinished business here...maybe I have to warn the girl! Oh, but maybe it's too late for her....</p>
+          <p> </p>
+          <p>Wait, there was a book....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"But I gave you your notebook."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Not my notebook. Another book...Oh, this is embarrassing.... </p>
+          <p> </p>
+          <p>I remember about the girl and the murderer now. They're from a novel I was reading when I died. It was a great read! But I never got to the ending before...you know.</p>
+          <p> </p>
+          <p>Maybe if I find out how it ends, I'll get to pass into the flow of Aether. Would you help me find it?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I was reading it when the airship crashed.... Everything went black, and when I came to, I saw a giant Ksellid eating the bodies.</p>
+          <p> </p>
+          <p>He must have eaten the book when he ate me! You'll have to kill him to get it back. The book's called "[%dic:STR_DIC_I_QUEST_2325a]."</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"We'll see...if it hasn't been digested yet."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>How will I ever obtain peace now?</p>
+          <p> </p>
+          <p>I just have to know how that book ends!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Maybe some other traveler will know."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Who was the murderer? I thought it was Farfnig, but then he was murdered too....</p>
+          <p> </p>
+          <p>Do you have the book? Who was it?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"This should give you the answers...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, that's not the book I was looking for.</p>
+          <p> </p>
+          <p>I suppose I can wait as long as it takes. But I have to know who the murderer is!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"All right, one more time...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes! That's the book! Thank you!</p>
+          <p> </p>
+          <p>Oh, so Bastron did it. That's a little cliche, don't you think?</p>
+          <p> </p>
+          <p>Frankly, I'm disappointed. But at least I can pass on to my eternal rest.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Defeat [%dic:STR_DIC_M_ShellizardNamedDQ_25_An] and take the book to [%dic:STR_DIC_N_Hermod].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Get Hermod the novel "Bone Speaks" so that he can return to the flow of Aether.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hermod believed that he could not return to the flow of Aether because never finished the novel he was reading.</p>
+          <p> </p>
+          <p>You defeated the Mutant Ksellid that ate his corpse and returned the book to him.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

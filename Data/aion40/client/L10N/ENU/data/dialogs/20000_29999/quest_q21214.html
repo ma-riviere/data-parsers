@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>For all their savagery, the Balaur are such fascinating creatures.</p>
+          <p> </p>
+          <p>Their technology--Drana, the Dredgion, the rift they opened in Dark Poeta...it's simply astounding! The Balaur might appear crude, but their aptitude for technology rivals that of even the shrewdest Shugo tinkerers.</p>
+          <p> </p>
+          <p>To have any hope of defeating the Balaur, we need to know more about them. Don't you agree, [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Knowing your enemy is important."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes! Knowing is half the battle, I always say. I just wish my little brother Itar was more concerned with knowledge. Our family has produced a dozen renowned scholars, but sometimes I think he just doesn't have it in him.</p>
+          <p> </p>
+          <p>Anyway, that's neither here nor there. While I was out in the field protecting naive little Itar from the fierce beasts of Balaurea, I noticed an abandoned Drana Growing Device in the Dragonrest.</p>
+          <p> </p>
+          <p>I'd love to get my hands on it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Why don't you?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's too dangerous to take Itar there with me, and I couldn't leave him here alone. Perhaps you could fetching it for me, [%username]?</p>
+          <p> </p>
+          <p>Bring it back here, and I might be able to learn how the Balaur operate it. Then we Asmodians will be able to use it!</p>
+          <p> </p>
+          <p>If this works, I'll gain renown from Lady Lumiel, and bring glory to our entire family! I fear I'm our only hope.... Poor Itar just lacks the conviction of a true scholar.</p>
+          <p> </p>
+          <p>Well, what do you think? Will you help me?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+  
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent! Head to the Dragonrest and locate the [%dic:STR_DIC_OBJ_DF4_RuinedDranaSuction_Q21214]. The device itself is too big to move, but its power generator should be a superb specimen.</p>
+          <p> </p>
+          <p>Well, what are you waiting for? Get going!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Going, going, gone!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You...you're not a scholar...are you, [%username]?</p>
+          <p> </p>
+          <p>You don't seem all that smart to me, but...</p>
+          <p> </p>
+          <p>Are you planning to steal my specimen for your own research?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Don't flatter yourself."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Bah! I can't make heads or tails of this Balaur technology! There are bits of it I understand, but none of it is clear. If only I could somehow become one of the Balaur...</p>
+          <p> </p>
+          <p>Kidding, of course, [%username], I would never want to become one of those monsters...probably.</p>
+          <p> </p>
+          <p>Well, did you find the power generator?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here it is."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What's this? You don't have it, [%username]!</p>
+          <p> </p>
+          <p>I thought you had already been to the Dragonrest?</p>
+          <p> </p>
+          <p>How dare you try to trick me! If this is some kind of joke, I am not amused!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Well, I thought it was funny."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This is the power generator? It's far more damaged than I had anticipated.... But I swear on Azphel's name, I won't leave Gelkmaros until I make a discovery worthy of our family!</p>
+          <p> </p>
+          <p>Yes, all shall know the name of Tanar! Well, and his little brother Itar, who made many discoveries but always lived in the shadow of true greatness.</p>
+          <p> </p>
+          <p>We always repay our debts in my family, so please take this, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+          <step><p visible="[%0]"><font color="[%1]">Obtain a part from an [%dic:STR_DIC_OBJ_DF4_RuinedDranaSuction_Q21214] and take it to [%dic:STR_DIC_N_Tanar].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Detach the power generator from a Drana Growing Device abandoned in the Dragonrest and bring it to Tanar.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>While traveling near the Dragonrest, Tanar spotted an abandoned Drana Growing Device, and wanted to use its power generator for research.</p>
+          <p> </p>
+          <p>You helped Tanar by finding the same Drana Growing Device and getting its power generator, but he seemed disappointed to discover it more damaged than he expected.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

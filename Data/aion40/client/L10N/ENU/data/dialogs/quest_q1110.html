@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You would not know it to look at me, but my father works as a librarian in [%dic:STR_DIC_ELA07]. He's quite the learned man and keeps sending me books from the Sanctum Library.</p>
+          <p> </p>
+          <p>The thing is, though, I'm not the fastest reader in the world, and I don't really get that much time between shifts to read. I end up sending most of the books back unread, but I do lend some out to my friends when I can.</p>
+          <p> </p>
+          <p>A few days ago, [%dic:STR_DIC_LA10] asked me if I had any books about nymphs. Why a woodcutter would want such a book is beyond me, but I had none and had to let him down. But, that was then...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"You do now?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes. Another shipment of book arrived from Sanctum today, and among them was [%dic:STR_DIC_QILA73].</p>
+          <p> </p>
+          <p>I'm not sure if it's exactly what Namus is looking for, but it's better than nothing.</p>
+          <p> </p>
+          <p>Would you take it to him for me? I'm on duty, and I will be for a good while, yet. By the time my shift ends, Namus is usually fast asleep.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Great! Thanks, [%username].</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_LA10] is usually in Daminu Forest. Just keep to the path as you enter, and you can't miss him.</p>
+          <p> </p>
+          <p>Please tell him that if the book isn't quite right, I'll ask my father for something else.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"No problem."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, no problem, really. I'll try to make time tomorrow.</p>
+          <p> </p>
+          <p>Namus is a forgetful soul at the best of times anyway. He's probably forgotten all about this nymph fascination of his!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Take care, Melampus."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes?</p>
+          <p> </p>
+          <p>What is it? These trees won't chop themselves, mercenary.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I've brought you a book from Melampus."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_QILA73], eh?</p>
+          <p> </p>
+          <p>Why this... this is perfect!</p>
+          <p> </p>
+          <p>Please, pass on my thanks to Melampus! I've been looking for a book like this for so long now!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Take Melampus's book to [%dic:STR_DIC_LA10].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Melampus asked you to take a book to Namus, a woodcutter usually found at the entrance of the Daminu Forest.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Namus wanted to borrow a book about nymphs from Melampus.</p>
+          <p> </p>
+          <p>Melampus found a book called "The Nymph In Folklore" and asked you to take it to Namus for him. Namus was grateful to receive it.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I assume you've heard of the Dragonbound? I've heard that blasted name too often lately.</p>
+          <p> </p>
+          <p>I've treated many septic wounds caused by them--too many, in fact, for normal weaponry.</p>
+          <p> </p>
+          <p>I've found that they are coating their blades and arrowheads with poison.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"And you seek an antidote."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Of course. Right now, I can only treat symptoms--a long and painful road to recovery.</p>
+          <p> </p>
+          <p>To do that, I need a sample of the poison in its purest form, before it goes to work in the body.</p>
+          <p> </p>
+          <p>I've heard you take such tasks for the good of fellow Daevas and Asmodae...?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm afraid I only have secondhand accounts from the Daevas I've treated.</p>
+          <p> </p>
+          <p>But some told me that they saw the Dragonbound with a [%dic:STR_DIC_E_IDTemple_PoisonBottle_Q30010] before they were attacked.</p>
+          <p> </p>
+          <p>Those are what I need. They're probably scattered throughout Udas Temple for the Dragonboud to use. Bring them back for me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"The Dragonbound are the poisoned ones...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I...see.</p>
+          <p> </p>
+          <p>I confess I was tempted for a moment to infect you with the poison, just to show you what your fellow Daevas are going through.</p>
+          <p> </p>
+          <p>But I couldn't do something like that. And you'd still be useless to me then anyway. Just leave--I'm busy.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Don't even THINK of infecting me."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've done as much as I can--the wounded are resting comfortably, for now--but the pain is agonizing and the weakness profound.</p>
+          <p> </p>
+          <p>Asmodae needs those Daevas in fighting shape as soon as possible. Please give me whatever you found in Udas Temple.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here's what I have...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I know it must be difficult obtaining the poison without becoming its victim, but I really do need it in its original state. It's the best bet I have of finding an antidote.</p>
+          <p> </p>
+          <p>Those [%dic:STR_DIC_E_IDTemple_PoisonBottle_Q30010]s are probably either well-guarded or well-hidden, but please do your best to get them.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I always do."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hmm, the bottles are smaller than I expected they'd be. It's either more potent or more concentrated than I thought.</p>
+          <p> </p>
+          <p>But at last, I can start creating an antidote. It'll also tell me a lot about how the Dragonbound make all their poisons.</p>
+          <p> </p>
+          <p>This was no mere fetch errand--you've actually advanced the Asmodian cause significantly. Good job.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get [%dic:STR_DIC_E_IDTemple_PoisonBottle_Q30010]s from the Udas Temple and bring them to [%dic:STR_DIC_N_Sulbanyer].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">The Dragonbound have started applying poison to their weapons. Go to the Udas Temple and collect Poison Bottles for Sulbanyer.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Sulbanyer was concerned by the poison the Dragonbound use on their weapons. He wanted to examine the poison directly to create an antidote for injured Daevas.</p>
+          <p> </p>
+          <p>You went to Udas Temple and found the Dragonbound's Poison Bottles for Sulbanyer to study. He appreciated your efforts on his (and Asmodae's) behalf.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

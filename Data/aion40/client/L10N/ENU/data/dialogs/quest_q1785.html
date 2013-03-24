@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Here [%username]. Listen to me, I want to talk to you about something.</p>
+          <p> </p>
+          <p>Our Daevas here are threatened from all directions; at times we fight for days for mere inches of territory. We face very real danger around every corner and because of that, our forces are spread thin.</p>
+          <p> </p>
+          <p>Take the Fortress for example. I would love nothing more than to mobilize a legion and take the place back, but such an operation requires time and manpower, and we have neither.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"How do the troops cope?"</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Not well, unfortunately. Such a long campaign invariably dampens their spirits, but things are looking especially grim these days. Losing the Fortress only exacerbated the problems.</p>
+          <p> </p>
+          <P>I want to raise their spirits, show them that there is an end in sight. I need a group of highly skilled Daevas to enter the Fortress and dispatch the [%dic:STR_DIC_M_Crohtan_Guard].</P>
+          <p> </p>
+          <p>That should do the trick. The garrison is powerful and eliminating it will be a show of force for our side. What do you say, [%username]? Would you like to accept the challenge?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Do not take the garrison lightly. Defeating them will require coordination and determination in equal amounts. We know that all too well.</p>
+          <p> </p>
+          <p>We have fought against them many times, you see, but that has only made them stronger. Now they can stand toe to toe with our finest Guardians.</p>
+          <p> </p>
+          <p>Gather your Legion before you go. You won't survive alone.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"If you insist. Faith and arms, Centurion."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>A refusal?! I had heard many stories about you, [%username]. Shame to realize that they were simply fabrications and exaggerations.</p>
+          <p> </p>
+          <p>Run along now, [%userclass]. I have my duties to attend.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Yes, Centurion."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <P>Back so soon, [%username]? Shame, I was getting ready to shout at Myrrha again. Some people are just not capable of getting their work done.</P>
+          <p> </p>          
+          <p>You aren't one of those people, are you?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"No, I have done as you asked."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent work!</p>
+          <p> </p>
+          <p>Perhaps now the others will allow themselves to hope for an end to this conflict. I'll make sure the news is passed down as soon as possible.</p>
+          <p> </p>
+          <p>Thank you, [%username]. I Hope you'll be willing to help us again sometime.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Eliminate the [%dic:STR_DIC_M_Crohtan_Guard] ([%2]/10).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report back to [%dic:STR_DIC_N_Menelaus].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Gather your companions and eliminate the garrison at the Krotan Refuge, then report back to Centurion Menelaus.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Centurion Menelaus was worried that the morale of his Guardians had been falling following the loss of the Krotan Refuge to the enemy, and asked you to help raise their spirits by defeating some of the enemy.</p>
+          <p> </p>
+          <p>You returned after defeating the garrison as the Centurion asked, at which point Menelaus asked for more help in the future.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

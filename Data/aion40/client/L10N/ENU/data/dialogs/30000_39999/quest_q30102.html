@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Something has been weighing on my mind lately...[%username], is it?</p>
+          <p> </p>
+          <p>Nearby is an abandoned Balaur temple--it's called Udas Temple, I believe.</p>
+          <p> </p>
+          <p>This temple was abandoned long ago, but the Dragonbound recently took it over. Now they are expanding their influence beyond the temple grounds.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"You want me to deal with them?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I want you to find out what this group wants with Udas Temple. They must have a reason....</p>
+          <p> </p>
+          <p>There may be another way to uncover the truth, but I don't know of anything that will work except the direct approach. By which I mean striking them down and searching for clues.</p>
+          <p> </p>
+          <p>Are you truly willing to help me as you said you would?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's dangerous to go alone. Take this advice: before you enter the temple, first find out what you can outside of it in Subterranea.</p>
+          <p> </p>
+          <p>It is filled with Fighters, Guards, Raiders, and Sentinels who will not be pleased to see you. Undoubtedly there will be dark Sorcerers, Spiritmasters, Healers, and Monks as well. Any of them might carry a clue to their purpose.</p>
+          <p> </p>
+          <p>Be careful, Daeva. None of these beings are in their right mind. They are insane, completely brainwashed by the Balaur. Even for you, they will not be easy to contend with.</p>        	
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Neither will I."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I knew that your offer of help was a sham. Am I too like an Elyos for your taste?</p>
+          <p> </p>
+          <p>Pah.... Go. Leave me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Gladly."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I wondered if you would return, [%username].</p>
+          <p> </p>
+          <p>Did you learn what the Dragonbound are doing in Udas Temple? Tell me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I found a clue...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Do you mock me, [%username]? I thought you agreed to help.</p>
+          <p> </p>
+          <p>Waste no more time, or we will all suffer for it. Go to Subterranea immediately, and find out what the enemy is plotting.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Oh, THAT Subterranea."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hmmmm.... The Dragonbound are clearly carrying out an organized plot of some sort! Tools, deadlines...but nothing about what they are building, or why.</p>
+          <p> </p>
+          <p>It will take more than this to find out what their true motives are, but you've done well all the same, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Hunt down the [%dic:STR_DIC_E_DF4_Fanatic_All] and bring a clue to their motives to [%dic:STR_DIC_N_Aglauros].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Hunt down [%dic:STR_DIC_M_DF4_FanaticFi_53_An]s, [%dic:STR_DIC_M_DF4_FanaticKn_53_An]s, [%dic:STR_DIC_M_DF4_FanaticAs_53_An]s, [%dic:STR_DIC_M_DF4_FanaticRa_53_An]s, [%dic:STR_DIC_M_DF4_FanaticWi_53_An]s, [%dic:STR_DIC_M_DF4_FanaticEl_53_An]s, [%dic:STR_DIC_M_DF4_FanaticPr_53_An]s, and [%dic:STR_DIC_M_DF4_FanaticCh_53_An]s and get proof of the enemy's motives.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Aglauros said that Udas Temple had been taken over by Dragonbound, and asked you to uncover their motives.</p>
+          <p> </p>
+          <p>You defeated Dragonbound in Subterranea and obtained a set of written orders, but it didn't reveal the enemy's true purpose.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], thank goodness you're here! Something very unusual is going on and I'm worried I might be setting myself up for a terrible fall.</p>
+          <p> </p>
+          <p>Yesterday there was a sudden darkness in the middle of the afternoon, and several villagers claim to have heard strange whispering voices.</p>
+          <p> </p>
+          <p>Then at midnight I woke to a strange tapping on my door. There was an old man there who asked me to weave a certain garment for him--one of my "special" robes.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Why is it special?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It grants special abilities! The wearer can detect [%dic:STR_DIC_ELA13], and more specifically, those who can wield Aetheric energy, such as [%dic:STR_DIC_ELA09]s.</p>
+          <p> </p>
+          <p>I tried to work out who he was, but it was dark and his face was hidden by a heavy cloak. I was suspicious, but the money offered was substantial, and I had no real reason to say no.</p>
+          <p> </p>
+          <p>It was only this morning, when I took out my designs and started working out what items that I needed, that I realized who the old man was. It was [%dic:STR_DIC_LA12].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Pernos?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Have you not heard of him? The Hermit who lives up on Agaric Spore Road? There are rumors around the village about his... experiments out there.</p>
+          <p> </p>
+          <p>Anyway, I agreed to make the robe, but I'm lacking the main material--[%dic:STR_DIC_MLA06] skins. I was actually hoping a [%userclass] like you would be able to help. Abex are far too tough for me to kill.</p>
+          <p> </p>
+          <p>Will you do it, [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, thank you so much, [%username]!</p>
+          <p> </p>
+          <p>I'll get started on the inner fabric right away. If you could get three [%dic:STR_DIC_QILA07]s, I should have just about enough material for the robe.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_MLA06] can be found in the [%dic:STR_DIC_FLA04]. They're quite passive creatures, but if attacked they are dangerous animals. Please be careful!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Don't worry, it won't take long."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, if you won't help me, then who will? Everyone here is so busy reclaiming the farmlands!</p>
+          <p> </p>
+          <p>Sorry [%username], it's not your fault. It seems as though I've bitten off more than I can chew.</p>
+          <p> </p>
+          <p>I'll see if I can get help elsewhere.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Good luck."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, [%username]!</p>
+          <p> </p>
+          <p>You're back, and just in time!</p>
+          <p> </p>
+          <p>The lining is pretty much complete, I just need to incorporate the [%dic:STR_DIC_QILA07]s, and we'll be done!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here's all I could get."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No no no! I asked for three skins, remember?</p>
+          <p> </p>
+          <p>Please hurry, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Yes, yes, I remember."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent! You've brought me exactly what I need. Good quality [%dic:STR_DIC_QILA07]s too--I should enlist your services more often!</p>
+          <p> </p>
+          <p>I'd better finish this robe off now, before [%dic:STR_DIC_LA12] returns.</p>
+          <p> </p>
+          <p>Here's your pay, please take it with my heartfelt thanks.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Hunt the [%dic:STR_DIC_MLA06]es and gather skins from them for a robe for [%dic:STR_DIC_LA04] to make.</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Mune received an order from the hermit Pernos, but can't obtain the materials to fill it. You agreed to bring her the Abex skins she needs.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Mune received an order from Pernos to make him a special robe.</p>
+          <p> </p>
+          <p>She couldn't obtain the materials herself, so you brought her three [%dic:STR_DIC_QILA07]s.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

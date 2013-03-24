@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], 자네에게 한 가지 더 부탁할 것이 있네.</p>
+          <p> </p>
+          <p>아무래도 [%dic:STR_DIC_W_ZONE_NAME_IDCatacombs]의 일이 불안해서 말이야.</p>
+          <p> </p>
+          <p>할 수 있는 한 놈들의 숫자를 줄여 둬야겠어.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">도울 일이 있는지 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>자네가 조사해 온 바에 따르면 [%dic:STR_DIC_W_ZONE_NAME_IDCatacombs]에서 가장 위협적인 존재는 역시 티아마트 휘하의 용족들일세.</p>
+          <p> </p>
+          <p>그곳으로 가서 파슈만디르 사원 입구와 영웅의 묘실, 영원의 주랑에 있는 [%dic:STR_DIC_E_IDCatacombsN_Drakan_Guard]들을 제거해 주게.</p>
+          <p> </p>
+          <p>이미 한 번 다녀온 곳이니 다른 가디언을 보내는 것보다는 자네를 보내는 것이 나을 것 같아 하는 부탁이네.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>용계를 정벌하고 티아마트의 목을 치기 위해서는 자네처럼 용기 있는 데바들이 많이 필요하다네.</p>
+          <p> </p>
+          <p>자네라면 분명 해낼 수 있을 게야. 파슈만디르 사원으로 가서 [%dic:STR_DIC_E_IDCatacombsN_Drakan_Guard]들을 남김 없이 처단해 주게나.</p>
+          <p> </p>
+          <p>날 실망시키지 않으리라 믿네.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>저번 임무로 쌓인 피로가 아직 채 가시지도 않았을 텐데 내가 괜한 부탁을 한 모양이군.</p>
+          <p> </p>
+          <p>이 일은 다른 가디언들에게 맡길 테니 이만 가보도록 하게.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>파슈만디르 용족 수호자들은 모두 처치하였는가?</p>
+          <p> </p>
+          <p>설마 임무를 완수하지 못했다는 말을 하려고 찾아온 것은 아니겠지?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>자네가 해낼 줄 알았다네, [%username]!</p>
+          <p> </p>
+          <p>앓던 이가 빠진 느낌이로군.</p>
+          <p> </p>
+          <p>기회가 된다면 나에게 다시 찾아오게나. 자네라면 언제나 환영일세.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">파슈만디르 용족 수호자를 처치하라</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_IDCatacombsN_Drakan_Guard_Entrance] ([%2]/20)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_IDCatacombsN_Drakan_Guard_tomb] ([%5]/10)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_IDCatacombsN_Drakan_Guard_priest] ([%8]/40)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Cainus]%와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">카이누스가 파슈만디르 사원에서 파슈만디르 용족 수호자들을 처치하여 자신의 불안을 달래 줄 것을 부탁했다.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>카이누스는 파슈만디르 사원을 지키고 있는 용족 세력을 걱정하며 지속적으로 놈들의 숫자를 줄여야 한다고 부탁했다.</p>
+          <p> </p>
+          <p>파슈만디르 사원을 지키는 용족의 세력이 더 결집하기 전에 사원으로 가서 용족 수호자들을 처치하여 숫자를 줄였다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ehh...so...tired...</p>
+          <p> </p>
+          <p>What?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"You were falling asleep there."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes, I know, but...I am so tired, and I don't know what to do....</p>
+          <p> </p>
+          <p>I lay awake nights just listening to the awful noises those Acheron Drakes make.</p>
+          <P> </P>
+          <P>Worse than the noise is the smell. How can any of them sleep through this?</P>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Maybe you're just sensitive."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, I know I am a sensitive sleeper! That blasted Livius teases me about it all the time!</p>
+          <p> </p>
+          <p>If someone could just get rid of those Acheron Drakes, then maybe I could sleep better.</p>
+          <p> </p>
+          <p>I might be so grateful that I would offer a reward, hmm...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Really? That's most kind of you!</p>
+          <p> </p>
+          <p>I believe the Acheron Drakes must be in one of the nearby islands. In fact, I can smell them right now...</p>
+          <p> </p>
+          <p>Get rid of every [%dic:STR_DIC_M_Ab1_1211_Bonedrake_32_An] and [%dic:STR_DIC_M_Ab1_1211_BonedrakeB_32_An] you come across, and then I can sleep at last.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Better start making your bed."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, but who would help me? It's not as though I have anything great to offer...</p>
+          <p> </p>
+          <p>I might do it myself, but I'm just so...tired....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Goodnight...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Zzzzz.... Oh, no more roast Porgus for me, thanks....</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Wake up!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Huh? Oh, I must have been sleeping....</p>
+          <p> </p>
+          <p>And that stench didn't wake me up? You must have done it!</p>
+          <p> </p>
+          <p>Take this, and thank you. Now, leave me to my sleep....</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get rid of the Acheron Drakes that are interrupting Mercus's rest.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Ab1_1211_Bonedrake_32_An] ([%2]/15)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Ab1_1211_BonedrakeB_32_An] ([%5]/20)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report the result to [%dic:STR_DIC_N_Mercus].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Mercus says that he can't sleep because the Acheron Drakes are too noisy and smelly. Get rid of Bone Drakes and Dire Acheron Drakes to help him out.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Mercus said he couldn't sleep because of those noisy, smelly Acheron Drakes, so you helped him get rid of them.</p>
+          <p> </p>
+          <p>It seemed he slept well after that.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Blast! I've just returned from the Crimson Temple, and it's been overrun!</p>
+          <p> </p>
+          <p>The Elyos and the Balaur are both scrambling for control, and there's no way I'm letting some snot-nosed twiggy or ornery scaleback seize hold of Gelkmaros.</p>
+          <p> </p>
+          <p>The temple must be retaken, and by Azphel's shadow I will see it happen.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What can we do?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Vorgaltem Battlefiled is a tactical nightmare--the terrain is near impossible to defend no matter who holds it. We could pussyfoot around and try to mount a coordinated attack, but I prefer a more direct approach.</p>
+          <p> </p>
+          <p>We skip all that strategizing nonsense, march straight to the Crimson Temple, and slay the Guardian General.</p>
+          <p> </p>
+          <p>That ought to make the enemy think twice about crossing Asmodae. What do you say?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I knew I could count on you, [%username].</p>
+          <p> </p>
+          <p>Getting to the [%dic:STR_DIC_M_QUEST_21232] should be simple enough. Slaying it will be more difficult. Gather your allies, and steel your resolve.</p>
+          <p> </p>
+          <p>Once you've slain the Guardian General and retaken the temple, report to Cozett. She should be in the area, and will no doubt reward you for your bravery. Now, get moving before the enemy has a chance to mount a defense!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Blood for blood!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>There is nothing more important than retaking the Crimson Temple, [%username]!</p>
+          <p> </p>
+          <p>If we don't retake the temple, we may lose the war.</p>
+          <p> </p>
+          <p>If you reconsider, please come back.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll do that."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That was one heck of a battle, [%username]. Many of my allies fell, but now the Crimson Temple is under our control.</p>
+          <p> </p>
+          <p>There's much to be done to shore up our defenses.</p>
+          <p> </p>
+          <p>But before Svidar and I get to that, I heard that you took part in the siege? Someone even mentioned that you slew the Guardian General?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Yes, it's true."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That's amazing!</p>
+          <p> </p>
+          <p>I knew you were a capable Daeva, but I never imagined you could defeat the Guardian General.</p>
+          <p> </p>
+          <p>Here, please take this. Today you have brought glory to Asmodae. Blood for blood!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Defeat the enemy Guardian General to retake the [%dic:STR_DIC_W_DF4_SZ_3021_A].</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_QUEST_21232]([%2]/1)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_N_Cozett].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">The Crimson Temple has fallen to the enemy. Defeat the Guardian General and retake the Crimson Temple.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Raeyana asked you to participate in an operation to retake the Crimson Temple.</p>
+          <p> </p>
+          <p>You marched on the Crimson Temple with trusted allies and defeated the enemy Guardian General. You then reported to Cozett, who gave you a reward and commended your bravery.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

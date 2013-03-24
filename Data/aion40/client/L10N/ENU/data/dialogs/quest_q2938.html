@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>All Asmodians are equal, but there is one place within the walls of Pandaemonium where all are not equal.</p>
+          <p> </p>
+          <p>The Temple of Knowledge is open to everyone, Humans and Daevas alike...but no one may enter the Hidden Library without special permission.</p>
+          <p> </p>
+          <p>The books and scrolls we keep there are both valuable and delicate.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"How does one get permission?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Most of the people who gain access are scholars who've achieved eminence in their fields.</p>
+          <p> </p>
+          <p>And sometimes those who have accomplished great things for Pandaemonium are given access as a civic honor.</p>
+          <p> </p>
+          <p>If you want access to the Hidden Library, I suggest you provide proof of your notable achievements. For example, you could ask a fortress commander for a letter of recommendation. Can you get such a letter, [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've heard you've been mentioned many times in communiqués from Altgard, [%username]. You've made quite a name for yourself there.</p>
+          <p> </p>
+          <p>You might want to approach Brigade General [%dic:STR_DIC_N_Sueron], the Altgard fortress commander, for a recommendation.</p>
+          <p> </p>
+          <p>He's spoken highly of you in the past. I expect he'll be happy to support you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll head to Altgard then."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That's all right. Not everyone is stirred by the thought of priceless books or ancient wisdom.</p>
+          <p> </p>
+          <p>Those books do have lots of long, difficult words in them, after all. And not many pictures.</p>
+          <p> </p>
+          <p>Run along, now. Run along.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Hey...!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, [%username]!</p>
+          <p> </p>
+          <p>Always good to see a veteran out here.</p>
+          <p> </p>
+          <p>What can I do for you?</p>
+         </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Would you write me a recommendation?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>A recommendation? Hmm--and what would you need that for? Are you trying to get into the Hidden Library at the Temple of Knowledge, perhaps?</p>
+          <p> </p>
+          <p>You should just keep working hard as a [%userclass]. There's nothing in a secret room full of books you can't learn on the battlefield.</p>
+          <p> </p>
+          <p>I suppose it's none of my business. You've proved yourself in the field and that's what matters. Let me just write this out.... Here you go.</p>
+         </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SET_SUCCEED">"Thank you, Brigade General."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Letter of recommendation? What post do you want to be recommended for? Honored Foot-Dragger? Loafer Extraordinary? Twiddler of the Thumbs?</p>
+          <p> </p>
+          <p>I assign you a mission, you don't bother to complete it, and you saunter back asking for a letter of recommendation?</p>
+          <p> </p>
+          <p>IF you finish the mission you were assigned in the first place, then I MIGHT recommend you for something other than scrubbing the sun-blasted pots.</p>
+         </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm...I'm sorry, Brigade General."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I see you're back, [%username].</p>
+          <p> </p>
+          <p>Did you get a letter of recommendation from Brigade General Suthran?</p>
+          <p> </p>
+          <p>It could be your key to the Hidden Library....</p>
+         </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Yes, I did. Here it is."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I see. You're quite the hero of Asmodae. No wonder we've heard so many fascinating stories about you. I see that some of them, at least, are true....</p>
+          <p> </p>
+          <p>Welcome to the Hidden Library, [%username]. From now on, I will admit you whenever you wish.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Go to [%dic:STR_DIC_N_Sueron] to get a letter of recommendation.</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Talk with [%dic:STR_DIC_N_Izwin].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">A letter of recommendation is required to enter the Hidden Library. Go to Brigade General Suthran in Altgard to get your letter.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oubliette said that, to enter the Hidden Library, you would need a letter of recommendation proving that you had achieved great things for Pandaemonium.</p>
+          <p> </p>
+          <p>You went to Brigade General Suthran in Altgard, received the letter, and got permission to enter the Hidden Library.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

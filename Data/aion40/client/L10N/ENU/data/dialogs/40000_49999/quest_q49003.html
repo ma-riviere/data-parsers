@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], when you get to Theobomos, make sure you talk with [%dic:STR_DIC_N_Noorn] and Centurion [%dic:STR_DIC_N_dromik].</p>
+          <p> </p>
+          <p>Nohrn controls the Theobomos Rift Generator, and he'll tell you what to watch for when you enter the battle.</p>
+          <p> </p>
+          <p>Centurion Dromic commands aerial operations in Theobomos. He'll likely be the one giving you new orders.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%userclass], right?</p>
+          <p> </p>
+          <p>Are you having any pain or discomfort? Difficulty breathing? Hallucinations, maybe?</p>
+          <p> </p>
+          <p>Drat. Er, I mean, excellent. You got through all without any ill effects. I take it you're ready for battle then?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">"Yes."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent, excellent. Centurion Dromic will fill you in on where you're neaded right now.</p>
+          <p> </p>
+          <p>I'm done here. Go on, I have other things to do today.</p>
+          <p> </p>
+          <p>Oh, yes, I suppose I should give you a direction. Head towards [%dic:STR_DIC_W_LF2B_SZ_C3]. You'll find Dromic near there.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"On my way."</Act>
+    </Selects>
+    <CutScene id="372"/>
+  </HtmlPage>
+
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You must be one of the reinforcements Salla sent.</p>
+          <p> </p>
+          <p>What's your name [%userclass]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I am called..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]?</p>
+          <p> </p>
+          <p>Salla told me about you. Said you're one of the best [%userclass]s, around?</p>
+          <p> </p>
+          <p>I could use someone with your skills, who can work independently.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk with [%dic:STR_DIC_N_Noorn].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Talk with [%dic:STR_DIC_N_dromik].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Talk with Nohrn and Centurion Dromic who've been dispatched to the Theobomos Rift Battle. Learn what is going on, and receive additional assignments.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>As Salla instructed, you met up with Nohrn (a controller for the Dimensional Vortex Generator) as soon as you reached Theobomos to get updated on the Rift Battle. Then, you spoke with Centurion Dromic, Commander of Theobomos Air Operations, about additional missions.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

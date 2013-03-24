@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This village is quite desolate, isn't it? Still, it's a lot better than when I first came here. We all slept on the ground then.</p>
+          <p> </p>
+          <p>Now, we have an Obelisk and actual merchants. It finally looks like a real village.</p>
+          <p> </p>
+          <p>The biggest problem remaining is finding a dependable source of food near the village.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Yes, food is important."</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We used to be able to collect the Litreas and Tanges around Latheron Coast, but these days the Vespines, Hornskulls and Mudthorns are eating them all.</p>
+          <p> </p>
+          <p>Sometimes I go to the coast with my brother and hunt them, but they breed so fast, there's no end.</p>
+          <p> </p>
+          <p>So we are asking Daevas to kill them for us. You're the only ones who can kill enough of them fast enough to make a difference.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>When you leave the village, take the road on the right side. Then you'll see Latheron Coast.</p>
+          <p> </p>
+          <p>Kill the Vespines, Hornskulls, and Mudthorns, and bring back Salty Shells as evidence of your kills for a reward.</p>
+          <p> </p>
+          <p>What kind of reward? Why, a platinum coin!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Sounds fair."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hey, I understand you may have urgent businesses.</p>
+          <p> </p>
+          <p>We have approval from Sanctum to give platinum coins as a reward for this mission, so if you change your mind, let me know.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I will."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hey there. That was fast!</p>
+          <p> </p>
+          <p>So, did you kill the vermin that are eating up our food? If you brought back enough Salty Shells, I'll give you a platinum coin.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here they are."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, did you have trouble finding the way to Latheron Coast?</p>
+          <p> </p>
+          <p>You just have to turn right as soon as you go out of the village entrance.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Thanks."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You have done enough. Excellent!</p>
+          <p> </p>
+          <p>Here is the coin I promised you.</p>
+          <p> </p>
+          <p>If you can keep this up, we can use your help. I'll give you more coins if you want to stick around and do more.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get rid of Vespines, Hornskulls, and Mudthorns and bring their shells to Eunomia.</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Vespines, Hornskulls and Mudthorns eat up all the local food around the Latheron Coast. This is causing a food shortage, so Eunomia is offering a reward for those who kill the vermin. Collect their shells and bring them to Eunomia.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Eunomia was worried about local wildlife eating all the available food.</p>
+          <p> </p>
+          <p>She said that the Vespines, Hornskulls and Mudthorns had become the biggest problems, and offered you a reward for killing them.</p>
+          <p> </p>
+          <p>You did as she requested, and collected their shells as evidence. She gave you a coin as a reward.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

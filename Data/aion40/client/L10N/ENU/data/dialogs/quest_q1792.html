@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I mustn't be swayed by personal emotions on the field, but...I had a...friend...who was killed...vanished, actually, just a little while ago.</p>
+          <p> </p>
+          <p>I see his face whenever I close my eyes, his expression in the final instant, this regretful smile on his face as he vanished into Aether. He just blew away like stardust through my hands, gone forever. That memory is all the Balaur left of him.</p>
+          <p> </p>
+          <p>I suppose it's good that I have responsibilities here. If I leave, the Legion will be weakened. Someone else might...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Baucis, easy..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>ACCURSED BALAUR!</p>
+          <p> </p>
+          <p>I want to cut them all down! I want to grow claws, like the Asmodians so I can tear them up with my bare HANDS! I want to grow Balaur fangs and DEVOUR them, I want...</p>
+          <p> </p>
+          <p>VENGEANCE! ...bloody, bloody revenge....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You'd do this? I... Ariel's grace, there aren't words...</p>
+          <p> </p>
+          <p>He was fighting some [%dic:STR_DIC_M_Ab1_1241_LizardmanAs_40_An]s, and [%dic:STR_DIC_M_Ab1_1241_LizardmanRa_40_An]s when the battle drove us apart. I saw a [%dic:STR_DIC_M_Ab1_1241_LizardmanFi_40_An] spit on him after he fell.</p>
+          <p> </p>
+          <p>What is it the Asmodians say? "Blood for blood?" That's what I want. Blood for blood.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Blood it will be."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Tower Above, is there no justice? No relief from the pain?</p>
+          <p> </p>
+          <p>Of course, revenge won't bring him back... </p>
+          <p> </p>
+          <p>No, it's all right. I feel better, talking to you. I should move on...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm sorry, Baucis."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, isn't that [%username]? What happened, the thing I asked of you?</p>
+          <p> </p>
+          <p>Have you avenged my friend?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Blood for blood, as I said."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Aah, thank you so much. It lightens my heart, [%username]. And somewhere in the flow of Aether, your name rings now as well, I'm sure.</p>
+          <p> </p>
+          <p>Ariel's grace be eternally upon you, Daeva.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Obliterate Ranx Draconute Legion on the Drakenwreck.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Ab1_1241_LizardmanFi_40_An] ([%2]/5)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Ab1_1241_LizardmanAs_40_An] ([%5]/5)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Ab1_1241_LizardmanRa_40_An] ([%8]/5)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_N_Baucis].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Carry out Baucis' request to avenge his vanished friend by annihilating the infantrymen, troopers, and sentinels of the Ranx Draconute Legion.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Baucis was heartsick over the loss of a dear friend, vanished by the Balaur.</p>
+          <p> </p>
+          <p>You exterminated the soldiers of Ranx Draconute Legion to avenge his friend, bringing justice for the dead man and peace for the living one.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

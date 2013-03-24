@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>나브레이가 어려운 상황이라고 하는데 [%username] 님이 [%dic:STR_DIC_N_LDF5b_Navrei_E]에게 도움을 주실 수 있겠습니까?</p>
+          <p> </p>
+          <p>나브레이가 속한 정찰대가 고립되어 고전을 면치 못하고 있다고 합니다.</p>
+          <p> </p>
+          <p>스텔만 님에 제게 지시한 일이지만 제가 담당한 구역의 일도 벅찬 상태라 직접 갈 수가 없습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>여기까지 용케도 뚫고 오셨군요!</p>
+          <p> </p>
+          <p>앞뒤로 꽉 막히어 정말 힘든 상황이었는데 이렇게 와주셔서 감사합니다.</p>
+          <p> </p>
+          <p>문제가 되는 것은 제43 기마부대인데 워낙 기동력이 좋아 전황을 뒤엎을 수도 있는 병력입니다. 녀석들을 그대로 두면 무슨 일이 발생할 지 모릅니다.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_E_LDF5b_F2_Vri]%이 주저하고 있는 틈을 타 녀석들을 처치해 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+  
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>제43 기마부대의 처단은 어떻게 되어가고 있습니까?</p>
+          <p> </p>
+          <p>놈들은 실전으로 단련된 부대라서 호락호락하지 않은 상대입니다.</p>
+          <p> </p>
+          <p>하지만 제43 기마부대가 방심하고 있는 지금이야 말로 놈들을 공격할 절호의 기회라고 할 수 있습니다.</p>	  
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>수고 많으셨습니다.</p>
+          <p> </p>
+          <p>이렇게만 해두어도 앞으로 상황은 많이 호전시킬 수 있을 것입니다.</p>
+          <p> </p>
+          <p>저 혼자만으로는 이런 좋은 기회를 놓칠까 마음을 졸이고 있었는데, 때마침 와주셔서 기회를 잡을 수 있었습니다.</p>
+          <p> </p>
+          <p>전선의 상황이 예측할 수 없으니 앞으로도 잘 부탁드립니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_LDF5b_Navrei_E]%와 대화하라</font></p></step>
+               <step><p visible="[%9]"><font color="[%10]">[%dic:STR_DIC_E_LDF5b_F2_Vri]%을 처치하라([%11]/9)</font></p></step>
+               <step><p visible="[%24]"><font color="[%25]">[%dic:STR_DIC_N_LDF5b_Navrei_E]%와 대화하라</font></p></step>
+	</steps>
+          <p><font font_xml="quest_summary">나브레이를 만나 대화하고 제43 기마부대를 제거하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>엘타의 부탁으로 정찰대인 나브레이가 고립된 곳을 찾아가서 제43 기마부대를 처치하는 일을 도와주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

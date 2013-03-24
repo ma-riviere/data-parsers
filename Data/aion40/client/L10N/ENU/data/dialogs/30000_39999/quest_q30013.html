@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], remember our little situation from earlier? About the Reian blacksmith and his pickaxes?</p>
+          <p> </p>
+          <p>Helping him would really shed a friendly light on our public relations with these people.</p>
+          <p> </p>
+          <p>I thought of a way to help...but it's not as simple as I think you or he had hoped.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Let's hear it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What I'm proposing is very unorthodox...could land us in a heap of trouble, but it will help out our Reian friend.</p>
+          <p> </p>
+          <p>You'll need to go to the Lower Udas Temple and steal pickaxes from the Dragonbound there. Pretty dangerous, but that's the only way I can think of to get that many pickaxes so quickly.</p>
+          <p> </p>
+          <p>I must keep my hands clean on this one, so I'm afraid it's all up to you, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I heard you've already been to the Lower Udas Temple and know that the Dragonbound are digging a large tunnel.</p>
+          <p> </p>
+          <p>Like I said, it's a dangerous mission, but I know they'll have dozens of decent pickaxes to take.</p>
+          <p> </p>
+          <p>You'll probably have to violently remove the [%dic:STR_DIC_I_QUEST_30013a]s from the [%dic:STR_DIC_M_IDTemple_FanaticAsWorker_53_Ae]s.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Don't mind that at all."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, no, no, no...you can't just drop this problem in my lap, [%username]! You're in this as deep as I am.</p>
+          <p> </p>
+          <p>I'm the Daeva who vouched for this Reian! I'll look like a damn fool if he can't deliver. And, so help me, I'll bring you down with me.</p>
+          <p> </p>
+          <p>So, when are you leaving for the Udas Temple then?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"How am I in as deep as you?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good, you're back, [%username]. I was already starting to think of ways to spin this little problem of ours...a Reian turf war was all that I came up with.</p>
+          <p> </p>
+          <p>Did you get the pickaxes?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Got them...here."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], what are you doing? I've got Brigade Generals breathing down my neck about "the dirty Reian blacksmith I introduced them to," and you're strolling around here like a Kerubar without a care!</p>
+          <p> </p>
+          <p>We have until tonight before I tell them that you and the Reian are partners...that you're the Daeva who vouched for him, not me!</p>
+          <p> </p>
+          <p>Get down to the Lower Udas Temple, kill those damn [%dic:STR_DIC_M_IDTemple_FanaticAsWorker_53_Ae]s, and bring back their [%dic:STR_DIC_I_QUEST_30013a]s!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"You're blackmailing me?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Not bad, not bad. These aren't the best-looking pickaxes I've seen, but they'll work for now.</p>
+          <p> </p>
+          <p>Our pal Gefeios may need a few more, but these should hold off the generals for a few days. I'll have some Daevas take them over.</p>
+          <p> </p>
+          <p>I feel better now, don't you? And who says we don't give a shard about the Reians, huh?</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect [%dic:STR_DIC_I_QUEST_30013a]s and take them to [%dic:STR_DIC_N_Sueros].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">There are pickaxes that can be taken from the Lower Udas Temple. Defeat Udas Elite Peons and collect their Heavy Picks.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Sueros said the only way to get the pickaxes that Gefeios needs is by taking them from workers in the Lower Udas Temple.</p>
+          <p> </p>
+          <p>After you took the picks from Udas Elite Peons, Sueros said he would send them to Gefeios.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

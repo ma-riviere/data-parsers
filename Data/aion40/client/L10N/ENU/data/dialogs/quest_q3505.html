@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thanks to you, [%username], I managed to eat something. But now I must worry about feeding the Vigilantes of the village.</p>
+          <p> </p>
+          <p>This is worse than battle! All they do is eat! I need to find enough ingredients plus some firewood, then cook the meal and do all the washing up afterward.</p>
+          <p> </p>
+          <p>Sometimes I think I'd much rather pick up my sword and get back out in the trenches.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"No one helps?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>These Vigilantes don't even bother to wash their plates after they've finished. It's like watching Drakes eat.</p>
+          <p> </p>
+          <p>Would you give me a hand, [%username]? I know you're probably not much of a cook, but if you could find some firewood, that would help me out so much.</p>
+          <p> </p>
+          <p>Do you have time?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>If only the Vigilantes were as considerate as you, Daeva. Thank you.</p>
+          <p> </p>
+          <p>You've done this before so you know what I need, yes? Just find me about a dozen [%dic:STR_DIC_I_quest_1591a]s...the staffs of the [%dic:STR_DIC_M_Spectre_41_An]s from the Patema Ruins.</p>
+          <p> </p>
+          <p>They seem to burn forever. Not even the heavy winds here can put them out.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll see what I can find."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I should have known better than to ask, [%username]. It's fine. I know you're busy.</p>
+          <p> </p>
+          <p>I'll have a word with the priest. But the last time I asked for an assistant, he sent me a Shulack. Little beast ate everything in front of his face.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"A Shulack, eh?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Arieluma! Did you bring the staffs?</p>
+          <p> </p>
+          <p>I caught a slew of Sand Potcrabs while you've been gone. Now I can boil them so the inconsiderate carnivores can sleep with full bellies tonight.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I've got these twelve."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I suppose getting the [%dic:STR_DIC_I_quest_1591a]s from the [%dic:STR_DIC_M_Spectre_41_An]s isn't going as easily as you'd hoped.</p>
+          <p> </p>
+          <p>You haven't given up, have you? We're going to have a village of angry Vigilantes if that's the case.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm going, I'm going."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, these are great, Daeva! They're fresh and dry--dry as Andu's legendary wit--perfect for burning.</p>
+          <p> </p>
+          <p>You really helped me out here. This isn't much, but please take it.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect [%dic:STR_DIC_I_quest_1591a]s from [%dic:STR_DIC_M_Spectre_41_An]s and take them to [%dic:STR_DIC_N_Camana].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Help Camana by gathering the firewood needed to prepare the meal for the village Vigilantes.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Camana was ordered by the priest to prepare meals for the village Vigilantes.</p>
+          <p> </p>
+          <p>She needed help and asked you to bring back several Flame Staffs from the Vicious Specters, which you accomplished.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ugh.... My headache is getting worse....</p>
+          <p> </p>
+          <p>Do you know if Dragonbound brainwashing works on Daevas like it does on the Reians?</p>
+          <p> </p>
+          <p>How can I protect my soldiers from the Dragonbound when we can't even deal with the Wargs?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Sounds like you have an infestation."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Wargs? Yes. They hunt in groups and attack anything that looks like food. I can barely do my patrols anymore!</p>
+          <p> </p>
+          <p>Ooouh... My headache keeps getting worse....</p>
+          <p> </p>
+          <p>Can you help out with the Wargs, [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You'll see the [%dic:STR_DIC_M_LF4_B_Warg_MeerkatBaby_53_An]s and [%dic:STR_DIC_M_LF4_B_Warg_Meerkat_53_An]s when you pass the Sawtooth Gate.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll solve the problem for you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm going to lay down and have a good think.</p>
+          <p> </p>
+          <p>You can leave.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"You can't lay down! You need to do things!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I remember when I was young and strong, too inexperienced to fear anything so long as I had a sword in my hand.</p>
+          <p> </p>
+          <p>Sometimes I wish I could be that naive, young soldier again.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Well, I got rid of your Wargs."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good work! That means we can get the soldiers out there patrolling.</p>
+          <p> </p>
+          <p>...and I can go back to worrying about the Dragonbound.</p>
+          <p> </p>
+          <p>One issue at a time. One issue at a time.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get rid of the Wargs that interfere with Sueros's patrols.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_LF4_B_Warg_MeerkatBaby_53_An]([%2]/10)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_LF4_B_Warg_Meerkat_53_An]([%5]/7)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_N_Sueros].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Get rid of Wargs that interfere with Sueros's patrols in Sawtooth Valley.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hypochondriac Sueros had a headache, exacerbated by the Wargs attacking his patrols.</p>
+          <p> </p>
+          <p>You cleared out the Shortmane and Longmane Wargs, and he thanked you.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

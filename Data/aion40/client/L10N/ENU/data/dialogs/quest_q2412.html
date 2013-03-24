@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's quite simple [%username]. All you need do is smash Earth Spirits along the Fall Road.</p>
+          <p> </p>
+          <p>This task will not be easy. The Spirits are both wily and deadly. If you take your eyes off them, even for a moment, you will find yourself surrounded.</p>
+          <p> </p>
+          <p>And not all Earth Spirits behave the same.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I heard there are several kinds...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Indeed, three different kinds of Earth Spirits roam Fall Road. They are [%dic:STR_DIC_M_ElementalEarth2D_35_An]s, [%dic:STR_DIC_M_ElementalEarth3D_35_An]s and [%dic:STR_DIC_M_ElementalEarth4D_36_An]s.</p>
+          <p> </p>
+          <p>Even though they are all similar, Earth Spirits have more earth energy than Soil Spirits, and Bountiful Spirits have more than both the others.</p>
+          <p> </p>
+          <p>You should remove all three kinds, and bring back their elemental stones as evidence.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>One more thing, the elemental stones vary depending on the Spirit.</p>
+          <p> </p>
+          <p>Bring back three [%dic:STR_DIC_I_QUEST_2412a]s from the Soil Spirits, two [%dic:STR_DIC_I_QUEST_2412b]s from the Earth Spirits, and one [%dic:STR_DIC_I_QUEST_2412c] from a Bountiful Spirit.</p>
+          <p> </p>
+          <p>Go fiercely, Daeva.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll smash them to pebbles!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What? Why are you backing out now? </p>
+          <p> </p>
+          <p>Is the work not what you expected? With your abilities, [%username], I thought this task would be simple...</p>
+          <p> </p>
+ 					<p>I'll give you more time to think about it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm just shaking the dust off."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've been waiting for you, Daeva.</p>
+          <p> </p>
+          <p>You didn't get hurt, did you? Earth Spirits can really pummel their enemies.</p>
+          <p> </p>
+          <p>Do you have the Elemental Stones that I requested?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Those spirits do hit hard."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's not an easy task. They may be spirits but they smash and bash like an earthquake.</p>
+          <p> </p>
+          <p>Don't stop now, Daeva, I'm sure you can clobber them.</p>
+          <p> </p>
+          <p>I'll wait here for your return.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Right, I'll be back...soon."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good work! You got them all! I won't need to worry about Earth Spirits for a while.</p>
+          <p> </p>
+          <p>Thank you for helping me.</p>
+          <p> </p>
+          <p>Take this reward from Tyr. You deserve it. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get rid of [%dic:STR_DIC_M_ElementalEarth4D_all]s to gather three kinds of Elemental Stones and bring them to [%dic:STR_DIC_N_Angrboda].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Get rid of Soil Spirits, Earth Spirits, and Bountiful Spirits on Fall Road and gather Elemental Stones for Angreboda.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Angreboda explained about the Earth Spirits on Fall Road, and asked you to hunt them and bring Soil Spirit stones, Earth Spirit stones, and Terra Elemental Stones as evidence.</p>
+          <p> </p>
+          <p>When you brought the Elemental Stones to her, she was pleased.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

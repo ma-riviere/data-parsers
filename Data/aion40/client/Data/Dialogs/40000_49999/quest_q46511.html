@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p align="center"> - 의뢰장 - </p>
+          <p> </p>
+          <p>마도성 이미니스의 영혼에게 안식을 달라는 의뢰를 요청받았다.</p>
+          <p></p>
+          <p>찰리룽 흥신소 조직원들은 다음 내용을 숙지하고 지시에 따라 주기 바란다. </p>
+          <p> </p>
+          <p> 1. 이름: [%dic:STR_DIC_M_DF4_DaQ_AncientClan_ghost_Wi_54]</p>
+          <p></p>
+          <p> 2. 위치: 파괴된 눙라크 부락 오드 생장기 부근</p>
+          <p></p>
+          <p> 3. 상세: 과거 뛰어난 전사로 겔크마로스에서 싸우던 연족 마도성의 영혼으로 죽어서까지 용족과 싸우는 모습이 발견됨. 그녀에게 편안한 안식을 달라는 연족 생존자들의 요청이 있었음.</p>
+          <p> </p>
+          <p>마도성 이미니스를 추적하여 처치한 자에게 의뢰대금을 지급하겠음. 유품으로 보이는 [%dic:STR_DIC_OBJ_DF4_FOBJ_Q46511]를 조사하면 모습을 드러낸다고 함.</p>
+          <p> </p>
+          <p>- 찰리룽 흥신소, [%dic:STR_DIC_E_46500] 일동 -</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">의뢰장을 접어 넣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+   <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>또 왔구낭, 갸릉.</p>
+          <p> </p>
+          <p>(문서를 살피며) 이번 일은 가엾은 연족 마도성의 영혼을 처리하는 일이었구낭, 냥냥.</p>
+          <p> </p>
+          <p>의뢰를 완수했으면 어서 보고해랑, 냥냥.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>낡은 법서는 그 연족 영혼의 유품인 것 같당, 냥냥.</p>
+          <p> </p>
+          <p>무슨 미련이 있어서 죽어서도 주문서 주변을 떠나지 못하는 걸까냥? 더구나 죽어서까지 용족과 싸우다니... </p>
+          <p> </p>
+          <p>연족 생존자들이 안타깝게 생각할 만 하당, 냥냥.</p>          
+          <p> </p>
+          <p>아무튼 일은 완수한 것 확인했으니 의뢰대금 꼭 받아가라, 갸릉.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_OBJ_DF4_FOBJ_Q46511] 주변을 떠도는 [%dic:STR_DIC_M_DF4_DaQ_AncientClan_ghost_Wi_54]에게 안식을 전하라([%2]/1)</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_E_46500]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">찰리룽 흥신소에서 의뢰장이 왔다. 의뢰를 수행하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>찰리룽 흥신소에서 마도성 이미니스의 영혼에게 안식을 달라는 내용의 의뢰장을 받았다.</p>
+          <p> </p>
+          <p>의뢰를 확인하여 마도성 이미니스를 쓰러뜨리고 겔크마로스 관리부 직원에게 보고하자 수고했다며 의뢰대금을 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What do you want? I've got nothing for you right now. Admiral Gorgos is breathing down my neck, and I'm just that annoyed right now. I've no need to run afoul of Gorgos, and it wouldn't take much to do it these days. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"What's the problem?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>How many days do you have? It would take that long to cover it all, and no mistake. The biggest thing, though, is supplies--or lack of them. </p>
+          <p> </p>
+          <p>The fleet couldn't anchor in Stenon Bay due to the rocks and shallow water, so we had to anchor the fleet to the northeast instead. We loaded most of our supplies into a smaller ship to be brought into the bay, but the currents here are fierce and capsized the ship.</p>
+           <p> </p>
+          <p>No one was hurt, but we lost more than half our supplies. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Could you recover them?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What do you think we've been trying to do all this time? The [%dic:STR_DIC_E_LF3_SupplyBox_Q1623] went ashore somewhere, but we can't find it. We've collected what we can from the village, but it won't feed and supply an army. </p>
+          <p> </p>
+          <p>Weapons, armor, and potions are all in short supply. I'm only one man, aye? I can't just whistle it up on the next strong wind.</p>
+          <p> </p>
+          <p>Hey, that's an idea. You've a strong back and a keen eye...help me find the lost [%dic:STR_DIC_I_QUEST_1623a]. If you can, it'll tide us over until another shipment can arrive. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, thanks, [%username]. Anything that keeps my head off a ship's prow is most welcome. It should be on the coast somewhere around the village. Find the [%dic:STR_DIC_E_LF3_SupplyBox_Q1623] and bring me 3 sets of [%dic:STR_DIC_I_QUEST_1623a] in good condition.</p>
+
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Will do."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Too busy, are you? Aye. Perhaps you'll tell the Admiral how you're too busy to help your fellow Daevas. You must be very busy indeed. </p>
+          <p> </p>
+          <p>Well, if you get UN-busy, perhaps you'll favor us with your time then. </p>
+          <p> </p>
+          <p>Ah, I'm just annoyed. Go on with you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be back when I can."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], any luck? While you searched for supplies, I went to get potions. A Shugo merchant just "dropped" by with a pack-full to sell--more like ran his fuzzy ears over as fast as he could, but no matter.  
+          	</p>
+          <p> </p>
+          <p>I've got the potions dealt with in any case. Weapons and armor, though, we're still that short on. Did you find any of the supplies we need? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here, this should help."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're kidding. What do you mean "help"? There's nothing here. You want to get me killed, is that it? </p>
+          <p> </p>
+          <p>I need those supplies and I need them now! The Admiral will have my backside for a hat if I don't get them! Go on with you and bring them back here, if you please! </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Sorry, I'll go find them."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, now this is a fine piece of work right here. Beautiful, beautiful. No better sight in the world than the pattern of the Blue Fleet when it's all dressed and armed. </p>
+          <p> </p>
+          <p>Thank you, [%username]. Lives will be saved thanks to you. I'll tell the Admiral of your work here today. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Please collect supplies from [%dic:STR_DIC_E_LF3_SupplyBox_Q1623] and take them to [%dic:STR_DIC_N_Ekseus].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">The Blue Fleet needs more weapons and armor. Get supplies from the Supply Box somewhere along the coast and take them to Ekseus.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ekseus said that Admiral Gorgos was in a bad mood due to a lack of supplies for the Blue Fleet's soldiers. He asked for help finding the lost weapons and armor to resupply the camp.</p>
+          <p> </p>
+          <p>When you got the supplies and took them to Ekseus, he thanked you and offered to praise you to the Admiral.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

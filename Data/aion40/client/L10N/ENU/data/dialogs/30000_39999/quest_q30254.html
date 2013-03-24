@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]! You've helped us advance from Kaluva's Nest to the Crystal Mezzanine, so I guess you're all right.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Have you gotten past the disk yet?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Not yet. Our investigators keep getting stopped by [%dic:STR_DIC_M_IDAbRe_Core_FiNmd_Combine].</p>
+          <p> </p>
+          <p>Every time they get close, it splits into [%dic:STR_DIC_M_IDAbRe_Core_Boss_Guardian_Light_Fi_55_Al] and [%dic:STR_DIC_M_IDAbRe_Core_Boss_Guardian_Dark_Fi_55_Al], then pushes them back or kills them.</p>
+          <p> </p>
+          <p>Are you ready for another chance to penetrate the Abyssal Splinter?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Let me give you the run down. After splitting into [%dic:STR_DIC_M_IDAbRe_Core_Boss_Guardian_Light_Fi_55_Al] and [%dic:STR_DIC_M_IDAbRe_Core_Boss_Guardian_Dark_Fi_55_Al], they build a shield.</p>
+          <p> </p>
+          <p>But they also cancel each other out! If you take Rukril's Splendor Fragment to Ebonsoul--and, conversely, Ebonsoul's Darkness Fragment to Rukril--his shield will disappear.</p>
+          <p> </p>
+          <p>But you must coordinate your attacks. If one collapses before the other, the remaining enemy will become too aggressive to deal with.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"An old game of switch-kill? I like it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>After all we've been through, you draw the line at this? This?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"What can I say? It's not my scene."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We may hold the Divine Fortress right now, but we could be attacked from beneath at any time.</p>
+          <p> </p>
+          <p>Ah, [%username], our potential savior. What news of Rukril and Ebonsoul? What lies beyond the Crystal Mezzanine? Safety, perhaps?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"The disk is ours, but wait...there's more."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good work! Your efforts and constant loyalty make the fortress a safer way-station for all Daevas.</p>
+          <p> </p>
+          <p>An Artifact of Protection, you say. There must be a way to use it to our advantage.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get rid of the Protector of the Crystal Mezzanine.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_IDAbRe_Core_Boss_Guardian_Light_Fi_55_Al]([%2]/1)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_IDAbRe_Core_Boss_Guardian_Dark_Fi_55_Al]([%5]/1)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Let [%dic:STR_DIC_NPC_Ab1_1011_TreasureGate_Li] know there's more to the Splinter.</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">The Abyssal Splinter remains un-investigated because Rukril and Ebonsoul protect the Crystal Mezzanine. Defeat them for the right to explore deeper inside the Splinter.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Aratus said his investigators had advanced to the Crystal Mezzanine, but couldn't win past it.</p>
+          <p> </p>
+          <p>Following his information, you got rid of Rukril and Ebonsoul, then discovered the Artifact of Protection inside the Abyssal Splinter.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

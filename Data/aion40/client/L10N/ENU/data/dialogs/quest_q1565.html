@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm sure you know that Daevas of Zephyr are dispatched to Heiron to gather information on the Balaur and the undead. We need intelligence on the Balaur to aid our fight in the Abyss. </p>
+          <p> </p>
+          <p>Other Daevas, like myself, investigate undead...attempting to fathom the source of the contamination. Most importantly we return lost souls to the flow of Aether.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Yes, we must do what we can." </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm in charge of the whole area, but this place is so sharding huge I can't oversea every detail. My superiors don't accept excuses.</p>
+          <p> </p>
+          <p>So. I want to ask you this. Would you go to Orton Farm and destroy [%dic:STR_DIC_M_Banshee_37_An]s and [%dic:STR_DIC_M_Bookie_37_An]s?</p>
+          <p> </p>
+          <p>Their numbers have increased and I have no time or people to handle them.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Terrific. Orton Farm is east from here.</p>
+          <p> </p>
+          <p>Kill [%dic:STR_DIC_M_Banshee_37_An]s and [%dic:STR_DIC_M_Bookie_37_An]s, then report back.</p>
+          <p> </p>
+          <p>I'm counting on you. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Killing the dead is an honor."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], you'll never understand my troubles.</p>
+          <p> </p>
+          <p>I chose to become a Daeva of Zephyr because of their reputation for freedom, but I'm not as free as I expected.</p>
+          <p> </p>
+          <p>I don't know who else I can turn to....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Maybe you should get to work...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, you're back. I've been preoccupied with sorting the information I've gathered so far.</p>
+          <p> </p>
+          <p>Things would be better if the Daevas in the field just sent their reports to the temple and let them sort it out.</p>
+          <p> </p>
+          <p>How did you fare with the Banshees and Boggarts? Did they give you any trouble?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Not at all--they're done for."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you.</p>
+          <p> </p>
+          <p>I'll attach one more line to my report.</p>
+          <p> </p>
+          <p>Here's a reward for your efforts.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Hunt Banshees and Boggarts at Orton Farm.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Banshee_37_An]([%2]/7)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Bookie_37_An]([%5]/5)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report the result to [%dic:STR_DIC_N_Gamedes].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Get rid of Sobbing Banshees and Ragged Boggarts at Orton Farm.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Gamedes said he wanted the undead at Orton Farm removed, but he didn't have time due to his heavy workload. </p>
+          <p> </p>
+          <p>So you went to the Orton Farm to get rid of the Sobbing Banshees and Ragged Boggarts. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

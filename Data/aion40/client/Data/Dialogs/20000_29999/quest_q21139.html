@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>어머니가 용족의 공격에 돌아가셨다고 했다니?</p>
+          <p> </p>
+          <p>아들된 도리로 부모 죽인 원수를 그냥 둘 순 없다니.</p>
+          <p> </p>
+          <p>눙라크 부락을 공격한 놈들 한 놈도 살려두지 않을 거라니, 아울.</p>
+          <p> </p>
+          <p>그러고 보니 네 이름은 뭐라니? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">이름을 알려준다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]? 특이한 이름이라니.</p>
+          <p> </p>
+          <p>[%username], 나 좀 도와주면 안 되겠니? </p>
+          <p> </p>
+          <p>어머니 원수는 내가 직접 나서야 맞지만 아직 어린 자식이 있다니, 아울.</p>
+          <p> </p>
+          <p>그 녀석들 앞가림하려면 좀더 있어야 한다니.</p>
+          <p> </p>
+          <p>네가 대신 용족 놈들 혼 좀 내주면 안 되겠니?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정말 고맙다니.</p>
+          <p> </p>
+          <p>내 이 은혜는 꼭 갚겠다니.</p>
+          <p> </p>
+          <p>파괴된 눙라크 부락에 남아있는 용족이 누구라니?</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_DF4_DrakanFi_Re_B1_53_An]과 [%dic:STR_DIC_M_DF4_DrakanPr_Re_B1_53_An]이라니? 걔네들 모두 없애 달라니, 아울.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>괜찮다니, 아울.</p>
+          <p> </p>
+          <p>부모 원수를 남한테 부탁한 내가 잘못이라니.</p>
+          <p> </p>
+          <p>아우의 소식을 알려준 것만으로도 충분히 고맙다니.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 아니라니?</p>
+          <p> </p>
+          <p>파괴된 눙라크 부락에서 오는 길이라니?</p>
+          <p> </p>
+          <p>어머니를 죽인 용족에게 복수를 했다니?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 얘기한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>고맙다니, 정말 고맙다니.</p>
+          <p> </p>
+          <p>이제야 형으로서 아우에게 면목이 설 것 같다니, 아울.</p>
+          <p> </p>
+          <p>이거 받으라니. 내가 제일 아끼는 건데 네겐 하나도 아깝지 않다니.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">파괴된 눙라크 부락의 용족을 소탕하라</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_DF4_DrakanFi_Re_B1_53_An]([%2]/5)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_DF4_DrakanPr_Re_B1_53_An]([%5]/5)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Owlau_DF4_01]과 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">울라킨을 대신해 눙라크 부락을 파괴하고 어머니를 죽인 용족에게 복수해야겠다.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>울라킨은 아들된 도리로 어머니를 죽인 원수를 갚아야 한다며 아직 어린 자식들이 있어 직접 나서기 힘드니 대신 복수해 달라고 했다.</p>
+          <p> </p>
+          <p>울라킨의 부탁대로 파괴된 눙라크 마을의 용족을 처치하고 돌아가자 정말 고맙다며 자신이 아끼는 것을 건넸다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

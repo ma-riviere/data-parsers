@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], did you see a Soul on your way here? It looks like a floating mass of rock carrying a load of minerals on its back.</p>
+          <p> </p>
+          <p>I'd never seen or heard of such a thing, but Priest Ganglot says he feels the energy of souls within it. But Ganglot has become a little odd of late, so he could be feeling hungry or thirsty for all I know. </p>
+          <p> </p>
+          <p>He thinks that the souls of Daevas who vanished in Reshanta might have been absorbed by a mineral that eventually transformed into that hideous creature.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"That's an interesting theory."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I don't know if he is right or not--I know nothing about minerals or souls.</p>
+          <p> </p>
+          <p>But Ganglot is quite serious and insists that we gather fragments of Souls and send them to Pandaemonium for research. He wants them examined by a Protector of Divinity with better skills than his own.</p>
+          <p> </p>
+          <p>Would you please help me gather fragments of Soul, [%username]? I cannot leave the priest alone. Elyos may appear at any time.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>All right, good. Now, Ganglot says there are two types of Souls: [%dic:STR_DIC_M_Ab1_1132_SouledStone_25_An] and [%dic:STR_DIC_M_Ab1_1132_SouledStoneB_25_An].</p>
+          <p> </p>
+          <p>We need to gather fragments of both for better analysis.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"To think I earned my wings for this."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>A mass of moving rock imbued with souls. Nonsense, right?</p>
+          <p> </p>
+          <p>You can be frank with me. I thought he was crazy when I first heard about it too.</p>
+          <p> </p>
+          <p>However, after working with Ganglot these weeks and seeing and hearing at least three incredible things every morning before breakfast, I now believe. If you can't, I understand.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Farewell."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're back sooner than I expected.</p>
+          <p> </p>
+          <p>Did you gather [%dic:STR_DIC_I_QUEST_2744a] and [%dic:STR_DIC_I_QUEST_2744b]?</p>
+          <p> </p>
+          <p>Here, give me the fragments.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here are the fragments...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's not exactly an urgent mission. Even if you gather them now, I cannot send them immediately to Pandaemonium.</p>
+          <p> </p>
+          <p>But please don't delay too long. I have to send the fragments by the messenger who delivers our supplies.</p>
+          <p> </p>
+          <p>I would be much relieved if you could collect them as soon as possible.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Sure."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Look at these fragments. They glow with a dim, blue light. Aren't they beautiful?</p>
+          <p> </p>
+          <p>Even I feel a mysterious energy. I may have heard too much talk of soul imbuing and the like. </p>
+          <p> </p>
+          <p>Well, I have no idea what they are. I just need to pack them safely off to Pandaemonium. Thank you for your help.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect the fragments of [%dic:STR_DIC_M_Ab1_1132_SouledStone_25_An] and [%dic:STR_DIC_M_Ab1_1132_SouledStoneB_25_An], and take them to [%dic:STR_DIC_N_Gjalf].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Ganglot believes that the Blue Crystal Soul and the Evolving Soul contain the souls of dead Daevas. Defeat the Souls and collect their fragments for further study.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Gjalf was told by Priest Ganglot that the Blue Crystal Soul and the Evolved Soul wandering about the Grave of Steel might contain the souls of Daevas.</p>
+          <p> </p>
+          <p>Gjalf wanted to send them to Pandaemonium for close examination. You defeated the Blue Crystal Soul and the Evolved Soul and took the fragments of Souls to her.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

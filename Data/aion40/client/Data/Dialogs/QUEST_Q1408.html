@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아! 다시 와 주셨군요.</p>
+          <p> </p>
+          <p>제가 얼마나 반가운지 모를 겁니다.</p>
+          <p> </p>
+          <p>라이노스와 드라이네크가 여전히 결계탑으로 쳐들어오거든요.</p>
+          <p> </p>
+          <p>놈들 때문에 아주 골치가 아파 죽겠어요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>뭘 처치해야 하는지는 아시죠? </p>
+          <p> </p>
+          <p>이번에도 [%dic:STR_DIC_M_Rhinoce_35_An]와 [%dic:STR_DIC_M_Driton_35_An]%을 부탁드리겠습니다.</p>
+          <p> </p>
+          <p>[%username] 님이라면 이 정도는 문제없겠죠? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>다시 도와주러 와 주셔서 정말 감사합니다.</p>
+          <p> </p>
+          <p>라이노스와 드라이네크를 처치하고 증거를 가지고 와 주세요.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_I_QUEST_1408a]%와 [%dic:STR_DIC_I_QUEST_1408b]%을 5개씩 부탁드릴게요.</p>
+          <p> </p>
+          <p>그럼 [%username] 님만 믿고 있겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>지난번에도 말씀드렸지만 라이노스와 드라이네크는 사나운 데다 수도 많아서 키벨레와 저만으론 모두 처리하기 힘들어요.</p>
+          <p> </p>
+          <p>정말 도움이 절실히 필요합니다.</p>
+          <p> </p>
+          <p>나중에라도 생각이 바뀌면 오십시오. 라이노스와 드라이네크는 많으니까요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_M_Rhinoce_35_An]와 [%dic:STR_DIC_M_Driton_35_An]은 처치하고 오셨나요?</p>
+          <p> </p>
+          <p>[%username] 님이라면 그 정도는 일도 아니었겠죠?</p>
+          <p> </p>
+          <p>그럼 증거물을 이리 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">사냥의 증거를 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이번에 부탁드린 건 [%dic:STR_DIC_I_QUEST_1408a] 5개와 [%dic:STR_DIC_I_QUEST_1408b] 5개입니다.</p>
+          <p> </p>
+          <p>뭔가 착각하신 건가요?</p>
+          <p> </p>
+          <p>하나하나 가져올 때마다 보수를 드릴 순 없습니다. 그러니 증거물 숫자를 딱 맞춰서 가져오세요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이번에도 훌륭하게 처리해 주셨군요.</p>
+          <p> </p>
+          <p>여기 약속드린 보수입니다.</p>
+          <p> </p>
+          <p>이제야 좀 마음놓고 쉴 수 있겠군요. 정말 감사합니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_M_Rhinoce_35_An]와 [%dic:STR_DIC_M_Driton_35_An]%을 처치한 증거를 [%dic:STR_DIC_N_Dionera]에게 가져가라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">결계탑으로 돌진하는 라이노스와 드라이네크를 처치하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body> 
+          <p>결계탑으로 돌진하는 라이노스와 드라이네크를 처치하고 증거물을 모아 디오네라에게 가져갔다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

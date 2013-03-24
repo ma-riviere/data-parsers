@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p> - Emergency Operation Order - </p>
+          <p> </p>
+          <p>From: Pandaemonium Operations Headquarters</p>
+          <p> </p>
+          <p>To: [%username]</p>
+          <p> </p>
+          <p>Order: Eliminate members of [%dic:STR_DIC_E_Q49007].</p>
+          <p> </p>
+          <p>Report to [%dic:STR_DIC_N_Sala] at the Marchutan Priory once you have completed this mission.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Time to be on my way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+        	<p>What? Elyos infiltrating Brusthonin? There's no rift there!</p>
+        	<p> </p>
+        	<p>Is it possible that they've developed Dimensional Vortex technology as well?</p>
+        	<p> </p>
+        	<p>The incursion doesn't matter though, if you've stopped it. Give me your report.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I dealt with the threat."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+        <p>That was fortunate timing then. With their supplies and reinforcements cut off, it will be easier for us to deal with the remaining Ellies.</p>
+        <p> </p>
+      	<p>I'm concerned though, that we didn't realize the Elyos had landed in Brusthonin. Reconniassance shows they made their beachhead to the South.</p>
+      	<p> </p>
+      	<p>I think we got lucky with this one. Thank you, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Kill members of [%dic:STR_DIC_E_Q49007]s ([%2]/15).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report to [%dic:STR_DIC_N_Sala].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Emergency Order: Eliminate The 1st Sanctum Operations Headquarters Support Unit then report to Salla.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You received an emergency order from the Pandaemonium Operations Headquarters, telling you to stop The 1st Sanctum Operations Headquarters Support Unit, a group of Elyos cowards who had infiltrated Brusthonin. You completed the mission flawlessly.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

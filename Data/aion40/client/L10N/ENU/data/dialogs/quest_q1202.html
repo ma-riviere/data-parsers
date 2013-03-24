@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You really made a difference last time, [%username].</p>
+          <p> </p>
+          <p>But you know what the Krall are like--stupid, ugly, and persistent.</p>
+          <p> </p>
+          <p>They're massing again, which means another attack on Verteron Citadel.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What can we do?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>          
+          <p>We have to stop it before it begins. If you head down to the Tursin Outpost and take out ten each of the [%dic:STR_DIC_MLA60]s and [%dic:STR_DIC_MLA27_1]s, their battle plans should be crippled...for now, at least.</p>     
+          <p> </p>
+          <p>There's not much left in the Verteron war chest, but I'm sure we can pay you something.</p>  
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Glad to hear it, [%username]!</p>
+          <p> </p>
+          <p>Just don't try heading out there alone. A single Krall is no big deal, but a camp full is a different matter.</p>   
+          <p> </p>
+          <p>Now get in there! I'll wait here.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"The task is mine."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Really? I thought... Never mind. I am sure you have many claims on your time.</p>
+          <p> </p>
+          <p>If you happen to see other [%userclass]s, would you point them this way? The Krall are mustering, and someone has to deal with it.</p>   
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I will."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">   
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You made it back, [%username]! You did remember to take allies, didn't you?</p>
+          <p> </p>
+          <p>How's the Krall body count looking?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Taken care of."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I knew you wouldn't let me down. Good work, [%username].</p>          
+          <p> </p>
+          <p>Any time you're free, I'd welcome your help. I need people I can count on.</p>   
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Eliminate Krall in the [%dic:STR_DIC_FLA22].</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_MLA60] ([%2]/10)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_MLA27_1] ([%5]/10)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_LA39].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">The Tursin Krall are gathering, preparing an assault on Verteron Citadel. Kill Krall in the Tursin Outpost.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Krall frequently gather to prepare large-scale assaults, so Meteina sends volunteers into the Tursin Outpost to subdue them.</p>
+          <p> </p>
+          <p>You gathered some allies and battled the Krall.</p>  
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

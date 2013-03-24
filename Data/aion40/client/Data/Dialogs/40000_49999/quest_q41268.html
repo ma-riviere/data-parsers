@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q41268</QuestId>
+    <QuestName>최고의 요리 1</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>상부에 제 성과를 보고하면 다들 놀라 자빠질 겁니다. [%username] 님께서 도와주신 분량을 포함하지 않아도요!</p>
+          <p> </p>
+          <p>하지만 도와주신 것은 분명히 기억해 두고 있겠습니다. 높은 지위에 오르게 되더라도 말이죠.</p>
+          <p> </p>
+          <p>그럼 이제... [%dic:STR_DIC_N_Kinotia]에게 가 봐야겠죠?</p>
+          <p> </p>
+          <p>하지만 이렇게 좋은 날 빈손으로 돌아갈 순 없습니다. 아내가 언제나 먹고 싶어하던 최고의 요리를 선물해야겠어요.</p>
+          <p> </p>
+          <p>죄송한데 [%dic:STR_DIC_W_LDF4a_SZ_C2_01]에서 북쪽으로 난 길을 따라가면 볼 수 있는 [%dic:STR_DIC_M_LDF4A_C2_SalivadoRed_58_An]의 등뼈를 좀 구해주시지 않겠습니까?</p>
+          <p> </p>
+          <p>제가 가고 싶지만 발목의 상처가 아직 낫지를 않아서 말입니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>제 입으로 말하기는 좀 쑥스럽지만 제 요리실력은 수준급이랍니다.</p>
+          <p> </p>
+          <p>바쁘지 않을 때에는 아내에게 곧잘 요리를 해주는 편입니다만 최근에는 너무 바빠져서 그러질 못했었죠.</p>
+          <p> </p>
+          <p>그러니 평소에 아내가 가장 먹고 싶어하던 음식을 만들어 봐야겠습니다.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_LDF4A_C2_SalivadoRed_58_An]에게서 [%dic:STR_DIC_I_QUEST_41268A]는 챙겨오셨습니까? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">등뼈를 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>좋은 등뼈로군요.</p>
+          <p> </p>
+          <p>끝내주는 국물이 우러날 것 같습니다.</p>
+          <p> </p>
+          <p>수고하셨습니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_I_QUEST_41268A]%을 구해 [%dic:STR_DIC_N_Joubis]에게 돌아가라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">아내에게 최고의 요리를 선물하고 싶은 조우비스를 위해 국물의 재료를 구해가자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>조우비스는 아픈 키노티아에게 빈손으로 돌아갈 수 없다며 최고의 요리를 선물하고 싶다고 했다.</p>
+          <p> </p>
+          <p>다친 발목이 낫지 않은 그를 위해 끝내주는 국물의 재료를 구해다 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

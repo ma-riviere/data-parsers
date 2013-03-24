@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q41272</QuestId>
+    <QuestName>킬루스 사냥</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_W_LDF4a_SZ_C2]에서 돌아온 병사들의 말을 들어보니 드라칸들이 자색꼬리 클룩스를 사육한다고 하더군요.</p>
+          <p> </p>
+          <p>자색꼬리 클룩스는 엄청난 식욕과 번식력을 가지고 있는 괴물입니다.</p>
+          <p> </p>
+          <p>놈들이 머무른 지역의 식생은 급속도로 황폐해져 버리죠.</p>
+          <p> </p>
+          <p>그렇지 않아도 식재료 수급에 문제가 많은데 놈들이 바깥으로 빠져나오기라도 하면 상황은 더욱 나빠질 겁니다.</p>
+          <p> </p>
+          <p>[%username] 님께서 [%dic:STR_DIC_M_LDF4A_C2_Kuillus_DR_57_An]를 좀 처리해 주시면 안 되겠습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>저는 지속 가능한 발전이 무엇보다도 중요하다고 생각합니다.</p>
+          <p> </p>
+          <p>드라칸들은 침략과 약탈에 의존하기 때문에 그런 점은 신경쓰지 않죠.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_LDF4A_C2_Kuillus_DR_57_An]가 어떤 놈들인데 먹이를 주고 기르다니... 어휴...</p>
+          <p> </p>
+          <p>놈들은 처치하고 오셨습니까?</p>
+          <p> </p>
+          <p>꽤 사나웠을 텐데... </p>
+         </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">처치했다고 답한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>역시!</p>
+          <p> </p>
+          <p>[%username] 님이시라면 수월하게 처리하실 줄 알았습니다.</p>
+          <p> </p>
+          <p>당분간은 걱정하지 않아도 되겠군요. 감사합니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+             
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_W_LDF4a_SZ_C2]로 가서 [%dic:STR_DIC_M_LDF4A_C2_Kuillus_DR_57_An]를 처치하라([%2]/11)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Dohios]%와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">엄청난 식욕과 번식력을 가진 자색꼬리 클룩스들을 처치하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>도이오스는 드라칸들이 기르는 자색꼬리 클룩스가 탈출이라도 하면 주변에서 식자재를 구하기가 더욱 힘들어 질 거라며 걱정했다.</p>
+          <p> </p>
+          <p>그래서 티아마트의 심연으로 가 자색꼬리 클룩스를 처치해 줬다.</p>
+          <p> </p>
+          <p>도이오스의 말처럼 식성이 엄청날 것 같아보이는 녀석이었다.</p>
+          <p> </p>
+          <p>번식력은 확인할 수 없었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

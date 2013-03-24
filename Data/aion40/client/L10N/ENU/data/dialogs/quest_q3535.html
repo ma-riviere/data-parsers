@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q3535</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>Not entered</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Pacing? Well, yes, I guess I am pacing. This place makes me antsy. It's so quiet compared to the Abyss.</p>
+          <p> </p>
+          <p>Going from fighting in Reshanta to teaching Guardians in Heiron is kind of a sharp contrast. It'll take a while to adjust. The work is good though. I like teaching, it's just so much...slower.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Nothing wrong with slow."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I suppose not. And things I think of as trivial, like maurauding Kerubiels...well, they're downright dangerous to the average villager. Something that needs to be addressed.</p>
+          <p> </p>
+          <p>And honestly, a good Kerubiel hunt sounds pretty fun, but I've got a full class schedule today.</p>
+          <p> </p>
+          <p>You wouldn't happen to be interested in clearing out the Kerubiels down by the Aetheric Field Observatory, would you?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good to hear. I'd love to wait and do it on my day off, but the villagers could really use the help sooner than that.</p>
+          <p> </p>
+          <p>If you could kill off the [%dic:STR_DIC_M_Cherubim3_32_An]s near the Aetheric Field Observatory and bring back their [%dic:STR_DIC_I_QUEST_3535A]s, I can show the belts to the villagers to reassure them that the threat has been addressed.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Sure. Belts it is."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Drat. I can't just skip class, and I don't have authority to order anyone else to do it.</p>
+          <p> </p>
+          <p>Oh well. I'll have to wait until I have some free time.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm sure the Kerubiels will wait."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That was snappy.</p>
+          <p> </p>
+          <p>How was the fight? Fun?</p>
+          <p> </p>
+          <p>Did you bring the [%dic:STR_DIC_I_QUEST_3535A]s?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Belts in an assortment of sizes."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You haven't been to the Aetheric Field Observatory yet?</p>
+          <p> </p>
+          <p>Come on now, it's not that far away!</p>
+          <p> </p>
+          <p>Oh, and don't forget to bring back the [%dic:STR_DIC_I_QUEST_3535A]s.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Yeah, yeah."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Let me see...ah, look at that tooling. These are definitely Kerubiel Belts.</p>
+          <p> </p>
+          <p>Thank you. These should reassure the villagers. One less thing to worry about.</p>
+          <p> </p>
+          <p>I know it doesn't seem like much, but every little bit helps.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect [%dic:STR_DIC_I_QUEST_3535A]s and bring them to [%dic:STR_DIC_N_Daruka].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Eliminate the Kerubiel Sentinels near the Aetheric Field Observatory, and bring [%dic:STR_DIC_I_QUEST_3535A]s to [%dic:STR_DIC_N_Daruka] so he can reassure the villagers.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Daruka was concerned about the Kerubiel attacks on villagers near the Aetheric Field Observatory.</p>
+          <p> </p>
+          <p>He was busy with classes, so you eliminated the Kerubiel Sentinels for him and brought back Kerubiel Belts to prove the conquest.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

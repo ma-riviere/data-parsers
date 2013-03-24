@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We've lost a lot of good soldiers to the Ice Claw Mau...blasted string chasers.</p>
+          <p> </p>
+          <p>I wear a Mau skin hat each time I venture near their village, just to let those fuzz faces know that opposing Asmodae means death.</p>
+          <p> </p>
+          <p>Even still...the Mau are no pushovers, but I'm sure you know that, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I've slain my fair share."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hahaha, That's what I like to hear!</p>
+          <p> </p>	
+          <p>You know, killing Mau in the Ice Claw Village might be tough, but the MuMu Village is a different story.</p>
+          <p> </p>
+          <p>The Mau stationed there are far weaker than those at Ice Claw Village. Even though the Mau at Ice Claw Village are the main threat, we can cut off their ginseng supply from the plantation by killing Mau at the MuMu Village.</p>
+          <p> </p>
+          <p>If we hit ginseng production at the plantation, we deal a crippling blow to Ice Claw Village. What do you say, [%username]? Interested in cracking some skulls?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Blood for blood, [%username]!</p>
+          <p> </p>
+          <p>Let's start by killing [%dic:STR_DIC_M_LycanHunterM_29_An], [%dic:STR_DIC_M_KeA_LycanKnightM_29_An], and [%dic:STR_DIC_M_LycanFighterM_29_An] in the MuMu Village. Ginseng production will drop, and the Ice Claw Mau will lose their power.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"The task is mine."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This will deal a cripping blow to the Mau, [%username]!</p>
+          <p> </p>
+          <p>We don't know when the Ice Claw Mau might realize their weakness and send reinforcements to the MuMu Village. Now is the time to strike!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I can't right now."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I envy the soldiers who are sent to the front.... Though the Mau are formidable foes, it is fighting the Elyos that brings Asmodae true glory. Guard duty brings no such glory, but I suppose it has to be done.</p>
+          <p> </p>
+          <p>Well, [%username]? How did you fare at the Munmun Ginseng Plantation?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"The Mau are dead."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That's excellent news! Your efforts have moved us one step closer to crushing the Mau.</p>
+          <p> </p>
+          <p>Those string chasers had no idea what was coming, eh, [%username]? I'll make sure to mention your name when I report our progress.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get rid of Mau at the Munmun Ginseng Plantation.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_LycanHunterM_29_An]([%2]/10)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_KeA_LycanKnightM_29_An]([%5]/15)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_LycanFighterM_29_An]([%8]/20)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_N_Hakon].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">As Hakon requested, get rid of Mau at the Munmun Ginseng Plantation to weaken the Ice Claw Village. </font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hakon told you that the Munmun Ginseng Plantation is vulnerable, and that killing Mau there will weaken the more powerful Ice Claw Mau.</p>
+          <p> </p>
+          <p>You slew a great number of Ice Claw Hunters, Ice Claw Guards, and Ice Claw Pawsoldiers at the plantation, and Hakon was most impressed.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

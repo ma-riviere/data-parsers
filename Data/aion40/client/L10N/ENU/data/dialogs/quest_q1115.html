@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, [%username]. I was hoping you might help me with something.</p>
+          <p> </p>
+          <p>Do you see the [%dic:STR_DIC_ELA29] standing by me? His name is Noah, and I think he wants help with something, though for the life of me I don't know what it is.</p>
+          <p> </p>
+          <p>What makes matters worse is that Elim hardly ever speak to Humans, so for Noah to contact me like this--there must be something seriously amiss.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What can I do to help?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>If you plan on heading to Lake Cliona anytime soon, please speak with [%dic:STR_DIC_LA07]. She has conversed with the Elim before and may be able to understand what Noah is asking.</p>
+          <p> </p>
+          <p>You'll find her by [%dic:STR_DIC_FLA03]. I'm sure she'll be willing to help.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you so much. Please hurry.</p>
+          <p> </p>
+          <p>I fear something is wrong and we've not noticed yet.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm on it!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I don't think you understand. Something is very wrong if Noah is contacting us, but I don't have a clue what he's saying!</p>
+          <p> </p>
+          <p>Please help--the future of the entire forest could be at stake! You must reconsider!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll think about it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You look concerned, [%userclass]. What's wrong?</p>
+          <p> </p>
+          <p>Has Namus sent you? Is he all right?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">"Namus is worried about the Elim..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Namus was right to send you over. The Elim are such a private species. I wonder what this means.</p>
+          <p> </p>
+          <p>I'm afraid I don't know what is wrong with Noah, though. I can only suggest you head to Akarios Village and speak with the priest there--a man named Asteros.</p>
+          <p> </p>
+          <p>Please make haste, [%username]!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"You can trust me!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, you must be [%username].</p>
+          <p> </p>
+          <p>I have heard stories about you. In fact, I hear you're quite the [%userclass].</p>
+          <p> </p>
+          <p>My name is Asteros, I am the priest of this small village--how may I help you?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Feira sent me, on behalf of Namus..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You were right to come to me with this. Problems in the Daminu Forest often have implications for the rest of Poeta, so this is certainly something I should look into.</p>
+          <p> </p>
+          <p>I'll consult with your mercenary captain and ask for his thoughts.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk with [%dic:STR_DIC_LA07].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Talk with [%dic:STR_DIC_LA02].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Noah of the Elim came to Namus for help, but it was difficult to understand what Noah wanted. Go to Cliona Lake and ask Feira if she can interpret the message.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Noah of the Elim asked Namus for help, but it was difficult to understand what he wanted. You went to Cliona Lake and asked Feira if she could interpret the message.</p>
+          <p> </p>
+          <p>Feira said that this matter was beyond her and sent you to Priest Asteros in the Nobelium. He said that he would consult the mercenary captain.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

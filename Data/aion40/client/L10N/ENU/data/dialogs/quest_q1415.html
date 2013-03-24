@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's time we launched a raid against the Kaidan Headquarters.</p>
+          <p> </p>
+          <p>In light of recent developments, it's clear that we have a golden opportunity. Krall are inherently lazy and cowardly. If we take this chance to hurt them, they'll be reluctant to approach our forces for a while.</p>
+          <p> </p>
+          <p>Besides, now we have someone we can rely on.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"I appreciate your confidence."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], I have the utmost confidence in you. And that's why I'm going to trust you with this mission.</p>
+          <p> </p>
+          <p>The Krall rely on their veteran fighters to motivate and lead large numbers of undisciplined troops.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"The rank and file are unmotivated on their own."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're correct. Just by taking out a few of their better fighters, we can throw the Kaidan Krall into disarray.</p>
+          <p> </p>  
+          <p>Go to the Kaidan Headquarters and kill some [%dic:STR_DIC_M_all_KrallWarrior]s. Collect their [%dic:STR_DIC_I_QUEST_1415a]s and we'll put them on the trophy wall.</p>
+          <p> </p>
+          <p>Crack Kaidan Warmonger, Crack Kaidan Slashers, Kaidan Juggernaut, Crack Kaidan Smashers and Crack Kaidan Skullcrackers are the major combat forces, but I think they've met their match in you, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent. Get rid of the [%dic:STR_DIC_M_all_KrallWarrior]s in the Kaidan Headquarters. They are the motivating force of the Kaidan Krall.</p>
+          <p> </p>
+          <p>Please remove Crack Kaidan Warmonger, Crack Kaidan Slashers, Kaidan Juggernaut, Crack Kaidan Smashers, and Crack Kaidan Skullcrackers. Then collect their [%dic:STR_DIC_I_QUEST_1415a]s.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm on it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hmm, I was relying on you, [%username]. I didn't expect you to refuse.... </p>
+          <p> </p>
+          <p>The future of Eltnen depends on this important mission.</p>
+          <p> </p>
+          <p>Please think it over.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I will return later."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've been waiting for reports from my scouts, but I've heard nothing regarding your mission.</p>
+          <p> </p>
+          <p>Did you get rid of the [%dic:STR_DIC_M_all_KrallWarrior]s and collect the [%dic:STR_DIC_I_QUEST_1415a]s?</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I took these from their bodies."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I thought that you would carry out this mission faithfully, but apparently I was wrong, [%username]?</p>
+          <p> </p>
+          <p>Eltnen is facing a great crisis.</p>
+          <p> </p>
+          <p>Go right away and get rid of the [%dic:STR_DIC_M_all_KrallWarrior]s, and bring their [%dic:STR_DIC_I_QUEST_1415a]s to me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I will return soon."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You removed the Kaidan Warriors? That's welcome news. I receive too little encouraging news these days. Their forces will be greatly weakened.</p>
+          <p> </p>
+          <p>You've successfully carried out a very difficult mission, [%username].</p>
+          <p> </p>
+          <p>I have a reward for you.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Remove [%dic:STR_DIC_M_all_KrallWarrior]s and bring the evidence to [%dic:STR_DIC_N_Aeolus].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Weaken the Kaidan Krall Army. Remove some of their key fighters, and collect Warrior's Marks.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Tumblusen told you to remove key combat forces to weaken the Kaidan Krall Army. </p>
+          <p> </p>
+          <p>As he requested, you removed some of the most elite fighters in the Kaidan Headquarters, and brought their Warrior's Marks as evidence. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

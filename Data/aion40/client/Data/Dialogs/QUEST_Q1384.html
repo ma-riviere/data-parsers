@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>불의 깃털을 구하러 왔구나, 꾸쿠우!</p>
+          <p> </p>
+          <p>사람은 날 보면 불의 깃털만 구할 생각을 한다, 꾸쿠우!</p>
+          <p> </p>
+          <p>불의 칼 때문이라고 했다. 아니면 비싸게 팔 수 있다고 했다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>불의 깃털을 그냥 줄 수는 없다, 꾸쿠우!</p>
+          <p> </p>
+          <p>원하는 것을 가져오면 주겠다.</p>
+          <p> </p>
+          <p>구해 오기 아주 어려운 것이다.</p>
+          <p> </p>
+          <p>그래도 불의 깃털을 원하는가, 꾸쿠우?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_I_QUEST_1384a], [%dic:STR_DIC_I_QUEST_1384b], [%dic:STR_DIC_I_QUEST_1384c].</p>
+          <p> </p>
+          <p>그걸 모아서 가져와라, 꾸쿠우.</p>
+          <p> </p>
+          <p>그리폰을 괴롭히는 짐승을 처치해야만 얻을 수 있는 것이다.</p>
+          <p> </p>
+          <p>그들을 처치하고 증거를 가져오면 불의 깃털을 주겠다, 꾸쿠우.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>내가 원하는 물건이 없으면 불의 깃털도 없다.</p>
+          <p> </p>
+          <p>부탁을 들어주지 않으려면 내 앞에서 떠나라, 꾸쿠우.</p>
+          <p> </p>
+          <p>사람은 언제나 귀찮다, 꾸쿠우.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_I_QUEST_1384a], [%dic:STR_DIC_I_QUEST_1384b], [%dic:STR_DIC_I_QUEST_1384c]를 가져왔나, 꾸쿠우?</p>
+          <p> </p>
+          <p>불의 깃털을 가지고 싶으면 그걸 3개씩 가져와야 한다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">물건을 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+   <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그리포닉스는 장난을 좋아하지 않는다, 꾸쿠우.</p>
+          <p> </p>
+          <p>요구한 물건이 없으면 불의 깃털도 없다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>놈들에게 그리폰을 건드리면 어떻게 된다는 걸 보여 줬다, 꾸쿠우.</p>
+          <p> </p>
+          <p>이젠 함부로 그리폰에게 덤비지 않을 것이다.</p>
+          <p> </p>
+          <p>약속한 대로 불의 깃털의 주겠다, 꾸쿠우.</p>
+          <p> </p>
+          <p>어서 받고 떠나라.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">요구한 물건을 모아 [%dic:STR_DIC_N_NPC_Griffonix]에게 가져가라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">그리폰을 괴롭히는 [%dic:STR_DIC_M_Harpy_all]와 [%dic:STR_DIC_M_Pretor_31_all], [%dic:STR_DIC_M_elementalair3_33_all]을 처치하고 증거물을 가져가서 화염의 그리포닉스에게 불의 깃털을 받자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>화염의 그리포닉스는 불의 깃털을 갖고 싶으면 그리폰을 괴롭히는 퓨리와 프렐, 바람의 정령을 처치하라고 했다.</p>
+          <p> </p>
+          <p>그래서 놈들을 처치하고 증거물을 가져가자 약속대로 불의 깃털을 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

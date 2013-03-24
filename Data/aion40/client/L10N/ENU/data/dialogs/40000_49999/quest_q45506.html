@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Here, take this.</p>
+          <p> </p>
+          <p>It's an urgent order for you, [%username], from the Blood Crusade.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Let's see it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p align="center"> - Operation Order - </p>
+          <p> </p>
+          <p>From: The Blood Crusade</p>
+          <p> </p>
+          <p>To: Crusader [%username]</p>
+          <p> </p>
+          <p>The Blood Crusade has confirmed the presence of an Elyos legion on the move in Morheim and Beluslan. Their numbers are not massive, but nonetheless pose a threat to Asmodae. As such, the Blood Crusade is issuing a kill order to be executed immediately.</p>
+          <p> </p>
+          <p>  1. Move to intercept the Elyos in [%dic:STR_DIC_E_DF2_name] and [%dic:STR_DIC_E_DF3_name] and slay at least three of their number.</p>
+          <p> </p>
+          <p>  2. Dispose of the enemy by any means possible--brutal tactics are authorized for this mission. Fight with pride. Killing Elyos novices will not count towards this assignment.</p>
+          <p> </p>
+          <p>  3. When the enemies have been slain, report to [%dic:STR_DIC_N_Tostig].</p>
+          <p> </p>
+          <p>May you walk in Azphel's shadow. Blood for blood!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This is great news!</p>
+          <p> </p>
+          <p>A [%userclass] like you at the forefront of this initiative will really help our drive. People follow you, see? You're a leader.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"They should follow their own paths."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh. I...I see.</p>
+          <p> </p>
+          <p>I understand. Of course, I can't force you to help me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm sorry. I can't help now."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, [%username], you're back!</p>
+          <p> </p>
+          <p>I hear the Elyos legion in Morheim and Beluslan ran into a little...trouble.</p>
+          <p> </p>
+          <p>I don't suppose you had a hand in that?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"They had an unexpected visitor."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hahaha! I knew I could count on you, [%username].</p>
+          <p> </p>
+          <p>Please take this reward from your fellow Crusaders, and continue to crush the twiggies wherever they pop up.</p>
+          <p> </p>
+          <p>Blood for blood!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Butcher the [%dic:STR_DIC_E_Daily_2] cowards in [%dic:STR_DIC_E_DF2_name] and [%dic:STR_DIC_E_DF3_name]([%2]/2).</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Report back to [%dic:STR_DIC_N_Tostig].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Urgent order: Kill the Elyos in Morheim and Beluslan, and report to a Reshanta branch agent.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Blood Crusade has issued an unrgent kill order against the Elyos legion roaming throughout Morheim and Beluslan. </p>
+          <p> </p>
+          <p>You slew the Elyos and reported to a Reshanta Branch Agent for your reward.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+  
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

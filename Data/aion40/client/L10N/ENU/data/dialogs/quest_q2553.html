@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]! [%username] [%username] [%username]!</p>
+          <p> </p>
+          <p>Been waiting for you for so long now, yes yes! Forgot your face, asked all the passing Daevas "Are you [%username]?" But no! Now here you are!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Here I am. What's wrong?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Paid good Kinah by a man, told to send a Daeva named [%username] to Brigade General [%dic:STR_DIC_N_Nerthus].</p>
+          <p> </p>
+          <p>Don't look at me like that, Daeva--I don't know any more! Paid good Kinah, told not to ask questions, so didn't. But doesn't matter! Nerita wants you, so go--hurry to Beluslan Fortress!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good good. Must be important if [%dic:STR_DIC_N_Nerthus] wants to speak to Daeva personally, yes?</p>
+          <p> </p>
+          <p>Go, hurry! Beluslan Fortress won't come to you!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Thanks for letting me know."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Stupid Daeva! No matter to me! Was only told to tell you, but stupid STUPID Daeva!</p>
+          <p> </p>
+          <p>Nerita is Brigade General  of all of Beluslan! She asks for you, you should go running!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Watch your tongue, Shugo."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, you must be [%username]?</p>
+          <p> </p>
+          <p>I should apologise for contacting you in such a roundabout way. Unfortunately, my hand was forced--you were difficult to keep track of.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">"Why am I here, General?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Because of the Lepharists, [%username]. They've set up some kind of base in the Malek mine, and we don't know why. The mine is right next to the Kidorun Thieves, and we understand you've developed something of a working relationship with them.</p>
+          <p> </p>
+          <p>We want to know what else is in the mine. We've scouted the area, and the Lepharists there are soldiers, not miners.</p>
+          <p> </p>
+          <p>Speak with your contacts in the Kidorun Thieves, and report back. Blood for blood.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"Easy. Blood for blood."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Back so soon?</p>
+          <p> </p>
+          <p>What did Nerita want? Can Daeva say? You can, yes?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Tell me what's in the Malek Mine. Now."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Malek Mine? Daeva asks ME? B-But look! Skinny little arms, fragile little b-b-body!  Lepharists would kill Huarinrinerk, yes yes!</p>
+          <p> </p>
+          <p>Don't ask me, D-Daeva! Let's t-talk about something else, yes? Yes yes!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk to [%dic:STR_DIC_N_Nerthus].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Talk to [%dic:STR_DIC_N_Shugo_DF3_12].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Huarinrinerk told you that Brigade General Nerita was looking for you. Go to the fortress and meet her.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Huarinrinerk told you that Nerita, the Brigade General of the Beluslan Fortress, was looking for you.</p>
+          <p> </p>
+          <p>You went to the fortress and met Nerita, who said that there was something strange about the Lepharists occupying the Malek Mine. She wanted to investigate them, and the mine.</p>
+          <p> </p>
+          <p>However, she couldn't dispatch spies due to complex terrain over there, and asked you to investigate the Lepharists with the help from the Kidorun Thieves that had grown to know you.</p>
+          <p> </p>
+          <p>You returned to Huarinrinerk and asked her about the mine, causing her to panic as she feigned ignorance.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

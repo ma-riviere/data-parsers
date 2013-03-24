@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Shards! The enemy is storming the Crimson Temple, [%username]!</p>
+          <p> </p>
+          <p>Most of my comrades are either bleeding on the battlefield or at an Obelisk. We need soldiers to retake the Crimson Temple, or Vorgaltem Citadel and Gelkmaros Fortress itself will be at risk!</p>
+          <p> </p>
+          <p>I mean, I enjoy a bloodbath just as much as the next Asmodian, but not when we're in danger of losing our hold on Gelkmaros!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What needs to be done?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We've got to retake the Crimson Temple. There's no other course of action.</p>
+          <p> </p>
+          <p>[%username], I need you to head to the temple and slaughter the guards. Take some dependable allies with you if possible, or it'll get messy.</p>
+          <p> </p>
+          <p>Well, are you up for it?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've got another legion tasked with slaying the Guardian General, so you just need to concentrate on the guards.</p>
+          <p> </p>
+          <p>Once the temple can be captured, attack the [%dic:STR_DIC_M_QUEST_21231all], and kill as many as possible. When you've retaken the temple, report in to [%dic:STR_DIC_N_Cozett]--she should be in the area. </p>
+          <p> </p>
+          <p>Get moving. There's no time to waste!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Blood for blood."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're abandoning your people in their hour of need, [%username].</p>
+          <p> </p>
+          <p>Many of my friends bled on that battlefield for the glory of Asmodae.</p>
+          <p> </p>
+          <p>When the enemy occupies the Crimson Temple, it doesn't bode well for any of us in Gelkmaros. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be careful."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank Azphel this is over.... I failed to protect the Crimson Temple, and the enemy overtook it....</p>
+          <p> </p>
+          <p>Balaurea is still strange to me. I'll never be comfortable in this place, even with Svidar at my side.</p>
+          <p> </p>
+          <p>I'm just glad that we have the temple back. I heard that you played a part in that, [%username]?</p>
+         </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I did my part."</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you. Without Daevas like you in Gelkmaros, we'd have no hope of wresting control from our enemies, or slaying Tiamat.</p>
+          <p> </p>
+          <p>The enemy has retreated...for now, and we're one step closer to domination.</p>
+          <p> </p>
+          <p>Please, take this as a reward for your service.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Eliminate the [%dic:STR_DIC_M_QUEST_21231all] ([%2]/20)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_N_Cozett].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">The Crimson Temple has fallen to the enemy. Eliminate the enemy guards and retake the temple.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Raeyena gave you a mission to eliminate enemy guards as part of the effort to reclaim the Crimson Temple.</p>
+          <p> </p>
+          <p>You went there and triumphed over the guards. When you reported to Cozett, she thanked you for your service to Asmodae.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

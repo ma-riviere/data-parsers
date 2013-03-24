@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--Tightening pass 17 Apr by Dave-->
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I wish [%dic:STR_DIC_N_Motgar] was here. I'd wring his neck.</p>
+          <p> </p>
+          <p>We sent him out to the [%dic:STR_DIC_W_DF1_13] a few weeks ago. His laziness was getting intolerable here. He's the sort who won't lift a finger unless you stand right behind him and scream in his ear. Not exactly the Asmodian way, eh?</p>
+          <p> </p>
+          <p>I'd go yell at him again, but I've got too much to do here. Our armorer, [%dic:STR_DIC_N_Dalot], can't do his job because Motgar won't get him the sap he needs.</p>
+          <p> </p>
+          <p>Wait...you're [%username], right?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Yes."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Aha! I heard you were Vanar's lackey for a while. Glad to see you've moved on. That Vanar is useless, sitting there in his tent and cursing the darkness.</p>
+          <p> </p>
+          <p>Is it true he sent Tobu a fruit basket? Not exactly the sort of gift a real raider like Tobu appreciates.</p>
+          <p> </p>
+          <p>Anyway, [%username]...the best way to earn some prestige with us and catch Ulgorn's eye is to volunteer. There's always one more thing to do, eh?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I see where you're going with this..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I figured you would. [%dic:STR_DIC_N_Motgar] needs another dose of old-fashioned yelling to get him extracting sap again. And I'm too busy sortin' out the camp defenses to run back and forth.</p>
+          <p> </p>
+          <p>Could you "convince" him to get back to work? He's in the Munihele Forest</p>
+          <p> </p>
+          <p>It should be easy. Motgar is meek, and he'll fold like a shirt when you get in his face.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I know you haven't been with us long, but you're starting to walk and talk like a raider. That'll help you with [%dic:STR_DIC_N_Motgar].</p>
+          <p> </p>
+          <p>So, the message: Tell him that I need three buckets of sap in two days. Our new recruits need armor, so it's vital we receive the sap soon.</p>
+          <p> </p>
+          <p>If he fails, he'll be dancing with the ghosts this time next week. You can tell him that too, if you think it'll get results out of him.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Understood. On my way!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Too much for you? Not everyone is strong enough to enter the [%dic:STR_DIC_FLA195], so I won't rip your head off. I suppose it's good that you keep to your limits now, rather than bite off more than you can chew.</p>
+          <p> </p>
+          <p>Let me know when you feel up to it, [%userclass].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Will do."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Kaindal sent you...? Not in the face! Please, not my face!</p>
+          <p> </p>
+          <p>Look, I'm working hard! People are checking up on me all the time...my hands are raw from the work...I haven't slept.... Please, just don't kill me!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Three buckets, Motgar. In two days."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Two days? Two...days?</p>
+          <p> </p>
+          <p>Do you even know how long it takes to...to... Two days! That's impossible!</p>
+          <p> </p>
+          <p>You may as well kill me now. Maybe then I can rest.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Deliver Kaindal's message to [%dic:STR_DIC_N_Motgar].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">You heard that Motgar, one of the raiders ordered to extract sap, is lazy. Head over to him and deliver Kaindal's message.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You heard that the raiders can't make more armor because Motgar, who works at the Sap Farm, is lazy and isn't gathering the sap quickly enough.</p>
+          <p> </p>
+          <p>As Kaindal requested, you went to the Munihele Forest and gave Motgar a deadline.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

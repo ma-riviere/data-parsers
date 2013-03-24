@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Unbelievable! You're [%username], aren't you?</p>
+          <p> </p>
+          <p>The stories from Verteron Citadel don't quite do you justice.</p>
+          <p> </p>
+          <p>Tell me, is it true that you snatched the eye of a Balaur right from its head?</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I hadn't heard that one, actually."</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I was sure they said it was a [%userclass] named [%username]. Those stories keep us going out here, you know.</p>
+          <p> </p>
+          <p>Most of our time is spent dealing with [%dic:STR_DIC_M_Troll_35_An]s and [%dic:STR_DIC_M_Trollkin_35_An]. It's harder all the time.</p>
+          <p> </p>
+          <p>Sometimes it takes half a day to hunt just one, and Hylas said I must account for another 20 before my shift ends. Could I trouble you for help?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Wonderful. I was going to give up on it; you've given me renewed hope. </p>
+          <p> </p>
+          <p>If you hunt seven [%dic:STR_DIC_M_Troll_35_An]s and three [%dic:STR_DIC_M_Trollkin_35_An], I'll handle the rest.</p>
+          <p> </p>
+          <p>We should go now. I want show you that I'm up to the task, and worthy of your respect.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Good hunting!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You are right. This is my duty to fulfill. I shouldn't have even asked.</p>
+          <p> </p>
+          <p>I am doing my best out here, but it's hard to hold it together sometimes.</p>
+          <p> </p>
+          <p>What I can do on my own will have to be good enough. Even if Hylas reprimands me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm glad you understand."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're back already?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I have good news."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's really amazing. I heard that you were skilled, but I didn't expect this.</p>
+          <p> </p>
+          <p>Hylas has to be happy with what we've done.</p>
+          <p> </p>
+          <p>Just don't tell anybody else. I would be so ashamed if anyone knew....</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get rid of the Trolls and Trollkin that are causing trouble.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Troll_35_An] ([%2]/7)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Trollkin_35_An] ([%5]/3)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report to [%dic:STR_DIC_N_Paion].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Eliminate Troll Outlaws and Knuckledragger Trollkin so that Paion can fulfill her duty.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hylas had ordered Paion to eliminate Trolls and Trollkin, but she was having trouble doing it quickly enough.</p>
+          <p> </p>
+          <p>So you eliminated Troll Outlaws and Knuckledragger Trollkin to help her complete her task.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

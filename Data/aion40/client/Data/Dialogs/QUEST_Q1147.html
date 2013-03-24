@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>할 일이 너무 많아서 몸이 두 개라도 모자랄 지경입니다. 요새만도 버거운데 주변까지 돌보려니 정신이 없죠.</p>
+          <p> </p>
+          <p>톨바스 마을은 자경단이 있어 그나마 다행입니다. 주민들이 자발적으로 만든 조직이라 그런지 의욕이 대단하더군요.</p>
+          <p> </p>
+          <p>보급품을 너무 자주 보내 달라고 해서 그게 탈이지만요. 작은 마을이라 그렇게 많이는 필요 없을 텐데 말입니다.</p>
+          <p> </p>
+          <p>하지만 스파탈로스 님이 자경단을 좋게 보셨는지 필요한 물자는 아낌없이 지원하라고 하셨습니다. 자경단을 조직화할 가치가 있다고 보시는 것 같습니다.</p>       
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이번에 방어구와 장검이 새로 들어와서 톨바스 마을에 보낼 걸 따로 챙겨 뒀습니다.</p>
+          <p> </p>
+          <p>자경단장인 [%dic:STR_DIC_LA24]의 요청도 있었고, 스파탈로스 님도 그러라고 하셨으니까요.</p>
+          <p> </p>
+          <p>톨바스 마을로 가서 이 보급품 꾸러미를 아볼로스에게 전해 주시겠습니까?</p>
+          <p> </p>
+          <p>아마 기다리고 있을 겁니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>감사합니다. 이 보급품 꾸러미를 [%dic:STR_DIC_LA24]에게 전해 주십시오.</p>
+          <p> </p>
+          <p>요즘 이게 몇 번째인지 모르겠습니다. 마을로 쳐들어오는 아인종이나 야수가 많은 것인지 요령이 없어서 무기를 다 부수는 것인지.</p>
+          <p> </p>
+          <p>어쨌든 스파탈로스 님께서 요청하는 대로 보내라고 하셨으니 보내 줘야죠.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이를 어쩐다. 보급품 전달은 아무에게나 맡길 수 없는데.</p>
+          <p> </p>
+          <p>[%username], 생각이 바뀌면 언제라도 다시 오세요.</p>       
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>키네소스 님이 보급품을 보내 주신다고 했는데 아직 소식이 없군요.</p>
+          <p> </p>
+          <p>언제 보내주시려나. 급한 일 때문에 내일은 마을을 비워야 하는데...</p> 
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">보급품 꾸러미를 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>키네소스 님께서 제때에 보급품을 보내셨군요.</p>
+          <p> </p>
+          <p>매번 이렇게 훌륭한 장비를 보내 주시니 정말 감사한 일이죠.</p>
+          <p> </p>
+          <p>이 소식을 어서 단원들에게 알려야겠군요. 정말 고맙습니다. </p>         
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">키네소스가 전하는 보급품을 [%dic:STR_DIC_LA24]에게 가져가라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">키네소스는 톨바스 마을의 자경단을 칭찬하며 보급품을 보내려고 한다. 보급품을 자경단장 아볼로스에게 전해 주자.</p>
+          <p></font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>키네소스는 톨바스 마을에 보급품을 보내야 하는데 마땅한 사람을 찾지 못해 걱정이라고 했다.</p>
+          <p> </p>
+          <p>그래서 자경단장 아볼로스에게 보급품을 전해 줬다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

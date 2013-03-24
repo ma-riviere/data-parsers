@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've been looking for you, [%username]!</p>
+          <p> </p>
+          <p>This is for you! You should open it now.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Okay...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p align="center"> - Fortuneers Proclamation - </p>
+          <p> </p>
+          <p>My fellow Fortuneers, a new bounty in Mitrakand has been decreed.</p>
+          <p> </p>
+          <p> 1. Name: [%dic:STR_DIC_OBJ_FOBJ_Q36017a]</p>
+          <p> </p>
+          <p> 2. Summary: This gold chest contains countless Balaur treasures along with revelations to some of their most guarded secrets. If it's found, it will be worth a fortune to the right buyer. Rumor has it that it's hidden somewhere in [%dic:STR_DIC_W_SZ_DF4_C2_2], Gelkmaros.</p>
+          <p> </p>
+          <p>The first Fortuneer who locates this chest and delivers its treasures to us will be rewarded very generously.</p>
+          <p> </p>
+          <p>- Decreed by [%dic:STR_DIC_E_36500], Fortuneers Legion</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I knew you'd help, [%username]!</p>
+          <p> </p>
+          <p>I know you know what you're doing, but the Balaur of [%dic:STR_DIC_W_SZ_DF4_C2_2] are strong, so be careful.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I will."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Huh. I thought you'd want to help....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I do, but can't."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Where in the great Abyss have you been, [%username]? I'm trying to run a business here!</p>
+          <p> </p>
+          <p>By that smile on your face, I can tell that you've been successful! I really didn't think you'd last long in our legion when I first saw you--we only take the best. But now I think you'll do just fine.</p>     
+          <p> </p>
+          <p>Don't make me wait any longer...where is it? Where is that shiny Balaur treasure?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"All right, keep your pauldrons on!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What the.... Why aren't you in [%dic:STR_DIC_W_SZ_DF4_C2_2] by now?</p>
+          <p> </p>
+          <p>I have several clients waiting for this Balaur treasure, [%username]! This is not the way the Fortuneers do business. We are a professional outfit.</p>
+          <p> </p>
+          <p>If you can't handle a simple task like invading a lair of deadly Balaur to steal something precious and dear to them, then maybe I should find someone who can! Now, get to Mitrakand, [%username]!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm leaving for Mitrakand now."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Lady of Light! It is beautiful! It is the most beautiful thing I've ever seen!</p>
+          <p> </p>
+          <p>It's made entirely of gold...feel that. I would hate to see this battlegear running at me in the heat of combat. I can only imagine the value of this dazzling piece on the market.</p>
+          <p> </p>
+          <p>You have done the Fortuneers proud, [%username]. Take your reward, and go in her light and all that.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Find the [%dic:STR_DIC_OBJ_FOBJ_Q36017a] hidden in [%dic:STR_DIC_W_SZ_DF4_C2_2], Gelkmaros, and deliver it to the [%dic:STR_DIC_E_36500].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">A Fortuneers Proclamation was given to you. Follow its instructions.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>A Fortuneers Proclamation was handed to you.</p>
+          <p> </p>
+          <p>When you found the Balaur Golden Treasure Chest in Mitrakand and delivered it to the Fortuneers Captain, he commended your heroics and gave you a reward.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+  
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New Quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In Progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

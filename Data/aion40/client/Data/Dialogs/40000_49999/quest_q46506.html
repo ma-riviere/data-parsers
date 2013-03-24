@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p align="center"> - 의뢰장 - </p>
+          <p> </p>
+          <p>관리병 말리카 무차를 처치해 달라는 의뢰를 요청받았다.</p>
+          <p></p>
+          <p>찰리룽 흥신소 조직원들은 다음 내용을 숙지하고 지시에 따라 주기 바란다. </p>
+          <p> </p>
+          <p> 1. 이름: [%dic:STR_DIC_M_DF4_DaQ_FanaticFi_53]</p>
+          <p></p>
+          <p> 2. 위치: [%dic:STR_DIC_SEN_DF4_SensoryArea_Q46506]</p>
+          <p></p>
+          <p> 3. 상세: 마족 보급병을 습격해 다수의 보급품과 보급 식량을 탈취한 뒤 저주받은 지하도시로 도주하였음.</p>
+          <p> </p>
+          <p>관리병 말리카 무차의 행방에 대해 결정적인 제보를 하거나 직접 처치한 자에게 의뢰대금을 지급하겠음.</p>
+          <p> </p>
+          <p>- 찰리룽 흥신소, [%dic:STR_DIC_E_46500] 일동 -</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">의뢰장을 접어 넣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+   <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>관리병 말리카 무차를 처치하고 왔냥?</p>
+          <p> </p>
+          <p>혹시 그 주변에 탈취해 간 보급품 상자가 없었는지 궁금하당, 냥냥.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>포대 자루가 조금 있었다고, 냥냥?</p>
+          <p> </p>
+          <p>녀석이 훔쳐간 보금품은 꽤 많은 양이라고 들었는데 벌써 다 먹어치웠나 보당, 냥냥.</p>
+          <p> </p>
+          <p>남은 물건이라도 사람을 시켜 회수를 해야겠구낭.</p>
+          <p> </p>
+          <p>어쨌든 수고하셨으니 약속한 의뢰대금을 주겠당. 다음에도 의뢰장이 가거든 적극적인 협조 바란당, 냥냥.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_SEN_DF4_SensoryArea_Q46506]에서 [%dic:STR_DIC_M_DF4_DaQ_FanaticFi_53]를 찾아 처치하라([%2]/1)</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_E_46500]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">찰리룽 흥신소에서 의뢰장이 왔다. 의뢰를 수행하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>찰리룽 흥신소에서 관리병 말리카 무차를 처치해 달라는 내용의 의뢰장을 받았다.</p>
+          <p> </p>
+          <p>저주받은 지하도시로 가 관리병 말리카 무차를 추적하여 처치한 후 겔크마로스 관리부 직원에게 보고하자 수고했다며 의뢰대금을 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

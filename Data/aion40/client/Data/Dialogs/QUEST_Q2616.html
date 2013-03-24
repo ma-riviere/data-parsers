@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아무래도 집을 파괴해서 녀석들을 쫓아내려던 작전은 실패인 것 같아요.</p>
+          <p> </p>
+          <p>당신이 트롤의 집을 부순 뒤 새로운 보고가 들어왔는데 집을 잃은 트롤들이 마을 근처까지 와서 난동을 부렸다지 뭐예요! </p>
+          <p> </p>
+          <p>그리고는 저항할 힘도 없는 약한 라이칸과 사람들을 공격했다는 거예요.</p>
+          <p> </p>
+          <p>하는 걸로 봐선 놈들은 서식지를 떠날 생각이 전혀 없는 것 같네요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+ 
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>결국 대대적인 트롤 소탕 작전 명령이 떨어졌어요.</p>
+          <p> </p>
+          <p>내 의도를 이해하고 다른 데로 떠났으면 좋았을 것을... 어휴 미련한 놈들! </p>
+          <p> </p>
+          <p>부탁인데 송곳니 트롤 부락으로 가서 녀석들을 처치해 주시겠어요? </p>
+          <p> </p>
+          <p>이렇게 된 이상 트롤들을 싹 몰아내는 수밖에 없으니까요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>기왕 시작한 일이니 [%username] 님 손으로 마무리 짓는 게 좋을 것 같아요.</p>
+          <p> </p>
+          <p>대대적인 트롤 소탕 작전인 만큼 [%dic:STR_DIC_M_TrollRe2D_41_An]과 [%dic:STR_DIC_M_TrollkinReD_41_An]을 눈에 띄는 대로 없애 주세요.</p>
+          <p> </p>
+          <p>자비는 베풀지 않아도 좋습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이 일에서 그만 손을 떼고 싶으신 건가요? </p>
+          <p> </p>
+          <p>하기사 트롤의 집을 파괴한 것이 [%username] 님인 것을 알면 놈들이 아주 사납게 달려들지도 모르겠네요.</p>
+          <p> </p>
+          <p>어쩔 수 없군요. 제가 책임지고 처리하겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>트롤이 입힌 피해가 크지 않아서 그나마 다행이에요.</p>
+          <p> </p>
+          <p>하지만 처음부터 제가 트롤을 너무 만만하게 봤나 봐요.</p>
+          <p> </p>
+          <p>그런데 송곳니 트롤 사냥꾼과 트롤킨 일꾼은 다 처리하셨어요? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>역시 단순하게 처치하는 방법이 가장 빠른 길이었군요.</p>
+          <p> </p>
+          <p>어쨌든 감사합니다. 이것은 제가 드리는 선물이에요.</p>
+          <p> </p>
+          <p>당신이 치르고 온 수고에 보답이 되었으면 합니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">송곳니 트롤 사냥꾼과 트롤킨 일꾼을 처치하라</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_TrollRe2D_41_An]([%2]/10)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_TrollkinReD_41_An]([%5]/15)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Mostin]%와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">트롤 소탕 작전에 따라 송곳니 트롤 사냥꾼과 트롤킨 일꾼을 처치하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>모스틴은 트롤의 집을 파괴해서 트롤을 몰아내려는 작전이 실패했다며 결국 트롤 소탕 작전 명령이 떨어졌다고 했다.</p>
+          <p> </p>
+          <p>그녀의 부탁대로 송곳니 트롤 사냥꾼과 트롤킨 일꾼을 처치하고 보고하였다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

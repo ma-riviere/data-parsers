@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1"> <Contents cdata="true">     <html> 
+      <body> 
+      	<p>I've just heard reports from the [%dic:STR_DIC_ELA14]--the news is grave. The Asmodians have secured a number of strongholds there.</p>
+        <p> </p> 
+       	<p>You look uninterested, but I must remind you that our entire way of life--our very existence--is at risk here</p>
+        <p> </p>         
+        <p>Our [%dic:STR_DIC_ELA09]s are struggling against the Asmodians as we speak, and as priest of Akarios Village, it is my duty to send them tribute to help support our cause.</p>
+        <p> </p>
+        <p>You see, while the [%dic:STR_DIC_ELA14] is a desolate and harsh wasteland, Aion and our Seraphim Lords have granted us this world of Elysea, full of fertile pastures and natural life. It would be foolish of us to not take advantage of this environment.</p>
+       </body>
+      </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I agree."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Very good. I have considered sending rations to the [%dic:STR_DIC_ELA14], as we normally do. However, in this time of crisis, something else may be needed.</p>
+          <p> </p>
+          <p>I have received word from [%dic:STR_DIC_ELA07] that they need more healing potions for our suffering [%dic:STR_DIC_ELA09]s. Unfortunately, they're running low on the key ingredient.</p>
+          <p> </p>
+          <p>[%username], I need you to bring me [%dic:STR_DIC_I_herb_n_c_10a], so we can send it on to our alchemists in Sanctum. The herb grows in abundance throughout [%dic:STR_DIC_E_LF1_name].</p>          
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, thank you!</p>
+          <p> </p>
+          <p>We'll need to send over three samples for now. You can find the [%dic:STR_DIC_I_herb_n_c_10a] growing among the trees.</p>
+          <p> </p>
+          <p>Please hurry--I must send our tribute before the supply lines are closed.</p>   
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be quick."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Your ignorance astounds me, [%username].</p>
+          <p> </p>
+          <p>I understand that mercenaries only do deeds when there is personal benefit, but you need to think on a grander scale here.</p>          
+          <p> </p>
+          <p>Gah! Why reason with the foolish? Off with you!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Goodbye."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're back, [%username].</p>
+          <p> </p>
+          <p>Have you harvested the [%dic:STR_DIC_I_herb_n_c_10a] I asked for?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here it is."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah... no...</p>
+          <p> </p>
+          <p>We need three roots, remember?</p>
+          <p> </p>
+          <p>Please hurry, [%username]! You should be able to find plenty of Aria in [%dic:STR_DIC_FLA04].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm working on it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Wonderful, this is exactly what we need!</p>
+          <p> </p>
+          <p>I'll send the supplies to Sanctum right away.</p>
+          <p> </p>
+          <p>You did a great thing today, [%username]. Please take this as compensation for your work.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect [%dic:STR_DIC_I_herb_n_c_10a], and take it to [%dic:STR_DIC_N_Polinia].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Polinia needs a quantity of Aria to contribute to the tribute to Sanctum. Gather 3 Aria roots for her.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>With the Asmodian offensive in the Abyss growing, the demand for healing potions has increased dramatically.</p>
+          <p> </p>
+          <p>That resulted in a shortage of Aria, a key ingredient for healing potions.</p>
+          <p> </p>
+          <p>You gathered enough Aria for Polinia to send on as tribute to Sanctum.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

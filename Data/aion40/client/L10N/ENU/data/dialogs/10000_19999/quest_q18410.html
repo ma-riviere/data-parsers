@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>All right, I can brief you now. Just remember that everything I'm about to tell you is strictly confidential.</p>
+          <p> </p>
+          <p>We tried everything to track the disappearing prisoners. We even disguised ourselves as captives with tracking spells. No success.</p>
+          <p> </p>
+          <p>But then, this portal here opened out of nowhere, and a Reian came out of it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"A Reian? What'd he say?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>He said he was from some place called the Esoterrace, and that he knew where our Balaur prisoners went.</p>
+          <p> </p>
+          <p>In fact, they used this very portal, which was hidden by some very sophisticated cloaking spells, at least until the Reian revealed it.</p>
+          <p> </p>
+          <p>I wanted to go in, but I'm not trained for the combat I'd probably be facing. You, on the other hand, look like you could handle yourself....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Welcome aboard. [%dic:STR_DIC_N_Nepion] is the name of the Reian I met. He said he'd be waiting on the other side of the portal.</p>
+          <p> </p>
+          <p>I suggest talking to him first. Report to [%dic:STR_DIC_N_Antigone] once your mission is complete.</p>
+          <p> </p>
+          <p>I also suggest taking some allies. I don't know anything about this place, but I'm sure it's bad news.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"With the Balaur around, I'm sure it is."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Without you, this investigation is stalled until we can find someone to go into that portal.</p>
+          <p> </p>
+          <p>True, without knowing what's on the other side, it could be a suicide mission....</p>
+          <p> </p>
+          <p>We'll figure something out. Just remember what I told you about confidentiality.</p>
+         </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"My lips are sealed."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah! You must be the one the Elyos sent. Siel be praised for your presence. I'm sure you have many questions.</p>
+          <p> </p>
+          <p>This place is called the Esoterrace. It alone is responsible for over half of the Drana produced in Tiamat's territories.</p>
+          <p> </p>
+          <p>Your Balaur prisoners must have been moved further within. Here, peer into this Image Marble to see more.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Let's take a look...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>As you can see, this territory is vast, and full of danger. But you must face it if you want the answers you seek.</p>
+          <p> </p>
+          <p>Go to the cliff nearby. My friends will open a Windstream to Narayama Canyon, at the base of the Esoterrace.</p>
+          <p> </p>
+          <p>Keep the Image Marble. I suggest taking it to your superiors. It will help in your investigation of the Esoterrace.</p>
+         </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"Thank you. Walk in the light, friend."</Act>
+    </Selects>
+    <CutScene id="473"/>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You must be [%username]. I have already been informed of your efforts on our behalf...as has Veille.</p>
+          <p> </p>
+          <p>She is pleased that progress is being made on finding the Balaur prisoners. I assume you're here to report?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Yes, I bring news and this marble."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>An Image Marble? Let's see... Oh. By the light.... To think such a place connects to our fortresses....</p>
+          <p> </p>
+          <p>And it really produces that much Drana? We could cripple Tiamat's resources in a single stroke!</p>
+          <p> </p>
+          <p>I'll let my superiors know about this at once. You can't imagine the service you've done for Elysea today.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Enter the [%dic:STR_DIC_W_IDf4re_Drana_Li] and find [%dic:STR_DIC_N_Nepion].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Scout the inside of the [%dic:STR_DIC_W_idf4re_drana_SZ_Stage_02_1].</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Deliver Nepion's Image Marble to [%dic:STR_DIC_N_Antigone].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Nepion, a Reian tribesman, revealed a hidden dimensional rift. Enter it and meet with him.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Sanctum Expedition Inspector told you that a Reian tribesman named Nepion helped reveal a dimensional rift within the Inggison fortresses.</p>
+          <p> </p>
+          <p>You entered the rift and met with Nepion in a place known as the Esoterrace, a prime location for the production of Drana.</p>
+          <p> </p>
+          <p>After some scouting, you reported to Daidra with the Image Marble. She thanked you on behalf of all Elysea.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

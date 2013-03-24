@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q3721</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>Script quest</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We've got a real problem, [%username]! A real problem.</p>
+          <p> </p>
+          <p>There's so much work to be done before storming into Tiamaranta. Yet Sanctum keeps leaning on my Hushblade Legion to do it all.</p>
+          <p> </p>
+          <p>Every mission, every operation, every damn task.... And now they're discussing having us take care of the Chantra Dredgion.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"You're stretched too thin?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thinner than a hungry Reian! We keep losing the [%dic:STR_DIC_W_LF4_SZ_2011_A] and [%dic:STR_DIC_W_LF4_SZ_2021_A] to the Balaur forces and their damn dredgion.</p>
+          <p> </p>
+          <p>We can't seem to get any reinforcements in there, but that Chantra Dredgion keeps dropping fresh troops and supplies behind our lines.</p>
+          <p> </p>
+          <p>We take the fortresses, then they take it back. It's become a war of attriton, and not in our favor. Would you see what you could do, [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent. I appreciate this, Daeva.</p>
+          <p> </p>
+          <p>First, check in with [%dic:STR_DIC_N_Yannis]. He'll get you up to speed on the mission.</p>
+          <p> </p>
+          <p>You won't be entirely alone...but watch your back.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Faith and arms, Yulia!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This is why I only trust my Hushblade Legion, [%username].</p>
+          <p> </p>
+          <p>We're losing this war because of selfish, lazy Daevas like yourself.</p>
+          <p> </p>
+          <p>Next time you need my help for something, don't even bother asking.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm not lazy...I'm busy!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, you're the [%userclass] Brigade General Yulia sent over. I heard that you had some experience with the dredgion in Reshanta...this shouldn't be too much different.</p>
+          <p> </p>
+          <p>The basic structure of the Chantra Dredgion is the same, but the objective itself is a bit different. Our goal is to take out their supplies and reserve soldiers before they arrive.</p>
+          <p> </p>
+          <p>First and foremost, take the [%dic:STR_DIC_OBJ_IDDreadgion_02_Drakanbox_Q3721] from the ship's arsenal.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Shouldn't be too difficult."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That's not all. I also need you to terminate [%dic:STR_DIC_M_IDDreadgion_02_DrakanBoss_55_Ah], if you can.</p>
+          <p> </p>
+          <p>Zanata is not a typical Drakan soldier. Some rumors even say that he is the right hand of Tiamat, though that hasn't been confirmed yet.</p>
+          <p> </p>
+          <p>He's one of their toughest combatants, [%username]. If you can take him out, it'll deal a major blow to troop morale.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"I'll send Zanata back to the Aether."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Arieluma, [%username], I'm glad to see you're back in one piece.</p>
+          <p> </p>
+          <p>Mission accomplished?</p>
+          <p> </p>
+          <p>Did you capture the Balaur weapons and assassinate Captain Zanata?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Yes, and here...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Suffering Siel, I can't believe you pulled that off, [%username]!</p>
+          <p> </p>
+          <p>The Balaur are now deprived of their weapons and their strongest officer! We can now wage our attack!</p>
+          <p> </p>
+          <p>Well done, Daeva! Take this...you've earned it!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Speak to [%dic:STR_DIC_N_Yannis].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Collect [%dic:STR_DIC_OBJ_IDDreadgion_02_Drakanbox_Q3721].</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Terminate [%dic:STR_DIC_M_IDDreadgion_02_DrakanBoss_55_Ah][%8].</font></p></step>
+               <step><p visible="[%9]"><font color="[%10]">Report the result to [%dic:STR_DIC_N_Yulia].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Yulia said they keep losing the fortresses to the Balaur. Infiltrate the Chantra Dredgion, eliminate Captain Zanata, and steal their weapons.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yulia said they keep losing the Inggison fortresses because the Chantra Dredgion keeps bringing in supplies and soldiers to Inggison. She told you to speak with Yannis for a mission.</p>
+          <p> </p>
+          <p>As requested, you infiltrated the Chantra Dredgion, collected the Balaur's weapons, and killed Captain Zanata.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

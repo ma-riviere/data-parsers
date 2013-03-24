@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>So, this reward.</p>
+          <p> </p>
+          <p>I had two options with you: armor or coin. One more immediate, but the other's something you can use as you please. It's also much easier to carry around. So, you got a coin.</p>
+          <p> </p>
+          <p>You look puzzled. Never used a coin before?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Well, I..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Stop your stuttering! Here's how coins work.</p>
+          <p> </p>
+          <p>First off, think of them as just another type of currency. The difference is that you can't use coins in normal shops, but only with contribution reward officers or administration officers like me.</p>
+          <p> </p>
+          <p>You can purchase a range of items with coins, such as armor, weapons, and potions. They're all top notch stuff, too. Ready to give them a try?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Now, take that coin to Lohaban. Can't miss him. He's literally next to me.</p>
+          <p> </p>
+          <p>Buy Lohaban's Treasure and bring it to me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Er, okay."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No? Coins are too complicated for you?</p>
+          <p> </p>
+          <p>Maybe you should concentrate on easier things for now, like breathing, walking in a straight line....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"...not giving you a black eye..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>How did you get on?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No, I need Lohaban's Treasure. He's probably listed it separately from his main stock.</p>
+          <p> </p>
+          <p>Have another look, and come back when you've bought it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Got it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Perfect!</p>
+          <p> </p>
+          <p>Now you can get to buying whatever takes your fancy. I have items for combat classes such as Gladiators, Templars, Assassins, and Rangers. Lohaban has items for magic classes such as Clerics, Chanters, Sorcerers, and Spiritmasters.</p>
+          <p> </p>
+          <p>Make sure to speak with the right administration officer for your class!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Use your coin to buy Lohaban's Treasure, then hand it to [%dic:STR_DIC_N_Lateni].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Use your coin to buy the treasure from Lohaban.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Lateni taught you the coin system and asked you to buy an item from Lohaban to prove you understood.</p>
+          <p> </p>
+          <p>You returned with Lohaban's Treasure, much to Lateni's delight.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

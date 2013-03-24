@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p> - 긴급 지령서 - </p>
+          <p></p>
+          <p> 1. 발신 : 카탈람 토벌군, [%dic:STR_DIC_W_LDF5b_D2_v13]의 [%dic:STR_DIC_N_LDF5_Village_Guard13_D]</p>
+          <p></p>
+          <p> 2. 수신 : [%username]</p>
+          <p></p>
+          <p> 3. 명령 : 남부 카탈람 [%dic:STR_DIC_W_LDF5b_SZ_D2_3]에 침투한 천족 데바 1명을 처치할 것.</p>
+          <p></p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">의뢰를 수행한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+   <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>천족들이 사우로 산맥을 끊임없이 도발하고 있습니다.</p>
+          <p> </p>
+          <p>놈들도 사우로 산맥가 전략적으로 유리한 곳이라는 것을 알고 있는 것 같습니다.</p>
+          <p> </p>
+          <p>천족들이 함부로 침범할 수 없도록 [%username] 님이 자주 살펴 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>역시 [%username] 님이시로군요.</p>
+          <p> </p>
+          <p>좋은 소식을 가지고 오실 줄 알았습니다.</p>
+          <p> </p>
+          <p>당분간은 천족도 주춤할 것입니다.</p>
+          <p> </p>
+          <p></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">남부 카탈람 [%dic:STR_DIC_W_LDF5b_SZ_D2_3]에 침투한 천족을 처치하라([%2]/1)</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_N_LDF5_Village_Guard13_D]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">긴급 지령: 남부 카탈람 사우로 산맥의 고요한 구릉지에 침투한 천족을 처치하고 토르핀에게 보고하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>천족이 남부 카탈람 사우로 산맥의 고요한 구릉지를 노리고 계속 도발을 한다.</p>
+          <p> </p>
+          <p>침투한 천족들을 소탕하고 토르핀에게 보고했다.</p>
+          <p> </p>
+          <p></p>
+          <p> </p>
+          <p></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Rewrite Dave 26 June -->
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The presence of fire marks you, Daeva. Radiant tongues of flame speak to me.</p>
+          <p> </p>
+          <p>Yes, the aura is unmistakable. Tell me, do you hold a weapon infused with the same celestial fires that bless our people?</p>
+          <p> </p>
+          <p>I would dearly like to see such an item.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Here. Handle with care..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, just as I thought. The sword is a powerful weapon--that much cannot be denied. Such precision of design, yet an unnamed fury within.</p>
+          <p> </p>
+          <p>Yet, its promise is still unfulfilled. The essence of fire cries out from within, but it's a hollow echo. The flame waits to be fed and nurtured into its final form.</p>
+          <p> </p>
+          <p>With the right materials, I would be able to imbue this blade with a far more potent measure of searing flame. These materials, however...you would have to travel far to acquire them.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Sounds like a worthy journey."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I was hoping you'd say that. You must feed a weapon well if you expect it to serve you faithfully.</p>
+          <p> </p>
+          <p>This sword hungers for three materials: Griffonix Feather, Magma Essence, and Burning Barghest Tail.</p>
+          <p> </p>
+          <p>All three are found in Eltnen. Are you certain you are up to the task, [%userclass]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The materials will not simply fall into your hands the moment you reach Eltnen, unfortunately.</p>
+          <p> </p>
+          <p>You'll find both [%dic:STR_DIC_I_QUEST_1930B] and [%dic:STR_DIC_I_QUEST_1930C] in the Geroch Caldera. It's an inhospitable place at the best of times.</p>
+          <p> </p>
+          <p>To acquire the [%dic:STR_DIC_I_QUEST_1930A], travel deep into the Kuriullu Mountain and find the Griffonix, head of all Griffons. You'll then either have to persuade the Griffonix to help you, or fight it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm off to Eltnen."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I see that the journey is too much for you at this time. I'm sure Daevas like you have many duties to attend to.</p>
+          <p> </p>
+          <p>As you go about your duties, though, ponder this: if you're pinned down by a full Legion of marauding Asmodians, will you wish that your sword burned with the fury of a living flame?</p>
+          <p> </p>
+          <p>If you change your mind, return to me, and we'll never speak of this refusal again.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll bear that in mind."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>So, you've returned from Eltnen, young Daeva.</p>
+          <p> </p>
+          <p>Now, the burning question...</p>
+          <p> </p>
+          <p>Do you have the materials?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here they are."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I can do nothing for your sword without the proper materials. Your sword hungers--and it's a picky eater.</p>
+          <p> </p>
+          <p>Remember: you need to gather a [%dic:STR_DIC_I_QUEST_1930A], a [%dic:STR_DIC_I_QUEST_1930B], and a [%dic:STR_DIC_I_QUEST_1930C]. Find them, and your sword will reach its potential.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Magnificent! Give me a moment.... Infusing a sword such as this takes all my concentration.</p>
+          <p> </p>
+          <p>There...it is done. Phew! That was more difficult than I thought.</p>
+          <p> </p>
+          <p>You now wield the Starfire Sword. This is my greatest work, [%username], a weapon without equal in all of Elysea. May the blessings of Aion itself shine in its surface.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Take the materials you have obtained from [%dic:STR_DIC_N_NPC_Griffonix], the [%dic:STR_DIC_M_ElementalFire3_36_An]s, and [%dic:STR_DIC_M_Hellhound_39_An]s to [%dic:STR_DIC_N_Regmos].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Upgrading the Flame Sword requires materials that can only be found in Eltnen. Collect the materials and bring them to Regmos.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Regmos, Daeva of Flame, said that he could upgrade the Flame Sword.</p>
+          <p> </p>
+          <p>You collected the necessary materials in Eltnen and, when you returned to Sanctum, Regmos upgraded your sword to the Starfire Sword, his greatest accomplishment.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

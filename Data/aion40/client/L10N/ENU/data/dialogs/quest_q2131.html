@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+        <p>Would you mind doing me a favor, [%userclass]?</p>
+        <p> </p>
+        <p>I've prepped a bunch of armor, and now I need someone to make the deliveries.</p>
+        <p> </p>
+        <p>It's bad enough I'm the de facto armorer, but I'll be sun-poxed if they make me their delivery boy, too!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Jack of all trades..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yeah yeah, master of none....</p>
+          <p> </p>
+          <p>Look, these batches of [%dic:STR_DIC_I_2115b] need to be delivered to [%dic:STR_DIC_N_Denma]. She runs the general store at the Anturoon Crossing and has been pestering me for the supplies.</p>
+          <p> </p>
+          <p>Would you mind making the delivery for me?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good, thank you.</p>
+          <p> </p>
+          <p>Remember, you'll find [%dic:STR_DIC_N_Denma] over at the [%dic:STR_DIC_W_DF1_5]. It's a dangerous place, filled with hostile predators, so stock up on supplies before you head out there, okay?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Thanks for the tip."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hmm.</p>
+          <p> </p>
+          <p>So, you hang around the village asking everyone and their shadows for work, but when I give you a simple task, you turn me down? You're a strange one, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Sorry to disappoint."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Greetings, raider. I assume you are [%username], the one Dalor said would be delivering my leather supplies?</p>
+          <p> </p>
+          <p>Please, I have little time for small talk.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Suit yourself. Here's your stuff."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This is all of it?</p>
+          <p> </p>
+          <p>I asked for as much leather as possible, and when he eventually gets around to supplying me, this is what I get? Who decided Dalor would be our sole leather supplier, anyway?</p>
+          <p> </p>
+          <p>Well, I suppose there's no reason to shoot the delivery person. Here is the money I promised; at least I will hold up my end of our deal.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Deliver the Thick Leather [%dic:STR_DIC_N_Dalot] tanned to [%dic:STR_DIC_N_Denma].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Denma needs thick leather. Deliver the leather to her on behalf of Dalor.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Dalor was too busy to deliver the leather supplies Denma asked for, so you made the delivery on his behalf.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

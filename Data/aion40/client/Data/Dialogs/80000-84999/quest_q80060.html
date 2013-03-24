@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>음... 저를 찾아온 걸 보니, 뭔가 잘 안 풀리는 문제가 있다는 건데?</p>
+          <p> </p>
+          <p>맞나요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">고개를 끄덕인다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그러니 남의 일에, 사랑이 걸린 문제라면 특히나 간섭해서는 안 되는 법이지요.</p>
+          <p> </p>
+          <p>하지만 뭐 이해는 합니다.</p>
+          <p> </p>
+          <p>제가 [%username] 님을 조금 도와드려도 문제는 없는 것이지요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">그렇다고 한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">좀 더 생각해보겠다고 한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>제가 지금부터 말씀드리는 재료를 구해 주시면 간단히... 원하시는 그것을 내어드리도록 하지요.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_I_QUEST_80060A]가 필요합니다.</p>
+          <p> </p>
+          <p>양피지... 어디에 쓰실지는 아시겠지요? 편지라는 것은... 아, 너무 길게 말씀드리지 않겠습니다.</p>
+          <p> </p>
+          <p>그럼 여기서 얌전히 [%dic:STR_DIC_I_QUEST_80060A]가 도착하기만을 기다리고 있습지요.</p>
+          <p> </p>
+          <p>천천히 다녀오시기 바랍니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>예, 좋습니다.</p>
+          <p> </p>
+          <p>천천히 생각해보시고 언제라도 생각이 바뀌시면 저를 찾아오시지요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아, 오셨군요.</p>
+          <p> </p>
+          <p>말씀드린 그것은?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">구해온 것을 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>상당히 [%dic:STR_DIC_I_QUEST_80060A]로군요.</p>
+          <p> </p>
+          <p>예, 이만하면 충분합니다.</p>
+          <p> </p>
+          <p>그렇다면 원하시는 그것을 드리지요.</p>
+          <p> </p>
+          <p>이 일은 저와 [%username] 님만 알고 있는 것이니, 그 불쌍한 연인들은 신경 안 쓰셔도 됩니다.</p>
+	  <p> </p>
+          <p>그럼, 이만</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_I_QUEST_80060A]는 아직입니까?</p>
+          <p> </p>
+          <p>하하, 제법 여유가 있으시군요.</p>
+          <p> </p>
+          <p>뭐, 그렇다면 저도 여기서 언제까지고 [%dic:STR_DIC_I_QUEST_80060A]가 도착하기를 기다리고 있습지요.</p>
+          <p> </p>
+          <p>천천히 다녀오시기 바랍니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_I_QUEST_80060A]를 구해 [%dic:STR_DIC_N_event_Kardinal]에게 전해주자.</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">거친 양피지를 구해 카디날에게 전해주자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>거래중개소에서 구할 수 없는 편지를 대신 제작해준다는 데바가 있어 찾아갔다.</p>
+          <p> </p>
+          <p>거친 양피지를 구해 주면 원하는 편지를 내어주겠다고 하기에 재료를 찾아 주었다.</p>
+          <p> </p>
+          <p>어딘지 모르게 능글맞은 그의 웃음이 마음에 들지 않았지만 무사히 편지를 구할 수 있었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

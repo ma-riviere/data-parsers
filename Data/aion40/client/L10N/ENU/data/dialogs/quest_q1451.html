@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hmm, now I have to figure out how to get this Adamantium to Hannet....</p>
+          <p> </p>
+          <p>[%username], would you deliver the Ore to Hannet?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Certainly."</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you. Wait here for a moment while I bundle it up.</p>
+          <p> </p>
+          <p>Sorry for making you wait! Please deliver this bag to [%dic:STR_DIC_N_Hagne] for me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>When you deliver the bag, please give her this message.</p>
+          <p> </p>
+          <p>Tell her that I will help her whenever she needs me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll deliver both of your gifts."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You must be very busy. Well, if you say so.</p>
+          <p> </p>
+          <p>I'll send it to Hannet using the Shugo Express Mail, so you may go.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Sorry."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah dearie, you startled this old lady!</p>
+          <p> </p>
+          <p>Did you deliver the letter to Ophelos?</p>
+          <p> </p>
+          <p>He should have sent me the materials by now....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Here is your ore and a message."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, that Ophelos has a kind heart....</p>
+          <p> </p>
+          <p>Oh, what am I thinking? Here I am blubbering. You must think I'm an old fool!</p>
+          <p> </p>
+          <p>Thank you so much for all your help, Daeva! Now I can make the sword for Asclepius.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Deliver Ophelos' Bag to [%dic:STR_DIC_N_Hagne].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Deliver the bag of Adamantium to Hannet.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ophelos said that he couldn't leave since he had so many things to do, so he asked you to deliver the bag of Adamantium to Hannet.</p>
+          <p> </p>
+          <p>When you delivered the bag to Hannet, she thanked and rewarded you.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

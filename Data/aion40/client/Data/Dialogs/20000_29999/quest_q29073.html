@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], 이제 제가 더 이상 당신에게 가르칠 수 있는 것이 없습니다.</p>
+          <p> </p>
+          <p>이렇게 멋진 [%userclass]으로 성장하지 않으셨습니까!</p>
+          <p> </p>
+          <p>그렇다고 지금에 만족하면 안 됩니다. 세상에는 배워야 할 스킬들이 많이 있습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">고개를 끄덕인다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>당신에게 소개시켜줄 분이 있습니다. 혹시 브린힐드 님의 이름을 들어 보셨습니까?</p>
+          <p> </p>
+          <p>모든 예술가들의 스승이라 불릴 정도로 뛰어난 실력을 지닌 [%userclass] 이시니 한 번은 들어 보셨을 겁니다. 제 스승님이기도 합니다.</p>
+          <p> </p>
+          <p>여기, 소개장입니다. 중앙 의사당으로 가 브린힐드 님께 이 추천서를 보여 주십시오.</p>
+          <p> </p>
+          <p>스승님이라면 분명 [%username]%을 더 발전시켜 주실 수 있을 겁니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>중앙 의사당에 가시면 어렵지 않게 브린힐드 님을 찾아 보십시오.</p>
+          <p> </p>
+          <p>제 소개장을 보여 드리면 분명 흔쾌히 [%username] 님을 제자로 받아 주실 겁니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>설마 브린힐드 님에게 이미 가르침을 받고 계신 겁니까?</p>
+          <p> </p>
+          <p>대단하십니다! 하지만 제 추천서는 가져가면 대우가 달라질 수도 있을 텐데요.</p>
+          <p> </p>
+          <p>추천서가 필요하면 나중에라도 오십시오. [%username]%이라면 써 드리겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>오, 그대는 데바로 각성한지 얼마 안 됐나보군.</p>
+          <p> </p>
+          <p>하지만 자만해서는 안 되네. 데바로써의 의무가 무엇인지 모른다면 그저 날개달린 인간에 불과할 테니 말일세.</p>
+          <p> </p>
+          <p>자신에게 내재된 무한한 가능성을 아름다운 아트레이아를 만들어 나가기 위해 발현하는 것, 그것이야 말로 데바의 의무가 아니겠나?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">추천서를 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(추천서를 읽으며) 고드프리드가 보냈단 말인가?</p>
+          <p> </p>
+          <p>그렇게나 빨리 고드프리드의 가르침을 습득했다니, 놀라운 친구군!</p>
+          <p> </p>
+          <p>이제부터 내가 자네를 가르쳐 주도록 하겠네. 앞으로 배우고 싶은 스킬이 있으면 나를 찾아오게.</p>
+          <p> </p>
+          <p>하지만 고드프리드의 가르침보다는 훨씬 엄격할 테니 각오하는게 좋을 걸세.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_DC1_Brinhild_M]에게 추천서를 가져가라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">고드프리드의 추천서를 브린힐드에게 보이자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>고드프리드는 이제 가르칠 것이 없다며 추천서를 써 줄 테니 브린힐드에게 가 보라고 했다.</p>
+          <p> </p>
+          <p>추천서를 본 브린힐드는 뛰어난 데바가 되려면 앞으로도 배워야 할 것이 많다며 가르침이 필요하면 언제라도 오라고 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

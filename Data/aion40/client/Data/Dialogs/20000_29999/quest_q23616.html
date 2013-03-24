@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_W_ZONE_NAME_LDF5_SZ_T1]%에 대해 들어보셨나요?</p>
+          <p> </p>
+          <p>그곳은 아마도 룬족의 거주구역이 아니였을까 추정되고 있는 장소에요.</p>
+          <p> </p>
+          <p>얼마 전 정찰병들이 정체불명의 유령들을 목격했다고 하는 장소가 있는데, 그 곳이 아마 신전 무덤굴이 아닌가 싶어요.</p>
+          <p> </p>
+          <p>우선 [%dic:STR_DIC_W_LDF5_Under_SensoryArea_Q23616]%으로 가셔서 위치를 확인해주시고 [%dic:STR_DIC_E_LDF5_Under_Shadow]%이 목격된다면 그들을 처치하고 그 증거품을 회수해주세요.</p>
+          <p> </p>
+          <p>신전 무덤굴이 확실하다면 그 곳을 중심으로 룬족에 대한 단서를 찾아볼 수 있을 것 같아요. 그럼 부탁드려요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_none" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_W_ZONE_NAME_LDF5_SZ_T1]%에 대해 들어보셨나요?</p>
+          <p> </p>
+          <p>그곳은 아마도 룬족의 거주구역이 아니였을까 추정되고 있는 장소에요.</p>
+          <p> </p>
+          <p>얼마 전 정찰병들이 정체불명의 유령들을 목격했다고 하는 장소가 있는데, 그 곳이 아마 신전 무덤굴이 아닌가 싶어요.</p>
+          <p> </p>
+          <p>우선 [%dic:STR_DIC_W_LDF5_Under_SensoryArea_Q23616]%으로 가셔서 위치를 확인해주시고 [%dic:STR_DIC_E_LDF5_Under_Shadow]%이 목격된다면 그들을 처치하고 그 증거품을 회수해주세요.</p>
+          <p> </p>
+          <p>신전 무덤굴이 확실하다면 그 곳을 중심으로 룬족에 대한 단서를 찾아볼 수 있을 것 같아요. 그럼 부탁드려요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+<HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_W_ZONE_NAME_LDF5_SZ_T1]%을 발견하셨나요? </p>
+          <p> </p>
+          <p>발견하셨다면 정말 그 곳에 [%dic:STR_DIC_E_LDF5_Under_Shadow]%이 있던가요? </p>
+          <p> </p>
+          <p>앞으로의 조사에 진행하려면 꼭 충분한 분량의 [%dic:STR_DIC_I_QUEST_23616a]%을 증거품으로 구해오셔야 해요. 상부를 설득하려면 그 정도 증거는 있어야 해요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">저주받은 룬의 유산을 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_ok">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_W_ZONE_NAME_LDF5_SZ_T1]%을 찾아 내셨군요! </p>
+          <p> </p>
+          <p>이만큼 룬족의 유산이 발견된다면 틀림 없어요.</p>
+          <p> </p>
+          <p>제가 룬족 조사에 대한 중요한 단서를 찾아낼 수 있다니 정말 흥분되는 일이에요!</p>
+          <p> </p>
+          <p>이제부터 본격적인 조사에 착수할 수 있을 것 같아요!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SET_SUCCEED">대화를 계속한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_fail">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>음... [%dic:STR_DIC_I_QUEST_23616a]%가 이게 전부인가요?</p>
+          <p> </p>
+          <p>이 정도로는 상부를 설득할 수가 없어요.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_I_QUEST_23616a]%을 좀 더 구해오셔야 될 것 같네요. 부탁드려요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>별로 상태가 좋은 유산들은 아니지만, 이 정도면 상부에 보고하고 본격적으로 신전 무덤굴 조사에 착수할 수 있을 것 같아요.</p>
+          <p> </p>
+          <p>이제부터 본격적으로 룬족의 역사에 대해 조사할 수 있는 것이에요. 정말 흥분되지 않나요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>결과적으로 신전 무덤굴은 과거 룬족이 거주하던 곳이라고 판단해도 무방할 것 같아요.</p>
+          <p> </p>
+          <p>수백년 전 찬란한 문명을 지닌채 갑자기 사라진 문명을 다시 발굴해내다니, 그 것도 제 이름을 걸고 말이에요.</p>
+          <p> </p>
+          <p>그래서 작게나마 [%username] 님에게 도움이 될 만한 물건들을 보상으로 준비해보았어요.</p>
+          <p> </p>
+          <p>별 것 아닌 보상이겠지만, 제 능력껏 준비했습니다. 꼭 받아주세요!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_W_LDF5_Under_SensoryArea_Q23616]%에 진입하라</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_I_QUEST_23616a]%을 수집하여 [%dic:STR_DIC_N_LDF5_Under_Nibella_E]%에게 전달하라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">니벨라를 도와 신전 무덤굴을 탐색하고 룬족의 유산을 모으자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>니벨라는 과거 룬족이 거주하던 신전 무덤굴을 찾아야 한다며, 그 곳을 찾아 증거물을 확보해달라고 했다.</p>
+          <p> </p>
+          <p>증거물인 저주받은 룬의 유산을 찾아 전해주자, 룬족의 고대 거주구가 틀림없다며 본격적인 조사를 시작할 수 있다고 무척 기뻐해 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

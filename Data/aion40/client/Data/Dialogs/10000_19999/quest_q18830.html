@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그런데 왜 멀뚱하게 보고 있냥?</p>
+          <p> </p>
+          <p>가구를 선물받았다면 얼른 집에 가서 [%dic:STR_DIC_E_Housing_FurnitureArrangement]를 통해 선물 받은 가구를 설치하는 것이 예의당, 냥냥.</p>
+          <p> </p>
+          <p>얼른 가서 집사와 상의해서 좋은 위치에 가구를 배치해 봐랑, 갸릉.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_E_Housing_Butler]란 가구 배치 분야의 전문가나 다름이 없으니 상의해 보면 좋다, 갸릉.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>미요링링에게 다녀오는 길이냐, 갸릉?</p>
+          <p> </p>
+          <p>미요링링은 집을 가진 데바를 모두 잠정 고객이라고 생각하기 때문에 선물 인심이 매우 후하다, 냥냥.</p>
+          <p> </p>
+          <p>뭔가 주지 않았냥?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">가구를 받았다고 말한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그렇다면 집 모양을 눌러 봐랑. [%dic:STR_DIC_E_Housing_FurnitureArrangement] 말이다, 갸릉.</p>
+          <p> </p>
+          <p>가구를 배치할 땐 그렇게 해야 한단 말이다, 냥냥.</p>
+          <p> </p>
+          <p>내가 무슨 말을 하는지 잘 모르겠다면 가운데 아랫쪽 집 모양을 잘 살펴 보란 말이다, 갸릉.</p>
+          <p> </p>
+          <p>그리고 가구를 [%dic:STR_DIC_E_Housing_FurnitureArrangement] 해봐랑, 갸릉.</p>
+          <p> </p>
+          <p>가구를 다 배치한 다음에는 [%dic:STR_DIC_E_Housing_Pot]%을 하나 놓아야 집답지, 냥냥!</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_N_Raknus]에게 가 봐랑, 갸릉.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>반갑습니다. 싱싱한 [%dic:STR_DIC_E_Housing_Pot]%이 많이 들어왔습니다.</p>
+          <p> </p>
+          <p>[%username] 님은 처음 뵙는 것 같네요?</p>
+          <p> </p>
+          <p>여태 포티 사러 오신 적이 없죠?</p>
+          <p> </p>
+          <p>포티를 별로 좋아하지 않으시나 봐요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">포티에 대해 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>맙소사! [%username] 님과 같이 알 만한 분이 [%dic:STR_DIC_E_Housing_Pot]에 대해 모르시다니!</p>
+          <p> </p>
+          <p>포티는 식물과 교감을 나누고 좋은 물건도 얻을 수 있는 아주 훌륭한 물건입니다.</p>
+          <p> </p>
+          <p>선물로 포티를 하나 드릴게요. 이걸 통해서 포티의 묘미를 느껴 보시길 바랍니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_E_Housing_Butler]와 대화하라</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_E_Housing_FurnitureArrangement]를 시작하여 가구를 설치하고 포티 상인 [%dic:STR_DIC_N_Raknus]와 대화하라</font></p></step>
+               <step><p visible="[%9]"><font color="[%10]">[%dic:STR_DIC_E_Housing_FurnitureArrangement]를 시작하여 가구를 설치하고 포티 상인 [%dic:STR_DIC_N_Raknus]와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">집사는 가구를 배치한 다음에는 포티에 대해 알아 보라고 했다. 가구 다음으로 중요한 포티에 대해 라크누스에게 배워 보자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>집사는 가구를 배치한 다음에는 포티에 대해서도 알아 보라고 했다.</p>
+          <p> </p>
+          <p>포티를 팔고 있는 라크누스에게 가서 포티에 대해 묻자 포티를 하나 선물했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

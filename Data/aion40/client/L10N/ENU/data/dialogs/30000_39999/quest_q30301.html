@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Are you familiar with the Balaur town of Mitrakand, [%username]?</p>
+          <p> </p>
+          <p>We recently detected some rather suspicious activity there. The Dragonbound were seen transporting something through the area. We're not sure where to, but we suspect it is the Vorgaltem Battlefield.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Why are you telling me?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We must find out why the Dragonbound are involved there, and what they're transporting. I have a bad feeling that there will be trouble if we don't follow up on this.</p>
+          <p> </p>
+          <p>Can you investigate this matter for me, [%username]? I need someone with good judgment here, and I think you fit that description.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You should leave immediately if you are to catch these Dragonbound. I recommend searching the area around the Vorgaltem Battlefield for them.</p>
+          <p> </p>
+          <p>Once you find them, dispose of the [%dic:STR_DIC_M_DF4_FanaticFi_Q_54_An] in charge of logistics and obtain the [%dic:STR_DIC_I_QUEST_30301a]. We must find out their purpose.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Blood for blood."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I...I never expected you would refuse this mission. Vidar himself has his eye on you. Surely one such as you could understand the gravity of....</p>
+          <p> </p>
+          <p>Never mind. I suppose I will find another Daeva for this mission. Leave me, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm just too busy."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did you dispose of the [%dic:STR_DIC_M_DF4_FanaticFi_Q_54_An] and bring the [%dic:STR_DIC_I_QUEST_30301a]? We must learn of their plot. Even now the Balaur scheme to reclaim Gelkmaros.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I found this report."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Are you out of your mind? The Balaur are plotting to reclaim Gelkmaros and you're ignoring orders?</p>
+          <p> </p>
+          <p>Even a slight lapse in concentration is an invitation to our defeat! Get out there, dispose of the [%dic:STR_DIC_M_DF4_FanaticFi_Q_54_An], and return with the [%dic:STR_DIC_I_QUEST_30301a]!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm on it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The convoy wasn't carrying anything? I suppose that means the transport must have already been completed. We must hope for clues in the Supply Report....</p>
+          <p> </p>
+          <p>Hmmmm...this appears to be written in Balaur. I hope I can read it!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Dispose of the [%dic:STR_DIC_M_DF4_FanaticFi_Q_54_An] and bring the [%dic:STR_DIC_I_QUEST_30301a] to [%dic:STR_DIC_N_Hler].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Discover what the Dragonbound are transporting near the Vorgaltem Battlefield.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Richelle said the Dragonbound have been transporting something peculiar somewhere in the Vorgaltem Battlefield. </p>
+          <p> </p>
+          <p>At her request, you disposed of the Mitrakand Quartermaster Captain and obtained a Supply Report.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

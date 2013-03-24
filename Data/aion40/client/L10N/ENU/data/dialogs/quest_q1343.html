@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I have news for you, [%username] if you're ready to hear it. About what made the Stoneshell Ksellids violent.</p>
+          <p> </p>
+          <p>Our investigation revealed that the caravan was not so innocent, and was attempting to capture Ksellikis--the young Ksellids--alive.</p>
+          <p> </p>
+          <p>Their big mistake was that they tried to catch [%dic:STR_DIC_M_ShellizardNamed_31_An].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Who, or what, is that?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You don't know the story of Andre? It is unbelievably huge for a Ksellid.</p>
+          <p> </p>
+          <p>Speedy is its child, and will be just as huge when it's fully grown.</p>
+          <p> </p>
+          <p>It's clear those greedy travelers paid the price for their bad judgment.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"It seems that way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>In the end, I fear we all will. More people may have another try at capturing it, and we'll be digging even more graves before this is done.</p>
+          <p> </p>
+          <p>As much as I hate to do it, I'm issuing orders to end the threat. We need to stop [%dic:STR_DIC_M_ShellizardNamed_31_An] before it is fully grown.</p>
+          <p> </p>
+          <p>Would you like to join the hunt, [%username]? If you face this peril, others will not have to. </p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I have reports that [%dic:STR_DIC_M_ShellizardNamed_31_An] has been wounded, and fled to the Eastern Eracus Desert.</p>
+          <p> </p>
+          <p>Nothing is more dangerous than a wounded beast.</p>
+          <p> </p>
+          <p>I'm relying on you, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll keep us all safe." </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You are the one who can best achieve success. I know you have this in you.</p>
+          <p> </p>
+          <p>No one knows how big of a threat it will be when fully grown. It might disrupt the whole ecosystem of Eltnen.</p>
+          <p> </p>
+          <p>You will not allow that, will you?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"This is not my problem." </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I have warned the locals not to attack Ksellids, Speedy in particular.</p>
+          <p> </p>
+          <p>They need to learn to leave the wild things to the wild.</p>
+          <p> </p>
+          <p>Did you deal with Speedy?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I did." </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That's one less worry thanks to you, [%username].</p>
+          <p> </p>
+          <p>You've done good work here. If there were another Andre...it makes me scared just thinking about it.</p>
+          <p> </p>
+          <p>We might just have some peace for a while.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Hunt [%dic:STR_DIC_M_ShellizardNamed_31_An] ([%2]/1).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report to [%dic:STR_DIC_N_Alexis].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Hunt Speedy before it grows as big as Andre.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It was discovered that the Ksellids became violent because people tried to capture Speedy alive.</p>
+          <p> </p>
+          <p>Alexis wanted to get rid of Speedy before it grew up to be as big as Andre and destroyed the ecosystem of Eltnen. At his request, you hunted Speedy.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

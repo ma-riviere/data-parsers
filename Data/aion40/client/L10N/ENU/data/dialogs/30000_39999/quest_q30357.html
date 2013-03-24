@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You know what my favorite part of Laize's Panoply is? The Gloves.</p>
+          <p> </p>
+          <p>They're clearly the fanciest part of the Panoply, but looks aren't the reason they're important.</p>
+          <p> </p>
+          <p>Rosarea didn't usually wear gloves, but when preparation for battle was almost done, she put on the gloves with a smile on her face...and turned into a completely different person.</p>
+          <p> </p>
+          <p>I heard the look in her eyes was amazing! Once she put on the gloves, no one would dare face her.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Spiffy."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Right now I'm putting all my efforts into Laize's Gloves. They're the showpiece of what will be a beautiful Panoply.</p>
+          <p> </p>
+          <p>I do have one concern though.... I still don't have enough Aether energy. With what I have, I don't think I can restore their original glory.</p>
+          <p> </p>
+          <p>I'd like to ask you to help me, [%username]. You'll have the first pair of gloves once they're done.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Take this marble, and use it to collect Aether energy.</p>
+          <p> </p>
+          <p>Inside the Abyssal Splinter, you'll find [%dic:STR_DIC_M_IDAbRe_Core_SilikaCannon_Ra_55_Ah]s and [%dic:STR_DIC_M_IDAbRe_Core_Millipede_Sc_55_An]s. Kill them, and the Aether energy will be stored in the marble automatically. </p>
+          <p> </p>
+          <p>Hurry back! These gloves will be great when they're done.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I hope so."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You don't care about Laize's Gloves? Maybe you think that a homeless craftsman can't handle the job?</p>
+          <p> </p>
+          <p>For your information, I failed to become a master because I didn't have connections, not because I wasn't good enough!</p>
+          <p> </p>
+          <p>Whatever. Go away.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Fine, I will."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Daevas lined up to witness the moment Rosarea put on gloves. In fact, many of them even tried to challenge her to a duel.</p>
+          <p> </p>
+          <p>You see, when she accepted a challenger, she would always put on her gloves as an indication that she was willing to fight. She was very selective though. Many people left disappointed.</p>
+          <p> </p>
+          <p>There's no denying that Laize's Gloves are amazingly beautiful. Anyone who wears them will get quite a lot of attention.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Great. Here's your Aether."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, this looks like quite a bit. But I can't tell if it's enough to fully empower the gloves.</p>
+          <p> </p>
+          <p>If it is, they're yours immediately. Let's give this a try.... Here we go...!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Kill Aether-rich creatures and collect their Aether energy.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_IDAbRe_Core_SilikaCannon_Ra_55_Ah]([%2]/3)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_IDAbRe_Core_Millipede_Sc_55_An]([%5]/10)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Take the Aether marble to [%dic:STR_DIC_NPC_Darkhum].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Aether energy is required to complete Laize's Gloves. Go to the Abyssal Splinter and collect Aether energy.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Darkhum was working on Laize's Gloves, a piece of Laize's Panoply.</p>
+          <p> </p>
+          <p>To complete this gem of Laize's Panoply, he needed more Aether energy.</p>
+          <p> </p>
+          <p>You got rid of Aether-rich creatures at the Abyssal Splinter to gather the needed Aether.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

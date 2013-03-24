@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p align="center"> - Work Order -</p>
+          <p> </p>
+          <p>1. To: Temp Worker [%username]</p>
+          <p> </p>
+          <p>2. Job Details: Get 5 Stone of Purification in *** and submit them to the supervising branch.</p>
+          <p> </p>
+          <p>3. Supervising Branch: Silverine South Katalam Branch</p>
+          <p> </p>
+          <p>The above mission will be considered in the evaluation process for hiring you as a full-time worker. Additional points may be added depending on the result. Do your best nyerk.</p>
+          <p> </p>
+          <p>- Danurinerk, Recruiter of Silverine Limited</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">Fold the work order and put it away.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This mission is to get the Stone of Purification, isn't it?</p>
+          <p> </p>
+          <p>I really don't know what my superiors are thinking.</p>
+          <p> </p>
+          <p>No one has ever succeeded in getting the Stones of Purification, so why did they send out that request again, nyerk?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">Hand over the Stones of Purification.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>As I imagined, nyerk.</p>
+          <p> </p>
+          <p>That's okay, it's not like I was expecting you to make it.</p>
+          <p> </p>
+          <p>No one has ever succeeded in getting the Stones of Purification.</p>
+          <p> </p>
+          <p>Well, frankly, just touching it makes you pass out, so we actually call it the "Stone of Fainting."</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">End dialog.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Are those really the Stones of Purification?</p>
+          <p> </p>
+          <p>(Opens his bag wide) Put them in here, please.</p>
+          <p> </p>
+          <p>I heard that people faint when they touch these.</p>
+          <p> </p>
+          <p>The water of the *** lake is clean because of the Stones of Purification.</p>
+          <p> </p>
+          <p>I was scolded for spending too much money trying to purify the swamp water. I feel better now.</p>
+          <p> </p>
+          <p>Now we need to get rid of those useless Skurvs, nyerk.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Find the Stones of Purification and deliver them to the Silverine South Katalam Branch.</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">You received a work order from Silverine Limited. Check the work details and perform the mission.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You received a work order from Silverine Limited.</p>
+          <p> </p>
+          <p>After you obtained the Stones of Purification in *** lake and submitted them to the Silverine South Katalam Branch, you were rewarded for your hard work.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

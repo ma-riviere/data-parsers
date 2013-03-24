@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Blast! I can't believe we've lost Siel's Western Fortress! Well, I'll see about that.</p>
+          <p> </p>
+          <p>Our problem was the fortress garrison, but there's no point in attacking while the enemy is on the alert.</p>
+          <p> </p>
+          <p>We'll turn the tide when the fortress enters Vulnerable State.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"You're ready?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We can keep the Balaur in check, but I need outside help to defeat the Elyos.</p>
+          <p> </p>
+          <p>But once the [%dic:STR_DIC_M_2803_all] is out of the way, recapturing the fortress won't be difficult.</p>
+          <p> </p>
+          <p>Can you help us, [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Then go to Siel's Western Fortress, observe and bide your time, [%username]. Attack as soon as the fortress is Vulnerable.</p>
+          <p> </p>
+          <p>Crush the elite Elyos garrison, from Novices on up. Bring me their [%dic:STR_DIC_I_QUEST_2803a]s as proof they're gone.</p>
+          <p> </p>
+          <p>The Elyos are crafty. Don't let your guard down for a moment.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"On my way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Reluctant, are you?</p>
+          <p> </p>
+          <p>I understand. Scales, this isn't a mere one or two Elyos, but sneaking into a fortress.</p>
+          <p> </p>
+          <p>This mission is important. If you're unwilling, we'll find someone else, but I'll welcome you if you change your mind.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+
+      <Act href="HACTION_FINISH_DIALOG">"Farewell."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Azphelumbra, [%username].</p>
+          <p> </p>
+          <p>Have you been to the Fortress?</p>
+          <p> </p>
+          <p>Did you defeat the [%dic:STR_DIC_M_2803_all] and bring me [%dic:STR_DIC_I_QUEST_2803a]s?</p>
+        </body>
+        </html>
+    </Contents>
+
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here...the plundered hairpins."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You haven't been there yet, I see.</p>
+          <p> </p>
+          <p>Your mission is crucial to this victory, [%username]. Get out and watch that Fortress!</p>
+          <p> </p>
+          <p>I need the [%dic:STR_DIC_M_2803_all] routed and their [%dic:STR_DIC_I_QUEST_2803a]s in my hand.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Blood for blood!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You've done as you promised and dealt the Elyos a devastating loss.</p>
+          <p> </p>
+          <p>You've taken us a step closer to retaking Siel's Western Fortress, [%username]. I'm grateful for your service.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Destroy the [%dic:STR_DIC_M_2803_all] and bring the proof to [%dic:STR_DIC_N_Gnad].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">The Elyos forces must be weakened in order to recapture Siel's Western Fortress. When the fortress enters Vulnerable State, defeat the Elyos garrison and return with their Guardian's Hairpins.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>For Ogmund to recapture the Siel's Western Fortress lost to the enemy, he must remove the garrison defending the fortress.</p>
+          <p> </p>
+          <p>The Elyos garrison was especially fierce, so Ogmund needed help. You destroyed the Elyos garrison and returned to Ogmund with the Guardian's Hairpins.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

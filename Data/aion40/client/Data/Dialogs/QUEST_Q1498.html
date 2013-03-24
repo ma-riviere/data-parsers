@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님도 얘기를 들어 아시겠지만 카이단 크랄 놈들이 사람들을 납치해 가고 있습니다.</p>
+          <p> </p>
+          <p>최근엔 히에르니라는 지질학자를 데려갔죠.</p>
+          <p> </p>
+          <p>그나마 카이단 본진이 아니라 채굴장으로 끌려가 다행이긴 한데 그래도 걱정은 걱정입니다.</p>
+          <p> </p>
+          <p>그 짐승 같은 놈들이 히에르니에게 무슨 짓을 할 지 모르니까요. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>상부에 보고했더니 조만간 히에르니를 구출할 사람을 보내겠다고 하더군요.</p>
+          <p> </p>
+          <p>하지만 대규모 인력을 파견할 순 없으니 그전에 카이단 채굴장을 지키는 카이단 경비병과 돌격병들을 정리해 두랍니다. 도와줄 사람을 구해서 말입니다.</p>
+          <p> </p>
+          <p>제가 보기에 [%username] 님이 그 일에 딱 제격일 것 같은데 어떻습니까? 카이단 채굴장에 있는 크랄 놈들을 좀 처치해 주시겠습니까?</p>
+          <p> </p> 
+          <p>아, 물론 포상은 두둑이 해 드릴 겁니다.</p>    
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>마음 먹으신 김에 바로 출발해 주셨으면 좋겠군요. 시간이 지체될수록 포로가 무사할 가능성이 낮아지니까요.</p>
+          <p> </p>
+          <p>주의 사항 몇 가지만 짧게 말씀드리죠.</p>
+          <p> </p>
+          <p>카이단 채굴장은 위험한 곳입니다. 그러니 혼자 가지 마시고 꼭 동료와 함께 가십시오.</p>
+          <p> </p>
+          <p>그리고 카이단 경비병과 돌격병을 잡거든 [%dic:STR_DIC_I_QUEST_1498a]과 [%dic:STR_DIC_I_QUEST_1498b]을 벗겨서 가져 오세요.</p>
+          <p> </p>
+          <p>그게 있어야 약속한 포상을 드릴 수 있으니까요. </p>
+          <p> </p>
+          <p>다 이해하셨으면 바로 출발해 주십시오. 행운을 빕니다!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>제가 사람을 잘못 봤나 보군요. 여기 있으면서 사람 보는 눈이 있다고 나름 자부했는데... </p>
+          <p> </p>
+          <p>설마 카이단 채굴장에 같이 갈 동료가 없어서 거절하는 건 아니겠죠?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아리엘 주신이시여, 감사합니다.</p>
+          <p> </p>
+          <p>카이단 채굴장으로 가시고 계속 소식이 없어 걱정이 많았답니다.</p>
+          <p> </p>
+          <p>이렇게 무사한 걸 보니 정말 기쁘군요. </p>
+          <p> </p>
+          <p>그건 그렇고 갔던 일은... 어떻게 됐습니까? 성공... 하셨나요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">경비병과 돌격병의 가면을 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이런, 일은 실패하셨나 보군요.</p>
+          <p> </p>
+          <p>어찌됐건 [%username] 님이 무사히 돌아오셔서 다행이긴 한데 그래도 히에르니가 맘에 걸리는군요.</p>
+          <p> </p>
+          <p>돌아온 지 얼마 안 된 분께 이런 말씀드리기 미안하지만 약속대로 [%dic:STR_DIC_I_QUEST_1498a]과 [%dic:STR_DIC_I_QUEST_1498b]%을 가져다 주시면 안 되겠습니까?</p>
+          <p> </p>
+          <p>아, 물론 당장 가라는 건 아닙니다. 몸을 좀 추스르고 나서 시작해 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>윽, 이렇게 흉측한 걸 도대체 왜 쓰고 다니는지...</p>
+          <p> </p>
+          <p>정말 수고 많으셨습니다.</p>
+          <p> </p>
+          <p>받으십시오. 엘테넨 요새에서 드리는 포상입니다. </p>
+          <p> </p>
+          <p>앞으로도 엘테넨의 안전을 위해 힘써 주시길 바랍니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_I_QUEST_1498a]과 [%dic:STR_DIC_I_QUEST_1498b]%을 모아 [%dic:STR_DIC_N_Anasya]에게 가져가라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">카이단 채굴장에 잡힌 포로를 쉽게 구출할 수 있게 채굴장을 지키는 카이단 경비병과 돌격병들을 처치하고 증거로 가면을 벗겨 아나샤에게 가져다 주자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아나샤는 카이단 크랄이 히에르니라는 지질학자를 납치해 갔다며 조만간 구출 작전을 펼칠 계획이라고 했다.</p>
+          <p> </p>
+          <p>빠른 작전 수행을 위해 그전에 카이단 채굴장을 지키는 카이단 경비병과 돌격병을 처치해야 한다며 그 일을 도와달라고 부탁했다.</p>
+          <p> </p>
+          <p>아나샤의 지시대로 카이단 채굴장을 지키는 크랄을 처치하고 증거로 경비병의 가면과 돌격병의 가면을 벗겨가자 수고했다며 포상을 했다.</p>   
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

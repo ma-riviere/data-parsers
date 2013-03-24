@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Now that we understand what's going on, we need to stop it. Your first mission is to stop the Krall's Odium production.</p>
+          <p> </p>
+          <p>They're using it to amplify their strength, but if it's properly refined it can also be used to open an Abyss Gate. We must not let them refine it!</p>
+          <p> </p>
+          <p>I've been planning a mission to infiltrate the Kaidan Headquarters and undermine their refining capabilities.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"How can you do that?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We'll have to strike at the resources they need to enable their processing. As you approach the Kaidan Headquarters, you'll see a windmill. That windmill is used to generate the power to refine Odium.</p>
+          <p> </p>
+          <p>There's an [%dic:STR_DIC_LF2_Gear_Q1414] attached to the windmill. Without it, the mechanism won't function, and it will take quite some time to replace. If you take out the [%dic:STR_DIC_I_QUEST_1414a], the windmill will stop.</p>
+          <p> </p>
+          <p>You're the one most familiar with that base. Will you take the mission?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Go to the Kaidan Headquarters, take out that windmill and come back.</p>
+          <p> </p>
+          <p>Don't forget to bring back the [%dic:STR_DIC_I_QUEST_1414a], to prevent them from repairing the windmill.</p>
+          <p> </p>
+          <p>Every moment we delay gives them more refined Odium.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll teach them a lesson."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You'll need to gather some supplies, I presume?</p>
+          <p> </p>
+          <p>Leave as soon as you're ready.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I will return soon."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Click...click...click....</p>
+          <p> </p>
+          <p>click...click...click....</p>
+          <p> </p>
+          <p>click...click...click....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"Aha...this is the key part...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, You're back safely.</p>
+          <p> </p>
+          <p>Have you carried out the mission successfully?</p>
+          <p> </p>
+          <p>If so, then let me see the [%dic:STR_DIC_I_QUEST_1414a]. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Here it is. It doesn't look very important."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I know it seems like a small thing, but this is the key part, I assure you.</p>
+          <p> </p>
+          <p>The Kaidan Krall will not be able replace it easily, so their operation should be stopped for the time being.</p>
+          <p> </p>
+          <p>But we'll need to watch them carefully and strike again if they try to get it running.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Break the [%dic:STR_DIC_LF2_Gear_Q1414].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Report to [%dic:STR_DIC_N_Aeolus].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Break the windmill that supplies the Krall with the power to refine Odium.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Tumblusen said that the Krall were amplifying their power with Odium, and that you should help prevent them from refining it.</p>
+          <p> </p>
+          <p>As ordered, you went to the Kaidan Headquarters and broke the windmill that was driving their refinery.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

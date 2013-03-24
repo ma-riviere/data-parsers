@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Teleportation requires so much Aether. Sadly, that's in short supply these days. And my teleportation statue has been acting rather strange lately...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"That sounds bad."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Very bad. I don't know if the device is just old or damaged, but each activation consumes more Aether than it should.</p>
+          <p> </p>
+          <p>I think it needs a repair and I'm worried that the statue may malfunction before I can get the work done.</p>
+          <p> </p>
+          <p>For now, I can make do with extra Aether Crystals. But since I need to look after the statue and activate it, I don't have time to collect them.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I can gather Aether Crystals."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you for volunteering, [%username]. </p>
+          <p> </p>
+          <p>You know the Vortexes that float in the sky above the Fortress? The [%dic:STR_DIC_I_od_d_n_c_20a]s from them will hold me until I can get the repairs made.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you.</p>
+          <p> </p>
+          <p>I'm glad I found someone who can extract the [%dic:STR_DIC_I_od_d_n_c_20a] from the Vortexes.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"The task is mine."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I don't even want to think about what would happen if you couldn't exit to your destination during a teleport!</p>
+          <p> </p>
+          <p>This is important.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Some other time."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>So far, the statue hasn't caused any problems, but I'm afraid of what could happen. Did you bring the Aether Crystals I asked for?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I hope these help."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Not enough crystals yet? </p>
+          <p> </p>
+          <p>Did you have trouble? Please hurry!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"On my way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>With these, the statue should hold up until I can get repairs in place.</p>
+          <p> </p>
+          <p>Thank you for doing this for me!</p>
+       </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Extract [%dic:STR_DIC_I_od_d_n_c_20a]s and bring them to [%dic:STR_DIC_N_Orhe].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Orhe said she needs Aether Crystals to power the statue. Extract them from the Vortexes above the Fortress.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Orhe said that the teleportation statue was consuming excessive Aether and asked you to extract Aether Crystals to power the statue until it is repaired.</p>
+          <p> </p>
+          <p>You flew above the fortress and extracted Crystals from the Vortexes there.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

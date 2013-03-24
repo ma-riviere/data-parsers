@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>갈수록 먹고살기 어렵군요.</p>
+          <p> </p>
+          <p>톨바스 숲에서 채집을 하려면 이제는 목숨을 걸어야 하니 말입니다.</p>
+          <p> </p>
+          <p>뭐 인간으로 사는 게 다 그런 거지요.</p>
+          <p> </p>
+          <p>하지만 위험해도 키나는 벌어야지요. 목숨이 붙어 있는 이상 산 입에 거미줄 칠 수도 없으니까요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>원래 프릴파이맘과 토그는 숲 깊숙한 곳에 있었고, 자이프는 큰길 주변에서 서식했습니다.</p>
+          <p> </p>
+          <p>그런데 갑자기 늘어난 프릴파이맘에 밀려 토그가 자이프 영역까지 밀고 내려왔지요.</p>
+          <p> </p>
+          <p>영역을 뺏겨서 그런지 자이프가 예전보다 훨씬 사나워졌습니다. 그냥 지나가는 사람까지 쫓아가서 공격하니까요.</p>
+          <p> </p>
+          <p>그래서 마음 놓고 채집을 할 수가 없을 지경입니다.</p>
+          <p> </p>
+          <p>제가 목숨을 걸지 않아도 되도록 자이프를 좀 처치해 주시겠습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>감사합니다.</p>
+          <p> </p>
+          <p>대로변에서 날뛰고 있는 [%dic:STR_DIC_MLA129]%와 [%dic:STR_DIC_MLA130]%을 처치해 주십시오. </p>
+          <p> </p>
+          <p>놈들을 처치해 주신다면 사례는 꼭 하겠습니다.</p>         
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>급한 일이 있으신가 보군요.</p>
+          <p> </p>
+          <p>알겠습니다.</p>
+          <p> </p>
+          <p>요새로 가서 키네소스 님께 말씀드리는 게 낫겠군요.</p>          
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>오셨군요.</p>
+          <p> </p>
+          <p>자이프는 처치하셨습니까, 데바님?</p>
+          <p> </p>
+          <p>이젠 맘 놓고 채집을 해도 됩니까?</p> 
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">사냥 결과를 말한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정말 감사합니다.</p>
+          <p> </p>
+          <p>당분간 자이프 걱정은 안 해도 되겠군요.</p>
+          <p> </p>
+          <p>이건 약속한 사례입니다.</p>         
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">사람들의 안전을 위협하는 자이프를 사냥하라 </font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_MLA129]([%2]/6)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_MLA130]([%5]/4)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Ondanius]%와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">자이프가 톨바스 숲을 지나는 사람들을 무조건 공격하고 있다. 온다니우스가 마음 놓고 채집할 수 있도록 대로변 주변에서 자이프를 몰아내자.</p>
+          <p></font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>난폭하고 잔인한 자이프 때문에 사람들이 툴바스 숲을 안심하고 지나다닐 수 없었다.</p>
+          <p> </p>
+          <p>온다니우스가 마음 놓고 채집을 할 수 있도록 대로변 주변에서 자이프를 몰아냈다.</p>         
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

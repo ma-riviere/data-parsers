@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q3042</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>파수병 일이란 게 말입니다, 겉보기엔 편해 보일지 몰라도 아주 꽤 굉장히 피곤한 일입니다. </p>
+          <p> </p>
+          <p>언제 일이 생길지 모르니 늘 긴장하고 있어야 하거든요. </p>
+          <p> </p>
+          <p>헌데 아트로포스 님이 지나다 절 보시고는 허구헌 날 빈둥대고 있다고 야단을 치지 뭡니까?</p>
+          <p> </p>
+          <p>자기는 결계탑 안에서 손 하나 까닥하지 않으면서, 쳇.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그러면서 [%dic:STR_DIC_W_LF2B_SZ_A]에 있는 [%dic:STR_DIC_M_LF2A_SalivadoRed_45_An]를 말끔히 청소할 때까지는 잠시도 쉬지 말라고 으름장을 놓고 가셨습니다.</p>
+          <p> </p>
+          <p>그게 말이 됩니까? 여기 병력이 다 동원돼도 힘든 일을 저 혼자 다 처리하라니요.</p>
+          <p> </p>
+          <p>맘 같아선 다 때려 치고 싶지만 그러기엔 지금껏 가디언 생활을 한 게 아까워서요.</p>
+          <p> </p>
+          <p>그렇다고 그 많은 살리바도 놈들을 혼자서 처리할 수도 없고... 저기 [%username] 님이 도와주시면 안 되겠습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_M_LF2A_SalivadoRed_45_An]는 아주 난폭합니다.</p>
+          <p> </p>
+          <p>게다가 수가 어찌나 많은지 이 일대를 장악하고 있다 해도 과언이 아니죠.</p>
+          <p> </p>
+          <p>5마리만 처치해 주시면 나머지는 제가 어떻게 해볼 수 있을 것도 같습니다.</p>
+          <p> </p>
+          <p>그 정도는 가능하시겠죠?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>살리바도 놈들은 아주아주 지독한 놈들이에요.</p>
+          <p> </p>
+          <p>저 혼자서 이 길목을 청소하는 건 거의 불가능하지요.</p>
+          <p> </p>
+          <p>도와주시지 않으면 저는 또 결계 수호자님께 한소리 들을 겁니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>벌써 살리바도 5마리를 다 처치한 건가요?</p>
+          <p> </p>
+          <p>저도 꽤 열심히 했습니다만 아직 두 마리도 못 잡았는데.</p>
+          <p> </p>
+          <p>설마 중도에 포기하고 돌아온 건 아니겠죠? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>역시 도와주셨군요.</p>
+          <p> </p>
+          <p>정말 고맙습니다. 이 정도면 아트로포스 님도 만족하실 겁니다.</p>
+          <p> </p>
+          <p>사나운 살리바도 놈들을 처치하느라 수고가 많으셨습니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_M_LF2A_SalivadoRed_45_An]를 사냥하라([%2]/5)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Noridia]와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">결계 수호자 아트로포스가 노리디아에게 열사의 황무지에 살리바도를 소탕할 때까지 쉬지 말라는 명령을 내렸다고 한다. 노리디아가 무사히 임무를 끝낼 수 있게 살리바도 소탕을 도와주자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>노리디아는 최선을 다해 마을을 지키는데도 결계 수호자인 아트로포스에게 빈둥댄다는 야단을 맞았다며 억울해 했다.</p>
+          <p> </p>
+          <p>황무지의 살리바도를 모조리 소탕하라는 아트로포스의 명령을 무사히 수행할 수 있게 살리바도를 처치해 주자 노리디아가 무척 고마워했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

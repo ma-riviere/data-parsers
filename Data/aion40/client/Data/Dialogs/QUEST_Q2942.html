@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>오, [%username] 다시 봤네. 젠체하는 [%userclass]인 줄만 알았는데 요리 솜씨가 꽤 쓸만한 걸.</p>
+          <p> </p>
+          <p>조금만 더 노력하면 주신께 바칠 천수 음식을 만들어도 되겠어. 물론 내 도움이 좀 필요하겠지만 말이야.</p>
+          <p> </p>
+          <p>그건 그렇고 [%username]! 부탁이 있어 그러는데 시간 좀 내주지 않겠나?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">무슨 일인지 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>어려운 일은 아니니 그렇게 긴장할 필요는 없네.</p>
+          <p> </p>
+          <p>그냥 이 치코리 튀김 가루를 어비스에 있는 [%dic:STR_DIC_N_Siana]에게 전해 주기만 하면 된다네. 프리뭄 거점에 납품할 거라며 빨리 보내 달라더군.</p>
+          <p> </p>
+          <p>어떤가, 이 일을 맡아 주겠나?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>화끈한 게 마음에 드는군. 딱 내 취향이야.</p>
+          <p> </p>
+          <p>농담이고 [%dic:STR_DIC_N_Siana]에게 전할 꾸러미는 이것일세. 급하게 필요하다 하니 바로 출발하게.</p>
+          <p> </p>
+          <p>그럼 자네만 믿겠네.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], 자네라면 흔쾌히 허락할 줄 알았는데... 솔직히 좀 실망일세.</p>
+          <p> </p>
+          <p>내일 저녁을 준비하려면 치코리 튀김 가루가 꼭 필요하다던데 이걸 어쩌나...</p>
+          <p> </p>
+          <p>더 할 말 없으면 그만 가 보게. 그렇게 버티고 있으면 생각하는데 방해만 되니 말일세.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+ 
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>뭐가 필요하다고 하셨죠? 죄송합니다. 오늘 제가 좀 정신이 없네요.</p>
+          <p> </p>
+          <p>아칸들이 먹을 음식 재료를 오늘까지 납품해야 하는데 물량이 턱없이 부족하네요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">라이니타의 꾸러미를 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>라이니타 님이 보내신 분이군요. 그럼 이 꾸러미는 치코리 튀김 가루겠네요.</p>
+          <p> </p>
+          <p>휴, 그나마 다행이군요. 이것마저 안 오면 어떡하나 했거든요.</p>
+          <p> </p>
+          <p>물건을 빨리 가져와 주셔서 감사합니다. 이건 고마워서 드리는 거니 부디 사양말고 받아 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">라이니타의 꾸러미를 [%dic:STR_DIC_N_Siana]에게 전하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">라이니타가 준 치코리 튀김 가루를 어비스에 있는 잡화 상인 시아나에게 전해야겠다.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>라이니타는 프리뭄 거점에 있는 잡화 상인 시아나에게 급히 보낼 물건이 있다며 그 일을 해 달라고 부탁했다.</p>
+          <p> </p>
+          <p>라이니타가 준 꾸러미를 시아나에게 가져가자 고마워하며 사례를 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

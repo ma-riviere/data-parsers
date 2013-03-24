@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p align="center"> - Operation Order - </p>
+          <p> </p>
+          <p>From: The Blood Crusade</p>
+          <p> </p>
+          <p>To: Crusader [%username]</p>
+          <p> </p>
+          <p>The Reshanta branch of the Blood Crusade has issued a general kill order on the arrogant Elyos in all areas. You are hereby tasked with the slaying of Elyos anywhere you come across them. To this end, we give the following orders:</p>
+          <p> </p>
+          <p>  1. Regardless of time and place, slay any Elyos you come across, with a goal of five Elyos victims at the very least. You should ignore those with little combat power--seek out worthy adversaries.</p>
+          <p> </p>
+          <p>  2. Once the enemy has lost the will to fight, and you have slain enough foes, report to [%dic:STR_DIC_E_45502].</p>
+          <p> </p>
+          <p>May you walk in Azphel's shadow. Blood for blood!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">Fold up the order.</Act>
+    </Selects>
+  </HtmlPage>
+
+   <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good to see you again, [%username].</p>
+          <p> </p>
+          <p>From what I heard, enough Elyos fell today that it seemed like there were six of you. How did things go?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"The Ellies felt my wrath today."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Indeed they did, [%username]. And so you shall be justly rewarded.</p>
+          <p> </p>
+          <p>Here's your reward. Blood for blood!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Kill the [%dic:STR_DIC_E_Daily_2] in [%dic:STR_DIC_W_Daily]([%2]/5).</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Report to [%dic:STR_DIC_E_45502].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Daily Order: Butcher the combat-worthy Elyos anywhere and everywhere, then report to an Reshanta branch agent.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Blood Crusade has issued a general kill order on all worthy Elyos, anywhere and everywhere.</p>
+          <p> </p>
+          <p>After completing the mission, you visited a Reshanta branch agent and received a reward.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+	 	  <HtmlPage name="select_acqusitive_quest_desc">
+	 	    <Selects>
+	 	      <Act>New quest: [%questname]</Act>
+	 	    </Selects>
+	 	  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>Quest in progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've considered our options and I believe we need some eyes on the ground to figure this out.</p>
+          <p> </p>
+          <p>Considering where the Dragonbound are heading, it's logical to conclude that their final destination is Silentera Canyon.</p>
+          <p> </p>
+          <p>And the most likely place in Silentera Canyon to find Protectors is at Beshmundir Temple.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Seems reasonable."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I don't know what kind of ceremony they are planning, but it's a pretty safe assumption that we should prevent it.</p>
+          <p> </p>
+          <p>Unfortunately, it's not easy to get to [%dic:STR_DIC_W_ZONE_NAME_IDCatacombs] or [%dic:STR_DIC_E_UnderPass_Li].</p>
+          <p> </p>
+          <p>[%username], I want you to destroy the Protectors and halt this ceremony.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Last time I was there, the Temple Protectors tended to congregate in the deepest part of Beshmundir Temple. It won't be easy, but I know you will triumph.</p>
+          <p> </p>
+          <p>Get in there and destroy the Protectors and [%dic:STR_DIC_E_IDCatacombsN_DrakanMonkBossNmd_55_Ah].</p>
+          <p> </p>
+          <p>Keep in mind that you can only access the [%dic:STR_DIC_W_ZONE_NAME_IDCatacombs] when Silentera Canyon is open.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Canyon, temple, head bashing--check."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I mention Beshmundir Temple and you say no?</p>
+          <p> </p>
+          <p>How did you get such a stellar reputation if a little temple infiltration makes you squirm?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm not squirming!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've been waiting for you, [%username].</p>
+          <p> </p>
+          <p>What's the report?</p>
+          <p> </p>
+          <p>Were you able to eliminate the Temple Protectors and Isbariya the Resolute?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Piece of cake."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Protector said what? Followed by an ominous shriek? Oh! In retrospect, perhaps we should have questioned him before killing him. His death may not have been our best move.</p>
+          <p> </p>
+          <p>Well, nothing to be gained from worrying about that now.</p>
+          <p> </p>
+          <p>I'll prepare the troops for possible consequences of these actions.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get rid of the Beshmundir Temple Protectors.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_IDCatacombsN_DrakanMonk1Nmd_55_Ah] ([%2]/1)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_IDCatacombsN_DrakanMonk2Nmd_55_Ah] ([%5]/1)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_IDCatacombsN_DrakanMonk3Nmd_55_Ah] ([%8]/1)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_IDCatacombsN_DrakanMonk4Nmd_55_Ah] ([%11]/1)</font></p></step>
+               <step><p visible="[%12]"><font color="[%13]">Get rid of [%dic:STR_DIC_E_IDCatacombsN_DrakanMonkBossNmd_55_Ah]([%14]/1).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_N_Cainus].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Get rid of Isbariya the Resolute and Temple Protectors before they complete the ceremony at Beshmundir Temple.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Outremus said whatever the Balaur were planning, we should stop it by eliminating the Protectors who perform the ceremony.</p>
+          <p> </p>
+          <p>You killed Isbariya the Resolute at the Beshmundir Temple. While he was dying, he uttered some dire words of warning, which were followed by an ominous shriek from somewhere.</p>
+          <p> </p>
+          <p>When you reported to Outremus, he said that killing Isbariya might have been a mistake.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

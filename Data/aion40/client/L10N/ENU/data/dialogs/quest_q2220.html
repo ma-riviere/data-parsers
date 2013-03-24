@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Okay, [%username], this time I know we're close.</p>
+          <p> </p>
+          <p>The seeds we have are good, but having just a few more would be best.</p>
+          <p> </p>
+          <p>It's only this farm that seems affected. But these MuMu, they're not from around here, are they?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What do you mean?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Frightcorn grows just about anywhere, but not like this. I think the seeds are being altered elsewhere.</p>
+          <p> </p>
+          <p>Maybe if we get rid of the [%dic:STR_DIC_M_RatmanWarriorM_11_An]s and [%dic:STR_DIC_M_RatmanWarriorM_13_An]s you saw guarding the Frightcorn Fields, I could examine their stores more closely!</p>
+          <p> </p>
+          <p>I'm ready to try if you are.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Okay, here's the plan. You go up ahead and take out the [%dic:STR_DIC_M_RatmanWarriorM_11_An]s and [%dic:STR_DIC_M_RatmanWarriorM_13_An]s, and I'll slip in behind you and gather the seeds.</p>
+          <p> </p>
+          <p>That way, we'll finally know what's going on.</p>
+          <p> </p>
+          <p>Of course, it would be better if we could get rid of all of them, but 5 should be a sufficient distraction to get the job done.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Right. Let's do this!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>But...I thought.... We're so close!</p>
+          <p> </p>
+          <p>Nobody else knows as much about the situation as we do.</p>
+          <p> </p>
+          <p>If you have more important things to do, I understand, but please reconsider....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll see what I can do."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Wow, I can't believe how fierce the [%dic:STR_DIC_M_RatmanWarriorM_11_An]s and [%dic:STR_DIC_M_RatmanWarriorM_13_An]s are!</p>
+          <p> </p>
+          <p>I could hardly focus on getting the seeds, I was so afraid they might bite me!</p>
+          <p> </p>
+          <p>I lost track of you while I was in there, did you take care of your part?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="PLAYEMOTION_clap;HACTION_SELECT_QUEST_REWARD">"It was tough, wasn't it?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You were amazing! I felt completely safe with you on the job.</p>
+          <p> </p>
+          <p>I think I can get some of the hunters to band together and finish this up.</p>
+          <p> </p>
+          <p>You should go back to your duties, but please take this for your troubles.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Remove the [%dic:STR_DIC_M_RatmanWarriorM_11_An]s and [%dic:STR_DIC_M_RatmanWarriorM_13_An]s that are guarding the Frightcorn Field ([%2]/5).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_N_Titt].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">To allow Tigg and the townsfolk to obtain Frightcorn Seeds easily, thin out the patrols in the fields.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Tigg wanted to obtain more Frightcorn Seeds and asked you to thin out the MuMu Patrols and Veteran MuMu Patrols that were scouting the Frightcorn Field. You did so, enabling Tigg to sneak in and gather more of the seeds.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

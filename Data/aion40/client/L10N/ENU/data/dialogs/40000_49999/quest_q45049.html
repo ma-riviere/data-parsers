@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Field Warden:</p>
+          <p> </p>
+          <p>Field Scanners were placed in key areas of Gelkmaros to track the flow of Aether in Balaurea. Recently several scanners were destroyed, and we believe the native wildlife is responsible.</p>
+          <p> </p>
+          <p>The Gelkmaros Field Scanners were custom made by our Research Laboratory in Pandaemonium, and they are neither easy nor cheap to manufacture. If we have to keep replacing them like this, we will soon have a huge financial problem.</p>
+          <p> </p>
+          <p>Field Wardens are hereby asked to deplete the local [%dic:STR_DIC_M_DF4_Hellhound_Wolf_51_An] population in an effort to curb their evident intolerance of our scanners. Afterward, please report your result to a [%dic:STR_DIC_E_45021].</p>
+          <p> </p>
+          <p>This matter is highly confidential, so please destroy this letter after reading it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">(Drop the letter into a rift.)</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Do you have something to turn in to me? Something to report? There are so many missions, and so many Wardens, it's hard to keep track of who's doing what.</p>
+          <p> </p>
+          <p>So what is it? Did your target escape? Were you seen placing the devices? Let me check my notes.... Hmmm...[%username]...[%username]....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"What devices?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Not important. Ah, I see. [%username]. Here you are. You went to solve the Gelkmaros Field Scanner problem, huh? What a relief! I'm glad you got rid of the Starved Barghests so quickly. </p>
+          <p> </p>
+          <p>Do you realize how difficult it is to custom-manufacture a Field Scanner? Those things are so precise, they can even track the flow of Aether within a specific Daeva! Not that there would be any use for such a thing, of course.</p>
+          <p> </p>
+          <p>Anyway, here's your reward. Keep up the good work!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Cull the [%dic:STR_DIC_M_DF4_Hellhound_Wolf_51_An]s([%2]/5).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report to [%dic:STR_DIC_E_45021].</font></p></step>
+    </steps>
+        <p><font font_xml="quest_summary">A letter has arrived from the Field Wardens. Follow its instructions.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>A letter from the Field Wardens asked you to get rid of some Starved Barghests that are destroying the Gelkmaros Field Scanners.</p>
+          <p> </p>
+          <p>You slew several Starved Barghests and reported the result to a Gelkmaros Branch Member, who rewarded you for your time.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

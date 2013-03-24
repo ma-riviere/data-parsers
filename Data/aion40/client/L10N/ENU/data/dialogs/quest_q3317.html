@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]! You've got to try this! The old books were right! Kselliki meat does increase your energy and strength!</p>
+          <p> </p>
+         <p>Sure, it's a bit sharp, but nothing a little spice can't fix. Have a bit more. Can you feel that wholesome energy?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Wow! That's potent stuff!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm going to cook up a big pot of Kselliki stew for everyone. This'll help us kick some serious Asmodian...talons.</p>
+          <p> </p>
+          <p>And it's certainly not going to hurt my reputation any! Now, they'll have to admit that a good diet can make a difference.</p>
+          <p> </p>
+          <p>[%username], could you help me out by getting more [%dic:STR_DIC_I_QUEST_1353a]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>There are several subspecies of Ksellikis in the Eracus Desert.</p>
+          <p> </p>
+          <p>What I'm looking for is [%dic:STR_DIC_M_ShellizardBaby_28_An], [%dic:STR_DIC_M_ShellizardBabyL_28_An], [%dic:STR_DIC_M_ShellizardBaby_30_An], or [%dic:STR_DIC_M_ShellizardBabyL_30_An].</p>
+          <p> </p>
+          <p>Just make sure to avoid the adult Kselliki. Turns out their meat is completely inedible.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Somehow, I'm not surprised."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+      <p>Oh come on! This is important! The extra energy boost may be the difference between a Guardian winning or loosing a battle.</p>
+        <p> </p>
+        <p>Don't you want us to have every advantage against those gloom-cursed fiends?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Forget it. I'm busy!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Kselliki stew has worn off. I'm starting to feel a bit exhausted. I wish I could justify eating Kselliki for every meal, but we need all the stew for those going into battle.</p>
+          <p> </p>
+          <p>Were you able to get more [%dic:STR_DIC_I_QUEST_1353a]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Yep. Now, can I have a bowl?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You haven't had a chance to get more [%dic:STR_DIC_I_QUEST_1353a]?</p>
+          <p> </p>
+          <p>Can you put a bit of a rush on it? I'm down to my last pot of stew and there's a big offensive planned tomorrow.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll see what I can do."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Fantastic! You're a lifesaver.</p>
+          <p> </p>
+          <p>Here, have a bowl of stew while you rest. I'm going to get this meat prepped so I can get some more stew on. I'll be overrun by hungry Daevas any minute now.</p>
+          <p> </p>
+          <p>If this stew becomes as popular as I think it will, I may ask you to help me procure more ingredients. Faith and arms!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Take [%dic:STR_DIC_M_ShellizardBaby_28_An], [%dic:STR_DIC_M_ShellizardBabyL_28_An], [%dic:STR_DIC_M_ShellizardBaby_30_An], or [%dic:STR_DIC_M_ShellizardBabyL_30_An] meat to [%dic:STR_DIC_N_Acaste].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Bring Acaste the Kselliki meat.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Acaste has discovered the energizing qualities of Kselliki meat and would like to share with her battle-boundcolleagues.</p>
+          <p> </p>
+          <p>You went to the Eracus Desert, acquired Kselliki meat, and took it to Acaste.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

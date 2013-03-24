@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>마족이 또 요새를 공격하고 있습니다. 성문을 공격하려고 수호탑을 세웠어요!</p>
+          <p> </p>
+          <p>이대로 가다가는 성문이 부서질지도 모릅니다. 성문이 최후의 방어막입니다.</p>
+          <p> </p>
+          <p>성문이 부서지면 놈들이 물밀듯이 밀려올 거예요.</p>
+          <p> </p>
+          <p>무슨 일이 있어도 마족 놈들을 요새 안으로 들여서는 안 됩니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">고개를 끄덕인다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>마족이 공격을 포기하게 만들려면 우선 놈들의 수호탑을 부숴야 합니다. </p>
+          <p> </p>
+          <p>그렇지 않으면 멈추지 않고 계속 요새로 들어오려고 시도할 테니까요.</p>
+          <p> </p>
+          <p>[%username] 님이 그 [%mainslotitem]%으로 [%dic:STR_DIC_OBJ_1131_AttackTower_Da]을 좀 부숴 주시겠습니까?</p>
+          <p> </p>
+          <p>다른 사람들은 성문을 강화하느라 정신이 없으니 [%username] 님이 수호탑을 좀 맡아 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>힘든 일을 맡아 주시겠다니 정말 고맙습니다.</p>
+          <p> </p>
+          <p>이 시엘의 왼쪽 날개 요새는 전략적으로 중요한 곳입니다. 절대 놈들에게 빼앗겨서는 안 됩니다.</p>
+          <p> </p>
+          <p>그러니 [%dic:STR_DIC_OBJ_1131_AttackTower_Da]을 당장 없애 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>지금 이 상황에 임무를 거절하시는 겁니까?</p>
+          <p> </p>
+          <p>우리가 이 요새를 잃어야 속이 시원하겠습니까?</p>
+          <p> </p>
+          <p>천족으로서, 데바로서의 사명감은 도대체 어디로 간 겁니까?</p>
+          <p> </p>
+          <p>정말이지 믿을 수가 없군요!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>마족 수호탑을 부수고 오신 겁니까?</p>
+          <p> </p>
+          <p>조금 전부터 공격이 잠잠해진 걸 보고 [%username] 님이 성공하신 줄 알았습니다.</p>
+          <p> </p>
+          <p>자세한 상황을 설명해 주시겠습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>우리가 요새를 뺏기지 않은 건 모두 [%username] 님 덕입니다.</p>
+          <p> </p>
+          <p>때 맞춰 [%username] 님이 오신 걸 보니 아리엘 주신께서 우리를 살피신 것 같습니다.</p>
+          <p> </p>
+          <p>[%username] 님께 아리엘의 가호가 함께하길.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">성문을 공격하는 [%dic:STR_DIC_OBJ_1131_AttackTower_Da]을 부숴라([%2]/1)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Ab1_1131_Quest_Li]와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">마족이 요새를 빼앗으려고 마족 수호탑을 세워 공격하고 있다. 마족 수호탑을 부숴 놈들의 침입을 막자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>마족이 성문을 공격하기 시작하자 오케아노스는 당장 놈들을 막아야 한다고 했다.</p>
+          <p> </p>
+          <p>그래서 부탁대로 성 밖으로 나가서 마족 수호탑을 부수자 덕분에 요새를 지킬 수 있었다며 고마워했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

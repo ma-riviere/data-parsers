@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, I'm just so frustrated, [%username].</p>
+          <p> </p>
+          <p>We've been sent here on an urgent matter. We're checking which regions are contaminated and how far contamination has progressed in each region.</p>
+          <p> </p>
+          <p>Interlopers have made investigating the contamination in Adma Plains difficult, however. We're overwhelmed with the workload. Can you help us out?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What do you need?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Just a few samples. Peckus are particularly resilient to all levels of toxins. By hunting Peckus, we can examine their tissue for the level of contamination.</p>
+          <p> </p>
+          <p>But sampling isn't easy because Petrahulks would attack us while we were tagging the Peckus. It would be a big help if you, [%username], would remove the [%dic:STR_DIC_M_DF2A_CyclopsWorkerD_48_An]s for us.</p>
+          <p> </p>
+          <p>Can you help us?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Killing every [%dic:STR_DIC_M_DF2A_CyclopsWorkerD_48_An] on the [%dic:STR_DIC_W_DF2B_SZ_D2] and in the [%dic:STR_DIC_W_DF2B_SZ_D3] would clear the way for us to collect the samples we need.</p>
+          <p> </p>
+          <p>Well, maybe that's a bit much--thinning out thirty of them would do.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Consider it done."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Pandaemonium expects us to complete our missions properly and quickly. I can't send a Human out there. I was hoping you'd be willing to help.</p>
+          <p> </p>
+          <p>We just don't see enough strong Daevas out here.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll think about it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We've certainly not seen enough Daevas out here to help make progress with our sample collection.</p>
+          <p> </p>
+          <p>Carrying out missions properly and efficiently is a must for an Archon.</p>
+          <p> </p>
+          <p>How about it, [%username]? Did you kill all the Petrahulk Workers?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Thirty down."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You did a great job. We should be able to make some progress now.</p>
+          <p> </p>
+          <p>Thank you so much.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Kill [%dic:STR_DIC_M_DF2A_CyclopsWorkerD_48_An]s ([%2]/30).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report the result to [%dic:STR_DIC_N_Asustri].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Petrahulk Workers are preventing Asustri from collecting contamination samples. Get rid of the Petrahulk Workers.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Asustri had trouble collecting contamination samples in the Adma Plains. Petrahulk Workers are hindering the mission.</p>
+          <p> </p>
+          <p>You got rid of the Petrahulk Workers for him. Asustri expects he could complete the mission in time now.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

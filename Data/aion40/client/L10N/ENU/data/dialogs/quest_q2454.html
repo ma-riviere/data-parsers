@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, you should be joyous, Daeva! You will never grow old! You will keep your youth forever.</p>
+          <p> </p>
+          <p>Each year, each month, each day it gets more and more cumbersome for me to move. Just to walk about my cabin is such an exertion. Soon I will cease to have the energy needed to even arise in the morning, and then death will come for me, like a dark specter, reaching to claim my very...um...what was I saying?</p>
+          <p> </p>
+          <p>In any case, if it keeps up like this, I won't be able to finish my task.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I know I shouldn't ask, but...what task?"</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good question! Every year around this time, I collect Twisp from the Patamor Thicket. Then I spin thread out of it to make clothes. Making those clothes gives me the feeling of starting a new year. I look so forward to it.</p>
+          <p> </p>
+          <p>But this year...I'm so old now, if I go out to gather in this condition, I could get killed by Spriggs!</p>
+          <p> </p>
+          <p>If you don't mind, Daeva, would you collect some for me? Of course, I will pay you for the labor.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I guess I have an eye for people.</p>
+          <p> </p>
+          <p>You're truly kind to help an old man. </p>
+          <p> </p>
+          <p>Please bring me some [%dic:STR_DIC_E_plant_d_n_c_20a]. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"It's no bother at all."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, you are a heartless one!</p>
+          <p> </p>
+          <p>How could you flatly refuse an old man's request?</p>
+          <p> </p>
+          <p>Maybe I should have asked one of those Spinetails?! They'd only try to kill me instead of destroying my faith in the goodness of all Daeva!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"You should try to relax."</Act>
+    </Selects>
+  </HtmlPage>
+ 
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh... my aching joints...</p>
+          <p> </p>
+          <p>Greetings! I have been waiting for you, Daeva.</p>
+          <p> </p>
+          <p>Did you bring the Twisp? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Is this Twisp fiber?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This isn't exactly right, no....</p>
+          <p> </p>
+          <p>I thought I asked for [%dic:STR_DIC_E_plant_d_n_c_20a]...</p>
+          <p> </p>
+          <p>You don't have to go far. Just search here in the Patamor Thicket. I know you can find it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes! This is Twisp all right.</p>
+          <p> </p>
+          <p>Thank you. Now I can start this year feeling reassured.</p>
+          <p> </p>
+          <p>Take this. It isn't much, but it's all I have. Please take it.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect the fiber from [%dic:STR_DIC_E_gb_source_plant_d_20a] plants and bring it to [%dic:STR_DIC_N_Gundalpun].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Kellan said that he starts the new year by making clothes with Twisp. Obtain some Twisp and bring it to Kellan, who is too old to get it himself.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Kellan said that he used to make clothes by collecting Twisp every year, but that it would be hard for him this year as he has difficulty moving.</p>
+          <p> </p>
+          <p>So you brought the Twisp to him. Kellan rewarded you for your help.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

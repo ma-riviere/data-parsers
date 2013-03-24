@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>호박은 참 튼튼해.</p>
+          <p> </p>
+          <p>다른 작물 모두 말라 죽었는데 혼자 살아남았어.</p>
+          <p> </p>
+          <p>주인님이 돌보지 않았는데도 말이야.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">고개를 끄덕인다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>하지만 그냥 두면 썩을 거야.</p>
+          <p> </p>
+          <p>주인님 계셨으면 [%dic:STR_DIC_LA76]에게 팔았을 텐데. </p>
+          <p> </p>
+          <p>그리곤 술과 노올라 새 옷을 사서 돌아왔을 거야.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>잘 익은 호박 썩게 두면 주인님 슬퍼할 거야.</p>
+          <p> </p>
+          <p>호박 따서 [%dic:STR_DIC_LA76]에게 갈래?</p>
+          <p> </p>
+          <p>에르디오가 호박 값 많이 줄 거야.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="PLAYEMOTION_sad;HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>고맙다. 주인님 돌아오면 말해 줄게.</p>
+          <p> </p>
+          <p>그러면 주인님이 좋은 선물 줄 거야. 우리 주인님 좋은 사람이니까. </p>
+          <p> </p>
+          <p>호박 따서 음식상인 [%dic:STR_DIC_LA76]에게 가. </p> 
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>주인님 없으니 노올라 도와주는 사람도 없구나.</p>
+          <p> </p>
+          <p>아, 그리운 주인님.</p>
+          <p> </p>
+          <p>노올라 너무 쓸쓸해, 슬퍼. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이런 날엔 따끈한 호박 스튜가 딱이죠. 특히 발보아 농장의 호박으로 만든 게 최곤데.</p>
+          <p> </p>
+          <p>그러고 보니 발보아 씨는 도대체 어찌 된 건지 알 수가 없네요.</p>
+          <p> </p>
+          <p>이렇게 오랫동안 소식이 없다니 말이에요. 마을 사람들 모두가 궁금해하고 있어요.</p> 
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">호박을 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그런데 여긴 무슨 일인가요?</p>
+          <p> </p>
+          <p>음식을 사러온 것 같진 않고 재료를 팔러 오신 건가요?</p>
+          <p> </p>
+          <p>보아하니 빈손인 것 같은데...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아니, 이건 발보아 농장의 호박 아닙니까! 빛깔만 봐도 알겠군요.</p>
+          <p> </p>
+          <p>올해는 발보아 농장의 호박으로 만든 스튜를 못 먹을 줄 알았는데...</p>
+          <p> </p>
+          <p>노올라가 보냈나 보군요. 가져다 주셔서 감사합니다.</p>
+          <p> </p>
+          <p>자, 이건 호박 값입니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">호박을 따서 [%dic:STR_DIC_LA76]에게 가져가라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">발보아 농장에 열린 호박이 무르익었다. 썩기 전에 따서 음식상인 [%dic:STR_DIC_LA76]에게 가져가자.</p>
+          <p></font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>허수아비 노올라는 매년 이맘때 주인 발보아가 호박을 따서 상인 에르디오에게 팔았다고 했다.</p>
+          <p> </p>
+          <p>호박이 썩기 전에 [%dic:STR_DIC_LA76]에게 팔아달라는 노올라의 부탁을 들어줬다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

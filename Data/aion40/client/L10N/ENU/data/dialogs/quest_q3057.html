@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You avenged my friends for me--I should go turn myself in. I did escape after all. But there's something I have to do first for...safety reasons. I...have a serious illness. A lethal illness...</p>
+          <p> </p>
+          <p>Every night, I...become a Worg.</p>
+          <p> </p>
+          <p>Years ago, a vicious old Asmodian witch cursed me. She proclaimed I would live my whole life in solitude. At the time I didn't really think about it, but within a few days, I learned how bad it really was. I awoke in a strange place surrounded by blood. Angry strangers watched me with fear in their eyes.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"And you'll be like that forever?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I have a cryptic clue to breaking the curse: "Bathe the beast in waters twice fallen from under, a pool no sun shall see." There's more...I think the rest of the saying was put there just to force the rhyme, but that's the important part.</p>
+          <p> </p>
+          <p>I think I found the exact location here in the cave--Stalactite Spring. The problem is that I have to bathe when I'm a Worg. But in that state, my body is beyond my control.</p>
+          <p> </p>
+          <p>[%username], would you wait until I turn into a Worg and bring me to [%dic:STR_DIC_W_LF2B_SZ_D_1]?</p> 
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I have no control of myself as a Worg. I'll probably fight you. But Worgs are beasts like Asmodians. They understand a hierarchy of strength. If you subdue me, you should be able to get me to [%dic:STR_DIC_W_LF2B_SZ_D_1].</p>
+          <p> </p>
+          <p>And I'm sorry in advance for anything I may do to you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"My apologies as well."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Then I'm doomed to live my whole life like this.</p>
+          <p> </p>
+          <p>I can't move among other Elyos, even prisoners. You would have saved more than one life.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I can't right now."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]! Do you know what you've done?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Uh...cured you?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes, yes! You did it! That dreadful curse is gone.</p>
+          <p> </p>
+          <p>I'm no longer afraid of the night. I can't thank you enough, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Subdue [%dic:STR_DIC_M_LF2A_ZaifNmPrisonerNMQ_50_An_2] once he's turned into a Worg and take him to [%dic:STR_DIC_W_LF2B_SZ_D_1].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Talk with [%dic:STR_DIC_N_Siraus].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">A witch's curse has doomed Zirius to turn into a Worg every night. Bring Cursed Zirius to the Stalactite Spring to break the curse.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Zirius said he had something to do before turning himself in.</p>
+          <p> </p>
+          <p>He said that as a result of the curse of an Asmodian witch, he turned into a Worg every night. He can break the curse only if, as a Worg, he bathed in the waters of a nearby spring.</p>
+          <p> </p>
+          <p>You waited until night, Zirius turned into a Worg, and you brought him to the Stalactite Spring. The water there broke the curse.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>
+

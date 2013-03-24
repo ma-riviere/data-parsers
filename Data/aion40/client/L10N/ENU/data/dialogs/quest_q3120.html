@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q3120</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>On my last trip into the Adma Stronghold, I ran across someone calling himself Bard Guionbark.</p>
+          <p> </p>
+          <p>He wouldn't leave me alone, so I looked him up when I got back. He's a criminal on Sanctum's Most Wanted list! That idiot picked the wrong person to bother.</p>
+          <p> </p>
+          <p>Unfortunately, I've got reports to write, but if you run across [%dic:STR_DIC_E_L_DF2a_Q3120] on your next trip into Adma Stronghold, terminate him immediately. [%dic:STR_DIC_N_Esclados] will know if the reward is still valid. Talk to him after you kill Guionbark.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+        	<p>Can't you see I'm busy right now?</p>
+        	<p> </p>
+          <p>These wanted posters won't sort themselves.</p>
+          <p> </p>
+          <p>I have ten of these for some Bard Guionbark I have to hang up.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Don't bother."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What? You mean, you killed him? Let me find the posters for him.</p>
+          <p> </p>
+          <p>Here it is. The one who kills Bard Guionbark will receive... 1 million Kinah!</p>
+          <p> </p>
+          <p>Er, I mean, Bard Guionbark wasn't a very important criminal. The reward was pretty small, just take it and go.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Kill the wanted criminal [%dic:STR_DIC_E_L_DF2a_Q3120] ([%2]/1)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report to [%dic:STR_DIC_N_Esclados].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Kill the bard from Sanctum's Most Wanted list.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Rovilance said he spotted Bard Guionbark, one of Sanctum's most wanted criminals, and asked you to kill him, then report to Esclados.</p>
+          <p> </p>
+          <p>When you killed Guionbark and reported it to Esclados, Esclados lied about the enormous reward and gave you a small reward instead.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah...ACHOO! Ah...ah...ACHOO!</p>
+          <p> </p>
+          <p>Sorry [%username]! It's this guard duty, I get a cold whenever it starts raining, then it takes days until I'm better. Worst thing is I tend to get snappy when I'm ill, so...</p>
+          <p> </p>
+          <p>ACHOO!</p>
+	</body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Do you have any medicine?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>NO I DON'T! Oh...sorry....</p>
+          <p> </p>
+          <p>I can't leave my post, and the medical supplies haven't been refreshed in a fair while. The only thing I could really do is go and find some [%dic:STR_DIC_E_vegetable_n_c_20a] roots out in the fields--but again, I can't leave my post.</p>
+          <p> </p>
+          <p>Oh...what am I to do...?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I could get the roots for you?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>ACHOO!</p>
+          <p> </p>
+          <p>You would do that? R...ACHOO! Really?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], that's fantastic! [%dic:STR_DIC_E_vegetable_n_c_20a] roots have worked wonders for me before. I will need 15 of them.</p>
+          <p> </p>
+          <p>You'll find them in and around the Manduri Village and Storage areas. Keep your eyes open--they'll catch you off guard if you aren't careful!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll watch out."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>FINE! I didn't want your help anyway!</p>
+          <p> </p>
+          <p>Oh...I'm so sorry. It's the blocked nose you see, it drives me...ACHOO!</p>
+          <p> </p>
+          <p>Drives me crazy. I'll get the roots from someone else, don't you worry.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"All right. Stay dry."</Act>
+    </Selects>
+  </HtmlPage>
+  
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh my poor, sore head....</p>
+          <p> </p>
+          <p>Did you get the roots I asked for?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here, I think this is right."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well you're wrong. I asked you to bring me 15 [%dic:STR_DIC_E_vegetable_n_c_20a] roots and instead I get this?! Have you no sympathy?</p>
+          <p> </p>
+          <p>Hurry up, before my cold worsens!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be back soon."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Perfect!</p>
+          <p> </p>
+          <p>Oh, I feel better just looking at them! I'll get these washed up right away!</p>
+          <p> </p>
+          <p>Thank you, [%username]! Please, take this!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect [%dic:STR_DIC_E_vegetable_n_c_20a]s and bring them to [%dic:STR_DIC_N_Archelaos].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Collect Rubashi roots for Archelaos.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Archelaos told you that he had caught a cold, and asked you to gather some Rubashi roots for him so that he might get better sooner.</p>
+          <p> </p>
+          <p>You brought the roots for him, which he appreciated greatly.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

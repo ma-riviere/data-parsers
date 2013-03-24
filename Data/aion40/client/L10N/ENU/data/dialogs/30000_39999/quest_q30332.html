@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], when I summoned the Fire Spirits, they...spoke to me. I know, flames cannot speak, but I heard their voices in my head. The story they told was a sad one.</p>
+          <p> </p>
+          <p>Long ago, many Fire Spirits were fused into a single form called Flarestorm, in order to fight the Balaur. A veritable conflagration conglomeration! While Flarestorm fought valiantly, the fused spirit was ultimately captured and...I hesitate to speak the words....</p>
+          <p> </p>
+          <p>Flarestorm was confined to an incinerator in the Beshmundir Temple, and is being used to burn garbage!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"How terrible!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Flarestorm once burned red with rage, but its long period of confinement has corrupted it, and turned it blue with despair.</p>
+          <p> </p>        	
+          <p>I simply cannot let this ancient spirit be tormented like that! It is time to set aside thoughts of historical immortality--we must simply do what is right.</p>
+          <p> </p>
+          <p>I can't do much myself, but with your help, perhaps we could free Flarestorm from this horrible fate. Will you help, [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The spirits tell me you will find Flarestorm within the [%dic:STR_DIC_W_IDCatacombs_SZ_D2], at a corner of the Garden of the Dead inside the Beshmundir Temple.</p>
+          <p> </p>
+          <p>I have no idea if vanquishing Flarestorm will completely return it to the flow of Aether--since it is composed of many individual spirits, it may require repetition to fully release each spirit.</p>
+          <p> </p>
+          <p>The spirits I summoned gave me the key to unlock the incinerator, and assuming you will help I will pass it on to you. Please, use it to open the door and purify [%dic:STR_DIC_E_IDCatacombsN_ElementalFireNmd_55_Ah].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I shall do this."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I am sorely disappointed, [%username]. You feel no anger at the Balaur, or sympathy for Flarestorm?</p>
+          <p> </p>
+          <p>Keep the key I gave you, in case you change your mind. I have no doubt you will reconsider.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Perhaps I will."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The spirits are restless, [%username]. They wish to know if Flarestorm has been returned to the flow of Aether.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Yes, at least partly."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>As I suspected.... It would be ideal if Flarestorm could be released from the incinerator all at once, but it seems we will have to do it one spirit at a time.</p>
+          <p> </p>
+          <p>At least one noble Fire Spirit has rejoined the flow of Aether. Given time, they day will surely come when all of Flarestorm has been freed. Please persevere, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Vanquish [%dic:STR_DIC_E_IDCatacombsN_ElementalFireNmd_55_Ah] to help free it from its terrible fate ([%2]/1).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_N_Yumir].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">You have agreed to return Flarestorm, an ancient conglomeration of Fire Spirits bound by Balaur, to the flow of Aether.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Fire Spirits Yumir summoned told him of an ancient spirit named Flarestorm, which was bound to an incinerator and corrupted by the Balaur.</p>
+          <p> </p>
+          <p>Flarestorm--who is actually a conglomeration of smaller flames--must be vanquished repeatedly to return each individual Fire Spirit to the flow of Aether.</p>
+          <p> </p>
+          <p>You went to the Blue Flame Incinerator in the Beshmundir Temple and vanquished Flarestorm, releasing one of the spirits.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

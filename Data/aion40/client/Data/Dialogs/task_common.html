@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+		<body>
+          <p>- 제작 의뢰서 -</p>
+		  <p>아래 물품의 제작을 요청합니다.</p>
+		  <p> </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>- 제작 상황 -</p>
+		  <p> </p>
+		  <p>진행 상황</p>
+		  [%collectitem]
+		  <p> </p>
+		  <p>의뢰 물품</p>
+		  [%task_product_list]
+		  <p> </p>
+		  <p>지급 재료</p>
+		  [%task_component_list]
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">의뢰받은 물건을 제작해 [%dic:STR_DIC_N_[%task_npc_name0]] 또는 [%dic:STR_DIC_N_[%task_npc_name1]]에게 가져가라</font></p>[%collectitem]</step>
+    </steps>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>명인의 의뢰로 [%task_product]%을 [%task_product_count]개 만들었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>제작 의뢰: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>제작 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

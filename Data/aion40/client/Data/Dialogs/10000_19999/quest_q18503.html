@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(잔기침을 하며 힐끔힐끔 쳐다본다.)</p>
+          <p> </p>
+          <p>(뭔가 할 말이 있는 것 같다.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">할 말이 있느냐고 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(당황하며) 아니, 저 그게...</p>
+          <p> </p>
+          <p>데바 무지 강한 것 같당. </p>
+          <p> </p>
+          <p>장사 때문에 온 건 아닌 것 같은데 여기까지 다치지 않고 무사히 온 걸 보니...</p>
+          <p> </p>
+          <p>그래서 하나 더 부탁하고 싶은데 괜찮겠냥?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">고개를 끄덕인다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>뭐, 내가 딱히 사심이 있어서 그런 건 아니고...</p>
+          <p> </p>
+          <p>하라멜의 신선한 오델라를 보니 친구 생각이 나서...</p>
+          <p> </p>
+          <p>오델라를 구해서 견본으로 전해주고 싶은데 데바가 도와주면 안되겠냥?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>무글이 관리하는 오델라 재배장에 가면 [%dic:STR_DIC_OBJ_ODGrass]가 잔뜩 있을 테니 슬쩍 뽑아 오면 된당.</p>
+          <p> </p>
+          <p>5개 정도 구해서 베르테론 요새의 [%dic:STR_DIC_N_Manos]에게 전해 줘랑.</p>
+          <p> </p>
+          <p>학문적인 목적이당! 절대 이득 취하려는 것 아니당.</p>
+          <p> </p>
+          <p>이득이 목적이면 왜 친구한테 주겠냥? 내가 가지지! 안 그러냥?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>혹시 내가 다른 용도로 쓸까 봐 그러는 거냥?</p>
+          <p> </p>
+          <p>이미 한번 도와줬으면서도 나를 못 믿겠냥!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>쿨럭 쿨럭...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">오델라를 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>쿨럭 쿨럭...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이게 무슨 풀이우? 반짝반짝 하는 게...</p>
+          <p> </p>
+          <p>아니, 이건 오델라가 아니우?</p>
+          <p> </p>
+          <p>코코빙? 아 설마 그때 그 슈고인가...</p>
+          <p> </p>
+          <p>이런 걸 다 챙겨주다니... 참 고맙게 되었수.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_OBJ_ODGrass]를 모아 [%dic:STR_DIC_N_Manos]에게 가져가라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">코코빙이 부탁한 대로 마노스에게 전할 오델라를 모으자</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>코코빙은 학문 목적으로 오델라를 구하는 친구 마노스에게 줘야겠다며 오델라를 구해올 것을 부탁했다.</p>
+          <p> </p>
+          <p>부탁한 대로 오델라를 모아 마노스에게 가져다 주니 감사를 표했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

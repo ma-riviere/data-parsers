@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Glad to see you finally made it here. I've got another mission for you.</p>
+          <p> </p>
+          <p>We've discovered that the Bakarma Legion is stationed in Beluslan.</p>
+          <p> </p>
+          <p>It was a huge risk just to get this much information, but now something has to be done. Will you take on this task?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What should I do?"</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Bakarma Legion is assembling a formidable new weapon at [%dic:STR_DIC_W_STR_DF3_SZ_H].</p>         
+          <p> </p>
+          <p>We've sent a number of Daevas to the location already, but none have reported back.</p>
+          <p> </p>
+          <p>[%username], we need you to go to [%dic:STR_DIC_W_STR_DF3_SZ_H] and eliminate key members of the Bakarma Legion. This will put a stop to their weapons development.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Stone Teleport Statue at Southgate will make it easy to reach [%dic:STR_DIC_W_STR_DF3_SZ_H].</p>
+          <p> </p>
+          <p>You'll probably want to bring some friends along. Especially since no one else we sent has come back yet...</p>
+          <p> </p>
+          <p>Good luck.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Thanks."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It takes courage to face a dangerous mission like this.</p>
+          <p> </p>
+          <p>Even the bravest Daeva would have a hard time making a decision.</p>
+          <p> </p>
+          <p>Come back if you change your mind.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I will."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Wonderful!</p>
+          <p> </p>
+          <p>No wonder you're famous among the Priests of Blessing.</p>
+          <p> </p>
+          <p>Have you successfully annihilated the Bakarma Legion?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I have."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Clearly the Empyrean Lords sent you to us for the sake of all Asmodians.</p>
+          <p> </p>
+          <p>May fate guide you forward!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+                <step><p visible="[%0]"><font color="[%1]">Kill the following monsters at [%dic:STR_DIC_W_STR_DF3_SZ_H].</font></p>
+                     <p visible="[%0]"><font color="[%1]">Instructor Afrane ([%2]/3) </font></p>
+                     <p visible="[%0]"><font color="[%1]">Beautiful Lakshmi ([%5]/3) </font></p>
+                     <p visible="[%0]"><font color="[%1]">Kind Saraswati ([%8]/3) </font></p>
+                     <p visible="[%0]"><font color="[%1]">Commander Nimbarka ([%11]/3) </font></p>
+                     <p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_M_IDDF3_DrakanFiBossD_50_Ah] ([%14]/1) </font></p></step>  
+               <step><p visible="[%15]"><font color="[%16]">Talk with Karzanke.</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Karzanke asked you to annihilate the Bakarma Legion in [%dic:STR_DIC_W_STR_DF3_SZ_H]. Go to Southgate, in Beluslan, and find the Stone Teleport Statue that will take you to the cave.</font></p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>At Karzanke's request, you went to [%dic:STR_DIC_W_STR_DF3_SZ_H] and annihilated key members of the Bakarma Legion.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q30760</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>Not entered</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select_none" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], there's more to the stone statues than I previously let on. I should explain...</p>
+	  			<p> </p>
+	  			<p>A friend of mine named Gabelline has gone missing. We've been friends for centuries, going back to the Millennium War. We've fought together, killed together, even died together. And now she's gone missing. Her legion was attacked, and Gabelline was killed... but she never resurrected.</p>
+	  			<p> </p>
+	  			<p>That's why I wanted to know about the stone statues in the [%dic:STR_DIC_W_IDTiamat_SZ_S6], you see. If one of them holds Gabelline's soul, then I must free her. If you can help, I'll give you a marble blessed by Lady Yustiel. It will break the seal that holds her...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]! Did you go to the [%dic:STR_DIC_W_IDTiamat_SZ_S6]? Was Gabelline there?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Well..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh... th-thank you!</p>
+	  			<p> </p>
+	  			<p>[%username], Gabelline's Obelisk had already been destroyed. I knew that destroying the statue would send Gabelline to the Aetherstream, but better there than trapped forever, no?</p>
+	  			<p> </p>
+	  			<p>I must pray for her now. Please, take this, and my thanks. You've done a great service for my best comrade.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Go to the [%dic:STR_DIC_W_IDTiamat_SZ_S6] and destroy the statue of [%dic:STR_DIC_N_IDTiamat_FOBJ_Li_Statue]. Once destroyed, talk to [%dic:STR_DIC_N_Q30710_hero].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Report back to [%dic:STR_DIC_N_Herald].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Go to the Noble Garden and help free Gabelline.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Harold told you about Gabelline, an old comrade who had failed to resurrect after being killed. Worried that she'd been turned into a statue by Tiamat, Harold asked you to travel to the Noble Garden and find Gabelline's statue.</p>
+	  			<p> </p>
+	  			<p>After finding it, you broke the seal and set Gabelline free, only to find out on your return that she was no longer bound to an Obelisk and instead had been sent to the Aetherstream. Harold, while clearly upset, still thanked you for freeing his friend.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

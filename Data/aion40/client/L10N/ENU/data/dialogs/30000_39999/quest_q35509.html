@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p align="center"> - CONFIDENTIAL - </p>
+          <p> </p>
+          <p>From: Radiant Ops Headquarters</p>
+          <p>To: Agent [%username]</p>
+          <p> </p>
+          <p>Subject: Bringing the war to the Asmodians. The Inggison Branch will not tolerate Asmodians anywhere. Asmodian forces must not destabilize Elyos efforts.</p>
+          <p> </p>
+          <p>Orders: Locate and destroy five combat-worthy Asmodians per day to create holes in enemy operations. Terminate with extreme prejudice. At mission completion, report to [%dic:STR_DIC_E_35503].</p>
+          <p> </p>
+          <p>May Aion's light illuminate your battles!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Here, Asmo, Asmo, Asmo.... Here, boy."</Act>
+    </Selects>
+  </HtmlPage>
+
+   <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, I'll be a Jotun's uncle! If it isn't [%username].</p>
+          <p> </p>
+          <p>How'd you do? Did your enemies cower when pitted against your mighty [%mainslotitem]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I got my five."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This'll teach those dirty trogs to try and overrun our cities! Soon, every place under Aion's gaze will be cleansed.</p>
+          <p> </p>
+          <p>Take this reward on behalf of Radiant Ops Headquarters. They've got a lot riding on this one.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get rid of [%dic:STR_DIC_E_Daily_1] in [%dic:STR_DIC_W_Daily]([%2]/5).</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Report to [%dic:STR_DIC_E_35503].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Daily Order: Eliminate Asmodians anywhere and everywhere. Report to an Inggison Radiant Ops agent.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Radiant Ops Headquarters issued a daily order to eliminate all Asmodians everywhere.</p>
+          <p> </p>
+          <p>You completed the mission and got your reward from Radiant Ops.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+	 	  <HtmlPage name="select_acqusitive_quest_desc">
+	 	    <Selects>
+	 	      <Act>New quest: [%questname]</Act>
+	 	    </Selects>
+	 	  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>Quest in progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

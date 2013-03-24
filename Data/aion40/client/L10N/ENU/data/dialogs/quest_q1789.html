@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Filthy Asmodian vultures! The fortress was full of their muck and garbage when we captured it.</p>
+          <p> </p>
+          <p>I almost had to scrub the walls to get out the stench!</p>
+          <p> </p>
+          <p>I wish I could repay them for making me break my back clearing out all that refuse, but the Generals won't let us off the leash.</p>          
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"We must hold the fortress."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Let's be honest. How will we take Primum Landing and blast the Asmodians off Atreia if we keep losing and retaking fortresses like this?</p>
+          <p> </p>
+          <p>I think becoming immortal smothered their sense of urgency. Aion can't wait on us forever!</p>
+          <p> </p>
+          <p>The Aether's running out, and to save Elysea we have to eliminate both the Asmodians and the Balaur, and soon.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"That does sound urgent."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We have a chance to teach the Asmodians a good lesson by crippling their bind point, [%username], so they won't even think of approaching here again.</p>
+          <p> </p>
+          <p>Yeah, and we could plunder their [%dic:STR_DIC_I_QUEST_1789a]es as well. However much they want this fortress, they can't take it without weapons and provisions!</p>
+          <p> </p>
+          <p>I can't disobey orders, but...you want glory? Attack [%dic:STR_DIC_N_Menglad], [%dic:STR_DIC_N_Modsognir], [%dic:STR_DIC_N_Reginlief], [%dic:STR_DIC_N_Moinn], and [%dic:STR_DIC_N_Geri] at the Asmodians' bind point and steal their supplies.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Bring the [%dic:STR_DIC_I_QUEST_1789a]es here when you're done.</p>
+          <p> </p>
+          <p>Great Tower, [%username], if those trogs were upset when we took their fortress, they'll be tearing out their scraggly manes over this. I can't wait!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"You're a cruel one, Musai."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Damn, that's a shame. I wanted to hear those zaifs howl!</p>
+          <p> </p>
+          <p>You're passing up a great chance to twist their tails.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Let's stick to orders."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Okay, I want details. Are they angry? Did they howl?</p>
+          <p> </p>
+          <p>Did you take the supplies? Let me see.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I took all I found."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], this won't work unless we starve them out! You can't leave them any [%dic:STR_DIC_I_QUEST_1789a]es.</p>
+          <p> </p>
+          <p>You did actually go to the Asmodians' bind point, didn't you?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Fine, I'll try again."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Let's see what's in their little packages...</p>
+          <p> </p>
+          <p>Hmmm...a lot of weapons, as I expected. They were preparing for a fresh attack.</p>
+          <p> </p>
+          <p>Well, so much for that. Can't bite with no teeth! Nicely done, my friend.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Ambush [%dic:STR_DIC_N_Menglad], [%dic:STR_DIC_N_Modsognir], [%dic:STR_DIC_N_Reginlief], [%dic:STR_DIC_N_Moinn], and [%dic:STR_DIC_N_Geri], steal their supply boxes and return to [%dic:STR_DIC_N_Ab1_1231_Quest_Li].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Attack the Asmodian bind point near Kysis Fortress, and return to Musai with their supply boxes.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Musai wanted to keep the momentum of victory and attack the Asmodians' bind point on Kysis Isle to seize any weapons and provisions.</p>
+          <p> </p>
+          <p>You did as he suggested, depriving the Asmodians of the means to counterattack.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

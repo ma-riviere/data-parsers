@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>제게 [%dic:STR_DIC_E_LDF5B_E_Babar]에게 [%dic:STR_DIC_I_QUEST_13044A]%을 되찾으라는 임무가 떨어졌습니다.</p>
+          <p> </p>
+          <p>전투를 위해 평생을 훈련했건만... 고작 물건 회수라니요!</p>
+          <p> </p>
+          <p>정말 죄송합니다만 이 임무를 대신해 주실 수 있겠습니까?</p>
+          <p> </p>
+          <p>이번 임무 만큼은 받아들일 수가 없어서 말입니다.</p>
+          <p> </p>
+          <p>임무를 완료하시면 [%dic:STR_DIC_N_LDF5b_Portis_E] 님에게 보고하시면 됩니다. 그 분의 명령이거든요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이 신관장 포르티스를 찾으셨습니까?</p>
+          <p> </p>
+          <p>무슨 일로 이 포르티스를 찾아오셨는지요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">약탈당한 물건을 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_I_QUEST_13044A]%을 회수하신 것이군요.</p>
+          <p> </p>
+          <p>이 임무는 트라고스에게 준 것으로 기억하는데, 뭐 상관 없습니다.</p>
+          <p> </p>
+          <p>뭐 대단한 일은 아닙니다만, 어쨋든 수고하셨습니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_I_QUEST_13044A]%을 회수하여 [%dic:STR_DIC_N_LDF5b_Portis_E]에게 전하라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">루루바 부족이 훔쳐간 물건을 회수해 포르티스에게 전달하라.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>트라고스의 요청으로 루루바 부족이 훔쳐간 물건을 회수해 포르티스에게 전달했다.</p>
+          <p> </p>
+          <p>포르티스는 크게 중요한 일은 아니다라는 투였다. 왜 직접 트라고스에게 명령을 내린 것일까?</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

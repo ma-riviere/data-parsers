@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], 그대가 가져온 문서에 따르면 이 곳에 잠입한 마족의 첩자가 브리트라군의 핵심 인물들에 대한 정보를 가지고 있다고 하네.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_N_LDF5a_Klaf_E]라는 자는 얼마 전 기지 인근을 기웃거리다가 체포된 마족 포로라네.</p>
+          <p> </p>
+          <p>괜찮다면 그대가 이 자와 접촉해서 브리트라군의 핵심 인물을 파악하고 그들을 제거하는 임무를 맡아주었으면 좋겠네.</p>
+		  <p> </p>
+          <p>카탈람의 전황을 좌지우지 할 수 있는 중대한 임무라네.</p>
+		  <p> </p>
+          <p>어떤가? 맡아주겠는가?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>나는 이 카탈람의 브리트라군 주력인 제43 군단을 이끌고 있는 군단장 타브로쉬의 소재지를 알고 있소.</p>
+          <p> </p>
+          <p>타브로쉬의 소재지에 대한 정보를 알고 싶다면 거래를 하는 것이 어떻소? 조건은 날 풀어주는 것이오.</p>
+          <p> </p>
+          <p>한번에 날 믿을 수는 없을 테니 내가 가지고 있는 정보 중 약한 것을 하나 건네주겠소. 거래의 신뢰성을 위해서요.</p>
+          <p> </p>
+          <p>제43 군단의 제1 부대장인 [%dic:STR_DIC_M_LDF5b_F1_Vri_Post_1st_Q_KN_Nmd_65_Ah]의 위치를 우선 알려주겠소.</p>
+          <p> </p>
+          <p>바스티는 브리트라 방어전선의 북부와 남부에 있는 기지들 중 하나에서 나타날 것이오. 강직한 성격이라 휘하 부대를 지휘하기 위해 항상 전선의 여러 곳을 시찰한다고 하오.</p>
+          <p> </p>
+          <p>내가 말해준 위치에 그가 있는지 확인해보고 나서 거래에 응할 것인지 답해주시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>어떻소? 바스티를 찾았소?  날 이제 믿겠소? </p>
+          <p> </p>
+          <p>이제 내가 가진 정보를 믿을 수 있을 것이라 생각하오.</p>
+          <p> </p>
+          <p>이제 거래에 응할 것이라 믿소. 어떻게 할 생각이오?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">거래에 응한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>바스티도 만만치 않은 용족이지만, 타브로쉬는 카탈람에 파견된 브리트라군 제43 군단의 군단장이오.</p>
+          <p> </p>
+          <p>단순히 내가 지닌 거래의 신뢰성을 쌓기 위해 그에 관한 정보를 알려주려는 것은 아니라오. </p>
+          <p> </p>
+          <p>그대들 천족 뿐만 아니라 우리 마족에게 있어서도 그는 걸림돌이오.</p>
+          <p> </p>
+          <p>원래는 우리 카탈람 토벌군의 사령관에게 보고할 일이지만 어쨌든 그대가 나와의 약속을 이행하리라 믿겠소.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_LDF5a_Klaf_E]%와 대화하라</font></p></step>
+               <step><p visible="[%9]"><font color="[%10]">[%dic:STR_DIC_M_LDF5b_F1_Vri_Post_1st_Q_KN_Nmd_65_Ah]%을 처치하라([%11]/1)</font></p></step>
+               <step><p visible="[%24]"><font color="[%25]">[%dic:STR_DIC_N_LDF5a_Klaf_E]%와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">티린스의 명령으로 포로가 된 첩자인 클라프를 취조하고 그 정보를 바탕으로 움직이자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>티린스는 최근 사로잡은 첩자가 비밀 정보 문서와 연관된 중요한 정보를 알고 있는 것 같다며 그를 취조하라고 했다.</p>
+          <p> </p>
+          <p>첩자인 클라프와 이야기하자 그는 자신을 풀어주는 조건으로 거래를 하자고 하며 제43 군단의 제1 부대장인 바스티의 소재지를 알려주었다. </p>
+          <p> </p>
+          <p>클라프가 말한 위치에 가자 바스티를 발견할 수 있었고, 그를 처치하고 돌아가 거래에 응하자 클라프는 제43 군단장인 타브로쉬의 소재지를 알려주겠다고 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

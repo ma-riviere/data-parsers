@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>알퀴미아 성채에 보고를 하러 다녀왔으니 당분간은 본부로 갈 구실이 없소.</p>
+          <p> </p>
+          <p>중대한 보고 사항도 없는데 본부로 다시 갔다가는 의심을 사게 될 거요.</p>
+          <p> </p>
+          <p>그러니 놈들의 식수에 마비약을 타는 일도 [%username]%이 좀 해 줘야겠구려. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">고개를 끄덕인다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>알퀴미아 성채 깊숙이 들어가야 하기 때문에 절대 쉬운 일이 아니오.</p>
+          <p> </p>
+          <p>웬만한 각오가 아니면 성공하기 힘들 거요. </p>
+          <p> </p>
+          <p>내가 할 수 없으니 부탁하기는 하지만 자신이 없으면 차라리 처음부터 거절하시오. </p>
+          <p> </p>
+          <p>어떻소, 해낼 수 있겠소? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>좋소, 그럼 이 마비약을 받으시오. </p>
+          <p> </p>
+          <p>알퀴미아 성채 쪽으로 가면 혁명단 막사가 있소. 천막 아래에 식탁이 놓여 있는 곳인데 두 군데에 있을 거요.</p>
+          <p> </p>
+          <p>막사 여기저기에 나무로 된 [%dic:STR_DIC_OBJ_Q2664A]이 있소. 그 통에 이 약을 풀기만 하면 되오.</p>
+          <p> </p>
+          <p>그럼 조심해서 다녀오시오. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>임무를 성공시킬 자신이 없는가 보구려.</p>
+          <p> </p>
+          <p>그렇다면 차라리 지금 포기하는 게 나에게도 낫소. </p>
+          <p> </p>
+          <p>임무를 수행하러 갔다가 놈들에게 잡혀서 내 정체가 탄로나기라도 하면 곤란하니까 말이오.</p>
+         </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>돌아왔구려, [%username].</p>
+          <p> </p>
+          <p>놈들의 식수에 약은 탔소? </p>
+          <p> </p>
+          <p>혁명단 놈들이 눈치 채지 못하도록 은밀하게 잘 처리했겠지? </p>
+         </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정말 수고했구려, [%username].</p>
+          <p> </p>
+          <p>혁명단 놈들이 식사 때마다 그 물을 마실 테니 레파르 혁명단의 전력이 약해지는 건 시간 문제일 거요.</p>
+          <p> </p>
+          <p>자, 받으시오. 열심히 임무를 수행해 준 보답이오.</p>
+         </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">레파르 혁명단의 [%dic:STR_DIC_OBJ_Q2664A]에 마비약을 풀어라([%2]/5)</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_N_Dewi]에게 보고하라</font></p></step>
+     </steps>
+          <p><font font_xml="quest_summary">구해 온 마비약을 레파르 혁명단의 식수통에 풀어야 한다. 알퀴미아 성채에 있는 혁명단 막사로 가서 식수통을 찾자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>데위는 얼마 전에 알퀴미아 성채에 보고를 하러 다녀왔기 때문에 다시 갈 구실이 없다고 했다.</p>
+          <p> </p>
+          <p>그래서 부탁대로 혁명단 막사로 가서 식수통에 붉은갈기 라이칸에게서 얻어 온 마비약을 탔다. </p>
+          <p> </p>
+          <p>임무를 마치고 돌아가 보고했더니 데위는 이제 레파르 혁명단의 전력이 약해질 거라면서 매우 기뻐했다. </p>
+          <p> </p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

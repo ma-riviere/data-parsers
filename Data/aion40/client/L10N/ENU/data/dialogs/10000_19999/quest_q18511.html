@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did the Daeva see all the ginseng in Haramel? Mountains of it. Those poor slaves are starving...but Hamerun eats three meals a day of that tasty ginseng! Nyerk!</p>
+          <p> </p>
+          <p>Moorilerk loves ginseng. Always reminds Moorilerk of his friend Manos at the Verteron Citadel.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What? Are we old buddies now?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No, no, no, Daeva! Moorilerk is just reflecting on the past...reflecting out loud, nyerk.</p>
+          <p> </p>
+          <p>But Manos is very old. Has had a hard life. Would like to bring him some ginseng soup...but still under suspicion, nyerk. Moorilerk cannot leave area.</p>
+          <p> </p>
+          <p>Maybe the kind, kind Daeva would bring my old friend some ginseng soup?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Very kind Daeva, nyerk. Very kind. Moorilerk saw dried ginseng in the Odella Processing Plant in Haramel.</p>
+          <p> </p>
+          <p>Get five tasty-looking pieces of ginseng, put them in the huge cauldron, and boil them down to soup. When all cooked and good, take it to [%dic:STR_DIC_N_Shugo2].</p>
+          <p> </p>
+          <p>And.... friend knows nothing of our problems here. No need to mention Haramel, yes?</p>
+         </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I won't say a word."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Daeva doesn't want to help old friend Moorilerk anymore? Daeva gets what Daeva wants and that is that? Nyerk?</p>
+          <p> </p>
+          <p>Not nice, Daeva. Not nice.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Shugo can make his own soup!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(There is a huge cauldron with some aromatic liquid boiling inside.)</p>
+          <p> </p>
+          <p>(It would probably make a delicious soup if you put the dried ginseng in.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I'll just drop it in like so...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(The ginseng begins to tenderize in the boiling liquid.)</p>
+          <p> </p>
+          <p>(A savory smell comes from the cauldron now.)</p>
+          <p> </p>
+          <p>(You taste it, and it seems done.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO2">"I'll just scoop this into a bowl."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_fail">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(There is a huge cauldron with some aromatic liquid boiling inside.)</p>
+          <p> </p>
+          <p>(You thought it would make a delicious soup if you put the dried ginseng inside...but the smell is disgusting.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Ewww, smells like a wet Shugo."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, the wanderer. I hope you are keeping warm on your adventures?</p>
+          <p> </p>
+          <p>If you don't take care of yourself, by the time you get to my age, you'll wish you had.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Here. This will warm your bones."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ginseng soup! My favourite--but how did you know?</p>
+          <p> </p>
+          <p>Oh, it must have been old Moorilerk. How is the old fellow? Did he make his fortune yet?</p>
+          <p> </p>
+          <p>I guess he must have, if he can afford to send a Daeva to bring me soup.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Put the [%dic:STR_DIC_OBJ_IDNovice_DriedSam] into the [%dic:STR_DIC_OBJ_IDNovice_Jar] to make some soup.</font></p>[%collectitem]</step>
+               <step><p visible="[%6]"><font color="[%7]">Deliver the soup to [%dic:STR_DIC_N_Manos].</font></p></step>
+
+    </steps>
+          <p><font font_xml="quest_summary">As Moorilerk requested, make ginseng soup and deliver it to Manos.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Moorilerk said he wanted to make a dried ginseng soup and send it to his old friend Manos to warm his bones.</p>
+          <p> </p>
+          <p>You found some Well-Dried Ginseng and made it into a delicious soup in a large cauldron you found in Haramel.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

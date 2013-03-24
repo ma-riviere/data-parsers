@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I believe I'm starting to like this place.... Everyone's so gullible! Err...kind!</p>
+          <p> </p>
+          <p>Hello [%username], I didn't see you there. Yes, thanks to you, I think I am beginning to figure out what I did wrong in my incantation.</p>
+          <p> </p>
+          <p>Yes, so very close to figuring out what the Pumpkin King did to me...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Pumpkin King?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Um, yes...didn't I tell you? The Pumpkin King Minis. He's...evil. He must be stopped! That's what I was trying to do when my incantation failed.</p>
+          <p> </p>
+          <p>If I play my cards right this time, no one will escape! No one will escape...my thanks! For all the help the Daevas of Sanctum have given me. You are all so kind.</p>
+          <p> </p>
+          <p>I just need one more thing. The Pumpkin King had Witch Hunters steal Soul's Lights from me. I need them back. Then, perhaps this nightmare will end! Will you help?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The more time I spend with you, Daeva, the more I like you.</p>
+          <p> </p>
+          <p>Just defeat [%dic:STR_DIC_M_Branch_Event_UndeadLightWiD_45_An]s, [%dic:STR_DIC_M_Branch_Event_UndeadLightPrd_45_An]s, and [%dic:STR_DIC_M_Branch_Event_LehparAs_48_An]s.</p>
+          <p> </p>
+          <p>Collect my beautiful [%dic:STR_DIC_I_QUEST_80097A] from their rotting corpses!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Your beautiful soul's light? Hmmm..."</Act>
+    </Selects>
+
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You refuse?</p>
+          <p> </p>
+          <p>Well, all right, but I'd be somewhat careful around bridges tonight. What? Oh, no reason...just a feeling.</p>
+          <p> </p>
+          <p>Bwaahahaa!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Creep factor, 10."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes...I'll make pie out of that pumpkin head! Pie! And I'll feed it to the birds!</p>
+          <p> </p>
+          <p>Don't you just love pumpkin pie, [%username]? I'm planning on making one soon. Would you like me to save you a slice? Hmm?</p>
+          <p> </p>
+          <p>Did you get the Red Soul's Lights?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here, but I want two slices of pie."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, these are wonderful! And mine! All mine!</p>
+          <p> </p>
+          <p>No wonder that stupid Pumpkin King wanted to come here! These Soul's Lights are so potent! Like nectar.</p>
+          <p> </p>
+          <p>Perhaps I'll tarry a bit longer here in Sanctum....</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Where are my [%dic:STR_DIC_I_QUEST_80097A]s?</p>
+          <p> </p>
+          <p>Without those, I'll never be free! You do want me to be free...don't you? Hmm?</p>
+          <p> </p>
+          <p>Now be a good little Daeva, and go fetch them for me. That's right...shoo!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Good little Daeva? What?!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect [%dic:STR_DIC_I_QUEST_80097A]s and deliver them to [%dic:STR_DIC_N_event_Blair].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Collect the Red Soul's Lights and deliver them to Blair...or things might go badly for you.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Blair asked...demanded that you bring her the Soul's Lights that her pursuers stole.</p>
+          <p> </p>
+          <p>When you brought her the Lights, she seemed...ominous.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

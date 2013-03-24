@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q22026</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>미입력</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>비록 창고지기로 일하고 있지만 저도 전투에 도움이 되고 싶은 마음만은 누구 못지 않습니다.</p>
+          <p> </p>
+          <p>티아마트 휘하의 군단 중 가장 강한 병사들이 모인 티아마트 수호군단을 처치한다면 큰 도움이 되겠죠.</p>
+          <p> </p>
+          <p>[%username] 님과 제가 힘을 합친다면 어렵지 않을 겁니다.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_LDF4b_C3_DrakanFi_Noble_60_Ae], [%dic:STR_DIC_M_LDF4b_C3_DrakanSc_Noble_60_Ae], [%dic:STR_DIC_M_LDF4b_C3_DrakanWi_Noble_60_Ae], [%dic:STR_DIC_M_LDF4b_C3_DrakanCl_Noble_60_Ae]을 처치하고 수호군단의 휘장을 모아다 주십시오. </p>
+          <p> </p>
+          <p>[%dic:STR_DIC_I_quest_22026a]을 증거로 상부에 보고하면 아마 매우 기뻐할 겁니다. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>돌아오셨군요, [%username] 님.</p>
+          <p> </p>
+          <p>수호군단의 정예병을 처치하고 휘장을 모아 오셨습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">수호군단의 휘장을 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이렇게 증거물이 있으니 상부에서도 제 말을 의심하지 않겠군요.</p>
+          <p> </p>
+          <p>일단 쿠시르 님께 수호군단의 정예병을 처치했다고 보고하겠습니다.</p>
+          <p> </p>
+          <p>이번 일로 어쩌면 저에게도 기회가 올지 모르겠군요.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_I_quest_22026a]을 모아 [%dic:STR_DIC_N_Motogut]에게 가져가라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">모토구트는 창고지기이지만 자신도 전투에 도움이 되고 싶다고 한다. 수호군단 드라칸 정예 전투사관, 수호군단 드라칸 정예 수색사관, 수호군단 드라칸 정예 법사사관, 수호군단 드라칸 정예 치유사관을 처치하고 휘장을 모으자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>모토구트는 자신도 전투에 도움이 되고 싶다면서 티아마트 휘하의 군단 가운데 가장 강력한 수호군단의 정예병을 처치하자고 했다.</p>
+          <p> </p>
+          <p>그래서 수호군단의 정예병을 처치하고 증거물로 수호군단의 휘장을 모아다 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

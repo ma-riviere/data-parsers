@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q30602</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>If you're headed up to the Dredgion, could you do me a favor?</p>
+          <p> </p>
+          <p>Sanctum has asked for a sample of [%dic:STR_DIC_I_quest_30602a], either from the Supplies Storage or the Shulack Drudges.</p>
+          <p> </p>
+          <p>The request said something about investigating signatures from power surges produced by Dredgions' Surkanas. I don't really remember the details.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], how did it go?</p>
+          <p> </p>
+          <p>Did you find out anyting about the Surkana power surge... signature... er...</p>
+          <p> </p>
+          <p>Did you get the [%dic:STR_DIC_I_quest_30602a]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">"I did as asked."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Huh. Well, from the look of it, these are mostly broken power couplings.</p>
+          <p> </p>
+          <p>But what do I know? I'll just send these on to Sanctum.</p>
+          <p> </p>
+          <p>And for you, a reward.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get [%dic:STR_DIC_I_quest_30602a] and bring them to [%dic:STR_DIC_N_Linocus].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">It's necessary to get Balaur Supplies. Obtain the Dredgion supplies from the Supplies Storage, or from Shulack Drudges.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Rokus said that it was necessary to obtain Balaur Supplies, and asked you to get them from Terath Dredgion.</p>
+          <p> </p>
+          <p>So you brought the Dredgion supplies and Rokus said that he would send them to Sanctum for research.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

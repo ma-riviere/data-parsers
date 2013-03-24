@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Not all Elyos weapons are made to be sold, you know.</p>
+          <p> </p>
+          <p>Walk these halls and you'll see weapons that you couldn't buy for all the Kinah in the world. These are companion weapons, built by their owners with the finest materials they could get their hands on.</p>
+          <p> </p>
+          <p>Crafting your own weapon is something you should strive for, [%userclass]. When you understand your tools, you will be a better Daeva for it. In time, as you become skilled, you may even learn to make better weapons than any you could hope to buy in Sanctum.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Really?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Of course. It is a natural part of one's ascension.</p>
+          <p> </p>
+          <p>The very best Daevas, the most ferocious, are skilled weaponsmiths themselves. They've made their reputations with their own blades at their sides.</p>
+          <p> </p>
+          <p>Now, I'm sure you're not here simply to talk about weapons. You wish to learn the art of Weaponsmithing, don't you?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I do."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Very well. Now, creating a weapon is no simple feat. It requires hard work, dedication, time, and knowledge. Many Daeva falter when they realize just how much effort is required.</p>
+          <p> </p>
+          <p>First you must make an ingot. This is a simple block of metal that you will later need to process to create your first weapon.</p>
+          <p> </p>
+          <p>Feel up to the task, [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Now, go to [%dic:STR_DIC_FLA18_4] and gather several samples of [%dic:STR_DIC_I_metal_n_c_81j]. When you have enough ore, come back and make me three steel ingots using the crafting table here.</p>
+          <p> </p>
+          <p>Oh, and remember, you'll need Charcoal Briquettes to create steel ingots! You should collect extras, just in case you fail in your first attempts.</p>
+          <p> </p>
+          <p>This is just the first step on a long journey.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll get started right away."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I warned you about this, [%userclass].</p>
+          <p> </p>
+          <p>You'll never craft a complete weapon if you haven't the patience to make three ingots.</p>
+          <p> </p>
+          <p>Now leave. I have wasted enough time with you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"My apologies."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ha! You've more burns on your hands than a novice Mage. Poor young [%username]!</p>
+          <p> </p>
+          <p>Now, was it worth it, that's the question! Pass me the steel ingots, if you managed to make them, of course....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh dear. It looks like you're going to have to get those delicate hands of yours scorched a little more.</p>
+          <p> </p>
+          <p>Remember, you're immortal now. The fire may hurt but your wounds will heal, and in time you'll learn not to injure yourself while creating ingots. Sharpening blades, though... That's a different matter entirely.</p>
+          <p> </p>
+          <p>The question is, will you give up or will you gather your spirits and complete the task? Well?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm not giving up."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, look at that! Three ingots!</p>
+          <p> </p>
+          <p>Congratulations are in order, my friend! However, let's not get carried away. This proves little, other than a willingness to learn. There are many greater challenges along the path you have just started on.</p>
+          <p> </p>
+          <p>Still, you have begun and it's a good beginning. Well done.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Dig up [%dic:STR_DIC_I_metal_n_c_81j], process it into three steel ingots, then take them to [%dic:STR_DIC_N_Anteros].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Anteros has been growing concerned that young Daevas are not persistent enough to learn how to craft weapons. He tasked you to obtain iron ore samples from Tolbas Forest, make steel ingots from them using the Weapon Forge, and bring them to him.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Anteros has been growing concerned that young Daevas are not persistent enough to learn how to craft weapons.</p>
+          <p> </p>
+          <p>He complained that they just give up as soon as they face a problem. He asked you to make three steel ingots so you could start learning Weaponsmithing. You processed the iron ore you gathered and took the three steel ingots you made to him.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

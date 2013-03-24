@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Gah, those Strigik are a lot more trouble than we thought. They don't look strong, but they are.</p>
+          <p> </p>
+          <p>They don't even bother trying to communicate with us. They just attack, and keep on attacking.</p>
+          <p> </p>
+          <p>But then, we are intruding on their territory. I guess we'd react the same way if we were them.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Still, it sounds like a problem."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It is. Feles is having a hard time getting research done, and we're usually overwhelmed and forced to fall back.</p>
+          <p> </p>
+          <p>The ones that come right from the village are especially strong. But that's the one place we need to investigate most.</p>
+          <p> </p>
+          <p>We could use some support here, [%username]. Cutting down their numbers in the Strigik Village would help us a lot.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You can find [%dic:STR_DIC_M_DF4_Owllau_Fi_51_Ae]s, [%dic:STR_DIC_M_DF4_Owllau_Wi_51_Ae]s, [%dic:STR_DIC_M_DF4_Owllau_As_51_Ae]s, and [%dic:STR_DIC_M_DF4_Owllau_Pr_51_Ae]s all over Strigik Village.</p>
+          <p> </p>
+          <p>Oh, and bring back 20 [%dic:STR_DIC_I_QUEST_21028a]s from them. Feles thinks she can figure out something about their diet or lifestyle with those.</p>
+          <p> </p>
+          <p>That way, you're killing two birds with one stone...so to speak.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"You'd better not have done that on purpose."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I thought you came here to help Feles?</p>
+          <p> </p>
+          <p>Look, I may not understand a lot of what she does, but I do know it's important, no matter what you think.</p>
+          <p> </p>
+          <p>It's going to have to get done somehow, with or without you. I just think it'd go a lot easier if it were "with."</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Look, I can't, all right?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Man, I'd rather be fighting the Elyos. At least they're Human...sort of. But they're still a little like us.</p>
+          <p> </p>
+          <p>The Strigik, though.... They're even more vicious than the Mau. I could almost swear their eyes glow with hate....</p>
+          <p> </p>
+          <p>But that's just me. Feles is looking forward to studying those [%dic:STR_DIC_I_QUEST_21028a]s, you know.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"And now she will."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Sorry, that's not enough. Feles said she needs at least 20 to get anything useful out of them.</p>
+          <p> </p>
+          <p>I'd pluck all the [%dic:STR_DIC_I_QUEST_21028a]s out of one bird if I could, but she says she needs a wide range of samples to get accurate data.</p>
+          <p> </p>
+          <p>Don't worry, Varca and I can protect her until you get back.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I put my trust in you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Those are Strigik Feathers, all right. They sure stink like them.</p>
+          <p> </p>
+          <p>With this many, I'm sure the Strigik Village is a lot quieter. Should be easier to infiltrate now.</p>
+          <p> </p>
+          <p>You've done a lot for all of us. Thanks a lot!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Gather [%dic:STR_DIC_I_QUEST_21028a]s and take them to [%dic:STR_DIC_N_Asathor].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Asathor is having problems with the Strigik in the Strigik Village. Reduce their numbers and bring back their Strigik Feathers.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Asathor asked you to clear out the Strigik Village to make it easier to research there, and to bring back feathers from the Strigiks you killed for research purposes.</p>
+          <p> </p>
+          <p>You killed many of the bird-beasts and returned with their feathers. Asathor was pleased and grateful.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

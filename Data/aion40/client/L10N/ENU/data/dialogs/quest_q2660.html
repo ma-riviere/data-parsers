@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], come here and speak softly. I've been waiting for you.</p>
+          <p> </p>
+          <p>No need for the weapon--please, just listen.</p>
+          <p> </p>
+          <p>Someone from your side promised me that a Daeva would come who could help me with my work. I knew it was you as soon as you approached. How should I put this...? You smell of shadows.</p>
+        </body>        
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Um...okay. How can I help?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Keep it down, will you?</p>
+          <p> </p>
+          <p>I came here to collect information on the Indratu Legion Brigade General and other leaders inside the fortress. But those Draconutes and Nagarants make it almost impossible.</p>
+          <p> </p>
+          <p>And even if I got inside, I couldn't do much. There are Drakan in there. Have you ever fought them? They control the Draconutes and Nagarants--they're smart and they wield powerful magic.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Brains AND magic--that's trouble."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yep. They'll sniff me out no matter how careful I may be. That's where you come in.</p> 
+          <p> </p>
+          <p>Would you infiltrate the fortress and get rid of [%dic:STR_DIC_M_IDLF3CI_DrakanFighter_47_Ae]s, [%dic:STR_DIC_M_IDLF3CI_DrakanAssassin_47_Ae]s, [%dic:STR_DIC_M_IDLF3CI_DrakanWizard_47_Ae]s, and [%dic:STR_DIC_M_IDLF3CI_DrakanPriest_47_Ae]s?</p>
+          <p> </p>
+          <p>Every Kinah I have with me is yours if you succeed.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body> 
+          <p>Very good.</p>
+          <p> </p>
+          <p>One thing more--I need proof that you completed the mission. I don't want to be surprised when I go in there. Bring me the tail of every Drakan you kill inside the fortress.</p>
+          <p> </p>
+          <p>Take some help if you need it--any useful companions you may have. Just bring me the [%dic:STR_DIC_I_QUEST_1518a]s.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm going in."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You don't trust me, do you? I guess it wouldn't be easy to trust an Elyos you've just met.</p>
+          <p> </p>
+          <p> But remember, we're both fighting the Balaur. You ARE here to kill the blasted Balaur, are you not?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I just don't know...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've been a Daeva of Zephyr for hundreds of years, and no mission has ever made me this uneasy.</p>
+          <p> </p>
+          <p>So, what have you got for me, [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Those Drakan are tough lizards...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm sure they were reluctant to give their tails away.</p>
+          <p> </p>
+          <p>Well, if they weren't, they wouldn't be Drakan, right?</p>
+          <p> </p>
+          <p>Please try again. Defeat the Drakan inside the Indratu Fortress and bring me [%dic:STR_DIC_I_QUEST_1518a]s. This mission is critical for Elysea.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"For Asmodae!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Now that's a lot of Drakan tails! You've cleared the way for me, [%username], and I'm grateful.</p>
+          <p> </p>
+          <p>I may ask you to carry out similar missions in the future--the Balaur replace their personnel pretty quickly.</p>
+          <p> </p>
+          <p>I hope my Kinah serves as an incentive to help me again. Here you go.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect [%dic:STR_DIC_I_QUEST_1518a]s and bring them to [%dic:STR_DIC_N_Erebos].</font></p>[%collectitem]</step> 
+    </steps>
+          <p><font font_xml="quest_summary">Kill Drakan inside the Indratu Fortress and collect their tails, clearing the way so that Erebus can collect information on the fortress.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You met an Elyos named Erebus in the Indratu Fortress who expected your arrival. He asked you to help him by killing the Drakan commanding the Draconutes and Nagarants.</p>
+          <p> </p>
+          <p>You infiltrated the Indratu Fortress with your allies, killed Drakan, and collected their tails as proof you completed the mission.</p>
+          <p> </p>
+          <p>Erebus was pleased, and told you that he might need to assign you the same mission later because the Indratu Legion reinforces its troops quickly.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

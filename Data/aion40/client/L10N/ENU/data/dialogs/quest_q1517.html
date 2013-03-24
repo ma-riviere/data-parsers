@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>How's the situation in Heiron? With Drafala out of the picture, I bet the rest of the Balaur scattered, eh?</p>
+          <p> </p>
+          <p>Just because I'm scouting this side of the Abyss Gate doesn't mean I don't overhear things.</p>
+          <p> </p>
+          <p>Besides, if Drafala was still alive, you wouldn't be here.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Drafala is dead, but the Balaur remain."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hmmm. The Indratu Legion may be stronger than we thought. I need to finish my mission more quickly.</p>
+          <p> </p>
+          <p>I need to gather information on Brigadier Indratu and the other Balaur leaders, but I can't get past the Nagarants.</p>
+          <p> </p>
+          <p>[%username], can you help me? You could carve a path through the [%dic:STR_DIC_A_IDLF3CI_1517a]s and [%dic:STR_DIC_A_IDLF3CI_1517b]s. That'll leave a way open that I can use to infiltrate the fortress.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've observed the Nagarants. I've learned that a mage always patrols with a warrior. They're a tough combination--too tough for a single Daeva.</p>
+          <p> </p>
+          <p>Gather some allies, then defeat some [%dic:STR_DIC_A_IDLF3CI_1517a]s and [%dic:STR_DIC_A_IDLF3CI_1517b]s around here. Faith and arms, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Faith and arms!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You don't understand the importance of my mission.</p>
+          <p> </p>
+          <p>The more we learn about the Balaur leadership, the sooner we discover their weak points and can eliminate them.</p>
+          <p> </p>
+          <p>Kill one leader, and the Indratu Legion will just promote another Balaur. Eliminate the entire leadership, and the Indratu Legion will be flounder--like a kite severed from its string.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Nice metaphor, but I'm busy."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Whew! It's you, [%username]. When I heard you approach, I thought the Balaur were on to me.</p>
+          <p> </p>
+          <p>How did things go?</p>
+          <p> </p>
+          <p>Did you get rid of some [%dic:STR_DIC_A_IDLF3CI_1517a]s and [%dic:STR_DIC_A_IDLF3CI_1517b]s?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Indeed I did."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I noticed fewer patrols. At the next change of guards, I'll start my infiltration.</p>
+          <p> </p>
+          <p>If you come by this way again, check back with me--if the Nagarants get reinforced, I'll need your help to infiltrate them again.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get rid of the Balaur guarding Indratu Fortress.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_A_IDLF3CI_1517a] ([%2]/11)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_A_IDLF3CI_1517b] ([%5]/20)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report the result to [%dic:STR_DIC_N_Erebos].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Get rid of Naga Mages and Warriors guarding the fortress so that Erebus can infiltrate it and learn about the Indratu Legion's leaders.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>After hearing that the Balaur in Heiron were weakened but not eliminated, Erebus wanted you to eliminate Naga Mages and Warriors guarding the fortress so that he could gather information about the leaders of the Indratu Legion.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

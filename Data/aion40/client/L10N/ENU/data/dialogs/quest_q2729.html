@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm supposed to be guarding the supply depot, but I find myself helping Fyra out. It's my duty to keep an eye out for attackers, not help Fyra with deliveries! But everyone is busy here, and we're short handed, so I help when I think it's safe. How can I say no?</p>
+          <p> </p>
+          <p>But I don't need to worry about invaders in the Primum Landing, right?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Did you need something?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Blast it, this new supply requisition is vexing. Most supplies requested from a bind point or a fortress, so I pack them and send them by messenger.</p>
+          <p> </p>
+          <p>But this one is for supplies addressed to that bloodthirsty Mokkurkalfi.</p>
+          <p> </p>
+          <p>You know who Mokkurkalfi is, don't you? He was one of our most fearsome fighters, but he left the Red Hasia Legion--now he leads his own personal campaign against the enemy.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Interesting...how can I help?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I thought Mokkurkalfi worked alone, but I might be wrong. Maybe he's on a secret mission or something like that...? I don't know why else we'd be sending him supplies....</p>
+          <p> </p>
+          <p>But I can't send an official messenger for "unofficial" supplies, nor can I go there myself--I can't leave the supply depot unguarded.</p>
+          <p> </p>
+          <p>Would you deliver the supplies to [%dic:STR_DIC_N_Mokkurkalfi], [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_N_Mokkurkalfi] is on the Solitary Island to the southwest. Here's his order. Be careful--he's not the only creepy thing lurking on that island.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Thanks for the tip."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Blast! Now what do I do? I can't leave my post!</p>
+          <p> </p>
+          <p>You'd better sharding believe I'll remember this if you ever need a favor!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Sorry."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Why do you people keep bothering me? I came out here to be alone, blast it! Begone!</p>
+          <p> </p>
+          <p>If you're another of those sycophantic Daevas begging for killing lessons...I might just show you how I do it...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Peace! I'm just delivering supplies. Here."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh. You brought me supplies? How unexpected...they actually sent what I asked for.</p>
+          <p> </p>
+          <p>Why are you still here? Go on!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Deliver the supply package to [%dic:STR_DIC_N_Mokkurkalfi].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Undran says she has been helping to deliver supplies but needs help with the supplies going to Mokkurkalfi. You agreed to deliver the supplies to Mokkurkalfi.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Undran said that she had been helping with the supply depot and that she recently received a strange supply requisition.</p>
+          <p> </p>
+          <p>The supplies were to be sent to Mokkurkalfi, so they couldn't go the usual route.</p>
+          <p> </p>
+          <p>To help her, you went to the Solitary Island and delivered the supplies to Mokkurkalfi.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

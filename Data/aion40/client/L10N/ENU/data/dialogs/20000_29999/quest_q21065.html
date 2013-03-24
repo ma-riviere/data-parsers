@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Have you ever had an experience you couldn't explain, [%username]?</p>
+          <p> </p>
+          <p>I was at the Dragonrest recently, chasing a Dredgion legionary, and I had the strangest...well, I don't know what to call it. I just can't get it out of my mind. It was nearly the end of me.</p>
+          <p> </p>
+          <p>I was leaving my campsite, and I climbed on top of a boulder to glide away when I was suddenly swept away by a strong gust of wind. I immediately tried to land, but the current was too strong. Unnaturally strong.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Tell me more."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Fortunately the current died down for a brief moment, and I managed to escape. But even now I break out in a cold sweat when I think about it.... If that current had taken me somewhere like Mitrakand, I might have fallen into a den of Balaur!</p>
+          <p> </p>
+          <p>Anyway, I mentioned this to a few other Daevas, and apparently one of them had a similar experience. I know Gelkmaros is a dangerous place, but something must be done about these aberrant wind currents.</p>
+          <p> </p>
+          <p>If you have some spare time, would you want to look into the issue?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I wouldn't expect you to investigate this yourself, [%username]. You might want to ask an expert. Herka might be a good place to start.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_N_Herka] is a Balaur expert, but she might have heard about this since it would affect the Balaur as well. Ask her if she knows about this phenomenon, and if there is any way to deal with it.</p>
+          <p> </p>
+          <p>Until then, I'm staying on the ground where it's safe. Relatively speaking, of course.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Sound advice."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I wouldn't expect you to do it yourself. There's a Balaur researcher named [%dic:STR_DIC_N_Herka] who might know. I can't go anywhere until my shift is over, but if you were free...?</p>
+          <p> </p>
+          <p>Well, never mind. I guess there's nothing I can do if you can't be bothered.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I think this can wait."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Just...just a moment.</p>
+          <p> </p>
+          <p>If I don't write this down immediately I'll forget....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">(Wait patiently.)</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>There, now what was it you wanted? Something about the wind? You must be referring to a windstream. Gelkmaros has many spots with variable air pressure, and these currents are called windstreams.</p>
+          <p> </p>
+          <p>Niamela, did you say her name was? Tell her a windstream isn't so dangerous. In fact, if you use it wisely you could travel conveniently to other places without much effort at all.</p>
+          <p> </p>
+          <p>So far, I think we've found two windstreams, at [%dic:STR_DIC_W_SZ_DF4_C4] and [%dic:STR_DIC_W_SZ_DF4_A4]. Both lead to safe locations, so tell Niamela she can use them without concern.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"I'll let you get back to work."</Act>
+    </Selects>
+    <CutScene id="562"/>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did you see Herka? What did she say about the windstream? Did he know what it was?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Your fears are...groundless."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Foolish me. I should have asked sooner, instead of agonizing over it. Strange experience indeed--it's just a natural phenomenon, and a safe one at that!</p>
+          <p> </p>
+          <p>I'll tell the others about the locations of these windstreams, so we can all take advantage of them.</p>
+          <p> </p>
+          <p>Thank you for your effort, [%username]. Sorry to have wasted your time.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk with [%dic:STR_DIC_N_Herka].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Talk with [%dic:STR_DIC_N_Niamela].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Niamela is curious about a strange wind current she discovered at the Dragonrest. Ask Herka about it.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Niamela was swept away by a strong wind current at the Dragonrest. Another colleague had a similar experience, and Niamela wanted to know more about the phenomenon.</p>
+          <p> </p>
+          <p>Balaur researcher Herka said the currents are called windstreams, and that they can make travel more convenient if used wisely.</p>
+          <p> </p>
+          <p>You told Niamela what Herka said, and she thanked you for your help in the matter.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

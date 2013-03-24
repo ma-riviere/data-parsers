@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No need for a secret password--I recognize you.</p>
+          <p> </p>
+          <p>Thanks to a certain talkative mid-rank staff officer I've learned some top secret information.</p>
+          <p> </p>
+          <p>I'll report it right away. But it may be too late to take action if I wait for orders... But, I can't take action by myself. I don't know what to do!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"What is it?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>There is something that looks like a gate in Alquimia Approach and another at Alquimia Stronghold.</p>
+          <p> </p>
+          <p>I was curious why they set up two gate-looking objects--neither of them were entrances to a building or a monument. Moreover, elite soldiers always guard the place. My intuition told me something was up.</p>
+          <p> </p>
+          <p>Then I heard the gates connect to the Abyss!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"To the Abyss?! Are you sure?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes! The gate in Alquimia Approach is the [%dic:STR_DIC_OBJ_DF3_LehparGate_Q2620A] and the one in Alquimia Stronghold is the [%dic:STR_DIC_OBJ_DF3_LehparGate_Q2620B].</p>
+          <p> </p>
+          <p>That means the Lepharists are expanding their influence to the Abyss. Can you imagine the trouble they could cause? What if they teamed up with the Ellies or worse...the Balaur?</p>
+          <p> </p>
+          <p>We need to destroy those gates immediately. I believe you, [%username], are perfect for the job. Will you take on this mission?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Go to the stronghold right now, and destroy the [%dic:STR_DIC_OBJ_DF3_LehparGate_Q2620A] and the [%dic:STR_DIC_OBJ_DF3_LehparGate_Q2620B].</p>
+          <p> </p>
+          <p>You must destroy both gates to block the Lepharists from traveling freely in and out of the Abyss.</p>
+          <p> </p>
+          <p>I'm sure I don't need to tell you this, but be sure to bring along some friends. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Destroy the gates. I'm on it!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Don't you realize how important this mission is? The Lepharists are traveling in and out of the Abyss!</p>
+          <p> </p>
+          <p>We must prevent their conspiracy from spreading any further!</p>
+          <p> </p>
+          <p>And you call yourself a Daeva... I just can't believe it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Wanna use a password this time?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>My timing on infiltrating the Lepharist Revolutionaries could not have been better.</p>
+          <p> </p>
+          <p>If I hadn't succeeded, we wouldn't have known that the Lepharists had access to the Abyss.</p>
+          <p> </p>
+          <p>What's the password?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"No password...but we did destroy the gates."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It warms my toes to hear the Abyss gates are destroyed.</p>
+          <p> </p>
+          <p>I reported the bad news that the Lepharists had made Abyss gates. Now I get to report better news--that you, [%username], destroyed those gates. </p>
+          <p> </p>
+          <p>Good work, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Destroy the Lepharist Abyss gates.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_OBJ_DF3_LehparGate_Q2620A] ([%2]/1)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_OBJ_DF3_LehparGate_Q2620B] ([%5]/1)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report the result to [%dic:STR_DIC_N_Dewi].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">The Lepharists have created gates that connect to the Abyss. Go to Alquimia Approach and Alquimia Stronghold and destroy the Abyss gates.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Dewi told you he learned that the Lepharists had made gates that connect to the Abyss. </p>
+          <p> </p>
+          <p>He worried that Asmodians could be in danger if the Lepharists plotted with either the Balaur or the Elyos in the Abyss.</p>
+          <p> </p>
+          <p>You went to Alquimia Approach and Alquimia Stronghold with your colleagues and destroyed the Abyss gates. Then you reported back to Dewi.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

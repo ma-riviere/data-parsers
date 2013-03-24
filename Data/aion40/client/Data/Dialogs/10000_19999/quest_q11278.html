@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>필요없는 마석은 새 마석으로 교환해 가십시오!</p>
+          <p> </p>
+          <p>정신력 +70, 회피 +14, 무기방어 +22에 해당하는 마석을 10개씩 갖고 오시면 새로운 마석으로 바꿔 드립니다.</p>
+          <p> </p>
+          <p>큐브도 정리하고 쓸만한 마석도 얻고, 썩 괜찮은 거래이지 않습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이번에 마석 제거사 협회에서 마석 회수 사업을 좀 더 적극적으로 할 모양입니다.</p>
+          <p> </p>
+          <p>기존에 1개씩 회수하던 걸 10개씩 묶음으로 회수하라는 공지가 내려왔답니다.</p>
+          <p> </p>
+          <p>바꾸러 오시는 분 입장에서도 여러 번 발걸음을 안 해도 되니 어찌보면 잘 된 결정이지요.</p>
+          <p> </p>
+          <p>그러니 [%username] 님도 정신력 +70, 회피 +14, 무기방어 +22 마석을 10개씩 추려서 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">마석을 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>교환할 마석이 없으면 다음에 오십시오.</p>
+          <p> </p>
+          <p>저는 늘 이 자리에서 마석 제거와 마석 교환을 해 드리니까 걱정하지 말고 나중에 다시 오세요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(낡은 마석을 잔뜩 쌓아 놓고 일일이 돋보기로 감정하고 있다.) </p>
+          <p> </p>
+          <p>(무기와 방어구에서 제거한 마석 같다.)</p>
+          <p> </p>
+          <p>쓸모없는 마석을 왜 들여다보고 있느냐고 묻는 분이 계시더라고요. 하지만 그건 모르는 말씀이지요.</p>
+          <p> </p>
+          <p>저는 마석 제거사 이전에 마석 수집가입니다. 수집가의 눈으로 보면 낡은 마석 틈에서도 보물이 보이죠.</p>
+          <p> </p>
+          <p>그런데 마석을 교환하러 오신 건가요?</p>
+          <p> </p>
+          <p>그럼 마석을 줘 보십시오. 종류와 개수가 맞나 확인하겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">마석을 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>흐음, 제 말을 잘 못 알아들으셨나 봅니다.</p>
+          <p> </p>
+          <p>교환해 드린다고 한 마석은 정신력 +70, 회피 +14, 무기방어 +22 10개씩이랍니다.</p>
+          <p> </p>
+          <p>종류와 수치, 하나라도 틀리면 교환이 안 돼요.</p>
+          <p> </p>
+          <p>다시 확인하고 오십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정신력 +70, 회피 +14, 무기방어 +22 ... 네, 맞습니다.</p>
+          <p> </p>
+          <p>제대로 갖고 오셨군요.</p>
+          <p> </p>
+          <p>그럼 새 마석으로 교환해 드리겠습니다.</p>
+          <p> </p>
+          <p>그리고 혹시 새 마석을 끼우실 생각이라면 말씀만 하십시오. 바로 기존 마석을 제거해 드리겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">마석을 모아 [%dic:STR_DIC_N_Caicedo]에게 가져가라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">쓸모없는 마석을 카이세도에게 가져가 새로운 마석으로 교환하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>카이세도는 마석 제거사 협회의 지시에 따라 쓸모없는 마석을 다른 마석으로 교환해 주고 있다고 했다.</p>
+          <p> </p>
+          <p>카이세도가 말한 마석을 10개씩 모아 가져갔더니 새로운 마석으로 교환해 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

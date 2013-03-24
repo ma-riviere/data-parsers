@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm so hungry, I'm wasting away.</p>
+          <p> </p>
+          <p>I can't eat anything. There's only thing that will cure this hunger.</p>
+          <p> </p>
+          <p>Ah, if only I could taste it just once more....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"What are you craving?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>A visiting Daeva once cooked some fish I'd never seen before.</p>
+          <p> </p>
+          <p>It smelled delicious. He offered me some from his meal. It tasted wonderful! I never knew a fish could taste so good.</p>
+          <p> </p>
+          <p>He told me it was [%dic:STR_DIC_gb_fish_n_c_30b]. I've dreamed of it ever since.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Sounds good."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Not just good--unforgettable! I can't forget the taste of Roast Megrim. I really don't want to eat anything else.</p>
+          <p> </p>
+          <p>I found a lake filled with Megrim. But it's next to the Tigric Village...they'd kill me if I tried fishing there.</p>
+            <p> </p> 
+          <p>Daeva, I'm desperate. Would you get me some [%dic:STR_DIC_gb_fish_n_c_30b], please?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>To get to the Tigric Village and the lake where the [%dic:STR_DIC_gb_fish_n_c_30b] are, you'll have to go through the Poya Jungle.</p>
+          <p> </p>
+          <p>Tigrics are savage, and I hear the lake is also full of Moonflowers. Please be careful.</p>
+          <p> </p>
+          <p>I wouldn't ordinarily ask someone to do something so dangerous, but if you don't bring me those Megrim, I'll fade away from hunger.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Don't worry. I'll get them."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You won't do this for me?</p>
+          <p> </p>
+          <p>You'd rather see me dead, wouldn't you?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Oh, grow up!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>People laughed at me. I don't blame them. They don't understand.</p>
+          <p> </p>
+          <p>They've never tasted it. They'd understand if they took just one bite.</p>
+          <p> </p>
+          <p>Did you get the [%dic:STR_DIC_gb_fish_n_c_30b] like you promised?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Just call me 'Fishmonger.'"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Why are you doing this to me?</p>
+          <p> </p>
+          <p>You know what I need! Catch some [%dic:STR_DIC_gb_fish_n_c_30b] for me before I die.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"You're not going to die."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>At last, the Megrim I've been dreaming of!</p>
+          <p> </p>
+          <p>I must roast them while they're still fresh!</p>
+          <p> </p>
+          <p>Thank you so much, [%username]. Now I can find pleasure in life again.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Catch some [%dic:STR_DIC_gb_fish_n_c_30b] and take them to [%dic:STR_DIC_N_Roina].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Roina can't forget about Roast Megrim, which she tasted once before. Catch some Megrim for her.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Roina said she still can't forget about the taste of Roast Megrim shared by a Daeva who was passing by the Aetheric Field Observatory some time ago.</p>
+          <p> </p>
+          <p>Dreaming of Roast Megrim, she lost her appetite for anything else. She was ecstatic when you brought her the beloved Megrim.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

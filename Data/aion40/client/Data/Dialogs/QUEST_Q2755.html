@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>천족에게 포로로 잡힌 아칸들을 구출하기 위해 수색대를 파견한다고 하더군요.</p>
+          <p> </p>
+          <p>놈들의 포로 수용소가 유황 나무 요새 옆에 있어서 이쪽으로 온다고 합니다.</p>
+          <p> </p>
+          <p>수색대가 포로들을 무사히 구출해야 할 텐데 말입니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그래서 요새에서 수색대에게 적극 협조하길 바란다는 명령서를 보냈습니다.</p>
+          <p> </p>
+          <p>다른 일은 신경 쓰지 않고 포로 구출에만 집중할 수 있도록 말이죠.</p>
+          <p> </p>
+          <p>그래서 제 생각에는 유황의 늪에 있는 [%dic:STR_DIC_M_Ab1_1141_RottenTreeB_29_An]과 [%dic:STR_DIC_M_Ab1_1141_RottenTree_29_An]을 우리가 처치해 둬야 할 것 같습니다.</p>
+          <p> </p>
+          <p>그래야 놈들에게 방해 받지 않고 요새로 빠르게 접근할 수 있겠지요.</p>
+          <p> </p>
+          <p>[%username] 님도 좀 도와주시겠습니까? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>유황의 늪은 유황 나무 요새 가는 방향에 있는 부유도입니다.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_Ab1_1141_RottenTreeB_29_An]과 [%dic:STR_DIC_M_Ab1_1141_RottenTree_29_An]이 수색대에게 방해가 되기 전에 처치해 주십시오.</p>
+          <p> </p>
+          <p>참, 유황 때문에 생명력에 타격을 입을 수 있으니 조심해야 할 겁니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>적에게 사로잡힌 동료를 위한 일입니다.</p>
+          <p> </p>
+          <p>그런 일을 거절하다니 데바로서 사명감이 없는 것 아닙니까?</p>
+          <p> </p>
+          <p>[%username] 님께 정말 실망했습니다!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>유황의 늪에 다녀오시는 길인가요? </p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_Ab1_1141_RottenTreeB_29_An]과 [%dic:STR_DIC_M_Ab1_1141_RottenTree_29_An]을 처치하셨겠죠?</p>
+          <p> </p>
+          <p>수색대가 포로를 구출하는 데 도움이 돼야 할 텐데요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정말 수고하셨습니다.</p>
+          <p> </p>
+          <p>우리가 할 일은 다 했으니 이제는 포로들이 구출되기를 빌어야겠군요.</p>
+          <p> </p>
+          <p>어둠의 진리를 따르는 모든 자에게 평화를!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">수색대를 위해 나무인간을 처치하라</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Ab1_1141_RottenTreeB_29_An]([%2]/5)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Ab1_1141_RottenTree_29_An]([%5]/5)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Gagnrad]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">수색대가 마족 포로를 구출하는데 방해되지 않도록 유황의 늪에 있는 메마른 나무인간과 검은 나무인간을 처치하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>가그라드는 천족에게 사로잡힌 마족 포로를 구출하러 온 수색대에게 협조하라는 명령을 받았다고 했다.</p>
+          <p> </p>
+          <p>그래서 유황 나무 요새까지 빠르게 전진할 수 있도록 유황의 늪으로 가 메마른 나무인간과 검은 나무인간을 처치했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

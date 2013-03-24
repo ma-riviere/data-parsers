@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I know why you're here, [%username]. I've heard the stories about all the candy everywhere.</p>
+          <p> </p>
+          <p>Yes, it was the stuff I made. Yes, the Shulacks stole it. No, I'm not happy. Yes, I would like some beer. No, I'm not going to pay you for it. Yes, I am sorry. No, I don't want you to beat me up.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Er, what?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, nothing. I'm just...fed up.</p>
+          <p> </p>
+          <p>The Shulacks have turned socialist, or something. Stole the [%dic:STR_DIC_I_WORLD_EVENT_POTION_HP_MP_40A]s I'd made for everyone, and started handing them out to the blasted monsters outside! Monsters! Eating candy!</p>
+          <p> </p>
+ 	  			<p>Anyway, I need them back. Harvest Revel is underway, and the Pumpkin King has to have his pumpkin treats to dish out. Maybe...maybe you could pick them up?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>R...really? Thank you, [%username]! Maybe the Harvest Revel will be fine after all!</p>
+          <p> </p>
+          <p>I need you collect ten [%dic:STR_DIC_I_WORLD_EVENT_POTION_HP_MP_40A]s. They should be easy enough to see, and I doubt the monsters actually bothered trying to eat them.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"No worries. We'll be fine."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, I see.</p>
+          <p> </p>
+          <p>Well, I can't ask any more of you, I suppose--I can't lean on you for everything.</p>
+          <p> </p>
+	  			<p>Enjoy your day.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"And you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]!</p>
+	  			<p> </p>
+          <p>Do you have the [%dic:STR_DIC_I_WORLD_EVENT_POTION_HP_MP_40A]s? All ten?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I think so!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No no, this isn't right!</p>
+          <p> </p>
+          <p>Please, hurry and collect the [%dic:STR_DIC_I_WORLD_EVENT_POTION_HP_MP_40A]s before it's too late. I'll need about ten from you before I can reward you for your time.</p>
+	  			<p> </p>
+          <p>Blood for blood! Good luck!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Blood for blood!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes! I can smell it already!</p>
+          <p> </p>
+          <p>Well, they're a bit dirty, but nothing irreversible. I'll get these cleaned up and handed out to everyone right away.</p>
+          <p> </p>
+          <p>Thank you, friend! Blood for blood!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Hand over the [%dic:STR_DIC_I_WORLD_EVENT_POTION_HP_MP_40A]s you recover to [%dic:STR_DIC_N_event_Tali].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Find the Pumpkin Lollipops left lying around and return them to Tali.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You found the Pumpkin Lollipops left lying around and brought back them to Tali.</p>
+          <p> </p>
+          <p>Tali was clearly relieved, and thanked you for your help before rewarding you well for all your hard work.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

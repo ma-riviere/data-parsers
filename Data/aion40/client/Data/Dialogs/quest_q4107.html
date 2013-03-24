@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>꺄악, 벌레! 어, 어깨에 벌레가 붙었어.</p>
+          <p> </p>
+          <p>(벌레를 쫓아내자) 어떻게 된 거야, 벌레 다 없앴다고 하지 않았어?</p>
+          <p> </p>
+          <p>됐어! 난 거짓말하는 사람이 제일 싫어.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">다시 벌레를 잡아주겠다고 한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정말이지? 이번엔 확실히 다 없애줘야 해!</p>
+          <p> </p>
+          <p>그럼 지금 바로 마가로 원시림에 있는 벌레를 없애줘. </p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_DF2A_SpakleVioletD_45_n], [%dic:STR_DIC_M_DF2A_MutaMantisD_45_n], [%dic:STR_DIC_M_DF2A_SpakyButterflyD_45_n] 몽땅 말이야.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>고마워. 그리고 저기, 좀전에 한 말은 진심이 아니야.</p>
+          <p> </p>
+          <p>세상에서 제일 싫다고 한 것 말이야. </p>
+          <P> </P>
+          <P>꺄악, 벌레가 또 머리에!</P>
+          <P> </P>
+          <P>(벌레를 쫓아내자) 이젠 괜찮으니까 빨리 원시림에 있는 벌레나 처치해 줘. </P>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>다시 잡아주겠다면서? 그것도 거짓말이었어? </p>
+          <p> </p>
+          <p>이런 말까진 안 하려고 했는데 [%username], 벌레보다, 아, 아니 벌레만큼 싫어.</p>
+          <p> </p>
+          <p>더는 얘기하고 싶지 않으니까 저리 가 버려.</p>     
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>벌써 일을 끝낸 거야?</p>
+          <p> </p>
+          <p>마가로 원시림에 사는 벌레가 한둘이 아닐 텐데. </p>
+          <p> </p>
+          <p>지난번처럼 몇 마리 잡다가 만 건 아니겠지? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 얘기한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>고마워. 그 얘기를 들어서인지 벌레가 안 보이는 것 같아.</p>
+          <p> </p>
+          <p>아까는 신경질 내서 미안해.</p>
+          <p> </p>
+          <p>헤인츠 아저씨가 성수의 수호자는 늘 친절하게 굴어야 한다고 하는데 벌레만 보면 그런 생각이 싹 사라지지 뭐야.</p>
+          <p> </p>
+          <p>나도 헤인츠 아저씨처럼 벌레를 안 무서워 했으면 좋겠는데... 나이를 훨씬 많이 먹으면 나아질까?</p>
+          <p> </p>
+          <p>그리고 이것 받아. 고마워서 주는 거야. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">마가로 원시림에 있는 벌레를 처치하라</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_DF2A_SpakleVioletD_45_n]([%2]/25)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_DF2A_MutaMantisD_45_n]([%5]/20)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_DF2A_SpakyButterflyD_45_n]([%8]/15)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Ervin]에게 결과를 알려라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">벌레를 끔찍하게 싫어하는 에르빈을 위해 마가로 원시림에 서식하는 벌레를 처치하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>에르빈은 벌레가 또 많아졌다면서 마가로 원시림의 벌레를 다시 소탕해 달라고 했다.</p>
+          <p> </p>
+          <p>에르빈을 위해 마가로 원시림에 있는 언덕 스파클과 뾰족머리 뮤타, 수풀 모스키를 처치해 주자 고맙다며 선물을 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

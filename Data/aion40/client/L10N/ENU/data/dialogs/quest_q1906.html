@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], may I ask you a question?</p>
+          <p> </p>
+          <p>Is it wrong to expect gratitude when a job is well done? Should I spend years perfecting my alchemical understanding, then receive nothing for sharing it?</p>
+          <p> </p>
+          <p>It's not too much to ask, is it?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Sounds like you've made up your mind."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's just that I remember when it was different.</p>
+          <p> </p>
+          <p>When my elders taught me, I'd gather food for them, or pay them with my meager possessions. But now, people expect teaching for nothing!</p>
+          <p> </p>
+          <p>When I see a young [%userclass] standing before me, I wonder if they also want me to impart my knowledge without giving anything in return.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"No, I'm not like that."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Perhaps. Let's see if you can back up your words.</p>
+          <p> </p>
+          <p>As it happens, I've just run out of Lesser Elemental Water, which I need for a number of low level potions. I'd like you to provide me with some.</p>
+          <p> </p>
+          <p>Or is that sort of thing beneath you?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Now, a quick lesson. Elemental Water must be purified from other, baser substances. Bring the unrefined materials here. All the tools you need to refine them are on the tables in this very room!</p>
+          <p> </p>
+          <p>In the case of Lesser Elemental Water, you must gather Lesser Elemental Stones and purify them here. The stones are created as a natural by-product of digestion. You should find them in the bellies of [%dic:STR_DIC_MLA16_2]s, [%dic:STR_DIC_MLA140]s, and [%dic:STR_DIC_MLA41]s. All of those creatures can be found around the [%dic:STR_DIC_FLA09].</p>
+          <p> </p>
+          <p>Do not disappoint me, [%username]....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll do my best."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm not surprised. Your mentality only mirrors that of those around you, and yet I was foolish enough to allow myself to feel the smallest spark of hope....</p>
+          <p> </p>
+          <p>My knowledge is priceless, [%username]. All I ask in return for sharing it is the respect and gratitude that other masters in this hall receive on a daily basis. Is that really so much to ask, in exchange for such power?</p>
+          <p> </p>
+          <p>Now, leave me. I have wasted enough time on you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Very well."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You've returned, and so soon!</p>
+          <p> </p>
+          <p>Perhaps I was over-generous in expecting you to take longer: Elemental Water is not difficult to obtain. It is the basest substance we alchemists deal with, the first rung on a mighty ladder that stretches as far as your imagination allows.</p>
+          <p> </p>
+          <p>Now, show me what you have brought back.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Just like that...the bubble is burst!</p>
+          <p> </p>
+          <p>I told you each step of this simple, simple process, [%username], and still you contrive to fail.</p>
+          <p> </p>
+          <p>Gather the Lesser Elemental Stones, then refine them using the implements in this room! The creatures from which you get the stones are even around the Verteron Citadel. It couldn't be simpler!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I shall try harder."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm shocked! Astounded, really!</p>
+          <p> </p>
+          <p>So few here seem capable of even the simplest of tasks, yet you have done as I asked and in good time, too! Of course, the task wasn't difficult, but still...</p>
+          <p> </p>
+          <p>Soon we'll have you working on proper alchemical ingredients!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Take the Lesser Elemental Water you refined on the alchemy table to [%dic:STR_DIC_N_Diana].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Hunt Lobnites, Sharphorn Starcrabs, and Mud Potcrabs, and obtain their Lesser Elemental Stones. Refine the stones and use them to create the Lesser Elemental Water Diana asked for.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Diana believes that trainees should show respect to teachers. She complained that today's Daeva do not show proper appreciation.</p>
+          <p> </p>
+          <p>Diana asked you to bring her 15 samples of Lesser Elemental Water. After doing so, you received her gratitude and a small reward.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

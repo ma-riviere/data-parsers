@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I received a new order from Verteron Citadel, [%username]. And since you've been involved in this operation from the very beginning, I'm hoping I can count on you to finish the job.</p>
+          <p> </p>
+          <p>Between us, Sanctum was more than shocked that one single Asmodian could have created such a lucrative, illegal Odium operation...and get its labor right here in our own backyard.</p>
+          <p> </p>
+          <p>We believe Hamerun was aided by a Shugo. A Shugo we came to trust over the years. We don't know all the details yet...but we're close.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"A Shugo, huh? Have a name?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No name on the Shugo yet, but an eyewitness description. He's not the big picture, though. Hamerun is. We need to break up his organization.</p>
+          <p> </p>
+          <p>If we let them be, they'll reorganize and grow even stronger...like a disease.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"We'll strike out the infection then!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I like your initiative, [%username]! We must systematically attack his organization until it dwindles away.</p>
+          <p> </p>
+          <p>I have a list of the mid-level managers of his crew. I need you to kill each one of them. Teach them what happens when you tango with the Elyos!</p>
+          <p> </p>
+          <p>I have three names for you: Drudgelord Kakiti, MuMu Ham the Grey, and Bossman Nukiti. Show each one how to tie a noose.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Knowledge of Haramel's existence has been contained for now. Only four Daevas are wise to it...and you and me are two of them.</p>
+          <p> </p>
+          <p>So if this information gets out into the public, I'll only have three Daevas to interrogate as to who spilled the beans.</p>
+          <p> </p>
+          <p>Now kill [%dic:STR_DIC_M_IDNovice_02_DBrownieWWa_named_18_an], [%dic:STR_DIC_M_IDNovice_05_RatmanMWa_named_19_an], and [%dic:STR_DIC_M_IDNovice_07_DBrownieWWa_named_20_an], and show me evidence.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"They'll reap what they've sown."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], I haven't trusted you since the first moment I saw you!</p>
+          <p> </p>
+          <p>And now that you're walking away from this order, my eyes are going to be locked on you until the end of days.</p>
+          <p> </p>
+          <p>You so much as breathe wrong, and I'll be watching. You're dirty...I just can't figure out how dirty yet. Yet!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Shout when you have something."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did you take care of our little organizational problem? Did you...terminate their employment?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"And here's the proof."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You may say you've eliminated our problem, but until I see proof, the problem still exists. Know why? Because I don't trust you, [%username].</p>
+          <p> </p>
+          <p>Terminate Drudgelord Kakiti, MuMu Ham the Grey, and Bossman Nukiti! And bring me evidence! Anything...an ear, an eye, a belt...anything!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"You have trust issues, friend."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This is a big load off my mind, [%username]. A big load. Their death is our extended careers.</p>
+          <p> </p>
+          <p>Any idea how Hamerun was able to enslave Kobolds and Skurvs? I heard there was some Odium abuse involved...but everybody's clammed up with the facts.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Bring proof of killing [%dic:STR_DIC_E_Q28505] to [%dic:STR_DIC_N_Notos].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">As Notos requested, go to Haramel and get rid of Drudgelord Kakiti, MuMu Ham the Grey, and Bossman Nukiti. And bring back proof.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Notos said Hamerun's organization should be removed systematically.</p>
+          <p> </p>
+          <p>So you got rid of mid-level managers Drudgelord Kakiti, MuMu Ham the Grey, and Bossman Nukiti, and brought back evidence.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

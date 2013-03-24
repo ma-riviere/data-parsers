@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Your second challenge will be in the [%dic:STR_DIC_W_DF2_SUB_toDF2_DFlame].</p>
+          <p> </p>
+          <p>Many brave Daevas have been engulfed in flames before completing even their first objective here.</p>
+          <p> </p>
+          <p>However, I am confident that you can do better. I want you to bring me something special from inside the temple.</p>      
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What do you want?"</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The monsters within the [%dic:STR_DIC_W_DF2_SUB_toDF2_DFlame] are known to have hearts that burn with a heat to match the temple itself.</p>
+          <p> </p>
+          <p>Maybe bringing some back here will cool down the temple a bit.</p>
+          <p> </p>
+          <p>Find an ally or two and go collect some for me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="PLAYEMOTION_comfort;HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The [%dic:STR_DIC_W_DF2_SUB_toDF2_DFlame] entrance is located inside the [%dic:STR_DIC_W_LF2_SZ_D].</p>
+          <p> </p>
+          <p>Go to the room on your right at the very end, and you will find it.</p>
+          <p> </p>
+          <p>I will be waiting for your return.</p>                    
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"You won't wait long."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>All right.</p>
+          <p> </p>
+          <p>I guess I was wrong.</p>
+          <p> </p>
+          <p>You're not ready for this challenge after all.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Maybe later."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did you make it?</p>
+          <p> </p>
+          <p>Were you able to remove some Fiery Hearts for me?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Careful with those."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ouch! They're really hot still!</p>
+          <p> </p>
+          <p>Maybe I should get some gloves.</p>      
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Maybe you should."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Are you okay?</p>
+          <p> </p>
+          <p>[%username], you have completed the challenge perfectly.</p>
+          <p> </p>
+          <p>Sanctum would like me to give you this token to express our appreciation.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Find the Fiery Hearts in the [%dic:STR_DIC_W_DF2_SUB_toDF2_DFlame] and take them to Netalion. </font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Priest Netalion asks you to bring him some Fiery Hearts. Go to the [%dic:STR_DIC_W_DF2_SUB_toDF2_DFlame], kill the main monsters, and collect the hearts.</font></p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Netalion, a Priest of Blessing, asked you to bring him some Fiery Hearts.</p>
+          <p> </p>
+          <p>You defeated the main monsters in the Fire Temple, and brought him what he asked for.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>
+

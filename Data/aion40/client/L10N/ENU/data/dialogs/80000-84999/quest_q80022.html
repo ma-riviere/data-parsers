@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>So many people spend all year rushing around, and then when it comes to the New Year, they move straight onto the celebrations without taking the time to look after themselves.</p>
+          <p> </p>
+          <p>Tell me, are you getting enough to eat?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I love my grub too much to forget!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good to hear. Fighting and flying and running about can really take it out of you.</p>
+          <p> </p>
+          <p>Well, since that's the case, maybe you can help me? I'm trying to spread the New Year cheer, but my shipment of [%dic:STR_DIC_I_WORLD_WRAP_EVENT_NEWYEAR_01A]es was waylaid and all the food has disappeared!</p>
+          <p> </p>
+          <p>I think it was monsters, rather than people, who took it, so it's probably scattered about.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You've got a good heart, [%username]. Right now I need you to find things to make the kids' lunch boxes, since they're most in need.</p>
+          <p> </p>
+          <p>I need 5 [%dic:STR_DIC_I_WORLD_EVENT_FOOD_NEWYEAR_3STATS]s, 5 [%dic:STR_DIC_I_WORLD_EVENT_NEWYEAR_POTION_HP_MP_40A] and 5 bottles of [%dic:STR_DIC_I_WORLD_EVENT_NEWYEAR_FOOD_DPHEAL_30A] for one lunch, but I don't have any right now.</p>
+          <p> </p>
+          <p>Oh...and if you already have any in your cube, you can give them to me now.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I may have picked some up along the way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That's a shame. Still maybe you can help me without going out of your way.</p>
+          <p> </p>
+         <p>If you happen to pick up any [%dic:STR_DIC_I_WORLD_EVENT_FOOD_NEWYEAR_3STATS]s, [%dic:STR_DIC_I_WORLD_EVENT_NEWYEAR_POTION_HP_MP_40A], or [%dic:STR_DIC_I_WORLD_EVENT_NEWYEAR_FOOD_DPHEAL_30A] on your travels, would you bring them to me?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"That doesn't sound too hard."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hi, [%username]! Oh, you're the one I sent out looking for stuff for the kids' lunch boxes, aren't you?</p>
+          <p> </p>
+          <p>Well, don't dawdle--show me what you've got.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"It should all be riiight....here."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, you don't have any right now. That's OK! Just come back when you get those [%dic:STR_DIC_I_WORLD_WRAP_EVENT_NEWYEAR_01A]es back. I'm guessing you can retrieve most of the food directly from the monsters, provided it hasn't spoiled.</p> 
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm on it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That smells good!</p>
+          <p> </p>
+          <p>The food has gotten a little cold, but at least it hasn't gone bad.</p>
+          <p> </p>
+          <p>I hope the New Year brings you all the rewards you deserve for this good deed!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Find 5 [%dic:STR_DIC_I_WORLD_EVENT_FOOD_NEWYEAR_3STATS]s, 5 [%dic:STR_DIC_I_WORLD_EVENT_NEWYEAR_POTION_HP_MP_40A], and 5 bottles of [%dic:STR_DIC_I_WORLD_EVENT_NEWYEAR_FOOD_DPHEAL_30A] for the [%dic:STR_DIC_I_WORLD_WRAP_EVENT_NEWYEAR_01A]es, and bring them to [%dic:STR_DIC_N_event_Namor].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Open the new year lunch boxes that the monsters dropped and bring Namor the food he needs.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You opened the new year lunch boxes the monsters dropped and found the leek dumplings, bulgogi, and cordial that Namor was looking for. He thanked you.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

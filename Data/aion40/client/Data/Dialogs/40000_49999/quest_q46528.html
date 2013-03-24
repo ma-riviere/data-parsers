@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p align="center"> - 의뢰장 - </p>
+          <p> </p>
+          <p>이번 의뢰는 겔크마로스의 깊숙한 곳에 숨어 있는 괴수에 대한 것이다.</p>
+          <p></p>
+          <p>이동 속도 저하와 비행 불가의 마법을 가지고 있어 섣불리 덤볐다가는 도망칠 수도 없게 된다는 괴수가 있다.</p>
+          <p> </p>
+          <p> 1. 이름: [%dic:STR_DIC_M_DF4_DayQ_CyclopsOd_55_An]</p>
+          <p></p>
+          <p> 2. 위치: [%dic:STR_DIC_W_SZ_DF4_D1_Od]</p>
+          <p></p>
+          <p> 3. 상세: 겔크마로스 동서쪽에 노출된 초록색 광석이 오드의 영향으로 변이되어 생겨난 거대한 괴수가 골칫거리가 되고 있다.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_DF4_DayQ_CyclopsOd_55_An]를 처치하고 변이 광석을 가져오는 자에게 증표를 지급하겠다.</p>
+          <p> </p>
+          <p>- 찰리룽 흥신소, [%dic:STR_DIC_E_46500] 일동 -</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">의뢰장을 접어 넣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>혹시 [%dic:STR_DIC_M_DF4_DayQ_CyclopsOd_55_An]를 본 적이 있냥, 냥냥?</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_W_SZ_DF4_D1_Od]에서 생겨난 초록색 광석들이 변이를 일으켜서 생겨났다고 하던데 무시무시하지 않냥, 갸릉.</p>
+          <p> </p>
+          <p>많은 데바들이 그 근처에서 티노스를 만나 영혼 치유 신세를 면치 못했다고 한당.</p>
+          <p> </p>
+          <p>그래서 누군가 의뢰를 한 모양인데 의뢰 완수를 할 수 있을지, 갸릉.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">변이 광석을 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>의뢰인은 규정상 구체적으로 말할 수 없지만 데바인 건 맞당, 냥냥.</p>
+          <p> </p>
+          <p>데바들이 슈고를 불신하는 것은 하루이틀 일이 아니니 증표를 갖다 줘야 한당, 갸릉.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_DF4_DayQ_CyclopsOd_55_An]를 처치하게 되거든 꼭 [%dic:STR_DIC_I_quest_46528a]을 가지고 와야 증표를 줄 수 있당.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>앗, 데바가 변이 광석을 가지고 온 거냥?</p>
+          <p> </p>
+          <p>역시 [%username]%은 우리 흥신소에 없어서는 안 될 중요한 데바당, 갸릉.</p>
+          <p> </p>
+          <p>여기 증표를 받아랑.</p>
+          <p> </p>
+          <p>매일매일 데바가 도와준다면 우리 흥신소도 크게 번창할 거당, 냥냥.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_M_DF4_DayQ_CyclopsOd_55_An]의 광석을 모아 [%dic:STR_DIC_E_46500]에게 가져가라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">찰리룽 흥신소에서 의뢰장이 왔다. 의뢰를 수행하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>찰리룽 흥신소에서 온 의뢰장에는 겔크마로스에 있는 거대한 티노스에 대해 적혀 있었다.</p>
+          <p> </p>
+          <p>그 괴수를 처치하고 변이 광석을 가져가자 증표를 얻을 수 있었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

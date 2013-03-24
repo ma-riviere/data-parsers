@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I guess I am really lucky to work in a place like this.</p>
+          <p> </p>
+          <p>Not many people come and go around here, either because it's an isolated area, or because there are more Shugos than Humans.</p>
+          <p> </p>
+          <p>Whatever the reason, I have plenty of free time to write.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"What are you working on?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Nothing a Daeva like you has ever heard of, I'm sure.</p>
+          <p> </p>
+          <p>But since you asked, I compile legends into a record called "The Nymph in Folklore"</p>
+          <p> </p>
+          <p>Stories like the love of a woodcutter for a forest spirit, that sort of thing.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I have heard of it!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, that's surprising! As far as I knew, only the head librarian at Sanctum and his son have ever shown an interest in my work. I still have so much to learn as a writer.</p>
+          <p> </p>
+          <p>I practice whenever I have time, but the pens cost so much! I use one a day, and it really adds up. I guess I could get the materials myself, but my post here is too important to leave, even for a short time.</p>
+          <p> </p>
+          <p>Say, You've read my work--would you like to sponsor me?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It would really mean a lot, and wouldn't be all that hard. All I need are a few [%dic:STR_DIC_I_QUEST_3007a]s.</p>
+          <p> </p>
+          <p>The feathers of the [%dic:STR_DIC_M_Harpy_23_An] hold up the best. Sometimes I can go two days with one of those.</p>
+          <p> </p>
+          <p>They're a bit violent, but I have a feeling that a seasoned [%userclass] like you can handle them easily.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Consider it done!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I probably chose the wrong word, again. When I said sponsorship, you may have thought financial support. I'm just asking to "borrow" your abilities for a while.</p>
+          <p> </p>
+          <p>All I want is to for you to swat a few [%dic:STR_DIC_M_Harpy_23_An]s and get some [%dic:STR_DIC_I_QUEST_3007a]s for me...</p>
+          <p> </p>
+          <p>I can't force you, but I hope you'll at least consider it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"It's something to think about."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, hello there. Do you know a five letter word for higher being?</p>
+          <p> </p>
+          <p>Oh, of course: Daeva. Where was my mind? I didn't even ask you about the Viragos!</p>
+          <p> </p>
+          <p>Isn't it odd how their feathers are so soft, in opposition to their natures? Were you able to gather any [%dic:STR_DIC_I_QUEST_3007a]s?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"It's been an interesting day..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, I though you were going to get rid of some [%dic:STR_DIC_M_Harpy_23_An]s.</p>
+          <p> </p>
+          <p>If you could hurry just a little bit, I'd appreciate it. </p>
+          <p> </p>
+          <p>I only have this one pen left...and nothing to write with tomorrow.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"No Problem."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Wow, this is great! Not only prettier, but much stronger than the ones I buy from Shugos.</p>
+          <p> </p>
+          <p>This will do nicely. Now how do you spell [%username] again? I'll write a poem about you!</p>
+          <p> </p>
+          <p>Wait. I almost forgot. This is a little something for you.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Hunt some [%dic:STR_DIC_M_Harpy_23_An]s, collect feathers, and take them to [%dic:STR_DIC_N_Thesaly].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Get some Virago's Feathers so that Thesaly can concentrate on her writing without worrying about paying for her pens.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thesaly spends her spare time writing, but she goes through so many pens that she wanted to find an alternate supply.</p>
+          <p> </p>
+          <p>When you returned with feathers for her to use, she thanked you very much.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

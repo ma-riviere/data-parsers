@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>음, 계속 생각해 봤는데 일을 그대로 넘겨선 안될 것 같소.</p>
+          <p> </p>
+          <p>우리를 도와 싸운 슈고의 사정이 너무 딱하지 않소?</p>
+          <p> </p>
+          <p>그리고 우리를 만만히 보고 설친 천족 놈들을 그냥 내버려 둘 순 없는 노릇이오.</p>
+          <p> </p>
+          <p>[%username] 님이 가서 지하 카탈람을 활보하는 천족을 처치하고 [%dic:STR_DIC_N_LDF5_Under_Merde_E]에게 보고해 주시오.</p>
+          <p> </p>
+          <p>마족의 명예가 걸린 일이니 반드시 수행해 주리라 믿소.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="select_none" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>음, 계속 생각해 봤는데 일을 그대로 넘겨선 안될 것 같소.</p>
+          <p> </p>
+          <p>우리를 도와 싸운 슈고의 사정이 너무 딱하지 않소?</p>
+          <p> </p>
+          <p>그리고 우리를 만만히 보고 설친 천족 놈들을 그냥 내버려 둘 순 없는 노릇이오.</p>
+          <p> </p>
+          <p>[%username] 님이 가서 지하 카탈람을 활보하는 천족을 처치하고 [%dic:STR_DIC_N_LDF5_Under_Merde_E]에게 보고해 주시오.</p>
+          <p> </p>
+          <p>마족의 명예가 걸린 일이니 반드시 수행해 주리라 믿소.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>가끔 지상에 있던 친구들에게 서신이 오곤 해요.</p>
+          <p> </p>
+          <p>다들 지하에서 할 일이 없어 좋겠다고 하더군요.</p>
+          <p> </p>
+          <p>뭘 몰라도 한참 모르고 하는 말이지 뭔가요?</p>
+          <p> </p>
+          <p>지상에 있을 때 보다 지하에 있을 때가 훨씬 일이 많은데 말이죠.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>훌륭히 완수하셨네요.</p>
+          <p> </p>
+          <p>천족 처단 임무를 받으셨단 건 브리프 님의 지령서로 알고 있었어요.</p>
+          <p> </p>
+          <p>사실 그 전에 이미 예상하고 있었지만요.</p>
+          <p> </p>
+          <p>천족은 여기서 저희가 반드시 해결해야 할 문제 중 하나니까요.</p>
+          <p> </p>
+          <p>여기, 수고하신 데 대한 보상이니 받아 가세요.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_W_LDF5_Under_all]에 있는 천족을 처치하라([%2]/3)</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_N_LDF5_Under_Merde_E]에게 보고하라</font></p></step>
+
+    </steps>
+          <p><font font_xml="quest_summary">지하 카탈람을 돌아다니는 천족을 처치하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>브리프는 액터룬의 사연을 생각할수록 그냥 넘겨선 안되겠다며 지하 카탈람을 돌아다니는 천족을 처단하는 임무를 주었다.</p>
+          <p> </p>
+          <p>임무대로 지하 카탈람의 천족을 처치하고 메르데에게 보고하자 훌륭히 완수했다며 보상을 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

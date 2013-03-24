@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Don't run off, [%username]. What are you planning to do with Kromede's Flame there?</p> 
+          <p> </p>	
+          <p>You're not going to wear it, are you? Tsk.</p>
+          <p> </p>
+          <p>I got a better idea. Melt down the Flame, then use it to coat the Tome of the Judge.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"How would you do that?"</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's complicated, but if you want to see how it's done, you'll need to bring me both items.</p>
+          <p> </p>
+          <p>You've got Kromede's Flame, so you're halfway there. Now you just need the Tome of the Judge.</p>
+          <p> </p>	
+          <p>Fortunately, I can tell you where to get that...if you're interested.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good choice. You won't regret it. Now, as to that Tome of the Judge.... </p>
+          <p> </p>
+        <p>Word in Morheim is that a little lady you know named [%dic:STR_DIC_M_FireSanctuaryQueenBoss_37_Ae] has it. She's in something called the Fire Temple.</p>
+          <p> </p>
+          <p>If you ask around, I'm sure someone can tell you how to get there.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Thanks for the tip."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You think I can't stick a necklace and a book inside a raging flame without destroying both items?</p>
+          <p> </p>
+          <p>I know that sounds crazy, but I'm not an amateur.</p>
+          <p> </p>
+          <p>Think about this. I'm sure you'll change your mind.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm not so sure."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did you bring me the Tome of the Judge? All I need is that and Kromede's Flame, and we can proceed as planned.</p>
+          <p> </p>
+          <p>Don't weep for Kromede.... She's been taken over by grief and hate. She doesn't deserve your compassion anymore.</p>
+          <p> </p>
+          <p>Now let me just stoke this flame and we'll toss that book in there.... You seem nervous. Is there a problem?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"N...no. Here you go."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Listen, I'm not just some simple Raider with a few twigs and a big hammer.</p>
+          <p> </p>
+          <p>Once I took a polearm and I turned it into a dagger, and then back into a polearm. A much smaller polearm, true....</p>
+          <p> </p>
+          <p>Regardless, I have no doubt I can combine the Tome of the Judge and Kromede's Flame. Come to me with both in your Cube, and I'll prove it to you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I have to think about this."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>All right! Here we go. First I throw the book in the flames--woosh, there it goes...</p>
+          <p> </p>
+          <p>Or, wait...does Kromede's Flame go in first? I think I got that backwards. Oh well, too late now. Let's see what happens....</p>
+          <p> </p>
+          <p>Hey, it worked. It's Kromede's Tome! That's good to know. I'd better write that down for next time.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect materials to refine the Tome of the Judge and bring them to [%dic:STR_DIC_N_Walter].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Walter said he could refine the Tome of the Judge for you using Kromede's Flame.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Walter said Kromede's Flame can be used to reinforce the Tome of the Judge, and asked you to bring him both items.</p>
+          <p> </p>
+          <p>Contrary to logic, you trusted him and gave him both Kromede's Flame and the Tome of the Judge. Walter somehow managed to not destroy both items, giving you Kromede's Tome.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

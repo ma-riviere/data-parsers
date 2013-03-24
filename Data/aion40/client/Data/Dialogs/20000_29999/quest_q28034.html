@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>철벽의 보루를 침공하려는 브리트라군의 계획은 이미 알고 있습니다.</p>
+          <p> </p>
+          <p>하지만 우리는 이후의 계획을 더 신경써야 할 필요가 있다고 생각합니다.</p>
+          <p> </p>
+          <p>혹시 [%dic:STR_DIC_W_IDLDF5b_TD] 전투에 참가하실 때에 [%dic:STR_DIC_I_IDLDF5b_TD_Map_Q28034]%이 있는지 찾아봐 주십시오.</p>
+          <p> </p>
+          <p>철벽의 보루에 대한 전투 작전서가 있었다면 그 후의 전략을 기록한 작전서도 있을지 모릅니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>분명 브리트라군은 철벽의 보루 점령에 성공할 것이라 판단했을 겁니다.</p>
+          <p> </p>
+          <p>그러니 그 다음 일에 대한 계획도 세워져 있지 않겠습니까?</p>
+          <p> </p>
+		  <p>[%dic:STR_DIC_I_IDLDF5b_TD_Map_Q28034]만 손에 넣는다면 방어적으로 취약한 부분을 알아내 보강해둘 수 있을 겁니다.</p> 
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">카탈람 진격 작전서를 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아! 정말 찾아오셨군요!</p>
+          <p> </p>
+          <p>이건 정말 귀중한 정보입니다.</p>
+          <p> </p>
+          <p>카탈람의 수비를 한층 두텁게 만들어 줄 테니까요.</p>
+          <p> </p>
+          <p>곧 상부에 작전서를 전달해 대책을 세우도록 하겠습니다. 정말 수고가 많으셨습니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_I_IDLDF5b_TD_Map_Q28034]%을 찾아 [%dic:STR_DIC_N_LDF5_Village_Guard11_D]에게 전해라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">브리트라군에게 철벽의 보루 침공에 성공했을 때를 위한 향후의 작전서가 있을지 모르니 찾아보자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>토발드는 브리트라군이 철벽의 보루 침공에 성공한 후의 계획을 세워뒀을 거라고 말했다.</p>
+          <p> </p>
+          <p>철벽의 보루를 수비하던 중 발견한 카탈람 진격 작전서를 가져다주니 카탈람을 수비하는데 매우 큰 도움이 될 자료라며 기뻐했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

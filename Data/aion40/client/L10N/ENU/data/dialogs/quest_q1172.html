@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], can you keep a secret? I've done something really stupid and I need help.</p>          
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"What's the matter, Perinens?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It was Estino's fault! He just kept on and on at me until I couldn't take it anymore!</p>
+          <p> </p>
+          <p>"Guarding the citadel again, are we? Nothing much going on? I'd say you should watch the Tursin Outpost some time, but I know not everyone's cut out for fighting."</p>
+          <p> </p>
+          <p>I couldn't just stand there and take it! So I...I...kind of let my mouth run away with me. Now I have to go to the Tursin Outpost or lose the stupid bet I made.</p>          
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Can't you handle the Krall?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Of course I can, but I can't leave my post! Especially for something so trivial as a personal score.</p>
+          <p> </p>
+          <p>Once, a sentry called Gaione fell asleep on his watch--the citadel was almost overrun. I won't have a story like that floating around about me.</p>
+          <p> </p>        
+          <p>But...maybe you could raid the Tursin Outpost and pretend I'd done it?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], you're like family to me. Thank you. </p>
+          <p> </p>                    
+          <p>The best proof would be a pile of [%dic:STR_DIC_QILA82]s, so please gather some. The Krall keep them in supply crates all over their campsite. About eight of them should be enough to shut [%dic:STR_DIC_LA27] up. He's at the Ellun River Mouth. Tell him the Krall weapons are from me, and he's lost the bet. He'll give you the money he owes me and you can just keep it.</p>
+          <p> </p>
+          <p>And please...don't ever breathe a word of this to anyone.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Your secret is safe."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I understand. I got myself into this mess. I should pull myself out of it.</p>
+          <p> </p>
+          <p>I'll lose the bet, of course. I'll be the laughing stock of all Verteron.</p>
+          <p> </p>
+          <p>Even if you won't help me, please don't tell Estino that I asked you to. That would just make it worse.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I won't."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]? What are you doing all the way out here?</p>
+          <p> </p>
+          <p>Wait...Perinens sent you? That girl doesn't know when to quit!</p>
+          <p> </p>
+          <p>Did she send you with my money? Is she finally paying up?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"She sent me with these."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No disrespect to you, [%userclass], but why did you bother coming?</p>
+          <p> </p>
+          <p>You tell me Perinens went to the Tursin Outpost and expect me to take her word for it? Where's the proof?</p>
+          <p> </p>
+          <p>Hey, if you're taking messages back and forth, tell her this from me. Four words--"Know when you're beat."</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Er, I'll be right back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What the...these are [%dic:STR_DIC_QILA82]s. They must have come from high-ranking Krall. In the Tursin Outpost.</p>
+          <p> </p>
+          <p>She really went, didn't she? Looting all these weapons...she could have been killed!</p> 
+          <p> </p>
+          <p>Would you give her this for me? She won it fair and square. I'll watch my mouth around her in the future.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect weapons from the Krall Supply Crates and take them to [%dic:STR_DIC_LA27].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">[%dic:STR_DIC_LA78] has made a reckless bet with Estino that she would go and raid the Tursin Outpost. Gather Krall weapons, since Perinens can't leave her post, and bring them to Estino.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Estino taunted Perinens until she lost her temper and made a wager with him.</p>
+          <p> </p>
+          <p>She boasted that she could tackle the Krall in the Tursin Outpost easily, but ended up asking you to gather Krall weapons for her and bring them to Estino as proof.</p> 
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

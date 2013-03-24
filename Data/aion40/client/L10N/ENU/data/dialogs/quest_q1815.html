@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>According to Centurion Minerva, the Asmodians will widen their war in the Abyss from their base in Miren Fortress.</p>
+          <p> </p>
+          <p>That could bring our own advances to a halt. What would happen if Reshanta fell to the Balaur or Asmodians?</p>
+          <p> </p>
+          <p>We have to blunt this new offensive before it begins!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What's Minerva's strategy?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Centurion Minerva says the best course is to deplete the Asmodian garrison in the fort.</p>
+          <p> </p>
+          <p>We can't do that with an assault. Too easily spotted. But a single expert soldier could slip in, and one blade inside the walls might cripple the [%dic:STR_DIC_M_1815_all] where many blades outside could not!</p>
+          <p> </p>
+          <p>Of the Daevas here, [%username], yours is the name at the top of the list.</p>    
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Aaah, a hero like you makes decisions without hesitating.</p>
+          <p> </p>
+          <p>Carry out your mission whenever the Miren Fortress switches to the vulnerable state while it is under Asmodian rule.</p>
+          <p> </p>
+          <p>Slaughter the [%dic:STR_DIC_M_1815_all] and capture their [%dic:STR_DIC_I_QUEST_1815a].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"They'll never see me coming."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], the Asmodians will soon fill the sky here in droves.</p>
+          <p> </p>
+          <p>If I were you, I'd want to put a stop to that.</p>
+          <p> </p>
+          <p>Please don't turn me down.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I have other battles to fight."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've been waiting for you, Lord [%username]!</p>
+          <p> </p>
+          <p>Did you catch the [%dic:STR_DIC_M_1815_all] in their beds?</p>
+          <p> </p>
+          <p>Those [%dic:STR_DIC_I_QUEST_1815a]s will make fine trophies...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"This is what I found."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Aah, this is awkward.</p>
+          <p> </p>
+          <p>I trust your word, [%username], but my superiors have less faith in us.</p>
+          <p> </p>
+          <p>If you don't show me the [%dic:STR_DIC_I_QUEST_1815a]s, I can't release your reward.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Fine. I'll get them."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's marvelous to see you in action, [%username].</p>
+          <p> </p>
+          <p>I hope I can fight beside you on the field someday. I will deliver the insignia to Centurion Minerva myself.</p>
+          <p> </p>
+          <p>...and, of course, tell her who took them from the fortress, [%username]. Don't worry!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Defeat the [%dic:STR_DIC_M_1815_all], collect [%dic:STR_DIC_I_QUEST_1815a], and take them to [%dic:STR_DIC_N_Sarpedon].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">The Asmodians are driving the Elyos into a corner with the mighty Miren Fortress garrison. Ambush the Asmodian garrison when the fortress switches to the vulnerable state, and halt this all-out Asmodian attack.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Sarpedon revealed that the latest Asmodian all-out attack comes from from Miren Fortress. He asked you to help disrupt it.</p>
+          <p> </p>
+          <p>You ambushed the Asmodian garrison and stole their insignia. Sarpedon gratefully brought them to the Centurion and told him you had ended the threat.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

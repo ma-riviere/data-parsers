@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I apologize for my outburst earlier, [%username]. It was unworthy of me as an Asmodian.</p>
+          <p> </p>
+          <p>I discovered other magical creatures that could provide the necessary power. In fact, the Balaur themselves took advantage of one of these species.</p>
+          <p> </p>
+          <p>The undead energies of Acheron Drakes could be exactly what we need.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"'Could be'?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Actually, it's exactly what we need. I'd stake my reputation on it.</p>
+          <p> </p>
+          <p>That's because I've discovered the existence of a particularly powerful Acheron Drake dwelling in the Forgotten Storeroom.</p>
+          <p> </p>
+          <p>With its energies, you can finally activate the Rift Orb and see Stormwing with your own eyes. Please take this final step with me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>When you kill [%dic:STR_DIC_E_IDCatacombsN_BonedrakeNmd_55_Ah], you can extract its Magical Essence. Once you have it, return to the [%dic:STR_DIC_OBJ_IDCatacombs_BigOrb_Q30211].</p>
+          <p> </p>
+          <p>Use the Magical Essence and the Quartz Rod. The two will resonate on their own, providing the power the Rod needs to activate the Orb.</p>
+          <p> </p>
+          <p>You can then teleport to the place where Stormwing is imprisoned. If you decide to enter the portal right then and there--and you need not--I suggest bringing powerful and staunch allies with you.</p>
+          <p> </p>
+          <p>The Shedim watch over you, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Thank you, Herka."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This is the last step in this long journey. I beg you not to give up now.</p>
+          <p> </p>
+          <p>We need to confirm whether Stormwing is safely imprisoned or not. I know it may be difficult to contemplate having to fight something feared by Tiamat.</p>
+          <p> </p>
+          <p>But if you need time to think about it, I understand. But please don't take too long to come to a final decision.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll take only the time I need."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(The Rift Orb glows softly.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">(Hold the Essence and Rod aloft.)</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_ok">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(The Orb explodes in a dazzling light.)</p>
+          <p> </p>
+          <p>(An Abyss Gate to the Prison of Ice opens. You shouldn't step through unprepared.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"This will be a glorious battle."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_fail">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(The Orb's light fades away.)</p>
+          <p> </p>
+          <p>(You need the Magical Essence to produce the energy needed to activate the Orb.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I must find that Drake."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You've returned, [%username]! Herka has given me a report on all you have learned thus far.</p>
+          <p> </p>
+          <p>Stormwing sounds like a grave threat indeed. I know that we had incomplete information, yet I regret my rash decision.</p>
+          <p> </p>
+          <p>Herka said you were going to its prison personally. What happened?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"When I arrived there..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Knowing that something as vicious and powerful as Stormwing lurks there...it's almost unimaginable.</p>
+          <p> </p>
+          <p>But now we know what we're up against. We can prepare for a monumental battle. You should consider leading that charge, [%username].</p>
+          <p> </p>
+          <p>You have done well in this pursuit. The Shedim Lords must be proud to see one such as you serving them.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Hunt [%dic:STR_DIC_E_IDCatacombsN_BonedrakeNmd_55_Ah] to obtain Magical Essence and activate the [%dic:STR_DIC_OBJ_IDCatacombs_BigOrb_Q30211].</font></p>[%collectitem]</step>
+               <step><p visible="[%3]"><font color="[%4]">Report to [%dic:STR_DIC_N_Hler].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Obtain the Magical Essence and activate the Rift Orb.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Herka discovered that other species of monster could be used to power the Quartz Rod. She sent you after Thurzon the Undying, a powerful undead in the Forgotten Storeroom.</p>
+          <p> </p>
+          <p>You defeated it and recieved the Magical Essence, which was finally able to recharge the Quartz Rod and activate the Rift Orb.</p>
+          <p> </p>
+          <p>The Orb opened a portal to the Prison of Ice. Richelle had high praise for your dedication.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

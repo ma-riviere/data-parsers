@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q11524</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], mind if I ask you for a favor? It shouldn't take too much of your time.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_N_Firenon] was supposed to send me Magical Aether for repairing the ship, you see. I say supposed to, because nothing's arrived yet. I want to make sure everything's all right, but can't go and see him directly. Not when there's much to do.</p>
+          <p> </p>
+          <p>Could you go and ask him why it's taking so long?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What? The Magical Aether?</p>
+          <p> </p>
+          <p>I gave it to Pogrunerk to sell, as per Filatyon's orders. Look here. I still have the letter. It says... it says... oh. Oh no! I thought it said I had to sell it to [%dic:STR_DIC_N_Shugo_LDF4a_09], which I did! Oh no! Please, maybe Pogrunerk still has some left in stock, but you'd have to hurry!</p>
+          <p> </p>
+          <p>Please, check for me! I can't believe I did that!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"I'll go as fast as I can!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select3">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Magical Aether? Akakak! All gone, Daeva! Sold faster than rarest manastones!</p>
+          <p> </p>
+          <p>Made 100,000 Kinah too! Not bad effort for few hours of work, yes yes? Money isn't mine though, and can only give it to Firon.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO2">"I need to see Filatyon."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've was waiting for you, [%username].</p>
+          <p> </p>
+          <p>I've seen countless Daevas coming out of the Trade Agency with these huge smiles on their faces. Are the Shugos drunk or something?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"No..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What?! ALL OF IT? For 100,000 Kinah?!</p>
+          <p> </p>
+          <p>That's ridiculous! I told Firon to sell all his stock EXCEPT the Aether! Oh, for the five! This is terrible, terrible news.</p>
+          <p> </p>
+          <p>We're going to have to buy new supplies, and we'll have to report this to Sanctum. Firon will be in a great deal of trouble....</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk with Warehouse Manager [%dic:STR_DIC_N_Firenon].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Talk with Trade Agent [%dic:STR_DIC_N_Shugo_LDF4a_09].</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Report back to [%dic:STR_DIC_N_Filatyon].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Find out why Firon hasn't delivered the Magical Aether yet.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Filatyon wanted to know why Firon hadn't delivered the Magical Aether needed for essential ship repairs.</p>
+          <p> </p>
+          <p>It turned out that the Magical Aether was sold at a giveaway price thanks to Firon's mistake. Filatyon was disgusted when he heard the news, and implied Firon was in a for a rude awakening once they reached port.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

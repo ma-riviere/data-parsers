@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>어서 오십시오, [%username] 님.</p>
+          <p> </p>
+          <p>안 그래도 전할 말이 있어서 찾고 있었습니다.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_N_Lasanya] 백부장님이 [%username] 님을 만나면 프리뭄 훈련소에 들러 달라는 말을 전해 달라고 하셨거든요.</p>
+          <p> </p>
+          <p>중요하게 부탁할 일이 있다고 하셨습니다. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">무슨 일인지 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>무슨 일인지 구체적으로 듣지는 못했지만 용족과 관련된 일인 것 같았습니다.</p>
+          <p> </p>
+          <p>라사냐 백부장님께 가면 무슨 일인지 상세히 알려 주실 겁니다. </p>
+          <p> </p>
+          <p>어쨌든 아주 급하고 중요한 일 같았습니다.</p>
+          <p> </p>
+          <p>지금 당장 [%dic:STR_DIC_N_Lasanya] 백부장님께 가 보시겠습니까? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_N_Lasanya] 백부장님은 프리뭄 훈련소 입구에 계십니다.</p>
+          <p> </p>
+          <p>잊지 말고 꼭 들러 주십시오.</p>
+          <p> </p>
+          <p>급하다고 하셨으니까 이왕이면 빨리 가 보시는 게 좋을 것 같습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>라사냐 백부장님이 중요한 일이라고 했는데...</p>
+          <p> </p>
+          <p>[%username] 님을 믿고 특별히 부른 것 같은데 거절하시다니...</p>
+          <p> </p>
+          <p>어쩔 수 없지요. 라사냐 백부장님께는 [%username] 님이 거절했다고 전하겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]에게 맡길 임무가 있어서 기다리고 있었소.</p>
+          <p> </p>
+          <p>중요한 임무가 있어서 알트가르드와 판데모니움의 아는 사람들에게 연락을 했더니 모두들 [%username]%을 추천하더구려.</p>
+          <p> </p>
+          <p>그래서 [%username]에게 이번 일을 맡기기로 했소.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">어떤 임무인지 묻는다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>용족의 훈련소를 공격하는 임무라오.</p>
+          <p> </p>
+          <p>데바들이 어비스에서 전투하기 전에 프리뭄 훈련소에서 훈련을 받는 것처럼 용족도 병사들이 어비스에 적응하도록 훈련시키는 곳이 있소.</p>
+          <p> </p>
+          <p>훈련을 받는 드라코뉴트 병사들은 별로 위협적인 적이 아니지만 훈련을 마치면 어비스로 투입돼서 곳곳에서 우리를 위협하게 될 거요.</p>
+          <p> </p>
+          <p>그러니 놈들이 쓸 만한 병사로 자라기 전에 놈들을 쓸어버리기로 했소.</p>
+          <p> </p>
+          <p>이 임무를 [%username]에게 맡기고 싶소. 그러니 잠시 생각해 보고 마음의 각오가 되면 나와 레반에게 임무를 받으시오.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_Lasanya]와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">라사냐 백부장이 찾는다고 한다. 프리뭄 훈련소로 가서 만나 보자.</p>
+          <p></font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>어비스 전령인 콘토가 프리뭄 훈련소의 라사냐 백부장이 찾고 있다는 말을 전해 주었다.</p>
+          <p> </p>
+          <p>라사냐에게 갔더니 용족 훈련소와 관련해서 중요한 임무를 맡기고 싶다고 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

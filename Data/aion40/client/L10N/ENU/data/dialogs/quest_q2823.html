@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Rewrite by Dave 28 May -->
+<!-- Editing by Fran 31 May -->
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hey! Did Hildebrant over at Krotan Refuge send you?</p>
+          <p> </p>
+          <p>It doesn't matter, I suppose. We need your help!</p>
+          <p> </p>
+          <p>This crazy heat is warping our weapons even as they leave our scabbards!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Do you know how?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Kysis Isle is a furnace, and scorching heat can deform a weapon. But I think this is more than hot air...the Abyss changes everything it touches.</p>
+          <p> </p>
+          <p>I'm new here, so when our weapons started deforming before our very eyes, I sent runners to Hildebrant over at Krotan Refuge. My missive might have been a little on the, um, panicky side.</p>
+          <p> </p>
+          <p>But she shared with me the technique they're using over on Krotan, something I'd like to try. Can you help?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hildebrant says melting the hearts of Ravenous Pretors yields a fluid that protects weapons from warping.</p>
+          <p> </p>
+          <p>A melted weapon is useless, and a weaponless soldier is almost useless, so I'll try anything. Can you hunt [%dic:STR_DIC_M_Ab1_1231_Pretor_38_An]s and bring their [%dic:STR_DIC_I_QUEST_2823a]s to me?</p>
+          <p> </p>
+          <p>Ten hearts will be enough for one batch of fluid.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Can't leave you unarmed, eh?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Too busy, are you? Or do you doubt me?</p>
+          <p> </p>
+          <p>You might scoff at the notion, but Hildebrant swears this technique works. And she ought to know! Krotan's almost as hot as it is here.</p>
+          <p> </p>
+          <p>Aren't you even curious?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"No, just hot."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did you get the [%dic:STR_DIC_I_QUEST_2823a] we need?</p>
+          <p> </p>
+          <p>I hope this works. I had a dagger knot itself before my eyes just a few minutes ago.</p>
+          <p> </p>
+          <p>Show me what you've got.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here you go."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What's this? I need ten [%dic:STR_DIC_I_QUEST_2823a]s.</p>
+          <p> </p>
+          <p>Hurry! I'm eager to see whether this trick will keep our weapons from warping.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"On my way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ooh, did you feel these? They're as cold as ice!</p>
+          <p> </p>
+          <p>Hildebrant didn't mention that in her instructions. Let me see...where did I leave that parchment...?</p>
+          <p> </p>
+          <p>Oh, before I forget, take this. Lucky they give me disbursement authority, eh?</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Hunt [%dic:STR_DIC_M_Ab1_1231_Pretor_38_An]s to gather their hearts and return to [%dic:STR_DIC_N_Ab1_1231_Quest_Da].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Gather the Hearts of Ravenous Pretors used to make weapons resistant to the strange heat of Kysis, then bring them to Etzel.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Abyssal heat of Kysis Isle warps weapons, so Etzel's soldiers can't defend the fortress.</p>
+          <p> </p>
+          <p>Another commander melts the hearts of heat-tolerant Ravenous Pretors and spreads the resulting oil on weapons. Etzel wanted to try that, but had no Pretor hearts.</p>
+          <p> </p>
+          <p>You hunted Ravenous Pretors and returned with their hearts as Etzel instructed.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The guard on Roah Fortress has only been getting stronger. I was sent there to scout because I was told somebody had kindly eliminated the garrison for us.</p>
+          <p> </p>
+          <p>When I got there, I just barely avoided running straight into the elite garrison that took their place.</p>
+          <p> </p>
+          <p>I'm no weakling, but I'll admit I don't think I can take on an entire elite garrison by myself.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Sensible."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We have to get rid of that garrison. I've been authorized to give a reward to any Daevas looking for freelance work.</p>
+          <p> </p>
+          <p>What do you say? You think you're up to gathering some backup and taking on those Ellies?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That's the Asmodian fighting spirit!</p>
+          <p> </p>
+          <p>Go kill those [%dic:STR_DIC_M_2810_all], with your friends to back you up, of course.</p>
+          <p> </p>
+          <p>Each soldier should carry a [%dic:STR_DIC_I_QUEST_2810a]. Bring them back to me. And tell your friends to do the same.</p>
+          <p> </p>
+          <p>You don't have to get rid of all of them, but that'd be appreciated. Blood for blood.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Blood for blood."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Don't feel up to being a leader? I understand, it's hard.</p>
+          <p> </p>
+          <p>Perhaps you're not as strong as you look, Daeva.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm strong enough."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You look like you've been fighting. Why don't you tell me how it went?</p>
+          <p> </p>
+          <p>Better yet, show me the [%dic:STR_DIC_I_QUEST_2810a]s.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Take a look."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, that's not good. You know, if you don't take their Kisks, they're going to come back to life right in the same spot.</p>
+          <p> </p>
+          <p>We're not paying you to kill them twice.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Fine, I'll get the Kisks."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm not ordinarily the kind of person who, ah, praises other people. It's just not my nature.</p>
+          <p> </p>
+          <p>But, well... you did a good job out there.</p>
+          <p> </p>
+          <p>Here's your payment. And don't tell anyone I complimented you.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Destroy the [%dic:STR_DIC_M_2810_all] and return with the proof to [%dic:STR_DIC_N_Dullaha].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Defeat the elite Elyos garrison and return to Dullaha with Guardian's Kisks.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Dullaha asked for your help to defeat the elite Elyos garrison at Roah Fortress.</p>
+          <p> </p>
+          <p>You defeated the elite Elyos garrison as he asked and returned to him with the Guardian's Kisks to prevent the elite troops from resurrecting easily.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

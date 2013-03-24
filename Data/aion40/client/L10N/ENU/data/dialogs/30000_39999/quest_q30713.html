@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q30713</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Wait! Wait! I think we can try to extract the hatred now!</p>
+          <p> </p>
+          <p>See, the Balaur device is clearly powerful enough already, and doesn't require any augmentations from our engineering team! While this is great news for us, we should be worried that Balaur technology has advanced so far so quickly.</p>
+          <p> </p>
+          <p>Here, take the [%dic:STR_DIC_N_IDTiamat_FOBJ_Dagger] and place it near the [%dic:STR_DIC_I_quest_30713a]. It should start extracting the essence into the glass vial that I've already prepared. If everything goes well, take the vial to [%dic:STR_DIC_N_Garnon].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(The Malefic Dagger is in your possession again, and is already tugging at the fibers of your morality.)</p>
+          <p> </p>
+          <p>(You want to let go. You want to give in. You want to embrace the hatred and let it take you... but you can't! It's now or never... you have to activate the device and drain the energy.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"Here we go!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, [%username]! What brings you here?</p>
+          <p> </p>
+          <p>News from Tiamat Stronghold, I assume? Speak now.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Actually..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What?! You've harnessed Apsu's Hate?!</p>
+          <p> </p>
+          <p>Why in Siel's name weren't the Elders informed that you were even attempting this stupid act? Do you realize the risks you took? Do you realize how many lives you endangered?!</p>
+          <p> </p>
+          <p>Ulian will answer for this. You are an outsider, but he... he should have known better! This is unforgivable. I'll take that vial of yours and have the elders examine it, the group who should have had it in the first place. You are free to leave.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Use the [%dic:STR_DIC_I_quest_30713a] to extract Apsu's Hate from the [%dic:STR_DIC_N_IDTiamat_FOBJ_Dagger].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Speak to [%dic:STR_DIC_N_Garnon] about the experiment.</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Extract Apsu's Hate with the tools Ulian made.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You used Ulian's Remodeled Reverse Field Control Device to extract Apsu's Hate, and took it to Garnon, only to find both you and Ulian in deep trouble. Garnon was furious that the proper channels hadn't been used, and that you'd endangered so many lives while carrying out your experiment.</p>
+          <p> </p>
+          <p>Garnon let you leave, but indicated that Ulian would have to answer for his actions.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

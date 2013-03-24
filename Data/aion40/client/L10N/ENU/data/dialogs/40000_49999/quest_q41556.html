@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q41556</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>Not entered</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select_none" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I need to confide in someone, and it may as well be you. Just... don't repeat what I'm about to say.</p>
+          <p> </p>
+          <p>Morale is falling among the Tiamaranta Expeditionaries. We need to do something or else they'll mope themselves into displacement.</p>
+          <p> </p>
+          <p>I have an idea. But first I need [%dic:STR_DIC_I_quest_41556a]. You could get it for me by wading through [%dic:STR_DIC_M_Q41556_All]s and taking it off [%dic:STR_DIC_M_LDF4b_C3_Dragon_General2_Named_60_Ae].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did you bring the banner?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I've got it! What's the plan?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_ok">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I only need a moment to rip it to tatters. Hah!</p>
+          <p> </p>
+          <p>Plant this torn up flag at the [%dic:STR_DIC_W_LDF4b_SZ_C3_S2].</p>
+          <p> </p>
+          <p>It may not demoralize the Drakan much, but it should be a symbol of victory and hope for any of our allies who pass that way.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Ingenious!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_fail">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Our allies' hearts and swords falter too much.</p>
+          <p> </p>
+          <p>You must bring [%dic:STR_DIC_I_quest_41556a] from [%dic:STR_DIC_M_LDF4b_C3_Dragon_General2_Named_60_Ae] before it's too late.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"You can count on me."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>When Daevas see our symbolic destruction, they'll take heart.</p>
+          <p> </p>
+          <p>By Siel's Spear, it feels good to bolster our allies.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I've prominently planted the pennant."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That soothes my mind and fires my fighting arm.</p>
+          <p> </p>
+          <p>Thank you for working with me on this secret project.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Kill [%dic:STR_DIC_M_Q41556_All]s ([%2]/7).</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Kill [%dic:STR_DIC_M_LDF4b_C3_Dragon_General2_Named_60_Ae], and take [%dic:STR_DIC_I_quest_41556a] to [%dic:STR_DIC_N_Eden].</font></p>[%collectitem]</step>
+               <step><p visible="[%6]"><font color="[%7]">Plant the torn banner at [%dic:STR_DIC_W_LDF4b_SZ_C3_S2] [%8].</font></p></step>
+               <step><p visible="[%9]"><font color="[%10]">Talk to [%dic:STR_DIC_N_Eden].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">For Eden's secret plan to raise morale, you must bring her Kunati's Banner.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Eden said Tiamaranta Daevas suffered from low morale, though she begged you not to make that knowledge public.</p>
+          <p> </p>
+          <p>For her secret plan to regain fighting spirit in the region, she sent you to kill Protectorate Drakan and Assault Team Leader Kunati.</p>
+          <p> </p>
+          <p>You then acquired Kunati's Banner, which she tore up and had you plant at the enemy's gate as a symbol of their helplessness before your might.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+       <p>원래 제 이름은 가이오네입니다.</p>
+       <p> </p>
+       <p>부모님이 모두 데바여서 남들보다 일찍 데바로 각성하고 가디언도 됐죠.</p>   
+       <p> </p>
+       <p>하지만 천성이 게을러 가디언의 임무는 내팽개치고 잠만 잤습니다.</p>   
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">토그가 된 이유를 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>엘룬강 하구에서 크랄을 감시하는 게 제 임무였습니다. 그런데 자리를 비우고 잠을 자다 크랄이 요새로 쳐들어 가는 걸 미리 알리지 못했습니다.</p> 
+          <p> </p> 
+          <p>이를 알고 분노하신 엘리시움의 고위 데바들께서 제게 벌을 내리셨죠.</p> 
+          <p> </p>           
+          <p>그래서 이렇게 토그가 된 겁니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"평생 토그로 살아야 합니까?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그건 아닙니다. 천 일 동안 [%dic:STR_DIC_MLA41]%을 구천 마리를 잡으면 다시 데바가 될 수 있습니다.</p>
+          <p> </p>
+          <p>맘 같아서는 놈들을 한 번에 잡고 싶지만 지금 이 모습으로는 그게 쉽지가 않군요.</p>
+          <p> </p>
+         <p>약속한 천 일이 얼마 남지 않았는데 잡아야 할 캔서리드는 아직도 한참입니다.</p>
+         <p> </p>
+          <p>[%username] 님, 절 조금만 도와주시면 안 되겠습니까? 많이도 아닙니다. 9마리만 부탁드리겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정말 감사합니다, [%username] 님.</p>
+          <p> </p>
+          <p>그럼 [%dic:STR_DIC_MLA41]%을 9마리만 처치해 주십시오.</p>
+          <p> </p>
+          <p>구천 마리를 채우려면 아직 멀어서 솔직히 더 부탁드리고 싶지만 그러기엔 너무 염치가 없군요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>염치없는 부탁이란 건 압니다.</p>
+          <p> </p>
+          <p>하지만 임무를 수행하지 못하면 다시 천 일을 기다려야 합니다.</p>
+         <p> </p>
+         <p>[%username] 님은 토그로 사는 게 얼마나 비참하고 끔찍한 일인지 모를 겁니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>약속대로 [%dic:STR_DIC_MLA41]%을 처치하셨습니까?</p>  
+         <p> </p>
+         <p>[%username] 님에겐 식은 죽 먹기였을 텐데...</p>       
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>고맙습니다, [%username] 님. </p>
+          <p> </p>          
+          <p>정말 큰 도움이 됐습니다.</p>   
+          <p> </p>   
+          <p>나중에 다시 데바가 되면 이 은혜는 꼭 갚겠습니다.</p>          
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">토그 가이오네를 도와 [%dic:STR_DIC_MLA41]를 처치하라([%2]/9)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">토그가 된 [%dic:STR_DIC_LA44]%와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">토그 가이오네가 다시 데바가 되려면 약속한 기한 안에 캔서리드 구천 마리를 처치해야 한다고 한다. 다시 데바가 될 수 있도록 부탁받은 9마리를 처치해 주자.</p>
+          <p></font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>요새 근처에서 말하는 토그를 만났다. 자신은 원래 가디언인데 벌을 받아 토그가 됐다고 했다.</p>
+          <p> </p>
+          <p>데바로 돌아갈 수 있도록 자신의 임무를 도와달라고 부탁했다. 캔서리드를 처치해 주자 무척 고마워하며 가지고 있던 물건을 선물로 줬다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

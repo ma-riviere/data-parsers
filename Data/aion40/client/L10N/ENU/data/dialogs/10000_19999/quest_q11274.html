@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Please, [%username]. Stay and talk with me a while.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"You work too hard, Veille."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I think you're right. That's why I want to give you some of my authority and power.</p>
+          <p> </p>
+          <p>Are you interested in fighting to recapture enemy fortresses? And gaining some prestige?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you for your constancy. I know we don't speak often, but I consider you a close friend.</p>
+          <p> </p>
+          <p>And as your friend, I must tell you: when you go out there to capture a fortress, collect [%dic:STR_DIC_I_JUNK_KAISINEL_REWARD_01A]s.</p>
+          <p> </p>
+          <p>Silly name, I know, but Kaisinel insisted.</p>
+          <p> </p>
+          <p>If you bring six favors, I will give you the shield the Lord Kaisinel gave to me when he made me his Agent.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I couldn't possibly take that."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No, of course. You must be busy, just as busy as I am.</p>
+          <p> </p>
+          <p>Faith and arms!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Try to get some rest, friend."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Welcome to my little corner of the world, once again.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I brought six favors."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I don't see your favors, [%username], but I have faith in you.</p>
+          <p> </p>
+          <p>Now that you've grasped the way of acquiring them, you'll go far.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Thanks, V. See you soon."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Six? I'm impressed, [%username]. I know how much work goes into earning each and every one of these.</p>
+          <p> </p>
+          <p>I couldn't have done better myself.</p>
+          <p> </p>
+          <p>Please, take this practical symbol of my--and Lord Kaisinel's--esteem. For the glory of Elysea!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect [%dic:STR_DIC_I_JUNK_KAISINEL_REWARD_01A]s and bring them to [%dic:STR_DIC_N_Heranas].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Destroy Mastarius, Marchutan's agent, and bring the symbol of your triumph to Veille.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Lord Kaisinel's Agent Veille said she would give her shield to a Daeva who fought to capture enemy fortresses.</p>
+          <p> </p>
+          <p>When you brought six Veille's Favors, she gave you the shield.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

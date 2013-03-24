@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Lepharists have a very strong position up in that Bastion, and I've been giving a lot of thought as to how we can get around that. I might have come with an idea. Drinking water!</p>
+          <p> </p>
+          <p>Think about it. They must need an incredible amount of water for all those workers and trainees, especially in this hot and dry climate.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"That's true."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>So, I'm investigating their water supply. I hope that examining the composition of the water they drink will lead us to its source.</p>
+          <p> </p>
+          <p>If we could the somehow deny them access to their water, it'd put a real dent in their ability to operate here. Plus, it wouldn't hurt for us to have access to another source of water too.</p>
+          <p> </p>
+          <p>I need samples of the water they drink. Would you be willing to get them?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've observed them for a while, and all the [%dic:STR_DIC_M_LF2_3303all] carry [%dic:STR_DIC_I_QUEST_3303a]s around their waists.</p>
+          <p> </p>
+          <p>I presume they're for water, so please get me some of those bottles.</p>
+          <p> </p>
+          <p>If you do, I'll give you a Golden Lepharist Insignia as a reward.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Consider it done."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Does it not seem important enough?</p>
+          <p> </p>
+          <p>I think it's much more important than just killing a few Lepharists.</p>
+          <p> </p>
+          <p>Of course, if this works out, we might be able to force their operations completely out of Eltnen.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Let me consider it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, [%username]!</p>
+          <p> </p>
+          <p>Did you bring the [%dic:STR_DIC_I_QUEST_3303a]s?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Got them right here."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Haven't you been there yet?</p>
+          <p> </p>
+          <p>The purpose of this mission is not to deal with Lepharists but to bring me their bottles for analysis.</p>
+          <p> </p>
+          <p>Please head back in there and bring me the [%dic:STR_DIC_I_QUEST_3303a]s.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Will do."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Goodness...these are quite heavy. Most of them are empty but I'll see what I can get out of them.</p>
+          <p> </p>
+          <p>Anyway, as you have brought the bottles, I'll give you what I promised. Please accept this Golden Lepharist Insignia.</p>
+          <p> </p>
+          <p>I've heard Laigas is collecting them. Visit me again when you have time, and I'll have more work for you.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect [%dic:STR_DIC_I_QUEST_3303a]s from [%dic:STR_DIC_M_LF2_3303all] in [%dic:STR_DIC_W_LF2_SZ_J] and take them to [%dic:STR_DIC_N_Deurone].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">To help Deurone discover the water source of the Lepharist Revolutionaries, get the water bottles the Lepharists in the Lepharist Bastion carry around.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Deurone wanted to investigate how the Lepharists in the Lepharist Bastion could procure water.</p>
+          <p> </p>
+          <p>You collected the crude wood bottles the Novice Lepharists use to carry water, and brought them to her. She thanked you and rewarded you with a Golden Lepharist Insignia.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

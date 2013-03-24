@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_W_IDAb1_MiniCastle_SZ_L]에서의 임무가 하나 더 있습니다. 바로 [%dic:STR_DIC_I_QUEST_3704a]를 가져오는 일이지요.</p>
+          <p> </p>
+          <p>우리쪽 조사에 따르면 새로운 무기를 시험해 보는 것이 바로 노흐사나 훈련소라고 합니다. 다시 말하면 노흐사나 훈련소가 용족의 시험용 무기를 손에 넣을 수 있는 유일한 곳이지요.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_OBJ_IDAB1_MiniCastle_DragonArms_Q3704]%은 노흐사나 훈련 요새 안에 들어가면 찾을 수 있을 겁니다. 무기 보관함에서 [%dic:STR_DIC_I_QUEST_3704a]를 가져오십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>훌륭한 전사에게는 좋은 무기가 필요하죠. 적의 무기보다 훨씬 뛰어난 무기요.</p>
+          <p> </p>
+          <p>그러자면 무기를 제작하는 사람도 여러 모로 연구를 해야 합니다.</p>
+          <p> </p>
+          <p>[%username] 님이 가져오신 [%dic:STR_DIC_I_QUEST_3704a]가 연구에 큰 도움이 될 겁니다. </p>
+          <p> </p>
+          <p>자, 이리 주십시오. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">용족의 시험용 무기를 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아직 노흐사나 훈련소에 가지 않은 겁니까?</p>
+          <p> </p>
+          <p>재촉하고 싶지는 않지만 그래도 중요한 일이라서 말입니다.</p>
+          <p> </p>
+          <p>놈들의 시험용 무기를 손에 넣으면 엘리시움에서 그 무기에 대항할 더 좋은 무기를 만들 수 있겠지요. </p>
+          <p> </p>
+          <p>그러니 [%dic:STR_DIC_I_QUEST_3704a]를 꼭 좀 구해다 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이게 용족이 새로 만든 무기인가 보군요. </p>
+          <p> </p>
+          <p>묵직한 것이 공격받으면 꽤 큰 타격을 입을 것 같습니다.</p>
+          <p> </p>
+          <p>구해 오느라 고생 많으셨습니다. 이건 바로 엘리시움으로 보내 새로운 무기를 만드는 데 자료로 쓰겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_OBJ_IDAB1_MiniCastle_DragonArms_Q3704]에서 무기를 모아 [%dic:STR_DIC_N_LF2_Brando]에게 가져가라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">용족의 시험용 무기가 필요하다고 한다. 노흐사나 훈련소에서 무기를 모아 브란도에게 가져가자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>브란도 교관은 용족이 노흐사나 훈련소에서 새로 만든 무기를 시험하고 있다면서 그걸 구해다 달라고 했다.</p>
+          <p> </p>
+          <p>훈련 요새 안의 용족 무기 보관함에서 시험용 무기를 구해 가져다 주자 엘리시움으로 보내 새로운 무기를 만드는 연구 자료로 쓰겠다고 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

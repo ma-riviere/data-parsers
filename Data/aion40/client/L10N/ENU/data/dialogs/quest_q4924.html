@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I see you often these days, [%username].</p>
+          <p> </p>
+          <p>You must be training very hard.</p>
+          <p> </p>
+          <p>I find your effort commendable and I would like to tell you of an opportunity. Would you like to participate in the Divine Power Test?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"The Divine Power Test?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Divine Power skills are special abilities that Aion has granted to Daevas. But because they're rarely used, even some veterans are rather inexperienced with them.</p>
+          <p> </p>
+          <p>The Divine Power Test is an incentive proposed by the Governor to solve that problem.</p>
+          <p> </p>
+          <p>We call it a test, but it's really more of a training session. It ends when you use a chosen skill ten times. What do you think? Would you like to give it a go?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Very good. Let me see...you're a Ranger, which means you have access to the Destruction Trap skill. That will be the subject of this test.</p>
+          <p> </p>
+          <p>Return to me when you've used the [%dic:STR_DIC_E_DP_Ra] skill ten times, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I will."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Why do you decline?</p>
+          <p> </p>
+          <p>Don't tell me you don't know how to recharge your Divine Power?</p>
+          <p> </p>
+          <p>It's accumulated naturally as you fight. You could always go to the Abyss if you want to accumulate it faster.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Let me think about it."</Act>
+    </Selects>
+  </HtmlPage>
+
+    <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're in the midst of the Divine Power Test, right?</p>
+          <p> </p>
+          <p>So, did you use [%dic:STR_DIC_E_DP_Ra] ten times as I instructed?</p>
+          <p> </p>
+          <p>May I touch your brow?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Of course."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hmmm...the flow of your Divine Power is smooth and uninterrupted. It seems you've practiced the Divine Power skill properly.</p>
+          <p> </p>
+          <p>Well done--you've passed the test. But continue to hone your skills--we need more Rangers like you in the Abyss War.</p>
+          <p> </p>
+          <p>Here's a reward we give to those who pass the test. This should be of use to you as a Ranger.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Use [%dic:STR_DIC_E_DP_Ra] ([%2]/10).</font></p></step>               
+               <step><p visible="[%3]"><font color="[%4]">Report the result to [%dic:STR_DIC_N_Sigyn].</font></p></step>               
+    </steps>
+          <p><font font_xml="quest_summary">The Governor is sponsoring a Divine Power Test. Use Destruction Trap ten times to pass the test.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Sigyn invited you to take part in the Divine Power Test--an incentive for Daevas who are inexperienced at using Divine Power.</p>
+          <p> </p>
+          <p>When you returned to Sigyn after using the Destruction Trap skill ten times, she congratulated you on passing the test.</p>
+	</body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

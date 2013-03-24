@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q20091</QuestId>
+    <QuestName>이드겔의 힘</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>데바여, 용족이 그대를 불러 놀랐나보구려.</p>
+          <p> </p>
+     	  <p>그대가 바로 티아마트 님의 죽음에 큰 영향을 끼친 데바라고 알고 있소.</p>
+          <p> </p>
+          <p>그렇지 않소?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">복수하기 위해 불렀냐고 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그런 이유가 아니오. 쿨럭! 부, 부디 내 말을 좀 들어주시오.</p>
+          <p> </p>
+          <p>사실 그대에게 간곡히 부탁할 것이 있어서 치욕을 무릅쓰고 불렀다오.</p>
+          <p> </p>
+	      <p>우리 티아마트 군단의 패잔병들은 이곳 카탈람에 흩어져 고대의 힘을 찾아 군단을 재건할 꿈을 꾸고 있소.</p>
+          <p> </p>
+          <p>하지만 저주받을 용제, 브리트라는 고대의 힘을 차지하기 위해 동족인 우리들을 학살하고 있다오!</p>
+          <p> </p>
+	      <p>내가 속해 있던 부대도 브리트라 군의 습격에 모두 학살 당하고 나만 살아남게 된 거요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_2">대화를 계속한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_2">
+    <Contents cdata="true">
+        <html>
+        <body>
+	     <p>이 꼴이 되고 나니 확실히 알겠더구려. 티아마트 군단은 이미 끝나버렸다는 사실을.</p>
+          <p> </p>
+	      <p>지금 이 시간에도 용족의 분쟁 지역에서는 다른 동지들이 모여 헛된 꿈을 쫓고 있소.</p>
+          <p> </p>
+          <p>조금 전 프라데스 초원에서 [%dic:STR_DIC_M_LDF5B_b3_Vri_Tanker_Fi_DD_NmdM_65_An]이 출발했소. 분명 티아마트군을 공격하려는 지령서를 가지고 있을 테니 그를 처치하고 [%dic:STR_DIC_I_quest_20091a]%를 뺏아와 주시오.</p>
+          <p> </p>
+          <p>적의 부탁이라 생각치 말고 패배자를 위한 아량이라 생각하고 제발 도와주시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">대화를 마친다.</Act>
+    </Selects>
+	<Voice file="Q20091-1.ogg"/>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>브리트라 군에게 입은 상처가 너무 깊구려.</p>
+          <p> </p>
+		  <p>오래 버틸 수 없을 것 같소.</p>
+		  <p> </p>
+          <p>그래, [%dic:STR_DIC_M_LDF5B_b3_Vri_Tanker_Fi_DD_NmdM_65_An]은 늦지 않게 따라 잡으셨소?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">지령서를 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_ok">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정말 진심으로 고맙소.</p>
+          <p> </p>
+          <p>(지령서를 펼쳐 읽어내려간다.) </p>
+          <p> </p>
+          <p>역시, 공격을 허가해 달라는 내용이었구려.</p>
+          <p> </p>
+          <p>하마터면 마지막 남은 동족들이 몰살당할 뻔 했소.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO2">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_fail">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_M_LDF5B_b3_Vri_Tanker_Fi_DD_NmdM_65_An]을 찾지 못했단 말이오?</p>
+          <p> </p>
+          <p>그럴 리가 없소!</p>
+          <p> </p>
+          <p>(한참동안 기침을 해댄다.)</p>
+          <p> </p>
+          <p>분명 아직 폐허 성채를 벗어나지 못했을 테니 다시 한 번만 찾아주시오. 이렇게 간곡히 부탁드리겠소!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select3">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>슬픈 일이지만 카탈람의 동지들은 결국 뜻을 이루지 못할 거요.</p>
+          <p> </p>
+          <p>우리에겐 더 이상 티아마트 님이 안 계시니...</p>
+          <p> </p>
+          <p>그렇지만 마지막 동족들을 죽게 내버려 둘 수는 없소.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT3_1">대화를 계속한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select3_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>데바여, [%dic:STR_DIC_W_LDF5b_SZ_B3]로 가 [%dic:STR_DIC_M_LDF5B_b3_SWHowitzer_Gu_NmdM_65_Ae]를 파괴하고 [%dic:STR_DIC_M_LDF5B_b3_Vri_Weabind_Ri_SN_NmdM_65_Ae]%를 처치해주시오.</p>
+          <p> </p>
+          <p>물론 그대가 마족의 적인 용족을 위한 부탁을 들어줄 이유는 없소.</p>
+          <p> </p>
+          <p>하지만 이는 곧 브리트라 군의 전력을 약화시키는 일이기도 하니 부디 도와주시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO3">대화를 마친다.</Act>
+    </Selects>
+	<Voice file="Q20091-2.ogg"/>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+	      <p>오셨구려.</p>
+          <p> </p>
+          <p>내게 남은 숨이 별로 없다오.</p>
+          <p> </p>
+		  <p>말해주시오.</p>
+		  <p> </p>
+          <p>브리트라 군은 어떻게 되었소?</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>고맙소, 이제야 좀 쉴 수 있겠소.</p>
+          <p> </p>
+          <p>진정으로 고맙소.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_W_LDF5b_SZ_B1]에 있는 [%dic:STR_DIC_N_LDF5a_Drakan_Kuvirkan_E]과 대화하라</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_M_LDF5B_b3_Vri_Tanker_Fi_DD_NmdM_65_An]에게서 [%dic:STR_DIC_I_quest_20091a]%을 빼앗아 [%dic:STR_DIC_N_LDF5a_Drakan_Kuvirkan_E]에게 가져가라</font></p>[%collectitem]</step>
+               <step><p visible="[%6]"><font color="[%7]">[%dic:STR_DIC_W_LDF5b_SZ_B1]에 있는 [%dic:STR_DIC_N_LDF5a_Drakan_Kuvirkan_E]과 대화하라</font></p></step>
+               <step><p visible="[%9]"><font color="[%10]">[%dic:STR_DIC_M_LDF5B_b3_SWHowitzer_Gu_NmdM_65_Ae]%을 파괴하라([%11]/3)</font></p></step>        
+               <step><p visible="[%12]"><font color="[%13]">[%dic:STR_DIC_M_LDF5B_b3_Vri_Weabind_Ri_SN_NmdM_65_Ae]%을 처치하라([%14]/1)</font></p></step>   
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_W_LDF5b_SZ_B1]에 있는 [%dic:STR_DIC_N_LDF5a_Drakan_Kuvirkan_E]과 대화하라</font></p></step>   
+    </steps>
+          <p><font font_xml="quest_summary">지령: 티아마트 군의 패잔병 쿠비르칸이 도움을 요청하고 있다. 그를 만나보자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>티아마트 군의 패잔병 쿠비르칸이 불러 찾아가보니 그는 심하게 다친 상태였다.</p>
+		  <p> </p>
+          <p>그는 브리트라 군에 의해 자신의 남은 동족들이 몰살 당할 위기에 처해있다며 도와 달라고 말했다.</p>
+          <p> </p>
+		  <p>패배자를 위해 아량을 베풀어 달라며 모든 자존심을 버리고 하는 부탁을 무시할 수 없었고, 또한 브리트라 군의 병력을 처치하는 일이라면 마족에게도 도움이 될 것이라 판단하여 그의 부탁을 들어줬다.</p>
+          <p> </p>
+		  <p>그의 부탁대로 브리트라 군들을 처치하고 돌아가니, 그는 진심으로 감사하다는 말을 하고 쉴 수 있겠다고 하였다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>미션 진행: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

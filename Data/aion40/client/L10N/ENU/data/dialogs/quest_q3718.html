@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q3718</QuestId>
+    <QuestName>[Group] Dredgion Assault</QuestName>
+    <QuestType>Script Quest</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>To really shake the Dredgion, we need to keep the Balaur balanced on their talons.</p>
+          <p> </p>
+          <p>We can't afford to give them any time to regroup.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Let's harry them, sir."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes. That's what I want you to do, [%username]. You were born to inflict continuous damage, so harry the fiends from all angles.</p>
+          <p> </p>
+          <p>Can you apply yourself to the task?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Then infiltrate the Dredgion and wreak havoc.</p>
+          <p> </p>
+          <p>Three incursions should slam those Balaur and prove your skill.</p>
+          <p> </p>
+          <p>Make sure you take out at least eight of the [%dic:STR_DIC_M_IDAb1_Dreadgion_NagaPr_50_Ae]s while you're there. If the Balaur can't be healed, they can't come after us.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Faith and arms!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This easy mission ought to be right up your alley, troublemaker. You'd complete it with ease and watch the Balaur squirm on the hooks of your merriment.</p>
+          <p> </p>
+          <p>Yet you turn it down.</p>
+          <p> </p>
+          <p>What I wouldn't give for a faithful Daeva....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Killing is not a sport."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Welcome, welcome, my apprentice. Can I offer you a drink?</p>
+          <p> </p>
+          <p>Tell me of your latest mission for Maias.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"When I crept aboard the Dredgion...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Splendid! You've outdone yourself this time, my [%userclass].</p>
+          <p> </p>
+          <p>As a reward for faithfully completing your mission, I give you this.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Assault the Dredgion and eliminate the enemy healers.</font></p>
+                         <p visible="[%0]"><font color="[%1]">  Dredgion battle ([%2]/3)</font></p>
+                         <p visible="[%3]"><font color="[%4]">  [%dic:STR_DIC_M_IDAb1_Dreadgion_NagaPr_50_Ae] ([%5]/8).</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Talk with [%dic:STR_DIC_N_Taranis].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">You agreed to throw the Dredgion into chaos with three incursions and the elimination of eight Baranath Fleshmenders.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Maias wants a nonstop assault on the Dredgion, keeping the Balaur off-balance and damaged.</p>
+          <p> </p>
+          <p>You infiltrated the Dredgion three times and eliminated eight Baranath Fleshmenders as requested.</p>
+          <p> </p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

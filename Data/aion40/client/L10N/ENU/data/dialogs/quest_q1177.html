@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Do you see those stones floating about? Mysterious Stones, they're called. I know--clever name, right?</p>
+          <p> </p>
+          <p>Despite that, they're an interesting bit of local history. They used to be part of the Aetheric Field that protected what is now the Zumion Ruins. When the Balaur stormed through in the Cataclysm, they smashed all the stones near the shrine and scattered the fragments.</p>
+          <p> </p>          
+          <p>The protective field is gone now, but the stones are still full of Aether, which makes them valuable for mages.</p> 
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Oh?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes. In fact, Vascus makes a living selling the fragments from these stones.</p>
+          <p> </p>
+          <p>He can't travel much anymore, what with that rock following him around all the time. Don't even ask how that got started....</p>
+          <p> </p>
+          <p>Obviously, I haven't got time to go foraging for stone bits, but maybe you do?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Maybe...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, if you're planning to cross Altamia Ridge, would you gather some [%dic:STR_DIC_QILA86]s for Vascus?</p>
+          <p> </p>
+          <p>It'd be a real favor.</p>          
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That's kind of you. Vascus could use some cheering up.</p>
+          <p> </p>
+          <p>Could you gather about seven fragments? That should be plenty, for now.</p>
+          <p> </p>
+          <p>There are lots of the [%dic:STR_DIC_ELA83]s on the path going over [%dic:STR_DIC_FLA19]. Watch out, though--the Plumas have been vicious recently, and there are weird rock monsters here and there. Nothing you can't deal with, I'm sure!</p>          
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll take care of it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, you aren't heading that way? Never mind, then.</p>
+          <p> </p>          
+          <p>Let me know if you're planning to head out by Altamia Ridge in the future. A few fragments would really help him out.</p>      
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll let you know."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Welcome, Daeva! Please sit down, and don't mind Stony, he's harmless...mostly....</p>
+          <p> </p>
+          <p>Wait, did Meliodas send you?</p>
+          <p> </p>
+          <p>Do you have some [%dic:STR_DIC_QILA86]s for me?</p>   
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here they are."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh. No [%dic:STR_DIC_QILA86]s.</p>
+          <p> </p>
+          <p>It's always nice to have company up here, but I confess I'm disappointed....</p>
+          <p> </p>
+          <p>No, Stony! It's all right! The Daeva is a friend!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll...be right back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p> [%username], this was kind of you! Thank you!</p>
+          <p> </p>
+          <p>There's real demand for [%dic:STR_DIC_QILA86]s right now. I should earn enough for a worthy offering to the Seraphim Lords!</p>
+          <p> </p>
+          <p>I've not been able to offer much in tribute lately. It's been troubling. I can finally set my mind at rest.</p> 
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Gather [%dic:STR_DIC_QILA86]s from the [%dic:STR_DIC_FLA19] and bring them to [%dic:STR_DIC_LA65].</font></p>[%collectitem]</step>              
+    </steps>
+          <p><font font_xml="quest_summary">Vascus asked Meliodas to gather some Mysterious Stone fragments for him. Since Meliodas is busy, gather the fragments on his behalf and take them to Vascus.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Vascus, a seller of Mysterious Stone fragments, has been troubled recently. He was unable to collect many fragments because of his new friend, Stony. You collected some fragments and brought them to Vascus.</p>         
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

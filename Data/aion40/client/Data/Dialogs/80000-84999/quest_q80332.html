@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(이국적인 문양이 새겨진 편지지다.)</p>
+          <p> </p>
+          <p>(용감한 데바 님들은 보세요롱... 저희 요정들은 데바 님들의 힘이 필요합니다.)</p>
+          <p> </p>
+          <p>(요정들? 도대체 누구지?! 상당히 삐뚤빼뚤한 글씨체다.)</p>
+          <p> </p>
+          <p>(일단, 이 편지를 보낸 [%dic:STR_DIC_N_IDAsteria_IU_IN_NPC01]을 만나보러 가야겠다.) </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">편지를 습득한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>누구, 우리 요정들을 도와줄 데바 님 없으신가요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="PLAYEMOTION_think;HACTION_SELECT_QUEST_REWARD">편지를 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(크게 안도하는 표정으로) 세상에나!</p>
+          <p> </p>
+          <p>잘 오셨어요.</p>
+          <p> </p>
+          <p>먼길 오느라 고생했을테니 우선 이것부터 받고 우리 얘기를 들어줘요!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_IDAsteria_IU_IN_NPC01]%에게 편지를 가져가라 </font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">어디에서 왔는지 알 수 없는 요정들을 찾아가 편지를 건네자.</p>
+          <p></font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>우연히 습득한 편지. 나와 같은 데바를 찾는다는 내용이 서툰 글씨로 빼곡하게 적혀있었다.</p>
+          <p>그래서 어디에서 왔는지 알 수 없는 요정을 찾아가 편지를 건네니 고맙다며 나에게 선물을 주었다.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

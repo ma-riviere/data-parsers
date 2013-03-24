@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's hard to feel safe in Beluslan these days, between a collapsing fortress, people getting struck by falling fragments....And there's no end of dangerous creatures around here, either.</p>
+          <p> </p>
+          <p>Of course, we're also shorthanded. The Archons we do have are too busy to tend to culling the local beasties.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Sounds like a problem, all right."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It is. Luckily we've been allotted some Silver Coins to reward other Daevas who can take on jobs the Archons can't be spared for.</p>
+          <p> </p>
+          <p>Right now we need someone to hunt the Vespines and Black Branch Gnarls. Is that something you're interested in, [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>There are a lot of [%dic:STR_DIC_M_VespaD_29_n]s right outside the fortress. They're a bloody nuisance to the residents.</p>
+          <p> </p>
+          <p>And [%dic:STR_DIC_M_XipetoD_30_An]s are all over the Black Plains, thick as pudding.</p>
+          <p> </p>
+          <p>So go out and kill those pests for us, and I'll be waving your silver coin when you come back.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"The task is mine, Govanon."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Can't blame you for not getting excited about a pest hunt, [%username].</p>
+          <p> </p>
+          <p>Better to turn the mission down now than quit in the middle, I suppose.</p>
+          <p> </p>
+          <p>Still, if you change your mind, I'll save out a coin for you. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Good to know."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, you're back, [%username]. How did it go with the [%dic:STR_DIC_M_VespaD_29_n]s and [%dic:STR_DIC_M_XipetoD_30_An]s?</p>
+          <p> </p>
+          <p>Tell me the whole story.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Well, it took a while...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You've done a good thing for Beluslan. Thank you.</p>
+          <p> </p>
+          <p>Now people will be able to go outside the fortress without fear.</p>
+          <p> </p>
+          <p>And I haven't forgotten about your coin, either.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get rid of creatures that threaten the residents in the Beluslan Fortress.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_VespaD_29_n] ([%2]/24)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_XipetoD_30_An] ([%5]/17)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report the result to [%dic:STR_DIC_N_Govanon].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Vespines and Gnarls around the fortress threaten the residents. Get rid of the Plains Vespines in front of the Beluslan Fortress and the Black Branch Gnarls in the Black Plains.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Govanon said local creatures threatened the Fortress Inhabitants, but he was giving the job to Daevas because he was short of Archons. He asked you to carry out a hunt for the safety of the fortress inhabitants.</p>
+          <p> </p>
+          <p>You got rid of the Plains Vespines and Black Branch Gnarls, and received a silver coin as a reward.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

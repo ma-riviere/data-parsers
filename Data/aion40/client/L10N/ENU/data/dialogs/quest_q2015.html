@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Rewrite by Dave 12 May -->
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>After the Tiamat's Sword fiasco--I know, I know, you did your best--we're taking the Lepharist Revolutionaries a lot more seriously.</p>
+          <p> </p>
+          <p>Before, we crossed blades with them only when they wandered past Basfelt Village.</p>
+          <p> </p>
+          <p>But now Commander Suthran is livid. It's intolerable that a bunch of revolutionaries have a hideout so near the village. His orders are quite explicit.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Orders?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Let me quote part of the orders: "...your best chance to atone for these failures is to behead the leader of this gang of Lepharist criminals, [%dic:STR_DIC_M_LehparAsChD_15_An]..."</p>
+          <p> </p>
+          <p>And that's your mission, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1_1">"The task is mine!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Blood for blood! The mission won't be easy.</p>
+          <p> </p>
+          <p>Head beyond the village north of Idun's Lake, and you will see a bridge. Across the bridge is a cave--that's their hideout.</p>
+          <p> </p>
+          <p>Kill [%dic:STR_DIC_M_LehparWaD_14_An]s and [%dic:STR_DIC_M_LehparAsD_14_An]s around the cave, and then get rid of the cell leader, [%dic:STR_DIC_M_LehparAsChD_15_An].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+       <Act href="HACTION_SETPRO1">"Consider it done."</Act>
+    </Selects>
+    <Voice file="Q2015-1.ogg"/>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The whole village has been waiting, [%username].</p>
+          <p> </p>
+          <p>Did you get rid of [%dic:STR_DIC_M_LehparAsChD_15_An] and the Lepharist grave robbers?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I beheaded him."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good. Commander Suthran likes fast soldiers.</p>
+          <p> </p>
+          <p>I'll report to Altgard Fortress that [%dic:STR_DIC_M_LehparAsChD_15_An] and many lesser criminals are no more. That should make the commander happy. Or at least less angry.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk with [%dic:STR_DIC_N_Nokirjar].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Get rid of the Lepharist Revolutionaries.</font></p>
+                     <p visible="[%3]"><font color="[%4]">Kill [%dic:STR_DIC_M_LehparAsChD_15_An]([%5]/1)</font></p>
+                     <p visible="[%3]"><font color="[%4]">Kill [%dic:STR_DIC_M_LehparWaD_14_An]s([%8]/5)</font></p>
+                     <p visible="[%3]"><font color="[%4]">Kill [%dic:STR_DIC_M_LehparAsD_14_An]([%11]/5)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report the result to [%dic:STR_DIC_N_Nokirjar].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Order: Get rid of Sumarhon, leader of a Lepharist cell, and the grave robbers.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Nokir received orders to keep the Lepharist Revolutionaries away from Basfelt Village and kill their leader. On his behalf, you went to their hideout and got rid of Sumarhon and his rebels.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>Order: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>Mission Progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

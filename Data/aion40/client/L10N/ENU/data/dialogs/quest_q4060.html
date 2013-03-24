@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(This looks like a very old diary. You'd better be careful it doesn't fall apart.)</p>
+          <p> </p>
+          <p>([%dic:STR_DIC_N_Ervin] would know who it belonged to. Maybe she'd like to see it.) </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Let's see what Ervin has to say."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What brings you here?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">"You might like to read this."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This sounds like it belonged to Aureia. He sent his son away, but...I guess he didn't make it.</p>
+          <p> </p>
+          <p>His descendants might want to know what happened to him. That family's been using the character "Aur" in front of their names for generations.</p>
+          <p> </p>
+          <p>If you've ever come across anyone with a name like that, why don't you see if he's their ancestor?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"I think I know someone...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select3">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Azphelumbra. Enjoying your travels?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT3_1">"Is your family from Brusthonin?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select3_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No, I'm afraid I don't know this family. I suppose it's just a coincidence that my name's Aur.</p>
+          <p> </p>
+          <p>There must be somebody else with an "Aur" name that you could ask.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO2">"Maybe in Beluslan..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select4">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Are you looking for something in particular?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT4_1">"Are you from the Aur family?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select4_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm not...but I once met someone who was. He remarked on the coincidence.</p>
+          <p> </p>
+          <p>His name was [%dic:STR_DIC_N_Asustri]. Apparently his branch of the family started changing their names to "Asu" after some kind of tragedy.</p>
+          <p> </p>
+          <p>He said he was heading back to Brusthonin.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO3">"I'll search there."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I heard a Daeva was asking after me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Is this your ancestor's diary?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes...it certainly seems to be. My branch of the family changed their names to "Asu" in honor of those who stayed in Brusthonin and died.</p>
+          <p> </p>
+          <p>This diary's rather depressing. It all happened a long time ago, but you can still see the contamination in the land.</p>
+          <p> </p>
+          <p>I hope he's not one of the undead I had to kill last week.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk with [%dic:STR_DIC_N_Ervin].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Go to Pandaemonium and talk with [%dic:STR_DIC_N_Aur].</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Go to Beluslan and talk with [%dic:STR_DIC_N_Aurvandil].</font></p></step>
+               <step><p visible="[%9]"><font color="[%10]">Go to Brusthonin and talk with [%dic:STR_DIC_N_Asustri].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">You found a diary after killing a zombie. Take it to Ervin and find out who it belonged to.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You found an old diary while killing a Zombie. According to Ervin, it belonged to someone in the village. You decided to take it to their descendant.</p>
+          <p> </p>
+          <p>The family had the tradition of affixing "Aur" to the front of its name, so you asked all the Aurs you knew.</p>
+          <p> </p>
+          <p>Eventually, one of them told you that he'd met someone from that family, but that they'd changed their name to "Asu." You showed the diary to Asustri and he said it belonged to his ancestor.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

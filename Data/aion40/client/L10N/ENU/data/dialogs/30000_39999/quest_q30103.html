@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I acknowledge your continued assistance, Asmodian, but let me be blunt: I know that what the enemy is hiding in that temple is probably more important to you than it is to us.</p>
+          <p> </p>
+          <p>We only wish to defeat the Balaur and their Followers so we may live in peace, whereas you want to conquer the whole of Gelkmaros.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I cannot deny that."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I appreciate your honesty, Daeva. Yet despite your people's long term agenda, we must cooperate in the short term to defeat the Dragonbound.</p>
+          <p> </p>        	
+          <p>I fear you will find nothing more of use outside of the [%dic:STR_DIC_E_IDTemple_DF4]. You must go inside and find out what the [%dic:STR_DIC_E_IDTemple_SensoryArea_Q30003] is.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You will need to again pass through Subterranea to reach the [%dic:STR_DIC_E_IDTemple_DF4]. Once inside...I wish I could tell you exactly where to go and what to do, but Udas Temple is completely foreign to me.</p>
+          <p> </p>
+          <p>One thing is certain, however--their leader will be inside. Defeat [%dic:STR_DIC_E_IDTemple_FanaticFiNamed_53_Ah], and you might find a helpful clue to the [%dic:STR_DIC_E_IDTemple_SensoryArea_Q30003].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I will not be long."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Afraid, are you? It's only natural--determination alone isn't enough for anyone to venture into Balaur territory, to a place overrun by Dragonbound. I won't hold it against you.</p>
+          <p> </p>
+          <p>Too bad.... I desperately wanted to collaborate with the Asmodians and eradicate the Dragonbound. Perhaps I'll find another....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I am not afraid...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did you discover what the Dragonbound are after, [%username]? What lies inside the Udas Temple?</p>
+          <p> </p>
+          <p>Tell me everything!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"We must go deeper...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hmmmm.... The enemy's motives elude us once again, but you've done well. Now we know that our search must include the Lower Udas Temple. The gate to that area will indeed open with the key you bear, but only if it is properly attuned...here, let me....</p>
+          <p> </p>
+          <p>There. The key is attuned to your energy. It has accepted you, and so the gate to the Lower Udas Temple will open.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Strike down [%dic:STR_DIC_E_IDTemple_FanaticFiNamed_53_Ah] and find the [%dic:STR_DIC_E_IDTemple_SensoryArea_Q30003].</font></p>[%collectitem]</step>
+               <step><p visible="[%3]"><font color="[%4]">Report to [%dic:STR_DIC_N_Aglauros].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Infiltrate Udas Temple and defeat Nexus to uncover the true motives of the Dragonbound.</font></p>
+        </body>
+        </html>
+    </Contents>
+    <notifies>
+      <notify color="yellow" fontsize="16" pos="2" progress="1" showframe="true" time="5">Entrance to Lower Udas Temple found! Report to Aglauros.</notify>
+    </notifies>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Aglauros said infiltrating the Udas Temple was the only hope of discovering the motives of Dragonbound.</p>
+          <p> </p>
+          <p>You couldn't unveil the enemy's motives, but you did find a passage to a lower level, which will open with the key Aglauros attuned.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

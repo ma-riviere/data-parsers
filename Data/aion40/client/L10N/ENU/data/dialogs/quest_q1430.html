@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I told her, "Teleportation is tricky, not something to mess with." Of course, she didn't listen, did she?</p>
+          <p> </p>
+          <p>She has to try her little experiments. "I can do it without the machine," she says. "Just watch," she says.</p>
+          <p> </p>
+          <p>I watched, all right. It's been...festive.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Sorry, who are you talking about?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_N_Sonirim], of course. She has guts, I'll give her that, but she's crazy thinking that she can teleport anyone by manipulation of Aether alone!</p>
+          <p> </p>
+          <p>She won't listen to me, of course. Just asks me to send her people she can practice on.</p>
+          <p> </p>
+          <p>What about you, [%username]? Are you feeling gutsy?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Really? You're willing to help out? Wow. Truth be told, I was just going through the motions by asking you in the first place.</p>
+          <p> </p>
+          <p>Well, don't say I didn't warn you. She's up on the second floor if you're ready to be experimented on.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"It'd be nice not to need the machine...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No? Shocking.</p>
+          <p> </p>
+          <p>I was just going through the motions asking you, truth be told. I wouldn't actually recommend anyone be experimented on.</p>
+         </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Right. Thanks."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, a VISITOR! I don't get many these days, for some reason.</p>
+          <p> </p>
+          <p>What can I do for you?</p>
+         </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Onesimus sent me to see you...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Then I can teleport you?! YES!</p>
+          <p> </p>
+          <p>Oh thank you, [%username]! I really think that this will be great once I can get the hang of it. No machines! Think of the freedom! I'll do my best to keep you in one piece.</p>
+          <p> </p>
+          <p>So where would you like me to send you? THIS IS SO EXCITING!</p>
+         </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1_1">"Well, where can you send me?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, I've tried Poeta, Verteron, and Sanctum so far. Best to stick with those, I expect.</p>
+         </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"Okay, let's try Poeta."</Act>
+      <Act href="HACTION_SETPRO1">"How about Verteron then?"</Act>
+      <Act href="HACTION_SETPRO1">"Let's try Sanctum."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're alive! YES!</p>
+          <p> </p>
+          <p>Wait wait...let me look. Two arms, two legs, wings--YES! I'm going to get rid of these machines yet!</p>
+          <p> </p>
+          <p>Where did I send you again? Was it where you wanted to get to?</p>
+         </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="PLAYEMOTION_sorry;HACTION_SELECT_QUEST_REWARD">"Erm...it was Asmodae, so...no."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>ASMODAE?! Not again!</p>
+          <p> </p>
+          <p>No! This WILL work, I don't care what Onesimus says! I'm not giving up.</p>
+          <p> </p>
+          <p>I'm sorry though, [%username]. Let me give you this to make up for it.</p>
+         </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk to [%dic:STR_DIC_N_Sonirim].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Return to Elysea and talk to [%dic:STR_DIC_N_Sonirim].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Onesimus the Teleporter asked you to help Sonirim. Go to the second floor of the Fortress and meet her.</font></p>
+        </body>
+        </html>
+    </Contents>
+    <notifies>
+       <notify progress="1"  pos="3" fontsize="16" showframe="true" time="5" color="yellow">Sonirim sent you to Asmodae! Find a way back!</notify>
+    </notifies>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Onesimus asked you to help Sonirim, a young-looking Daeva who is trying to find a way to teleport people by manipulation of Aether alone. You spoke to her and allowed her to send you to a region of Elysea, but she accidentally teleported you to Asmodae.</p>
+          <p> </p>
+          <p>You made your way back to Elysea and told Sonirim what had happened. She was so sorry that she gave you a gift as a token of apology.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I don't know how we lost Siel's Western Fortress. It's unacceptable.</p>
+          <p> </p>
+          <p>No point standing here lamenting, though. What's important is that we win the fortress back.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I agree."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We must wipe out the elite Asmodian troops while the fortress is being occupied. It's our best chance at success.</p>
+          <p> </p>
+          <p>Are you willing to help us?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Then go to the fortress when it is in the Vulnerable State and wipe out the [%dic:STR_DIC_M_1804_all]. That will take care of Asmodian Elite Fighters, Archers, Mages, and Priests. Their experience level is not important.</p>
+          <p> </p>
+          <p>Bring their [%dic:STR_DIC_I_QUEST_1804a] back to me. We decorate our armor with them to remind our enemies of their dead friends.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll return with them."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Why do you reject my request?</p>
+          <p> </p>
+          <p>Was your reputation just made up of lies, [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Erm...no?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've been waiting for you, [%username]. Took you long enough.</p>
+          <p> </p>
+          <p>No matter. Did you take care of it?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I did."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>How can you not have gone yet?</p>
+          <p> </p>
+          <p>What could you have been doing? Testing your wings?</p>
+          <p> </p>
+          <p>Go back out and bring me the [%dic:STR_DIC_I_QUEST_1804a]s. Don't disappoint me again.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"On my way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well done. Thank you.</p>
+          <p> </p>
+          <p>We'll demoralize those troops in no time and take back the fortress easily.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Wipe out the [%dic:STR_DIC_M_1804_all] and take the proof to [%dic:STR_DIC_N_Chrysaor].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">To reclaim Siel's Western Fortress, you must attack the fortress when it is occupied by the Asmodians. When the fortress is in the Vulnerable State, eliminate the elite troops of the Asmodian garrison and return with their Insignias.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Chrysaor said that to reclaim Siel's Western Fortress, you must attack the fortress when it was occupied by the Asmodians.</p>
+          <p> </p>
+          <p>When the fortress was in the Vulnerable State, you defeated the elite Asmodian Fighters, Archers, Mages and Priests, and returned to Chrysaor with their Insignias.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q3714</QuestId>
+    <QuestName>[Group] Kill an Auditor</QuestName>
+    <QuestType>Not entered</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Baranath Legion seems to be in serious chaos because of the damage you've dealt to the Dredgion, [%username].</p>
+          <p> </p>
+          <p>The Legion dispatched an investigator to Dredgion. We can only assume he's there to assess the damage and requisition reinforcements.</p>
+          <p> </p>
+          <p>This is an opportunity for us!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"An opportunity?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>If we stop him, we can delay the arrival of parts and reinforcements. It will take longer for the Dredgion to get back to fighting form.</p>
+          <p> </p>
+          <p>Which means...could you make another trip onto the Dredgion, [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'd expect [%dic:STR_DIC_M_IDAb1_Dreadgion_DrakanRAInspector_50_Ah] to be in the command center, but he might also be checking other places on board.</p>
+          <p> </p>
+          <p>The faster you deal with Nirshaka, the better our chances for slowing their repairs.</p>
+          <p> </p>
+          <p>Arieluma, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Arieluma."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I realize asking you to just kill one lone Balaur may seem insignificant after all you've accomplished, [%username], but this one Balaur may affect so many Elyos lives.</p>
+          <p> </p>
+          <p>Come back when you reconsider.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"You'll be the first to know."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm looking forward to the day we can drive the Dredgion from Reshanta for good.</p>
+          <p> </p>
+          <p>With Ariel's guidance and Daevas like you, [%username], that day will come soon.</p>
+          <p> </p>
+          <p>So what do you have to report?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Nirshaka is dead."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well done, [%username]. </p>
+          <p> </p>
+          <p>The Baranath Legion should be in confusion, and the Dredgion out of commission for a while. </p>
+          <p> </p>
+          <p>Perhaps...if we seize this opportunity...</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Eliminate [%dic:STR_DIC_M_IDAb1_Dreadgion_DrakanRAInspector_50_Ah] ([%2]/1).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report back to [%dic:STR_DIC_N_Mias].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Get rid of Auditor Nirshaka and prevent the Baranath Legion from repairing the Dredgion or sending reinforcements.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Maias said that the Baranath Legion sent Auditor Nirshaka to figure out the status of the Dredgion.</p>
+          <p> </p>
+          <p>As he suggested, you eliminated the investigator to prevent the Baranath Legion from initiating repairs or sending reinforcements.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

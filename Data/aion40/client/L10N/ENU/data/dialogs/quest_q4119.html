@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q4119</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hello [%username]. I feel a little bad asking you to do this, because it's a personal request.</p>
+          <p> </p>
+          <p>I made another trip into [%dic:STR_DIC_E_D_LF2a_entrance] and was chased out by [%dic:STR_DIC_E_D_LF2a_Q4119]. It gives me the shakes just thinking about it.</p>
+          <p> </p>
+          <p>On your next trip into the labs, I would like you to kill it. I don't have anything to reward you, but if you report your kill to [%dic:STR_DIC_N_Surt], he will have something for you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm glad that Parqusha is in charge of researching Theobomos Lab. He even keeps up on his paperwork!</p>
+          <p> </p>
+          <p>But lately, every report mentions how [%dic:STR_DIC_E_D_LF2a_Q4119] must be eliminated.</p>
+          <p> </p>
+          <p>That creature has him seriously frightened.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Not any more."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Parqusha will feel so much better now.</p>
+          <p> </p>
+          <p>I'll feel better too, because I won't have to read that name in any more of his reports.</p>
+          <p> </p>
+          <p>Thank you Daeva.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Kill [%dic:STR_DIC_E_D_LF2a_Q4119], which has scared Parqusha. ([%2]/1)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report to [%dic:STR_DIC_N_Surt].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Kill the monster that terrified Parqusha.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Parqusha asked you to kill Naughty Pocaching, which terrified him.</p>
+          <p> </p>
+          <p>You entered Theobomos Lab, killed Naughty Pocaching, and reported it to Surt. He told you that Parqusha would be much happier now.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

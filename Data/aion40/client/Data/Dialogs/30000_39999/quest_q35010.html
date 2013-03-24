@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 보시오.</p>
+          <p> </p>
+          <p>신성 수호회에서 활동하는 신관 트로우에게서 이상한 제보를 받았소.</p>
+          <p> </p>
+          <p>00월 00일 마족이 인테르디카 결계탑을 기습할지도 모른다는 제보요.</p>
+          <p> </p>
+          <p>하지만 그가 전에도 잘못된 정보를 보내온 적이 있기 때문에 좀더 확실한 정보가 필요한 상황이오.</p>
+          <p> </p>
+          <p>그러니 [%username]%이 가서 [%dic:STR_DIC_N_Trou]를 만나 상황을 파악한 뒤, [%dic:STR_DIC_E_35007]에게 보고하시오.</p>
+          <p> </p>
+          <p>만약 사태가 긴급하다고 판단되면 바로 조치를 취할 수 있도록 만반의 준비를 해 놓겠소.</p>
+          <p> </p>
+          <p>명심하시오. 행동은 신속하게! 입은 무겁게! </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">의뢰서를 접어 넣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(초조한 기색으로) 무슨 일이십니까?</p>
+          <p> </p>
+          <p>혹시 신성 수호회에서 오신 겁니까?</p>
+          <p> </p>
+          <p>아아! 그렇다면 왜 이렇게 늦게 오신 겁니까! </p>
+          <p> </p>
+          <p>혼자서 걱정이 돼서 죽는 줄 알았다고요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">제보에 대해 상세히 물어본다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그러니까, 그게...</p>
+          <p> </p>
+          <p>특별한 징후가 있었던 것은 아니고...</p>
+          <p> </p>
+          <p>제 꿈에서 봤단 말입니다.</p>
+          <p> </p>
+          <p>시커먼 날개들이 인테르디카 결계탑을 뒤덮는 무서운 광경을요.</p>
+          <p> </p>
+          <p>제발 꿈이 현실이 안 되어야 할 텐데... </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>어떻게 된 겁니까?</p>
+          <p> </p>
+          <p>신관 트로우가 제보했다는 그 정보 말입니다.</p>
+          <p> </p>
+          <p>만약 그게 사실이라면 엘리시움에 알려야 하는 것 아닌가요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>뭐, 뭐라고요?</p>
+          <p> </p>
+          <p>꿈이라니, 정말 어이없는 일이로군요.</p>
+          <p> </p>
+          <p>아무리 신관이라지만 그런 일로 호들갑을 떨다니, 이거 완전히 속은 느낌이로군요.</p>
+          <p> </p>
+          <p>하지만 어쩔 수 없습니다. 가끔 그런 황당한 제보 속에 값진 정보가 들어 있는 경우가 있거든요. </p>
+          <p> </p>
+          <p>물샐 틈 없이 결계탑을 수호하다 보면 가끔 그런 헛걸음도 생긴답니다. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_Trou]%와 대화하라</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_E_35007]%에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">신성 수호회에서 의뢰서가 왔다. 지시에 따르자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>신성 수호회는 마족이 인테르디카 결계탑을 기습하려한다는 신관 트로우의 제보가 사실인지 확인하라고 했다.</p>
+          <p> </p>
+          <p>트로우를 만나 물어보니 꿈에서 그와 비슷한 것을 봤다는 것이었다.</p>
+          <p> </p>
+          <p>이 사실을 팔리스에게 보고하자, 어이없지만 가끔 황당한 제보 중에 귀한 정보가 들어 있기도 하다며 결계탑을 수호하려면 어쩔 수 없다고 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

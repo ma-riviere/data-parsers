@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's time to make this village our home! We're starting a new program to improve every aspect our our village, from fountains to flowers, and bricks to bells!</p>
+          <p> </p>
+          <p>Today's task: Collect [%dic:STR_DIC_E_metal_n_c_housing_d] and bring it to the [%dic:STR_DIC_N_Town_D_shugo_Worker_05] so that a new fountain can be built.</p>
+          <p> </p>
+          <p>- Village Manager -</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Every day villagers come and ask same nyerking question! "When will village have fountain?" they ask, so finally got fed up with questions and decided to start fountain construction.</p>
+          <p> </p>
+          <p>First step is to build fountain base, but base needs adamantium ore, and village has none. That's why notice was put up, see?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">"Well guess what I brought?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Adamantium ore! Show me, Daeva - must be of good quality!</p>
+          <p> </p>
+          <p>Yes! Perfect! Will start working on the fountain base right away. Soon villagers will have more fountain than they know what to do with! Akakakak!</p>
+          <p> </p>
+          <p>Here, Daeva! Payment for the ore.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Gather some [%dic:STR_DIC_E_metal_n_c_housing_d] and take it to the [%dic:STR_DIC_N_Town_D_shugo_Worker_05].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">A new village initiative has been started. The first task is to build a new fountain, the base of which will be made from adamantium ore. Gather some and help out.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>A new village initiative began, requiring you to gather adamantium ore for a new fountain. You did your part, and brought the ore to the village's construction boss, who thanked you and gave you a small payment.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

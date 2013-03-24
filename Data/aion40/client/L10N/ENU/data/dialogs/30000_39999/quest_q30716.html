@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q30716</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The [%dic:STR_DIC_W_IDTiamat_SZ_S5] is becoming quite the headache, [%username]. The entrance is so narrow that they can effectively defend the entire base with a fraction of the soldiers that we have to deploy.</p>
+          <p> </p>
+	  			<p>We need your help. The [%dic:STR_DIC_E_Q30716a]s won't be expecting an elite [%userclass] like you. Smash through their defenses, and help us end this bloody war.</p>
+          <p> </p>
+          <p>When you're finished, return to Tiamaranta and report to [%dic:STR_DIC_N_Erephe].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]!</p>
+          <p> </p>
+          <p>What are you doing here? I thought you were at the Tiamat Stronghold?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I have a report for you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Defeated?? Excellent!</p>
+          <p> </p>
+          <p>Now the way is clear for our troops to take the Headquarters. It's a key strategic location that should make the rest of our assaults much easier.</p>
+          <p> </p>
+          <p>You have saved a great many lives, friend. Thank you for all that you've done!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Wipe out the [%dic:STR_DIC_E_Q30716a]s ([%2]/8).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report back to [%dic:STR_DIC_N_Erephe].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">The Elyos forces have been struggling to defeat the Balaur defending the headquarters. Lend them your strength and clear out the defenses.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ariana told you how the Tahabata Legion HQ was extremely well defended, causing the Elyos assault to stall. You offered to help, and wiped out the Balaur forces.</p>
+          <p> </p>
+          <p>On your return, Erephe thanked you for your work, and told you that the war should be a little smoother now.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

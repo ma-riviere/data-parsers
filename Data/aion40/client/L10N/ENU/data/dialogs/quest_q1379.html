@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hey, hey! Shoo! Scram!</p>
+          <p> </p>
+          <p>Oh, ah...hello!</p>
+          <p> </p>
+          <p>I wasn't shouting at you, [%username], just the blasted Drakes.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"For what reason?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Because they're terrible pests, that's why!</p>
+          <p> </p>
+          <p>As the land's dried out, they've congregated near every source of water, growing bold and taking what they want. Even the spring's not safe. If I turn back to my studies for even a moment...</p>
+          <p> </p>
+          <p>I fenced them out, but with their strength they'll easily tear through soon.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"So kill a few. That works!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I am tempted, believe me. But I am...not a warrior, really.</p>
+          <p> </p>
+          <p>You're an experienced [%userclass]. Couldn't you help me?</p>
+          <p> </p>
+          <p>It's just the ones that hover around the Mystic Spring.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes, just kill 8 [%dic:STR_DIC_M_Drake_28_An]s and 4 [%dic:STR_DIC_M_Drake_30_An]s.</p>
+          <p> </p>
+          <p>That should scare away the rest.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"That sounds about right."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes, yes, I suppose you're much in demand!</p>
+          <p> </p>
+          <p>Just have to think of another solution.</p>
+          <p> </p>
+          <p>Poisoned Gorgon meat, perhaps....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"You'll find a way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hope that's not your blood!</p>
+          <p> </p>
+          <p>Those creatures' bills are quite sharp, and often the wounds fester.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Nope, it's Drake blood."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, yes! The noise has already abated.</p>
+          <p> </p>
+          <p>I did well asking you, dear [%username].</p>
+          <p> </p>
+          <p>Though I fear I've forgotten something.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Remove Drakes from around the Laquepin Mystic Spring.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Drake_28_An] ([%2]/8)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Drake_30_An] ([%5]/4)</font></p></step>         
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_N_Esaias].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Clear away Drakes so Esaias can study the tainted Mystic Spring in peace.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Drakes fleeing the desert are depleting the water of the Mystic Spring, and Esaias is too busy battling them to do his work.</p>
+          <p> </p>
+          <p>Since Daevas of Life are poor in combat, you drove off the Drakes for him.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

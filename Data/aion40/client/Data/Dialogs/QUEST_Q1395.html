@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이 일을 어쩌면 좋지요.</p>
+          <p> </p>
+          <p>레파르 혁명단 놈들의 기지 건설이 급격히 진척되고 있습니다.</p>
+          <p> </p>
+          <p>일하는 놈들도 계속 늘어나고 건물 터도 점점 늘어나고 있어요.</p>
+          <p> </p>
+          <p>요새에 연락을 해도 대책을 세울 때까지는 시간이 걸릴 텐데... </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">돕겠다고 말한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그래만 주시면 정말 고맙지요. </p>
+          <p> </p>
+          <p>일단은 공사를 방해하는 게 최우선입니다. </p>
+          <p> </p>
+          <p>건설 현장의 수비를 담당하고 있는 [%dic:STR_DIC_M_LehparWa_38_An]과 공사를 담당하고 있는 [%dic:STR_DIC_M_LehparWorkerEM_37_An], [%dic:STR_DIC_M_LehparWorkerFM_38_An]을 없애 주십시오.</p>
+          <p> </p>
+          <p>공사를 담당하는 놈들을 처치하면 일단 시간을 벌 수 있을 겁니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정말 감사합니다. </p>
+          <p> </p>
+          <p>그럼 당장 레파르 혁명단 건설기지로 가서 [%dic:STR_DIC_M_LehparWa_38_An]%와 [%dic:STR_DIC_M_LehparWorkerEM_37_An], [%dic:STR_DIC_M_LehparWorkerFM_38_An]을 처치해 주세요.</p>
+          <p> </p>
+          <p>전 그 사이에 요새에 이 사실을 알리고 놈들을 막을 수 있는 묘책이 없는지 알아보겠습니다.</p>
+          <p> </p>
+          <p>[%username] 님도 조심하십시오!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님이 거절하실 줄은 몰랐습니다. </p>
+          <p> </p>
+          <p>데바로서의 사명감이 강하다고 하더니 다 헛소문이었나 보군요.</p>
+          <p> </p>
+          <p>싫다는데 어떻게 강요할 수 있겠습니까.</p>
+          <p> </p>
+          <p>혼자라도 놈들을 처치하러 가야지요. [%username] 님은 신경 쓰지 마십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>혁명단 건설기지에는 다녀오셨습니까?</p>
+          <p> </p>
+          <p>그새 공사가 얼마나 진척됐던가요?</p>
+          <p> </p>
+          <p>제가 부탁한 놈들을 모두 처치하셨겠죠?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>휴, 다행입니다. 일단 시간은 번 셈이로군요.</p>
+          <p> </p>
+          <p>그동안 요새에서 빨리 작전을 세워야 할 텐데 말입니다.</p>
+          <p> </p>
+          <p>그나마 한숨 돌린 건 다 [%username] 님 덕분입니다. 정말 감사합니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">혁명단 건설기지의 레파르 혁명단을 처치하라</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_LehparWa_38_An]([%2]/2)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_LehparWorkerEM_37_An]([%5]/3)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_LehparWorkerFM_38_An]([%8]/5)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Laigas]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">혁명단 건설기지에 계속 건물이 늘어난다고 한다. 놈들이 기지를 완성하지 못하도록 레파르 혁명단을 처치해야겠다.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>라이가스는 혁명단 건설기지의 작업 진척 속도가 빨라졌다면서 매우 걱정했다. 그래서 놈들이 기지를 완성하지 못하도록 기지를 건설하고 있는 건설기지 노역꾼과 잡역꾼, 건설 현장을 수비하고 있는 혁명단 돌격병을 처치했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

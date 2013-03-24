@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Greetings, Elyos. It's been some time since I've had a good chat with one of your kind.</p>
+          <p> </p>
+          <p>It's strange how our races used to be so similar, and yet are now so...separated.</p>
+          <p> </p>
+          <p>Oh, do you...uh...might you be...?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Might I be...?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Might you be headed to the Scar Canyon anytime soon?</p>
+          <p> </p>
+          <p>You see, I was there recently and ran into a few Crestliches and Pucas. I thought I could handle them, but they...handled me, I suppose you could say.</p>
+          <p> </p>
+          <p>I escaped, but they tore off my sack...all my belongings went flying out. I just left it all there and ran as fast as I could!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"They're pretty tough."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes, very tough. Especially when they encircle you--nothing you can do but run.</p>
+          <p> </p>
+          <p>But I lost some ancient treasure that I was holding for Gelon.... I haven't told him yet.</p>
+          <p> </p>
+          <p>Would you find the [%dic:STR_DIC_I_QUEST_11104a] and [%dic:STR_DIC_I_QUEST_11104b] that the Crestliches and Pucas took from me? Before Gelon finds out?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you, Elyos. Gelon will chew my head off if he finds out!</p>
+          <p> </p>
+          <p>The [%dic:STR_DIC_I_QUEST_11104a] and [%dic:STR_DIC_I_QUEST_11104b] are somewhere out there.</p>
+          <p> </p>
+          <p>I will never forget your kindness, my friend.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Favors make favors."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It was silly of me to ask an Elyos for help. Your kind always steers clear of us Reians.</p>
+          <p> </p>
+          <p>I hoped you would be different...but I understand.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"It's nothing personal."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, you're just in time, Elyos! Gelon just came to me and asked to have his treasures back. I lied and said that my friend was cleaning them.</p>
+          <p> </p>
+          <p>Please tell me you found them on a [%dic:STR_DIC_M_LF4_B_Crestlich_Stone_53_n] or [%dic:STR_DIC_M_LF4_B_Bookie_Stone_53_An]....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here is Gelon's treasure."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You haven't left yet? I heard Gelon is on his way here.... You must find his treasure for me!</p>
+          <p> </p>
+          <p>He'll hang me out to dry if I don't have his treasures when he comes! Please, Elyos.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Don't worry, my friend."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ahhh, you've found it! And the Watch and Hairpin don't look to be too badly scratched up.</p>
+          <p> </p>
+          <p>I was fearing the worst...but Gelon will never notice.</p>
+          <p> </p>
+          <p>Thank you, Elyos. You have saved my hide today. I owe you...I owe you greatly.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Find the items that [%dic:STR_DIC_M_LF4_B_Crestlich_Stone_53_n] and [%dic:STR_DIC_M_LF4_B_Bookie_Stone_53_An] took and bring them to [%dic:STR_DIC_N_Savinus].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Savinus said that creatures in the Scar Canyon took Gelon's treasures. Get rid of Crackled Crestliches and Smiling Pucas to find the Reian treasures.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Savinus said Crackled Crestliches and Smiling Pucas took Gelon's treasure.</p>
+          <p> </p>
+          <p>You got rid of the Crestliches and Pucas and found the Reian treasures that Savinus lost.</p>
+          <p> </p>
+          <p>When you brought back the items, he was very thankful.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

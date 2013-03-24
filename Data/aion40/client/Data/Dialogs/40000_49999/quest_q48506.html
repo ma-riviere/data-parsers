@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>구하고 싶은 동전이 있어서 온 거냥?</p>
+          <p> </p>
+          <p>동전 교환의 규칙은 알고 있지?</p>
+          <p> </p>
+          <p>눈에는 눈, 동전에는 동전! </p>
+          <p> </p>
+          <p>내가 가진 동전을 얻으려면 데바도 그에 맞는 값어치의 동전을 구하린린에게 줘야한당. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">고개를 끄덕인다.</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>구하린린이 수집 중인 동전은 흥신소 증표이당. </p>
+          <p> </p>
+          <p>교환 가능한 동전은 특수사령부 증표이고 말이당.</p>
+          <p> </p>
+          <p>구하린린과 동전 교환을 할 거냥?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(품에서 두루마리를 꺼내 살피며) 현재 시세로는 특수사령부 증표 6개가 흥신소 증표 7개와 맞먹는구낭.</p>
+          <p> </p>
+          <p>그러니 데바가 구하린린에게 [%dic:STR_DIC_I_COIN_D_HUNTERS_01] 7개를 줘랑.</p>
+          <p> </p>
+          <p>그럼 특수사령부 증표를 데바에게 주겠당, 갸릉.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">흥신소 증표를 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>데바가 원하는 동전이 아닌가 보구낭.</p>
+          <p> </p>
+          <p>아쉽지만 조건이 안 맞으면 어쩔 수 없지, 갸릉.</p>
+          <p> </p>
+          <p>나중에라도 특수사령부 증표가 필요하면 와랑.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>교환할 동전을 가져온 거냥?</p>
+          <p> </p>
+          <p>어디 가져온 걸 이리 줘봐랑.</p>
+          <p> </p>
+          <p>제대로 가져왔는지 확인해 봐야겠당, 갸릉.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">흥신소 증표를 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>구하린린이 말하는 동안 어디 갔었냥?</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_I_COIN_D_HUNTERS_01] 7개가 있어야 내가 가진 증표로 교환해 줄 수 있다고 말하지 않았냥.</p>
+          <p> </p>
+          <p>조건이 맞지 않으면 절대 동전 교환을 해 줄 수 없으니 그리 알아랑, 갸릉.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(증표를 하나씩 살피며) 모두 진짜 흥신소 증표가 맞구낭.</p>
+          <p> </p>
+          <p>냥, 가끔 위조 증표가 있기도 해서 말이당.</p>
+          <p> </p>
+          <p>데바가 약속을 지켰으니 이젠 내가 지켜야겠지, 갸릉.</p>
+          <p> </p>
+          <p>(큐브에서 뭔가를 꺼내며) 받아랑. 특수사령부 증표당.</p>
+          <p> </p>
+          <p>계속해서 특수사령부 증표를 흥신소 증표로 교환할 생각이니 가지고 있는 흥신소 증표가 더 있으면 언제든 찾아와랑, 갸릉.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_I_COIN_D_HUNTERS_01]를 모아 [%dic:STR_DIC_N_Shugo_Exchange_08]에게 가져가라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">구하린린이 흥신소 증표를 수집한다고 한다. 흥신소 증표를 가져가 특수사령부 증표로 교환해야겠다.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>동전 수집가 구하린린은 자신이 가진 특수사령부 증표를 흥신소 증표로 교환하고 싶다고 했다.</p>
+          <p> </p>
+          <p>그래서 가지고 있던 흥신소 증표를 구하린린에게 주고 특수사령부 증표로 교환했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

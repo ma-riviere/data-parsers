@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p align="center"> - 현상 수배 - </p>
+          <p> </p>
+          <p>큰 부리 파피니를 아래의 죄목으로 현상수배하는 바이다.</p>
+          <p></p>
+          <p>현상금 사냥꾼 협회원은 다음 내용을 숙지하고 지시에 따라 주기 바란다. </p>
+          <p> </p>
+          <p> 1. 이름: [%dic:STR_DIC_M_LF4_DayQ_Lupyllini_52_n] </p>
+          <p></p>
+          <p> 2. 죄목: 사냥용 덫 파괴</p>
+          <p></p>
+          <p> 3. 상세: 가디언의 식량 조달용 덫을 보이는 대로 파괴하여 큰 물질적, 정신적 피해를 입힌 바 있음. 일그러진 숲 북부에서 종종 모습을 드러낸다고 함.</p>
+          <p> </p>
+          <p>일그러진 숲 북부에 [%dic:STR_DIC_OBJ_LF4_FOBJ_Q36504]%을 놓았으니 큰 부리 파피니가 나타나면 가장 먼저 처치하는 자에게 후사하겠음.</p>
+          <p> </p>
+          <p>- 현상금 사냥꾼 협회, [%dic:STR_DIC_E_36500] 백</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">전단지를 접어 넣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+   <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>저희 현상금 사냥꾼은 무슨 일이든 합니다.</p>
+          <p> </p>
+          <p>현상금만 걸려 있다면 동물, 식물, 사람 가리지 않지요!</p>
+          <p> </p>
+          <p>[%username] 님도 그런 현상금 사냥꾼의 마음가짐에 익숙해지셨겠죠? 그럼 어떤 일을 완수하셨는지 볼까요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>사냥용 덫을 파괴하던 파피니 자신이 덫에 걸린 셈이군요! 그것 참 고소한 이야기네요.</p>
+          <p> </p>
+          <p>가뜩이나 보급품을 얻을 일도 곤란한 가디언들이 자급자족마저 어렵다며 불만을 토로하고 있던 참이었는데 말이죠.</p>
+          <p> </p>
+          <p>골치아픈 동물을 처리해 주셨으니 마땅한 보상을 드려야겠네요.</p>
+          <p> </p>
+          <p>수고많으셨습니다, [%username] 님.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_OBJ_LF4_FOBJ_Q36504]%으로 [%dic:STR_DIC_M_LF4_DayQ_Lupyllini_52_n]%을 유인해 처치하라([%2]/1)</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_E_36500]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">현상금 사냥꾼 협회에서 현상 수배 전단지가 왔다. 지시에 따르자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>현상금 사냥꾼 협회에서 현상 수배 전단지가 왔다.</p>
+          <p> </p>
+          <p>가디언들의 식량 조달을 방해한 죄목으로 수배된 큰 부리 파피니를 처치하고  잉기스온 현상금 관리인에게 보고하자 수고했다며 사례를 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

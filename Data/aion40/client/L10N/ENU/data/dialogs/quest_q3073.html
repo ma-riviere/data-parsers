@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm glad you're here, [%username]. I need to ask you a great favor.</p>
+          <p> </p>
+          <p>We're shorthanded these days--so many Daevas are being sent to the Abyss.</p>
+          <p> </p>
+          <p>Manastone removal isn't easy to learn and we need to train more workers to help us.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"How can I assist you?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We're training Manastone Removers at the Manastone Removers Association, but we need more Manastones.</p>
+          <p> </p>
+          <p>Obviously I can't leave my seat, so would you please bring me more Manastones?</p>
+          <p> </p>
+          <p>I can't pay, but I'll give you a useful Manastone in return.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This time, I need MP +60, Evasion +12, and Parry +20 Manastones.</p>
+          <p> </p>
+          <p>They're relatively common, so it shouldn't be too hard.</p>
+          <p> </p>
+          <p>I'll leave the details to you, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be back with your stones."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I know, I know--you're not satisfied with the reward, but it's all for Elysea!</p>
+          <p> </p>
+          <p>One good turn deserves another. Please help me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Sorry. I can't help you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, you're just in time, [%username]!</p>
+          <p> </p>
+          <p>I was just about to send the Manastones I've already gathered to the association.</p>
+          <p> </p>
+          <p>Now I can add yours to the shipment.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here you are, Dania."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>These aren't the stones I'm looking for.</p>
+          <p> </p>
+          <p>The association asked for MP +60, Evasion +12, and Parry +20 Manastones.</p>
+          <p> </p>
+          <p>I think you were confused because they do look alike. Please bring me the correct ones.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"My mistake. I'll be back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You brought the stones! Here is the Manastone I promised you.</p>
+          <p> </p>
+          <p>This will definitely help, but I can always send more. If you find the same Manastones you brought today, bring them to me.</p>
+          <p> </p>
+          <p>Thanks so much, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+<HtmlPage name="select9">
+ 	<Contents cdata="true">
+ 		<html>
+ 		<body>
+ 			<p>There's no pressure, but I've been asked to ask if you have any more of those manastones.</p>
+ 			<p> </p>
+ 			<p>If you had another batch of  a of MP +60, Evasion +12, and Parry +20 manastones, I could make the same trade again.</p>
+ 			<p> </p>
+ 			<p>Just tell me if you're interested.</p>
+ 		    <p> </p>
+ 	    </body>
+        </html>
+    </Contents>
+    <Selects>
+    	<Act href="HACTION_QUEST_ACCEPT">Accept.</Act>
+        <Act href="HACTION_FINISH_DIALOG">"Perhaps I'll come around again later."</Act>
+    </Selects>
+  </HtmlPage>
+  
+   <HtmlPage name="select10">
+ 	<Contents cdata="true">
+ 		<html>
+ 		<body>
+ 			<p>The Association is somewhat insistent on the correct combinations, sorry.</p>
+ 			<p> </p>
+ 			<p>What I really need is a set of  MP +60, Evasion +12, and Parry +20 manastones.</p>
+ 			<p> </p>
+ 			<p>Again, there's no pressure. Just come back when you have the right ones and we'll make the exchange.</p>
+ 			<p> </p>
+ 	    </body>
+        </html>
+    </Contents>
+    <Selects>
+        <Act href="HACTION_FINISH_DIALOG">"Until then."</Act>
+    </Selects>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect Manastones and bring them to Dania.</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Collect MP +60, Evasion +12 and Parry +20 Manastones that the Manastone Removers Association needs, and bring them to Dania.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Dania needs more Manastones to train new removers.</p>
+          <p> </p>
+          <p>You brought her the new stones, she thanked you, and gave you another useful Manastone.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

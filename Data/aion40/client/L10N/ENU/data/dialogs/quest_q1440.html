@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The sandstorms are very heavy today. You should take extra care on days like this; the desert animals become even more violent.</p>
+          <p> </p>
+          <p>Well, you've dealt with them, [%username]--you know. The animals here are very fierce, especially the Sheluks, Amphas, and Gnarls.</p>
+          <p> </p>
+          <p>Sentinels get injured by them quite often. </p>       
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Constant vigilance is required."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>When the Sentinels come back injured, I treat their wounds with mashed Umblia. </p>
+          <p> </p>
+          <p>The herb has a calming effect, and seldom leaves a scar if applied correctly.</p>
+          <p> </p>
+          <p>I just can't procure enough by myself. If you are not busy, will you please help me? </p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you so much. There's no time to be lost!</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_E_herb_n_c_20b] is a herb that grows near the desert, so you should be able to collect it easily around here.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll head right out."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Not everybody can afford potions, you know. Sometimes, you just have to make do.</p>
+          <p> </p>
+          <p>Well, I suppose you wouldn't come to the desert if you didn't have business here.</p>
+          <p> </p>
+          <p>Don't worry about it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I have to be going now."</Act>
+    </Selects>
+  </HtmlPage>
+  
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well , that's the last of it. [%username], were you able to find any Umblia?</p>
+          <p> </p>
+          <p>It's common enough, but there are weed plants that are very similar in appearance.</p>
+          <p> </p>
+          <p>Let me see what you have, so that I can check the quality.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"No problem. Take a look."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I thought as much. It's a common mistake, don't worry.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_E_herb_n_c_20b] is the one with green leaves and light purple flowers. Be sure to bring as much as you can find.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Okay. Thanks for the information."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm impressed! </p>
+          <p> </p>
+          <p>Most people can't distinguish between Umblia and other plants, but you brought the right ones.</p>
+          <p> </p>
+          <p>Take this, as a reward for your help.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect [%dic:STR_DIC_E_herb_n_c_20b] and bring it to [%dic:STR_DIC_N_Makarios].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">A herb is needed to heal the wounded. Collect Umblia in the desert, and bring it to Makarion.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Makarion was worried that there had been so many attacks by violent desert animals that he could not collect enough herbs to treat the wounded.</p>
+          <p> </p>
+          <p>You collected Umblia in the desert and brought them to him. He asked you to bring by any more you happened to collect later.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

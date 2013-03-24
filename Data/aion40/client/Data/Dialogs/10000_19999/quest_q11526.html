@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q11526</QuestId>
+    <QuestName>느빌림 처치</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님. 며칠 전, 제 요청을 받고 공방 내부로 향했던 정찰병들이 며칠째 돌아오지 않고 있습니다.</p>
+          <p> </p>
+          <p>아무래도 느빌림 장인들에게 당한 것 같은데... 큰일이군요.</p>
+          <p> </p>
+          <p>꼭 확인해봐야 할 것이 있는데...</p>
+          <p> </p>
+	<p>아! [%username] 님께서 [%dic:STR_DIC_W_LDF4a_SZ_B2_09]으로 가서 [%dic:STR_DIC_M_LDF4A_B2_Nepilim_R_58_Ae]와 [%dic:STR_DIC_M_LDF4A_B2_Nepilim_M1_58_Ae]를 처치해 주시면 안 될까요?</p>
+          <p> </p>
+          <p>정찰 임무는 시간이 오래 걸릴 테니 [%username] 님께 맡길 수는 없어요. 하지만 정찰병들을 위해 그들을 처치해 주실 수는 있겠죠?</p>
+<p> </p>
+<p>당신같은 훌륭한 [%userclass]이라면 어렵지 않을 테니까요 </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+	<p>요즘 드바림 지하공방에서는 이제까지와 다른 뭔가가 느껴집니다.</p>
+          <p> </p>
+          <p>분위기랄까... 아무튼 형용하기 힘들지만 뭔가 분명히 변했어요...</p>
+          <p> </p>
+	<p>그것을 알아내기 위해 정찰병이 필요한 거예요.</P>
+          <p> </p>
+          <p>참, [%dic:STR_DIC_M_LDF4A_B2_Nepilim_R_58_Ae]와 [%dic:STR_DIC_M_LDF4A_B2_Nepilim_M1_58_Ae]는 처치하고 오셨나요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그렇군요. 정말 수고가 많으셨습니다.</p>
+          <p> </p>
+          <p>사실 사라진 정찰병들의 행방을 찾는 게 먼저겠지만... [%username] 님 같은 바쁜 분께 그런 일을 시킬 수야 없죠.</p>
+          <p> </p>
+          <p>여기, 고생하셨으니 당연히 대가를 드려야겠죠?</p>
+
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+              <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_W_LDF4a_SZ_B2_09]의 느빌림들을 처치하라</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_LDF4A_B2_Nepilim_M1_58_Ae] ([%2]/3)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_LDF4A_B2_Nepilim_R_58_Ae] ([%5]/3)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Ghaitia]와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">정찰을 방해하는 드바림 지하공방의 느빌림 장인들을 처치하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>가이티아는 드바림 지하공방에 설명하기 힘든 어떤 변화가 있는 것 같다며 정찰병들을 보냈다고 했다.</p>
+          <p> </p>
+          <p>그들이 돌아오지 않는 것으로 봐서 느빌림 장인들에게 발각되어 봉변을 당한 것 같다고 말했다.</p>
+          <p> </p>
+          <p>그녀는 다음 정찰병들이 무사히 작전을 펼칠 수 있도록 느빌림 장인들을 처치해 달라고 부탁했고, 드바림 지하공방으로 가 그 부탁을 들어줬다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've been thinking, [%username]. Knocking off the Mosbears one by one isn't going to solve the problem. It's a temporary solution at best.</p>
+          <p> </p>
+          <p>We need something that will take care of the problem on a more permanent level. I think the best way to really get at this issue will be to take out their leader.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Didn't you mention him before?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I did mention him before. That new leader of theirs seems to be what's gotten them all so suddenly violent. Eliminate him, eliminate the source of the problem.</p>
+          <p> </p>
+          <p>How do you feel about taking care of this for me?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Great. The Mosbear that's taken over is called [%dic:STR_DIC_M_MosbearReBigNamedDQ_34_An].</p>
+          <p> </p>
+          <p>He lives in a cave in the deepest part of the Mosbear Snowfield.</p>
+          <p> </p>
+          <p>Once you've taken care of him, get the [%dic:STR_DIC_I_QUEST_2525a] off him, and bring it back to me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"The task is mine."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hmm.</p>
+          <p> </p>
+          <p>Really, it's just one more Mosbear. Yes, he's probably a bit tougher, but...it's just one.</p>
+          <p> </p>
+          <p>That's fine, though. I'll find someone else. Surely someone will pass by this way.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Good luck."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hmm...you look...unscathed.</p>
+          <p> </p>
+          <p>How did it go?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Completed."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You seem to have forgotten the leather I asked for.</p>
+          <p> </p>
+          <p>Please, go out and retrieve it if you've killed him, and kill him if you haven't!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"On my way!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent work, [%username].</p>
+          <p> </p>
+          <p>Thanks for your hard work.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get rid of [%dic:STR_DIC_M_MosbearReBigNamedDQ_34_An] and take the evidence to [%dic:STR_DIC_N_Sorgrim].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Get rid of Snowfur, the Mosbear leader, and deliver his leather to Sorgrim.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Sorgrim wanted to eliminate the fundamental cause of the Mosbear problem, and decided that their new leader needed to be eliminated.</p>
+          <p> </p>
+          <p>You defeated Snowfur and took his leather to Sorgrim.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

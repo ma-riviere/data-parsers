@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q21517</QuestId>
+    <QuestName>칼리돈 발자국</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>며칠 전, 한 피난민 무리가 피를 흘리며 이곳으로 왔습니다. 어떻게 된 일이냐고 물어보니, [%dic:STR_DIC_W_LDF4a_SZ_A1_04]을 지나는데 난폭한 칼리돈에게 습격당했다고 했습니다.</p>
+          <p> </p>
+          <p>문제는 며칠 전에도 칼리돈에게 습격당한 피난민들이 도착했다는 겁니다.</p>
+          <p> </p>
+          <p>이제 사르판 수호대에 정식으로 토벌대 구성을 요청해야겠지만, 그 전에 피난민을 습격한 것이 칼리돈의 소행이 분명하다는 증거를 준비해야 합니다.</p>
+          <p> </p>
+          <p>[%username] 님. 칼리돈이 피난민을 습격했다는 [%dic:STR_DIC_E_Q21517_ebi]%을 찾아와 주세요.</p>
+          <p> </p>
+          <p>피난민들은 [%dic:STR_DIC_W_LDF4a_SZ_A1_04]의 남쪽 끝 부분에서 당했다고 했으니 그 주변을 찾아보시면 될 겁니다.</p>
+          </body>
+        </html>
+    </Contents>
+    <Selects>
+        <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>어땠습니까? 증거가 남아 있었습니까?</p>
+          <p> </p>
+          <p>병력이 부족한 지금 같은 시기에 토벌대 구성을 요청하려면 칼리돈이 위험하다는 [%dic:STR_DIC_E_Q21517_ebi]가 있어야만 설득하기 쉬울 겁니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">칼리돈의 발자국을 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이 판자는 피난민이 타고 왔던 마차에서 떨어져나온 게 분명합니다.</p>
+          <p> </p>
+          <p>게다가 갈라진 발굽모양이 또렷이 찍혀 있으니 칼리돈의 소행이라는 것도 명확하게 알 수 있겠고요.</p>
+          <p> </p>
+          <p>일단 이렇게 확실한 증거가 있으니 빨리 상부에 전달해서 대책을 세우는 게 좋을 것 같습니다. 수고 많으셨습니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">오스티포 언덕길의 남쪽으로 가 칼리돈이 피난민을 습격했다는 [%dic:STR_DIC_E_Q21517_ebi]%을 찾아 [%dic:STR_DIC_N_Samuz]에게 돌아가라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">피난민들을 습격한 것이 칼리돈의 소행이라는 증거를 찾아내자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>사무즈는 칼리돈에게 습격당했다는 피난민의 이야기를 들려주며 칼리돈 토벌대를 요청하는데 어려움이 있다고 말했다.</p>
+          <p> </p>
+          <p>칼리돈이 피난민을 습격했다는 증거가 있어야만 토벌대가 편성될 것이라는 사무즈는 명확한 증거를 찾아 줄 것을 부탁했고, 오스티포 언덕길을 뒤져 명확한 증거를 찾아다 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

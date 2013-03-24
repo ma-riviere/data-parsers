@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>- 긴급 명령서 -</p>
+          <p> </p>
+          <p>1. 발신: 카탈람 토벌군의 폰 유격대장</p>
+          <p> </p>
+          <p>2. 수신: [%username]</p>
+          <p> </p>
+          <p>3. 명령: [%dic:STR_DIC_W_LDF5A_OP_L] 부근에서 천족의 동향을 살피고 [%dic:STR_DIC_M_LDF5A_OP_L_Guard_Fi_L_Q_61_An]을 처치해 주십시오!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">의뢰를 수행한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>가디언 보초병을 처치했습니까?</p>
+          <p> </p>
+		  <p>이런! 너무 큰 소리로 말했군요. 스텔만이 듣지 않았으면 좋겠는데...</p>
+		  <p> </p>
+		  <p>다시 조용히 묻겠습니다.</p>
+		  <p> </p>
+		  <p>가디언 보초병은 처리하셨습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">그렇다고 한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>잘 되었군요.</p>
+          <p> </p>
+		  <p>이제 제 부하들을 풀어 기습 공격을 할 생각입니다.</p>
+		  <p> </p>
+		  <p>천족 놈들이 깜짝 놀랄 테지요.</p>
+		  <p> </p>
+		  <p>이번 공격이 성공하면 스텔만보다 더 높은 자리로 올라갈 수도 있을 겁니다.</p>
+		  <p> </p>
+		  <p>모두 [%username] 님 덕분입니다. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_W_LDF5A_OP_L]에서 가디언 보초병을 암살하라</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_LDF5A_OP_L_Guard_Fi_L_Q_61_An]([%2]/2)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_LDF5A_Phone_E]%과 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">긴급 지령:재건된 빛의 탑 주위에 있는 가디언 보초병을 처치하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>천족 본거지를 살피던 중 카탈람 파견대의 폰 유격대장에게 지령이 왔다.</p> 
+		  <p> </p>
+		  <p>지령대로 천족 가디언을 처치하고 폰 유격대장에게 돌아갔다.</p> 
+		  <p> </p>
+		  <p>폰 유격대장은 천족 놈들이 깜짝 놀랐을 것이라며 기습 공격을 하겠다고 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

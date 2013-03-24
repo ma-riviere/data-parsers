@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Centurion is such a great man!</p>
+          <p> </p>
+          <p>Lately he just pores over the campaign maps of Reshanta, worrying over each new Asmodian gain.</p>
+          <p> </p>
+          <p>He said last night that if we can't reverse the trend, we'll never retake the fortress.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"He's likely right."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>See? Defeatism in our best soldiers! It's true we're short-handed, but we can still make a difference here!</p>
+          <p> </p>
+          <p>I've heard of your cunning and power, [%username]. Couldn't you do something to raise the Centurion's hopes?</p>
+          <p> </p>
+          <p>I don't expect you to take the fortress, but...maybe you could assassinate some of the [%dic:STR_DIC_M_1812_all]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good, good! We'll show the Centurion we can turn the tide!</p>
+          <p> </p>
+          <p>Our pressing need is to stop the spread of Asmodian influence in Reshanta, so you should attack while they occupy the fortress.</p>
+          <p> </p>
+          <p>When the fortress next enters the vulnerable state, infiltrate the fortress, slay some [%dic:STR_DIC_M_1812_all]s and take their [%dic:STR_DIC_I_QUEST_1812a]s.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Suppose it can't hurt..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Never mind. After all, could one Daeva do what even we Guardians cannot, [%username]?</p>
+          <p> </p>
+          <p>I understand. Don't worry about us, and go on your way.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Kid worries too much..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Here, sit!</p>
+          <p> </p>
+          <p>What a fight it must have been. You're covered in sweat!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"The flags you ordered."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Centurion Menelaus is already upset at me for sanctioning this mission, and now you're empty-handed?</p>
+          <p> </p>
+          <p>If you don't bring me those [%dic:STR_DIC_I_QUEST_1812a]s, my career will be ruined!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"How'd I get into this?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're a national treasure, [%username].</p>
+          <p> </p>
+          <p>Please accept this, it's all I can give you now.</p>
+          <p> </p>
+          <p>I must report to the Centurion. I can't wait to see his smile!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Defeat [%dic:STR_DIC_M_1812_all] troops, collect evidence, and take it to [%dic:STR_DIC_N_Mors].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Mors is frightened that his Centurion's bleak view of the war means he's depressed. To cheer him up, Mors wants to give him a victory. Hunt down garrison soldiers in Krotan Refuge, gather their flags, and take them to Mors.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Mors thinks Centurion Menelaus is depressed by the expanding Asmodian influence in Reshanta. He convinced you to cheer up the Centurion with an audacious secret mission.</p>
+          <p> </p>
+          <p>As he requested, you stalked the Asmodian elite garrison in the Krotan Refuge and took their Archon's Flags. Mors was certain this would reassure the Centurion that the long war would soon end.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(돌돌 말아 끈으로 단단히 묶은 두루마리다.)</p>
+          <p> </p>
+          <p>(아래쪽에 '울고른 님께'라고 적혀 있다.)</p>
+          <p> </p>
+          <p>(울고른 두목에게 전하는 것이 좋겠다.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">살펴보기를 그만둔다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>오, [%username]!</p>
+          <p> </p>
+          <p>그래, 무슨 일인가?</p>
+          <p> </p>
+          <p>내가 임무를 준 것 같지는 않은데...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="PLAYEMOTION_blush;HACTION_SELECT2_1">두루마리를 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>음, 웬 두루마리지?</p>
+          <p> </p>
+          <p>(두루마리를 풀어 읽는 동안 얼굴이 점점 붉어진다.)</p>
+          <p> </p>
+          <p>흠흠, 이건 어디서 발견한 건가? 그냥 버려둘 일이지 괜히 갖고 와서는...</p>
+          <p> </p>
+          <p>어쨌거나 이건 [%dic:STR_DIC_N_Linevir]의 것이니 돌려주는 게 좋겠군.</p>
+          <p> </p>
+          <p>미안하지만 난 죽은 아내를 잊지 못하고 있다고 전해 주게.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>영혼 치유를 받을 것도 아니면서 나한테는 무슨 볼일이야?</p>
+          <p> </p>
+          <p>난 중요한 일을 하느라 바쁘니까 용건만 간단히 말해 줬으면 좋겠어.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">두루마리와 두목의 말을 전한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(두목의 말을 듣자 얼굴이 새빨개진다.)</p>
+          <p> </p>
+          <p>아, 아니, 이게 어디서?</p>
+          <p> </p>
+          <p>두목님이 이걸 다 읽었단 말이야?</p>
+          <p> </p>
+          <p>내 마음을 적긴 했지만 받아 주지 않을 게 뻔해서 드리지도 못하고 가지고 있었던 건데.</p>
+          <p> </p>
+          <p>어디서 흘린 거지? 게다가 넌 이걸 왜 대뜸 두목님께 가져간 거야!</p>
+          <p> </p>
+          <p>난 몰라, 이제 두목님 얼굴을 어떻게 봐.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_Ulgorn]에게 편지를 가져가라</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_N_Linevir]에게 편지를 전하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">호수에서 사냥을 하다가 울고른 두목의 이름이 적힌 두루마리를 발견했다. 두목에게 가져가자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>호수에서 사냥을 하다가 울고른 두목의 이름이 적힌 두루마리를 발견했다.</p>
+          <p> </p>
+          <p>두목에게 가져가니 읽어 보고는 마음을 받을 수 없다며 리네비르에게 되돌려주라고 했다.</p>
+          <p> </p>
+          <p>리네비르는 두목이 읽었다는 것을 알자 매우 창피해하며 화를 냈다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

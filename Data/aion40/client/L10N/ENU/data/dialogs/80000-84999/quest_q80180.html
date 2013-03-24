@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, [%username]. I really need your help.</p>
+      	  <p> </p>
+          <p>The woman that I love is coming for a visit, and I want to propose to her.</p>
+          <p> </p>
+          <p>The trouble is, I can't leave my post for a while yet, and I want this proposal to be special. That's where you come in.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What do I do?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'd like you to deliver this engagement ring to her. Don't say who it's from, just give it to her.</p>
+          <p> </p>
+          <p>She'll be wondering who it's from, and what's going on. Then once you come back and tell me, I'll surprise her with the rest!</p>
+          <p> </p>
+          <p>Will you help me out?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Blessings on you for this. You should find her near [%dic:STR_DIC_FLA31].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Blessings on you too."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, you won't help me? Very well, I'll find some other way.</p>
+          <p> </p>
+      	  <p>My love and I will be together somehow!</p>
+          <p> </p>
+	        <p>Come back if you change your mind though. I'm going to be here a while thinking.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Goodbye."</Act>
+    </Selects>
+  </HtmlPage>
+
+<HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You were asked to give this to someone here?</p>
+          <p> </p>
+          <p>Well, I'm the only one here, so it must be for me, right?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"That sounds reasonable."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+         <p>This is so exciting! My mother is coming for a visit, I hope she's here when my admirer is revealed.</p>
+          <p> </p>
+          <p>Oh, I can hardly wait for her to arrive!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]"> Deliver the Engagement Ring to a Daeva in Elyos Square.</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Luella asked you to deliver his Engagement Ring. Take it to Renniah.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Luella asked you to deliver a ring for a proposal.</p>
+          <p> </p>
+          <p>It seemed like Renniah was the intended recepient.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

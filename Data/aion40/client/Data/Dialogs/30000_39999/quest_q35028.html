@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 보시오.</p>
+          <p> </p>
+          <p>카이시넬 주신의 은총과 여러 데바의 노력으로 잉기스온으로의 진출이 성공적으로 진행되고 있다하오.</p>
+          <p> </p>
+          <p>가장 큰 문제였던 오드 문제도 아이온 탑의 파편과 오벨리스크 덕분에 해결되었다 하니 이제 다음 단계를 준비할 때가 온 것 같소. </p>
+          <p> </p>
+          <p>바로 잉기스온 결계탑을 세우는 것이오.</p>
+          <p> </p>
+          <p>몇몇 회원에게 미리 결계탑을 세울 지점을 물색토록 지시를 내려두었으니 가서 상황을 확인해 주시오. </p>
+          <p> </p>
+          <p>우선 고대 용의 신전에 있는 [%dic:STR_DIC_N_Queesia]%를 만나 현재 상황 얘기를 듣고 결과를 [%dic:STR_DIC_E_35021]에게 보고하여 주시오.</p>
+          <p> </p>
+          <p>명심하시오. 행동은 신속하게! 입은 무겁게! </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">의뢰서를 접어 넣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님 아닙니까?</p>
+          <p> </p>
+          <p>여기엔 무슨 일로... </p>
+          <p> </p>
+          <p>(주위를 살피더니 작은 목소리로) 혹시 신성 수호회?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">용건을 말한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>안 그래도 지시를 받고 살펴 봤는데 지금 상태론 이곳에 결계탑을 세우기는 힘들 것 같습니다.</p>
+          <p> </p>
+          <p>오벨리스크로 만들어 내는 지금의 오드 양으로는 이곳의 인원을 감당하기도 벅차고 무엇보다 적의 침략이 너무 잦아서 말입니다.</p>
+          <p> </p>
+          <p>실렌테라 회랑과 방벽 너머까지 차지하지 않는 한 고대 용의 신전에 결계탑을 세우긴 힘들 것 같다고 보고해 주세요.</p>
+          <p> </p>
+          <p>그럼 조심히 돌아가십시오. 바깥에 적들이 숨어 있을지 모르니 조심하시고요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>미행이 붙진 않았습니까?</p>
+          <p> </p>
+          <p>요즘 우리 신성 수호회원을 상대로한 습격 사건이 빈번하다고 하니 [%username] 님도 조심하십시오.</p>
+          <p> </p>
+          <p>그건 그렇고 퀴시아는 만나봤습니까?</p>
+          <p> </p>
+          <p>고대 용의 신전 상황이 어떻다고 하던가요? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">퀴시아의 말을 전한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>짐작대로군요. 저도 고대 용의 신전에 결계탑을 세우기는 힘들다고 생각했습니다.</p>
+          <p> </p>
+          <p>하루가 멀다하고 용족과 마족이 공격해 오는 곳에 결계탑을 세울 순 없죠.</p>
+          <p> </p>
+          <p>어쨌거나 수고 많으셨습니다. 상부에는 보고한 말씀 그대로 전하겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_Queesia]와 대화하라</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_E_35021]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">신성 수호회에서 의뢰서가 왔다. 지시에 따르자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>신성 수호회는 잉기스온 결계탑을 세울 지점을 물색할 때가 됐다며 고대 용의 신전에 있는 퀴시아를 만나 그곳의 상황을 확인하라고 했다.</p>
+          <p> </p>
+          <p>퀴시아를 만나 고대 용의 신전 상태를 묻자 현재 상태론 결계탑을 세우기에 무리라고 했다. 이 말을 잉기스온 지부 담당자에게 전하자 상부에서 그대로 보고하겠다고 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

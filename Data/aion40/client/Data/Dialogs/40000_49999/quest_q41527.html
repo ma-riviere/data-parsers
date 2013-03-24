@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q41527</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>미입력</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select_none" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>남쪽에 신비한 용암온천이 있는 건 알고 계신가요?</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_N_Favilian]이라는 학자가 그곳에서 연구를 하고 있습니다.</p>
+          <p> </p>
+          <p>그런데 꽤 힘든 일이 많은가 봅니다. 도와줄 사람이 있으면 좀 보내 달라고 하더라고요.</p>
+          <p> </p>
+          <p>관심 있으시면 [%dic:STR_DIC_W_LDF4b_SZ_T3_S3]로 가서 파빌리안을 만나 보십시오. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>기대하지 않고 있었는데 도와줄 사람이 와서 다행입니다.</p>
+          <p> </p>
+          <p>신비한 용암온천에 특별한 효능이 있는 것 같은데 조사할 방법이 없었거든요.</p>
+          <p> </p>
+          <p>이 근처에 있는 안킬로틀이나 가스토와 싸우다 보면 변신 주문에 걸릴 때가 있습니다.</p>
+          <p> </p>
+          <p>용암온천에 그 주문을 푸는 효과가 있는 것 같은데 아직 확인해 보지 못했습니다.</p>
+          <p> </p>
+          <p>우선 [%dic:STR_DIC_M_LDF4b_T3_Monster_Quest_Starfish]와 전투를 하십시오. 그리고 가스토로 변신하면 용암온천으로 들어가 온천의 효능을 시험해 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>기다리고 있었습니다, [%username] 님.</p>
+          <p> </p>
+          <p>신비한 용암온천의 효과는 확인하셨습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>역시 제가 생각한 것이 맞았군요. 용암온천에는 변신 상태를 푸는 힘이 있었어요.</p>
+          <p> </p>
+          <p>하지만 이상한 것은 어떻게 이곳의 생명체가 사람을 변신시키는 힘을 가지고 있느냐 하는 것입니다.</p>
+          <p> </p>
+          <p>죽어가면서 거는 저주라고 넘겨 버리기엔 어딘가 이상한 점이 있어요.</p>
+          <p> </p>
+          <p>그건 제가 이곳에서 천천히 연구해서 풀어야 할 문제겠지요.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_Favilian]%과 대화하라</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_M_LDF4b_T3_Monster_Quest_Starfish]를 처치하라[%5]</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">신비한 용암온천으로 들어가라[%8]</font></p></step>
+               <step><p visible="[%9]"><font color="[%10]">[%dic:STR_DIC_N_Favilian]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">신비한 용암온천에 변신을 푸는 효능이 있는지 확인해 주기로 했다. </font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>데스로나는 온천 조사대 야영지에 있는 파빌리안이 도움을 필요로 한다고 했다.</p>
+          <p> </p>
+          <p>파빌리안에게 갔더니 신비한 용암온천의 효능을 조사해 달라고 했다.</p>
+          <p> </p>
+          <p>강력한 코틸로와 전투하다 가스토로 변신된 후 용암온천에 들어갔더니 변신이 풀리는 것을 확인할 수 있었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

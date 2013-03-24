@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This is for you.</p>
+          <p> </p>
+          <p>It's an urgent order from the Blood Crusade.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Oh?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p align="center"> - Operation Order - </p>
+          <p> </p>
+          <p>From: The Blood Crusade</p>
+          <p> </p>
+          <p>To: Crusader [%username]</p>
+          <p> </p>
+          <p>The Blood Crusade has confirmed that the number of Elyos infiltrating Asmodae from Eltnen and Heiron has increased. To stem the escalation, we must prevent the Elyos from entering Asmodae altogether. We are issuing the following kill order to be carried out with utmost urgency:</p>
+          <p> </p>
+          <p>  1. Infiltrate [%dic:STR_DIC_E_LF2_name] or [%dic:STR_DIC_E_LF3_name] through a [%dic:STR_DIC_E_directportal].</p>
+          <p> </p>
+          <p>  2. Locate the Elyos forces, and dispatch at least one of their more capable warriors in either Eltnen and Heiron. You may safely ignore enemies possessing little combat power as they have not been seen in Asmodae and pose no direct threat.</p>
+          <p> </p>
+          <p>  3. Once the enemy has lost the will to fight, report to [%dic:STR_DIC_N_Tostig].</p>
+          <p> </p>
+          <p>May you walk in Azphel's shadow. Blood for blood!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The time has finally come.</p>
+          <p> </p>
+          <p>Do what you were born to do, friend. Blood for blood!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Blood for blood!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You don't want to help us with this operation?</p>
+          <p> </p>
+          <p>Well, I guess we'll find someone else....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Good luck."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Welcome back, [%username].</p>
+          <p> </p>
+          <p>How did your mission in Elysea go? Please be terse--I have rewards for other Blood Crusaders to prepare.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"The Elyos suffered greatly."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Another successful mission. Excellent work, [%username].</p>
+          <p> </p>
+          <p>Infiltrating Elysea is no easy task--many rifts open into dangerous areas--so your efforts are greatly appreciated. </p>
+          <p> </p>
+          <p>Here is your reward. Blood for blood!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Infiltrate [%dic:STR_DIC_E_LF2_name] or [%dic:STR_DIC_E_LF3_name] and get rid of [%dic:STR_DIC_E_Daily_2]([%2]/1).</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Report back to [%dic:STR_DIC_N_Tostig].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Urgent Order: Infiltrate Eltnen or Heiron. After killing Elyos, report to a Reshanta branch agent.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Blood Crusade has issued an urgent kill order on the Elyos in Eltnen and Heiron.</p>
+          <p> </p>
+          <p>After completing the mission, you visited a Reshanta branch agent and received a reward.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+  
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

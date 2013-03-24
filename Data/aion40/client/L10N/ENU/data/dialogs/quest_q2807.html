@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've heard you're good, [%username].</p>
+          <p> </p>
+          <p>But how good are you?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Very."</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Really? Are you good enough to retake Asteria Fortress for us?</p>
+          <p> </p>
+          <p>You know how it goes: not enough men, no reinforcements, you freelance Daevas are all we've got.</p>
+          <p> </p>
+          <p>So we have been planning strategies to get the fortress back, but the problem is always the number of troops.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Oh, I've been there before all right."</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good, maybe you've got an idea what our plan is.</p>
+          <p> </p>
+          <p>We're going to hit them in several places at once, split up their troops so they'll be easier to deal with.</p>
+          <p> </p>
+          <p>Obviously, we can't do it without volunteer help. You think you can help?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>All right, here's your part of the plan: you're going to get rid of their weapons. They're not going to fight without weapons.</p>
+          <p> </p>
+          <p>Let me put it more concretely: destroy [%dic:STR_DIC_M_2807_all], and bring [%dic:STR_DIC_I_QUEST_2807a] to me.</p>
+          <p> </p>
+          <p>Only when the fortress is vulnerable, obviously.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"On my way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, you think you're too good to work with us, or what?</p>
+          <p> </p>
+          <p>What else are you gonna do out here but fight?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Maybe I'm just here to take in the scenery."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, [%username]. Did you do it?</p>
+          <p> </p>
+          <p>You look a little tired. Let's hope that's a good sign.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here's the weapons, like you asked."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>"Like you asked?" There's no weapons here.</p>
+          <p> </p>
+          <p>I guess you must've gotten tired just taking a nap.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That's the weapons, all right. Look at those showy Ellie pieces of trash.</p>
+          <p> </p>
+          <p>All flair, no bite.</p>
+          <P> </P>
+          <P>Anyway, here's your reward, [%username].</P>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Crush the [%dic:STR_DIC_M_2807_all], gather their weapons and return to [%dic:STR_DIC_N_Arnora].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Help reclaim Asteria Fortress. Defeat the Elyos garrison that appears when the fortress is vulnerable, take their weapons, and return to Arnora.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Arnora asked you to join in the raids on Asteria Fortress. Your job was to take the enemy's weapons.</p>
+          <p> </p>
+          <p>You defeated the Elyos, took their weapons, and earned your reward.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

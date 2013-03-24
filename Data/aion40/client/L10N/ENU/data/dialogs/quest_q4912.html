@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The sword is now complete. I have reforged the fragments to re-create the sword my master slaved over.</p>
+          <p> </p>
+          <p>After so many trials and incredible efforts you have brought all of the pieces together in one place for the first time since they were sundered at the hand of an Empyrean Lord!</p>
+          <p> </p>
+          <p>But I can't give it to you yet.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What?!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well...remember when I told you I'd discovered a way to remove the curse? I have, but it's tricky.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_DC1_DrakeVioletNamedQ_47_Ae] is a particularly malicious Drake, and even the Balaur found it hard to control, so they sealed it in an Artifact in Draupnir. </p>
+          <p> </p>
+          <p>I think I know how to use it to cancel out the curse on Agrif's Rage.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Beritra's Oracle in the [%dic:STR_DIC_W_STR_DF3_SZ_H] is where you'll find the [%dic:STR_DIC_OBJ_IDDF3Dragon_FOBJ_Q4912] with Garnokk sealed inside. I'll give you a [%dic:STR_DIC_I_quest_4912a] that can break the seal. </p>
+          <p> </p>
+          <p>Vanquish [%dic:STR_DIC_M_DC1_DrakeVioletNamedQ_47_Ae] and bring me his Blackened Spirit. When we imbue Agrif's Rage with that spirit, it will cancel out the sword's curse.</p>
+          <p> </p>
+          <p>The Draupnir Cave is fraught with danger, so take some reliable allies with you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I've got a bad feeling about this."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What?</p>
+          <p> </p>
+          <p>But I think you're the right person to wield this sword, [%username]. Really!</p>
+          <p> </p>
+          <p>Please reconsider.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll think about it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I have sheathed Agrif's Rage in the Scabbard of Sealing so no one else can lay their hands on it. We don't want to anger an Empyrean Lord.</p>
+          <p> </p>
+          <p>Give me the [%dic:STR_DIC_I_quest_4912b] now.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here it is."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_fail">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I know that going into the Draupnir Cave is a difficult task.</p> 
+          <p> </p>
+          <p>Confronting and overcoming the [%dic:STR_DIC_M_DC1_DrakeVioletNamedQ_47_Ae], even more so.</p>
+          <p> </p>
+          <p>But I don't know how long the Scabbard of Sealing will last, so do try to hurry a little.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be back."</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Let me just imbue the sword with the spirit...and there. </p>
+          <p> </p>
+          <p>Sorry if that wasn't too exciting. It would be more interesting if Agrif's Rage exploded with fire or something, but that's not how these things are done.</p>
+          <p> </p>
+          <p>The curse is now gone, as I expected. Now is your time to choose. Choose the form you desire, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Release the spirit of [%dic:STR_DIC_M_DC1_DrakeVioletNamedQ_47_Ae] sealed in the [%dic:STR_DIC_OBJ_IDDF3Dragon_FOBJ_Q4912], and return to [%dic:STR_DIC_N_Usener].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Usener said a particular kind of power is needed to cancel out the curse on Agrif's Rage. Release the Cursed Drake in the Draupnir Cave and obtain its Blackened Spirit.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Usener said a particular kind of power is needed to cancel out the curse on Agrif's Rage.</p>
+          <p> </p>
+          <p>So you defeated the Cursed Drake that appeared from the Balaur Artifact in the Draupnir Cave, and returned with the Blackened Spirit.</p>
+          <p> </p>
+          <p>Usener used the power of that spirit to expunge Agrif's Rage's curse, and gave you the weapon as a reward. Finally.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

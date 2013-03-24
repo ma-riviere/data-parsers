@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Once again, [%username], I have need of your skills.</p>
+          <p> </p>
+          <p>It's the [%dic:STR_DIC_W_ZONE_NAME_IDCatacombs]. I'm still concerned about what's afoot in that foul place.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What's on your mind?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>According to your reports, the most threatening foes in the [%dic:STR_DIC_W_ZONE_NAME_IDCatacombs] are the Balaur under Tiamat's direct command.</p>
+          <p> </p>
+          <p>Our path is clear. Go forth and eliminate the [%dic:STR_DIC_E_IDCatacombsN_Drakan_Guard]s who infest Beshmundir's Walk, the Hero's Vault, and the Courtyard of Eternity.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Conquering Balaurea and destroying Tiamat will require many courageous Daevas, of whom you are a prime example, [%username].</p>
+          <p> </p>
+          <p>I know we can do this. Go to the Beshmundir Temple...and do not leave a single [%dic:STR_DIC_E_IDCatacombsN_Drakan_Guard] alive.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Faith and arms!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Have I asked too much of you? Have you not yet recovered from your previous mission?</p>
+          <p> </p>
+          <p>I will entrust this task to other Guardians. Go, get some rest.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Thanks. I am rather exhausted."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, you've returned. You look exhausted.</p>
+          <p> </p>
+          <p>Were you successful? Have you destroyed all of the Beshmundir Balaur Protectors?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"They'll trouble us no more."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I knew you'd succeed, [%username]!</p>
+          <p> </p>
+          <p>You have done us proud. Go, rest, eat. Come see me again later and tell the details of your triumph.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Eliminate the Beshmundir Balaur Protectors.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_IDCatacombsN_Drakan_Guard_Entrance] ([%2]/20)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_IDCatacombsN_Drakan_Guard_tomb] ([%5]/10)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_IDCatacombsN_Drakan_Guard_priest] ([%8]/40)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_N_Cainus].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Outremus has asked you to eliminate the Beshmundir Balaur Protectors.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Outremus was concerned about the Balaur forces defending the Beshmundir Temple and asked you to prune their numbers.</p>
+          <p> </p>
+          <p>You went to the temple and did some Balaur Protector pruning...with prejudice.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

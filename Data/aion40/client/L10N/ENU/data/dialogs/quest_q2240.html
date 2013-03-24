@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You can't imagine how delighted I am to see you, [%username]. I'm in desperate need.</p>
+          <p> </p>
+          <p>I should have listened!  I should have gathered a search party!</p>
+          <p> </p>
+          <p>But I couldn't just pace the village, wondering if my fiance was alive or dead....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Tell me what happened."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's been two weeks since my fiance, [%dic:STR_DIC_N_Leinolz], left for the Traders' Berth at Seggurheim. He was making a delivery to the Shugos there.</p>
+          <p> </p>
+          <p>He's usually home in three or four days, but nobody has seen him! And a trader coming the other way says he never arrived!</p>
+          <p> </p>
+          <p>I have to find Leinolz. I couldn't wait for the Archons! I made my way this far, but I don't dare go any farther--there are so many Spriggs and Amphas.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"You did all you could."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>But I can't give up now! I have to know he's all right!</p>
+          <p> </p>
+          <p>I wouldn't ask, but the valley road is so dangerous.... [%userclass], would you please escort me?</p>
+          <p> </p>
+          <p>If we travel the Seggurheim road, we may find some trace of my Leinolz.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Lords bless you, Daeva.</p>
+          <p> </p>
+          <p>I'll rest here until you're ready.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm ready when you are."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select3">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm sure we'll find him soon!</p>
+          <p> </p>
+          <p>Now here is the Seggurheim road.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"Stay close, Irehilt."</Act>
+      <Act href="HACTION_FINISH_DIALOG">"This is a fool's errand."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, it's true! Becoming a Daeva stills your heart!</p>
+          <p> </p>
+          <p>Or are you afraid?  Well, what guides me is stronger than fear, I can tell you that!</p>
+          <p> </p>
+          <p>You're a coward, "mighty" Daeva. I will never give up looking! If I must, I'll die and seek him in the Aether!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Let me think about it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Irehilt! Here? Thank you so much for guiding her safely.</p>
+          <p> </p>
+          <p>How could she have been so impulsive? Beloved, you could have been attacked!</p>
+          <p> </p>
+          <p>If it weren't for this Daeva, it would be you we were searching for.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Actually, she's quite resourceful...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I must stay here to straighten things out. But at least Irehilt's not crying any longer.</p>
+          <p> </p>
+          <p>I thank you again for watching over her.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Find [%dic:STR_DIC_N_Irehilt] when you're ready.</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Escort [%dic:STR_DIC_N_Irehilt].</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Talk with [%dic:STR_DIC_N_Leinolz].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Irehilt is seeking her lost fiance, Leinolz. Guard her on the road.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Irehilt's fiance, Leinolz, disappeared on the road. She was searching his trail through the dangerous Gribade Canyon alone.</p>
+          <p> </p>
+          <p>You escorted her and reunited the lovers.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

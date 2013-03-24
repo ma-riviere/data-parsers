@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q30401</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>Not entered</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>There's a reason I've been so secretive. This involves a very sensitive project, known only to a few.</p>
+          <p> </p>
+          <p>One of our tribe, Davlin, has a talent for creating golems. She had a mansion built deep in Elementis Forest so she could work in peace.</p>
+          <p> </p>
+          <p>But it seems she was attacked by a Balaur contingent led by a Drakan named Zadra Spellweaver. Fortunately, one of Davlin's Hetgolems escaped with this news.</p>
+          <p> </p>
+          <p>Please speak with [%dic:STR_DIC_N_Brenon] in [%dic:STR_DIC_W_ZONE_NAME_IDElemental_1]. He's been scouting the situation, and will have more to tell you, I'm sure.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Huh? An Elyos, here? How'd you even get here? There's nothing here any....</p>
+          <p> </p>
+          <p>Oh, Sierrac sent you? Thank Aion!</p>
+          <p> </p>
+          <p>Argent Manor lies deep within the forest, but Elementis too has been twisted by the Balaur. And there are other barriers.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">"Like what?"</Act>
+    </Selects>
+    <CutScene id="465"/>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>There's also [%dic:STR_DIC_M_IDElementalN_Nmd_Farmer_60_Al]. It's one of Davlin's most powerful golems, created to guard the forest.</p>
+          <p> </p>
+          <p>Zadra corrupted it along with the others. Now it guards the [%dic:STR_DIC_I_QUEST_30401A], the one object that can penetrate the barrier over the mansion.</p>
+          <p> </p>
+          <p>Zadra is powerful, but not enough to destroy the Magic Stone. That's our chance. Take it back to Sierrac once you get it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"Understood."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>So you've been to Elementis Forest. Then you must have seen how beautiful it once was.</p>
+          <p> </p>
+          <p>Oh, it may still be now, but with the Balaur's evil infecting it, I'm afraid it's a mere shadow of its former glory.</p>
+          <p> </p>
+          <p>Perhaps freeing Davlin will free the forest as well. Did you find a way into the mansion?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">"I believe so."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>A pity you had to destroy Tuali. But hopefully Davlin can restore it... once she is safe.</p>
+          <p> </p>
+          <p>As an elder of the Reian tribe, I have the power to transfer the Magic Stone's unique qualities to you.</p>
+          <p> </p>
+          <p>Kutura galatha Siel manani.... There! Now you will be able to freely pass into Argent Manor.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk to [%dic:STR_DIC_N_Brenon].</font></p>[%collectitem]</step>
+               <step><p visible="[%3]"><font color="[%4]">Get the [%dic:STR_DIC_I_QUEST_30401A] and take it to Sierrac.</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Go to Elementis Forest and talk to Brenon. Find out how to pass the barrier over Argent Manor.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Sierrac told you that Davlin, a talented Golem creator, had been imprisoned in Argent Manor by Zadra Spellweaver, a powerful Drakan magician.</p>
+          <p> </p>
+          <p>He sent you to Elementis Forest to speak to Brenon, who'd scouted the area. Brenon told you of the Magic Stone, which could penetrate the barrier placed over Argent Manor.</p>
+          <p> </p>
+          <p>You defeated Tuali, a corrupted golem, to gain access to the Magic Stone. Sierrac then transfered its power to you so you could enter Dorgel.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

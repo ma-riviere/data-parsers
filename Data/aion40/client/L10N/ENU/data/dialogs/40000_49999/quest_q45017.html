@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Dear [%username],</p>
+          <p> </p>
+          <p>I have a private message to pass along to the Field Wardens. It concerns the people of Brusthonin.</p>
+          <p> </p>
+          <p>I can't explain any more in this letter, and I will arouse suspicion if I deliver it myself.</p>
+          <p> </p>
+          <p>Please destroy this letter, and then meet me when you can so you might carry my message to the [%dic:STR_DIC_E_45014].</p>
+          <p> </p>
+          <p>May the darkness grant you peace,</p>
+          <p> </p>
+          <p>--Priest [%dic:STR_DIC_N_Hort]</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">(Chew on the letter.)</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Greetings, [%userclass]. Are you here to learn the teachings of the Empyrean Lords? Or....</p>
+          <p> </p>
+          <p>Wait, you're [%username], aren't you? From the Field Wardens?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">"I am. I received your letter."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes, yes, as I said, there is a situation in Brusthonin. I...I can't explain out loud. Wait, there is a code... The message is...um...the codes were....</p>
+          <p> </p>
+          <p>Ah! I remember. The message is "A flower grows in shade."</p>
+          <p> </p>
+          <p>Please tell this to a Brusthonin Field Agent, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"Got it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes, I know where you came from, [%username]. You have a message for me? Please, tell me what it is.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"A flower grows in shade."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What? Are you sure? That doesn't make....</p>
+          <p> </p>        	
+          <p>Oh, wait. She meant "A flower blooms in twilight." That makes more sense. Hort still has everything under control, it seems. No, don't worry about what it all means, [%username]. It's quite complicated.</p>
+          <p> </p>
+          <p>Anyway, your job is done here. Please accept this token of our appreciation.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk with [%dic:STR_DIC_N_Hort].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Talk with [%dic:STR_DIC_E_45014].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">A forwarded letter has arrived from the Field Wardens. Follow its instructions.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>A private letter explains that Priest Hort has a private message for the Field Wardens.</p>
+          <p> </p>
+          <p>You met Hort and delivered her message to the Brusthonin Field Agent, who gave you a reward.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>데바님, 어쩌면 좋죠?</p>
+          <p> </p>
+          <p>여기서 아래를 내려다 보다가 그만 장신구를 떨어트리고 말았어요.</p>
+          <p> </p>
+          <p>요새에 정착할 자금으로 쓰려고 가지고 온 건데... 그래도 남편이 선물로 준 거라 팔기가 가슴 아파서 고민하던 중이었죠.</p>
+          <p> </p>
+          <p>그러다 아차 하는 사이에 저 아래 얼어붙은 호수로 떨어지고 말았어요. 전 이제 어쩌면 좋죠?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">도와주겠다고 말한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정말이세요? 아아, 감사합니다!</p>
+          <p> </p>
+          <p>장신구가 떨어지자 마자 근처에 있던 루필리니와 파이니, 레피스마가 달려들었어요. </p>
+          <p> </p>
+          <p>놈들이 사라진 후에는 장신구가 보이지 않더군요. 아마 그놈들이 제 장신구를 가져갔을 거예요.</p>
+          <p> </p>
+          <p>제 장신구를 찾으려면 호수로 날아가서 놈들을 처치해야 할 거예요. 그래도 찾아 주실 거죠?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>제가 잃어버린 건 오팔 목걸이와 사파이어 반지, 진주 귀고리 한 쌍이에요.</p>
+          <p> </p>
+          <p>얼음호수 루필리니와 서리 파이니, 얼음 레피스마를 처치하면 찾으실 수 있을 거예요.</p>
+          <p> </p>
+          <p>제 전 재산이니 꼭 좀 찾아 주세요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>도와주시겠다고 하시고선 왜 거절하시는 건가요?</p>
+          <p> </p>
+          <p>데바님에겐 별것 아닌지 몰라도 저에겐 앞으로의 생활이 그 장신구에 달려 있어요. </p>
+          <p> </p>
+          <p>남편과 헤어졌으니 저도 먹고살 방도를 찾아야지요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>찾으셨나요?</p>
+          <p> </p>
+          <p>제 [%dic:STR_DIC_I_QUEST_2302a], [%dic:STR_DIC_I_QUEST_2302b], [%dic:STR_DIC_I_QUEST_2302c]%을 전부 찾으셨어요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">장신구를 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아직... 못 찾으신 모양이군요.</p>
+          <p> </p>
+          <p>바쁜 일이 많으실 테니 재촉하진 않겠습니다.</p>
+          <p> </p>
+          <p>잊지 말고 찾아주시기만 하면 됩니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>맞아요, 제가 떨어트린 장신구!</p>
+          <p> </p>
+          <p>감사합니다, 정말 감사합니다.</p>
+          <p> </p>
+          <p>덕분에 살았습니다. 이 고마움을 다 어떻게 표현해야 할지...</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_I_QUEST_2302all]를 찾아 [%dic:STR_DIC_N_Frenai]에게 가져가라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">프레나이가 자신의 전 재산인 목걸이와 반지, 귀고리를 잃어버렸다고 한다. 요새 주위의 호수에 있는 짐승들을 처치하고 장신구를 되찾아 주자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>프레나이는 전 재산인 장신구를 요새 아래의 호수로 떨어트렸다고 슬퍼하고 있었다. </p>
+          <p> </p>
+          <p>그래서 호수에 있는 동물을 처치하고 목걸이와 반지, 귀고리를 되찾아 주었다. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I was an adventurer once, [%username], just like you.</p>
+          <p> </p>
+          <p>I didn't make it very far, though, before I gave it up....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"What happened?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What happened? Oh, I was terrible.</p>
+          <p> </p>
+          <p>I tried several jobs when I came back. After a while, I finally realized that fishing is what I'm really good at--and what I really enjoy.</p>
+          <p> </p>
+          <p>I was able to make a living at it for a while, but lately it's become impossible.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Why's that?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The number of [%dic:STR_DIC_E_fish_n_c_10c]s in the river has increased far too quickly. They eat the other fish and have few natural predators to keep their numbers reasonable.</p>
+          <p> </p>
+          <p>I catch them whenever I have the chance, but I can't solve the problem alone. Are you available to help?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Great! You can find [%dic:STR_DIC_E_fish_n_c_10c]s everywhere between here and the Putrid Mire.</p>
+          <p> </p>
+          <p>Oh, and please bring them back to me. It's the only way I have of making Kinah, you know.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Got it. I'll be quick."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No confidence in your fishing skills, eh?</p>
+          <p> </p>
+          <p>I understand. Come back if you change your mind.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll do that."</Act>
+    </Selects>
+  </HtmlPage>
+ 
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, [%username]!</p>
+          <p> </p>
+          <p>I'm so glad you've returned! Quickly, hand me the Afaris. If I sell them while they're still fresh, I'll get the best price for them.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Wow. You're not terribly good at fishing, are you?</p>
+          <p> </p>
+          <p>I've caught 10 [%dic:STR_DIC_E_fish_n_c_10c]s in the time you've been gone.</p>
+          <p> </p>
+          <p>Well, that's all right--it was your first time, after all. Go on, and return when you've got them all.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be right back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Great job!</p>
+          <p> </p>
+          <p>Here--take part of the profit. It's only fair after all your help.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Catch [%dic:STR_DIC_E_fish_n_c_10c]s and bring them to [%dic:STR_DIC_N_Lano].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">The number of Afaris has exploded, upsetting the ecological balance of the river. Catch some of them, and bring them to Lano.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Lano survives by fishing, but he was worried that the Afaris have rapidly increased in number, surviving off the other fish.</p>
+          <p> </p>
+          <p>You caught some of them in the river between the Eltnen Fortress and the Putrid Mire, and brought them to him.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

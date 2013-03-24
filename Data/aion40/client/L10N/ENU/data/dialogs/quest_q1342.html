@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], [%username]! I need your help immediately!</p>
+          <p> </p>
+          <p>No one else here can do what you do.</p>
+          <p> </p>
+          <p>Have you heard of Stoneshell Ksellids and Stoneshell Kselliki?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Sounds familiar."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ksellids and Kselliki are not dangerous animals. They never normally attack Humans unless provoked.</p>
+          <p> </p>
+          <p>But we just got word that a pack of them destroyed a caravan crossing the desert!</p>
+          <p> </p>
+          <p>The fortress is investigating, but we can't wait for the results; anything might happen in the meantime. So, we need your help, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"How can I help?" </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hunt some [%dic:STR_DIC_M_Shellizard_29_An]s and [%dic:STR_DIC_M_ShellizardBaby_30_An]s, and bring back some samples from them.</p>
+          <p> </p>
+          <p>I don't know what made them so violent, but the safety of innocents must always be my first concern.</p>
+          <p> </p>
+          <p>I'm asking you because it's urgent, [%username]. I have heard of your feats in Verteron.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent! Go hunt some [%dic:STR_DIC_M_Shellizard_29_An]s and [%dic:STR_DIC_M_ShellizardBaby_30_An]s, and bring 15 [%dic:STR_DIC_I_QUEST_1342a]s as evidence. </p>
+          <p> </p>
+          <p>Not only will the area be safer, but with what you bring back we might be able to find a cause for the sudden attacks.</p>
+          <p> </p>
+          <p>It may be that the investigators will find a solution while you are out, but I must take action, rather than just wait for news.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"No problem. I'll be right back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I heard you do not hide from difficult missions. Was that not true?</p>
+          <p> </p>
+          <p>How can you ignore those who are in danger?</p>
+          <p> </p>
+          <p>Maybe I was wrong to believe what Spiros said.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Look, I'm just this Daeva."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], good. You made it back. I hope the [%dic:STR_DIC_M_Shellizard_29_An]s and [%dic:STR_DIC_M_ShellizardBaby_30_An]s did not give you too much trouble.</p>
+          <p> </p>
+          <p>And that you were able to gather their shells.</p>
+          <p> </p>
+          <p>Tell me how your patrol went.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"It was easy...." </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It would seem so, since you returned without enough [%dic:STR_DIC_I_QUEST_1342a]s.</p>
+          <p> </p>
+          <p>If we're going to stop these attacks, we need those samples.</p>
+          <p> </p>
+          <p>Now, please go gather the shells.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I won't let you down."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good news! I was just informed the Fortress found the cause for the attacks.</p>
+          <p> </p>
+          <p>Well, not so good, actually, but that's a matter for another time..</p>
+          <p> </p>
+          <p>Every patrol we send out brings back another piece of information, and we need information most of all.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Take the proof that you hunted [%dic:STR_DIC_M_Shellizard_29_An]s and [%dic:STR_DIC_M_ShellizardBaby_30_An]s to [%dic:STR_DIC_N_Alexis].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">The Ksellids and Kselliki have suddenly become violent, so collect their shells and take them to Alexis as for examination.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Alexis said that the Ksellids and Kselliki had suddenly turned violent, so he asked you to hunt them in order to protect the locals, and bring him some samples.</p>
+          <p> </p>
+          <p>When you delivered him the shells, he said that the fortress had found out what made them violent.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

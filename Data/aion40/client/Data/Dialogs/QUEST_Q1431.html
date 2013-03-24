@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%mainslotitem]%을 보니 꽤 유능한 [%userclass]인가 보군요.</p>
+          <p> </p>
+          <p>저도 한때는 [%mainslotitem]%으로 전투에 나갔던 때가 있었죠. </p>
+          <p> </p>
+          <p>바로 돌아왔지만 아니, 쫓겨났지만 말이에요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">이유를 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>왜긴요, 전투에 소질이 없으니 그랬죠. 보다 못한 직속 백부장이 후방에서 전투를 지원하는 게 어떻겠냐며 돌려보내더군요.</p>
+          <p> </p>
+          <p>요새로 돌아온 뒤에도 이것저것 해 보다가 겨우 적성에 맞는 일을 찾았답니다. 그게 바로 낚시죠.</p>
+          <p> </p>
+          <p>다행이 이걸로 밥벌이 정도는 하고 있는데 요즘은 좀 힘드네요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">무슨 문제가 있는지 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>강에 [%dic:STR_DIC_E_fish_n_c_10c]이 너무 많이 늘었어요.</p>
+          <p> </p>
+          <p>뽀렐은 더러운 물에서도 잘 사는 데다 잡식성이라 다른 물고기까지 잡아 먹는답니다. 게다가 천적이 거의 없어 나날이 수가 늘어나고 있죠. 반대로 다른 물고기의 숫자는 줄어들고 말이에요. </p>
+          <p> </p>
+          <p>그래서 시간이 나는 대로 뽀렐을 잡고 있는데 혼자서는 힘들군요. 당신이 도와주면 훨씬 수월할 것 같은데 어때요? 좀 도와주겠습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그럼 바로 [%dic:STR_DIC_E_fish_n_c_10c]을 잡아 주십시오.</p>
+          <p> </p>
+          <p>여기서 고요의 늪까지 쭉 퍼져 있으니 찾는 건 그리 어렵지 않을 겁니다.</p>
+          <p> </p>
+          <p>아참, 잡은 뽀렐은 제게 가져 오십시오. 이왕 잡은 거 상점에 팔면 몇 푼이나마 벌 수 있으니까요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>낚시에 자신이 없어 그러는 겁니까?</p>
+          <p> </p>
+          <p>뽀렐은 그리 큰 기술 없이도 잡을 수 있는데.</p>
+          <p> </p>
+          <p>네, 알겠습니다. 혹시라도 생각이 바뀌면 언제라도 오십시오.</p>
+          <p> </p>
+          <p>전 계속 여기에 있을 거니 말입니다. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+ 
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>표정을 보니 [%dic:STR_DIC_E_fish_n_c_10c]을 다 잡으셨나 보군요.</p>
+          <p> </p>
+          <p>신선할 때 팔아야 한 푼이라도 더 받을 수 있으니 잡아온 뽀렐을 이리 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">뽀렐을 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>낚시에 정말 소질이 없나 보군요.</p>
+          <p> </p>
+          <p>전 그새 [%dic:STR_DIC_E_fish_n_c_10c]을 10마리나 잡았는데...</p>
+          <p> </p>
+          <p>뭐, 처음이니 그럴 수도 있죠. 시간이 좀 걸려도 괜찮으니 가서 뽀렐을 마저 잡아 오세요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>꽤 실력이 좋은 걸요.</p>
+          <p> </p>
+          <p>조금만 더하면 저보다 더 잘할지도 모르겠습니다, 하하하.</p>
+          <p> </p>
+          <p>아참, 잊어버리기 전에 드려야지. 받으세요. 뽀렐 값입니다.</p>
+          <p> </p>
+          <p>도와주신 것도 감사한데 저 혼자 돈을 벌 순 없죠.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_E_fish_n_c_10c]을 잡아 [%dic:STR_DIC_N_Lano]에게 가져가라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">급속도로 늘어나는 뽀렐 때문에 강의 생태계 균형이 무너진다고 한다. 뽀렐을 잡아 라노에게 가져다 주자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>라노는 물고기를 잡아 생계를 유지하고 있는데 최근 뽀렐의 수가 급격히 늘어나 다른 물고기들이 사라지고 있다며 걱정을 했다.</p>
+          <p> </p>
+          <p>엘테넨 요새 근처의 강과 고요의 늪에서 뽀렐을 잡아 가져다 주자 크게 기뻐했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

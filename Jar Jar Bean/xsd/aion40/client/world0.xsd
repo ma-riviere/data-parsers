@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="data">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:byte" name="except_intersvr" use="optional"/>
+          <xs:attribute type="xs:int" name="id" use="optional"/>
+          <xs:attribute type="xs:byte" name="pve_attack_ratio_magical_dark" use="optional"/>
+          <xs:attribute type="xs:byte" name="pve_attack_ratio_magical_light" use="optional"/>
+          <xs:attribute type="xs:byte" name="pve_attack_ratio_physical_dark" use="optional"/>
+          <xs:attribute type="xs:byte" name="pve_attack_ratio_physical_light" use="optional"/>
+          <xs:attribute type="xs:byte" name="pve_defend_ratio_magical_dark" use="optional"/>
+          <xs:attribute type="xs:byte" name="pve_defend_ratio_magical_light" use="optional"/>
+          <xs:attribute type="xs:byte" name="pve_defend_ratio_physical_dark" use="optional"/>
+          <xs:attribute type="xs:byte" name="pve_defend_ratio_physical_light" use="optional"/>
+          <xs:attribute type="xs:byte" name="show_pvp_option_area" use="optional"/>
+          <xs:attribute type="xs:byte" name="show_pvp_state" use="optional"/>
+          <xs:attribute type="xs:byte" name="beginner_twin_count" use="optional"/>
+          <xs:attribute type="xs:short" name="cool_time" use="optional"/>
+          <xs:attribute type="xs:short" name="max_user" use="optional"/>
+          <xs:attribute type="xs:byte" name="skill_prohibit_set_id" use="optional"/>
+          <xs:attribute type="xs:byte" name="twin_count" use="optional"/>
+          <xs:attribute type="xs:byte" name="item_prohibit_set_id" use="optional"/>
+          <xs:attribute type="xs:string" name="enable_chase_user_by_trace" use="optional"/>
+          <xs:attribute type="xs:float" name="min_attack_dist_chase_user_by_trace" use="optional"/>
+          <xs:attribute type="xs:byte" name="looting_level" use="optional"/>
+          <xs:attribute type="xs:string" name="looting_auth" use="optional"/>
+          <xs:attribute type="xs:string" name="except_buff" use="optional"/>
+          <xs:attribute type="xs:byte" name="duel_option" use="optional"/>
+          <xs:attribute type="xs:short" name="reward_range" use="optional"/>
+          <xs:attribute type="xs:short" name="max_move_broadcast_count" use="optional"/>
+          <xs:attribute type="xs:byte" name="min_move_broadcast_range" use="optional"/>
+          <xs:attribute type="xs:string" name="prison" use="optional"/>
+          <xs:attribute type="xs:byte" name="pvp_option" use="optional"/>
+          <xs:attribute type="xs:string" name="spvp_time_name" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="world_id">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="data" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

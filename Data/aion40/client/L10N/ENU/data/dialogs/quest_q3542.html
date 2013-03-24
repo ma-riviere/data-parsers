@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q3542</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>Not entered</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hello, [%username].</p>
+          <p> </p>
+          <p>Do you smell something? Something...rotten?</p>
+          <p> </p>
+          <p>Eck! It's me! Blast it. I still can't get rid of that smell!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Potent. What is it?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Sluggish Zombie. Yeah. Gross.</p>
+          <p> </p>
+          <p>We ran into a bunch on patrol the Decayed Grove yesterday.</p>
+          <p> </p>
+          <p>Makes my eyes water just thinking of the smell. I tripped over a log and landed on one! The stuff of nightmares, I tell you! And now, I smell like year old socks!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Soap?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Tons of soap. Five hot showers. Sigh. I think I'm stuck with it till it wears off.</p>
+          <p> </p>
+          <p>Umm...so...[%username], any chance I could convince you to go get rid of those [%dic:STR_DIC_M_Zombie_34_An] for me?</p>
+          <p> </p>
+          <p>You're so fast and agile, I doubt you'll have any problem avoiding getting stench soaked.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank Ariel! I don't think I could bear confronting another [%dic:STR_DIC_M_Zombie_34_An].</p>
+          <p> </p>
+          <p>Go to the Decayed Grove, take them down, and bring me their [%dic:STR_DIC_I_QUEST_3542A]s so I can destroy them. So no one else gets smelly like I did.</p>
+          <p> </p>
+          <p>Um, you might want to put them in a sack, so the stench won't spread.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"A sack, check."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, I can't say I blame you. The stench IS pretty gruesome.</p>
+          <p> </p>
+          <p>Just because you're a fabulous fighter doesn't mean you're immune to that type of horrific odor.</p>
+          <p> </p>
+          <p>Sour...err..Soar in the light.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Sun's blessings."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Whew, I think the stink is gone at last.</p>
+          <p> </p>
+          <p>I washed these clothes so many times I can practically see through them now.</p>
+          <p> </p>
+          <p>How did it go with the Sluggish Zombies? You don't smell like you had any problems.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here's the Rotten Bandages."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You still haven't tackled the [%dic:STR_DIC_M_Zombie_34_An] problem?</p>
+          <p> </p>
+          <p>Feeling a bit reluctant to deal with the stench, eh?</p>
+          <p> </p>
+          <p>I won't hurry you. Take your time. Just bring me those [%dic:STR_DIC_I_QUEST_3542A]s when you're done!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I will."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yuck! I can smell it from here and I'm not even breathing through my nose!</p>
+          <p> </p>
+          <p>Did you even get any on you, [%username]? Doesn't smell like it. You are agile.</p>
+          <p> </p>
+          <p>Well, I'm off to burn these before the stench eats holes in the sack cloth.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect the [%dic:STR_DIC_I_QUEST_3542A]s and bring them to [%dic:STR_DIC_N_Rahelio].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Destroy the foul-smelling Sluggish Zombies and collect their Rotten Bandages.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Rahelio got Zombie stench all over him while trying to battle a Sluggish Zombie.</p>
+          <p> </p>
+          <p>He asked you to kill the Sluggish Zombies and return with their Rotten Bandages, so he could burn them.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

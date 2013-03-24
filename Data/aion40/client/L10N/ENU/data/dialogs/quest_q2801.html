@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Manual recode by Dave -->
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Everything's gone scaly--we've lost Siel's Eastern Fortress to the sun-poxed enemy!</p>
+          <p> </p>
+          <p>We've got to take it back. But we've got to be careful.</p>
+          <p> </p>
+          <p>This will be a high-priority operation. When we attack, we need to be sure we can win. I hear you're just the help we need.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I'm listening."</Act>
+    </Selects>
+  </HtmlPage>
+
+<HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Elyos garrison is at full strength right now. They've taken the fortress, their morale is high, and they've just received fresh troops.</p>
+          <p> </p>
+          <p>If we were fighting the Balaur it would be no problem, but the Elyos have the advantage, so we need help from outside.</p>
+          <p> </p>
+          <p>We need to get that blasted garrison out of the way. Can you help us with that, [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.
+      	</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.
+</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I knew I could count on you. Here's your task: Observe the situation at Siel's Eastern Fortress. Once the fortress is in Vulnerable State, attack.</p>
+          <p> </p>
+          <p>Wipe out the [%dic:STR_DIC_M_2801_all], including Elyos Fighters, Archers, Mages, and Priests, whether they're Veterans, Experienced or Novices. Bring me their [%dic:STR_DIC_I_QUEST_2801a]s as the proof of their defeat.</p>
+          <p> </p>
+          <p>Don't worry about the Balaur--focus on keeping the Elyos in check. Blood for blood!</p>
+        </body>
+        </html>
+    </Contents>
+
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"The task is mine!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Don't tell me I need to drag you into battle face down and feet first! I was told you could do this job with one arm tied behind your back!</p>
+          <p> </p>
+          <p>But I understand if you're not up to fighting Ellie. I'll keep looking for someone with the right stuff.</p>
+          <p> </p>
+          <p>If you change your mind, find me here and we'll talk again.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll give it some thought."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Glad to see you've returned safely, [%username].</p>
+          <p> </p>
+          <p>We're keeping the Balaur in check. Can I assume you've defeated the Elyos at Siel's Eastern Fortress?</p>
+          <p> </p>
+          <p>Show me the [%dic:STR_DIC_I_QUEST_2801a].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here they are."</Act>
+
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What are you doing here? You're supposed to be watching Siel's Eastern Fortress.</p>
+          <p> </p>
+          <p>Your mission is crucial to our victory, [%username]. Get back to your post!</p>
+          <p> </p>
+          <p>Once you've defeated the Elyos, report back to me. And don't forget--I'll expect you to bring the [%dic:STR_DIC_I_QUEST_2801a]s with you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+
+      <Act href="HACTION_FINISH_DIALOG">"On my way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's true what they say about you, [%username]. Your victory over the Elyos paves the way for our success.</p>
+          <p> </p>
+          <p>This will make them think twice about leaving the fortress. It certainly thins their numbers.</p>
+          <p> </p>
+          <p>We're grateful, [%username]. We'll sing your praises in the Temple of Gold.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Destroy the [%dic:STR_DIC_M_2801_all] and take the proof to [%dic:STR_DIC_N_Ogmund].</font>
+</p>[%collectitem]</step>
+</steps>
+<p><font font_xml="quest_summary">The fortress garrison must be defeated in order to recapture Siel's Eastern Fortress. Defeat the Elyos garrison when it's in Vulnerable State, and return with the Elyos Insignias.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+
+        <html>
+        <body>
+<p>Ogmund said that to recapture Siel's Eastern Fortress from the Elyos, it was crucial to defeat the garrison defending the site.</p>
+<p> </p>
+<p>Out-manned and outgunned, Ogmund hired you to help him keep the Elyos in check.</p>
+<p> </p>
+<p>After defeating the Elyos occupiers, you returned to Ogmund with the Guardian's Insignias as your proof of success.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

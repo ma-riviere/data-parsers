@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>저라고 이렇게 넋 놓고 있는 게 좋겠습니까?</p>
+          <p> </p>
+          <p>군부의 공격 명령서가 아직 도착하지 않았단 말입니다.</p>
+          <p> </p>
+          <p>전 명령에 묶여 있는 몸이라 명령 없이는 공격할 수 없습니다.</p>
+          <p> </p>
+          <p>하지만 이대로 가다간 전세가 역전될 수 있으니 [%username] 님이 [%dic:STR_DIC_E_LDF5b_B3_Vri]%을 처치해 주시면 안 되겠습니까?</p>
+          <p> </p>
+          <p>증거로 [%dic:STR_DIC_I_quest_23027a]%을 가져오시면 충분히 보답해 드리겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>도대체 공격 명령서는 언제 오는 거야!</p>
+          <p> </p>
+          <p>이크, [%username] 님에게 한 소리는 아닙니다.</p>
+          <p> </p>
+          <p>가만히 기다리고 있자니 속이 타서 혼자 하는 소리입니다.</p>
+          <p> </p>
+          <p>그나저나 가셨던 일은 어떻게 됐습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">휘장을 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>어쩐지 브리트라군의 수가 많이 줄었다 했습니다.</p>
+          <p> </p>
+          <p>이거 덕분에 한시름 놓게 됐군요.</p>
+          <p> </p>
+          <p>명령서는 이곳 상황이 모두 정리되면 오려나 봅니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_I_quest_23027a]%을 모아 [%dic:STR_DIC_N_LDF5b_Ringermen_E]%에게 전하라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">브리트라군 토벌대를 처치하고 브리트라군 휘장을 모으자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>대기만 하다가 공격할 시기를 놓친 링거먼의 부탁으로 브리트라군 토벌대를 처치하고 휘장을 모아 링거먼에게 전해 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

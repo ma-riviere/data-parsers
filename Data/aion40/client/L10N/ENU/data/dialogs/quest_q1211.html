@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Do you ever regret your choice of [%userclass], Daeva?</p>
+          <p> </p>
+          <p>I wanted to be a Soul Healer all my life, so this is excellent work for me.</p>
+          <p> </p>
+          <p>If only I hadn't run out of potions....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+       <Act href="HACTION_SELECT1_1">"Potions?"</Act>
+    </Selects>
+  </HtmlPage>
+
+ <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Healing souls is exhausting work. Using the Obelisk looks easy, but it takes intense concentration.</p>
+          <p> </p>
+          <p>After healing one or two souls, we become mentally fatigued.</p>
+          <p> </p>
+          <p>We can restore our strength by quiet meditation, but that takes time, which we don't always have. The potion can refresh us immediately, but I'm nearly out.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Which potion is it?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The same ones sold as "Mana Treatment Potions." I make them myself, but I don't have the ingredients now.</p>
+          <p> </p>
+          <p>If you're not too busy, maybe you could help?</p>
+          <p> </p>
+          <p>I have to stay here by the Obelisk, but you could gather some herbs for me, if you have the time.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Even your soul is beautiful, [%username].</p>
+          <p> </p>
+          <p>The herb I need to make the potion is [%dic:STR_DIC_E_herb_n_c_10b]. You can find it growing abundantly near the Miraju's Holy Ground.</p>
+          <p> </p>
+          <p>Would you bring me ten of them, please?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"On my way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That's quite all right, [%username].</p>
+          <p> </p>
+          <p>I am sure you have a good reason.</p>
+          <p> </p>
+          <p>Don't worry about me. I'll find someone else to gather the Targena.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Aion watch over you."</Act>
+    </Selects>
+  </HtmlPage>
+ 
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did you find where the [%dic:STR_DIC_E_herb_n_c_10b] grows?</p>
+          <p> </p>
+          <p>Doesn't it smell delicious, freshly picked?</p>
+          <p> </p>
+          <p>May I have it? I'd like to get this potion made.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here it is."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, dear. This won't do at all.</p>
+          <p> </p>
+          <p>I need those Targena leaves, dear [%username]. I can't get by without.</p>
+          <p> </p>
+          <p>The recipe calls for ten pieces of [%dic:STR_DIC_E_herb_n_c_10b]. Come back when you have them.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"My mistake. I'll be right back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I knew I could trust you, Daeva. Your soul has a beautiful light.</p>
+          <p> </p>
+          <p>With your help, I can make my potion right away and be ready to heal our wounded Daevas.</p>
+          <p> </p>
+          <p>Please take this. It's a small token of my gratitude.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Gather [%dic:STR_DIC_E_herb_n_c_10b] and take it to [%dic:STR_DIC_N_Titania].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Gather Targena from the Miraju's Holy Ground and take it to Titania so that she can make her potion.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Titania explained that operating the Obelisk requires a high level of concentration and that she likes to keep Mana Treatment Potions on hand for emergencies.</p>
+          <p> </p>
+          <p>She usually makes the potions herself from Targena. Since she had to stay by the Obelisk, you collected the herb for her.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

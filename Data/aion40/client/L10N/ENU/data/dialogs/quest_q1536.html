@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This observation post is dangerously isolated.</p>
+          <p> </p>
+          <p>Sure, it's close to Kishar Village and the Indratu Barracks, but our supplies and reinforcements all come from Jeiaparan Village.</p>
+          <p> </p>
+          <p>And when our Guardians take leave, Jeiaparan Village is the only place they can go...if they want to be back in time for their next shift.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"But Jeiaparan Village isn't so far...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Sure, it's a quick trip if you cross the Black Tears Swamp and take the southern road of the Decayed Grove.</p>
+          <p> </p>
+          <p>But if you've come that way recently, you know the problem: the southern road stinks--literally. It stinks worse than the swamp.</p>
+          <p> </p>
+          <p>We've actually had patrols collapse on the road, overcome by the fumes. So far we've been lucky, but it's just a matter of time before the beasts in the grove--or the Krall--drag off our unconscious soldiers.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"The stench is that strong?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Not always. It depends on the wind--and on how many Contaminated Spirits are wandering around.</p>
+          <p> </p>
+          <p>The swamp muck smells bad, but it's nothing compared to the toxic stench of the Spirits. I think it's because the Spirits are a condensed version of the contaminated soil that we find across all of Heiron.</p>
+          <p> </p>
+    			<p>If you eliminate those troublesome Spirits, [%username], I'll reward you handsomely. And you'll make the road safe for supplies and reinforcements.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank the light! I was afraid that you might turn me down because the task is so...unsavory.</p>
+          <p> </p>
+          <p>So go wipe out the [%dic:STR_DIC_M_ElementalEarth2_34_An]s and [%dic:STR_DIC_M_ElementalEarth2_35_An]s along the southern road of the Decayed Grove.</p>
+          <p> </p>
+          <p>I know it's not glamorous, but we're still counting on you, [%username]. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Faith and arms!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Perhaps Daevas too sensitive for the stench, eh? Or is mucking about in the swamp somehow beneath you, [%username]?</p>
+          <p> </p>
+          <p>If you won't help, I'll try to solve this problem with the Guardians at my disposal.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Good luck."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+
+         <p>Did you kill the Contaminated Spirits, [%username]? That would be the best news we've heard all week!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"They're  eliminated."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Nothing helps the Guardians' morale like making their time here a little more bearable.</p>
+          <p> </p>
+          <p>We can get supplies down that road safely now, and without the fumes making us collapse.</p>
+          <p> </p>
+          <p>Thank you for your efforts. Here's a token of appreciation from all of us at the Observation Post.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get rid of stinking Spirits.</font></p>
+                     <p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_M_ElementalEarth2_34_An] ([%2]/6)</font></p>
+                     <p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_M_ElementalEarth2_35_An] ([%5]/3)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with Brosia.</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Eliminate Contaminated Spirits as Brosia asked.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Brosia said that the Spirits on the road to Jeiaparan Village stink so much that travelers are collapsing on the road.</p>
+          <p> </p>
+          <p>When you eliminated the Ruined Soil Spirits and Contaminated Terra Spirits, it pleased Brosia and improved morale at the observation post.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

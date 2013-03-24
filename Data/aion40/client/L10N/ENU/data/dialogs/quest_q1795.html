@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Now that they've captured the Miren Fortress, our enemies are preparing a number of attacks throughout the Abyss.</p>
+          <p> </p>
+          <p>The Elyos will suffer crippling casualties if these attacks are allowed to proceed.</p>
+          <p> </p>
+          <p>We must retake the fortress and upset their plans. We must regain and maintain control!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Yes, we must!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>There are far too of those roaches to subdue in a single blow, but if we raid them periodically, I believe we can break down their defenses.</p>
+          <p> </p>
+          <p>We'll need quality Daevas to make this work.</p>
+          <p> </p>
+          <p>Are you willing to help, [%username]? Will you be our vanguard and wipe out the [%dic:STR_DIC_M_Lamiren_Guard] inside the fortress?</p>    
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent. Return after you have eliminated the [%dic:STR_DIC_M_Lamiren_Guard] inside Miren Fortress.</p>
+          <p> </p>
+          <p>This is not a task for the light of heart, and the colleagues you bring should be your equals, though I'm sure you gathered that already.</p>
+          <p> </p>
+          <p>We will proceed to the next phase after you return safely.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Faith and arms!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Why did you come to the Abyss if you have no interest in furthering the Elyos cause?</p>
+          <p> </p>
+          <p>If you can't handle the fighting, go back to Atreia, where such things will not be asked of you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Apologies."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I have been waiting for you, [%username]!</p>
+          <p> </p>
+          <p>Was your mission successful?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"It was."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good news, though the situation sounds worse than I thought.</p>
+          <p> </p>
+          <p>Still, I expect it will be much easier to take back the fortress now.</p>
+          <p> </p>
+          <p>For the glory of Sanctum!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Eliminate the [%dic:STR_DIC_M_Lamiren_Guard] ([%2]/10).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report the result to [%dic:STR_DIC_N_Monerva].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Eliminate garrison troops inside the Miren Fortress to help Minerva, who is planning a surprise attack to recapture the fortress.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Minerva was planning a surprise attack to recapture the Miren Fortress. Her plan involved causing a disturbance in the enemy line by raiding the garrison troops defending the fortress.</p>
+          <p> </p>
+          <p>You wiped out the Miren Fortress garrison and returned to Minerva to report your success.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

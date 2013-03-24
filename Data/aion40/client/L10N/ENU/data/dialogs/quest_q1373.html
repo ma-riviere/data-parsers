@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>There is a great sickness in the village. One villager is covered with oozing open sores. It's a wonder he has any healthy skin left!</p>
+          <p> </p>
+          <p>We've tried everything, but nothing brings him relief. Hot Spring Water might cure the disease...but it's too dangerous for Humans to get the water.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"What is the difficulty?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hot spring water itself is not difficult to draw. The problem is that this spring water is only effective when it is hot--very hot.</p>
+          <p> </p>
+          <p>No Human is fast enough to carry it back before the water gets cold. But a Daeva could collect the water and then use the Obelisk to return while the water is still hot.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"May I be of service?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>If you would help us, [%username], we would be very thankful.</p>
+          <p> </p>
+          <p>Please go to [%dic:STR_DIC_W_LF2_SZ_G4], and bring us Hot Spring Water. We can't take our patient to the hot spring, so we'll have to bring the hot spring to him.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>If you go to [%dic:STR_DIC_W_LF2_SZ_G4], you'll find a geyser that spouts hot water. You can draw the water with this Flask. Try not to get any foam in it. Please come back swiftly. The water is only effective while it is hot.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be as quick as a darting Pleuro."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This is serious. If you saw him yourself, you'd see his agony.</p>
+          <p> </p>
+          <p>Please, take pity on him. I implore you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Farewell."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You made it!</p>
+          <p> </p>
+          <p>I knew you could do it, [%username].</p>
+          <p> </p>
+          <p>Please give me the Hot Spring Water.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here's the water. Be careful--it's really hot!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Sure, you came back in time. But for what? You didn't bring the Hot Spring Water!</p>
+          <p> </p>
+          <p>Please, hurry to the [%dic:STR_DIC_W_LF2_SZ_G4] and bring it back, extra hot!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Extra hot Spring Water, no foam, got it!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ariel be praised--you brought back the Hot Spring Water in time!</p>
+          <p> </p>
+          <p>With this, the patient's oozing skin will finally be healed.</p>
+          <p> </p>
+          <p>Thank you.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Draw Hot Spring Water from the geyser in [%dic:STR_DIC_W_LF2_SZ_G4].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Bring the Flask containing the Hot Spring Water to [%dic:STR_DIC_N_Aerope] within the time limit.</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Draw the Hot Spring Water and bring it to the patient, as Aerope requested.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Aerope was worried about a patient in the village whose skin could not be healed with any of the usual medicines. You collected Hot Spring Water and brought it to her so she could use it to cure the patient.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

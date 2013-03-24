@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I just got done with a short survey of this area. While I was in the Frillneck habitat I saw a huge egg.</p>
+          <p> </p>
+          <p>I'm telling you [%username], this egg was so big my jaw dropped. And when I tried to get a better look at it...it moved!</p>
+          <p> </p>
+          <p>I figured anything that'd come out of an egg that size would be pretty dangerous, so I ran. But now I'm a bit worried.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"About an egg?"</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, the egg was in the Frillneck habitat, so I think it must be a [%dic:STR_DIC_E_LF3_FrillfaimamEgg_Q1556].</p>
+          <p> </p>
+          <p>If it is, it could be trouble for all of Heiron if we don't do anything.</p>
+          <p> </p>
+          <p>And by "we" I mean "you."</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Gojira is an enormous Frillneck--as big as a tower. Anything coming out of that egg is likely to be huge, mean, and hungry.</p>
+          <p> </p>
+          <p>We certainly can't afford to have two Gojiras running around. You need to destroy that egg, and while you're at it, bring back a [%dic:STR_DIC_I_QUEST_1556a] for study. </p>
+          <p> </p>
+          <p>And keep your eyes open for that Gojira!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"One Frillneck omelette comin' up!" </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Frillnecks grow really fast.</p>
+          <p> </p>
+          <p>If we let that thing hatch it could be huge by the time we muster a response.</p>
+          <p> </p>
+          <p>If we miss this chance to kill it in the egg, the consequences could be disastrous.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"It's just an egg." </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Are you okay? Did you see the Gojira?</p>
+          <p> </p>
+          <p>I was worried about you, [%username].</p>
+          <p> </p>
+          <p>Did you crush the [%dic:STR_DIC_E_LF3_FrillfaimamEgg_Q1556]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I brought you this."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You haven't found the [%dic:STR_DIC_E_LF3_FrillfaimamEgg_Q1556] yet?</p>
+          <p> </p>
+          <p>The safety of Heiron depends on you, [%username]!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Don't worry."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This is the sample from the little Gojira in the egg?</p>
+          <p> </p>
+          <p>Thank you very much. I'll study this and see if I can determine why Gojiras get so big. We don't want all the Frillnecks to get that large, do we!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Break the [%dic:STR_DIC_E_LF3_FrillfaimamEgg_Q1556], get a sample for research, and take it to [%dic:STR_DIC_N_Okonus].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">A Gojira egg was found in the Frillneck habitat. Destroy the egg, get a sample from it, and take it to Okonus.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Okonus said he found a huge egg in the Frillneck habitat.</p>
+          <p> </p>
+          <p>If the egg hatches and the hatchling Gojira grows, it might threaten Heiron. He asked you to destroy the egg before it can hatch.</p>
+          <p> </p>
+          <p>You broke the egg, got rid of the hatchling, got the sample, and took it to Okonus as he asked.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

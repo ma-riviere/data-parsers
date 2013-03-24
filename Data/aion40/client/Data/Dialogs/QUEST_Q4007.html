@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>개량한 씨앗에 대한 조사는 마쳤지만 어디다 심느냐 하는 문제는 아직 남아 있습니다.</p>
+          <p> </p>
+          <p>남부 오염지대는 그럭저럭 정화가 되고 있지만 그곳만 가지고는 부족하지요. </p>
+          <p> </p>
+          <p>북쪽에 있는 하벤야크 농장까지 개척해야 수확량이 어느 정도 나올 겁니다.</p>
+          <p> </p>
+          <p>그런데 하벤야크 농장에는 몇 가지 문제가 있습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아직은 토양 상태도 확인을 못 했지만 그보다 더 큰 문제가 있습니다.</p>
+          <p> </p>
+          <p>대파국 때 죽은 농부들이 언데드가 되어 하벤야크 농장을 헤매고 있다는 겁니다.</p>
+          <p> </p>
+          <p>그들이 있는 한 하벤야크 농장을 개척하는 건 불가능합니다. 예전에 왔던 개척단이 실패한 것도 그 때문이니까요.</p>
+          <p> </p>
+          <p>대대적으로 언데드를 소탕해야 하지만 현재는 그럴 만한 여력이 없습니다.</p>
+          <p> </p>
+          <p>[%username] 님이 손을 좀 빌려 주신다면 큰 도움이 될 텐데... 하벤야크 농장의 언데드를 처치해 주시겠습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>하벤야크 농장으로 가서 그곳을 배회하고 있는 [%dic:STR_DIC_M_ZombieFarmerD_23_An]과 [%dic:STR_DIC_M_ZombieMiddleageD_23_An]들을 처치해 주십시오.</p>
+          <p> </p>
+          <p>정착민들이 안심하고 하벤야크 농장으로 가서 개척할 수 있도록 말입니다. </p>
+          <p> </p>
+          <p>하루라도 빨리 그곳에 농작물을 재배할 수 있어야 사람들의 고생도 줄어들 텐데요...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>지난번 임무가 너무 힘들었던 겁니까?</p>
+          <p> </p>
+          <p>휴식이 필요하시다면 강요하진 않겠습니다.</p>
+          <p> </p>
+          <p>도와줄 다른 사람도 있을 테니까요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>브루스트호닌으로 온 후 눈에 보이는 진척이 없어서 마음이 답답했었습니다.</p>
+          <p> </p>
+          <p>하지만 [%username] 님 덕분에 조금씩 진척이 돼 가는 것 같습니다.</p>
+          <p> </p>
+          <p>하벤야크 농장을 떠도는 언데드는 처치하셨습니까?</p>
+          <p> </p>
+          <p>언데드 문제만 해결되면 정착민들이 당장이라도 하벤야크 농장으로 가서 개척을 시작할 겁니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정말 수고하셨습니다.</p>
+          <p> </p>
+          <p>언데드가 완전히 소탕된 것은 아니지만 [%username] 님 덕분에 큰 짐은 덜었습니다. </p>
+          <p> </p>
+          <p>정착민들이 모두 감사할 겁니다. 물론 우리 레기온 사람들도요.</p>
+          <p> </p>
+          <p>수고해 주신 답례니까 거절하지 말고 받아 주십시오.</p> 
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">하벤야크 농장의 언데드를 처치하라</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_ZombieFarmerD_23_An]([%2]/11)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_ZombieMiddleageD_23_An]([%5]/11)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Randet]%에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">정착민들이 하벤야크 농장을 개척할 수 있도록 농장을 배회하는 언데드 농장주민과 언데드 농장일꾼을 처치하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>란데트는 개량한 씨앗을 심으려면 남부 오염지대 외에도 하벤야크 농장을 개척해야 한다고 했다.</p>
+          <p> </p>
+          <p>하지만 하벤야크 농장에는 대파국 때 죽은 언데드가 배회하고 있어서 정착민들이 들어갈 수 없다고 걱정했다.</p>
+          <p> </p>
+          <p>그래서 정착민들이 안전하게 하벤야크 농장을 개척할 수 있도록 언데드 농장주민과 언데드 농장일꾼을 처치하였다.</p>  
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

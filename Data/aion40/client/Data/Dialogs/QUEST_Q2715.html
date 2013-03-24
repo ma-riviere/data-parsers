@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+       <p>요즘 제가 걱정이 많습니다. 이유는 모르겠지만 불타는 피의 성운에 사는 화염족들이 이곳을 자꾸 침입하거든요.</p>
+       <p> </p>
+       <p>순간 이동을 시키는데 방해가 되기도 하고, 라테스란의 줄기에 무슨 피해가 갈까 봐 두렵습니다.</p>
+       <p> </p>
+       <p>프리뭄 요새에 보고했지만 전투 병력도 부족한 판에 거기 지원할 인원이 없다는 답변만 받았습니다.</p>
+       <p> </p>
+       <p>대신 은주화를 줄 테니 도와줄 데바를 찾아보라더군요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>어떻습니까, [%username] 님?</p>
+          <p> </p> 
+          <p>불타는 피의 성운으로 가서 [%dic:STR_DIC_A_Ab1_2715all] 무리를 소탕해 주시겠습니까?</p>  
+          <p> </p> 
+          <p>이번 일을 도와주시면 보답으로 은주화를 드리겠습니다.</p>     
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>계속 걱정하고 있었는데 정말 다행입니다.</p>
+          <p> </p>
+          <p>그럼 크로탄 섬이나 드키사스 섬으로 가서 화염족에게 본때를 보여 주세요.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_Ab1_1221_Tauric_38_An], [%dic:STR_DIC_M_Ab1_1231_Tauric_38_An] 상관없이 처치하면 됩니다.</p>
+          <p> </p>
+          <p>그럼 부탁드립니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>다시 생각해 주실 순 없을까요?</p>
+          <p> </p>
+          <p>다른 분이면 이렇게 사정하지도 않습니다.</p>
+          <p> </p>
+          <p>[%username] 님 실력이 뛰어나단 걸 아니까 이렇게 부탁드리는 겁니다. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>벌써 돌아오셨습니까?</p>  
+         <p> </p>
+         <p>[%username] 님의 명성은 익히 들었는데 이 정도로 실력이 뛰어난 줄은 몰랐군요. </p>  
+         <p> </p>
+         <p>화염족은 모두 처치하셨겠죠?</p>       
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님의 말을 들으니 제가 안심이 됩니다.</p>
+          <p> </p>   
+          <p>화염족 놈들도 [%username] 님 덕분에 겁 좀 먹었을 겁니다.</p>   
+          <p> </p> 
+          <p>자, 약속한 은주화입니다. 모아 뒀다가 좋은 물건을 장만하시길 빕니다.</p>
+          <p> </p>   
+          <p>그리고 앞으로도 시간이 나면 다시 와서 도와주십시오.</p> 
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">불타는 피의 성운에 있는 [%dic:STR_DIC_A_Ab1_2715all]을 처치하라([%2]/15)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Liudona]와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">불타는 피의 성운에 사는 화염족의 동태가 수상하다고 한다. 리우도나의 부탁대로 크로탄 화염족과 드키사스 화염족을 처치하자.</p>
+          <p></font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>리우도나는 화염족이 자꾸 라테스란 서쪽 줄기를 넘보는 것이 불안하다면서 불타는 피의 성운으로 가서 놈들을 처치해 달라고 했다.</p>
+          <p> </p>     
+          <p>그래서 크로탄 화염족과 드키사스 화염족을 처치하고 돌아가자 수고했다며 은주화를 주었다. </p>   
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

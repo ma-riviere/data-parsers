@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>제가 드린 어비스 포인트는 당신을 분명히 강하게 만들어 드릴 겁니다.</p>
+          <p> </p>
+          <p>모든 것은 [%username] 님의 선택이지만, </p>
+          <p> </p>
+          <p>분명한 것은 저는 [%username] 님께서 영웅이 되시길 바란다는 것이죠.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>제 뒤에 방은, 당신을 강하게 만들어 드릴 수 많은 아칸 장비가 있습니다. </p>
+          <p> </p>
+          <p></p>
+          <p> </p>
+          <p>[%dic:STR_DIC_I_QUEST_80323a]를 구입하여 저에게 가져와 주십시오. </p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>어비스에서의 모험은 이제 시작입니다. </p>
+          <p> </p>          
+          <p>[%username] 님은 영웅이 되시겠죠. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>뜻이 있어 거절하시는 것이라 믿습니다. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>가져오셨나요? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">가디언 십부장의 아쿠아마린 반지를 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>제가 말씀드린 것을 아직 가져오시지 못하셨군요. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이 것이 시작이라 믿습니다. </p>
+          <p> </p>
+          <p>[%username] 님은 점점 더 강해지시겠죠. </p>
+          <p></p>
+          <p>천족들과 더 큰 싸움에서 [%username] 님과 함께라면 이제 두렵지 않을 겁니다. </p>
+          <p></p>
+          <p>마족에게 영광의 빛이 함께 할 것입니다. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_event_Dalet]와 대화하라</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_N_event_Dalet]에게 [%dic:STR_DIC_I_QUEST_80323a]를 가져가라.</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">[%dic:STR_DIC_N_event_Dalet]는 어비스에서 더욱 강해지는 방법을 알려주고자 한다. </font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>천족을 상대로 더욱 강해지기 위해서 얻어야 하는 장비를 얻었다. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

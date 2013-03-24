@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Legion missions have been given to all members. The Legion mission will not be deemed complete until all members have completed their individual assignments. Good luck, everyone!</p>
+          <p> </p>
+          <p>Legion Mission: </p>
+          <p> </p>
+          <p>Kill [%dic:STR_DIC_M_Adma_DeathknightNamed_50_Ah] in the Adma Stronghold. Report to [%dic:STR_DIC_N_Ceana] when your mission is complete.</p>
+          <p> </p>
+          <p>- Legion Administrator -</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], are you back from Adma Stronghold?</p>
+          <p> </p>
+          <p>I already read the Legion's report that you had been dispatched there. All I need from you is to know how you faired.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Lord Lannok is dead."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent work then. [%userguildname] is doing quite well, and your efforts are a big part of that.</p>
+          <p> </p>
+          <p>Here, take this reward for your efforts.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Kill [%dic:STR_DIC_M_Adma_DeathknightNamed_50_Ah] ([%2]/1).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report to [%dic:STR_DIC_N_Ceana].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Legion Mission: defeat Lord Lannok. Participation will contribute towards the legion.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You were tasked with defeating Lord Lannok. You accomplished the mission and contributed to the legion.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

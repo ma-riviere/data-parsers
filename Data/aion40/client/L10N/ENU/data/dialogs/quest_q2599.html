@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, arr! Hm, hum. Ah ah!</p>
+          <p> </p>
+          <p>I have such a sore throat! And I'm...achoo! Sneezing, too.</p>
+          <p> </p>
+          <p>I usually lose my voice when I have a cold...I hate that.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Is there something you can do?"</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I usually gargle with salt, then drink a cup of honey tea. And I cover my neck with a hot cloth when I go to bed.</p>
+          <p> </p>
+          <p>Oh, no! Do I have honey at home? Shards! I used it all the last time I caught a cold.</p>
+          <p> </p>
+          <p>Will you get me some? There's no way I can go after it while I'm on duty.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Snowy Mosbears keep a lot of honey in their nests, but I wouldn't want to be the one trying to take it from them. Try [%dic:STR_DIC_M_Sprigg4_34_An]s or [%dic:STR_DIC_M_Sprigg3DF3_33_An]s instead.</p>
+          <p> </p>
+          <p>You should be able to find [%dic:STR_DIC_I_QUEST_2599a] they've already stolen.</p>
+          <p> </p>
+          <p>And while you're about it, will you get me a [%dic:STR_DIC_I_QUEST_2599b]? I need something to cover my neck with.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll get what you need." </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, it's okay. It was a rather selfish request.</p>
+          <p> </p>
+          <p>Anyway, who cares if I lose my voice?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm sure you'll be all right." </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah ah ah...choo!</p>
+          <p> </p>
+          <p>It's getting worse!</p>
+          <p> </p>
+          <p>I think I'd better make that honey tea right now.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here you go."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You didn't go yet?</p>
+          <p> </p>
+          <p>If you'd told me before you couldn't do it, I could have found another way!</p>
+          <p> </p>
+          <p>Can you go now? I really need that honey and the Spriggle Bandana. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm on my way." </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You've got the honey! And there's enough to make quite a few cups of tea. Thanks!</p>
+          <p> </p>
+          <p>Is this the bandana? Hmm...I guess I'd better plan to wash it first.</p>
+          <p> </p>
+          <p>I have your reward here. It's not much, but please take it.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Take some [%dic:STR_DIC_I_QUEST_2599a] and a [%dic:STR_DIC_I_QUEST_2599b] to Information Officer Gaamel.</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Go to get the Snowy Mosbear Honey and Spriggle Bandana for Information Officer Gaamel for his sore throat.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Information Officer Gaamel said his throat was getting sore. He wanted to drink hot honey tea before going to bed.</p>
+          <p> </p>
+          <p>But he was out of honey, and asked you to procure some for him.</p>
+          <p> </p>
+          <p>You got the honey and a Spriggle Bandana from the Spriggles. He thanked you and gave you a reward. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

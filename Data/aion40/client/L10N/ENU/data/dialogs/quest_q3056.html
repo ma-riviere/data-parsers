@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p> - WANTED -</p>
+          <p> </p>
+          <p>Prison Breaker [%dic:STR_DIC_N_Siraus] to stand trial for the following charges:</p>
+          <p> </p>
+          <p> 1. Murdering the Homuron family.</p>
+          <p> 2. Escaping guards and fleeing.</p>
+          <p> </p>
+          <p>A generous reward is offered for anyone who provides critical information on the whereabouts of Zirius or brings him in alive.</p>
+          <p> </p>
+          <p>Posted by [%dic:STR_DIC_N_Iphigenia], Administration Officer</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"Alive? Sounds challenging. I like it."</Act>
+      <Act href="HACTION_FINISH_DIALOG">"I've too much else to do."</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Please, Daeva! I'm begging you! Please listen to me!</p>
+          <p> </p>
+          <p>I know they think I killed the Homurons. But I didn't! I've known them since childhood and were like family!</p>
+          <p> </p>
+          <p>I've been trying to clear my name tracking the real criminal, but you bounty hunters make it impossible for me to do much more than hide!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"You know who the real criminal is?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What? You're going to listen to me? Oh, thank you, [%username]! You're different than those other bounty hunters.</p>
+          <p> </p>
+          <p>When I went to the Homurons' house, everybody was dead already. The smell of blood everywhere and...a much more sinister smell. The smell of [%dic:STR_DIC_M_LF2A_SpectreFxQ_50_An].</p>
+          <p> </p>
+          <p>I tracked the smell all the way to Marla Cave, but if the bounty hunters catch me here, Mabolo will never be caught. [%username], please catch the true criminal for me...no, for my friends the Homurons. Please, I beg you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO2">"I'll do my best."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did you catch Deatheater Mabolo?</p>
+          <p> </p>
+          <p>He's here in Marla Cave, isn't he? I'm sure of it. My nose has never been wrong.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"You didn't mention how creepy he was."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>So he's gone? Oh, thank you, [%username]!</p>
+          <p> </p>
+          <p>Now my friends' souls will be able to return to the flow of Aether peacefully.... Honestly, that's more important than clearing my name.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Find Prison Breaker [%dic:STR_DIC_N_Siraus].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Get rid of [%dic:STR_DIC_M_LF2A_SpectreFxQ_50_An] ([%5]/1).</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Talk with [%dic:STR_DIC_N_Siraus].</font></p></step>        
+    </steps>
+          <p><font font_xml="quest_summary">Find Prison Breaker Zirius, a wanted criminal.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You found Zirius, a wanted criminal, at Marla Cave. You were about to arrest him when he said he didn't murder the Homuron family. He begged you to catch the real criminal, Deatheater Mabolo.</p>      
+          <p> </p>
+          <p>You killed Mabolo and returned to let Zirius know. Zirius thanked you for freeing his friends' souls.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

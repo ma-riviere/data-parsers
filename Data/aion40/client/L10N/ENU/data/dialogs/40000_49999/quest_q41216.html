@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q41216</QuestId>
+    <QuestName>Worth the Price?</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You came to me with a backpack, [%username]. That was all you had, and yet we're about to part ways as close friends. You have done so much for my family.</p>
+          <p> </p>
+          <p>There is one last thing you could help with, though. My father mentioned his most prized possession in his last entry, and how he'd hidden it in the [%dic:STR_DIC_W_LDF4a_SZ_B2_10].</p>
+          <p> </p>
+          <p>I would like you to recover it, if you can spare time. We both know that I cannot hope to leave that place alive.</p>
+          <p> </p>
+          <p>Please, help if you can. Even if it's a journal filled with technobabble, I would like to hold on to it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're back! What did you find in the [%dic:STR_DIC_W_LDF4a_SZ_B2_10]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">"I think it's actually for you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>For... for me? Let me see! "My dear Luanna. Words cannot convey the sense of shame I feel when I think of my actions as a father.</p>
+          <p> </p>
+          <p>"I have failed you. Too caught up in my own little world, I sought out new adventures constantly. But you were always in my mind.</p>
+          <p> </p>
+          <p>"This archive contains letters I was too afraid to send you, and all the work that took me away from you. I only hope that you can forgive me for my failings. My love, always. Father."</p>
+          <p> </p>
+          <p>I... don't know what to say. You've brought my father and me closer than I ever thought we'd be. Please leave me so that I can read these letters.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Use the Windstream near the Crumbling Petralith to find the item hidden in the [%dic:STR_DIC_W_LDF4a_SZ_B2_10] and return it to [%dic:STR_DIC_N_Linacroft].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Reclaim the item that Luanna's father hid away before his death.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Luanna asked you for one final favor: to reclaim the prized possession that her father had hidden away before he was killed. You searched the Jotun Ruins for them, and instead of treasure, found a book.</p>
+          <p> </p>
+          <p>You brought the archive back to Luanna, who saw it held countless letters, all addressed to her. Luanna, deeply moved, thanked you for finding the archive, and asked to left alone to read its contents.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>어이, [%username]! 시간 좀 있나?</p>
+          <p> </p>
+          <p>짬이 나면 나 좀 도와주게. 요즘 앞뒤로 공격을 받고 있는데 대처할 인원이 부족해서 말이야.</p>
+          <p> </p>
+          <p>알고 있겠지만 여기 파견된 건 [%dic:STR_DIC_FLA07]에 서식하는 크랄과 브라우니의 동태를 살피기 위해서였지.</p>
+          <p> </p>
+          <p>그런데 요즘 우리 애를 먹이는 녀석들은 바로 [%dic:STR_DIC_MLA10]라네.</p>
+          <p> </p>
+          <p>툭 하면 야영지로 와서 음식 창고를 노리는 통에 피해가 이만저만이 아닐세.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다. </Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>저 빌어먹을 [%dic:STR_DIC_MLA10] 놈들을 혼쭐을 내 줬으면 좋겠네.</p>
+          <p> </p>
+          <p>놈들을 처치해서 겁을 주면 함부로 식량을 노리러 오지는 못하겠지.</p>
+          <p> </p>
+          <p>마음 같아서는 녀석들의 씨를 말리고 싶지만 어차피 불가능한 일이고... 이것만이라도 좀 도와주게.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그럼 [%dic:STR_DIC_MLA10]를 9마리만 잡아 오게.</p>
+          <p> </p>
+          <p>그렇게만 해 준다면 비상금을 털어서라도 사례하지.</p>
+          <p> </p>
+          <p>더 이상 자이프 녀석들 때문에 식량을 지키느라고 밤잠을 설치기는 싫다네.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>뭐 바쁜 일이라도 있는 겐가?</p>
+          <p> </p>
+          <p>그것 참 안됐구먼.</p>
+          <p> </p>
+          <p>일을 도와주면 두둑히 사례하려고 했는데.</p>
+          <p> </p>
+          <p>혹시 동료 가운에서 한가한 사람이 있으면 이리로 와 달라고 해 주겠나?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그래, [%dic:STR_DIC_MLA10]%은 좀 잡아 왔는가?</p>
+          <p> </p>
+          <p>놈들의 이빨과 발톱이 여간 날카로운 게 아니었을 텐데.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 얘기한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>수고 많았네. 녀석들의 울음소리가 좀 줄어든 느낌이군.</p>
+          <p> </p>
+          <p>요즘 크랄과 브라우니 놈들이 뭔가 꾸미는 것 같아서 정찰하기에도 바쁜 판에 자이프까지 날뛰니 이만저만 힘든 게 아니었거든.</p>
+          <p> </p>
+          <p>자, 약속했던 사례금일세.</p>
+          <p> </p>
+          <p>나중에 정찰 임무가 끝나면 같이 한잔하세나.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">음식 창고를 노리는 [%dic:STR_DIC_MLA10]를 처치하라([%2]/9) </font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_LA144]와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">툴라가 음식 창고를 노리는 잿빛 자이프 때문에 골치가 아프다고 한다. 다미누 숲 가장자리에 서식하는 잿빛 자이프를 없애주자.</p>
+          <p></font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>툴라는 멜포네 야영지에 자꾸 잿빛 자이프가 침입해서 골치라고 했다.</p>
+          <p> </p>
+          <p>그래서 놈들을 혼쭐을 내 달라는 부탁을 받아 자이프를 처치했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

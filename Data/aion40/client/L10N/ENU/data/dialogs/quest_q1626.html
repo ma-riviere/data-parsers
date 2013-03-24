@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You probably think the torches are a silly idea. Did you ever hear about Calon? The people of Calon were allegedly saved by these very torches--and legend has it that the people in the camp when the torches are lit never die.</p>
+          <p> </p>
+          <p>Even if it isn't true, if the troops believe it, it could give us the advantage we need. Faith is as important as strength, yes?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I suppose so."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It also doesn't hurt that it will light the path, of course. There's a practical side to this, too. </p>
+          <p> </p>
+          <p>The lives of my soldiers are my responsibility, [%username], and I will do whatever is necessary to bring as many as possible safely home again. I know what our odds are against Bollvig. If a torch can make the difference, I will absolutely use it. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"That makes sense."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm glad you think so, because I have one last favor to ask of you before the battle--help me light up the strike route. </p>
+          <p> </p>
+          <p>I know you've been to the Patema Ruins before. You know the area well, and you could save us valuable time. </p>
+          <p> </p>
+          <p>What do you say, old friend?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I knew I could count on you. Here's the bottle with the Starturtle Fat. </p>
+          <p> </p>
+          <p>Go to [%dic:STR_DIC_W_LF3_SZ_F1], and set light to the Torches of Encouragement, Attack, Courage, Guidance, Battle, Victory, and Glory, one by one from the one nearest to the village to the one farthest away.</p>
+          <p> </p>
+          <p>Once you light the torches, not even a storm will be able to extinguish them. Then we can set off on our mission with clear hearts and able spirits.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll take care of it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I...see. Fine. I bid you good day, [%username]. Think of us as we march into Bollvig's lair, won't you? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Voluptes...Sun's blessings on you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Is it done? I can see a glow on the horizon....I'd hoped it was your light preparing the way. </p>
+          <p> </p>
+          <p>I'm anxious, I admit, but your deeds here today help set my heart at ease. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Light will guide your steps."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you, [%username]. I can see on the faces of my soldiers. They've taken heart. Their spirits have been raised on the eve of battle, no easy task. </p>
+          <p> </p>
+          <p>We'll go now. Here's your reward--say a prayer to Aion for us as we travel into battle. Bollvig awaits...we will not keep him long. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Set light to [%dic:STR_DIC_E_LF3_Torch1].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Set light to [%dic:STR_DIC_E_LF3_Torch2].</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Set light to [%dic:STR_DIC_E_LF3_Torch3].</font></p></step>
+               <step><p visible="[%9]"><font color="[%10]">Set light to [%dic:STR_DIC_E_LF3_Torch4].</font></p></step>
+               <step><p visible="[%12]"><font color="[%13]">Set light to [%dic:STR_DIC_E_LF3_Torch5].</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Set light to [%dic:STR_DIC_E_LF3_Torch6].</font></p></step>
+               <step><p visible="[%18]"><font color="[%19]">Set light to [%dic:STR_DIC_E_LF3_Torch7].</font></p></step>
+               <step><p visible="[%21]"><font color="[%22]">Talk with [%dic:STR_DIC_N_Voluptes].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Set light to the torches in the Patema Ruins so that the Blue Fleet soldiers can attack The Storm Circle.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Voluptes told you of a legend about the torches protecting the lives of the people in camp when they have been lit. He asked for your help to raise his soldiers' morale and light the strike route. </p>
+          <p> </p>
+          <p>After you lit the torches, he thanked you and asked you to think of him and his men as they attack Bollvig.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

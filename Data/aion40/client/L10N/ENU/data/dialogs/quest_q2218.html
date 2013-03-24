@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hey, [%username]! Remember me, it's Tigg!</p>
+          <p> </p>
+          <p>I was thinking...fruit's not the only thing that grows around here.</p>
+          <p> </p>
+          <p>Have you ever heard of Frightcorn?</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Can't say that I have. What is it?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's a grain that grows just about anywhere. A priest I know in Basfelt Village wants some to cultivate.</p>
+          <p> </p>
+          <p>They're having problems with Mosbears, and the Frightcorn would supplement their food stores. Even a novice farmer can grow it with ease, and it tastes great!</p>
+          <p> </p>
+          <p>There's a problem, though...</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What is it this time?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Here in Altgard, the only place to get it right now is the MuMu Farmland.</p>
+          <p> </p>
+          <p>I'm a gatherer, not a warrior. All the Sapiens working and patrolling the area frighten me something awful.</p>
+          <p> </p>
+          <p>But I was thinking, a Daeva like you... Could you help the village and gather the seeds?</p>
+        	<p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Wow! What they're saying about you is true.</p>
+          <p> </p>
+          <p>You can find the seeds in sacks carried by [%dic:STR_DIC_M_RatmanGathererM_11_An]s, [%dic:STR_DIC_M_RatmanGathererMS_11_An]s, or [%dic:STR_DIC_M_RatmanGathererMS_13_An]s. </p>
+          <p> </p>
+          <p>I think 5 [%dic:STR_DIC_I_quest_2218a]s should be enough to start farming.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Sounds simple enough..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Okay, I understand. A Daeva follows a higher calling. You probably don't even get hungry like we do.</p>
+          <p> </p>
+          <p>It's just... Priest Gefion, he's counting on me to get the seeds.</p>
+          <p> </p>
+          <p>If you could help me, I know we can do some real good for Basfelt Village. Would you please reconsider?</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"It's just not my problem."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Have you already been to the field?</p>
+          <p> </p>
+          <p>Great! I knew it would be an easy task for a Daeva!</p>
+          <p> </p>
+          <p>Let's see what you collected.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here's everything I could get..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Okay, okay, I understand, you probably got attacked by Balaur or something, but the seeds are important to us.</p>
+          <p> </p>
+          <p>If you can bring the five seeds... I'm sorry to be a bother...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"It's all right, I'm heading right back!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Great! I sent word ahead to the village that a Daeva was helping me, and they're very thankful!</p>
+          <p> </p>
+          <p>These will be...will be... Hmm, That's odd.</p>
+          <p> </p>
+          <p>It's been a while, but I'm pretty sure these Frightcorn seeds are the wrong color.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect [%dic:STR_DIC_I_quest_2218a]%s and take them to [%dic:STR_DIC_N_Titt].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">To help villagers farm, steal Frightcorn Seeds from the MuMu Farmers and Gatherers and deliver them to Tigg.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Tigg needed to procure some seeds  Priest Gefion asked for. He knew Frightcorn would be the perfect crop for novice farmers, but he was worried since they only come from the MuMu Farmland.</p>
+          <p> </p>
+          <p>At his request, you snatched Frightcorn Seeds after defeating MuMu Farmers and Gatherers. Tigg thanked you for your help.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

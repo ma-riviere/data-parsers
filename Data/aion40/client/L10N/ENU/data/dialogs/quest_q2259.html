@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_M_DireBeast_18_An]s are giving me a such headache!</p>
+          <p> </p>
+          <p> They usually stay in the Black Claw Village but now they keep attacking the wagons that supply the reconstruction site!</p>
+       
+          <p> </p>
+          <p>I'd like to go up there and just wipe them out. I can't, though, because I have to stay and supervise this place.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"How can I help?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's said that they won't attack an opponent that is stronger than they are--Wait! I have an idea that will make them shake with fear!</p>
+          <p> </p>
+          <p>[%username], please hunt them and bring me something that I can use to show them that we are stronger than they are.</p>
+          <p> </p>
+          <p>I think a [%dic:STR_DIC_I_quest_2259a] should show those taygas who is the boss. I'll hang it on the wagon to strike fear in their hearts.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You can find [%dic:STR_DIC_M_DireBeast_18_An]s in the [%dic:STR_DIC_W_DF1A_30].</p>
+          <p> </p>
+          <p>They stay near the village most of the time, but be careful! The village is the den of the deadly Black Claw tribe.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be fine."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>If you're too busy, don't worry about it. We'll just have to find another Daeva to help us.</p>
+          <p> </p>
+          <p>Maybe I'll just go there and do it myself. That'll show 'em!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Try not to get yourself killed."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, where is that wagon? This keeps happening because of those infernal [%dic:STR_DIC_M_DireBeast_18_An]s!</p>
+          <p> </p>
+          <p>So, did you bring the fang?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here's the Tayga Fang you needed."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Are you still here?</p>
+          <p> </p>
+          <p>Please, go get the fang--we have no time to waste. I only need the one!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Fine, fine."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ouch! This fang is really sharp! No wonder those taygas do so much damage.</p>
+          <p> </p>
+          <p>Thank you so much. I'll hang this on the wagon right away. That ought to show them who is boss around here.</p>
+          <p> </p>
+          <p>Here is a token of my appreciation for your help.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Bring a fang to [%dic:STR_DIC_N_Gulkalla].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">You were told that Wild Taygas attack the wagons going to Impetusium. Acquire a Wild Tayga Fang to send them a message.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Wild Taygas were attacking the wagons carrying materials to Impetusium.</p>
+          <p> </p>
+          <p>Gulkalla asked you to get a Wild Tayga Fang so that he could scare the Taygas off. You retrieved a fang and brought it to Gulkalla.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Would you do me a favor, [%username]? You have been of a great help to our Desert Scout Camp.</p>
+          <p> </p>
+          <p>I can see you preparing to leave us, and I need to send a letter somewhere remote.</p>
+          <p> </p>
+          <p>Just one more bit of help for us, and you can forget about this place.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Where do you need it to go?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I have written a report describing our recent missions.</p>
+          <p> </p>
+          <p>I'm sending it to the Fortress, but I think it will also be helpful to the Golden Bough Legion in their Garrison.</p>
+          <p> </p>
+          <p>So, I would like to ask you to deliver the report to [%dic:STR_DIC_N_Castor], the Golden Bough Brigade General.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Please deliver this report to [%dic:STR_DIC_N_Castor] at the Golden Bough Garrison.</p>
+          <p> </p>
+          <p>Neither the Guardians, the Golden Bough Legion, nor the Daevas of Life can stop the desertification of Eltnen, though they do their best. </p>
+          <p> </p>
+          <p>Our time here has been hard, and the desert is one opponent we cannot defeat. But they should at least know that we try.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll let them know." </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're not from here, I can't expect you to understand our pain.</p>
+          <p> </p>
+          <p>Walking away now is the best course of action for you. Before you come to care for us.</p>
+          <p> </p>
+          <p>Thank you for all your trouble.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm sorry I can't help."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You look quite exhausted, [%username].</p>
+          <p> </p>
+          <p>Don't tell me that this heat is getting you down.</p>
+          <p> </p>
+          <p>So, what brings you here?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Demokritos sends word from the field." </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hmm...I didn't know that any of this had happened. This is a lot to think about. </p>
+          <p> </p>
+          <p>The Scout Band is doing an excellent job. I am most grateful to Demokritos for keeping them on mission.</p>
+          <p> </p>
+          <p>Thank you for delivering the report. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Deliver the Scout Report to [%dic:STR_DIC_N_Castor]. </font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Deliver the report from the Scout Band to [%dic:STR_DIC_N_Castor], the Golden Bough Brigade General.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Demokritos wanted to make sure that the Golden Bough Legion had all the latest information.</p>
+          <p> </p>
+          <p>Therefore, you delivered the Scout Report to Castor, who was most appreciative.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

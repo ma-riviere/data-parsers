@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>My heart is filled with sadness of late. Strange dreams plague me, growing worse with each night...dreams of tormented Daevic souls, screaming...crying for release.</p>
+          <p> </p>
+          <p>I thought they were just nightmares at first, but I am now convinced otherwise. These are most certainly visions of something taking place right now.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"How can you be sure?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I suppose the only way would be to visit the place and see for myself, but the scene is never clear enough to know where it might be taking place.</p>
+          <p> </p>
+          <p>However, a substance known as [%dic:STR_DIC_I_QUEST_30326a] makes it possible to recollect visions from a dream even after waking. With the clarity of consciousness, I could certainly locate this dream spot.</p>
+          <p> </p>
+          <p>It's my duty as a Priest to rescue these souls. Will you help me, [%username]?</p>
+          </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you. With the [%dic:STR_DIC_I_QUEST_30326a], I will be able to find out where the souls of the Daeva are trapped and--more importantly--how to free them.</p>
+          <p> </p>
+          <p>There are not many natural sources of Dream Powder, but one such source is at the Dragonrest. Go there and hunt down the [%dic:STR_DIC_M_DF4_ShadowStalker_Sand_54_An]s and [%dic:STR_DIC_M_DF4_ShadowStalker_Sand_55_An]s that shed it.</p>
+          <p> </p>
+          <p>Please, [%username], be quick.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I will."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I...I understand. You must be skeptical about this dream being a true vision.</p>
+          <p> </p>
+          <p>But whether you believe me or not, I know my dreams are visions of something real. What sort of a Priest would I be if I couldn't make that distinction?</p>
+          <p> </p>
+          <p>I have faith, [%username]. Search your soul for your own font of faith, and if you find it return to me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I will try."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I have waited long, [%username]. Last night's dream was more vivid than ever. I can still recall the Daevas, their tormented expressions and cries...but their prison is still hidden.</p>
+          <p> </p>
+          <p>Please, tell me--did you bring me the Dream Powder?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here it is."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Do you not know how serious this is, Daeva? Imagine your own soul, trapped for all eternity, in torment. Yet you do nothing?</p>
+          <p> </p>
+          <p>Please, go and slay Souleater Obscura and Animus Obscura, and bring me the [%dic:STR_DIC_I_QUEST_30326a] they shed from their skin.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I will do what I can."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you, Daeva. I shall use this immediately--the effect is quick. Just a single breath in, and....</p>
+          <p> </p>
+          <p>Oh...oh my. I think I know where they are. They can finally be freed, but...it will not be easy.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Obtain [%dic:STR_DIC_I_QUEST_30326a] and take it to [%dic:STR_DIC_N_Unset].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Defeat Souleater Obscura and Animus Obscura and obtain Dream Powder so that Greeta may clearly see the visions from her dreams.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Greeta said she'd been having dreams of tormented souls of Daeva, and felt compelled to rescue them.</p>
+          <p> </p>
+          <p>You brought her Dream Powder, which helped her discern where the souls were trapped.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

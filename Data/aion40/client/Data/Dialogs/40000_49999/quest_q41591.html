@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q41591</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>미입력</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님이 정찰하러 온 놈들을 처치해 주셨지만 아직 좀 문제가 남아 있습니다.</p>
+          <p> </p>
+          <p>솔직히 놈들이 아무리 처치해도 한때뿐입니다.</p>
+          <p> </p>
+          <p>대장이 있으니 부하들을 지휘해서 계속 몰려오는 게 아닌가 싶습니다. </p>
+          <p> </p>
+          <p>그러니 놈들의 우두머리인 [%dic:STR_DIC_M_LDF4b_T1_S3_DrakanSc_Sikara_Fight_Named_58_An]를 좀 처치해 주시겠습니까?</p>
+          <p> </p>
+          <p>우두머리가 없으면 놈들의 움직임이 아무래도 좀 주춤해질 테니까요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>기다리고 있었습니다, [%username] 님.</p>
+          <p> </p>
+          <p>놈들의 우두머리를 처치하는 일은 어떻게 됐나요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정찰대장 마호크가 사라졌다고 하니 안심이 됩니다.</p>
+          <p> </p>
+          <p>이제 놈들의 움직임이 예전 같지는 않을 테니까요.</p>
+          <p> </p>
+          <p>덕분에 정말 한시름 덜었습니다.</p>
+          <p> </p>
+          <p>감사합니다, [%username] 님. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_M_LDF4b_T1_S3_DrakanSc_Sikara_Fight_Named_58_An]를 처치하라([%2]/1)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Briz]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">공성부대 주둔지를 정찰하는 용족의 대장인 정찰대장 마호크를 처치해 주기로 했다.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>브리즈는 정찰 병력을 아무리 처치해도 우두머리를 처치하지 않으니 계속해서 몰려온다고 했다.</p>
+          <p> </p>
+          <p>그래서 놈들의 우두머리인 정찰대장 마호크를 처치해 줬더니 이제 한시름 덜었다며 고마워했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

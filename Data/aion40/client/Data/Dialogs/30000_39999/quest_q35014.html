@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>신성 수호회 일동 보시오.</p>
+          <p> </p>
+          <p>동지들의 활발한 활동에 힘입어 결계를 수호하는 일이 차질없이 진행되고 있소.</p>
+          <p> </p>
+          <p>하지만 방심은 최대의 적이기에 신성 수호회는 잡학 박사 바토니아에게 의뢰하여 기발한 장치를 하나 발명했소.</p>
+          <p> </p>
+          <p>그것은 천인이 아닌 자가 지나가면 반응하는 [%dic:STR_DIC_OBJ_FOBJ_Q35014]이오. 그리고 그 수상한 자의 형상을 어렴풋하게나마 기록할 수 있소.</p>
+          <p> </p>
+          <p>모든 신성 수호회 회원에게 알리니, 테오보모스 주요 길목에 설치된 탐지의 눈에서 탐지의 기억을 챙겨 [%dic:STR_DIC_E_35014]에게 가져다 주시오.</p>
+          <p> </p>
+          <p>명심하시오. 행동은 신속하게! 입은 무겁게! </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">의뢰서를 접어 넣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>무슨 일이오?</p>
+          <p> </p>
+          <p>(작은 목소리로) 혹시 신성 수호회의...?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">탐지의 기억을 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>신성 수호회에서 의뢰서를 받지 않았소?</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_OBJ_FOBJ_Q35014]에서 수상한 자의 형상이 기록된 탐지의 기억을 가져오라고 분명히 써 있었을 텐데.</p>
+          <p> </p>
+          <p>앞으로 의뢰서를 읽을 땐 내용을 외워두는 습관을 들이시오.</p>
+          <p> </p>
+          <p>(주위 눈치를 살피며) 보는 눈도 많고, 일일이 다시 말해 줄 수 없단 말이오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>내 잠시 살펴보겠소.</p>
+          <p> </p>
+          <p>(탐지의 기억을 응시하자 어렴풋한 형상이 떠오른다.)</p>
+          <p> </p>
+          <p>으음... 이건! 아무래도 검은 날개를 단 자 같구려. 얼른 신성 수호회에 보고해야겠소.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_OBJ_FOBJ_Q35014]의 기억을 모아 [%dic:STR_DIC_E_35014]에게 가져가라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">신성 수호회에서 의뢰서가 왔다. 지시에 따르자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>신성 수호회에서 온 의뢰서에 따르면 테오보모스 주요 길목에 수상한 자가 지나가면 형상을 기록하는 탐지의 눈을 설치했다고 한다.</p>
+          <p> </p>
+          <p>탐지의 눈을 찾아 탐지의 기억을 챙겨 가져가자 검은 날개를 단 자가 보인다며 신성 수호회에 보고하겠다고 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

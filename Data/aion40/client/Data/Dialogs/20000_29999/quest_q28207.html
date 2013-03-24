@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그런데 [%username], 물어볼 게 하나 있습니다.</p>
+          <p> </p>
+          <p>혹시 제2 템페르 훈련소에서 용족을 본 적 있습니까?</p>
+          <p> </p>
+          <p>확인할 게 있어서 물어보는 거니 사실 대로만 말해주면 됩니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">고개를 젓는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(고개를 갸우뚱하며) 흠... 매번 나타나는 현상은 아닌가 보군요.</p>
+          <p> </p>
+          <p>다녀왔으니 알겠지만 제2 템페르 훈련소에는 용족과 상대하는 단계가 없습니다.</p>
+          <p> </p>
+          <p>그런데 최근 훈련소에서 용족의 공격을 받았다는 보고가 몇 건 있었습니다.</p>
+          <p> </p>
+          <p>내가 모르는 훈련 변경 사항이 있을리는 없지만 혹시 모르니 당신이 확인해 주었으면 합니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>템페르 훈련소의 환영 경기장은 시간의 데바 [%dic:STR_DIC_N_Inggness]가 관리하고 있습니다.</p>
+          <p> </p>
+          <p>그러니 그녀에게 가서 제2 템페르 훈련소의 훈련 내용이 변경됐는지 확인해 주세요.</p>
+          <p> </p>
+          <p>아마 내가 보냈다고 해야 제대로 된 대화를 할 수 있을 겁니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>바쁜가 보군요.</p>
+          <p> </p>
+          <p>알겠습니다. 이 일은 다른 사람에게 부탁하겠습니다.</p>
+          <p> </p>
+          <p>대신 제2 템페르 훈련소에서 용족을 보거든 꼭 내게 알려주길 바랍니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>히라... 우... 바난...</p>
+          <p> </p>
+          <p>(힘겨운 표정으로 쳐다보다 제2 템페르 훈련소 쪽으로 시선을 돌린다.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">안야의 말을 전한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(고개를 돌려 지긋이 응시한다.) </p>
+          <p> </p>
+          <p>전투교관이... 보냈군요.</p>
+          <p> </p>
+          <p>잘 됐어요. 안 그래도 전투교관에게 그것에 대해 전할 말이 있었어요.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_Inggness]%와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">제2 템페르 훈련소에 용족이 나타나는 이유를 잉그네스에게 확인하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>안야 전투교관은 혹시 제2 템페르 훈련소에서 용족을 본 적이 없냐며 훈련 과정에 없던 용족의 공격을 받았다는 보고가 심심치 않게 있다고 했다.</p>
+          <p> </p>
+          <p>혹시 훈련 변경 사항이 있는지 확인해 달라기에 환영 경기장을 관리하는 시간의 데바 잉그네스에게 갔더니 안 그래도 전투교관에게 할 말이 있다고 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

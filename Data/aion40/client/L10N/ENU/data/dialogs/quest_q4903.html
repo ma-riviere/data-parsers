@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>How do your studies fare, [%username]? Have they taught you the extent of what you do not yet know? Even immortality does not change this--the world is so immense as to defy comprehension. </p>
+          <p> </p>
+          <p>Every effort we make to reduce our ignorance, however, is a step in the right direction. We may never be satisfied, but our efforts bring us ever closer, one small bit at a time. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I agree."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Now is the time for you to take a major step forward. I have no more to teach you.</p>
+          <p> </p>
+          <p>Let me refer you to someone else. Her name is Sif. She's always at the Capitol Building. She'll be very happy to see you. You two may even have met.</p>
+          <p> </p>
+          <p>I've written you a recommendation letter for her. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+
+          <p>The letter will help her understand what I've taught you already.</p>
+          <p> </p>
+          <p>You'll need to meet with Sif often as your training progresses, so build a good relationship with her.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I will."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>If you refuse, I can't force you, but I assure you this is the right course.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll think it over."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Language is an important tool, but too many words may dim the truth. </p>
+          <p> </p>
+          <p>Small talk is so often an obstacle in pursuing wisdom.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I have a letter from Ve."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Learning has no end, [%username]. Though people call me preceptor, I'm still learning too. I'm glad Ve has sent you to me. </p>
+          <p> </p>
+          <p>Come see me if you are ready to learn new things. I'll teach you everything I know, and maybe I'll learn something in the process. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Take the recommendation letter to [%dic:STR_DIC_N_Sif].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Show Ve's recommendation letter to Sif.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ve said she had nothing more to teach you, and that she would write you a recommendation letter so that you can take it to Sif.</p>
+          <p> </p>
+          <p>Upon reading the recommendation letter, Sif said that you have many things to learn, and that she would teach you.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

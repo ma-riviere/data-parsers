@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Field Warden:</p>
+          <p> </p>
+          <p>We have discovered a new class of Aether which is apparently only found in Balaurea. This [%dic:STR_DIC_G_QUEST_45045a] is essential to our goals in the area, and we must gather as much as we can.</p>
+          <p> </p>
+          <p>Henceforth, travel to Balaurea and collect [%dic:STR_DIC_G_QUEST_45045a]. When you have gathered a sufficient quantity, bring it to [%dic:STR_DIC_N_Amphibia] or [%dic:STR_DIC_N_Mollusca] for proper storage.</p>
+          <p> </p>
+          <p>This matter is highly confidential, so please destroy this letter after reading it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">Incinerate the letter with Divine Power.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We have fewer active Wardens in Gelkmaros than any other place in Atreia. I suppose the duties here are more challenging, but that's only because they're so crucial to our cause.</p>
+          <p> </p>
+          <p>Those Wardens who are truly passionate about their job will certainly be duly rewarded, though.</p>
+          <p> </p>
+          <p>Sorry for rambling--did you need me for something?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I have this...special Aether."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm fairly certain you were contacted, [%username], yet you haven't collected an adequate quantity of [%dic:STR_DIC_G_QUEST_45045a] yet?</p>
+          <p> </p>
+          <p>Other Wardens have brought some, but we still need more for.... Well, for whatever. It's powerful. We just need it. That's all that should matter. Please see to this promptly.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I shall."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, excellent. With this special Aether the Field Wardens will truly be able to use it for...the benefit of all Asmodae. Obviously.</p>
+          <p> </p>
+          <p>But the specifics aren't important. What matters is your reward, right? Here you are!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect [%dic:STR_DIC_G_QUEST_45045a] and bring it to [%dic:STR_DIC_N_Amphibia] or [%dic:STR_DIC_N_Mollusca].</font></p>[%collectitem]</step>
+    </steps>
+        <p><font font_xml="quest_summary">A letter has arrived from the Field Wardens. Follow its instructions.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>A letter from the Field Wardens asks you to gather a special Magical Aether and bring it to Rebbina or Wakir.</p>
+          <p> </p>
+          <p>You extracted and turned in the special Aether, and were rewarded for your time.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

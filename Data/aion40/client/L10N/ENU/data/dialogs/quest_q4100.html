@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, hey [%username].</p>
+          <p> </p>
+          <p>I showed Hjuki that mithril you brought back. I hoped he could figure out how to extract the impurities, but he said it'd cost more than the metal's worth.</p>
+          <p> </p>
+          <p>I guess it was worth trying, but it's puzzling--the book I read said that mine is famous for its purity. I think there's only one place the mithril can be.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Where's that?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm guessing that the miners were always prepared for Balaur attack, so they left the impure mithril laying around as a decoy.</p>
+          <p> </p>
+          <p>If something happened and the miners fled, they'd take the pure ore with them and leave the junk ore for the enemy to find.</p>
+          <p> </p>
+          <p>See where I'm going with this?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Not yet."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The miners fled the mine, taking the ore with them, but they never made it back. Instead they died and became undead.</p>
+          <p> </p>
+          <p>I'm betting that if you go to [%dic:STR_DIC_W_DF2B_SZ_A2_2] and search [%dic:STR_DIC_M_DF2A_ZombieFarmerD_46_An]s and [%dic:STR_DIC_M_DF2A_TestresultZombieD_47_An]s, you could hit the mother lode.</p>
+          <p> </p>
+          <p>But hey, don't take my word for it....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You look doubtful.</p>
+          <p> </p>
+          <p>Please, believe me. Go search them.</p>
+          <p> </p>
+          <p>Those miners became undead and they've still got the ore on them. I'm sure of it! Go to the [%dic:STR_DIC_W_DF2B_SZ_A2_2] and see. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Can't hurt to check."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This idea makes perfect sense.</p>
+          <p> </p>
+          <p>I'm sure it's true, but someone has to go check it out.</p>
+          <p> </p>
+          <p>Will you please reconsider?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll think about it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Imagine how luxurious and wealthy life was in Brusthonin long ago.</p>
+          <p> </p>
+          <p>Huge crop fields, mines of rare ores.... Ah, if I could enjoy only half as much wealth, I'd be set for life!</p>
+          <p> </p>
+          <p>Did you check out my theory?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Is this the ore?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No, it's not.</p>
+          <p> </p>
+          <p>I'm sure the undead have the mithril. Please just go defeat some [%dic:STR_DIC_M_DF2A_ZombieFarmerD_46_An]s and [%dic:STR_DIC_M_DF2A_TestresultZombieD_47_An]s and see if they have it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"We shall see."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Wow! I knew you could do it! Look at these samples.</p>
+          <p> </p>
+          <p>They're small but very pure! I knew it! Woo! I was right!</p>
+          <p> </p>
+          <p>Here's your share, and thank you!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Defeat [%dic:STR_DIC_M_DF2A_ZombieFarmerD_46_An]s and [%dic:STR_DIC_M_DF2A_TestresultZombieD_47_An]s, collect the mithril ore and take it to [%dic:STR_DIC_N_Sjazi].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Sjazi claimed that Undead Drudges and Diggers must have the mithril that's missing from the mine. She asked you to defeat some and search them.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Sjazi said the Undead Drudges and Diggers might have valuable mithril ore. She asked you to investigate.</p>
+          <p> </p>
+          <p>You went back to the Brusthonin Mithril Mine, searched the belongings of Undead Drudges and Diggers and found the pure ore that Sjazi predicted.</p>
+          <p> </p>
+          <p>You took the ore to Sjazi, who was very delighted to have been right, and to have the pure ore.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

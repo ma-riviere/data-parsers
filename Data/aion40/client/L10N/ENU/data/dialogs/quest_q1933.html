@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh! You're here just in time, [%username].</p>
+          <p> </p>
+          <p>Look at this! It's a report from Nerison, a Daeva of Zephyr working at the Research Center Overwatch in Heiron.</p>
+          <p> </p>
+          <p>He attached something...unusual to the report.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"What is it?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>He had found a torn piece of discarded paper. When he examined it, he thought it might be a report written by one of the Lepharist Revolutionaries.</p>
+          <p> </p>
+          <p>I can make out part of a sentence that says, "Human remodeling test is almost complete..."</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Human remodeling?!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Right. You see my concern. There's the part of me that wants to know what that means...then the part that...really doesn't, if you follow me.</p>
+          <p> </p>
+          <p>I don't know anything else about this, though. I've got nothing more than what's in front of me: six words that give me the chills.</p>
+          <p> </p>
+          <p>If I could just find the rest of this note...wait...maybe you could help me? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Nerison's report said that he found this paper at the Lepharist Research Center in Heiron, near a group of [%dic:STR_DIC_M_LabPo_LehparBioWi_41_An]s, [%dic:STR_DIC_M_Lab_LehparAs_42_An]s, and [%dic:STR_DIC_M_LabPo_LehparBioPr_42_An]s. If you look in the right places, you might find the rest of this note.</p>
+          <p> </p>
+          <p>It was fortunate that the torn piece Nerison picked up was at the bottom of the page. See that page number there? If this is four, then there are at least three others.</p>
+          <p> </p>
+          <p>They may be kept by three different people. I'll wait here, but please hurry.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be swift."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Really? You're sure you can't do it? You're totally fine leaving after hearing the term "Human remodeling"?</p>
+          <p> </p>
+          <p>Well, you have to live with that conscience, not me, so...choose as you will.</p>
+          <p> </p>
+          <p>I just hope that we can get the information fast enough without your help.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I don't fall for guilt trips."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], it's good to see you again.</p>
+          <p> </p>
+          <p>While you were gone, I could think of nothing except all the terrible things the Lepharists could be doing.</p>
+          <p> </p>
+          <p>Please, tell me what you've found so that at least I can stop wondering.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Will this ease your worries?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The fact that you haven't left yet? No! Why would that ease my worries?!</p>
+          <p> </p>
+          <p>If I had known you'd be this slow about it, I would have given this job to someone else!</p>
+          <p> </p>
+          <p>You must get back out there and find the rest of this note before it's too late!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be right back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hold on...one, two...and three. You've collected them all! Now we can start figuring out what they're up to.</p>
+          <p> </p>
+          <p>Some parts are smudged, but I can work around that.</p>
+          <p> </p>
+          <p>Just wait a minute...let me see what it says....</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Defeat [%dic:STR_DIC_M_LabPo_LehparBioWi_41_An], [%dic:STR_DIC_M_Lab_LehparAs_42_An], and [%dic:STR_DIC_M_LabPo_LehparBioPr_42_An], and take the report to [%dic:STR_DIC_N_Xenophon].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Xenophon received a report on recent Lepharist activities, and thinks the scrap of paper attached to it is part of a research report about live subject experimentation on Humans. He thinks this is an important matter. You need to find the rest of the research report.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Xenophon received a report from Nerison on recent Lepharist activities. Attached to it was a scrap of paper that appeared to be part of a research report about live subject experimentation on Humans.</p>
+          <p> </p>
+          <p>The torn paper said the Human remodeling experiment was nearing completion.</p>
+          <p> </p>
+          <p>Xenophon wanted to know what Lepharists were up to before they caused a more serious problem. You went to the Lepharist Research Center, obtained the rest of the research paper, and delivered it to Xenophon.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

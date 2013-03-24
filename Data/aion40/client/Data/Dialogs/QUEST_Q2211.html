@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>첨에 여기로 배치됐을 땐 눈앞이 캄캄했는데 지금은 아주 좋습니다.</p>
+          <p> </p>
+          <p>무무족이 생각보다 잠잠하고 숲의 짐승들도 얌전한 편이라서요.</p>
+          <p> </p>
+          <p>게다가 수에론 대장님을 안 봐도 되니 정말 살 것 같습니다.</p>
+          <p> </p>
+          <p>아, 칼니프만 아니면 아무 고민도 없을 텐데.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">무슨 일이 있는지 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>놈들 때문에 요즘 하루도 편할 날이 없습니다. 원래 숲 안쪽에 살던 놈들인데 요즘 무슨 일인지 길가까지 나와 행인들을 공격하지 뭐에요!</p>
+          <p> </p>
+          <p>피해자가 계속 늘어나서 무무족을 감시하면서도 틈틈이 놈들을 처치하고 있는데 우리 둘만으로는 조금 버겁네요. </p>
+          <p> </p>
+          <p>[%username] 님이 좀 도와주면 훨씬 수월할 것 같은데 어때요, 그럴 생각이 있습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>흔쾌히 허락해 줘서 고맙습니다.</p>
+          <p> </p>
+          <p>그럼 길가에 있는 [%dic:STR_DIC_M_Kalnif_10_An]%을 처리해 주십시오.</p>
+          <p> </p>
+          <p>10마리 정도 처치하면 나머지 놈들도 겁을 먹고 도망칠 겁니다.</p>
+          <p> </p>
+          <p>그럼 부탁드리겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>바쁜 일이 있나 보군요.</p>
+          <p> </p>
+          <p>그러면 할 수 없지만 아쉽네요. 앞으로도 계속 피해자가 늘어날 텐데.</p>
+          <p> </p>
+          <p>나중에라도 여유가 생기면 꼭 좀 도와주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_M_Kalnif_10_An]%은 모두 처치하셨나요?</p>
+          <p> </p>
+          <p>포악한 놈들이라 쉽진 않았을 텐데 어디 다친 데는 없습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>대단하군요. [%dic:STR_DIC_M_Kalnif_10_An] 10마리를 한꺼번에 처치하다니.</p>
+          <p> </p>
+          <p>떼로 몰려들면 꽤나 위험한데 말입니다.</p>
+          <p> </p>
+          <p>이제 놈들도 겁 좀 먹었겠군요.</p>
+          <p> </p>
+          <p>모두 [%username] 덕분입니다. 감사합니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_W_DF1A_3]의 무법자를 소탕하라</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Kalnif_10_An]([%2]/10)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Okkolenja]와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">칼니프가 숲을 지나는 사람들을 공격한다고 한다. 무무족을 감시하느라 바쁜 오코레냐와 동료를 대신해 길가의 칼니프를 처치하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>오코레냐는 깊숙한 숲에 살던 칼니프가 길가까지 나와 지나는 행인을 공격해 걱정이라고 했다.</p>
+          <p> </p>
+          <p>바쁜 오코레냐를 위해 칼니프를 처치해 주자 그녀는 매우 기뻐하여 사례를 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

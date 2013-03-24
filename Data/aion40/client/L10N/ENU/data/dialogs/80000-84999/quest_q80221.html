@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You have come a long way, [%username].</p>
+          <p> </p>
+          <p>Are you ready to test your abilities?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Yes, I am."</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Your first test will be against the Balaur warriors their primary training facility, [%dic:STR_DIC_W_IDAb1_MiniCastle_SZ_All]. Balaur trained there go on to swell their ranks in the Abyss in their fight against us.</p>
+          <p> </p>
+          <p>Find and kill the [%dic:STR_DIC_M_Mini_Castle_DrakanFi_27_Ah] who commands the facility. You might have to put him down more than once; those things are resilient.</p>
+          <p> </p>
+          <p>It is a dangerous place to fight alone. You should get an ally or two to go with you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It is good to have an ally or two to fight alongside you.</p>
+          <p> </p>
+          <p>May the protection of the Empyrean Lords be with you!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Thank you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Haven't you found any allies yes?</p>
+          <p> </p>
+          <p>Rushing to the training camp alone will only bring failure.</p>
+          <p> </p>
+          <p>I recommend that you find someone to watch your back.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll keep looking."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Have you killed the [%dic:STR_DIC_M_Mini_Castle_DrakanFi_27_Ah] who commands the training camp?</p>
+          <p> </p>
+          <p>I expected as much. You may be the one that the High Priest spoke of, destined to win a great victory.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"The General's dead."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Congratulations, you completed your first mission.</p>
+          <p> </p>
+          <p>I should tell my fellow priests that you killed the [%dic:STR_DIC_M_Mini_Castle_DrakanFi_27_Ah].</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Kill the [%dic:STR_DIC_M_Mini_Castle_DrakanFi_27_Ah] in [%dic:STR_DIC_W_IDAb1_MiniCastle_SZ_All].([%2]/3) </font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with Erdat.</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Erdat asks you to defeat the [%dic:STR_DIC_M_Mini_Castle_DrakanFi_27_Ah] in [%dic:STR_DIC_W_IDAb1_MiniCastle_SZ_All].</font></p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Your first mission from Erdat, a Priest of Blessing, was to kill the General of the Nochsana Training Camp, with the aid of your allies.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

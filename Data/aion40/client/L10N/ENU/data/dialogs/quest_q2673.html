@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm very concerned, [%username]. Beluslan isn't the only place the Balaur have invaded. I've heard that they've also infiltrated Elysea, in Heiron specifically. </p> 
+          <p> </p> 
+          <p>It seems they've opened an Abyssal Gate that links their Indratu fortress with Elysea. Our observatory is already destroyed...if the Balaur manage to open the gate there, they could open it here too. Our people will be in grave danger.</p> 
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What must be done?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We must send someone to Indratu Fortress to investigate. The journey will be difficult, however. The Abyssal Gate leading to Heiron was made by the Balaur. If a Daeva uses it, it will cause intolerable levels of pain. </p>
+          <p> </p> 
+          <p>There is a way around it, thankfully. The Balaur use magic to offset the pain. If you kill an Indratu Worldbender and obtain a [%dic:STR_DIC_I_QUEST_2673a] along with a [%dic:STR_DIC_I_QUEST_2673b] from an Indratu Protector, I can extract the energy from the items and imbue it into your armor instead.</p> 
+          <p> </p> 
+          <p>Would you undertake this quest, [%username]? We need someone of your caliber to make this mission successful.</p> 
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Go to the Nute Warrens in Elysea. The rift in the Bakarma Barracks will take you directly there. The Balaur who guards the place is an [%dic:STR_DIC_M_LF3E3_EeA_NagaEleD_47_Ae]. Defeat him and take his Bead of Magical Power.</p>
+          <p> </p> 
+          <p>If you then kill the [%dic:STR_DIC_M_LF3E3_FeA_NagaFiD_47_Ae], you'll be able to gather a Fighter's Skin as well. I wish I could claim this would be easy, but it won't be. Choose your companions with care, and come back safely.</p> 
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"For Asmodae."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I can't force you to go, and I won't beg. This must be done, however, and few could do it as well as you. If you change your mind, let me know. Asmodae requires your aid--I believe you will not fail her. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll think on it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm afraid to ask how your journey went, [%username]. So much rests on our actions here. I lost the battle to save the Observatory...I don't like to think what might happen if we lose this one too. We must wipe out the Balaur.</p>
+          <p> </p>
+          <p>Were you able to get the [%dic:STR_DIC_I_QUEST_2673a] and the [%dic:STR_DIC_I_QUEST_2673b] so I can complete the ritual? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here they are."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Why are you here? Haven't you gone to Elysea yet?</p>
+          <p> </p>
+          <p>Remember, you need to use the rift that appears in the Bakarma Barracks in order to get to Heiron. Go and get the [%dic:STR_DIC_I_QUEST_2673a] and the [%dic:STR_DIC_I_QUEST_2673b] and bring them back to me. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"The task is mine."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You made it! Not that I doubted you would, but still...it's the first glimmer of hope I've felt in some time. </p>
+          <p> </p>
+          <p>Wait a moment...I'll extract the energy and embed it into your armor so you can survive the Abyssal Gate. </p>
+          <p> </p> 
+          <p>Aaaaand.....it's done. The gate is in the Nute Warrens in Elysea. Go find it, and Aion watch over you in your quest.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Go to the Nute Warrens in Elysea, get  [%dic:STR_DIC_I_QUEST_2673a] and [%dic:STR_DIC_I_QUEST_2673b], and bring them to [%dic:STR_DIC_N_Gwendolin].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">In order to go to the Indratu Fortress that Balaur built in Abyss, Balaur energy has to be instilled into your armor. Go to the Nute Warrens in Elysea through the rift in the Bakarma Barracks and to get a Bead of Magical Power and a Fighter's Skin.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Gwendolin was worried that that the Balaur would open the Abyss Gate in Asmodae like the one they opened in Elysea. She sent you to investigate the Indratu Fortress and find a way to stop them.</p>  
+          <p> </p>
+          <p>In order to accomplish this, you needed to instill Balaur energy into your armor so that you could survive using a Balaur Abyss Gate.</p>
+          <p> </p>
+          <p>You went to Elysea through the rift, got a Bead of Magical Power and Fighter's Skin and brought them to Gwendolin. She imbued your armor with Balaur energy and sent you on to infiltrate the Indratu Fortress. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

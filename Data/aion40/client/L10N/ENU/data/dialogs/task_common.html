@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+		<body>
+          <p>- Work Order -</p>
+		  <p>I humbly request that you craft the following items:</p>
+		  <p> </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>- Craft Status -</p>
+		  <p> </p>
+		  <p>Craft Progress</p>
+		  [%collectitem]
+		  <p> </p>
+		  <p>Requested Items</p>
+		  [%task_product_list]
+		  <p> </p>
+		  <p>Raw Material Provided</p>
+		  [%task_component_list]
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Craft the requested items and take them to either [%dic:STR_DIC_N_[%task_npc_name0]] or [%dic:STR_DIC_N_[%task_npc_name1]].</font></p>[%collectitem]</step>
+    </steps>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>At the master's request, you made [%task_product_count] [%task_product]s.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>Work Order: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>Craft in progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

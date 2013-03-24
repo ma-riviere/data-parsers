@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(This is a leather necklace with a metal pendant hanging from it. There are letters inscribed on the pendant, but they are too faint to read. Perhaps [%dic:STR_DIC_N_Ibelia], a Daeva of Zephyr, would be able to read it.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll take it to Ibelia."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, hello. Just a moment, I'm writing a report for the Temple of Vaizel. If I don't finish what I'm working on at the time, I never get back to it....</p>
+          <p> </p>
+          <p>There--all done. Thank you for being patient.</p>
+          <p> </p>
+          <p>How can I help you?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">"Can you read this inscription?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You found this on an Ettin? How strange. This isn't of Ettin manufacture at all.</p>
+          <p> </p>
+          <p>One must have taken it from somewhere. Unusual. Ettins don't normally wear this sort of thing....</p>
+          <p> </p>
+          <p>I'm afraid I can't make out the inscription. You might ask Priest [%dic:STR_DIC_N_Sulates] at the fortress if you're really curious. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"Light's blessings, Daeva."</Act>
+    </Selects>
+  </HtmlPage>
+
+<HtmlPage name="select3">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Faith and arms, [%username]. What brings you to see me?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT3_1">"What can you tell me about this?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select3_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Where did you find this again? An Ettin? How odd. Let me see what this says...my, this is tarnished.</p>
+          <p> </p>
+          <p>The writing is worn, but it looks...Atreian. Yes...definitely Ancient Atreian. Unfortunately I can't read it. </p>
+          <p> </p>
+          <p>[%dic:STR_DIC_N_Biesa] is our local Atreian scholar. You should show it to him. He will be able to translate this for you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO2">"Biesa...all right. My thanks."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Greetings, Daeva! Welcome to our library. Which book are you looking for?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I need a translation."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hmm...this...this is fascinating. An Ettin? Really? Absolutely fascinating! Look here, you see this? I know the letters are faint, but if you look carefully, you can see the tool marks.</p>
+          <p> </p>
+          <p>It says, "Name... Moroch. Place of residence, Superus Temple." It's a collar for a pet! Someone who lived at the Superus Temple must have kept an Ettin as a pet.</p>
+          <p> </p>
+          <p>Please, may I have it?  It'll be the talk of the scholars--an invaluable find for our research, but of no practical value. I'll trade you this for it. Please?</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk with [%dic:STR_DIC_N_Ibelia]. </font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Talk with [%dic:STR_DIC_N_Sulates]. </font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Talk with [%dic:STR_DIC_N_Biesa]. </font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">While hunting Ettins, you found an old necklace that bears a strange inscription. Find out what it is.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+        <p>While hunting Ettins, you found an old necklace that bears a strange inscription. You took it to Ibelia, a Daeva of Zephyr, but she couldn't read it and sent you to Sulates.</p>
+          <p> </p> 
+          <p>Sulates identified the writing as Ancient Atreian but he couldn't read it either and sent you to Biesa. When you showed the necklace to Biesa, he was pleased and shocked to realize that what you had was a pet's collar for an Ettin. He asked to keep it and made you a trade for the item.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

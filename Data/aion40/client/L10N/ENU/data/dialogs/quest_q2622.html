@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>There's never enough to eat in Red Mane Cavern. The ground is frozen, and can't be farmed.</p>
+          <p> </p>
+          <p>We have some provisions from Pandaemonium, but the only other food we have is what we can hunt--Darus and Gorgons. It's delicious meat. Everyone loves it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Some of my favorites."</Act>
+    </Selects>
+  </HtmlPage>
+ 
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The problem is, the numbers of Darus and Gorgons are declining...harder to hunt.</p>
+          <p> </p>
+          <p>Turns out the Viragos living on Beluslan's Roof are hunting Darus and Gorgons, too.</p>
+          <p> </p>       
+          <p>They'll starve us if they aren't stopped. Will you take on the job of killing the Viragos so we can have enough food?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Very good.</p>
+          <p> </p>
+          <p>Go to [%dic:STR_DIC_W_STR_DF3_SZ_D5] and hunt some of the [%dic:STR_DIC_M_HarpyD_41_An]s and [%dic:STR_DIC_M_HarpyReD_41_An]s.</p>
+          <p> </p>
+          <p>The more you kill, the more food we'll have.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Dead Viragos coming up."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The most important weapon on the battlefield is food. Hungry soldiers don't win battles.</p>
+          <p> </p>
+          <p>I implore you. Please help us.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I can't do it right now."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Drakan Punisher Legion has a great appetite, but we carry out our missions with equal hunger.</p>
+          <p> </p>
+          <p>How did it go? Did you kill the Viragos? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"They're deader than Darus."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You took care of that more quickly than I thought.</p>
+          <p> </p>
+          <p>They won't give up on Darus and Gorgons because of this, but it'll be easier for us get food for a while.</p>
+          <p> </p>
+          <p>Thank you.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Dispatch Virago Searchers and Virago Cold Hunters.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_HarpyD_41_An] ([%2]/12).</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_HarpyReD_41_An] ([%5]/6).</font></p></step>  
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_N_Bowen].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Kill Virago Searchers and Virago Cold Hunters to safeguard the main food source of the Red Mane Cavern.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Bowen said it was getting harder to secure Darus and Gorgons--the main food sources of the cave village. Viragos were hunting Darus and Gorgons too much.</p>
+          <p> </p>
+          <p>You killed the Virago Searchers and Virago Cold Hunters, he thanked you, and gave you a token of his appreciation.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

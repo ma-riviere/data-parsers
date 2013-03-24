@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We're trying to reach Agairon Village, [%username]. It's our only chance of surviving here in Eltnen.</p>
+          <p> </p>
+          <p>Agairon village has two things going for it. Firstly, their spring hasn't dried up. The desert may be getting closer each day, but the spring grants water, and Agairon survives.</p>
+          <p> </p>
+          <p>Secondly, the village is protected by Eltnen Guardians. Lepharists would never dare attack a place guarded by some of Elysea's strongest immortals.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Stay strong. The hardest part is over."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Perhaps. But even staying here is tough on us, and young Teos...he's had a torrid time recently. He's had to bury both of his parents on our travels, and he's now so...so quiet.</p>
+          <p> </p>
+          <p>The joy of youth is slipping away from my poor nephew. He doesn't eat, he barely sleeps, and he bursts into tears so often.</p>
+          <p> </p>
+          <p>It breaks my heart. I can't help but wish things were better for him, even at my own expense.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Can I help?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I don't see how, [%username]. What Teos needs is family, and yo....</p>
+          <p> </p>
+          <p>Of course! Dellome! My mind was so parched I had completely forgotten about his grandmother!</p>
+          <p> </p>
+          <p>She lives in Agairon Village. I'm sure Teos will be back to his old self once he's with his Nana. Would you have the time to do this for us though? We can't leave yet....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You've accepted? I...I almost can't believe it....</p>
+          <p> </p>
+          <p>Please, be true to your word. Take Teos to his grandmother, [%dic:STR_DIC_N_Dellome]. She will look after him until we arrive.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I will. Now rest."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I...I understand.</p>
+          <p> </p>
+          <p>A Daeva's duties extend far beyond caring for simple villagers. I just...I had hoped you could help. But I understand.</p>
+          <p> </p>
+          <p>I just hope...that in the fullness of time...you remember just what...and who...you're fighting for.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Goodbye, Ernia."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select3">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Are you going to take me to Nana?</p>
+          <p> </p>
+          <p>I'm...sniff...I'm scared. And I'm hungry. And I want to go home, but Auntie Ernia says we have to go start a new home.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"Come on Teos, I'll race you to your Nana!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>A Daeva, visiting feeble old me! Well I never! What can this haggard old lady do for you, my dear?</p>
+          <p> </p>
+          <p>If you've come for food, you'll have to look elsewhere. The days when we could farm these fields are long gone. Long gone....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="PLAYEMOTION_sad;HACTION_SELECT_QUEST_REWARD">"Well, you see...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What?! Then, my daughter is...is dead? But she was so full of life and...and was so happy!</p>
+          <p> </p>
+          <p>And this is Teos? But there's nothing of him! Oh my.</p>
+          <p> </p>
+          <p>I...I don't know what to say. Please, leave me with my grandson for a short while, Daeva. I appreciate all that you have done, but I must be alone with young Teos. We must both grieve over our losses.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Take Teos to [%dic:STR_DIC_N_Dellome] in Agairon Village.</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Talk to [%dic:STR_DIC_N_Dellome].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Teos, a refugee boy, is going to die if he stays in the Refugee Camp. Take him to Agairon Village and have him meet his grandmother, Dellome.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ernia was worried about Teos, a refugee boy who had lost both his parents and was now refusing to eat.</p>
+          <p> </p>
+          <p>You agreed to take him to his grandmother in Agairon Village so that he could be with his family again.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p> - WANTED -</p>
+          <p> </p>
+          <p>Fugitive Scopind has been found guilty of the following charges:</p>
+          <p> 1. Attacking the trade agency and murdering seven Shugos.</p>
+          <p> 2. Working for Lepharist Revolutionaries.</p>
+          <p> 3. Breaking out of the prison in Sanctum.</p>
+          <p> </p>
+          <p>A generous reward is available for anyone who captures or kills [%dic:STR_DIC_M_LF2A_LehparFiPrisonerNMQ_50_An_1] and brings his Tattoo Tool Chest.</p>
+          <p> </p>
+          <p>Posted by [%dic:STR_DIC_N_Iphigenia], Administration Officer</p>
+        </body>
+        </html>
+    </Contents>
+    <Background name="Doc_bg_q3055"/>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"I can handle him."</Act>
+      <Act href="HACTION_FINISH_DIALOG">"I've other things to do."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hello, Daeva!</p>
+          <p> </p>
+          <p>I'm always glad to see strong hands ready to work. Are you ready to get your hands dusty out here?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I already have."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_fail">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You killed Scopind? You'll have to bring me [%dic:STR_DIC_I_QUEST_3055a] as proof.</p>
+          <p> </p>
+          <p>I'm sure you're trustworthy. It's just that I've dealt with bounty hunters and Shugos for too long.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll bring it next time."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thanks for bringing Scopind's Tattoo Tool Chest. You certainly had to kill him for it. I know he'd never have given that up while he was alive.</p>
+          <p> </p>
+          <p>Oileus will be jealous. That's less work for these other bounty hunters. Oh, that reminds me, I should have Rosina update her records.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Bring evidence of killing [%dic:STR_DIC_M_LF2A_LehparFiPrisonerNMQ_50_An_1] to [%dic:STR_DIC_N_Iphigenia].</font></p>[%collectitem]</step>        
+    </steps>
+          <p><font font_xml="quest_summary">Kill Fugitive Scopind, a wanted criminal, and bring his Tattoo Tool Chest to Iphigenia to receive the bounty.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You killed Fugitive Scopind, a criminal wanted for multiple crimes, and brought his Tattoo Tool Chest to Iphigenia as evidence. She rewarded you with the bounty for Scopind.</p>        
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

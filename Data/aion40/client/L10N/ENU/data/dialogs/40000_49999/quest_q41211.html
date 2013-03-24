@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q41211</QuestId>
+    <QuestName>The Explorer's Backpack</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+ <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], I need your help with something. This could be a grim task, my friend, but from what I've heard, you've had your fair share of grim.</p>
+          <p> </p>
+          <p>I was scouting the [%dic:STR_DIC_W_LDF4a_SZ_B2_10] when I saw an old backpack on a cliff edge. I would've retrieved it myself, but sands were shifting fast, and I was forced back.</p>
+          <p> </p>
+          <p>The problem is, I think I know who the bag belongs to, and it was heavily blood stained. I've been reassigned here now, but I can't leave this story untold.</p>
+          <p> </p>
+          <p>Please, you must find the [%dic:STR_DIC_I_QUEST_41211A] and take it to [%dic:STR_DIC_N_Linacroft]. Just... be gentle.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What is it, [%userclass]?</p>
+          <p> </p>
+          <p>Please, be quick. I have my hands full and need to get my tools stored before this sandstorm winds up.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">"I found this near the Jotari Ruins..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Why would I care ab... N... no!</p>
+          <p> </p>
+          <p>This is my father's backpack! He carries this whenever he goes exploring! Where did you say you found it? Oh... father....</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Find the [%dic:STR_DIC_I_QUEST_41211A] on the cliff overlooking [%dic:STR_DIC_W_LDF4a_SZ_B2_09] and take it to [%dic:STR_DIC_N_Linacroft].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Ganofus asked you to collect a backpack he found while out scouting, and to locate its owner. Find the [%dic:STR_DIC_I_QUEST_41211A] and report to an excavation team leader, [%dic:STR_DIC_N_Linacroft].</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ganofus said he found an Explorer's Backpack while out scouting, but couldn't identify whose it was. So you went to the Jotari Sanctuary Ruins and found it on a cliff overlooking the Debarim Petralith Studio.</p>
+          <p> </p>
+          <p>You took the backpack to the Jotun Lead Researcher, Luanna, and she was overwhelmed with shock, explaining that it belonged to her father.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

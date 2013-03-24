@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>오, [%username]. 마침 잘 왔소.</p>
+          <p> </p>
+          <p>겔크마로스 방어기지에 보낼 사람을 찾고 있었는데 당신에게 부탁하면 되겠구려.</p>
+          <p> </p>
+          <p>방어기지에 계신 [%dic:STR_DIC_M_DF4_3111_Boss_Da_1] 대행자님께 힘을 좀 보태 주시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">방법을 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>바가바탐 봉인탑과 붉은 대지의 신전이 천족에게 넘어가면 [%dic:STR_DIC_M_DF4_3111_Boss_Da_1] 대행자님께서 직접 나서실 텐데 그때 힘을 보태주면 되오.</p>
+          <p> </p>
+          <p>아, 곁에서 같이 싸워달란 얘기는 아니오. 물론 그래 줘도 좋지만 그보다 대행자님께서 전투에 좀더 집중할 수 있게끔 테그라크의 오드 집중기에 축복을 내려주시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>겔크마로스 방어기지로 가기 전에 물자 보급병 빈센조에게 가서 [%dic:STR_DIC_I_QUEST_21127a]을 구입해 가시오.</p>
+          <p> </p>
+          <p>그리고 [%dic:STR_DIC_M_DF4_3111_Boss_Da_1] 대행자님이 천족에게 공격을 받거든 전념의 축복을 테그라크의 오드 집중기에 사용하구려.</p>
+          <p> </p>
+          <p>100번 이상의 축복이 오드 집중기에 모여야 대행자께서 주신의 봉혼석을 사용할 수 있으니 [%username], 당신이 10번 이상 축복을 해 줬으면 좋겠소.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>거절하는 게 이해가 안 되는 것은 아니오.</p>
+          <p> </p>
+          <p>테그라크 대행자께서 직접 나서실 정도면 전투 상황이 치열할 게 뻔하니까.</p>
+          <p> </p>
+          <p>하지만 그러기에 [%username], 당신의 도움이 더 필요한 거요.</p>
+          <p> </p>
+          <p>당신 정도의 실력자라야 테그라크 대행자님에게 힘을 보탤 수 있소. 그러니 생각을 바꿔 주시오, 제발.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아! [%username], 어떻게 됐소?</p>
+          <p> </p>
+          <p>왜 벌써 돌아온 거요? </p>
+          <p> </p>
+          <p>테그라크 대행자님은 어떻게 하고...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>전념의 축복으로 테그라크 대행자님께 힘을 보태 드리고 왔구려.</p>
+          <p> </p>
+          <p>이게 모두 당신이 발 빠르게 움직여 준 덕분이오.</p>
+          <p> </p>
+          <p>조금이라도 늦었으면 어떻게 됐을지... 생각만 해도 끔찍하구려.</p>
+          <p> </p>
+          <p>이거 받으시오. 천족을 물리칠 수 있게 도와줘서 정말 고맙소.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_I_QUEST_21127a]을 [%dic:STR_DIC_M_DF4_3111_Boss_Da_1]의 오드 집중기에 사용해 대행자에게 힘을 전하라([%2]/10)</font></p></step>               
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_N_Vedrfonir]에게 결과를 보고하라</font></p></step>               
+    </steps>
+          <p><font font_xml="quest_summary">마르쿠탄의 대행자 테그라크가 천족에게 공격을 받을 때 전념의 축복을 테그라크의 오드 집중기에 사용해 대행자에게 힘을 전하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>베르드폴니르는 테그라크 대행자가 천족과 싸울 때 힘을 보태 달라고 했다.</p>
+          <p> </p>
+          <p>그의 지시대로 전념의 축복을 테그라크의 오드 집중기에 사용해 대행자에게 힘을 전하고 돌아오자 수고했다며 보상을 주었다.</p>
+	</body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Pssst! Hey, [%username]...have you heard the rumor?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What rumor? Why are you whispering?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Because it's potentially explosive information! I hear that someone's made a liquor that causes you to...disappear!</p>
+          <p> </p>
+          <p>Several sources have confirmed it! One drink and pffft! They VANISH! The other half of the rumor is even stranger.</p>
+          <p> </p>
+          <p>Some say they've traveled to Elysea and returned! Isn't it mysterious? Perhaps you could investigate this very odd rumor? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Really? You must be as curious about the rumor as I am!</p>
+          <p> </p>
+          <p>I heard that [%dic:STR_DIC_N_Sveinn] knows everything that comes and goes in the Fortress. He must know who handles the liquor.</p>
+          <p> </p>
+          <p>See if you can convince him to tell you. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be very persuasive."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You aren't even the slightest bit curious?</p>
+          <p> </p>
+          <p>Sure, it could be just a silly rumor...</p>
+          <p> </p>
+          <p>But what if it's real?!</p>
+         </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"That seems unlikely."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>A liquor that makes you disappear?</p>
+          <p> </p>
+          <p>That's...that's crazy. I've never heard of such a thing....Who told you that? Really, I thought you Daevas were hard to fool, but someone has been putting a joke over on you, my friend.</p>
+          <p> </p>
+          <p>Anyway, I don't know anything about that liquor. Do you have any other business with me? </p>
+         </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"I think you're hiding something."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I...I...I don't know where you heard about it, but somebody has a big mouth. They should learn to keep secrets...</p>
+          <p> </p>
+          <p>Well, so you know. A food merchant named [%dic:STR_DIC_N_Otter] is handling the liquor. But don't tell anyone else!</p>
+          <p> </p>
+          <p>And you didn't hear that from me!</p>
+         </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"I'll keep it to myself."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Have you come to buy food, Daeva?</p>
+          <p> </p>
+          <p>What can I do for you? </p>
+         </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="PLAYEMOTION_surprise;HACTION_SELECT2_1">"I've come about the vanishing liquor."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Shhh! Where did you hear...</p>
+          <p> </p>
+          <p>You shouldn't know about that at all!</p>
+          <p> </p>
+          <p>Here, take it. But you must keep all of this a secret! And I'm not responsible for what happens when you drink it!</p>
+         </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO2">"I'll drink it right now, thanks!"</Act>
+      <Act href="HACTION_SELECT2_2">"I'll save it for later, thanks."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're scared now?</p>
+          <p> </p>
+          <p>You were so confident when you asked for it! </p>
+          <p> </p>
+          <p>Just drink it. Your curiosity must be killing you.  </p>
+         </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO2">"Okay...bottom's up!"</Act>
+      <Act href="HACTION_FINISH_DIALOG">"No, not right now."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, [%username]!</p>
+          <p> </p>
+          <p>Did you find the liquor? The liquor that makes you disappear!? </p>
+          <p> </p>
+          <p>Did you drink it? What happened?</p>
+         </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Well, here's what happened..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The rumor was true? And Elysea, you say?</p>
+          <p> </p>
+          <p>Amazing! It's good that I didn't drink it! </p>
+          <p> </p>
+          <p>Please accept this reward for satisfying my curiosity! </p>
+         </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk with [%dic:STR_DIC_N_Sveinn].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Talk with [%dic:STR_DIC_N_Otter].</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Go to Asmodae to talk with [%dic:STR_DIC_N_Hapenill].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">According to the rumor that Hapenill heard, there is a liquor that makes you disappear if you drink it. Meet with Sveinn for details.</font></p>
+        </body>
+        </html>
+    </Contents>
+    <notifies>
+       <notify progress="2"  pos="3" fontsize="16" showframe="true" time="5" color="yellow">You arrived in Elysea! You'd better return.</notify>
+    </notifies>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hapenill told you about a liquor that makes you disappear if you drink it, and asked you to see if it's real.</p>
+          <p> </p>
+          <p>You went to Sveinn to ask about the liquor, and Sveinn told you Otis handles it. You went to Otis and drank a draft, which teleported you to Elysea.</p>
+          <p> </p>
+          <p>You went back to Asmodae to let Hapenill know that the rumor was true. Hapenill thanked you for satisfying her curiosity.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

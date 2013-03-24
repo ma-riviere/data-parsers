@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>보아하니 [%userclass] 같은데 이렇게 외딴 곳까지 어떤... 아니, 무슨 일인가요?</p>
+          <p> </p>
+          <p>어쨌든 반갑습니다.</p>
+          <p> </p>
+          <p>만날 짐승들만 보다 오랜만에 사람 얼굴을 보니 말입니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">뭘 하고 있는지 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아, 옥타사이드에게 물려 좀 쉬는 중이에요.</p>
+          <p> </p>
+          <p>전 약초를 뽑는... 음... 캐는 일을 하는데 여기에 테오니아를 캐러 왔다가 물렸어요.</p>
+          <p> </p>
+          <p>상처가 심하진 않지만 독 때문인지 좀 어지럽네요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">위험한 건 아닌지 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아, 그 정도는 아니니 걱정하실 필요 없어요. 많이 물린 것도 아니고 해독제도 먹었으니까요.</p>
+          <p> </p>
+          <p>사실 더 걱정되는 건 옥타사이드예요. 시간이 지나면 좀 작아... 사라질까 했는데 줄어들기는커녕 갈수록 늘어나니...</p>
+          <p> </p>
+          <p>저기 [%username] 님, 꽤 유능한 [%userclass]인 것 같은데 부탁 하나만 드려도 될까요?</p>
+          <p> </p>
+          <p>저 [%dic:STR_DIC_M_OctasideD_21_An]들을 좀 없애 주세요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>도와주신다니 정말 고마워요.</p>
+          <p> </p>
+          <p>그럼 [%dic:STR_DIC_M_OctasideD_21_An] 10마리를 처치하시고 알려 주세요.</p>
+          <p> </p>
+          <p>전 좀 쉬고 있겠습니다. [%username] 님이 옥타사이드를 처치하면 그때부터 다시 채취, 아니 채집을 시작해야죠.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>다시 생각해 줄 순 없나요?</p>
+          <p> </p>
+          <p>[%username] 님 실력이면 옥타사이드 10마리쯤은 방금... 음, 금방 처치할 텐데.</p>
+          <p> </p>
+          <p>옥타사이드만 잡아 주시면 사례는 섭섭지 않게 할게요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>여기서 얼른... 얼핏 봤는데 실력이 정말 대단하시네요.</p>
+          <p> </p>
+          <p>제가 사람을 잘 골라서 부탁한 것 같아요.</p>
+          <p> </p>
+          <p>옥타사이드는 다 잡으셨죠?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 알려 준다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정말 고맙습니다.</p>
+          <p> </p>
+          <p>이제 마음 편하게 약초를 뽑을 수... 아니, 캘 수 있겠군요.</p>
+          <p> </p>
+          <p>그리고 이건 감사의 표시로 드리는 겁니다. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_M_OctasideD_21_An]를 처치하라([%2]/10)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Medea]와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">옥타사이드 때문에 채집을 못 하겠다는 메데아를 위해 그늘 옥타사이드를 잡아 줘야겠다.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>메데아는 테오니아를 캐다가 옥타사이드에게 물려 쉬는 중이라고 했다.</p>
+          <p> </p>
+          <p>그녀가 안심하고 약초를 캘 수 있도록 그늘 옥타사이드를 처치해 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

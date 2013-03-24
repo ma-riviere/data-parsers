@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>퀘스트 개체 수 오버 처리 관련 테스트용 퀘스트입니다.</p>
+          <p> </p>
+          <p>[Zaif_10_An], [Zaif_11_An], [Zaif_12_An], [Zaif_6_An], [Zaif_7_An]를 각 3 마리씩 처치해 주시길 바랍니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>처치는 어떻게 됐나요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">임무 성공을 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>축하합니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">몬스터를 처치하라</font></p>
+                     <p visible="[%0]"><font color="[%1]">[Zaif_10_An]([%2]/3)</font></p>
+                     <p visible="[%0]"><font color="[%1]">[Zaif_11_An]([%5]/3)</font></p>
+                     <p visible="[%0]"><font color="[%1]">[Zaif_12_An]([%8]/3)</font></p>
+                     <p visible="[%0]"><font color="[%1]">[Zaif_6_An]([%11]/3)</font></p>
+                     <p visible="[%0]"><font color="[%1]">[Zaif_7_An]([%14]/3)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">레베카와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">몬스터를 처치하고 레베카와 대화한다.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>완료완료</p>
+          <p> </p>
+          <p>이이잉</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

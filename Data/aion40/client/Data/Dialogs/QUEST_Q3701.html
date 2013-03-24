@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>마침 잘 만났습니다, [%username] 님.</p>
+          <p> </p>
+          <p>안 그래도 찾고 있던 참이었거든요.</p>
+          <p> </p>
+          <p>네레우스 백부장님이 [%username] 님을 만나면 꼭 자기에게 들러 달라는 말을 전해 달라고 부탁했거든요.</p>
+          <p> </p>
+          <p>테미논 훈련소가 외진 곳에 있어서 도통 [%username] 님을 만날 수가 없다면서요. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">무슨 일인지 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>자세한 건 저도 잘 모릅니다. </p>
+          <p> </p>
+          <p>네레우스 백부장님께 찾아가면 무슨 일 때문인지 자세히 알려 주시겠죠. </p>
+          <p> </p>
+          <p>얼핏 용족과 관련된 임무라고 들었습니다.</p>
+          <p> </p>
+          <p>어쨌든 중요한 임무니까 [%username] 님을 찾는 거겠지요.</p>
+          <p> </p>
+          <p>지금 [%dic:STR_DIC_N_Nereus] 백부장님께 가 보시겠습니까? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_N_Nereus] 백부장님은 테미논 훈련소 입구에 계십니다.</p>
+          <p> </p>
+          <p>꽤 중요한 일 같았으니 빨리 가 보는 게 좋을 것 같습니다.</p>
+          <p> </p>
+          <p>아리엘의 가호가 함께하길.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>특별한 임무가 있어서 네레우스 백부장님이 [%username] 님을 찾는 겁니다.</p>
+          <p> </p>
+          <p>그런데도 안 가겠다는 겁니까?</p>
+          <p> </p>
+          <p>가디언이 아니니 강요할 수는 없는 일이지만... 좀 실망스럽군요.</p>
+          <p> </p>
+          <p>알겠습니다. 네레우스 백부장님께는 [%username] 님이 거절했다고 보고하겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>안 그래도 기다리고 있었소.</p>
+          <p> </p>
+          <p>[%username]에게 맡기고 싶은 임무가 있어서 말이오.</p>
+          <p> </p>
+          <p>꽤 중요한 일이라서 [%username]처럼 믿을 수 있는 데바가 맡아 줬으면 하오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">어떤 임무인지 묻는다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>용족의 훈련소를 공격하는 임무요.</p>
+          <p> </p>
+          <p>우리가 일정한 자격을 갖춘 데바만 어비스에 출입할 수 있도록 제한하고, 이곳에서 훈련을 시키는 것처럼 그 빌어먹을 놈들도 병사들을 훈련시키는 곳이 있소.</p>
+          <p> </p>
+          <p>훈련소에 있는 드라코뉴트 병사들의 실력이야 아직 별것 아니지만 놈들이 훈련을 마치면 우리를 위협하는 적이 될 것이오.</p>
+          <p> </p>
+          <p>그러니 애초에 싹을 완전히 뽑는 게 낫지 않겠소? 그래서 데바를 파견해서 놈들을 완전히 쓸어버리기로 했소.</p>
+          <p> </p>
+          <p>그 일을 [%username]에게 맡기려는 것이오. 마음에 각오가 서면 나와 에우로스에게 임무를 받으시오.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_Nereus]와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">네레우스 백부장이 찾는다고 한다. 테미논 훈련소로 가서 만나 보자.</p>
+          <p></font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정보관인 렌티아가 테미논 훈련소의 네레우스 백부장이 찾고 있다는 말을 전해 주었다.</p>
+          <p> </p>
+          <p>네레우스에게 갔더니 용족 훈련소와 관련해서 중요한 임무를 맡기고 싶다고 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

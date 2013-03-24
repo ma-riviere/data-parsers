@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>To: [%username]</p>
+          <p>From: [%dic:STR_DIC_N_Vespasianus], Academy Instructor</p>
+          <p> </p>
+          <p>Do you ever wish to be invisible?</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_LF2_DQ_DAssassin_43_An]s have infiltrated the Eltnen Observatory using just such magic: [%dic:STR_DIC_OBJ_LF2_FOBJ_Q37006]s!</p>
+          <p> </p>
+          <p>Today, the Daeva who works with a Mentor and kills five cowardly assassins will receive a reward.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Yay! Reward! Where's my Mentor?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Glad to see you didn't disappear while chasing down those [%dic:STR_DIC_OBJ_LF2_FOBJ_Q37006]s!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"We found and silenced the enemy Agents."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good work on today's assignment, [%username]. You're really growing as a Daeva.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">With a [%dic:STR_DIC_E_Mentor], defeat [%dic:STR_DIC_M_LF2_DQ_DAssassin_43_An]s in [%dic:STR_DIC_OBJ_LF2_FOBJ_Q37006]s ([%2]/5).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_N_Vespasianus].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Academy Instructor Zentern instructed you and your Mentor to defeat Asmodian Agents hiding on the Lankusis Plateau.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Academy Instructor Zentern instructed you and your Mentor to defeat Asmodian Agents hiding on the Lankusis Plateau.</p>
+          <p> </p>
+          <p>You successfully completed his assignment, and he rewarded your good work.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

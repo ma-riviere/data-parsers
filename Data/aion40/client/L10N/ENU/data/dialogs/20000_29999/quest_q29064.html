@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q41171</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Now that we've tested your strength, we'll be testing your skills. Not combat skills, mind you. Crafting skills.</p>
+          <p> </p>
+          <p>Surprised? We only accept multi-talented candidates for the Fangs. After all, if you have to go under deep cover, it's good to have a career to fit into.</p>
+          <p> </p>
+          <p>I hear you specialize in Construction. Is that right? If so, you'll need to visit [%dic:STR_DIC_N_Darfen] for more details.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+         <p>I hear you're taking the Fenris's Fangs test? Normally, you'd have to jump through a few hoops to craft a Hot Heart of Magic and ask Usener for the insignia, but I think it's more impressive if you make the insignia yourself.</p>
+         <p> </p>
+         <p>Here's the design for it. Make that, get a [%dic:STR_DIC_I_relic_d_02], and take them both to [%dic:STR_DIC_N_Balder] for the purification ritual.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"I'm on it!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Come, bathe in the shade of Azphel.</p>
+          <p> </p>
+          <p>I know the path you walk, [%username], and it is important to stay pure as you travel it. Fenris' Fangs will not accept anything less.</p>
+          <p> </p>
+          <p>Kneel down and receive the sacrament.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">"I'm ready now."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, it's done. And... if I'm not mistaken, that Insignia looks different from the usual fare. Who made this? It is excellent.</p>
+          <p> </p>
+          <p>Kvasir will be impressed, I'm sure.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk with [%dic:STR_DIC_N_Darfen] in the [%dic:STR_DIC_W_DC1_5].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Take the Insignia of the Fenris's Fangs and a [%dic:STR_DIC_I_relic_d_02] to [%dic:STR_DIC_N_Balder].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Carry out the crafting skill test that Kvasir assigned you.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+          <body>
+            <p>Kvasir sent you to make an Insignia of the Fenris's Fangs to prove your worth to the group.</p>
+            <p> </p>
+            <p>Balder performed a purification ritual on the item and declared it ready to present to the Fangs.</p>
+          </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

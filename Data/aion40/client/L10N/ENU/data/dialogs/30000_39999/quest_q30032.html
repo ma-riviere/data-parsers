@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I can repair this Siel's Supreme Mace of yours...but it won't be easy. It's no standard weapon, you see.</p>
+          <p> </p>
+          <p>To restore its powers to full bloom will take quite a bit of work, and some rare materials.</p>
+          <p> </p>
+          <p>Tell you what...if you can get me the material I need, I'll fix up your mace and make it as proud as the day it was first forged!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What's the catch?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>There's no catch, Daeva. I'll do it for free just to be able to handle that mace again.</p>
+          <p> </p>
+          <p>But like I said, you need to obtain the material first and then I'll fix it...then I'll return it to its original state.</p>
+          <p> </p>
+          <p>But I get to keep what's left of the material after! You get it, I fix your mace for free, and I get rare material to work with. We have ourselves a deal, Daeva?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The material I need is very rare...and very old. Ever heard of [%dic:STR_DIC_I_Insidium_01]s? It's before your time.</p>
+          <p> </p>
+          <p>It's a special ore that was birthed when the great Lady Siel fought Tiamat before the Cataclysm. Their energies produced an immense heat that turned coal into this special ore.</p>
+          <p> </p>
+          <p>The only soul around here who has some is [%dic:STR_DIC_N_Honeus]. He fashioned them into what he calls Noxallon Ingots. You'll probably have to do a favor for him, but he should give you one in return.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll see Honeus then."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>But you have the Siel's Supreme Mace...one of the most powerful weapons in Reian history!</p>
+          <p> </p>
+          <p>And you're just going to let it languish like that? Do you realize what this weapon is capable of? One of these can wrench the armor off a Balaur general in one swipe.</p>
+          <p> </p>
+          <p>But you're content keeping all that power bottled up under dirt, dings, and dried blood, are you? Heresy!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I just don't have time."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You made it back quickly, [%username]. I'm glad I prepared the forge and coals already.</p>
+          <p> </p>
+          <p>Let me see the Noxallon Ingot and your mace, and I'll start the process.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here they are..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You are the slowest Daeva I've ever had the misfortune of doing business with, [%username]!</p>
+          <p> </p>
+          <p>I tell you that I'll fix that beautiful weapon at no cost to you...and you go sightseeing instead.</p>
+          <p> </p>
+          <p>One more chance, [%username]. Go see [%dic:STR_DIC_N_Honeus] and bring back the [%dic:STR_DIC_I_Insidium_01]. You'll need to have both items in your Cube when you see me, too.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll find Honeus now."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's been a long, long time since I've held a Noxallon Ingot in my hands...felt the vibrations it gives off...that strange warmth.</p>
+          <p> </p>
+          <p>(He places the Noxallon Ingot in a forge and tempers the mace.)</p>
+          <p> </p>
+          <p>There we go, Daeva. Didn't take long at all, did it? Give it a swing...feel that difference? Your mace sings once again! It is now Noble Siel's Supreme Mace!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Obtain the [%dic:STR_DIC_I_QUEST_30032] and bring it to [%dic:STR_DIC_N_Gefeios].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Obtain the Noxallon Ingot, a material that can restore the powers of the Siel's Supreme Mace.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Gefeios said he needed a special material in order to restore the true powers of the Siel's Supreme Mace.</p>
+          <p> </p>
+          <p>You went to see Honeus and received the Noxallon Ingot after doing him a favor. With the ingot, Gefeios turned your mace into Noble Siel's Supreme Mace.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

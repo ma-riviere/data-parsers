@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>차원의 소용돌이를 통해 테오보모스로 건너가거든 [%dic:STR_DIC_N_Noorn]%와 [%dic:STR_DIC_N_dromik] 백부장님을 만나십시오. </p>
+          <p> </p>
+          <p>노오른은 차원의 소용돌이 생성기 관리자인데 시공 전투와 관련해 주의할 사항을 알려 줄 겁니다.</p>
+          <p> </p>
+          <p>드로미크 백부장님은 테오보모스 시공 전투를 총지휘하는 분인데 [%username]%이 테오보모스에서 할 세부 작전 내용을 알려줄 겁니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%userclass] 맞으시죠?</p>
+          <p> </p>
+          <p>어디 불편하거나 안 좋은 데는 없고요?</p>
+          <p> </p>
+          <p>(명단에서 이름을 찾아 지우며) 아직까지는 모두 통합 공간을 무사히 통과했네요. 정말 다행입니다.</p>
+          <p> </p>
+          <p>혹시라도 통합 공간에서 미아가 생길까 봐 걱정했거든요.</p>
+          <p> </p>
+          <p>이번 전투와 관련해 몇 가지 주의사항을 알려 드리겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">고개를 끄덕인다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>차원의 소용돌이와 관련해 주의할 사항은 이 정도입니다.</p>
+          <p> </p>
+          <p>나머지 실제 전투 전략에 대한 건 [%dic:STR_DIC_N_dromik] 백부장님이 알려 주실 겁니다.</p>
+          <p> </p>
+          <p>백부장님은 [%dic:STR_DIC_W_LF2B_SZ_C3] 쪽에 계십니다. 네, 여기서 쭉 직진해서 가면 됩니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">대화를 마친다.</Act>
+    </Selects>
+    <CutScene id="372"/>
+  </HtmlPage>
+
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>살라가 보낸 추가 지원병인가 보구려.</p>
+          <p> </p>
+          <p>[%userclass]인 것 같은데 이름이?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">이름을 말한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>당신이 [%username]?</p>
+          <p> </p>
+          <p>살라에게 얘기 들었소. 소문난 [%userclass]이라면서?</p>
+          <p> </p>
+          <p>마침 손 빠르고 입 무거운 자가 필요했는데 잘 됐소.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_Noorn]과 대화하라</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_N_dromik]와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">테오보모스 시공 전투를 파견된 노오른과 드로미크 백부장을 만나 현황을 듣고 추가 임무를 받자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>살라의 지시대로 테오보모스로 넘어가자 마자 차원의 소용돌이 생성기 관리자인 노오른에게 시공 전투에 대한 주의 사항을 듣고 테오보모스 시공 전투 지휘관인 드로미크 백부장을 만나 추가 임무에 대한 이야기를 들었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

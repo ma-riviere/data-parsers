@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Let's see what this says.</p>
+          <p> </p>
+          <p>"The test subject, designated RM-78c, is showing excellent abilities that meet--and in some cases exceed--our expectations."</p>
+          <p> </p>
+          <p>Oh...that doesn't really sound promising, does it?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Guess that depends on perspective...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Perspective? This is horrifying!</p>
+          <p> </p>
+          <p>There must be something we can do....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Does the Governor know yet?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Governor! Of course! I must report this to the Governor right away.</p>
+          <p> </p>
+          <p>But...oh, there's no time for chain of command! By the time we get his orders, it may be too late. We have to act now.</p>
+          <p> </p>
+          <p>[%username], I need you to find [%dic:STR_DIC_M_ID5R_PerfectWaBossQ_45_Ae]...and destroy it. If it's Human...oh, we can't afford to take chances. Even if it's Human, destroy it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>After you've destroyed RM-78c, gather some of its [%dic:STR_DIC_I_QUEST_1934a]. We'll need to examine it to find out what they're doing over there.</p>
+          <p> </p>
+          <p>Be careful. I'll inform the Governor while you're gone.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"The task is mine."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No? Afraid it's going to be a Human?</p>
+          <p> </p>
+          <p>I can't blame you...but...</p>
+          <p> </p>
+          <p>Just...please reconsider.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"We'll see."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]...</p>
+          <p> </p>
+          <p>How did it...go?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Well...I've brought this."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You've not found it yet?</p>
+          <p> </p>
+          <p>Well, I don't know what to tell you, [%username]. Keep looking for it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"All right. I'll try again."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you for taking care of this, [%username].</p>
+          <p> </p>
+          <p>We'd better examine that tissue right away.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect tissue from [%dic:STR_DIC_M_ID5R_PerfectWaBossQ_45_Ae] and give it to [%dic:STR_DIC_N_Xenophon].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Xenophon found out from a research report that the Lepharists have succeeded in producing some spectacular alterations in a test subject they call RM-78c. Infiltrate the [%dic:STR_DIC_W_IDLF3LP_SZ_1], destroy RM-78c, and collect a sample of tissue.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Xenophon found out from the research report that the Lepharists succeeded in making alterations in a Human test subject.</p>
+          <p> </p>
+          <p>Since the situation was worse than he thought, Xenophon asked you to infiltrate the Secret Laboratory in the Lepharist Research Center and destroy the test subject.</p>
+          <p> </p>
+          <p>When you brought him a tissue sample from RM-78c, he said he would get it examined.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

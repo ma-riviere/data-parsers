@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What?</p>
+          <p> </p>
+          <p>It's very distracting to have people just barging in here. I'm trying to think. Don't you have something to do?</p>
+          <p> </p>
+          <p>Oh, wait! [%userclass], I might have a job for you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"What kind of job?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh...something pretty simple. Should be a cakewalk for someone like you.</p>
+          <p> </p>
+          <p>Keep your voice down, but...have you ever hunted Calydons?</p>
+         </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Why do you ask?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, we have a weekly wager on who can hunt the most Calydons. I'd really like to win one, and I'm not really concerned with how.</p>
+          <p> </p>
+          <p>You know who won last time? A Shugo called Nagrunerk. He's small, but he's good at poisons.</p>
+          <P> </P>
+          <P>I hate losing to a Shugo, so if you're willing, I'll pay you to hunt some Calydons for me.</P>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It'll be a good deal for both of us.</p>
+          <p> </p>
+          <p>I need you to hunt [%dic:STR_DIC_M_LF2A_CalydonAssassinH_48_An]s and [%dic:STR_DIC_M_LF2A_CalydonMageH_48_An]s.</p>
+          <P> </P>
+          <p>With your kills added to mine, I should win hands down!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Glad to help."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I see. Well, that's fine, but don't mention this to anyone else, all right?</p>
+          <p> </p>
+          <p>If you change your mind, my offer still stands.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Of course."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Keep your voice down, [%username]. Have you been out to find the Calydons? What happened?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Here's what happened...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Looks like I picked the right person for this job. I hear that the others are also racking up some kills, so if you're looking for more work, I can hire you again.</p>
+          <p> </p>
+          <p>Just let me know. Tityus and Nagrunerk need to be taken down a peg.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Defeat Calydons in the Calydon Village.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_LF2A_CalydonAssassinH_48_An] ([%2]/10)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_LF2A_CalydonMageH_48_An] ([%5]/8)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_N_Oileus].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Get rid of Calydon Assassins and Calydon Fortunetellers so that Oileus can win a wager with the other bounty hunters.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oileus hired you to help him win a bet. The bounty hunters had wagered on who could defeat the most Calydons. Even though it's cheating, he hired you to hunt Calydons to inflate his kill count.</p>
+          <p> </p>
+          <p>When you came back after getting rid of Calydon Assassins and Calydon Fortunetellers, he informed you that he'd be happy to hire you to hunt more of them.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

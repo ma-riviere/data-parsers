@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I don't know what to do, [%username]. We're low on food. The supplies we brought from Pandaemonium are nearly exhausted.</p>
+          <p> </p>
+          <p>I've tried hard to stretch things, making weaker and weaker soups and stews. I can't make food out of thin air, though.</p>
+          <p> </p>
+          <p>It's just not enough, Daeva. I'm tearing my mane out trying to feed these people.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"What can we do?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Keep this quiet, [%username], but there is some food in the area. A strange plant called [%dic:STR_DIC_OBJ_Q4006] grows at the Havenjark Farm.</p>
+          <p> </p>
+          <p>Yes, it's crawling with undead, but the Frightcorn Fruit fills their bellies and restores their strength.</p>
+          <p> </p>
+          <p>I secretly made the vigilantes and laborers eat some and nobody died. Admittedly, Vitda was rather sick, but...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Couldn't happen to a nicer person."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Maybe that's the answer to our problem, then.</p>
+          <p> </p>
+          <p>If we can get a large amount of [%dic:STR_DIC_I_QUEST_4006a] from [%dic:STR_DIC_OBJ_Q4006], I can stretch our supplies a bit more.</p>
+          <p> </p>
+          <p>Would you please help me, [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_OBJ_Q4006] plants are everywhere in the abandoned fields around Havenjark Farm.</p>
+          <p> </p>
+          <p>A fragile Human would be no match for the undead, but I don't think they'd pose a problem for you.</p>
+          <p> </p>
+          <p>Please, gather lots of [%dic:STR_DIC_I_QUEST_4006a] so we can feed these people.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"The task is mine."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You'd let them starve? What sort of Daeva are you?</p>
+          <p> </p>
+          <p>You didn't come to Brusthonin to help, did you? You came to flit about like a Glow-worm.</p>
+          <p> </p>
+          <p>Be on your way, [%username]. I'll find an honorable Daeva somewhere.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Sorry, I can't help right now."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Nobles in the Banquet Hall of Pandaemonium will take a bite of food and discard the rest, so as to leave room for more tasty morsels. </p>
+          <p> </p>
+          <p>I never appreciated how there was such a difference in the world. How can some live in fear of starvation while others are so careless of what they eat?</p>
+          <p> </p>
+          <p>Sorry, just musing. Did you find any [%dic:STR_DIC_I_QUEST_4006a]? I hope you got some ripe ones!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here you go."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What do you mean, you don't have them yet?</p>
+          <p> </p>
+          <p>I realize I can hardly threaten you, but time is of the essence.</p>
+          <p> </p>
+          <p>If the [%dic:STR_DIC_I_QUEST_4006a] is at all ripe, the birds and beasts will eat them all.</p> 
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll go get them."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Look at all this fruit! You picked perfectly ripe ones.</p>
+          <p> </p>
+          <p>This will restore hope in Brusthonin. Thanks to you, the people won't fear starvation for a while yet.</p>
+          <p> </p>
+          <p>Walk in Azphel's shadow, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Pick fruits from [%dic:STR_DIC_OBJ_Q4006], and take them to [%dic:STR_DIC_N_Jarnsaxa].</font></p> [%collectitem]</step> 
+    </steps>
+          <p><font font_xml="quest_summary">Settlers Campsite doesn't have enough food. Collect [%dic:STR_DIC_I_QUEST_4006a] and take it to Jarnsaxa.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Jarnsaxa said that the food shortage in Settlers Campsite was a serious problem. However the Frightcorn Fruit grows in Havenjark Farm, and after a test, she learned that they were...edible.</p>
+          <p> </p>
+          <p>She asked you to collect wild Frightcorn Fruits. When you brought the fruits from Havenjark Farm, she thanked you for staving off starvation.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

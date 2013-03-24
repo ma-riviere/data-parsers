@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Can you feel that? It's from the Laupedes.</p>
+          <p> </p>
+          <p>Normal insects poison you with bites and stings, but this one releases a gas that can spread over a wide area.</p>
+          <p> </p>
+          <p>Of course we Daevas are okay, but it's dangerous to Humans.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Why not hunt them?"</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It only takes a few Laupedes nearby to endanger the camp. We'd never be able to reduce the population enough. I wrote a letter to an expert in Sanctum and he offered a solution.</p>
+          <p> </p>
+          <p>He can make an antidote. Then it won't matter how many Laupedes are around, the Humans will be fine.</p>
+          <p> </p>
+          <p>But to make the antidote he needs a few Laupede Poison Sacs, and I can't spare anyone to go hunting for them.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, thank you. It's good to know that there are still some Daevas who will lend a hand willingly.</p>
+          <p> </p>
+          <p>Look for [%dic:STR_DIC_M_Centipede_37_An]s and collect a [%dic:STR_DIC_I_QUEST_1543a] from each one. We need enough antidote for everyone, so bring seven of them.</p>
+          <p> </p>
+          <p>I've seen some due south of here in Mud Valley.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be back soon."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I understand. No, really.</p>
+          <p> </p>
+          <p>Eventually we'll have someone to spare to take care of this. I just hope no one dies in the meantime.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Take care."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've been waiting for you.</p>
+          <p> </p>
+          <p>Did you collect the [%dic:STR_DIC_I_QUEST_1543a]s we need for the antidote?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here they are."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I don't understand. Were you not able to find them?</p>
+          <p> </p>
+          <p>There are plenty of Laupedes around. Just keep looking.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm on it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That poison is incredibly strong. I hope you were careful handling it.</p>
+          <p> </p>
+          <p>I'll pack these up and send them to Sanctum.</p>
+          <p> </p>
+          <p>Thanks for helping out.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Hunt [%dic:STR_DIC_M_Centipede_37_An]s and collect their poison sacs for [%dic:STR_DIC_N_Piera].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Collect the Laupede Poison Sacs and give them to Piera for use in making n antidote.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Piera complained that she's spending too much time driving away Laupedes so they don't poison the Humans in the camp.</p>
+          <p> </p>
+          <p>You volunteered to get some poison sacs from Laupedes so an expert in Sanctum can manufacture an antidote.</p>
+          <p> </p>
+          <p>She was grateful for your help.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

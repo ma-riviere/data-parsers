@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(네모나게 접혀 있는 작은 종이이다.) </p>
+          <p> </p>
+          <p>(펴 보니 판데모니움에서 물건을 보내는 배달 전표이다.)</p>
+          <p> </p>
+          <p>([%dic:STR_DIC_N_Urnir]에게 자세한 것을 물어보는 것이 좋겠다.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">살펴보기를 그만둔다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>무슨 일이십니까?</p>
+          <p> </p>
+          <p>결계탑에 알릴 정보라도 가지고 오신 겁니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">배달 전표를 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이건 배달 전표로군요. 그런데 어디서 주웠다고요?</p>
+          <p> </p>
+          <p>그럼 칼바리아 언덕 아래 나루터에 떠 다니는 상자가 판데모니움에서 검은구름 무역단에게 보내는 거였나 보군요. </p>
+          <p> </p>
+          <p>얼마 전에 마차가 습격당한 일이 있어서 다 그때 떨어진 상자려니 했었는데. 그럼 물건을 싣고 오던 배가 난파한 건가?</p>
+          <p> </p>
+          <p>어쨌거나 마브룬은 이 사실도 모르고 애타게 화물을 기다리겠군요. 이왕이면 [%username] 님이 [%dic:STR_DIC_W_DF1A_16]으로 가서 [%dic:STR_DIC_N_Shugo_DF1_9]에게 이 사실을 알려 주십시오. </p>
+          <p> </p>
+          <p>속은 좀 상하겠지만 그래도 사실을 아는 게 낫지요. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>하아, 걱정이당.</p>
+          <p> </p>
+          <p>판데모니움에 주문한 물건이 있는데 한참이 지났는데도 아직 오지를 않는당.</p>
+          <p> </p>
+          <p>이러다가 마브룬 신용 다 떨어지겠당, 냥냥.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">배달 전표를 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이게 무슨 소리냥! 나루터에 떠다니는 화물상자에서 이 전표를 발견했단 말이냥?</p>
+          <p> </p>
+          <p>그럼 주문한 물건이 몽땅... 아이고, 난 망했당. </p>
+          <p> </p>
+          <p>선금으로 치른 돈이 얼만데... 무역단 상부에서 날 문책할 거당, 냥냥.</p>
+          <p> </p>
+          <p>아니지, 이럴 때가 아니지. 지금 당장 칼바리아 언덕으로 달려가서 남은 물건이라도 찾아봐야겠당.</p>
+          <p> </p>
+          <p>어쨌거나 알려 줘서 고맙당, 냥냥. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_Urnir]%와 대화하라</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_N_Shugo_DF1_9]%와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">나루터의 화물상자에서 배달 전표를 주웠다. 알트가르드 결계탑으로 가서 우르니르에게 물어보는 것이 좋겠다.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>떠내려온 화물상자를 처리하다가 배달 전표를 주워서 우르니르에게 보여 주었다.</p>
+          <p> </p>
+          <p>우르니르는 판데모니움에서 마브룬에게 보내는 물건의 전표라면서 알트가르드 동부관문으로 가서 마브룬에게 알려 주라고 했다.</p>
+          <p> </p>
+          <p>마브룬에게 전표를 보여 주자 화물을 몽땅 날려서 검은구름 무역단에서 문책을 당할 거라며 매우 걱정했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Are you pleased with your progress in learning new skills?</p>
+          <p> </p>
+          <p>I think the time has come to tell you about the Divine Power Test, [%username]. Are you interested?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"The Divine Power Test?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Divine Power skills are special abilities that Aion has granted to Daevas. But because they're rarely used, even some veterans are rather inexperienced with them..</p>
+          <p> </p>
+          <p>The Divine Power Test is an incentive proposed by the Governor to solve that problem.</p>
+          <p> </p>
+          <p>We call it a test, but it's really more of a training session. It ends when you use a chosen skill ten times. What do you think? Would you like to give it a go?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You are a Spiritmaster, did you say? Then you should have learned the Disenchant skill recently.</p>
+          <p> </p>
+          <p>That skill will be subject of your Divine Power Test. Return to me once you've used [%dic:STR_DIC_E_DP_El] ten times.</p>
+         </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I will."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I guess you have other urgent matters to attend to. I understand.</p>
+          <p> </p>
+          <p>You can take the Divine Power Test later.</p>
+          <p> </p>
+          <p>Take care.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"See you later."</Act>
+    </Selects>
+  </HtmlPage>
+
+    <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Have you already finished the test?</p>
+          <p> </p>
+          <p>Did you really use [%dic:STR_DIC_E_DP_El] ten times already?</p>
+          <p> </p>
+          <p>May I touch your brow?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Of course."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hmmm...the flow of your Divine Power is smooth and uninterrupted. It seems you've practiced the Divine Power skill properly.</p>
+          <p> </p>
+          <p>Well done--you've passed the test. But do hone your skills.</p>
+          <p> </p>
+          <p>Here's a reward we give to those who pass the test. This should be of use to you as a Spiritmaster.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Use [%dic:STR_DIC_E_DP_El] ([%2]/10).</font></p></step>               
+               <step><p visible="[%3]"><font color="[%4]">Report the result to [%dic:STR_DIC_N_Sif].</font></p></step>               
+    </steps>
+          <p><font font_xml="quest_summary">The Divine Power Test is sponsored by the Governor. Use the Disenchant skill ten times to pass the test.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Sif invited you to take part in the Divine Power Test being conducted to train Daevas who are inexperienced at using Divine Power.</p>
+          <p> </p>
+          <p>When you returned to Sif after using the Disenchant skill ten times, she congratulated you on passing the test. </p>
+	</body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

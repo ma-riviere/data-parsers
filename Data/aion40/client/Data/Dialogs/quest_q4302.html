@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>저희의 주요 임무는 데바 분들의 소모된 영혼을 치유하는 일이죠.</p>
+          <p> </p>
+          <p>이곳 외에도 수많은 곳에서 영혼치유사들이 파견되어 활동을 하고 있답니다.</p>
+          <p> </p>
+          <p>하지만 아시다시피 상황이 열악한 곳이 많아요. 아직 대파국의 상처가 지워지지도 않았는데 오랜 전쟁이 계속되고 있으니까요.</p>
+          <p> </p>
+          <p>그래서 저희 치유사들도 다른 아칸 분들과 함께 현지의 일을 돕기도 한답니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">고개를 끄덕인다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>얼마 전에도 다친 주민들을 돌보는 일을 도왔죠.</p>
+          <p> </p>
+          <p>상처를 보니 독에 당한 사람들이 많더라고요. 주변의 사나운 짐승에게 물린 상처보다 독에 당한 상처가 훨씬 위험하고 치료하기도 어렵습니다.</p>
+          <p> </p>
+          <p>주변의 독을 가진 생물체들을 정리하면 피해도 줄이고, 아칸의 일손도 줄일 수 있을 거라는 생각이 들어요.</p>
+          <p> </p>
+          <p>[%username] 님은 어떻게 생각하세요? 제 생각이 맞다고 여기시면 도와 주셨으면 좋겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>도와주시겠다니 감사합니다.</p>
+          <p> </p>
+          <p>주변에 보이는 [%dic:STR_DIC_M_merdionD_27_n]과 [%dic:STR_DIC_M_ScorpionD_27_An]을 처리해 주시면 됩니다.</p>
+          <p> </p>
+          <p>녀석들의 독이 맹독이라서 데바는 몰라도 인간이나 아인종의 피해는 제법 심각하거든요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>안타까운 일입니다.</p>
+          <p> </p>
+          <p>[%username] 님이 도와주시면 모드들 감사해 할 텐데...</p>
+          <p> </p>
+          <p>어쩔 수 없죠. 제가 다른 방법을 찾아보도록 하겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>영혼이 치유된다고 하지만 그 상처의 흔적은 사라지지 않습니다.</p>
+          <p> </p>
+          <p>[%username] 님도 임무 수행 중에 다치지 않도록 주의하십시오.</p>
+          <p> </p>
+          <p>제가 부탁한 일을 완수하셨으면 말씀해 주시고요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 말한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정말 감사합니다.</p>
+          <p> </p>
+          <p>[%username] 님 덕분에 주민의 안전을 확보함을 물론, 아칸들의 일손도 덜게 되었군요.</p>
+          <p> </p>
+          <p>단지 메르디온과 스콜로펜이 워낙 번식이 빠른 생물체라 걱정이 되지만, 이제 어떻게든 해결할 수 있을 겁니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">독을 가진 생명체를 처치하라</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_merdionD_27_n]([%2]/5)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_ScorpionD_27_An]([%5]/5)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Maxeldor]%와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">막셀도르가 부탁한 대로 맹독을 가진 메르디온과 스콜로펜을 처치하여 주민의 안전을 확보하고 아칸의 일손을 덜자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>막셀도르는 주변에 있는 맹독을 가진 생물체 때문에 피해가 많고 아칸의 업무가 많아진다고 했다.</p>
+          <p> </p>
+          <p>그래서 소금핥기 메르디온과 검은 꼬리 스콜로펜을 처치라고 돌아가자 감사를 표했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You want to eat? Need a potion? Then you have to stay alert.</p>
+          <p> </p>
+          <p>If this outpost ever collapses, the Inggison Illusion Fortress will be at risk...even with Agent Veille's protection.</p>
+          <p> </p>
+          <p>And then supply soldiers like me will have to join the fighting. So where will you get your Odella Powder?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"An army moves on its supply soldiers."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, you understand. Better than Sanctum does.</p>
+          <p> </p>
+          <p>We've reached the point where I even stock food...like a Food Supply Soldier. It's better to stock it than to wait until Sanctum sends supplies.</p>
+          <p> </p>
+          <p>What do I stock? Local delicacies. Delicacies? Hah! But...maybe you can help me out?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Great. Why don't you bring [%dic:STR_DIC_M_LF4_B7_Varanus_Axolotl_54_n] meat and [%dic:STR_DIC_M_LF4_B_Rafflesia_Dr_54_An] stamens?</p>
+          <p> </p>
+          <p>They may not taste good, but they're full of nutrients.</p>
+          <p> </p>
+          <p>I'm counting on you to keep our army moving!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I've never had those..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Not in your job description? Of course it isn't! It's not in mine either.</p>
+          <p> </p>
+          <p>Doesn't make it any less necessary.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I've still got an omlette, I think."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Maybe I'll move into food supply. Choosing what to prepare was way more fun than counting potions.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"How about preparing these?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Weren't you bringing me [%dic:STR_DIC_M_LF4_B7_Varanus_Axolotl_54_n] meat and [%dic:STR_DIC_M_LF4_B_Rafflesia_Dr_54_An] stamens?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Right. I'll go get them now."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Quality ingredients!</p>
+          <p> </p>
+          <p>Thank you for your help, [%username]. Let me reward you for saving us all...for a few days at least.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect [%dic:STR_DIC_M_Q11148] and bring them to [%dic:STR_DIC_N_Enoitia].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">As Enoitia requested, collect supply ingredients from Highland Vortiles and Mutated Moonflowers.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>With the outpost woefully undersupplied, Enoitia has also been handling food supplies.</p>
+          <p> </p>
+          <p>You brought her Highland Vortile meat and Mutated Moonflower stamens to make more rations, and she thanked you.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Daeva!</p>
+          <p> </p>
+          <p>Please help me!</p>
+          <p> </p>
+          <p>I've got an emergency on my hands!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What's happened?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Last night Lepharist Revolutionaries broke into my house!</p>
+          <p> </p>
+          <p>My uncle and I were both asleep when it happened. We each jumped up and ran out of the house, but we split up to get away.</p>
+          <p> </p>
+          <p>I saw him running toward the falls, but I haven't seen him since then and I'm too terrified to go anywhere near the house again. Will you look for him?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, thank you. Uncle [%dic:STR_DIC_N_Groken] is the only family I have.</p>
+          <p> </p>
+          <p>He may be hiding by the falls. Oh, please find him alive.</p>
+          <p> </p>
+          <p>Bring news back the instant you know anything.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I will, Manir."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Wh...what?!</p>
+          <p> </p>
+          <p>You would refuse to help out a fellow Asmodian? You would just leave him to die?</p>
+          <p> </p>
+          <p>What else can be on your plate? When you arrived, you were leisurely picking vegetables!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Goodbye, Manir."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah! Oh, it's you.</p>
+          <p> </p>
+          <p>You frightened me--I thought you were one of the Lepharist Revolutionaries, come to finish the job.</p>
+          <p> </p>
+          <p>What are you doing here behind the falls?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">"Manir's looking for you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, Manir. I thought he might, but I've been too afraid to leave.</p>
+          <p> </p>
+          <p>I actually need to get the safe from the back of my house before those Lepharist Revolutionaries find it. It's all the money Manir and I have.</p>
+          <p> </p>
+          <p>Actually...do you think you could get it for me?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"I'm on it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select3">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(This is the only safe behind this house. It must be Groken's.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO2">"This must be it. All right then...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah! Oh, [%username]. I'm sorry, I'm jumping at shadows.</p>
+          <p> </p>
+          <p>Did you find my safe? Was it still there?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Here it is."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The money is untouched! They didn't even see it!</p>
+          <p> </p>
+          <p>Thank you so much!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Find [%dic:STR_DIC_N_Groken].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Find the safe at the back of Manir's house.</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Pick up the safe and return to Groken.</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Manir, who ran away from his house because of the Lepharist Revolutionaries, told you that he is worried about his uncle. Find Groken.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Manir and Groken ran away when the Lepharist Revolutionaries raided their house. They split up and Manir hasn't seen his uncle since they separated. When you found Groken, he asked you to retrieve the safe he hid at the back of the house. You found the safe and returned it to him.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

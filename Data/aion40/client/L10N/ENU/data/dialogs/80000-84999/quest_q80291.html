@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Arieluma [%username]. We meet again. What brings you before me today?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I heard something about Durable Daevanion weapons."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Heard about those, did you? Only the most dedicated of Daevas will ever obtain one, but let me assure you, they're worth all the effort.</p>
+          <p> </p>
+          <p>The first step is collecting all the pieces for a set of Durable Daevanion armor. Then, I need to send five [%dic:STR_DIC_LC_relic_weapon_30]s to my collector friend. You can just purchase those.</p>
+          <p> </p>
+          <p>However, to get a full set of Durable Daevanion armor, you'd practically have to relive your life several times over. Still, if you're willing to go through all that, I will gladly reward you with the Durable Daevanion weapon of your choice.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+         <p>I'm impressed with your dedication. Sun's blessings on you as you try to gather all of these pieces, and don't forget, you can at least get the Divine Incense Burners from [%dic:STR_DIC_N_Perena].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Thanks."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You believe that reliving your life is impossible? Of course, by that logic, no one can obtain a Durable Daevanion weapon either.</p>
+          <p> </p>
+          <p>Oh well. If you change your mind, come back and see me. If anyone has a chance to accomplish this, I think it's you, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Goodbye."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's always good to see you, [%username], but if you're here for a Durable Daevanion weapon, I can't give one to you yet.</p>
+          <p> </p>
+          <p>You need to bring all five Durable Daevanion armor pieces with you first. I know it's difficult, but please persevere.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll do my best."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select3">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It seems that you still lack two Durable Daevanion armor pieces. You're more than halfway to your goal, [%username], it would be tragic for you to give up now.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I've come this far..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You have all the right armor pieces, [%username], and yes, you even have the Divine Incense Burners!</p>
+          <p> </p>
+          <p>It appears you have everything you need. Give me the Divine Incense Burners, and I'll give you the weapon you've worked so long for.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here they are."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_fail">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm afraid I can't give you the Durable Daevanion weapon without five [%dic:STR_DIC_LC_relic_weapon_30]s. They're not for me, but the maker of these weapons is such a particular collector. He'd never forgive me if I didn't give him the chance to complete his set.</p>
+          <p> </p>
+          <p>Please go to [%dic:STR_DIC_N_Perena] and get me five Divine Incense Burners.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll return with the items."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Very impressive work from you, [%username]. It takes true dedication to a cause to be able to wield a Durable Daevanion weapon.</p>
+          <p> </p>
+          <p>May it serve you well, wherever you go.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Faith and Arms."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Select the weapon you want.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get five [%dic:STR_DIC_LC_relic_weapon_30]s and five pieces of Durable Daevanion armor. Bring your items to [%dic:STR_DIC_N_EVENT_Zephyrin] when ready.</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Receive a Durable Daevanion weapon from [%dic:STR_DIC_N_EVENT_Zephyrin]. </font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Zephyrin explained to you about how to get a Durable Daevanion weapon. She said it wasn't easy to gather all parts for a Durable Daevanion armor and five Divine Incense Burners needed for the weapon.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You went to Zephyrin wearing all the required Daevanion armor pieces. She said that you were qualified to have a Durable Daevanion weapon.</p>
+          <p> </p>
+          <p>She took the five Divine Incense Burners for her friend and exchanged them for a Durable Daevanion weapon.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

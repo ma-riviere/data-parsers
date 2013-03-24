@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh in the name of Lady Yustiel, I wish we'd get some relief from this oppressive heat! I've been here for a while now but I never get used to it.</p>
+          <p> </p>
+          <p>I was raised in Eltnen, so you'd think the heat wouldn't bother me, but it's dry in Eltnen. You never get the humidity we have here.</p>
+          <p> </p>
+          <p>If I didn't have Cold [%dic:STR_DIC_gb_herb_n_c_30b] Tea, I'd probably go insane. I'd offer you some, but unfortunately it just ran out.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Does that mean you'll go insane?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Of course not. I'm sure I have some more. All you need to make it is Dried [%dic:STR_DIC_gb_herb_n_c_30b] Leaves. Steep them in boiling water and then add ice.</p>
+          <p> </p>
+          <p>It tastes good and cools you off! I learned about it from a villager. It's their secret to beat the heat, passed down for generations.</p>
+          <p> </p> 
+          <p>I'll just get out some dried [%dic:STR_DIC_gb_herb_n_c_30b] leaves from my...oh, wait. It's empty! I'm out! I can't make more tea!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Now the insanity?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Don't even joke about it, [%username]. You might be sweating, but you can look forward to leaving. Soon you'll be off to Sanctum or someplace else cool and comfortable.</p>
+          <p> </p>
+          <p>The tea doesn't just cool me off. It relaxes me and helps me forget that I'm not going to get out of here for a long time.</p>
+          <p> </p>
+          <p>The villager who brings me the amalils isn't due to visit for weeks, and there's no way I can go out and gather it myself in the jungle. Would you...?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh thank you! You can buy [%dic:STR_DIC_gb_herb_n_c_30b]s from someone who has them, or gather them yourself. They're all over in the Poya Jungle and Klawtan's Wallow.</p>
+          <p> </p>
+          <p>You can't imagine what this means to me, [%username]. It's the one pleasure I have in this terrible place.</p>
+          <p> </p>
+          <p>We won't be able to drink it right away, of course, as the leaves must be dried first.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I understand that it seems silly to you. It's just tea after all.</p>
+          <p> </p>
+          <p>But it's the one pleasure I have in this terrible place.</p>
+          <p> </p>
+          <p>Won't you please reconsider?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll think it over."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, [%username], it's good to see you again. I trust everything has gone well for you in the jungle?</p>
+          <p> </p>
+          <p>Did you manage to find any of the [%dic:STR_DIC_gb_herb_n_c_30b]s I need to make tea yet?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Is this it?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, okay. Take your time.</p>
+          <p> </p>
+          <p>Please gather some for me whenever you happen to find it.</p>
+          <p> </p>
+          <p>Especially if that time is very soon.</p>  
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I will."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ariel's Light! You brought the Amalils!</p>
+          <p> </p>
+          <p>I know it must have been a lot of trouble but I really appreciate it, [%username].</p>
+          <p> </p>
+          <p>I'll set these out to dry right away, and soon there will be Cold Amalil Tea again!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Gather [%dic:STR_DIC_gb_herb_n_c_30b]s and take them to [%dic:STR_DIC_N_Prokopios].</font></p>[%collectitem]</step> 
+    </steps>
+          <p><font font_xml="quest_summary">Gather some Amalils, an ingredient of Cold Amalil Tea, and take them to Prokopios.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Prokopios said Cold Amalil Tea is his trick for enduring hot and humid weather.</p>
+          <p> </p>
+          <p>He wanted to serve you a glass but had run out, so when you gathered some Amalils for him he was very grateful.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

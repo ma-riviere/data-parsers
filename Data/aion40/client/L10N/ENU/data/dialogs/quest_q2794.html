@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>How do you like the Miren Fortress?</p>
+          <p> </p>
+          <p>Admittedly, it isn't perfect yet, but it's better than being outside.</p>
+          <p> </p>
+          <p>If you enjoy our hospitality, perhaps you'd volunteer to help maintain it?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What do you have in mind?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I need someone to wipe out the remnants of the Elyos who have fled. They're probably camped somewhere outside the fortress.</p>
+          <p> </p>
+          <p>Go there and kill [%dic:STR_DIC_N_Monerva], [%dic:STR_DIC_N_Metis], [%dic:STR_DIC_N_Baucis], [%dic:STR_DIC_N_Belus], and [%dic:STR_DIC_N_Sarpedon]. Bring back their [%dic:STR_DIC_I_QUEST_2794a]s as proof.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Don't let your guard down out there. The Elyos are raising a Guard Tower, so they'll be alert.</p>
+          <p> </p>
+          <p>If you underestimate them, you'll be in for an embarrassing defeat.</p>
+          <p> </p>
+          <p>All right. On your way, then.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"They don't stand a chance."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I suppose fleeing is a strategy, too.</p>
+          <p> </p>
+          <p>Giving up now is a wise choice if you don't think you can handle this.</p>
+          <p> </p>
+          <p>If you're admitting they'll defeat you, then I agree with your choice.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Let me think about this."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Have you successfully completed the mission? Show me their [%dic:STR_DIC_I_QUEST_2794a]s.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"These crests are from their corpses."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Of course bringing me their Temple Crests is just a formality, but it can't be avoided when giving a reward.</p>
+          <p> </p>
+          <p>Trust is not a luxury I can afford, so get going and bring back the [%dic:STR_DIC_I_QUEST_2794a]s.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You've done well, though I'm sure they put up a stiff resistance. </p>
+          <p> </p>
+          <p>Here's the reward I promised. You've earned it.</p>
+          <p> </p>
+          <p>May it help you win more battles.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Eliminate the Guardians at the Elyos bind point, gather their [%dic:STR_DIC_I_QUEST_2794a]s and bring them to [%dic:STR_DIC_N_Ab1_1241_Quest_Da].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Eliminate the Guardians Minerva, Metis, Baucis, Belus, and Sarpedon who are camped outside the Miren Fortress. Gather their Temple Crests as proof and bring them to Dehitine.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Dehitine asked you to eliminate the Elyos Guardians camped outside the fortress.</p>
+          <p> </p>
+          <p>You eliminated the Guardians Minerva, Metis, Baucis, Belus, and Sarpedon, then returned to her with their Temple Crests as she instructed. She commended your effort and gave you a reward.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

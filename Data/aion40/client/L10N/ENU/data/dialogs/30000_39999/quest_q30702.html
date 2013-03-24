@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q30702</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]! We've found out where the Chantra and Terath Dredgion fleets are based!</p>
+          <p> </p>
+          <p>They're at the [%dic:STR_DIC_W_IDTiamat_SZ_S3] inside [%dic:STR_DIC_W_IDTiamat_SZ_R1]. If we could access the center and figure out where the dredgion fleets are heading, we'd have a huge advantage in this war.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_N_Yuser] has asked me to organize a force, but I don't have time. I want you to take this on, friend, but you must be prepared: the defenses you'll face will be powerful indeed, and according to our intel, [%dic:STR_DIC_M_IDTiamat_Sardha_Named_60_Ah] himself may be there.</p>
+          <p> </p>
+          <p>Can you help?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(Near the model are the battle plans for the dredgion fleet!)</p>
+          <p> </p>
+          <p>(There's not enough time to write everything down...)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"I can remember this."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh! [%username]?</p>
+          <p> </p>
+          <p>Can I help you? I heard you were at Tiamat Stronghold.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I have information for you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>My word...</p>
+          <p> </p>
+          <p>Sorus sent you, eh? A perfect candidate, if there ever was one. And, with Terath dead, and the dredgion fleet's location known, we surely have the upper hand in this war.</p>
+          <p> </p>
+          <p>There's just one problem... it seems as though one of the dredgions has already been launched, and we have no idea where it is.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Go to the [%dic:STR_DIC_W_IDTiamat_SZ_S3] and find the dredgion fleet orders by accessing the [%dic:STR_DIC_N_IDTiamat_FOBJ_Model].</font></p></step>
+               <step><p visible="[%9]"><font color="[%10]">Kill [%dic:STR_DIC_M_IDTiamat_Sardha_Named_60_Ah] ([%11]/1).</font></p></step>
+               <step><p visible="[%24]"><font color="[%25]">Report to [%dic:STR_DIC_N_Yuser].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Go to the Dredgion Control Center and carry out Yusef's orders.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Sorus asked you if you could gather the Dredgion battle information for Yusef, and warned you that Brigade General Terath was seen in the area.</p>
+          <p> </p>
+          <p>You reached the command center, recovered the Terath Dredgion fleet information, and killed Terath. You reported back to an elated Yusef, although it soon transpired that one dredgion was missing from the fleet....</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

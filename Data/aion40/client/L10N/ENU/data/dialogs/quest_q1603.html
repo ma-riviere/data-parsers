@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The biggest problem this outpost faces is the Lepharist Revolutionaries.</p>
+          <p> </p>
+          <p>Their den is somewhere around here.</p>
+          <p> </p>
+          <p>We don't know precisely what they're up to, but there sure are a lot of them.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"How can I help, Riley?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We're too short-handed to send regular patrols to the area. Would you look into it, [%username]?</p>
+          <p> </p>
+          <p>Head towards the Lepharist Research Center and find some clue as to what they're up to.</p>
+          <p> </p>
+          <p>Bring it back and we'll know what to do next.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Northwest of here, you can find the Lepharist Research Center. You should search any [%dic:STR_DIC_M_LehparAsLF3_40_An] and [%dic:STR_DIC_M_LehparBiochemist_40_An] bodies for clues.</p>
+          <p> </p>
+          <p>Time is of the essence, [%username]!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Faith and arms!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I never expected you to turn down the assignment, [%username].</p>
+          <p> </p>
+          <p>I've heard such favorable things about you and your work for our people.</p>
+          <p> </p>
+          <p>I don't know who else to turn to...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm sorry."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah. You're back from the Lepharist Research Center!</p>
+          <p> </p>
+          <p>Did you find out what they're up to?</p>
+          <p> </p>
+          <p>Those blasted Lepharists drive me mad. Let's see what they're doing.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I found this scroll..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You found nothing at all? I find that highly unlikely.</p>
+          <p> </p>
+          <p>Go immediately to catch [%dic:STR_DIC_M_LehparAsLF3_40_Ans]s and [%dic:STR_DIC_M_LehparBiochemist_40_An]s, and bring me the evidence we need.</p>
+          <p> </p>
+          <p>Be off, [%username]!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Oh, all right."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>They're experimenting on the Elim?</p>
+          <p> </p>
+          <p>I've seen an increasing number of deformed trees these days. Why would they do this to the Elim?</p>
+          <p> </p>
+          <p>The more we learn, the more questions we get. Blast!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Take evidence from [%dic:STR_DIC_M_LehparAsLF3_40_An] and [%dic:STR_DIC_M_LehparBiochemist_40_An], and take it to [%dic:STR_DIC_N_Hestonos].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Go to the Lepharist Research Center and find some clue to their plans.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Riley said he couldn't patrol the Lepharist Research Center and asked you to investigate it.</p>
+          <p> </p>
+          <p>You found the plans to a strange experiment involving the Elim. Riley got frustrated as the mystery deepened.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

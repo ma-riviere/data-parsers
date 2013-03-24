@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p align="center">- 업무 지시서 -</p>
+          <p> </p>
+          <p>1. 수신자: 직원 [%username]</p>
+          <p> </p>
+          <p>2. 업무: 늪수 정화 작업을 방해하는 [%dic:STR_DIC_E_LDF5b_B2_VriZomb]%을 처치하고, 증거로 [%dic:STR_DIC_I_quest_39610a]%을 구해 담당 지부에 납부해 주시기 바랍니다냥.</p>
+          <p> </p>
+          <p>3. 담당 지부: [%dic:STR_DIC_E_LDF5b_Silverlin_BA]</p>
+          <p> </p>
+          <p>위 업무를 완수하면 보상이 있으므로 성실히 임해 주시기 바랍니다냥.</p>
+          <p> </p>
+          <p>- 실버린 주식회사, 인사담당자 다누링 백</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">업무 지시서를 접어 넣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이번 업무는 오염된 드라칸 좀비들을 처치하는 것이라고 들었습니당.</p>
+          <p> </p>
+          <p>업무는 잘 처리하셨습니까냥?</p>
+          <p> </p>
+          <p>지시서에 적힌 증거물도 수거해 왔겠지용?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">브리트라 병사의 무기를 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(수염을 빳빳이 세우며) 왜 빈손인 겁니까냥?</p>
+          <p> </p>
+          <p>업무 지시서를 읽기는 했습니까냥?</p>
+          <p> </p>
+          <p>증거가 없으면 [%username]%이 오염된 드라칸 좀비들을 처치했는지 어떻게 압니까냥?</p>
+          <p> </p>
+          <p>설마 처치하고 무기를 그냥 두고 온 겁니까냥, 그 비싼 것을!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(꼬리를 살랑이며) 냐앙, 이 정도면 꽤 높은 가격에...</p>
+          <p> </p>
+          <p>아, 수고가 많았습니당.</p>
+          <p> </p>
+          <p>오염된 드라칸 좀비 때문에 늪수 정화 작업에 차질이 있었는데 이제 맘놓고 일을 시킬 수 있겠습니당.</p>
+          <p> </p>
+          <p>뭐하고 있습니까냥? 보고도 끝났고 수당도 받았으니 가보라니까용.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_E_LDF5b_B2_VriZomb]%을 처치하고 증거로 [%dic:STR_DIC_I_quest_39610a]를 모아 [%dic:STR_DIC_E_LDF5b_Silverlin_BA]%에 납부하라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">실버린 주식회사에서 업무 지시서가 왔다. 업무를 확인하고 수행하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>실버린 주식회사에서 업무 지시서가 왔다.</p>
+          <p> </p>
+          <p>늪수 정화 작업을 방해하는 오염된 드라칸 좀비들을 처치하고 무기를 수거해 실버린 남부 카탈람 지부에게 전하자 수고했다며 사례를 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The local Krall sure have been acting strangely!</p>
+          <p> </p>
+          <p>When they first invaded, they were typical Krall, mounting raids and causing trouble wherever they went.</p>
+          <p> </p>
+          <p>Now, though, they're burrowing deep into the [%dic:STR_DIC_FLA08], and when our scouts get close they just go berserk! And I mean more berserk than usual.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Should I spy on their raiders?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Sure, if you think you can take on the Krall. I should warn you though, [%username], these Tursin tribesmen are wily as well as strong, and there are many of them in that cave. You'll need your wits to get into the mines, never mind back out from them!</p>
+          <p> </p>
+          <p>The Dukaki have been mining ore in the [%dic:STR_DIC_FLA07] and taking wagonloads of it into the caves. This ore must be something special: eight Krall watch each wagon--far more than for regular ore.</p>
+          <p> </p>
+          <p>I need samples of whatever it is they're mining. Think you can get me some?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Great. One of our scouts slipped into the caves the day before yesterday, and said she saw rows of bins along the walls. She opened one and found ore inside, but a Krall patrol chased her off before she could take any.</p>
+          <p> </p>
+          <p>We need you to head into the mines and fetch three samples of the ore. Once you have them, take them straight to Captain [%dic:STR_DIC_LA139].</p>
+          <p> </p>
+          <p>Hopefully he can work out just what those Krall are up to.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"One way to find out."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What's wrong? Can't hack the big jobs the rest of us take on?</p>
+          <p> </p>
+          <p>Well, [%username], I thought you were a talented [%userclass]. Make yourself useful or get back to Akarios Village, all right? I haven't the time or inclination to drag dead weight in our squad, especially with my injured wrist.</p>
+          <p> </p>
+          <p>Go on--get out of here!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Right..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, the great [%username] returns.</p>
+          <p> </p>
+          <p>You know, you're getting quite a name for yourself. I've had villagers asking for you by name, and even traders traveling from Verteron have heard of your exploits. Keep this up and I'll have to start paying you more!</p>
+          <p> </p>
+          <p>Now, what brings you to me? I thought you were operating out by the strip mine?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I've brought some ore for analysis."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hmm. I'm afraid I can't work on such a limited sample, mercenary.</p>
+          <p> </p>
+          <p>I'll need at least three chunks of ore to study if I'm to ascertain any sense of consistency in them. I cannot make solid observations on such a small sample.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"My mistake, boss."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, excellent. Pass it here.</p>
+          <p> </p>
+          <p>Hmm. Looks like Odium, but it's not normally this translucent. The Krall must have processed it, but why? What would processed ore do that Odium normally cannot? I must think on this.</p>
+          <p> </p>
+          <p>As for you, my friend, I'll see to it that your services are recognized. Take this bonus, and keep up the good work.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Search the suspicious boxes in the [%dic:STR_DIC_FLA08], and bring the unusual ore to [%dic:STR_DIC_LA139].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Poa noticed odd behavior among the Krall. He asked you to search the [%dic:STR_DIC_FLA08] and bring any ore you find to Captain Kalio.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Poa explained to you how the patrols near the [%dic:STR_DIC_FLA08] had noticed the Krall acting strange. Hoping to find out why, he asked you to search through the boxes in the [%dic:STR_DIC_FLA08] for ore.</p>
+          <p> </p>
+          <p>You gathered the ore and took it to Captain Kalio. He noted that the ore had been refined and, now, needed to figure out why.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

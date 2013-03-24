@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>God tempers the wind to the shorn lamb.</p>
+          <p> </p>
+          <p>You, reputed as an excellent [%userclass], shows up.</p>
+          <p> </p>
+          <p>Thank you, Lady Ariel!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"I'm not sure I take your meaning."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You must have heard, [%username]. We lost the Sulfur Fortress.</p>
+          <p> </p>
+          <p>The Asmodians! I'm so angry, but what can I do! </p>
+          <p> </p>
+          <p>This is our situation now. We must plan our counter-offensive!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"It's only a matter of time."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Their military force, the internal deployments. These we must know.</p>
+          <p> </p>
+          <p>But the [%dic:STR_DIC_M_SulfurTree_Guard]s block my scouting attempts.</p>
+          <p> </p>
+          <p>If you can help me, I have another strategy, [%username].</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>My plan is this. As soon as you are ready, gather your colleagues and go to the fortress.</p>
+          <p> </p>
+          <p>The [%dic:STR_DIC_M_SulfurTree_Guard]s will turn their attention to your force, while Kenia and I gather information. </p>
+          <p> </p>
+          <p>Bring [%dic:STR_DIC_I_QUEST_1759a]s as evidence so I can include you in my report to the fortress.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Sounds simple enough."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>My intelligence reports said that [%username] always gets the job done, in any circumstance.</p>
+          <p> </p>
+          <p>But I think, to know the truth, direct experience is always the best measure.</p>
+          <p> </p>
+          <p>You are clearly too busy to do your duty. Kenia and I have our assignment, and will complete it as ordered. Alone.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"This is not my responsibility."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>And then Kenia, did you see me slip past those Guards? They were too busy fighting...oh, hello, [%username]!</p>
+          <p> </p>
+          <p>I was just telling Kenia that their defense formation was looser than usual. It looks like we did not need you after all.</p>
+          <p> </p>
+          <p>But, just in case, were you able to thin their ranks any? Surely you have evidence?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Evidence. Right."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, ah, you see, There was a bit of a mixup, and we...well, we forgot to get ours.</p>
+          <p> </p>
+          <p>I mean, we got the job done, sure, but we're heading back in to get the rest.</p>
+          <p> </p>
+          <p>Let's go, [%username]. We'll need more proof for the higher-ups!</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I think I understand you now."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You are as good as I had heard. Our sortie was flawless.</p>
+          <p> </p>
+          <p>And these insignia, hardly bloody at all!</p>
+          <p> </p>
+          <p>When Brigade General Calon hears about this, he will praise your achievement along with ours, [%username].</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get rid of [%dic:STR_DIC_M_SulfurTree_Guard]s and take the marks to [%dic:STR_DIC_N_Dactyl].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Gather your colleagues, attack the garrison of the Sulfur Fortress, and collect Guard's Insignias so that Dactyl and Kenia can examine the inside of the Sulfur Fortress.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Dactyl was angry at the loss of the Sulfur Fortress. He needed to know the internal situation of the fortress to take it back, but he couldn't due to tight security. He asked you for help.</p>
+          <p> </p>
+          <p>So you turned the attention of the garrison of the Sulfur Fortress away so that Dactyl and Kenia could gather information. You did so, and brought back evidence of your own.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

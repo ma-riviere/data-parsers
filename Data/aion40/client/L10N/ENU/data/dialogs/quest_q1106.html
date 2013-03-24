@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+         <p>Hey, [%username]! I have another favor to ask.</p>
+         <p> </p>
+         <p>Those Snufflers and Kerubs nearly wiped out my entire crop. Things are under control now, but I'm worried that if I leave my plot, they'll do even more damage.</p> 
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+     <Act href="HACTION_ASK_QUEST_ACCEPT">"What can I do to help?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I need someone to take what grain I could recover up to the village. I've already struck a deal with Uno, the village cook, so you needn't worry about selling the goods.</p>
+          <p> </p>
+          <p>It's just up the road, and I'm sure you have other work that'll take you there anyway. I need to trade the grain for enough food to survive.</p>     
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh thank you, [%username]! I knew I could count on you.</p>
+          <p> </p>
+          <p>Just take the grain to [%dic:STR_DIC_LA05]. He'll be expecting you!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"You can rely on me."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+         <p>You won't help? I guess I'll have to risk the trip myself, and hope the Kerubs and Snufflers don't take everything else I have.</p>
+         <p> </p>
+         <p>I thought you might have been looking to make a good first impression, but clearly I was wrong.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Sorry, I'm just too busy right now."</Act>
+    </Selects>
+  </HtmlPage>
+
+   <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hello there, brave [%userclass]! Tell me, would you like to buy one of my ervio pies? You won't find another like it anywhere!</p>             
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I have an urgent delivery!"</Act>
+    </Selects>
+  </HtmlPage>
+
+    <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, this must be the grain from [%dic:STR_DIC_LA36], am I right?</p>
+          <p> </p>
+          <p>I've been worried about him. He hasn't been up here for a while now. He must be just about out of food!</p>
+          <p> </p>
+          <p>Don't worry, [%username]--we'll make sure he gets what he needs to survive. And I'll tell him you said hello. Now, about those pies...</p> 
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Bring [%dic:STR_DIC_LA36]'s grain sack to [%dic:STR_DIC_LA05], the cook.</font></p></step>           
+                   </steps>
+          <p><font font_xml="quest_summary">[%dic:STR_DIC_LA36] could not leave his farm unattended, so he asked you to bring his grain sack to [%dic:STR_DIC_LA05], the cook in [%dic:STR_DIC_FLA02].</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Kales was on the verge of starvation, and he asked you to take a sack of grain to the village cook Uno for barter.</p>
+          <p> </p>
+          <p>You brought the grain to Uno.</p> 
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

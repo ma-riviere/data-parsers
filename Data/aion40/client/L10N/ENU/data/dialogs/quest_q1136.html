@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Whatever you need, just let me know. I have everything from daggers to maces to spears to spellbooks. Every weapon you could possibly need.</p>
+          <p> </p>
+          <p>You'll find good old-fashioned quality here, no throwaway rubbish. Every blade leaves my shop freshly sharpened. See the gleam from that edge? A thread of sunlight!</p>  
+          <p> </p>
+          <p>The hilts are studded with Crystals. They burn and dazzle like flames. Beautiful, aren't they?</p> 
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Which Crystals do you use?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>They come from a local ore. They're translucent, resilient, and perfect for ornamentation. All true Verteron weapons have these Crystals embedded in them.</p>
+          <p> </p>
+          <p>They're difficult to get, though. The larger Crystals are embedded so deeply in the earth that you can break your back trying to dig them out.</p>
+          <p> </p>
+          <p>But you can dig up [%dic:STR_DIC_QILA76]s pretty easily.</p>      
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Oh yeah?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Absolutely. That's why it's so hard to find Crystal Fragments in the swamp these days. The few that are left are mostly under water.</p>
+          <p> </p>
+          <p>Most people in Verteron leave those alone, what with all the creatures living in there.</p>
+          <p> </p>
+          <p>You don't look afraid of Slinks or Potcrabs...and my supply of [%dic:STR_DIC_QILA76]s is nearly used up. Would you be willing to fetch some for me?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That's decent of you! Thanks!</p>
+          <p> </p>
+          <p>I'll need five or more [%dic:STR_DIC_QILA76]s to finish ornamenting the current batch of weapons. You should be able to find Crystals in the river, or the pools in front of the citadel.</p>
+          <p> </p>
+          <p>Oh, by the way, there's some sort of brigand camp out there. Be careful of them. We don't know who they are, but they've been attacking travelers.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"They won't be a problem."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Okay, then. I'll just have to collect them myself. At least death by Potcrab sting is quick.</p>
+          <p> </p>
+          <p>If I don't come back, would you at least let my family know what happened? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Sure thing."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Have you seen those imitation Verteron weapons? Blunt as chair legs and smothered with fake crystal.</p>
+          <p> </p>         
+          <p>Weapons are supposed to be elegant and beautiful, not gaudy like costume jewelry.</p>
+          <p> </p>   
+          <p>Did you bring back the Crystals?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Right here."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I can't do the work without the Crystals.</p>
+          <p> </p>   
+          <p>I have orders to complete, so I'd appreciate it if you took this a little more seriously.</p>   
+          <p> </p>  
+          <p>You remember where to look, don't you?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I remember. I'll be right back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What beautiful specimens! These are genuine [%dic:STR_DIC_QILA76]s, grown underwater over centuries.</p>
+          <p> </p>
+          <p>Look at the clarity! The shine!</p>
+          <p> </p>
+          <p>Thank you. Please, take this. It's the least I can do.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect Crystal Fragments that grow in pools around the citadel for [%dic:STR_DIC_LA75].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Ivis, a weapons merchant, needs Crystal Fragments to ornament his weapons. Bring him the fragments he needs.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ivis needed Crystal Fragments in order to ornament the weapons he makes. You dug some up from under the water in Verteron Swamp and brought them to him.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

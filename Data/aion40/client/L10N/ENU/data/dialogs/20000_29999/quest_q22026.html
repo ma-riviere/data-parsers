@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q22026</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>Not entered</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm just a Warehouse Keeper, but the Fatebound Legionaries keep suggesting I could do more for the war. Y'know, if you and I get together, [%username], it won't be hard.</p>
+          <p> </p>
+          <p>Why don't you go collect [%dic:STR_DIC_I_quest_22026a]s from any [%dic:STR_DIC_M_LDF4b_C3_DrakanFi_Noble_60_Ae], [%dic:STR_DIC_M_LDF4b_C3_DrakanSc_Noble_60_Ae], [%dic:STR_DIC_M_LDF4b_C3_DrakanWi_Noble_60_Ae], and [%dic:STR_DIC_M_LDF4b_C3_DrakanCl_Noble_60_Ae].</p>
+          <p> </p>
+          <p>Then, we'll report to the Legionaries together.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Can I interest you in a--</p>
+          <p> </p>
+          <p>[%username]! Those Fatebound Legionaries keep asking when I'll join up. Do you have those items we talked about that one time?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">"If you mean these Insignias..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Wonderful! Now I can tell Kusir about how we defeated those Protectorate Drakan.</p>
+          <p> </p>
+          <p>Don't you think we work well together?</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect [%dic:STR_DIC_I_quest_22026a]s for [%dic:STR_DIC_N_Motogut].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Help Warehouse Keeper Marius to be part of the combat effort. Collect the Insignias from Protectorate Legionaries.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Marius appealed to your better nature and asked you to collect Protectorate Insignias from dangerous Drakan so that he could be part of the war effort.</p>
+          <p> </p>
+          <p>Theoretically, he gave you equal credit for the work when he reported to Fatebound Centurion Kusir.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, I'm glad you're here, [%username]! At the end of the note you brought me from Vivi, he asked if I might send more fish.</p>
+          <p> </p>
+          <p>He thanked me for the Roast Gadill and said it was delicious, and that he'd just love to have some Roast Dorado.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Sounds simple enough."</Act>
+    </Selects>
+  </HtmlPage> 
+
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh it is. Catching Dorado is usually no problem for me, but....</p>
+          <p> </p>
+          <p>I have to go to the Altgard Fortress for an appointment. There's a merchant who sells rare bait, and he's meeting me there. If I don't show up, he'll go on with his travels.</p>
+          <p> </p>
+          <p>I just don't have the time to fish for Dorado right now. Could you do me one more favor, [%username]? Really, it's my last request.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>If you could catch some Dorado for me, I'd be very grateful. I'm sure Vivi will be too.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_E_gb_source_fish_d_20b] is also found in the Salintus Desert, so if you can't find it in the Sprigg Habitat, you can go there. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Almost sounds like a vacation."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Aww, really?</p>
+          <p> </p>
+          <p>I have no one else to ask! </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"You can't always get what you want."</Act>
+    </Selects>
+  </HtmlPage>
+ 
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're timing is excellent.</p>
+          <p> </p>
+          <p>I'm prepared to roast that Dorado, now.</p>
+          <p> </p>
+          <p>What have you got?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here you go."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, it looks like you were too hasty.</p>
+          <p> </p>
+          <p>Please catch the [%dic:STR_DIC_E_gb_source_fish_d_20b].</p>
+          <p> </p>
+          <p>If you can't catch it here, go to the Salintus Desert. I know you are a Daeva who completes a task once you begin it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Don't worry. I'll be back soon."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're certainly a capable angler, I must say.</p>
+          <p> </p>
+          <p>Thank you. I'll go ahead and roast this fish now. Thank you!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Catch [%dic:STR_DIC_E_gb_source_fish_d_20b] and take it to [%dic:STR_DIC_N_Lif].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Vivi asked Lif for Roast Dorado. Catch Dorado for Lif.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Upon reading the note, Lif said that Vivi had requested Roast Dorado.</p>
+          <p> </p>
+          <p>You caught Dorado and brought it to him.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

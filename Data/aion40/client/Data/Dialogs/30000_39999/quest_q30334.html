@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>과거에 파슈만디르 사원에 임무를 수행하러 간 적이 있소.</p>
+          <p> </p>
+          <p>그때 나는 임무를 제대로 수행하지 못했다오.</p>
+          <p> </p>
+          <p>게다가 함께 간 동료마저 희생시키고 나 혼자만 살아 돌아왔다오.</p>
+          <p> </p>
+          <p>아무도 날 힐책하지는 않았지만 오랫동안 그 일은 내 마음에 짐이었소.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">고개를 끄덕인다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>지금이라도 그 임무를 완수하고 싶다는 소망이 있다오.  </p>
+          <p> </p>
+          <p>그때 내가 받은 임무는 저주받은 위대한 용사, 타로스를 구하는 것이었소.</p>
+          <p> </p>
+          <p>정말 뛰어난 용사였지만 잔인한 운명은 그분에게 큰 시련을 주었지. </p>
+          <p> </p>
+          <p>부하들을 희생시킬 수 없었기에 그분은 용족에게 저주받는 운명을 받아들이고 말았다오. </p>
+          <p> </p>
+          <p>[%username]%이 타로스 님을 잔인한 운명에서 해방시켜 주시겠소?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>타로스 님은 파슈만디르 사원에 있는 망자의 정원에 속박돼 계시오.</p>
+          <p> </p>
+          <p>망자의 정원에서 용족의 파수꾼이 된 [%dic:STR_DIC_E_IDCatacombsN_DeathNightNmd_55_Ah] 님을 오드의 흐름으로 돌려보내 주시오.</p>
+          <p> </p>
+          <p>그러면 저주에서 풀려나 그분의 영혼이 자유를 얻을 수 있을 것이오.</p>
+          <p> </p>
+          <p>그대를 믿소, [%username]! </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>나에게도 벅찬 일을 다른 사람에게 부탁한다는 것이 무리인 것 같소!</p>
+          <p> </p>
+          <p>자신의 짐은 자신이 짊어지고 가야 하는 것을...</p>
+          <p> </p>
+          <p>시엘 주신의 보우하심이 있다면 언젠가 임무를 완수할 날이 올 거라고 믿어 보겠소.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>돌아왔구려, [%username]!</p>
+          <p> </p>
+          <p>나의 임무는 대신 완수했소?</p>
+          <p> </p>
+          <p>타로스 님이 드디어 해방되어 오드의 흐름으로 돌아가셨소?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 말해 준다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정말 고맙소, 정말 고마워!</p>
+          <p> </p>
+          <p>드디어 타로스 님께서 자유를 얻으셨다고 생각하니 정말 감개가 무량하구려!</p>
+          <p> </p>
+          <p>[%username]%이 아니었다면 꿈도 꿀 수 없는 일이었을 거요.</p>
+          <p> </p>
+          <p>시엘의 영원한 축복이 그대에게 있기를.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_E_IDCatacombsN_DeathNightNmd_55_Ah]를 처치하여 저주에서 해방시켜라([%2]/1)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Aurbotha]%와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">아우르보다는 타로스를 저주에서 푸는 임무는 받았지만 실패했다고 한다. 그를 대신하여 사로잡힌 용사 타로스를 저주에서 풀어 주자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아우르보다는 과거 파슈만디르 사원에서 사로잡힌 용사 타로스를 저주에서 푸는 임무를 수행했지만 실패했다고 했다.</p>
+          <p> </p>
+          <p>자신을 대신하여 그의 저주를 풀어달라고 하기에 파슈만디르 사원으로 가서 사로잡힌 타로스를 처치하여 오드의 흐름으로 돌려보냈다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

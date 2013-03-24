@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Field Warden:</p>
+          <p> </p>
+          <p>Unexpected involvement from private investors and a shortage of raw materials has left our recently developed Pharmaceutical Division unable to keep up with our present needs. It is essential to our operation that we secure the required supplies, one way or another.</p>
+          <p> </p>
+          <p>Of all the herbs required to meet our needs, [%dic:STR_DIC_G_QUEST_45042_a] is among the most important. Fortunately, it is also one of the easiest to gather, and we require as much of it as we can get.</p>
+          <p> </p>
+          <p>As such, we call on all Field Wardens to collect this herb and bring it to [%dic:STR_DIC_N_Alaum] in Brusthonin for redistribution.</p>
+          <p> </p>
+          <p>This matter is highly confidential, so please destroy this letter after reading it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">(Feed the letter to a Porgus.)</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I have to confess that I have a vested interest in the success of our new lab. One of my talents is Alchemy, and if the lab can get fully operational, I might have a new job in store for me! This one is fine, I guess, but....</p>
+          <p> </p>
+          <p>Okay, it's not fine. I'd much rather be up in Pandaemonium than here. Much better view.</p>
+          <p> </p>
+          <p>Anyway, I had heard you were on the hunt for [%dic:STR_DIC_G_QUEST_45042_a]. Have you found much?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"About that Subella..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's imperative that we acquire as much Subella as we can, Warden. Even a single tiny dose of the distilled compound requires a bountiful amount of herbs to start with.</p>
+          <p> </p>
+          <p>Your participation is vital, as is everyone else's. If the lab succeeds then I might...</p>
+          <p> </p>
+          <p>But I can't be selfish. Please hurry and bring me some [%dic:STR_DIC_G_QUEST_45042_a]. A mere 3 plants will be enough to demonstrate your commitment to the Wardens.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be back with the Subella."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent, you brought the Subella. This much alone will create about one dose of the medicine the lab is making.</p>
+          <p> </p>
+          <p>Interestingly, I heard a rumor from a colleague at the lab that Subella might also be used to make a particularly deadly toxin--but that uses much more of the herb. Quantities like the Field Wardens require now. Not that I'm suggesting anything....</p>
+          <p> </p>
+          <p>Anyway, I have no idea what the lab has in mind, being stuck down here. But I do know what you have in mind--this token, right?</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Gather [%dic:STR_DIC_G_QUEST_45042_a] and bring it to [%dic:STR_DIC_N_Alaum].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">A letter has arrived from the Field Wardens. Follow its instructions.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>A letter from the Field Wardens suggests that a rather large amount of Subella is needed to tackle a shortage of medical supplies.</p>
+          <p> </p>
+          <p>You collected Subella and brought it to the Brusthonin Field Agent, who rewarded you for your time.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

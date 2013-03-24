@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님! 시간이 있으면 절 좀 도와주시겠습니까? </p>
+          <p> </p>
+          <p>건달푼의 헛소리 때문에 사람들에게 시달리고 있어서 제 일을 처리할 시간이 좀 부족해서 말입니다.</p>
+          <p> </p>
+          <p>그 일만 아니라면 이렇게 남에게 부탁하지 않아도 될 텐데...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">고개를 끄덕인다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>개인적으로 조사하는 일이 있는데 용암 발게스트가 조사에 좀 방해가 되네요. </p>
+          <p> </p>
+          <p>제가 찾는 흔적을 놈들이 없애버리고 있어서 말입니다. 그런데 놈들을 처치하자니 그동안 그나마 남은 흔적까지 사라질 것 같아서요.</p>
+          <p> </p>
+          <p>그러니 [%dic:STR_DIC_M_HellhoundD_28_An]를 처치해 주시면 큰 도움이 될 것 같습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이 근처에 [%dic:STR_DIC_M_HellhoundD_28_An]가 아주 많습니다.</p>
+          <p> </p>
+          <p>이리저리 바닥을 쑤석거리고 다니는 바람에 제가 찾는 흔적이 점점 사라지고 있지요. 머리가 둘이라서 두 배로 빨리 사라지는 것 같아요.</p>
+          <p> </p>
+          <p>10마리 정도 처치하면 큰 도움이 될 겁니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>안 도와주시겠다고요?</p>
+          <p> </p>
+          <p>설명하느라 쓸데없이 시간만 낭비한 셈이로군요. </p>
+          <p> </p>
+          <p>한시라도 빨리 조사에 착수해야 하니 그만 돌아가 주세요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>여기 사람들은 남의 일에 관심이 뭐 그리 많은지 모르겠습니다.</p>
+          <p> </p>
+          <p>건달푼만 해도 툭 하면 뭘 조사하냐고 꼬치꼬치 물으니.</p>
+          <p> </p>
+          <p>그나저나 [%dic:STR_DIC_M_HellhoundD_28_An]는 모두 처치한 겁니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>감사합니다. 앞으로 조사에 도움이 되겠군요.</p>
+          <p> </p>
+          <p>아, 제가 뭘 조사하고 있더라는 말은 남들에게 하지 마십시오. 개인적인 일이라 남의 귀에 들어가면 곤란합니다.</p>
+          <p> </p>
+          <p>그리고 이건 절 도와주신 보답입니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">수사에 방해가 되는 [%dic:STR_DIC_M_HellhoundD_28_An]를 처치하라([%2]/10)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Utgar]와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">용암 발게스트가 바닥에 남은 흔적을 없애는 바람에 우트가르가 조사하는 일에 방해가 된다고 한다. 우트가르 대신 용암 발게스트를 처치해 주기로 했다.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>우트가르는 개인적으로 조사하는 일이 있는데 용암 발게스트 때문에 남겨진 단서가 사라지고 있다고 했다.</p>
+          <p> </p>
+          <p>그래서 우트가르가 단서를 잘 조사할 수 있도록 발게스트를 처치해 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

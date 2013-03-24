@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님께서 프릴파이맘을 잡으러 간 사이에 요새에서 전갈이 왔습니다.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_FrillfaimamFemale_21_An]%이 멸종할 때까지 모조리 찾아 없애라지 뭐에요?</p>
+          <p> </p>
+          <p>하긴 그것들은 시도때도 없이 다른 짐승이나 사람들을 공격하니 좀 소란스러워야죠.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>부탁할 데바가 없어서 이번에는 제가 직접 해야 하는 건가 고민하고 있었습니다.</p>
+          <p> </p>
+          <p>아무리 사람에게 피해를 준다지만 생명을 없애는 일은 괴로운 일입니다. 모든 생명은 평등하니까요.</p>
+          <p> </p>
+          <p>하지만 명령은 명령이니 [%username] 님이 가서 [%dic:STR_DIC_M_FrillfaimamFemale_21_An]을 좀 처치해 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님이라면 제 부탁을 들어주실 줄 알았습니다.</p>
+          <p> </p>
+          <p>그런데 이번에는 지난번보다 좀 숫자가 많습니다.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_FrillfaimamFemale_21_An] 10마리를 사냥해 주십시오.</p>
+          <p> </p>
+          <p>그럼 부탁드립니다!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아아, 정말 내 손으로 잡아야 하는 건가?</p>
+          <p> </p>
+          <p>생명은 무엇이나 평등한 것인데 인간의 편의를 위해 다른 생명을 죽여야 하다니...</p>
+          <p> </p>
+          <p>가디언만 안 되었어도 이런 일은 없었을 것을...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>돌아오셨군요!</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_FrillfaimamFemale_21_An]은 잡은 거겠죠?</p>
+          <p> </p>
+          <p>요새에서 계속 보고하라고 해서 아주 곤란했습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="PLAYEMOTION_clap;HACTION_SELECT_QUEST_REWARD">처치했다고 말한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정말 고맙습니다! 이제 한숨 돌리겠네요.</p>
+          <p> </p>
+          <p>요새에서 당분간 채근하지 않을 테니 아름다운 자연의 소리나 즐겨야겠습니다.</p>
+          <p> </p>
+          <p>하지만 정기적으로 보고를 해야하니 시간이 나면 언제든 다시 들러 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">만두리 숲에서 [%dic:STR_DIC_M_FrillfaimamFemale_21_An]을 사냥하라([%2]/10)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Androkles]와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">사람들에게도 해를 끼치는 프릴파이맘을 처치하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>안드로클레스는 요새에서 프릴파이맘을 처치하라는 명령이 내려와서 곤란해 하고 있었다. 그래서 부탁대로 대신 프릴파이맘을 처치해 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]! Thank the Empyrean Lords you're here!</p>
+          <p> </p>
+          <p>Kaisinel's Agent Veille wants you for an important mission. She says you helped her in a moment of weakness...?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"You're making me blush. It was nothing really."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>She needs you to go to Vorgaltem Citadel and the Crimson Temple...but let's not talk about business yet. Let me tell you about your reward for completing the mission!</p>
+          <p> </p>
+          <p>Tell me, how do you like the dagger I made for you last time?</p>
+          <p> </p>
+          <p>Well, if you complete Agent Veille's assignment, I will talk to someone more talented than I about getting you an even better weapon. Sounds good, yes?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good! A smart Daeva knows the value of a good weapon and a good reputation with Lord Kaisinel!</p>
+          <p> </p>
+          <p>We need to take back the [%dic:STR_DIC_W_DF4_SZ_3011_A] and the [%dic:STR_DIC_W_DF4_SZ_3021_A]. All you need to do is go and get rid of the enemy Guardian Generals.</p>
+          <p> </p>
+          <p>We will talk more about the advanced version of Laestrygos's Dagger when you return.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm off to kill the Generals, the Guardian Generals of trogs."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You sure you won't even let me tell you about the mission? Agent Veille was so excited to have you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Victory for Veille! Just...without me."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select3">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you for your efforts, [%username]. At this rate, we may achieve peace in our time.</p>
+          <p> </p>
+          <p>Your great contribution to recovering Vorgaltem and Crimson means that I'll have your Laestrygos's Dagger upgraded.</p>
+          <p> </p>
+          <p>You did bring Laestrygos's Dagger, right?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO3">"For Elysea and peace! Hmmm...the dagger..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select4">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What? Foolish [%userclass]!</p>
+          <p> </p>
+          <p>The special reward for this mission is only for those who have Laestrygos's Dagger.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"So how do I get one, then?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm sure I gave you Laestrygos's Dagger before.</p>
+          <p> </p>
+          <p>But if you don't have it, then you can't be rewarded for this mission. I'm sorry to trouble you for nothing.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I went to all this effort for nothing?"</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Remember how I said we would upgrade your dagger? I have here a Piece of Aegis.</p>
+          <p> </p>
+          <p>They are very rare, very powerful. A Piece of Aegis can transform your weapon into something even greater.</p>
+          <p> </p>
+          <p>And now it is yours. Thank you for getting rid of those Guardian Generals for myself and Agent Veille.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Infiltrate enemy fortresses to kill their Guardian Generals.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  Guardian General of [%dic:STR_DIC_W_DF4_SZ_3011_A]([%5]/1).</font></p>
+                     <p visible="[%0]"><font color="[%1]">  Guardian General of [%dic:STR_DIC_W_DF4_SZ_3021_A]([%8]/1).</font></p></step>
+               <step><p visible="[%12]"><font color="[%13]">Talk with [%dic:STR_DIC_N_Laestrygos].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Laestrygos sent you to kill the Asmodian Guardian Generals at the enemy fortresses. He promised to enhance your Laestrygos's Dagger when you returned triumphant.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Laestrygos sent you to kill the enemy Guardian Generals at the Vorgaltem Citadel and the Crimson Temple.</p>
+          <p> </p>
+          <p>When you returned triumphant, he gave you a Piece of Aegis to enhance your Laestrygos's Dagger.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

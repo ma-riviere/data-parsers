@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q41219</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Last time I passed the [%dic:STR_DIC_W_LDF4a_SZ_B2_09], I noticed some strange things floating above it.</p>
+          <p> </p>
+          <p>I'm no expert, but it looked like [%dic:STR_DIC_I_QUEST_41219A] had broken off the Jotari Sanctuary Ruins. But Yaci doesn't believe me.</p>
+          <p> </p>
+          <p>I'm sure those fragments have some kind of value, so could you fly around the [%dic:STR_DIC_W_LDF4a_SZ_B2_09] and collect those some [%dic:STR_DIC_I_QUEST_41219A] pieces?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I started to worry after you left.</p>
+          <p> </p>
+          <p>If these fragments end up being worthless, you've done a lot of work for no reason.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">"Here they are, either way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thanks, [%username], and here is your reward.</p>
+          <p> </p>
+          <p>If these fragments end up being important, I'll make sure everyone knows who helped me get ahold of them.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect [%dic:STR_DIC_I_QUEST_41219A] shards from the skies above [%dic:STR_DIC_W_LDF4a_SZ_B2_09] and bring them to [%dic:STR_DIC_N_Desios].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Desios has spotted some Sanctuary Debris  floating above Debarim Petralith Studio, and she thinks they might be useful.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Desios noticed some Sanctuary Debris  floating above Debarim Petralith Studio and sent you to collect them.</p>
+          <p> </p>
+          <p>When you returned with the fragments, she revealed that she was worried they might be worthless, though she rewarded you anyway.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

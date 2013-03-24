@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This is no time for sightseeing, [%username]! Are you aware we lost the [%dic:STR_DIC_W_LF4_SZ_2011_A]?</p>
+          <p> </p>
+          <p>You realize its importance, don't you? It means the Altar of Avarice is no longer safe! And if the Altar of Avarice is no longer safe, then the Inggison Illusion Fortress is not safe!</p>
+          <p> </p>
+          <p>I have soldiers positioned in the outpost, but that won't hold them back for long....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I know the area well."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That's the first bit of good news I've heard all day. We must reclaim the [%dic:STR_DIC_W_LF4_SZ_2011_A], and you're going to lead us to victory!</p>
+          <p> </p>
+          <p>[%username], I need you to get rid of the guards at the Temple. Gather some soldiers that you trust and head out as soon as you can!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This isn't an elaborate mission, [%username].... It's a simple slice-and-dice job! We just need to cause chaos amongst their troops...the rest will fall into place.</p>
+          <p> </p>
+          <p>Return to the Temple of Scales and attack the [%dic:STR_DIC_M_QUEST_11214all]. If it gets too hairy out there, retreat.</p>
+          <p> </p>
+          <p>If you can get rid of enough guards, the Wisplight Legion will be dispatched to take care of the rest. [%dic:STR_DIC_N_Queesia] will have a reward for you if you can pull this off.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Make sure my reward is Mithril."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I wouldn't have given this mission to someone who I thought couldn't handle it. Apparently I was mistaken.</p>
+          <p> </p>
+          <p>I hope you need my help some day, [%username]. I hope I can turn my back on you, too!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I won't ever need your help."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ever since we discovered the Abyss, we have been fighting a war of attrition against the Asmodians and the Balaur.</p>
+          <p> </p>
+          <p>You have merely played your role in this millenium opera. But this time it's different. This time we have to win at all costs.</p>
+          <p> </p>
+          <p>We can't lose the Temple of Scales. We can't....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I have slaughtered the guards."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Faith and arms, [%username]! You have done what so many other Daevas could not...or would not.</p>
+          <p> </p>
+          <p>We could really use your blade and wits around here, if you decide to stay.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get rid of the [%dic:STR_DIC_M_QUEST_11214all]([%2]/20).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk to [%dic:STR_DIC_N_Queesia].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">The Temple of Scales has been lost to the enemy. Get rid of their guards and cause chaos.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Moras asked you to disturb the Temple of Scales guards in order to reclaim the fortress, which fell into enemy hands.</p>
+          <p> </p>
+          <p>You slaughtered many guards and reported to Siaqua, who then asked you for further help.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

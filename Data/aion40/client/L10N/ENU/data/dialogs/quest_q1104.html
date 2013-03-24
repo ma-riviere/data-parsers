@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<HtmlPages>
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ok, [%username], listen up.</p>
+          <p> </p>
+          <p>You're working out well, so I think we can trust you with more important tasks.</p>
+          <p> </p>
+          <p>Up this path lies [%dic:STR_DIC_FLA02]. Captain Kalio can make better use of you there.</p> 
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+    <Act href="HACTION_ASK_QUEST_ACCEPT">"What about the Kerubs?"</Act>
+    </Selects>
+  </HtmlPage>
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Don't worry, there's a new bunch of recruits starting later and I'll get them working on the infestation. Your orders are to head up to the village and give a report to [%dic:STR_DIC_LA03].</p>
+          <p> </p>
+          <p>She needs to settle our accounts so we can get paid. Tell her everything we've done here.</p>              
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Polinia is usually near the [%dic:STR_DIC_ELA15]. Make sure she gets all the details in her report.</p>
+          <p> </p>
+          <p>Afterward, speak to Captain [%dic:STR_DIC_LA139]. He'll know what to do with you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Good advice, I'll be on my way."</Act>
+    </Selects>
+  </HtmlPage>
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>A mercenary who doesn't want to be paid, eh?</p>
+          <p> </p>
+          <p>You're a strange one, [%username]!</p>
+          <p> </p>
+          <p>Fine, you just sit around here. I'll head up to the village later.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Fine by me."</Act>
+    </Selects>
+  </HtmlPage>
+   <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Before you speak, remember that you stand before the great [%dic:STR_DIC_ELA15]. This is a place of worship and I will not tolerate disrespect, even from a mercenary.</p>
+          <p> </p>
+          <p>Now, what is it?</p>
+       </body>
+        </html>
+    </Contents>
+    <Selects>
+   <Act href="HACTION_SELECT_QUEST_REWARD">"I have a report from the Akarios Plains."</Act>
+    </Selects>
+  </HtmlPage>
+    <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah!</p>
+          <p> </p>
+          <p>You bring good news to the [%dic:STR_DIC_ELA15]! I'll combine this with the other reports and present them to the villagers later.</p>
+          <p> </p>
+          <p>The Akarios Plains are a source of concern for the villagers here, and while some were hesitant to bring in mercenaries, I can now see that our money was well spent. Tell me, though--did you see a farmer in the plains, a man named Kales? He is my cousin, and I have not heard from him in some time. I do hope he is well....</p>
+          <p> </p>
+          <p>Oh, and don't worry, I took detailed notes. I know how particular Mires is about his reports.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Report to [%dic:STR_DIC_LA03].</font></p></step>               
+    </steps>
+          <p><font font_xml="quest_summary">Your work in the Akarios Plains is complete. Go to [%dic:STR_DIC_FLA02] and report your results to Priest Polinia.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Mires sent you to the village to report to Polinia on the situation in the Akarios Plains.</p>
+          <p> </p>
+          <p>Polinia assured you that she'd noted everything accurately.</p>         
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+</HtmlPages>

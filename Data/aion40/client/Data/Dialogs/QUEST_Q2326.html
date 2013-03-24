@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>요즘 이 근처에서 이상한 낌새가 느껴지지 않소?</p>
+          <p> </p>
+          <p>못 보던 자들이 왔다 갔다 하기에 자세히 살펴보니 레파르 혁명단이더군.</p>
+          <p> </p>
+          <p>놈들이 무슨 꿍꿍이로 이 근처를 배회하는 건지 모르겠소.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">고개를 끄덕인다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>혁명단 놈들이 나타난 지역 치고 사고가 일어나지 않았던 지역이 없소.</p>
+          <p> </p>
+          <p>놈들이 무슨 일을 벌이기 전에 불씨를 없애야겠소.</p>
+          <p> </p>
+          <p>다섯 주신을 모독하는 판데모니움의 적이니 처치하는 것이 마땅하기도 하고 말이오.</p>
+          <p> </p>
+          <p>이 근처를 배회하는 감시단의 암살병, 전투병, 조사원을 모조리 쓸어버릴 생각인데 좀 도와주시겠소?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이렇게 선뜻 도와주겠다고 나서니 [%username] 님이 정말 믿음직스럽구려.</p>
+          <p> </p>
+          <p>근처를 맴돈 건 한참 됐지만 이 감시 초소나 주민을 공격한 적은 없으니 지금이 놈들을 치기에는 적기인 것 같소.</p>
+          <p> </p>
+          <p>어서 가서 [%dic:STR_DIC_M_LehparAsD_27_An]과 [%dic:STR_DIC_M_LehparWaD_27_An], [%dic:STR_DIC_M_LehparWizardD_27_An]을  모조리 처치하시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>레파르 혁명단을 두려워해서야 어떻게 데바라고 할 수 있겠소?</p>
+          <p> </p>
+          <p>그 [%mainslotitem]%이 아깝지도 않소?</p>
+          <p> </p>
+          <p>정말 실망스럽구려.</p>
+          <p> </p>
+          <p>다시 생각해 보고 마음이 바뀌면 돌아오시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아무런 움직임이 없다고 해도 레파르 혁명단은 항상 감시하고 있어야 하오.</p>
+          <p> </p>
+          <p>괜찮겠지 하고 방심하고 있다면 뒤통수를 맞을 테니 말이오.</p>
+          <p> </p>
+          <p>부탁한 대로 감시단의 암살병, 전투병, 조사원 녀석들은 모두 처치했소?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="PLAYEMOTION_clap;HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>훌륭하군! 정말 잘했소.</p>
+          <p> </p>
+          <p>판데모니움에 올릴 보고서에 [%username] 님의 활약도 적어야겠소.</p>
+          <p> </p>
+          <p>무슨 짓을 저지르려고 했는지는 모르겠지만 이것으로 놈들의 사기가 꺾였으면 좋겠소. 하지만 원체 끈질긴 녀석들이라 아마 포기하지 않을 거요.</p>
+          <p> </p>
+          <p>하지만 [%username] 님 덕분에 당분간은 문제없겠소. 정말 고맙소.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">레파르 혁명단을 처치하라</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_LehparAsD_27_An]([%2]/4)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_LehparWaD_27_An]([%5]/4)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_LehparWizardD_27_An]([%8]/2)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Tofa]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">토파는 요즘 주변에 모습을 드러내는 레파르 혁명단원들 때문에 신경이 곤두서 있다. 무슨 일이 생기지 않도록 레파르 혁명단을 처치하는 것이 좋겠다.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>토파는 레파르 혁명단이 나타난 지역에서 문제가 일어나지 않은 적이 없다며 최근 모습을 드러내고 있는 레파르 혁명단에 대해 걱정을 표시했다.</p>
+          <p> </p>
+          <p>그래서 그의 부탁대로 레파르 혁명단을 처치해 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

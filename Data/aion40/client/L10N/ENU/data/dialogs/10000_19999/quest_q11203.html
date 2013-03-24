@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Arieluma, [%username]. Did you know that plants are very sensitive to changes in their environment?</p>
+          <p> </p>
+          <p>Sometimes they'll adapt and thrive, while other times they'll simply die off. Dragrints are a good example of the former....</p>
+          <p> </p>
+          <p>They can adapt to Drana, as my notes have noted. But they can also adapt to strong amounts of sulfur. Even acidic sulfur, like around here.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Interesting...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Indeed, very interesting. Excellent for research since the sulfur here is caused by Tiamat. But Sulfur Dragrints are actually quite tame.</p>
+          <p> </p>
+          <p>I'm getting soft, I can feel it. I need a more powerful foe to challenge or I'll become as weak as...as weak as you!</p>
+          <p> </p>
+          <p>You see, powerful Daevas need to fight powerful enemies, and weak Daevas...well, you know. So, I have a mission for you...you're perfect for it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I knew you'd take this mission, [%username].</p>
+          <p> </p>
+          <p>Get rid of [%dic:STR_DIC_M_LF4_C_Agrint_Acid_55_An]s and bring back the Essence of Sulfur inside them.</p>
+          <p> </p>
+          <p>In the meantime, I'll protect this Observation Post in case the Balaur attack. That's my echelon of foe! You can have the little creatures; I'll take the big ones.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I kind of hope the Balaur do attack."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Really? Why? Do little creatures frighten the big Daeva?</p>
+          <p> </p>
+          <p>I'm just having some fun with you, [%username]. It's tiring being out here smelling sulfur all day.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"You've got the wit of a knuckle-dragger!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>If the Altar of Avarice is ever occupied, my Observation Post will be a very important Bind Point for many Daevas.</p>
+          <p> </p>
+          <p>That's why I'm here...and that's why I couldn't leave. Did you take care of matters for me?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here's the Essence of Sulfur."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Better I lost my wings than trust you with a task again, [%username]! The Sulfur Dragrints aren't going to eliminate themselves!</p>
+          <p> </p>
+          <p>You should be able to finish them off easily, if you're as strong as you say you are. Or did you butter the backsides of politicians to get here like the Hushblade Legion?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I don't like you one bit."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, faith and arms! I knew this task would be a breeze for you. Any Daeva who can cut it in Inggison can cut up a few Dragrints.</p>
+          <p> </p>
+          <p>I'll give these Essences of Sulfur to the scholars and yes, I'll let them know that you helped me.</p>
+          <p> </p>
+          <p>Now, please vacate my Observation Post. You've done your job.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect the Essence of [%dic:STR_DIC_M_LF4_C_Agrint_Acid_55_An]s and take them to [%dic:STR_DIC_N_Totus].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">As Totus requested, get rid of Sulfur Dragrints and collect their Essence of Sulfur.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Totus said the Sulfur Dragrints are important for researching the power of Tiamat.</p>
+          <p> </p>
+          <p>You got rid of Sulfur Dragrints and collected their Essence of Sulfur. When you brought it back to him, he thanked you somewhat sarcastically.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

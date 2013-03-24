@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>전선에 나와 있으면 이모저모 감수해야 할 것이 많다오.</p>
+          <p> </p>
+          <p>약초의 데바라고 해서 속 편하게 연구만 할 수는 없는 입장이라오.</p>
+          <p> </p>
+          <p>아칸이나 행정관의 일손도 돕고 하는 것이 나중엔 내게 도움이 될 때도 있고 하니까 말이오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>뭐 그런 이유로 지금 주화 임무를 좀 돕고 있다오.</p>
+          <p> </p>
+          <p>요새에서 느빌림에 관심을 가지고 조사를 하고 있는 모양이오.</p>
+          <p> </p>
+          <p>우다스 신전 지하로 정기적으로 아칸을 파견하는데 조사보다 전투에 더 시간이 걸린다고 하는구려.</p>
+          <p> </p>
+          <p>이런저런 것들이 방해를 하는 모양인데 [%username]%이 좀 도와주면 어떻겠소?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그럼 [%dic:STR_DIC_M_IDTemple_RollingWheel_53_Ae]%을 좀 처치해 주시구려. </p>
+          <p> </p>
+          <p>톱니가 날카로워서 위협적인데다 계속 돌아다녀서 더 방해가 되는 모양이오. </p>
+          <p> </p>
+          <p>마력의 차크란타 숫자가 좀 적어진다면 아칸들이 편하게 조사할 수 있을 거요.</p>
+          <p> </p>
+          <p>잘 좀 부탁하오, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이거 참 곤란하구려.</p>
+          <p> </p>
+          <p>[%username]%라면 흔쾌히 들어줄 거라고 생각해서 부탁한 건데 말이오.</p>
+          <p> </p>
+          <p>공적인 일인데 나 몰라라 팽개칠 수도 없고...</p>
+          <p> </p>
+          <p>이 일만 생각하면 정말 골치가 아프구려.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>요즘 정말 정신이 없어서 죽겠소.</p>
+          <p> </p>
+          <p>새로운 독에, 부상자에 거기다 주화까지 관리할 게 한두 가지가 아니라오.</p>
+          <p> </p>
+          <p>주화 일이라도 덜면 좀 편하겠지만 나 하나 좋자고 모른 척하기도 그렇고...</p>
+          <p> </p>
+          <p>어쨌거나 할 일은 해야지. 마력의 차크란타는 어떻게 됐소? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">모두 처치했다고 한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 덕에 내가 한시름 덜었소.</p>
+          <p> </p>
+          <p>약속했던 미스릴 주화이니 받으시오.</p>
+          <p> </p>
+          <p>행정관이 주는 임무가 늘 그렇지만 이번 한 번으로 끝나는 일이 아니라오.</p>
+          <p> </p>
+          <p>그러니 시간이 나면 또 도와주시구려.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_M_IDTemple_RollingWheel_53_Ae]%을 처치하라([%2]/10)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Sulbanyer]%와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">느빌림을 조사하는데 마력의 차크란타가 방해가 된다고 한다. 우다스 신전 지하로 가서 마력의 차크란타를 처치하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>술반예르는 일손이 없어서 공적인 일을 돕고 있다며 우다스 신전 지하로 가서 임무를 수행해 달라고 했다. </p>
+          <p> </p>
+          <p>그래서 그의 부탁대로 아칸들이 느빌림을 조사하는데 방해가 되는 마력의 차크란타를 처치해 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

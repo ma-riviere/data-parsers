@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p> - 긴급 작전 명령서- </p>
+          <p></p>
+          <p> 1. 발신: 판데모니움 작전사령부</p>
+          <p></p>
+          <p> 2. 수신: [%username]</p>
+          <p></p>
+          <p> 3. 명령: </p>
+          <p></p>
+          <p>하나, 브루스트호닌의 [%dic:STR_DIC_W_DF2B_SZ_A_Town]을 공격하고 있는 천족을 막아라.</p>
+          <p></p>
+          <p>둘, 명령서를 확인하는 즉시 작전지로 이동하며, 수행 결과는 마르쿠탄 템페르 훈련소에 있는 [%dic:STR_DIC_N_Sala]에게 보고하라.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">명령서를 접어 넣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>얘기 들었습니다. 천족이 브루스트호닌의 [%dic:STR_DIC_W_DF2B_SZ_A_Town]을 습격했다고요?</p>
+          <p> </p>
+          <p>안 그래도 언데드 때문에 병력이 부족한 지역인데 하마터면 큰일날 뻔했습니다.</p>
+          <p> </p>
+          <p>그건 그렇고 보상을 준비해야 하니 이번 임무 결과를 보고해 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>임무 완수를 확인했습니다, [%username] 님.</p>
+          <p> </p>
+          <p>자, 받으세요. 저희 작전사령부에서 마련한 보상입니다.</p>
+          <p> </p>
+          <p>다시 한번 노고에 감사 드립니다. </p>
+          <p> </p>
+          <p>[%username] 님이 브루스트호닌에 가 주셔서 얼마나 고마운지 모릅니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">브루스트호닌을 습격한 천족을 처치하라([%2]/5)</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_N_Sala]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">긴급 명령: 브루스트호닌의 벨다자르의 언덕마을을 습격한 천족을 소탕하고 살라에게 보고하라</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>판데모니움 작전사령부에서 벨다자르의 언덕마을을 공격한 천족을 처단하라는 긴급 명령서를 받아 임무를 수행했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

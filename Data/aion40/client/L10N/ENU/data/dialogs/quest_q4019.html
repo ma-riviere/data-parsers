@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Rewrite Dave 16 July -->
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Psst! It's [%username], right? You've been out to Havenjark farm...I've got a proposition for you.</p>
+          <p> </p>
+          <p>Just between you and me, of course.</p>
+          <p> </p>
+          <p>Got any skulls from there? Or any bones at all? If they're in good shape, I'll pay top Kinah for them.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"You want to buy bones?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Don't look at me like that! What's wrong with collecting skulls as a hobby?</p>
+          <p> </p>
+          <p>I volunteered to come to Brusthonin because it has so many Undead, but I've been stuck in the campsite since I got here. Randet's orders.</p>
+          <p> </p>
+          <p>Look, [%username], I know you aren't exactly squeamish. How about heading back to Havenjark Farm and collecting some skulls? I'll pay, of course.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What I really want is skulls from [%dic:STR_DIC_M_GraveknightD_23_An]s and [%dic:STR_DIC_M_SkeletonMagicianD_23_An]s at Havenjark farm. Will you bring me bring me some? </p>
+          <p> </p>
+          <p>And I'm paying for intact skulls, not a bunch of bone splinters. Understand?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Blood for blood!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Okay, so maybe you're a little on the squeamish side...</p>
+          <p> </p>
+          <p>Look, I'm not some sinister mastermind who wants skulls to raise an Undead horde or anything. I'm just a humble Legionary with an unusual hobby.</p>
+          <p> </p>
+          <p>If you won't help, then at least do me the courtesy of not gossiping about "Tala and her macabre hobby." Not everyone is...broad-minded, I guess.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"My lips are sealed."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The teachings of Lady Lumiel are our solace in hard times.</p>
+          <p> </p>
+          <p>Hard times...like having to explain to Randet why I've got a bunch of skulls in my tent.</p>
+          <p> </p>
+          <p>But enough of my troubles. Cheer me up--show me some skulls!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here you go...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>There are three kinds of people I hate in this world: First, cruel gossips who just won't leave a humble Legionary alone.</p>
+          <p> </p>
+          <p>Second, so-called "antiquities dealers" in Pandaemonium who sell Zombie skulls as Unfest skulls.</p>
+          <p> </p>
+          <p>And third: people who say they'll help you, but then don't follow through. That ring true, [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>These specimens are just what I wanted. Now I need only the skulls of Banshees and Boggarts, and I'll have examples of everything from Havenjark Farm.</p>
+          <p> </p>
+          <p>Where am I going to put these? Randet told me to clear my collection out of the tent, so I have them stashed outside for now.</p>
+          <p> </p>
+          <p>But that's my problem, not yours, I suppose. Thanks for your help--and your discretion.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect [%dic:STR_DIC_M_GraveknightD_23_An] skulls and [%dic:STR_DIC_M_SkeletonMagicianD_23_An] skulls and take them to [%dic:STR_DIC_N_Tala].</font></p>[%collectitem]</step> 
+    </steps>
+          <p><font font_xml="quest_summary">Go to Havenjark Farm and procure skulls of Unfests and Anubites for Tala, who makes a hobby of collecting skulls.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Tala noticed you going to Havenjark Farm, so she asked you to sell her any skulls you found there.</p>
+          <p> </p>
+          <p>A collector of skulls, Tala asked you to collect skulls because she was stuck on duty at the Settlers Campsite and couldn't gather them herself.</p>
+          <p> </p>
+          <p>You collected skulls for Tala, who thanked you but asked you not to tell others about her unusual hobby.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

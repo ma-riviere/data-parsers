@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님, 돈 벌 생각 없습니까?</p>
+          <p> </p>
+          <p>보아하니 혼자 다니는 것 같은데 그러려면 아무래도 수중에 돈이 좀 있어야죠.</p>
+          <p> </p>
+          <p>제가 알려 드리는 일을 하면 봉혼석 값 정도는 충분히 벌 수 있을 겁니다.</p>
+          <p> </p>
+          <p>아, 이상한 눈으로 보지 마세요. 매사에 열심인 것 같아서 권하는 거지 다른 뜻은 없습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">얘기를 계속 듣는다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>옛 유적터에 가면 집게발 루펜트가 있습니다.</p>
+          <p> </p>
+          <p>요즘 엘리시움에서 [%dic:STR_DIC_I_QUEST_1326a]로 만든 요리가 아주 폭발적인 인기라더군요.</p>
+          <p> </p>
+          <p>놈들의 집게발이 없어서 못 팔 지경이랍니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님이 [%dic:STR_DIC_M_Lobster_25_An]%을 잡아서 [%dic:STR_DIC_I_QUEST_1326a]을 가져오시면 제가 좋은 값에 쳐 드리겠습니다.</p>
+          <p> </p>
+          <p>저도 슈고 상인에게 팔 수 있으니 누이 좋고 매부 좋은 격이지요.</p>
+          <p> </p>
+          <p>10개 정도만 가져오시면 됩니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그럼 [%dic:STR_DIC_W_LF2_SZ_G1] 근처를 돌아다니는 [%dic:STR_DIC_M_Lobster_25_An]를 처치하고 집게발을 모아 오십시오.</p>
+          <p> </p>
+          <p>참! 헤로데스가 왜 루펜트를 사냥하는 거냐고 묻거든 대충 둘러 대십시오.</p>
+          <p> </p>
+          <p>통통한 집게발이 비싼 값에 팔리는 걸 아직 모르는 것 같더라고요. </p>
+          <p> </p>
+          <p>워낙 부수입을 밝히는 편이니 헤로데스가 알게 되면 이 동네 루펜트가 씨가 마를 겁니다. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님을 돕고 싶어서 알려 드린건데...</p>
+          <p> </p>
+          <p>제 성의를 받아들이지 않으시니 조금 섭섭합니다.</p>
+          <p> </p>
+          <p>뭐 어쩌겠습니까? 관심이 없다는데 강요하는 것도 예의가 아니지요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>표정을 보니 수확이 있나 보군요.</p>
+          <p> </p>
+          <p>루펜트 사냥은 잘 하셨습니까?</p>
+          <p> </p>
+          <p>그럼 모아 온 [%dic:STR_DIC_I_QUEST_1326a]을 이리 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">집게발을 건넨다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아직 루펜트를 사냥하지 않은 겁니까?</p>
+          <p> </p>
+          <p>엘리시움의 유행은 수명이 짧답니다. 이 시기를 놓치면 제값을 받기 힘들 거예요.</p>
+          <p> </p>
+          <p>그러니 조금만 서둘러 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이 울퉁불퉁하고 딱딱한 집게발이 정말 맛있는 요리로 변하는 걸까요?</p>
+          <p> </p>
+          <p>저도 잠깐 머물긴 했지만 엘리시움 시민의 취향은 정말 알 수가 없다니까요.</p>
+          <p> </p>
+          <p>어쨌거나 그것 때문에 우리에게 수입이 생기니 좋다면 좋은 일이겠지요.</p>
+          <p> </p>
+          <p>자, 여기 집게발 값입니다. 후하게 쳐드린 거니 그리 아십시오.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_M_Lobster_25_An]%을 처치하여 얻은 요리 재료를 [%dic:STR_DIC_N_Novan]에게 가져가라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">비싼 값에 팔린다는 루펜트의 통통한 집게발을 모아 노반에게 가져가자. </font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>노반은 엘리시움에서 집게발 요리가 유행이라면서 루펜트의 통통한 집게발을 가져오면 좋은 값을 쳐 주겠다고 했다.</p>
+          <p> </p>
+          <p>그래서 옛 유적터로 가서 집게발 루펜트를 잡아 통통한 집게발을 가져다 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p align="center"> - CONFIDENTIAL - </p>
+          <p> </p>
+          <p>From: Radiant Ops Headquarters</p>
+          <p>To: Agent [%username]</p>
+          <p> </p>
+          <p>Subject: Enemy activity in Reshanta. Reports from area field agent confirm presence of small mobile Asmodian unit moving unopposed through both the Top and Core levels of Reshanta.</p>
+          <p> </p>
+          <p>Orders: Locate [%dic:STR_DIC_W_AB1] and terminate three combat-worthy Asmodians to destabilize enemy operations. Use any means necessary. At mission completion, report to [%dic:STR_DIC_E_35502].</p>
+          <p> </p>
+          <p>May the light of Aion fall upon you in battle!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Yah, probably only three of them out there..."</Act>
+    </Selects>
+  </HtmlPage>
+
+   <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Arieluma [%username].</p>
+          <p> </p>
+          <p>I'm surprised to see you so soon. Have you already completed your mission?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Mission accomplished."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well done, Agent [%username].</p>
+          <p> </p>
+          <p>Here's a little something in appreciation of your service.</p>
+          <p> </p>
+          <p>For the glory of Sanctum!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Destroy the [%dic:STR_DIC_E_Daily_1] in the Top and Core levels of [%dic:STR_DIC_W_AB1]([%2]/3).</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Report back to [%dic:STR_DIC_E_35502].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Daily Order: Eliminate the Asmodians wreaking havoc in Reshanta. Report to the Reshanta Radiant Ops agent.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Radiant Ops Headquarters issued a daily order to eliminate the Asmodians in Reshanta's Top and Core levels.</p>
+          <p> </p>
+          <p>You completed the mission and got your reward from Radiant Ops.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+	 	  <HtmlPage name="select_acqusitive_quest_desc">
+	 	    <Selects>
+	 	      <Act>New quest: [%questname]</Act>
+	 	    </Selects>
+	 	  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

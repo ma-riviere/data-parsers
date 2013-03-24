@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>My fellow Field Warden:</p>
+          <p> </p>
+          <p>Until recently, the Aetheric Field fluctuations had been stable in Beluslan.</p>
+          <p> </p>
+          <p>Now we have detected possible fluctuations in a recording device--commissioned by the Pandaemonium Research Center--which we placed in a strategic location in that region.</p>
+          <p> </p>
+          <p>Immediately proceed to Beluslan and retrieve the Monitor Record from a [%dic:STR_DIC_OBJ_FOBJ_Q45007], then bring it to the [%dic:STR_DIC_E_45007].</p>
+          <p> </p>
+          <p>Never shall the Field fall.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">(Store the letter.)</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes, fellow Warden?</p>
+          <p> </p>
+          <p>Do you by chance have a Monitor Record? I was expecting it today....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Is this it?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No. I was told that a Field Warden would be bringing it to me.</p>
+          <p> </p>
+          <p>Perhaps you received a letter recently? Maybe the letter said something about a Field Monitor? It's quite urgent that I get that information processed today. Please do your duty, Warden.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Apologies. I'll leave now."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent. Let me see your letter as well.</p>
+          <p> </p>
+          <p>Interesting...I thought.... Well, it doesn't look like there's any problem--everything seems reasonably stable for now.</p>
+          <p> </p>
+          <p>The task is mine. Here is your reward.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Recover data from a [%dic:STR_DIC_OBJ_FOBJ_Q45007] and bring it to the [%dic:STR_DIC_E_45007].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">A letter has arrived from the Field Wardens. Follow its instructions.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>According to a letter from the Field Wardens, an Aetheric Field Monitor in Beluslan is being used to monitor and record the status of the Aetheric Field.</p>
+          <p> </p>
+          <p>You located the tower and brought the Monitor Record to the Beluslan Field Agent, who said there wasn't any major problem at this time.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

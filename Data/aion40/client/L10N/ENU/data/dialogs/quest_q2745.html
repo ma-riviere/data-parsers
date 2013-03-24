@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah! You've come at the right time! I've an important secret mission, [%username], that requires a few fine, ah, volunteers who can work independently of the legion.</p>
+          <p> </p>
+          <p>Several renowned Daevas were recommended, but I think you have the best wings to carry out the mission, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"A secret mission? Keep talking..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Ellies managed to set up bind point on the Forsaken Isle--they paid dearly for it for that territory--now they watch for a chance to attack the fortress. We captured this fortress with blood of Asmodians, we cannot lose it again. We must drive out the sun-cursed Ellies from the Wings of Siel Archipelago immediately!</p>
+          <p> </p>
+          <p>We've decided to take the initiative and destroy the [%dic:STR_DIC_OBJ_1131_AttackTower_Li] on the Forsaken Isle. Without the Guard Tower those blasted Ellies will be dust under our wings! </p>
+          <p> </p>
+          <p>Well, are you the right Daeva for the job? Will you carry out this mission?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good! Go now to the Forsaken Isle. The enemy's bind point is somewhere in the center of the island and is guarded by the [%dic:STR_DIC_OBJ_1131_AttackTower_Li]. </p>
+          <p> </p>
+          <p>Be warned, when you get close, the Elyos Guards will immediately attack.</p>
+          <p> </p>
+          <p>You must battle through the enemy lines and destroy that bind point, This mission will be tougher than milking a brax bull but I know that [%username] that you can handle it. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Blood for blood!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Although the Siel Western Fortress is now in our hands, we cannot let down our guard! </p>
+          <p> </p>
+          <p>If we show any sign of weakness those Ellies will attack with a vile vengeance.</p>
+          <p> </p>
+          <p>Offense is the best defense, don't you think? This plan will fail without you to lead it, please, reconsider.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Farewell."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I heard a terrible noise! Screams, shouts, and wails echoed through the fortress. What happened? Did you destroy the [%dic:STR_DIC_OBJ_1131_AttackTower_Li]</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"The tower is no more."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ahh, your reputation is well deserved.</p>
+          <p> </p>
+          <p>Thank you. Those simpering Ellies will not dare return to the Wings of Siel Archipelago anytime soon.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Destroy [%dic:STR_DIC_OBJ_1131_AttackTower_Li] on the Forsaken Isle ([%2]/1).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report the result to [%dic:STR_DIC_N_Ab1_1131_Quest_Da].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Lirhel asked you to attack the Elyos who set up a bind point on the Forsaken Isle. Go to the island and destroy the Guard Tower.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Lirhel was concerned that Elyos still coveted Siel's Western Fortress which is now in Asmodian control. He wanted to drive out the Elyos.</p>
+          <p> </p>
+          <p>As he requested, you destroyed the Guard Tower to weaken the Elyos forces on the Forsaken Isle.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

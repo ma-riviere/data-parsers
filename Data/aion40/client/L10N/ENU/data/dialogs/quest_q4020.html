@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Rewrite Dave 16 July -->
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Azphelumbra, [%userclass]. Going to Havenjark Farm?</p>
+          <p> </p>
+          <p>If so, I'd like you to deliver something for me.</p>
+          <p> </p>
+          <p>It hardly weighs a thing, and it'll take up just one slot in your Cube.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What is it, exactly?"</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I knew you'd ask that, but...it's something that [%dic:STR_DIC_N_DF2a_ArchonGuard_2] personally requested. and she swore me to secrecy about it.</p>
+          <p> </p>
+          <p>On my life, though, I swear it's neither dangerous nor strange.</p>
+          <p> </p>
+          <p>Can you deliver it to Parica?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I knew I could count on a Daeva like you. It's true what they say about you....</p>
+          <p> </p>
+          <p>Here's the box. What Parica asked for is inside.</p>
+          <p> </p>
+          <p>She ordered it from Pandaemonium a long time ago, and it finally arrived yesterday by post. Please tell Parica that I'm sorry for the delay.</p>
+          <p> </p>
+          <p>You can find [%dic:STR_DIC_N_DF2a_ArchonGuard_2] at the borderland of Sudorville, north of here.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"The task is mine!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm sorry...did my words offend you?</p>
+          <p> </p>
+          <p>I wasn't suggesting that you were a mere errand-runner, or that you didn't have anything better to do.</p>
+          <p> </p>
+          <p>I just thought...well, it doesn't matter. I apologize for bothering you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"No problem."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>If you go north from here, you'll be in Sudorville.</p>
+          <p> </p>
+          <p>But be warned: if you lack the courage or strength to cut down a Pale Karnif without hesitation, turn back. You'll find only pain and death in Sudor, and I grow weary of recovering the bodies of the arrogant and the foolhardy.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">"I have a box for you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>All this time, I thought Blume forgot! Now, where can I stash this box while I'm on duty....</p>
+          <p> </p>
+          <p>Are you going back to the Settlers Campsite, [%userclass]?</p>
+          <p> </p>
+          <p>Deliver this to Blume, if you don't mind. Tell him this is the remainder--he'll know what that means.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"Sure, the task is mine."</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You haven't left for the northern border yet?</p>
+          <p> </p>
+          <p>Parica must be desperate...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"This is the remainder..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You've been there and back already? I had no idea!</p>
+          <p> </p>
+          <p>Parica didn't have to pay me on the spot. But she's a...precise sort of person, if you know what I mean.</p>
+          <p> </p>
+          <p>Here, take this for your trouble. If Parica's satisfied, I'm satisfied.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Deliver a [%dic:STR_DIC_I_quest_4020a] to [%dic:STR_DIC_N_DF2a_ArchonGuard_2].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Deliver the envelope to [%dic:STR_DIC_N_Blume].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">An item Parica ordered a long time ago has arrived at last. Deliver the Pink Box to Parica on Blume's behalf.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Blume had something to deliver to Archon Parica, who watches the northern border. Blume asked you to deliver it because Parica's post lies just beyond Havenjark Farm.</p>
+          <p> </p>
+          <p>When you delivered the pink box, Parica gave you an envelope for Blume--an envelope containing the remainder of her payment.</p>
+          <p> </p>
+          <p>You went back to the Settlers Campsite and delivered the envelope to Blume.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

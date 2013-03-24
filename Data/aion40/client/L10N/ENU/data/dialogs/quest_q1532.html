@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>May I ask you one more favor, Daeva?</p>
+          <p> </p>
+          <p>I ask because you're the only one who listens.</p>
+          <p> </p>
+          <p>I need your help with something very important. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I'm listening."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I used to have keepsakes--a [%dic:STR_DIC_I_QUEST_1532a] and a [%dic:STR_DIC_I_QUEST_1532b] with a portrait inside.</p>
+          <p> </p>
+          <p>They were precious to me, but I can't remember when I saw them last. I may have lost them while fighting with Trolls. Or maybe I lost them while wandering, and a Keraton picked them up.</p>
+          <p> </p>
+          <p>Will you find them for me, [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I think it was my personal things that helped me remember who I was...who I am. If I don't get them back, I might become like...the others.</p>
+          <p> </p>
+          <p>I'm depending on you, [%username]. Please search among the [%dic:STR_DIC_M_TrollRE_34_An]s and the [%dic:STR_DIC_M_CatosRE_34_An], and retrieve the [%dic:STR_DIC_I_QUEST_1532a] and the [%dic:STR_DIC_I_QUEST_1532b] I lost.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll find them. I promise."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I don't want to be like them!</p>
+          <p> </p>
+          <p>I thought you'd understand!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Let me think about it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I forget more and more.</p>
+          <p> </p>
+          <p>I think it's only a matter of time before I forget everything.</p>
+          <p> </p>
+          <p>Did you find my [%dic:STR_DIC_I_QUEST_1532a] and  [%dic:STR_DIC_I_QUEST_1532b]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I found them."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Have you searched [%dic:STR_DIC_M_TrollRE_34_An]s and the [%dic:STR_DIC_M_CatosRE_34_An]?</p>
+          <p> </p>
+          <p>They must have  them.</p>
+          <p> </p>
+          <p>What did I ask you to find? I can no longer remember.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll hurry."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Look, there's a portrait in the locket....</p>
+          <p> </p>
+          <p>Who do you think is she? I hope I remember her--she's beautiful.</p>
+          <p> </p>
+          <p>She must have been very important to me.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Search [%dic:STR_DIC_M_TrollRE_34_An] and [%dic:STR_DIC_M_CatosRE_34_An] to find the [%dic:STR_DIC_I_QUEST_1532UNI] and take them to [%dic:STR_DIC_N_NPC_LF3_GraveKnight].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Get rid of the Trolls and the Keratons to find the locket and buckle that Ganges lost.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Cursed Ganges said he  lost a locket and a buckle that are very important to him. </p>
+          <p> </p>
+          <p>You got rid of Trolls and Keratons to retrieve them. Cursed Ganges was grateful.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

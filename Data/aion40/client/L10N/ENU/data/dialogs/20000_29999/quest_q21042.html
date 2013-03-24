@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Have you been to the Nunglark Ruins yet, [%username]?</p>
+          <p> </p>
+          <p>It's occupied by Krall and Mau, you know. By order of the Drakan, the poor dispossessed Sapiens who used to live there were killed or scattered to the winds.</p>
+          <p> </p>
+          <p>I have a plan to drive out the insidious Krall and Mau at the village. Not only will this rid the world of our enemies, but it will allow us to gather some much-needed Aether.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Aether?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Unlike other creatures in Balaurea, these Krall and Mau don't seem to be much affected by Drana. We can extract a small amount of Aether from their bodies.</p>
+          <p> </p>
+          <p>If you can bring 6 units each of the [%dic:STR_DIC_I_QUEST_21042a] and [%dic:STR_DIC_I_QUEST_21042b], I'll be able to get the Aether I need.</p>
+          <p> </p>
+          <p>By the way, you'll also need to buy a [%dic:STR_DIC_I_junk_d_redeem_jewelry_02a] so I can refine the Aether in the blood. Otherwise the Aether will dissipate, uselessly.</p>
+          <p> </p>
+          <p>Is all that worth a Mithril coin to you?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm pretty sure you can distinguish a Krall from a Mau, [%username], but I had a young confused Daeva here not so long ago, so I'll be specific.</p>
+          <p> </p>
+          <p>Krall Blood comes from [%dic:STR_DIC_M_DF4_KrallFi_DR_53_An] and Mau Blood comes from [%dic:STR_DIC_M_DF4_LycanFi_DR_53_An]. You can find them at the Nunglark Ruins.</p>
+          <p> </p>
+          <p>Bring 6 units of each type of blood and a [%dic:STR_DIC_I_junk_d_redeem_jewelry_02a], and a Mithril coin is yours!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Blood for bloo...err...coin!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, I guess if you're not interested in Mithril coins...or Aether...or helping other people...or avenging dispossessed Sapiens....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I have other concerns, sorry."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Were the Mau and Krall still camped at the Nunglark Ruins, or had they moved on? I hope you found them.</p>
+          <p> </p>
+          <p>Did you bring me the [%dic:STR_DIC_I_QUEST_21042a], [%dic:STR_DIC_I_QUEST_21042b], and [%dic:STR_DIC_I_junk_d_redeem_jewelry_02a] I asked for?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here's what I brought."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm sorry, but I can't give you a Mithril coin unless you follow my exact instructions.</p>
+          <p> </p>
+          <p>You must collect 6 units of [%dic:STR_DIC_I_QUEST_21042a] and [%dic:STR_DIC_I_QUEST_21042b], and then purchase a [%dic:STR_DIC_I_junk_d_redeem_jewelry_02a].</p>
+          <p> </p>
+          <p>Come back only when you've gathered everything together.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I guess I lost count."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The blood of Krall and Mau...and a Disposable Aether Refining Device. This is everything I need. Thank you, [%username].</p>
+          <p> </p>
+          <p>Here is the Mithril coin I promised. Stop back any time--I always have work.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Bring the [%dic:STR_DIC_I_QUEST_21042a], [%dic:STR_DIC_I_QUEST_21042b] and a [%dic:STR_DIC_I_junk_d_redeem_jewelry_02a] to [%dic:STR_DIC_N_Godin].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Kill Krall and Mau in the Nunglark Ruins to obtain their blood, and take it along with a Disposable Aether Refining Device to Godin.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Coin Administration Officer Godin asked you to kill Krall and Mau, and then obtain a Disposable Aether Refining Device to refine Aether from their blood.</p>
+          <p> </p>
+          <p>When you returned with the blood and a Disposable Aether Refining Device, Godin rewarded you with a Mithril coin.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

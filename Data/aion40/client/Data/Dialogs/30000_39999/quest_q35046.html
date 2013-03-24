@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>신성 수호회 일동 보시오.</p>
+          <p> </p>
+          <p>아이온께서 허락하신 오드의 힘을 얻은 데바는 은총을 받지 못한 불행한 자들에게 은혜를 베풀어야 하오.</p>
+          <p> </p>
+          <p>용계로 와 마족을 치고 티아마트를 공략하는 것도 중요하지만 우리 신성 수호회는 신성의 진정한 의미를 잊어선 안 되오.</p>
+          <p> </p>
+          <p>지금 이 순간에도 용계에서 버림받은 아인종과 터전을 잃은 연족이 굶주림의 고통에 시달리고 있소.</p>
+          <p> </p>
+          <p>모든 신성 수호회 회원에게 알리니, 용계에서 고통을 겪고 있는 형제들에게 전할 식량을 헌납하시오.</p>
+          <p> </p>
+          <p>회원들이 마련해야 할 식량은 [%dic:STR_DIC_G_QUEST_35046_01], [%dic:STR_DIC_G_QUEST_35046_02], [%dic:STR_DIC_G_QUEST_35046_03]라오. 식량을 다 모으면 [%dic:STR_DIC_E_35021]에게 전하면 되오. 회원들의 사소한 노고가 잉기스온을 위한 선행이 될 것이오.</p>
+          <p> </p>
+          <p>명심하시오. 행동은 신속하게! 입은 무겁게! </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">의뢰서를 접어 넣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이런 곳까지 무슨 일이십니까?</p>
+          <p> </p>
+          <p>(주변을 살피며) 혹시 신성 수호회에 관련된 일입니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">가져온 식량을 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>식량이라면 얼마든지 환영입니다.</p>
+          <p> </p>
+          <p>하지만 내부 규칙에 따라 아무 식량이나 받고 있지는 않습니다.</p>
+          <p> </p>
+          <p>반드시 지정된 물건이어야 합니다. 식량의 전달도 여러 가지 경로가 있기 때문이죠.</p>
+          <p> </p>
+          <p>아무튼 [%dic:STR_DIC_G_QUEST_35046_01], [%dic:STR_DIC_G_QUEST_35046_02], [%dic:STR_DIC_G_QUEST_35046_03]를 빠뜨리지 말고 가져오십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님께 신성의 가호가 영원하길!</p>
+          <p> </p>
+          <p>기부하신 식량은 잉기스온의 굶주리는 아인종과 연족에게 지급될 것입니다.</p>
+          <p> </p>
+          <p>[%username] 님의 헌신은 증표로 보답하겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_E_Q35046]%를 모아 [%dic:STR_DIC_E_35021]에게 가져가라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">신성 수호회에서 의뢰서가 왔다. 지시에 따르자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>신성 수호회에서 온 의뢰서에는 잉기스온의 아인종과 연족을 돕기 위해 식량이 필요하다며 기부를 부탁하는 내용이 적혀 있었다.</p>
+          <p> </p>
+          <p>요청받은 식량을 모두 구해 잉기스온 지부 회원에게 가져가자 협조에 감사를 표하며 증표로 답례했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

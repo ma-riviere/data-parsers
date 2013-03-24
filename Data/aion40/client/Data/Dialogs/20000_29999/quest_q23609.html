@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_W_ZONE_NAME_LDF5_SZ_D1]에서 발견된 드라칸들이 전부 이상하다는 보고를 받았습니다.</p>
+          <p> </p>
+          <p>전부 이성이 없는 좀비 상태인데다가 상당히 변이가 진행된 것 같다고 하더군요.</p>
+          <p> </p>
+          <p>[%username] 님께서 원인 조사를 위해 [%dic:STR_DIC_M_LDF5_Under_VrDrZombID_Fi_65_An]과 [%dic:STR_DIC_M_LDF5_Under_VrDrZombID_Wi_65_An]를 처치하고 단서를 구해와 주십시오.</p>
+          <p> </p>
+          <p>짐작가는 원인이 없는 건 아니지만 확증이 있어야겠지요.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_LDF5_Under_VrDrZombID_all]들을 처치하다 보면 분명 뭔가 나올 겁니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>조사에 진척은 있었습니까?</p>
+          <p> </p>
+          <p>변이된 드라칸 병사들을 상대하는 데 어려움은 없으셨습니까?</p>
+          <p> </p>
+          <p>이성이 마비되어 고통을 느끼지 못하는 놈들이라 만만치 않으셨을 겁니다.</p>
+          <p> </p>
+          <p>상처가 없으신 걸 보니 별일은 없었던 것 같군요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">이드 변이 관찰일지를 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>흥미롭게도 제목이 이드 변이 관찰일지군요?</p>
+          <p> </p>
+          <p>(책장을 넘겨 내용을 읽으며) 동료가 죽었다, 곧 좀비가 되어 다시 살아났다, 다시는 원래대로 돌아오지 못했다...</p>
+          <p> </p>
+          <p>마지막 줄, 원인은 이드인 것 같다... 라. 드라칸 병사들이 좀비가 된 게 이드 탓인 것처럼 서술하고 있군요.</p>
+          <p> </p>
+          <p>누가 이런 걸 적은 건지는 몰라도 관찰한 모습이 비교적 상세히 적혀있습니다.</p>
+          <p> </p>
+          <p>속단하기 이르지만 이 문서는 좀 더 연구해 볼 가치가 있을 것 같습니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_M_LDF5_Under_VrDrZombID_all]를 처치하고 [%dic:STR_DIC_I_quest_23609a]를 얻어 [%dic:STR_DIC_N_LDF5_Under_Oturu_E]에게 가져가라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">변이된 드라칸 병사가 좀비가 된 원인을 조사하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>오투르는 이드 플랜트에서 발견된 변이된 드라칸 병사들이 전부 좀비인 원인을 조사해 달라고 부탁했다.</p>
+          <p> </p>
+          <p>오투르의 부탁대로 변이된 드라칸 병사를 처치하고 단서로 이드 변이 관찰일지를 가져갔다. 오투르는 일지에 드라칸 병사들이 좀비가 된 원인이 이드 탓인 것 처럼 서술되어 있다며 좀 더 이 문서를 연구해 볼 가치가 있을 것 같다고 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

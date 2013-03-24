@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>First things first--we need more information on this Black Opal before we can start looking for it. Ishalgen is huge--without so much as a hint, we'll never find a pearl.</p>
+          <p> </p>
+          <p>[%username], I need you to help me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"What do you need from me?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I need you to get more information from them. Surely they wouldn't have landed here without good reason.</p>
+          <p> </p>
+          <p>That reason has to be somewhere on that ship.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"So what do I look for?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You'll probably need to find a [%dic:STR_DIC_I_2116a] or something similar. It should be a simple task to get aboard the ship. You know what to expect from the Lepharist rabble now.</p>
+          <p> </p>
+          <p>Of course, this should probably stay between us...</p>
+          <p> </p>
+          <p>How about it?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That's what I like to hear!</p>
+          <p> </p>
+          <p>Hurry over to the coast and board that ship. I don't care if you sneak on or chew through every one of those treasure hunters to get aboard. The important thing is that we get that [%dic:STR_DIC_I_2116a].</p>
+          <p> </p>
+          <p>Oh, I should mention--don't even think about taking the map for yourself. I know how to find a man when I need to, and I won't take kindly to being fooled.</p>
+          <p> </p>
+          <p>Now--off with ya!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"On my way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No time,huh? That's unexpected.</p>
+          <p> </p>
+          <p>You better not be planning to put one over on me--finding the map for yourself and the like.</p>
+          <p> </p>
+          <p>If that's your plan, I can promise you'll be real sorry...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Find someone else."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're late!</p>
+          <p> </p>
+          <p>I was starting to think you'd been caught by those Lepharists and held prisoner or drowned...thank Azphel you're okay!</p>
+          <p> </p>
+          <p>Was it worth it? Did you find a [%dic:STR_DIC_I_2116a]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here it is."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You haven't done it yet?</p>
+          <p> </p>
+          <p>Come on now, you've taken long enough as it is and we need to make sure we find the treasure before any of the others, or the pirates themselves, get to it.</p>
+          <p> </p>
+          <p>Get back to that ship and get the [%dic:STR_DIC_I_2116a] before it's too late!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"On my way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I love it when a plan comes together!</p>
+          <p> </p>
+          <p>I love it even more when cohorts remain loyal--and quiet. You did well, [%username]. There are many Lepharists around that ship. The fact that you returned at all proves your skill.</p>          
+          <p> </p>
+          <p>Now, let's have a look at this map...</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Go to the pirate ship, find the map, and bring it back to [%dic:STR_DIC_N_Lidun].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">You need more information before you can search for the Black Opal. Go look around the pirate ship for any information.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+        <p>More information was needed before you could start looking for the Black Opal. You searched the pirate ship for clues and found a map showing the treasure site. You brought it to Lidun, just as she requested.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

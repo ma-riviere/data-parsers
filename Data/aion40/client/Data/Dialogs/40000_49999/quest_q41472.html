@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q41462</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]. 그대가 [%dic:STR_DIC_E_60lvDeva_wepon]를 가지려한다는 소식을 들었소.</p>
+          <p> </p>
+          <p>그대가 내게 주어진 임무를 대신 수행해주면 내가 모아두었던 어두운 감정의 정수 중 그대에게 모자란 정수를 주겠소.</p>
+          <p> </p>
+          <p>분하지만 나는 아직 루미나시엘 무기를 지닐만한 그릇이 되질 못한 것 같으니 말이오.</p>
+          <p> </p>
+          <p>임무는 [%dic:STR_DIC_M_IDRaksha_05_Raksha_Nmd_60_Ae]나 [%dic:STR_DIC_M_IDYun_Nmd_7Named_60_Ah], [%dic:STR_DIC_M_IDTiamat_Tahabata_Named_60_Ah] 중 한 명을 처치하는 일이지만... 분명 쉽지는 않을 것이오.</p>
+          <p> </p>
+          <p>어떻소? 한번 해 보겠소?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>돌아왔구려.</p>
+          <p> </p>
+          <p>말했던 임무는 끝마치고 돌아오셨소?</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_IDRaksha_05_Raksha_Nmd_60_Ae], [%dic:STR_DIC_M_IDYun_Nmd_7Named_60_Ah], [%dic:STR_DIC_M_IDTiamat_Tahabata_Named_60_Ah] 중 한 명이라도 처치하셨다면 말씀해주시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>사실 누군가 모아둔 정수를 이용하는 것은 시엘의 창 레기온의 원칙에 어긋난 일이라오.</p>
+          <p> </p>
+          <p>하지만 겨우 이런 정도의 도움을 받는다고 하여 루미나시엘 무기를 얻는 일이 크게 쉬워질 것이라고는 생각치 않소.</p> 
+          <p> </p>
+          <p>그간 그대가 연족을 위해 기울인 많은 노력에 대한 댓가로 도와드리는 것이라 생각해주시오.</p>
+          <p> </p>
+          <p>혹여 이 일로 문제가 발생하거든 내가 모두 책임질 터이니 말이오.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_M_IDRaksha_05_Raksha_Nmd_60_Ae]나 [%dic:STR_DIC_M_IDYun_Nmd_7Named_60_Ah], [%dic:STR_DIC_M_IDTiamat_Tahabata_Named_60_Ah] 셋 중 한 명을 처치하라([%2]/1)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Bargeni]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">바르제니의 임무를 대신 해주고 루미나시엘 무기를 만드는 재료를 얻어내자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>바르제니는 자신의 임무를 대신 해주면 자신이 모아뒀던 어두운 감정의 정수를 주겠다고 했다.</p>
+          <p> </p>
+          <p>그의 임무를 처리하고 돌아가니 루미나시엘 무기를 만드는데 모자랐던 정수를 줬다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

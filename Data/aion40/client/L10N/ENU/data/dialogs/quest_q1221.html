@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What a headache!</p>
+          <p> </p> 
+          <p>We received a report that there are weird Krall appearing in Cantas Coast. They look exactly like Tursin Krall, but act quite strangely.</p>
+          <p> </p> 
+          <p>These Krall--even all amputated and bloody--have been attacking Lepharist Revolutionaries, and they keep on fighting way past when they'd normally give up, like they were under some kind of spell.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Quite strange."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>According to the report, this looks like the work of an Asmodian named Hamerun. We don't know how he brainwashed these Krall, but we can't just sit here and watch.</p>
+          <p> </p>
+          <p>I don't even want to imagine what would happen if these Krall begin attacking the Verteron Aetheric Field Observatory. We must stop them before such a disaster occurs.</p>     
+          <p> </p>
+          <p>If you help us out, [%username], we can surely take care of this right away. Will you?</p>   
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you. Considering the brainwashed Tursin Krall are appearing in Cantas Coast, the entrance to [%dic:STR_DIC_W_IDNovice_SZ_IDNovice]--where Hamerun is no doubt hiding--should be near there.</p>
+          <p> </p>
+          <p>If you manage to enter Haramel, terminate [%dic:STR_DIC_M_IDNovice_07_TKrallWa_prion_18_an]s with all possible haste.</p>
+          <p> </p>
+          <p>The sooner we can keep those brainwashed Krall away from Cantas Coast, the better.</p>
+	</body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Understood."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hmmm.... I guess you must be busy? Oh well. I guess it can wait another day. </p>
+          <p> </p>
+          <p>Still, I do wish we could get rid of all these brainwashed Krall....</p>      
+          <p> </p>
+          <p>Think about it, and let me know if you change your mind.</p>   
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll do that."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good to see you! Was the entrance to [%dic:STR_DIC_W_IDNovice_SZ_IDNovice] in Cantas Coast?</p>
+          <p> </p>
+          <p>How many [%dic:STR_DIC_M_IDNovice_07_TKrallWa_prion_18_an]s did you come up against?</p>          
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Quite a few."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Krall and Sapiens together? This Hamerun is more dangerous than I expected. We'll have to investigate further.</p>  
+          <p> </p>
+          <p>At any rate, it's a relief you terminated all of the Tursin Outpost Guards.</p>      
+          <p> </p>
+          <p>Here's a Mark of Krall as a reward--I believe it will do you good, [%username].</p>  
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Kill the [%dic:STR_DIC_M_IDNovice_07_TKrallWa_prion_18_an]s in [%dic:STR_DIC_W_IDNovice_SZ_IDNovice]([%2]/3).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report back to [%dic:STR_DIC_LA18].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">You heard that Tursin Krall, brainwashed by the Asmodian Hamerun, had shown up on the Cantas Coast. For the safety of the Verteron Aetheric Field Observatory, you should terminate the Tursin Outpost Guards captivated by Hamerun.</font></p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hyacinte said the Tursin Krall have been attacking the Lepharist Revolutionaries in Cantas Coast and mentioned that an Asmodian named Hamerun was behind the attacks.</p>
+          <p> </p>
+          <p>He was worried that the Krall might attack Verteron Aetheric Field Observatory. He asked you to kill the Tursin Outpost Guards in Haramel to slow them down.</p>
+          <p> </p>
+          <p>You did as you were asked, killing the Tursin Krall before returning for a reward.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

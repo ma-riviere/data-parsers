@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p> - 긴급 작전 명령서- </p>
+          <p></p>
+          <p> 1. 발신: 판데모니움 작전사령부</p>
+          <p></p>
+          <p> 2. 수신: [%username]</p>
+          <p></p>
+          <p> 3. 명령: </p>
+          <p></p>
+          <p>하나, 그리폰의 발톱 군단장 [%dic:STR_DIC_NPC_DF2a_Nevma_G_LHM]를 처치하라.</p>
+          <p></p>
+          <p>둘, 명령서를 확인하는 즉시 명령을 수행하며, 수행 결과는 마르쿠탄 템페르 훈련소에 있는 [%dic:STR_DIC_N_Sala]에게 보고하라.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">명령서를 접어 넣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>기다리고 있었습니다, [%username] 님.</p>
+          <p> </p>
+          <p>브루스트호닌 수비 작전에 참여하셨다고요? </p>
+          <p> </p>
+          <p>[%username] 님에게 특별한 임무를 부탁 드렸다고 하던데 어떻게 됐습니까?</p>
+          <p> </p>
+          <p>군단장 네브마 건 말입니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>역시 [%username] 님이군요.</p>
+          <p> </p>
+          <p>일당백 [%userclass]이라고 불리는 지 이제 알겠습니다.</p>
+          <p> </p>
+          <p>덕분에 브루스트호닌을 습격한 천족 무리를 일망타진할 수 있었습니다.</p>
+          <p> </p>
+          <p>작전사령부를 대표하여 감사 말씀 드립니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">그리폰의 발톱 군단장 [%dic:STR_DIC_NPC_DF2a_Nevma_G_LHM]를 처치하라([%2]/1)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Sala]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">긴급 명령: 벨다자르의 언덕마을을 습격한 마족의 우두머리 군단장 네브마를 처치하고 살라에게 보고하라</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>판데모니움 작전사령부에서 그리폰의 발톱 군단장 네브마를 처치하라는 긴급 명령서를 받아 임무를 수행했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, Hannet would finally ask for help now. I'm swamped with work!</p>
+          <p> </p>
+          <p>I've got Drakes practically in my tent and pilgrims to watch over. Not to mention the healing forces we must focus on the land around us. It's exhausting!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Sounds like important work."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], will you help me?</p>
+          <p> </p>
+          <p>I really want to help Hannet, since she doesn't usually ask for anything.</p>
+          <p> </p>
+          <p>I will reward you if you lend me a hand. What do you think?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you. </p>
+          <p> </p>
+          <p>Please bring me a large quantity of [%dic:STR_DIC_E_metal_n_c_30b].</p>
+          <p> </p>
+          <p>It should be easy to find as we are near Kuriullu Mountain.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Sun's blessings!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I didn't think it was that big a deal for a Daeva. I could really use your help....</p>
+          <p> </p>
+          <p>I'm so very busy these days. I guess I could just buy it from Shumerurk. It won't be cheap though.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Farewell."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Impressive! You are efficient and quick!</p>
+          <p> </p>
+          <p>Did you bring the [%dic:STR_DIC_E_metal_n_c_30b]?</p>
+          <p> </p>
+          <p>It used to be everywhere, but it's become harder and harder to find.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here is the Adamantium Ore."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I thought I made it clear. I need 20 pieces of [%dic:STR_DIC_E_metal_n_c_30b].</p>
+          <p> </p>
+          <p>It's okay to take a little more time as long as you bring me 20 pieces of Ore.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"20 pieces--got it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I can see it was a good idea to ask you for help, [%username].</p>
+          <p> </p>
+          <p>I could have gotten it from Shumerurk, but I couldn't trust the quality.</p>
+          <p> </p>
+          <p>Hannet will be pleased with this Ore.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect [%dic:STR_DIC_E_metal_n_c_30b] and bring it to [%dic:STR_DIC_N_Ophelos].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Collect Adamantium to send to Hannet, on behalf of Ophelos.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ophelos said that he wanted to help Hannet, but he couldn't leave his post. He asked you to get the Adamantium for him.</p>
+          <p> </p>
+          <p>You brought Adamantium to him. He thanked you and gave you a reward.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

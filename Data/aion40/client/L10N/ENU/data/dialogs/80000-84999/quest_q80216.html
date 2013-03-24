@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Welcome back. You've become much stronger than when we first met in Sanctum.</p>
+          <p> </p>
+          <p>I was on my way to the Lyceum when I heard you were coming. I decided to wait and give you another challenge.</p>
+          <p> </p>
+          <p>We've started having more trouble with pirates recently.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What is it?"</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>There's a group of Shulack pirates who came to Atreia using a ship powered by Balaur technology, abducting Elyos Daevas and committing all sorts of other atrocities.</p>
+          <p> </p>
+          <p>But on their last raid, their ship was damaged. Now it's anchored near Elysea while they make repairs. This is our chance to punish the pirates and rescue our allies.</p>
+          <p> </p>
+          <p>[%username], I believe you should be the one to rescue our friends and kill the pirate captain. Do you accept this challenge?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you.</p>
+          <p> </p>
+          <p>The brave control the future.</p>
+          <p> </p>
+          <p>Defeat [%dic:STR_DIC_M_IDShip_ShulackCaptainNmd_46_Ah], captain of the Steel Rake, enough times to make sure he's really dead.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Faith and Arms!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I know this is difficult...</p>
+          <p> </p>
+          <p>But the longer you wait, the more time the pirates have to repair their ship.</p>
+          <p> </p>
+          <p>I hope you can stop them before that happens.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"We'll see."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're back!</p>
+          <p> </p>
+          <p>Were you successful?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I was."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're skills are becoming incredible.</p>
+          <p> </p>
+          <p>I'm amazed you completed that so quickly.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Kill [%dic:STR_DIC_M_IDShip_ShulackCaptainNmd_46_Ah] on the Steel Rake ([%2]/5). </font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with Luella.</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Luella asks you to kill [%dic:STR_DIC_M_IDShip_ShulackCaptainNmd_46_Ah]. Go to the Steel Rake and defeat him. [%dic:STR_DIC_N_Shugo_LC1_29] will let you in.</font></p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Luella gave you a challenge to end the Shulack pirates' violence.</p>
+          <p> </p>
+          <p>You killed Brass-Eye Grogget, completing the challenge.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank Ariel you're here, [%username]! Aifemis has taken ill. She coughs up blood and hasn't eaten in days.</p>
+          <p> </p>
+          <p>I don't know what to do! I know what's causing it, but I don't know how to treat it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What causes her malady?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's those [%dic:STR_DIC_M_BATRe2_40_An]s that sneak into the village at night. They feed on the corpses of our fallen, and then bring filth and disease back here with them.</p>
+          <p> </p>
+          <p>It's making everyone sick, especially the weak and the aged. They'll be back soon...you can smell their stench a mile away.</p>
+          <p> </p>
+          <p>Will you help us, [%username]? For the sake of Aifemis....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I knew you were the right Daeva to ask for help.</p>
+          <p> </p>
+          <p>The Blackfog Bloodfangs usually gather at Medeus Manor East until nightfall.</p>
+          <p> </p>
+          <p>You'll know you're close when you begin to smell the rotting flesh.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Better than a map, eh?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I understand, [%username]. Most Daevas wouldn't go near those creatures either.</p>
+          <p> </p>
+          <p>I will give your best wishes to Aifemis...she needs all the help she can get now.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I hope she recovers."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Eeeewww! Did you step in....</p>
+          <p> </p>
+          <p>Ah, forgive me, [%username], that stench snuck up on me. I assume by that wretched smell that you killed off the Blackfog Bloodwings for us?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"They're dead. Very dead."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, thank you.</p>
+          <p> </p>
+          <p>To be honest, I worried the Bloodwings were approaching when I first caught a whiff of you. I think you've earned yourself a bath.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Destroy the [%dic:STR_DIC_M_BATRe2_40_An]s ([%2]/10).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_N_Hideros].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Kill ten Blackfog Bloodwings, which bring diseases into the village at night.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The carrion-eating Blackfog Bloodwings have been sneaking into the village at night, spreading disease.</p>
+          <p> </p>
+          <p>When you returned from destroying the Bloodwings, Hideros thanked you.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

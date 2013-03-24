@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Care for a tough mission, Daeva?</p>
+          <p> </p>
+          <p>The Eye of Reshanta is guarded by three strongholds, The Kysis Fortress, Krotan Refuge, and Miren Fortress. We're here to take Kysis from the Asmodians and keep it.</p>
+          <p> </p>
+          <p>Vergilius and I have a plan to make sure that happens.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"And how's that?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We're assembling a host to storm the fortress. The Asmodians seem to have noticed our movements and have moved elite troops here. That's both a problem and an opportunity.</p>
+          <p> </p>
+          <p>Volunteers like you, [%username], are slipping behind their lines and disrupting their troops. Someone of your caliber could handle these elites, and that would really hurt Asmodian morale. Interested?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Very brave. Okay, here are your orders. Enter the Kysis Fortress as soon as it switches to the vulnerable state. Find the [%dic:STR_DIC_M_1814_all] in the fortress, kill those you can and bring me their [%dic:STR_DIC_I_QUEST_1814a]s.</p>
+          <p> </p>
+          <p>While the Asmodians are occupied, my Protector of Teminon Legion will be moving into better positions.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Can't wait to go!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hmm. Disappointing, but not surprising.</p>
+          <p> </p>
+          <p>Come by another time if you're feeling braver.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Not a coward, just busy..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], I hear you visited the Asmodians!</p>
+          <p> </p>
+          <p>A Legionary scout reported seeing [%dic:STR_DIC_M_1814_all] corpses.</p>
+          <p> </p>
+          <p>I hope you brought many [%dic:STR_DIC_I_QUEST_1814a]s to show me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Think I brought a few..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did you forget to gather their weapons?</p>
+          <p> </p>
+          <p>It must have slipped your mind during the fight.</p>
+          <p> </p>
+          <p>Fetch me those [%dic:STR_DIC_I_QUEST_1814a]s!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"No need to nag!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The scout also saw Balaur in the area. I'm glad you didn't fall prey to them.</p>
+          <p> </p>
+          <p>You're more elite than their elites, [%username].</p>
+          <p> </p>
+          <p>I'll say as much to Governor Michalis.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Defeat [%dic:STR_DIC_M_1814_all], collect the evidence and bring it to [%dic:STR_DIC_N_Bellona].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Strike the Asmodian elite garrison while they occupy the Kysis Fortress. Report your success to Bellona.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Bellona asked you to help harass the Asmodian force holding Kysis Fortress.</p>
+          <p> </p>
+          <p>You entered the fortress on her orders and decimated the Asmodian elite garrison. When you came back victorious, Bellona said she'd mention your success to the Governor.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'll be honest, this was not my first choice of duty assignments. That said, it's not so bad.</p>
+          <p> </p>
+          <p>Things are slow and peaceful and the MuMu keep to themselves. I don't even see much of Commander Suthran--thank goodness for small blessings.</p>
+          <p> </p>
+          <p>If not for the Karnifs, nothing would even happen here. They're enough to keep us busy, though, sad to say.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What's going on?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, they used to live deep in the forest, but something must have happened to drive them out. Lately they prowl the road, attacking everyone! </p>
+          <p> </p>
+          <p>We often hunt them while watching the MuMu, but the attacks are escalating. They may be too much for just us.</p>
+          <p> </p>
+          <p>If you could assist, [%username], it would really help.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent!</p>
+          <p> </p>
+          <p>If you defeat 10 [%dic:STR_DIC_M_Kalnif_10_An], the rest will get scared and run away.</p>
+          <p> </p>
+          <p>We're counting on you.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"The task is mine."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What? Not your problem?</p>
+          <p> </p>
+          <p>I guess I understand, but I'm afraid that there will be more victims.</p>
+          <p> </p>
+          <p>If you can spare some time, please help us.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Maybe later."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did you encounter the [%dic:STR_DIC_M_Kalnif_10_An]s?</p>
+          <p> </p>
+          <p>They can be quite ferocious. Did they injure you?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Nothing I couldn't handle..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Great! You defeated 10 [%dic:STR_DIC_M_Kalnif_10_An]s!</p>
+          <p> </p>
+          <p>They usually only attack the weak, [%username]--I don't think we'll have any more problems.</p>
+          <p> </p>
+          <p>Thank you.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Eliminate the Karnifs in [%dic:STR_DIC_W_DF1A_3].</font></p>
+                     <p visible="[%0]"><font color="[%1]"> Kill [%dic:STR_DIC_M_Kalnif_10_An]([%2]/10)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_N_Okkolenja].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Karnifs have been attacking people passing through the forest. Clean up the Karnifs near the road to help Olenja, who is busy watching the MuMu.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Olenja was worried that the Karnifs, which used to live deep in the forest, have come out to the road to attack people.</p>
+          <p> </p>
+          <p>You defeated Karnifs for Olenja. She was very happy to hear the news and thanked you.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

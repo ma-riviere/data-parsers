@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q10084</QuestId>
+    <QuestName>Find Kahrun</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Talk with Loras, the Scout Post Centurion of the Katalam Dispatched Troop</p>
+          <p> </p>
+	  <p>He says he hates to find Kahrun again, but he can't just stay and do nothing since the Reian Tribe contacted the Asmodians. He suggests that we should find him first, anyway.</p>
+          <p> </p>
+	  <p>He says they should meet the Search Squad that the Reian Tribe sent out first in order to find Kahrun.</p>
+          <p> </p>
+	  <p>Lead in the direction of the Reian Tribe Search Squad</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">Say Yes.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Talk with the Trace of the Reian Tribe Search Squad</p>
+          <p> </p>
+	  <p>(Although the fire is out, the smoke is still there. It seems to be recent.)</p>
+          <p> </p>
+	  <p>You're led to another Trace</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO2">Finish Examining.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select3">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Talk with the Trace of the Reian Tribe Search Squad</p>
+          <p> </p>
+	  <p>(It's a tent that was recently used by the Reian Tribe.)</p>
+          <p> </p>
+	  <p>You're led to another Trace</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO3">Finish Examining.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select4">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Talk with the Trace of the Reian Tribe Search Squad</p>
+          <p> </p>
+	  <p>(A bag you did not expect to find. There is a map when you look inside of it.)</p>
+          <p> </p>
+	  <p>Lead in the direction of the Reian Tribe Search Squad</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO3">Finish Examining.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Talk with Ambros of the Reian Tribe Eastern Search Squat</p>
+          <p> </p>
+	  <p>He says he is looking for any traces of Kahrun.</p>
+          <p> </p>
+	  <p>He asks for help.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO5">Say Yes.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Talk with Kahrun's Tent</p>
+          <p> </p>
+	  <p>(It appears to be similar to the existing Reian Tribe's tent, but slightly more used than that.)</p>
+          <p> </p>
+	  <p>(On a closer look, there's Kahrun's Cloak.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SET_SUCCEED">Pick up Kahrun's Cloak.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Report: Talk with Ambros of the Reian Tribe Eastern Search Squad</p>
+          <p> </p>
+	  <p>He asks if you saw any traces of Kahrun.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">Hand over Kahrun's Cloak.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>He says it's definitely Kahrun's cloak.</p>
+          <p> </p>
+	  <p>He says thank you.</p>
+          <p> </p>
+	  <p>He says they'll look around for more traces in the area.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk with Loras.</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Find the Trace of the Reian Tribe Search Squad.</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Find the Trace of another Reian Tribe Search Squad.</font></p></step>
+               <step><p visible="[%9]"><font color="[%10]">Find the Trace of the Reian Tribe Search Squad.</font></p></step>
+               <step><p visible="[%12]"><font color="[%13]">Talk with Ambros.</font></p></step>        
+               <step><p visible="[%15]"><font color="[%16]">Find any trace of Kahrun.</font></p></step>   
+               <step><p visible="[%18]"><font color="[%19]">Report to Ambros.</font></p></step>         
+    </steps>
+          <p><font font_xml="quest_summary">Order: Talk with Loras to determine the next step.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The content after completion</p>
+          <p> </p>
+          <p>to be written</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>Mission Progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

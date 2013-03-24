@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes...yes, these symptoms match that of a previous malady I worked on. I made an ointment back then that seemed to work wonders.</p>
+          <p> </p>
+          <p>If I remember correctly, I marinated the Fruits of Elim in [%dic:STR_DIC_I_quest_11452a], pureed them, and applied the paste to the skin.</p>
+          <p> </p>
+          <p>It was a very difficult concoction to make...took nearly a month to get it right.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"But you can make it again?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes, of course.... I kept very thorough notes on the matter.</p>
+          <p> </p>
+          <p>But I ran out of the necessary ingredients. I'll need someone to find me what I need.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What is it that you need?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>If I'm not mistaken...I'll need [%dic:STR_DIC_I_quest_11452a]. It sounds threatening, but we need to kill the fever to end the sickness.</p>
+          <p> </p>
+          <p>I can make the cure if you can find me the Poison.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes, yes, [%dic:STR_DIC_I_quest_11452a] is the most important part of this treatment.</p>
+          <p> </p>
+          <p>It took me over a hundred experiments to discover it last time--it shouldn't take that long this time.</p>
+          <p> </p>
+          <p>If Ariel is on our side, that is....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Ariel is always on our side."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I thought you said you were here to help Crosia...but you won't go and find the ingredient I need?</p>
+          <p> </p>
+          <p>I did not come to you, [%username]. You came to me, remember?</p>
+          <p> </p>
+          <p>The Guardians will surely die without my cure. You have no empathy for your fellow Daevas!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Empathy gets a Daeva killed."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ahh, [%username], did you bring [%dic:STR_DIC_I_quest_11452a] like I asked?</p>
+          <p> </p>
+          <p>I will make a large batch of the ointment this time in case this disease should spread.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here's Mosqua's Poison."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I do not see [%dic:STR_DIC_I_quest_11452a] on you. Was there a problem finding it?</p>
+          <p> </p>
+          <p>Perhaps you lost it on your way here, hmm? I would suggest looking for it again.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll see what I can find."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ahh, wonderful, wonderful. This will be the perfect amount for the ointment.</p>
+          <p> </p>
+          <p>Mosqua's Poison is rather sticky, so this should make a very effective batch. Let's see here...two dashes of this...a pinch of....</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get rid of [%dic:STR_DIC_M_IDElim_2F_NeutWorkmanfly_Qeen_52_Ae] and bring the needed ingredient to [%dic:STR_DIC_N_Phailos].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Bring Mosqua's Poison to Phailos so he can make an ointment.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Phailos said he ran out of his ointment to treat the injured soldiers.</p>
+          <p> </p>
+          <p>He asked if you would find Mosqua's Poison to make the cure, which you did.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

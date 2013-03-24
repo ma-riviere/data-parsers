@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Blessing of the Empyrean Lords radiates from you. I sense that you've gained a lot of strength since coming to Pandaemonium.</p>
+          <p> </p>
+          <p>I was on my way to meet the High Priest when I heard that you were coming, so I decided to wait for you. It was vital for me to give you this mission.</p>
+          <p> </p>
+          <p>You see, we've been having a lot of problems with pirates lately.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"How so?"</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Shulack pirates have been looting, kidnapping, and committing all sorts of crimes in the area.</p>
+          <p> </p>
+          <p>But their ship was damaged in their last raid and is anchored near Asmodae while they attempt repairs.</p>
+          <p> </p>
+          <p>This is our chance to eliminate the pirates and rescue our kidnapped allies. We need someone brave to lead the assault. Like you, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I knew you had it in you.</p>
+          <p> </p>
+          <p>You must defeat [%dic:STR_DIC_M_IDShip_ShulackCaptainNmd_46_Ah], the captain of the Steel Rake. I doubt his crew will just let you walk up to him, either.</p>
+          <p> </p>
+          <p>He's wily, so you might have to take him out a few times to be sure he's dead.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Blood for blood."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I don't know who else we'll find to lead the assault.</p>
+          <p> </p>
+          <p>I hope you reconsider.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"We'll see."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Welcome back.</p>
+          <p> </p>
+          <p>Did you kill [%dic:STR_DIC_M_IDShip_ShulackCaptainNmd_46_Ah]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"He'll sail no more."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're getting more and more incredible.</p>
+          <p> </p>
+          <p>I'm amazed you completed the mission so quickly.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Kill [%dic:STR_DIC_M_IDShip_ShulackCaptainNmd_46_Ah] on the Steel Rake ([%2]/5). </font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with Rikanellie.</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Rikanellie asks you to kill [%dic:STR_DIC_M_IDShip_ShulackCaptainNmd_46_Ah]. Go to the Steel Rake and defeat him. [%dic:STR_DIC_N_Shugo_DC1_24] will let you in.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Rikanellie gave you a mission, saying they can no longer allow the Shulack pirates' violence to continue.</p>
+          <p> </p>
+          <p>You killed [%dic:STR_DIC_M_IDShip_ShulackCaptainNmd_46_Ah] as ordered.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

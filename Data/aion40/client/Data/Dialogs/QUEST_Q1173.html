@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이곳에서 나오는 독기는 인간들에게 치명적이죠.</p>
+          <p> </p>
+          <p>그래서 인간의 출입을 통제하고 있지만 언제까지 막을 수 있을지 모르겠습니다.</p> 
+          <p> </p>
+          <p>지금이 순례 기간이라 여길 지나 환영신의 성소로 가려는 순례자들이 늘어날 텐데...</p>  
+          <p> </p>
+          <p>그 사람들은 위험을 무릅쓰고라도 여길 지나려고 할 거예요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>    
+          <p>늪의 독기도 독기지만 슬라임 때문에 걱정입니다.</p>
+          <p> </p>     
+          <p>늪 바닥에 숨어 있다가 지나가는 사람을 공격하거든요.</p>
+          <p> </p>
+          <p>놈들에게 상처를 입으면 데바라도 중독되고 말 겁니다. 본래의 독성에 늪의 독기까지 더해 아주 치명적이 됐거든요. </p>
+         <p> </p>
+         <p>그래서 틈틈이 놈들을 처치하고 있지만 저 혼자 상대하기엔 버겁군요.</p>
+          <p> </p>
+         <p>[%username] 님이 좀 도와주시겠습니까?</p> 
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+  
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>고마워요. 그럼 오염된 늪에 있는 [%dic:STR_DIC_MLA147]%을 소탕한 뒤 알려 주세요.</p>
+          <p> </p>
+          <p>10마리 정도 처치하면 될 겁니다. </p>  
+          <p> </p>
+          <p>잘 알겠지만 조심하십시오. 슬라임 독은 생각보다 치명적이니까요. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>다른 일이 있다고요? 안타깝군요.</p>
+          <p> </p>
+          <p>저 [%dic:STR_DIC_MLA147]%을 그냥 두면 여길 지나는 순례자들이 위험할 텐데...</p>  
+          <p> </p>
+          <p>어찌됐든 이 일은 제가 알아서 처리할 테니 그만 가 보십시오. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_MLA147] 때문에 고생하지는 않았나요? </p>
+          <p> </p>
+          <p>오랫동안 늪에서 지낸 저도 슬라임은 상대하기 어렵던데... </p>
+          <p> </p>
+          <p>그건 그렇고 슬라임의 수는 좀 줄었겠죠?</p>   
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>쉽지 않았을 텐데 감사합니다. </p>
+          <p> </p>
+          <p>[%username] 님 덕분에 일이 수월하게 끝났군요. </p>
+          <p> </p>
+          <p>정말 감사합니다. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">로세이노를 도와 [%dic:STR_DIC_MLA147]을 처치하라([%2]/10)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_LA30]%와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">슬라임이 오염된 늪을 지나는 사람들의 안전을 위혐한다고 한다. 로세이노를 도와 슬라임을 처치하자.</p>
+          <p></font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>로세이노가 슬라임 때문에 오염된 늪이 더 위험하다고 했다. 순례자들이 오염된 늪을 무사히 지나갈 수 있도록 늪 속의 슬라임을 처치했다.</p>               
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

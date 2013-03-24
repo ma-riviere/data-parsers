@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hey, you! Have you seen a recipe? It's around here somewhere...argh. This is so frustrating. </p>
+          <p> </p>
+          <p>Apparently we're a bit too provincial here for the Blue Fleet. They're used to city food. I'm trying to accommodate them, but I haven't cooked any of this food in a long time.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I'm afraid I haven't seen--" </Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, there it is!</p>
+          <p> </p>
+          <p>Marinating the Basilisk Meat in Mudthorn Sap...Ah, I should have remembered. No wonder it was so tough! </p>
+          <p> </p>
+          <p>Hey, since you're here, could you get me [%dic:STR_DIC_I_QUEST_1622a]s and [%dic:STR_DIC_I_QUEST_1622b]? I need to try again, but I'm out of ingredients and if I'm not here to watch it, the bread will burn. If you'll do it, I'll give you the recipe as a reward. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you. 5 [%dic:STR_DIC_I_QUEST_1622a]s and 5 [%dic:STR_DIC_I_QUEST_1622b] should be enough for the fleet. I'll get everything else ready. Hurry back! </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be back soon."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>But...this is an amazing recipe! Hardly anyone knows how to get Basilisk to be this tender! What do you mean you don't want to?</p>
+          <p> </p>
+          <p>All right. I'll get some Blue Fleet sailors to handle it. In the meantime, is there something you wanted to buy?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"No, I'm not hungry right now."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did you get the ingredients I asked for? Are you sure you got the right parts? Let me see.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here's your list."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Wait, there's nothing here. What are you doing back here without them? I'm on a timetable here, and these sailors are hungry! Go on, get [%dic:STR_DIC_M_BasiliskRe_41_An] and [%dic:STR_DIC_M_Mudthorn_41_An] already!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Fine, I'll go get them."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good work, [%username]. That's exactly what I needed, and the Mudthorn Sap is top quality. Well done. </p>
+          <p> </p>
+          <p>All right, here's the recipe. Use it well--and don't forget to marinate the ribs!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Hunt [%dic:STR_DIC_M_BasiliskRe_41_An] and [%dic:STR_DIC_M_Mudthorn_41_An] and collect ingredients for [%dic:STR_DIC_N_Senir].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Collect Basilisk Ribs and Mudthorn Sap so that Senir can cook for the Blue Fleet.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Senir wanted to cook something other than seafood for the Blue Fleet. He asked you to go get Basilisk Ribs and Mudthorn Sap. In return, he gave you recipe for Charcoal-roasted Basilisk.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

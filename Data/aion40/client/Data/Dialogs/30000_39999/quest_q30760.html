@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q30760</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>미입력</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select_none" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>하켈란 님은 천년전쟁 시절 제 목숨을 두 번이나 구해주신 생명의 은인입니다.</p>
+	  <p> </p>
+	  <p>티아마트 성채 지하를 수색하던 중에 티아마트 군단의 공격을 받으셔서 소멸하신 줄 알았는데...</p>
+	  <p> </p>
+	  <p>높은 신성력을 지닌 고위 신관님들의 힘을 빌려도 오드의 흐름 속에서 하켈란 님의 영혼을 찾을 수 없더군요.</p>
+	  <p> </p>
+	  <p>그렇다면 분명 티아마트의 전리품이 되어 [%dic:STR_DIC_W_IDTiamat_SZ_S6]에 있다고 밖에 생각할 수 없습니다.</p>
+	  <p> </p>
+	  <p>[%username] 님. 마르쿠탄 주신의 가호가 담긴 구슬을 이용해 부디 하켈란 님을 석화에서 풀려나게 해주세요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_W_IDTiamat_SZ_S6]에 다녀오시는 길입니까?</p>
+	  <p> </p>
+	  <p>설마 하켈란 님의 석상이... 그곳에 없었던 것은 아니겠죠?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아... 하켈란 님의 영혼이 석화되어 있었다는 말씀이군요...</p>
+	  <p> </p>
+	  <p>(눈시울이 붉어진다.)</p>
+	  <p> </p>
+	  <p>괜찮습니다. 비록 육신은 사라졌지만 이제 하켈란 님의 영혼은 자유를 되찾을 수 있을 테니까요.</p>
+	  <p> </p>
+	  <p>빨리 신전으로 가서 하켈란 님과 대화를 나눠봐야겠어요.</p>
+	  <p> </p>
+	  <p>여기, 수고해주신 대가입니다.</p>
+	  <p> </p>
+	  <p>다시 한 번 진심으로 감사드립니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_W_IDTiamat_SZ_S6]으로 가 [%dic:STR_DIC_N_IDTiamat_FOBJ_Da_Statue]의 석화를 해제하고 [%dic:STR_DIC_N_Q30760_hero]과 대화하라</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_N_Dragan]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">용제의 정원으로 가 하켈란이 자유를 되찾을 수 있도록 돕자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+              <p>드라간은 하켈란의 영혼이 응답을 하지 않는다며 그가 용제의 정원에 석화되어 있을 지 모른다고 말했다.</p>
+	  <p> </p>
+	  <p>마르쿠탄 주신의 가호를 마족 영웅의 석상에 사용하니 석화는 해제 됐지만, 그는 이미 영혼만 남아 있는 상태였다.</p>
+	  <p> </p>
+	  <p>드라간에게 이 사실을 알려주니 영혼만이라도 자유를 되찾아 다행이라며 감사를 표했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

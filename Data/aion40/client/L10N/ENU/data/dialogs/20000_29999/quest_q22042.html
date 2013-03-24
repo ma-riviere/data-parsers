@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q22042</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>Not entered</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%userclass], here. The Reians have a special request they wish to make of us.</p>
+          <p> </p>
+          <p>They need to heat steel to an extremely high temperature. We're not sure why, but we know what they need: White Charcoal from the Flame Dragrints.</p>
+          <p> </p>
+          <p>Our relationship with the Reians is comfortable at the moment, but could do with a little nudge in the right direction. Helping them get their charcoal would be a solid first step. Will you help?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good. I was waiting for you.</p>
+          <p> </p>
+          <p>Do you have the charcoal? The Reians have been asking.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">"Everything's here."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yeah, this is the stuff. Good work, [%username].</p>
+          <p> </p>
+          <p>I'll make sure credit's given where it's due. The Reians will soon know that our blood is strong and reliable, unlike the watery drips the sunburnt cowards sneeze out.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Gather White Charcoal from Flame Dragrints and bring it to Lineta.</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">The Reians have asked for White Charcoal. Kill off the Flame Dragrints and harvest it for them.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Lineta told you that the Reians had sent a special request for white charcoal, an extremely rare substance that naturally forms inside Flame Dragrints. You were asked to help, and gathered the charcoal in good time.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

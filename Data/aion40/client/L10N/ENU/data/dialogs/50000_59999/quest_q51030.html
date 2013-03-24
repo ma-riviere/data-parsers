@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Would you like to make a trade? I think I have something you'll be interested in.</p>
+          <p> </p>
+          <p>My experiments are very advanced alchemy, and I've been generating a lot of failures. Nothing destructive, you understand; actually a lot of my failures are turning out to be quite valuable items, just not what I'm trying to accomplish.</p>
+          <p> </p>
+          <p>Anyway, if you bring me [%dic:STR_DIC_I_event_worlddrop_1] and [%dic:STR_DIC_I_event_worlddrop_2], I will give you the results of any failed experiments I attempt with them. That way, we're both getting something we want.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Remember your trade with me?</p>
+          <p> </p>
+          <p>You bring six [%dic:STR_DIC_I_event_worlddrop_1]s and six [%dic:STR_DIC_I_event_worlddrop_2]s to me, and I give you any experiments that fail?</p>
+          <p> </p>
+          <p>Can you show me the material first? My failed results are probably worth more than the Soul Vigor or Life Essence.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">"I have them, see?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I never doubted you. This is definitely the Soul Vigor and Life Essence I asked you for.</p>
+          <p> </p>
+          <p>In exchange, here's my latest failed test result.</p>
+          <p> </p>
+          <p>It may be something rare and valuable. Or not. Who knows?</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect [%dic:STR_DIC_I_event_worlddrop_1] and [%dic:STR_DIC_I_event_worlddrop_2] for [%dic:STR_DIC_N_event_Loylung].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Romustion says he will give you the results of his failed experiments if you bring him Soul Vigor and Life Essence. The failures may have been transformed into valuable items.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Romustion said he would give you his failed alchemy experiments in exchange for Soul Vigor and Life Essence.</p>
+          <p> </p>
+          <p>They may be failures to him, but they may also be valuable items to you. You agreed to the exchange.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

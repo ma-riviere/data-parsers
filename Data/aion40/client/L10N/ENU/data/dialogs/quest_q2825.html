@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Rewrite by Dave 28 May -->
+<!-- Editing by Fran 31 May -->
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Our Asmodian ancestors discovered Reshanta centuries ago, but the Eye of Reshanta is mostly a mystery to us even today.</p>
+          <p> </p>
+          <p>We don't know who built the Divine Fortress. We don't know why there are no ghosts or other monsters there. And we know little about the lower levels of the fortress.</p>
+          <p> </p>
+          <p>Oh, we search for answers, and I'll wager the Elyos have, too. But we're thwarted at every turn.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Thwarted by what?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The problem is the lower levels of the Divine Fortress. Enigmatic beings called "Defenders" reside down there, and they kill anyone who approaches.</p>
+          <p> </p>
+          <p>I just know there's something important beneath the fortress! And I think the Defenders keep the Eye clear of ghosts and other horrors of the Abyss.</p>
+          <p> </p>
+          <p>It's all conjecture, though...we don't even know who wrought the Defenders. They might be servants of a Dragon Lord, or maybe they serve Aion. It gives me shivers...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I asked Grunn, the closest thing we have to an anatomist, about the Defenders. He says with core samples from each protector, he could study where they came from and how they're controlled.</p>
+          <p> </p>
+          <p>[%username], defeat a [%dic:STR_DIC_M_Ab1_1011_CyclopsOd_50_An], [%dic:STR_DIC_M_Ab1_1011_CyclopsFire_50_An], [%dic:STR_DIC_M_Ab1_1011_BoneDrake_50_An], and [%dic:STR_DIC_M_Ab1_1011_AgrintGi_50_An]. Return with their cores.</p>
+          <p> </p>
+          <p>One additional complication...Grunn says the cores are fragile, and it's hard to defeat a Defender without smashing the core inside. Good luck with that...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Yeah, for science, right?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Really? This is the greatest mystery in the entire Abyss! You have no scientific interest?</p>
+          <p> </p>
+          <p>Hmm, it seems that rumors of your adequacy are overstated.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Do your own digging!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We could feel a rumbling deep beneath the Divine Fortress. Was that you?</p>
+          <p> </p>
+          <p>I figured as much. Show me the [%dic:STR_DIC_I_QUEST_2825all]s, please. Grunn needs them right away.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here they are."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's not a complete set, but you know what? I didn't expect success.</p>
+          <p> </p>
+          <p>Well, not on your first try. You aren't the first Daeva I've assigned to this. Many have sought the [%dic:STR_DIC_I_QUEST_2825all]s, but everyone's failed so far.</p>
+          <p> </p> 
+          <p>Don't give up now! Try again, and walk in Azphel's shadow.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"All right, once more."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent work. There has been grumbling about my sending Daevas on "suicide missions." I'm glad to prove it false.</p>
+          <p> </p>
+          <p>There is one element of truth, though. You weren't the first Daeva I sent against the Defenders. But not only did you come back, you brought a full set of cores!</p>
+          <p> </p>
+          <p>Blood for blood, [%username]! I'll send these to Grunn at Primum Fortress. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Defeat the Defenders guarding the Eye of Reshanta, gather the [%dic:STR_DIC_I_QUEST_2825all]s and take them to [%dic:STR_DIC_N_Ab1_1011_Quest_Da].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">The Defenders guarding the Divine Fortress block exploration of the Eye of Reshanta. Gather cores from the Aether's Defenders, Fire's Defenders, Ancient Defenders, and Nature's Defenders, to bring a complete set to Muelina.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Muelina's research into the Divine Fortress was frustrated by the Defenders of the Eye of Reshanta. Not knowing what purpose the Defenders serve, she doesn't dare destroy them all, but she asked you to gather cores from a Aether's Defender, Fire's Defender, Ancient Defender, and Nature's Defender for her.</p>
+          <p> </p>
+          <p>You defeated the Defenders lurking in the lower levels of the fortress and returned with four different types of cores as Muelina instructed. She will send them to Grunn, an expert in the denizens of the Abyss.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

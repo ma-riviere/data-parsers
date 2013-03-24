@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p> - 긴급 작전 명령서- </p>
+          <p></p>
+          <p> 1. 발신: 판데모니움 작전사령부</p>
+          <p></p>
+          <p> 2. 수신: [%username]</p>
+          <p></p>
+          <p> 3. 명령: </p>
+          <p></p>
+          <p>하나, 천족 레기온인 [%dic:STR_DIC_E_Q49007]를 없애 적의 병력을 약화시켜라.</p>
+          <p></p>
+          <p>둘, 명령서를 확인하는 즉시 작전지로 이동하며, 수행 결과는 마르쿠탄 템페르 훈련소에 있는 [%dic:STR_DIC_N_Sala]에게 보고하라.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">명령서를 접어 넣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>도대체 이게 무슨 일입니까? 천족이 브루스트호닌에 침투하다니요.</p>
+          <p> </p>
+          <p>그곳은 지금껏 시공의 균열이 생긴 적이 없던 곳이라 더 놀랍습니다.</p>
+          <p> </p>
+          <p>혹시 놈들도 우리처럼 차원의 소용돌이를 만들어낸 건 아닌지...</p>
+          <p> </p>
+          <p>그래, 작전 결과는 어떻게 됐습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>휴, 다행이네요. 보급병들을 없앴으니 놈들이 제대로 싸우긴 힘들 겁니다.</p>
+          <p> </p>
+          <p>그나저나 브루스트호닌에 천족 군단이 있는 줄은 몰랐었습니다. 이번 일로 조사를 해 보니 브루스트호닌 남쪽에 불시착해 있던 군단이었다더군요.</p>
+          <p> </p>
+          <p>규모가 크지 않아 그곳의 아칸에게 위임했었는데 하마터면 큰일날 뻔 했습니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_E_Q49007]를 소탕하라([%2]/15)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Sala]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">긴급 명령: 엘리시움 작전사령부 제1 지원대를 소탕한 후 살라에게 보고하라</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>판데모니움 작전사령부에서 브루스트호닌에 침투한 엘리시움 작전사령부 제1 지원대를 처단하라는 긴급 명령서를 받아 임무를 수행했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

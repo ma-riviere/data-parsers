@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아, 여기 있군.</p>
+          <p> </p>
+          <p>마침 약초 채집꾼에게 부탁해서 구해 놓은 슈고풀이 조금 남아있구려.</p>
+          <p> </p>
+          <P>사실 슈고풀이 어느 정도 효과가 있을 줄은 알았지만 이 정도 일 줄은 몰랐소.</P>
+          <p> </p>
+          <p>슈고풀을 주지 않은 슈고까지 앞다퉈 광물 견본을 보내다니, 허허허.</p>
+          <P> </P>
+          <P>결과적으로 내 작전이 성공한 셈이긴 한데, 이래서야 원. 슈고풀을 더 많이 장만해 두어야겠구려.</P>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그런데 아무리 생각해도 루우링이라는 슈고는 기억이 나지 않는구려.</p>
+          <p> </p>
+          <p>분명히 키도룬 도굴단 캠프에 있단 말이지? 허허 참.</p>
+          <P> </P>
+          <P>[%username], 수고스럽겠지만 왔던 길을 되돌아가서 [%dic:STR_DIC_N_Shugo_DF3_13]에게 슈고풀을 전해 줄 수 있겠소? </P>
+          <P> </P>
+          <P>그 슈고가 어디에 있는지는 당신이 가장 잘 알 테니 쉬운 일 아니겠소.</P>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>자, 여기 슈고풀이 있소.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_N_Shugo_DF3_13]에게 가져다주시오.</p>
+          <p> </p>
+          <p>저번엔 실례했다고, 루우링의 능력은 충분히 인정했으니 앞으로도 잘 부탁한다고 전해 주길 바라오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>왔던 길을 다시 돌아가기 싫은 거요? </p>
+          <p> </p>
+          <p>루우링이 어디에 있는지 아는 당신이 전해 주면 좋으련만.</p>
+          <p> </p>
+          <p>사정이 그렇다면 어쩔 수 없지. 슈고풀은 놔두시오.</p>
+          <p> </p>
+          <p>인사도 할 겸 내가 직접 전하던가 하겠소.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>기다리고 있었당.</p>
+          <p> </p>
+          <p>슈고풀... 아, 아니 데바 말이당.</p>
+          <p> </p>
+          <p>호루에게 변형 라케움은 잘 가져다 준 거냥.</p>
+          <p> </p>
+          <p>호루가 내 능력을 인정한 것 같냥? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">슈고풀을 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>슈고풀을 줬냥? 그렇다면 날 충분히 인정한 것 같구낭.</p>
+          <p> </p>
+          <p>이 정도면 조용히 있다고 만만한 슈고가 아니라는 것을 잘 알았을 거당, 냥! </p>
+          <p> </p>
+          <p>데바가 정말 수고가 많았당.</p>
+          <p> </p>
+          <p>슈고풀을 한입 먹게 해 줄 수는 없지만 대신 다른 선물 주겠당, 냥냥.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_Shugo_DF3_13]에게 슈고풀을 전하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">변형 라케움을 구해 준 답례로 호루가 보내는 슈고풀을 루우링에게 전하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>호루는 변형 라케움을 보낸 루우링이 누군지 기억이 안 난다며 슈고풀을 대신 전해 달라고 했다.</p>
+          <p> </p>
+          <p>슈고풀을 전해 주자 루우링은 인정받았다며 매우 기뻐했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

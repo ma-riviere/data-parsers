@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Blast! We've lost the Vorgaltem Citadel! How could Krizarid let this happen? I've heard the Archons whispering that Krizarid never sleeps, he only waits.... But perhaps that's just a rumor.</p>
+          <p> </p>
+          <p>Nonetheless, we need to control that citadel or Gelkmaros Defense Base will be at risk.</p>
+          <p> </p>
+          <p>Our enemies are closing in, and it's not just the Balaur--the Elyos are here as well.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"How can we retake the tower?"</Act>
+    </Selects>
+  </HtmlPage>
+
+ <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's not going to be easy, [%username]. We'll need all the strength Asmodae can muster.</p>
+          <p> </p>
+          <p>Empyrean Lord Marchutan's legion is there, as is the Pandaemonium Expeditionary Force, but even their numbers won't defeat the Guardian General alone.</p>
+          <p> </p>
+          <p>[%username], I need you to gather a force and march on the Vorgaltem Citadel. The Guardian General must die.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've sent several Daevas to the citadel already. Hopefully they're still alive and able to aid you.</p>
+          <p> </p>
+          <p>We need to defeat the [%dic:STR_DIC_M_QUEST_21228] or this will go south in a hurry.</p>
+          <p> </p>
+          <p>Once you've captured the Citadel, make sure to find [%dic:STR_DIC_N_Krizarid]. Just don't accuse him of sleeping on the job...unless you don't value your limbs....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll...keep that in mind."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We must reclaim the citadel, [%username]!</p>
+          <p> </p>
+          <p>The war in Gelkmaros depends on it.</p>
+          <p> </p>
+          <p>Facing the Guardian General is not easy, but you must steel your resolve and march for the glory of Asmodae!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm busy right now."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Glory for Asmodae!</p>
+          <p> </p>
+          <p>But this victory is bittersweet for me.... It seems someone else slew the Guardian General.</p>
+          <p> </p>
+          <p>Is it true, [%username], that you were the one who vanquished the Guardian General?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Linar said you were sleeping, so..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Linar said that?! Well, that's fine. He'll still fight well with just one arm.</p>
+          <p> </p>
+          <p>No, I was not sleeping! Well...I may have been focusing so intensely on channeling my rage that I went into a catatonic state....</p>         
+          <p> </p>
+          <p>But Krizarid does not sleep! Though he does thank you for defeating the Guardian General in his absence.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Vanquish the enemy Guardian General to reclaim the [%dic:STR_DIC_W_DF4_SZ_3011_A].</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_QUEST_21228]([%2]/1)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_N_Krizarid].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">The Vorgaltem Citadel must be reclaimed. Vanquish the Guardian General of the Vorgaltem Citadel and report to the notorious Krizarid.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Linar said the Vorgaltem Citadel must be recaptured.</p>
+          <p> </p>
+          <p>You marched there with your allies and vanquished the Guardian General to retake the citadel. While Krizarid was disappointed he didn't slay the Guardian General himself, he thanked you for your effort.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

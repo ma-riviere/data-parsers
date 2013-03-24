@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], allow me a moment to explain how things work around here.</p>
+          <p> </p>
+          <p>Sanctum is, at its heart, an industrious, hard-working city. It serves many roles: cosmopolitan trading hub, sanctuary for our battle-weary Daevas, and shrine for our Seraphim Lords. We also decide on and prepare tribute for our Lords here.</p>
+          <p> </p>
+          <p>Right now, for example, we are preparing tribute for Nezekan, Lord of Justice. This time our tribute is causing something of a logistical headache, to be honest.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Why is that?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's the choice and quantity of items we're crafting for Nezekan. His shield, Aegis, is a mighty barrier that has defended Sanctum and its people countless times, and it's time his actions be suitably celebrated. Of course, we didn't realize how much inlay work would be required when we decided upon a shield for every citizen....</p>
+          <p> </p>
+          <p>Our Artisans need enormous supplies of Betua wood for the tribute, and have been working faster than our traders can bring in supplies. Of course, all this demand has been driving up the price of Betua, too, so it's becoming increasingly expensive to purchase.</p>
+          <p> </p>
+          <p>Ideally we need someone to gather wood and bring it here directly. Do you think you could help?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, splendid! You'll need to gather several [%dic:STR_DIC_I_GB_SOURCE_TREE_10A]s from [%dic:STR_DIC_FLA18_4] in Verteron. Once you have the wood, you'll be able to process it using the facilities here.</p>
+          <p> </p>
+          <p>Be careful out there, [%username]. Tolbas Forest is home to some very unpleasant creatures....</p>
+          <p> </p>
+          <p>Oh, and one final point: I'm only asking you for three logs, but it's easy to make mistakes and ruin the wood, especially when you're new to the trade. Gather more than you need, else you'll risk having to head back out to Verteron for more supplies.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Thanks for the warning."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh? You're too busy to pick up some tools and help us celebrate all that Nezekan has done for us over the years? I assume you think you could have survived without his protection, without his Aegis?</p>
+          <p> </p>
+          <p>[%username], you should never ever underestimate all the Seraphim Lords have done for us. We owe them our very existence, and with each passing day they still defend us, shielding us from the brutal Balaur and the cursed Asmodians. Their tribute is more than deserved, and we should each strive to ensure it is as bounteous as their protection warrants.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll keep that in mind."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, you have returned!</p>
+          <p> </p>
+          <p>I hope those creatures in Verteron didn't harm you in any way. I've seen others come back on the verge of death, and I must admit I was concerned about your well-being while you were out.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I'm perfectly fine, as are your Betua logs."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No wood? Please, I don't have time for this, [%username]! Nezekan will be expecting his tribute shortly. If we were to arrive carrying nothing he would be deeply insulted.</p>
+          <p> </p>
+          <p>We can't afford to waste any more time. You must hurry back to the [%dic:STR_DIC_FLA18_4] and gather wood, then refine it using the crafting table in this very room.</p>
+          <p> </p>
+          <p>Hurry!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be back shortly."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The quality is...is superb!</p>
+          <p> </p>
+          <p>I will grade the wood later, but on first glance it looks like you have done splendidly. There is a small knot in this piece, but they all have a good, straight grain, and there are no splits or twists in any of them!</p>
+          <p> </p>
+          <p>I'm impressed, [%username]. It seems you have a natural talent for this trade. I would love to see how you would do with more complicated work....</p>
+          <p> </p>
+          <p>Time is running out, however, and we need to make sure we have everything ready for Nezekan's shipment. Now, please leave me to get the rest of my work done.</p>
+          <p> </p>
+          <p>Well done, [%username]!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Trim three [%dic:STR_DIC_I_GB_SOURCE_TREE_10A]s on the Crafting Table and then take them to [%dic:STR_DIC_N_Utisda].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">You agreed to gather Betua logs from Tolbas Forest and trim it using the Crafting Table near Utisda.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The list of goods to be offered as tribute to the Seraphim Lord Nezekan requires a great deal of work, and Utisda cannot handle it all by himself. He has been forced to entrust the preparation of basic materials to others.</p>
+          <p> </p>
+          <p>You were asked to bring Betua wood from Tolbas Forest, then process it so that Utisda could work with it.</p>
+          <p> </p>
+          <p>After seeing your work, Utisda was highly impressed and suggested you would do well working in his trade.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

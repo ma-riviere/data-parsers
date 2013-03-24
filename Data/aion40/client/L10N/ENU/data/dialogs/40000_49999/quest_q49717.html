@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p align="center"> - A Letter of Greenery -</p>
+          <p> </p>
+          <p>We hope everything is well and good with the members of the Green Hat Unit.</p>
+          <p> </p>
+          <p>This time, we'll be headed to the North Katalam Logging Area to volunteer.</p>
+          <p> </p>
+          <p>Our investigation found that the actual owner of the logging area is ***, an executive at Goldrine Limited. He's said to be hiding in *** so find and kill him. Afterwards, report the result to the to the South Katalam Branch of the Green Hat Unit.</p>
+          <p> </p>
+          <p>Always remember, nature precedes our existence.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">Fold the letter and put it away.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>So, Goldrine has been the mastermind of Silverine all along.</p>
+          <p> </p>
+          <p>As I expected.</p>
+          <p> </p>
+          <p>Did you get the executive ***? Was he really in ***?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">Tell him the result.</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Daeva, you really are something else!</p>
+          <p> </p>
+          <p>Now I understand why you were chosen by our superiors to do this, nyerk.</p>
+          <p> </p>
+          <p>Now that the foreman of the logging area is gone, our trees can grow peacefully.</p>
+          <p> </p>
+          <p>We are indebted to you, [%username]. The Green Hat Unit is always thankful for your hard work, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Kill ***, the true owner of the logging area ([%2]/1).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report the result to the South Katalam Branch of the Green Hat Unit.</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">You received a Letter of Greenery from the Green Hat Unit. Read the letter and perform the mission.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You received a Letter of Greenery from the Green Hat Unit.</p>
+          <p> </p>
+          <p>After you killed ***, the actual owner of the logging area and executive at Goldrine Limited, you reported the result to the South Katalam Branch of the Green Hat Unit. You were complimented for your hard work.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

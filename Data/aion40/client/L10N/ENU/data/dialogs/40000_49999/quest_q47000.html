@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>To: [%username]</p>
+          <p>From: [%dic:STR_DIC_N_Turbo], Marchutan Priory </p>
+          <p>Task: Altgard Security Inspection</p>
+          <p> </p>
+          <p>Welcome to the Marchutan Priory. Our organization is dedicated to helping the newly ascended "learn the ropes" of being a Daeva, so to speak.</p>         
+          <p> </p>
+          <p>You have been assigned to inspect the [%dic:STR_DIC_OBJ_Q47000]s near Altgard Fortress to ensure their proper functioning.</p>
+          <p> </p>
+          <p>Locate a [%dic:STR_DIC_E_Mentor] and take the Crystal Balls from the Ward Orbs. Note this cannot be done alone.</p>
+          <p> </p>
+          <p>Bring the Crystal Balls to me for examination. Keep your eyes open and be willing to learn.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I think I'll learn a lot...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]? [%username].... You're one of the Daevas assigned to the security inspection, aren't you?</p>
+          <p> </p>
+          <p>The Priory handles all newly ascended Daevas these days. I hope you found a Mentor who suits your style and needs.</p>
+          <p> </p>
+          <p>If you'll recall, you need to give me the Crystal Balls you collected.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here they are."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Here they aren't. You may not think you'll learn much from such a simple task, but think of it as a taste of what teamwork can bring. Plus, this inspection really needs to be done.</p>
+          <p> </p>
+          <p>Remember, to open a [%dic:STR_DIC_OBJ_Q47000] and get the [%dic:STR_DIC_I_quest_47000a] inside, you'll need to work with a Mentor.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Yes, yes, I remember."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Let me take a look at these.... Condition green. Everything seems to be functioning normally.</p>
+          <p> </p>
+          <p>Such routines keep the Balaur, Sapiens, and Lepharists at bay so we can concentrate on greater things.</p>
+          <p> </p>
+          <p>I hope you've learned something from the experience. Thank your Mentor the next time you two meet.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">With the aid of a [%dic:STR_DIC_E_Mentor], inspect the [%dic:STR_DIC_OBJ_Q47000]s and take the [%dic:STR_DIC_I_quest_47000a]s to [%dic:STR_DIC_N_Turbo].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">You have been welcomed into the Marchutan Priory. Find a Mentor, inspect the Ward Orbs around Altgard, and collect the Crystal Balls within.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Marchutan Priory asked you to inspect the Ward Orbs located around Altgard.</p>
+          <p> </p>
+          <p>With the aid of a Mentor, you inspected the Orbs and collected the Crystal Balls within for offical inspection.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

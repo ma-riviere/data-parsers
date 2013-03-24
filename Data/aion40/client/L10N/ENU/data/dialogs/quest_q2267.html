@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Some time ago, I received a message asking us to guard a wagon that would be passing through with dangerous cargo. As if we weren't busy enough guarding the Observatory! But, it was an order, so....</p>
+          <p> </p>
+          <p>When the wagon came through, it didn't seem to be carrying anything dangerous. Just a stack of boxes.</p>
+          <p> </p>
+          <p>Anyway, Neifenmer and I escorted the wagon up to the lower area of [%dic:STR_DIC_W_DF1A_27], just like the order said.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Then what happened?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>After escorting the wagon up to where the [%dic:STR_DIC_W_DF1A_15] could be seen, we returned to our post at the Observatory.</p>
+          <p> </p>
+          <p>On our way back, we heard a commotion. When we turned back, the wagon was burning and the boxes were rolling down the hill toward the Airship Dock.</p>
+          <p> </p>
+          <p>There was no way to find out what exactly happened! The people pulling the wagon just seemed to disappear.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What did you see?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Some sort of monster came out of one of the boxes! What were they thinking, carting monsters around like everyday cargo?</p>
+            <p> </p>
+            <p>Neifenmer and I did our best to hunt them down, but there were too many. I think we missed a few.</p>
+          <p> </p>
+          <p>There are still boxes drifting near the Airship Dock. It's too dangerous to leave them be. Would you please deal with the [%dic:STR_DIC_M_MimicD_17_n]es?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>If you head down from [%dic:STR_DIC_W_DF1A_27] toward the [%dic:STR_DIC_W_DF1A_15], you should see the burning wagon.</p>
+          <p> </p>
+          <p>Go down a little further from there, and you'll see the road to the dock on the right.</p>
+          <p> </p>
+          <p>You'll find the [%dic:STR_DIC_M_MimicD_17_n]es on the dock and around the nearby islands. Please deal with those boxes!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm on my way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Observatory is the most important place in Altgard. Its safety is the highest priority!</p>
+          <p> </p>
+          <p>How can you just walk away and leave those monsters to run rampant? You must be crazy!</p>
+          <p> </p>
+          <p>No Daeva in their right mind would refuse such a mission!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Sorry."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did you deal with the [%dic:STR_DIC_M_MimicD_17_n]es? Then you must have seen the monsters.</p>
+          <p> </p>
+          <p>Who would have thought transporting those monsters by wagon was a good idea? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I can't imagine."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you for dealing with the remaining boxes.</p>
+          <p> </p>
+          <p>Now, I can get back to more important things, like guarding the observatory.</p>
+          <p> </p>
+          <p>Here is a reward for your help.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Hunt the monsters hiding in the [%dic:STR_DIC_M_MimicD_17_n]es ([%2]/5).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_N_Urnir].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">The wagon carrying dangerous cargo was attacked and the boxes have rolled away. Urnir asked you to hunt them down.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The wagon carrying dangerous cargo was attacked and the boxes scattered.</p>
+          <p> </p>
+          <p>Urnir said that there were monsters hiding in the boxes, so you took care of the problem.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

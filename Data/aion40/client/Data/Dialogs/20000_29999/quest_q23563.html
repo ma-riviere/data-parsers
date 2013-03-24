@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>큰 일입니다냥.</p>
+          <p> </p>
+          <p>할 일이 많은데 요즘 들어 일꾼들이 하나 둘 씩 사라지고 있습니다냥.</p>
+          <p> </p>
+          <p>아무래도 몰래 선착장을 이용해 도망가는 것 같습니다냥.</p>
+          <p> </p>
+          <p>일꾼들이 도망칠까봐 슈라크 경비병까지 동원했는데 변하는 것이 없습니다냥. 슈라크 경비병도 아무래도 의심스럽 습니다냥. 갸릉.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_N_LDF5b_ShulackGuard_01]%에게 가서 왜 일꾼들이 사라지는지 조사해주시길 바랍니다냥! 부탁합니다냥!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>왜 날 찾아왔더거?</p>
+          <p> </p>
+          <p>별로 할일도 없는데 심심하다거.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">일꾼 실종에 대해 추궁한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>나, 나는 연관 없다거! </p>
+          <p> </p>
+          <p>난폭한 빨간 두건을 두른 슈라크들이 일꾼들을 빼돌리는 거 지켜본 것 밖에 없다거.</p>
+          <p> </p>
+          <p>나도 협박 당해서 도운 거니 좀 봐달라거! 다시는 안 그러겠다거!</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_E_LDF5b_E_Shulack] 무섭다거. 나같은 힘없는 슈라크는 어쩔 수 없다거!</p>
+          <p> </p>
+          <p>용병대만 처치하면 일꾼들 사라지지 않는다거!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>어떻게 되었습니까냥?</p>
+          <p> </p>
+          <p>그 슈라크 경비병 밀항을 돕는 게 맞지 않습니까냥?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>강철장미? 설마 강철장미 해적단을 말하는 것입니까냥? </p>
+          <p> </p>
+          <p>그런 무서운 해적과 연관된 녀석들이 판다룽스에 있다니... 믿어지지 않습니다냥. 갸릉.</p>
+          <p> </p>
+          <p>대책을 마련해야겠습니다냥.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_LDF5b_ShulackGuard_01]%와 대화하라</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_I_QUEST_23563A]%을 모아 [%dic:STR_DIC_N_LDF5b_Sparing_E]%에게 전하라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">일꾼 브라우니들이 사라지는 원인을 조사하여 스패링에게 보고하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>스패링은 일꾼 브라우니들이 차츰 사라지는 것이 수상하다며 조사를 의뢰했다.</p>
+          <p> </p>
+          <p>조사 결과 강철장미 용병대가 사실은 해적단이며 이들이  브라우니들이 납치고 있었다.</p>
+          <p> </p>
+          <p>스패링은 강철장미 용병대의 범죄 사실에 경악했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

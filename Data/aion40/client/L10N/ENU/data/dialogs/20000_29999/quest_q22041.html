@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q22041</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>Not entered</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We took the Heart of Gravity! I can't believe it!</p>
+          <p> </p>
+          <p>And now we have so much to do! We need reinforcements, we need supplies, and we need a new warehouse to house all of our supplies. Ugh. And we need supplies to build the warehouse.</p>
+          <p> </p>
+          <p>[%username], could you bring us the stone we need? You should be able to harvest it from the Gravity Well Mugolems.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did you bring the stone? We've almost everything else ready to get started.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">"Have a look at this."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Perfect! Tiamat's breath couldn't knock this stuff down, [%username]!</p>
+          <p> </p>
+          <p>Excellent work.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Gather the stone needed to contruct a new warehouse, then bring it to Mustan.</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">More stone is needed to build an extra warehouse. Destroy the Gravity Well Mugolems, and gather their stone for the construction effort.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Mustan told you that extra supplies would be needed now that friendly forces had taken control of the Heart of Gravity. Those extra supplies would obviously need to be stored, meaning an extra warehouse needed to be built.</p>
+          <p> </p>
+          <p>You destroyed Gravity Well Mugolems, gathering the stone from them to be used in the warehouse's construction.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're [%username], aren't you? I've heard a lot about you. They say you're an exceptional [%userclass].</p>
+          <p> </p>
+          <p>A talented visitor at such a time? Must be my lucky day!</p>
+          <p> </p>
+          <p>Laigas at Kuriullu Outpost needs reinforcements, and I was looking for someone suitable.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What's wrong at Kuriullu?"</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, it's unclear. They say Griffons are blocking the Outpost road.</p>
+          <p> </p>
+          <p>It may be serious. Laigas is a proud guy, but he's calling for help.</p>
+          <p> </p>
+          <p>And Kuriullu Mountain is an important post. They do surveillance on the Lepharist Bastion. Get over there, [%username]. Check the situation, and get rid of those [%dic:STR_DIC_M_Griffon_32_An]s.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I gather [%dic:STR_DIC_M_Griffon_32_An]s are daylight hunters, so plan accordingly.</p>
+          <p> </p>
+          <p>Once they're gone, come back and fill me in.</p>
+          <p> </p>
+          <p>If they're really in trouble, I'll request reinforcements from Eltnen Fortress.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Yes, Ma'am!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Won't do it, eh?</p>
+          <p> </p>
+          <p>Come on, it'll be easy!</p>
+          <p> </p>
+          <p>Well, you know where to find me, [%username]. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Sure do."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Back so soon?</p>
+          <p> </p>
+          <p>So, what's going on up there?</p>
+          <p> </p>
+          <p>Lepharist Griffons run amok?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Yeah, uh, not really."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, that's a relief.</p>
+          <p> </p>
+          <p>Laigas made such a stink I thought it might be serious. Never pegged him for a whiner. Hee!</p>
+          <p> </p>
+          <p>Thank you for helping, anyway.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get rid of the [%dic:STR_DIC_M_Griffon_32_An]s blocking the road to Kuriullu Outpost ([%2]/7).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_N_Lemia].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Clear Hunter Griffons blocking the road into Kuriullu Outpost.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Lemia wanted someone to clear Griffons from the road into Kuriullu Outpost.</p>
+          <p> </p>
+          <p>You drove away Hunter Griffons in the Kuriullu Mountain and reported back to Lemia that there was no need to ask for reinforcements.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

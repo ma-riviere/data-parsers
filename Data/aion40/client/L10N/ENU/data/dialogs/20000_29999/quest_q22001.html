@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q22001</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>Not entered</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Shards! We're out of potions again?! Someone must be using them for stomachaches and minor cuts!</p>
+          <p> </p>
+          <p>At this rate, we'll be useless in battle. Fortunately, I can make more myself until we get resupplied, but I'll need help.</p>
+          <p> </p>
+          <p>I can use [%dic:STR_DIC_I_quest_22001a] from [%dic:STR_DIC_M_LDF4b_T1_Scorpion_Giant_58_An]s to make potions. I know it doesn't sound like it should work, but it does. If you could help get the poison, I'd really appreciate it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I swear by Aion, if I get my hands on whoever's chugging our potions, I'll...!</p>
+          <p> </p>
+          <p>Okay, one thing at a time. First, make potions. Then, find and strangle the potion waster.</p>
+          <p> </p>
+          <p>I've got everything together except the Scolopen's Poison. Did you bring some?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">"I do. And it stinks!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Mmm, yes, it is a bit rank, isn't it? But that just means it's potent!</p>
+          <p> </p>
+          <p>The smell will go away once I dilute it and mix in the other ingredients. Which I'll do right now.</p>
+          <p> </p>
+          <p>Thank you, [%username]. Oh, and if you catch the potion waster... displace him for me, will you?</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect [%dic:STR_DIC_I_quest_22001a] and take it to [%dic:STR_DIC_N_Tokoma].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Tokoma is short on potions for combat. Get poison from Huge Desert Scolopens to help him make more.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Fatebound Legionary Tokoma said that someone has been wasting his potions and now he's almost out.</p>
+          <p> </p>
+          <p>You killed Huge Desert Scolopens for their poison and brought it to Tokoma to mix into potions. He replaced his missing stock, but still held a grudge against whoever had wasted potions.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

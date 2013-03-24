@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>어서오시오, [%username].</p>
+          <p> </p>
+          <p>그런데 무슨 용건이오? 설마 심심해서 그냥 한번 말을 걸어 본 것은 아닐테고...</p>
+          <p> </p>
+          <p>아아, 만약 그랬다면 그냥 갈 길을 가시오! 내게는 요즘 골치 아픈 일이 많다오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">무슨 일인지 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>생각만 해도 분통이 터지는군! [%dic:STR_DIC_W_NAME_IDDF2A_Adma]에 대해서는 당신도 알고 있겠지.</p>
+          <p> </p>
+          <p>그곳에 피를 주식으로 하는 수상한 작자가 있다는 소문을 듣고 호기심 많은 전사들이 몰려갔다오. 그런데 결과가 어땠는지 아시오?</p>
+          <p> </p>
+          <p>실종된 데바가 한 둘이 아니오. 또 무사히 돌아왔다는 이들도 문을 닫아 걸고 벌벌 떨며 집 밖으로 나가지 않고 있소.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_Adma_DeathknightNamed_50_Ah]%이 사용하는 기이한 힘 때문이라더군. 죽어도 다시 살아나는 자라던데... 어떻소, 직접 가서 확인하고 그를 처치해 주시겠소?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>호오, 제법이군. 얘기를 듣자마자 슬금슬금 도망갈 줄 알았는데 말이오.</p>
+          <p> </p>
+          <p>하지만 생각하는 것만큼 쉬운 일은 아닐 것이오.</p>
+          <p> </p>
+          <p>좋소, 만약 성공하고 돌아온다면 당신에게 보상으로 주화를 주겠소.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그러면 그렇지. 그렇게 무시무시한 소문을 듣고도 용감히 나설 자가 누가 있겠소?</p>
+          <p> </p>
+          <p>뭐, 몸을 사리는 것이 나쁘다고는 생각하지 않소.</p>
+          <p> </p>
+          <p>하지만 내 시간을 빼앗는 것은 썩 기분 좋지 않군. 어서 가 보시오!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>세상이 어수선하니 별 희한한 일들이 다 생기는 것 같소.</p>
+          <p> </p>
+          <p>너도나도 몰려와 아우성이니 이거 쉴 수가 있나.</p>
+          <p> </p>
+          <p>여기에서 그런 자들을 맞이하는 것만으로도 하루가 다 가버린다오.</p>
+          <p> </p>
+          <p>그런데 [%dic:STR_DIC_M_Adma_DeathknightNamed_50_Ah]%은 처치하였소?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그렇군. 수고했소.</p>
+          <p> </p>
+          <p>죽여도 다시 살아나는 자라니... 곧 또 피해를 입는 데바가 생기겠지만 그래도 당분간은 안전하겠지.</p>
+          <p> </p>
+          <p>자, 받으시오. 약속했던 주화라오.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_M_Adma_DeathknightNamed_50_Ah]%을 처치하라([%2]/1)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Rumolt]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">아드마 성채로 가서 데바의 안전을 위협하는 영주 란마르크를 처치하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>행정관 루몰트는 아드마 성채로 갔던 전사들이 실종되거나 상태가 이상해졌다고 했다.</p>
+          <p> </p>
+          <p>그래서 아드마 성채로 가서 영주 란마르크를 처치하고 돌아와 보상으로 주화를 받았다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

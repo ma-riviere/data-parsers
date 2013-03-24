@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>워이, 워이! 저리 가.</p>
+          <p> </p>
+          <p>아, 오해하지 마십시오. </p>
+          <p> </p>
+          <p>[%username] 님이 아니라 저기 드레이크에게 한 소리입니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">무슨 일인지 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>저놈들 등쌀 때문에 못 살겠습니다.</p>
+          <p> </p>
+          <p>원래 여기는 드레이크가 많던 곳이 아니었습니다. 그런데 사막화가 심해져 먹을 물이 부족해지니 여기로 몰려들더군요.</p>
+          <p> </p>
+          <p>잠시만 한눈을 팔면 신비샘의 물을 먹어대는 통에 실험할 물까지 부족할 지경입니다.</p>
+          <p> </p>
+          <p>드레이크 서식지로 통하는 입구도 막아놓기는 했지만 임시 방편이라 언제 뚫고 들어올지 불안합니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">드레이크를 처치하라고 한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그러고 싶은 맘이야 굴뚝같죠. 그런데 저희는 전투에는 영 자신이 없어서요. </p>
+          <p> </p>
+          <p>보아하니 꽤 경험이 많은 [%userclass]인 것 같은데 저희를 도와주시면 안 되겠습니까?</p>
+          <p> </p>
+          <p>신비샘 주변을 맴도는 드레이크를 좀 처치해 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>감사합니다.</p>
+          <p> </p>
+          <p>그럼 [%dic:STR_DIC_M_Drake_28_An] 6마리와 [%dic:STR_DIC_M_Drake_30_An] 4마리를 처치해 주시길 부탁드립니다.</p>
+          <p> </p>
+          <p>그 정도 처치해야 나머지 놈들이 겁을 먹고 도망칠 거예요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>급한 일이 있으신가 보군요.</p>
+          <p> </p>
+          <p>그럼 어쩔 수 없죠.</p>
+          <p> </p>
+          <p>바쁘실 텐데 어서 가 보십시오.</p>
+          <p> </p>
+          <p>드레이크 문제는 뭐 어떻게든 되겠죠.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>어디 다친 덴 없나요?</p>
+          <p> </p>
+          <p>놈들 부리가 꽤 날카롭던데.</p>
+          <p> </p>
+          <p>지난 번에 한 마리를 잡다 부리에 찔려 한동안 고생을 좀 했었죠.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정말 [%dic:STR_DIC_M_Drake_28_An] 8마리와 [%dic:STR_DIC_M_Drake_30_An] 4마리를 모두 처치하셨단 말입니까!</p>
+          <p> </p>
+          <p>역시 [%username] 님께 부탁하길 잘 했군요.</p>
+          <p> </p>
+          <p>정말 훌륭합니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">라세핀 신비샘 주변의 드레이크를 처치하라</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Drake_28_An]([%2]/6)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Drake_30_An]([%5]/4)</font></p></step>         
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Esaias]와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">생명의 데바가 신비샘의 오염 문제를 안심하고 연구할 수 있도록 드레이크를 처치해야겠다.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>에사이어스는 갑자기 몰려든 드레이크가 신비샘의 물을 마셔서 연구를 제대로 할 수 없다고 하소연했다.</p>
+          <p> </p>
+          <p>전투에 익숙하지 않은 생명의 데바를 대신해 드레이크를 처치해 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

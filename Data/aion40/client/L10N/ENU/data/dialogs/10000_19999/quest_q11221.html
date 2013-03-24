@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Greetings, [%username]. We fought valiantly to win the Temple of Scales. Let me rephrase that--we, the Wisplight Legionaries, fought valiantly.</p>
+          <p> </p>
+          <p>That damned Expeditionary Force came in after the bloodshed and carnage stopped, but it didn't stop them from sharing in our glory. Tea-sipping novices!</p>
+          <p> </p>
+          <p>It was wild out there. I got ambushed...they were everywhere! I took off and they started chasing me...I could feel the Dark Forever biting at my heels. But as I was running, a big sandstorm erased my footsteps behind me. Turns out it was [%dic:STR_DIC_M_LF4_C_Shadowstalker_Sand_55_An]s.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"They saved you?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>In a way, yes. The enemy couldn't follow me, so I lost them. I never thought an Obscura would save my life. They're all right in my book.</p>
+          <p> </p>
+          <p>But I just got handed orders. It's something I can't do, but I was hoping you could. The same Obscuras that saved my life...now need to be exterminated.</p>
+          <p> </p>
+          <p>The [%dic:STR_DIC_M_LF4_C_Shadowstalker_Sand_55_An]s pose a threat to our security...at least that's what my orders say. Could you do this for me?</p> 
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Kaisinel doesn't have mercy for everyone, I suppose. But I see his logic. If the enemy realizes how the Obscuras helped me, they may use the same power against us.</p>
+          <p> </p>
+          <p>So, you don't mind killing [%dic:STR_DIC_M_LF4_C_Shadowstalker_Sand_55_An]s for me? I just can't, not since they saved my life.</p>
+          <p> </p>
+          <p>They're near the fortress. And, if you could, bring back their strange dust so I can show my superiors? Blessed Ariel, this is a sad day to be a Daeva.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"A good soldier doesn't feel sorrow."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I share your conviction, [%username]. To kill any of Ariel's creatures is not the way of the Daeva.</p>
+          <p> </p>
+          <p>But their death may end up winning us this war! I'll think of something.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Stick to your beliefs."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Now that we have the Temple of Scales, we must do everything in our power to hold it. Even things that we don't want to do.</p>
+          <p> </p>
+          <p>How did the Obscura situation turn out, [%username]? I feel bad, but I hope that you've taken care of matters.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here's the Obscura Dust."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Are you having second thoughts about hunting the Obscuras, [%username]?</p>
+          <p> </p>
+          <p>I don't blame you. Well, if you can bring yourself to murder some empathetic creatures, I'll give you the reward.</p>
+          <p> </p>
+          <p>Just don't keep me waiting too long...I don't want to dwell on this matter longer than I have to.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"An order is an order, right?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You really killed the Sandstorm Obscuras? I wasn't sure you had it in you, [%username].</p>
+          <p> </p>
+          <p>Don't...don't give me details. I just want to forget about this dark day in my life. Here's your reward, though.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect the dust of [%dic:STR_DIC_M_LF4_C_Shadowstalker_Sand_55_An]s and bring it to [%dic:STR_DIC_N_Queesia].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Get rid of Sandstorm Obscuras near the fortress and collect their dust as Siaqua requested.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Siaqua said she got help from Sandstorm Obscuras during the battle for the Temple of Scales.</p>
+          <p> </p>
+          <p>But she said she had received orders to kill them, so she asked for your help in the matter.</p>
+          <p> </p>
+          <p>When you returned after killing the Obscuras, Siaqua thanked you and gave you a reward for doing what she couldn't.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

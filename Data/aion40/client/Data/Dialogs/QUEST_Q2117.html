@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_M_Kalnif_6_An] 놈들 극성이 갈수록 심해지는군.</p>
+          <p> </p>
+          <p>그까짓 짐승을 왜 그렇게 신경쓰나고? 그야 먹고사는 문제가 걸렸으니 그렇지.</p>
+          <p> </p>
+          <p>놈들이 브락스를 쉴 새 없이 잡아먹지 뭐야. 이러다 주변에 브락스 씨가 마르겠어.</p>
+          <p> </p>
+          <p>근처에 먹을 만한 거라곤 브락스 밖에 없는데 말이야.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그렇다고 하던 일을 내팽개치고 브락스를 지킬 수도 없고...</p>
+          <p> </p>
+          <p>[%username], 시간 좀 있나?</p>
+          <p> </p>
+          <p>짬이 나면 나 좀 도와줘. 저 빌어먹을 [%dic:STR_DIC_M_Kalnif_6_An] 좀 혼쭐을 내주라고.</p>
+          <p> </p>
+          <p>물론 공짜로 해 달란 소리는 아니야.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>일단 [%dic:STR_DIC_M_Kalnif_6_An]를 9마리만 잡아줘.</p>
+          <p> </p>
+          <p>다시는 이 주변에 얼씬거리지 못하도록 말이야.</p>
+          <p> </p>
+          <p>어때, 식은 죽 먹기지? 그럼 부탁해.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>막상 [%dic:STR_DIC_M_Kalnif_6_An]를 상대하려니 무섭나 보지?</p>
+          <p> </p>
+          <p>알았어, 이번에도 내가 직접 나서야겠군.</p>
+          <p> </p>        
+          <p>안 가고 거기서 뭐 해? 거치적거리니 그만 가보라고.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], 벌써 [%dic:STR_DIC_M_Kalnif_6_An] 놈들을 다 잡은 거야?</p>
+          <p> </p>  
+          <p>얼마 전까지만 해도 칼질을 하는지 춤을 추는지 구분이 안 될 정도였는데 그새 솜씨가 늘었나 보군.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정말 수고했어. 혼자서 힘들었을 텐데 말이야.</p>
+          <p> </p>
+          <p>당분간은 칼니프가 잠잠하겠군. 브락스도 살이 통통하게 오르고 말이야.</p>
+          <p> </p>
+          <p>자, 이건 약속한 대가야. 맘 바뀌기 전에 빨리 받아.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">브락스를 잡아먹는 [%dic:STR_DIC_M_Kalnif_6_An]%을 사냥하라([%2]/9)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Mijou]와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">미요우는 칼니프가 브락스를 잡아먹어서 걱정이라고 한다. 칼니프를 처치해 브락스를 지키자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>미요우가 칼니프가 도적단의 주요 식량인 브락스를 잡아먹어서 걱정이라고 했다. 미요우 대신 송곳니 칼니프를 처치하고 사례금을 받았다.</p>                
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

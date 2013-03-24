@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hey, [%username]. Have you talked to that Mookie over there yet? Yeah, Squip. No? Perfect.</p>
+          <p> </p>
+          <p>Apparently, she was being held by the Shulacks in Rokoros Village, but she managed to escape. Which is good for her, since those Shulacks eat Mookies. Can you imagine? Ugh! It's great that she escaped, but the details of the story sound a bit fishy.</p>
+          <p> </p>
+          <p>I mean, have you ever been to Rokoros Village? It's a long trek through a Pluma-infested valley. How the heck did one tiny Mookie managed to get through that valley unscathed?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Is there an alternate route?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hmm...good point. There are geysers around Inggison that emit some wickedly strong windstreams. I've heard stories about Daevas riding them, but I always figured it was a load of Mau droppings.</p>
+          <p> </p>
+          <p>If there's a windstream around here that leads to Rokoros Village, I have no idea where it might be. But it could explain how Squip got through that valley in one piece.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_N_Tuca_01] hasn't spoken to me since I mentioned that I love Mookie dishes. Stop making faces! I just meant that they're great cooks! Which is obviously not how she took it. Could you try talking to her? See if she'll tell you about the windstream?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Great. Just don't tell her I sent you!</p>
+          <p> </p>
+          <p>And don't mention Mookies and cooking in the same sentence!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Check."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Shards! I think I'm on to something here, and there's no one else around who hasn't offended our friend Squip in some way.</p>
+          <p> </p>
+          <p>She's a bit distrustful, but who can blame her?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"You could just apologize."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Who are you? What do you want?</p>
+          <p> </p>
+          <p>Are you one of those Mookie-eating barbarians? Bah!</p>
+          <p> </p>
+          <p>Go away and let me photosynthesize in peace!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">"No, I'm just curious about windstreams."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You sure you don't eat Mookie? Hmmm? In that case, pull up a stump and get off those spindly leg things. It's disconcerting watching you wobble about. I bet you're looking for the windstream to Rokoros Village. Huh?</p>
+          <p> </p>
+          <p>OK then. What you want is to go find Grandfather Starturtle. He's the ancient [%dic:STR_DIC_M_LF4_A5_BigStarturtle_52_n] who lives North of Dimaia Fountainhead.</p>
+          <p> </p>
+          <p>Below where he sits is the crevice where the windstream to Rokoros Village starts. It's a nice ride, but a terrible tourist destination.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"Ride a windstream? Sounds exhilarating!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I saw you chatting with Squip. Seems like you hit it off.</p>
+          <p> </p>
+          <p>Did she confirm my hypothesis about riding the windstream to Rokoros Village?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Yes."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hah! Really? That's amazing! I totally didn't believe those stories.</p>
+          <p> </p>
+          <p>So, there's a giant Starturtle obscuring the geyser? Interesting. This I've got to see.</p>
+          <p> </p>
+          <p>Thanks for talking to Squip for me, [%username]. Here, take this as a token of my gratitude.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk with [%dic:STR_DIC_N_Tuca_01].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Talk with [%dic:STR_DIC_N_Armond].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Armond asked to talk to Squip about the mythical windstream to Rokoros Village.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Armond was daydreaming about riding windstreams to Rokoros Village. He asked you to ask Squip about it.</p>
+          <p> </p>
+          <p>Squip told you about a windstream under the Starturtle that leads to the village. When you informed Armond of this, he was both stunned and elated.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

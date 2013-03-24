@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q20062</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>미입력</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님의 구해다 주신 무거운 중력의 파편 덕분에 마력 감시계를 만들 수 있었어요.</p>
+          <p> </p>
+          <p>중력의 근원 근처에 설치하면 도움이 되는 정보를 얻을 수 있겠죠.</p>
+          <p> </p>
+          <p>마음이 급하겠지만 이럴 때일수록 침착하게 기다릴 줄도 알아야 하는 법이에요.</p>
+          <p> </p>
+          <p>그리고 아직 구해야 할 물건이 남아 있기도 하고요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">무엇인지 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>마력 감시계에 티아마트의 힘을 불어넣는 데는 성공했지만 감시 자체를 위한 마력이 부족해요.</p>
+          <p> </p>
+          <p>핵심적인 재료라 충분히 준비했다고 생각했는데 생각보다 더 많은 마력이 필요하더군요.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_LDF4b_T1_Monster_M_Flyingeye]을 처치하고 [%dic:STR_DIC_I_QUEST_10060b]을 구해다 주시겠어요?</p>
+          <p> </p>
+          <p>조금만 더 보충하면 마력 감시계를 소환할 감시의 핵을 완성할 수 있을 거예요. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">대화를 마친다.</Act>
+    </Selects>
+    <Voice file="Q20062-1.ogg"/>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>돌아오셨군요, [%username] 님.</p>
+          <p> </p>
+          <p>부탁한 관찰의 눈은 구해 오셨나요?</p>
+          <p> </p>
+          <p>그것만 있으면 바로 마력 감시계를 소환할 감시의 핵을 만들 수 있습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">관찰의 눈을 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_ok">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_W_LDF4b_SZ_T3_S7] 근처에 마력 감시계를 설치할 마법진을 소환해 놓았습니다.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_E_LDF4B_ItemUseArea_Q20062A]에서 감시의 핵을 사용하면 마력 감시계가 나타날 겁니다.</p>
+          <p> </p>
+          <p>그럼 분노의 근원을 감싸는 마력의 흐름을 파악할 수 있게 될 거예요.</p>
+          <p> </p>
+          <p>아주 중요한 일이니 잘 부탁합니다, [%username] 님.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+    <Voice file="Q20062-2.ogg"/>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_fail">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_I_QUEST_10060b]이 있어야만 감시의 핵을 만들 수 있습니다.</p>
+          <p> </p>
+          <p>그게 있어야만 분노의 근원을 감시할 마력 감시계를 소환할 수 있고요.</p>
+          <p> </p>
+          <p>그러니 어서 [%dic:STR_DIC_M_LDF4b_T1_Monster_M_Flyingeye]을 처치하고 관찰의 눈을 구해다 주세요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>기다리고 있었어요, [%username] 님.</p>
+          <p> </p>
+          <p>분노의 근원 주위에 마력 감시계는 설치했나요?</p>
+          <p> </p>
+          <p>제대로 작동하던가요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>마력 감시계를 설치했으니 결과를 기다려 봐야겠군요.</p>
+          <p> </p>
+          <p>느긋하게 기다려야 한다고 마음을 다잡고 있는데도 자꾸 조급한 생각이 드네요.</p>
+          <p> </p>
+          <p>그래도 중요한 일은 모두 마쳤으니 조금만 기다리면 될 거예요. </p>
+          <p> </p>
+          <p>어쨌거나 수고 많으셨습니다, [%username] 님.</p>
+          <p> </p>
+          <p>마력 감시계에서 주목할 만한 결과가 나오면 바로 다음 일에 착수하도록 해요.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_W_LDF4b_SZ_OP_A4]로 가서 가르논%와 대화하라</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_M_LDF4b_T1_Monster_M_Flyingeye]을 처치하고 [%dic:STR_DIC_I_QUEST_10060b]을 구해 가르논에게 가져가라</font></p>[%collectitem]</step>
+               <step><p visible="[%6]"><font color="[%7]">[%dic:STR_DIC_W_LDF4b_SZ_T3_S7] 주변의 마법진에 마력 감시계를 설치하라[%8]</font></p></step>
+               <step><p visible="[%9]"><font color="[%10]">[%dic:STR_DIC_W_LDF4b_SZ_OP_A4]로 가서 가르논에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">지령: 분노의 근원을 무력화시키기 위해 정보를 수집해야 한다고 한다. 가르논을 만나 보자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>가르논은 마력 감시계를 만들 준비가 대부분 끝났지만 아직 감시에 사용할 마력이 부족하다고 했다.</p>
+          <p> </p>
+          <p>그래서 관찰의 오큘라젠을 처치하고 관찰의 눈을 구해 가져갔더니 감시의 핵을 만들어 주었다.</p>
+          <p> </p>
+          <p>감시의 핵을 분노의 근원 주변에 있는 마법진에 가져가 그곳에 마력 감시계를 설치했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>미션 진행: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

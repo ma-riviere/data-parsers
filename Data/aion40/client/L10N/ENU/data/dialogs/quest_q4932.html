@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], are you carrying out the teachings of Destiny faithfully? How are you using your Divine Power? Hopefully by carrying out the will of Marchutan.</p>
+          <p> </p>
+          <p>Presently I am issuing tasks to Clerics and Chanters in Pandaemonium by the command of Lord Marchutan.</p>
+          <p> </p>
+          <p>Will you also do your part?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What shall I do?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+
+          <p>Use the resurrection skills you have learned from the teachings of the Temple to resurrect fallen comrades.</p>
+          <p> </p>
+          <p>Report back to Freyr when you have completed this task.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You should not feel burdened by this task.</p>
+          <p> </p>
+          <p>Anywhere you go, you will find someone who is in need. Resurrect those who have fallen.</p>
+          <p> </p>
+          <p>And when you think you have done enough, report back to Freyr.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I will."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I will not force this task on you.</p>
+          <p> </p>
+          <p>But it is the will of Lord Marchutan, so I recommend you reconsider your decision.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll think it over."</Act>
+    </Selects>
+  </HtmlPage>
+
+    <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Are you here because you have questions to be answered, [%userclass]? Or perhaps to learn a new skill?</p>
+          <p> </p>
+          <p>Oh, wait...you're here because of Lyfjaberga's task, aren't you.</p>
+          <p> </p>
+          <p>Tell me what happened. Have you resurrected enough fallen comrades?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I have."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Even I find it difficult to carry out the teachings sometimes, but I can tell by looking at you that your heart is well prepared for whatever you may face.</p>
+          <p> </p>
+          <p>Accept this reward from the Temple of Destiny.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Use the [%dic:STR_DIC_E_RESURRECT] to resurrect fallen comrades ([%2]/10).</font></p></step>               
+               <step><p visible="[%3]"><font color="[%4]">Talk with [%dic:STR_DIC_N_Freyr].</font></p></step>               
+    </steps>
+          <p><font font_xml="quest_summary">Follow Lyfjaberga's instructions and use resurrection skills on fallen comrades.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Lyfjaberga recommended you carry out a task issued by the Temple of Destiny.</p>
+          <p> </p>
+          <p>So you used resurrection skills to raise fallen comrades, and talked to Freyr to receive a reward.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

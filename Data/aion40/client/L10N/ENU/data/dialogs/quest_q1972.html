@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Marvelous, [%username]!</p>
+          <p> </p>
+          <p>I haven't been teaching you Weaponsmithing for long, but you're already very good.</p>
+          <p> </p>
+          <p>I think you have a special talent for the craft.</p>
+          <p> </p>
+          <p>I'd like to test how good you are....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Test? What kind of test?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I would like you to make Anteros' Noble Greatsword for me.</p>
+          <p> </p>
+          <p>You need more than talent to make something like that. You also need ceaseless dedication and effort.</p>
+          <p> </p>
+          <p>So, will you give it a try?</p>
+          <p> </p>
+          <p>Remember, though, if you agree to become a Weaponsmithing Expert, you can only become an Expert in one other field, and even then you must wait until you've finished your studies. Please think carefully before you answer.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Then, make Anteros' Noble Greatsword and bring it to me.</p>
+          <p> </p>
+          <p>You can buy the design from [%dic:STR_DIC_N_Nakia] over there. But I warn you, it'll take more skill to make Anteros' Noble Greatsword than it ever did to make [%dic:STR_DIC_E_Q1972]s.</p>
+          <p> </p>
+          <p>It's not easy, but hard workers like you can succeed, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll get started now."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, you seem less passionate about Weaponsmithing than I expected.</p>
+          <p> </p>
+          <p>Or perhaps you're put off by the difficulty of crafting Anteros' Noble Greatsword.</p>
+          <p> </p>
+          <p>Never mind, then.</p>
+          <p> </p>
+          <p>I thought you could become a Weaponsmithing Expert. I must have been wrong.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"We shall see."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, [%username]!</p>
+          <p> </p>
+          <p>The other trainees would hate to hear this, but you're the one who always makes me proud!</p>
+          <p> </p>
+          <p>You might be able to succeed me.</p>
+          <p> </p>
+          <p>By the way, did you make Anteros' Noble Greatsword?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"For your inspection..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I thought you came because you had succeeded in crafting Anteros' Noble Greatsword....</p>
+          <p> </p>
+          <p>Maybe I expected too much from you. But I think you can succeed, [%username].</p>
+          <p> </p>
+          <p>I'm trusting you here.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I shall double my effort."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's good to know I was right about you.</p>
+          <p> </p>
+          <p>Of course you need talent, but to craft Anteros' Noble Greatsword requires perseverance above all.</p>
+          <p> </p>
+          <p>I am pleased you're passionate about Weaponsmithing, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select10">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Perhaps you don't understand, [%username]. You can only take your Expert test in one craft at a time.</p>
+          <p> </p>
+          <p>If you're walking the path of an Expert in another field, you can't become a Weaponsmithing Expert for now.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Then it seems I must choose."</Act>
+    </Selects>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Make Anteros' Noble Greatsword and bring it to [%dic:STR_DIC_N_Anteros].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Anteros wanted to see if you have a true passion for Weaponsmithing, and asked you to make Anteros' Noble Greatsword.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Anteros told you that you seemed to have a special talent for Weaponsmithing, and wanted to see if you have true passion for the craft.</p>
+          <p> </p>
+          <p>When you made Anteros' Noble Greatsword as he requested, he recognized your talent and passion, and was very pleased.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

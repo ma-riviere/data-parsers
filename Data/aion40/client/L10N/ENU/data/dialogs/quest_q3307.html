@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, [%username]! Glad to see you again. I was so busy last time that I didn't have time to thank you. I really appreciated your help in testing the new flight route.</p>
+          <p> </p>
+          <p>By way of saying thanks, I have a job opportunity. It's a little dangerous, but you should be able to handle it, and the pay is exceptional.</p>
+          <p> </p>
+          <p>Are you interested?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What kind of job?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, I received new orders from my superiors a few days ago. It seems they're tired of taking out the low-ranked punks and they want to get serious.</p>
+          <p> </p>
+          <p>I'm authorized to carry out operations directly against important figures we can identify at the Bastion. These are precision strikes, and we need Ariel's finest to make sure the hits are successful.</p>
+          <p> </p>
+          <p>What do you think? Are you interested?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good. I've been waiting for the go-ahead to hit these guys hard, and I want to make it count.</p>
+          <p> </p>
+          <p>Your first target is [%dic:STR_DIC_M_LF2_LehparFiNamedQ_38_Ae]. Your second target is [%dic:STR_DIC_M_LF2_LehparPrNamedQ_38_Ae]. They won't be easy to get at, but losing them will be a real blow to the Lepharist command structure.</p>
+          <p> </p>
+          <p>May the protection of Ariel be with you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Faith and arms!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, I understand. Getting into the Bastion is no easy task.</p>
+          <p> </p>
+          <p>We still have time before the operation starts. Please think it over and come back if you change your mind.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I will."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good to see you back. It must not have been easy to deal with both Gennaion and Epicara.</p>
+          <p> </p>
+          <p>But you defeated them, right?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Of course I did."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>If I had assigned the mission to anyone else I would have been worried to death, but I had complete confidence in you, [%username].</p>
+          <p> </p>
+          <p>Gennaion and Epicara were absolutely central to the command of the Bastion. This should throw their operations into disarray for a while.</p>
+          <p> </p>
+          <p>Good job!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Break down the command structure of the Lepharist Bastion.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_LF2_LehparFiNamedQ_38_Ae] ([%2]/1)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_LF2_LehparPrNamedQ_38_Ae] ([%5]/1)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report back to [%dic:STR_DIC_N_Elram].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Elram is carrying out operations against the Lepharist Commanders. Eliminate Major Gennaion and Adjutant Epicara.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Elram offered you a job eliminating the heads of the Lepharist Bastion. </p>
+          <p> </p>
+          <p>The goal of the operation was to break down their chain of command by killing specific individuals. You took out Major Gennaion and Adjutant Epicara. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

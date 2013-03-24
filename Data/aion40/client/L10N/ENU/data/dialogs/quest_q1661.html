@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We've been so concerned about the Balaur in the Indratu Barracks that I think we've taken the Krall for granted.</p>
+          <p> </p>
+          <p>They aren't just front-line troops for the Balaur.</p>
+          <p> </p>
+          <p>They're up to something.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Like what?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Krall have a knack for distilling Odium, but here, I think they're forging it into a weapon.</p>
+          <p> </p>
+          <p>They have something that looks like a forge. I tried to investigate but they swarmed me. I had to retreat.</p>
+          <p> </p>
+          <p>We're an observation post, not a fortress. If the Krall develop a new weapon, we'll be its first target.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"You're sure it's a weapon?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No, I'm not sure of anything. That's why I want you to go on a spying mission.</p>
+          <p> </p>
+          <p>Return after you have spied on the [%dic:STR_DIC_W_SensoryArea_Q1661A], [%dic:STR_DIC_W_SensoryArea_Q1661B], and [%dic:STR_DIC_W_SensoryArea_Q1661C].</p>
+          <p> </p>
+          <p>We need to know how the Krall are processing Odium and what they're making with it. Once we know that, we can defend ourselves.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You'll find the [%dic:STR_DIC_W_SensoryArea_Q1661A] behind a four-horned totem deep inside the Kishar village.</p>
+          <p> </p>
+          <p>The [%dic:STR_DIC_W_SensoryArea_Q1661B] is on a hill to the right of the Weapon Forge. It gives off green smoke and has two windmills. Behind the Odium Refinery is the [%dic:STR_DIC_W_SensoryArea_Q1661C]. </p>
+          <p> </p>
+          <p>That's your path--the weapon forge, then the refinery, and finally the armor forge.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Faith and arms!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Look, [%username], we've got Balaur here in Heiron!</p>
+          <p> </p>
+          <p>They're pulling the strings. You think the Krall figured out how to make Odium weapons by themselves?</p>
+          <p> </p>
+          <p>You must see how important this is.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Perhaps another time, Piros."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This whole Odium business is ominous, if you ask me.</p>
+          <p> </p>
+          <p>What did you learn, [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"The forges seemed ordinary."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The forges were...just normal forges? The Odium was just like the Odium you've seen before?</p>
+          <p> </p>
+          <p>Something is amiss. The Krall have picked up the pace of their raids. And what's making that green smoke?</p>
+          <p> </p>
+          <p>It's going to take more than just a scouting mission to get to the bottom of this.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Spy on the movements of the Kishar Krall.</font></p>
+                     <p visible="[%3]"><font color="[%4]">Spy on the [%dic:STR_DIC_W_SensoryArea_Q1661A].</font></p>
+                     <p visible="[%6]"><font color="[%7]">Spy on the [%dic:STR_DIC_W_SensoryArea_Q1661B].</font></p>
+                     <p visible="[%9]"><font color="[%10]">Spy on the [%dic:STR_DIC_W_SensoryArea_Q1661C].</font></p></step>
+               <step><p visible="[%12]"><font color="[%13]">Report the result to [%dic:STR_DIC_N_Piros].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">A new set of forges have been sighted in Kishar Village. Investigate on what is going on.</font></p>
+        </body>
+        </html>
+    </Contents>
+    <notifies>
+       <notify progress="16"  pos="2" fontsize="16" showframe="true" time="5" color="yellow">Spying on the Weapon Forge complete.</notify>
+       <notify progress="32"  pos="2" fontsize="16" showframe="true" time="5" color="yellow">Spying on the Odium Refinery complete.</notify>
+       <notify progress="48"  pos="2" fontsize="16" showframe="true" time="5" color="yellow">Spying on the Weapon Forge and Odium Refinery complete.</notify>
+       <notify progress="64"  pos="2" fontsize="16" showframe="true" time="5" color="yellow">Spying on the Armor Forge complete.</notify>
+       <notify progress="80"  pos="2" fontsize="16" showframe="true" time="5" color="yellow">Spying on the Weapon Forge and Armor Forge complete.</notify>
+       <notify progress="96"  pos="2" fontsize="16" showframe="true" time="5" color="yellow">Spying on the Odium Refinery and Armor Forge complete.</notify>
+       <notify progress="112" pos="2" fontsize="16" showframe="true" time="5" color="yellow">Spying complete. Report to Piros.</notify>
+    </notifies>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Piros recently discovered a strange, green smoke rising from Kishar Village, and he asked you to spy on the Odium Refinery and the forges because the Krall might be making a new weapon out of Odium.</p>
+          <p> </p>
+          <p>You spied on the structures and went back to report that there was no suspicious activity, but Piros was still concerned that there is something wrong.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

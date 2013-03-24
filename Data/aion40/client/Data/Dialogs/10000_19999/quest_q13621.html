@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p> - 긴급 지령서 - </p>
+          <p></p>
+          <p> 1. 발신 : 카탈람 파견대, [%dic:STR_DIC_W_ZONE_NAME_LDF5_SZ_M1]의 [%dic:STR_DIC_N_LDF5_Under_Kurius_E]</p>
+          <p></p>
+          <p> 2. 수신 : [%username]</p>
+          <p></p>
+          <p> 3. 명령 : 지하 카탈람에 침투한 마족 2명을 처치할 것.</p>
+          <p></p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">의뢰를 수행한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+   <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>마족들은 이 지하 카탈람에 주둔하고 있는 우리 카탈람 파견대의 힘을 측정해보려는 듯 하네.</p>
+          <p> </p>
+          <p>정예 병력이라면 아무리 소수가 침투했더라도 경시할 수는 없는 법이지.</p>
+          <p> </p>
+          <p>사태가 더 커지기 전에 침투한 마족들을 처리하고 수습해주게.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], 자네가 좋은 소식을 가져올 것이라 믿고 있었네.</p>
+          <p> </p>
+          <p>자네 덕택에 소규모 마족 침투 부대에게 병력이 소모되는 것을 막을 수 있었다네.</p>
+          <p> </p>
+          <p>다음 번에도 잘 부탁하네.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">지하 카탈람에 침투한 마족을 처치하라([%2]/2)</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_N_LDF5_Under_Kurius_E]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">긴급 지령: 지하 카탈람에 침투한 마족을 처치하고 쿠리우스에게 보고하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>마족이 지하 카탈람을 노리고 침투해왔다.</p>
+          <p> </p>
+          <p>침투한 마족들을 소탕하고 쿠리우스에게 보고하였다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

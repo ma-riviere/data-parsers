@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q41258</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select_none" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>어쩌면 치유의 힘을 지닌 이 유물로 부서진 봉인탑을 수리할 수 있을지도 모르겠습니다.</p>
+          <p> </p>
+          <p>[%username] 님. 잘 들어주십시오. 남쪽으로 난 길을 쭉 따라가시다 보면 부서진 봉인탑을 찾을 수 있을 겁니다.</p>
+          <p> </p>
+          <p>용족에 의해 수호석이 파괴되어 버려 지금은 [%dic:STR_DIC_ILDF4a_FOBJ_Q41258a]만 남은 상태죠.</p>
+          <p> </p>
+          <p>유물의 힘을 [%username] 님께 불어 넣어드릴테니 부서져버린 [%dic:STR_DIC_ILDF4a_FOBJ_Q41258a]에 불어넣어주세요. 그리고 어떤 반응을 보이는지 제게 알려주시면 됩니다.</p>        
+          <p> </p>
+          <p>찾기가 쉽지는 않겠지만 [%dic:STR_DIC_W_LDF4a_SZ_C1_01]가 내려다 보이는 곳이니 참고하시면 될 거예요.</p>
+          <p> </p>
+          <p>참! [%dic:STR_DIC_M_Q41258_Drakan_1]이 그곳을 지키고 있다는 제보가 있었습니다. 만약 그가 아직 있다면 제거해 버리고 일을 진행해 주세요.</p>
+         </body>
+        </html>
+    </Contents>
+    <Selects>
+       <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(이렇게 심하게 부서진 탑이 원상복귀 될 수 있을지 의문이다.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SET_SUCCEED">유물의 힘을 불어넣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>돌아 오셨군요! 정말 한참을 기다리고 있었습니다!</p>
+          <p> </p>
+          <p>봉인탑은, 봉인탑은 어떻게 되었습니까?!</p>
+          <p> </p>
+          <p>그 봉인탑을 수리할 수만 있다면 [%dic:STR_DIC_W_LDF4a_SZ_C1_000]에 퍼지고 있는 티아마트의 기운을 한층 약해지게 만들 수 있을 겁니다!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">원상복구 되었다고 답한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>시엘이시여! 감사합니다!</p>
+          <p> </p>
+          <p>아니지, 용서하소서. 이 감사는 [%dic:STR_DIC_LA60] 주신께 돌리겠나이다!</p>
+          <p> </p>
+          <p>당신은 지금 정말 대단한 일을 끝마치고 오신겁니다.</p>
+          <p> </p>
+          <p>부서져버린 봉인탑을 복원하는 것은 그동안 막대한 노력이 있어야만 가능했는데...</p>
+          <p> </p>
+          <p>빨리 이 유물을 원로들에게 보여 드려야겠습니다.</p>
+          <p> </p>
+          <p>그 일은 제가 하도록 하죠. 그동안 수고 많으셨습니다.</p>
+          <p> </p>
+          <p>여기, 약소하지만 수고의 댓가로 받아 주세요. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_ILDF4a_FOBJ_Q41258a]를 찾아 앞을 지키고 있는 [%dic:STR_DIC_M_Q41258_Drakan_1]%을 처치해라([%2]/1)</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_ILDF4a_FOBJ_Q41258a]에 유물의 힘을 불어넣어라</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">[%dic:STR_DIC_N_Sotuon]에게 돌아가라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">부서진 봉인탑을 찾아 유물의 힘을 불어넣어보자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>소투온은 유스티엘의 힘이 깃든 유물의 힘으로 부서진 봉인탑을 복원할 수 있을 것이라 말했다.</p>
+          <p> </p>
+          <p>하부만 남아 있는 봉인탑을 찾아가니 드라칸 특임병이 그곳을 지키고 있었지만, 가볍게 제압하고 봉인탑을 복원했다.</p>
+          <p> </p>
+          <p>도저히 제 기능을 하지 못할 것처럼 부서져 있던 봉인탑은 거짓말처럼 복구되었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

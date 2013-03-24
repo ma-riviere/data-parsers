@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q10053</QuestId>
+    <QuestName>Relic Protector</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], I was beginning to worry that something had gone awry.</p>
+          <p> </p>
+          <p>Have you found any trace of Oriata?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"I'm sorry, not yet."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh. That is... disappointing. Of course, I understand that it's a difficult mission.</p>
+          <p> </p>  
+          <p>I'm not disappointed in you, [%username]--just anxious to find the Protector before the Balaur do. If they are able to harness the power... the destruction! There will be nothing left, [%username], and we will not even be here to mourn the death of Atreia.</p>
+          <p> </p>
+          <p>Before you go, take this necklace. It has always kept me safe. Perhaps it will lend its power to you, as well.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"Thank you. I'm sure I will find her soon."</Act>
+    </Selects>
+    <Voice file="Q10053-1.ogg"/>
+  </HtmlPage>
+
+  <HtmlPage name="select3">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(This is definitely some deeply twisted land. Overhead, the pounding of the waterfall is deafening.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO3">"I hope this is the right place..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Daeva... You have come a long way to disturb my rest.</p>
+          <p> </p>
+          <p>You look... different. You are not Reian, are you? Yet I sense an urgency about you, strange one. What have you woken me for?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT5_1">"We need your help. Tiamat has Siel's Relics."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What? That's... that's impossible! That monster, defiling such a pure and beautiful power? It casts the shadow of disaster over all Atreia!</p>
+          <p> </p>
+          <p>But... you are here, so Atreia must yet stand. Tell me, Daeva--I am almost afraid to ask--do the Reian people still survive? Wait! I feel their presence still. Oh, what relief! But if Tiamat has Siel's Relics, my people will not stand for long.</p>
+          <p> </p>
+          <p>We must not delay! We must act! We... argh! I can hardly catch my breath! Something must have sapped my power while I slumbered. Help me, strange one. My [%dic:STR_DIC_I_QUEST_10053B]s... it is likely that the [%dic:STR_DIC_M_LDF4A_C1_Elementalking_Cristal_57_An]s took them, as they are the only beasts capable of touching my realm.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO5">"Yes, I saw many of them outside!"</Act>
+    </Selects>
+    <Voice file="Q10053-2.ogg"/>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>My realm! What used to be my sanctuary now shimmers with malevolent power. While you were gone, I felt almost... unsafe... menaced.</p>
+          <p> </p>
+          <p>Imagine that! Frightened, in my own sacred space... Tiamat's rage must be truly terrible if it can touch me here.</p>
+          <p> </p>
+          <p>I feel as though we are on the cusp of some howling armageddon... Please, I cannot bear this feeling with my power so drained! Give the Power Crystal Shards to me!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"This will restore you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_ok">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>My power is a blessing, [%username]. You may carry it already, but you have yet to truly earn it.</p>
+          <p> </p>
+          <p>It is not some petty thing you may turn to your own devices. It must be used only to countermand the power of Siel's Relics. Know that retribution for its misuse could have dire consequences, least of which is the end of my own existence.</p>
+          <p> </p>
+          <p>This is a tremendous responsibility, as well as an honor.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I will remember, Oriata. Thank you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_fail">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You didn't bring them?</p>
+          <p> </p>
+          <p>Daeva, do you not realize the danger we are in? The very balance of our world is crumbling!</p>
+          <p> </p>
+          <p>I need [%dic:STR_DIC_I_QUEST_10053B]s to restore my power. Get them from the [%dic:STR_DIC_M_LDF4A_C1_Elementalking_Cristal_57_An]s, and quickly!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Okay, I'm going! I'm sorry!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, [%username]. Did things to as planned?</p>
+          <p> </p>
+          <p>Did you find Protector Oriata? Where is she?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I did, sir, and that's not all..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You? You carry the power to neutralize Siel's Relics?</p>
+          <p> </p>
+          <p>Well! I did not expect quite that result, but it is certainly preferable to some broody Asmodian wielding that power. Good work, [%username].</p>
+          <p> </p>
+          <p>And now! Now we bring the fight again to Tiamat! We will blind that dark beast with Elyos light!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Check in with [%dic:STR_DIC_N_Garnon].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Search for the [%dic:STR_DIC_OBJ_LDF4a_10053_20053_door], which will lead you to [%dic:STR_DIC_N_Oriatia].</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Awaken the Protector Oriata.</font></p></step>
+               <step><p visible="[%9]"><font color="[%10]">Protect Oriata from the Balaur assault.</font></p></step>
+               <step><p visible="[%12]"><font color="[%13]">Speak to [%dic:STR_DIC_N_Oriatia].</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Get the [%dic:STR_DIC_I_QUEST_10053B]s from the [%dic:STR_DIC_M_LDF4A_C1_Elementalking_Cristal_57_An]s, and return them to [%dic:STR_DIC_N_Oriatia].</font></p>[%collectitem]</step>
+               <step><p visible="[%18]"><font color="[%19]">Report back to [%dic:STR_DIC_N_Killios].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Order: Get the power to counter Siel's Relics from the Protector Oriata.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>After misleading Garnon, you searched for the Protector's realm by yourself.</p>
+          <p> </p>
+          <p>While you attempted to awaken Protector Oriata, Drakan gained access to the realm and attempted to capture her. When things looked most dire, the power in the necklace Garnon gave you drove the Balaur back.</p>
+          <p> </p>
+          <p>When Oriata awoke, she was hesitant to share her power with you. But when Garnon appeared with an Asmodian ambassador, both attested to your ability and judgment.</p>
+          <p> </p>
+          <p>You were granted the power to counter Siel's Relics.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>Mission Progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

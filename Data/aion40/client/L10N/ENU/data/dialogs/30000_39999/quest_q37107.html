@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Dearest Key [%username],</p>
+          <p> </p>
+          <p>I'd really appreciate it if you could be a [%dic:STR_DIC_E_Mentor] for some [%dic:STR_DIC_E_Li_10_19]s down by the Ellun River. Show the Apprentices how to gather the [%dic:STR_DIC_I_QUEST_37100A]s that are contaminating the Citadel's drinking water.</p>
+          <p> </p>
+          <p>Once they're trained up, you can take yours to [%dic:STR_DIC_N_Seira], who is coordinating the toxicity research.</p>
+          <p> </p>
+          <p>--Ziyunia, Orichalcum Key Membership Manager</p>
+          <p>"Silently, we direct."</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Anything to keep you happy, Z."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Have you tried drinking the purified water? It's still blue.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Probably because these shells are blue."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We are gathered here today to witness the final moments of [%username].</p>
+          <p> </p>
+          <p>If you don't collect those [%dic:STR_DIC_I_QUEST_37100A]s, Ziyunia is going to displace you!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Please don't tell her! I'll get them."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ooooh, give them here. They're so shiny....</p>
+          <p> </p>
+          <p>From poison, most likely. I'll turn these over to our research team.</p>
+          <p> </p>
+          <p>"Silently, we direct."</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Become a [%dic:STR_DIC_E_Mentor] for a [%dic:STR_DIC_E_Li_10_19] and collect [%dic:STR_DIC_I_QUEST_37100A]s for [%dic:STR_DIC_N_Seira].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Gather Mutated Inina Shells with a Verteron Apprentice, then take them to Seira.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ziyunia, Membership Manager for the Orichalcum Key, wrote you asking for help in Verteron. </p>
+          <p> </p>
+          <p>You becaome a Mentor and helped gather Mutated Inina Shells, which you then brought to Seira, who is coordinating the research on the shells' toxic effects. Seira acknowledged your service with the upper-level Key motto, "Silently, we direct."</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

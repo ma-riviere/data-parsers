@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아, [%username] 님!</p>
+          <p> </p>
+          <p>마침 잘 만났습니다.</p>
+          <p> </p>
+          <p>안 그래도 갈룸 님에게서 자질 있는 데바를 추천해 달라는 부탁을 받은 참이었거든요.</p>
+          <p> </p>
+          <p>제 생각에는 [%username] 님이 딱 갈룸 님이 찾는 데바인 것 같습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_N_Gallum] 님은 판데모니움 예비 템페르의 관리관이시죠. [%username] 님, 판데모니움 예비 템페르에 관해 아십니까? </p>
+          <p> </p>
+          <p>새로 각성한 데바들이 경험 많은 데바에게 직접 보고 배울 수 있는 기회를 주는 곳이랍니다. </p>
+          <p> </p>
+          <p>한마디로 경험 많은 데바와 함께 전투하면서 그들의 전투력을 몸으로 익히는 겁니다. 임무를 수행하는 데 도움도 받고요.</p>
+          <p> </p>
+          <p>뭐, 제가 설명하는 것 보다 직접 들으시는 게 좋겠군요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그럼 알트가르드 요새로 가서 [%dic:STR_DIC_N_Gallum] 님을 만나 보십시오.</p>
+          <p> </p>
+          <p>그분께 가면 판데모니움 예비 템페르에 대해 자세히 설명해 주실 겁니다.</p>
+          <p> </p>
+          <p>어둠의 평안이 함께하길! </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>모처럼 추천을 해 드렸는데 안타깝군요.</p>
+          <p> </p>
+          <p>판데모니움 예비 템페르의 일원과 친분을 쌓아서 나쁠 것이 없는데 말이죠.</p>
+          <p> </p>
+          <p>나중에라도 마음이 바뀌면 오십시오. 갈룸 님께 소개해 드릴 테니까요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>혹시 도만 님의 추천으로 오신 겁니까?</p>
+          <p> </p>
+          <p>제가 발전 가능성이 높은 데바를 좀 추천해 달라고 부탁을 드렸거든요. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">고개를 끄덕인다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정말 잘 오셨습니다, [%username] 님.</p>
+          <p> </p>
+          <p>판데모니움 예비 템페르는 데바의 능력을 개발하기 위한 단체입니다. 각성한 지 얼마 되지 않은 데바를 대상으로 말이지요.</p>
+          <p> </p>
+          <p>오랫동안 전투 경험을 쌓은 데바와 함께 전투하면서 그들의 실력을 직접 보고 배울 수 있는 기회를 주는 것이 목적입니다.</p>
+          <p> </p>
+          <p>아무래도 훌륭한 데바와 함께하면 여러모로 배우는 게 많지 않겠습니까?</p>
+          <p> </p>
+          <p>그런 식으로 자질이 뛰어난 데바가 성장할 수 있는 발판을 마련해 주는 게 저희의 일입니다.</p>
+          <p> </p>
+          <p>혹시 더 궁금한 것이 있으면 얼마든지 물어 보십시오.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">알트가르드로 가서 [%dic:STR_DIC_N_Gallum]%와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">판데모니움 예비 템페르에서 사람을 찾고 있다고 한다. 알트가르드 요새에 있는 갈룸을 만나 보자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>판데모니움의 공간이동사인 도만이 판데모니움 예비 템페르의 갈룸이 찾는다고 전해 주었다.</p>
+          <p> </p>
+          <p>알트가르드 요새에 있는 갈룸에게 갔더니 판데모니움 예비 템페르에 대해 설명해 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>If I could just...zzzz...</p>
+          <p> </p>
+          <p>...but the Crasaurs...at the chili competition...won first place...best chili around...zzzzz...</p>
+          <p> </p>
+          <p>Wh...wha... Oh! You startled me, [%username]! I was just, er, thinking. Deeply. About...work.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Work, huh?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, technically yes.</p>
+          <p> </p>
+          <p>Oh, it's Centurion [%dic:STR_DIC_N_Valuerin]! He's determined that the citizens must feel safe walking about the fortress, which is admirable, but--oh, he's just putting far too much on me!</p>
+          <p> </p>
+          <p>"Patrol the fortress all day," he says, "and then hunt the creatures outside all night."</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"When do you sleep?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah! Ah-hah! That's the question, isn't it? When, when, when will I get some sleep? I just keep nodding off on patrol...and having...strange dreams...</p>
+          <p> </p>
+          <p>Please, [%username], could you help me?</p>
+          <p> </p>
+          <p>The [%dic:STR_DIC_M_PhainiD_10_n] give me the most trouble--they keep me up the longest. Do you think you could hunt a few so I might get some sleep tonight?</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, thank you! To think I might sleep tonight...and I've got such a strange craving for chili....</p>
+          <p> </p>
+          <p>Anyway, you can find [%dic:STR_DIC_M_PhainiD_10_n]s in [%dic:STR_DIC_W_DF1A_2], right outside the fortress.</p>
+          <p> </p>
+          <p>They spend most of their time in the water. If you can hunt maybe 10 of them, that would free up a few hours for...zzzzz...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm on it. Enjoy your nap."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh. Well, I'm sure your day is already full of trouble and folly. No need for me to add to it.</p>
+          <p> </p>
+          <p>I did hope you would pity my situation.... Maybe you'll come back after you've...thought about...zzzzz....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Maybe."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No...nothing wrong with...my wings...zzzz...</p>
+          <p> </p>
+          <p>Oh, [%username]! Er, did you hunt [%dic:STR_DIC_M_PhainiD_10_n]s for me?</p>
+          <p> </p>
+          <p>I've been so anxious....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="PLAYEMOTION_salute;HACTION_SELECT_QUEST_REWARD">"The creatures are dead."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, thank you!</p>
+          <p> </p>
+          <p>Now I can report to Centurion Valurion. I am in your debt!</p>
+          <p> </p>
+          <p>This isn't much, but it's all I can afford. Please take it.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Hunt [%dic:STR_DIC_M_PhainiD_10_n]s ([%2]/10).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_N_Heidunn].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">The Help Heidunn kill Ice Crasaurs so he can get some sleep.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Heidunn is an Archon who was recently transferred to the Altgard Fortress.</p>
+          <p> </p>
+          <p>He was ordered to clear all dangerous animals near the Fortress, but his orders left him no time for sleep. He asked you for help.</p>
+          <p> </p>
+          <p>You killed 10 Ice Crasaurs for him.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

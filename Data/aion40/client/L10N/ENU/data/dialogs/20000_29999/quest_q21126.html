@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm glad to see another Asmodian in a place like this.</p>
+          <p> </p>
+          <p>From the looks of that [%mainslotitem], you've seen more than your fair share of battle. I could use your strength, [%userclass].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"To what end?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I was sent here to support the Reians, but the job's been a lot bigger than I thought.</p>
+          <p> </p>
+          <p>I thought those Dragonbound were just a few ragtag maniacs, but they're a fearsome fighting force, especially with brainwashed Reians on their side.</p>
+          <p> </p>
+          <p>I've sent for reinforcements, but I have no idea when the fortress will have any to spare. Could you lend us your aid?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You must have seen the Manticores on the way here. The Dragonbound use them to track, harry, and capture Reian tribesmen.</p>
+          <p> </p>
+          <p>It's strange, because Manticores are very wild and normally untamable. I think the shackles on their legs have something to do with it. If I could examine them, I might be able to counteract their magic.</p>
+          <p> </p>
+          <p>Hunt [%dic:STR_DIC_M_DF4_GriffonPet_DR_53_An]s in Subterranea and bring me their [%dic:STR_DIC_I_QUEST_21126a]s.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"The task is mine."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Shards! I was afraid you'd say that. So few Daevas come by to begin with, I didn't think my luck would hold out.</p>
+          <p> </p>
+          <p>We Asmodians share blood with these Reians.... They truly need our aid.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"They'll find it elsewhere."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I just got a missive from the fortress. They can't spare any reinforcements yet. I'll just have to help the Reians hold out until then.</p>
+          <p> </p>
+          <p>Did you manage to find me [%dic:STR_DIC_I_QUEST_21126a]s?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Got them right here."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>These don't seem any different from ordinary.... Aha! There are runes etched on the inside of the cuff. That's probably it.</p>
+          <p> </p>
+          <p>This kind of magic is beyond me, actually. I'll have the Spiritmasters at the fortress look them over.</p>
+          <p> </p>
+          <p>Both the Reians and I are grateful, [%username]. I'll let you know what turns up.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Actually, no, you don't. At least, not enough for me to really get answers from.</p>
+          <p> </p>
+          <p>You'll find more [%dic:STR_DIC_M_DF4_GriffonPet_DR_53_An]s with the Dragonbound in Subterranea.</p>
+          <p> </p>
+          <p>I know it's difficult, but this is an important task.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"One I will complete."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Gather the shackles of [%dic:STR_DIC_M_DF4_GriffonPet_DR_53_An]s and bring them to [%dic:STR_DIC_N_Fjoelnir].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Gather Manticore's Shackles for Fjoelnir to find out how the Dragonbound have tamed the Manticores.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Fjoelnir of the Pandaemonium Expeditionary Force has seen Reians attacked by the Dragonbound's Manticores. He believes the Manticore's Shackles explain how the Dragonbound tamed these untamable beasts.</p>
+          <p> </p>
+          <p>You obtained some Manticore's Shackles for him, and Fjoelnir said he would send them to the fortress for examination.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

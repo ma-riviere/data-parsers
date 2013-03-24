@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've taught handicrafting to many Daevas, but I've never seen someone progress so far, so fast.</p>
+          <p> </p>
+          <p>You've a special talent for handicrafting, [%username].</p>
+          <p> </p>
+          <p>I want to see how good you are. Will you take my test?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I'll take on all comers."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Make Utsida's Noble Necklace and bring it to me.</p>
+          <p> </p>
+          <p>Utsida's Noble Necklace is not easily made. This will take time and effort.</p>
+          <p> </p>
+          <p>Remember, if you decide to become a Handicrafting Expert, you cannot train to be an Expert in another field. Think carefully before you answer. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I knew you had the passion and ambition to succeed.</p>
+          <p> </p>
+          <p>Go now to Chiwurinerk who sells the Utsida's Noble Necklace design, and begin work. Yes, it's more difficult than [%dic:STR_DIC_E_Q1976], but you can do it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll begin now."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Was I wrong about you?</p>
+          <p> </p>
+           <p>Well, I can't force you to make it....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Some other time."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Some people think handicrafting is only about making necklaces and rings. That's not true at all.</p>
+          <p> </p>
+          <p>If you put your heart and soul into handicrafting, you'll begin to understand how many potential items you can create.</p>
+          <p> </p>
+          <p>Did you make Utsida's Noble Necklace?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I did."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, I'm disappointed.</p>
+          <p> </p>
+          <p>I thought I gave you enough time. You can have more time, of course. Go and make Utsida's Noble Necklace.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This is as good as the ones I make.</p>
+          <p> </p>
+          <p>You're almost as good as an Expert.</p>
+          <p> </p>
+          <p>I'm pleased to find a Daeva with your talent and ambition.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select10">
+    <Contents cdata="true">
+        <html>
+        <body>
+         <p>I thought you were an Expert in another field.</p>
+         <p> </p>
+         <p>To be an Expert in two fields, you must first complete the training in the other field.</p>
+         <p> </p>
+         <p>Become an Expert in your current field. Then come to me, and I'll train you to be a Handicrafting Expert.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I was impatient."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select10_2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's a pity, but you can only choose to become one type of Expert at a time.</p>
+          <p> </p>
+          <p>If you're training to be an Expert in another field, you can't train to become a Handicrafting Expert.</p>
+          <p> </p>
+          <p>Finish your training in the other field, then return to me.</p>
+         </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select10_3">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Aren't you already a Handicrafting Expert?</p>
+          <p> </p>
+          <p>I thought so. It's probably someone else you should be going to.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I took a wrong turn."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Make Utsida's Noble Necklace and take it to [%dic:STR_DIC_N_Utisda].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Utsida wanted to see how good you are at handicrafting, and asked you to make Utsida's Noble Necklace. </font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Utsida wanted to see how good you are at handicrafting, and asked you to make Utsida's Noble Necklace.</p>
+          <p> </p>
+          <p>So when you succeeded in making the necklace, he was pleased.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

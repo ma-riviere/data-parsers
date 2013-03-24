@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>First things first, [%username]: we need to get our troops back.</p>
+          <p> </p>
+          <p>Ever since we landed, the Asmodians have been stalking us, picking us off when we're not looking. They come at night, mostly, and kidnap our sleeping Daevas from their tents. Every day we wake to find our camp a little smaller, a little weaker....</p>
+          <p> </p>
+          <p>I want them back. The morale boost would be huge.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I heard Nevma sent you out to rescue the troops! He could have had you guard the perimeter, or rebuild the camp, but no... he knows where our priorities lie.</p>
+          <p> </p>
+          <p>So, how did you do?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I rescued them all. The General should be thrilled."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Should be indeed!</p>
+          <p> </p>
+          <p>Let me thank you on behalf of the Sanctum Ops HQ, [%username]. Victories like this strengthen our spirits as well as our numbers.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Rescue the Griffon's Claw members taken as prisoners([%2]/7).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report to [%dic:STR_DIC_NPC_Arena_Geniki_E_LHM].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Destroy the prison to free the Griffon's Claw members, then report to Giniki.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Nevma told you about members of the Griffon's Claw who had been taken prisoner, and asked you to help rescue them. You accepted, and managed to destroy the prison while saving your comrades.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I still have a few reports to get through, but I'm done with the urgent ones. They need to be delivered to [%dic:STR_DIC_N_Tobu], second in command of the Ulgorn Raiders.</p>
+          <p> </p>
+          <p>These reports are highly important, [%username]. Tobu and Ulgorn need to know that we're making progress on our quotas--that we're doing our job as raiders.</p>
+          <p> </p>
+          <p>More to the point: Without these reports, none of us get paid come caravan-time.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Who usually delivers the reports?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Usually I deliver them myself, [%userclass]!</p>
+          <p> </p>
+          <p>But I'm so very busy.... Look, just take these up to [%dic:STR_DIC_N_Tobu], will you?</p>
+          <p> </p>
+          <p>I'm including some of the fruits you collected as a gift for Tobu, so make sure you don't bruise them. These reports are a little late, so I'm hoping he'll consider the fruit my way of saying sorry.</p>
+          <p> </p>
+          <p>Can you deliver the reports?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good. You should find [%dic:STR_DIC_N_Tobu] in the center of [%dic:STR_DIC_W_DF1_2]. He hardly ever leaves Ulgorn's side. So if you see the boss, you'll probably see Tobu.</p>
+          <p> </p>
+          <p>Oh, and one last thing: Be sure to mention that I prepared the fruit. I'm tired of being on Tobu's bad side.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"I'll mention you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, is a simple task beneath you?</p>
+          <p> </p>
+          <p>Be careful who you cross, [%username]. I'm first in line to take over for Tobu when he decides to retire from raiding.</p>
+          <p> </p>
+          <p>And once I'm second in command of the raiders, it'll be Vanar doling out the various jobs we all have to do.</p>
+          <p> </p>
+          <p>Think of the worst possible duty, then imagine doing that every single day. Care to reconsider?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Don't ever threaten me."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What? Still here?</p>
+          <p> </p>
+          <p>Are you trying to put me even further on [%dic:STR_DIC_N_Tobu]'s bad side?</p>
+          <p> </p>
+          <p>All right, I'll save you the walk. I was saving this teleport scroll, but I did get it from that wandering fortuneteller. Maybe it's best if I use it up on you, anyway.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"Fine, just hurry up and teleport me."</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You must be the messenger Vanar sent. Am I right?</p>
+          <p> </p>
+          <p>Hand me the reports, then. Let me see if I can decipher the idiot's handwriting...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Here they are...plus fruit from Vanar."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hah! He thinks he can charm me with a fruit basket? I'm an Ulgorn Raider! I have no desire for such softness as fruit baskets!</p>
+          <p> </p>
+          <p>Listen closely, [%userclass]. You'd do well to distance yourself from that fool. Vanar can talk, but he's a coward and gets no respect from the others. If you want to make it as a raider, you need to display loyalty, grit, and ability. There's a good reason we stuck Vanar way out in the Aldelle Basin.</p>
+          <p> </p>
+          <p>Anyway, thanks for the reports. I'll pass on whatever Ulgorn needs to see.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Deliver the package including the fruit to [%dic:STR_DIC_N_Tobu].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Vanar asked you to deliver [%dic:STR_DIC_I_2106a] to Tobu because he had too much paperwork. Go to Tobu.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Vanar finished writing the urgent orders, but asked you to deliver them to Tobu instead because he still had much to do.</p>
+          <p> </p>
+          <p>You delivered the package containing the orders and fruits to Tobu. However, Tobu was unimpressed with the fruit and advised you to steer clear of Vanar.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

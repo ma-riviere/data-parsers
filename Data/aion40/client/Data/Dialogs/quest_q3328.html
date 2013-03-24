@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>명색이 가디언인데 요즘 같아서는 제가 행정관이라도 된 것 같아요.</p>
+          <p> </p>
+          <p>마을을 지키긴커녕 주민을 위한 식량과 물자 조달로 정신이 없으니 말이에요. </p>
+          <p> </p>
+          <p>주민들의 안전을 위협하는 짐승들을 처치해야 하는데 도저히 시간을 낼 수 없을 정도로요.</p>
+          </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">고개를 끄덕인다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>노력하면 두 가지 임무를 다 처리할 수 있을지도 모르지만 솔직히 제 몸은 하나라구요.</p>
+          <p> </p>
+          <p>그렇다고 마냥 모른체 할 수도 없고...</p>
+          <p> </p>
+          <p>[%username] 님께 부탁 좀 드려도 될까요? 마을 주변에서 날뛰고 있는 [%dic:STR_DIC_M_Rhinoce_33_An]를 좀 처치해 주세요.</p>
+          <p> </p>
+          <p>실력 있는 분이니 데바님께는 간단한 일일 거예요.</p>
+          </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정말 고맙습니다. [%username] 님이라면 도와주실 줄 알았어요.</p>
+          <p> </p>
+          <p>실력 있는 분이시니 이 정도는 별로 어렵지 않겠죠?</p>
+          <p> </p>
+          <p>마을 밖으로 조금만 걸어가면 신비샘 근처에 있는 [%dic:STR_DIC_M_Rhinoce_33_An]가 보일겁니다. 그럼 부탁드립니다.</p>
+           </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>바쁘시면 할 수 없죠.</p>
+          <p> </p>
+          <p>어차피 제가 해야 할 일이니 밤을 새서라도 해 내겠습니다. </p>
+          <p> </p>
+          <p>어디에 매이지 않은 데바는 참 좋겠어요. </p>
+          <p> </p>
+          <p>꼭 해야만 하는 일이라는 게 없으니까요. </p>
+          </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아! 돌아오셨군요, [%username] 님.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_Rhinoce_33_An]를 다 처치하고 오셨나요?</p>
+          <p> </p>
+          <p>이제 주민들이 안전하게 다닐 수 있겠죠?</p>
+          </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>도와주셔서 감사합니다.</p>
+          <p> </p>
+          <p>아직 제가 할 일은 한참 쌓여 있지만 말입니다. </p>
+          <p> </p>
+          <p>이건 보답으로 드리는 거예요. 별건 아니지만 성의로 생각하고 받아 주세요. </p>
+          </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_M_Rhinoce_33_An]를 처치하라([%2]/10)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">%[%dic:STR_DIC_N_Beramones]%와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">일이 많은 베라모네스 대신에 뿔엄니 라이노스를 처치해 주기로 했다.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아게이론의 마을 주민들을 돌보느라 바쁜 베라모네스 대신 주민들의 안전을 위해 뿔엄니 라이노스를 처치해 주었다.</p>
+          </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

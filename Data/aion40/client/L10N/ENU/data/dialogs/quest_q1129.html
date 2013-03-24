@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I was dispatched here a few weeks ago to spy on the Tursin Krall. More specifically, to watch their movements in and around the abandoned Timolia Mine.</p>
+          <p> </p>
+          <p>This has proven difficult of late. The Tursin are spending more time inside the mines where it's nigh on impossible to tread without being seen.</p>
+          <p> </p>
+          <p>Things don't look like they're changing either, forcing me into a difficult position. I need someone to head into the mine and find out what's going on in there. It's a dangerous place, with narrow pathways and potential ambush spots--you'd need your... agh... your wits about you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Are you hurt?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Cracked my wrist yesterday. Fell out of a tree while I was trying to get a better view of the Krall. Serves me right.</p>
+          <p> </p>
+          <p>In any case, I would need you to head into the mines, kill some Krall, and take whatever you find to the captain.</p>
+          <p> </p>
+          <p>Feel up to it?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Good.</p>
+          <p> </p>
+          <p>Go to the abandoned [%dic:STR_DIC_FLA08], kill [%dic:STR_DIC_MLA57]s, [%dic:STR_DIC_MLA14_1]s, and [%dic:STR_DIC_MLA14_2]s, and take whatever you find to Kalio.</p>
+          <p> </p>
+          <p>You might be better off taking out the smaller [%dic:STR_DIC_MLA137] first, then focusing on the Krall. It's easy to get swamped in there.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Thanks for the advice."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ha!</p>
+          <p> </p>
+          <p>That's what I thought. It'd take great courage to enter the mine shafts alone. Honestly, I'm not feeling up to the job either, especially with my wrist the way it is.</p>
+          <p> </p>
+          <p>I'll send a request for some reinforcements.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Good luck."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Poa sent word that I was to expect you.</p>
+          <p> </p>
+          <p>You've fought the Krall already? Most come back with skin so bruised they look almost Asmodian, but you haven't a scratch on you...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"They're strong but stupid, captain."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>True enough. Now, let's see what you've brought.</p>
+          <p> </p>
+          <p>Hmm. No... I can't make any reasonable conclusions with such a small sample. You'll need to bring back more than this.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be right back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>True enough. Now, let's see what you've brought.</p>
+          <p> </p>
+          <p>Ah, I recognize these. Let me just assemble this... and... there we go. Oh... strange. This is a power generator. But what could the Krall want with a power generator?</p>
+          <p> </p>
+          <p>I must think on this for a while, my friend. Thank you for bringing the parts to me.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Bring clues from [%dic:STR_DIC_MLA57]s, [%dic:STR_DIC_MLA14_1]s, and [%dic:STR_DIC_MLA14_2]s to [%dic:STR_DIC_LA139].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">You're helping Poa investigate the Krall plot. Hunt [%dic:STR_DIC_MLA57]s, [%dic:STR_DIC_MLA14_1]s, and [%dic:STR_DIC_MLA14_2]s, and find clues that you can show to Captain Kalio.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Poa had been spying on the Tursin Krall in the abandoned Timolia Mine for quite some time. However, they had been acting increasingly strange recently, forcing Poa to ask for your help.</p>
+          <p> </p>
+          <p>You entered the mine and killed the Krall, then took clues found on them to Captain Kalio. According to him, these were parts of some kind of power generator.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

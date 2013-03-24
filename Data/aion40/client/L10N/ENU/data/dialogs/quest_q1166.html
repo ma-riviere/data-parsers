@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The creatures of the forest are becoming victims of this vicious contamination. More and more are affected each day.</p>
+          <p> </p>
+          <p>No one comes here anymore, and it's hardly surprising. Who wants to go for a peaceful walk in the glade when ravenous mutants lurk in the shadows all around?</p>
+          <p> </p>
+          <p>We have to do something! We must stop the poisoning of the forest...before it's too late....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What can we do?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Giant Rakeclaw Frillnecks, Venomous Arachnas, and Glade Plumas seem to be the creatures most affected. You may want to help them, but don't be fooled. They're very dangerous.</p>
+          <p> </p>
+          <p>I have recently been stung, which means I can't collect the samples I need. If I could analyze them, I could get to the bottom of all this.</p>          
+          <p> </p>
+          <p>Could you collect samples for me, Daeva?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you. You are a friend of the forest. </p>
+          <p> </p>
+          <p>You'll need to hunt Giant Rakeclaw Frillnecks, Venomous Arachnas, and Glade Plumas. This is the only way to get the samples I'll need.</p>
+          <p> </p>
+          <p>I'll need at least 10 to make any progress in my research.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"The task is mine."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You underestimate the significance of this. What's the use in fighting a war, when the world you hope to inherit is being poisoned? </p>
+          <p> </p>
+          <p>You, Daeva, are the only one who can make a difference here.</p>
+          <p> </p>
+          <p>I urge you to reconsider, on behalf of the forest!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll think about it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Have you collected the samples I asked for?</p>
+          <p> </p>
+          <p>I really did fear for your safety, Daeva or not. I'm relieved to see you uninjured. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here's what I've collected."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You've collected nothing?!</p>
+          <p> </p>
+          <p>I thought I made it clear. Without these samples, we may as well just give up on the forest.</p>
+          <p> </p>
+          <p>Please, I'm anxious to continue my research and end this plague for good.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be right back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you. Thank you so much. These samples could solve a huge problem before it spirals out of control.</p>
+          <p> </p>
+          <p>I will dedicate all my resources to studying the samples you've brought and determining the cause of the contamination.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect samples from contaminated creatures for [%dic:STR_DIC_LA29].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">The forest contamination is becoming extremely serious. To find its cause, hunt Giant Rakeclaw Frillnecks, Venomous Arachnas, and Glade Plumas, take samples of their body fluids, and bring them to Lepios.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Lepios was concerned that the forest was becoming increasingly contaminated.</p>
+          <p> </p>
+          <p>You collected samples of contaminated body fluids from Frillnecks, Arachnas, and Plumas, and brought them to Lepios so that he could find the cause of the contamination.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

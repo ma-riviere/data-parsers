@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q11524</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>혹시 바쁘지 않으시다면 제 부탁을 좀 들어주시겠습니까?</p>
+          <p> </p>
+          <p>함선을 수리하는데 쓰일 마력의 오드를 창고 관리인인 [%dic:STR_DIC_N_Firenon]이 가져다 주기로 했는데 아직까지 소식이 없군요.</p>
+          <p> </p>
+          <p>왜 빨리 가져다 주지 않는지 한번 물어봐 주시기만 하면 됩니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>무슨 말씀이세요?</p>
+          <p> </p>
+          <p>마력의 오드라면 거래 중개소의 포가룬에게 좋은 값에 팔아달라고 맡겨 뒀습니다만?</p>
+          <p> </p>
+          <p>필라티온 선장님께서 개인 창고에 맡겨진 잡동사니들을 다 팔아달라고 제게 부탁하셨었거든요.</p>
+          <p> </p>
+          <p>뭔가 착각하고 계신 것 같은데...</p>
+          <p> </p>
+          <p>혹시 모르니 [%dic:STR_DIC_N_Shugo_LDF4a_09]에게 가서 마력의 오드가 팔렸는지 확인해 보시겠어요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select3">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>필라티온 선장의 마력의 오드라면 벌써 다 팔렸당, 냥냥.</p>
+          <p> </p>
+          <p>십만 키나 밖에 못 받았지만... 지금 같이 경기가 안 좋은 상황에서는 그것도 많이 받은 거당.</p>
+          <p> </p>
+          <p>그래도 나 정도 되는 슈고니까 그 정도 값을 받아낸 거당.</p>
+          <p> </p>
+          <p>키나는 본인이 직접 와야 줄 수 있다냥. 그러니 나중에 잠깐 들르라고 전해줘라냥.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO2">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>기다리고 있었습니다.</p>
+          <p> </p>
+          <p>조금 전에 거래 중개소에서 왠 못보던 데바가 뭐가 그리 좋은 일이 있는 지 싱글벙글 웃으며 나오더군요.</p>
+          <p> </p>
+          <p>카마르로 내려가는 것 같던데, 지금 같은 안 좋은 상황에 웃음이 나오는지 원...</p>
+          <p> </p>
+          <p>참, 마력의 오드는 어떻게 됐다고 하던가요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>십만 키나라고요!</p>
+          <p> </p>
+          <p>백 개나 되는 마력의 오드를 십만 키나에?</p>
+          <p> </p>
+          <p>이런 말도 안 되는 일이...</p>
+          <p> </p>
+          <p>마력의 오드는 빼놓고 팔아달라고 그렇게나 신신당부를 했는데!</p>
+          <p> </p>
+          <p>휴, 이거 정말 큰일이군요. 엘리시움에는 뭐라고 보고를 해야 할지 원...</p>
+          <p> </p>
+          <p>어쨌든 고맙습니다. 거래 중개소에는 나중에 직접 들르도록 하죠.</p>
+          <p> </p>
+          <p>맙소사... 겨우 십만 키나라니!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">창고 관리인 [%dic:STR_DIC_N_Firenon]%와 대화하라</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">거래 중개인 [%dic:STR_DIC_N_Shugo_LDF4a_09]%와 대화하라</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">[%dic:STR_DIC_N_Filatyon]%에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">필라티온이 받아야 할 마력의 오드가 왜 아직도 안 왔는지 알아보자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>필라티온은 함선 정비에 쓰일 마력의 오드를 피레논이 가져다 주기로 했는데 아직까지 소식이 없다고 했다.</p>
+          <p> </p>
+          <p>알고보니 피레논의 착각으로 마력의 오드는 헐값에 팔려나가버렸고, 이 사실을 필라티온에게 전하니 말도 안 되는 가격에 팔려버렸다며 절망했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

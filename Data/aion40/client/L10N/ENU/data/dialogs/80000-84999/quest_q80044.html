@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Do you have siblings, [%username]? I used to go to the beach with my little brother when we were kids, and I'd bury him up to his neck in the sand... ahh, those were the days. I thought maybe we could relive those times, and I had the sailboats ready to go...</p>
+          <p> </p>
+          <p>Only, our boats need repairing from last year, and monsters have made off with all the materials.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Well, that's inconvenient."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes! I had the perfect [%dic:STR_DIC_I_QUEST_80044A]s, and they were eaten all up by [%dic:STR_DIC_M_Agrint_34_An]s, [%dic:STR_DIC_M_Rottentree_34_An]s, [%dic:STR_DIC_M_ElementalEarth2_34_An]s, and [%dic:STR_DIC_M_ElementalEarth2_35_An]s.</p>
+          <p> </p>
+          <p>I was going to ask you to retrieve them, but that's not really in the spirit of recapturing your youth, now is it?</p>
+          <p> </p>
+          <p>Oh, wait! I've had a brainwave! How about we call it a dare? You must have done some pretty outrageous dares in your time, a bold Daeva like you...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, well bless your wings, [%username]! We'll get the chance to be kids again, and it'll be thanks to you!</p>
+          <p> </p>
+          <p>Like I said, the [%dic:STR_DIC_I_QUEST_80044A]s were eaten by the monsters from the Decayed Grove. Just don't ask me why I thought it would be a good idea to use that route. Shortest isn't always quickest, my old dad used to tell me. Well, I guess I am still a kid in some ways.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Never grow up, Tallas."</Act>
+    </Selects>
+
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, if you like breaking little children's hearts, all right.</p>
+          <p> </p>
+          <p>Oh, don't give me that nonsense about not really being a little child. I'm a child at heart! A heart which you have now broken. So there.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Yup, definitely a baby."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Sweet Lady Ariel! You're back! You have my planks, right? The sooner we start repairs, the sooner I can be diving off the deck of my very own sailboat into the tropical waters...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here are your planks."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes...yes, these are the [%dic:STR_DIC_I_QUEST_80044A]s I had made. My sailboat is saved!</p>
+          <p> </p>
+          <p>Thank you, [%username]! You've made my dreams come true. As soon as I fix this baby up, you're invited to come sailing with me any time you like.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>How did it go, [%username]? Have you even started looking for the [%dic:STR_DIC_I_QUEST_80044A]s yet?</p>
+          <p> </p>
+          <p>Or is the Decayed Grove too scary for you? Maybe next time I'll make the dare something more your speed... like standing on one leg for a minute.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm not scared, I'm just busy!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Go to the Decayed Grove and retrieve [%dic:STR_DIC_I_QUEST_80044A]s for [%dic:STR_DIC_N_event_Tallas].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Go to the Decayed Grove and retrieve Red Planks for Tallas.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Tallas had planned some childlike festivities to recapture his youth, but the planks for repairing the sailboat were stolen by monsters.</p>
+          <p> </p>
+          <p>You recovered the planks, but it seems unlikely that the boat will be ready in time.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

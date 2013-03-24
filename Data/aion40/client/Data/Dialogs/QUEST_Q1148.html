@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>전 토그와 루필리니를 처치하러 왔습니다.</p>
+          <p> </p>
+          <p>아볼로스 단장님이 지원자를 모집하기에 바로 나섰죠.</p>
+          <p> </p>
+          <p>사람들에게 능력을 보여줄 수 있는 절호의 기회라고 생각했으니까요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그런데 놈들을 너무 만만하게 봤나 봅니다.</p>
+          <p> </p>
+          <p>그냥 덤벼도 상대하기도 힘든데 놈들이 마법까지 사용하지 뭡니까!</p>
+          <p> </p>
+          <p>아, 이대로 돌아가면 조롱거리가 될 텐데...</p>
+          <p> </p>
+          <p>데바님이 사냥하는 걸 좀 도와주시겠습니까? 보답은 꼭 하겠습니다.</p>        
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>고맙습니다. 그럼 [%dic:STR_DIC_MLA143]와 [%dic:STR_DIC_MLA144]를 사냥해 주세요.</p>
+          <p> </p>
+          <p>증거물로 [%dic:STR_DIC_QILA77] 7개와 [%dic:STR_DIC_QILA78] 5개를 가져오시면 됩니다.</p>
+          <p> </p>
+          <p>그럼 데바님만 믿겠습니다.</p>      
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아, 이대로 돌아가면 자경단에서 쫓겨날지도 모릅니다.</p>
+          <p> </p>
+          <p>그렇게 되면 평생 나이아의 바가지에 시달릴 거고요.</p> 
+          <p> </p>
+          <p>제발 다시 한번만 생각해 주십시오. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_MLA143]와 [%dic:STR_DIC_MLA144]를 모두 잡았습니까?</p>
+          <p> </p>
+          <p>증거물은 어디 있나요?</p>  
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">이빨과 발톱을 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아니 빈손으로 온 겁니까? </p>
+          <p> </p>
+          <p>증거가 없으면 단장님이 믿어주지 않을 겁니다. </p>
+          <p> </p>
+          <p>제발 부탁이니 [%dic:STR_DIC_QILA77] 7개와 [%dic:STR_DIC_QILA78] 5개를 구해 주십시오.</p>    
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>사나운 토그와 루필리니도 데바님 앞에선 꼼짝 못하는군요.</p>
+          <p> </p>
+          <p>고맙습니다. 이건 일을 도와주신 데에 대한 보답입니다.</p>
+          <p> </p>
+          <p>그리고 잘 아시겠지만 이번 일은 아무에게도 말하면 안 됩니다. 특히 나이아에겐 비밀입니다.</p>         
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_MLA143]와 [%dic:STR_DIC_MLA144]를 처치하고 [%dic:STR_DIC_LA28]에게 증거물을 가져가라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">토그와 루필리니가 너무 사나워서 로스테스가 상대하기 힘들다고 한다. 대신 짐승들을 사냥하고 증거물을 모아 로스테스에게 가져가자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>로스테스는 아볼로스 자경단장의 명을 받고 토그와 루필리니를 사냥하러 숲으로 왔지만 놈들이 너무 사나워서 한 마리 잡기도 힘들다고 하소연했다. 그래서 대신 토그와 루필리니를 처치하고 증거를 로스테스에게 가져다 주었다.</p>         
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

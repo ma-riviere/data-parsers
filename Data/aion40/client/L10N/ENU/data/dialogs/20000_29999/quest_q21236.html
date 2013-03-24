@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Filth born, muck lurking, abhorrent Sandstorm Obscuras! The creatures are all around the Temple of Scales, and their incessant chattering and whisking about is driving me into a rage...a far more terrifying rage than is customary!</p>
+          <p> </p>
+          <p>I can't concentrate on plotting death and mayhem with them swirling about just outside base!</p>
+          <p> </p>
+          <p>But whenever I go out there to kill the creatures and put a stop to the racket, their numbers replenish before I even get back!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I've noticed that happening..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm at my wit's end, [%username]. I need peace and quiet if I am to draw up a plan to defend the Temple of Scales.</p>
+          <p> </p>
+          <p>I need you to go out there and eradicate the Sandstorm Obscuras. Just stay as close as possible so I can hear them wail as they die. It gives me all kinds of warm and fuzzy thoughts...even reminds me of my childhood.</p>
+          <p> </p>
+          <p>Well? Are you up to it, or not?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes.... I can already hear the creatures howling in agony as their existence is snuffed out...and now I feel like cuddling....</p>
+          <p> </p>
+          <p>That's not an invitation, [%username]. Anyway, there are all kinds of [%dic:STR_DIC_M_LF4_C_Shadowstalker_Sand_55_An]s that roam the surrounding area.</p>
+          <p> </p>
+          <p>Kill as many as possible, and bring me their Black Souls as proof.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be back soon."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Arghhh! I feel my grip on sanity slipping.</p>
+          <p> </p>
+          <p>Soon...yes...very soon this terrifying rage will be too much to control.</p>
+          <p> </p>
+          <p>I recommend you walk away...now.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I am...very quickly...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Shards! My brother Krizarid slaughtered an entire legion of Balaur today!</p>
+          <p> </p>
+          <p>If it weren't for those blasted Sandstorm Obscuras, I would have already drawn up this plan, and I'd be out having fun too!</p>
+          <p> </p>
+          <p>Though the creatures have quieted in the last few minutes.... Were you the cause of that?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I am--here are the Souls."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Lies, [%username]!</p>
+          <p> </p>
+          <p>This isn't enough! I can hear the obnoxious creatures chattering out there even now!</p>
+          <p> </p>
+          <p>Go back, and don't return with less than 60!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be back...again."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah yes! After hearing the creatures wail in anguish, it gave me the peace I needed to draft up a great defense plan. </p>
+          <p> </p>
+          <p>It's all thanks to you, [%username].</p>
+          <p> </p>
+          <p>When the Elyos and Balaur fail to take the Temple of Scales, it will be your doing.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Take the Black Souls of [%dic:STR_DIC_M_LF4_C_Shadowstalker_Sand_55_An]s to [%dic:STR_DIC_N_Kirhua].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Kirhua wants you to kill Sandstorm Obscuras around the Temple of Scales. Save her sanity and aid her.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Kirhua said the racket caused by the Sandstorm Obscuras around the Temple of Scales was preventing her from creating a defense plan.</p>
+          <p> </p>
+          <p>You eradicated the annoying Obscuras and returned with their Black Souls as proof. Kirhua thanked you and gave you a reward.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

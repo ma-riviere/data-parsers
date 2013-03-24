@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>My work connects me with every place in Atreia, and people ask me for all sorts of help.</p>
+          <p> </p>
+          <p>Most often, they ask me to hold goods for pick-up. It's not that difficult, just boring at times.</p>
+          <p> </p>
+          <p>Sometimes, though, I get orders for shipments to the Outer Port. I know it's not easy for them to come this far, but I can't run all the way to the Sanctum Outer Port whenever I want.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Sounds like a problem."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_N_Phokas], the port manager, usually comes by, gathers the goods and loads them on outbound transports.</p>
+          <p> </p>
+          <p>But he hasn't been by in a while and now I have stacks of goods to move. I'd do it myself, but I can't leave my post.</p>
+          <p> </p> 
+          <p>[%username], how about taking these there for exercise? I can't pay all that much, but it will help if you need money to go to Verteron or Eltnen.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I could send Shugo workers or runners but, since you're here, I thought I'd ask.</p>
+          <p> </p>
+          <p>If you're going to make a round of Sanctum, how about dropping in there?</p>
+          <p> </p>
+          <p>Just deliver the goods to [%dic:STR_DIC_N_Phokas] in the Passenger Ship Port and come back here when you're done.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"No problem."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I understand. You probably have more than enough for traveling expenses.</p>
+          <p> </p>
+          <p>But if you change your mind, come back and see me. </p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll keep it in mind."</Act>
+    </Selects>
+  </HtmlPage>
+ 
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Are you going to the Sanctum Outer Port?</p>
+          <p> </p>
+          <p>Please wait a moment. The airship will come soon.</p>
+          <p> </p>
+          <p>Ah, don't step out too far. It's very dangerous.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">"Polyidus asked me to bring these by."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Again? This is the third time today!</p>
+          <p> </p>
+          <p>I'm a port manager, but helping my friend makes me feel like a deliveryman.</p>
+          <p> </p>
+          <p>No matter. Tell him I'll send these to the Outer Port safely. Take care of yourself.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"You, too."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hey, [%username], you're back! People left me more goods while you were away.</p>
+          <p> </p>
+          <p>I started doing this to help people from far away stay in touch, but now they take it for granted.</p>
+          <p> </p>
+          <p>Not me, though. I take care of my friends. Did you deliver the goods to Phogus?</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Without any problems."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you so much. You saved me trouble, and helped people you don't even know at he same time.</p>
+          <p> </p>
+          <p>Here's what I promised. I know it's not much but I hope you can make the best use of it.</p>
+          <p> </p>
+          <p>Please come back and help again if you have time. There are always goods to deliver.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk with [%dic:STR_DIC_N_Phokas].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Talk with [%dic:STR_DIC_N_Polyidus].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Polyidus wants to send some goods to the Outer Port. Deliver them to Phogus in the Passenger Ship Port.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Polyidus, the Teleport Master, helps visitors to Sanctum with their belongings and occasional deliveries.</p>
+          <p> </p> 
+          <p>He usually keeps things and gives them back to their owners later. But the Outer Port is so far from his post that he sends goods to Phogus in the Passenger Ship Port.</p>
+          <p> </p> 
+          <p>When you visited him, he asked you to take some for him. You delivered the goods and received a reward.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, [%username]! I'm fortunate that you're still in the fortress. </p>
+          <p> </p>
+          <p>I know I should not ask you another favor. You must be still tired... </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I'm fine. What is it?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It would seem I also need the cores of two other Defenders--[%dic:STR_DIC_M_Ab1_1011_LightGuardian_50_An]s and  [%dic:STR_DIC_M_Ab1_1011_DarkGuardian_50_An]s.</p>
+          <p> </p>
+          <p>I'm so very sorry, but this needs to be done. I'll reward you handsomely for your trouble.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, good! I didn't know what to do when I found them missing...</p>
+          <p> </p>
+          <p>As their names imply, [%dic:STR_DIC_M_Ab1_1011_LightGuardian_50_An]s appear only by day, [%dic:STR_DIC_M_Ab1_1011_DarkGuardian_50_An]s by night. </p>
+          <p> </p>
+          <p>When you've defeated the Light's Defender, wait where he appeared until night falls. Be patient, and you will see the Shadow's Defender.</p>
+          <p> </p>
+          <p>I wish you good luck, then.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be on my way now."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, well, I'm sure you have enough reasons to refuse.</p>
+          <p> </p>
+          <p>At least, I was lucky enough to notice that two cores were missing before I sent the package to Ventus.</p>
+          <p> </p>
+          <p>I'll have to find someone else to get them for me, I suppose.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Let me think about this."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+
+          <p>You look tired. It's not an easy task, been dealing with Defenders.</p>
+          <p> </p>
+          <p>How was it? Did you bring [%dic:STR_DIC_I_QUEST_1826a]s and [%dic:STR_DIC_I_QUEST_1826b]s?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I have them here."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+
+          <p>Surely I told you I needed 5 [%dic:STR_DIC_I_QUEST_1826a]s and 5 [%dic:STR_DIC_I_QUEST_1826b]s.</p>
+          <p> </p>
+          <p>And the Light's Defender appears only by day while the Shadow's Defender appears only at night.</p>
+          <p> </p>
+          <p>Now please bring me the cores you promised.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I shall not fail."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hmmm... looks like the right number to me. Thank you very much.</p>
+          <p> </p>
+          <p>You must be tired. I won't hold you long. Take this reward I promised.</p>
+          <p> </p>
+          <p>It is not a fortune, but I hope it will be useful to you.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Defeat [%dic:STR_DIC_M_Ab1_1011_LightGuardian_50_An]s and [%dic:STR_DIC_M_Ab1_1011_DarkGuardian_50_An]s and take their cores to [%dic:STR_DIC_N_Ab1_1011_Quest_Li].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Hypnos also needs cores from the Light's Defenders and of the Shadow's Defenders. Collect 5 of each and take them to him.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Apologizing that he forgot to tell you about the Light's Defenders and the Shadow's Defenders, Hypnos asked you to collect their cores too.</p>
+          <p> </p>
+          <p>As he requested, you defeated these two Defenders, collected their cores, and gave them to Hypnos.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

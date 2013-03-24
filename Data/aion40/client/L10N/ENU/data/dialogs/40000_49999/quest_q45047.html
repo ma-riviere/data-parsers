@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Field Warden:</p>
+          <p> </p>
+          <p>One of our allies in Gelkmaros has asked us to supply them with weapons to assist in an effort that is of mutual benefit to both parties.</p>
+          <p> </p>
+          <p>We have specifically been asked to gather [%dic:STR_DIC_G_QUEST_45047a]s and [%dic:STR_DIC_G_QUEST_45047b]. Please collect these materials and bring them to [%dic:STR_DIC_N_Amphibia] or [%dic:STR_DIC_N_Mollusca], who will see that they are passed on to the proper contacts.</p>
+          <p> </p>
+          <p>This matter is highly confidential, so please destroy this letter after reading it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">(Swallow the letter whole.)</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Gelkmaros is full of enemies--not just the Balaur, either. There are hidden enemies all around, and we must be prepared to fight at all times to defend our position here.</p>
+          <p> </p>
+          <p>Of course, there are also hidden allies to assist us...so long as we are able to help them in return.</p>
+          <p> </p>
+          <p>I believe you were asked to assist in this effort? [%dic:STR_DIC_G_QUEST_45047a]s and [%dic:STR_DIC_G_QUEST_45047b] were to be gathered to make weapons, as I recall.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here's what I found."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Not amusing, [%username].</p>
+          <p> </p>
+          <p>All Wardens in Gelkmaros were specifically asked to collect [%dic:STR_DIC_G_QUEST_45047a]s and [%dic:STR_DIC_G_QUEST_45047b]. If we do not meet our quota there is no telling what might happen.</p>
+          <p> </p>
+          <p>Please do what you can to fulfill your obligation.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"We'll see."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Wood...ore.... Yes, these will make fine weapons, I think. Specifically what they will be used for, I do not know. That is for...our allies to decide.</p>
+          <p> </p>
+          <p>But that's for neither of us to worry about. Here is your reward--I'll take things from here.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect [%dic:STR_DIC_G_QUEST_45047a]s and [%dic:STR_DIC_G_QUEST_45047b] and bring them to [%dic:STR_DIC_N_Amphibia] or [%dic:STR_DIC_N_Mollusca].</font></p>[%collectitem]</step>
+    </steps>
+        <p><font font_xml="quest_summary">A letter has arrived from the Field Wardens. Follow its instructions.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>A letter from the Field Wardens asked you to gather weapon-making materials and bring them to Rebbina or Wakir.</p>
+          <p> </p>
+          <p>You collected the materials as requested, and were rewarded for your time.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

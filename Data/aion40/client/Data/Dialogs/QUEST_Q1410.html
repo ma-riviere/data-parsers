@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님! 아직 가시면 안 돼요.</p>
+          <p> </p>
+          <p>요새에서 답장이 왔다고 했잖아요? 그것도 아이올로스 님께 말이에요. </p>
+          <p> </p>
+          <p>답장을 보신 아이올로스 님이 [%username] 님이 오시는대로 자신에게 안내하라고 하더군요. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">이유를 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>저도 이유는 모르겠어요. 보고서에 [%username] 님이 도와주신다고 썼는데 그것 때문이려나...</p>
+          <p> </p>
+          <p>뭐, [%dic:STR_DIC_N_Aeolus] 님을 만나면 바로 알 수 있겠죠.</p>
+          <p> </p>
+          <p>지금 결계탑 안에 계시니 직접 확인하는 게 좋을 것 같네요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>지체말고 바로 가 보세요.</p>
+          <p> </p>
+          <p>아이올로스 님이 직접 말씀하겠다는 걸 보면 꽤 중요한 일인 것 같으니까요.</p>
+          <p> </p>
+          <p>그럼, 전 이만 순찰을 돌러 가야겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>지금 당장할 일이 있는 건가요?</p>
+          <p> </p>
+          <p>무슨 일인지는 모르겠지만 아이올로스 님을 너무 기다리게 하지 않는 것이 좋아요.</p>
+          <p> </p>
+          <p>너그러우신 분이지만 한 번 화가 나시면 아무도 말릴 수 없으니까요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>어서 오십시오.</p>
+          <p> </p>
+          <p>아까부터 기다리고 있었는데 꽤 늦었군요.</p>
+          <p> </p>
+          <p>이런 일을 당신에게 맡기라니 텔레마커스 님은 무슨 생각이신지...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">무슨 일인지 묻는다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>보아하니 이제 막 전투를 끝내고 돌아온 것 같은데 일단 한숨부터 돌리십시오.</p>
+          <p> </p>
+          <p>흥분한 상태에서 들을 얘기는 아니니까요.</p>
+          <p> </p>
+          <p>마음이 좀 진정되면 말씀하세요. 그때 자세한 얘기를 들려드리죠.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_Aeolus]를 만나 지령을 받아라 </font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">결계 수호자 아이올로스가 찾는다고 한다. 결계탑으로 가서 그를 만나야겠다.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>돌아가려던 나를 키벨레가 붙잡았다. 요새에서 온 답장을 받은 아이올로스가 나를 찾는다고 했다.</p>
+          <p> </p>
+          <p>결계탑에 들어가 아이올로스를 가자 일단 한숨부터 돌리라고 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아니, 이게 누구요? [%username] 아니오!</p>
+          <p> </p>
+          <p>유능한 [%userclass]%을 찾던 중이었는데 당신이 나타나다니 나야말로 아리엘 님의 가호를 받았나보오.</p>
+          <p> </p>
+          <p>시간이 없으니 용건만 말하겠소.</p>
+          <p> </p>
+          <p>지금 당장 인테르디카 결계탑으로 가주지 않겠소?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">무슨 일인지 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_N_Aphesius]가 지원을 요청했다오. </p>
+          <p> </p>
+          <p>워낙 자존심이 강한 친구라 이런 부탁을 한 적이 없었는데 사람을 보내 요청한 걸 보면 정말 급하긴  급한가 보오.</p>
+          <p> </p>
+          <p>이왕이면 능력있는 [%userclass]%을 보내 달라고 해서 그러는데 당신이 도와주면 안 되겠소?</p>
+          <p> </p>
+          <p>지금 결계탑은 포이에 밀림과 키샤르 부락에 끼어 위급한 상황이라오. 당신이 가주면 정말 큰 도움이 될 거요.</p>
+          <p> </p>
+          <p>매사에 확실한 친구니 보상도 확실히 할 거고 말이오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>잘 생각했소. 그럼 바로 출발하시오.</p>
+          <p> </p>
+          <p>걸어가는 것보다 이동사에게 부탁하는 게 나을 거요.</p>
+          <p> </p>
+          <p>결계탑이 포이에 밀림과 키샤르 부락 사이에 있어서 초행길인 사람은 찾기 힘든데다 가는 길도 험하거든.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>다시 생각하면 안 되겠소?</p>
+          <p> </p>
+          <p>다른 때 같으면 요새 파수병을 보냈겠지만 용족 때문에 인테르디카 요새도 전시 상황이라오.</p>
+          <p> </p>
+          <p>결계탑은 결계탑 자체로도 중요한 곳이지만 동쪽에서 서쪽으로 넘어가는 길목이라 그곳을 뺏기면 무슨 일이 날지 모른다오.</p>
+          <p> </p>
+          <p>그러니 제발 생각을 바꿔 주시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>여기엔 무슨 일이오?</p>
+          <p> </p>
+          <p>급한 일이 아니라면 좀 나중에 오면 안 되겠소?</p>
+          <p> </p>
+          <p>동쪽 지역에 차원의 문이 열려서 요즘 정신이 없구려.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">요새에서 보냈다고 한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>바르시타가 보낸 사람이라고?</p>
+          <p> </p>
+          <p>그러고 당신이 그 유명한 [%username]? 내 익히 소문은 들었소.</p>
+          <p> </p>
+          <p>[%userclass] 수가 부족했는데 정말 잘 됐소. 역시 바르시타에게 부탁하길 잘 했구려.</p>
+          <p> </p> 
+          <p>이렇게 훌륭한 [%userclass]%을 보내주다니.</p>
+          <p> </p>
+          <p>여기 일이 생각보다 힘들겠지만 앞으로 많이 좀 도와주시오. 내 보답은 꼭 하겠소.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_Aphesius]와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">인테르디카 결계탑의 일손이 부족하다고 한다. 결계탑으로 가서 아페시우스를 만나봐야겠다.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>백부장 바르시타는 아페시우스가 지원을 요청했다며 인테르디카 결계탑으로 가보라고 했다.</p>
+          <p> </p>
+          <p>서둘러 결계탑으로 가자 아페시우스는 와 줘서 고맙다며 기뻐했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

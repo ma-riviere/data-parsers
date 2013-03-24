@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q41558</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>Not entered</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select_none" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's time. Wily Astus has slept for the last time.</p>
+          <p> </p>
+          <p>You must break into his house, retrieve any documentation you find, and then kill him. The traitor shall know the price of his betrayal, and you, my friend, will show him.</p>
+          <p> </p>
+          <p>Are you ready?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hey! Hey [%username]! Wait, wait a minute!</p>
+          <p> </p>
+          <p>I know where you're going! I know you're going to find Astus, and kill him. But please, please listen to me--he's an old friend of mine, and I know that I can convince him to come back to us.</p>
+          <p> </p>
+          <p>Please! I just need one thing.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO10">"Speak quickly."</Act>
+      <Act href="HACTION_SETPRO20">"Not interested. Traitors die."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Okay! Listen, I'm not asking you to save him. I just want you to buy me some time so that I can convince him to come back. We're old friends, you see. He'll listen to me.</p>
+          <p> </p>
+          <p>You've already placed a marker stone outside his house, right? Well, I've got another stone. I want you to place it in front of [%dic:STR_DIC_W_LDF4b_SZ_T2_S14]. It'll create confusion, and buy me some time.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"You better work fast."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select3">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What? What?!</p>
+          <p> </p>
+          <p>Stoine asked you to save Astus? The IDIOT! None of this is easy for us, you know, Reians killing Reians is a horrific experience for us, one that we wish to be over as soon as possible. Stoine's actions, valiant as they may be, are completely unacceptable.</p>
+          <p> </p>
+          <p>[%username], put an end to this ridiculous situation. Enter Astus' house and find [%dic:STR_DIC_OBJ_LDF4b_FOBJ_Document]. Once you have it, kill [%dic:STR_DIC_M_LDF4b_Monster_Q41557]. Now go!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO3">"I'll work fast."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select10_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're back!</p>
+          <p> </p>
+          <p>What happened? Did you put the Marker Stone in front of a different house?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Yeah, I did."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you so much, [%username]!</p>
+          <p> </p>
+          <p>I've sent a letter to Astus, hoping I'll finally be able to change his mind. Now I just have to wait....</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select10_2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What happened? Do you have the journal? Is the traitor dead?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Well..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Finally, we can rest easy. Thank you. [%username].</p>
+          <p> </p>
+          <p>I'll read through the journal and find out how much information they shared with the Balaur. You're done for now, friend. Excellent work.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk with [%dic:STR_DIC_N_Stoy].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Place another Marker Stone in front of [%dic:STR_DIC_W_LDF4b_SZ_T2_S14] [%5].</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Report back to [%dic:STR_DIC_N_Stoy].</font></p></step>
+               <step><p visible="[%9]"><font color="[%10]">Talk with [%dic:STR_DIC_N_Aesty].</font></p></step>
+               <step><p visible="[%12]"><font color="[%13]">Find the [%dic:STR_DIC_OBJ_LDF4b_FOBJ_Document] [%14].</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Kill [%dic:STR_DIC_M_LDF4b_Monster_Q41557] ([%17]/1).</font></p></step>
+               <step><p visible="[%18]"><font color="[%19]">Report back to [%dic:STR_DIC_N_Aesty].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Stoine wants to talk to you about Astus. Find him and find out what he wants.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Aethon finally sent you to kill Wily Astus. However, while traveling, you were spoken to by Stoine, who wanted time to speak to Astus and convince him to return. Time to make a decision.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

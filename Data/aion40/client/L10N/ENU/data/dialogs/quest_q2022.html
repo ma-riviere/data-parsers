@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], I'm disappointed in how our efforts against the Black Claw Tribe have gone so far.</p>
+          <p> </p>
+          <p>Azphel once cautioned his soldiers to strike at the enemy's root, not its branches. So far your efforts have pruned back many branches, but the tree itself--the Black Claw Tribe, if you're following me--remains as healthy as ever.</p>
+          <p> </p>
+          <p>Are you ready to strike at the root for a change, [%userclass]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Blood for blood!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>My subordinates have failed to provide me with useful intelligence, but I've pieced together the Mau goal: open an Abyss Gate.</p>
+          <p> </p>
+          <p>The first clue was the refined Odella they were stockpiling--Odella is useful for manipulating Aether and powering a gate-opening ritual.</p>
+          <p> </p>
+          <p>The second clue was Zemurru. The Mau started to venerate Zemurru because he is buried near an ancient portal that could be redirected to the Abyss. They must be trying to bring the Balaur to Asmodae.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1_1">"You're sure of this?"</Act>
+    </Selects>
+    <Voice file="Q2022-1.ogg"/>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+        	<p>Yes, I'm sure...not that you have any credibility to be second-guessing your superiors. You do have credibility when it comes to closing Abyss Gates, though--or so I'm told.</p> 
+          <p> </p>
+          <p>For better or for worse, you're the best soldier for this job </p>
+          <p> </p>
+          <p>If you're ready, I'll <font color="B00000">teleport</font> you to Zemurru's Grave near the Abyss Gate. It's inside a huge tree. It is imperative that you destroy the gate. Got it?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"Got it. I'm ready to go!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Azphelumbra, [%username]. I await a full report...of your success.</p>
+          <p> </p>
+          <p>Did you destroy the gate? And did you confirm that the Balaur were behind it all?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I did, and destroyed the Abyss Gate."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Just as I surmised. The Mau were trying to summon the Balaur to Asmodae. I think we just saved Asmodae from a full-fledged Balaur invasion.</p>
+          <p> </p>
+          <p>I will report our success to Kvasir in Pandaemonium. And take note, Meiyer...I expect all my soldiers to deliver results like [%username] just did.</p>
+          <p> </p>
+          <p>Here's a reward for you. You've done well.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk with [%dic:STR_DIC_N_Sueron].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Go to [%dic:STR_DIC_W_DF1A_31] and find the [%dic:STR_DIC_E_14]. Then, go into the sealed area.</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Disrupt the Gate Guardian Stone, which maintains the [%dic:STR_DIC_E_14].</font></p></step>
+               <step><p visible="[%9]"><font color="[%10]">Defeat [%dic:STR_DIC_M_NagaFighterSQ_20_An].</font></p></step>
+               <step><p visible="[%12]"><font color="[%13]">Destroy the [%dic:STR_DIC_E_14].</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report the result to [%dic:STR_DIC_N_Sueron].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Order: Talk to Brigade General Suthran and receive orders for a secret mission imperative to Altgard's very survival.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Brigade General Suthran believes the Mau are trying to open an Abyss Gate.</p>
+          <p> </p>
+          <p>You found the Abyss Gate within a tree and entered the sealed area. There was a large Gate Guardian Stone there.</p>
+          <p> </p>
+          <p>As you were disrupting the Gate Guardian Stone, a Nagarant appeared. You defeated the Nagarant and destroyed the Abyss Gate. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>Order: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>Mission Progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

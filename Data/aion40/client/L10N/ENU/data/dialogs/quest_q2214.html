@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Shards! This quill is broken! I'm running short on time and now my quill won't cooperate?</p>
+          <p> </p>
+          <p>I have to send this report to the fortress today!</p>
+          <p> </p>
+          <p>Oh, hello, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Is there anything I can do to help?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This is my last quill, and I only use [%dic:STR_DIC_I_quest_2214a]s to make them. They really are the best.</p>
+          <p> </p>
+          <p>If you want to help, could you bring me the materials to make a new quill?</p>
+          <p> </p>
+          <p>You can get [%dic:STR_DIC_I_quest_2214a]s from [%dic:STR_DIC_M_lupylliniD_10_n]s.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you. [%dic:STR_DIC_M_lupylliniD_10_n]s are easy to find--they're all over the Moslan Forest.</p>
+          <p> </p>
+          <p>Bring me 5 feathers. I don't want to get caught empty handed again.</p>
+          <p> </p>
+          <p>I'd like to finish this report right away, so if you can hurry it up I'd appreciate it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be back soon."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hmm. I always thought that charity and goodwill were part of being a Daeva. I guess standards are slipping these days.</p>
+          <p> </p>
+          <p>If you can't help me, I'm certainly going to be late getting my report out.</p>
+          <p> </p>
+          <p>This isn't going to look good for me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Sorry."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>MuMu are contained...Karnif attacks on the rise... Now, what else was there?</p>
+          <p> </p>
+          <p>Ah, [%username]. Just going over my report. Did you find the Plumas?</p>
+          <p> </p>
+          <p>I really need to get this down...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I've got them right here."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You haven't tracked down the [%dic:STR_DIC_M_lupylliniD_10_n]s yet?</p>
+          <p> </p>
+          <p>You're not afraid of birds, are you?</p>
+          <p> </p>
+          <p>I would have gathered them myself if I had known it would take this long.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>These should do nicely!</p>
+          <p> </p>
+          <p>I shouldn't have to worry about quills for quite some time.</p>
+          <p> </p>
+          <p>Thank you very much! Take this for your efforts.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get [%dic:STR_DIC_I_quest_2214a]s and take them to [%dic:STR_DIC_N_Lovinja].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Loriniah said his quill was broken. Get him Pluma Feathers so that he can finish his report with a new feather quill.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Loriniah was making a report when his quill broke. You hunted Plumas for feathers to make a new quill for him.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

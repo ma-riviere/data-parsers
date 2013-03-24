@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q41594</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>미입력</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>낯선 곳에서 힘든 임무를 수행하다 보니 동료들의 사기가 많이 떨어진 것 같습니다.</p>
+          <p> </p>
+          <p>이럴 때 맛있는 요리를 먹으면 사기가 좀 오를 겁니다.</p>
+          <p> </p>
+          <p>동료들에게 그리폰 알로 만든 오믈렛을 만들어 주고 싶은데 재료가 부족합니다.</p>
+          <p> </p>
+          <p>[%username] 님이 [%dic:STR_DIC_M_LDF4b_T1_Griffon_Crack_58_An]을 처치하고 [%dic:STR_DIC_I_QUEST_41594a]을 좀 구해다 주시면 안 될까요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>동료들이 맛있는 요리를 먹으면 기운을 좀 차릴까요?</p>
+          <p> </p>
+          <p>그렇게 된다면 정말 좋을 텐데 말입니다.</p>
+          <p> </p>
+          <p>그리폰의 알은 구해 오셨습니까?</p>
+          <p> </p>
+          <p>알만 있으면 지금 당장 요리를 만들 수 있습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">그리폰의 알을 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>알이 정말 크네요.</p>
+          <p> </p>
+          <p>이 정도면 오믈렛을 꽤 많이 만들 수 있을 것 같습니다.</p>
+          <p> </p>
+          <p>지금 당장 만들어야겠습니다.</p>
+          <p> </p>
+          <p>재료를 구해다 주셔서 정말 감사합니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_I_QUEST_41594a]을 구해 [%dic:STR_DIC_N_Naisoi]에게 가져가라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">나이소이는 기운이 없는 동료들에게 맛있는 요리를 해주고 싶다고 한다. 황금뿔 그리폰을 처치하고 그리폰의 알을 구해다 주자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>나이소이는 낯선 곳에서 힘든 임무를 수행하다 보니 동료들의 사기가 많이 떨어진 것 같다고 했다.</p>
+          <p> </p>
+          <p>그래서 맛있는 요리로 기운을 북돋워 주고 싶다고 했다.</p>
+          <p> </p>
+          <p>그래서 오믈렛을 만들 수 있도록 황금뿔 그리폰을 처치하고 그리폰의 알을 구해다 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

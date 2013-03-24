@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We have taken control of the Miren Fortress--for now. The Asmodians won't give it up without a fight, though.</p>
+          <p> </p>
+          <p>In particular, the Red Hasia Legion is gathering around the bind point on Drakenwreck. They've been quiet lately, but that just unsettles me all the more.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"You think they're planning something?"</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Of course they're planning something! They're always planning something!</p>
+          <p> </p>
+          <p>The trouble is that our numbers are already stretched thin--we can't spare the men to find out what those roaches are planning. Perhaps you might help us?</p>
+          <p> </p>
+          <p>If you defeat [%dic:STR_DIC_N_Rossjof], [%dic:STR_DIC_N_Grid], [%dic:STR_DIC_N_Lofn], [%dic:STR_DIC_N_Lifprasir], and [%dic:STR_DIC_N_Magnair], you might find an [%dic:STR_DIC_I_QUEST_1794a] on them. Bring that back here, and maybe we can determine what they're up to.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you, [%username]. If we can get hold of that [%dic:STR_DIC_I_QUEST_1794a], we can learn what they're plotting.</p>
+          <p> </p>
+          <p>We'll be able to shut them down before they get started.</p>
+          <p> </p>
+          <p>If, Ariel forbid, things do not go your way, retreat immediately. Those plans aren't worth losing one of our best Daevas.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Faith and arms!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You must be in the middle of another important mission.</p>
+          <p> </p>
+          <p>I understand. I'll find another Daeva who can help.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"That's a good plan."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did you retrieve the [%dic:STR_DIC_I_QUEST_1794a]?</p>
+          <p> </p>
+          <p>Quickly, hand it over.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here it is."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You've not yet gone to Drakenwreck?</p>
+          <p> </p>
+          <p>In order to retain control of this fortress, we must find out what the Red Hasia Legion is up to.</p>
+          <p> </p>
+          <p>Please, hurry and return with the [%dic:STR_DIC_I_QUEST_1794a].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"On my way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes, this is what I'd hoped you'd find. It is as I suspected.</p>
+          <p> </p>
+          <p>Those troglodytes will be mobilizing soon. I must organize a counter-attack immediately.</p>
+          <p> </p>
+          <p>Thank you for taking on this mission. Your work will not be forgotten.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Defeat the Red Hasia Legion on Drakenwreck, obtain the [%dic:STR_DIC_I_QUEST_1794a], and take it to [%dic:STR_DIC_N_Ab1_1241_Quest_Li].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">The Asmodians have been plotting an attack since losing the Miren Fortress. Attack the Red Hasia Legion on Drakenwreck to obtain their Operation Order.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Taigeta believed that the Asmodians who lost the Miren Fortress must be up to something. In particular, she thought  the Red Hasia Legion on Drakenwreck seemed suspicious.</p>
+          <p> </p>
+          <p>At her request, you defeated them and obtained their Operation Order, from which you discovered an imminent attack on the Miren Fortress.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>우리 집안 사람들은 용족이라면 모두 치를 떤답니다.</p>
+          <p> </p>
+          <p>그도 그럴 것이 고조 할아버지와 증조 할아버지, 두 분의 삼촌이 모두 용족에게 소멸되셨거든요.</p>
+          <p> </p>
+          <p>그래서 어렸을 때부터 귀에 못이 박히게 들었지요. 데바로 각성하게 되면 꼭 용족에게 복수를 해야 한다고 말입니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>어쨌거나 이렇게 데바가 되고 용족이 들끊는 에레슈란타로 왔는데도 좀처럼 복수할 기회가 생기지 않네요.</p>
+          <p> </p>
+          <p>그라바크 님의 호위 일을 맡은지 얼마 안 되서 좀 정신이 없거든요.</p>
+          <p> </p>
+          <p>아, 여기서 멀지 않은 검의 섬에 용족이 있다던데 아무 손도 못 쓰다니! 너무 답답합니다.</p>
+          <p> </p>
+          <p>지금 같아선 다른 사람이 그놈들을 처치해 주기만 해도 좋겠어요.</p>
+          <p> </p>
+          <p>[%username] 님이 저 대신 용족들을 그 일을 해 주시면 안 될까요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>고맙습니다. 여기서 서쪽에 있는 검의 섬에 용족 제33 군단의 무리가 있다고 합니다.</p>
+          <p> </p>
+          <p>그곳으로 가 [%dic:STR_DIC_M_Ab1_1251_LizardmanFi_33_An], [%dic:STR_DIC_M_Ab1_1251_LizardmanAs_33_An], [%dic:STR_DIC_M_Ab1_1251_LizardmanRa_33_An], [%dic:STR_DIC_M_Ab1_1251_LizardmanPr_33_An]을 모조리 없애 주세요.</p>
+          <p> </p>
+          <p>그럼 [%username] 님만 믿겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>용족이 우리 가문만의 원수는 아니잖아요?</p>
+          <p> </p>
+          <p>어떻게 보면 마족 전체의 원수인데 이 일을 거절하시니 의외네요.</p>
+          <p> </p>
+          <p>시간을 좀 드릴 테니 잘 생각해 보시고 생각이 바뀌면 다시 절 찾아오세요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>알려 드린 대로 검의 섬에 용족이 있던가요?</p>
+          <p> </p>
+          <p>소문대로 징그럽고 잔인하게 생겼던가요?</p>
+          <p> </p>
+          <p>궁금해서 숨이 넘어갈 것 같으니 빨리 결과를 알려 주세요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그랬군요. 정말 감사합니다.</p>
+          <p> </p>
+          <p>덕분에 응어리진 마음이 좀 풀리는 것 같습니다.</p>
+          <p> </p>
+          <p>어찌 보면 무리한 부탁이었는데 자기 일처럼 처리해 주셔서 정말 감사합니다.</p>
+          <p> </p>
+          <p>기회가 되면 나중에라도 이 은혜는 꼭 갚겠습니다. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">검의 섬에 있는 제33 군단 드라코뉴트를 처치하라</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Ab1_1251_LizardmanFi_33_An]([%2]/4)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Ab1_1251_LizardmanAs_33_An]([%5]/2)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Ab1_1251_LizardmanRa_33_An]([%8]/2)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Ab1_1251_LizardmanPr_33_An]([%11]/1)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Muirica]와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">검의 섬에 있는 제33 군단 드라코뉴트를 처치해 뮤리카 집안의 복수를 대신해 주자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>뮤리카는 고조 할아버지와 증조 할아버지, 삼촌이 용족에게 소멸됐다며 용족에게 복수하고 싶어했다.</p>
+          <p> </p>
+          <p>하지만 맡은 임무 때문에 자리를 비울 수 없다며 자신을 대신해 가까운 검의 섬에 있는 제33 군단 드라코뉴트 군단을 처치해 달라고 부탁했다.</p>
+          <p> </p>
+          <p>그녀를 위해 드라코뉴트 병사들을 처치하고 결과를 말해주자 뛸 듯이 기뻐했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q1707</QuestId>
+    <QuestName>Rank 4 Asmodian Soldier</QuestName>
+    <QuestType>Not entered</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Welcome, [%username].</p>
+          <p> </p>
+          <p>Calon tells me that you've helped us gain quite a footing in the Abyss by getting rid of the lower level Asmodian soldiers.</p>
+          <p> </p>
+          <p>Do you think you can handle the elimination of the higher level soldiers as well?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Of course I can."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Confidence--that's what I like to see.</p>
+          <p> </p>
+          <p>The first you'll face will be the [%dic:STR_DIC_E_Dgrade4]s.</p>
+          <p> </p>
+          <p>Are you prepared to leave right now?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you. If you successfully remove the [%dic:STR_DIC_E_Dgrade4]s, it will give us quite an advantage. Only if they're of stronger stuff, mind. The weakest wind can blow over weak walls, friend. </p>
+          <p> </p>
+          <p>Come back before their blood dries.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I will be quick."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Was everything I heard from Calon false? He spoke of your great skill as well as your sense of duty, yet I see neither.</p>
+          <p> </p>
+          <p>Come back when your sense of duty has returned.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I will."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>How did you do with the [%dic:STR_DIC_E_Dgrade4]s?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I did as you asked."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent. Your reputation is well deserved, then.</p>
+          <p> </p>
+          <p>You can expect more difficult missions as time progresses.</p>
+          <p> </p>
+          <p>Here is a reward for your hard work.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Fight against [%dic:STR_DIC_E_Dgrade4]s and win ([%2]/10).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report the result to [%dic:STR_DIC_N_Sakmis].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Get rid of the Level 4 Asmodian Soldiers who hinder patrol missions of the Gray Wind Legion.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Sakmis, the Brigade General of the Gray Wind Legion in charge of patrol missions in the Abyss, told you that he heard good things about you from Brigade General Calon.</p>
+          <p> </p>
+          <p>He said the Level 4 Asmodian Soldiers interfered with missions of the Gray Wind Legion. He asked  you to handle them, which you did.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

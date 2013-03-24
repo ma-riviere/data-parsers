@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm so tired of people who expect to become Alchemists overnight without putting in the work. That type never succeeds--Alchemy is not an easy craft.</p>
+          <p> </p>
+          <p>At least you seem to be different from that rabble, but I must test you to determine if you have real talent.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Ask me anything."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Then make Diana's Noble Spellbook and bring it to me. Making such a thing requires more than talent. You'll also need some luck.</p>
+          <p> </p>
+          <p>Oh, you should also know this up front: if you agree to become an Alchemy Expert, you can only become an Expert in one other field, and even then you must wait until you've finished your studies. So please consider carefully before you answer.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You can buy the Diana's Noble Spellbook design from [%dic:STR_DIC_N_Darius]. It's a more complicated design than the one for [%dic:STR_DIC_E_Q1980].</p>
+          <p> </p>
+          <p>If you can achieve this feat, I will recognize your talent. I'll be waiting here.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll get busy."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>So you admit that you're no different from the lazy good-for-nothings who pretend that they know everything about Alchemy?</p>
+          <p> </p>
+          <p>Everything I've seen from you so far must have been sheer luck.</p>
+          <p> </p>
+          <p>Hmph! You're wasting my time.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I need to think this over."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Welcome, [%username].</p>
+          <p> </p>
+          <p>That took you quite a while.</p>
+          <p> </p>
+          <p>Did you succeed in making Diana's Noble Spellbook?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here it is...I think."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This isn't Diana's Noble Spellbook. I'm...not sure what it is.</p>
+          <p> </p>
+          <p>Are you trying to test my patience? I'll give you more time. Go make Diana's Noble Spellbook, and bring it to me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm on it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did you really make it yourself?</p>
+          <p> </p>
+          <p>Hmm, not bad at all--no impurities. I'm quite satisfied.</p>
+          <p> </p>
+          <p>I'm happy to have found a truly talented Alchemist after all this time.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select10">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You must think quite a lot of yourself, [%username].</p>
+          <p> </p>
+          <p>I know it's restrictive, but you can only take your Expert test in one craft at a time. If you are walking the path of an Expert in another field, you cannot become an Alchemy Expert yet.</p>
+          <p> </p>
+          <p>I'm afraid you'll have to have patience.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Let me think about it."</Act>
+    </Selects>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Make Diana's Noble Spellbook and bring it to [%dic:STR_DIC_N_Diana].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Diana asked you to bring her Diana's Noble Spellbook, saying that she wanted to test your talent in Alchemy.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Diana observed that many people who pretend to be Alchemists were never willing to put in the work to achieve expertise. She told you that you must prove your talent to her.</p>
+          <p> </p>
+          <p>You brought her Diana's Noble Spellbook, which you had made, and she admitted that you had great talent.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

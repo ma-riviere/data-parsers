@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p> - Special Operations Order - </p>
+          <p> </p>
+          <p> 1. From: Giniki, Sanctum Ops HQ</p>
+          <p> </p>
+          <p> 2. To: [%username]</p>
+          <p> </p>
+          <p> 3. Order: The Asmodian Captain [%dic:STR_DIC_N_dromik] has infiltrated Theobomos. Destroy him.</p>          
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Right away."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We heard about Dromic. He'd been sent to find Jamanok and assassinate her, did you know that?</p>
+          <p> </p>
+          <p>If you hadn't taken Dromic out, we'd have inevitably lost Jamanok, along with all the vital information that she holds.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"It was my duty, sir."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, I wish all Elyos felt the same sense of duty that you do, [%username]. Perhaps some will follow your example in time, eh? I can but hope....</p>
+          <p> </p>
+          <p>Thank you for you work. Here's your reward.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step>
+               <p visible="[%0]"><font color="[%1]">Kill [%dic:STR_DIC_N_dromik] ([%2]/1).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report to [%dic:STR_DIC_NPC_Arena_Geniki_E_LHM].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Emergency Order: Kill Dromic and report to Giniki.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>An Asmodian Captain named Dromic infiltrated Theobomos through a Dimensional Vortex looking to kill Jamanok. You were able to reach Dromic before he carried out his assassination, and reported to Giniki for your reward.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

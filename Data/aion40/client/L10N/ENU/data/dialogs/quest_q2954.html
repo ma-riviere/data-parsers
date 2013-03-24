@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, look who it is! The mighty [%username]! Blew all your traveling money on booze and tavern snacks, did you?</p> 
+          <p> </p>          
+          <p>Maybe I've got some trivial task I can send you on, so I can justify tipping you a few Kinah for your trouble. Let me think, now...</p>
+          <p> </p>
+          <p>Ah, yes. I think I have something suited to your proven talent for skipping around the city and delivering messages. Unless you're already busy running errands for someone else, of course?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Spit it out, Doman."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, Haven was supposed to bring me a little something from the Apellbine Tavern--I'm sure you know the place--but I've not seen her all day.</p>
+          <p> </p>
+          <p>Run over there and collect my order, will you?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thanks, [%username]. I appreciate this, seriously.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_N_Herpa] will be in her usual spot outside the Apellbine, I expect, trying to drum up some customers. I'd go myself, but, you know...I have to operate the teleporter all day.</p>
+          <p> </p>
+          <p>Hurry back, if you could.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"The task is mine."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, if you don't need the money then never mind.</p>
+          <p> </p>
+          <p>But if you're ever stuck for your fare, you know where to come.</p>
+          <p> </p>
+          <p>I can always find something for you to do.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Thanks, Doman."</Act>
+    </Selects>
+  </HtmlPage>
+ 
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Welcome!</p>
+          <p> </p>
+          <p>Come right in to the Apellbine Tavern!</p>
+          <p> </p>
+          <p>Fresh Conide on the spit, great liquor on tap. You won't want to leave!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">"Doman's waiting for his order."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, blast! I completely forgot!</p>
+          <p> </p>
+          <p>Here, take this. It's Doman's juice. Please get it to [%dic:STR_DIC_N_Doman] right away.</p>
+          <p> </p>
+          <p>When you're done, you should come back here and have a few drinks yourself!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"Maybe I will."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]!</p>
+          <p> </p>
+          <p>Thank Azphel you're back! Could you have taken any longer?!</p>
+          <p> </p>
+          <p>You've got my order, right?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Sure thing, Doman."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you! Some days I can barely make it through my shift, but I heard about this Odella Juice, so I tried it.</p>
+          <p> </p>
+          <p>It's good stuff! Makes your hands and feet tingle. Kind of hard to stop drinking it, though, once you've taken up the habit. It's good for you, though! Keeps you healthy! Improves your reaction speed! I can feel it doing me good right now!</p>
+          <p> </p> 
+          <p>Thanks, [%username]. Need me to send you anywhere?</p> 
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk with [%dic:STR_DIC_N_Herpa].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Deliver Odella Juice to [%dic:STR_DIC_N_Doman].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Collect what Doman asked for from Haven and deliver it to him.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Doman said that Haven was supposed to send him something, but she hadn't turned up. He asked you to go to the Apellbine Tavern and pick up his order.</p>
+          <p> </p> 
+          <p>It turned out that Haven had forgotten Doman's Odella Juice again, so she gave it to you.</p>
+          <p> </p>
+          <p>When you brought the Odella Juice to Doman, he explained that he needed it to help keep up his energy, because working the teleporter all day was so exhausting.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

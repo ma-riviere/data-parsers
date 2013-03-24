@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+ 
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Asmodians are advancing fast on our troops in Brusthonin, [%username]. I need someone to get out there, take out their leadership, and stall their plans.</p>
+          <p> </p>
+          <p>We've identified three targets within the Reaper squad that we want dead. Specifically, the two vice-captains, [%dic:STR_DIC_NPC_DirectPortal_Giel] and [%dic:STR_DIC_NPC_DirectPortal_Dinos], along with their Captain, [%dic:STR_DIC_N_Surt].</p>
+          <p> </p>
+          <p>Will you do it? These Asmos can fight, but they haven't faced anything like you before.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Is the job done, [%username]? Are the three of them dead?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"They are, Giniki."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent!</p>
+          <p> </p>
+          <p>The Asmodians need leadership as badly as they need to bathe, and when their troops start seeing officer after officer drop dead, the others will end up too afraid to lead themselves.</p>
+          <p> </p>
+          <p>We spread fear, [%username], and then we assert ourselves.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Assassinate the Reaper squad officers.</font></p>
+               <p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_NPC_DirectPortal_Giel]([%2]/1).</font></p>               
+               <p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_NPC_DirectPortal_Dinos]([%5]/1).</font></p>
+               <p visible="[%6]"><font color="[%7]">[%dic:STR_DIC_N_Surt]([%8]/1).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk to [%dic:STR_DIC_NPC_Arena_Geniki_E_LHM].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Giniki ordered you to take out the Reaper squad officers. Kill Giel, Dineos and Surt.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Giniki ordered you to take out the Reaper squad officers. You worked fast, and were well rewarded for your bloody work.</p>
+         </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

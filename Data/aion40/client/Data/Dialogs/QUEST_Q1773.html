@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>어비스의 생명체들이 독특하다는 건 이미 경험하셨을 겁니다.</p>
+          <p> </p>
+          <p>여기 잔해의 섬을 떠도는 파멸의 원혼도 그중 하나죠.</p>
+          <p> </p>
+          <p>천계에서 비슷한 모습의 생명체를 본 적 있지만 그것과는 좀 차이가 나더군요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">어떤 차이인지 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>뭐랄까, 좀더 공격적이고 잔인하다고 할까요?</P>
+          <p> </p>
+          <p>천계에 있는 것들은 사람들의 눈을 피해 지하나 어두운 곳으로 숨어드는데 여기 원혼들은 움직이는 것만 보면 달려 듭니다.</p>
+          <p> </p>
+          <p>임무를 수행하는데 방해가 될 정도로 말입니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아, 예정대로라면 벌써 여기 일을 끝내고 테미논 요새로 돌아갔어야 했는데...</p>
+          <p> </p>
+          <p>누가 저놈들을 처리해 주면 남은 일을 빨리 처리할 수 있을 것 같은데 말입니다.</p>
+          <p> </p>
+          <p>이왕이면 그 누군가가 [%username] 님이었으면 좋겠군요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>도와주시겠다니 감사합니다.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_Ab1_1211_ShadowStalkerB_32_An]을 될 수 있는 한 많이 처치해 주세요.</p>
+          <p> </p>
+          <p>저희가 잔해의 섬을 정찰하는데 방해받지 않도록 말입니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이렇게까지 부탁했는데 거절하시니 좀 무안하군요.</p>
+          <p> </p>
+          <p>알겠으니 그만 가 보십시오.</p>
+          <p> </p>
+          <p>싫다는 사람을 더 붙잡을 생각은 없습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>파멸의 원혼은 다 처리하셨습니까?</p>
+          <p> </p>
+          <p>[%username] 님 덕분인지 오늘따라 놈들의 방해가 덜한 것 같던데...</P>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>짐작이 맞았군요. </p>
+          <p> </p>
+          <p>덕분에 이제는 맘 놓고 주변 정찰에 나설 수 있겠네요. 정말 감사합니다.</p>
+          <p> </p>
+          <p>약소하지만 받으십시오. 조금이라도 [%username] 님께 보탬이 됐으면 좋겠군요.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">잔해의 섬을 떠도는 [%dic:STR_DIC_M_Ab1_1211_ShadowStalkerB_32_An]을 처치하라([%2]/8)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Livy]에게 결과를 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">파멸의 원혼이 잔해의 섬을 정찰하는 가디언들을 방해한다고 한다. 파멸의 원혼을 처치하고 리비우스에게 결과를 알리자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>리비우스는 파멸의 원혼이 잔해의 섬 정찰을 방해하고 있다며 임무에 집중할 수 있게 원혼들을 처치해 달라고 부탁했다.</p>
+          <p> </p>
+          <p>그의 부탁대로 파멸의 원혼을 처치하고 돌아가자 고마워하며 사례를 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

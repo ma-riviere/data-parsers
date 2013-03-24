@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<HtmlPages>
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We've knocked the Kerubs down a few notches, but a lot of the grain that had already been harvested has gone missing.</p>
+          <p> </p>
+          <p>The Kerubs are stealing it, [%username]. It seems they're not quite as stupid as they look.</p>
+          <p> </p>
+          <p>The villagers need it back. They're facing a tough harvest as it is--they have to gather enough crops for their own stocks on top of the [%dic:STR_DIC_ELA20] they need to send to [%dic:STR_DIC_ELA07].</p>          
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+    <Act href="HACTION_ASK_QUEST_ACCEPT">"So you want me to recover the grain?"</Act>
+    </Selects>
+  </HtmlPage>
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+	        <p>Yes, exactly.</p>
+          <p> </p>
+          <p>Polinia, the one who hired us, is threatening to withhold payment until the sacks are returned to the villagers. I don't know where she learned smarts like that, but it certainly wasn't priest school.</p>
+          <p> </p>
+          <p>Can you help? I know you just fought those Kerubs, but the faster we get those sacks back, the faster we get paid.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Great. Gather up three [%dic:STR_DIC_QILA69]s from the Kerub dens around here. There's one up on that hill--might be a good place to start.</p>
+          <p> </p>
+         <p>If you don't see any there, there are other dens nearby.</p>
+          <p> </p>
+          <p>Hurry [%username]. They need grain in [%dic:STR_DIC_ELA07] pretty urgently.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll go as quickly as I can!"</Act>
+    </Selects>
+  </HtmlPage>
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I see.</p>
+          <p> </p>
+          <p>You know, not all mercenary work involves killing things, [%username]. Sometimes we get the more menial jobs, too. Best learn that soon if you want to be accepted by the others.</p>
+          <p> </p>
+          <p>Go on then, get out of here.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll think it over."</Act>
+    </Selects>
+  </HtmlPage>
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Back so soon?</p>
+          <p> </p>
+          <p>I hope you have all those grain sacks.</p>   
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Right here."</Act>
+    </Selects>
+  </HtmlPage>
+<HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], please! I said three sacks!</p>
+          <p> </p>
+          <p>Get back out there and recover the rest!</p>      
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Three sacks...I'll get moving!"</Act>
+    </Selects>
+  </HtmlPage>
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent!</p> 
+          <p> </p>
+          <p>The priest gets her grain, we get paid--good for all concerned!</p>
+          <p> </p>
+          <p>Oh, speaking of payment... here's your reward. Good work, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Bring the [%dic:STR_DIC_QILA69]s to [%dic:STR_DIC_LA148].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Polinia the priest told Mires that the mercenaries would receive their reward only if he retrieved grain sacks from the Kerub dens in [%dic:STR_DIC_FLA01].</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The priest decided that she could not give the Mercenaries the reward for getting rid of the Kerubs until they had retrieved stolen grain sacks.</p>
+          <p> </p>
+          <p>You brought back grain sacks from the Kerub dens as Mires ordered.</p>          
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+</HtmlPages>

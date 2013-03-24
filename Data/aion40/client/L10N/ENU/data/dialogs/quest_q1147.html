@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>"Defend your hometown," my father always told me. "It was once your cradle, and it will someday be your grave."</p>
+          <p> </p>
+          <p>What he didn't tell me was that I'd be fighting logistics and paperwork more often than monsters and marauders.</p>
+          <p> </p>
+          <p>Just yesterday I got a request for supplies from the Watch of Tolbas Village. I had to fill out twelve different forms just to get the weapons here.</p>      
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Wait. They're arming themselves now?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yeah, Tolbas got tired of asking us for help whenever they were attacked by monsters, so they formed a Watch.</p>
+          <p> </p>
+          <p>They're enthusiastic, at least. Since they're only requesting supplies and not manpower, Spatalos has decided to help them.</p>
+          <p> </p>
+          <p>They're led by [%dic:STR_DIC_LA24]. I acquired the weapons, but now I need someone to take them to the village for me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Great. You're saving me a ton of paperwork. Thanks, [%username]!</p>
+          <p> </p>
+          <p>While you're there, give the troops a few tips on how not to break their weapons so I don't have to send them any more replacements.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Sure thing. Faith and arms, Centurion."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I see.</p>
+          <p> </p>
+          <p>Well, now I'm going to have to spend another hour on courier requisition forms. The next time the Watch breaks their swords, they'll need to to fix them themselves.</p>       
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Probably do them good."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Where are those supplies William promised us? We're going to have to start outfitting the Watch with broom handles and cooking pots.</p>
+          <p> </p>
+          <p>It'd be faster to forge our own weapons at this rate.</p> 
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I have your supplies right here."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank Vaizel! This is everything I asked for! Segatus and Lusis are going to love these new blades.</p>
+          <p> </p>
+          <p>Thank you for this, [%userclass]. We're all in your debt.</p>         
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Deliver supplies from William to [%dic:STR_DIC_LA24].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">William told you about the Tolbas Village Watch, and has asked you to bring supplies to Abolos, the Watch leader.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>William wanted to send supplies to Tolbas Village, but had not found anyone to do the job.</p>
+          <p> </p>
+          <p>You delivered the supplies to Abolos, the Watch leader.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

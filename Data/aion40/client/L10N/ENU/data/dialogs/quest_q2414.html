@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I just saw your name mentioned in the guards' reports. It seems you helped them kill some Spirits along the Fall Road.</p>
+         </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"It was nothing, really...." </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Not at all! On behalf of the Observatory, I thank you.</p>
+          <p> </p>
+          <p>But there's someone else who won't be nearly so pleased.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Who?" </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_N_Hreidmar] rather likes those Spirits, and he's not nearly so fond of Asmodians! He thinks we disturb the natural order of things.</p>
+          <p> </p>
+          <p>So I'm going to send you to Hreidmar to explain things.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're quite brave, aren't you? He'll be at the lake near the Fall Road.</p>
+          <p> </p>
+          <p>Explain that we had to thin out the Spirit population a bit, to reduce the threat to Humans.</p>
+          <p> </p>
+          <p>I'll just wait here for you to come back....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Thanks a lot!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, dear....</p>
+          <p> </p>
+          <p>Hreidmar really doesn't like me much. I'd be lucky if all he did was ignore me.</p>
+          <p> </p>
+          <p>Listen, I'll give you some time to think about it, all right?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Sure thing." </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What do you want, killer of Spirits?</p>
+          <p> </p>
+          <p>Don't bother denying it...I can smell their deaths on you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">"I hope when I explain...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+					<p>If you thought to persuade me with that pitiful excuse, you have miscalculated.</p>
+          <p> </p>          
+          <p>You Asmodians are a selfish and stupid tribe, with no regard for anyone other than yourselves.</p>
+          <p> </p>
+          <p>Tell this to the rest of your kind--if this thing happens again...there will not be another warning. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"I'll tell them." </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+        <p>Ah, welcome back, [%username]. Good to see you again.</p>
+        <p> </p>
+        <p>So how did it go with Hreidmar? Do we have an understanding?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Not exactly, no...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That does sound ominous! And here you are, [%username], caught in the middle for trying to help.</p>
+          <p> </p>
+          <p>Take this. It's the least you deserve.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Speak to [%dic:STR_DIC_N_Hreidmar].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Report back to [%dic:STR_DIC_N_Tyr].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Meet with Hreidmar about the Spirits that you killed.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Tyr, the Aetheric Field Protector, asked you to go to Hreidmar and seek his understanding about the hunting of Spirits.</p>
+          <p> </p>
+          <p>You met Hreidmar and tried to explain, but he became angry and warned the Asmodians to leave the Spirits alone.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

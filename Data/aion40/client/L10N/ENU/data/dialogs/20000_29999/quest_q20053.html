@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q20053</QuestId>
+    <QuestName>The Protector's Blessing</QuestName>
+    <QuestType>Undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>There you are, [%username]!</p>
+          <p> </p>
+          <p>I hadn't heard from you in a little while and hoped you might have some information for me regarding the Protector. Have you found her yet? Or any clues, at least?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Nothing yet, Garnon. It's hard work."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes, yes, I'm sure it is. The Studio is filled with all manner of beasts, not least the Jotun. Still, I had hoped something would have turned up by now.</p>
+          <p> </p>  
+          <p>Well, I suppose I'd better let you get back to it. And... oh! Why don't you take this necklace with you? It will help you whenever you're in trouble and should help you find the Protector that much faster.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"Thank you! I better get back to it."</Act>
+    </Selects>
+    <Voice file="Q20053-1.ogg"/>
+  </HtmlPage>
+
+  <HtmlPage name="select3">
+    <Contents cdata="true">
+        <html>
+        <body>
+           <p>(The surroundings match the descriptions in Zayedan's Record.)</p>
+           <p> </p>
+           <p>(Hurry inside and meet [%dic:STR_DIC_N_Oriatia].)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO3">"Here we go..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+       		<p>A visitor? How peculiar. I haven't had company in... well, I'm not sure to be honest.</p>
+          <p> </p>
+          <p>I assume you came for more than idle chit-chat though, Daeva. So, out with it. What is it I've been awoken for?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT5_1">"We need help. Tiamat has Siel's Relics."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+         	<p>What?! How did this happen? With the Relics, Tiamat will soon rip what's left of this planet apart!</p>
+          <p> </p>
+          <p>But... but you came to me. That means Atreia still holds, and we have time to act. I must... I must... oh....</p>
+          <p> </p>
+          <p>I'm so weak, Asmodian! Spirits must have absorbed my powers as I slept. I can't help you as I am, but if you were to find me some [%dic:STR_DIC_I_QUEST_10053B]s, I would soon recover. I believe... I believe you can find them within [%dic:STR_DIC_M_LDF4A_C1_Elementalking_Cristal_57_An]s. Go now--please!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO5">"Wait here! Conserve your energy!"</Act>
+    </Selects>
+    <Voice file="Q20053-2.ogg"/>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I had been pondering Tiamat's power as I slept. My mind ran in circles, and I slipped further and further from reality. I nearly fell from the realm of time itself, Asmodian! I was so nearly lost.</p>
+          <p> </p>
+          <p>Please... if you have the [%dic:STR_DIC_I_QUEST_10053B]s, hand them to me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_ok">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It is done. You have my powers and can now stop Tiamat from destroying our world.</p>
+          <p> </p>
+          <p>A warning: the power I bestowed upon you must only be used to seal Siel's Relics. If they are used for personal reasons or the furtherance of your people, I will leave this world, and abandon you to your fickle ways.</p>
+          <p> </p>
+          <p>Now go. The world watches, Asmodian. Do not place it in jeopardy.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Thank you, Oriata."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_fail">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No! I need the [%dic:STR_DIC_I_QUEST_10053B]s if I'm to restore my power! If I can't then you and I are both doomed, you fool!</p>
+          <p> </p>
+          <p>Hurry! Destroy the [%dic:STR_DIC_M_LDF4A_C1_Elementalking_Cristal_57_An]s, and bring me their Power Crystals! </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm sorry! Hang on!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]! You're back!</p>
+          <p> </p>
+          <p>Did everything go according to plan? Did you find the Protector?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Well..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You did it!</p>
+          <p> </p>
+          <p>Incredible work, [%username]! The council of Pandaemonium will be overjoyed at your achievements here today. What's more, the Elyos and Reians both agreed to give you the powers.</p>
+          <p> </p>
+          <p>A great battle starts today, friend. Tiamat will shake in fear when he hears your approaching footsteps and the screaming and chanting of "Blood for blood!"</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+             <step><p visible="[%0]"><font color="[%1]">Talk with [%dic:STR_DIC_N_Garnon].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Find the [%dic:STR_DIC_OBJ_LDF4a_10053_20053_door] that will lead you to the room of the Protector [%dic:STR_DIC_N_Oriatia].</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Break the Protector's Seal.</font></p></step>
+               <step><p visible="[%9]"><font color="[%10]">Ward off the Balaur attack.</font></p></step>
+               <step><p visible="[%12]"><font color="[%13]">Talk with [%dic:STR_DIC_N_Oriatia].</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]"> Recover [%dic:STR_DIC_I_QUEST_10053B]s from the nearby [%dic:STR_DIC_M_LDF4A_C1_Elementalking_Cristal_57_An]s, and go back to [%dic:STR_DIC_N_Oriatia].</font></p>[%collectitem]</step>
+               <step><p visible="[%18]"><font color="[%19]">Report back to [%dic:STR_DIC_N_Aimah].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Order: Find Protector Oriata and receive her powers.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Working secretly with Aimah, you reported back to Garnon and told her that you couldn't find the Protector before setting off to meet her for the first time. </p>
+          <p> </p>
+          <p>You tried to break the seal to the Protector's room, only to be attacked by the Balaur. However, you were able to fight them off, largely thanks to the necklace given to you by Garnon. Oriata then appeared. You asked her for the power to seal Siel's Relics, but she had been weakened and needed saving. You brought her the crystals she needed, and as you returned, Garnon and the Elyos leader emerged, vouching for you to receive the powers she had.</p>
+          <p> </p>
+          <p>You were given the power by Oriata, along with a stern warning to use the power for the benefit of all Atreia, else the planet would be doomed forever.</p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>Mission Progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

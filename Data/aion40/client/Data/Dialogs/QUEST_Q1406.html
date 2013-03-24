@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>큰일났습니다. 결계탑 남서쪽에 타우릭이 나타났다는군요.</p>
+          <p> </p>
+          <p>요즘 괴상한 짐승이 나타났단 소문은 들었지만 신경 쓸 새가 없었습니다. 카이단 크랄 때문에 정신이 없어서 말이에요.</p>
+          <p> </p>
+          <p>그런데 그게 바로 타우릭이었다니...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">뭐가 문제냐고 한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아니, 타우릭을 모른단 말입니까? 저주받은 타우릭을요?</p>
+          <p> </p>
+          <p>놈들이 나타나는 곳엔 항상 나쁜 일이 일어나죠.</p>
+          <p> </p>
+          <p>멀쩡하던 마을에 전염병이 돌거나 가축 떼가 한꺼번에 폐사하거나... 아무튼 재수 없는 놈들이에요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>놈들을 그냥 둘 수 없습니다.</p>
+          <p> </p>
+          <p>미신을 믿는다고 비웃어도 좋습니다. 하지만 요즘처럼 힘든 상황에 사람들의 마음을 불안하게 만드는 요소를 그냥 내버려 둘 수 없습니다.</p>
+          <p> </p>
+          <p>그러니 [%username] 님이 [%dic:STR_DIC_M_TauricRe_36_An]을 좀  처치해 주시겠습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>부탁을 들어주셔서 감사합니다. </p>
+          <p> </p>
+          <p>그럼 결계탑 입구 근처에 있는 [%dic:STR_DIC_M_TauricRe_36_An]을 모조리 처치하고 돌아오십시오.</p>
+          <p> </p>
+          <p>놈들의 앞발을 조심하세요. 날카로운 발톱으로 사정없이 공격을 퍼부으니까요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>안 그래도 사막화 때문에 분위기가 흉흉한데 타우릭을 내버려 두었다가 다른 문제까지 생기면 어쩝니까!</p>
+          <p> </p>
+          <p>문제가 생기면 이미 늦은 겁니다. </p>
+          <p> </p>
+          <p>그러니 다시 한번 생각해 보십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>타우릭을 처치하셨습니까?</p>
+          <p> </p>
+          <p>아는 게 병이라고 모를 땐 아무렇지 않았는데 지금은 사방에 사악한 기운이 가득한 느낌입니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정말 고맙습니다.</p>
+          <p> </p>
+          <p>이제 사람들이 불안에 떨지 않겠네요.</p>
+          <p> </p>
+          <p>이게 모두 [%username] 님 덕분입니다.</p>
+          <p> </p>
+          <p>자, 이걸 받으십시오.</p>
+          <p> </p>
+          <p>사양하지 마세요. 타우릭의 저주를 없애 주신 분이니 충분히 받을 자격이 있습니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">결계탑 입구에 있는 [%dic:STR_DIC_M_TauricRe_36_An]을 처치하라([%2]/7)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Kibelle]와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">불행을 몰고 오는 타우릭이 결계탑 근처에 나타났다고 한다. 타우릭 파수병을 처치해서 사람들이 불안해하지 않도록 해야겠다.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>키벨라는 불행을 몰고 오는 타우릭이 결계탑 입구 쪽에 나타났다며 걱정했다. 그래서 타우릭 파수병을 사냥해 줬더니 고맙다며 사례를 했다. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

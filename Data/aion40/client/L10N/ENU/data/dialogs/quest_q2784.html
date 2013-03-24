@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Things are going beautifully right now! Life's nearly perfect.</p>
+          <p> </p>
+          <p>We've almost repaired the fortress, save a few odds and ends.</p>
+          <p> </p>
+          <p>But there's one nail I still wish I could hammer down...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"That's the 'nearly' you mentioned?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes, a few determined Elyos are still dug in too close for my liking.</p>
+          <p> </p>
+          <p>[%username], I think you ought to talk with them.</p>
+		  <p> </p>
+          <p>Use your "rhetoric" to change their minds.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hah! I knew you'd want the honors, [%username].</p>
+          <p> </p>
+          <p>I don't think you need to "convince" all of them.</p>
+          <p> </p>
+          <p>Five of them--[%dic:STR_DIC_N_Menelaus], [%dic:STR_DIC_N_Lyaeus], [%dic:STR_DIC_N_Myrrha], [%dic:STR_DIC_N_Leager], and [%dic:STR_DIC_N_Mors]--are the leaders. After you open their minds, take their [%dic:STR_DIC_I_QUEST_2784a]s.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll hone my arguments."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I must have overdone the jokes.</p>
+          <p> </p>
+          <p>Look, this is serious. I want this fortress safe, and they're in the way.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I know, Hildebrant. Perhaps later."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Are you done already?</p>
+          <p> </p>
+          <p>Would've thought they'd put up more of a fight!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Well, I'm very persuasive."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Where are my trophies?</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_N_Menelaus], [%dic:STR_DIC_N_Lyaeus], [%dic:STR_DIC_N_Myrrha], [%dic:STR_DIC_N_Leager], and [%dic:STR_DIC_N_Mors]? They each carry a crest.</p>
+          <p> </p>
+          <p>Discuss the...uh, debate... Oh, for Azphel's sake, kill them and take the crests!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Yes, the time for jokes is past."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Great! Those five, in such a short time?</p>
+          <p> </p>
+          <p>Well, whether it was your words or not, you clearly convinced them!</p>
+          <p> </p> 
+          <p>I'll make sure I always take your side, friend. Hahaha!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Bring the crests of [%dic:STR_DIC_N_Menelaus], [%dic:STR_DIC_N_Lyaeus], [%dic:STR_DIC_N_Myrrha], [%dic:STR_DIC_N_Leager], and [%dic:STR_DIC_N_Mors] to [%dic:STR_DIC_N_Ab1_1221_Quest_Da].</font></p>[%collectitem]</step>          
+               
+    </steps>
+          <p><font font_xml="quest_summary">To secure this Fortress, kill the Elyos Guardians nearby and take their Guardian crests to Hildebrant.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hildebrant felt the fortress wouldn't be secure with Elyos Guardians hovering around it. She sent you after five key Guardians to drive them away.</p>
+          <p> </p>
+          <p>On your return, she remarked on your powers of persuasion.</p>    
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

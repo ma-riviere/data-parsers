@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q30713</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>여기, 개조형 역장 억제장치를 한번 만들어 봤습니다. 이거면 무형의 힘을 추출해낼 수 있을 거예요.</p>
+          <p> </p>
+          <p>자, 이 [%dic:STR_DIC_I_quest_30713a]를 [%dic:STR_DIC_N_IDTiamat_FOBJ_Dagger] 가까이에서 사용해 주세요.</p>
+          <p> </p>
+          <p>그러면 아프수의 무시무시한 원한이 내부에 설치된 유리병 속으로 추출될 겁니다. [%username] 님께 피해가 발생하는 일은 없을 테니 걱정은 하지 마시구요.</p>
+          <p> </p>
+          <p>그 후에는, 아차차... 그 정도의 위험을 가진 재료를 도시로 반입하려면 허가가 필요하겠네요.</p>
+          <p> </p>
+          <p>괜찮으시면 오시는 길에 [%dic:STR_DIC_N_Garnon]에게 들러 허가도 좀 받아주세요. 절차는 금방 끝날 겁니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(다시 봐도 익숙해질 수 없는 섬뜩함이 느껴진다.)</p>
+          <p> </p>
+          <p>(억제장치가 오작동을 일으키면 큰일이 벌어지겠지만, 유퀴니를 믿어보는 것이 좋겠다.)</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">억제장치를 작동한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님이시군요. 항상 수고가 많으십니다.</p>
+          <p> </p>
+          <p>티아마트 성채 침공으로 바쁘신 걸로 아는데, 무슨 일로 찾아오셨나요?</p>
+          <p> </p>
+          <p>제가 뭐 처리해 드릴 일이라도 있으신지?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">아프수의 원한에 대해 말한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아프수의 원한이라니요!</p>
+          <p> </p>
+          <p>원로회에 보고도 없이 그토록 위험한 행동을 하시다니... 죄송하지만 반입은 허가할 수 없습니다.</p>
+          <p> </p>
+          <p>추출된 아프수의 원한은 연족 원로회에서 압수하도록 하죠.</p>
+          <p> </p>
+	<p>이번 일은 유퀴니 님과 [%username] 님 모두 생각이 조금 짧으셨던 것 같습니다.</p>
+          <p> </p>
+          <p>너무 차갑게 구는 것 같아 죄송하지만, 이번 일은 정말 중대한 사안이니 이해해 주세요.</p>
+          <p> </p>
+          <p>[%username] 님께는 이 정도 선에서 끝나겠지만 유퀴니 님에게는 적절한 조치가 취해질 겁니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_I_quest_30713a]를 이용해 [%dic:STR_DIC_N_IDTiamat_FOBJ_Dagger]에서 아프수의 원한을 추출해라</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_N_Garnon]에게 반입 허가를 받아라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">유퀴니가 만든 도구로 아프수의 원한을 추출하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>유퀴니가 만든 개조형 역장 억제장치를 이용해 아프수의 원한을 추출했다.</p>
+          <p> </p>
+          <p>하지만 반입신고를 위해 가르논에게 가져가니 보고도 없이 위험한 일을 했다며 화를 냈다.</p>
+          <p> </p>
+          <p>추출된 아프수의 원한은 압수당했고, 유퀴니에게는 적절한 조치가 취해질 것이라 말했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Rewrite by Dave 28 May -->
+<!-- Editing by Fran 31 May -->
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This is unfair. How can dead Elyos make so much more trouble than live ones?</p>
+          <p> </p>
+          <p>We're establishing our presence on the Twilight Battlefield. When my scouts found a lightly defended Guard Tower there, I seized the opportunity.</p>
+          <p> </p>
+          <p> Only two Elyos scholars and a Shugo merchant there, my scouts said. A squad of Asmodae's finest should sledgehammer it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"But they couldn't?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+        <p>No! It turns out the place is crawling with Elyos ghosts, and our squad took a shameful beating. The Twilight Battlefield saw some grisly fighting in the early years of the war, and the ghosts of Daevas who were Vanished then still wander it.</p>
+          <p> </p>
+          <p>A lot of Daevas--some ours, some theirs--died on that field. But the Elyos ghosts have gathered near that tower. Teach them a good lesson, [%username]. I want you to drive them out completely from the Twilight Battlefield.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>As you approach the tower, you'll see Asmodian ghosts roaming the Twilight Battlefield.</p>
+          <p> </p>
+          <p>Ignore them if you can. Focus on the Elyos ghosts...[%dic:STR_DIC_M_Ab1_1131_UndeadLightFi_25_An] and [%dic:STR_DIC_M_Ab1_1131_UndeadLightWi_25_An].</p>
+          <p> </p>
+          <p>Walk in Azphel's shadow, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Shadow guard us all!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I know things are tough all over Reshanta, but my troops here are exhausted.</p>
+          <p> </p>
+          <p>I hate to rush injured soldiers back into the fray, but if that's what it takes....</p>
+          <p> </p>
+          <p>Surely you see the strategic value of the Twilight Battlefield, [%username]. In the name of Azphel, please reconsider.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Farewell."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>When they put me in command, I had no idea how much work it is, keeping a unit in fighting shape. That's why your assistance is crucial.</p>
+          <p> </p>
+          <p>So give me a quick report: Did you exorcise those wretched Elyos souls roaming the Twilight Battlefield?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Task accomplished!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You are indeed as mighty as your reputation suggests.</p>
+          <p> </p>
+          <p>Once I get some reinforcements, we'll tear down that Guard Tower. Clear the tower, and we can take Twilight Battlefield. Take Twilight Battlefield, and we can take...</p>
+          <p> </p>
+          <p>You get the idea. And if you venture out there again, don't be shy about reducing the ghost population. Every little bit helps the war effort, eh?</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Destroy the Elyos ghosts on the Twilight Battlefield.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Ab1_1131_UndeadLightFi_25_An] ([%2]/15).</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Ab1_1131_UndeadLightWi_25_An] ([%5]/5).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_N_Ab1_1131_Quest_Da].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Elyos ghosts are interfering with action against an Guard Tower. Help Lirhel by destroying the Eternal Warriors and Eternal Soldiers that are roaming the Twilight Battlefield.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Lirhel said Elyos ghosts repelled the squad she sent to demolish the Guard Tower on the Twilight Battlefield. She asked you to deal with the ghosts.</p>
+          <p> </p>
+          <p>After you vanquishing the fighters and foot soldiers of Eternity as Lirhel instructed, she said that the ghosts will require periodic culling.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

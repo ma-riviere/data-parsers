@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q41463</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+        	<p>So, [%username], you want to make a Luminasiel weapon, do you? Well, the first step in the process is to acquire [%dic:STR_DIC_I_Q41463a].</p>
+        	<p> </p>
+        	<p>This won't be easy. These petals contain a bit of the very essence of Lady Siel, and were scattered everywhere during the Cataclysm.</p>
+        	<p> </p>
+        	<p>If you really are serious about this, go see [%dic:STR_DIC_N_Ekios]. He'll tell you more.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>A Luminasiel weapon? I think that's rather hasty of you. But since Kahrun sent you to me, I suppose that I should at least get you started.</p>
+          <p> </p>
+          <p>Siel's Petals are practically impossible to find in the wild. You'll need this [%dic:STR_DIC_I_Q41463_poty].</p>
+          <p> </p>
+          <p>Take good care of it, it's very rare. Come back to me when you manage to get seven Siel's Petals from it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"I'll be careful."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, hello again. Have you been taking good care of the Siel's Petal Hearthbloom I gave you?</p>
+          <p> </p>
+          <p>I hope you've at least managed to get one or two petals from it. Please tell me that I didn't waste that precious Hearthbloom on a clumsly, brown-thumbed Daeva.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">"Seven petals, right here."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You! You actually did it!</p>
+          <p> </p>
+          <p>There's no question, these are actual Siel's Petals! Forgive me - I've just seen far too many Daevas get a new hearthbloom, only to let it wither for lack of care. I'll deliver these to Siel's Temple myself.</p>
+          <p> </p>
+          <p>You should probably go back to Kahrun and find out what other materials you need.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Obtain the [%dic:STR_DIC_I_Q41463_poty] from [%dic:STR_DIC_N_Ekios].</font></p></step>
+	       <step><p visible="[%3]"><font color="[%4]">Collect [%dic:STR_DIC_I_Q41463a], and bring them to [%dic:STR_DIC_N_Ekios].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Take good care of the Siel's Petal Hearthbloom and obtain some of Siel's Petals. </font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Kahrun told you that Siel's Petals are the most important component to craft a Luminasiel weapon.</p>
+          <p> </p>
+          <p>Ekios gave you a Siel's Petal Hearthbloom and told you to take good care of it.</p>
+          <p> </p>
+          <p>You took good care of the Hearthbloom and were able to gather enough of Siel's Petals to bring back to Ekios.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

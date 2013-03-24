@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>마침 잘 오셨습니다! 중요한 작전이 있어서 [%username] 님을 찾고 있던 참입니다.</p>
+          <p> </p>
+          <p>비밀리에 수행할 작전이라서 군단과는 별도로 움직일 데바가 필요하거든요.</p>
+          <p> </p>
+          <p>명망 있는 데바를 몇 명 추천받기는 했지만 전 [%username] 님이 이 임무에 적임자라고 판단했습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>버림받은 섬에 천족 놈들이 거점을 만들고 요새를 노리고 있습니다. </p>
+          <p> </p>
+          <p>힘들게 손에 넣은 요새를 놈들에게 빼앗길 수는 없습니다. 그러니 최대한 빨리 시엘의 날개 군도에서 천족을 몰아내야 합니다.</p>
+          <p> </p>
+          <p>그래서 우선 버림받은 섬에 있는 [%dic:STR_DIC_OBJ_1131_AttackTower_Li]부터 치기로 했습니다. </p>
+          <p> </p>
+          <p>천족 수호탑을 파괴해 놈들의 방어력부터 약화시키는 것이 좋겠습니다. 수호탑이 없으면 나머지 군단병은 쉽게 소탕할 수 있을 겁니다.</p>
+          <p> </p>
+          <p>어떻습니까, 이 임무를 맡아주시겠습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그럼 지금 당장 버림받은 섬으로 가십시오. </p>
+          <p> </p>
+          <p>섬 중앙쯤에 놈들의 거점을 마련해 놨습니다. 그리고 [%dic:STR_DIC_OBJ_1131_AttackTower_Li]으로 거점을 보호하고 있지요.</p>
+          <p> </p>
+          <p>가까이 다가가기만 해도 천족 수호탑이 공격할 테니 각별히 조심하십시오.</p>
+          <p> </p>
+          <p>힘들겠지만 [%username] 님이라면 반드시 성공할 거라고 믿습니다. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>우리가 시엘의 서부 요새를 차지했다고 안심하고 있을 순 없습니다! </p>
+          <p> </p>
+          <p>조금이라도 틈을 보이면 놈들이 우리의 숨통을 조일 겁니다.</p>
+          <p> </p>
+          <p>공격이 최선의 방어라는 말도 모르십니까?</p>
+          <p> </p>
+          <p>특별히 [%username] 님을 믿고 수립한 작전입니다. 그러니 다시 한번 생각해 보십시오. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>어떻게 됐습니까? 버림받은 섬에는 다녀오신 겁니까?</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_OBJ_1131_AttackTower_Li]은 파괴했습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>과연 명성만큼이나 뛰어난 실력이로군요.</p>
+          <p> </p>
+          <p>누가 뭐래도 [%username] 님이라면 잘 해낼 거라고 믿었습니다.</p>
+          <p> </p>
+          <p>정말 수고하셨습니다. 이제 천족은 더 이상 시엘의 날개 군도에 발을 붙이지 못할 겁니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">버림받은 섬에 있는 [%dic:STR_DIC_OBJ_1131_AttackTower_Li]%을 파괴하라([%2]/1)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Ab1_1131_Quest_Da]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">버림받은 섬에 거점을 마련한 천족을 공격해 달라는 리르헬의 부탁을 받았다. 그곳으로 가서 천족 수호탑을 파괴해야겠다.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>리르헬은 마족이 시엘의 서부 요새를 차지했지만 천족이 계속해서 이곳을 노리고 있다며 시엘의 날개 군도에서 천족을 몰아내야 한다고 했다.</p>
+          <p> </p>
+          <p>그래서 버림받은 섬에 거점을 마련한 천족에게 타격을 주기 위해 천족 수호탑을 파괴했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

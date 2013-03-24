@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q3508</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>Not entered</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Arieluma, [%username]! I'm glad to see you're still here. I thought that perhaps you already left for the sand saunas of the Eracus Desert.</p>
+          <p> </p>
+          <p>I received another letter from Miobera, you know. Seems she's having trouble with the Ethereal Windwisps again.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I thought that was resolved?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, they're back. Considering how many Ethereal Windwisps we destroyed last time, they must reproduce at an alarming rate.</p>
+          <p> </p>
+          <p>Anyway, their attacks are more ferocious than ever! Miobera doesn't dare take passage to the Puitonen Bogs now.</p>
+          <p> </p>
+          <p>I want to give her some support...but I'm stuck here at the village, as you can see. Can you lend a hand? She could always use a good [%userclass] over there.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're my Sun's Blessing today, [%username]! I mean it.</p>
+          <p> </p>
+          <p>Get over there as soon as you can and start killing those shadow-cursed [%dic:STR_DIC_M_Vapor_41_An]s. You need to clear a safe path between the campsite entrance and [%dic:STR_DIC_W_LF3_SZ_F2].</p>
+          <p> </p>
+          <p>I'll send a message to Miobera and let her know you're on the way. The speed of Ariel to you, friend.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm on my way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're not my Sun's Blessing...you're my Sun's curse, [%username]!</p>
+          <p> </p>
+          <p>What in the Great Abyss happened to you? Miobera was counting on you! I was counting on you!</p>
+          <p> </p>
+          <p>Did you even manage to kill a single Ethereal Windwisp? You're as unreliable as those mead-swiggers in Agairon! Get out of my sight, Daeva!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">End Dialog.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'll bet a day's wage that you just returned from the Puitonen Bogs. Am I right? Am I right? The mud on your boots gave it away.</p>
+          <p> </p>
+          <p>Ha! The gift of observation is a powerful tool...the most powerful tool a warrior has, though most seldom use it.</p>
+          <p> </p>
+          <p>So, did you kill enough Ethereal Windwisps to clear a safe path for Miobera?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I killed quite a few, yeah."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent, just as I expected from you, [%username].</p>
+          <p> </p>
+          <p>I hope this is the last we'll hear about those gloom-cursed Windwisps. Damn things are a nuisance!</p>
+          <p> </p>
+          <p>Seems we have a little issue of a reward to discuss, huh?</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get rid of the [%dic:STR_DIC_M_Vapor_41_An]s blocking the entrance to Changarnerk's Campsite ([%2]/7).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Talk with [%dic:STR_DIC_N_Tegis].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Ethereal Windwisps are blocking the entrance to Changarnerk's Campsite. Get rid of the Windwisps for Tegis, who is too busy with his duties in the village.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Tegis said the Ethereal Windwisps have reappeared at Changarnerk's Campsite, and he asked you to get rid of them.</p>
+          <p> </p>
+          <p>When you returned from eradicating the Windwisps, Tegis gave you a reward.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

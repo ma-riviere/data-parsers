@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I have a request for you. It's a small thing, really, but you'll be doing an old lady a good deed.</p>
+          <p> </p>
+          <p>Please say yes?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"What can I do?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's my son. He's been so kind to me lately, taking me in now that I can't take care of myself. He's so busy, and he thinks I don't pay attention, but I do.</p>
+          <p> </p>
+          <p>I heard him saying he needs some new gloves, but I hardly think I know what the youngsters are wearing these days. I've been looking around, and you look like one of the best-dressed here, so I thought you'd know. What kind of gloves should I get for him?</p>  
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"How about some Brax Gloves?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That's a lovely idea! They'll keep his hands warm, and he's always had such poor circulation.</p>
+          <p> </p>
+          <p>Do you know, I think I heard that they are giving them away at the [%shoplink] as a special offer. You don't even need a coupon! I've tried using it before, though, and I couldn't wrap my mind around that newfangled thing. Would you get them for me? I'm sure it'll be easy enough for you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>That's a dear. I have some more business in town, so I'll still be here when you have them.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I won't be long!'</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No, no, you're right. I'm sure I can figure it out if I try hard enough. I don't need to waste your time with something like that.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I may have time later."</Act>
+    </Selects>
+  </HtmlPage>
+
+<HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, that was quick! Do you have the gloves, or are you back to tell me they've sold out?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"It was these you wanted, wasn't it?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, it seems you're having as much difficulty working it out as I did! I know that you visit the [%shoplink], and then they send you your purchases in the Express Mail. Would you mind trying again? I can't read all that tiny text.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Sorry about that."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh yes! Beautiful! Well, thank you very much for your time. I'm sure that my boy will love these.</p>
+          <p> </p>
+          <p>Now, here, take this. No, no, please take it. My sister-in-law gave it to me, but I think she's going senile. I must've told her twenty times that I'm allergic to the fur.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Get a [%dic:STR_DIC_I_junk_world_event_webshop_02a] for [%dic:STR_DIC_NPC_event_Hinjel].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Hinjel would like some Brax Gloves as a gift for her son.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Old Hinjel wanted to give her son a nice gift, but needed your guidance in what to buy, and your help in getting it from the [%shoplink], which she found newfangled and confusing.</p>
+          <p> </p>
+          <p>You found her some lovely Brax Gloves, which didn't even cost you any kinah.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

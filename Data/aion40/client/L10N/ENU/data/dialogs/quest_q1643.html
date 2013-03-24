@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've studied the Hazy Disks you brought from the Anubite Fighters. I just can't figure out what they are--but the shape engraved on them looks familiar. Where have I seen it?</p>
+          <p> </p>
+          <p>Ah--that's it! The Star of Heiron! It's the Ancient symbol of Jeiaparan Village.</p>
+          <p> </p>
+          <p>It's very old, though--the town hasn't used it in years.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What does it mean?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The star? I don't know--except that the fighter who kept this must have been tied to Jeiaparan Village somehow.</p>
+          <p> </p>
+          <p>The village priest could probably tell us more. Would you take this and show it to her?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Okay, you know where Jeiaparan Village is, right? Look for [%dic:STR_DIC_N_Erato] and see what she can tell you about the symbol. It's my only lead.</p>
+          <p> </p>
+          <p>And the more you can learn about the fighter who carried it--if you can learn anything at all--the better.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Erato. Village Priest. Got it!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You realize you've tied my hands, right?</p>
+          <p> </p>
+          <p>Even with Miobera here, I can't leave my research materials unprotected. The Shugos would tear into them in a heartbeat if I were gone.</p>
+          <p> </p>
+          <p>But I can't do anything if you're not interested.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Good luck, Liske."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Arieluma, [%username]!</p>
+          <p> </p>
+          <p>What brings you to me?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"What can you tell me about this?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, this disk is the trace of binding. The Star of Heiron means this belonged to someone who had bound his soul to the Obelisk of this village.</p>
+          <p> </p>
+          <p>If you bind your soul to an Obelisk, the Aetheric energy inside you turns into a crystal that leaves this kind of trace.</p>
+          <p> </p>
+          <p>Did you say this was from an Anubite? Then I'll be able to call the spirit. The Obelisk knows every soul bound here. Follow me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"Yes, ma'am."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Augh! Oooh...</p>
+          <p> </p>
+          <p>Who calls me?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO2">"Priest Eratos and I, the Daeva [%username]."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select3">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Aion's light! Anubites were the Daevas Bollvig killed...and they resurrected at the Cursed Obelisk....</p>
+          <p> </p>
+          <p>That means the spirits and undead in The Storm Circle and at Nolantis were killed by Bollvig, too.</p>
+          <p> </p>
+          <p>And somehow he bound them to his own obelisk. Hm...perhaps Liske can solve that mystery. Be blessed in the light, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SET_SUCCEED">"Thanks for your help, Erato."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I was going crazy waiting for you, [%username]!</p>
+          <p> </p>
+          <p>What did you find out?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="PLAYEMOTION_surprise;HACTION_SELECT_QUEST_REWARD">"The undead are victims of Bollvig...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Wait! Wait! Let me make sure I understand what you're saying.</p>
+          <p> </p>
+          <p>The Anubites are Daevas who were killed by Bollvig? Bollvig made the Cursed Obelisk...where he resurrected undead fighters that he could control?</p>
+          <p> </p>
+          <p>How can that be...? It sounds like powerful magic. This information is priceless, [%username]! Thank you so much for your help!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk with [%dic:STR_DIC_N_Erato]. </font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Follow [%dic:STR_DIC_N_Erato] and participate in the summoning ceremony.</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Talk with the Vengeful Spirit of Prapero. </font></p></step>
+               <step><p visible="[%9]"><font color="[%10]">Talk with [%dic:STR_DIC_N_Erato]. </font></p></step>
+               <step><p visible="[%12]"><font color="[%13]">Report the result to [%dic:STR_DIC_N_Lisidike].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Ask Erato if he knows anything about the Hazy Disks you acquired from the Anubite Fighters.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Liske examined one of the Hazy Disks you retrieved from an Anubite Fighter's remains. She found that the symbol of the Jeiaparan Village was printed on it.</p>
+          <p> </p>
+          <p>She asked you to speak to the priest Erato and ask about it. She said that it was the trace of binding to an Obelisk and that she could summon its soul to learn more.</p>
+          <p> </p>
+          <p>When you performed the summoning ceremony, an Anubite Fighter appeared and said that he became an undead as a result of resurrection to Bollvig's Cursed Obelisk.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

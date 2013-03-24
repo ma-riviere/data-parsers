@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>My superiors seem to think the duties here aren't enough to keep me busy. They ordered me to collect Titanium Ore between patrols and send it to them. They say it's needed for temple offerings in Pandaemonium.</p>
+          <p> </p>
+          <p>But that's the only time I get to rest. I'm not lazy, mind you, but everyone needs a break now and then!</p>           
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Sure, but someone has to get that ore."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Of course someone has to do it--but they're out of touch with the reality of the situation here.</p>
+          <p> </p>
+          <p>We shouldn't be expected to go out and gather ore with all our other duties. I don't even know what good ore looks like. I'm no miner!</p>
+          <p> </p>
+          <p>Can you give me a hand, [%username]? I'll pay you if you can gather the Titanium Ore for me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>A perfect arrangement! I'll need fifteen pieces of [%dic:STR_DIC_G_metal_n_c_20a].</p>
+          <p> </p>
+          <p>You can find it spread all over Morheim. You may want to look between the Snow Field and the Salintus Desert in particular.</p>
+          <p> </p>
+          <p>The instructions tell me that there's more to be found in the rocky areas rather than the plains. Good luck, [%username]. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be back with the ore soon."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Never mind. You must have other things to attend to, [%username].</p>
+          <p> </p>
+          <p>I guess I should ask someone else to help me with this Ore.</p>
+          <p> </p>
+          <p>Some days it's not worth it to even get out of bed...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I know what you mean!"</Act>
+    </Selects>
+  </HtmlPage>
+  
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You came back this soon?</p>
+          <p> </p>
+          <p>It hasn't been long since you left...</p>
+          <p> </p>
+          <p>Do you have the ore?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here's what I've found so far."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hmm...I guess I didn't explain it well enough.</p>
+          <p> </p>
+          <p>I need fifteen pieces of [%dic:STR_DIC_G_metal_n_c_20a] to send to Pandaemonium.</p>
+          <p> </p>
+          <p>You can find a lot of ore in the Morheim Snow Field and the Salintus Desert. You should head that way.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Thanks for the tip."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This should be enough to send to Pandaemonium for temple offerings. And you saved me a lot of time!</p>
+          <p> </p>
+          <p>I knew that I chose the right person, [%username]! Here's the payment I promised.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect [%dic:STR_DIC_G_metal_n_c_20a] and take it to [%dic:STR_DIC_N_Thurnberg].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Gather Titanium Ore for Thurnberg who is busy with other duties.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thurnberg was worried because he didn't have time to get Titanium Ore because he had many other duties to take care of.</p>
+          <p> </p>
+          <p>You procured Titanium ore for him, and he was grateful.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

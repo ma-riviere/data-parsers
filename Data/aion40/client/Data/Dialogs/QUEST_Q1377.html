@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>엘테넨 전체가 사막으로 변해 가는 것도 큰일이지만 주민들에게는 다른 문제도 많습니다.</p>
+          <p> </p>
+          <p>그중 하나가 이 근처의 동물들이 아주 난폭해진 것이지요. 동물들도 먹고살기가 힘들어졌으니까요.</p>
+          <p> </p>
+          <p>그래서 가디언들에게 난폭해진 동물들을 소탕하는 임무를 주고는 있지만 솔직히 역부족입니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그래서 이곳을 지나는 데바들에게 보상으로 주화를 걸고 임무를 주고 있습니다.</p>
+          <p> </p>
+          <p>그렇게라도 해서 주민들이 안전하게 살 수 있도록 해야지요.</p>
+          <p> </p>
+          <p>요즘 가장 큰 골칫거리는 [%dic:STR_DIC_M_Cherubim2_35_n]%와 [%dic:STR_DIC_M_Cherubim3_35_n]입니다. 덩치가 작다고 만만하게 봤다가는 된통 당하기 십상이지요.</p>
+          <p> </p>
+          <p>주민들을 위해 놈들을 좀 처치해 주시겠습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>대답이 정말 시원시원하시군요.</p>
+          <p> </p>
+          <p>감사합니다. 그럼 [%dic:STR_DIC_M_Cherubim2_35_n]%와 [%dic:STR_DIC_M_Cherubim3_35_n]%을 잡아 주세요.</p>
+          <p> </p>
+          <p>놈들이 사람들을 해코지하고 있을 지도 모르니 서둘러 출발해 주세요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(입맛을 다시며) 쩝, 아깝군요.</p>
+          <p> </p>
+          <p>[%username] 님처럼 실전 경험이 풍부한 [%userclass]을 만나기 쉽지 않은데.</p>
+          <p> </p>
+          <p>혹시라도 생각이 바뀌면 다시 오십시오. 당신이라면 언제나 대환영입니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>벌써 다녀오신 겁니까?</p>
+          <p> </p>
+          <p>제가 처치해 달라고 한 게 한두 마리가 아닌데...</p>
+          <p> </p>
+          <p>사냥 실력이 정말 좋은 모양이로군요. </p>
+          <p> </p>
+          <p>어쨌든 약속한 숫자만큼 처치한 거겠죠? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>역시 [%username] 님은 확실한 분이군요.</p>
+          <p> </p>
+          <p>정말 수고 많으셨습니다. 자, 이건 약속한 주화입니다.</p>
+          <p> </p>
+          <p>별일 없으시면 앞으로도 계속 부탁합니다. 시간은 얼마가 걸려도 상관없으니 케루비언과 케루비엘을 처치해 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">주민을 괴롭히는 케루비언과 케루비엘을 처치하라</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Cherubim2_35_n]([%2]/4)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Cherubim3_35_n]([%5]/6)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Agrips]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">케루비언과 케루비엘이 사람들을 공격한다고 한다. 쿠리울루 통로에서 케루빔을 몰아내야겠다.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아그립스는 케루비언과 케루비엘 때문에 주민들이 곤란을 겪고 있는데 가디언의 힘만으로는 부족하다며 놈들을 처치해 달라고 했다.</p>
+          <p> </p>
+          <p>그래서 쿠리울루 통로에서 케루비언과 케루비엘을 처치하고 왔더니 앞으로도 계속 부탁한다고 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

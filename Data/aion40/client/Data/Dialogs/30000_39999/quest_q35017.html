@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 보시오.</p>
+          <p> </p>
+          <p>최근 테오모보스에 이상한 조짐이 있다고 들었소.</p>
+          <p> </p>
+          <p>그런데 신성 수호회에서 활동하는 결계 수호자 아트로포스에게서 소식이 끊겼다오.</p>
+          <p> </p>
+          <p>바라지 않는 일이오만 위급한 상황이 생긴 것일지도 모르니 서둘러 [%dic:STR_DIC_N_Atropos]를 만나 상황을 파악하시오.</p>
+          <p> </p>
+          <p>만약 상황이 심각하면 바로 급전을 치고, 그게 아니라면 [%dic:STR_DIC_E_35014]에게 보고하시오.</p>
+          <p> </p>
+          <p>명심하시오. 행동은 신속하게! 입은 무겁게! </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">의뢰서를 접어 넣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(반가운 표정으로) [%username]! 당신이 이곳엔 무슨 일이오?</p>
+          <p> </p>
+          <p>혹시 신성 수호회에 무슨 일이라도 있소?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">사정을 말한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>나한테서 소식이 끊겼다고 난리가 났단 말이오? 이상하구려, 보고서는 꼬박꼬박 잘 보냈는데...</p>
+          <p> </p>
+          <p>(뭔가 생각난 듯 무릎을 치며) 짐작되는 게 있소.</p>
+          <p> </p>
+          <p>모두 특급 우편으로 보냈는데 슈고 녀석들, 내가 보낸 보고서를 제대로 전하지 않은 게로군.</p>
+          <p> </p>
+          <p>담당 슈고를 불러 확인해 볼 테니 상부에는 이상 없다고 전해 주시오. </p>
+          <p> </p>
+          <p>누락된 보고서는 내가 다시 작성해서 보내겠다고 말이오. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>갔던 일은 어떻게 됐소?</p>
+          <p> </p>
+          <p>결계 수호자 아트로포스는 만났소?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>특급 우편으로 보낸 보고서가 사라졌단 말이오?</p>
+          <p> </p>
+          <p>흐음, 만약 그 슈고 배달부가 아트로포스가 신성 수호회에 보낸 보고서만 빼돌린 거라면 단순한 문제가 아닐 것 같소.</p>
+          <p> </p>
+          <p>일단 아트로포스가 조사해 본다고 했으니 결과를 기다려봐야겠소. </p>
+          <p> </p>
+          <p>어쨌거나 수고 많았소, [%username]. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_Atropos]%와 대화하라</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_E_35014]%에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">신성 수호회에서 의뢰서가 왔다. 지시에 따르자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>신성 수호회는 결계 수호자 아트로포스의 소식이 끊겼다며 가서 상황을 알아보라 했다.</p>
+          <p> </p>
+          <p>아트로포스를 만나 물어보니 슈고에게 맡긴 편지가 배달 사고를 일으킨 것 같다고 했고, 프리아모스에게 그대로 전하자 알았다고 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

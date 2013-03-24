@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q20061</QuestId>
+    <QuestName>Powering On</QuestName>
+    <QuestType>Not entered</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It seems as though our first attack on Tiamat's heart has failed miserably. But we never got anywhere by giving up. We'll pull back, consider our options, and attack again.</p>
+          <p> </p>
+          <p>This time, we've decided to study the hearts by creating monitors. They will observe the hearts and report their findings. We'll hopefully have enough information to fight not harder, but smarter.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"So then, what needs doing?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ever helpful, aren't you, [%username]?</p>
+          <p> </p>
+          <p>The monitors that have been designed are ready, save for a power cell. According to our scientists, the monitors require something quite powerful to run them, and we've identified a creature wandering about the [%dic:STR_DIC_W_LDF4b_SZ_T2_A6] as suitable fodder.</p>
+          <p> </p>
+          <p>All we need now is someone to defeat the creature...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"I'll leave now."</Act>
+    </Selects>
+    <Voice file="Q20061-1.ogg"/>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I heard we'd sent you to find a suitable power cell. How did you do?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Will this do?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ha. Tiamat's taint is all over this little stone. How interesting!</p>
+          <p> </p>
+          <p>This will certainly work as a power cell, [%username]. We'll have to adapt our monitors, but I'd sooner do that than find an alternative energy type. Now we can plant this on one of the hearts, and work out a way to finally claim them!</p>
+          <p> </p>
+          <p>Thank you for your trouble!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk with [%dic:STR_DIC_N_Adela].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Scout out the [%dic:STR_DIC_W_LDF4b_SZ_T2_A6] [%5].</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Destroy the Fragmented Gapemaw [%8].</font></p></step>
+               <step><p visible="[%9]"><font color="[%10]">Retrieve the power source from the Rift Gap [%11].</font></p></step>
+               <step><p visible="[%12]"><font color="[%13]">Head to [%dic:STR_DIC_W_LDF4b_SZ_OP_A4], and report back to Garnon.</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Order: The Reian Tribe has new information about the Hearts. Meet Adella.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Adella mentioned a plan to install monitors on the hearts of Tiamat's power. The monitors had been created but still needed a suitable power source to function properly.</p>
+          <p> </p>
+          <p>You were pointed toward the Gravity Well, where you found a huge creature known as a Fragmented Gapemaw. You destroyed it and gathered the power core it carried before returning to Garnon for your reward.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>Mission Progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

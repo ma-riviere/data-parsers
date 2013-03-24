@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>There are many Artifacts in the Ruins of Roah, which makes it an important point to hold. But whether it be the Balaur or the Asmodians who occupy the fortress, they always deploy their best in the front.</p>
+          <p> </p>
+          <p>It's very difficult to collect information we can use to plan an attack. And the latest news indicates that it may be harder than we thought.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What kind of news?"</Act>
+
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We obtained information that the elite Asmodian troops carry powerful Kisks, supposedly far superior to what we have now.</p>
+          <p> </p>
+          <p>If true, it's a dangerous development.</p>
+          <p> </p>
+          <p>I need a Daeva to wipe out the [%dic:STR_DIC_M_1810_all]s in the fortress and bring me their [%dic:STR_DIC_I_QUEST_1810a]s for examination.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're volunteering? I...well, I didn't expect anyone would be brave enough. I've seen these elite Asmodian troops in combat--they're very skilled. I'd find some allies to go along with you.</p>
+          <p> </p>
+          <p>Ah, yes: The elite Asmodian troops only appear when the Asmodians have taken the fortress, and its much easier to deal with them when the fortress in the Vulnerable State.</p>
+          <p> </p>
+          <p>Defeat the [%dic:STR_DIC_M_1810_all]s and make sure to return with the [%dic:STR_DIC_I_QUEST_1810a]s.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Consider it done."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Perhaps I misunderstood you?</p>
+          <p> </p>
+          <p>I thought you were volunteering. I'm sorry. That's just my wishful thinking, I suppose.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I wish you good fortune."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The battle must have been intense.</p>
+          <p> </p>
+          <p>Did you bring those Kisks? The [%dic:STR_DIC_I_QUEST_1810a]s, I mean.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Just as you asked."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>They will be resurrected soon if they still have the Kisks with them.</p>
+          <p> </p>
+          <p>So make sure to take away the rest of the Archon's Kisks from them.</p>
+          <p> </p>
+          <p>It will force the [%dic:STR_DIC_M_1810_all]s to resurrect somewhere far from here.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll take care of it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you for your efforts.</p>
+          <p> </p>
+          <p>After defeating that elite garrison, I suspect you'll get more respect from the enemy, [%username].</p>
+          <p> </p>
+          <p>I hope you'll continue to lend us a hand.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Defeat the [%dic:STR_DIC_M_1810_all]s, take their Kisks and return to [%dic:STR_DIC_N_Livy].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Information has been obtained about the powerful Kisks carried by the elite Asmodian troops. Defeat the elite garrison, collect the Archon's Kisks and return to Livius.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Livius said while gathering information on the  Roah Fortress to recapture it, he learned that the elite Asmodian garrison carry powerful Kisks.</p>
+          <p> </p>
+          <p>You defeated the elite Asmodian garrison in the fortress as he asked, and returned to Livius with the Archon's Kisks to prevent the elite troops from resurrecting easily.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

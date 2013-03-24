@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>자꾸 짐을 얹어 주는 것 같아서 미안하지만 부탁할 임무가 한 가지 더 있소.</p>
+          <p> </p>
+          <p>하지만 드레드기온을 완전히 무력화시키려면 함장을 처치하는 것만으로는 부족해서 말이오.</p>
+          <p> </p>
+          <p>함장이 없으면 잠시 혼란에 빠지겠지만 부함장 같은 다른 용족이 빈자리를 메울 거요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>드레드기온을 완전히 혼란에 빠트리려면 드레드기온의 설비 자체를 부술 필요가 있소. </p>
+          <p> </p>
+          <p>추가적으로 바라나트 군단의 정예 병사까지 처치하면 더 큰 효과가 있을 거요.</p>
+          <p> </p>
+          <p>바라나트 드레드기온에 침투한 후에 주요 설비를 부수고 놈들의 정예 병사를 처치해 주겠소?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>드레드기온을 지휘하는 사령실의 [%dic:STR_DIC_M_IDAb1_Dreadgion_Surkana_13]를 부숴 주시오. </p>
+          <p> </p>
+          <p>그곳의 수르카나를 부수면 드레드기온의 기능이 전반적으로 마비될 거요.</p>
+          <p> </p>
+          <p>또 드레드기온 병력의 주축을 이루는 [%dic:STR_DIC_M_IDAb1_Dreadgion_Elite]도 처치해 주시오.</p>
+          <p> </p>
+          <p>그 정도면 바라나트 드레드기온을 충분히 혼란에 빠트릴 수 있을 테니까.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>싫다면 강요하지 않겠소.</p>
+          <p> </p>
+          <p>하지만 이왕 드레드기온에 침투할 거라면 이 임무도 같이 수행해 줬으면 좋겠소. </p>
+          <p> </p>
+          <p>[%username]에게 크게 부담이 가는 일은 아니라고 생각하오.</p>
+          <p> </p>
+          <p>그러니 곰곰이 생각해 보고 다시 오시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>기다리고 있었소, [%username].</p>
+          <p> </p>
+          <p>부탁한 임무는 수행했소? </p>
+          <p> </p>
+          <p>사령실 동력 수르카나를 부수고 바라나트 군단의 정예 병사를 처치하는 임무 말이오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>수고했소. 덕분에 바라나트 드레드기온이 혼란에 빠졌을 거요.</p>
+          <p> </p>
+          <p>하지만 이 정도로 놈들을 완전히 에레슈란타에서 몰아내기는 힘들 거라고 생각하오.</p>
+          <p> </p>
+          <p>그러니 [%username]%이 조금만 더 노력해 주시오.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">드레드기온을 공격하여 혼란에 빠트려라</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_IDAb1_Dreadgion_Surkana_13] ([%2]/1)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_IDAb1_Dreadgion_Elite] ([%5]/20)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Henir]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">드레드기온을 마비시키기 위해 주요 설비와 바라나트 군단의 주 병력에 타격을 주기로 했다.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>헤니르는 드레드기온을 완전히 혼란에 빠트리려면 함장만 처치해서는 힘들다고 했다.</p>
+          <p> </p>
+          <p>그래서 그의 말대로 사령실 동력 수르카나와 바라나트 군단의 정예 병사를 처치했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

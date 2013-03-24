@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Olga has picked up the trail of a Dramata, [%username]! This could be Padmarashka--we're not sure, but regardless, it's an important find!</p>
+          <p> </p>
+          <p>I'm still not sure how she did it. I saw her devouring some kind of animal over there not too long ago...then all the sudden she picked up the scent of a Dramata, as if she were a beast!</p>
+          <p> </p>
+          <p>Olga's a little mad, but her tracking skills are without match. The Dramata will no doubt be hidden in some deep cavern, guarded by its children. The reason many doubt Dramata exist is because few Asmodians who have gone looking for them ever return....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"That's a bit unsettling..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hahaha, nonsense, [%username]! A Daeva of your talent would have no problem dispatching a Dramata and a few of its children! That's why I wnt you to be the scout for our force....</p>
+          <p> </p>
+          <p>What? No, of course this isn't some kind of suicide mission! Why ever would you think that?</p>
+          <p> </p>
+          <p>We believe there's a Dramata hiding somewhere in the XX region of Gelkmaros. We've sent several other scouts, but none have retur...I mean...they all came back...but no sign of the Dramata. What do you say, [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent! I'm sure a Daeva of your renown will find the evidence we're looking for even though the others were eat...I mean, all came back in one piece!</p>
+          <p> </p>
+          <p>Head to the XX and look for the Balaur. Slay them, and find some kind of proof that you've discovered the Dramata's lair. Under no circumstances are you to approach the Dramata itself. In fact, it would be better if it remains unaware of your presence....</p>
+          <p> </p>
+          <p>What? Of course this isn't dangerous! Would I risk your life to satisfy my curiosity, [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Signs point to yes."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I see...this isn't at all risky, [%username]. I promise.</p>
+          <p> </p>
+          <p>Why, I even heard there's a delightful Shugo selling cake just outside the Dramata's lair!</p>
+          <p> </p>
+          <p>Okay, that might not be true, but...I'm sure you'd be fine...mostly sure...sort of.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I hope you get eaten."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Shards! That's the sixteenth scout we've sent who didn't return! How will I ever find the Dramata with these imbeciles?</p>
+          <p> </p>
+          <p>Oh, [%username]! I didn't see you there...but I see you're back! Well? Did you find proof that the Dramata is hiding in the XX?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here, take a look at this."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No proof then...but you've returned, so that's progress!</p>
+          <p> </p>
+          <p>What do you mean "what do I mean by progress"? Of course others have returned!</p>
+          <p> </p>
+          <p>They just didn't bring me proof that a Dramata is hiding in the XX...head back there and find me what I need, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm going, I'm going."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes, this is it! Now I can get all those lost scouts off my conscien...I mean, now we can prepare for battle!</p>
+          <p> </p>
+          <p>We must carefully plan our attack--the Dramata are quite clever.</p>
+          <p> </p>
+          <p>Thank you, and be sure to return. I'm sure we will require more help if we want to eradicate the Dramata.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Gather the XXX and bring them to Batalrion.</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Obliterate the Balaur protecting the Dramata's lair as Batalrion has asked and gather proof of a Dramata's existence there.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Batalrion asked you to slay the Balaur in XX and find proof that a Dramata dwells there.</p>
+          <p> </p>
+          <p>You returned with proof after obliterating the XXX in XX. Batalrion thanked you and asked for more help in the future.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

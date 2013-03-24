@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Despite the language barrier between ourselves and the Elyos, we actually know quite a bit about what happens in Elysea.</p>
+          <p> </p>
+          <p>This is partly thanks to espionage missions undertaken by our own Daevas. We manage to piece together a surprising amount from bits of intel.</p>
+          <p> </p>
+          <p>Don't ask me how I know these things; I have my sources. One of them told me about an Elyos legionary named Icaronix. He's a bad one.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Worse than normal Elyos?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Actually, yes. He's a Lepharist who apparently betrayed his superior, one of the top Elyos commanders. This commander vanished, and no one knows what happened.</p>
+          <p> </p>
+          <p>If it were just that, he could be safely ignored. But it seems he has some leadership qualities that are helping the Lepharists in general. That includes here in Asmodae.</p>
+          <p> </p>
+          <p>This cannot stand, of course. You would do us all a favor by eliminating Icaronix once and for all.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I hope you know what you're doing, [%username]. Infiltrating [%dic:STR_DIC_W_LF3_Lehpar] won't be easy, for many obvious reasons.</p>
+          <p> </p>
+          <p>But any blow we can strike to the Lepharists anywhere will help us deal with them here. It's bad enough fighting the Elyos and Balaur; we don't need another front.</p>
+          <p> </p>
+          <p>Though if you happen to meet any Elyos along the way... Well, let's just say you should do what any good Asmodian soldier would do.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"It'd be my pleasure."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I know it seems like you'd be doing the Elyos a favor, and I know that repulses you. But you'd actually be helping Asmodae too.</p>
+          <p> </p>
+          <p>The Lepharists are a blight in both our worlds. If they succeed in Elysea, they can turn their combined resources on us.</p>
+          <p> </p>
+          <p>We'd be caught between them and the Balaur.... It's not a pretty thought. Do I alter your mind at all?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Maybe...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's hard to understand what the Lepharists want, exactly. Surely they know that if the Balaur triumph, we all lose, including them?</p>
+          <p> </p>
+          <p>Do they think they can deal with the Balaur if that happens? If so, they are greater fools than even the Elyos.</p>
+          <p> </p>
+          <p>Speaking of fools, did you fight [%dic:STR_DIC_M_IDLF3CL_LehparIcaronixQ_45_Ah]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"It wasn't easy...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Really! Sounds horrible! Though I have a feeling that form only reflected the innermost heart he was born with.</p>
+          <p> </p>
+          <p>Imagine what it would've been like had all Lepharists been so altered. Even our Daevas would've had a difficult time with it.</p>
+          <p> </p>
+          <p>It seems you did more good than even I expected. Good work. I'll be sure to let my superiors in Pandaemonium know what you've done.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Terminate [%dic:STR_DIC_M_IDLF3CL_LehparIcaronixQ_45_Ah]([%2]/1).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report to [%dic:STR_DIC_N_Lewin].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Go to Azoturan Fortress and kill Betrayer Icaronix, an Elyos Lepharist.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Lewin heard of an Elyos Lepharist named Icaronix, who betrayed his commander and people. Concerned about his leadership skills, she asked you to stop him.</p>
+          <p> </p>
+          <p>You infiltrated Elysea and Azoturan Fortress, and killed Betrayer Icaronix. Lewin was pleased to see you return, and the traitor killed.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

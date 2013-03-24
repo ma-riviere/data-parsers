@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>케이레스가 속한 정찰대가 고립되어 어려운 상황에 처해있는 것 같습니다.</p>
+          <p> </p>
+          <p>제가 직접 도움을 주면 좋곘지만, 제가 담당한 구역의 일도 현재 벅찬 상태라 [%username]님의 도움을 요청해야 할 듯 하네요.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_N_LDF5b_Kailes_E]%을 찾아가서 도움을 주시면 좋을 듯 싶네요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>어서오십시오, [%username] 님.</p>
+          <p> </p>
+          <p>정말 힘든 상황이었는데 이렇게 와주셔서 감사합니다.</p>
+          <p> </p>
+          <p>현재 문제가 되는 것은 제43 군단 기마부대입니다. 워낙 기동력이 좋아 전황을 반전시킬 수 있는 병력이지요.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_E_LDF5b_F2_Vri]%이 주저하고 있는 지금이 가장 좋은 기회입니다. 녀석들을 처치해 주십시요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+  
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>브리트라 군의 처단은 어떻게 되어가고 있습니까?</p>
+          <p> </p>
+          <p>바스티 부대는 브리트라군 제43 군단의 1부대로 실전으로 단련된 부대라서 호락호락하지 않은 상대입니다.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_E_LDF5b_F2_Vri]%이 방심하고 있는 지금 처치해야 후환이 없을 것 같습니다.</p>		  
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">보상을 요구한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>감사합니다.</p>
+          <p> </p>
+          <p>이렇게만 해두어도 앞으로 상황은 많이 호전시킬 수 있을 것입니다. </p>
+          <p> </p>
+          <p>저 혼자만으로는 이런 좋은 기회를 놓칠까 마음을 졸이고 있었는데, 적시에 이렇게 와주셔서 감사합니다.</p>
+          <p> </p>
+          <p>워낙 전선의 상황이 치열해서 앞으로도 잘 부탁드리겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_LDF5b_Kailes_E]%와 대화하라</font></p></step>
+               <step><p visible="[%9]"><font color="[%10]">[%dic:STR_DIC_E_LDF5b_F2_Vri]%을 처치하라([%11]/9)</font></p></step>
+               <step><p visible="[%24]"><font color="[%25]">[%dic:STR_DIC_N_LDF5b_Kailes_E]%와 대화하라</font></p></step>
+	</steps>
+          <p><font font_xml="quest_summary">파르테노의 요청으로 케이레스를 만나 제43 군단 기마부대를 제거하라.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>파르테노의 요청으로 케이레스를 만나 제43 군단 기마부대를 제거했라.</p>
+          <p> </p>
+          <p>케이레스는 전선의 상황이 치열해서 앞으로도 더 도움이 필요할 것 같다고 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

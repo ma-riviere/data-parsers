@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q41464</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>루미나시엘 무기를 만드는 데는 많은 재료들이 필요하다.</p>
+          <p> </p>
+          <p>하지만 네가 구해야 할 것은 희귀 금속이나 제련석 따위가 아니라 [%dic:STR_DIC_E_Q41464all]들이다.</p>
+          <p> </p>
+          <p>루미나시엘 무기의 원형에 흡수시킬 재료들이지.</p>
+          <p> </p>
+          <p>사르판 곳곳에 깃들어 있는 [%dic:STR_DIC_E_Q41464all]들을 구해 [%dic:STR_DIC_N_Morphiuss]에게 전해라.</p>
+          <p> </p>
+          <p>그러면 그가 다음으로 해야할 일을 알려줄 것이다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아, [%username] 님이시군요.</p>
+          <p> </p>
+          <p>그렇지 않아도 카룬 님께 연락을 받고 기다리고 있었습니다.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_E_Q41464all]들은 모아 오셨습니까?</p>
+          <p> </p>
+          <p>정해진 수량에서 한 개라도 모자라면 곤란하니 개수를 정확히 파악해 주시면 감사하겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">어두운 감정의 정수들을 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>어디보자...</p>
+          <p> </p>
+          <p>좋습니다. 정확히 가져오셨군요.</p>
+          <p> </p>
+          <p>이 정수들은 제가 정제 과정을 거쳐 신전에 전달하겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_E_Q41464all]를 모아 [%dic:STR_DIC_N_Morphiuss]에게 가져가라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">루미나시엘 무기의 재료인 어두운 감정의 정수들을 모으자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>카룬은 루미나시엘 무기의 재료인 어두운 감정의 정수를 모으라고 말했다.</p>
+          <p> </p>
+          <p>사르판에서 재료를 모아 모피우스에게 전하니 정제 과정을 거쳐 신전에 전달해 주겠다고 답했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

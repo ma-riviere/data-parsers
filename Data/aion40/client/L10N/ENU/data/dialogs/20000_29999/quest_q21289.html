@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]. I trust I can rely on your discretion? There is a small matter I need to speak to you about.</p>
+          <p> </p>
+          <p>I have received intelligence that the Elyos are attempting to enter Gelkmaros through the Silentera Canyon.</p>
+          <p> </p>
+          <p>Now, we must prepare for this eventuality, but there is no need to make this widely known. It will only start a panic.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Of course."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The plan is as follows: should Vorgaltem Citadel and the Crimson Temple fall to the Elyos, Agent [%dic:STR_DIC_M_DF4_3111_Boss_Da_1] will make his stand at the Gelkmaros Defense Base.</p>
+          <p> </p>
+          <p>As long as he stands strong, we cannot fail. Our job is to make sure he stands strong, and I want you to lend a hand, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, that is good news. I already feel much greater confidence in our victory.</p>
+          <p> </p>
+          <p>What I need you to do is, when Agent [%dic:STR_DIC_M_DF4_3111_Boss_Da_1] is under attack, to use Mastarius's Aether Concentrator.</p>
+          <p> </p>
+          <p>This device allows you to transfer some of your own Aetheric power to the Agent. In a place like this, where Aether is so scarce, he needs all the help he can get.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"The task is mine."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes, this will no doubt be a bitter battle. One who is not fully committed would be wise not to make promises they can't keep.</p>
+          <p> </p>
+          <p>I hope that further experiences lead you to reconsider. Even if you doubt your own competence, I do not, and neither does the Agent.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Thanks. I'll think about it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I saw your performance in that battle, [%username]. You kept your head and stayed cool throughout all the chaos--very impressive.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Thank you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>As the representative of Agent Mastarius, I am authorized to give you this.</p>
+          <p> </p>
+          <p>Thank you for all the sacrifices you have made for the good of all Asmodae.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Use [%dic:STR_DIC_M_DF4_3111_Boss_Da_1]'s Aether Concentrator to give the Agent strength [%2].</font></p></step>               
+               <step><p visible="[%3]"><font color="[%4]">Talk to [%dic:STR_DIC_N_Mijien].</font></p></step>               
+    </steps>
+          <p><font font_xml="quest_summary">Use Mastarius's Aether Concentrator to lend power to Mastarius while he is under attack by the Elyos.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Athana asked you to support Agent Mastarius while he was fighting the Elyos. </p>
+          <p> </p>
+          <p>You used Mastarius's Aether Concentrator to lend power to the agent during the fight, and Mijien issued you a reward for your part in the battle.</p>
+	</body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

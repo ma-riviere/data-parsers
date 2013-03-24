@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>오늘 제가 운이 좋은가 보군요. 도움이 필요하던 참이었거든요.</p>
+          <p> </p>
+          <p>요즘 새로 책을 쓰고 있습니다. 브라우니의 토속 신앙에 대한 건데 예전에 쓴 '크랄의 종교 의식에 대한 연구'의 후속편이죠.</p>
+          <p> </p>
+          <p>[%username] 님도 알다시피 크랄와 브라우니는 주종 관계입니다. 그래서 브라우니의 의복이나 생활 방식은 크랄과 거의 비슷하죠. 그런데 흥미롭게도 종교적인 부분은 많이 다르더군요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">어떻게 다른지 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>크랄은 용제나 샨두카 족장 같은 영웅을 받드는데 비해 브라우니는 돌이나 나무, 큰 짐승 같은 자연을 추앙합니다.</p>
+          <p> </p>
+          <p>특히 베르테론 지역의 두카키족에서 그런 경향을 볼 수 있죠. 놈들은 자신이 모시는 신을 나무에 새겨 부적처럼 몸에 지니고 다닌답니다.</p>
+          <p> </p>          
+          <p>그래서 부적의 모양이 제각각이죠. 계급이나 직업, 성별의 영향을 받는 것 같은데 정확한 건 자료를 조사해야 알 것 같아요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">도움이 필요하냐고 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>      
+          <p>도와주시면 고맙죠. </p>
+          <p> </p> 
+          <p>책을 쓰려면 자료를 구하러 여기저기 다녀야 하는데 울라구루 때문에 꼼짝을 못하고 있거든요. 이 녀석을 다룰 수 있는 사람이 저 밖에 없어서요. </p>
+          <p> </p>
+          <p>그렇다고 데리고 다닐 수도 없으니 [%username] 님이 저 대신 [%dic:STR_DIC_I_junk_k_s_13d]을 구해다 주시겠어요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage> 
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>감사합니다. 덕분에 한시름 덜었군요.</p>
+          <p> </p>
+          <p>두카키족은 베르테론 지역에 있는 [%dic:STR_DIC_FLA12]과 [%dic:STR_DIC_FLA13]에 많습니다.</p>
+          <p> </p>
+          <p>가서 [%dic:STR_DIC_I_junk_k_s_13d]을 가져오십시오. 찾기 쉽지는 않겠지만 열심히 뒤지면 구할 수 있을 거예요.</p>
+          <p> </p>
+          <p>그런데 놈들이 순순히 안 주면 어떡하냐고요? 호호호, [%username] 님이 잘 해결할 거라 믿겠습니다.</p>        
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>당신은 도와줄 거라 믿었는데 낭패군요.</p>
+          <p> </p>
+          <p>아, 누구에게 부탁한다...</p>
+          <p> </p>
+          <p>나중에라도 생각이 바뀌면 오십시오.</p>  
+          <p> </p>
+          <p>보상은 섭섭치 않게 하겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>드디어 오셨군요.</p>
+          <p> </p>
+          <p>부탁한 [%dic:STR_DIC_I_junk_k_s_13d]은 구했겠죠?</p> 
+          <p> </p>
+          <p>자료가 없으니 책을 쓸 수 없어 그동안 너무 답답했습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">부적을 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>실망이군요.</p>
+          <p> </p>
+          <p>[%username] 님은 약속을 지키는 분인 줄 알았는데...</p>
+          <p> </p>
+          <p>전 확실한 자료를 토대로 책을 씁니다. 생각만으로 글을 쓰는 건 사기나 다름없으니까요.</p>
+          <p> </p>
+          <p>제가 책을 완성할 수 있도록 약속한 [%dic:STR_DIC_I_junk_k_s_13d]을 구해다 주세요. 이렇게 부탁할게요!</p> 
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>와아, 부적 모양이 정말 제각각이잖아.</p>
+          <p> </p>
+          <p>이건 나무 모양, 이건 브락스처럼 생겼잖아!</p>
+          <p> </p>
+          <p>이런, 죄송합니다. 모처럼 자료를 보니 흥분돼서 [%username] 님이 계시다는 걸 깜박했습니다.</p>
+          <p> </p>
+          <p>감사합니다. 덕분에 책을 계속 쓸 수 있을 것 같아요.</p> 
+          <p> </p>
+          <p>이건 제 성의니 받아 두십시오. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">베르테론 지역의 두카키족에게서 [%dic:STR_DIC_I_junk_k_s_13d]을 모아 [%dic:STR_DIC_N_Mameia]에게 가져가라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">마메이아가 브라우니의 토속 신앙에 대한 책을 쓰는데 자료가 필요하다고 한다. 두카키 채굴장과 두카키 부락에 사는 두카키족이 지닌 부적을 모아서 마메이아에게 가져가자.</p>
+          <p></font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>마메이아는 브라우니의 토속 신앙에 대한 책을 쓰는데 자료가 부족해 걱정이라고 했다.</p>
+          <p> </p>
+          <p>울라구루 때문에 엘리시움을 떠날 수 없는 마메이아를 대신해 두카키 부적을 구해다 주자 고마워하며 사례를 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

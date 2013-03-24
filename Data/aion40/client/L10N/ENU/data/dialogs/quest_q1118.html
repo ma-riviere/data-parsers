@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Just a moment, [%username]!</p>
+          <p> </p>
+          <p>I was looking for someone to do a job for me. It's not difficult, and if you were already heading to the Kabarah Strip Mine, then it won't take long for you to do at all.</p>
+          <p> </p>
+          <p>Please, please listen. It's Melponeh, she's... she's...</p>
+          <p> </p>
+          <p>I'm sorry, I'm finding this whole thing difficult to deal with.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"No need for apologies. What's wrong?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you, [%username].</p>
+          <p> </p>
+          <p>I have an ointment here that needs to be given to [%dic:STR_DIC_LA11]. She was attacked during a [%dic:STR_DIC_MLA10] raid, and now, it seems as though her wounds have become infected. To be honest, if she doesn't receive this treatment, Melponeh may soon... she may soon die.</p>
+          <p> </p>
+          <p>Please... please take the ointment to her, [%username]. You'll find her near the [%dic:STR_DIC_FLA07].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank Aion!</p>
+          <p> </p>
+          <p>Oh, and be careful, [%username]. The [%dic:STR_DIC_MLA10]s that hurt Melponeh are highly aggressive and will likely attack you on sight. Melponeh needs to get better, but you also need to not get hurt.</p>
+          <p> </p>
+          <p>If you have the Kinah, I'd suggest you speak to [%dic:STR_DIC_N_Kustanon] about a quick flight path.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Thanks for the advice."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Your lack of empathy shocks and saddens me, [%username].</p>
+          <p> </p>
+          <p>I was certain you'd be willing to help, seeing as the task was so simple. Clearly, I thought too highly of you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Sorry."</Act>
+    </Selects>
+  </HtmlPage>
+  
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes, [%userclass]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">"I was hoping you could tell me about flight transportation."</Act>
+    </Selects>
+  </HtmlPage>
+  
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You've never used flight before? Interesting.</p>
+          <p> </p>
+          <p>It's simple, mercenary. I can send you to Melponeh's Campsite using specific channels of the aetherstream. Every region has its own paths, though we only usually bother establishing paths when they lead to or near populated areas.</p>
+          <p> </p>
+          <p>Oh, and the service isn't free. I have to eat, just like you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"Thanks for the information."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hello? Who... who is there?</p>
+          <p> </p>
+          <p>Please, talk quickly. I am weak. Even conversation exhausts me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I have some treatment for you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Medicine from the temple? Oh my, I have good friends.</p>
+          <p> </p>
+          <p>The Worgs that attacked our camp were so strong. We eventually... fought them off, but not before one of them slashed my back.</p>
+          <p> </p>
+          <p>Thank you for all your help, [%username]. I'm certain that I would have died had you not come to help me. Please, take this.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk with [%dic:STR_DIC_N_Kustanon].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Deliver the ointment to [%dic:STR_DIC_LA11] in [%dic:STR_DIC_FLA05_1].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Polinia asked you to deliver a precious ointment to Melponeh, who was injured by a Worg. You must get to her quickly.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Polinia, a priest of Akarios Village, asked you to deliver a precious ointment to Melponeh, a historian who had been attacked by a pack of Worgs.</p>
+          <p> </p>
+          <p>You went to Melponeh's Campsite and handed over the ointment, thereby almost certainly saving her life.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In Progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

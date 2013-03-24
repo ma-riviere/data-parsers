@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q11550</QuestId>
+    <QuestName>Stigma Master's Challenge</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I've been watching you [%username], and I believe you can handle one more Greater Stigma. However, as you know, the Greater Stigmas are very powerful.</p>
+          <p> </p>
+          <p>I need you to prove that you're qualified to handle such power by joining in with [%dic:STR_DIC_E_LDF4B_Occupation_Combat] in Tiamaranta, by going to the [%dic:STR_DIC_W_IDArena_pvp_L], or by hunting.</p>
+          <p> </p>
+          <p>Speak to me again, choose whichever seems the best challenge, then best it. I'll then be able to give you a [%dic:STR_DIC_I_Q11550_stigma].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Now, return the [%dic:STR_DIC_I_Q11550_stigma] I gave you.</p>
+          <p> </p>
+          <p>I'm afraid I've forgotten, [%username]: have you been to partake in [%dic:STR_DIC_E_LDF4B_Occupation_Combat], or did you enter the [%dic:STR_DIC_W_IDArena_pvp_L]? Perhaps you went Macori hunting?</p>
+          <p> </p>
+          <p>Either way, I'll grant you a further Greater Stigma Slot with the power embedded in your Stigma.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">"Well..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent. You now have one extra Greater Stigma slot. Check it out, and empower yourself!</p>
+          <p> </p>
+          <p>I hope you will fight beside the Reian Tribe until the day Tiamat and the rest of the Balaur kneel before us.</p>
+          <p> </p>
+          <p>Faith and arms!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Prove that you're qualified and receive a [%dic:STR_DIC_I_Q11550_stigma] from [%dic:STR_DIC_N_Bariunos].</font></p>[%collectitem]</step>
+               <step><p visible="[%15]"><font color="[%16]">Return the [%dic:STR_DIC_I_Q11550_stigma] to [%dic:STR_DIC_N_Bariunos].</font></p></step>             
+    </steps>
+          <p><font font_xml="quest_summary">Participate in siege warfare in Tiamaranta, combat in the Crucible Coliseum, or hunting at Macori Hill to prove that you can handle Greater Stigma.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Bariunos concluded that you were ready to have one more Greater Stigma.</p>
+          <p> </p>
+          <p>He added that stronger power requires a qualified handler, and asked you to prove yourself in siege warfare, the Crucible Coliseum, or hunting.</p>
+          <p> </p>
+          <p>When you proved yourself without difficulty, he granted you an extra Stigma Slot.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

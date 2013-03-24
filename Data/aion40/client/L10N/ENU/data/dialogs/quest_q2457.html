@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Many think I am strange, but I've seen far more eccentric people...</p>
+          <p> </p>
+          <p>Do you know a Daeva of Fishing named [%dic:STR_DIC_N_Lif]?</p>
+          <p> </p>
+          <p>She's known to be the best of the best, always bragging that she has caught even the rarest fish in the world.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+       <Act href="HACTION_SELECT1_1">"That doesn't seem eccentric."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Well, Lif claims to have caught Lasayo Fish, which are known to lay eggs only once every hundred years! And even Daevic Fish, whose progenitor was a Daeva who had been transformed into a fish by divine punishment.</p>
+          <p> </p>
+          <p>But, she says the only fish she's failed to catch is...Gadill! Does that make any sense to you at all?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Well, Gadill can be tricky, I guess."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ha! Have you ever fished at all?! Gadill is one of the most common fish around!</p>
+          <p> </p>
+          <p>It just seems so weird that a Daeva of Fishing, who claims to have caught all the rarest fish in the world, has failed to catch even a single Gadill!</p>
+          <p> </p>
+          <p>But I do feel sorry for her too. It'd be nice if we could give her some hope. Oh, I know! Why don't you catch some [%dic:STR_DIC_E_fish_d_n_c_20a] and take them to [%dic:STR_DIC_N_Lif]? Show her it's not impossible.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I think if you catch five [%dic:STR_DIC_E_fish_d_n_c_20a] and take them to [%dic:STR_DIC_N_Lif], that should be enough.</p>
+          <p> </p>
+          <p>Gadill is plentiful in this river, so you don't need to go far.</p>
+          <p> </p>
+          <p>Take her the Gadill, and maybe you can help break this "Gadill curse" she's fishing under.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"That sounds like a great idea."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Aww, really?</p>
+          <p> </p>
+          <p>I could do it myself, but I just got this fire going really well and I don't want to let it go out.</p>
+          <p> </p>
+          <p>You just seemed like the kind of person who'd want to do a nice thing for someone.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Looks can be deceiving."</Act>
+    </Selects>
+  </HtmlPage>
+ 
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Arg! I've caught many rare fish today, as usual.</p>
+          <p> </p>
+          <p>And, as usual, I've caught all kinds of fish but [%dic:STR_DIC_E_fish_d_n_c_20a]!</p>
+          <p> </p>
+          <p>Isn't that strange? I even caught a fish today that's been extinct in Asmodae for hundreds of years!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Wow, that's an amazing achievement!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I suppose, but it seems so meaningless to me.</p>
+          <p> </p>
+          <p>I have no idea what plans the Shedim Lords have for me, but this [%dic:STR_DIC_E_fish_d_n_c_20a] obsession is going to drive me to the Abyss!</p>
+          <p> </p>
+          <p>Everyone says it's quite abundant!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"It's true. Look what I've brought."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ooh, what do you have there? Is that...? It's Gadill!</p>
+          <p> </p>
+          <p>Ah, Favyr sent you to encourage me, didn't he? He does that sometimes. It's sort of a joke, I think, but he's well-meaning.</p>
+          <p> </p>
+          <p>It does help to know that the Gadill can actually be caught.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Catch [%dic:STR_DIC_E_fish_d_n_c_20a] and take them to [%dic:STR_DIC_N_Lif].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Favyr said that Lif--who calls herself a Daeva of Fishing--has caught every strange fish, but not Gadill, the most common fish. Catch Gadill and bring them to Lif as Favyr requested.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Favyr has sent Gadill to Lif, a Daeva of Fishing, from time to time to cheer her up. Lif has caught all kinds of fish but Gadill, the most common fish.</p>
+          <p> </p>
+          <p>You caught Gadill and gave them to Lif to encourage her.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

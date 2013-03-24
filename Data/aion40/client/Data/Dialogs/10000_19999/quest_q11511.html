@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q11511</QuestId>
+    <QuestName>아우리오와 아울라엣 4</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>큰일이라니. 페리우가 죽은 걸 알고 경계가 더 삼엄해졌라니. 지금 도망 가면 아버지에게 잡히고 말라니...</p>
+          <p> </p>
+          <p>아우우우울... (슬픔에 잠긴다.) </p>
+          <p>  </p>
+          <p>왜 하필 그대 이름은 아우리오라니...</p>
+          <p>  </p>
+          <p>[%dic:STR_DIC_E_ldf4a_Aurio]가 이름을 버렸으면 좋겠라니. 아메프레 꽃은 이름을 버려도 향기로울라니. 이름만 버리면 아울라엣의 모든 걸 가질 수 있을라니...</p>
+          <p> </p>
+          <p>아울?! 좋은 생각이 났라니!</p>
+          <p> </p>
+          <p>수면제라니! 가서 강력한 수면제를 구해 오라니! 설명은 나중에 해 줄라니! </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>오! 한참을 기다리고 있었습니다! 아울라엣에게 간 일은 어떻게 됐습니까? </p>
+          <p> </p>
+          <p>(그동안의 상황과 수면제 이야기를 들려준다.)</p> 
+          <p> </p>
+          <p>수면제를 어디에 쓰려는 걸까요?</p>
+          <p> </p>
+          <p>흐음... (생각에 잠긴다.) </p>
+          <p>  </p>
+          <p>설마...</p>
+          <p> </p>
+          <p>[%username] 님. [%dic:STR_DIC_W_LDF4a_SZ_A3]로 가셔서 환각날개 디오나에를 처치해 주십시오. 그러면 [%dic:STR_DIC_I_QUEST_11511_bottle]를 얻을 수 있을 겁니다.</p>
+          <p> </p>
+          <p>그것을 아울라엣에게 수면제라고 속이고 가져다 주십시오.</p>
+          <p> </p>
+          <p>아울라엣이 어떤 생각을 하는지 대충 알 것 같습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">알겠다고 답한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>또 늦었라니. 이젠 기대도 안 하고 싶라니...</p>
+          <p> </p>
+          <p>수면제나 내놔라니.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">맹독 가루를 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이리 달라니!</p>
+          <p> </p>
+          <p>아... 이제 [%dic:STR_DIC_E_ldf4a_Aurio]와 결혼 할 수 있라니...</p>
+          <p> </p>
+          <p>계획을 듣고 싶으라니? 정말 기가 막히라니!</p>
+          <p> </p>
+          <p>약을 먹고 깊이 잠들면 아울라우들이 내가 죽은 줄 알고 밖에 묻으러 갈 거라니. 그때 도망가는 거라니!</p>
+          <p> </p>
+          <p>아울라엣은 정말 천재라니!</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_N_Mooluios]에게 상황을 전달하라</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_I_QUEST_11511_bottle]%을 구해 [%dic:STR_DIC_N_Owlau_LDF4a_01]에게 전해줘라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">이제까지의 정보를 무루이오스에게 전달하고, 그의 지시를 따르자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아울라엣은 백작 페리우가 죽은 것 때문에 경계가 삼엄해져 탈출할 수 없다고 했다. </p>
+          <p> </p>
+          <p>탈출 방법을 고민하던 아울라엣이 갑자기 수면제를 구해 달라는 것이 이상하여 무루이오스에게 보고했다.</p>
+          <p> </p>
+          <p>상황을 들은 무루이오스가 뭔가 알 것 같다며 수면제 대신 환각날개 디오나에의 맹독 가루를 가져다 주라고 하여 그렇게 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

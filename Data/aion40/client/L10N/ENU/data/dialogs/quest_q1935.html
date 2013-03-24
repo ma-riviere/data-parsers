@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+        	<p>Now, I just need it delivered.</p>
+        	<p> </p>
+          <p>Since you've helped me this far, how about taking it for me?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I can do that."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Great. [%dic:STR_DIC_N_Gerania] was restoring that report for me. It's probably ready by now, so you should pick that up first.</p>
+          <p> </p>
+          <p>Once you've got it, you can take it plus the Body Tissue to [%dic:STR_DIC_N_Hygea], the best Daeva in the Temple of Life.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thanks, [%username].</p>
+          <p> </p>
+          <p>Once you've delivered the items, wait until Hygea has finished her analysis, then report the result to me.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I will."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This seems like an odd time to start turning me down.</p>
+          <p> </p>
+          <p>It's your choice, of course. I'll just send it some other way.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Good luck."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did you come to restore a book, [%username]? </p>
+          <p> </p>
+          <p>Hand it over--but be aware that there's quite a line ahead of you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">"I'm here for Xenophon's report."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah! I've already sent that off to Hygea. I must have forgotten to tell Xenophon--I must start making myself notes!</p>
+          <p> </p>
+          <p>Sorry you came by for nothing....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"No trouble. I'll be on my way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select3">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes?</p>
+          <p> </p>
+          <p>Can I help you with something?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT3_1">"This is from Xenophon."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select3_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah...well, let me take a look at this. Hmm...interesting. This is more like the body tissue of a Daeva than that of Human. It has stronger Aether energy, though, and reproduces faster than a Daeva's would....</p>
+          <p> </p>
+          <p>It's as though this Daeva was...artificially strengthened....</p>
+          <p> </p>
+          <p>It's unstable, though, that's for sure. I wonder what they did....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO2">"Thanks. I'll let Xenophon know."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Welcome, [%username].</p>
+          <p> </p>
+          <p>Did you meet with Hygea?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I did. She said..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hmm...as I expected....</p>
+          <p> </p>
+          <p>We're probably going to need more help from you, [%username], presuming you're willing to give it....</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Talk to [%dic:STR_DIC_N_Gerania] in the Hidden Library.</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Talk to [%dic:STR_DIC_N_Hygea].</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Talk to [%dic:STR_DIC_N_Xenophon].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Xenophon asked you to deliver the tissue sample from RM-78c to Hygea. Get the research report from Gerania and deliver it with the tissue to Hygea.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Xenophon asked you to get the research report he had sent Gerania for restoration and to deliver it with the tissue from RM-78c to Hygea.</p>
+          <p> </p>
+          <p>When you went to Gerania, she said she had already restored the research report and delivered it to Hygea, and she was sorry for having troubled you to come for nothing.</p>
+          <p> </p>
+          <p>You met Hygea and handed over the tissue sample. She explained that RM-78c was a Daeva whose physical power was artificially strengthened, but that the tissue was unstable.</p>
+          <p> </p>
+          <p>When you reported Hygea's analysis to Xenophon, he said that future operations would be more dangerous, and asked you to continue to carry out missions.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

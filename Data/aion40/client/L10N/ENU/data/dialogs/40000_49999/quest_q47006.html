@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>To: [%username]</p>
+          <p>From: [%dic:STR_DIC_N_Titorea], Priory </p>
+          <p>Task: Check the Field Amplifiers</p>
+          <p> </p>
+          <p>The Aetheric Field Amplifers near the Morheim Observatory are malfunctioning. Your job is to find out why.</p>
+           <p> </p>
+          <p>Check on the [%dic:STR_DIC_OBJ_Q47006]s with a [%dic:STR_DIC_E_Mentor]. It will be impossible to do alone.</p>
+          <p> </p>
+          <p>Once you're done, report your findings to me. Keep your eyes open and be willing to learn.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Wonder what's going on...?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hm, you look a little more run-down than I would've expected.</p>
+          <p> </p>
+          <p>When I got the notification from the Observatory, I thought it'd be a simple repair job.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"It was sabotage."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Lepharists, eh? Seems rather foolish.... The Aetheric field protects them too.</p>
+          <p> </p>
+          <p>Still, at least you put a stop to it.</p>
+          <p> </p>
+          <p>You and your Mentor worked together well on this one. You'd be wise to keep that in mind for future tasks.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">With the aid of a [%dic:STR_DIC_E_Mentor], find the problem with the [%dic:STR_DIC_OBJ_Q47006]s ([%2]/5).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report to [%dic:STR_DIC_N_Titorea].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">The Marchutan Priory has an assignment. Find a Mentor and check the Morheim Field Amplifiers. Remove the cause of their malfunction.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The Marchutan Priory instructed you to find and fix whatever was causing Morheim Field Amplifers to malfunction.</p>
+          <p> </p>
+          <p>You and your Mentor found the cause to be Lepharists. With their defeat, the Amplifiers should now run normally.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p align="center">- 업무 지시서 -</p>
+          <p> </p>
+          <p>1. 수신자: 직원 [%username]</p>
+          <p> </p>
+          <p>2. 업무: 상부에서 필요하다고 하니 [%dic:STR_DIC_E_LDF5a_Idgel_Q39601]에서 [%dic:STR_DIC_I_quest_49601a]%을 구해 담당 지부에 납부해 주시기 바랍니다냥.</p>
+          <p> </p>
+          <p>3. 담당 지부: [%dic:STR_DIC_E_LDF5a_Silverlin_BD]</p>
+          <p> </p>
+          <p>위 업무를 완수하면 보상이 있으므로 성실히 임해 주시기 바랍니다냥.</p>
+          <p> </p>
+          <p>- 실버린 주식회사, 인사담당자 두무링 백</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">업무 지시서를 접어 넣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이번 업무는 참 간단하지 않았습니까냥?</p>
+          <p> </p>
+          <p>부서진 이디움만 모으면 되니까 말입니당.</p>
+          <p> </p>
+          <p>내가 [%username] 위치일 때는 커다란 사파이어 원석을 백 개씩 캐야 했습니다냥.</p>
+          <p> </p>
+          <p>어디, 가져온 것을 확인해 볼까용?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">부서진 이디움을 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아니, 지금까지 뭘 한 겁니까냥?</p>
+          <p> </p>
+          <p>이런 식으로 하면 보상을 줄 수 없습니당.</p>
+          <p> </p>
+          <p>이번은 봐줄 테니 지시서에 적힌 대로 [%dic:STR_DIC_I_quest_49601a]%을 구해오십시옹.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>어디... 물건 맞고, 개수도 맞습니다냥.</p>
+          <p> </p>
+          <p>이름이 [%username] 맞습니까냥? 앞으로도 오늘처럼만 하면 딱 좋겠습니다냥.</p>
+          <p> </p>
+          <p>그나저나 상부에선 도대체 왜 이런 걸 모으라고 하는지 모르겠습니다냥.</p>
+          <p> </p>
+          <p>반짝반짝 빛나는 게 예쁘긴 하지만 말입니당, 갸릉.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_I_quest_49601a]%을 모아 [%dic:STR_DIC_E_LDF5a_Silverlin_BD]%에 납부하라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">실버린 주식회사에서 업무 지시서가 왔다. 업무를 확인하고 수행하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>실버린 주식회사에서 업무 지시서가 왔다.</p>
+          <p> </p>
+          <p>부서진 이디움을 모아 실버린 북부 카탈람 지부에게 전하자 수고했다며 사례를 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

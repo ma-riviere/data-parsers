@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Getting rid of the Mamaki Kobolds has given us some breathing space, but the Kaidan Krall remain a thorn in our side.</p>
+          <p> </p>
+          <p>I used to think that the ones at the Kaidan Mine were little threat, since all they do is dig for ore. I thought of them as mostly harmless. </p>
+          <p> </p>
+          <p>But it seems I was wrong. They've been abducting people, and they're mining Odium.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"We should deal with them."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I agree. We can't do anything about the Kaidan Headquarters, but we can drive them out of the Kaidan Mine, at least. To do that we need to weaken them by eliminating their main fighters.</p>
+          <p> </p>
+          <p>That's not going to be easy. Even so, I think you can handle it, [%username]. You are...exceptional. </p>
+          <p> </p>
+          <p>Will you accept this task?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You are indeed a hero, [%username]. Please go to the Kaidan Mine and eliminate the [%dic:STR_DIC_M_KrallScoutHK_28_Ae]s and [%dic:STR_DIC_M_ReC_KrallRangerK_29_Ae]s.</p>
+          <p> </p>
+          <p>You should take some allies with you. The Krall are no pushovers.</p>
+          <p> </p>
+          <p>In the meantime, I'll be praying for you to return safely.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Faith and arms!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I know it's no easy task.</p>
+          <p> </p>
+          <p>There's no shame in fearing death.</p>
+          <p> </p>
+          <p>If you reconsider, I'll welcome your help.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll think on it."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>When the Balaur disappeared from the face of Atreia after the Catalcysm, I thought we wouldn't need to fight the Krall anymore.</p>
+          <p> </p>
+          <p>Perhaps we have a chance to defeat them this time if you've eliminated their fighters. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I have."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you. I know it was a difficult mission.</p>
+          <p> </p>
+          <p>You've weakened the enemy, [%username]. If we can continue to cut down the numbers of Veteran Scouts and Elite Sentinels, it will be a great blow to the Krall.</p>
+          <p> </p>
+          <p>So continue to help us in the future whenever you're able.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Go to the Kaidan Mine and eliminate the main fighters.</font></p>
+                     <p visible="[%0]"><font color="[%1]"> [%dic:STR_DIC_M_KrallScoutHK_28_Ae] ([%2]/7)</font></p>
+                     <p visible="[%0]"><font color="[%1]"> [%dic:STR_DIC_M_ReC_KrallRangerK_29_Ae] ([%5]/7)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report the result to [%dic:STR_DIC_N_Anasya].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Weaken the Krall in the Kaidan Mine by eliminating Veteran Kaidan Scouts and Crack Kaidan Loudmouths.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Taera said the Krall in the Kaidan Mine are kidnapping people and mining Odium. She asked you weaken their forces.</p>
+          <p> </p>
+          <p>You went to the Kaidan Mine and eliminated Veteran Kaidan Scouts and Crack Kaidan Loudmouths.</p>
+          <p> </p>
+          <p>When you reported back to Taera, she said the attacks must be continued, and asked you for more help in the future.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

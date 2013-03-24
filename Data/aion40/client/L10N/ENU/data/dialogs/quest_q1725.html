@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Come to see the Legion assemble for battle? Since we fight every day, I suppose we're a bit jaded, but it's pretty impressive if you've never seen it before.</p>
+          <p> </p>
+          <p>We leave as soon as all of today's troops have their suppl--Oh, no!</p>
+          <p> </p>
+          <p>I'd forgotten 'til just now!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Forgotten what?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>A few days ago, Brigade General Calon asked me to send supplies to some soldiers in the field, and I forgot!</p>
+          <p> </p>
+          <p>By now they'll be starving, and my Legion's shipping out. I have to do something. The general will be furious.</p>
+          <p> </p>
+          <p>Maybe you could help me, [%username]? Will you deliver the supplies in my place?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you so much, [%username]! Here are the supplies.</p>
+          <p> </p>
+          <p>Half are for Teleporter [%dic:STR_DIC_N_Tiberius] on the Western Shard of Latesran. The rest are for [%dic:STR_DIC_N_Dactyl] on the Isle of Roots.</p>
+          <p> </p>
+          <p>Tell them I'm really, really sorry about the late delivery, okay?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I will."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I can't believe you'd hang me out to dry like this, [%username]!</p>
+          <p> </p>
+          <p>If the general finds out, he'll hang me by my pinfeathers!</p>
+          <p> </p>
+          <p>You don't want that, do you?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Let me think it over."</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You have some business for me? </p>
+          <p> </p>
+          <p>Unless it's urgent, come by later. I'm swamped right now.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">"I have supplies from Centurion Cesilie."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, our supplies! Perfect timing. We were about to run out.</p>
+          <p> </p>
+          <p>Don't worry, I won't complain--I'm sure Centurion Cesilie feels guilty enough as it is.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"That's kind of you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Is everything all right in Teminon Fortress?</p>
+          <p> </p>
+          <p>See, quite a while ago I asked them for supplies, but I haven't heard back yet.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Ah, that was Cesilie's fault...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Cesilie forgot?</p>
+          <p> </p>
+          <p>She's quite talented, but a bit absent-minded. It's okay, the stuff's here now.</p>
+          <p> </p>
+          <p>Tell her not to worry, the supplies came just in time.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Deliver the supplies to [%dic:STR_DIC_N_Tiberius].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Deliver the supplies to [%dic:STR_DIC_N_Dactyl].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Centurion Cesilie forgot to send supplies to some of her troops. Deliver supplies to Tiberius and Dactyl and apologize on Cesilie's behalf.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Centurion Cesilie forgot to send some supplies to Guardians in Reshanta, a mistake General Calon wouldn't look kindly on.</p>
+          <p> </p>
+          <p>Since she was about to march to battle, you brought the supplies (and an apology) to Tiberius and Dactyl.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

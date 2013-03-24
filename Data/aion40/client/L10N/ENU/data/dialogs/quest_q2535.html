@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You may not know this, but I grew up in Besfer Village. When my father ascended as a Daeva, my family moved to Pandaemonium, but I remembered all my friends in Besfer.</p>
+          <p> </p>
+          <p>Recently I had to visit the village for a mission, and I got a terrible shock. Two of my childhood friends have become zombies.</p>
+          <p> </p>
+          <p>My best friends, Imud and Moloch.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="PLAYEMOTION_sad;HACTION_ASK_QUEST_ACCEPT">"How terrible!" </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'd heard that Imud became a Priest and Moloch became a Watch Leader, so I went to the Besfer Refugee Camp and asked around about them.</p>
+          <p> </p>
+          <p>Everyone says they fought bravely trying to save others, and were taken by the undead.</p>
+          <p> </p>
+          <p>Gigrite told me that real friendship means sending them back to the flow of Aether, but...I don't think I can kill my friends. [%username], will you help me? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I know I should be the one to do it, but it's just too painful for me.</p>
+          <p> </p>
+          <p>Please, send [%dic:STR_DIC_M_ZombieNamedDQ_36_An] and [%dic:STR_DIC_M_SkeletonNamedDQ_36_An] to their final rest.</p>
+          <p> </p>
+          <p>I will pray to Lord Marchutan for the comfort of their souls.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"It will be done."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Do you think I should send them back to the flow of Aether myself? </p>
+          <p> </p>
+          <p>I know that's the right thing to do, but I just can't do it.</p>
+          <p> </p>
+          <p>Okay. I'll try to work up the courage.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Good luck to you." </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're back, [%username]! </p>
+          <p> </p>
+          <p>I've been praying to Lord Marchutan for Imud and Moloch.</p>
+          <p> </p>
+          <p>Did they return to the flow of Aether? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"They're at rest now."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm glad my friends' souls can rest now. They were good people, and they deserved better than to wander the world as undead.</p>
+          <p> </p>
+          <p>I'll visit there someday to set up a tombstone for each of them. Thank you.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Send Alfgeir's friends who became undead back to the flow of Aether.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_ZombieNamedDQ_36_An] ([%2]/1)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_SkeletonNamedDQ_36_An] ([%5]/1)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report back to [%dic:STR_DIC_N_Alfgeir].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Alfgeir's childhood friends became undead. He has asked that you be the one to send them back to the flow of Aether.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Alfgeir discovered that his childhood friends had become undead.</p>
+          <p> </p>
+          <p>He knew that he should send them back to the flow of Aether, but it was too painful for him. So he asked you to send Deathbelcher Imud and Captain Moloch back to the flow of Aether.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Why, why do you keep coming here to find me?</p>
+          <p> </p>
+          <p>Did I not tell you I was hiding? Hiding--as in trying not to be found.</p>
+          <p> </p>
+          <p>It is not safe for me or my family if other Shulacks know where I am. Very bad trouble. Why do you keep coming here?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Sorry. Here, I'll hide behind this while we talk."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Talk? What should we talk about, Daeva? I know nothing that would interest a Daeva....</p>
+          <p> </p>
+          <p>Ah! Perhaps I do! There is a book...Daeva like books! Dorkin knows where a [%dic:STR_DIC_OBJ_IDElim_Book_Q11461] is...sort of.</p>
+          <p> </p>
+          <p>Do you want to have a look? It might contain much information. If I tell you where to find it, will you keep my location secret?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This other Daeva, [%dic:STR_DIC_N_Marica], she left the book in my sleeping hole. It was too lumpy to sleep on, so I threw it away.</p>
+          <p> </p>
+          <p>I do not know exactly where it landed, somewhere by Taloc's Boughs. Daeva [%dic:STR_DIC_N_Marica] is mad she lost it. She is rude, so I do not tell her where I think it is.</p>
+          <p> </p>
+          <p>You should find the [%dic:STR_DIC_OBJ_IDElim_Book_Q11461]. Take a peek inside. Maybe return it to [%dic:STR_DIC_N_Marica]...or maybe not?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Interesting plan."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You cannot promise?</p>
+          <p> </p>
+          <p>Then I will say no more.</p>
+          <p> </p>
+          <p>I will not tell you or [%dic:STR_DIC_N_Marica] where to find the interesting book.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Touchy, aren't you?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>A Shulack hiding in Taloc told you where to find my book?</p>
+          <p> </p>
+          <p>Why that despicable fuzz ball! I hope his whiskers fall out!</p>
+          <p> </p>
+          <p>That journal contains years of research notes! I've been trying to find it for weeks, but every time I stopped and asked that Shulack about it, he always said he hadn't seen it! Phony shade-loving roach!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Now, now. Calm down."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>My research journal?</p>
+          <p> </p>
+          <p>You really know where it is? Asmodae's mittens! I have to get it back! It's got years of data in it!</p>
+          <p> </p>
+          <p>Unfortunately, I can't leave right now. Could you please go look for it?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Well, all right. If it's that important."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This is the diary I kept when I was investigating Taloc.</p>
+          <p> </p>
+          <p>This one day, I was being chased by a swarm of bugs and I stuffed the journal into a hole to keep it safe. But when I went back for it, it was gone!</p>
+          <p> </p>
+          <p>Did you read it? Wait, this isn't my book! I think it's a journal from an exploratory expedition to Taloc. I wonder who wrote this, and when? Hmm...interesting...I'll have to study this.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Find the [%dic:STR_DIC_OBJ_IDElim_Book_Q11461] and bring it to [%dic:STR_DIC_N_Marica].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Dorkin told you about a book he'd found and discarded. Marica's been looking for the book. Find it and return it.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Dorkin convinced you to go away and look for a book that he'd seen.</p>
+          <p> </p>
+          <p>You found the book and returned it to Marica. It turned out not to be hers, but she seemed to find it interesting.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>요즘 레미를 구하기가 아주 어려워졌어요. 아, 라즈도요.</p>
+          <p> </p>
+          <p>예전에는 근처 골짜기에 레미와 라즈가 워낙 흔했기 때문에 필요할 때마다 채집해서 쓰고 했는데 말이에요.</p>
+          <p> </p>
+          <p>하지만 이젠 필요할 때를 위해서 귀하게 보관하는 풀이 되었어요.</p>
+          <p> </p>
+          <p>이게 다 만두리 탓이랍니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>만두리들은 레미건 라즈건 향이 나는 풀이라면 모조리 뽑아서 먹거든요.</p>
+          <p> </p>
+          <p>이대로 두었다가는 이 근방에 좋은 약초는 다 씨가 마를 거예요.</p>
+          <p> </p>
+          <p>놈들을 발견했다고 좋아했더니 좋아할 일이 아니었지요.</p>
+          <p> </p>
+          <p>조치를 취해야 할 것 같은데 데바님이 좀 도와주시겠어요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아무래도 만두리 수를 줄여야겠어요.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_ManduriBRe_39_An]%와 [%dic:STR_DIC_M_ManduriTRe_39_An]%가 5마리 씩만 줄어도 지금보다는 훨씬 좋아질 거예요.</p>
+          <p> </p>
+          <p>그럼 다녀오세요. 기다리고 있을게요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>중요한 임무를 많이 수행하신 데바님께 만두리를 처치해 달라는 부탁은 무리인가요? </p>
+          <p> </p>
+          <p>냉정하게 거절하셔도 뭐라고 할 말이 없네요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님이 떠나고 나서 놈들이 무얼 먹는지 좀 더 조사해 봤어요.</p>
+          <p> </p>
+          <p>레미나 라즈 말고도 뮤타 날개에 프릴파이맘 꼬리뼈까지 먹더군요. 보기보다 무서운 놈들이에요.</p>
+          <p> </p>
+          <p>그래, 가셨던 일은 어떻게 됐나요? 어디 다친 데는 없어요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>역시 데바님께 만두리 쯤 처치하는 것은 일도 아니었군요.</p>
+          <p> </p>
+          <p>자, 이거 받으세요.</p>
+          <p> </p>
+          <p>여러모로 도와주신 데에 대한 보답이에요.</p>
+          <p> </p>
+          <p>아주 작은 거니까 부담갖지 않으셔도 돼요.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">밀림 생태계의 균형을 무너뜨리는 만두리 수를 줄여라</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_ManduriBRe_39_An]([%2]/5)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_ManduriTRe_39_An]([%5]/5)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Sillen]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">만두리 때문에 약초가 멸종할 지도 모른다고 한다. 만두리 수를 줄여 밀림의 균형을 지켜야겠다.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>만두리에 대해 연구한다는 실렌은 만두리가 레미와 라즈 등의 약초를 먹어치우고 있다고 했다.</p>
+          <p> </p>
+          <p>이대로 두면 포이에 밀림에 약초가 사라질지도 모르니 만두리 수를 줄여 달라고 부탁했다.</p>
+          <p> </p>
+          <p>부탁한 수만큼 만두리를 처치하고 실렌에게 돌아가자 성의 표시라며 작은 선물을 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

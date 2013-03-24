@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Those Krall sure look threatening, don't you think, [%username]?</p>
+          <p> </p>
+          <p>I'm getting used to them, but fighting them still makes me queasy.</p>
+          <p> </p>
+          <p>Of course, I'd never admit that to my cohorts! But you're so easy to talk with.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"How are you coping?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Fairly well, but, well...there is something you could do for me.</p>
+          <p> </p>
+          <p>See my sword? That big hole there? The Orichalcum coin that was inset there came out last week, somewhere in the swamp. No chance of finding it.</p>
+          <p> </p>
+          <p>I've been feeling rather skittish since then. That coin was my lucky charm. I was hoping I could convince you to bring me something to replace it.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thanks. I appreciate it. I know it's a silly request, but it would really help me feel more confident.</p>
+          <p> </p>
+          <p>Could you bring me some [%dic:STR_DIC_I_QUEST_3539A]s? They're a popular sword ornament, and rubbing them is said to soothe the spirit.</p>
+          <p> </p>
+          <p>You can get them by hunting [%dic:STR_DIC_M_BATRe2_34_An]s in the Decayed Grove.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll get you some."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I apologize, I guess my request was a bit too personal.</p>
+          <p> </p>
+          <p>Sorry. I didn't mean to embarrass you.</p>
+          <p> </p>
+          <p>I'll just do some deep breathing and try to find a replacement lucky charm later.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Hang in there!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're back! I've been waiting for you.</p>
+          <p> </p>
+          <p>Did you get the Bloodwing Claws?</p>
+          <p> </p>
+          <p>I sure hope they help to calm my nerves. I'll just polish them and get them set into the hilt, right here.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here's the claws."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I need more [%dic:STR_DIC_I_QUEST_3539A]s than that, just to make sure I have one fit for my sword.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_BATRe2_34_An]s should be flying about near the cliffs next to the field.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Soon. I'll get them soon."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>So these are the fabled claws.</p>
+          <p> </p>
+          <p>They're quite pretty. And...interesting. Did you notice how they seem to heat up when you hold them?</p>
+          <p> </p>
+          <p>I think these will do the trick nicely. Thank you again, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect [%dic:STR_DIC_I_QUEST_3539A]s and bring them to [%dic:STR_DIC_N_Brosia].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Obtain Bloodwing Claws for Brosia to use as a lucky charm, and to decorate her sword.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Brosia was feeling down after losing the lucky charm from the hilt of her sword.</p>
+          <p> </p>
+          <p>You found her some Bloodwing Claws that could be used to create a new charm, and she was very pleased.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

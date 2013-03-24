@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hey, [%username], are you, uh...busy?</p>
+          <p> </p>
+          <p>I have a sort of problem. You see, I have really sharp hearing. It's one of the reasons I'm a Sentinel.</p>
+          <p> </p>
+          <p>But sometimes it's a curse! Lately I can't sleep at all, because the blasted Crestliches in the Ruberein Wastes are shrieking all night. Nobody else can hear it, but it's driving me crazy!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Crestliches? I don't hear anything."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh trust me, they're screaming their heads off. My ears are as keen as a Tigric. They just started doing it recently. Must be mating season or something.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Maybe they'll stop soon?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>So, I'm desperate! I'll pay you to go hunt those stupid [%dic:STR_DIC_M_Crestlich_23_An]es and [%dic:STR_DIC_M_Crestlich_24_An]es</p>
+          <p> </p>
+          <p>The Commander won't authorize me to go out there myself, since it doesn't bother anyone else.</p>
+          <p> </p>
+          <p>I'd go there and cut all their throats right now if I could!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh Thank the Empyrean Lords! Go to the [%dic:STR_DIC_W_LF2_SZ_F1]. You'll find [%dic:STR_DIC_M_Crestlich_23_An]es and [%dic:STR_DIC_M_Crestlich_24_An]es there.</p>
+          <p> </p>
+          <p>Please get rid of them. Before I go mad!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll shut them up."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What? Do you think I'm just hearing phantoms?</p>
+          <p> </p>
+          <p>I'll pay you! What can I do to convince you?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Sorry, not interested."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Back already?</p>
+          <p> </p>
+          <p>You must have killed a lot of the [%dic:STR_DIC_M_Crestlich_23_An]es and [%dic:STR_DIC_M_Crestlich_24_An]es.</p>
+          <p> </p>
+          <p>I heard their cries of pain from here! Finally I'll be able to sleep!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Here's what I brought back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you!</p>
+          <p> </p>
+          <p>You can't imagine how grateful I am.</p>
+          <p> </p>
+          <p>Please take this with my blessings.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Go to the [%dic:STR_DIC_W_LF2_SZ_F1] and hunt Crestliches.</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Crestlich_23_An] ([%2]/7)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Crestlich_24_An]([%5]/14)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report to [%dic:STR_DIC_N_Herodes].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Heropres has had restless nights thanks to the Crestliches' noise. Hunt them for him.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Heropres was being kept awake at night by the Crestliches' noise, and was upset that nobody understood how terrible this was.</p>
+          <p> </p>
+          <p>So, you went to the Ruberein Wastes and hunted Crestliches for him until it was quiet.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

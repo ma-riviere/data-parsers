@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아무래도 나두카 생체 연구소에 있는 놈들이 장난을 치는 것 같습니다.</p>
+          <p> </p>
+          <p>이 일대는 사막 지대라 벌떼가 살지 않는데 얼마 전부터 벌떼가 보이기 시작하더군요. 그리고 점점 그 수가 늘어나고 있습니다.</p>
+          <p> </p>
+          <p>분명 연구소에서 실험체로 사용하던 벌들인 게 분명해요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>용족이 공격력이 강하게 개량해서 그런지 겔크마로스 요새 주변에 있는 벌떼보다 사납고 독성이 강하더군요.</p>
+          <p> </p>
+          <p>올가가 벌떼를 쫓으려 했다가 한동안 정신을 잃을 정도였으니까요.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_DF4_W_C5_Bee_DR_lab_55_An]의 수가 더 늘어나기 전에 뿌리를 뽑는 게 좋을 것 같습니다. 그 일을 [%username] 님께 부탁 드려도 될까요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_W_DF4_SZ_C5_Lab]는 잔해의 바다 깊숙한 곳에 있습니다.</p>
+          <p> </p>
+          <p>용족이 그곳에서 여러 생명체를 대상으로 실험을 한다는 것만 알뿐 그 안에 어떤 게 얼마나 있는 지는 저도 잘 모릅니다.</p>
+          <p> </p>
+          <p>그러니 만반의 준비를 하고 가십시오.</p>
+          <p> </p>
+          <p>그럼 좋은 소식 기다리겠습니다. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>하긴 어려운 일이긴 하죠?</p>
+          <p> </p>
+          <p>개량 벌떼쯤은 문제가 없겠지만 나두카 생체 연구소가 어떤 곳인지 알 수 없으니.</p>
+          <p> </p>
+          <p>알겠습니다. 좀 지켜보고 상황이 악화되는 것 같으면 겔크마로스 요새에 지원을 요청하지요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그러고 보니 개량 벌떼가 좀 뜸한 것 같아요.</p>
+          <p> </p>
+          <p>나두카 생체 연구소에 갔던 일이 잘 풀렸나 봅니다.</p>
+          <p> </p>
+          <p>그곳에 있던 [%dic:STR_DIC_M_DF4_W_C5_Bee_DR_lab_55_An]를 모두 없앤 건가요? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 말한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>늦지 않게 개량 벌떼를 없애서 다행입니다.</p>
+          <p> </p>
+          <p>관리하는 이도 없는데 그냥 뒀으면 이 일대가 온통 벌천지가 될 뻔 했네요.</p>
+          <p> </p>
+          <p>이건 이번 일에 대한 사례입니다.</p>
+          <p> </p>
+          <p>피곤할 텐데 이제 가서 좀 쉬십시오.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_W_DF4_SZ_C5_Lab]로 가 [%dic:STR_DIC_M_DF4_W_C5_Bee_DR_lab_55_An]를 소탕하라([%2]/10)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Helen]과 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">바탈리온의 야영지 주변에 개량 벌떼가 나타났독 한다. 헬렌이 알려준 대로 나두카 생체 연구소로 가 용족이 개량한 벌떼를 없애자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>헬렌은 야영지 주변에 갑자기 벌떼가 나타났다며 아무래도 나두카 생체 연구소에서 연구 중인 벌떼가 풀린 것 같다고 했다.</p>
+          <p> </p>
+          <p>그냥 두면 피해가 더 커질 테니 연구소로 가 벌떼를 없애 달라고 했다.</p>
+          <p> </p>
+          <p>나두카 생체 연구소로 가 개량 벌떼를 소탕하고 돌아가자 수고했다며 사례를 했다. </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

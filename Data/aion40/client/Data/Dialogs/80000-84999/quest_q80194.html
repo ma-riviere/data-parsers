@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-16"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이렇게 인연을 맺었으니,[%username]께서 그분이신지도 모르겠네요.</p>
+          <p></p>
+          <p>머 가능성은 낮지만요.</p>
+          <p> </p>
+          <p>여하튼 반갑습니다. 그럼 본격적으로 일 얘기를 해볼까요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다. </Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>간단한 일이에요. [%dic:STR_DIC_FLA10]로 가서 굶주린 자이프를 처치 해주세요. 그 정도는 문제 없겠죠?</p>
+          <p> </p>
+          <p>요즘 녀석들이 말썽을 피워 여러 문제가 이만저만 발생하는게 아니에요.</p>
+          <p> </p>
+          <p>그럼 처리 해주신다고 알고 있을께요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그럼 굶주린 자이프를 17마리를 사냥하세요.</p>
+          <p> </p>
+          <p>간단히 사례도 하겠어요.</p>
+          <p> </p>
+          <p>어서 가세요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>설마 자이프 따위를 두려워 하는건가요?</p>
+          <p> </p>
+          <p>무서우면 동료를 모집해서 하시던가요.</p>
+          <p> </p>
+          <p>(작은 목소리로)저렇게 겁이 많아서야. 쯧쯧</p>
+          <p> </p>
+          <p>마음이 바뀌면 다시와요.(작은 목소리로)겁쟁이 같으니라고.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>음,, 굶주린 자이프는 처리 하신건가요?</p>
+          <p> </p>
+          <p>역시 간단한 일이었지요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 얘기한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>머 그정도는 해내실줄 알았어요. 그것도 못하면 그 분이실 가능성은 제로니까요.</p>
+          <p> </p>
+          <p>네? 아,그분에 대해선 다음에 얘기 하도록 해요.</p>
+          <p> </p>
+          <p>별건 없지만 사례하겠서요.</p>
+          <p> </p>
+          <p>또 일거리가 기다리고 있어요. 걱정 말아요.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_FLA10]에 있는 굶주린 자이프를 처치하라([%2]/17) </font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_event_Proburr]와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">[%dic:STR_DIC_N_event_Proburr]가 굶주린 자이프를 처치 하라고 한다. [%dic:STR_DIC_FLA10]에 가서 굶줄인 자이프를 없애주자.</p>
+          <p></font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%dic:STR_DIC_N_event_Proburr]는 굶주린 자이프를 처치 하라고 했다..</p>
+          <p> </p>
+          <p>굶주린 자이프를 간단히 처치 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

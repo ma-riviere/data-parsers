@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I analyzed the Pluma Tail Feathers you fetched for me earlier. I have good news and bad news.</p>
+          <p> </p>
+          <p>The good news is, they haven't been poisoned. The bad news is, they are not only still violent, they are malnourished.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"What does that mean?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>They cannot find enough food.</p>
+          <p> </p>
+          <p>I've been watching the Pluma in their environment, and I think the cause of the problem is the [%dic:STR_DIC_M_Spakle_19_n]s.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Sparkles? But Pluma don't eat Sparkles."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Sparkles live in the same areas as Plumas, and they eat the same food. Both animals prey on smaller insects.</p>
+          <p> </p>
+          <p>Recently, the Sparkles have increased in number, and must be exhausting the food supply.</p>
+          <p> </p>
+          <p>If we reduce the number of [%dic:STR_DIC_M_Spakle_19_n]s, it should restore the balance.</p>
+          <p> </p>
+          <p>Would you take care of this too, [%username]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>In the forest below the fortress, eliminate [%dic:STR_DIC_M_Spakle_19_n]s.</p>
+          <p> </p>
+          <p>It seems harsh, but we need to do this for the Plumas, as well as for the residents they are bothering.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"It will be done."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>If we don't act, the Plumas will be completely exterminated. They will die one by one of starvation.</p>
+          <p> </p>
+          <p>And, what's worse, if they keep attacking people, who knows what consequences might befall the Humans or the Plumas.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Some other time."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Have you hunted the [%dic:STR_DIC_M_Spakle_19_n]s?</p>
+          <p> </p>
+          <p>It's interesting how delicate the balance of nature is. Any increase or decrease on one side has a profound effect on the other side.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Fewer Sparkles means fat and happy Plumas."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you [%username].</p>
+          <p> </p>
+          <p>Even though the Plumas may not calm immediately, they will return to normal as they become less hungry.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Hunt [%dic:STR_DIC_M_Spakle_19_n]s around [%dic:STR_DIC_W_LF2_SZ_OP] ([%2]/10).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Report to [%dic:STR_DIC_N_Gaia].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Hunt the Sparkles that have been eating the Plumas' food supply.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Gaia's investigation showed that the Plumas had become violent out of hunger. The Sparkles had eaten all the Plumas' food supply.</p>
+          <p> </p>
+          <p>You hunted Sparkles in the forest around the Fortress as Gaia asked.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

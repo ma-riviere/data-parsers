@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q41100</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>undefined</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]. The Sandstorm Legion has put great effort into eliminating those violent creatures that threaten the refugees.</p>
+          <p> </p>
+          <p>But we just can't kill all the Sandstorm Targets by ourselves. So we recruit strong Daevas to help us out. Like you.</p>
+          <p> </p>
+          <p>If you think you're up for it, feel free to take down one of the [%dic:STR_DIC_E_Q41113a]. I can promise a reward and the gratitude of the Sandstorm Legion.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You ever witnessed a Sheluk courtship dance? It's spectacular to watch but often bloody. A dance of death, all for a chance at life.</p>
+          <p> </p>
+          <p>You came back, [%username]. So you either showed tremendous skill in killing [%dic:STR_DIC_E_Q41113a] or you have't found one yet.</p> 
+          <p> </p>
+          <p>Can I take one of those fiends off the "to do" list?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"A target no longer..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Fantastic. I'd pay to hear all about it, but I know you're a busy Daeva, [%username].</p>
+          <p> </p>
+          <p>Thanks. Here's your well earned reward from the Sandstorm Legion.</p>
+          <p> </p>
+          <p>There are always more targets, though. Your talents will find you more work here, if you want it.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Kill one of the [%dic:STR_DIC_E_Q41113a] ([%2]/1).</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Return to [%dic:STR_DIC_N_Betios].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Find and kill one of the Dangerous Shadow Targets.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Betios asked you to kill the Dangerous Shadow Targets posing threats to the refugees.</p>
+          <p> </p>
+          <p>You trailed and killed one of the targets and received a reward and gratitude from the Sandstorm Legion.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

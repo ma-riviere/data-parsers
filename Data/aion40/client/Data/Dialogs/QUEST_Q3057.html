@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>친구의 복수도 끝났으니 이제 자수하는 일만 남았군. 하지만 그 전에 끝내고 싶은 일이 있어.</p>
+          <p> </p>
+          <p>눈치챘을지 모르겠지만 난 병에 걸렸다네. 그것도 아주 몹쓸 병에...</p>
+          <p> </p>
+          <p>밤이 되면 난 자이프가 돼. 사악한 마족 할멈을 죽이고 받은 대가지.</p>
+          <p> </p>
+          <p>그 마녀가 소멸하면서 그러더군. 평생 고독 속에서 살아보라고 말이야.</p>
+          <p> </p>
+          <p>대수롭지 않게 생각했는데 며칠이 지나니 알겠더군. 아침에 눈을 뜨면 낯선 곳에 쓰러져 있고 주변 사람들이 두려움에 찬 눈으로 바라봤어.</p>
+          <p> </p>
+          <p>결국 그들에게 버림받기 전에 내가 먼저 그들을 떠났지.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">저주를 푸는 방법을 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>순수한 기운을 가진 물로 목욕하면 저주를 풀 수 있다더군.</p>
+          <p> </p>
+          <p>하지만 그게 꼭 자이프로 변한 상태여야만 된다는 게 문제야. 그 상태에선 내 의지와 상관없이 몸이 움직이거든.</p>
+          <p> </p>
+          <p>마침 이 동굴에 종유석 샘이 있더군. 물의 기운이 순수한 게 내 저주를 풀어줄 것 같아.</p>
+          <p> </p>
+          <p>[%username], 기다렸다 내가 자이프로 변하면 그 [%dic:STR_DIC_W_LF2B_SZ_D_1]으로 데려가 주지 않겠나?</p> 
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그냥은 안 갈 테니 죽지 않을 정도로 기운을 빼서라도 [%dic:STR_DIC_W_LF2B_SZ_D_1]으로 데려가게.</p>
+          <p> </p>
+          <p>후후, 아마 반쯤은 체력을 깍아야 데려가기 편할 걸세. </p>
+          <p> </p>
+          <p>그럼 자네만 믿겠네. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>자넨 내 고통을 이해해 줄 거라 생각했는데...</p>
+          <p> </p>
+          <p>이번 기회를 놓치면 평생 이렇게 살아야할 지 몰라.</p>
+          <p> </p>
+          <p>사람 하나 구해주는 셈 치고 나 좀 도와주게, 제발. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>이 친구, 왜 이제야 왔나.</p>
+          <p> </p>
+          <p>자네가 오기를 한참 기다리고 있었어.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">상태를 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>보면 모르겠어? 그 지긋지긋한 저주가 풀렸어.</p>
+          <p> </p>
+          <p>이제 밤이 오는 걸 두려워하지 않아도 돼. 모두 자네 덕분이야.</p>
+          <p> </p>
+          <p>감사의 인사도 인사지만 자, 이거. </p>
+          <p> </p>
+          <p>자넨 생명의 은인이나 다름없어. 그러니 부담스러워 하지 말고 받아주게.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">자이프로 변한 [%dic:STR_DIC_M_LF2A_ZaifNmPrisonerNMQ_50_An_2]의 체력을 반으로 깎아 [%dic:STR_DIC_W_LF2B_SZ_D_1]으로 유인하라</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">[%dic:STR_DIC_N_Siraus]와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">마녀의 저주로 시라우스는 밤이 되면 자이프로 변한다고 한다. 그가 저주에서 풀려날 수 있게 저주받은 시라우스를 유인해 종유석 샘으로 데려가자.</p>
+          <p></font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>시라우스는 자수를 하기 전에 끝내야 할 일이 있다며 자신의 비밀을 털어놓았다.</p>
+          <p> </p>
+          <p>마족 마녀의 저주로 밤이 되면 자이프로 변하는데 그 상태에서 순수한 기운을 품은 물로 목욕해야만 저주를 풀 수 있다고 했다.</p>
+          <p> </p>
+          <p>밤이 되길 기다렸다가 자이프로 변한 시라우스를 종유석 샘으로 유인해 갔더니 시라우스가 말한 대로 저주가 풀렸다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>
+

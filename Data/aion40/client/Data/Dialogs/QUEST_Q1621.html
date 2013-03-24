@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>데바의 소명이 약한 인간을 보호하는 것이라고 하는데 내가 보기에 인간들은 결코 약하지 않습니다.</p>
+          <p> </p>
+          <p>다른 건 몰라도 고막 하나는 튼튼한 것 같아요. </p>
+          <p> </p>
+          <p>그렇지 않고서야 이 시끄러운 곳에서 저렇게 아무렇지도 않게 살 수는 없죠, 암요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="PLAYEMOTION_angry;HACTION_SELECT1_1">문제가 있는지 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아니, 이 소리가 안 들린단 말입니까? 신경을 후벼 파는 이 소리 말이에요.</p>
+          <p> </p>
+          <p>베이퍼가 내는 소리죠. 밤이면 더 시끄럽게 구는데 정말 못 견디겠습니다.</p>
+          <p> </p>
+          <p>여기에 온 후로 거의 잠을 못 잤다고요!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">베이퍼를 없애라고 한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그런 생각이야 벌써 열두 번도 더 했죠.</p>
+          <p> </p>
+          <p>그런데 베이퍼가 있는 곳에 유령이 좀 많아야죠.</p>
+          <p> </p>
+          <p>제가 다른 건 안 무서워하는데 유령은 좀... 무슨 말인지 아시죠?</p>
+          <p> </p>
+          <p>당신은 그런 데에 연연하지 않을 것 같은데 저 대신 [%dic:STR_DIC_M_Vapor_40_An]를 처치해 주시겠습니까? 물론 사례는 하겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>말만으로도 고맙군요. </p>
+          <p> </p>
+          <p>남들에게 사정 얘기도 못하고 속만 끊이고 있었거든요.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_Vapor_40_An]는 파테마 폐허에 많으니 그리로 가 보십시오. 10마리만 부탁드리겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>설마 당신도 유령이 무섭습니까? 보기엔 꽤 용감해 보이는데. </p>
+          <p> </p>
+          <p>하긴 남들도 내가 유령을 무서워하는 줄 모르니 피장파장이로군요.</p>
+          <p> </p>
+          <p>그나저나 망할 베이퍼 놈들을 어떻게 한다...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>생각보다 빨리 돌아왔군요.</p>
+          <p> </p>
+          <p>그래, 베이퍼 놈들은 처치했습니까?</p>
+          <p> </p>
+          <p>놈들 울음소리가 좀 줄어든 것 같기도 한데.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>역시 성공했군요. 정말 고맙습니다.</p>
+          <p> </p>
+          <p>오늘밤부터는 제대로 잠을 잘 수 있겠네요.</p>
+          <p> </p>
+          <p>이건 약속한 사례입니다. 약소하지만 성의니 넣어두십시오.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">파테마 폐허에 있는 [%dic:STR_DIC_M_Vapor_40_An]를 사냥하라([%2]/10)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Tegis]와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">테기스가 잠을 잘 수 있도록 베이퍼를 처치해야겠다.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>테기스는 베이퍼가 내는 소리 때문에 잠을 잘 수 없다고 하소연했다. </p>
+          <p> </p>
+          <p>유령을 무서워하는 그를 대신해 베이퍼를 처치하고 돌아가자 고맙다며 사례를 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

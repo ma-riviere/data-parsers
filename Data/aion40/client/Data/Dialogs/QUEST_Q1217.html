@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>칸타스 해안의 뜻이 노래하는 해안이라는 건 아십니까?</p>
+          <p> </p> 
+          <p>전설에 따르면 이 근처에는 세이렌이 아주 많았다는군요.</p>
+          <p> </p> 
+          <p>세이렌들이 바위 위에 앉아 노래를 부를 때마다 선원들은 노랫소리에 홀려 그쪽으로 배를 몰았답니다.</p>
+          <p> </p> 
+          <p>결국 배는 바위에 부딪혀서 부서지고 그렇게 부서진 배의 파편과 [%dic:STR_DIC_M_Mimic_19_n]가 칸타스 해안을 가득 덮었다고 하지요. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>지금은 세이렌은 없지만 화물상자는 여전히 많습니다.</p>
+          <p> </p>
+          <p>어디서 흘러온 것인지는 몰라도 먼 바다에서 해안으로 항상 밀려오지요. 제때 치우지 않으면 나무가 썩어서 바다가 오염될 지경입니다.</p>
+          <p> </p>
+          <p>게다가 상자 안에 이상한 괴물이 숨어 있을 때도 있습니다. 어찌나 포악한지 데바라 다행이지 인간이라면 목숨을 잃을 정도예요.</p>
+          <p> </p>
+          <p>바다가 오염되지 않고 인간들이 안전하게 다닐 수 있도록 [%username] 님이 좀 도와주시겠습니까?</p>        
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>고마워요. 그럼 조금만 도와주십시오. </p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_Mimic_19_n] 12개 정도면 크게 도움이 될 겁니다. 나머지는 부하들을 시켜 틈틈이 치우지요.</p>
+          <p> </p>
+          <p>참, 괴물이 들어 있는 상자든 보통 상자든 상관없습니다. 아무거나 보이는 대로 처리해 주십시오.</p>
+	</body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>중요한 임무를 수행하는 중인가 보군요.</p>
+          <p> </p>
+          <p>그렇다면 이렇게 사소한 일 때문에 잡아둘 수는 없지요.</p>      
+          <p> </p>
+          <p>임무를 다 수행하고 시간이 나시면 나중에라도 도와주십시오.</p>   
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>돌아오셨군요. </p>
+          <p> </p>
+          <p>부탁드린 대로 상자는 치우셨습니까?</p>
+          <p> </p>
+          <p>상자 속의 괴물 때문에 그렇게 수월하지는 않았을 텐데요.</p>          
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>요즘 들어 [%username] 님의 이름이 자주 들리는 게 이유가 있었군요.</p>
+          <p> </p>
+          <p>상자 속의 괴물을 조심하라고 충고한 게 민망하네요.</p>  
+          <p> </p>
+          <p>어쨌거나 도와주셔서 정말 고맙습니다. 이건 감사의 표시니 약소하더라도 받아 주십시오.</p>        
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">칸타스 해안을 더럽히는 [%dic:STR_DIC_M_Mimic_19_n]를 처리하라([%2]/10)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Phorcys]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">칸타스 해안이 어딘가에서 떠내려온 상자로 더럽혀지고 있다. 포르키스의 부탁으로 떠내려간 화물상자를 처리해 주기로 했다.</p>
+          <p></font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>프로키스는 어딘가에서 떠내려온 상자들이 칸타스 해안에 가득하다면서 바다를 오염시키고 있다고 걱정했다.</p>
+          <p> </p>
+          <p>게다가 사나운 괴물이 숨어 있는 상자도 있어서 인간의 안전을 위협하니 처리하는 것을 도와달라고 했다.</p>
+          <p> </p>
+          <p>그래서 부탁대로 떠내려간 화물상자를 처리하자 고마워하며 감사의 표시를 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah! Finally! The shadows shield the sun! Grace has crossed my path, [%username]!</p>
+          <p> </p>
+          <p>Batalrion sends happy news, you see? Stigma has been uncovered, and my fortunes as a Stigma Master have changed with a favorable wind.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What's happened?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I'm sorry, [%username], but this isn't information that I can just give out freely. More potential in this job than there is money in the Temple of Gold.</p>
+          <p> </p>
+          <p>Tell you what. You agree to help me, and I'll let you in on the details. I've always kept true to my word, I expect you to do the same.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It seems the Balaur have been researching some new Stigma down in the Naduka Biolab. Their subjects were some Krall saps, but something went wrong--they're all dead. It looks like the Drakan researchers have been turned into the undead too, while the handful of survivors fled to Dragonrest to devise some kind of plan.</p>
+          <p> </p>
+          <p>We want the [%dic:STR_DIC_I_quest_21277a] those [%dic:STR_DIC_M_21277]s most likely have on them. The survivors wouldn't have had a chance to take them, so they're ours for the plucking. Get them, and bring them back with some Document Reagent you can get from [%dic:STR_DIC_N_Thuth].</p>
+          <p> </p>
+          <p>Get going, [%username]. If we drag our heels on this we might lose out altogether.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Leaving now. Blood for blood."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No?! Fine then. Leave.</p>
+          <p> </p>
+          <p>I'll share my fortune with some other Daeva!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Suit yourself."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah! You're back!</p>
+          <p> </p>
+          <p>Do you have the [%dic:STR_DIC_I_quest_21277a]? And the Document Reagent from [%dic:STR_DIC_N_Thuth]?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I think so."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>No, no you don't.</p>
+          <p> </p>
+          <p>Remember, I need the [%dic:STR_DIC_I_quest_21277a] the [%dic:STR_DIC_M_21277]s still have on them. Get them, and the [%dic:STR_DIC_I_quest_21277b], and our world may well change forever!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I see. I'll be back!"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hmm, well these look like Balaur documents, but I'll have to work the Document Reagent into the page fibers before we can even start to read what's written.</p>
+          <p> </p>
+          <p>Still, I owe you my thanks! I'll let you know if I get anywhere with this.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect the [%dic:STR_DIC_I_quest_21277a] and some [%dic:STR_DIC_I_quest_21277b], then bring them to [%dic:STR_DIC_N_Garath].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Find the Stigma Research Diaries the Undead Drakan Researchers in the Naduka Biolab have on them. You can also search the Naduka Drakan Researchers at Dragonrests. Find them and help Garath's study on Balaur Stigma.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Garath received important information regarding Balaur Stigma from Batalrion and needed your help.</p>
+          <p> </p>
+          <p>You agreed to help, and brought all that was asked of you for a fitting reward.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Nothing seems to be going our way lately!</p>
+          <p> </p>
+          <p>Just the other day I found some [%dic:STR_DIC_I_QUEST_21001a] at a nearby Drana farm. I assumed the Balaur must have been using them, so I ordered my men to store them for further investigation.</p>
+          <p> </p>
+          <p>And then I got busy--there's so much going on here. So it's probably no surprise that I completely forgot about the parts and left them unguarded....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"And someone stole them?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes, [%username]. It was only this morning that I remembered, and I immediately sent a legionary to check on them. But it was too late--the parts were gone.</p>
+          <p> </p>
+          <p>Right now we don't know any more than that. I can only assume they were stolen. The only clue is that there were some [%dic:STR_DIC_M_DF4_Merdion_DR_51_n]s wandering about in the area. Looking very hungry, I'm told....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"You think they...ate them?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Do you think it's possible? It's just a theory, but I'd heard that [%dic:STR_DIC_M_DF4_Merdion_DR_51_n]s are gluttonous omnivores.</p>
+          <p> </p>
+          <p>I must do something! If rumor spreads that I lost all those [%dic:STR_DIC_I_QUEST_21001a], things will go badly for me. Do you have time to give me a hand?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent! It'll be easy to tell if my theory is valid. Snufflers have weak stomachs, so if hold them upside down and shake them, the parts should fall right out.</p>
+          <p> </p>
+          <p>Unfortunately, there are a lot of [%dic:STR_DIC_I_QUEST_21001a] missing. Please, don't come back until you've found them all.</p>
+          <p> </p>
+          <p>And keep it quiet!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"My lips are sealed."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>So you think there's no way that Snufflers could devour those parts? Do you have a better theory, [%username]? If so, I'd like to hear it.</p>
+          <p> </p>
+          <p>I'm sure that's what happened. The parts are gone, the Snufflers are nearby. It all fits.</p>
+          <p> </p>
+          <p>But if you don't want to help, I can't force you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"No, you can't."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Before you got here, the Destroyed Drana Farm was completely overgrown with Drana. I clenched my fists when I saw it--I couldn't help but think of Dark Poeta....</p>
+          <p> </p>
+          <p>Whenever I think that Balaur sowed those dirty seeds here, I just....</p>
+          <p> </p>
+          <p>Sorry for ranting. Do you have something for me?</p>          
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here are your slobbery parts."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What are you doing? Why are you here? You promised to retrieve all the missing [%dic:STR_DIC_I_QUEST_21001a], remember?</p>
+          <p> </p>
+          <p>There's no time to waste, [%username]. Please hurry!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm looking, I'm looking...."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I knew it! I knew the Snufflers ate them! I only wish I'd known ahead of time.... Then I could have taken appropriate measures in advance.</p>
+          <p> </p>
+          <p>Thank you for your help! Without you, we'd all be in serious trouble.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect the parts eaten by the [%dic:STR_DIC_M_DF4_Merdion_DR_51_n]s and take them to [%dic:STR_DIC_N_Gelastra].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Go to the Destroyed Drana Farm and retrieve any machine parts eaten by the Snufflers there.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Gelastra found some Drana Growing Device Parts at a Drana Farm, but when Legionaries went to get them, they found nothing but Snufflers wandering about.</p>
+          <p> </p>
+          <p>Gelastra suspected the Snufflers might have eaten the parts, and asked you to confirm that theory. It turned out the Snufflers did indeed devour the parts.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

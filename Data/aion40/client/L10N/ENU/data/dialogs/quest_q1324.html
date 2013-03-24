@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]! Do you by any chance plan to visit [%dic:STR_DIC_W_LF2_SZ_A1]?</p>
+          <p> </p>
+          <p>I need to have something delivered there by a courier who knows how to be discreet.</p>
+          <p> </p>
+          <p>Can you keep a secret?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"I am a paragon of discretion."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ha! Good to know.</p>
+          <p> </p>
+          <p>I think you'll do fine then. This is a confidential message for Sentinel [%dic:STR_DIC_N_Novan] in the [%dic:STR_DIC_W_LF2_SZ_A1].</p>
+          <p> </p>
+          <p>You may tell him that I sent it, but don't mention it to anyone else. Okay?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Perfect.</p>
+          <p> </p>
+          <p>Your reputation for trustworthiness assures me that you'll not open the message yourself. If you were to do so, I'm sure your reputation would suffer greatly.</p>
+          <p> </p>
+          <p>It's rather urgent, so please hurry and deliver it to [%dic:STR_DIC_N_Novan], who stands guard in the [%dic:STR_DIC_W_LF2_SZ_A1].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll get it there. Trust me."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes, I suppose it's beneath a Daeva to perform as a simple courier. I suppose I could use the Shugo Express Mail Service, but...it doesn't seem that safe to me.</p>
+          <p> </p>
+          <p>I know the Zephyr Guild wants to keep this secret, and the Shugos are crazy for Kinah. They might sell the information for money.</p>
+          <p> </p>
+          <p>Hmmm....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Best of luck to you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hail there, Daeva. What brings you out here to such a remote and barren place?</p>
+          <p> </p>
+          <p>A courier you say? Well, you should be very cautious. The Manduri occasionally waylay passers by for their possessions, but that's nothing compared to the Lepharist Revolutionaries!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">"Shhhh.... This confidential message is for you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, my....</p>
+          <p> </p>
+          <p>Is this quiet enough? Thank you for bringing this to me. Let me read it....</p>
+          <p> </p>
+          <p>Hmmm...yes this is important. It says in this note that I should share it with Heropres. He's standing right over there.</p>
+          <p> </p>
+          <p>Would you please take this to Heropres as well?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"Of course."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Hmm! What is it?</p>
+          <p> </p>
+          <p>What's your business?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"I have a confidential order for you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Let me see that....</p>
+          <p> </p>
+          <p>Uh-huh...hmm....go on intensified alert? This is troubling.</p>
+          <p> </p>
+          <p>Thank you for getting this to me in time. I'll take it from here.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Deliver the orders to [%dic:STR_DIC_N_Novan].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Deliver the orders to [%dic:STR_DIC_N_Herodes].</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Malonimus has important orders to deliver. He has asked you to deliver them discreetly.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Malonimus asked you to deliver some confidential orders to Novan, a guard at the Outpost Ruins.</p>
+          <p> </p>
+          <p>You went to Novan, and he requested you to deliver the order to Heropres as well. You did as he requested.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

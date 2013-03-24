@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Have you ever heard of Hanarkand--the Drakan village?</p>
+          <p> </p>
+          <p>Reports of suspicious activities have been trickling in from that region.</p>
+          <p> </p>
+          <p>I don't have final confirmation, but it looks like the Dragonbound are transporting something from the village to Angrief Ruins.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What do you think it is?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I don't know what or why, but they're hauling something, and that can't be good. We need to find out what they're up to.</p>
+          <p> </p>
+          <p>You any good at keeping a low profile, [%username]? Yes? I thought so.</p>
+          <p> </p>
+          <p>Can you go check it out? We need to see what's going on, but keep it on the QT until we find out what we're dealing with. It's always best to plan from a position of knowledge.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Splendid. Locate and remove the [%dic:STR_DIC_M_LF4_FanaticFi_Q_54_An], then see if you can get your hands on a copy of the [%dic:STR_DIC_I_QUEST_30201a].</p>
+          <p> </p>
+          <p>Assuming those beasts follow standard military bookkeeping strategies, that should provide us with all of the information we need.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Bookkeeping has strategies?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Really? I'd have thought you'd enjoy the chance to do a little skulking about.</p>
+          <p> </p>
+          <p>Well, I'll be sure not to disturb you with missions of this type in the future.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Yeah, whatever."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Were you able to deal with the Hanarkand Quartermaster and get your hands on the Transport Report?</p>
+          <p> </p>
+          <p>Our troops may control most of Inggison, but we can't afford to underestimate Balaur ingenuity.</p>
+          <p> </p>
+          <p>Who knows how far those Shades are willing to go to regain control of the lands we've liberated.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"One slightly tattered Transport Report."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You've become complacent now that Inggison is ours. Despite being conquered, the Balaur still have the advantage here on their former territory.</p>
+          <p> </p>
+          <p>We must be prepared! Even a slight lapse in concentration opens the door for a Balaur counterattack.</p>
+          <p> </p>
+          <p>Go! Dispose of the [%dic:STR_DIC_M_LF4_FanaticFi_Q_54_An] and bring me that [%dic:STR_DIC_I_QUEST_30201a]!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Fine! Don't fret your pretty little head."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>They weren't transporting anything? Blast! That means they've finished moving it. Whatever IT is.</p>
+          <p> </p>
+          <p>Let's hope this Transport Report gives us a clue as to what they're up to.</p>
+          <p> </p>
+          <p>It's encoded! Double-blast! We've got to get this useless piece of incomprehensible drivel deciphered.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Eliminate the [%dic:STR_DIC_M_LF4_FanaticFi_Q_54_An], find the [%dic:STR_DIC_I_QUEST_30201a] and take it to [%dic:STR_DIC_N_Cainus].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">The Dragonbound are hauling something from Hanarkand to Angrief Ruins. Go check it out.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Outremus said that the Dragonbound are transporting something from Hanarkand to Angrief Ruins.</p>
+          <p> </p>
+          <p>At his request, you disposed of the Hanarkand Quartermaster and obtained the Transport Report.</p>
+          <p> </p>
+          <p>Unfortunately, the report was in code so you weren't unable to assess the Balaur's plans.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

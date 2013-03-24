@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select_none">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>어서 오시오, 데바.</p>
+          <p> </p>
+          <p>어딘가 연륜이 묻어나는 게 그 사이 많은 경험을 한 것 같구려.</p>
+          <p> </p>
+          <p>혼자 여러 몫을 해내야 하는 호법성에게 다양한 실전 경험을 쌓는 것만큼 중요한 일은 없다오.</p>
+          <p> </p>
+          <p>호법성에게 필요한 임기응변은 그런 연륜이 쌓이고 쌓여 나온다는 걸 잊지 마시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그러고 보니 그동안 실력이 얼마나 늘었는지 확인해 볼 때도 된 것 같구려.</p>
+          <p> </p>
+          <p>어떻소, [%username]. [%dic:STR_DIC_E_DP_Ch]%을 10회 반복 사용하는 과제를 줄 텐데 도전해 볼 생각이 있소? </p>
+          <p> </p>
+          <p>그대가 실력 있는 호법성이라면 과제를 잘 끝낼 수 있을 테고, 실력이 부족하더라도 기술을 완전히 익힐 수 있는 좋은 기회가 될 거요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>다행히 신성력을 보충해 주는 젤리들이 있으니 필요할 때 적절히 사용하면 도움이 될 거라오.</p>
+          <p> </p>
+          <p>스승으로서 더 많은 도움을 주고 싶지만 훈련은 결국 데바 혼자의 몫이 아니겠소?</p>
+          <p> </p>
+          <p>그러니 힘이 들더라도 끝까지 포기하지 않으면 좋은 성과를 얻을 것이오.</p>
+          <p> </p>
+          <p>자, 그럼 좋은 소식을 기다리겠소.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아직 준비가 안 됐다니 어쩔 수 없구려.</p>
+          <p> </p>
+          <p>모든 일에는 다 때가 있는 법, 마음의 준비가 되면 다시 오시오.</p>
+          <p> </p>
+          <p>억지로 시키는 훈련은 역효과만 나는 법이니까 말이오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+    <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>지난번에 과제를 내 준 후로 제법 긴 시간이 흘렀구려.</p>
+          <p> </p>
+          <p>하지만 그대가 과제를 완수하고 돌아올 걸로 믿고 있었다오.</p>
+          <p> </p>
+          <p>그래, [%dic:STR_DIC_E_DP_Ch]%을 완전히 몸에 익혔소? </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 알려 준다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>잘 해냈구려.</p>
+          <p> </p>
+          <p>알다시피 호법성이 배워야 할 기술은 단계별로 여러 가지가 있고 효과도 다르오.</p>
+          <p> </p>
+          <p>하지만 뭐든 열심히 배우다 보면 결국 자기한테 꼭 맞는 기술을 찾게 되고, 자연스레 높은 경지에 이를 것이오.</p>
+          <p> </p>
+          <p>난 그대가 그렇게 되리라고 믿소.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_E_DP_Ch]%을 사용하라([%2]/10)</font></p></step>               
+               <step><p visible="[%3]"><font color="[%4]">치유성과 호법성의 스승 [%dic:STR_DIC_N_Thrasymedes]에게 보고하라</font></p></step>               
+    </steps>
+          <p><font font_xml="quest_summary">트라시메데스가 준 과제를 완료하고 돌아가 보고하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>트라시메데스는 호법성으로서의 실력을 확인해 보겠다며 질풍의 주문 I을 10회 사용하는 과제를 주었다.</p>
+          <p> </p>
+          <p>과제를 완료하고 트라시메데스에게 보고하자 앞으로 훌륭한 호법성이 되라며 격려를 했다.</p>
+	</body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

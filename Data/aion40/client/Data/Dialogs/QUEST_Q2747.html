@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>분노가 크면 클수록 머리는 차가워지죠. 지금 제가 그렇습니다.</p>
+          <p> </p>
+          <p>어떻게 하면 요새를 되찾을 수 있을지 오직 그것만 생각하고 있습니다.</p>
+          <p> </p>
+          <p>수없이 쓰러졌다 부활한다고 해도 요새를 되찾을 수 있다면 무슨 일이든 할 겁니다!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그래서 지금 군단병들과 요새를 되찾을 작전을 수립하는 중인데 방해를 하는 놈들이 있습니다.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_M_Ab1_1132_Specter_27_An] 놈들이 공중을 떠다니며 계속적으로 저희를 괴롭히는군요.</p>
+          <p> </p>
+          <p>하지만 막상 상대하려고 하면 바로 달아나 버려서 놈들을 쫓다가 시간만 낭비하고 있습니다.</p>
+          <p> </p>
+          <p>[%username] 님이 놈들을 좀 처치해 주시면 안 될까요? 그럼 저희가 편하게 작전을 수립할 수 있을 겁니다. </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>고맙습니다. 그럼 지금 당장 [%dic:STR_DIC_M_Ab1_1132_Specter_27_An] 놈들을 처치하러 가 주십시오.</p>
+          <p> </p>
+          <p>그동안 저희는 최선을 다해서 요새를 공략할 계획을 짜겠습니다.</p>
+          <p> </p>
+          <p>일이 모두 끝나면 와서 보고해 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>생명 파괴자를 처치하는 건 사소한 일입니다.</p>
+          <p> </p>
+          <p>하지만 그건 요새를 되찾으려는 큰일을 위해서 꼭 필요한 일이죠.</p>
+          <p> </p>
+          <p>그게 이해가 안 된다면 당연히 꼭 도와야 한다는 생각도 들지 않겠죠.</p>
+          <p> </p>
+          <p>도움을 구걸할 생각은 없습니다. 의미 없는 일이라고 생각한다면 그냥 가십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username] 님이 [%dic:STR_DIC_M_Ab1_1132_Specter_27_An]를 처치하러 가신 뒤로 놈들이 나타나 괴롭히는 일이 줄어들었습니다.</p>
+          <p> </p>
+          <p>덕분에 전략을 짜는데 큰 진전이 있었습니다.</p>
+          <p> </p>
+          <p>놈들을 얼마나 처치했는지 보고해 주십시오.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>생각했던 대로 훌륭하게 처리해 주셨네요.</p>
+          <p> </p>
+          <p>이제 조금만 더 노력하면 시엘의 동부 요새를 탈환할 수 있을 겁니다.</p>
+          <p> </p>
+          <p>하지만 문제는 생명 파괴자가 아직도 많이 남아 있다는 겁니다.</p>
+          <p> </p>
+          <p>그러니 다음에 조금만 더 도와주시면 고맙겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">[%dic:STR_DIC_M_Ab1_1132_Specter_27_An]를 처치하라([%2]/9)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Gefjun]에게 보고하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">요새를 되찾을 전략을 짜는 군단병들에게 생명 파괴자가 방해가 된다고 한다. 게퓬의 부탁대로 생명 파괴자를 처치해 주자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>게퓬은 요새를 되찾으려고 군단병들과 함께 전략을 짜고 있는데 생명 파괴자가 방해가 된다고 했다.</p>
+          <p> </p>
+          <p>그래서 군단병들이 수월하게 전략을 짤 수 있도록 생명 파괴자를 처치해 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

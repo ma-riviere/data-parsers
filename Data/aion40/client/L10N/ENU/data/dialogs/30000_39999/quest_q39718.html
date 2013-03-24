@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p align="center"> - A Letter of Greenery -</p>
+          <p> </p>
+          <p>We hope everything is well and good with the members of the Green Hat Unit.</p>
+          <p> </p>
+          <p>This time, we'll be leaving for the South Katalam Plateau to volunteer.</p>
+          <p> </p>
+          <p>The source of the bottled water that Silverine sells is within the plateau. We need to check the contamination level, so fill the enclosed vial with swamp water and deliver it to *** in Goldrine Village.</p>
+          <p> </p>
+          <p>Always remember, nature precedes our existence.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">Fold the letter and put it away.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>How can I help you?</p>
+          <p> </p>
+          <p>There has been a number of patients suffering from a stomachaches. Are you one of them too, [%username]?</p>
+          <p> </p>
+          <p>Then you came to the right place. Our hospital specializes in treating stomachaches, nyerk.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">Hand over the vial of swamp water.</Act>
+    </Selects>
+  </HtmlPage>
+
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(Lowering his voice) You're a Green Hat Unit, I see.</p>
+          <p> </p>
+          <p>Let me check this quickly. I'll be back with you shortly.</p>
+          <p> </p>
+          <p>(Starts investigating the swamp water by mixing it with chemical agents.)</p>
+          <p> </p>
+          <p>I can't believe it. You really brought this from the South Katalam Plateau, right?</p>
+          <p> </p>
+          <p>This is basically a lump of germs! </p>
+          <p> </p>
+          <p>Nyerk, now I understand why the number of patients have increased recently, nyerk.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Fill the Empty Vial with the swamp water in South Katalam Plateau.</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">Deliver the Vial of Swamp Water to *** in Goldrine Hospital.</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">You received a Letter of Greenery from the Green Hat Unit. Read the letter and perform the mission.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You received a Letter of Greenery from the Green Hat Unit.</p>
+          <p> </p>
+          <p>After you delivered the Contaminated Swamp water to *** in Goldrine Hospital, you were complimented for your hard work.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

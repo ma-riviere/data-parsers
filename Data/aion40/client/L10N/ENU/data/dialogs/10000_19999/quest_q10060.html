@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q10060</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>Not entered</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You've made quite an impression on Garnon, [%username]. She's asked for you to be assigned to her here in Tiamaranta as well.</p>
+          <p> </p>
+          <p>I've no idea what will happen when Tiamat falls, but for now, keep nursing this diplomacy. We need the Reians' trust, and I suspect the Asmodians are doing their best to turn our erstwhile allies against us.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"Aion help them if they do."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Our first steps into Tiamaranta are towards incapacitating the source of Tiamat's power.</p>
+          <p> </p>
+          <p>The Dragon Lord has created an avatar, an Incarnation, to protect each of his power sources, which are located in the far corners of Tiamaranta. They await in the Heart of Fissure, the Heart of Gravity, the Heart of Wrath, and the Heart of Petrification. Only when those Hearts are incapacitated will the defenses around Tiamaranta's Eye falter so that we can enter the stronghold. There we will find Tiamat, and Elyos glory.</p>
+          <p> </p>
+          <p>Garnon can fill you in on the rest of the mission. You'll find [%dic:STR_DIC_W_LDF4b_SZ_OP_A4] in Accord Square.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">"I'll look for her there."</Act>
+    </Selects>
+    <Voice file="Q10060-1.ogg"/>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]. I am pleased to see you, as always.</p>
+          <p> </p>
+          <p>Commander Ancanus filled you in on the situation here?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">"The four Hearts, yes."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Right: Fissure, Gravity, Wrath, and Petrification. And with the power to seal Siel's Relics, we can finally take them down.</p>
+          <p> </p>
+          <p>But the Hearts are surrounded by some kind of Aetheric field that could prove deadly to our forces. We must assess that field before we move.</p>
+          <p> </p>
+          <p>I need an [%dic:STR_DIC_I_QUEST_10060b] to build a Vigilance Core, which will run our Aetheric Monitor. The [%dic:STR_DIC_M_LDF4b_T1_Monster_M_Flyingeye]s carry them. Please fetch me one, and quickly! </p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO2">"I'll go as quickly as I can."</Act>
+    </Selects>
+    <Voice file="Q10060-2.ogg"/>
+  </HtmlPage>
+
+  <HtmlPage name="select3">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], excellent. Do you have the parts I asked for?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here they are, Garnon."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_ok">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Very good. I've managed to summon a Magic Ward over the [%dic:STR_DIC_W_LDF4b_SZ_T1_S8].</p>
+          <p> </p>
+          <p>Use the Vigilance Core within the [%dic:STR_DIC_E_LDF4B_ItemUseArea_Q10060A]'s boundaries and you'll install the Aetheric Monitor.</p>
+          <p> </p>
+          <p>That should give us a clearer idea of what we're dealing with.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Vigilance Core... Magic Ward... Monitor. Got it."</Act>
+    </Selects>
+    <Voice file="Q10060-3.ogg"/>
+  </HtmlPage>
+
+  <HtmlPage name="check_user_item_fail">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What were you doing out there, [%username]?</p>
+          <p> </p>
+          <p>I know the landscape is disarming, but we don't have time to waste here.</p>
+          <p> </p>
+          <p>Get a [%dic:STR_DIC_I_QUEST_10060b] from a [%dic:STR_DIC_M_LDF4b_T1_Monster_M_Flyingeye] and bring it to me. Please hurry!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Sorry, I'll do it right away."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_success">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, [%username].</p>
+          <p> </p>
+          <p>Is the Aetheric Monitor installed? Was it running properly?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"As far as I could tell, it is."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Excellent. We must monitor that magic field for a while before we can move on the Heart of Fissure.</p>
+          <p> </p>
+          <p>Waiting is excruciating when the stakes are this high, I know, but we must try to be patient.</p>
+          <p> </p>
+          <p>You'll be one of the first to know when we're ready to take out the Heart of Fissure.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Report to [%dic:STR_DIC_N_Ancanus].</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">Find [%dic:STR_DIC_W_LDF4b_SZ_OP_A4] in [%dic:STR_DIC_W_LDF4b_SZ_OP_A3]</font></p></step>
+               <step><p visible="[%6]"><font color="[%7]">Bring an [%dic:STR_DIC_I_QUEST_10060b] from a [%dic:STR_DIC_M_LDF4b_T1_Monster_M_Flyingeye] to Garnon.</font></p>[%collectitem]</step>
+               <step><p visible="[%9]"><font color="[%10]">Use the Vigilance Core to install the Aetheric Monitor in [%dic:STR_DIC_E_LDF4B_ItemUseArea_Q10060A], near the [%dic:STR_DIC_W_LDF4b_SZ_T1_S8] [%11].</font></p></step>
+               <step><p visible="[%12]"><font color="[%13]">Return to [%dic:STR_DIC_W_LDF4b_SZ_OP_A4] and report your success.</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Order: Report to Commander Ancanus for your Tiamaranta missions.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ancanus again assigned you to assist Garnon, based on your previous success working with her.</p>
+          <p> </p>
+          <p>You assisted Garnon in collecting the materials needed to assess the magical field protecting the Heart of Fissure.</p>
+          <p> </p>
+          <p>You used the Vigilance Core to install the Aetheric Monitor, which will assess the Magic Ward observing the Heart of Fissure.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>Mission Progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

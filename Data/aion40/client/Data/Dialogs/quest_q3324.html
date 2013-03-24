@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>순찰병들이 있어서 그나마 안심이 되지, 이곳은 정말 위험한 곳이에요.</p>
+          <p> </p>
+          <p>[%username] 님에게는 하찮을 수 있는 괴물이 우리 인간에게는 목숨을 위협하는 존재가 될 수도 있지요.</p>
+          <p> </p>
+          <p>특히 크레스틀리치와 바쿠는 유독 밤이 되면 더 날뛰는 것 같아요. </p>
+          <p> </p>
+          <p>잠을 청해보려고 하면 크레스틀리치와 바쿠가 이곳까지 쳐들어와서 순찰병들과 혈투를 벌이거든요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">얘기를 계속 듣는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>순찰병들은 크레스틀리치와 바쿠의 고기가 먹을 만하다면서 반기는 눈치지만 저는 얼마나 무서운지 몰라요.</p>
+          <p> </p>
+          <p>피난민이 되어 이렇게 떠돌면서 세상에는 두렵지 않은 것이 한 개도 없답니다.</p>
+          <p> </p>
+          <p>고향에 있을 때에는 매일 매일이 즐거웠는데...</p>
+          <p> </p>
+          <p>무서운 크레스틀리치와 바쿠를 처치해 주시면 제가 밤잠이라도 편히 이룰 수 있을 것 같은데 어떠세요?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>고맙습니다. 이 앞에 보면 [%dic:STR_DIC_M_Crestlich_28_An]와 [%dic:STR_DIC_M_Baku_27_An]가 많이 있습니다.</p>
+          <p> </p>
+          <p>그것들을 모조리 처치하고 와주시면 제게 소중한 것으로 답례하겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>알겠습니다. [%username] 님은 이해하지 못하실 거에요.</p>
+          <p> </p>
+          <p>크레스틀리치와 바쿠같은 짐승이 뭐가 무서운지 말이죠.</p>
+          <p> </p>
+          <p>저처럼 힘없는 피난민들의 입장을 헤아리지 못하니까 당연한 일이겠죠.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>크레스틀리치와 바쿠는 처치하고 오신 건가요?</p>
+          <p> </p>
+          <p>선임 순찰병들이 제가 이런 부탁을 드린 걸 알면 왜 고기를 갖다 달라고 하지 않고 사냥만 하라고 했냐고 화낼 거예요.</p>
+          <p> </p>
+          <p>하지만 저는 더이상 크레스틀리치와 바쿠의 고기를 먹고 싶지도 않아요.</p>
+          <p> </p>
+          <p>또 그것들의 꼴을 보기도 싫다고요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">모두 처치했다고 한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>정말 고맙습니다. 오늘 밤엔 좀 조용하겠군요.</p>
+          <p> </p>
+          <p>[%username] 님과 같이 믿음직한 분이 순찰병이라면 저도 안심할 수 있을 텐데... 뭐, 지금 순찰병들이 무능하다는 얘긴 아니고요.</p>
+          <p> </p>
+          <p>제가 가진 초라한 것들 중에서 이건 아주 고마운 분께 드리고 싶었던 겁니다.</p>
+          <p> </p>
+          <p>받아주세요.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">피난민을 공포에 떨게하는 짐승을 처치하라</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Crestlich_28_An]([%2]/6)</font></p>
+                     <p visible="[%0]"><font color="[%1]">  [%dic:STR_DIC_M_Baku_27_An]([%5]/4)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Ernia]%와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">간혹 피난민의 막사를 공격하여 에르니아를 공포에 떨게 하는 크레스틀리치와 바쿠를 처치해 주는 것이 좋겠다.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>피난민 에르니아는 피난민 막사를 공격하는 크레스틀리치와 바쿠가 무서워서 잠을 잘 수 없다고 했다.</p>
+          <p> </p>
+          <p>그녀의 부탁으로 크레스틀리치와 바쿠를 처치하고 돌아가자 매우 고마워했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

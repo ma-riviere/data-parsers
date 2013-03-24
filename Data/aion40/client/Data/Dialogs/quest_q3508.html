@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>아, [%username]. 아직 있었군요.</p>
+          <p> </p>
+          <p>(편지를 접으며) 잘 됐습니다. 안 그래도 부르려던 참인데. </p>
+          <p> </p>
+          <p>미오베라에게서 편지가 또 왔지 뭡니까.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">무슨 일인지 묻는다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>투명 베이퍼가 또 나타났다는군요. 지난번에 그렇게 잡았는데도 또 나타난 걸 보면 우리가 생각했던 것보다 투명 베이퍼 수가 많았나 봅니다.</p>
+          <p> </p>
+          <p>아무튼 전보다 더 사납게 공격을 하는 통에 퓌토넨 늪지대로 나갈 엄두를 못 내고 있답니다.</p>
+          <p> </p>
+          <p>다시 가서 지원을 해야 할 것 같은데 알다시피 전 마을을 떠날 수 없어서 말입니다. 당신이 그 일을 맡아주는 게 어떻겠습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">수락한다. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">거절한다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>당신이 가 준다니 안심이 되는군요.</p>
+          <p> </p>
+          <p>아무래도 다른 사람은 실력을 장담할 수가 없어서 말이에요.</p>
+          <p> </p>
+          <p>경험이 있으니 알겠지만 야영지 입구부터 [%dic:STR_DIC_W_LF3_SZ_F2] 사이에 있는 [%dic:STR_DIC_M_Vapor_41_An]를 처치하면 됩니다.</p>
+          <p> </p>
+          <p>미오베라에겐 제가 답장을 보내 놓겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>생각보다 책임감이 없는 사람이군요.</p>
+          <p> </p>
+          <p>사실 당신이 지난번에 제대로 일처리를 안 해서 생긴 일 아닙니까.</p>
+          <p> </p>
+          <p>투명 베이퍼를 7마리만 처치하랬다고 딱 그만큼만 처리하다니. 내가 이래서 다른 사람에게 일을 못 맡긴다니까.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">대화를 마친다. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>퓌토넨 늪지대에서 바로 왔나 보군요.</p>
+          <p> </p>
+          <p>아, 다리에 묻은 진흙을 보고 알았습니다.</p>
+          <p> </p>
+          <p>그래, 투명 베이퍼는 어떻게 됐습니까? 부탁한 대로 놈들을 몽땅 처치했습니까?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">결과를 보고한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>역시 일 처리 하난 깔끔하군요.</p>
+          <p> </p>
+          <p>그나저나 이번엔 확실히 투명 베이퍼가 사라져야 할 텐데... 공격하기 전에는 모습이 안 보이니 일이 성공했는지를 확신할 수 없어 답답하군요.</p>
+          <p> </p>
+          <p>어쨌거나 약속한 마리수만큼 베이퍼를 없앴으니 보상은 드려야죠. </p>
+          <p> </p>
+          <p>받으세요. 미오베라가 당신에게 주라고 맡긴 것입니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">챈가룽 야영지 입구를 막고 있는 [%dic:STR_DIC_M_Vapor_41_An]%을 처치하라([%2]/7)</font></p></step>
+               <step><p visible="[%15]"><font color="[%16]">[%dic:STR_DIC_N_Tegis]와 대화하라</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">투명 베이퍼가 챈가룽 야영지 입구를 막고 있다고 한다. 마을 일 때문에 바쁜 테기스를 대신해 투명 베이퍼를 처리하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>테기스는 챈가룽 야영지에 투명 베이퍼가 다시 나타났다며 한 번 더 베이퍼를 처치해 달라고 했다.</p>
+          <p> </p>
+          <p>챈가룽 야영지로 가서 입구 주변에 있는 투명 베이퍼를 처치하고 돌아가자 미오베라가 맡긴 것이라며 보상을 주었다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

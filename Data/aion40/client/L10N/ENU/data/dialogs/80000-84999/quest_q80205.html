@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, [%username]. It's tragic. Absolutely tragic.</p>
+          <p> </p>
+          <p>I used to love looking at that beautiful statue in the village. I even spent most of yesterday polishing it!</p>
+          <p> </p>
+          <p>And now it's ruined! Ruined! Oh!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Who ruined it?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Those Dukakis, obviously. They usually keep to [%dic:STR_DIC_FLA13], but they must have snuck in and done this last night.</p>
+          <p> </p>
+          <p>I can't imagine what they had against that poor statue.</p>
+          <p> </p>
+          <p>[%username], will you help me get some vengance?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you! I think I'll be satisfied with 18 Dukakis dead?</p>
+          <p> </p>
+          <p>Yes, that will do it. Let me know when it's done.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Goodbye."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>What? Do you not care about my feelings? How dare you.</p>
+          <p> </p>
+	        <p>Of course this is an appropriate response. I'm not over-reacting at all!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Okay then."</Act>
+    </Selects>
+  </HtmlPage>
+
+ <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did you teach those Dukakis a lesson for me? Not so smug now, are they?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"Yes. But I still don't see how..."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh wonderful! You're my hero!</p>
+          <p> </p>
+          <p>Please take this reward. And maybe I should have mentioned this first, but those Dukakis also killed a few guards last night.</p>
+          <p> </p>
+      	  <p>What? What do you mean that was more important than the statue?</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Kill Dukaki Miners ([%2]/18).</font></p></step>
+	       <step><p visible="[%15]"><font color="[%16]">Report back to Inisha.</font></p></step>
+    </steps>
+          <p><font font_xml="quest_summary">Teach the Dukaki Miners at [%dic:STR_DIC_FLA13] a lesson.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You punished the Dukaki Miners until Inisha felt better.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

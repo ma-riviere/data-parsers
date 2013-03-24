@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>There is a fire energy about you, [%username].</p>
+          <p> </p>
+          <p>Since you are not a Daeva of Flame, you must be carrying something with strong fire energy.</p>
+          <p> </p>
+          <p>Anything related to fire rouses my curiosity--may I ask what you are carrying?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT1_1">"I have this Fire Sword."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select1_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Fire Sword? The real Fire Sword? May I see?</p>
+          <p> </p>
+          <p>Ah, a good sword. Still...not in perfect condition. It has lost much of its fire energy.</p>
+          <p> </p>
+          <p>It's too bad to see such a good sword having lost so much strength.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Can it be fixed?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I may be able to revive the energy in it, if you bring me an item that has fire energy of its own--the stronger, the better.</p>
+          <p> </p>
+          <p>If you bring me something suitable, I can try to imbue the sword with energy once again.</p>
+          <p> </p>
+          <p>Would you like to try that?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>All right. Well, [%dic:STR_DIC_M_ElementalFire2_26_An]s have the strongest fire energy of anything in this area. </p>
+          <p> </p>
+          <p>Hunt the Flame Spirit and bring me its [%dic:STR_DIC_I_QUEST_1334a].</p>
+          <p> </p>
+          <p>I should be able to use that to put the power back into your sword.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Thank you. I'm on my way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You're just going to let this wonderful sword go to waste in your cube?</p>
+          <p> </p>
+          <p>If you leave the sword like that, it won't work at all. It's nothing but a club.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I like clubs better, anyway."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did you bring the [%dic:STR_DIC_I_QUEST_1334a]?</p>
+          <p> </p>
+          <p>I hope you appreciate what I'm doing for you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Here."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I need both the [%dic:STR_DIC_I_QUEST_1334a] and the Fire Sword to do this properly. What exactly do you propose I do with only one of these?</p>
+          <p> </p>
+          <p>I'm unable to make something from nothing, you know.</p>
+          <p> </p>
+          <p>Come back with both and I can help you.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'll be right back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select7">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Ah, yes...this essence is rich with fire energy.</p>
+          <p> </p>
+          <p>Your sword will be very effective once I've finished restoring it.</p>
+          <p> </p>
+          <p>Give me your sword...now give me just a moment.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT_QUEST_REWARD">"All right...I'll wait."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>It's done, [%username].</p>
+          <p> </p>
+          <p>If you have the chance to visit Sanctum, you should try to talk with the Daeva of Flame there. He knows much about this sword and can imbue with even stronger power.</p>
+          <p> </p>
+          <p>For now, though, it is much better than before. Go, test its power.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Obtain the [%dic:STR_DIC_I_QUEST_1334a] and take it to [%dic:STR_DIC_N_Garperos].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Take Flame Essence from Flame Spirits to Garperos so that he can upgrade your Fire Sword.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>After checking the Fire Sword you were carrying, Garperos concluded it had lost most of its fire energy, and would no longer work well.</p>
+          <p> </p>
+          <p>As he instructed, you hunted Flame Spirits and took their Flame Essence to Garperos, who upgraded the Fire Sword to the Flame Sword.</p>
+          <p> </p>
+          <p>He said that the Daeva of Flame in Sanctum could upgrade the sword to a higher level.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

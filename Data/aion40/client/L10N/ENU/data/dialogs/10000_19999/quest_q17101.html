@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>-- Important Announcement --</p>
+          <p> </p>
+          <p>The fountain project is running short of materials. Additional items are required to create the exterior of the fountain.</p>
+          <p> </p>
+          <p>[%dic:STR_DIC_E_fs_material_n_c_l]s and [%dic:STR_DIC_E_fs_material_n_c_21a_l]s must be brought to the [%dic:STR_DIC_N_Town_shugo_Worker_05] before the fountain can be completed.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>We successfully laid foundation for fountain, but material costs are soaring! Has Daeva seen price of Construction Fluxes lately? Akakak.</p>
+          <p> </p>
+          <p>Has Daeva brought Minor Construction Fluxes and Lesser Construction Fluxes? Construction office not want bonds to get junk rating, nyerk.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">"Relax, here's your Fluxes."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you Daeva. These are exactly what we need. Construction office authorized a reward for helping like this.</p>
+          <p> </p>
+          <p>Fountain construction will be able to continue without interruption now.</p>.
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Take [%dic:STR_DIC_E_fs_material_n_c_l] and [%dic:STR_DIC_E_fs_material_n_c_21a_l] to [%dic:STR_DIC_N_Town_shugo_Worker_05].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">The Construction office is running out of fluxes for the fountain. Collect the necessary materials and bring them to the Village Construction Boss.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>The fountain project is running over budget and short of materials.</p>
+          <p> </p>
+          <p>You brought some Construction Fluxes to the Village Construction Boss, who thanked you for your help.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

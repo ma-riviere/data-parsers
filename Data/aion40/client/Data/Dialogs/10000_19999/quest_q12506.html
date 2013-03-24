@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1" accept="true">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>용제 티아마트를 처치한 건 정말 잘된 일이지만 계속 석연치 않은 점들이 마음에 남아있습니다.</p>
+          <p> </p>
+          <p>무언가 더 캐내면 흐린 머릿속이 말끔히 정리될 수 있을 것 같은데 말이죠.</p>
+          <p> </p>
+          <p>가둬 둔 [%dic:STR_DIC_N_LDF5a_Avsada_E]를 저 대신 심문해 주시지 않겠습니까?</p>
+          <p> </p>
+          <p>아브사다는 티아마트군 장교였던 놈인데 저희가 붙잡았지요.</p>
+          <p> </p>
+          <p>뭔가 분명 알고 있는 눈치입니다. 저에겐 입을 열지 않고 있지만 [%username] 님이라면 혹시 모르지요.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_SIMPLE">수락한다.</Act>
+      <Act href="HACTION_QUEST_REFUSE_SIMPLE">거절한다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>귀찮게 굴지 마라... 난 아는 게 없다...</p>
+          <p> </p>
+          <p>전에도 지금도 대답, 똑같다...</p>
+          <p> </p>
+          <p>난 티아마트 군단의 장교, 천족에게 말할 이유... 특히 없다...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SELECT2_1">티아마트는 이미 패했다고 설득한다.</Act>
+  </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select2_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>그게 아니다!</p>
+          <p> </p>
+           <p>티아마트군이 패한 건... 패한 건!</p>
+          <p> </p>
+          <p>좋다. 네가 모르고 있던 진실을 알려주마.</p>
+          <p> </p>
+          <p>지하 카탈람으로 가서 [%dic:STR_DIC_M_LDF5_Under_VriCU_As_SN_65_An]를 찾아라.</p>
+          <p> </p>
+          <p>여기에 붙잡히기 전, 놈에게 내가 쓴 기록, 빼앗겼다.</p>
+          <p> </p>
+          <p>감찰대 드라칸 파수병에게서 [%dic:STR_DIC_I_doc_quest_12506a]를 가져와라.</p>
+          <p> </p>
+          <p>일지의 내용을 읽으면 모든 걸 알게 될 것이다...</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_SETPRO1">대화를 마친다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>지하로 가셨다는 보고는 받았습니다.</p>
+          <p> </p>
+          <p>별 일 없으셨나요?</p>
+          <p> </p>
+          <p>뭔가 알아낸 게 있으신 겁니까?</p>
+          <p> </p>
+          <p>안색을 보아하니 심각한 일인 것 같습니다만.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM_SIMPLE">아브사다의 일지를 건넨다.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>(받아서 빠르게 읽으며) 이런... 이건 정말 중대한 일입니다.</p>
+          <p> </p>
+          <p>그렇지만 이 기록을 보니 사건의 아귀가 맞는군요.</p>
+          <p> </p>
+          <p>티아마트가 그렇게 쉽게 쓰러진 이유가 이제야 이해가 갑니다.</p>
+          <p> </p>
+          <p>머릿속에 큰 그림이 그려지기 시작하네요.</p>
+          <p> </p>
+          <p>중요한 문서를 가져다 주셔서 감사합니다.</p>
+          <p> </p>
+          <p>이 문서는 당분간 제가 보관하도록 하겠습니다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">붙잡힌 티아마트군 장교 [%dic:STR_DIC_N_LDF5a_Avsada_E]와 대화하라</font></p></step>
+               <step><p visible="[%3]"><font color="[%4]">지하 카탈람의 [%dic:STR_DIC_M_LDF5_Under_VriCU_As_SN_65_An]에게서 [%dic:STR_DIC_I_doc_quest_12506a]를 얻어 [%dic:STR_DIC_N_LDF5A_Pepe_E]에게 가져가라</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">붙잡힌 아브사다를 심문하자.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>페페 천부장은 용제 티아마트를 쉽게 쓰러트린 점에 의문점이 있다며 재건된 빛의 탑에 붙잡혀 있는 티아마트군의 장교 아브사다를 심문해 봐달라고 부탁했다.</p>
+          <p> </p>
+          <p>붙잡힌 아브사다는 자신이 적은 기록을 보면 모든 진실을 알게 될 수 있을 것이라고 했다. 지하 카탈람의 감찰대 드라칸 파수병을 처치하고 얻은 아브사다의 일지에는 티아마트가 마지막에 제1 용제 프레기온에게 도움을 청하려고 했으나 좌절되었단 내용이 담겨 있었다.</p>
+          <p> </p>
+          <p>아브사다의 일지를 페페 천부장에게 가져가자 놀라운 사실을 알게 됐다며 일지는 당분간 자신이 보관하겠다고 했다.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>새 퀘스트: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>진행 중: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

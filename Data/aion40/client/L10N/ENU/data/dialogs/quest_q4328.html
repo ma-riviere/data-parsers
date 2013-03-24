@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HtmlPages>
+
+  <QuestInfo>
+    <QuestId>Q4328</QuestId>
+    <QuestName>???</QuestName>
+    <QuestType>Not entered</QuestType>
+  </QuestInfo>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username], you're [%username]! Please, wait!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"Can I help you?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Yes! Yes! ONLY you can help me!</p>
+          <p> </p>
+          <p>You see, things haven't been going well recently. I lost out on a job promotion. I was off work at the farm with an infected foot, and I've so many mouths to feed as it is, and now my wife's pregnant again! We can't cope!</p>
+          <p> </p>
+          <p>But there is a way! I've heard of a place on the [%dic:STR_DIC_W_DF2_SUB_C3] where [%dic:STR_DIC_M_VespaReD_32_n]s fly. They're magical creatures, filled with crystals that...that I could sell! Please, get them for me!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh, oh thank you! Thank the Five!</p>
+          <p> </p>
+          <p>Quickly, my friend, head to the [%dic:STR_DIC_W_DF2_SUB_C3]. You'll find the [%dic:STR_DIC_M_VespaReD_32_n]s there.</p>
+          <p> </p>
+          <p>Please, [%username]. We're relying on you!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"And they were relying on you. I'll be back."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh no...no.... I felt certain you would say yes. I heard so many good things about you....</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I'm sorry."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You... you came back?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I said I would. Here."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh no...no... this isn't enough. Please, please go and collect more?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"I will."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>You did it! I can't believe it!</p>
+          <p> </p>
+          <p>Oh, thank you so much! You've saved our family! Please, please take this. I know it's not much, but it's more heartfelt than the greatest of riches.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Collect [%dic:STR_DIC_M_VespaReD_32_n] crystals and bring them to [%dic:STR_DIC_N_Virashak].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Virashak asked you to gather some Vespine Crystals to help support his family.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Virashak asked you to bring him Wasp Vespine Crystals so he could feed his family.</p>
+          <p> </p>
+          <p>You did as he asked, and were thanked repeatedly by an emotional Virashak.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

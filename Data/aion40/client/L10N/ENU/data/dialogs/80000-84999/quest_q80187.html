@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>[%username]. I know your heart is in the right place, so I have one more favor to ask.</p>
+          <p> </p>
+          <p>This entire incident with Karzanke is embarrassing for both of us.</p>
+      	  <p> </p>
+          <p>It would be better if we could both just forget it ever happened.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+    <Act href="HACTION_ASK_QUEST_ACCEPT">"How will you do that?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Please kill the Fearless Fungies around [%dic:STR_DIC_W_DF1A_1].</p>
+          <p> </p>
+          <p>You will be able to obtain Forgetful Fragments, that Karzanke and I can use to forget that this ever happened.</p>
+          <p> </p>
+          <p>Will you help me?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept.</Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline.</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I need at least 10 Forgetful Fragments for this to work. Please hurry.</p>
+         </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Blood for blood."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+         <p>Fine. Leave me in misery then. I'm sure I'll laugh about this in a few hundred years.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Farewell."</Act>
+    </Selects>
+  </HtmlPage>
+
+   <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did you get all the pieces?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"I have them here."</Act>
+    </Selects>
+  </HtmlPage>
+
+ <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Did you lose a couple fingers, or can you just not count that high?</p>
+      	  <p> </p>
+          <p>I said I needed ten pieces. Come back when you have them.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Farewell."</Act>
+    </Selects>
+  </HtmlPage>
+
+    <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Thank you for helping me, [%username].</p>
+          <p> </p>
+          <p>Now I'll make these into something that will help us forget this disasterous mess. It would be awkward if we have to work together otherwise.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+                     <step><p visible="[%0]"><font color="[%1]">Gather 10 Forgetful Fragments and bring them to Rikanellie.</font></p>[%collectitem]</step>    
+    </steps>
+          <p><font font_xml="quest_summary">Rikanellie asked you to get Forgetful Fragments. Bring them to her when you have enough.</font></p>
+          <p> </p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Rikanellie said she would use Forgetful Fragments to erase her and Karzanke's memories of each other.</p>
+          <p> </p>
+          <p>They were able to forget that the entire embarrassing incident had ever happened.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<HtmlPages>
+
+  <HtmlPage name="select1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Oh! I'm very glad to see you again, [%username].</p>
+          <p> </p>
+          <p>After you thinned out the Rynoces and Drynacs, I realized that worrying about the animals was the only thing that kept my mind of the unbearable heat and supply shortages! Well, them and Kibelle, but she's got to attend to her duties too.</p>
+          <p> </p>
+          <p>Anyway, that doesn't matter, because it seems there were more of the beasts hiding out in the hills. They're a pain in the tail-feathers!</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_ASK_QUEST_ACCEPT">"What are they doing?"</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="ask_quest_accept">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>They attacked a convoy of wagons that was bringing fresh food to us. Several people were hurt, and the locals won't bring up more supplies until we can assure them that the animals have been put down again. </p>
+          <p> </p>
+          <p>I don't think I have to tell you how badly we need those supplies, but we simply can't leave the post undefended while we chase beasts across the rocks and dirt. Could I impose on you to lend us a hand exterminating [%dic:STR_DIC_M_Rhinoce_35_An]es and [%dic:STR_DIC_M_Driton_35_An]s again?</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_QUEST_ACCEPT_1">Accept. </Act>
+      <Act href="HACTION_QUEST_REFUSE_1">Decline. </Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_accept_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>I appreciate your continued support.</p>
+          <p> </p>
+          <p>Please bring me ten [%dic:STR_DIC_I_QUEST_1408a]s and ten [%dic:STR_DIC_I_QUEST_1408b]s.</p>
+          <p> </p>
+          <p>I'm relying on you, [%username].</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"It will be no problem."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="quest_refuse_1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>As I told you before, Kibelle and I can't eliminate the monsters here alone; they are too fierce, and there are too many of them.</p>
+          <p> </p>
+          <p>Your help is desperately needed.</p>
+          <p> </p>
+          <p>If you change your mind later, come to me anytime. We really need your help here.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"May Arieluma watch over you."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select5">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Have you eliminated the [%dic:STR_DIC_M_Rhinoce_35_An]es and [%dic:STR_DIC_M_Driton_35_An]s?</p>
+          <p> </p>
+          <p>Did you bring me the things I asked for? I'll show them to the troops to encourage them.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_CHECK_USER_HAS_QUEST_ITEM">"Yes. This is how it's done, you see."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select6">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>This time, I asked you to bring ten [%dic:STR_DIC_I_QUEST_1408a]s and ten [%dic:STR_DIC_I_QUEST_1408b]s.</p>
+          <p> </p>
+          <p>Perhaps you were confused about something?</p>
+          <p> </p>
+          <p>I can't give you a reward for each individual piece of evidence, because my funds and supplies are limited.</p>
+        </body>
+        </html>
+    </Contents>
+    <Selects>
+      <Act href="HACTION_FINISH_DIALOG">"Light guide our way."</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_quest_reward1">
+    <Contents cdata="true">
+        <html>
+        <body>
+          <p>Wonderful! I'll tell Kibelle to alert the locals that it's safe to make a delivery now.</p>
+          <p> </p>
+          <p>I hope the animals stay down for a while this time.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+   <HtmlPage name="quest_summary">
+    <Contents cdata="true">
+        <html>
+        <body>
+    <steps>
+               <step><p visible="[%0]"><font color="[%1]">Kill [%dic:STR_DIC_M_Rhinoce_35_An]es and [%dic:STR_DIC_M_Driton_35_An]s and bring the evidence to [%dic:STR_DIC_N_Dionera].</font></p>[%collectitem]</step>
+    </steps>
+          <p><font font_xml="quest_summary">Take care of the Rynoces and Drynacs that are swarming the Observatory.</font></p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="quest_complete">
+    <Contents cdata="true">
+        <html>
+        <body> 
+          <p>You killed Rynoces and Drynacs that were swarming the Observatory, and brought the evidence to Dionera.</p>
+        </body>
+        </html>
+    </Contents>
+  </HtmlPage>
+
+  <HtmlPage name="select_acqusitive_quest_desc">
+    <Selects>
+      <Act>New quest: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+  <HtmlPage name="select_progressive_quest_desc">
+    <Selects>
+      <Act>In progress: [%questname]</Act>
+    </Selects>
+  </HtmlPage>
+
+</HtmlPages>
