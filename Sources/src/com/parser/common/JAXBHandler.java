@@ -3,6 +3,8 @@ package com.parser.common;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.HashMap;
 import javax.xml.bind.JAXBElement;
 
 import com.parser.input.aion.recipes.ClientRecipe;
@@ -10,17 +12,14 @@ import com.parser.input.aion.skills.ClientSkill;
 
 public class JAXBHandler {
 
-	public static List<JAXBElement<? extends Serializable>> unusedRecipesProperties = null;
-	public static List<JAXBElement<? extends Serializable>> unusedSkillsProperties = null;
-	public static List<JAXBElement<? extends Serializable>> notToAdd = new ArrayList<JAXBElement<? extends Serializable>>();
+	public static Map<String, List<String>> unused = new HashMap<String, List<String>>();
+	public static Map<String, List<String>> all = new HashMap<String, List<String>>();
 
 	public static Object getRecipeValue(ClientRecipe cr, String propertyName) {
-		unusedRecipesProperties = cr.getIdOrNameOrDesc();
+		
 		
 		for (JAXBElement<? extends Serializable> jaxb : cr.getIdOrNameOrDesc()) {
 			if (jaxb.getName().getLocalPart().equalsIgnoreCase(propertyName)) {
-				if (unusedRecipesProperties.contains(jaxb))
-					unusedRecipesProperties.remove(jaxb);
 				return jaxb.getValue();
 			}
 		}
@@ -28,15 +27,27 @@ public class JAXBHandler {
 	}
 	
 	public static Object getSkillValue(ClientSkill cs, String propertyName) {
-		if (unusedSkillsProperties == null)
-			unusedSkillsProperties = cs.getIdOrNameOrDesc();
 
 		for (JAXBElement<? extends Serializable> jaxb : cs.getIdOrNameOrDesc()) {
+			/*if (all.get("skills") == null || all.get("skills").isEmpty()) {
+				List<String> niu = new ArrayList<String>();
+				niu.add(jaxb.getName().getLocalPart());
+				all.put("skills", niu);
+			}
+			else if (!all.get("skills").contains(jaxb.getName().getLocalPart())) {
+				all.get("skills").add(jaxb.getName().getLocalPart());
+			}*/
+
 			if (jaxb.getName().getLocalPart().equalsIgnoreCase(propertyName)) {
-				if (unusedSkillsProperties != null && unusedSkillsProperties.contains(jaxb.getValue())) {
-					unusedSkillsProperties.remove(jaxb.getValue());
-					notToAdd.add(jaxb);
+				/*if (unused.get("skills") == null || unused.get("skills").isEmpty()) {
+					List<String> niu2 = new ArrayList<String>();
+					niu2.add(jaxb.getName().getLocalPart());
+					unused.put("skills", niu2);
 				}
+				else if (!unused.get("skills").contains(jaxb.getName().getLocalPart())) {
+					unused.get("skills").add(jaxb.getName().getLocalPart());
+				}*/
+				
 				if (jaxb.getValue() instanceof Integer)
 					return ((Number) jaxb.getValue()).intValue();
 				else if (jaxb.getValue() instanceof String)
@@ -48,19 +59,21 @@ public class JAXBHandler {
 		return null;
 	}
 	
-	public static void printUnused(String which) {
-		List<JAXBElement<? extends Serializable>> toPrint = new ArrayList<JAXBElement<? extends Serializable>>();
-		switch(which) {
-			case "skills":
-				toPrint = unusedSkillsProperties; break;
-			case "recipes":
-				toPrint = unusedRecipesProperties; break;
-			default:
-				System.out.println("[JAXB] Trying to print non-available info");
+	public static void printUnused(String which) {	
+		if (unused.get(which) != null && !unused.get(which).isEmpty()) {
+			for (String s : unused.get(which)) {
+				if (all.get(which).contains(s))
+					all.get(which).remove(s);
+				else
+					System.out.println("[JAXB] Problem : All list does not contain value : " + s);
+			}
+		
+			System.out.println("\n[JAXB] Unused properties of Client "+ which + " :");
+			for (String s : all.get(which)) {
+				System.out.println("<"+s+">");
+			}
 		}
-		System.out.println("\n[JAXB] Unused properties of Client "+ which + " :");
-		for (JAXBElement<? extends Serializable> jaxb : toPrint) {
-			System.out.println(jaxb.getName().getLocalPart());
-		}
+		else
+			System.out.println("[JAXB] Trying to print non-available info");
 	}
 }

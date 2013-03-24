@@ -445,7 +445,7 @@ public class AionSkillsWriter extends AbstractWriter {
 	
 	@Override
 	public void analyze() {
-		JAXBHandler.printUnused("skills");
+		/*JAXBHandler.printUnused("skills");*/
 	}
 
 	@Override
