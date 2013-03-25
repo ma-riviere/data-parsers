@@ -26,6 +26,19 @@ ECHO.
 SET CHOICE=
 SET /P CHOICE=What do you want to parse : %=%
 
+ECHO.   
+ECHO #####################################################
+ECHO ###         List Client unused elements ?         ###
+ECHO #####################################################
+ECHO ###  0 : No            ###   1 : Yes              ###
+ECHO #####################################################
+ECHO.
+SET ANALYSE=
+SET /P ANALYSE=Do you want a list of client unused elements ? %=%
+
+IF "%ANALYSE%"=="0" SET ANALYSE=false
+IF "%ANALYSE%"=="1" SET ANALYSE=true
+
 SET Start=
 
 REM Client
@@ -48,7 +61,7 @@ REM Quit
 IF "%CHOICE%"=="q" GOTO QUIT
 IF "%CHOICE%"=="" GOTO QUIT
 
-JAVA -Xms512m -Xmx1024m -ea -cp libs/*;Parser.jar com.parser.start.aion.%Start%
+JAVA -Xms512m -Xmx1024m -ea -cp libs/*;Parser.jar com.parser.start.aion.%Start% %ANALYSE%
 
 GOTO MENU
 
