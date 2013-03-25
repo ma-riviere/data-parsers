@@ -43,7 +43,7 @@ public class AionRecipesWriter extends AbstractWriter {
 			
 			rt.setId((Integer) JAXBHandler.getValue(cr, "id"));
 			rt.setNameid(new AionDataCenter().getInstance().getMatchingStringId(JAXBHandler.getValue(cr, "desc").toString(), 2, 1));
-			rt.setSkillid(getMatchingSkill(JAXBHandler.getValue(cr, "combineskill").toString()));
+			rt.setSkillid(getSkill(JAXBHandler.getValue(cr, "combineskill").toString()));
 			rt.setRace(adjustRace(JAXBHandler.getValue(cr, "qualification_race").toString()));
 			rt.setSkillpoint((Integer) JAXBHandler.getValue(cr, "required_skillpoint"));
 			rt.setDp((Integer) JAXBHandler.getValue(cr, "require_dp"));
@@ -82,6 +82,8 @@ public class AionRecipesWriter extends AbstractWriter {
 		FileMarhshaller.marshallFile(finalTemplates, AionWritingConfig.RECIPES, AionWritingConfig.RECIPES_PACK);
 	}
 	
+	private int getSkill(String s) {return new AionDataCenter().getInstance().getSkillIdByName(s);}
+	
 	private String adjustRace(String race) {
 		if (race.equalsIgnoreCase("pc_dark")) {
 			return "ASMODIANS";
@@ -89,10 +91,6 @@ public class AionRecipesWriter extends AbstractWriter {
 			return "ELYOS";
 		} else
 			return "PC_ALL";
-	}
-	
-	private int getMatchingSkill(String skillName) {
-		return new AionDataCenter().getInstance().getSkillIdByName(skillName);
 	}
 
 }

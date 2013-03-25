@@ -66,7 +66,12 @@ import com.parser.output.aion.skills.MpUsePeriodicAction;
 import com.parser.output.aion.skills.Effects;
 import com.parser.output.aion.skills.Effect;
 
-import com.parser.output.aion.skills.DispelEffect;
+import com.parser.output.aion.skills.AbstractOverTimeEffect;
+
+import com.parser.output.aion.skills.HealEffect;
+import com.parser.output.aion.skills.MPHealEffect;
+import com.parser.output.aion.skills.FPHealEffect;
+import com.parser.output.aion.skills.DPHealEffect;
 
 import com.parser.output.aion.skills.Motion;
 
@@ -350,7 +355,7 @@ public class AionSkillsWriter extends AbstractWriter {
 				for (int a = 1; a <= 4; a++) {
 					if (JAXBHandler.getValue(cs, "effect"+a+"_type") != null && EffectType.fromClient(JAXBHandler.getValue(cs, "effect"+a+"_type").toString()) != null) {
 						if (!hasEffects)
-							hasEffects = setEffects(cs, effects, EffectType.fromClient(JAXBHandler.getValue(cs, "effect"+a+"_type").toString()));
+							hasEffects = computeEffects(cs, effects, EffectType.fromClient(JAXBHandler.getValue(cs, "effect"+a+"_type").toString()), a);
 					}
 				}
 				
@@ -792,22 +797,105 @@ public class AionSkillsWriter extends AbstractWriter {
 	// [UPDATE] Add check if skills get more than 4 effects with future updates
 	private boolean hasEffects(ClientSkill cs) {
 		for (int a = 1; a <= 4; a++) {
-			if (JAXBHandler.getValue(cs, "effect"+a+"_type") != null)
+			if (JAXBHandler.getValue(cs, "effect"+a+"_type") != null && JAXBHandler.getValue(cs, "effect"+a+"_type").toString() != "")
 				return true;
 		}
 		return false;
 	}
 	
-	private boolean setEffects(ClientSkill cs, Effects effects, EffectType et) {
+	private boolean computeEffects(ClientSkill cs, Effects effects, EffectType et, int a) {
 		boolean hasEffects = false;
+		String current = "effect" + a + "_";
 		
-		if (et == EffectType.DISPEL) {
-			DispelEffect de = new DispelEffect();
+		if (et.getAbstractCatetgory().equalsIgnoreCase("AbstractOverTimeEffect")) {
 			
-			effects.getRootAndStunAndSleep().add(de);
-			hasEffects = true;
+			if (et == EffectType.HEAL) {
+				HealEffect heal = new HealEffect();
+				hasEffects = setGeneral(cs, heal, a);
+				hasEffects = setAbstractOverTimeEffect(cs, heal, current);
+				effects.getRootAndStunAndSleep().add(heal);
+			}
+			if (et == EffectType.MPHEAL) {
+				MPHealEffect mpHeal = new MPHealEffect();
+				hasEffects = setGeneral(cs, mpHeal, a);
+				hasEffects = setAbstractOverTimeEffect(cs, mpHeal, current);
+				effects.getRootAndStunAndSleep().add(mpHeal);
+			}
+			if (et == EffectType.FPHEAL) {
+				FPHealEffect fpHeal = new FPHealEffect();
+				hasEffects = setGeneral(cs, fpHeal, a);
+				hasEffects = setAbstractOverTimeEffect(cs, fpHeal, current);
+				effects.getRootAndStunAndSleep().add(fpHeal);
+			}
+			if (et == EffectType.DPHEAL) {
+				DPHealEffect dpHeal = new DPHealEffect();
+				hasEffects = setGeneral(cs, dpHeal, a);
+				hasEffects = setAbstractOverTimeEffect(cs, dpHeal, current);
+				effects.getRootAndStunAndSleep().add(dpHeal);
+			}
 		}
 		
+		return hasEffects;
+	}
+	
+	private boolean setGeneral(ClientSkill cs, Effect effect, int a) {
+		boolean hasGeneralEffects = false;
+		String current = "effect" + a + "_";
+		
+		/**
+		protected SubEffect subeffect;
+		protected ActionModifiers modifiers;
+		protected List<Change> change;
+		protected Conditions conditions;
+		protected Conditions subconditions;
+		**/
+		if (JAXBHandler.getValue(cs, current + "hop_a") != null && JAXBHandler.getValue(cs, current + "hop_a") != 0) {
+			effect.setHopa((Integer) JAXBHandler.getValue(cs, current + "hop_a"));
+			hasGeneralEffects = true;
+		}
+		if (JAXBHandler.getValue(cs, current + "hop_b") != null && JAXBHandler.getValue(cs, current + "hop_b") != 0) {
+			effect.setHopb((Integer) JAXBHandler.getValue(cs, current + "hop_b"));
+			hasGeneralEffects = true;
+		}
+		if (JAXBHandler.getValue(cs, current + "hop_type") != null) {
+			effect.setHoptype(JAXBHandler.getValue(cs, current + "hop_type").toString().toUpperCase());
+			hasGeneralEffects = true;
+		}
+		effect.setCritadddmg1();
+		effect.setCritadddmg2();
+		effect.setCritprobmod2();
+		effect.setPreeffectProb();
+		effect.setPreeffect();
+		effect.setElement(); //SkillElement
+		effect.setHittypeprob2();
+		effect.setHittype(); //HitType
+		effect.setMrresist(); //boolean
+		effect.setAccmod1();
+		effect.setAccmod2();
+		effect.setNoresist(); //boolean
+		effect.setBasiclvl();//basiclv
+		effect.setE(a);
+		effect.setEffectid();//effectid
+		effect.setRandomtime();
+		effect.setDuration1();//remain1
+		effect.setDuration2();//remain2
+		effect.setOnfly();
+		effect.setDelta();//reserved8
+		effect.setValue();//reserved9
+		
+		return hasGeneralEffects;
+	}
+	
+	private boolean setAbstractOverTimeEffect(ClientSkill cs, AbstractOverTimeEffect effect, String current) {
+		boolean hasEffects = false;
+		if (JAXBHandler.getValue(cs, current + "checktime") != null && JAXBHandler.getValue(cs, current + "checktime") != 0) {
+			effect.setChecktime((Integer) JAXBHandler.getValue(cs, current + "checktime"));
+			hasEffects = true;
+		}
+		if (JAXBHandler.getValue(cs, current + "reserved6") != null && JAXBHandler.getValue(cs, current + "reserved6") == 1) {
+			effect.setPercent(true);
+			hasEffects = true;
+		}
 		return hasEffects;
 	}
 }
