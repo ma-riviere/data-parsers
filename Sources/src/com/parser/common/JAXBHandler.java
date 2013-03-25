@@ -39,7 +39,7 @@ public class JAXBHandler {
 		return null;
 	}
 	
-	public static Object getSkillValue(ClientSkill cs, String propertyName) {
+	public static Object getValue(ClientSkill cs, String propertyName) {
 
 		for (JAXBElement<? extends Serializable> jaxb : cs.getIdOrNameOrDesc()) {
 			if (AionSkillsWriter.ANALYSE)

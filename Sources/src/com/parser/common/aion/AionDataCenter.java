@@ -92,7 +92,7 @@ public class AionDataCenter {
 	private static void loadSkillNameIdMap() {
 		List<ClientSkill> clientSkills = new AionSkillsParser().parse();
 		for (ClientSkill cs : clientSkills)
-			skillNameIdMap.put(JAXBHandler.getSkillValue(cs, "name").toString().toUpperCase(), (int) JAXBHandler.getSkillValue(cs, "id"));
+			skillNameIdMap.put(JAXBHandler.getValue(cs, "name").toString().toUpperCase(), (int) JAXBHandler.getValue(cs, "id"));
 	}
 	
 	// Loading Npc Name <--> ID from client XML
