@@ -113,69 +113,69 @@ public class AionSkillsWriter extends AbstractWriter {
 			/***************** START **********************/
 			
 			/* Attributes */
-			if (JAXBHandler.getSkillValue(cs, "counter_skill") != null)
-				st.setCounterSkill(JAXBHandler.getSkillValue(cs, "counter_skill").toString());
-			if (JAXBHandler.getSkillValue(cs, "penalty_skill_succ") != null)
-				st.setPenaltySkillId(getSkillId(JAXBHandler.getSkillValue(cs, "penalty_skill_succ").toString()));
+			if (JAXBHandler.getValue(cs, "counter_skill") != null)
+				st.setCounterSkill(JAXBHandler.getValue(cs, "counter_skill").toString());
+			if (JAXBHandler.getValue(cs, "penalty_skill_succ") != null)
+				st.setPenaltySkillId(getSkillId(JAXBHandler.getValue(cs, "penalty_skill_succ").toString()));
 			
-			st.setSkillId((Integer) JAXBHandler.getSkillValue(cs, "id"));
-			if (JAXBHandler.getSkillValue(cs, "desc") != null) {
-				String desc = JAXBHandler.getSkillValue(cs, "desc").toString().trim();
+			st.setSkillId((Integer) JAXBHandler.getValue(cs, "id"));
+			if (JAXBHandler.getValue(cs, "desc") != null) {
+				String desc = JAXBHandler.getValue(cs, "desc").toString().trim();
 				st.setName(getName(desc));
 				st.setNameId(getNameId(desc, 2, 1));
 				st.setLvl(getSkillLevel(cs));
 				st.setStack(getStack(cs));
 			}
 			
-			if (JAXBHandler.getSkillValue(cs, "delay_id") != 0)
-				st.setCooldownId((Integer) JAXBHandler.getSkillValue(cs, "delay_id"));
-			st.setSkilltype(JAXBHandler.getSkillValue(cs, "type") == null ? "NONE" : SkillType.fromClient(JAXBHandler.getSkillValue(cs, "type").toString()).toString());
-			st.setSkillsubtype(JAXBHandler.getSkillValue(cs, "sub_type") == null ? "NONE" : SkillSubType.fromClient(JAXBHandler.getSkillValue(cs, "sub_type").toString()).toString());
-			if (JAXBHandler.getSkillValue(cs, "conflict_id") != 0)
-				st.setConflictId((Integer) JAXBHandler.getSkillValue(cs, "conflict_id"));
-			if (JAXBHandler.getSkillValue(cs, "target_slot") != null)
-				st.setTslot(TargetSlot.fromClient(JAXBHandler.getSkillValue(cs, "target_slot").toString()).toString());
-			if (JAXBHandler.getSkillValue(cs, "target_slot_level") != 0)
-				st.setTslotLevel((Integer) JAXBHandler.getSkillValue(cs, "target_slot_level"));
-			if (JAXBHandler.getSkillValue(cs, "dispel_category") != null && DispelCategoryType.fromClient(JAXBHandler.getSkillValue(cs, "dispel_category").toString()) != null)
-				st.setDispelCategory(DispelCategoryType.fromClient(JAXBHandler.getSkillValue(cs, "dispel_category").toString()).toString());
-			if (JAXBHandler.getSkillValue(cs, "required_dispel_level") != 0)
-				st.setReqDispelLevel((Integer) JAXBHandler.getSkillValue(cs, "required_dispel_level"));
-			if (JAXBHandler.getSkillValue(cs, "activation_attribute") != null)
-				st.setActivation(ActivationAttribute.fromClient(JAXBHandler.getSkillValue(cs, "activation_attribute").toString()).toString());
+			if (JAXBHandler.getValue(cs, "delay_id") != 0)
+				st.setCooldownId((Integer) JAXBHandler.getValue(cs, "delay_id"));
+			st.setSkilltype(JAXBHandler.getValue(cs, "type") == null ? "NONE" : SkillType.fromClient(JAXBHandler.getValue(cs, "type").toString()).toString());
+			st.setSkillsubtype(JAXBHandler.getValue(cs, "sub_type") == null ? "NONE" : SkillSubType.fromClient(JAXBHandler.getValue(cs, "sub_type").toString()).toString());
+			if (JAXBHandler.getValue(cs, "conflict_id") != 0)
+				st.setConflictId((Integer) JAXBHandler.getValue(cs, "conflict_id"));
+			if (JAXBHandler.getValue(cs, "target_slot") != null)
+				st.setTslot(TargetSlot.fromClient(JAXBHandler.getValue(cs, "target_slot").toString()).toString());
+			if (JAXBHandler.getValue(cs, "target_slot_level") != 0)
+				st.setTslotLevel((Integer) JAXBHandler.getValue(cs, "target_slot_level"));
+			if (JAXBHandler.getValue(cs, "dispel_category") != null && DispelCategoryType.fromClient(JAXBHandler.getValue(cs, "dispel_category").toString()) != null)
+				st.setDispelCategory(DispelCategoryType.fromClient(JAXBHandler.getValue(cs, "dispel_category").toString()).toString());
+			if (JAXBHandler.getValue(cs, "required_dispel_level") != 0)
+				st.setReqDispelLevel((Integer) JAXBHandler.getValue(cs, "required_dispel_level"));
+			if (JAXBHandler.getValue(cs, "activation_attribute") != null)
+				st.setActivation(ActivationAttribute.fromClient(JAXBHandler.getValue(cs, "activation_attribute").toString()).toString());
 			
 			if (getStigmaType(cs) != null)
 				st.setStigma(getStigmaType(cs).toString());
-			if (JAXBHandler.getSkillValue(cs, "ammo_speed") != 0)
-				st.setAmmospeed((Integer) JAXBHandler.getSkillValue(cs, "ammo_speed"));
-			if (JAXBHandler.getSkillValue(cs, "casting_delay") != null)
-				st.setDuration((Integer) JAXBHandler.getSkillValue(cs, "casting_delay"));
-			if ((Integer) JAXBHandler.getSkillValue(cs, "delay_time") != null)
-				st.setCooldown((int)((Integer) JAXBHandler.getSkillValue(cs, "delay_time") / 100f));
-			if (JAXBHandler.getSkillValue(cs, "pvp_damage_ratio") != 0)
-				st.setPvpDamage((Integer) JAXBHandler.getSkillValue(cs, "pvp_damage_ratio"));
-			if (JAXBHandler.getSkillValue(cs, "pvp_remain_time_ratio") != 0)
-				st.setPvpDuration((Integer) JAXBHandler.getSkillValue(cs, "pvp_remain_time_ratio"));
-			if (JAXBHandler.getSkillValue(cs, "chain_skill_prob2") != 0)
-				st.setChainSkillProb((Integer) JAXBHandler.getSkillValue(cs, "chain_skill_prob2"));
-			if (JAXBHandler.getSkillValue(cs, "cancel_rate") != 0)
-				st.setCancelRate((Integer) JAXBHandler.getSkillValue(cs, "cancel_rate"));
-			if (JAXBHandler.getSkillValue(cs, "change_stance") != null && !JAXBHandler.getSkillValue(cs, "change_stance").toString().equalsIgnoreCase("NONE"))
+			if (JAXBHandler.getValue(cs, "ammo_speed") != 0)
+				st.setAmmospeed((Integer) JAXBHandler.getValue(cs, "ammo_speed"));
+			if (JAXBHandler.getValue(cs, "casting_delay") != null)
+				st.setDuration((Integer) JAXBHandler.getValue(cs, "casting_delay"));
+			if ((Integer) JAXBHandler.getValue(cs, "delay_time") != null)
+				st.setCooldown((int)((Integer) JAXBHandler.getValue(cs, "delay_time") / 100f));
+			if (JAXBHandler.getValue(cs, "pvp_damage_ratio") != 0)
+				st.setPvpDamage((Integer) JAXBHandler.getValue(cs, "pvp_damage_ratio"));
+			if (JAXBHandler.getValue(cs, "pvp_remain_time_ratio") != 0)
+				st.setPvpDuration((Integer) JAXBHandler.getValue(cs, "pvp_remain_time_ratio"));
+			if (JAXBHandler.getValue(cs, "chain_skill_prob2") != 0)
+				st.setChainSkillProb((Integer) JAXBHandler.getValue(cs, "chain_skill_prob2"));
+			if (JAXBHandler.getValue(cs, "cancel_rate") != 0)
+				st.setCancelRate((Integer) JAXBHandler.getValue(cs, "cancel_rate"));
+			if (JAXBHandler.getValue(cs, "change_stance") != null && !JAXBHandler.getValue(cs, "change_stance").toString().equalsIgnoreCase("NONE"))
 				st.setStance(true);
 			// if (cs.get() != null)
 				// st.setSkillsetException(cs.get());
 			// if (cs.get() != null)
 				// st.setSkillsetMaxoccur(cs.get());
-			if (JAXBHandler.getSkillValue(cs, "desc") != null && StringUtils.containsIgnoreCase(JAXBHandler.getSkillValue(cs, "desc").toString(), "_avatar_") 
-				&& JAXBHandler.getSkillValue(cs, "sub_type") != null && JAXBHandler.getSkillValue(cs, "sub_type").toString().equalsIgnoreCase("buff"))
+			if (JAXBHandler.getValue(cs, "desc") != null && StringUtils.containsIgnoreCase(JAXBHandler.getValue(cs, "desc").toString(), "_avatar_") 
+				&& JAXBHandler.getValue(cs, "sub_type") != null && JAXBHandler.getValue(cs, "sub_type").toString().equalsIgnoreCase("buff"))
 				st.setAvatar(true);
-			if (JAXBHandler.getSkillValue(cs, "target_flying_restriction") != null && JAXBHandler.getSkillValue(cs, "target_flying_restriction").toString().equalsIgnoreCase("ground"))
+			if (JAXBHandler.getValue(cs, "target_flying_restriction") != null && JAXBHandler.getValue(cs, "target_flying_restriction").toString().equalsIgnoreCase("ground"))
 				st.setGround(true);
-			if (JAXBHandler.getSkillValue(cs, "dispel_category") == null) // TODO: If Debuff & require dispel level
+			if (JAXBHandler.getValue(cs, "dispel_category") == null) // TODO: If Debuff & require dispel level
 				st.setUnpottable(true);
-			if (JAXBHandler.getSkillValue(cs, "remove_at_fly_end") == 1)
+			if (JAXBHandler.getValue(cs, "remove_at_fly_end") == 1)
 				st.setRemoveFlyend(true);
-			if (JAXBHandler.getSkillValue(cs, "remove_at_die") == 1)
+			if (JAXBHandler.getValue(cs, "remove_at_die") == 1)
 				st.setNoremoveatdie(true);
 			
 			/* Elements */
@@ -184,33 +184,33 @@ public class AionSkillsWriter extends AbstractWriter {
 			Properties prop = new Properties();
 				boolean hasProperties = false;
 				// Add the weapon range to the distances calculation
-				if (JAXBHandler.getSkillValue(cs, "add_wpn_range") != 0) {
+				if (JAXBHandler.getValue(cs, "add_wpn_range") != 0) {
 					prop.setAwr(true);
 					hasProperties = true;
 				}
 				// Max target that can be hit (for AoE)
-				if (JAXBHandler.getSkillValue(cs, "target_maxcount") != 0) {
-					prop.setTargetMaxcount((Integer) JAXBHandler.getSkillValue(cs, "target_maxcount")); 
+				if (JAXBHandler.getValue(cs, "target_maxcount") != 0) {
+					prop.setTargetMaxcount((Integer) JAXBHandler.getValue(cs, "target_maxcount")); 
 					hasProperties = true;
 				}
 				// Type of targets affected by the skill (for AoE) : party, area ...
-				if (JAXBHandler.getSkillValue(cs, "target_range") != null) {
-					prop.setTargetType(TargetRangeAttribute.fromClient(JAXBHandler.getSkillValue(cs, "target_range").toString()).toString());
+				if (JAXBHandler.getValue(cs, "target_range") != null) {
+					prop.setTargetType(TargetRangeAttribute.fromClient(JAXBHandler.getValue(cs, "target_range").toString()).toString());
 					hasProperties = true;
 				}
 				// Relation between the caster and the first target : ENEMY, FRIEND ...
-				if (JAXBHandler.getSkillValue(cs, "target_relation_restriction") != null) {
-					prop.setTargetRelation(TargetRelationAttribute.fromClient(JAXBHandler.getSkillValue(cs, "target_relation_restriction").toString()).toString());
+				if (JAXBHandler.getValue(cs, "target_relation_restriction") != null) {
+					prop.setTargetRelation(TargetRelationAttribute.fromClient(JAXBHandler.getValue(cs, "target_relation_restriction").toString()).toString());
 					hasProperties = true;
 				}
 				// Max distance to first target for the skill to start
-				if (JAXBHandler.getSkillValue(cs, "first_target_valid_distance") != 0) {
-					prop.setFirstTargetRange((Integer) JAXBHandler.getSkillValue(cs, "first_target_valid_distance"));
+				if (JAXBHandler.getValue(cs, "first_target_valid_distance") != 0) {
+					prop.setFirstTargetRange((Integer) JAXBHandler.getValue(cs, "first_target_valid_distance"));
 					hasProperties = true;
 				}
 				// Type of the first target affected by the skill : ME, MASTER, POINT ...
-				if (JAXBHandler.getSkillValue(cs, "first_target") != null) {
-					prop.setFirstTarget(FirstTargetAttribute.fromClient(JAXBHandler.getSkillValue(cs, "first_target").toString()).toString());
+				if (JAXBHandler.getValue(cs, "first_target") != null) {
+					prop.setFirstTarget(FirstTargetAttribute.fromClient(JAXBHandler.getValue(cs, "first_target").toString()).toString());
 					hasProperties = true;
 				}
 				// State requirements for the target for the skill to be useable : STUMBLE, OPENAERIAL
@@ -219,22 +219,22 @@ public class AionSkillsWriter extends AbstractWriter {
 					hasProperties = true;
 				}
 				// ??? Most of the times = 12
-				if (JAXBHandler.getSkillValue(cs, "revision_distance") != 0) {
-					prop.setRevisionDistance((Integer) JAXBHandler.getSkillValue(cs, "revision_distance"));
+				if (JAXBHandler.getValue(cs, "revision_distance") != 0) {
+					prop.setRevisionDistance((Integer) JAXBHandler.getValue(cs, "revision_distance"));
 					hasProperties = true;
 				}
 				// Target Range Optional Values
-				if (JAXBHandler.getSkillValue(cs, "target_range_area_type") != null) {
+				if (JAXBHandler.getValue(cs, "target_range_area_type") != null) {
 					hasProperties = setRangeOptionalProperties(cs, prop);
 				}
 				// Check if the skill aim's the target's butt
-				if (JAXBHandler.getSkillValue(cs, "target_range_opt4") != null && JAXBHandler.getSkillValue(cs, "target_range_opt4").toString().equalsIgnoreCase("back")) {
+				if (JAXBHandler.getValue(cs, "target_range_opt4") != null && JAXBHandler.getValue(cs, "target_range_opt4").toString().equalsIgnoreCase("back")) {
 					prop.setDirection(1);
 					hasProperties = true;
 				}
 				// Races the skill will affect
-				if (JAXBHandler.getSkillValue(cs, "target_species_restriction") != null) {
-					String species = TargetSpeciesAttribute.fromClient(JAXBHandler.getSkillValue(cs, "target_species_restriction").toString()).toString();
+				if (JAXBHandler.getValue(cs, "target_species_restriction") != null) {
+					String species = TargetSpeciesAttribute.fromClient(JAXBHandler.getValue(cs, "target_species_restriction").toString()).toString();
 					if (!Strings.isNullOrEmpty(species) && !species.equalsIgnoreCase("all")) {
 						prop.setTargetSpecies(species);
 						hasProperties = true;
@@ -247,18 +247,18 @@ public class AionSkillsWriter extends AbstractWriter {
 			Conditions start = new Conditions();
 			boolean hasStartConditions = false;
 				
-				if (JAXBHandler.getSkillValue(cs, "cost_parameter") != null && StringUtils.containsIgnoreCase(JAXBHandler.getSkillValue(cs, "cost_parameter").toString(), "HP") && !isPeriodic(cs) && getCost(cs) != 0) {
+				if (JAXBHandler.getValue(cs, "cost_parameter") != null && StringUtils.containsIgnoreCase(JAXBHandler.getValue(cs, "cost_parameter").toString(), "HP") && !isPeriodic(cs) && getCost(cs) != 0) {
 					HpCondition hp = new HpCondition();
 					if (!hasStartConditions)
 						hasStartConditions = setConditions(cs, start, hp);
 				}
 				
-				if (JAXBHandler.getSkillValue(cs, "cost_parameter") != null && StringUtils.containsIgnoreCase(JAXBHandler.getSkillValue(cs, "cost_parameter").toString(), "MP") && !isPeriodic(cs) && getCost(cs) != 0) {
+				if (JAXBHandler.getValue(cs, "cost_parameter") != null && StringUtils.containsIgnoreCase(JAXBHandler.getValue(cs, "cost_parameter").toString(), "MP") && !isPeriodic(cs) && getCost(cs) != 0) {
 					MpCondition mp = new MpCondition();
 					hasStartConditions = setConditions(cs, start, mp);
 				}
 				
-				if (JAXBHandler.getSkillValue(cs, "cost_dp") != null && JAXBHandler.getSkillValue(cs, "cost_dp") != 0) {
+				if (JAXBHandler.getValue(cs, "cost_dp") != null && JAXBHandler.getValue(cs, "cost_dp") != 0) {
 					DpCondition dp = new DpCondition();
 					if (!hasStartConditions)
 						hasStartConditions = setConditions(cs, start, dp);
@@ -267,36 +267,36 @@ public class AionSkillsWriter extends AbstractWriter {
 				WeaponCondition weap = new WeaponCondition();
 				hasStartConditions = setConditions(cs, start, weap);
 				
-				if (JAXBHandler.getSkillValue(cs, "required_leftweapon") != null) {
+				if (JAXBHandler.getValue(cs, "required_leftweapon") != null) {
 					ArmorCondition armor = new ArmorCondition();
 					if (!hasStartConditions)
 						hasStartConditions = setConditions(cs, start, armor);
 				}
 				
-				if (JAXBHandler.getSkillValue(cs, "use_arrow") != null && (Integer) JAXBHandler.getSkillValue(cs, "use_arrow") != 0) {
+				if (JAXBHandler.getValue(cs, "use_arrow") != null && (Integer) JAXBHandler.getValue(cs, "use_arrow") != 0) {
 					hasStartConditions = setConditions(cs, start, new ArrowCheckCondition());
 				}
 				
-				if (JAXBHandler.getSkillValue(cs, "self_flying_restriction") != null) {
+				if (JAXBHandler.getValue(cs, "self_flying_restriction") != null) {
 					SelfFlyingCondition selfFlying = new SelfFlyingCondition();
 					if (!hasStartConditions)
 						hasStartConditions = setConditions(cs, start, selfFlying);
 				}
 				
-				if (JAXBHandler.getSkillValue(cs, "target_species_restriction") != null
-					&& (JAXBHandler.getSkillValue(cs, "target_species_restriction").toString().equalsIgnoreCase("PC") || JAXBHandler.getSkillValue(cs, "target_species_restriction").toString().equalsIgnoreCase("NPC"))) {
+				if (JAXBHandler.getValue(cs, "target_species_restriction") != null
+					&& (JAXBHandler.getValue(cs, "target_species_restriction").toString().equalsIgnoreCase("PC") || JAXBHandler.getValue(cs, "target_species_restriction").toString().equalsIgnoreCase("NPC"))) {
 					TargetCondition target = new TargetCondition();
 					if (!hasStartConditions)
 						hasStartConditions = setConditions(cs, start, target);
 				}
 				
-				if (JAXBHandler.getSkillValue(cs, "target_flying_restriction") != null) {
+				if (JAXBHandler.getValue(cs, "target_flying_restriction") != null) {
 					TargetFlyingCondition targetFlying = new TargetFlyingCondition();
 					if (!hasStartConditions)
 						hasStartConditions = setConditions(cs, start, targetFlying);
 				}
 				
-				if (JAXBHandler.getSkillValue(cs, "nouse_combat_state") != null && (Integer) JAXBHandler.getSkillValue(cs, "nouse_combat_state") != 0) {
+				if (JAXBHandler.getValue(cs, "nouse_combat_state") != null && (Integer) JAXBHandler.getValue(cs, "nouse_combat_state") != 0) {
 					if (!hasStartConditions)
 						hasStartConditions = setConditions(cs, start, new CombatCheckCondition());
 				}
@@ -305,7 +305,7 @@ public class AionSkillsWriter extends AbstractWriter {
 				if (!hasStartConditions)
 					hasStartConditions = setConditions(cs, start, chain);
 				
-				if (JAXBHandler.getSkillValue(cs, "allow_use_form_category") != null) {
+				if (JAXBHandler.getValue(cs, "allow_use_form_category") != null) {
 					FormCondition form = new FormCondition();
 					if (!hasStartConditions)
 						hasStartConditions = setConditions(cs, start, form);
@@ -318,7 +318,7 @@ public class AionSkillsWriter extends AbstractWriter {
 			Conditions use = new Conditions();
 				boolean hasUseConditions = false;
 			
-				if (JAXBHandler.getSkillValue(cs, "target_stop") != null && (Integer) JAXBHandler.getSkillValue(cs, "target_stop") == 0) {
+				if (JAXBHandler.getValue(cs, "target_stop") != null && (Integer) JAXBHandler.getValue(cs, "target_stop") == 0) {
 					PlayerMovedCondition move = new PlayerMovedCondition();
 					if (!hasUseConditions)
 						hasUseConditions = setConditions(cs, use, move);
@@ -331,8 +331,8 @@ public class AionSkillsWriter extends AbstractWriter {
 			Conditions equip = new Conditions();
 			boolean hasEquipConditions = false;
 				
-				if (JAXBHandler.getSkillValue(cs, "required_leftweapon") != null
-					&& JAXBHandler.getSkillValue(cs, "sub_type") != null && JAXBHandler.getSkillValue(cs, "sub_type").toString().equalsIgnoreCase("buff")) {
+				if (JAXBHandler.getValue(cs, "required_leftweapon") != null
+					&& JAXBHandler.getValue(cs, "sub_type") != null && JAXBHandler.getValue(cs, "sub_type").toString().equalsIgnoreCase("buff")) {
 					ArmorCondition armor = new ArmorCondition();
 					if (!hasEquipConditions)
 						hasEquipConditions = setConditions(cs, equip, armor);
@@ -348,9 +348,9 @@ public class AionSkillsWriter extends AbstractWriter {
 				
 				// [UPDATE] Update max value if skill get more effects
 				for (int a = 1; a <= 4; a++) {
-					if (JAXBHandler.getSkillValue(cs, "effect"+a+"_type") != null && EffectType.fromClient(JAXBHandler.getSkillValue(cs, "effect"+a+"_type").toString()) != null) {
+					if (JAXBHandler.getValue(cs, "effect"+a+"_type") != null && EffectType.fromClient(JAXBHandler.getValue(cs, "effect"+a+"_type").toString()) != null) {
 						if (!hasEffects)
-							hasEffects = setEffects(cs, effects, EffectType.fromClient(JAXBHandler.getSkillValue(cs, "effect"+a+"_type").toString()));
+							hasEffects = setEffects(cs, effects, EffectType.fromClient(JAXBHandler.getValue(cs, "effect"+a+"_type").toString()));
 					}
 				}
 				
@@ -371,35 +371,35 @@ public class AionSkillsWriter extends AbstractWriter {
 			Actions actions = new Actions();
 			boolean hasActions = false;
 			
-			if (JAXBHandler.getSkillValue(cs, "cost_parameter") != null && StringUtils.containsIgnoreCase(JAXBHandler.getSkillValue(cs, "cost_parameter").toString(), "HP") && !isPeriodic(cs) && getCost(cs) != 0) {
+			if (JAXBHandler.getValue(cs, "cost_parameter") != null && StringUtils.containsIgnoreCase(JAXBHandler.getValue(cs, "cost_parameter").toString(), "HP") && !isPeriodic(cs) && getCost(cs) != 0) {
 				HpUseAction hp = new HpUseAction();
 				hp.setValue(getCost(cs));
 				hp.setDelta(getDelta(cs));
-				if (JAXBHandler.getSkillValue(cs, "cost_parameter").toString().equalsIgnoreCase("HP_RATIO")) {hp.setRatio(true);}
+				if (JAXBHandler.getValue(cs, "cost_parameter").toString().equalsIgnoreCase("HP_RATIO")) {hp.setRatio(true);}
 				actions.getItemuseAndMpuseAndHpuse().add(hp);
 				hasActions = true;
 			}
 			
-			if (JAXBHandler.getSkillValue(cs, "cost_parameter") != null && StringUtils.containsIgnoreCase(JAXBHandler.getSkillValue(cs, "cost_parameter").toString(), "MP") && !isPeriodic(cs) && getCost(cs) != 0) {
+			if (JAXBHandler.getValue(cs, "cost_parameter") != null && StringUtils.containsIgnoreCase(JAXBHandler.getValue(cs, "cost_parameter").toString(), "MP") && !isPeriodic(cs) && getCost(cs) != 0) {
 				MpUseAction mp = new MpUseAction();
 				mp.setValue(getCost(cs));
 				mp.setDelta(getDelta(cs));
-				if (JAXBHandler.getSkillValue(cs, "cost_parameter").toString().equalsIgnoreCase("MP_RATIO")) {mp.setRatio(true);}
+				if (JAXBHandler.getValue(cs, "cost_parameter").toString().equalsIgnoreCase("MP_RATIO")) {mp.setRatio(true);}
 				actions.getItemuseAndMpuseAndHpuse().add(mp);
 				hasActions = true;
 			}
 			
-			if (JAXBHandler.getSkillValue(cs, "cost_dp") != null && (Integer) JAXBHandler.getSkillValue(cs, "cost_dp") != 0) {
+			if (JAXBHandler.getValue(cs, "cost_dp") != null && (Integer) JAXBHandler.getValue(cs, "cost_dp") != 0) {
 				DpUseAction dp = new DpUseAction();
-				dp.setValue((Integer) JAXBHandler.getSkillValue(cs, "cost_dp"));
+				dp.setValue((Integer) JAXBHandler.getValue(cs, "cost_dp"));
 				actions.getItemuseAndMpuseAndHpuse().add(dp);
 				hasActions = true;
 			}
 			
-			if (JAXBHandler.getSkillValue(cs, "component") != null && (Integer) JAXBHandler.getSkillValue(cs, "component_count") != 0) {
+			if (JAXBHandler.getValue(cs, "component") != null && (Integer) JAXBHandler.getValue(cs, "component_count") != 0) {
 				ItemUseAction item = new ItemUseAction();
-				item.setItemid(getItemId(JAXBHandler.getSkillValue(cs, "component").toString()));
-				item.setCount((Integer) JAXBHandler.getSkillValue(cs, "component_count"));
+				item.setItemid(getItemId(JAXBHandler.getValue(cs, "component").toString()));
+				item.setCount((Integer) JAXBHandler.getValue(cs, "component_count"));
 				actions.getItemuseAndMpuseAndHpuse().add(item);
 				hasActions = true;
 			}
@@ -410,15 +410,15 @@ public class AionSkillsWriter extends AbstractWriter {
 			// Periodic Actions
 			if (isPeriodic(cs) && getChecktimeCost(cs) != 0) {
 				PeriodicActions pa = new PeriodicActions();
-				pa.setChecktime((Integer) JAXBHandler.getSkillValue(cs, "effect1_checktime"));
+				pa.setChecktime((Integer) JAXBHandler.getValue(cs, "effect1_checktime"));
 
-				if (JAXBHandler.getSkillValue(cs, "cost_checktime_parameter") != null && StringUtils.containsIgnoreCase(JAXBHandler.getSkillValue(cs, "cost_checktime_parameter").toString(), "HP")) {
+				if (JAXBHandler.getValue(cs, "cost_checktime_parameter") != null && StringUtils.containsIgnoreCase(JAXBHandler.getValue(cs, "cost_checktime_parameter").toString(), "HP")) {
 					HpUsePeriodicAction hp = new HpUsePeriodicAction();
 					hp.setValue(getChecktimeCost(cs));
 					if (getChecktimeDelta(cs) != 0) {hp.setDelta(getChecktimeDelta(cs));}
 					pa.getHpuseAndMpuse().add(hp);
 				}
-				if (JAXBHandler.getSkillValue(cs, "cost_checktime_parameter") != null && StringUtils.containsIgnoreCase(JAXBHandler.getSkillValue(cs, "cost_checktime_parameter").toString(), "MP")) {
+				if (JAXBHandler.getValue(cs, "cost_checktime_parameter") != null && StringUtils.containsIgnoreCase(JAXBHandler.getValue(cs, "cost_checktime_parameter").toString(), "MP")) {
 					MpUsePeriodicAction mp = new MpUsePeriodicAction();
 					mp.setValue(getChecktimeCost(cs));
 					// if (getChecktimeDelta(cs) != 0) {mp.setDelta(getChecktimeDelta(cs));} // TODO : Add ?
@@ -429,15 +429,15 @@ public class AionSkillsWriter extends AbstractWriter {
 			// Motion
 			Motion motion = new Motion();
 			boolean hasMotion = false;
-				if (JAXBHandler.getSkillValue(cs, "motion_name") != null) {
-					motion.setName(JAXBHandler.getSkillValue(cs, "motion_name").toString().toLowerCase());
+				if (JAXBHandler.getValue(cs, "motion_name") != null) {
+					motion.setName(JAXBHandler.getValue(cs, "motion_name").toString().toLowerCase());
 					hasMotion = true;
 				}
-				if (JAXBHandler.getSkillValue(cs, "motion_play_speed") != null && JAXBHandler.getSkillValue(cs, "motion_play_speed") != 0) {
-					motion.setSpeed((Integer) JAXBHandler.getSkillValue(cs, "motion_play_speed"));
+				if (JAXBHandler.getValue(cs, "motion_play_speed") != null && JAXBHandler.getValue(cs, "motion_play_speed") != 0) {
+					motion.setSpeed((Integer) JAXBHandler.getValue(cs, "motion_play_speed"));
 					hasMotion = true;
 				}
-				if (JAXBHandler.getSkillValue(cs, "instant_skill") != null && JAXBHandler.getSkillValue(cs, "instant_skill") == 1) {
+				if (JAXBHandler.getValue(cs, "instant_skill") != null && JAXBHandler.getValue(cs, "instant_skill") == 1) {
 					motion.setInstantSkill(true);
 					hasMotion = true;
 				}
@@ -475,7 +475,7 @@ public class AionSkillsWriter extends AbstractWriter {
 		int level2 = 0;
 		
 		// First calculation
-		String desc = JAXBHandler.getSkillValue(cs, "desc").toString();
+		String desc = JAXBHandler.getValue(cs, "desc").toString();
 		if (StringUtils.containsIgnoreCase(desc, "_G")) {
 			String[] parts = desc.toUpperCase().trim().split("_G");
 			if (parts.length >= 1) {
@@ -491,9 +491,9 @@ public class AionSkillsWriter extends AbstractWriter {
 				System.out.println("[SKILLS] Error splitting Skill name for skill : " + desc);
 		}
 		
-		// Second calculation
-		// if (JAXBHandler.getSkillValue(cs, "chain_category_level") != 0)
-			// level2 = (Integer) JAXBHandler.getSkillValue(cs, "chain_category_level");
+		// Second calculation (less precise, sometimes more, sometimes less)
+		// if (JAXBHandler.getValue(cs, "chain_category_level") != 0)
+			// level2 = (Integer) JAXBHandler.getValue(cs, "chain_category_level");
 		
 		// if (level1 != level2)
 			// System.out.println("[SKILLS] Level methods returned 2 different results : " + level1 + " -- " + level2 + " for : " + desc.toUppercase());
@@ -503,7 +503,7 @@ public class AionSkillsWriter extends AbstractWriter {
 	
 	private String getStack(ClientSkill cs) {
 		String stack = null;
-		String desc = JAXBHandler.getSkillValue(cs, "desc").toString();
+		String desc = JAXBHandler.getValue(cs, "desc").toString();
 		String[] parts = desc.toUpperCase().trim().replaceFirst("STR_", "").split("_G");
 		if (parts.length >= 1)
 			stack = parts[0].toUpperCase();
@@ -512,7 +512,7 @@ public class AionSkillsWriter extends AbstractWriter {
 	}
 	
 	private StigmaType getStigmaType(ClientSkill cs) {
-		String name = JAXBHandler.getSkillValue(cs, "name").toString();
+		String name = JAXBHandler.getValue(cs, "name").toString();
 		
 		// First Calculation
 		List<ClientSkillTree> temp = new ArrayList<ClientSkillTree>();
@@ -554,41 +554,41 @@ public class AionSkillsWriter extends AbstractWriter {
 		return null;
 	}
 	
-	// [UPDATE] There may be more of them appearing
+	// [UPDATE] There may be more then 5 statuses max in the future
 	private List<String> getRequiredTargetStatus(ClientSkill cs) {
 		List<String> results = new ArrayList<String>();
 		for (int a = 1; a <= 5; a++) {
-		if (JAXBHandler.getSkillValue(cs, "target_valid_status"+a) != null)
-			results.add(JAXBHandler.getSkillValue(cs, "target_valid_status"+a).toString().toUpperCase());
+		if (JAXBHandler.getValue(cs, "target_valid_status"+a) != null)
+			results.add(JAXBHandler.getValue(cs, "target_valid_status"+a).toString().toUpperCase());
 		}
 		return results;
 	}
 	
 	private boolean setRangeOptionalProperties(ClientSkill cs, Properties prop) {
 		boolean hasProperties = false;
-		if (JAXBHandler.getSkillValue(cs, "target_range_area_type").toString().equalsIgnoreCase("FIREBALL")) {
-			if (JAXBHandler.getSkillValue(cs, "target_range_opt1") != null && JAXBHandler.getSkillValue(cs, "target_range_opt1") != 0) {
-				prop.setTargetDistance((Integer) JAXBHandler.getSkillValue(cs, "target_range_opt1"));
+		if (JAXBHandler.getValue(cs, "target_range_area_type").toString().equalsIgnoreCase("FIREBALL")) {
+			if (JAXBHandler.getValue(cs, "target_range_opt1") != null && JAXBHandler.getValue(cs, "target_range_opt1") != 0) {
+				prop.setTargetDistance((Integer) JAXBHandler.getValue(cs, "target_range_opt1"));
 				hasProperties = true;
 			}
 		}
-		else if (JAXBHandler.getSkillValue(cs, "target_range_area_type").toString().equalsIgnoreCase("FIRESTORM")) {
-			if (JAXBHandler.getSkillValue(cs, "target_range_opt1") != null && JAXBHandler.getSkillValue(cs, "target_range_opt1") != 0) {
-				prop.setTargetDistance((Integer) JAXBHandler.getSkillValue(cs, "target_range_opt1"));
+		else if (JAXBHandler.getValue(cs, "target_range_area_type").toString().equalsIgnoreCase("FIRESTORM")) {
+			if (JAXBHandler.getValue(cs, "target_range_opt1") != null && JAXBHandler.getValue(cs, "target_range_opt1") != 0) {
+				prop.setTargetDistance((Integer) JAXBHandler.getValue(cs, "target_range_opt1"));
 				hasProperties = true;
 			}
-			if (JAXBHandler.getSkillValue(cs, "target_range_opt2") != null && JAXBHandler.getSkillValue(cs, "target_range_opt2") != 0) {
-				prop.setEffectiveAngle((Integer) JAXBHandler.getSkillValue(cs, "target_range_opt2"));
+			if (JAXBHandler.getValue(cs, "target_range_opt2") != null && JAXBHandler.getValue(cs, "target_range_opt2") != 0) {
+				prop.setEffectiveAngle((Integer) JAXBHandler.getValue(cs, "target_range_opt2"));
 				hasProperties = true;
 			}
 		}
 		else { // LIGHTNINGBOLT
-			if (JAXBHandler.getSkillValue(cs, "target_range_opt1") != null && JAXBHandler.getSkillValue(cs, "target_range_opt1") != 0) {
-				prop.setEffectiveWidth((Integer) JAXBHandler.getSkillValue(cs, "target_range_opt1"));
+			if (JAXBHandler.getValue(cs, "target_range_opt1") != null && JAXBHandler.getValue(cs, "target_range_opt1") != 0) {
+				prop.setEffectiveWidth((Integer) JAXBHandler.getValue(cs, "target_range_opt1"));
 				hasProperties = true;
 			}
-			if (JAXBHandler.getSkillValue(cs, "target_range_opt2") != null && JAXBHandler.getSkillValue(cs, "target_range_opt2") != 0) {
-				prop.setTargetDistance((Integer) JAXBHandler.getSkillValue(cs, "target_range_opt2"));
+			if (JAXBHandler.getValue(cs, "target_range_opt2") != null && JAXBHandler.getValue(cs, "target_range_opt2") != 0) {
+				prop.setTargetDistance((Integer) JAXBHandler.getValue(cs, "target_range_opt2"));
 				hasProperties = true;
 			}
 		}
@@ -602,7 +602,7 @@ public class AionSkillsWriter extends AbstractWriter {
 			HpCondition hp = (HpCondition) c;
 			hp.setValue(getCost(cs));
 			hp.setDelta(getDelta(cs));
-			if (JAXBHandler.getSkillValue(cs, "cost_parameter").toString().equalsIgnoreCase("HP_RATIO")) {hp.setRatio(true);}
+			if (JAXBHandler.getValue(cs, "cost_parameter").toString().equalsIgnoreCase("HP_RATIO")) {hp.setRatio(true);}
 			conditions.getMpAndHpAndDp().add(hp);
 			hasConditions = true;
 		}
@@ -610,38 +610,38 @@ public class AionSkillsWriter extends AbstractWriter {
 			MpCondition mp = (MpCondition) c;
 			mp.setValue(getCost(cs));
 			mp.setDelta(getDelta(cs));
-			if (JAXBHandler.getSkillValue(cs, "cost_parameter").toString().equalsIgnoreCase("MP_RATIO")) {mp.setRatio(true);}
+			if (JAXBHandler.getValue(cs, "cost_parameter").toString().equalsIgnoreCase("MP_RATIO")) {mp.setRatio(true);}
 			conditions.getMpAndHpAndDp().add(mp);
 			hasConditions = true;
 		}
 		else if (c instanceof DpCondition) {
 			DpCondition dp = (DpCondition) c;
-			dp.setValue((Integer) JAXBHandler.getSkillValue(cs, "cost_dp"));
+			dp.setValue((Integer) JAXBHandler.getValue(cs, "cost_dp"));
 			conditions.getMpAndHpAndDp().add(dp);
 			hasConditions = true;
 		}
 		else if (c instanceof WeaponCondition) {
 			WeaponCondition weap = (WeaponCondition) c;
-			if (JAXBHandler.getSkillValue(cs, "required_sword") != null && JAXBHandler.getSkillValue(cs, "required_sword") == 1) {weap.getWeapon().add(WeaponType.SWORD_1H.toString()); hasConditions = true;}	
-			if (JAXBHandler.getSkillValue(cs, "required_mace") != null && JAXBHandler.getSkillValue(cs, "required_mace") == 1) {weap.getWeapon().add(WeaponType.MACE_1H.toString()); hasConditions = true;}	
-			if (JAXBHandler.getSkillValue(cs, "required_dagger") != null && JAXBHandler.getSkillValue(cs, "required_dagger") == 1) {weap.getWeapon().add(WeaponType.DAGGER_1H.toString()); hasConditions = true;}	
-			if (JAXBHandler.getSkillValue(cs, "required_2hsword") != null && JAXBHandler.getSkillValue(cs, "required_2hsword") == 1) {weap.getWeapon().add(WeaponType.SWORD_2H.toString()); hasConditions = true;}	
-			if (JAXBHandler.getSkillValue(cs, "required_polearm") != null && JAXBHandler.getSkillValue(cs, "required_polearm") == 1) {weap.getWeapon().add(WeaponType.POLEARM_2H.toString()); hasConditions = true;}	
-			if (JAXBHandler.getSkillValue(cs, "required_staff") != null && JAXBHandler.getSkillValue(cs, "required_staff") == 1) {weap.getWeapon().add(WeaponType.STAFF_2H.toString()); hasConditions = true;}
-			if (JAXBHandler.getSkillValue(cs, "required_bow") != null && JAXBHandler.getSkillValue(cs, "required_bow") == 1) {weap.getWeapon().add(WeaponType.BOW.toString()); hasConditions = true;}
-			if (JAXBHandler.getSkillValue(cs, "required_orb") != null && JAXBHandler.getSkillValue(cs, "required_orb") == 1) {weap.getWeapon().add(WeaponType.ORB_2H.toString()); hasConditions = true;}
-			if (JAXBHandler.getSkillValue(cs, "required_book") != null && JAXBHandler.getSkillValue(cs, "required_book") == 1) {weap.getWeapon().add(WeaponType.BOOK_2H.toString()); hasConditions = true;}
-			if (JAXBHandler.getSkillValue(cs, "required_gun") != null && JAXBHandler.getSkillValue(cs, "required_gun") == 1) {weap.getWeapon().add(WeaponType.GUN_1H.toString()); hasConditions = true;}
-			if (JAXBHandler.getSkillValue(cs, "required_cannon") != null && JAXBHandler.getSkillValue(cs, "required_cannon") == 1) {weap.getWeapon().add(WeaponType.CANON_2H.toString()); hasConditions = true;}
-			if (JAXBHandler.getSkillValue(cs, "required_harp") != null && JAXBHandler.getSkillValue(cs, "required_harp") == 1) {weap.getWeapon().add(WeaponType.HARP_2H.toString()); hasConditions = true;}
-			if (JAXBHandler.getSkillValue(cs, "required_keyblade") != null && JAXBHandler.getSkillValue(cs, "required_keyblade") == 1) {weap.getWeapon().add(WeaponType.KEYBLADE_2H.toString()); hasConditions = true;}
-			if (JAXBHandler.getSkillValue(cs, "required_keyhammer") != null && JAXBHandler.getSkillValue(cs, "required_keyhammer") == 1) {weap.getWeapon().add(WeaponType.KEYHAMMER_2H.toString()); hasConditions = true;}
-			// if (JAXBHandler.getSkillValue(cs, "required_ride_robot") == 1) {weap.getWeapon().add(WeaponType.RIDE_ROBOT.toString()); hasConditions = true;}
+			if (JAXBHandler.getValue(cs, "required_sword") != null && JAXBHandler.getValue(cs, "required_sword") == 1) {weap.getWeapon().add(WeaponType.SWORD_1H.toString()); hasConditions = true;}	
+			if (JAXBHandler.getValue(cs, "required_mace") != null && JAXBHandler.getValue(cs, "required_mace") == 1) {weap.getWeapon().add(WeaponType.MACE_1H.toString()); hasConditions = true;}	
+			if (JAXBHandler.getValue(cs, "required_dagger") != null && JAXBHandler.getValue(cs, "required_dagger") == 1) {weap.getWeapon().add(WeaponType.DAGGER_1H.toString()); hasConditions = true;}	
+			if (JAXBHandler.getValue(cs, "required_2hsword") != null && JAXBHandler.getValue(cs, "required_2hsword") == 1) {weap.getWeapon().add(WeaponType.SWORD_2H.toString()); hasConditions = true;}	
+			if (JAXBHandler.getValue(cs, "required_polearm") != null && JAXBHandler.getValue(cs, "required_polearm") == 1) {weap.getWeapon().add(WeaponType.POLEARM_2H.toString()); hasConditions = true;}	
+			if (JAXBHandler.getValue(cs, "required_staff") != null && JAXBHandler.getValue(cs, "required_staff") == 1) {weap.getWeapon().add(WeaponType.STAFF_2H.toString()); hasConditions = true;}
+			if (JAXBHandler.getValue(cs, "required_bow") != null && JAXBHandler.getValue(cs, "required_bow") == 1) {weap.getWeapon().add(WeaponType.BOW.toString()); hasConditions = true;}
+			if (JAXBHandler.getValue(cs, "required_orb") != null && JAXBHandler.getValue(cs, "required_orb") == 1) {weap.getWeapon().add(WeaponType.ORB_2H.toString()); hasConditions = true;}
+			if (JAXBHandler.getValue(cs, "required_book") != null && JAXBHandler.getValue(cs, "required_book") == 1) {weap.getWeapon().add(WeaponType.BOOK_2H.toString()); hasConditions = true;}
+			if (JAXBHandler.getValue(cs, "required_gun") != null && JAXBHandler.getValue(cs, "required_gun") == 1) {weap.getWeapon().add(WeaponType.GUN_1H.toString()); hasConditions = true;}
+			if (JAXBHandler.getValue(cs, "required_cannon") != null && JAXBHandler.getValue(cs, "required_cannon") == 1) {weap.getWeapon().add(WeaponType.CANON_2H.toString()); hasConditions = true;}
+			if (JAXBHandler.getValue(cs, "required_harp") != null && JAXBHandler.getValue(cs, "required_harp") == 1) {weap.getWeapon().add(WeaponType.HARP_2H.toString()); hasConditions = true;}
+			if (JAXBHandler.getValue(cs, "required_keyblade") != null && JAXBHandler.getValue(cs, "required_keyblade") == 1) {weap.getWeapon().add(WeaponType.KEYBLADE_2H.toString()); hasConditions = true;}
+			if (JAXBHandler.getValue(cs, "required_keyhammer") != null && JAXBHandler.getValue(cs, "required_keyhammer") == 1) {weap.getWeapon().add(WeaponType.KEYHAMMER_2H.toString()); hasConditions = true;}
+			// if (JAXBHandler.getValue(cs, "required_ride_robot") == 1) {weap.getWeapon().add(WeaponType.RIDE_ROBOT.toString()); hasConditions = true;}
 			conditions.getMpAndHpAndDp().add(weap);
 		}
 		else if (c instanceof ArmorCondition) {
 			ArmorCondition armor = (ArmorCondition) c;
-			armor.setArmor(ArmorType.fromClient(JAXBHandler.getSkillValue(cs, "required_leftweapon").toString()).toString());
+			armor.setArmor(ArmorType.fromClient(JAXBHandler.getValue(cs, "required_leftweapon").toString()).toString());
 			conditions.getMpAndHpAndDp().add(armor);
 			hasConditions = true;
 		}
@@ -664,19 +664,19 @@ public class AionSkillsWriter extends AbstractWriter {
 		}*/
 		else if (c instanceof TargetCondition) {
 			TargetCondition target = (TargetCondition) c;
-			target.setValue(TargetAttribute.fromClient(JAXBHandler.getSkillValue(cs, "target_species_restriction").toString()).toString());
+			target.setValue(TargetAttribute.fromClient(JAXBHandler.getValue(cs, "target_species_restriction").toString()).toString());
 			conditions.getMpAndHpAndDp().add(target);
 			hasConditions = true;
 		}
 		else if (c instanceof TargetFlyingCondition) {
 			TargetFlyingCondition targetFlying = (TargetFlyingCondition) c;
-			targetFlying.setRestriction(FlyingRestriction.fromClient(JAXBHandler.getSkillValue(cs, "target_flying_restriction").toString()).toString());
+			targetFlying.setRestriction(FlyingRestriction.fromClient(JAXBHandler.getValue(cs, "target_flying_restriction").toString()).toString());
 			conditions.getMpAndHpAndDp().add(targetFlying);
 			hasConditions = true;
 		}
 		else if (c instanceof SelfFlyingCondition) {
 			SelfFlyingCondition selfFlying = (SelfFlyingCondition) c;
-			selfFlying.setRestriction(FlyingRestriction.fromClient(JAXBHandler.getSkillValue(cs, "self_flying_restriction").toString()).toString());
+			selfFlying.setRestriction(FlyingRestriction.fromClient(JAXBHandler.getValue(cs, "self_flying_restriction").toString()).toString());
 			conditions.getMpAndHpAndDp().add(selfFlying);
 			hasConditions = true;
 		}/*
@@ -694,24 +694,24 @@ public class AionSkillsWriter extends AbstractWriter {
 		}*/
 		else if (c instanceof ChainCondition) {
 			ChainCondition chain = (ChainCondition) c;
-			if (JAXBHandler.getSkillValue(cs, "self_chain_count") != null && JAXBHandler.getSkillValue(cs, "self_chain_count") != 0) {
-				chain.setSelfcount((Integer) JAXBHandler.getSkillValue(cs, "self_chain_count"));
+			if (JAXBHandler.getValue(cs, "self_chain_count") != null && JAXBHandler.getValue(cs, "self_chain_count") != 0) {
+				chain.setSelfcount((Integer) JAXBHandler.getValue(cs, "self_chain_count"));
 				hasConditions = true;
 			}
-			if (JAXBHandler.getSkillValue(cs, "prechain_count") != null && JAXBHandler.getSkillValue(cs, "prechain_count") != 0) {
-				chain.setPrecount((Integer) JAXBHandler.getSkillValue(cs, "prechain_count"));
+			if (JAXBHandler.getValue(cs, "prechain_count") != null && JAXBHandler.getValue(cs, "prechain_count") != 0) {
+				chain.setPrecount((Integer) JAXBHandler.getValue(cs, "prechain_count"));
 				hasConditions = true;
 			}
-			if (JAXBHandler.getSkillValue(cs, "chain_time") != null && JAXBHandler.getSkillValue(cs, "chain_time") != 0) {
-				chain.setTime((Integer) JAXBHandler.getSkillValue(cs, "chain_time"));
+			if (JAXBHandler.getValue(cs, "chain_time") != null && JAXBHandler.getValue(cs, "chain_time") != 0) {
+				chain.setTime((Integer) JAXBHandler.getValue(cs, "chain_time"));
 				hasConditions = true;
 			}
-			if (JAXBHandler.getSkillValue(cs, "prechain_category_name") != null) {
-				chain.setPrecategory(JAXBHandler.getSkillValue(cs, "prechain_category_name").toString().toUpperCase());
+			if (JAXBHandler.getValue(cs, "prechain_category_name") != null) {
+				chain.setPrecategory(JAXBHandler.getValue(cs, "prechain_category_name").toString().toUpperCase());
 				hasConditions = true;
 			}
-			if (JAXBHandler.getSkillValue(cs, "chain_category_name") != null) {
-				chain.setCategory(JAXBHandler.getSkillValue(cs, "chain_category_name").toString().toUpperCase());
+			if (JAXBHandler.getValue(cs, "chain_category_name") != null) {
+				chain.setCategory(JAXBHandler.getValue(cs, "chain_category_name").toString().toUpperCase());
 				hasConditions = true;
 			}
 			conditions.getMpAndHpAndDp().add(chain);
@@ -724,7 +724,7 @@ public class AionSkillsWriter extends AbstractWriter {
 		}*/
 		else if (c instanceof FormCondition) {
 			FormCondition form = (FormCondition) c;
-			form.setValue(TransformType.fromClient(JAXBHandler.getSkillValue(cs, "allow_use_form_category").toString()).toString());
+			form.setValue(TransformType.fromClient(JAXBHandler.getValue(cs, "allow_use_form_category").toString()).toString());
 			conditions.getMpAndHpAndDp().add(form);
 			hasConditions = true;
 		}
@@ -740,10 +740,10 @@ public class AionSkillsWriter extends AbstractWriter {
 	}
 	
 	private boolean isPeriodic(ClientSkill cs) {
-		if (JAXBHandler.getSkillValue(cs, "cost_checktime_parameter") != null && (Integer) JAXBHandler.getSkillValue(cs, "cost_checktime") != 0) // USUAL
+		if (JAXBHandler.getValue(cs, "cost_checktime_parameter") != null && (Integer) JAXBHandler.getValue(cs, "cost_checktime") != 0) // USUAL
 			return true;
-		else if (JAXBHandler.getSkillValue(cs, "cost_parameter") != null && StringUtils.containsIgnoreCase(JAXBHandler.getSkillValue(cs, "cost_parameter").toString(), "ratio") 
-			&& JAXBHandler.getSkillValue(cs, "cost_time") != null && JAXBHandler.getSkillValue(cs, "cost_time") != 0 && getCost(cs) != 0) // EXCEPTIONS:  Skill 912 i.e. (and new 4.0 skills)
+		else if (JAXBHandler.getValue(cs, "cost_parameter") != null && StringUtils.containsIgnoreCase(JAXBHandler.getValue(cs, "cost_parameter").toString(), "ratio") 
+			&& JAXBHandler.getValue(cs, "cost_time") != null && JAXBHandler.getValue(cs, "cost_time") != 0 && getCost(cs) != 0) // EXCEPTIONS:  Skill 912 i.e. (and new 4.0 skills)
 			return true;
 		else
 			return false;
@@ -751,48 +751,48 @@ public class AionSkillsWriter extends AbstractWriter {
 	
 	private int getCost(ClientSkill cs) {
 		int cost = 0;
-		if (JAXBHandler.getSkillValue(cs, "cost_end") != null && JAXBHandler.getSkillValue(cs, "cost_end") != 0)
-			cost = (Integer) JAXBHandler.getSkillValue(cs, "cost_end");
-		else if (JAXBHandler.getSkillValue(cs, "activation_attribute").toString().equalsIgnoreCase("Toggle") && JAXBHandler.getSkillValue(cs, "cost_toggle") != null && JAXBHandler.getSkillValue(cs, "cost_toggle") != 0)
-			cost = (Integer) JAXBHandler.getSkillValue(cs, "cost_toggle");
-		else if (JAXBHandler.getSkillValue(cs, "cost_start") != null && JAXBHandler.getSkillValue(cs, "cost_start") != 0)
-			cost = (Integer) JAXBHandler.getSkillValue(cs, "cost_start");
+		if (JAXBHandler.getValue(cs, "cost_end") != null && JAXBHandler.getValue(cs, "cost_end") != 0)
+			cost = (Integer) JAXBHandler.getValue(cs, "cost_end");
+		else if (JAXBHandler.getValue(cs, "activation_attribute").toString().equalsIgnoreCase("Toggle") && JAXBHandler.getValue(cs, "cost_toggle") != null && JAXBHandler.getValue(cs, "cost_toggle") != 0)
+			cost = (Integer) JAXBHandler.getValue(cs, "cost_toggle");
+		else if (JAXBHandler.getValue(cs, "cost_start") != null && JAXBHandler.getValue(cs, "cost_start") != 0)
+			cost = (Integer) JAXBHandler.getValue(cs, "cost_start");
 		return cost;
 	}
 	
 	private int getDelta(ClientSkill cs) {
 		int delta = 0;
-		if (JAXBHandler.getSkillValue(cs, "cost_end_lv") != null && JAXBHandler.getSkillValue(cs, "cost_end_lv") != 0)
-			delta = (Integer) JAXBHandler.getSkillValue(cs, "cost_end_lv");
-		else if (JAXBHandler.getSkillValue(cs, "cost_start_lv") != null && JAXBHandler.getSkillValue(cs, "cost_start_lv") != 0)
-			delta = (Integer) JAXBHandler.getSkillValue(cs, "cost_start_lv");
+		if (JAXBHandler.getValue(cs, "cost_end_lv") != null && JAXBHandler.getValue(cs, "cost_end_lv") != 0)
+			delta = (Integer) JAXBHandler.getValue(cs, "cost_end_lv");
+		else if (JAXBHandler.getValue(cs, "cost_start_lv") != null && JAXBHandler.getValue(cs, "cost_start_lv") != 0)
+			delta = (Integer) JAXBHandler.getValue(cs, "cost_start_lv");
 		return delta;
 	}
 	
 	private int getChecktimeCost(ClientSkill cs) {
 		int pCost = 0;
-		Object costParam = JAXBHandler.getSkillValue(cs, "cost_parameter");
-		if (costParam != null && StringUtils.containsIgnoreCase(costParam.toString(), "ratio") && JAXBHandler.getSkillValue(cs, "cost_time") != null && JAXBHandler.getSkillValue(cs, "cost_time") != 0) // EXCEPTIONS:  Skill 912 i.e. (and new 4.0 skills)
+		Object costParam = JAXBHandler.getValue(cs, "cost_parameter");
+		if (costParam != null && StringUtils.containsIgnoreCase(costParam.toString(), "ratio") && JAXBHandler.getValue(cs, "cost_time") != null && JAXBHandler.getValue(cs, "cost_time") != 0) // EXCEPTIONS:  Skill 912 i.e. (and new 4.0 skills)
 			pCost = getCost(cs);
-		else if (JAXBHandler.getSkillValue(cs, "cost_checktime") != null && JAXBHandler.getSkillValue(cs, "cost_checktime") != 0) // USUAL
-			pCost = (Integer) JAXBHandler.getSkillValue(cs, "cost_checktime");
+		else if (JAXBHandler.getValue(cs, "cost_checktime") != null && JAXBHandler.getValue(cs, "cost_checktime") != 0) // USUAL
+			pCost = (Integer) JAXBHandler.getValue(cs, "cost_checktime");
 		return pCost;
 	}
 	
 	private int getChecktimeDelta(ClientSkill cs) {
 		int pDelta = 0;
-		Object costParam = JAXBHandler.getSkillValue(cs, "cost_parameter");
-		if (costParam != null && StringUtils.containsIgnoreCase(costParam.toString(), "ratio") && JAXBHandler.getSkillValue(cs, "cost_time") != null && JAXBHandler.getSkillValue(cs, "cost_time") != 0) // EXCEPTIONS:  Skill 912 i.e. (and new 4.0 skills)
+		Object costParam = JAXBHandler.getValue(cs, "cost_parameter");
+		if (costParam != null && StringUtils.containsIgnoreCase(costParam.toString(), "ratio") && JAXBHandler.getValue(cs, "cost_time") != null && JAXBHandler.getValue(cs, "cost_time") != 0) // EXCEPTIONS:  Skill 912 i.e. (and new 4.0 skills)
 			pDelta = getDelta(cs);
-		else if (JAXBHandler.getSkillValue(cs, "cost_checktime_lv") != null && JAXBHandler.getSkillValue(cs, "cost_checktime_lv") != 0) // USUAL
-			pDelta = (Integer) JAXBHandler.getSkillValue(cs, "cost_checktime_lv");
+		else if (JAXBHandler.getValue(cs, "cost_checktime_lv") != null && JAXBHandler.getValue(cs, "cost_checktime_lv") != 0) // USUAL
+			pDelta = (Integer) JAXBHandler.getValue(cs, "cost_checktime_lv");
 		return pDelta;
 	}
 	
 	// [UPDATE] Add check if skills get more than 4 effects with future updates
 	private boolean hasEffects(ClientSkill cs) {
 		for (int a = 1; a <= 4; a++) {
-			if (JAXBHandler.getSkillValue(cs, "effect"+a+"_type") != null)
+			if (JAXBHandler.getValue(cs, "effect"+a+"_type") != null)
 				return true;
 		}
 		return false;
