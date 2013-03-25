@@ -75,12 +75,18 @@ import com.parser.output.aion.skills.Motion;
  */
 public class AionSkillsWriter extends AbstractWriter {
 
+	public static boolean ANALYSE = false;
+
 	SkillData finalTemplates = new SkillData();
 	Collection<SkillTemplate> templateList = finalTemplates.getSkillTemplate();
 	List<ClientSkill> skillBaseList;
 	// Additional
 	List<ClientSkillTree> skillTreeList = new ArrayList<ClientSkillTree>();
 	Map<String, ClientItem> stigmaItemMap = new HashMap<String, ClientItem>();
+	
+	public AionSkillsWriter(boolean analyse) {
+		this.ANALYSE = analyse;
+	}
 	
 	@Override
 	public void parse() {
@@ -445,7 +451,8 @@ public class AionSkillsWriter extends AbstractWriter {
 	
 	@Override
 	public void analyze() {
-		/*JAXBHandler.printUnused("skills");*/
+		if (ANALYSE)
+			JAXBHandler.printUnused("skills");
 	}
 
 	@Override
@@ -458,7 +465,7 @@ public class AionSkillsWriter extends AbstractWriter {
 	
 	private String getName(String s) {return (s != null) ? new AionDataCenter().getInstance().getMatchingStringText(s) : "";}
 	private int getNameId(String s, int mult, int plus) {return (s != null) ? new AionDataCenter().getInstance().getMatchingStringId(s, mult, plus) : 0;}
-	private int getItemId(String s) {return (s != null) ? new AionDataCenter().getInstance().getItemIdByName(s, "") : 0;}
+	private int getItemId(String s) {return (s != null) ? new AionDataCenter().getInstance().getItemIdByName(s) : 0;}
 	private int getSkillId(String s) {return (s != null) ? new AionDataCenter().getInstance().getSkillIdByName(s) : 0;}
 	private int getNpcId(String s) {return (s != null) ? new AionDataCenter().getInstance().getNpcIdByName(s) : 0;}
 	private int getWorld(String s) {return (s != null) ? new AionDataCenter().getInstance().getWorldIdByName(s) : 0;}

@@ -624,7 +624,7 @@ public class AionItemsWriter extends AbstractWriter {
 	
 	/****** EXTRA *******/
 	
-	private int getItemId(String s) {return (s != null) ? new AionDataCenter().getInstance().getItemIdByName(s, "") : 0;}
+	private int getItemId(String s) {return (s != null) ? new AionDataCenter().getInstance().getItemIdByName(s) : 0;}
 	private int getSkillId(String s) {return (s != null) ? new AionDataCenter().getInstance().getSkillIdByName(s) : 0;}
 	private int getNpcId(String s) {return (s != null) ? new AionDataCenter().getInstance().getNpcIdByName(s) : 0;}
 	private int getWorld(String s) {return (s != null) ? new AionDataCenter().getInstance().getWorldIdByName(s) : 0;}

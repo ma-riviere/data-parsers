@@ -106,7 +106,7 @@ public class AionDataCenter {
 	private static void loadRecipeNameIdMap() {
 		List<ClientRecipe> clientRecipes = new AionRecipesParser().parse();
 		for (ClientRecipe cr : clientRecipes)
-			recipeNameIdMap.put(JAXBHandler.getRecipeValue(cr, "name").toString().toUpperCase(), (int) JAXBHandler.getRecipeValue(cr, "id"));
+			recipeNameIdMap.put(JAXBHandler.getValue(cr, "name").toString().toUpperCase(), (int) JAXBHandler.getValue(cr, "id"));
 	}
 	
 	private static void loadDescWorldIdMap() {
@@ -183,13 +183,13 @@ public class AionDataCenter {
 		return 0;
 	}
 	
-	public int getItemIdByName(String name, String prefix) {
+	public int getItemIdByName(String name) {
 		if (itemNameIdMap.isEmpty()) {loadItemNameIdMap();}
 		
-		if (itemNameIdMap.get(prefix + name.toUpperCase()) != null)
-			return itemNameIdMap.get(prefix + name.toUpperCase());
+		if (itemNameIdMap.get(name.toUpperCase()) != null)
+			return itemNameIdMap.get(name.toUpperCase());
 		else
-			System.out.println("[ITEMS] No Item ID matching name : " + prefix + name.toUpperCase());
+			System.out.println("[ITEMS] No Item ID matching name : " + name.toUpperCase());
 		return 0;
 	}
 	
