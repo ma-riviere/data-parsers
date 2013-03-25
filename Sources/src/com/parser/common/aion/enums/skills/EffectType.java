@@ -88,13 +88,13 @@ public enum EffectType {
 	FALL,
 	
 	// Heal
-	HEAL,
+	HEAL("AbstractOverTimeEffect"),
 	HEAL_INSTANT,
-	FPHEAL,
+	FPHEAL("AbstractOverTimeEffect"),
 	FPHEAL_INSTANT,
-	MPHEAL,
+	MPHEAL("AbstractOverTimeEffect"),
 	MPHEAL_INSTANT,
-	DPHEAL,
+	DPHEAL("AbstractOverTimeEffect"),
 	DPHEAL_INSTANT,
 	PROCHEAL_INSTANT,
 	PROCVPHEAL_INSTANT,
@@ -209,14 +209,26 @@ public enum EffectType {
 	SEARCH,
 	HIDE;
 	
+	private String abstractCategory;
+	// private String subCategory;
 	private String[] clientStrings;
 	
-	private EffectType(String[] clientStrings) {
+	private EffectType(String abstractCategory, String[] clientStrings) {
+		this.abstractCategory = abstractCategory;
 		this.clientStrings = clientStrings;
 	}
 	
+	private EffectType(String abstractCategory) {
+		this(abstractCategory, null);
+	}
+	
+	//TODO: Should not happen (fill all)
+	private EffectType(String[] clientStrings) {
+		this(null, clientStrings);
+	}
+	
 	private EffectType() {
-		this(null);
+		this(null, null);
 	}
 	
 	public List<String> getClientStrings() {
@@ -224,6 +236,10 @@ public enum EffectType {
 		if (clientStrings != null)
 			Collections.addAll(list, clientStrings);
 		return list;
+	}
+	
+	public String getAbstractCatetgory() {
+		return abstractCategory != null ? abstractCategory : "noAbstractCategory";
 	}
 	
 	/**

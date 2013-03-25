@@ -4,8 +4,8 @@ COLOR 3
 rem ## Save return path
 pushd %~dp0
 
-setx /M JAVA_HOME "C:\Program Files (x86)\Java\jdk1.7.0_05"
-REM setx /M JAVA_HOME "C:\Program Files\Java\jdk1.7.0_17"
+REM setx /M JAVA_HOME "C:\Program Files (x86)\Java\jdk1.7.0_05"
+setx /M JAVA_HOME "C:\Program Files\Java\jdk1.7.0_17"
 setx /M JAVA_TOOL_OPTIONS -Dfile.encoding=UTF8
 
 set ANT=%~dp0Tools\Ant\bin\ant
