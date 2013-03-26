@@ -3,24 +3,18 @@ package com.parser.common.aion.enums.skills;
 /**
  * @author Viria
  */
-public enum TargetSlot {
+public enum HopType {
 
-	NONE,
-    BUFF,
-    DEBUFF,
-    SPEC("special"),
-    SPEC2("special2"),
-    BOOST,
-    NOSHOW,
-    CHANT;
+	SKILLLV,
+    DAMAGE;
 
 	private String clientString;
 	
-	private TargetSlot(String clientString) {
+	private HopType(String clientString) {
 		this.clientString = clientString;
 	}
 	
-	private TargetSlot() {
+	private HopType() {
 		this(null);
 	}
 	
@@ -30,8 +24,8 @@ public enum TargetSlot {
 	 * Returns the ENUM matching the given client string
 	 * If no Client String is bound to the enum, it will try to match the enum string value.
 	 */
-	public static TargetSlot fromClient(String string) {
-		for (TargetSlot v : values()) {
+	public static HopType fromClient(String string) {
+		for (HopType v : values()) {
 			if (v.getClientString() != null) {
 				if (v.getClientString().equalsIgnoreCase(string))
 					return v;
@@ -40,12 +34,12 @@ public enum TargetSlot {
 					return fromValue(string);
 			}
 		}
-		System.out.println("[SKILLS] No TargetSlot matching :" + string);
+		System.out.println("[SKILLS] No HopType matching :" + string);
 		return null;
 	}
 	
-	public static TargetSlot fromValue(String name) {
-		for (TargetSlot v : values()) {
+	public static HopType fromValue(String name) {
+		for (HopType v : values()) {
 			if (v.toString().equalsIgnoreCase(name))
 				return v;
 		}

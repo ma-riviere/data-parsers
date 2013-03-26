@@ -8,7 +8,7 @@ import com.parser.input.aion.items.ClientItem;
 import com.parser.common.aion.AionDataCenter;
 
 /**
- * @author Imaginary
+ * @author Viria
  */
 public enum ItemCategory {
 

@@ -3,7 +3,7 @@ package com.parser.common.aion.enums;
 import com.google.common.base.Strings;
 
 /**
- * @author Imaginary
+ * @author Viria
  */
 public enum ModifiersEnum {
 

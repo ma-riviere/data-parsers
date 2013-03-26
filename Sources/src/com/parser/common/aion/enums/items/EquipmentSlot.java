@@ -3,7 +3,7 @@ package com.parser.common.aion.enums.items;
 import com.parser.input.aion.items.ClientItem;
 
 /**
- * @author Imaginary
+ * @author Viria
  */
 public enum EquipmentSlot {
 

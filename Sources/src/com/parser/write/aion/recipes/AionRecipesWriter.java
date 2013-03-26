@@ -78,8 +78,8 @@ public class AionRecipesWriter extends AbstractWriter {
 
 	@Override
 	public void marshall() {
-		System.out.println("Recipes count: " + templateList.size());
 		FileMarhshaller.marshallFile(finalTemplates, AionWritingConfig.RECIPES, AionWritingConfig.RECIPES_PACK);
+		System.out.println("[RECIPES] Recipes count: " + templateList.size());
 	}
 	
 	private int getSkill(String s) {return new AionDataCenter().getInstance().getSkillIdByName(s);}

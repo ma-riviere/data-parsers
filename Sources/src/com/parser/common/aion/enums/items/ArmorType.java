@@ -1,7 +1,7 @@
 package com.parser.common.aion.enums.items;
 
 /**
- * @author Imaginary
+ * @author Viria
  */
 public enum ArmorType {
 
