@@ -39,7 +39,7 @@ public class AionSkillsWriter extends AbstractWriter {
 	
 	List<ClientSkill> skillBaseList = null;
 	List<ClientSkillTree> skillTreeList = null;
-	Map<String, ClientItem> stigmaItemMap = null;
+	Map<String, ClientItem> stigmaItemMap = new HashMap<String, ClientItem>();
 	
 	public AionSkillsWriter(boolean analyse) {
 		this.ANALYSE = analyse;
@@ -750,38 +750,69 @@ public class AionSkillsWriter extends AbstractWriter {
 	}
 	
 	private boolean computeEffects(ClientSkill cs, Effects effects, EffectType et, int a) {
-		boolean hasEffects = false;
+		boolean compute = false;
 		String current = "effect" + a + "_";
 		
 		if (et.getAbstractCatetgory().equalsIgnoreCase("AbstractOverTimeEffect")) {
-			
+			// HealOverTimeEffect
 			if (et == EffectType.HEAL) {
 				HealEffect heal = new HealEffect();
-				hasEffects = setGeneral(cs, heal, a);
-				hasEffects = setAbstractOverTimeEffect(cs, heal, current);
-				effects.getRootAndStunAndSleep().add(heal);
+				if (setGeneral(cs, heal, a) || setAbstractOverTimeEffect(cs, heal, current)) {
+					effects.getRootAndStunAndSleep().add(heal);
+					compute = true;
+				}
 			}
 			if (et == EffectType.MPHEAL) {
 				MPHealEffect mpHeal = new MPHealEffect();
-				hasEffects = setGeneral(cs, mpHeal, a);
-				hasEffects = setAbstractOverTimeEffect(cs, mpHeal, current);
-				effects.getRootAndStunAndSleep().add(mpHeal);
+				if (setGeneral(cs, mpHeal, a) || setAbstractOverTimeEffect(cs, mpHeal, current)) {
+					effects.getRootAndStunAndSleep().add(mpHeal);
+					compute = true;
+				}
 			}
 			if (et == EffectType.FPHEAL) {
 				FPHealEffect fpHeal = new FPHealEffect();
-				hasEffects = setGeneral(cs, fpHeal, a);
-				hasEffects = setAbstractOverTimeEffect(cs, fpHeal, current);
-				effects.getRootAndStunAndSleep().add(fpHeal);
+				if (setGeneral(cs, fpHeal, a) || setAbstractOverTimeEffect(cs, fpHeal, current)) {
+					effects.getRootAndStunAndSleep().add(fpHeal);
+					compute = true;
+				}
 			}
 			if (et == EffectType.DPHEAL) {
 				DPHealEffect dpHeal = new DPHealEffect();
-				hasEffects = setGeneral(cs, dpHeal, a);
-				hasEffects = setAbstractOverTimeEffect(cs, dpHeal, current);
-				effects.getRootAndStunAndSleep().add(dpHeal);
+				if (setGeneral(cs, dpHeal, a) || setAbstractOverTimeEffect(cs, dpHeal, current)) {
+					effects.getRootAndStunAndSleep().add(dpHeal);
+					compute = true;
+				}
 			}
+			// SpellAtackEffect
+			if (et == EffectType.SPELLATK) {
+				SpellAttackEffect spell = new SpellAttackEffect();
+				if (setGeneral(cs, spell, a) || setAbstractOverTimeEffect(cs, spell, current)) {
+					effects.getRootAndStunAndSleep().add(spell);
+					compute = true;
+				}
+			}
+			// SpellAtkDrainEffect
+			if (et == EffectType.SPELLATKDRAIN) {
+				SpellAtkDrainEffect spellDrain = new SpellAtkDrainEffect();
+				boolean check = false;
+				if () {
+					spellDrain.setHpPercent();
+					check = true;
+				}
+				if () {
+					spellDrain.setMpPercent();
+					check = true;
+					
+				}
+				if (check || setGeneral(cs, spellDrain, a) || setAbstractOverTimeEffect(cs, spellDrain, current)) {
+					effects.getRootAndStunAndSleep().add(spellDrain);
+					compute = true;
+				}
+			}
+			
 		}
 		
-		return hasEffects;
+		return compute;
 	}
 	
 	private boolean setGeneral(ClientSkill cs, Effect effect, int a) {
@@ -807,9 +838,18 @@ public class AionSkillsWriter extends AbstractWriter {
 			effect.setHoptype(HopType.fromClient(JAXBHandler.getValue(cs, current + "hop_type").toString()).toString());
 			hasGeneralEffects = true;
 		}
-		// effect.setCritadddmg1();
-		// effect.setCritadddmg2();
-		// effect.setCritprobmod2();
+		if (JAXBHandler.getValue(cs, current + "critical_add_dmg_mod1") != null && JAXBHandler.getValue(cs, current + "critical_add_dmg_mod1") != 0) {
+			effect.setCritadddmg1((Integer) JAXBHandler.getValue(cs, current + "critical_add_dmg_mod1"));
+			hasGeneralEffects = true;
+		}
+		if (JAXBHandler.getValue(cs, current + "critical_add_dmg_mod2") != null && JAXBHandler.getValue(cs, current + "critical_add_dmg_mod2") != 0) {
+			effect.setCritadddmg2((Integer) JAXBHandler.getValue(cs, current + "critical_add_dmg_mod2"));
+			hasGeneralEffects = true;
+		}
+		if (JAXBHandler.getValue(cs, current + "critical_prob_mod2") != null && (Integer) JAXBHandler.getValue(cs, current + "critical_prob_mod2") != 100) {
+			effect.setCritprobmod2((Integer) JAXBHandler.getValue(cs, current + "critical_prob_mod2"));
+			hasGeneralEffects = true;
+		}
 		if (JAXBHandler.getValue(cs, current + "cond_preeffect_prob2") != null
 			&& (Integer) JAXBHandler.getValue(cs, current + "cond_preeffect_prob2") != 0 && (Integer) JAXBHandler.getValue(cs, current + "cond_preeffect_prob2") != 100) {
 			effect.setPreeffectProb((Integer) JAXBHandler.getValue(cs, current + "cond_preeffect_prob2"));
@@ -819,12 +859,28 @@ public class AionSkillsWriter extends AbstractWriter {
 			effect.setPreeffect(JAXBHandler.getValue(cs, current + "cond_preeffect").toString().replaceFirst("e", ""));
 			hasGeneralEffects = true;
 		}
-		// effect.setElement(); //SkillElement
-		// effect.setHittypeprob2();
-		// effect.setHittype(); //HitType
-		// effect.setMrresist(); //boolean
-		// effect.setAccmod1();
-		// effect.setAccmod2();
+		if (JAXBHandler.getValue(cs, current + "reserved10") != null) {
+			effect.setElement(Element.fromClient(JAXBHandler.getValue(cs, current + "reserved10").toString().toUpperCase()).toString());
+			hasGeneralEffects = true;
+		}
+		if (a > 1 && JAXBHandler.getValue(cs, current + "reserved_cond"+(a-1)+"_prob2") != null
+			&& (Integer) JAXBHandler.getValue(cs, current + "reserved_cond"+(a-1)+"_prob2") != 0 && (Integer) JAXBHandler.getValue(cs, current + "reserved_cond"+(a-1)+"_prob2") != 100) {
+			effect.setHittypeprob2((Integer) JAXBHandler.getValue(cs, current + "reserved_cond"+(a-1)+"_prob2"));
+			hasGeneralEffects = true;
+		}
+		if (JAXBHandler.getValue(cs, current + "reserved_cond1") != null) {
+			effect.setHittype(HitType.fromClient(JAXBHandler.getValue(cs, current + "reserved_cond1").toString().toUpperCase()).toString());
+			hasGeneralEffects = true;
+		}
+		// effect.setMrresist(); //TODO: Remove, unused
+		if (JAXBHandler.getValue(cs, current + "acc_mod1") != null && (Integer) JAXBHandler.getValue(cs, current + "acc_mod1") != 0) {
+			effect.setAccmod1((Integer) JAXBHandler.getValue(cs, current + "acc_mod1"));
+			hasGeneralEffects = true;
+		}
+		if (JAXBHandler.getValue(cs, current + "acc_mod2") != null && (Integer) JAXBHandler.getValue(cs, current + "acc_mod2") != 0) {
+			effect.setAccmod2((Integer) JAXBHandler.getValue(cs, current + "acc_mod2"));
+			hasGeneralEffects = true;
+		}
 		if (JAXBHandler.getValue(cs, current + "noresist") != null && (Integer) JAXBHandler.getValue(cs, current + "noresist") == 1) {
 			effect.setNoresist(true);
 			hasGeneralEffects = true;
@@ -838,8 +894,10 @@ public class AionSkillsWriter extends AbstractWriter {
 			effect.setEffectid((Integer) JAXBHandler.getValue(cs, current + "effectid"));
 			hasGeneralEffects = true;
 		}
-		 //TODO
-		// effect.setRandomtime();
+		if (JAXBHandler.getValue(cs, current + "randomtime") != null && (Integer) JAXBHandler.getValue(cs, current + "randomtime") != 0) {
+			effect.setRandomtime((Integer) JAXBHandler.getValue(cs, current + "randomtime"));
+			hasGeneralEffects = true;
+		}
 		if (JAXBHandler.getValue(cs, current + "remain1") != null && (Integer) JAXBHandler.getValue(cs, current + "remain1") != 0) {
 			effect.setDuration1((Integer) JAXBHandler.getValue(cs, current + "remain1"));
 			hasGeneralEffects = true;
@@ -848,7 +906,7 @@ public class AionSkillsWriter extends AbstractWriter {
 			effect.setDuration2((Integer) JAXBHandler.getValue(cs, current + "remain2"));
 			hasGeneralEffects = true;
 		}
-		// effect.setOnfly();
+		// effect.setOnfly(); //TODO Remove, unused
 		
 		// Delta & Value (input propety changes with ???)
 		
