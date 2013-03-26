@@ -618,8 +618,8 @@ public class AionItemsWriter extends AbstractWriter {
 
 	@Override
 	public void marshall() {
-		System.out.println("[ITEMS] Items count: " + templateList.size());
 		FileMarhshaller.marshallFile(finalTemplates, AionWritingConfig.ITEMS, AionWritingConfig.ITEMS_PACK);
+		System.out.println("[ITEMS] Items count: " + templateList.size());
 	}
 	
 	/****** EXTRA *******/

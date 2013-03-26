@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Collections;
 
 /**
- * @author Imaginary
+ * @author Viria
  */
 public enum EffectType {
 

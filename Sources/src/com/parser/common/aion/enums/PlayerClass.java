@@ -1,7 +1,7 @@
 package com.parser.common.aion.enums;
 
 /**
- * @author Imaginary
+ * @author Viria
  */
 public enum PlayerClass {
 

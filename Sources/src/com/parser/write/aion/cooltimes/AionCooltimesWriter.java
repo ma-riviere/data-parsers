@@ -53,8 +53,8 @@ public class AionCooltimesWriter extends AbstractWriter {
 
 	@Override
 	public void marshall() {
-		System.out.println("Instance Cooltimes count: " + templateList.size());
 		FileMarhshaller.marshallFile(finalTemplates, AionWritingConfig.COOLTIMES, AionWritingConfig.COOLTIMES_PACK);
+		System.out.println("Instance Cooltimes count: " + templateList.size());
 	}
 	
 	private int getMatchingCIC2Value(int id) {

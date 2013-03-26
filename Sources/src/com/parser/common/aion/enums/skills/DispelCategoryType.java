@@ -1,7 +1,7 @@
 package com.parser.common.aion.enums.skills;
 
 /**
- * @author Imaginary
+ * @author Viria
  */
 public enum DispelCategoryType {
 

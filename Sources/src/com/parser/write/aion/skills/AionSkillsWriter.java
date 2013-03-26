@@ -25,58 +25,10 @@ import com.parser.write.AbstractWriter;
 import com.parser.write.FileMarhshaller;
 import com.parser.write.aion.AionWritingConfig;
 
-import com.parser.output.aion.skills.SkillData;
-import com.parser.output.aion.skills.SkillTemplate;
-
-import com.parser.output.aion.skills.Conditions;
-import com.parser.output.aion.skills.Condition;
-import com.parser.output.aion.skills.TargetCondition;
-import com.parser.output.aion.skills.PlayerMovedCondition;
-import com.parser.output.aion.skills.ArrowCheckCondition;
-import com.parser.output.aion.skills.BackCondition;
-import com.parser.output.aion.skills.AbnormalStateCondition;
-import com.parser.output.aion.skills.FormCondition;
-import com.parser.output.aion.skills.HpCondition;
-import com.parser.output.aion.skills.MpCondition;
-import com.parser.output.aion.skills.NoFlyingCondition;
-import com.parser.output.aion.skills.OnFlyCondition;
-import com.parser.output.aion.skills.SelfFlyingCondition;
-import com.parser.output.aion.skills.TargetCondition;
-import com.parser.output.aion.skills.TargetFlyingCondition;
-import com.parser.output.aion.skills.WeaponCondition;
-import com.parser.output.aion.skills.ArmorCondition;
-import com.parser.output.aion.skills.ChainCondition;
-import com.parser.output.aion.skills.CombatCheckCondition;
-import com.parser.output.aion.skills.DpCondition;
-
-import com.parser.output.aion.skills.Properties;
-import com.parser.output.aion.skills.Property;
-
-import com.parser.output.aion.skills.Actions;
-import com.parser.output.aion.skills.Action;
-import com.parser.output.aion.skills.PeriodicActions;
-import com.parser.output.aion.skills.PeriodicAction;
-import com.parser.output.aion.skills.DpUseAction;
-import com.parser.output.aion.skills.HpUseAction;
-import com.parser.output.aion.skills.HpUsePeriodicAction;
-import com.parser.output.aion.skills.ItemUseAction;
-import com.parser.output.aion.skills.MpUseAction;
-import com.parser.output.aion.skills.MpUsePeriodicAction;
-
-import com.parser.output.aion.skills.Effects;
-import com.parser.output.aion.skills.Effect;
-
-import com.parser.output.aion.skills.AbstractOverTimeEffect;
-
-import com.parser.output.aion.skills.HealEffect;
-import com.parser.output.aion.skills.MPHealEffect;
-import com.parser.output.aion.skills.FPHealEffect;
-import com.parser.output.aion.skills.DPHealEffect;
-
-import com.parser.output.aion.skills.Motion;
+import com.parser.output.aion.skills.*;
 
 /**
- *@author Imaginary
+ *@author Viria
  */
 public class AionSkillsWriter extends AbstractWriter {
 
@@ -84,10 +36,10 @@ public class AionSkillsWriter extends AbstractWriter {
 
 	SkillData finalTemplates = new SkillData();
 	Collection<SkillTemplate> templateList = finalTemplates.getSkillTemplate();
-	List<ClientSkill> skillBaseList;
-	// Additional
-	List<ClientSkillTree> skillTreeList = new ArrayList<ClientSkillTree>();
-	Map<String, ClientItem> stigmaItemMap = new HashMap<String, ClientItem>();
+	
+	List<ClientSkill> skillBaseList = null;
+	List<ClientSkillTree> skillTreeList = null;
+	Map<String, ClientItem> stigmaItemMap = null;
 	
 	public AionSkillsWriter(boolean analyse) {
 		this.ANALYSE = analyse;
@@ -95,15 +47,9 @@ public class AionSkillsWriter extends AbstractWriter {
 	
 	@Override
 	public void parse() {
-		skillBaseList = new AionSkillsParser().parse();
-		// Additional
-		skillTreeList = new AionSkillTreeParser().parse();
-		Map<String, List<ClientItem>> clientItemMap = new AionItemsParser().parse();
-		
-		List<ClientItem> clientItemList = new ArrayList<ClientItem>();
-		for (List<ClientItem> lci : clientItemMap.values())
-			clientItemList.addAll(lci);
-		for (ClientItem ci : clientItemList) {
+		skillBaseList = new AionDataCenter().getInstance().getClientSkills();
+		skillTreeList = new AionDataCenter().getInstance().getClientSkillTree();
+		for (ClientItem ci : new AionDataCenter().getInstance().getClientItems()) {
 			if (!Strings.isNullOrEmpty(ci.getGainSkill1()))
 				stigmaItemMap.put(ci.getGainSkill1().toUpperCase(), ci);
 		}
@@ -462,8 +408,8 @@ public class AionSkillsWriter extends AbstractWriter {
 
 	@Override
 	public void marshall() {
-		System.out.println("[SKILLS] Skills written : " + templateList.size());
 		FileMarhshaller.marshallFile(finalTemplates, AionWritingConfig.SKILLS, AionWritingConfig.SKILLS_PACK);
+		System.out.println("[SKILLS] Skills written : " + templateList.size());
 	}
 	
 	/******* EXTRA ********/
@@ -858,30 +804,80 @@ public class AionSkillsWriter extends AbstractWriter {
 			hasGeneralEffects = true;
 		}
 		if (JAXBHandler.getValue(cs, current + "hop_type") != null) {
-			effect.setHoptype(JAXBHandler.getValue(cs, current + "hop_type").toString().toUpperCase());
+			effect.setHoptype(HopType.fromClient(JAXBHandler.getValue(cs, current + "hop_type").toString()).toString());
 			hasGeneralEffects = true;
 		}
-		effect.setCritadddmg1();
-		effect.setCritadddmg2();
-		effect.setCritprobmod2();
-		effect.setPreeffectProb();
-		effect.setPreeffect();
-		effect.setElement(); //SkillElement
-		effect.setHittypeprob2();
-		effect.setHittype(); //HitType
-		effect.setMrresist(); //boolean
-		effect.setAccmod1();
-		effect.setAccmod2();
-		effect.setNoresist(); //boolean
-		effect.setBasiclvl();//basiclv
+		// effect.setCritadddmg1();
+		// effect.setCritadddmg2();
+		// effect.setCritprobmod2();
+		if (JAXBHandler.getValue(cs, current + "cond_preeffect_prob2") != null
+			&& (Integer) JAXBHandler.getValue(cs, current + "cond_preeffect_prob2") != 0 && (Integer) JAXBHandler.getValue(cs, current + "cond_preeffect_prob2") != 100) {
+			effect.setPreeffectProb((Integer) JAXBHandler.getValue(cs, current + "cond_preeffect_prob2"));
+			hasGeneralEffects = true;
+		}
+		if (JAXBHandler.getValue(cs, current + "cond_preeffect") != null) {
+			effect.setPreeffect(JAXBHandler.getValue(cs, current + "cond_preeffect").toString().replaceFirst("e", ""));
+			hasGeneralEffects = true;
+		}
+		// effect.setElement(); //SkillElement
+		// effect.setHittypeprob2();
+		// effect.setHittype(); //HitType
+		// effect.setMrresist(); //boolean
+		// effect.setAccmod1();
+		// effect.setAccmod2();
+		if (JAXBHandler.getValue(cs, current + "noresist") != null && (Integer) JAXBHandler.getValue(cs, current + "noresist") == 1) {
+			effect.setNoresist(true);
+			hasGeneralEffects = true;
+		}
+		if (JAXBHandler.getValue(cs, current + "basiclv") != null && (Integer) JAXBHandler.getValue(cs, current + "basiclv") != 0) {
+			effect.setBasiclvl((Integer) JAXBHandler.getValue(cs, current + "basiclv"));
+			hasGeneralEffects = true;
+		}
 		effect.setE(a);
-		effect.setEffectid();//effectid
-		effect.setRandomtime();
-		effect.setDuration1();//remain1
-		effect.setDuration2();//remain2
-		effect.setOnfly();
-		effect.setDelta();//reserved8
-		effect.setValue();//reserved9
+		if (JAXBHandler.getValue(cs, current + "effectid") != null && (Integer) JAXBHandler.getValue(cs, current + "effectid") != 0) {
+			effect.setEffectid((Integer) JAXBHandler.getValue(cs, current + "effectid"));
+			hasGeneralEffects = true;
+		}
+		 //TODO
+		// effect.setRandomtime();
+		if (JAXBHandler.getValue(cs, current + "remain1") != null && (Integer) JAXBHandler.getValue(cs, current + "remain1") != 0) {
+			effect.setDuration1((Integer) JAXBHandler.getValue(cs, current + "remain1"));
+			hasGeneralEffects = true;
+		}
+		if (JAXBHandler.getValue(cs, current + "remain2") != null && (Integer) JAXBHandler.getValue(cs, current + "remain2") != 0) {
+			effect.setDuration2((Integer) JAXBHandler.getValue(cs, current + "remain2"));
+			hasGeneralEffects = true;
+		}
+		// effect.setOnfly();
+		
+		// Delta & Value (input propety changes with ???)
+		
+		// TODO: Selon quoi ce paramètre n'est plus Delta (move to Abstract if its the condition)
+		if (JAXBHandler.getValue(cs, current + "reserved8") != null) {
+			int delta = 0;
+			try {
+				delta = Integer.parseInt(JAXBHandler.getValue(cs, current + "reserved8").toString());
+			} catch (Exception ex) {
+				System.out.println("[SKILLS] Delta is a String for : " + JAXBHandler.getValue(cs, "name").toString());
+			}
+			if (delta != 0) {
+				effect.setDelta(delta);
+				hasGeneralEffects = true;
+			}
+		}
+		// TODO: Selon quoi ce paramètre n'est plus Value (move to Abstract if its the condition)
+		if (JAXBHandler.getValue(cs, current + "reserved9") != null) {
+			int value = 0;
+			try {
+				value = Integer.parseInt(JAXBHandler.getValue(cs, current + "reserved9").toString());
+			} catch (Exception ex) {
+				System.out.println("[SKILLS] Value is a String for : " + JAXBHandler.getValue(cs, "name").toString());
+			}
+			if (value != 0) {
+				effect.setValue(value);
+				hasGeneralEffects = true;
+			}
+		}
 		
 		return hasGeneralEffects;
 	}
