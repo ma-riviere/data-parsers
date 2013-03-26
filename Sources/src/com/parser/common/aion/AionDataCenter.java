@@ -38,7 +38,7 @@ import com.parser.read.aion.world.AionWorldDataParser;
 
 public class AionDataCenter {
 	
-	//TODO: Add all regular lists here
+	// ClientObjects lists (TODO)
 	public static List<ClientSkill> clientSkills = new ArrayList<ClientSkill>();
 	public static List<ClientItem> clientItems = new ArrayList<ClientItem>();
 	public static List<ClientSkillTree> clientSkillTree = new ArrayList<ClientSkillTree>();
