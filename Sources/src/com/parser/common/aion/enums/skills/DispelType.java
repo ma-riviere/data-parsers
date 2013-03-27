@@ -3,24 +3,21 @@ package com.parser.common.aion.enums.skills;
 /**
  * @author Viria
  */
-public enum TargetSlot {
-
+public enum DispelType {
+	
 	NONE,
-    BUFF,
-    DEBUFF,
-    SPEC("special"),
-    SPEC2("special2"),
-    BOOST,
-    NOSHOW,
-    CHANT;
+	EFFECTID("Effect_Id"),
+    EFFECTIDRANGE("Effect_ID_Range"),
+    EFFECTTYPE("Effect_Type"),
+    SLOTTYPE("Slot_Type");
 
 	private String clientString;
 	
-	private TargetSlot(String clientString) {
+	private DispelType(String clientString) {
 		this.clientString = clientString;
 	}
 	
-	private TargetSlot() {
+	private DispelType() {
 		this(null);
 	}
 	
@@ -30,8 +27,8 @@ public enum TargetSlot {
 	 * Returns the ENUM matching the given client string
 	 * If no Client String is bound to the enum, it will try to match the enum string value.
 	 */
-	public static TargetSlot fromClient(String string) {
-		for (TargetSlot v : values()) {
+	public static DispelType fromClient(String string) {
+		for (DispelType v : values()) {
 			if (v.getClientString() != null) {
 				if (v.getClientString().equalsIgnoreCase(string))
 					return v;
@@ -40,12 +37,12 @@ public enum TargetSlot {
 					return fromValue(string);
 			}
 		}
-		System.out.println("[SKILLS] No TargetSlot matching :" + string);
-		return TargetSlot.NONE;
+		System.out.println("[SKILLS] No DispelType matching :" + string);
+		return DispelType.NONE;
 	}
 	
-	public static TargetSlot fromValue(String name) {
-		for (TargetSlot v : values()) {
+	public static DispelType fromValue(String name) {
+		for (DispelType v : values()) {
 			if (v.toString().equalsIgnoreCase(name))
 				return v;
 		}

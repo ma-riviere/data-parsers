@@ -40,6 +40,7 @@ public class AionSkillsWriter extends AbstractWriter {
 	List<ClientSkill> skillBaseList = null;
 	List<ClientSkillTree> skillTreeList = null;
 	Map<String, ClientItem> stigmaItemMap = new HashMap<String, ClientItem>();
+	List<Integer> effectIds = null;
 	
 	public AionSkillsWriter(boolean analyse) {
 		this.ANALYSE = analyse;
@@ -54,6 +55,10 @@ public class AionSkillsWriter extends AbstractWriter {
 				stigmaItemMap.put(ci.getGainSkill1().toUpperCase(), ci);
 		}
 		System.out.println("[SKILLS] Loaded " + stigmaItemMap.size() + " Stigma Skill-Item pairs");
+		// for skillBaseList if JAXBHandler.getValue(cs, "effect"+a+"_type") != null
+		// et = EffectType.fromClient(JAXBHandler.getValue(cs, "effect"+a+"_type").toString()) !
+		// if et != null && et == EffectType.DISPEL
+		// effectIds.addAll(getEffectIds(cs, "effect"+a+"_");
 	}
 
 	@Override
@@ -84,8 +89,11 @@ public class AionSkillsWriter extends AbstractWriter {
 			st.setSkillsubtype(JAXBHandler.getValue(cs, "sub_type") == null ? "NONE" : SkillSubType.fromClient(JAXBHandler.getValue(cs, "sub_type").toString()).toString());
 			if (JAXBHandler.getValue(cs, "conflict_id") != 0)
 				st.setConflictId((Integer) JAXBHandler.getValue(cs, "conflict_id"));
-			if (JAXBHandler.getValue(cs, "target_slot") != null)
-				st.setTslot(TargetSlot.fromClient(JAXBHandler.getValue(cs, "target_slot").toString()).toString());
+			if (JAXBHandler.getValue(cs, "target_slot") != null) {
+				TargetSlot ts = TargetSlot.fromClient(JAXBHandler.getValue(cs, "target_slot").toString());
+				if (ts != TargetSlot.NONE)
+					st.setTslot(ts.toString());
+			}
 			if (JAXBHandler.getValue(cs, "target_slot_level") != 0)
 				st.setTslotLevel((Integer) JAXBHandler.getValue(cs, "target_slot_level"));
 			if (JAXBHandler.getValue(cs, "dispel_category") != null && DispelCategoryType.fromClient(JAXBHandler.getValue(cs, "dispel_category").toString()) != null)
@@ -122,7 +130,7 @@ public class AionSkillsWriter extends AbstractWriter {
 				st.setAvatar(true);
 			if (JAXBHandler.getValue(cs, "target_flying_restriction") != null && JAXBHandler.getValue(cs, "target_flying_restriction").toString().equalsIgnoreCase("ground"))
 				st.setGround(true);
-			if (JAXBHandler.getValue(cs, "dispel_category") == null) // TODO: If Debuff & require dispel level
+			if (JAXBHandler.getValue(cs, "dispel_category") == null) // TODO: if debuf, check all dispellable effectids, if inside, false
 				st.setUnpottable(true);
 			if (JAXBHandler.getValue(cs, "remove_at_fly_end") == 1)
 				st.setRemoveFlyend(true);
@@ -1029,6 +1037,26 @@ public class AionSkillsWriter extends AbstractWriter {
 				}
 			}
 		}
+		// DispelEffect
+		if (et == EffectType.DISPEL) {
+			DispelEffect e = new DispelEffect();
+			if (JAXBHandler.getValue(cs, current + "reserved1") != null) {
+				DispelType dtype = DispelType.fromClient(JAXBHandler.getValue(cs, current + "reserved1").toString());
+				if (dtype != DispelType.NONE) {
+					e.setDispeltype(dtype.toString());
+					if (dtype == DispelType.EFFECTID || dtype == DispelType.EFFECTIDRANGE && !getEffectIds(cs, current).isEmpty())
+						e.getEffectids().addAll(getEffectIds(cs, current));
+					else if (dtype == DispelType.EFFECTTYPE && !getEffectOrSlotType(cs, current).isEmpty())
+						e.getEffecttype().addAll(getEffectOrSlotType(cs, current));
+					else if (dtype == DispelType.SLOTTYPE && !getEffectOrSlotType(cs, current).isEmpty())
+						e.getSlottype().addAll(getEffectOrSlotType(cs, current));
+				}
+			}
+			if (setGeneral(cs, e, a)) {
+				effects.getRootAndStunAndSleep().add(e);
+				compute = true;
+			}
+		}
 		if (et.getAbstractCatetgory().equalsIgnoreCase("BufEffect")) {
 			// WeaponStatupEffect
 			// ShieldMasteryEffect
@@ -1286,6 +1314,35 @@ public class AionSkillsWriter extends AbstractWriter {
 		}
 		return hasDelta;
 	}	
+	
+	private List<Integer> getEffectIds(ClientSkill cs, String current) {
+		List<Integer> results = new ArrayList<Integer>();
+		for (int a = 2; a <= 9; a++) {
+			if (JAXBHandler.getValue(cs, current + "reserved"+a) != null) {
+				int value = getIntValue(cs, current, "reserved"+a);
+				if (value != 0)
+					results.add(value);
+			}
+		}
+		return results;
+	}
+	
+	private List<String> getEffectOrSlotType(ClientSkill cs, String current) {
+		List<String> results = new ArrayList<String>();
+		for (int a = 2; a <= 9; a++) {
+			if (JAXBHandler.getValue(cs, current + "reserved"+a) != null && JAXBHandler.getValue(cs, current + "reserved"+a).toString() != null) {
+				EffectType et = EffectType.fromClient(JAXBHandler.getValue(cs, current + "reserved"+a).toString());
+				if (et != null)
+					results.add(et.toString());
+				else {
+					TargetSlot ts = TargetSlot.fromClient(JAXBHandler.getValue(cs, current + "reserved"+a).toString());
+					if (ts != TargetSlot.NONE)
+						results.add(ts.toString());
+				}
+			}
+		}
+		return results;
+	}
 	
 	private int getIntValue(ClientSkill cs, String current, String property) {
 		int value = 0;

@@ -69,8 +69,7 @@ public class AionItemsWriter extends AbstractWriter {
 				if (EquipmentSlot.getEquipSlotByString(ci).getEquipmentSlot() != 0)
 					it.setSlot(EquipmentSlot.getEquipSlotByString(ci).getEquipmentSlot());
 				it.setCategory(ItemCategory.getMatchingCategory(ci).toString());
-				if (ItemCategory.getCategoryByName(it.getCategory()) != null)
-					it.setEquipmentType(ItemCategory.getCategoryByName(it.getCategory()).getEquipmentType());
+				
 				if (!Strings.isNullOrEmpty(ci.getItemType()))
 					it.setItemType(ci.getItemType().toUpperCase());
 				if (!Strings.isNullOrEmpty(ci.getWeaponType()) && !ci.getWeaponType().equalsIgnoreCase("no_weapon") && !ci.getWeaponType().equalsIgnoreCase("noweapon"))
@@ -83,6 +82,12 @@ public class AionItemsWriter extends AbstractWriter {
 						if (it.getCategory().equalsIgnoreCase("ARROW")) {it.setArmorType("ARROW");}
 						if (it.getCategory().equalsIgnoreCase("SHIELD")) {it.setArmorType("SHIELD");}
 					}
+				}
+				if (ItemCategory.getCategoryByName(it.getCategory()) != null) {
+					it.setEquipmentType(ItemCategory.getCategoryByName(it.getCategory()).getEquipmentType());
+					// Fixing Armors that don't have an equipmentType
+					if (it.getEquipmentType() == null && it.getArmorType() != null)
+						it.setEquipmentType("ARMOR");
 				}
 				// if (it.getSlot() != null && it.getSlot() == 24576) 
 					// it.setCategory("SHARD");
