@@ -200,66 +200,57 @@ public class AionSkillsWriter extends AbstractWriter {
 				
 				if (JAXBHandler.getValue(cs, "cost_parameter") != null && StringUtils.containsIgnoreCase(JAXBHandler.getValue(cs, "cost_parameter").toString(), "HP") && !isPeriodic(cs) && getCost(cs) != 0) {
 					HpCondition hp = new HpCondition();
-					if (!hasStartConditions)
-						hasStartConditions = setConditions(cs, start, hp);
+					hasStartConditions |= setConditions(cs, start, hp);
 				}
 				
 				if (JAXBHandler.getValue(cs, "cost_parameter") != null && StringUtils.containsIgnoreCase(JAXBHandler.getValue(cs, "cost_parameter").toString(), "MP") && !isPeriodic(cs) && getCost(cs) != 0) {
 					MpCondition mp = new MpCondition();
-					hasStartConditions = setConditions(cs, start, mp);
+					hasStartConditions |= setConditions(cs, start, mp);
 				}
 				
 				if (JAXBHandler.getValue(cs, "cost_dp") != null && JAXBHandler.getValue(cs, "cost_dp") != 0) {
 					DpCondition dp = new DpCondition();
-					if (!hasStartConditions)
-						hasStartConditions = setConditions(cs, start, dp);
+					hasStartConditions |= setConditions(cs, start, dp);
 				}
 				
 				WeaponCondition weap = new WeaponCondition();
-				hasStartConditions = setConditions(cs, start, weap);
+				hasStartConditions |= setConditions(cs, start, weap);
 				
 				if (JAXBHandler.getValue(cs, "required_leftweapon") != null) {
 					ArmorCondition armor = new ArmorCondition();
-					if (!hasStartConditions)
-						hasStartConditions = setConditions(cs, start, armor);
+						hasStartConditions |= setConditions(cs, start, armor);
 				}
 				
 				if (JAXBHandler.getValue(cs, "use_arrow") != null && (Integer) JAXBHandler.getValue(cs, "use_arrow") != 0) {
-					hasStartConditions = setConditions(cs, start, new ArrowCheckCondition());
+					hasStartConditions |= setConditions(cs, start, new ArrowCheckCondition());
 				}
 				
 				if (JAXBHandler.getValue(cs, "self_flying_restriction") != null) {
 					SelfFlyingCondition selfFlying = new SelfFlyingCondition();
-					if (!hasStartConditions)
-						hasStartConditions = setConditions(cs, start, selfFlying);
+					hasStartConditions |= setConditions(cs, start, selfFlying);
 				}
 				
 				if (JAXBHandler.getValue(cs, "target_species_restriction") != null
 					&& (JAXBHandler.getValue(cs, "target_species_restriction").toString().equalsIgnoreCase("PC") || JAXBHandler.getValue(cs, "target_species_restriction").toString().equalsIgnoreCase("NPC"))) {
 					TargetCondition target = new TargetCondition();
-					if (!hasStartConditions)
-						hasStartConditions = setConditions(cs, start, target);
+					hasStartConditions |= setConditions(cs, start, target);
 				}
 				
 				if (JAXBHandler.getValue(cs, "target_flying_restriction") != null) {
 					TargetFlyingCondition targetFlying = new TargetFlyingCondition();
-					if (!hasStartConditions)
-						hasStartConditions = setConditions(cs, start, targetFlying);
+					hasStartConditions |= setConditions(cs, start, targetFlying);
 				}
 				
 				if (JAXBHandler.getValue(cs, "nouse_combat_state") != null && (Integer) JAXBHandler.getValue(cs, "nouse_combat_state") != 0) {
-					if (!hasStartConditions)
-						hasStartConditions = setConditions(cs, start, new CombatCheckCondition());
+					hasStartConditions |= setConditions(cs, start, new CombatCheckCondition());
 				}
 				
 				ChainCondition chain = new ChainCondition();
-				if (!hasStartConditions)
-					hasStartConditions = setConditions(cs, start, chain);
+				hasStartConditions |= setConditions(cs, start, chain);
 				
 				if (JAXBHandler.getValue(cs, "allow_use_form_category") != null) {
 					FormCondition form = new FormCondition();
-					if (!hasStartConditions)
-						hasStartConditions = setConditions(cs, start, form);
+					hasStartConditions |= setConditions(cs, start, form);
 				}
 				
 			if (hasStartConditions)			
@@ -271,8 +262,7 @@ public class AionSkillsWriter extends AbstractWriter {
 			
 				if (JAXBHandler.getValue(cs, "target_stop") != null && (Integer) JAXBHandler.getValue(cs, "target_stop") == 0) {
 					PlayerMovedCondition move = new PlayerMovedCondition();
-					if (!hasUseConditions)
-						hasUseConditions = setConditions(cs, use, move);
+						hasUseConditions |= setConditions(cs, use, move);
 				}
 				
 			if (hasUseConditions)			
@@ -285,8 +275,7 @@ public class AionSkillsWriter extends AbstractWriter {
 				if (JAXBHandler.getValue(cs, "required_leftweapon") != null
 					&& JAXBHandler.getValue(cs, "sub_type") != null && JAXBHandler.getValue(cs, "sub_type").toString().equalsIgnoreCase("buff")) {
 					ArmorCondition armor = new ArmorCondition();
-					if (!hasEquipConditions)
-						hasEquipConditions = setConditions(cs, equip, armor);
+					hasEquipConditions |= setConditions(cs, equip, armor);
 				}
 				
 			if (hasEquipConditions)			
@@ -300,8 +289,7 @@ public class AionSkillsWriter extends AbstractWriter {
 				// [UPDATE] Update max value if skill get more effects
 				for (int a = 1; a <= 4; a++) {
 					if (JAXBHandler.getValue(cs, "effect"+a+"_type") != null && EffectType.fromClient(JAXBHandler.getValue(cs, "effect"+a+"_type").toString()) != null) {
-						if (!hasEffects)
-							hasEffects = computeEffects(cs, effects, EffectType.fromClient(JAXBHandler.getValue(cs, "effect"+a+"_type").toString()), a);
+						hasEffects |= computeEffects(cs, effects, EffectType.fromClient(JAXBHandler.getValue(cs, "effect"+a+"_type").toString()), a);
 					}
 				}
 				
@@ -372,7 +360,7 @@ public class AionSkillsWriter extends AbstractWriter {
 				if (JAXBHandler.getValue(cs, "cost_checktime_parameter") != null && StringUtils.containsIgnoreCase(JAXBHandler.getValue(cs, "cost_checktime_parameter").toString(), "MP")) {
 					MpUsePeriodicAction mp = new MpUsePeriodicAction();
 					mp.setValue(getChecktimeCost(cs));
-					// if (getChecktimeDelta(cs) != 0) {mp.setDelta(getChecktimeDelta(cs));} // TODO : Add ?
+					// if (getChecktimeDelta(cs) != 0) {mp.setDelta(getChecktimeDelta(cs));} // TODO : Add if needed
 					pa.getHpuseAndMpuse().add(mp);
 				}
 				st.setPeriodicactions(pa);
@@ -422,8 +410,8 @@ public class AionSkillsWriter extends AbstractWriter {
 	private int getWorld(String s) {return (s != null) ? new AionDataCenter().getInstance().getWorldIdByName(s) : 0;}
 	
 	private int getSkillLevel(ClientSkill cs) {
-		int level1 = 0;
-		int level2 = 0;
+		int level1 = 1;
+		int level2 = 1;
 		
 		// First calculation
 		String desc = JAXBHandler.getValue(cs, "desc").toString();
@@ -554,47 +542,58 @@ public class AionSkillsWriter extends AbstractWriter {
 			hp.setValue(getCost(cs));
 			hp.setDelta(getDelta(cs));
 			if (JAXBHandler.getValue(cs, "cost_parameter").toString().equalsIgnoreCase("HP_RATIO")) {hp.setRatio(true);}
-			conditions.getMpAndHpAndDp().add(hp);
-			hasConditions = true;
+			if (hp.getValue() != 0) {
+				conditions.getMpAndHpAndDp().add(hp);
+				hasConditions = true;
+			}
 		}
 		else if (c instanceof MpCondition) {
 			MpCondition mp = (MpCondition) c;
 			mp.setValue(getCost(cs));
 			mp.setDelta(getDelta(cs));
 			if (JAXBHandler.getValue(cs, "cost_parameter").toString().equalsIgnoreCase("MP_RATIO")) {mp.setRatio(true);}
-			conditions.getMpAndHpAndDp().add(mp);
-			hasConditions = true;
+			if (mp.getValue() != 0) {
+				conditions.getMpAndHpAndDp().add(mp);
+				hasConditions = true;
+			}
 		}
 		else if (c instanceof DpCondition) {
 			DpCondition dp = (DpCondition) c;
 			dp.setValue((Integer) JAXBHandler.getValue(cs, "cost_dp"));
-			conditions.getMpAndHpAndDp().add(dp);
-			hasConditions = true;
+			if (dp.getValue() != 0) {
+				conditions.getMpAndHpAndDp().add(dp);
+				hasConditions = true;
+			}
 		}
 		else if (c instanceof WeaponCondition) {
 			WeaponCondition weap = (WeaponCondition) c;
-			if (JAXBHandler.getValue(cs, "required_sword") != null && JAXBHandler.getValue(cs, "required_sword") == 1) {weap.getWeapon().add(WeaponType.SWORD_1H.toString()); hasConditions = true;}	
-			if (JAXBHandler.getValue(cs, "required_mace") != null && JAXBHandler.getValue(cs, "required_mace") == 1) {weap.getWeapon().add(WeaponType.MACE_1H.toString()); hasConditions = true;}	
-			if (JAXBHandler.getValue(cs, "required_dagger") != null && JAXBHandler.getValue(cs, "required_dagger") == 1) {weap.getWeapon().add(WeaponType.DAGGER_1H.toString()); hasConditions = true;}	
-			if (JAXBHandler.getValue(cs, "required_2hsword") != null && JAXBHandler.getValue(cs, "required_2hsword") == 1) {weap.getWeapon().add(WeaponType.SWORD_2H.toString()); hasConditions = true;}	
-			if (JAXBHandler.getValue(cs, "required_polearm") != null && JAXBHandler.getValue(cs, "required_polearm") == 1) {weap.getWeapon().add(WeaponType.POLEARM_2H.toString()); hasConditions = true;}	
-			if (JAXBHandler.getValue(cs, "required_staff") != null && JAXBHandler.getValue(cs, "required_staff") == 1) {weap.getWeapon().add(WeaponType.STAFF_2H.toString()); hasConditions = true;}
-			if (JAXBHandler.getValue(cs, "required_bow") != null && JAXBHandler.getValue(cs, "required_bow") == 1) {weap.getWeapon().add(WeaponType.BOW.toString()); hasConditions = true;}
-			if (JAXBHandler.getValue(cs, "required_orb") != null && JAXBHandler.getValue(cs, "required_orb") == 1) {weap.getWeapon().add(WeaponType.ORB_2H.toString()); hasConditions = true;}
-			if (JAXBHandler.getValue(cs, "required_book") != null && JAXBHandler.getValue(cs, "required_book") == 1) {weap.getWeapon().add(WeaponType.BOOK_2H.toString()); hasConditions = true;}
-			if (JAXBHandler.getValue(cs, "required_gun") != null && JAXBHandler.getValue(cs, "required_gun") == 1) {weap.getWeapon().add(WeaponType.GUN_1H.toString()); hasConditions = true;}
-			if (JAXBHandler.getValue(cs, "required_cannon") != null && JAXBHandler.getValue(cs, "required_cannon") == 1) {weap.getWeapon().add(WeaponType.CANON_2H.toString()); hasConditions = true;}
-			if (JAXBHandler.getValue(cs, "required_harp") != null && JAXBHandler.getValue(cs, "required_harp") == 1) {weap.getWeapon().add(WeaponType.HARP_2H.toString()); hasConditions = true;}
-			if (JAXBHandler.getValue(cs, "required_keyblade") != null && JAXBHandler.getValue(cs, "required_keyblade") == 1) {weap.getWeapon().add(WeaponType.KEYBLADE_2H.toString()); hasConditions = true;}
-			if (JAXBHandler.getValue(cs, "required_keyhammer") != null && JAXBHandler.getValue(cs, "required_keyhammer") == 1) {weap.getWeapon().add(WeaponType.KEYHAMMER_2H.toString()); hasConditions = true;}
-			// if (JAXBHandler.getValue(cs, "required_ride_robot") == 1) {weap.getWeapon().add(WeaponType.RIDE_ROBOT.toString()); hasConditions = true;}
-			conditions.getMpAndHpAndDp().add(weap);
+			if (JAXBHandler.getValue(cs, "required_sword") != null && JAXBHandler.getValue(cs, "required_sword") == 1) {weap.getWeapon().add(WeaponType.SWORD_1H.toString());}	
+			if (JAXBHandler.getValue(cs, "required_mace") != null && JAXBHandler.getValue(cs, "required_mace") == 1) {weap.getWeapon().add(WeaponType.MACE_1H.toString());}	
+			if (JAXBHandler.getValue(cs, "required_dagger") != null && JAXBHandler.getValue(cs, "required_dagger") == 1) {weap.getWeapon().add(WeaponType.DAGGER_1H.toString());}	
+			if (JAXBHandler.getValue(cs, "required_2hsword") != null && JAXBHandler.getValue(cs, "required_2hsword") == 1) {weap.getWeapon().add(WeaponType.SWORD_2H.toString());}	
+			if (JAXBHandler.getValue(cs, "required_polearm") != null && JAXBHandler.getValue(cs, "required_polearm") == 1) {weap.getWeapon().add(WeaponType.POLEARM_2H.toString());}	
+			if (JAXBHandler.getValue(cs, "required_staff") != null && JAXBHandler.getValue(cs, "required_staff") == 1) {weap.getWeapon().add(WeaponType.STAFF_2H.toString());}
+			if (JAXBHandler.getValue(cs, "required_bow") != null && JAXBHandler.getValue(cs, "required_bow") == 1) {weap.getWeapon().add(WeaponType.BOW.toString());}
+			if (JAXBHandler.getValue(cs, "required_orb") != null && JAXBHandler.getValue(cs, "required_orb") == 1) {weap.getWeapon().add(WeaponType.ORB_2H.toString());}
+			if (JAXBHandler.getValue(cs, "required_book") != null && JAXBHandler.getValue(cs, "required_book") == 1) {weap.getWeapon().add(WeaponType.BOOK_2H.toString());}
+			if (JAXBHandler.getValue(cs, "required_gun") != null && JAXBHandler.getValue(cs, "required_gun") == 1) {weap.getWeapon().add(WeaponType.GUN_1H.toString());}
+			if (JAXBHandler.getValue(cs, "required_cannon") != null && JAXBHandler.getValue(cs, "required_cannon") == 1) {weap.getWeapon().add(WeaponType.CANON_2H.toString());}
+			if (JAXBHandler.getValue(cs, "required_harp") != null && JAXBHandler.getValue(cs, "required_harp") == 1) {weap.getWeapon().add(WeaponType.HARP_2H.toString());}
+			if (JAXBHandler.getValue(cs, "required_keyblade") != null && JAXBHandler.getValue(cs, "required_keyblade") == 1) {weap.getWeapon().add(WeaponType.KEYBLADE_2H.toString());}
+			if (JAXBHandler.getValue(cs, "required_keyhammer") != null && JAXBHandler.getValue(cs, "required_keyhammer") == 1) {weap.getWeapon().add(WeaponType.KEYHAMMER_2H.toString());}
+			// if (JAXBHandler.getValue(cs, "required_ride_robot") == 1) {weap.getWeapon().add(WeaponType.RIDE_ROBOT.toString());}
+			if (!weap.getWeapon().isEmpty()) {
+				conditions.getMpAndHpAndDp().add(weap);
+				hasConditions = true;
+			}
 		}
 		else if (c instanceof ArmorCondition) {
 			ArmorCondition armor = (ArmorCondition) c;
 			armor.setArmor(ArmorType.fromClient(JAXBHandler.getValue(cs, "required_leftweapon").toString()).toString());
-			conditions.getMpAndHpAndDp().add(armor);
-			hasConditions = true;
+			if (armor.getArmor() != null) {
+				conditions.getMpAndHpAndDp().add(armor);
+				hasConditions = true;
+			}
 		}
 		else if (c instanceof ArrowCheckCondition) {
 			ArrowCheckCondition arrow = (ArrowCheckCondition) c;
@@ -604,8 +603,10 @@ public class AionSkillsWriter extends AbstractWriter {
 		else if (c instanceof PlayerMovedCondition) {
 			PlayerMovedCondition move = (PlayerMovedCondition) c;
 			move.setAllow(false);
-			conditions.getMpAndHpAndDp().add(move);
-			hasConditions = true;
+			if (!move.isAllow()) {
+				conditions.getMpAndHpAndDp().add(move);
+				hasConditions = true;
+			}
 		}/*
 		else if (c instanceof AbnormalStateCondition) {
 			AbnormalStateCondition abnormal = (AbnormalStateCondition) c;
@@ -616,20 +617,26 @@ public class AionSkillsWriter extends AbstractWriter {
 		else if (c instanceof TargetCondition) {
 			TargetCondition target = (TargetCondition) c;
 			target.setValue(TargetAttribute.fromClient(JAXBHandler.getValue(cs, "target_species_restriction").toString()).toString());
-			conditions.getMpAndHpAndDp().add(target);
-			hasConditions = true;
+			if (target.getValue() != null) {
+				conditions.getMpAndHpAndDp().add(target);
+				hasConditions = true;
+			}
 		}
 		else if (c instanceof TargetFlyingCondition) {
 			TargetFlyingCondition targetFlying = (TargetFlyingCondition) c;
 			targetFlying.setRestriction(FlyingRestriction.fromClient(JAXBHandler.getValue(cs, "target_flying_restriction").toString()).toString());
-			conditions.getMpAndHpAndDp().add(targetFlying);
-			hasConditions = true;
+			if (targetFlying.getRestriction() != null) {
+				conditions.getMpAndHpAndDp().add(targetFlying);
+				hasConditions = true;
+			}
 		}
 		else if (c instanceof SelfFlyingCondition) {
 			SelfFlyingCondition selfFlying = (SelfFlyingCondition) c;
 			selfFlying.setRestriction(FlyingRestriction.fromClient(JAXBHandler.getValue(cs, "self_flying_restriction").toString()).toString());
-			conditions.getMpAndHpAndDp().add(selfFlying);
-			hasConditions = true;
+			if (selfFlying.getRestriction() != null) {
+				conditions.getMpAndHpAndDp().add(selfFlying);
+				hasConditions = true;
+			}
 		}/*
 		else if (c instanceof OnFlyCondition) {
 			OnFlyCondition onFly = (OnFlyCondition) c;
@@ -645,27 +652,15 @@ public class AionSkillsWriter extends AbstractWriter {
 		}*/
 		else if (c instanceof ChainCondition) {
 			ChainCondition chain = (ChainCondition) c;
-			if (JAXBHandler.getValue(cs, "self_chain_count") != null && JAXBHandler.getValue(cs, "self_chain_count") != 0) {
-				chain.setSelfcount((Integer) JAXBHandler.getValue(cs, "self_chain_count"));
+			if (JAXBHandler.getValue(cs, "self_chain_count") != null && JAXBHandler.getValue(cs, "self_chain_count") != 0) {chain.setSelfcount((Integer) JAXBHandler.getValue(cs, "self_chain_count"));}
+			if (JAXBHandler.getValue(cs, "prechain_count") != null && JAXBHandler.getValue(cs, "prechain_count") != 0) {chain.setPrecount((Integer) JAXBHandler.getValue(cs, "prechain_count"));}
+			if (JAXBHandler.getValue(cs, "chain_time") != null && JAXBHandler.getValue(cs, "chain_time") != 0) {chain.setTime((Integer) JAXBHandler.getValue(cs, "chain_time"));}
+			if (JAXBHandler.getValue(cs, "prechain_category_name") != null) {chain.setPrecategory(JAXBHandler.getValue(cs, "prechain_category_name").toString().toUpperCase());}
+			if (JAXBHandler.getValue(cs, "chain_category_name") != null) {chain.setCategory(JAXBHandler.getValue(cs, "chain_category_name").toString().toUpperCase());}
+			if (chain.getSelfcount() != null || chain.getPrecount() != null || chain.getTime() != null || chain.getPrecategory() != null || chain.getCategory() != null) {
+				conditions.getMpAndHpAndDp().add(chain);
 				hasConditions = true;
 			}
-			if (JAXBHandler.getValue(cs, "prechain_count") != null && JAXBHandler.getValue(cs, "prechain_count") != 0) {
-				chain.setPrecount((Integer) JAXBHandler.getValue(cs, "prechain_count"));
-				hasConditions = true;
-			}
-			if (JAXBHandler.getValue(cs, "chain_time") != null && JAXBHandler.getValue(cs, "chain_time") != 0) {
-				chain.setTime((Integer) JAXBHandler.getValue(cs, "chain_time"));
-				hasConditions = true;
-			}
-			if (JAXBHandler.getValue(cs, "prechain_category_name") != null) {
-				chain.setPrecategory(JAXBHandler.getValue(cs, "prechain_category_name").toString().toUpperCase());
-				hasConditions = true;
-			}
-			if (JAXBHandler.getValue(cs, "chain_category_name") != null) {
-				chain.setCategory(JAXBHandler.getValue(cs, "chain_category_name").toString().toUpperCase());
-				hasConditions = true;
-			}
-			conditions.getMpAndHpAndDp().add(chain);
 		}/*
 		else if (c instanceof BackCondition) {
 			BackCondition back = (BackCondition) c;
@@ -676,8 +671,10 @@ public class AionSkillsWriter extends AbstractWriter {
 		else if (c instanceof FormCondition) {
 			FormCondition form = (FormCondition) c;
 			form.setValue(TransformType.fromClient(JAXBHandler.getValue(cs, "allow_use_form_category").toString()).toString());
-			conditions.getMpAndHpAndDp().add(form);
-			hasConditions = true;
+			if (form.getValue() != null) {
+				conditions.getMpAndHpAndDp().add(form);
+				hasConditions = true;
+			}
 		}
 		else if (c instanceof CombatCheckCondition) {
 			CombatCheckCondition combat = (CombatCheckCondition) c;
@@ -757,28 +754,28 @@ public class AionSkillsWriter extends AbstractWriter {
 			// HealOverTimeEffect
 			if (et == EffectType.HEAL) {
 				HealEffect heal = new HealEffect();
-				if (setGeneral(cs, heal, a) || setAbstractOverTimeEffect(cs, heal, current)) {
+				if (setGeneral(cs, heal, a) | setAbstractOverTimeEffect(cs, heal, current)) {
 					effects.getRootAndStunAndSleep().add(heal);
 					compute = true;
 				}
 			}
 			if (et == EffectType.MPHEAL) {
 				MPHealEffect mpHeal = new MPHealEffect();
-				if (setGeneral(cs, mpHeal, a) || setAbstractOverTimeEffect(cs, mpHeal, current)) {
+				if (setGeneral(cs, mpHeal, a) | setAbstractOverTimeEffect(cs, mpHeal, current)) {
 					effects.getRootAndStunAndSleep().add(mpHeal);
 					compute = true;
 				}
 			}
 			if (et == EffectType.FPHEAL) {
 				FPHealEffect fpHeal = new FPHealEffect();
-				if (setGeneral(cs, fpHeal, a) || setAbstractOverTimeEffect(cs, fpHeal, current)) {
+				if (setGeneral(cs, fpHeal, a) | setAbstractOverTimeEffect(cs, fpHeal, current)) {
 					effects.getRootAndStunAndSleep().add(fpHeal);
 					compute = true;
 				}
 			}
 			if (et == EffectType.DPHEAL) {
 				DPHealEffect dpHeal = new DPHealEffect();
-				if (setGeneral(cs, dpHeal, a) || setAbstractOverTimeEffect(cs, dpHeal, current)) {
+				if (setGeneral(cs, dpHeal, a) | setAbstractOverTimeEffect(cs, dpHeal, current)) {
 					effects.getRootAndStunAndSleep().add(dpHeal);
 					compute = true;
 				}
@@ -786,7 +783,7 @@ public class AionSkillsWriter extends AbstractWriter {
 			// SpellAtackEffect
 			if (et == EffectType.SPELLATK) {
 				SpellAttackEffect spell = new SpellAttackEffect();
-				if (setGeneral(cs, spell, a) || setAbstractOverTimeEffect(cs, spell, current)) {
+				if (setGeneral(cs, spell, a) | setAbstractOverTimeEffect(cs, spell, current)) {
 					effects.getRootAndStunAndSleep().add(spell);
 					compute = true;
 				}
@@ -795,21 +792,292 @@ public class AionSkillsWriter extends AbstractWriter {
 			if (et == EffectType.SPELLATKDRAIN) {
 				SpellAtkDrainEffect spellDrain = new SpellAtkDrainEffect();
 				boolean check = false;
-				if () {
-					spellDrain.setHpPercent();
-					check = true;
+				if (JAXBHandler.getValue(cs, current + "reserved15") != null) {
+					int value = getIntValue(cs, current, "reserved15");
+					if (value != 0) {
+						spellDrain.setHpPercent(value);
+						check = true;
+					}
 				}
-				if () {
-					spellDrain.setMpPercent();
-					check = true;
-					
+				if (JAXBHandler.getValue(cs, current + "reserved17") != null) {
+					int value = getIntValue(cs, current, "reserved17");
+					if (value != 0) {
+						spellDrain.setMpPercent(value);
+						check = true;
+					}
 				}
-				if (check || setGeneral(cs, spellDrain, a) || setAbstractOverTimeEffect(cs, spellDrain, current)) {
+				if (setGeneral(cs, spellDrain, a) | setAbstractOverTimeEffect(cs, spellDrain, current) | check) {
 					effects.getRootAndStunAndSleep().add(spellDrain);
 					compute = true;
 				}
 			}
-			
+			// MpAttackEffect
+			if (et == EffectType.MPATTACK) {
+				MpAttackEffect mpAttack = new MpAttackEffect();
+				if (setGeneral(cs, mpAttack, a) | setAbstractOverTimeEffect(cs, mpAttack, current)) {
+					effects.getRootAndStunAndSleep().add(mpAttack);
+					compute = true;
+				}
+			}
+			// FpAttackEffect
+			if (et == EffectType.FPATK) {
+				MpAttackEffect fpAttack = new MpAttackEffect();
+				if (setGeneral(cs, fpAttack, a) | setAbstractOverTimeEffect(cs, fpAttack, current)) {
+					effects.getRootAndStunAndSleep().add(fpAttack);
+					compute = true;
+				}
+			}
+			// BleedEffect
+			if (et == EffectType.BLEED) {
+				BleedEffect bleed = new BleedEffect();
+				if (setGeneral(cs, bleed, a) | setAbstractOverTimeEffect(cs, bleed, current)) {
+					effects.getRootAndStunAndSleep().add(bleed);
+					compute = true;
+				}
+			}
+			// PoisonEffect
+			if (et == EffectType.POISON) {
+				PoisonEffect poison = new PoisonEffect();
+				if (setGeneral(cs, poison, a) | setAbstractOverTimeEffect(cs, poison, current)) {
+					effects.getRootAndStunAndSleep().add(poison);
+					compute = true;
+				}
+			}
+		}
+		if (et.getAbstractCatetgory().equalsIgnoreCase("AbstractHealEffect")) {
+			// HealInstantEffect
+			if (et == EffectType.HEAL_INSTANT) {
+				HealInstantEffect e = new HealInstantEffect();
+				if (setGeneral(cs, e, a) | setAbstractHealEffect(cs, e, current)) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
+			// MPHealInstantEffect
+			if (et == EffectType.MPHEAL_INSTANT) {
+				MPHealInstantEffect e = new MPHealInstantEffect();
+				if (setGeneral(cs, e, a) | setAbstractHealEffect(cs, e, current)) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
+			// DPHealInstantEffect
+			if (et == EffectType.DPHEAL_INSTANT) {
+				DPHealInstantEffect e = new DPHealInstantEffect();
+				if (setGeneral(cs, e, a) | setAbstractHealEffect(cs, e, current)) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
+			// FPHealInstantEffect
+			if (et == EffectType.FPHEAL_INSTANT) {
+				FPHealInstantEffect e = new FPHealInstantEffect();
+				if (setGeneral(cs, e, a) | setAbstractHealEffect(cs, e, current)) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
+			// ProcHealInstantEffect
+			if (et == EffectType.PROCHEAL_INSTANT) {
+				ProcHealInstantEffect e = new ProcHealInstantEffect();
+				if (setGeneral(cs, e, a) | setAbstractHealEffect(cs, e, current)) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
+			// ProcMPHealInstantEffect
+			if (et == EffectType.PROCMPHEAL_INSTANT) {
+				ProcMPHealInstantEffect e = new ProcMPHealInstantEffect();
+				if (setGeneral(cs, e, a) | setAbstractHealEffect(cs, e, current)) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
+			// ProcDPHealInstantEffect
+			if (et == EffectType.PROCDPHEAL_INSTANT) {
+				ProcDPHealInstantEffect e = new ProcDPHealInstantEffect();
+				if (setGeneral(cs, e, a) | setAbstractHealEffect(cs, e, current)) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
+			// ProcFPHealInstantEffect
+			if (et == EffectType.PROCFPHEAL_INSTANT) {
+				ProcFPHealInstantEffect e = new ProcFPHealInstantEffect();
+				if (setGeneral(cs, e, a) | setAbstractHealEffect(cs, e, current)) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
+			// ProcVPHealInstantEffect
+			if (et == EffectType.PROCVPHEAL_INSTANT) {
+				ProcVPHealInstantEffect e = new ProcVPHealInstantEffect();
+				if (JAXBHandler.getValue(cs, current + "reserved3") != null) {
+					int value = getIntValue(cs, current, "reserved3");
+					if (value != 0) {
+						e.setValue2(value);
+					}
+				}
+				if (setGeneral(cs, e, a) | setAbstractHealEffect(cs, e, current) | e.getValue2() != null) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
+			// CaseHealEffect
+			if (et == EffectType.CASEHEAL) {
+				CaseHealEffect e = new CaseHealEffect();
+				if (JAXBHandler.getValue(cs, current + "reserved10") != null) {
+					int value = getIntValue(cs, current, "reserved10");
+					if (value != 0) {
+						e.setCondValue(value);
+					}
+				}
+				if (JAXBHandler.getValue(cs, current + "reserved13") != null) {
+					e.setType(HealType.fromClient(JAXBHandler.getValue(cs, current + "reserved13").toString()).toString());
+				}
+				if (setGeneral(cs, e, a) | setAbstractHealEffect(cs, e, current) | e.getType() != null | e.getCondValue() != null) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
+			// HealCastorOnAttackedEffect
+			if (et == EffectType.HEALCASTORONATTACKED) {
+				HealCastorOnAttackedEffect e = new HealCastorOnAttackedEffect();
+				boolean check = false;
+				if (JAXBHandler.getValue(cs, current + "reserved4") != null) {
+					float value = getFloatValue(cs, current, "reserved4");
+					if (value != 0.0f) {
+						e.setRange(value);
+						check = true;
+					}
+				}
+				e.setType("HP");
+				if (setGeneral(cs, e, a) | setAbstractHealEffect(cs, e, current) | check) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
+			// HealCastorOnTargetDeadEffect
+			if (et == EffectType.HEALCASTORONTARGETDEAD) {
+				HealCastorOnTargetDeadEffect e = new HealCastorOnTargetDeadEffect();
+				boolean check = false;
+				if (JAXBHandler.getValue(cs, current + "reserved4") != null) {
+					float value = getFloatValue(cs, current, "reserved4");
+					if (value != 0.0f) {
+						e.setRange(value);
+						check = true;
+					}
+				}
+				e.setType("HP");
+				if (JAXBHandler.getValue(cs, current + "reserved14") != null && JAXBHandler.getValue(cs, current + "reserved14").toString().equalsIgnoreCase("Castor_Party")) {
+					e.setHealparty(true);
+					check = true;
+				}
+				if (setGeneral(cs, e, a) | setAbstractHealEffect(cs, e, current) | check) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
+		}
+		if (et.getAbstractCatetgory().equalsIgnoreCase("AbstractDispelEffect")) {
+			// DispelDebuffEffect
+			if (et == EffectType.DISPELDEBUFF) {
+				DispelDebuffEffect e = new DispelDebuffEffect();
+				if (setGeneral(cs, e, a) | setAbstractDispelEffect(cs, e, current)) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
+			// DispelNpcDebuffEffect
+			if (et == EffectType.DISPELNPCDEBUFF) {
+				DispelNpcDebuffEffect e = new DispelNpcDebuffEffect();
+				if (setGeneral(cs, e, a) | setAbstractDispelEffect(cs, e, current)) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
+			// DispelDebuffPhysicalEffect
+			if (et == EffectType.DISPELDEBUFFPHYSICAL) {
+				DispelDebuffPhysicalEffect e = new DispelDebuffPhysicalEffect();
+				if (setGeneral(cs, e, a) | setAbstractDispelEffect(cs, e, current)) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
+			// DispelDebuffMentalEffect
+			if (et == EffectType.DISPELDEBUFFMENTAL) {
+				DispelDebuffMentalEffect e = new DispelDebuffMentalEffect();
+				if (setGeneral(cs, e, a) | setAbstractDispelEffect(cs, e, current)) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
+			// DispelBuffEffect
+			if (et == EffectType.DISPELBUFF) {
+				DispelBuffEffect e = new DispelBuffEffect();
+				if (setGeneral(cs, e, a) | setAbstractDispelEffect(cs, e, current)) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
+			// DispelNpcBuffEffect
+			if (et == EffectType.DISPELNPCBUFF) {
+				DispelNpcBuffEffect e = new DispelNpcBuffEffect();
+				if (setGeneral(cs, e, a) | setAbstractDispelEffect(cs, e, current)) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
+		}
+		if (et.getAbstractCatetgory().equalsIgnoreCase("BufEffect")) {
+			// WeaponStatupEffect
+			// ShieldMasteryEffect
+			// OneTimeBoostHealEffect
+			// SubTypeExtendDurationEffect
+			// ExtendAuraRangeEffect
+			// NoDeathPenaltyEffect
+			// StatboostEffect
+			// HiPassEffect
+			// OneTimeBoostSkillCriticalEffect
+			// BoostSpellAttackEffect
+			// CurseEffect
+			// DeboostHealEffect
+			// XPBoostEffect
+			// NoResurrectPenaltyEffect
+			// BoostSkillCastingTimeEffect
+			// BoostDropRateEffect
+			// WeaponStatboostEffect
+			// WeaponMasteryEffect
+			if (et == EffectType.WPN_MASTERY) {
+				WeaponMasteryEffect e = new WeaponMasteryEffect();
+				if (JAXBHandler.getValue(cs, current + "reserved5") != null) {
+					WeaponType weapon = WeaponType.fromClient(JAXBHandler.getValue(cs, current + "reserved5").toString());
+					e.setWeapon(weapon.toString());
+				}
+				if (setGeneral(cs, e, a) | setBufEffect(cs, e, current) | e.getWeapon() != null) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
+			// ArmorMasteryEffect
+			if (et == EffectType.AMR_MASTERY) {
+				ArmorMasteryEffect e = new ArmorMasteryEffect();
+				if (JAXBHandler.getValue(cs, current + "reserved5") != null) {
+					ArmorType armor = ArmorType.fromClient(JAXBHandler.getValue(cs, current + "reserved5").toString());
+					e.setArmor(armor.toString());
+				}
+				if (setGeneral(cs, e, a) | setBufEffect(cs, e, current) | e.getArmor() != null) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
+			// StatupEffect
+			// StatdownEffect
+			// SwitchHostileEffect
+			// BoostHateEffect
+			// SubTypeBoostResistEffect
+			// BoostHealEffect
+			// WeaponDualEffect
 		}
 		
 		return compute;
@@ -819,7 +1087,7 @@ public class AionSkillsWriter extends AbstractWriter {
 		boolean hasGeneralEffects = false;
 		String current = "effect" + a + "_";
 		
-		/**
+		/** TODO
 		protected SubEffect subeffect;
 		protected ActionModifiers modifiers;
 		protected List<Change> change;
@@ -860,8 +1128,11 @@ public class AionSkillsWriter extends AbstractWriter {
 			hasGeneralEffects = true;
 		}
 		if (JAXBHandler.getValue(cs, current + "reserved10") != null) {
-			effect.setElement(Element.fromClient(JAXBHandler.getValue(cs, current + "reserved10").toString().toUpperCase()).toString());
-			hasGeneralEffects = true;
+			Element element = Element.fromClient(JAXBHandler.getValue(cs, current + "reserved10").toString());
+			if (element != Element.NONE) {
+				effect.setElement(element.toString());
+				hasGeneralEffects = true;
+			}
 		}
 		if (a > 1 && JAXBHandler.getValue(cs, current + "reserved_cond"+(a-1)+"_prob2") != null
 			&& (Integer) JAXBHandler.getValue(cs, current + "reserved_cond"+(a-1)+"_prob2") != 0 && (Integer) JAXBHandler.getValue(cs, current + "reserved_cond"+(a-1)+"_prob2") != 100) {
@@ -869,8 +1140,11 @@ public class AionSkillsWriter extends AbstractWriter {
 			hasGeneralEffects = true;
 		}
 		if (JAXBHandler.getValue(cs, current + "reserved_cond1") != null) {
-			effect.setHittype(HitType.fromClient(JAXBHandler.getValue(cs, current + "reserved_cond1").toString().toUpperCase()).toString());
-			hasGeneralEffects = true;
+			HitType hitType = HitType.fromClient(JAXBHandler.getValue(cs, current + "reserved_cond1").toString());
+			if (hitType != HitType.NONE) {
+				effect.setHittype(hitType.toString());
+				hasGeneralEffects = true;
+			}
 		}
 		// effect.setMrresist(); //TODO: Remove, unused
 		if (JAXBHandler.getValue(cs, current + "acc_mod1") != null && (Integer) JAXBHandler.getValue(cs, current + "acc_mod1") != 0) {
@@ -908,48 +1182,128 @@ public class AionSkillsWriter extends AbstractWriter {
 		}
 		// effect.setOnfly(); //TODO Remove, unused
 		
-		// Delta & Value (input propety changes with ???)
-		
-		// TODO: Selon quoi ce paramètre n'est plus Delta (move to Abstract if its the condition)
-		if (JAXBHandler.getValue(cs, current + "reserved8") != null) {
-			int delta = 0;
-			try {
-				delta = Integer.parseInt(JAXBHandler.getValue(cs, current + "reserved8").toString());
-			} catch (Exception ex) {
-				System.out.println("[SKILLS] Delta is a String for : " + JAXBHandler.getValue(cs, "name").toString());
-			}
-			if (delta != 0) {
-				effect.setDelta(delta);
-				hasGeneralEffects = true;
-			}
-		}
-		// TODO: Selon quoi ce paramètre n'est plus Value (move to Abstract if its the condition)
-		if (JAXBHandler.getValue(cs, current + "reserved9") != null) {
-			int value = 0;
-			try {
-				value = Integer.parseInt(JAXBHandler.getValue(cs, current + "reserved9").toString());
-			} catch (Exception ex) {
-				System.out.println("[SKILLS] Value is a String for : " + JAXBHandler.getValue(cs, "name").toString());
-			}
-			if (value != 0) {
-				effect.setValue(value);
-				hasGeneralEffects = true;
-			}
-		}
+		// [NOTICE] Delta & Value are set seperatly in each AbstractEffect
 		
 		return hasGeneralEffects;
 	}
 	
 	private boolean setAbstractOverTimeEffect(ClientSkill cs, AbstractOverTimeEffect effect, String current) {
-		boolean hasEffects = false;
+		boolean hasAbstractEffects = false;
 		if (JAXBHandler.getValue(cs, current + "checktime") != null && JAXBHandler.getValue(cs, current + "checktime") != 0) {
 			effect.setChecktime((Integer) JAXBHandler.getValue(cs, current + "checktime"));
-			hasEffects = true;
+			hasAbstractEffects = true;
 		}
-		if (JAXBHandler.getValue(cs, current + "reserved6") != null && JAXBHandler.getValue(cs, current + "reserved6") == 1) {
-			effect.setPercent(true);
-			hasEffects = true;
+		if (JAXBHandler.getValue(cs, current + "reserved6") != null) {
+			int value = getIntValue(cs, current, "reserved6");
+			if (value == 1) {
+				effect.setPercent(true);
+				hasAbstractEffects = true;
+			}
 		}
-		return hasEffects;
+		hasAbstractEffects |= setDelta(cs, effect, current, "reserved8");
+		hasAbstractEffects |= setValue(cs, effect, current, "reserved9");
+		return hasAbstractEffects;
+	}
+	
+	private boolean setAbstractHealEffect(ClientSkill cs, AbstractHealEffect effect, String current) {
+		boolean hasAbstractEffects = false;
+		if (JAXBHandler.getValue(cs, current + "reserved6") != null) {
+			int value = getIntValue(cs, current, "reserved6");
+			if (value == 1) {
+				effect.setPercent(true);
+				hasAbstractEffects = true;
+			}
+		}
+		hasAbstractEffects |= setDelta(cs, effect, current, "reserved1");
+		hasAbstractEffects |= setValue(cs, effect, current, "reserved2");
+		return hasAbstractEffects;
+	}
+	
+	private boolean setAbstractDispelEffect(ClientSkill cs, AbstractDispelEffect effect, String current) {
+		boolean hasAbstractEffects = false;
+	
+		if (JAXBHandler.getValue(cs, current + "reserved16") != null) {
+			int value = getIntValue(cs, current, "reserved16");
+			if (value != 0) {
+				effect.setDispelLevel(value);
+				hasAbstractEffects = true;
+			}
+		}
+		if (JAXBHandler.getValue(cs, current + "reserved17") != null) {
+			int value = getIntValue(cs, current, "reserved17");
+			if (value != 0) {
+				effect.setDpower(value);
+				hasAbstractEffects = true;
+			}
+		}
+		if (JAXBHandler.getValue(cs, current + "reserved18") != null) {
+			int value = getIntValue(cs, current, "reserved18");
+			if (value != 0) {
+				effect.setPower(value);
+				hasAbstractEffects = true;
+			}
+		}
+		hasAbstractEffects |= setDelta(cs, effect, current, "reserved1");
+		hasAbstractEffects |= setValue(cs, effect, current, "reserved2");
+		return hasAbstractEffects;
+	}
+	
+	private boolean setBufEffect(ClientSkill cs, BufEffect effect, String current) {
+		boolean hasAbstractEffects = false;
+	
+		// if (JAXBHandler.getValue(cs, current + "reserved16") != null) {
+			// int value = getIntValue(cs, current, "reserved16");
+			// if (value != 0) {
+				effect.setMaxstat(true); // TODO !!!!!!!!!!!!!!!!
+				// hasAbstractEffects = true;
+			// }
+		// }
+		// hasAbstractEffects |= setDelta(cs, effect, current, "reserved1");
+		// hasAbstractEffects |= setValue(cs, effect, current, "reserved2");
+		return hasAbstractEffects;
+	}
+	
+	private boolean setValue(ClientSkill cs, Effect effect, String current, String property) {
+		boolean hasValue = false;
+		if (JAXBHandler.getValue(cs, current + property) != null) {
+			int value = getIntValue(cs, current, property);
+			if (value != 0) {
+				effect.setValue(value);
+				hasValue = true;
+			}
+		}
+		return hasValue;
+	}
+	
+	private boolean setDelta(ClientSkill cs, Effect effect, String current, String property) {
+		boolean hasDelta = false;
+		if (JAXBHandler.getValue(cs, current + property) != null) {
+			int delta = getIntValue(cs, current, property);
+			if (delta != 0) {
+				effect.setDelta(delta);
+				hasDelta = true;
+			}
+		}
+		return hasDelta;
+	}	
+	
+	private int getIntValue(ClientSkill cs, String current, String property) {
+		int value = 0;
+		try {
+			value = Integer.parseInt(JAXBHandler.getValue(cs, current + property).toString());
+		} catch (Exception ex) {
+			System.out.println("[SKILLS] " + property + " is a String for : " + JAXBHandler.getValue(cs, "id").toString());
+		}		
+		return value;
+	}
+	
+	private float getFloatValue(ClientSkill cs, String current, String property) {
+		float value = 0;
+		try {
+			value = Float.parseFloat(JAXBHandler.getValue(cs, current + property).toString());
+		} catch (Exception ex) {
+			System.out.println("[SKILLS] " + property + " is a String for : " + JAXBHandler.getValue(cs, "id").toString());
+		}		
+		return value;
 	}
 }

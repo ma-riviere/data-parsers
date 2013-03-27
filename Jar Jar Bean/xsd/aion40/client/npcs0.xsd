@@ -9,22 +9,22 @@
   <xs:element name="dir" type="xs:string"/>
   <xs:element name="mesh" type="xs:string"/>
   <xs:element name="material" type="xs:string"/>
-  <xs:element name="show_dmg_decal" type="xs:int"/>
+  <xs:element name="show_dmg_decal" type="xs:byte"/>
   <xs:element name="ui_type" type="xs:string"/>
   <xs:element name="cursor_type" type="xs:string"/>
-  <xs:element name="hide_path" type="xs:int"/>
-  <xs:element name="erect" type="xs:int"/>
+  <xs:element name="hide_path" type="xs:byte"/>
+  <xs:element name="erect" type="xs:byte"/>
   <xs:element name="bound_radius">
     <xs:complexType>
       <xs:sequence>
         <xs:element ref="front" minOccurs="0"/>
         <xs:element ref="side"/>
-        <xs:element ref="upper"/>
+        <xs:element ref="upper" minOccurs="0"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="scale" type="xs:int"/>
-  <xs:element name="weapon_scale" type="xs:int"/>
+  <xs:element name="scale" type="xs:short"/>
+  <xs:element name="weapon_scale" type="xs:short"/>
   <xs:element name="altitude" type="xs:float"/>
   <xs:element name="stare_angle" type="xs:float"/>
   <xs:element name="stare_distance" type="xs:float"/>
@@ -39,18 +39,18 @@
   <xs:element name="spine_angle" type="xs:float"/>
   <xs:element name="ammo_bone" type="xs:string"/>
   <xs:element name="ammo_fx" type="xs:string"/>
-  <xs:element name="ammo_speed" type="xs:int"/>
+  <xs:element name="ammo_speed" type="xs:byte"/>
   <xs:element name="pushed_range" type="xs:float"/>
-  <xs:element name="hpgauge_level" type="xs:int"/>
-  <xs:element name="magical_skill_boost" type="xs:int"/>
-  <xs:element name="attack_delay" type="xs:int"/>
+  <xs:element name="hpgauge_level" type="xs:byte"/>
+  <xs:element name="magical_skill_boost" type="xs:byte"/>
+  <xs:element name="attack_delay" type="xs:short"/>
   <xs:element name="ai_name" type="xs:string"/>
   <xs:element name="tribe" type="xs:string"/>
   <xs:element name="pet_ai_name" type="xs:string"/>
   <xs:element name="sensory_range" type="xs:float"/>
   <xs:element name="attack_range" type="xs:float"/>
   <xs:element name="attack_rate" type="xs:float"/>
-  <xs:element name="magical_skill_boost_resist" type="xs:int"/>
+  <xs:element name="magical_skill_boost_resist" type="xs:short"/>
   <xs:element name="race_type" type="xs:string"/>
   <xs:element name="npc_type" type="xs:string"/>
   <xs:element name="talking_distance" type="xs:float"/>
@@ -58,11 +58,11 @@
   <xs:element name="disk_type" type="xs:string"/>
   <xs:element name="weapon_hit_fx" type="xs:string"/>
   <xs:element name="foot_mat" type="xs:string"/>
-  <xs:element name="hide_shadow" type="xs:int"/>
+  <xs:element name="hide_shadow" type="xs:byte"/>
   <xs:element name="ammo_hit_fx" type="xs:string"/>
-  <xs:element name="float_corpse" type="xs:int"/>
+  <xs:element name="float_corpse" type="xs:byte"/>
   <xs:element name="pc_type" type="xs:string"/>
-  <xs:element name="face_type" type="xs:int"/>
+  <xs:element name="face_type" type="xs:byte"/>
   <xs:element name="hair_type" type="xs:string"/>
   <xs:element name="torso" type="xs:string"/>
   <xs:element name="leg" type="xs:string"/>
@@ -107,10 +107,10 @@
   <xs:element name="game_lang" type="xs:string"/>
   <xs:element name="quest_ai_name" type="xs:string"/>
   <xs:element name="ment" type="xs:string"/>
-  <xs:element name="dmg_texture" type="xs:int"/>
+  <xs:element name="dmg_texture" type="xs:byte"/>
   <xs:element name="main" type="xs:string"/>
   <xs:element name="sub" type="xs:string"/>
-  <xs:element name="undetectable" type="xs:int"/>
+  <xs:element name="undetectable" type="xs:byte"/>
   <xs:element name="head" type="xs:string"/>
   <xs:element name="talk_animation" type="xs:string"/>
   <xs:element name="tab" type="xs:string"/>
@@ -137,7 +137,7 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="buy_price_rate" type="xs:int"/>
+  <xs:element name="buy_price_rate" type="xs:short"/>
   <xs:element name="npc_function_type" type="xs:string"/>
   <xs:element name="trade_info">
     <xs:complexType>
@@ -148,9 +148,9 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="recovery" type="xs:int"/>
-  <xs:element name="recovery_opt1" type="xs:int"/>
-  <xs:element name="recovery_opt2" type="xs:int"/>
+  <xs:element name="recovery" type="xs:byte"/>
+  <xs:element name="recovery_opt1" type="xs:short"/>
+  <xs:element name="recovery_opt2" type="xs:byte"/>
   <xs:element name="walk_animation" type="xs:string"/>
   <xs:element name="airlines_name" type="xs:string"/>
   <xs:element name="title_offset" type="xs:float"/>
@@ -164,19 +164,19 @@
     </xs:complexType>
   </xs:element>
   <xs:element name="hair_color" type="xs:string"/>
-  <xs:element name="extendcharwarehouse_start" type="xs:int"/>
-  <xs:element name="extendcharwarehouse_end" type="xs:int"/>
-  <xs:element name="give_item_proc" type="xs:int"/>
-  <xs:element name="remove_item_option" type="xs:int"/>
-  <xs:element name="change_item_skin" type="xs:int"/>
+  <xs:element name="extendcharwarehouse_start" type="xs:byte"/>
+  <xs:element name="extendcharwarehouse_end" type="xs:byte"/>
+  <xs:element name="give_item_proc" type="xs:byte"/>
+  <xs:element name="remove_item_option" type="xs:byte"/>
+  <xs:element name="change_item_skin" type="xs:byte"/>
   <xs:element name="gather_skill_levelup" type="xs:string"/>
-  <xs:element name="func_giveup_craftskill" type="xs:int"/>
-  <xs:element name="extendinventory_start" type="xs:int"/>
-  <xs:element name="extendinventory_end" type="xs:int"/>
-  <xs:element name="package_permitted" type="xs:int"/>
-  <xs:element name="town_residence" type="xs:int"/>
-  <xs:element name="extendaccountwarehouse_start" type="xs:int"/>
-  <xs:element name="extendaccountwarehouse_end" type="xs:int"/>
+  <xs:element name="func_giveup_craftskill" type="xs:byte"/>
+  <xs:element name="extendinventory_start" type="xs:byte"/>
+  <xs:element name="extendinventory_end" type="xs:byte"/>
+  <xs:element name="package_permitted" type="xs:byte"/>
+  <xs:element name="town_residence" type="xs:byte"/>
+  <xs:element name="extendaccountwarehouse_start" type="xs:byte"/>
+  <xs:element name="extendaccountwarehouse_end" type="xs:byte"/>
   <xs:element name="npcfaction_name" type="xs:string"/>
   <xs:element name="atab" type="xs:string"/>
   <xs:element name="guide_func" type="xs:string"/>
@@ -190,11 +190,11 @@
     </xs:complexType>
   </xs:element>
   <xs:element name="sell_price_rate" type="xs:int"/>
-  <xs:element name="pvpzone" type="xs:int"/>
+  <xs:element name="pvpzone" type="xs:byte"/>
   <xs:element name="pvpzone_world_name" type="xs:string"/>
   <xs:element name="pvpzone_location_alias" type="xs:string"/>
-  <xs:element name="edit_character_gender" type="xs:int"/>
-  <xs:element name="edit_character_all" type="xs:int"/>
+  <xs:element name="edit_character_gender" type="xs:byte"/>
+  <xs:element name="edit_character_all" type="xs:byte"/>
   <xs:element name="fxc_type" type="xs:string"/>
   <xs:element name="ttab" type="xs:string"/>
   <xs:element name="trade_in_trade_info">
@@ -204,52 +204,53 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="talk_delay_time" type="xs:int"/>
+  <xs:element name="talk_delay_time" type="xs:byte"/>
   <xs:element name="user_animation" type="xs:string"/>
   <xs:element name="wing_mesh" type="xs:string"/>
-  <xs:element name="wing_always" type="xs:int"/>
-  <xs:element name="func_itemcharge" type="xs:int"/>
-  <xs:element name="func_town_challenge" type="xs:int"/>
-  <xs:element name="func_itemcharge2" type="xs:int"/>
-  <xs:element name="exclusion_list" type="xs:int"/>
-  <xs:element name="check_can_see" type="xs:int"/>
+  <xs:element name="wing_always" type="xs:byte"/>
+  <xs:element name="func_itemcharge" type="xs:byte"/>
+  <xs:element name="func_town_challenge" type="xs:byte"/>
+  <xs:element name="func_itemcharge2" type="xs:byte"/>
+  <xs:element name="exclusion_list" type="xs:byte"/>
+  <xs:element name="check_can_see" type="xs:byte"/>
   <xs:element name="deadbody_name_id" type="xs:string"/>
-  <xs:element name="static" type="xs:int"/>
-  <xs:element name="object_type" type="xs:int"/>
+  <xs:element name="static" type="xs:byte"/>
+  <xs:element name="object_type" type="xs:byte"/>
   <xs:element name="sanctuary_animation" type="xs:string"/>
   <xs:element name="str_type" type="xs:string"/>
   <xs:element name="huge_mob" type="xs:float"/>
-  <xs:element name="visible_range" type="xs:int"/>
-  <xs:element name="hide_pc_fx_shader" type="xs:int"/>
+  <xs:element name="visible_range" type="xs:short"/>
+  <xs:element name="hide_pc_fx_shader" type="xs:byte"/>
   <xs:element name="spawn_animation" type="xs:string"/>
   <xs:element name="abyss_npc_type" type="xs:string"/>
   <xs:element name="rotation_period" type="xs:float"/>
-  <xs:element name="unrotatable" type="xs:int"/>
-  <xs:element name="omit_system_msg" type="xs:int"/>
+  <xs:element name="unrotatable" type="xs:byte"/>
+  <xs:element name="omit_system_msg" type="xs:byte"/>
   <xs:element name="ammo_hit2_fx" type="xs:string"/>
-  <xs:element name="ammo_hit3_fx" type="xs:string"/>
   <xs:element name="ammo2_fx" type="xs:string"/>
+  <xs:element name="ammo_hit3_fx" type="xs:string"/>
   <xs:element name="ammo3_fx" type="xs:string"/>
   <xs:element name="left_finger" type="xs:string"/>
-  <xs:element name="artifact_id" type="xs:int"/>
-  <xs:element name="use_script" type="xs:int"/>
-  <xs:element name="match_maker" type="xs:int"/>
+  <xs:element name="artifact_id" type="xs:byte"/>
+  <xs:element name="subdialog_type" type="xs:string"/>
+  <xs:element name="use_script" type="xs:byte"/>
+  <xs:element name="match_maker" type="xs:byte"/>
   <xs:element name="right_finger" type="xs:string"/>
   <xs:element name="animation_marker" type="xs:string"/>
   <xs:element name="weapon_hit2_fx" type="xs:string"/>
   <xs:element name="weapon_hit3_fx" type="xs:string"/>
-  <xs:element name="jobfaction_name" type="xs:int"/>
+  <xs:element name="jobfaction_name" type="xs:byte"/>
   <xs:element name="bindstone_type" type="xs:string"/>
-  <xs:element name="bindstone_capacity" type="xs:int"/>
-  <xs:element name="bindstone_usecount" type="xs:int"/>
+  <xs:element name="bindstone_capacity" type="xs:byte"/>
+  <xs:element name="bindstone_usecount" type="xs:short"/>
   <xs:element name="custom_match_maker" type="xs:string"/>
   <xs:element name="html_bg" type="xs:string"/>
+  <xs:element name="flag_icon" type="xs:byte"/>
   <xs:element name="instance_entry" type="xs:int"/>
   <xs:element name="ins_creation_id_1" type="xs:string"/>
   <xs:element name="ins_creation_id_2" type="xs:string"/>
-  <xs:element name="func_enterhouse_to_instant" type="xs:int"/>
-  <xs:element name="subdialog_type" type="xs:string"/>
-  <xs:element name="compound_weapon" type="xs:int"/>
+  <xs:element name="func_enterhouse_to_instant" type="xs:byte"/>
+  <xs:element name="compound_weapon" type="xs:byte"/>
   <xs:element name="ctab" type="xs:string"/>
   <xs:element name="coupon_trade_info">
     <xs:complexType>
@@ -258,11 +259,11 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="func_pet_manage" type="xs:int"/>
+  <xs:element name="func_pet_manage" type="xs:byte"/>
   <xs:element name="left_ear" type="xs:string"/>
   <xs:element name="right_ear" type="xs:string"/>
   <xs:element name="buy_tab" type="xs:string"/>
-  <xs:element name="buy_price_rate2" type="xs:int"/>
+  <xs:element name="buy_price_rate2" type="xs:short"/>
   <xs:element name="trade_buy_info">
     <xs:complexType>
       <xs:sequence>
@@ -281,15 +282,15 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="ap_buy_price_rate" type="xs:int"/>
-  <xs:element name="ap_sell_price_rate" type="xs:int"/>
-  <xs:element name="func_personal_auction" type="xs:int"/>
-  <xs:element name="func_housing_pay_rent" type="xs:int"/>
-  <xs:element name="func_housing_kick" type="xs:int"/>
-  <xs:element name="func_housing_change_building" type="xs:int"/>
-  <xs:element name="func_housing_config" type="xs:int"/>
-  <xs:element name="func_housing_script" type="xs:int"/>
-  <xs:element name="func_recreate_personal_ins" type="xs:int"/>
+  <xs:element name="ap_buy_price_rate" type="xs:short"/>
+  <xs:element name="ap_sell_price_rate" type="xs:short"/>
+  <xs:element name="func_personal_auction" type="xs:byte"/>
+  <xs:element name="func_housing_pay_rent" type="xs:byte"/>
+  <xs:element name="func_housing_kick" type="xs:byte"/>
+  <xs:element name="func_housing_change_building" type="xs:byte"/>
+  <xs:element name="func_housing_config" type="xs:byte"/>
+  <xs:element name="func_housing_script" type="xs:byte"/>
+  <xs:element name="func_recreate_personal_ins" type="xs:byte"/>
   <xs:element name="subdialog_value" type="xs:int"/>
   <xs:element name="npc_client">
     <xs:complexType>
@@ -410,10 +411,11 @@
         <xs:element ref="unrotatable"/>
         <xs:element ref="omit_system_msg"/>
         <xs:element ref="ammo_hit2_fx"/>
-        <xs:element ref="ammo_hit3_fx"/>
         <xs:element ref="ammo2_fx"/>
+        <xs:element ref="ammo_hit3_fx"/>
         <xs:element ref="ammo3_fx"/>
         <xs:element ref="artifact_id"/>
+        <xs:element ref="subdialog_type"/>
         <xs:element ref="use_script"/>
         <xs:element ref="match_maker"/>
         <xs:element ref="animation_marker"/>
@@ -425,11 +427,11 @@
         <xs:element ref="bindstone_usecount"/>
         <xs:element ref="custom_match_maker"/>
         <xs:element ref="html_bg"/>
+        <xs:element ref="flag_icon"/>
         <xs:element ref="instance_entry"/>
         <xs:element ref="ins_creation_id_1"/>
         <xs:element ref="ins_creation_id_2"/>
         <xs:element ref="func_enterhouse_to_instant"/>
-        <xs:element ref="subdialog_type"/>
         <xs:element ref="compound_weapon"/>
         <xs:element ref="coupon_trade_info"/>
         <xs:element ref="func_pet_manage"/>

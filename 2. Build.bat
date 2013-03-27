@@ -1,12 +1,12 @@
 @ECHO off
 COLOR 3
 
+setx /M JAVA_HOME "C:\Program Files (x86)\Java\jdk1.7.0_05" > nul
+REM setx /M JAVA_HOME "C:\Program Files\Java\jdk1.7.0_17" > nul
+setx /M JAVA_TOOL_OPTIONS -Dfile.encoding=UTF8 > nul
+
 rem ## Save return path
 pushd %~dp0
-
-REM setx /M JAVA_HOME "C:\Program Files (x86)\Java\jdk1.7.0_05"
-setx /M JAVA_HOME "C:\Program Files\Java\jdk1.7.0_17"
-setx /M JAVA_TOOL_OPTIONS -Dfile.encoding=UTF8
 
 set ANT=%~dp0Tools\Ant\bin\ant
 
@@ -18,7 +18,7 @@ echo.
 
 CD "%~dp0Sources"
 
-CALL %ANT% clean dist
+CALL "%ANT%" clean dist
 
 SET Parser="%~dp0Sources\build\Parser.zip"
 IF NOT EXIST %Parser% GOTO BUILD_PATH_ERROR
@@ -51,7 +51,7 @@ echo.
 
 CD "%~dp0Sources"
 
-CALL %ANT% clean > nul && echo Done !
+CALL "%ANT%" clean > nul && echo Done !
 
 GOTO QUIT
 

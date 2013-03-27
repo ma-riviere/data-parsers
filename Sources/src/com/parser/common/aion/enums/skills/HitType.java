@@ -5,6 +5,7 @@ package com.parser.common.aion.enums.skills;
  */
 public enum HitType {
 
+	NONE,
 	EVERYHIT,
 	NMLATK,
 	MAHIT,
@@ -38,7 +39,7 @@ public enum HitType {
 			}
 		}
 		System.out.println("[SKILLS] No HitType matching :" + string);
-		return null;
+		return HitType.NONE;
 	}
 	
 	public static HitType fromValue(String name) {
