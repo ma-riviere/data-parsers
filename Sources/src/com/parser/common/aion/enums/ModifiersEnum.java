@@ -7,6 +7,7 @@ import com.google.common.base.Strings;
  */
 public enum ModifiersEnum {
 
+	NONE,
 	MAXHP("MAXHP"),
 	MAXMP("MAXMP"),
 	BLOCK("BLOCK"),
@@ -94,29 +95,35 @@ public enum ModifiersEnum {
 		this.clientString = clientString;
 	}
 	
+	private ModifiersEnum() {
+		this(null);
+	}
+	
 	public String getClientString() {return clientString;}
 	
-	public static ModifiersEnum getModifierByString(String string) {
-		if (Strings.isNullOrEmpty(string)) {return null;}
+	public static ModifiersEnum fromClient(String string) {
 		
 		// Special corrections (Thanks NC ...)
 		if (string.equalsIgnoreCase("MAGICALRESIST")) {string = "MAGICAL_RESIST";}
 		
-		for (ModifiersEnum mod : values()) {
-			if (mod.getClientString().equalsIgnoreCase(string))
-				return mod;
+		for (ModifiersEnum v : values()) {
+			if (v.getClientString() != null) {
+				if (v.getClientString().equalsIgnoreCase(string))
+					return v;
+			} else {
+				if (fromValue(string) != null)
+					return fromValue(string);
+			}
 		}
-		System.out.println("[MODIFIERS] No Modifier matching :" + string);
-		return null;
+		System.out.println("[MODIFIERS] No Modifiers matching :" + string);
+		return ModifiersEnum.NONE;
 	}
 	
-	public static ModifiersEnum getModifierByName(String name) {
-		if (Strings.isNullOrEmpty(name)) {return null;}
-		for (ModifiersEnum mod : values()) {
-			if (mod.toString().equalsIgnoreCase(name))
-				return mod;
+	public static ModifiersEnum fromValue(String name) {
+		for (ModifiersEnum v : values()) {
+			if (v.toString().equalsIgnoreCase(name))
+				return v;
 		}
-		System.out.println("[MODIFIERS] No Modifier named :" + name);
 		return null;
 	}
 }

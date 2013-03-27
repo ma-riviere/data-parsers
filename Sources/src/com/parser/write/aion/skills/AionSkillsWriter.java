@@ -40,7 +40,7 @@ public class AionSkillsWriter extends AbstractWriter {
 	List<ClientSkill> skillBaseList = null;
 	List<ClientSkillTree> skillTreeList = null;
 	Map<String, ClientItem> stigmaItemMap = new HashMap<String, ClientItem>();
-	List<Integer> effectIds = null;
+	List<Integer> effectIds = null; //TODO
 	
 	public AionSkillsWriter(boolean analyse) {
 		this.ANALYSE = analyse;
@@ -1122,6 +1122,8 @@ public class AionSkillsWriter extends AbstractWriter {
 		protected Conditions conditions;
 		protected Conditions subconditions;
 		**/
+		// hasGeneralEffects |= setChange(cs, effect, current);
+		
 		if (JAXBHandler.getValue(cs, current + "hop_a") != null && JAXBHandler.getValue(cs, current + "hop_a") != 0) {
 			effect.setHopa((Integer) JAXBHandler.getValue(cs, current + "hop_a"));
 			hasGeneralEffects = true;
