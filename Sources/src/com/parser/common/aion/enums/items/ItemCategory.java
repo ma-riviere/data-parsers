@@ -12,7 +12,7 @@ import com.parser.common.aion.AionDataCenter;
  */
 public enum ItemCategory {
 
-	//TODO: PET (food, egg, present ...) CASH
+	//TODO: PET (food, egg, present ...) CASH & SKIN !!!!!!!!!!!!!!!!!!
 	NONE(),
 	ARROW("ARMOR", "arrow", "_Arrow"),
 	WINGS("ARMOR", "wing_", "_Feather"),
