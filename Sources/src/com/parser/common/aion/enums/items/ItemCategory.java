@@ -14,9 +14,9 @@ public enum ItemCategory {
 
 	//TODO: PET (food, egg, present ...) CASH
 	NONE(),
-	ARROW("arrow", "_Arrow"),
-	WINGS("wing_", "_Feather"),
-	WINGS_BONE("_wing_", "_wing_bone"),
+	ARROW("ARMOR", "arrow", "_Arrow"),
+	WINGS("ARMOR", "wing_", "_Feather"),
+	WINGS_BONE("ARMOR", "_wing_", "_wing_bone"),
 	// Improvements
 	MANASTONE("matter_option_", "_magicstone_"),
 	MANASTONE_SACK("matter_option_", "_Sack"),
@@ -64,7 +64,7 @@ public enum ItemCategory {
 	JACKET("ARMOR", "torso_", "_Torso_"),
 	PANTS("ARMOR", "pants_", "_Pants_"),
 	SHOES("ARMOR", "shoes_", "_Shoes_"),
-	GLOVES("ARMOR", "gloves_", "_Gloves_"),
+	GLOVES("ARMOR", "glove", "_Glove"),
 	SHOULDERS("ARMOR", "shoulder_", "_Shoulder_"),
 	// Accesories
 	NECKLACE("ARMOR", "necklace_", "_Necklace_"),
@@ -78,7 +78,7 @@ public enum ItemCategory {
 	STIGMA_ADVANCED(),
 	// Shards
 	STIGMA_SHARDS("stigma_shard", "_Crystal"),
-	POWER_SHARDS("battery_", "_Battery"), 
+	POWER_SHARDS("ARMOR", "battery_", "_Battery"), 
 	POWER_SHARDS_SACK("battery_", "_Sack"),
 	// Misc
 	COIN("coin_", "_Coin"), // Also includes tokens 

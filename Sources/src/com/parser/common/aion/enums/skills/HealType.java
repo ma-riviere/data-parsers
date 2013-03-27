@@ -3,23 +3,21 @@ package com.parser.common.aion.enums.skills;
 /**
  * @author Viria
  */
-public enum Element {
-	
+public enum HealType {
+
 	NONE,
-	FIRE,
-	WIND("Air"),
-	WATER,
-	EARTH,
-	DARK,
-	LIGHT;
+	HP,
+    MP,
+    DP,
+    FP;
 
 	private String clientString;
 	
-	private Element(String clientString) {
+	private HealType(String clientString) {
 		this.clientString = clientString;
 	}
 	
-	private Element() {
+	private HealType() {
 		this(null);
 	}
 	
@@ -29,8 +27,8 @@ public enum Element {
 	 * Returns the ENUM matching the given client string
 	 * If no Client String is bound to the enum, it will try to match the enum string value.
 	 */
-	public static Element fromClient(String string) {
-		for (Element v : values()) {
+	public static HealType fromClient(String string) {
+		for (HealType v : values()) {
 			if (v.getClientString() != null) {
 				if (v.getClientString().equalsIgnoreCase(string))
 					return v;
@@ -39,12 +37,12 @@ public enum Element {
 					return fromValue(string);
 			}
 		}
-		System.out.println("[SKILLS] No Element matching :" + string);
-		return Element.NONE;
+		System.out.println("[SKILLS] No HealType matching :" + string);
+		return HealType.NONE;
 	}
 	
-	public static Element fromValue(String name) {
-		for (Element v : values()) {
+	public static HealType fromValue(String name) {
+		for (HealType v : values()) {
 			if (v.toString().equalsIgnoreCase(name))
 				return v;
 		}

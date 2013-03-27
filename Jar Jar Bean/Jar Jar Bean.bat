@@ -2,9 +2,6 @@
 TITLE Jar Jar Bean
 COLOR 05
 
-REM setx /M JAVA_HOME "C:\Program Files (x86)\Java\jdk1.7.0_05"
-setx /M JAVA_HOME "C:\Program Files\Java\jdk1.7.0_17"
-
 SET CURRENT=
 SET PREFIX=
 SET DIR=null
@@ -144,8 +141,8 @@ GOTO CHECKPATHS_XML
 
 REM ## Client - Server
 :ITEMS
-set XMS=512
-set XMX=1024
+set XMS=1024
+set XMX=1536
 set NAME=items
 set INPUT_XML=%ITEMS%
 set OUTPUT_XML=%SERVER%/item_templates.xml

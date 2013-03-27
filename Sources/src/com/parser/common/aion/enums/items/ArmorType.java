@@ -5,6 +5,7 @@ package com.parser.common.aion.enums.items;
  */
 public enum ArmorType {
 
+	NONE,
 	CHAIN,
     CLOTHES,
     LEATHER,
@@ -42,7 +43,7 @@ public enum ArmorType {
 			}
 		}
 		System.out.println("[SKILLS] No ArmorType matching :" + string);
-		return null;
+		return ArmorType.NONE;
 	}
 	
 	public static ArmorType fromValue(String name) {
@@ -50,7 +51,6 @@ public enum ArmorType {
 			if (v.toString().equalsIgnoreCase(name))
 				return v;
 		}
-		System.out.println("[SKILLS] No ArmorType named :" + name);
 		return null;
 	}
 }

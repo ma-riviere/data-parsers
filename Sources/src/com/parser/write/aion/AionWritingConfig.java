@@ -14,7 +14,7 @@ public class AionWritingConfig {
 	
 	// Items
 	public static final String ITEMS_NAME_ID = "../../Data/Mappings/items_name_id.xml";
-	public static final String ITEMS_NAME_ID_PACK = "com.parser.output.aion.p_items";
+	public static final String ITEMS_NAME_ID_PACK = "com.parser.input.aion.p_items";
 	
 	/*************************** SERVER XMLs *********************************/
 	
