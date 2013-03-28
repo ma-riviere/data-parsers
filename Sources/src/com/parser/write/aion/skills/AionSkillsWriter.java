@@ -1346,9 +1346,29 @@ public class AionSkillsWriter extends AbstractWriter {
 		return results;
 	}
 	
+	private boolean setChange(ClientSkill cs, Effect e, String current) {
+		List<Change> changes = new ArrayList<Change>();
+		List<ModifiersEnum> modifiers = new ArrayList<ModifiersEnum>();
+		// modifiers = getModifiers();
+		// getModifiers(reserved13, reserved14, reserved18) and linked value (map?)
+		// 		set PHYSICAL_DEFENSE for ArmorMasteryEffect && ShielMasteryEffect -- PHYSICAL_ATTACK for WeaponMasteryEffect
+		//		set BOOST_DROP_RATE if BoostDropRateEffect
+		//		TODO: If ...ALL (like ElementalDefendAll) make separate change for each included in "all")
+		// getFunction 
+		// if no function, set PERCENT if instanceof ArmorMasteryEffect or WeaponMasteryEffect or ShieldMasteryEffect)
+		
+		// getValue
+		if (!changes.isEmpty()) {
+			e.getChange().addAll(changes);
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
 	private int getIntValue(ClientSkill cs, String current, String property) {
 		int value = 0;
-		try {
+		try {	
 			value = Integer.parseInt(JAXBHandler.getValue(cs, current + property).toString());
 		} catch (Exception ex) {
 			System.out.println("[SKILLS] " + property + " is a String for : " + JAXBHandler.getValue(cs, "id").toString());

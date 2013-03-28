@@ -160,8 +160,10 @@ public enum ItemCategory {
 				
 		// Non-string based category calculation / Rectification
 		if (category == ItemCategory.NONE) {
+			// Gatherable
 			if (ci.getCategory() != null && ci.getCategory().equalsIgnoreCase("harvest"))
 				category = ItemCategory.GATHERABLE;
+			// Quest
 			if ((int) ci.getQuestLabel() == 1)
 				category = ItemCategory.QUEST_ITEM;
 			if ((int) ci.getQuestLabel() == 2) {
@@ -177,6 +179,30 @@ public enum ItemCategory {
 				if (desc.contains("Double-click to begin a quest".toUpperCase()) || desc.contains("더블 클릭하여 퀘스트를 받을 수 있습니다".toUpperCase())) // Check 182213370
 					category = ItemCategory.QUEST_START_ITEM;
 			}
+			// WeaponType
+			if (!Strings.isNullOrEmpty(ci.getWeaponType()) && !ci.getWeaponType().equalsIgnoreCase("no_weapon") && !ci.getWeaponType().equalsIgnoreCase("noweapon")) {
+				WeaponType wt = WeaponType.fromClient(ci.getWeaponType().toUpperCase());
+				if (wt == WeaponType.SWORD_1H) {category = ItemCategory.SWORD;}
+				else if (wt == WeaponType.DAGGER_1H) {category = ItemCategory.DAGGER;}
+				else if (wt == WeaponType.MACE_1H) {category = ItemCategory.MACE;}
+				else if (wt == WeaponType.TOOLHOE_1H) {category = ItemCategory.TOOLHOE;}
+				else if (wt == WeaponType.BOOK_2H) {category = ItemCategory.SPELLBOOK;}
+				else if (wt == WeaponType.ORB_2H) {category = ItemCategory.ORB;}
+				else if (wt == WeaponType.POLEARM_2H) {category = ItemCategory.POLEARM;}
+				else if (wt == WeaponType.STAFF_2H) {category = ItemCategory.STAFF;}
+				else if (wt == WeaponType.SWORD_2H) {category = ItemCategory.GREATSWORD;}
+				else if (wt == WeaponType.TOOLPICK_2H) {category = ItemCategory.TOOLPICK;}
+				else if (wt == WeaponType.TOOLROD_2H) {category = ItemCategory.TOOLROD;}
+				else if (wt == WeaponType.BOW) {category = ItemCategory.BOW;}
+				else if (wt == WeaponType.GUN_1H) {category = ItemCategory.GUN;}
+				else if (wt == WeaponType.CANON_2H) {category = ItemCategory.CANON;}
+				else if (wt == WeaponType.HARP_2H) {category = ItemCategory.HARP;}
+				else if (wt == WeaponType.KEYBLADE_2H) {category = ItemCategory.KEYBLADE;}
+				else if (wt == WeaponType.KEYHAMMER_2H) {category = ItemCategory.KEYHAMMER;}
+			}
+			if (!Strings.isNullOrEmpty(ci.getArmorType()) && !ci.getArmorType().equalsIgnoreCase("no_armor") && ArmorType.fromClient(ci.getArmorType()) != ArmorType.NONE) {
+				System.out.println("[CATEGORY] Item : " + ci.getId() + " has no category but is an armor !");
+			}		
 		}
 		
 		if (category == ItemCategory.STIGMA) {
