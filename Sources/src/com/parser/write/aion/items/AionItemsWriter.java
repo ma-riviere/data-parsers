@@ -66,17 +66,16 @@ public class AionItemsWriter extends AbstractWriter {
 				if (!Strings.isNullOrEmpty(ci.getDesc()))
 					it.setDesc(new AionDataCenter().getInstance().getMatchingStringId(ci.getDesc().trim(), 2, 1));
 				
-				if (EquipmentSlot.getEquipSlotByString(ci).getEquipmentSlot() != 0)
-					it.setSlot(EquipmentSlot.getEquipSlotByString(ci).getEquipmentSlot());
+				it.setSlot(EquipmentSlot.getEquipSlotByString(ci).getEquipmentSlot());
 				it.setCategory(ItemCategory.getMatchingCategory(ci).toString());
 				
 				if (!Strings.isNullOrEmpty(ci.getItemType()))
 					it.setItemType(ci.getItemType().toUpperCase());
 				if (!Strings.isNullOrEmpty(ci.getWeaponType()) && !ci.getWeaponType().equalsIgnoreCase("no_weapon") && !ci.getWeaponType().equalsIgnoreCase("noweapon"))
-					it.setWeaponType(WeaponType.fromClient(ci.getWeaponType().toUpperCase()).toString());
+					it.setWeaponType(WeaponType.fromClient(ci.getWeaponType()).toString());
 				else {
-					if (!Strings.isNullOrEmpty(ci.getArmorType()) && !ci.getArmorType().equalsIgnoreCase("no_armor"))
-						it.setArmorType(ci.getArmorType().toUpperCase());
+					if (!Strings.isNullOrEmpty(ci.getArmorType()) && !ci.getArmorType().equalsIgnoreCase("no_armor") && ArmorType.fromClient(ci.getArmorType()) != ArmorType.NONE)
+						it.setArmorType(ArmorType.fromClient(ci.getArmorType()).toString());
 					else {
 						if (ci.getEquipType() == 0 && (it.getCategory().equalsIgnoreCase("WINGS") || it.getCategory().equalsIgnoreCase("WINGS_BONE"))) {it.setArmorType("WINGS");}
 						if (it.getCategory().equalsIgnoreCase("ARROW")) {it.setArmorType("ARROW");}
@@ -124,7 +123,8 @@ public class AionItemsWriter extends AbstractWriter {
 					it.setDye("true"); 																																				// TODO : Remove, used in masks
 				if (!Strings.isNullOrEmpty(ci.getActivateTarget()))
 					it.setActivateTarget(ci.getActivateTarget().toUpperCase());
-				it.setActivateCount((int) ci.getActivationCount());
+				if (ci.getActivationCount() != 0)
+					it.setActivateCount((int) ci.getActivationCount());
 				if (ci.getWeaponBoostValue() != 0)
 					it.setWeaponBoost((int) ci.getWeaponBoostValue());
 				it.setMask(getMask(ci));
@@ -670,8 +670,8 @@ public class AionItemsWriter extends AbstractWriter {
 			mask |= 16384;
 		if (ci.getCanDye()  == 1)
 			mask |= 32768;
-		if (ci.getCanApExtraction()  != null && ci.getCanApExtraction().equalsIgnoreCase("true")) 																																			// TODO : Use
-			mask |= 65536;
+		//if (ci.getCanApExtraction() != null && ci.getCanApExtraction().equalsIgnoreCase("true")) 																																			// TODO : Use
+			//mask |= 65536;
 		return mask;
 	}
 	
