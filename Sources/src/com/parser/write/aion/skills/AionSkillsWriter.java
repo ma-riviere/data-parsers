@@ -1347,17 +1347,28 @@ public class AionSkillsWriter extends AbstractWriter {
 	}
 	
 	private boolean setChange(ClientSkill cs, Effect e, String current) {
+		Change change = new Change();
 		List<Change> changes = new ArrayList<Change>();
-		List<ModifiersEnum> modifiers = new ArrayList<ModifiersEnum>();
-		// modifiers = getModifiers();
-		// getModifiers(reserved13, reserved14, reserved18) and linked value (map?)
-		// 		set PHYSICAL_DEFENSE for ArmorMasteryEffect && ShielMasteryEffect -- PHYSICAL_ATTACK for WeaponMasteryEffect
-		//		set BOOST_DROP_RATE if BoostDropRateEffect
-		//		TODO: If ...ALL (like ElementalDefendAll) make separate change for each included in "all")
-		// getFunction 
-		// if no function, set PERCENT if instanceof ArmorMasteryEffect or WeaponMasteryEffect or ShieldMasteryEffect)
+		Map<ModifiersEnum, Integer> modifiers = new HashMap<ModifiersEnum, Integer>(); //TODO: Rename StatModifiers
+		int value = 0;
 		
-		// getValue
+		if (e instanceof ArmorMasteryEffect || e instanceof ShielMasteryEffect)
+			modifiers.add(ModifiersEnum.PHYSICAL_DEFENSE, (Integer) JAXBHandler.getValue(cs, current + ""));
+		else if (e instanceof WeaponMasteryEffect)
+			modifiers.add(ModifiersEnum.PHYSICAL_ATTACK, (Integer) JAXBHandler.getValue(cs, current + ""));
+		else if (e instanceof BoostDropRateEffect)
+			modifiers.add(ModifiersEnum.BOOST_DROP_RATE, (Integer) JAXBHandler.getValue(cs, current + ""));
+		if (modifiers.isEmpty()) {
+			//modifiers = getClientModAndValue(cs, current); (13, 14, 18) based on a map linking reserveds (stat & value)
+			//	In this one : If ...ALL (like ElementalDefendAll) make separate change for each included in "all"
+		}
+		if (!modifiers.isEmpty()) {
+			for (ModifiersEnum mod : modifiers)
+				change.set();
+				change.setValue(); //getValue
+				change.setFunction(); //TODO: from client or guessed (add in the enum)
+				changes.add(change);			
+		}
 		if (!changes.isEmpty()) {
 			e.getChange().addAll(changes);
 			return true;
