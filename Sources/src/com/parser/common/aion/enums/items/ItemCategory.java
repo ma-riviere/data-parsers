@@ -74,8 +74,8 @@ public enum ItemCategory {
 	BELT("ARMOR", "belt_", "_Belt_"),
 	// Skills
 	SKILLBOOK("skillbook_", "_skillbook_"),
-	STIGMA("stigma_", "_Stigma"),
-	STIGMA_ADVANCED(),
+	STIGMA("STIGMA", "stigma_", "_Stigma"),
+	STIGMA_ADVANCED("STIGMA", "", ""),
 	// Shards
 	STIGMA_SHARDS("stigma_shard", "_Crystal"),
 	POWER_SHARDS("ARMOR", "battery_", "_Battery"), 
@@ -127,10 +127,10 @@ public enum ItemCategory {
 		
 		for (ItemCategory ic : values()) {
 			boolean name = false;
-			if (ic.getClientNamePart() == null)  // If not defined, true
+			if (Strings.isNullOrEmpty(ic.getClientNamePart()))  // If not defined, true
 				name = true;
 			boolean iconName = false;
-			if (ic.getClientIconNamePart() == null) // If not defined, true
+			if (Strings.isNullOrEmpty(ic.getClientIconNamePart())) // If not defined, true
 				iconName = true;
 			
 			// If both checks are already true, it means the category has no definition, thus it should no be modified and stay NONE
@@ -158,7 +158,9 @@ public enum ItemCategory {
 			}
 		}
 				
-		// Non-string based category calculation / Rectification
+		/**
+		 * Non-string based category calculation / Rectification
+		 **/
 		if (category == ItemCategory.NONE) {
 			// Gatherable
 			if (ci.getCategory() != null && ci.getCategory().equalsIgnoreCase("harvest"))
@@ -200,8 +202,8 @@ public enum ItemCategory {
 				else if (wt == WeaponType.KEYBLADE_2H) {category = ItemCategory.KEYBLADE;}
 				else if (wt == WeaponType.KEYHAMMER_2H) {category = ItemCategory.KEYHAMMER;}
 			}
-			if (!Strings.isNullOrEmpty(ci.getArmorType()) && !ci.getArmorType().equalsIgnoreCase("no_armor") && ArmorType.fromClient(ci.getArmorType()) != ArmorType.NONE) {
-				System.out.println("[CATEGORY] Item : " + ci.getId() + " has no category but is an armor !");
+			if (!Strings.isNullOrEmpty(ci.getArmorType()) && !ci.getArmorType().equalsIgnoreCase("no_armor") && ArmorType.fromClient(ci.getArmorType()) != ArmorType.NONE) { //TODO
+				// System.out.println("[CATEGORY] Item : " + ci.getId() + " has no category but is an armor !");
 			}		
 		}
 		

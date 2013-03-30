@@ -7,6 +7,8 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Scanner;
+import javolution.util.FastMap;
 import org.apache.commons.lang.StringUtils;
 
 import com.parser.input.aion.skills.ClientSkill;
@@ -130,7 +132,7 @@ public class AionSkillsWriter extends AbstractWriter {
 				st.setAvatar(true);
 			if (JAXBHandler.getValue(cs, "target_flying_restriction") != null && JAXBHandler.getValue(cs, "target_flying_restriction").toString().equalsIgnoreCase("ground"))
 				st.setGround(true);
-			if (JAXBHandler.getValue(cs, "dispel_category") == null) // TODO: if debuf, check all dispellable effectids, if inside, false
+			if (isUnpottable(cs))
 				st.setUnpottable(true);
 			if (JAXBHandler.getValue(cs, "remove_at_fly_end") == 1)
 				st.setRemoveFlyend(true);
@@ -419,7 +421,7 @@ public class AionSkillsWriter extends AbstractWriter {
 	
 	private int getSkillLevel(ClientSkill cs) {
 		int level1 = 1;
-		int level2 = 1;
+		// int level2 = 1;
 		
 		// First calculation
 		String desc = JAXBHandler.getValue(cs, "desc").toString();
@@ -499,6 +501,21 @@ public class AionSkillsWriter extends AbstractWriter {
 		}
 		
 		return null;
+	}
+	
+	private boolean isUnpottable(ClientSkill cs) {
+		switch (getIntValue(cs, "", "delay_id")) {
+			case 632:
+			case 1040:
+			case 1560:
+			case 1660: 
+			case 1663: 
+			case 1666:
+			case 1774:
+			case 1789:
+				return true;
+		}
+		return false;
 	}
 	
 	// [UPDATE] There may be more then 5 statuses max in the future
@@ -767,21 +784,21 @@ public class AionSkillsWriter extends AbstractWriter {
 					compute = true;
 				}
 			}
-			if (et == EffectType.MPHEAL) {
+			else if (et == EffectType.MPHEAL) {
 				MPHealEffect mpHeal = new MPHealEffect();
 				if (setGeneral(cs, mpHeal, a) | setAbstractOverTimeEffect(cs, mpHeal, current)) {
 					effects.getRootAndStunAndSleep().add(mpHeal);
 					compute = true;
 				}
 			}
-			if (et == EffectType.FPHEAL) {
+			else if (et == EffectType.FPHEAL) {
 				FPHealEffect fpHeal = new FPHealEffect();
 				if (setGeneral(cs, fpHeal, a) | setAbstractOverTimeEffect(cs, fpHeal, current)) {
 					effects.getRootAndStunAndSleep().add(fpHeal);
 					compute = true;
 				}
 			}
-			if (et == EffectType.DPHEAL) {
+			else if (et == EffectType.DPHEAL) {
 				DPHealEffect dpHeal = new DPHealEffect();
 				if (setGeneral(cs, dpHeal, a) | setAbstractOverTimeEffect(cs, dpHeal, current)) {
 					effects.getRootAndStunAndSleep().add(dpHeal);
@@ -789,7 +806,7 @@ public class AionSkillsWriter extends AbstractWriter {
 				}
 			}
 			// SpellAtackEffect
-			if (et == EffectType.SPELLATK) {
+			else if (et == EffectType.SPELLATK) {
 				SpellAttackEffect spell = new SpellAttackEffect();
 				if (setGeneral(cs, spell, a) | setAbstractOverTimeEffect(cs, spell, current)) {
 					effects.getRootAndStunAndSleep().add(spell);
@@ -797,7 +814,7 @@ public class AionSkillsWriter extends AbstractWriter {
 				}
 			}
 			// SpellAtkDrainEffect
-			if (et == EffectType.SPELLATKDRAIN) {
+			else if (et == EffectType.SPELLATKDRAIN) {
 				SpellAtkDrainEffect spellDrain = new SpellAtkDrainEffect();
 				boolean check = false;
 				if (JAXBHandler.getValue(cs, current + "reserved15") != null) {
@@ -820,7 +837,7 @@ public class AionSkillsWriter extends AbstractWriter {
 				}
 			}
 			// MpAttackEffect
-			if (et == EffectType.MPATTACK) {
+			else if (et == EffectType.MPATTACK) {
 				MpAttackEffect mpAttack = new MpAttackEffect();
 				if (setGeneral(cs, mpAttack, a) | setAbstractOverTimeEffect(cs, mpAttack, current)) {
 					effects.getRootAndStunAndSleep().add(mpAttack);
@@ -828,7 +845,7 @@ public class AionSkillsWriter extends AbstractWriter {
 				}
 			}
 			// FpAttackEffect
-			if (et == EffectType.FPATK) {
+			else if (et == EffectType.FPATK) {
 				MpAttackEffect fpAttack = new MpAttackEffect();
 				if (setGeneral(cs, fpAttack, a) | setAbstractOverTimeEffect(cs, fpAttack, current)) {
 					effects.getRootAndStunAndSleep().add(fpAttack);
@@ -836,7 +853,7 @@ public class AionSkillsWriter extends AbstractWriter {
 				}
 			}
 			// BleedEffect
-			if (et == EffectType.BLEED) {
+			else if (et == EffectType.BLEED) {
 				BleedEffect bleed = new BleedEffect();
 				if (setGeneral(cs, bleed, a) | setAbstractOverTimeEffect(cs, bleed, current)) {
 					effects.getRootAndStunAndSleep().add(bleed);
@@ -844,7 +861,7 @@ public class AionSkillsWriter extends AbstractWriter {
 				}
 			}
 			// PoisonEffect
-			if (et == EffectType.POISON) {
+			else if (et == EffectType.POISON) {
 				PoisonEffect poison = new PoisonEffect();
 				if (setGeneral(cs, poison, a) | setAbstractOverTimeEffect(cs, poison, current)) {
 					effects.getRootAndStunAndSleep().add(poison);
@@ -852,7 +869,7 @@ public class AionSkillsWriter extends AbstractWriter {
 				}
 			}
 		}
-		if (et.getAbstractCatetgory().equalsIgnoreCase("AbstractHealEffect")) {
+		else if (et.getAbstractCatetgory().equalsIgnoreCase("AbstractHealEffect")) {
 			// HealInstantEffect
 			if (et == EffectType.HEAL_INSTANT) {
 				HealInstantEffect e = new HealInstantEffect();
@@ -862,7 +879,7 @@ public class AionSkillsWriter extends AbstractWriter {
 				}
 			}
 			// MPHealInstantEffect
-			if (et == EffectType.MPHEAL_INSTANT) {
+			else if (et == EffectType.MPHEAL_INSTANT) {
 				MPHealInstantEffect e = new MPHealInstantEffect();
 				if (setGeneral(cs, e, a) | setAbstractHealEffect(cs, e, current)) {
 					effects.getRootAndStunAndSleep().add(e);
@@ -870,7 +887,7 @@ public class AionSkillsWriter extends AbstractWriter {
 				}
 			}
 			// DPHealInstantEffect
-			if (et == EffectType.DPHEAL_INSTANT) {
+			else if (et == EffectType.DPHEAL_INSTANT) {
 				DPHealInstantEffect e = new DPHealInstantEffect();
 				if (setGeneral(cs, e, a) | setAbstractHealEffect(cs, e, current)) {
 					effects.getRootAndStunAndSleep().add(e);
@@ -878,7 +895,7 @@ public class AionSkillsWriter extends AbstractWriter {
 				}
 			}
 			// FPHealInstantEffect
-			if (et == EffectType.FPHEAL_INSTANT) {
+			else if (et == EffectType.FPHEAL_INSTANT) {
 				FPHealInstantEffect e = new FPHealInstantEffect();
 				if (setGeneral(cs, e, a) | setAbstractHealEffect(cs, e, current)) {
 					effects.getRootAndStunAndSleep().add(e);
@@ -886,7 +903,7 @@ public class AionSkillsWriter extends AbstractWriter {
 				}
 			}
 			// ProcHealInstantEffect
-			if (et == EffectType.PROCHEAL_INSTANT) {
+			else if (et == EffectType.PROCHEAL_INSTANT) {
 				ProcHealInstantEffect e = new ProcHealInstantEffect();
 				if (setGeneral(cs, e, a) | setAbstractHealEffect(cs, e, current)) {
 					effects.getRootAndStunAndSleep().add(e);
@@ -894,7 +911,7 @@ public class AionSkillsWriter extends AbstractWriter {
 				}
 			}
 			// ProcMPHealInstantEffect
-			if (et == EffectType.PROCMPHEAL_INSTANT) {
+			else if (et == EffectType.PROCMPHEAL_INSTANT) {
 				ProcMPHealInstantEffect e = new ProcMPHealInstantEffect();
 				if (setGeneral(cs, e, a) | setAbstractHealEffect(cs, e, current)) {
 					effects.getRootAndStunAndSleep().add(e);
@@ -902,7 +919,7 @@ public class AionSkillsWriter extends AbstractWriter {
 				}
 			}
 			// ProcDPHealInstantEffect
-			if (et == EffectType.PROCDPHEAL_INSTANT) {
+			else if (et == EffectType.PROCDPHEAL_INSTANT) {
 				ProcDPHealInstantEffect e = new ProcDPHealInstantEffect();
 				if (setGeneral(cs, e, a) | setAbstractHealEffect(cs, e, current)) {
 					effects.getRootAndStunAndSleep().add(e);
@@ -910,7 +927,7 @@ public class AionSkillsWriter extends AbstractWriter {
 				}
 			}
 			// ProcFPHealInstantEffect
-			if (et == EffectType.PROCFPHEAL_INSTANT) {
+			else if (et == EffectType.PROCFPHEAL_INSTANT) {
 				ProcFPHealInstantEffect e = new ProcFPHealInstantEffect();
 				if (setGeneral(cs, e, a) | setAbstractHealEffect(cs, e, current)) {
 					effects.getRootAndStunAndSleep().add(e);
@@ -918,7 +935,7 @@ public class AionSkillsWriter extends AbstractWriter {
 				}
 			}
 			// ProcVPHealInstantEffect
-			if (et == EffectType.PROCVPHEAL_INSTANT) {
+			else if (et == EffectType.PROCVPHEAL_INSTANT) {
 				ProcVPHealInstantEffect e = new ProcVPHealInstantEffect();
 				if (JAXBHandler.getValue(cs, current + "reserved3") != null) {
 					int value = getIntValue(cs, current, "reserved3");
@@ -932,7 +949,7 @@ public class AionSkillsWriter extends AbstractWriter {
 				}
 			}
 			// CaseHealEffect
-			if (et == EffectType.CASEHEAL) {
+			else if (et == EffectType.CASEHEAL) {
 				CaseHealEffect e = new CaseHealEffect();
 				if (JAXBHandler.getValue(cs, current + "reserved10") != null) {
 					int value = getIntValue(cs, current, "reserved10");
@@ -949,7 +966,7 @@ public class AionSkillsWriter extends AbstractWriter {
 				}
 			}
 			// HealCastorOnAttackedEffect
-			if (et == EffectType.HEALCASTORONATTACKED) {
+			else if (et == EffectType.HEALCASTORONATTACKED) {
 				HealCastorOnAttackedEffect e = new HealCastorOnAttackedEffect();
 				boolean check = false;
 				if (JAXBHandler.getValue(cs, current + "reserved4") != null) {
@@ -966,7 +983,7 @@ public class AionSkillsWriter extends AbstractWriter {
 				}
 			}
 			// HealCastorOnTargetDeadEffect
-			if (et == EffectType.HEALCASTORONTARGETDEAD) {
+			else if (et == EffectType.HEALCASTORONTARGETDEAD) {
 				HealCastorOnTargetDeadEffect e = new HealCastorOnTargetDeadEffect();
 				boolean check = false;
 				if (JAXBHandler.getValue(cs, current + "reserved4") != null) {
@@ -987,7 +1004,7 @@ public class AionSkillsWriter extends AbstractWriter {
 				}
 			}
 		}
-		if (et.getAbstractCatetgory().equalsIgnoreCase("AbstractDispelEffect")) {
+		else if (et.getAbstractCatetgory().equalsIgnoreCase("AbstractDispelEffect")) {
 			// DispelDebuffEffect
 			if (et == EffectType.DISPELDEBUFF) {
 				DispelDebuffEffect e = new DispelDebuffEffect();
@@ -997,7 +1014,7 @@ public class AionSkillsWriter extends AbstractWriter {
 				}
 			}
 			// DispelNpcDebuffEffect
-			if (et == EffectType.DISPELNPCDEBUFF) {
+			else if (et == EffectType.DISPELNPCDEBUFF) {
 				DispelNpcDebuffEffect e = new DispelNpcDebuffEffect();
 				if (setGeneral(cs, e, a) | setAbstractDispelEffect(cs, e, current)) {
 					effects.getRootAndStunAndSleep().add(e);
@@ -1005,7 +1022,7 @@ public class AionSkillsWriter extends AbstractWriter {
 				}
 			}
 			// DispelDebuffPhysicalEffect
-			if (et == EffectType.DISPELDEBUFFPHYSICAL) {
+			else if (et == EffectType.DISPELDEBUFFPHYSICAL) {
 				DispelDebuffPhysicalEffect e = new DispelDebuffPhysicalEffect();
 				if (setGeneral(cs, e, a) | setAbstractDispelEffect(cs, e, current)) {
 					effects.getRootAndStunAndSleep().add(e);
@@ -1013,7 +1030,7 @@ public class AionSkillsWriter extends AbstractWriter {
 				}
 			}
 			// DispelDebuffMentalEffect
-			if (et == EffectType.DISPELDEBUFFMENTAL) {
+			else if (et == EffectType.DISPELDEBUFFMENTAL) {
 				DispelDebuffMentalEffect e = new DispelDebuffMentalEffect();
 				if (setGeneral(cs, e, a) | setAbstractDispelEffect(cs, e, current)) {
 					effects.getRootAndStunAndSleep().add(e);
@@ -1021,7 +1038,7 @@ public class AionSkillsWriter extends AbstractWriter {
 				}
 			}
 			// DispelBuffEffect
-			if (et == EffectType.DISPELBUFF) {
+			else if (et == EffectType.DISPELBUFF) {
 				DispelBuffEffect e = new DispelBuffEffect();
 				if (setGeneral(cs, e, a) | setAbstractDispelEffect(cs, e, current)) {
 					effects.getRootAndStunAndSleep().add(e);
@@ -1029,7 +1046,7 @@ public class AionSkillsWriter extends AbstractWriter {
 				}
 			}
 			// DispelNpcBuffEffect
-			if (et == EffectType.DISPELNPCBUFF) {
+			else if (et == EffectType.DISPELNPCBUFF) {
 				DispelNpcBuffEffect e = new DispelNpcBuffEffect();
 				if (setGeneral(cs, e, a) | setAbstractDispelEffect(cs, e, current)) {
 					effects.getRootAndStunAndSleep().add(e);
@@ -1038,7 +1055,7 @@ public class AionSkillsWriter extends AbstractWriter {
 			}
 		}
 		// DispelEffect
-		if (et == EffectType.DISPEL) {
+		else if (et == EffectType.DISPEL) {
 			DispelEffect e = new DispelEffect();
 			if (JAXBHandler.getValue(cs, current + "reserved1") != null) {
 				DispelType dtype = DispelType.fromClient(JAXBHandler.getValue(cs, current + "reserved1").toString());
@@ -1057,26 +1074,194 @@ public class AionSkillsWriter extends AbstractWriter {
 				compute = true;
 			}
 		}
-		if (et.getAbstractCatetgory().equalsIgnoreCase("BufEffect")) {
-			// WeaponStatupEffect
-			// ShieldMasteryEffect
+		else if (et.getAbstractCatetgory().equalsIgnoreCase("BufEffect")) {
 			// OneTimeBoostHealEffect
+			if (et == EffectType.ONETIMEBOOSTHEALEFFECT) {
+				OneTimeBoostHealEffect e = new OneTimeBoostHealEffect();
+				if (setGeneral(cs, e, a) | setBufEffect(cs, e, current)) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
+			// BoostHealEffect
+			else if (et == EffectType.BOOSTHEALEFFECT) {
+				BoostHealEffect e = new BoostHealEffect();
+				if (setGeneral(cs, e, a) | setBufEffect(cs, e, current)) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
+			// BoostHateEffect
+			else if (et == EffectType.BOOSTHATE) {
+				BoostHateEffect e = new BoostHateEffect();
+				if (setGeneral(cs, e, a) | setBufEffect(cs, e, current)) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
 			// SubTypeExtendDurationEffect
+			else if (et == EffectType.SUBTYPEEXTENDDURATION) {
+				SubTypeExtendDurationEffect e = new SubTypeExtendDurationEffect();
+				if (setGeneral(cs, e, a) | setBufEffect(cs, e, current)) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
+			// SubTypeBoostResistEffect
+			else if (et == EffectType.SUBTYPEBOOSTRESIST) {
+				SubTypeBoostResistEffect e = new SubTypeBoostResistEffect();
+				if (setGeneral(cs, e, a) | setBufEffect(cs, e, current)) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
 			// ExtendAuraRangeEffect
+			else if (et == EffectType.EXTENDAURARANGE) {
+				ExtendAuraRangeEffect e = new ExtendAuraRangeEffect();
+				if (setGeneral(cs, e, a) | setBufEffect(cs, e, current)) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
 			// NoDeathPenaltyEffect
-			// StatboostEffect
+			else if (et == EffectType.NODEATHPENALTY) {
+				NoDeathPenaltyEffect e = new NoDeathPenaltyEffect();
+				if (setGeneral(cs, e, a) | setBufEffect(cs, e, current)) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
+			// SwitchHostileEffect
+			else if (et == EffectType.SWITCHHOSTILE) {
+				SwitchHostileEffect e = new SwitchHostileEffect();
+				if (setGeneral(cs, e, a) | setBufEffect(cs, e, current)) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
 			// HiPassEffect
+			else if (et == EffectType.HIPASS) {
+				HiPassEffect e = new HiPassEffect();
+				if (setGeneral(cs, e, a) | setBufEffect(cs, e, current)) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
 			// OneTimeBoostSkillCriticalEffect
+			else if (et == EffectType.ONETIMEBOOSTSKILLCRITICAL) {
+				OneTimeBoostSkillCriticalEffect e = new OneTimeBoostSkillCriticalEffect();
+				boolean check = false;
+				if (getIntValue(cs, current, "reserved7") != 0) {
+					e.setCount(getIntValue(cs, current, "reserved7"));
+					check = true;
+				}
+				if (getIntValue(cs, current, "reserved2") > 0 && getIntValue(cs, current, "reserved2") < 100) {
+					e.setPercent(true);
+					check = true;
+				}
+				if (setGeneral(cs, e, a) | setBufEffect(cs, e, current) | check) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
 			// BoostSpellAttackEffect
+			else if (et == EffectType.BOOSTSPELLATTACKEFFECT) {
+				BoostSpellAttackEffect e = new BoostSpellAttackEffect();
+				if (setGeneral(cs, e, a) | setBufEffect(cs, e, current)) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
 			// CurseEffect
+			else if (et == EffectType.CURSE) {
+				CurseEffect e = new CurseEffect();
+				if (setGeneral(cs, e, a) | setBufEffect(cs, e, current)) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
 			// DeboostHealEffect
+			else if (et == EffectType.DEBOOSTHEALAMOUNT) {
+				DeboostHealEffect e = new DeboostHealEffect();
+				if (setGeneral(cs, e, a) | setBufEffect(cs, e, current)) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
 			// XPBoostEffect
+			else if (et == EffectType.XPBOOST) {
+				XPBoostEffect e = new XPBoostEffect();
+				if (setGeneral(cs, e, a) | setBufEffect(cs, e, current)) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
 			// NoResurrectPenaltyEffect
+			else if (et == EffectType.NORESURRECTPENALTY) {
+				NoResurrectPenaltyEffect e = new NoResurrectPenaltyEffect();
+				if (setGeneral(cs, e, a) | setBufEffect(cs, e, current)) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
 			// BoostSkillCastingTimeEffect
+			else if (et == EffectType.BOOSTSKILLCASTINGTIME) {
+				BoostSkillCastingTimeEffect e = new BoostSkillCastingTimeEffect();
+				if (setGeneral(cs, e, a) | setBufEffect(cs, e, current)) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
 			// BoostDropRateEffect
+			else if (et == EffectType.BOOSTDROPRATE) {
+				BoostDropRateEffect e = new BoostDropRateEffect();
+				if (setGeneral(cs, e, a) | setBufEffect(cs, e, current)) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
+			// StatupEffect
+			else if (et == EffectType.STATUP) {
+				StatupEffect e = new StatupEffect();
+				if (setGeneral(cs, e, a) | setBufEffect(cs, e, current)) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
+			// StatboostEffect
+			else if (et == EffectType.STATBOOST) {
+				StatboostEffect e = new StatboostEffect();
+				if (setGeneral(cs, e, a) | setBufEffect(cs, e, current)) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
+			// StatdownEffect
+			else if (et == EffectType.STATDOWN) {
+				StatdownEffect e = new StatdownEffect();
+				if (setGeneral(cs, e, a) | setBufEffect(cs, e, current)) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
+			// WeaponStatupEffect
+			else if (et == EffectType.WEAPONSTATUP) {
+				WeaponStatupEffect e = new WeaponStatupEffect();
+				if (setGeneral(cs, e, a) | setBufEffect(cs, e, current)) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
 			// WeaponStatboostEffect
+			else if (et == EffectType.WEAPONSTATBOOST) {
+				WeaponStatboostEffect e = new WeaponStatboostEffect();
+				if (setGeneral(cs, e, a) | setBufEffect(cs, e, current)) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
 			// WeaponMasteryEffect
-			if (et == EffectType.WPN_MASTERY) {
+			else if (et == EffectType.WPN_MASTERY) {
 				WeaponMasteryEffect e = new WeaponMasteryEffect();
 				if (JAXBHandler.getValue(cs, current + "reserved5") != null) {
 					WeaponType weapon = WeaponType.fromClient(JAXBHandler.getValue(cs, current + "reserved5").toString());
@@ -1088,7 +1273,7 @@ public class AionSkillsWriter extends AbstractWriter {
 				}
 			}
 			// ArmorMasteryEffect
-			if (et == EffectType.AMR_MASTERY) {
+			else if (et == EffectType.AMR_MASTERY) {
 				ArmorMasteryEffect e = new ArmorMasteryEffect();
 				if (JAXBHandler.getValue(cs, current + "reserved5") != null) {
 					ArmorType armor = ArmorType.fromClient(JAXBHandler.getValue(cs, current + "reserved5").toString());
@@ -1099,30 +1284,181 @@ public class AionSkillsWriter extends AbstractWriter {
 					compute = true;
 				}
 			}
-			// StatupEffect
-			// StatdownEffect
-			// SwitchHostileEffect
-			// BoostHateEffect
-			// SubTypeBoostResistEffect
-			// BoostHealEffect
+			// ShieldMasteryEffect
+			else if (et == EffectType.SHIELD_MASTERY) {
+				ShieldMasteryEffect e = new ShieldMasteryEffect();
+				if (setGeneral(cs, e, a) | setBufEffect(cs, e, current)) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
 			// WeaponDualEffect
+			else if (et == EffectType.WPN_DUAL) {
+				WeaponDualEffect e = new WeaponDualEffect();
+				if (setGeneral(cs, e, a) | setBufEffect(cs, e, current)) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
 		}
 		
 		return compute;
 	}
+	
+	private boolean setAbstractOverTimeEffect(ClientSkill cs, AbstractOverTimeEffect effect, String current) {
+		boolean hasAbstractEffects = false;
+		if (JAXBHandler.getValue(cs, current + "checktime") != null && JAXBHandler.getValue(cs, current + "checktime") != 0) {
+			effect.setChecktime((Integer) JAXBHandler.getValue(cs, current + "checktime"));
+			hasAbstractEffects = true;
+		}
+		if (JAXBHandler.getValue(cs, current + "reserved6") != null) {
+			int value = getIntValue(cs, current, "reserved6");
+			if (value == 1) {
+				effect.setPercent(true);
+				hasAbstractEffects = true;
+			}
+		}
+		hasAbstractEffects |= setDelta(cs, effect, current, "reserved8");
+		hasAbstractEffects |= setValue(cs, effect, current, "reserved9");
+		return hasAbstractEffects;
+	}
+	
+	private boolean setAbstractHealEffect(ClientSkill cs, AbstractHealEffect effect, String current) {
+		boolean hasAbstractEffects = false;
+		if (JAXBHandler.getValue(cs, current + "reserved6") != null) {
+			int value = getIntValue(cs, current, "reserved6");
+			if (value == 1) {
+				effect.setPercent(true);
+				hasAbstractEffects = true;
+			}
+		}
+		hasAbstractEffects |= setDelta(cs, effect, current, "reserved1");
+		hasAbstractEffects |= setValue(cs, effect, current, "reserved2");
+		return hasAbstractEffects;
+	}
+	
+	private boolean setAbstractDispelEffect(ClientSkill cs, AbstractDispelEffect effect, String current) {
+		boolean hasAbstractEffects = false;
+	
+		if (JAXBHandler.getValue(cs, current + "reserved16") != null) {
+			int value = getIntValue(cs, current, "reserved16");
+			if (value != 0) {
+				effect.setDispelLevel(value);
+				hasAbstractEffects = true;
+			}
+		}
+		if (JAXBHandler.getValue(cs, current + "reserved17") != null) {
+			int value = getIntValue(cs, current, "reserved17");
+			if (value != 0) {
+				effect.setDpower(value);
+				hasAbstractEffects = true;
+			}
+		}
+		if (JAXBHandler.getValue(cs, current + "reserved18") != null) {
+			int value = getIntValue(cs, current, "reserved18");
+			if (value != 0) {
+				effect.setPower(value);
+				hasAbstractEffects = true;
+			}
+		}
+		hasAbstractEffects |= setDelta(cs, effect, current, "reserved1");
+		hasAbstractEffects |= setValue(cs, effect, current, "reserved2");
+		return hasAbstractEffects;
+	}
+	
+	private List<Integer> getEffectIds(ClientSkill cs, String current) {
+		List<Integer> results = new ArrayList<Integer>();
+		for (int a = 2; a <= 9; a++) {
+			if (JAXBHandler.getValue(cs, current + "reserved"+a) != null) {
+				int value = getIntValue(cs, current, "reserved"+a);
+				if (value != 0)
+					results.add(value);
+			}
+		}
+		return results;
+	}
+	
+	private List<String> getEffectOrSlotType(ClientSkill cs, String current) {
+		List<String> results = new ArrayList<String>();
+		for (int a = 2; a <= 9; a++) {
+			if (JAXBHandler.getValue(cs, current + "reserved"+a) != null && JAXBHandler.getValue(cs, current + "reserved"+a).toString() != null) {
+				EffectType et = EffectType.fromClient(JAXBHandler.getValue(cs, current + "reserved"+a).toString());
+				if (et != null)
+					results.add(et.toString());
+				else {
+					TargetSlot ts = TargetSlot.fromClient(JAXBHandler.getValue(cs, current + "reserved"+a).toString());
+					if (ts != TargetSlot.NONE)
+						results.add(ts.toString());
+				}
+			}
+		}
+		return results;
+	}
+	
+	private boolean setBufEffect(ClientSkill cs, BufEffect effect, String current) {
+		boolean hasAbstractEffects = false;
+		int e = effect.getE();
+		int f = 1;
+		
+		if (e > 1) {
+			while (e - f > 0) {
+				EffectType et = EffectType.fromClient(JAXBHandler.getValue(cs, "effect"+ (int)(e - f) +"_type").toString());
+				if (et != null && et == EffectType.SHAPECHANGE) {
+					for (Change change : effect.getChange()) {
+						if (StatModifiers.fromValue(change.getStat()) == StatModifiers.MAXHP || StatModifiers.fromValue(change.getStat()) == StatModifiers.MAXMP) {
+							effect.setMaxstat(true);
+							hasAbstractEffects = true;
+							break;
+						}
+					}
+				}
+				f++;
+			}
+		}
+
+		// hasAbstractEffects |= setDelta(cs, effect, current, "reserved1");
+		if (getIntValue(cs, current, "reserved6") > 1)
+			hasAbstractEffects |= setValue(cs, effect, current, "reserved6");
+		// 2 somtimes
+		return hasAbstractEffects;
+	}
+	
+	private boolean setValue(ClientSkill cs, Effect effect, String current, String property) {
+		boolean hasValue = false;
+		if (JAXBHandler.getValue(cs, current + property) != null) {
+			int value = getIntValue(cs, current, property);
+			if (value != 0) {
+				effect.setValue(value);
+				hasValue = true;
+			}
+		}
+		return hasValue;
+	}
+	
+	private boolean setDelta(ClientSkill cs, Effect effect, String current, String property) {
+		boolean hasDelta = false;
+		if (JAXBHandler.getValue(cs, current + property) != null) {
+			int delta = getIntValue(cs, current, property);
+			if (delta != 0) {
+				effect.setDelta(delta);
+				hasDelta = true;
+			}
+		}
+		return hasDelta;
+	}	
 	
 	private boolean setGeneral(ClientSkill cs, Effect effect, int a) {
 		boolean hasGeneralEffects = false;
 		String current = "effect" + a + "_";
 		
 		/** TODO
-		protected SubEffect subeffect;
 		protected ActionModifiers modifiers;
-		protected List<Change> change;
 		protected Conditions conditions;
 		protected Conditions subconditions;
 		**/
-		// hasGeneralEffects |= setChange(cs, effect, current);
+		hasGeneralEffects |= setChange(cs, effect, current);
+		// hasGeneralEffects |= setEffectConditions(cs, effect, current);
+		hasGeneralEffects |= setSubEffect(cs, effect, current);
 		
 		if (JAXBHandler.getValue(cs, current + "hop_a") != null && JAXBHandler.getValue(cs, current + "hop_a") != 0) {
 			effect.setHopa((Integer) JAXBHandler.getValue(cs, current + "hop_a"));
@@ -1217,157 +1553,96 @@ public class AionSkillsWriter extends AbstractWriter {
 		return hasGeneralEffects;
 	}
 	
-	private boolean setAbstractOverTimeEffect(ClientSkill cs, AbstractOverTimeEffect effect, String current) {
-		boolean hasAbstractEffects = false;
-		if (JAXBHandler.getValue(cs, current + "checktime") != null && JAXBHandler.getValue(cs, current + "checktime") != 0) {
-			effect.setChecktime((Integer) JAXBHandler.getValue(cs, current + "checktime"));
-			hasAbstractEffects = true;
-		}
-		if (JAXBHandler.getValue(cs, current + "reserved6") != null) {
-			int value = getIntValue(cs, current, "reserved6");
-			if (value == 1) {
-				effect.setPercent(true);
-				hasAbstractEffects = true;
-			}
-		}
-		hasAbstractEffects |= setDelta(cs, effect, current, "reserved8");
-		hasAbstractEffects |= setValue(cs, effect, current, "reserved9");
-		return hasAbstractEffects;
-	}
-	
-	private boolean setAbstractHealEffect(ClientSkill cs, AbstractHealEffect effect, String current) {
-		boolean hasAbstractEffects = false;
-		if (JAXBHandler.getValue(cs, current + "reserved6") != null) {
-			int value = getIntValue(cs, current, "reserved6");
-			if (value == 1) {
-				effect.setPercent(true);
-				hasAbstractEffects = true;
-			}
-		}
-		hasAbstractEffects |= setDelta(cs, effect, current, "reserved1");
-		hasAbstractEffects |= setValue(cs, effect, current, "reserved2");
-		return hasAbstractEffects;
-	}
-	
-	private boolean setAbstractDispelEffect(ClientSkill cs, AbstractDispelEffect effect, String current) {
-		boolean hasAbstractEffects = false;
-	
-		if (JAXBHandler.getValue(cs, current + "reserved16") != null) {
-			int value = getIntValue(cs, current, "reserved16");
-			if (value != 0) {
-				effect.setDispelLevel(value);
-				hasAbstractEffects = true;
-			}
-		}
-		if (JAXBHandler.getValue(cs, current + "reserved17") != null) {
-			int value = getIntValue(cs, current, "reserved17");
-			if (value != 0) {
-				effect.setDpower(value);
-				hasAbstractEffects = true;
-			}
-		}
-		if (JAXBHandler.getValue(cs, current + "reserved18") != null) {
-			int value = getIntValue(cs, current, "reserved18");
-			if (value != 0) {
-				effect.setPower(value);
-				hasAbstractEffects = true;
-			}
-		}
-		hasAbstractEffects |= setDelta(cs, effect, current, "reserved1");
-		hasAbstractEffects |= setValue(cs, effect, current, "reserved2");
-		return hasAbstractEffects;
-	}
-	
-	private boolean setBufEffect(ClientSkill cs, BufEffect effect, String current) {
-		boolean hasAbstractEffects = false;
-	
-		// if (JAXBHandler.getValue(cs, current + "reserved16") != null) {
-			// int value = getIntValue(cs, current, "reserved16");
-			// if (value != 0) {
-				effect.setMaxstat(true); // TODO !!!!!!!!!!!!!!!!
-				// hasAbstractEffects = true;
-			// }
-		// }
-		// hasAbstractEffects |= setDelta(cs, effect, current, "reserved1");
-		// hasAbstractEffects |= setValue(cs, effect, current, "reserved2");
-		return hasAbstractEffects;
-	}
-	
-	private boolean setValue(ClientSkill cs, Effect effect, String current, String property) {
-		boolean hasValue = false;
-		if (JAXBHandler.getValue(cs, current + property) != null) {
-			int value = getIntValue(cs, current, property);
-			if (value != 0) {
-				effect.setValue(value);
-				hasValue = true;
-			}
-		}
-		return hasValue;
-	}
-	
-	private boolean setDelta(ClientSkill cs, Effect effect, String current, String property) {
-		boolean hasDelta = false;
-		if (JAXBHandler.getValue(cs, current + property) != null) {
-			int delta = getIntValue(cs, current, property);
-			if (delta != 0) {
-				effect.setDelta(delta);
-				hasDelta = true;
-			}
-		}
-		return hasDelta;
-	}	
-	
-	private List<Integer> getEffectIds(ClientSkill cs, String current) {
-		List<Integer> results = new ArrayList<Integer>();
-		for (int a = 2; a <= 9; a++) {
-			if (JAXBHandler.getValue(cs, current + "reserved"+a) != null) {
-				int value = getIntValue(cs, current, "reserved"+a);
-				if (value != 0)
-					results.add(value);
-			}
-		}
-		return results;
-	}
-	
-	private List<String> getEffectOrSlotType(ClientSkill cs, String current) {
-		List<String> results = new ArrayList<String>();
-		for (int a = 2; a <= 9; a++) {
-			if (JAXBHandler.getValue(cs, current + "reserved"+a) != null && JAXBHandler.getValue(cs, current + "reserved"+a).toString() != null) {
-				EffectType et = EffectType.fromClient(JAXBHandler.getValue(cs, current + "reserved"+a).toString());
-				if (et != null)
-					results.add(et.toString());
-				else {
-					TargetSlot ts = TargetSlot.fromClient(JAXBHandler.getValue(cs, current + "reserved"+a).toString());
-					if (ts != TargetSlot.NONE)
-						results.add(ts.toString());
+	private boolean setSubEffect(ClientSkill cs, Effect effect, String current) {
+		boolean hasSubEffect = false;
+		String s = null;
+		int skillId = 0;
+		
+		if (getIntValue(cs, current, "reserved14") == 0 && JAXBHandler.getValue(cs, current + "reserved14") != null)
+			s = JAXBHandler.getValue(cs, current + "reserved14").toString();
+		else if (getIntValue(cs, current, "reserved15") == 0 && JAXBHandler.getValue(cs, current + "reserved15") != null)
+			s = JAXBHandler.getValue(cs, current + "reserved15").toString();
+		else if (getIntValue(cs, current, "reserved7") == 0 && JAXBHandler.getValue(cs, current + "reserved7") != null)
+			s = JAXBHandler.getValue(cs, current + "reserved7").toString();
+		
+		// Computing skillId
+		if (!Strings.isNullOrEmpty(s)) {
+			if (getSkillId(s) != 0) {skillId = getSkillId(s);}
+			else if (getSkillId("NormalAttack_" + s) != 0) {skillId = getSkillId("NormalAttack_" + s);}
+			else if (s.matches(".*\\d.*")) {
+				Scanner in = new Scanner("s").useDelimiter("[^0-9]+");
+				if (in.hasNext()) {
+					int i = in.nextInt();
+					if (i != 0) {
+						s = s.replaceAll(".*\\d.*", "") + "_" + i;
+						if (getSkillId(s) != 0) {skillId = getSkillId(s);}
+						else if (getSkillId("NormalAttack_" + s) != 0) {skillId = getSkillId("NormalAttack_" + s);}
+					}
 				}
 			}
 		}
-		return results;
+		
+		if (skillId != 0) {
+			SubEffect sub = new SubEffect();
+			sub.setSkillId(skillId);
+			if (getIntValue(cs, current, "reserved18") > 0 && getIntValue(cs, current, "reserved18") < 100)
+				sub.setChance(getIntValue(cs, current, "reserved18"));
+			if (effect instanceof SignetBurstEffect)
+				sub.setAddeffect(true);
+			effect.setSubeffect(sub);
+			hasSubEffect = true;
+		}
+	
+		return hasSubEffect;
 	}
 	
 	private boolean setChange(ClientSkill cs, Effect e, String current) {
 		Change change = new Change();
 		List<Change> changes = new ArrayList<Change>();
-		Map<ModifiersEnum, Integer> modifiers = new HashMap<ModifiersEnum, Integer>(); //TODO: Rename StatModifiers
+		Map<StatModifiers, Integer> modifiers = new HashMap<StatModifiers, Integer>(); 
 		int value = 0;
 		
-		if (e instanceof ArmorMasteryEffect || e instanceof ShielMasteryEffect)
-			modifiers.add(ModifiersEnum.PHYSICAL_DEFENSE, (Integer) JAXBHandler.getValue(cs, current + ""));
-		else if (e instanceof WeaponMasteryEffect)
-			modifiers.add(ModifiersEnum.PHYSICAL_ATTACK, (Integer) JAXBHandler.getValue(cs, current + ""));
-		else if (e instanceof BoostDropRateEffect)
-			modifiers.add(ModifiersEnum.BOOST_DROP_RATE, (Integer) JAXBHandler.getValue(cs, current + ""));
-		if (modifiers.isEmpty()) {
-			//modifiers = getClientModAndValue(cs, current); (13, 14, 18) based on a map linking reserveds (stat & value)
-			//	In this one : If ...ALL (like ElementalDefendAll) make separate change for each included in "all"
+		if (e instanceof ArmorMasteryEffect || e instanceof ShieldMasteryEffect) {
+			change.setStat(StatModifiers.PHYSICAL_DEFENSE.toString());
+			change.setValue(getIntValue(cs, current, "reserved2"));
+			change.setFunc("PERCENT");
+			changes.add(change);
+		}
+		else if (e instanceof WeaponMasteryEffect) {
+			change.setStat(StatModifiers.PHYSICAL_ATTACK.toString());
+			change.setValue(getIntValue(cs, current, "reserved2"));
+			change.setFunc("PERCENT");
+			changes.add(change);
+		}
+		else if (e instanceof BoostDropRateEffect) {
+			change.setStat(StatModifiers.BOOST_DROP_RATE.toString());
+			change.setValue(getIntValue(cs, current, "reserved2"));
+			change.setFunc("ADD");
+			changes.add(change);
+		}
+		
+		if (change.getStat() == null) {
+			modifiers = getClientModAndValue(cs, current);
 		}
 		if (!modifiers.isEmpty()) {
-			for (ModifiersEnum mod : modifiers)
-				change.set();
-				change.setValue(); //getValue
-				change.setFunction(); //TODO: from client or guessed (add in the enum)
-				changes.add(change);			
+			for (StatModifiers mod : modifiers.keySet()) {
+				change = new Change();
+				
+				// change.setConditions(getConditions(cs, current)); //TODO
+				change.setStat(mod.toString());
+				change.setValue(modifiers.get(mod)); 
+				
+				if (getIntValue(cs, current, "reserved1") != 0 && (getIntValue(cs, current, "reserved2") != 0 || getIntValue(cs, current, "reserved4") != 0))
+					change.setDelta(getIntValue(cs, current, "reserved1"));
+				
+				change.setFunc(getIntValue(cs, current, "reserved6") == 1 ? "PERCENT" : "ADD");
+				if (e instanceof WeaponStatboostEffect)
+					change.setFunc("PERCENT");
+				if (mod.isPercent())
+					change.setFunc("PERCENT");
+				// change.setUnchecked(); //TODO: Unused
+				changes.add(change);
+			}
 		}
 		if (!changes.isEmpty()) {
 			e.getChange().addAll(changes);
@@ -1377,12 +1652,75 @@ public class AionSkillsWriter extends AbstractWriter {
 		}
 	}
 	
+	private Map<StatModifiers, Integer> getClientModAndValue(ClientSkill cs, String current) {
+	
+		Map<StatModifiers, Integer> modifiers = new HashMap<StatModifiers, Integer>();
+		
+		if (JAXBHandler.getValue(cs, current + "reserved13") != null && StatModifiers.fromClient(JAXBHandler.getValue(cs, current + "reserved13").toString()) != StatModifiers.NONE) {
+			int value = 0;
+			StatModifiers stat = StatModifiers.fromClient(JAXBHandler.getValue(cs, current + "reserved13").toString());
+			
+			if (getIntValue(cs, current, "reserved2") != 0)
+				value = getIntValue(cs, current, "reserved2");
+			else if (getIntValue(cs, current, "reserved4") != 0)
+				value = getIntValue(cs, current, "reserved4");
+			else if (getIntValue(cs, current, "reserved1") != 0)
+				value = getIntValue(cs, current, "reserved1");
+			
+			if (stat.getLinked().isEmpty())
+				modifiers.put(stat, value);
+			else {
+				for (String ficelle : stat.getLinked())
+					modifiers.put(StatModifiers.fromValue(ficelle), value);
+			}
+		}
+		if (JAXBHandler.getValue(cs, current + "reserved14") != null && StatModifiers.fromClient(JAXBHandler.getValue(cs, current + "reserved14").toString()) != StatModifiers.NONE) {
+			int value = 0;
+			StatModifiers stat = StatModifiers.fromClient(JAXBHandler.getValue(cs, current + "reserved14").toString());
+			
+			if (getIntValue(cs, current, "reserved4") != 0)
+				value = getIntValue(cs, current, "reserved4");
+			else if (getIntValue(cs, current, "reserved2") != 0)
+				value = getIntValue(cs, current, "reserved2");
+			else if (getIntValue(cs, current, "reserved1") != 0)
+				value = getIntValue(cs, current, "reserved1");
+			
+			if (stat.getLinked().isEmpty())
+				modifiers.put(stat, value);
+			else {
+				for (String ficelle : stat.getLinked())
+					modifiers.put(StatModifiers.fromValue(ficelle), value);
+			}
+		}
+		if (JAXBHandler.getValue(cs, current + "reserved18") != null && StatModifiers.fromClient(JAXBHandler.getValue(cs, current + "reserved18").toString()) != StatModifiers.NONE) {
+			int value = 0;
+			StatModifiers stat = StatModifiers.fromClient(JAXBHandler.getValue(cs, current + "reserved18").toString());
+			
+			if (getIntValue(cs, current, "reserved16") != 0)
+				value = getIntValue(cs, current, "reserved16");
+			
+			if (stat.getLinked().isEmpty())
+				modifiers.put(stat, value);
+			else {
+				for (String ficelle : stat.getLinked())
+					modifiers.put(StatModifiers.fromValue(ficelle), value);
+			}
+		}
+		// Special Corrections
+		for (StatModifiers mod : modifiers.keySet()) {
+			if (mod == StatModifiers.ATTACK_RANGE)
+				modifiers.put(mod, modifiers.get(mod) * 1000);
+		}		
+		return modifiers;
+	}
+	
+	
 	private int getIntValue(ClientSkill cs, String current, String property) {
 		int value = 0;
 		try {	
 			value = Integer.parseInt(JAXBHandler.getValue(cs, current + property).toString());
 		} catch (Exception ex) {
-			System.out.println("[SKILLS] " + property + " is a String for : " + JAXBHandler.getValue(cs, "id").toString());
+			// System.out.println("[SKILLS] " + property + " is a String for : " + JAXBHandler.getValue(cs, "id").toString());
 		}		
 		return value;
 	}
@@ -1392,7 +1730,7 @@ public class AionSkillsWriter extends AbstractWriter {
 		try {
 			value = Float.parseFloat(JAXBHandler.getValue(cs, current + property).toString());
 		} catch (Exception ex) {
-			System.out.println("[SKILLS] " + property + " is a String for : " + JAXBHandler.getValue(cs, "id").toString());
+			// System.out.println("[SKILLS] " + property + " is a String for : " + JAXBHandler.getValue(cs, "id").toString());
 		}		
 		return value;
 	}

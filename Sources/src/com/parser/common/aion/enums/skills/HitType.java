@@ -38,7 +38,7 @@ public enum HitType {
 					return fromValue(string);
 			}
 		}
-		System.out.println("[SKILLS] No HitType matching :" + string);
+		try {int value = Integer.parseInt(string);} catch (Exception e) {System.out.println("[SKILLS] No HitType matching : " + string);}
 		return HitType.NONE;
 	}
 	

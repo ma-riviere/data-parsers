@@ -119,7 +119,7 @@ public class AionDataCenter {
 		if (rideNameIdMap.get(name.toUpperCase()) != null)
 			return rideNameIdMap.get(name.toUpperCase());
 		else
-			System.out.println("[ITEMS] No Item ID matching name : " + name.toUpperCase());
+			System.out.println("[RIDES] No Ride ID matching name : " + name.toUpperCase());
 		return 0;
 	}
 	
@@ -138,8 +138,8 @@ public class AionDataCenter {
 		
 		if (skillNameIdMap.get(name.toUpperCase()) != null)
 			return skillNameIdMap.get(name.toUpperCase());
-		else
-			System.out.println("[SKILLS] No Skill ID matching name : " + name.toUpperCase());
+		// else
+			// System.out.println("[SKILLS] No Skill ID matching name : " + name.toUpperCase());
 		return 0;
 	}
 	
@@ -159,7 +159,7 @@ public class AionDataCenter {
 		if (npcNameIdMap.get(name.toUpperCase()) != null)
 			return npcNameIdMap.get(name.toUpperCase());
 		else
-			System.out.println("[SKILLS] No Npc ID matching name : " + name.toUpperCase());
+			System.out.println("[NPCS] No Npc ID matching name : " + name.toUpperCase());
 		return 0;
 	}
 	
@@ -223,9 +223,9 @@ public class AionDataCenter {
 		return 0;
 	}
 	
-	/********************************
+	/*****************************************
 	 ***      LOADING MEHTODS     ***
-	 ********************************/
+	 ****************************************/
 	
 	// Loading StringMap from Data
 	private void loadDataStrings() {

@@ -1270,9 +1270,9 @@
 		<xs:sequence>
 			<xs:element name="conditions" type="Conditions"	minOccurs="0" maxOccurs="1"/>
 		</xs:sequence>
-		<xs:attribute name="stat" type="modifiersenum" use="required"/>
-		<xs:attribute name="func" type="StatFunc" use="required"/>
-		<xs:attribute name="value" type="xs:string" use="required"/>
+		<xs:attribute name="stat" type="xs:string" use="required"/>
+		<xs:attribute name="func" type="xs:string" use="required"/>
+		<xs:attribute name="value" type="xs:int" use="required"/>
 		<xs:attribute name="delta" type="xs:int"/>
 		<xs:attribute name="unchecked" type="xs:boolean" default="false"/>
 	</xs:complexType>
@@ -1328,9 +1328,6 @@
 	</xs:simpleType>
 	<xs:simpleType name="StatFunc">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="ADD"/>
-			<xs:enumeration value="PERCENT"/>
-			<xs:enumeration value="REPLACE"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="HealType">

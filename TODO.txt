@@ -1,98 +1,63 @@
-<statup duration2="600000" effectid="185523" e="3" basiclvl="200" noresist="true" preeffect="1">
-	<change stat="MAXHP" func="ADD" value="78000"/>
-	<change stat="MAXMP" func="ADD" value="156000"/>
-	<change stat="REGEN_HP" func="ADD" value="100"/>
-</statup>
-		<effect3_reserved1>0</effect3_reserved1>
-		<effect3_reserved2>78000</effect3_reserved2>
-		<effect3_reserved3>0</effect3_reserved3>
-		<effect3_reserved4>156000</effect3_reserved4>
-		<effect3_reserved6>0</effect3_reserved6>
-		<effect3_reserved7>0</effect3_reserved7>
-		<effect3_reserved13>MaxHP</effect3_reserved13>
-		<effect3_reserved14>MaxMP</effect3_reserved14>
-		<effect3_reserved15>0</effect3_reserved15>
-		<effect3_reserved16>100</effect3_reserved16>
-		<effect3_reserved17>0</effect3_reserved17>
-		<effect3_reserved18>HPRegen</effect3_reserved18>
+<signetburst signetlvl="5" signet="SYSTEM_SKILL_SIGNET1" value="319" delta="15" e="1" accmod2="200" element="FIRE" critprobmod2="0" hoptype="DAMAGE">
+	<subeffect skill_id="8383" addeffect="true"/>
+</signetburst>
+		<effect1_type>SignetBurst</effect1_type>
+		<effect1_noresist>0</effect1_noresist>
+		<effect1_target_type>Target_Only</effect1_target_type>
+		<effect1_reserved1>15</effect1_reserved1>
+		<effect1_reserved2>319</effect1_reserved2>
+		<effect1_reserved5>0</effect1_reserved5>
+		<effect1_reserved6>200</effect1_reserved6>
+		<effect1_reserved7>1</effect1_reserved7>
+		<effect1_reserved8>5</effect1_reserved8>
+		<effect1_reserved10>Fire</effect1_reserved10>
+		<effect1_reserved11>100</effect1_reserved11>
+		<effect1_reserved12>100</effect1_reserved12>
+		<effect1_reserved14>1</effect1_reserved14>
+		<effect1_reserved15>AS_SignetBurst_G1_AddEffect</effect1_reserved15>
+		<effect1_reserved16>1</effect1_reserved16>
+		<effect1_reserved17>0</effect1_reserved17>
+		<effect1_reserved18>200</effect1_reserved18>
 
-<statup duration2="600000" effectid="185524" e="4" basiclvl="200" noresist="true" preeffect="1">
-	<change stat="REGEN_MP" func="ADD" value="400"/>
-	<change stat="ABNORMAL_RESISTANCE_ALL" func="ADD" value="100000"/>
-	<change stat="PVP_ATTACK_RATIO" func="ADD" value="500"/>
-</statup>
-		<effect4_reserved1>0</effect4_reserved1>
-		<effect4_reserved2>400</effect4_reserved2>
-		<effect4_reserved3>0</effect4_reserved3>
-		<effect4_reserved4>100000</effect4_reserved4>
-		<effect4_reserved6>0</effect4_reserved6>
-		<effect4_reserved7>0</effect4_reserved7>
-		<effect4_reserved13>MPRegen</effect4_reserved13>
-		<effect4_reserved14>ARAll</effect4_reserved14>
-		<effect4_reserved15>0</effect4_reserved15>
-		<effect4_reserved16>500</effect4_reserved16>
-		<effect4_reserved17>0</effect4_reserved17>
-		<effect4_reserved18>PVPAttackRatio</effect4_reserved18>
+Stagger			8217 (reserved14)
+Stumble		8218 (reserved14)
+SimpleMoveBack		8219 (reserved 7) ???
+Spin				8223 (reserved14)
+OpenAerial	8224 (reserved14)
+Pulled			8441 (reserved14)
 
-<statup maxstat="true" duration2="7200000" effectid="191362" e="2" noresist="true" element="WATER" preeffect="1">
-	<change stat="MAXHP" func="ADD" value="90000"/>
-	<change stat="MAXMP" func="ADD" value="45000"/>
-	<change stat="PHYSICAL_DEFENSE" func="ADD" value="500"/>
-	<change stat="MAGICAL_RESIST" func="ADD" value="500"/>
-</statup>
-		<effect2_reserved1>0</effect2_reserved1>
-		<effect2_reserved2>90000</effect2_reserved2>
-		<effect2_reserved3>0</effect2_reserved3>
-		<effect2_reserved4>45000</effect2_reserved4>
-		<effect2_reserved6>0</effect2_reserved6>
-		<effect2_reserved7>0</effect2_reserved7>
-		<effect2_reserved10>water</effect2_reserved10>
-		<effect2_reserved13>maxHp</effect2_reserved13>
-		<effect2_reserved14>maxMp</effect2_reserved14>
-		<effect2_reserved15>0</effect2_reserved15>
-		<effect2_reserved16>500</effect2_reserved16>
-		<effect2_reserved17>0</effect2_reserved17>
-		<effect2_reserved18>PMDefend</effect2_reserved18>
+Flyoff			8696 (reserved14)
 
-<statup maxstat="true" duration2="7200000" effectid="191363" e="3" noresist="true" element="FIRE" preeffect="2">
-	<change stat="REGEN_HP" func="ADD" value="900"/>
-	<change stat="SPEED" func="ADD" value="1000"/>
-</statup>
-		<effect3_reserved1>0</effect3_reserved1>
-		<effect3_reserved2>900</effect3_reserved2>
-		<effect3_reserved3>0</effect3_reserved3>
-		<effect3_reserved4>10</effect3_reserved4>
-		<effect3_reserved6>0</effect3_reserved6>
-		<effect3_reserved10>fire</effect3_reserved10>
-		<effect3_reserved13>hpregen</effect3_reserved13>
-		<effect3_reserved14>speed</effect3_reserved14>
+Stagger3		8633
+Stumble3		8636
+Stumble4		8637
 
-<armormastery armor="PLATE" effectid="124" e="1" basiclvl="2">
-	<change stat="PHYSICAL_DEFENSE" func="PERCENT" value="10"/> if armor mastery stat = PHYSICAL_DEFENSE et PERCENT
-</armormastery>
+if (instanceof signet) : addeffect = 7 / 14 / 16 --- NAME match
+AS_SignetBurst_G1_AddEffect				8383 (reserved 15)
+AS_SignetImolation_G1_AddEffect			8412 (reserved 15)
+AS_SignetNova_G1_AddEffect				8413
+AS_DrainBurst_G1_AddEffect					8482
+AS_DrainBurst_G2_AddEffect					8523
+AS_NovaBurst_G1_AddEffect					8527
+AS_DemonicBurst_G1_AddEffect			8528
+
+AS_SunBurst_G1_AddEffect					8572
+AS_MoonBurst_G1_AddEffect				8573
+
+AS_SilentBurst_G1_AddEffect				8673
+
+AS_DrainBurst_G3_AddEffect					8759
+
+<onetimeboostskillcritical count="1" percent="true" value="70" duration2="10000" effectid="176" e="1" noresist="true"/>
 		<effect1_reserved1>0</effect1_reserved1>
-		<effect1_reserved2>10</effect1_reserved2> value
-		<effect1_reserved3>1</effect1_reserved3>
-		<effect1_reserved4>9</effect1_reserved4>
-		<effect1_reserved5>plate</effect1_reserved5>
+		<effect1_reserved2>70</effect1_reserved2>
 		<effect1_reserved6>0</effect1_reserved6>
-		<effect1_reserved7>10</effect1_reserved7>
-		<effect1_reserved8>1</effect1_reserved8>
-		<effect1_reserved9>9</effect1_reserved9>
+		<effect1_reserved7>1</effect1_reserved7>
 
-<wpnmastery weapon="SWORD_1H" effectid="101" e="1" basiclvl="2">
-	<change stat="PHYSICAL_ATTACK" func="PERCENT" value="30"/>
-</wpnmastery>
+<onetimeboostskillcritical count="2" value="1000" duration2="10000" effectid="176" e="1" noresist="true" hoptype="SKILLLV" hopb="587"/>
 		<effect1_reserved1>0</effect1_reserved1>
-		<effect1_reserved2>30</effect1_reserved2>
+		<effect1_reserved2>0</effect1_reserved2>
 		<effect1_reserved3>0</effect1_reserved3>
-		<effect1_reserved4>0</effect1_reserved4>
-		<effect1_reserved5>1h_sword</effect1_reserved5>
-
-	1 2 4 8 16
-2	0 1 
-4	0 0 1
-8	0 0 0 1
-16 	0 0 0 0 1
-32	0 0 0 0 0 1
-64  
+		<effect1_reserved4>1000</effect1_reserved4>
+		<effect1_reserved6>0</effect1_reserved6>
+		<effect1_reserved7>2</effect1_reserved7>
