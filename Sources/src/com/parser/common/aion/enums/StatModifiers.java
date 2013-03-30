@@ -1,21 +1,24 @@
 package com.parser.common.aion.enums;
 
 import com.google.common.base.Strings;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * @author Viria
  */
-public enum ModifiersEnum {
+public enum StatModifiers {
 
-	NONE,
-	MAXHP("MAXHP"),
-	MAXMP("MAXMP"),
-	BLOCK("BLOCK"),
+	// Items
+	MAXHP,
+	MAXMP,
+	BLOCK,
 	EVASION("DODGE"),
-	CONCENTRATION("CONCENTRATION"),
-	PARRY("PARRY"),
-	SPEED("SPEED"),
-	ATTACK_SPEED("ATTACKDELAY"),
+	CONCENTRATION,
+	PARRY,
+	SPEED(true),
+	ATTACK_SPEED("ATTACKDELAY", true),
 	PHYSICAL_ATTACK("PHYATTACK"),
 	PHYSICAL_ACCURACY("HITACCURACY"),
 	PHYSICAL_CRITICAL("CRITICAL"),
@@ -24,16 +27,18 @@ public enum ModifiersEnum {
 	MAGICAL_ACCURACY("MAGICALHITACCURACY"),
 	MAGICAL_CRITICAL("MAGICALCRITICAL"),
 	// MAGICAL_RESIST("MAGICALRESIST"), Handled by the accessors
-	MAGICAL_RESIST("MAGICAL_RESIST"),
+	MAGICAL_RESIST,
 	EARTH_RESISTANCE("ELEMENTALDEFENDEARTH"),
 	FIRE_RESISTANCE("ELEMENTALDEFENDFIRE"),
 	WIND_RESISTANCE("ELEMENTALDEFENDAIR"),
 	WATER_RESISTANCE("ELEMENTALDEFENDWATER"),
+	LIGHT_RESISTANCE("ELEMENTALDEFENDLIGHT"),
+	DARK_RESISTANCE("ELEMENTALDEFENDDARK"),
 	BOOST_MAGICAL_SKILL("MAGICALSKILLBOOST"),
-	BOOST_CASTING_TIME("BOOSTCASTINGTIME"),
+	BOOST_CASTING_TIME("BOOSTCASTINGTIME", true),
 	BOOST_HATE("BOOSTHATE"),
 	FLY_TIME("MAXFP"),
-	FLY_SPEED("FLYSPEED"),
+	FLY_SPEED("FLYSPEED", true),
 	PVP_ATTACK_RATIO("PVPATTACKRATIO"),
 	PVP_ATTACK_RATIO_PHYSICAL("PVPATTACKRATIO_PHYSICAL"),
 	PVP_ATTACK_RATIO_MAGICAL("PVPATTACKRATIO_MAGICAL"),
@@ -45,7 +50,6 @@ public enum ModifiersEnum {
 	CHARM_RESISTANCE("ARCHARM"),
 	CONFUSE_RESISTANCE("ARCONFUSE"),
 	CURSE_RESISTANCE("ARCURSE"),
-	// DEFORM_RESISTANCE(""),
 	DISEASE_RESISTANCE("ARDISEASE"),
 	FEAR_RESISTANCE("ARFEAR"),
 	OPENAREIAL_RESISTANCE("AROPENAREIAL"),
@@ -61,6 +65,7 @@ public enum ModifiersEnum {
 	STAGGER_RESISTANCE("ARSTAGGER"),
 	STUMBLE_RESISTANCE("ARSTUMBLE"),
 	STUN_RESISTANCE("ARSTUN"),
+	PULLED_RESISTANCE("ARPULLED"),
 	SILENCE_RESISTANCE_PENETRATION("SILENCE_ARP"),
 	PARALYZE_RESISTANCE_PENETRATION("PARALYZE_ARP"),
 	STAGGER_RESISTANCE_PENETRATION("STAGGER_ARP"),
@@ -87,26 +92,89 @@ public enum ModifiersEnum {
 	PERIFICATION_RESISTANCE_PENETRATION("PERIFICATION_ARP"),
 	OPENAREIAL_RESISTANCE_PENETRATION("OPENAREIAL_ARP"),
 	SNARE_RESISTANCE_PENETRATION("SNARE_ARP"),
-	SLOW_RESISTANCE_PENETRATION("SLOW_ARP");
-
-	private String clientString;
+	SLOW_RESISTANCE_PENETRATION("SLOW_ARP"),
+	// Skills
+	BOOST_DROP_RATE,
+	ABNORMAL_RESISTANCE_ALL("ARALL"),
+	ALLRESIST,
+	ALLPARA,
+	REGEN_HP("HPREGEN"),
+	REGEN_MP("MPREGEN"),
+	REGEN_FP("FPREGEN"),
+	DEFORM_RESISTANCE("ARDEFORM"),
+	POWER("STR"),
+	WILL("WIL"),
+	HEALTH("VIT"),
+	AGILITY("AGI"),
+	KNOWLEDGE("KNO"),
+	ATTACK_RANGE("ATTACKRANGE"),
+	PVE_ATTACK_RATIO("PVEATTACKRATIO"), //TODO: Add
+	// BOOST_CHARGE_TIME("BOOSTCHARGETIME", true), //TODO: Add
+	KNOWIL,
 	
-	private ModifiersEnum(String clientString) {
+	// Compacted Modifiers
+	PMATTACK(new String[] {"PHYSICAL_ATTACK", "MAGICAL_ATTACK"}),
+	PMDEFEND(new String[] {"PHYSICAL_DEFENSE", "MAGICAL_RESIST"}),
+	ELEMENTALDEFENDALL(new String[] {"EARTH_RESISTANCE", "FIRE_RESISTANCE", "WIND_RESISTANCE", "WATER_RESISTANCE"}),
+	ARSTUNLIKE(new String[] {"STUN_RESISTANCE", "STUMBLE_RESISTANCE", "STAGGER_RESISTANCE", "SPIN_RESISTANCE", "OPENAREIAL_RESISTANCE"}),
+	ACTIVEDEFEND(new String[] {"EVASION", "PARRY", "BLOCK"}),
+	ALLSPEED(new String[] {"SPEED", "FLY_SPEED"}),
+	//
+	
+	NONE;
+
+	private String clientString = null;
+	private String[] linked = null;
+	private boolean isPercent = false;
+	
+	private StatModifiers(String clientString, String[] linked, boolean isPercent) {
 		this.clientString = clientString;
+		this.linked = linked;
+		this.isPercent = isPercent;
 	}
 	
-	private ModifiersEnum() {
-		this(null);
+	private StatModifiers(String[] linked) {
+		this(null, linked, false);
+	}
+	
+	private StatModifiers(String clientString) {
+		this(clientString, null, false);
+	}
+	
+	private StatModifiers(String clientString, boolean isPercent) {
+		this(clientString, null, isPercent);
+	}
+	
+	private StatModifiers(boolean isPercent) {
+		this(null, null, isPercent);
+	}
+	
+	private StatModifiers() {
+		this(null, null, false);
 	}
 	
 	public String getClientString() {return clientString;}
+	public List<String> getLinked() {
+		List<String> meanings = new ArrayList<String>();
+		if (this.linked != null)
+			Collections.addAll(meanings, this.linked);
+		return meanings;
+	}
+	public boolean isPercent() {return isPercent;}
 	
-	public static ModifiersEnum fromClient(String string) {
+	public static StatModifiers fromClient(String string) {
 		
 		// Special corrections (Thanks NC ...)
 		if (string.equalsIgnoreCase("MAGICALRESIST")) {string = "MAGICAL_RESIST";}
+		if (string.equalsIgnoreCase("HP")) {string = "MAXHP";}
+		if (string.equalsIgnoreCase("ERFIRE")) {string = "FIRE_RESISTANCE";}
+		if (string.equalsIgnoreCase("ERAIR")) {string = "WIND_RESISTANCE";}
+		if (string.equalsIgnoreCase("EREARTH")) {string = "EARTH_RESISTANCE";}
+		if (string.equalsIgnoreCase("ERWATER")) {string = "WATER_RESISTANCE";}
+		if (string.equalsIgnoreCase("DEX")) {string = "AGI";}
+		if (string.equalsIgnoreCase("BOOSTSKILLCASTINGTIME")) {string = "BOOST_CASTING_TIME";}
 		
-		for (ModifiersEnum v : values()) {
+		for (StatModifiers v : values()) {
 			if (v.getClientString() != null) {
 				if (v.getClientString().equalsIgnoreCase(string))
 					return v;
@@ -115,12 +183,12 @@ public enum ModifiersEnum {
 					return fromValue(string);
 			}
 		}
-		System.out.println("[MODIFIERS] No Modifiers matching :" + string);
-		return ModifiersEnum.NONE;
+		try {int value = Integer.parseInt(string);} catch (Exception e) {System.out.println("[MODIFIERS] No StatModifiers matching : " + string);}
+		return StatModifiers.NONE;
 	}
 	
-	public static ModifiersEnum fromValue(String name) {
-		for (ModifiersEnum v : values()) {
+	public static StatModifiers fromValue(String name) {
+		for (StatModifiers v : values()) {
 			if (v.toString().equalsIgnoreCase(name))
 				return v;
 		}

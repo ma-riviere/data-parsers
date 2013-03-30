@@ -220,10 +220,11 @@ public enum EffectType {
 	ACTIVATE_ENSLAVE,
 		
 	SEARCH,
-	HIDE;
+	HIDE,
+	
+	NONE; //TODO: Return this (make checks if NONE)
 	
 	private String abstractCategory;
-	// private String subCategory;
 	private String[] clientStrings;
 	
 	private EffectType(String abstractCategory, String[] clientStrings) {
@@ -271,7 +272,7 @@ public enum EffectType {
 					return fromValue(string);
 			}
 		}
-		System.out.println("[SKILLS] No EffectType matching :" + string);
+		try {int value = Integer.parseInt(string);} catch (Exception e) {System.out.println("[SKILLS] No EffectType matching : " + string);}
 		return null;
 	}
 	

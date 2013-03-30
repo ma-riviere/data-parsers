@@ -734,8 +734,8 @@ public class AionItemsWriter extends AbstractWriter {
 		
 		// Finding out attribute
 		if (!Strings.isNullOrEmpty(bonus[0])) {
-			if (ModifiersEnum.fromClient(bonus[0]) != ModifiersEnum.NONE)
-				attribute = ModifiersEnum.fromClient(bonus[0]).toString();
+			if (StatModifiers.fromClient(bonus[0]) != StatModifiers.NONE)
+				attribute = StatModifiers.fromClient(bonus[0]).toString();
 			if (attribute == "") 
 				System.out.println("[ITEMS] No Attribute for :" + bonus[0].toUpperCase());
 		}

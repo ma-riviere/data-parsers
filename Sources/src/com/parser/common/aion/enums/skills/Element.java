@@ -39,7 +39,7 @@ public enum Element {
 					return fromValue(string);
 			}
 		}
-		System.out.println("[SKILLS] No Element matching :" + string);
+		try {int value = Integer.parseInt(string);} catch (Exception e) {System.out.println("[SKILLS] No Element matching : " + string);}
 		return Element.NONE;
 	}
 	
