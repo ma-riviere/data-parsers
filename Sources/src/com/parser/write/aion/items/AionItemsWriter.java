@@ -93,7 +93,7 @@ public class AionItemsWriter extends AbstractWriter {
 								
 				it.setQuality(ci.getQuality() != null ? ci.getQuality().toUpperCase() : "JUNK");
 				it.setPrice(ci.getPrice());
-				it.setRace(ci.getRacePermitted() != null ? Race.getRaceByString(ci.getRacePermitted()).toString() : "PC_ALL");
+				it.setRace(ci.getRacePermitted() != null ? Race.fromClient(ci.getRacePermitted()).toString() : "PC_ALL");
 				if (!Strings.isNullOrEmpty(ci.getNoEnchant()) && !ci.getNoEnchant().equalsIgnoreCase("false"))
 					it.setNoEnchant(ci.getNoEnchant().toLowerCase()); 																							// TODO : Remove no_enchant, use mask instead
 				it.setRestrict(createRestrictString(ci));
@@ -432,7 +432,7 @@ public class AionItemsWriter extends AbstractWriter {
 									Skilllearn sla = new Skilllearn();
 									sla.setSkillid(skillId);
 									sla.setLevel((int) csl.getPcLevel());
-									sla.setClazz(PlayerClass.getClassByString(csl.getClazz()).toString());
+									sla.setClazz(PlayerClass.fromClient(csl.getClazz()).toString());
 									actionList.getSkilllearn().add(sla);
 									hasActions = true;
 								}

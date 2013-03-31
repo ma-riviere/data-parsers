@@ -1,5 +1,9 @@
 package com.parser.common.aion.enums;
 
+import java.util.ArrayList;
+import java.util.List;
+import com.google.common.base.Strings;
+
 /**
  * @author Viria
  */
@@ -52,26 +56,42 @@ public enum Race {
 	
 	public String getClientString() {return clientString;}
 	
-	public static Race getRaceByString(String string) {
+	public static List<String> unkRace = new ArrayList<String>();
+	
+	public static Race fromClient(String string) {
+	
+		if (Strings.isNullOrEmpty(string))
+			return Race.NONE;
+	
 		String[] races = string.split(" ");
 		if (races.length > 1)
 			return PC_ALL;
 		else {
-			for (Race r : values()) {
-				if (r.getClientString().equalsIgnoreCase(string))
-					return r;
+			for (Race v : values()) {
+				if (v.getClientString() != null) {
+					if (v.getClientString().equalsIgnoreCase(string))
+						return v;
+				} else {
+					if (fromValue(string) != null)
+						return fromValue(string);
+				}
 			}
 		}
-		System.out.println("[RACE] No Race matching :" + string);
-		return null;
+		try {int value = Integer.parseInt(string);} 
+		catch (Exception e) {
+			if (!unkRace.contains(string.toUpperCase())) {
+				System.out.println("[RACE] No Race matching : " + string.toUpperCase());
+				unkRace.add(string.toUpperCase());
+			}
+		}
+		return Race.NONE;
 	}
 	
-	public static Race getRaceByName(String name) {
+	public static Race fromValue(String name) {
 		for (Race r : values()) {
 			if (r.toString().equalsIgnoreCase(name))
 				return r;
 		}
-		System.out.println("[RACE] No Race named :" + name);
 		return null;
 	}
 }

@@ -133,7 +133,6 @@ public enum StatModifiers {
 	ARSTUNLIKE(new String[] {"STUN_RESISTANCE", "STUMBLE_RESISTANCE", "STAGGER_RESISTANCE", "SPIN_RESISTANCE", "OPENAREIAL_RESISTANCE"}),
 	ACTIVEDEFEND(new String[] {"EVASION", "PARRY", "BLOCK"}),
 	ALLSPEED(new String[] {"SPEED", "FLY_SPEED"}),
-	//
 	
 	NONE;
 
@@ -191,7 +190,7 @@ public enum StatModifiers {
 		try {int value = Integer.parseInt(string);} 
 		catch (Exception e) {
 			if (!unknownMod.contains(string.toUpperCase())) {
-				System.out.println("[MODIFIERS] No StatModifiers matching : " + string.toUpperCase());
+				System.out.println("[STAT MODIFIERS] No StatModifiers matching : " + string.toUpperCase());
 				unknownMod.add(string.toUpperCase());
 			}
 		}

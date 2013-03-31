@@ -1,6 +1,5 @@
 package com.parser.write.aion.skills;
 
-import com.google.common.base.Joiner;
 import com.google.common.base.Strings;
 import java.util.Collection;
 import java.util.Collections;
@@ -495,11 +494,11 @@ public class AionSkillsWriter extends AbstractWriter {
 		}
 		
 		if (rm1 != null && rm2 == null) {
-			System.out.println("[SKILLS] Stigma method 1 returned a result for : " + name.toUpperCase() + " but not 2");
+			// System.out.println("[SKILLS] Stigma method 1 returned a result for : " + name.toUpperCase() + " but not 2");
 			return rm1;
 		}
 		if (rm1 == null && rm2 != null) {
-			System.out.println("[SKILLS] Stigma method 2 returned a result for : " + name.toUpperCase() + " but not 1");
+			// System.out.println("[SKILLS] Stigma method 2 returned a result for : " + name.toUpperCase() + " but not 1");
 			return rm2;
 		}
 		
@@ -1801,35 +1800,29 @@ public class AionSkillsWriter extends AbstractWriter {
 	}
 	
 	private boolean setValue(ClientSkill cs, Effect e, String current, Integer[] target) {
-		if (e.getValue() == null) {
-			List<Integer> targets = new ArrayList<Integer>();
-			Collections.addAll(targets, target);
-			
-			for (Integer i : targets) {
-				if (getIntValue(cs, current, "reserved" + i) != 0) {
-					e.setValue(getIntValue(cs, current, "reserved" + i));
-					return true;
-				}
+		List<Integer> targets = new ArrayList<Integer>();
+		Collections.addAll(targets, target);
+		
+		for (Integer i : targets) {
+			if (getIntValue(cs, current, "reserved" + i) != 0) {
+				e.setValue(getIntValue(cs, current, "reserved" + i));
+				return true;
 			}
-			return false;
 		}
-		return true;
+		return false;
 	}
 	
 	private boolean setDelta(ClientSkill cs, Effect e, String current, Integer[] target) {
-		if (e.getDelta() == null) {
-			List<Integer> targets = new ArrayList<Integer>();
-			Collections.addAll(targets, target);
-			
-			for (Integer i : targets) {
-				if (getIntValue(cs, current, "reserved" + i) != 0) {
-					e.setDelta(getIntValue(cs, current, "reserved" + i));
-					return true;
-				}
+		List<Integer> targets = new ArrayList<Integer>();
+		Collections.addAll(targets, target);
+		
+		for (Integer i : targets) {
+			if (getIntValue(cs, current, "reserved" + i) != 0) {
+				e.setDelta(getIntValue(cs, current, "reserved" + i));
+				return true;
 			}
-			return false;
 		}
-		return true;
+		return false;
 	}
 	
 	private boolean setGeneral(ClientSkill cs, Effect effect, int a) {
@@ -1843,6 +1836,7 @@ public class AionSkillsWriter extends AbstractWriter {
 		hasGeneralEffects |= setChange(cs, effect, current);
 		// hasGeneralEffects |= setEffectConditions(cs, effect, current);
 		hasGeneralEffects |= setSubEffect(cs, effect, current);
+		hasGeneralEffects |= setActionModifiers(cs, effect, current);
 		
 		if (JAXBHandler.getValue(cs, current + "hop_a") != null && JAXBHandler.getValue(cs, current + "hop_a") != 0) {
 			effect.setHopa((Integer) JAXBHandler.getValue(cs, current + "hop_a"));
@@ -1979,6 +1973,80 @@ public class AionSkillsWriter extends AbstractWriter {
 		}
 	
 		return hasSubEffect;
+	}
+	
+	private boolean setActionModifiers(ClientSkill cs, Effect effect, String current) {
+		boolean hasModifiers = false;
+		ActionModifiers modifiers = new ActionModifiers();
+		
+		if (JAXBHandler.getValue(cs, current + "reserved16") != null) {
+		
+			String modString = JAXBHandler.getValue(cs, current + "reserved16").toString().toUpperCase().trim();
+			
+			List<String> modStrings = new ArrayList<String>();
+			Collections.addAll(modStrings, modString.split(","));
+			
+			for (String s : modStrings) {
+				s= s.trim();
+				boolean add = false;
+				if (s.startsWith("_RACE_") && Race.fromClient(s.replaceFirst("_RACE_", "")) != Race.NONE) {
+					TargetRaceDamageModifier race = new TargetRaceDamageModifier();
+					race.setRace(Race.fromClient(s.replaceFirst("_RACE_", "")).toString());
+					add |= setModifiersGeneral(cs, race, current);
+					if (add) {
+						modifiers.getBackdamageAndFrontdamageAndAbnormaldamage().add(race);
+						hasModifiers = true;
+					}
+				}
+				else if (s.startsWith("_CLASS_") && PlayerClass.fromClient(s.replaceFirst("_CLASS_", "")) != null) {
+					// TODO: Implement
+				}
+				else if (s.equalsIgnoreCase("_BACK") || s.equalsIgnoreCase("BACK")) {
+					BackDamageModifier back = new BackDamageModifier();
+					add |= setModifiersGeneral(cs, back, current);
+					if (add) {
+						modifiers.getBackdamageAndFrontdamageAndAbnormaldamage().add(back);
+						hasModifiers = true;
+					}
+				}
+				else if (s.equalsIgnoreCase("_FRONT") || s.equalsIgnoreCase("FRONT")) {
+					FrontDamageModifier front = new FrontDamageModifier();
+					add |= setModifiersGeneral(cs, front, current);
+					if (add) {
+						modifiers.getBackdamageAndFrontdamageAndAbnormaldamage().add(front);
+						hasModifiers = true;
+					}
+				}
+				else if (EffectType.fromClient(s) != null) {
+					AbnormalDamageModifier abnormal = new AbnormalDamageModifier();
+					abnormal.setState(EffectType.fromClient(s).toString());
+					add |= setModifiersGeneral(cs, abnormal, current);
+					if (add) {
+						modifiers.getBackdamageAndFrontdamageAndAbnormaldamage().add(abnormal);
+						hasModifiers = true;
+					}
+				}
+			}
+			
+			if (hasModifiers)
+				effect.setModifiers(modifiers);
+		}
+		return hasModifiers;
+	}
+	
+	private boolean setModifiersGeneral(ClientSkill cs, ActionModifier mod, String current) {		
+		boolean hasGeneral = false;
+		// Set the general properties of the modifier
+		if (getIntValue(cs, current, "reserved7") == 1) {mod.setMode("PERCENT");}
+		if (getIntValue(cs, current, "reserved10") != 0) {
+			if (getIntValue(cs, current, "reserved10") != 0) {mod.setValue(getIntValue(cs, current, "reserved10")); hasGeneral = true;}
+			if (getIntValue(cs, current, "reserved9") != 0) {mod.setDelta(getIntValue(cs, current, "reserved9")); hasGeneral = true;}
+		}
+		else { // if reserved10 instanceof Element
+			if (getIntValue(cs, current, "reserved9") != 0) {mod.setValue(getIntValue(cs, current, "reserved9")); hasGeneral = true;}
+			if (getIntValue(cs, current, "reserved8") != 0) {mod.setDelta(getIntValue(cs, current, "reserved8")); hasGeneral = true;}
+		}
+		return hasGeneral;
 	}
 	
 	private boolean setChange(ClientSkill cs, Effect e, String current) {
