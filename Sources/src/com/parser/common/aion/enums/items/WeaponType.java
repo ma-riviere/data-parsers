@@ -1,5 +1,8 @@
 package com.parser.common.aion.enums.items;
 
+import java.util.List;
+import java.util.ArrayList;
+
 /**
  * @author Viria
  */
@@ -35,6 +38,8 @@ public enum WeaponType {
 	
 	public String getClientString() {return clientString;}
 	
+	public static List<String> unkWeap = new ArrayList<String>();
+	
 	/**
 	 * Returns the ENUM matching the given client string
 	 * If no Client String is bound to the enum, it will try to match the enum string value.
@@ -49,7 +54,13 @@ public enum WeaponType {
 					return fromValue(string);
 			}
 		}
-		System.out.println("[SKILLS] No WeaponType matching :" + string);
+		try {int value = Integer.parseInt(string);} 
+		catch (Exception e) {
+			if (!unkWeap.contains(string.toUpperCase())) {
+				System.out.println("[WEAPON] No WeaponType matching : " + string.toUpperCase());
+				unkWeap.add(string.toUpperCase());
+			}
+		}
 		return null;
 	}
 	
