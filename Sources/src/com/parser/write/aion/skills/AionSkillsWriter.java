@@ -3,6 +3,7 @@ package com.parser.write.aion.skills;
 import com.google.common.base.Joiner;
 import com.google.common.base.Strings;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
@@ -74,7 +75,7 @@ public class AionSkillsWriter extends AbstractWriter {
 			if (JAXBHandler.getValue(cs, "counter_skill") != null)
 				st.setCounterSkill(JAXBHandler.getValue(cs, "counter_skill").toString());
 			if (JAXBHandler.getValue(cs, "penalty_skill_succ") != null)
-				st.setPenaltySkillId(getSkillId(JAXBHandler.getValue(cs, "penalty_skill_succ").toString()));
+				st.setPenaltySkillId((Integer) findSkill("id", "name", JAXBHandler.getValue(cs, "penalty_skill_succ")));
 			
 			st.setSkillId((Integer) JAXBHandler.getValue(cs, "id"));
 			if (JAXBHandler.getValue(cs, "desc") != null) {
@@ -418,6 +419,8 @@ public class AionSkillsWriter extends AbstractWriter {
 	private int getSkillId(String s) {return (s != null) ? new AionDataCenter().getInstance().getSkillIdByName(s) : 0;}
 	private int getNpcId(String s) {return (s != null) ? new AionDataCenter().getInstance().getNpcIdByName(s) : 0;}
 	private int getWorld(String s) {return (s != null) ? new AionDataCenter().getInstance().getWorldIdByName(s) : 0;}
+	
+	private Object findSkill(String needed, String prop, Object value) {return new AionDataCenter().getInstance().skillFinder(needed, prop, value);} //TODO: Use instead of usual getters
 	
 	private int getSkillLevel(ClientSkill cs) {
 		int level1 = 1;
@@ -1155,11 +1158,9 @@ public class AionSkillsWriter extends AbstractWriter {
 					e.setCount(getIntValue(cs, current, "reserved7"));
 					check = true;
 				}
-				if (getIntValue(cs, current, "reserved2") > 0 && getIntValue(cs, current, "reserved2") < 100) {
-					e.setPercent(true);
-					check = true;
-				}
 				if (setGeneral(cs, e, a) | setBufEffect(cs, e, current) | check) {
+					compute |= setValue(cs, e, current, new Integer[] {4, 2});
+					if (e.getValue() < 100) {e.setPercent(true);}
 					effects.getRootAndStunAndSleep().add(e);
 					compute = true;
 				}
@@ -1232,6 +1233,7 @@ public class AionSkillsWriter extends AbstractWriter {
 			else if (et == EffectType.STATBOOST) {
 				StatboostEffect e = new StatboostEffect();
 				if (setGeneral(cs, e, a) | setBufEffect(cs, e, current)) {
+					fixFuncByValue(e);
 					effects.getRootAndStunAndSleep().add(e);
 					compute = true;
 				}
@@ -1256,6 +1258,7 @@ public class AionSkillsWriter extends AbstractWriter {
 			else if (et == EffectType.WEAPONSTATBOOST) {
 				WeaponStatboostEffect e = new WeaponStatboostEffect();
 				if (setGeneral(cs, e, a) | setBufEffect(cs, e, current)) {
+					fixFuncByValue(e);
 					effects.getRootAndStunAndSleep().add(e);
 					compute = true;
 				}
@@ -1301,68 +1304,438 @@ public class AionSkillsWriter extends AbstractWriter {
 				}
 			}
 		}
-		
+		else if (et.getAbstractCatetgory().equalsIgnoreCase("DamageEffect")) {
+			
+			// MoveBehindEffect
+			if (et == EffectType.MOVEBEHINDATK) {
+				MoveBehindEffect e = new MoveBehindEffect();
+				if (setGeneral(cs, e, a) | setDamageEffect(cs, e, current)) {
+					if (getIntValue(cs, current, "reserved6") == 1) {e.setMode("PERCENT");}
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
+			// DeathBlowEffect
+			else if (et == EffectType.DEATHBLOW) {
+				DeathBlowEffect e = new DeathBlowEffect();
+				if (setGeneral(cs, e, a) | setDamageEffect(cs, e, current)) {
+					if (getIntValue(cs, current, "reserved6") == 1) {e.setMode("PERCENT");}
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
+			// DispelBuffCounterAtkEffect
+			else if (et == EffectType.DISPELBUFFCOUNTERATK) {
+				DispelBuffCounterAtkEffect e = new DispelBuffCounterAtkEffect();
+				boolean check = false;
+				if (getIntValue(cs, current, "reserved8") != 0) {e.setHitdelta(getIntValue(cs, current, "reserved8")); check = true;}
+				if (getIntValue(cs, current, "reserved9") != 0) {e.setHitvalue(getIntValue(cs, current, "reserved9")); check = true;}
+				if (getIntValue(cs, current, "reserved16") != 0) {e.setDispelLevel(getIntValue(cs, current, "reserved16")); check = true;}
+				if (getIntValue(cs, current, "reserved17") != 0) {e.setDpower(getIntValue(cs, current, "reserved17")); check = true;}
+				if (getIntValue(cs, current, "reserved18") != 0) {e.setPower(getIntValue(cs, current, "reserved18")); check = true;}
+				if (setGeneral(cs, e, a) | setDamageEffect(cs, e, current) | check) {
+					if (getIntValue(cs, current, "reserved6") == 1) {e.setMode("PERCENT");}
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
+			// DelayedSpellAttackInstantEffect
+			else if (et == EffectType.DELAYEDSPELLATK_INSTANT) {
+				DelayedSpellAttackInstantEffect e = new DelayedSpellAttackInstantEffect();
+				if (getIntValue(cs, current, "reserved9") > 0) {e.setDelay(getIntValue(cs, current, "reserved9"));}
+				if (setGeneral(cs, e, a) | setDamageEffect(cs, e, current)) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
+			// DashEffect
+			else if (et == EffectType.DASHATK) {
+				DashEffect e = new DashEffect();
+				if (setGeneral(cs, e, a) | setDamageEffect(cs, e, current)) {
+					if (getIntValue(cs, current, "reserved6") == 1) {e.setMode("PERCENT");}
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
+			// MpAttackInstantEffect
+			else if (et == EffectType.MPATTACK_INSTANT) {
+				MpAttackInstantEffect e = new MpAttackInstantEffect();
+				if (getIntValue(cs, current, "reserved6") == 1) {e.setPercent(true);}
+				if (setGeneral(cs, e, a) | setDamageEffect(cs, e, current)) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
+			// FpAttackInstantEffect
+			else if (et == EffectType.FPATK_INSTANT) {
+				FpAttackInstantEffect e = new FpAttackInstantEffect();
+				if (getIntValue(cs, current, "reserved6") == 1) {e.setPercent(true);}
+				if (setGeneral(cs, e, a) | setDamageEffect(cs, e, current)) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
+			// ProcAtkInstantEffect
+			else if (et == EffectType.PROCATK_INSTANT) {
+				ProcAtkInstantEffect e = new ProcAtkInstantEffect();
+				if (setGeneral(cs, e, a) | setDamageEffect(cs, e, current)) {
+					if (getIntValue(cs, current, "reserved6") == 1) {e.setMode("PERCENT");}
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
+			// NoReduceSpellATKInstantEffect
+			else if (et == EffectType.NOREDUCESPELLATK_INSTANT) {
+				NoReduceSpellATKInstantEffect e = new NoReduceSpellATKInstantEffect();
+				if (getIntValue(cs, current, "reserved6") == 1) {e.setPercent(true);}
+				if (setGeneral(cs, e, a) | setDamageEffect(cs, e, current)) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
+			// CarveSignetEffect
+			else if (et == EffectType.CARVESIGNET) {
+				CarveSignetEffect e = new CarveSignetEffect();
+				boolean check = false;
+				if (getIntValue(cs, current, "reserved16") != 0 && getIntValue(cs, current, "reserved16") < 100) {e.setProb(getIntValue(cs, current, "reserved16")); check = true;}
+				if (getIntValue(cs, current, "reserved10") > 1) {e.setSignetlvlstart(getIntValue(cs, current, "reserved10")); check = true;}
+				if (getIntValue(cs, current, "reserved14") != 0) {e.setSignetlvl(getIntValue(cs, current, "reserved14")); check = true;}
+				if (getIntValue(cs, current, "reserved13") != 0) {
+					String signet = "SYSTEM_SKILL_SIGNET" + getIntValue(cs, current, "reserved13");
+					e.setSignet(signet);
+					if (findSkill("id", "desc", "STR_" + signet.toUpperCase() + "_1") != null)
+						e.setSignetid((Integer) findSkill("id", "desc", "STR_" + signet.toUpperCase() + "_1"));
+					check = true;
+				}
+				if (setGeneral(cs, e, a) | setDamageEffect(cs, e, current) | check) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
+			// SignetBurstEffect
+			else if (et == EffectType.SIGNETBURST) {
+				SignetBurstEffect e = new SignetBurstEffect();
+				boolean check = false;
+				// if () {e.setAbsorb();} //TODO: Unused ?
+				if (getIntValue(cs, current, "reserved14") != 0) {e.setSignetlvl(getIntValue(cs, current, "reserved14")); check = true;}
+				if (getIntValue(cs, current, "reserved13") != 0) {
+					String signet = "SYSTEM_SKILL_SIGNET" + getIntValue(cs, current, "reserved13");
+					e.setSignet(signet);
+					check = true;
+				}
+				if (setGeneral(cs, e, a) | setDamageEffect(cs, e, current) | check) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
+			// BackDashEffect
+			else if (et == EffectType.BACKDASHATK) {
+				BackDashEffect e = new BackDashEffect();
+				if (getIntValue(cs, current, "reserved12") > 0) {e.setDistance((float) getIntValue(cs, current, "reserved12"));}
+				if (setGeneral(cs, e, a) | setDamageEffect(cs, e, current)) {
+					if (getIntValue(cs, current, "reserved6") == 1) {e.setMode("PERCENT");}
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
+			// SkillAttackInstantEffect
+			else if (et == EffectType.SKILLATK_INSTANT) {
+				SkillAttackInstantEffect e = new SkillAttackInstantEffect();
+				if (getIntValue(cs, current, "reserved15") == 1) {e.setCannotmiss(true);}
+				if (getIntValue(cs, current, "reserved8") > 0) {e.setRnddmg(getIntValue(cs, current, "reserved8"));}
+				if (setGeneral(cs, e, a) | setDamageEffect(cs, e, current)) {
+					if (getIntValue(cs, current, "reserved6") == 1) {e.setMode("PERCENT");}
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
+			// SkillAtkDrainInstantEffect
+			else if (et == EffectType.SKILLATKDRAIN_INSTANT) {
+				SkillAtkDrainInstantEffect e = new SkillAtkDrainInstantEffect();
+				boolean check = false;
+				if (getIntValue(cs, current, "reserved15") != 0) {e.setHpPercent(getIntValue(cs, current, "reserved15"));	check = true;}
+				if (getIntValue(cs, current, "reserved17") != 0) {e.setMpPercent(getIntValue(cs, current, "reserved17"));	check = true;}
+				if (setGeneral(cs, e, a) | setDamageEffect(cs, e, current) | check) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
+			// SpellAttackInstantEffect
+			else if (et == EffectType.SPELLATK_INSTANT) {
+				SpellAttackInstantEffect e = new SpellAttackInstantEffect();
+				if (setGeneral(cs, e, a) | setDamageEffect(cs, e, current)) {
+					if (getIntValue(cs, current, "reserved6") == 1) {e.setMode("PERCENT");}
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
+			// SpellAtkDrainInstantEffect
+			else if (et == EffectType.SPELLATKDRAIN_INSTANT) {
+				SpellAtkDrainInstantEffect e = new SpellAtkDrainInstantEffect();
+				boolean check = false;
+				if (getIntValue(cs, current, "reserved15") != 0) {e.setHpPercent(getIntValue(cs, current, "reserved15"));	check = true;}
+				if (getIntValue(cs, current, "reserved17") != 0) {e.setMpPercent(getIntValue(cs, current, "reserved17"));	check = true;}
+				if (setGeneral(cs, e, a) | setDamageEffect(cs, e, current) | check) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
+		}
+		// SignetEffect
+		else if (et == EffectType.SIGNET) {
+			SignetEffect e = new SignetEffect();
+			if (setGeneral(cs, e, a)) {
+				effects.getRootAndStunAndSleep().add(e);
+				compute = true;
+			}
+		}
+		// **** Alterations ****/
+		// StunEffect
+		else if (et == EffectType.STUN) {
+			StunEffect e = new StunEffect();
+			if (setGeneral(cs, e, a)) {
+				effects.getRootAndStunAndSleep().add(e);
+				compute = true;
+			}
+		}
+		// BuffStunEffect
+		else if (et == EffectType.BUFFSTUN) {
+			BuffStunEffect e = new BuffStunEffect();
+			if (setGeneral(cs, e, a)) {
+				effects.getRootAndStunAndSleep().add(e);
+				compute = true;
+			}
+		}
+		// SleepEffect
+		else if (et == EffectType.SLEEP) {
+			SleepEffect e = new SleepEffect();
+			if (setGeneral(cs, e, a)) {
+				effects.getRootAndStunAndSleep().add(e);
+				compute = true;
+			}
+		}
+		// BuffSleepEffect
+		else if (et == EffectType.BUFFSLEEP) {
+			BuffSleepEffect e = new BuffSleepEffect();
+			if (setGeneral(cs, e, a)) {
+				effects.getRootAndStunAndSleep().add(e);
+				compute = true;
+			}
+		}
+		// FearEffect
+		else if (et == EffectType.FEAR) {
+			FearEffect e = new FearEffect();
+			if (getIntValue(cs, current, "reserved2") < 100) {e.setResistchance(getIntValue(cs, current, "reserved2"));}
+			if (setGeneral(cs, e, a)) {
+				effects.getRootAndStunAndSleep().add(e);
+				compute = true;
+			}
+		}
+		// SimpleRootEffect
+		else if (et == EffectType.SIMPLE_ROOT) {
+			SimpleRootEffect e = new SimpleRootEffect();
+			if (setGeneral(cs, e, a)) {
+				effects.getRootAndStunAndSleep().add(e);
+				compute = true;
+			}
+		}
+		// RootEffect
+		else if (et == EffectType.ROOT) {
+			RootEffect e = new RootEffect();
+			if (getIntValue(cs, current, "reserved2") < 100) {e.setResistchance(getIntValue(cs, current, "reserved2"));}
+			if (setGeneral(cs, e, a)) {
+				effects.getRootAndStunAndSleep().add(e);
+				compute = true;
+			}
+		}
+		// SnareEffect 
+		else if (et == EffectType.SNARE) {
+			SnareEffect e = new SnareEffect();
+			if (setGeneral(cs, e, a)) {
+				effects.getRootAndStunAndSleep().add(e);
+				compute = true;
+			}
+		}
+		// SilenceEffect 
+		else if (et == EffectType.SILENCE) {
+			SilenceEffect e = new SilenceEffect();
+			if (setGeneral(cs, e, a)) {
+				effects.getRootAndStunAndSleep().add(e);
+				compute = true;
+			}
+		}
+		// BuffSilenceEffect 
+		else if (et == EffectType.BUFFSILENCE) {
+			BuffSilenceEffect e = new BuffSilenceEffect();
+			if (setGeneral(cs, e, a)) {
+				effects.getRootAndStunAndSleep().add(e);
+				compute = true;
+			}
+		}
+		// ParalyzeEffect 
+		else if (et == EffectType.PARALYZE) {
+			ParalyzeEffect e = new ParalyzeEffect();
+			if (setGeneral(cs, e, a)) {
+				effects.getRootAndStunAndSleep().add(e);
+				compute = true;
+			}
+		}
+		// DiseaseEffect 
+		else if (et == EffectType.DISEASE) {
+			DiseaseEffect e = new DiseaseEffect();
+			if (setGeneral(cs, e, a)) {
+				effects.getRootAndStunAndSleep().add(e);
+				compute = true;
+			}
+		}
+		// StumbleEffect 
+		else if (et == EffectType.STUMBLE) {
+			StumbleEffect e = new StumbleEffect();
+			if (setGeneral(cs, e, a)) {
+				effects.getRootAndStunAndSleep().add(e);
+				compute = true;
+			}
+		}
+		// SlowEffect
+		else if (et == EffectType.SLOW) {
+			SlowEffect e = new SlowEffect();
+			if (setGeneral(cs, e, a)) {
+				effects.getRootAndStunAndSleep().add(e);
+				compute = true;
+			}
+		}
+		// BlindEffect
+		else if (et == EffectType.BLIND) {
+			BlindEffect e = new BlindEffect();
+			if (setGeneral(cs, e, a)) {
+				compute |= setValue(cs, e, current, new Integer[] {2});
+				effects.getRootAndStunAndSleep().add(e);
+				compute = true;
+			}
+		}
+		// ConfuseEffect 
+		else if (et == EffectType.CONFUSE) {
+			ConfuseEffect e = new ConfuseEffect();
+			if (setGeneral(cs, e, a)) {
+				effects.getRootAndStunAndSleep().add(e);
+				compute = true;
+			}
+		}
+		// BindEffect 
+		else if (et == EffectType.BIND) {
+			BindEffect e = new BindEffect();
+			if (setGeneral(cs, e, a)) {
+				effects.getRootAndStunAndSleep().add(e);
+				compute = true;
+			}
+		}
+		// BuffBindEffect 
+		else if (et == EffectType.BUFFBIND) {
+			BuffBindEffect e = new BuffBindEffect();
+			if (setGeneral(cs, e, a)) {
+				effects.getRootAndStunAndSleep().add(e);
+				compute = true;
+			}
+		}
+		// SpinEffect 
+		else if (et == EffectType.SPIN) {
+			SpinEffect e = new SpinEffect();
+			if (setGeneral(cs, e, a)) {
+				effects.getRootAndStunAndSleep().add(e);
+				compute = true;
+			}
+		}
+		// StaggerEffect 
+		else if (et == EffectType.STAGGER) {
+			StaggerEffect e = new StaggerEffect();
+			if (setGeneral(cs, e, a)) {
+				effects.getRootAndStunAndSleep().add(e);
+				compute = true;
+			}
+		}
+		// AlwaysBlockEffect 
+		else if (et == EffectType.ALWAYSBLOCK) {
+			AlwaysBlockEffect e = new AlwaysBlockEffect();
+			if (setGeneral(cs, e, a)) {
+				compute |= setValue(cs, e, current, new Integer[] {9});
+				effects.getRootAndStunAndSleep().add(e);
+				compute = true;
+			}
+		}
+		// AlwaysDodgeEffect 
+		else if (et == EffectType.ALWAYSDODGE) {
+			AlwaysDodgeEffect e = new AlwaysDodgeEffect();
+			if (setGeneral(cs, e, a)) {
+				compute |= setValue(cs, e, current, new Integer[] {9});
+				effects.getRootAndStunAndSleep().add(e);
+				compute = true;
+			}
+		}
+		// AlwaysParryEffect 
+		else if (et == EffectType.ALWAYSPARRY) {
+			AlwaysParryEffect e = new AlwaysParryEffect();
+			if (setGeneral(cs, e, a)) {
+				compute |= setValue(cs, e, current, new Integer[] {9});
+				effects.getRootAndStunAndSleep().add(e);
+				compute = true;
+			}
+		}
+		// AlwaysResistEffect 
+		else if (et == EffectType.ALWAYSRESIST) {
+			AlwaysResistEffect e = new AlwaysResistEffect();
+			if (setGeneral(cs, e, a)) {
+				compute |= setValue(cs, e, current, new Integer[] {9});
+				effects.getRootAndStunAndSleep().add(e);
+				compute = true;
+			}
+		}
+
 		return compute;
 	}
 	
 	private boolean setAbstractOverTimeEffect(ClientSkill cs, AbstractOverTimeEffect effect, String current) {
 		boolean hasAbstractEffects = false;
-		if (JAXBHandler.getValue(cs, current + "checktime") != null && JAXBHandler.getValue(cs, current + "checktime") != 0) {
-			effect.setChecktime((Integer) JAXBHandler.getValue(cs, current + "checktime"));
+		if (getIntValue(cs, current, "checktime") != 0) {
+			effect.setChecktime(getIntValue(cs, current, "checktime"));
 			hasAbstractEffects = true;
 		}
-		if (JAXBHandler.getValue(cs, current + "reserved6") != null) {
-			int value = getIntValue(cs, current, "reserved6");
-			if (value == 1) {
-				effect.setPercent(true);
-				hasAbstractEffects = true;
-			}
+		if (getIntValue(cs, current, "reserved6") == 1) {
+			effect.setPercent(true);
+			hasAbstractEffects = true;
 		}
-		hasAbstractEffects |= setDelta(cs, effect, current, "reserved8");
-		hasAbstractEffects |= setValue(cs, effect, current, "reserved9");
+		hasAbstractEffects |= setDelta(cs, effect, current, new Integer[] {8});
+		hasAbstractEffects |= setValue(cs, effect, current, new Integer[] {9});
 		return hasAbstractEffects;
 	}
 	
 	private boolean setAbstractHealEffect(ClientSkill cs, AbstractHealEffect effect, String current) {
 		boolean hasAbstractEffects = false;
-		if (JAXBHandler.getValue(cs, current + "reserved6") != null) {
-			int value = getIntValue(cs, current, "reserved6");
-			if (value == 1) {
-				effect.setPercent(true);
-				hasAbstractEffects = true;
-			}
+		if (getIntValue(cs, current, "reserved6") == 1) {
+			effect.setPercent(true);
+			hasAbstractEffects = true;
 		}
-		hasAbstractEffects |= setDelta(cs, effect, current, "reserved1");
-		hasAbstractEffects |= setValue(cs, effect, current, "reserved2");
+		hasAbstractEffects |= setDelta(cs, effect, current, new Integer[] {1});
+		hasAbstractEffects |= setValue(cs, effect, current, new Integer[] {2});
 		return hasAbstractEffects;
 	}
 	
 	private boolean setAbstractDispelEffect(ClientSkill cs, AbstractDispelEffect effect, String current) {
 		boolean hasAbstractEffects = false;
 	
-		if (JAXBHandler.getValue(cs, current + "reserved16") != null) {
-			int value = getIntValue(cs, current, "reserved16");
-			if (value != 0) {
-				effect.setDispelLevel(value);
-				hasAbstractEffects = true;
-			}
+		if (getIntValue(cs, current, "reserved16") != 0) {
+			effect.setDispelLevel(getIntValue(cs, current, "reserved16"));
+			hasAbstractEffects = true;
 		}
-		if (JAXBHandler.getValue(cs, current + "reserved17") != null) {
-			int value = getIntValue(cs, current, "reserved17");
-			if (value != 0) {
-				effect.setDpower(value);
-				hasAbstractEffects = true;
-			}
+		if (getIntValue(cs, current, "reserved17") != 0) {
+			effect.setDpower(getIntValue(cs, current, "reserved17"));
+			hasAbstractEffects = true;
 		}
-		if (JAXBHandler.getValue(cs, current + "reserved18") != null) {
-			int value = getIntValue(cs, current, "reserved18");
-			if (value != 0) {
-				effect.setPower(value);
-				hasAbstractEffects = true;
-			}
+		if (getIntValue(cs, current, "reserved18") != 0) {
+			effect.setPower(getIntValue(cs, current, "reserved18"));
+			hasAbstractEffects = true;
 		}
-		hasAbstractEffects |= setDelta(cs, effect, current, "reserved1");
-		hasAbstractEffects |= setValue(cs, effect, current, "reserved2");
+		hasAbstractEffects |= setDelta(cs, effect, current, new Integer[] {1});
+		hasAbstractEffects |= setValue(cs, effect, current, new Integer[] {2});
 		return hasAbstractEffects;
 	}
 	
@@ -1416,36 +1789,48 @@ public class AionSkillsWriter extends AbstractWriter {
 			}
 		}
 
-		// hasAbstractEffects |= setDelta(cs, effect, current, "reserved1");
-		if (getIntValue(cs, current, "reserved6") > 1)
-			hasAbstractEffects |= setValue(cs, effect, current, "reserved6");
-		// 2 somtimes
+		hasAbstractEffects |= setValue(cs, effect, current, new Integer[] {6}); //TODO: If > 1 ?
 		return hasAbstractEffects;
 	}
 	
-	private boolean setValue(ClientSkill cs, Effect effect, String current, String property) {
-		boolean hasValue = false;
-		if (JAXBHandler.getValue(cs, current + property) != null) {
-			int value = getIntValue(cs, current, property);
-			if (value != 0) {
-				effect.setValue(value);
-				hasValue = true;
-			}
-		}
-		return hasValue;
+	private boolean setDamageEffect(ClientSkill cs, DamageEffect effect, String current) {
+		boolean hasAbstractEffects = false;
+		hasAbstractEffects |= setDelta(cs, effect, current, new Integer[] {1, 3, 7});
+		hasAbstractEffects |= setValue(cs, effect, current, new Integer[] {2, 4});
+		return hasAbstractEffects;
 	}
 	
-	private boolean setDelta(ClientSkill cs, Effect effect, String current, String property) {
-		boolean hasDelta = false;
-		if (JAXBHandler.getValue(cs, current + property) != null) {
-			int delta = getIntValue(cs, current, property);
-			if (delta != 0) {
-				effect.setDelta(delta);
-				hasDelta = true;
+	private boolean setValue(ClientSkill cs, Effect e, String current, Integer[] target) {
+		if (e.getValue() == null) {
+			List<Integer> targets = new ArrayList<Integer>();
+			Collections.addAll(targets, target);
+			
+			for (Integer i : targets) {
+				if (getIntValue(cs, current, "reserved" + i) != 0) {
+					e.setValue(getIntValue(cs, current, "reserved" + i));
+					return true;
+				}
 			}
+			return false;
 		}
-		return hasDelta;
-	}	
+		return true;
+	}
+	
+	private boolean setDelta(ClientSkill cs, Effect e, String current, Integer[] target) {
+		if (e.getDelta() == null) {
+			List<Integer> targets = new ArrayList<Integer>();
+			Collections.addAll(targets, target);
+			
+			for (Integer i : targets) {
+				if (getIntValue(cs, current, "reserved" + i) != 0) {
+					e.setDelta(getIntValue(cs, current, "reserved" + i));
+					return true;
+				}
+			}
+			return false;
+		}
+		return true;
+	}
 	
 	private boolean setGeneral(ClientSkill cs, Effect effect, int a) {
 		boolean hasGeneralEffects = false;
@@ -1453,7 +1838,6 @@ public class AionSkillsWriter extends AbstractWriter {
 		
 		/** TODO
 		protected ActionModifiers modifiers;
-		protected Conditions conditions;
 		protected Conditions subconditions;
 		**/
 		hasGeneralEffects |= setChange(cs, effect, current);
@@ -1569,6 +1953,7 @@ public class AionSkillsWriter extends AbstractWriter {
 		if (!Strings.isNullOrEmpty(s)) {
 			if (getSkillId(s) != 0) {skillId = getSkillId(s);}
 			else if (getSkillId("NormalAttack_" + s) != 0) {skillId = getSkillId("NormalAttack_" + s);}
+			else if (getSkillId(s.substring(1)) != 0) {skillId = getSkillId(s.substring(1));}
 			else if (s.matches(".*\\d.*")) {
 				Scanner in = new Scanner("s").useDelimiter("[^0-9]+");
 				if (in.hasNext()) {
@@ -1604,45 +1989,97 @@ public class AionSkillsWriter extends AbstractWriter {
 		
 		if (e instanceof ArmorMasteryEffect || e instanceof ShieldMasteryEffect) {
 			change.setStat(StatModifiers.PHYSICAL_DEFENSE.toString());
-			change.setValue(getIntValue(cs, current, "reserved2"));
 			change.setFunc("PERCENT");
-			changes.add(change);
 		}
 		else if (e instanceof WeaponMasteryEffect) {
 			change.setStat(StatModifiers.PHYSICAL_ATTACK.toString());
-			change.setValue(getIntValue(cs, current, "reserved2"));
 			change.setFunc("PERCENT");
-			changes.add(change);
 		}
 		else if (e instanceof BoostDropRateEffect) {
 			change.setStat(StatModifiers.BOOST_DROP_RATE.toString());
-			change.setValue(getIntValue(cs, current, "reserved2"));
 			change.setFunc("ADD");
-			changes.add(change);
 		}
+		else if (e instanceof OneTimeBoostHealEffect || e instanceof BoostHealEffect) {
+			change.setStat(StatModifiers.HEAL_BOOST.toString());
+			change.setFunc("PERCENT");
+		}
+		else if (e instanceof BoostHateEffect) {
+			change.setStat(StatModifiers.BOOST_HATE.toString());
+			change.setFunc("PERCENT");
+		}
+		else if (e instanceof SubTypeExtendDurationEffect) {
+			change.setStat(StatModifiers.BOOST_DURATION_BUFF.toString());
+			change.setFunc("PERCENT");
+		}
+		else if (e instanceof SubTypeBoostResistEffect) {
+			change.setStat(StatModifiers.BOOST_RESIST_DEBUFF.toString());
+			change.setFunc("ADD");
+		}
+		else if (e instanceof ExtendAuraRangeEffect) {
+			change.setStat(StatModifiers.BOOST_MANTRA_RANGE.toString());
+			change.setFunc("ADD");
+		}
+		else if (e instanceof BoostSpellAttackEffect) {
+			change.setStat(StatModifiers.BOOST_SPELL_ATTACK.toString());
+			change.setFunc("PERCENT");
+		}
+		else if (e instanceof DeboostHealEffect) {
+			change.setStat(StatModifiers.HEAL_SKILL_BOOST.toString());
+			change.setFunc("PERCENT");
+		}
+		else if (e instanceof BoostSkillCastingTimeEffect) {
+			change.setStat(StatModifiers.BOOST_CASTING_TIME_ATTACK.toString());
+			change.setFunc("PERCENT");
+		}
+		change.setValue(getIntValue(cs, current, "reserved2"));
 		
-		if (change.getStat() == null) {
+		if (change.getStat() != null)
+			changes.add(change);
+		else
 			modifiers = getClientModAndValue(cs, current);
+		
+		if (e instanceof CurseEffect) {
+			modifiers.put(StatModifiers.MAXHP, getIntValue(cs, current, "reserved2") * -1);
+			modifiers.put(StatModifiers.MAXMP, getIntValue(cs, current, "reserved2") * -1);
 		}
+		else if (e instanceof XPBoostEffect) {
+			modifiers.put(StatModifiers.BOOST_CRAFTING_XP_RATE, getIntValue(cs, current, "reserved2"));
+			modifiers.put(StatModifiers.BOOST_GATHERING_XP_RATE, getIntValue(cs, current, "reserved2"));
+			modifiers.put(StatModifiers.BOOST_GROUP_HUNTING_XP_RATE, getIntValue(cs, current, "reserved2"));
+			modifiers.put(StatModifiers.BOOST_HUNTING_XP_RATE, getIntValue(cs, current, "reserved2"));
+			modifiers.put(StatModifiers.BOOST_QUEST_XP_RATE, getIntValue(cs, current, "reserved2"));
+		}
+		else if (e instanceof SnareEffect) {
+			modifiers.put(StatModifiers.SPEED, getIntValue(cs, current, "reserved2") * -1);
+			modifiers.put(StatModifiers.FLY_SPEED, getIntValue(cs, current, "reserved2") * -1);
+		}
+		else if (e instanceof SlowEffect)
+			modifiers.put(StatModifiers.ATTACK_SPEED, getIntValue(cs, current, "reserved2") * -1);
+		
 		if (!modifiers.isEmpty()) {
 			for (StatModifiers mod : modifiers.keySet()) {
 				change = new Change();
 				
 				// change.setConditions(getConditions(cs, current)); //TODO
-				change.setStat(mod.toString());
-				change.setValue(modifiers.get(mod)); 
 				
+				// Stat
+				change.setStat(mod.toString());
+				// Func
+				change.setFunc(getIntValue(cs, current, "reserved6") == 1 ? "PERCENT" : "ADD");
+				// Value
+				change.setValue(modifiers.get(mod));
+				// Delta
 				if (getIntValue(cs, current, "reserved1") != 0 && (getIntValue(cs, current, "reserved2") != 0 || getIntValue(cs, current, "reserved4") != 0))
 					change.setDelta(getIntValue(cs, current, "reserved1"));
 				
-				change.setFunc(getIntValue(cs, current, "reserved6") == 1 ? "PERCENT" : "ADD");
-				if (e instanceof WeaponStatboostEffect)
-					change.setFunc("PERCENT");
-				if (mod.isPercent())
-					change.setFunc("PERCENT");
-				// change.setUnchecked(); //TODO: Unused
+				// change.setUnchecked(); //TODO: Remove, unused
 				changes.add(change);
 			}
+		}
+		// Correcting some specificities
+		for (Change c : changes) {
+			if (c.getStat().equalsIgnoreCase("ATTACK_SPEED"))
+				c.setValue(c.getValue() * -1);
 		}
 		if (!changes.isEmpty()) {
 			e.getChange().addAll(changes);
@@ -1650,6 +2087,13 @@ public class AionSkillsWriter extends AbstractWriter {
 		} else {
 			return false;
 		}
+	}
+	
+	private void fixFuncByValue(Effect e) {
+		for (Change change : e.getChange()) {
+			if (Math.abs(change.getValue()) <= 100)
+					change.setFunc("PERCENT");
+		}			
 	}
 	
 	private Map<StatModifiers, Integer> getClientModAndValue(ClientSkill cs, String current) {
@@ -1706,11 +2150,6 @@ public class AionSkillsWriter extends AbstractWriter {
 					modifiers.put(StatModifiers.fromValue(ficelle), value);
 			}
 		}
-		// Special Corrections
-		for (StatModifiers mod : modifiers.keySet()) {
-			if (mod == StatModifiers.ATTACK_RANGE)
-				modifiers.put(mod, modifiers.get(mod) * 1000);
-		}		
 		return modifiers;
 	}
 	

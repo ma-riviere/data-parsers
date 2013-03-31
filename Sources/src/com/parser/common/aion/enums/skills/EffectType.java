@@ -55,7 +55,7 @@ public enum EffectType {
 	STATDOWN("BufEffect"),
 	WPN_MASTERY("BufEffect"),
 	AMR_MASTERY("BufEffect"),
-	SHIELD_MASTERY("BufEffect", new String[] {"SHIELD_MASTERY", "SHIELDMASTERY"}),
+	SHIELD_MASTERY("BufEffect"),
 	WPN_DUAL("BufEffect"),
 	BOOSTSKILLCASTINGTIME("BufEffect"),
 	BOOSTSPELLATTACKEFFECT("BufEffect"),
@@ -74,23 +74,62 @@ public enum EffectType {
 	NORESURRECTPENALTY("BufEffect"),
 	NODEATHPENALTY("BufEffect"),
 	HIPASS("BufEffect"),
-
-	// Counter
-	DISPELBUFFCOUNTERATK,
-	MAGICCOUNTERATK,
-	// Stats change
 	
+	// DamageEffect
+	SKILLATK_INSTANT("DamageEffect"),
+	SPELLATK_INSTANT("DamageEffect"),
+	NOREDUCESPELLATK_INSTANT("DamageEffect"),
+	DELAYEDSPELLATK_INSTANT("DamageEffect"),
+	FPATK_INSTANT("DamageEffect"),
+	MPATTACK_INSTANT("DamageEffect"),
+	PROCATK_INSTANT("DamageEffect"),
+	SPELLATKDRAIN_INSTANT("DamageEffect"),
+	SKILLATKDRAIN_INSTANT("DamageEffect"),
+	MOVEBEHINDATK("DamageEffect"),
+	BACKDASHATK("DamageEffect"),
+	DASHATK("DamageEffect"),
+	SIGNETBURST("DamageEffect"),
+	CARVESIGNET("DamageEffect"),
+	DISPELBUFFCOUNTERATK("DamageEffect"),
+	DEATHBLOW("DamageEffect"),
 	
+	// SignetEffect
+	SIGNET,
+	
+	// Alterations
+	STUN,
 	BUFFSTUN,
-	BUFFBIND,
-	BUFFSILENCE,
+	SLEEP,
 	BUFFSLEEP,
+	FEAR,
+	SIMPLE_ROOT,
+	ROOT,
+	SNARE,
 	
+	SILENCE,
+	BUFFSILENCE,
+	PARALYZE,
+	DISEASE,
+	STUMBLE,
+	SLOW,
+	BLIND,
+	CONFUSE,
+	BIND,
+	BUFFBIND,
+	// PETRIFICATION, //TODO: Implement, converted to Paralyze for now
+	SPIN,
+	STAGGER,
+	
+	// Buff
 	ALWAYSDODGE,
 	ALWAYSBLOCK,
 	ALWAYSRESIST,
 	ALWAYSPARRY,
 	
+	/************ TODO *************/
+	
+	MAGICCOUNTERATK,
+		
 	INVULNERABLEWING,
 		
 	// Teleport related
@@ -105,24 +144,10 @@ public enum EffectType {
 	
 	// Attacks
 	SKILLATK,
-	SKILLATK_INSTANT,
-	SPELLATK_INSTANT,
-	NOREDUCESPELLATK_INSTANT,
-	DELAYEDSPELLATK_INSTANT,
-	FPATK_INSTANT,
 	DELAYEDFPATK_INSTANT,
-	MPATTACK_INSTANT,
-	PROCATK_INSTANT,
-	SPELLATKDRAIN_INSTANT,
-	SKILLATKDRAIN_INSTANT,
-	MOVEBEHINDATK,
-	BACKDASHATK,
-	DASHATK,
+	
 	DELAYEDSKILL,
-	// Signets
-	SIGNET,
-	SIGNETBURST,
-	CARVESIGNET,
+	
 	// Shape
 	SHAPECHANGE,
 	POLYMORPH,
@@ -135,28 +160,6 @@ public enum EffectType {
 	FALL,
 	
 	CONVERTHEAL,
-	
-	// Bad buffs
-	STUN,
-	SLEEP,
-	FEAR,
-	ROOT,
-	SIMPLE_ROOT,
-	SNARE,
-	ABSOLUTESNARE,
-	SILENCE,
-	PARALYZE,
-	DISEASE,
-	STUMBLE,
-	SLOW,
-	ABSOLUTESLOW,
-	BLIND,
-	CONFUSE,
-	BIND,
-	
-	PETRIFICATION,
-	SPIN,
-	STAGGER,
 	
 	SUMMON,
 	SUMMONSKILLAREA,
@@ -180,7 +183,6 @@ public enum EffectType {
 	REFLECTOR,
 	PROTECT,
 	
-	DRBOOST, // New 4.0
 	APBOOST,
 	GATHERPOINTBOOST,
 	EXTRACTGATHERPOINTBOOST,
@@ -188,7 +190,7 @@ public enum EffectType {
 	MENUISIERCOMBINEPOINTBOOST,
 	BOOSTSKILLCOST,
 	
-	ONETIMEBOOSTSKILLATTACK(new String[] {"ONETIMEBOOSTSKILLATTACK", "ONETIMEBOOSTSKILLATK"}), // Different ?
+	ONETIMEBOOSTSKILLATTACK,
 		
 	ABSOLUTESTATTOPCBUFF,
 	ABSOLUTESTATTOPCDEBUFF,
@@ -214,7 +216,6 @@ public enum EffectType {
 	CONDSKILLLAUNCHER,
 	DPTRANSFER,
 	SWITCHHPMP_INSTANT,
-	DEATHBLOW,
 	
 	SKILLCOOLTIMERESET,
 	ACTIVATE_ENSLAVE,
@@ -227,29 +228,12 @@ public enum EffectType {
 	private String abstractCategory;
 	private String[] clientStrings;
 	
-	private EffectType(String abstractCategory, String[] clientStrings) {
-		this.abstractCategory = abstractCategory;
-		this.clientStrings = clientStrings;
-	}
-	
 	private EffectType(String abstractCategory) {
-		this(abstractCategory, null);
-	}
-	
-	//TODO: Should not happen (fill all)
-	private EffectType(String[] clientStrings) {
-		this(null, clientStrings);
+		this.abstractCategory = abstractCategory;
 	}
 	
 	private EffectType() {
-		this(null, null);
-	}
-	
-	public List<String> getClientStrings() {
-		List<String> list = new ArrayList<String>();
-		if (clientStrings != null)
-			Collections.addAll(list, clientStrings);
-		return list;
+		this(null);
 	}
 	
 	public String getAbstractCatetgory() {
@@ -261,16 +245,21 @@ public enum EffectType {
 	 * If no Client String is bound to the enum, it will try to match the enum string value.
 	 */
 	public static EffectType fromClient(String string) {
+		
+		// Special corrections (Thanks NC ...)
+		if (string.equalsIgnoreCase("DRBOOST")) {string = "BOOSTDROPRATE";}
+		if (string.equalsIgnoreCase("ABSOLUTESNARE")) {string = "SNARE";}
+		if (string.equalsIgnoreCase("ABSOLUTESLOW")) {string = "SLOW";}
+		if (string.equalsIgnoreCase("ONETIMEBOOSTSKILLATK")) {string = "ONETIMEBOOSTSKILLATTACK";}
+		if (string.equalsIgnoreCase("SHIELDMASTERY")) {string = "SHIELD_MASTERY";}
+		if (string.equalsIgnoreCase("PETRIFICATION")) {string = "PARALYZE";}
+		
 		for (EffectType v : values()) {
-			if (!v.getClientStrings().isEmpty()) {
-				for (String client : v.getClientStrings()) {
-					if (client.equalsIgnoreCase(string))
-						return v;
-				}
-			} else {
+			if (v.toString().equalsIgnoreCase(string))
+				return v;
+			else
 				if (fromValue(string) != null)
 					return fromValue(string);
-			}
 		}
 		try {int value = Integer.parseInt(string);} catch (Exception e) {System.out.println("[SKILLS] No EffectType matching : " + string);}
 		return null;
