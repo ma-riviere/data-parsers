@@ -223,6 +223,17 @@ public class AionDataCenter {
 		return 0;
 	}
 	
+	// ***** JAXB Methods ****** //
+	
+	public Object skillFinder(String needed, String prop, Object value) {
+		for (ClientSkill cs : getClientSkills()) {
+			if (JAXBHandler.getValue(cs, prop) != null && JAXBHandler.getValue(cs, prop).toString().equalsIgnoreCase(value.toString()))
+				if (JAXBHandler.getValue(cs, needed) != null)
+					return JAXBHandler.getValue(cs, needed);
+		}
+		return null;
+	}
+	
 	/*****************************************
 	 ***      LOADING MEHTODS     ***
 	 ****************************************/

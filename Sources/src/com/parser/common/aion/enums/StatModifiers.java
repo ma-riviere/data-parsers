@@ -17,8 +17,8 @@ public enum StatModifiers {
 	EVASION("DODGE"),
 	CONCENTRATION,
 	PARRY,
-	SPEED(true),
-	ATTACK_SPEED("ATTACKDELAY", true),
+	SPEED,
+	ATTACK_SPEED("ATTACKDELAY"),
 	PHYSICAL_ATTACK("PHYATTACK"),
 	PHYSICAL_ACCURACY("HITACCURACY"),
 	PHYSICAL_CRITICAL("CRITICAL"),
@@ -35,10 +35,10 @@ public enum StatModifiers {
 	LIGHT_RESISTANCE("ELEMENTALDEFENDLIGHT"),
 	DARK_RESISTANCE("ELEMENTALDEFENDDARK"),
 	BOOST_MAGICAL_SKILL("MAGICALSKILLBOOST"),
-	BOOST_CASTING_TIME("BOOSTCASTINGTIME", true),
+	BOOST_CASTING_TIME("BOOSTCASTINGTIME"),
 	BOOST_HATE("BOOSTHATE"),
 	FLY_TIME("MAXFP"),
-	FLY_SPEED("FLYSPEED", true),
+	FLY_SPEED("FLYSPEED"),
 	PVP_ATTACK_RATIO("PVPATTACKRATIO"),
 	PVP_ATTACK_RATIO_PHYSICAL("PVPATTACKRATIO_PHYSICAL"),
 	PVP_ATTACK_RATIO_MAGICAL("PVPATTACKRATIO_MAGICAL"),
@@ -93,8 +93,8 @@ public enum StatModifiers {
 	OPENAREIAL_RESISTANCE_PENETRATION("OPENAREIAL_ARP"),
 	SNARE_RESISTANCE_PENETRATION("SNARE_ARP"),
 	SLOW_RESISTANCE_PENETRATION("SLOW_ARP"),
+	
 	// Skills
-	BOOST_DROP_RATE,
 	ABNORMAL_RESISTANCE_ALL("ARALL"),
 	ALLRESIST,
 	ALLPARA,
@@ -109,8 +109,22 @@ public enum StatModifiers {
 	KNOWLEDGE("KNO"),
 	ATTACK_RANGE("ATTACKRANGE"),
 	PVE_ATTACK_RATIO("PVEATTACKRATIO"), //TODO: Add
-	// BOOST_CHARGE_TIME("BOOSTCHARGETIME", true), //TODO: Add
+	// BOOST_CHARGE_TIME("BOOSTCHARGETIME"), //TODO: Add
 	KNOWIL,
+	
+	// Server custom
+	BOOST_CRAFTING_XP_RATE,
+	BOOST_GATHERING_XP_RATE,
+	BOOST_GROUP_HUNTING_XP_RATE,
+	BOOST_HUNTING_XP_RATE,
+	BOOST_QUEST_XP_RATE,
+	BOOST_DROP_RATE,
+	BOOST_DURATION_BUFF,
+	BOOST_RESIST_DEBUFF,
+	BOOST_MANTRA_RANGE,
+	BOOST_SPELL_ATTACK,
+	BOOST_CASTING_TIME_ATTACK,
+	HEAL_SKILL_BOOST,
 	
 	// Compacted Modifiers
 	PMATTACK(new String[] {"PHYSICAL_ATTACK", "MAGICAL_ATTACK"}),
@@ -125,32 +139,22 @@ public enum StatModifiers {
 
 	private String clientString = null;
 	private String[] linked = null;
-	private boolean isPercent = false;
 	
-	private StatModifiers(String clientString, String[] linked, boolean isPercent) {
+	private StatModifiers(String clientString, String[] linked) {
 		this.clientString = clientString;
 		this.linked = linked;
-		this.isPercent = isPercent;
 	}
 	
 	private StatModifiers(String[] linked) {
-		this(null, linked, false);
+		this(null, linked);
 	}
 	
 	private StatModifiers(String clientString) {
-		this(clientString, null, false);
-	}
-	
-	private StatModifiers(String clientString, boolean isPercent) {
-		this(clientString, null, isPercent);
-	}
-	
-	private StatModifiers(boolean isPercent) {
-		this(null, null, isPercent);
+		this(clientString, null);
 	}
 	
 	private StatModifiers() {
-		this(null, null, false);
+		this(null, null);
 	}
 	
 	public String getClientString() {return clientString;}
@@ -160,7 +164,8 @@ public enum StatModifiers {
 			Collections.addAll(meanings, this.linked);
 		return meanings;
 	}
-	public boolean isPercent() {return isPercent;}
+	
+	public static List<String> unknownMod = new ArrayList<String>();
 	
 	public static StatModifiers fromClient(String string) {
 		
@@ -183,7 +188,13 @@ public enum StatModifiers {
 					return fromValue(string);
 			}
 		}
-		try {int value = Integer.parseInt(string);} catch (Exception e) {System.out.println("[MODIFIERS] No StatModifiers matching : " + string);}
+		try {int value = Integer.parseInt(string);} 
+		catch (Exception e) {
+			if (!unknownMod.contains(string.toUpperCase())) {
+				System.out.println("[MODIFIERS] No StatModifiers matching : " + string.toUpperCase());
+				unknownMod.add(string.toUpperCase());
+			}
+		}
 		return StatModifiers.NONE;
 	}
 	

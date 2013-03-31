@@ -74,8 +74,8 @@ public enum ItemCategory {
 	BELT("ARMOR", "belt_", "_Belt_"),
 	// Skills
 	SKILLBOOK("skillbook_", "_skillbook_"),
-	STIGMA("STIGMA", "stigma_", "_Stigma"),
-	STIGMA_ADVANCED("STIGMA", "", ""),
+	STIGMA("stigma_", "_Stigma"),
+	STIGMA_ADVANCED,
 	// Shards
 	STIGMA_SHARDS("stigma_shard", "_Crystal"),
 	POWER_SHARDS("ARMOR", "battery_", "_Battery"), 

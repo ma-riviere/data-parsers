@@ -131,7 +131,8 @@ public class AionItemsWriter extends AbstractWriter {
 				
 				if (ci.getReturnWorldid() != 0)
 					it.setReturnWorld(ci.getReturnWorldid());
-				it.setReturnAlias(ci.getReturnAlias());
+				if (!Strings.isNullOrEmpty(ci.getReturnAlias()))
+					it.setReturnAlias(ci.getReturnAlias().toUpperCase());
 				
 				// Modifiers -  [UPDATE] More attributes ? New Modifiers ?
 				Modifiers mod = new Modifiers();
@@ -662,16 +663,16 @@ public class AionItemsWriter extends AbstractWriter {
 			mask |= 1024;
 		if (ci.getCanCompositeWeapon() != null && ci.getCanCompositeWeapon().equalsIgnoreCase("true"))
 			mask |= 2048;
-		if (ci.getCannotChangeskin() == 1)
+		if (ci.getCannotChangeskin() == 0)
 			mask |= 4096;
 		if (ci.getCanSplit() != null && ci.getCanSplit().equalsIgnoreCase("true"))
 			mask |= 8192;
 		if (ci.getItemDropPermitted() != null && ci.getItemDropPermitted().equalsIgnoreCase("true"))
 			mask |= 16384;
-		if (ci.getCanDye()  == 1)
+		if (ci.getCanDye()  > 0)
 			mask |= 32768;
-		//if (ci.getCanApExtraction() != null && ci.getCanApExtraction().equalsIgnoreCase("true")) 																																			// TODO : Use
-			//mask |= 65536;
+		if (ci.getCanApExtraction() != null && ci.getCanApExtraction().equalsIgnoreCase("true")) 																																			// TODO : Use
+			mask |= 65536;
 		return mask;
 	}
 	
