@@ -42,7 +42,6 @@ public class AionSkillsWriter extends AbstractWriter {
 	List<ClientSkill> skillBaseList = null;
 	List<ClientSkillTree> skillTreeList = null;
 	Map<String, ClientItem> stigmaItemMap = new HashMap<String, ClientItem>();
-	List<Integer> effectIds = null; //TODO
 	
 	public AionSkillsWriter(boolean analyse) {
 		this.ANALYSE = analyse;
@@ -57,10 +56,6 @@ public class AionSkillsWriter extends AbstractWriter {
 				stigmaItemMap.put(ci.getGainSkill1().toUpperCase(), ci);
 		}
 		System.out.println("[SKILLS] Loaded " + stigmaItemMap.size() + " Stigma Skill-Item pairs");
-		// for skillBaseList if JAXBHandler.getValue(cs, "effect"+a+"_type") != null
-		// et = EffectType.fromClient(JAXBHandler.getValue(cs, "effect"+a+"_type").toString()) !
-		// if et != null && et == EffectType.DISPEL
-		// effectIds.addAll(getEffectIds(cs, "effect"+a+"_");
 	}
 
 	@Override
@@ -111,8 +106,7 @@ public class AionSkillsWriter extends AbstractWriter {
 				st.setAmmospeed((Integer) JAXBHandler.getValue(cs, "ammo_speed"));
 			if (JAXBHandler.getValue(cs, "casting_delay") != null)
 				st.setDuration((Integer) JAXBHandler.getValue(cs, "casting_delay"));
-			if ((Integer) JAXBHandler.getValue(cs, "delay_time") != null)
-				st.setCooldown((int)((Integer) JAXBHandler.getValue(cs, "delay_time") / 100f));
+			st.setCooldown(JAXBHandler.getValue(cs, "delay_time") != null ? (int)((Integer) JAXBHandler.getValue(cs, "delay_time") / 100f) : 0);
 			if (JAXBHandler.getValue(cs, "pvp_damage_ratio") != 0)
 				st.setPvpDamage((Integer) JAXBHandler.getValue(cs, "pvp_damage_ratio"));
 			if (JAXBHandler.getValue(cs, "pvp_remain_time_ratio") != 0)
@@ -302,17 +296,7 @@ public class AionSkillsWriter extends AbstractWriter {
 						hasEffects |= computeEffects(cs, effects, EffectType.fromClient(JAXBHandler.getValue(cs, "effect"+a+"_type").toString()), a);
 					}
 				}
-				
-				/* EFFECTS CONDITIONS
-				if (!Strings.isNullOrEmpty(cs.get()) && cs.get().equalsIgnoreCase("_nflying")) {equip.getMpAndHpAndDp().add(new NoFlyingCondition()); hasEquipConditions = true;} // Effects (TODO)
-				if (!Strings.isNullOrEmpty(cs.get()) && cs.get().equalsIgnoreCase("_flying")) {equip.getMpAndHpAndDp().add(new OnFlyCondition()); hasEquipConditions = true;} // Effects (TODO)
-				if (cs.get()) { // Effects (TODO) effect1_reserved16 (if Spellatk_inst)
-					AbnormalStateCondition abnormal = new AbnormalStateCondition();
-					hasEquipConditions = setConditions(cs, start, move);
-				}
-				if (cs.get()) {equip.getMpAndHpAndDp().add(new BackCondition()); hasEquipConditions = true;} // Effects (TODO) effect1_reserved16 (_back)
-				*/
-				
+
 				if (hasEffects)
 					st.setEffects(effects);
 			}
@@ -634,13 +618,7 @@ public class AionSkillsWriter extends AbstractWriter {
 				conditions.getMpAndHpAndDp().add(move);
 				hasConditions = true;
 			}
-		}/*
-		else if (c instanceof AbnormalStateCondition) {
-			AbnormalStateCondition abnormal = (AbnormalStateCondition) c;
-			// abnormal.setValue(AbnormalState.fromClient(cs.get())); // TODO
-			conditions.getMpAndHpAndDp().add(abnormal);
-			hasConditions = true;
-		}*/
+		}
 		else if (c instanceof TargetCondition) {
 			TargetCondition target = (TargetCondition) c;
 			target.setValue(TargetAttribute.fromClient(JAXBHandler.getValue(cs, "target_species_restriction").toString()).toString());
@@ -664,19 +642,7 @@ public class AionSkillsWriter extends AbstractWriter {
 				conditions.getMpAndHpAndDp().add(selfFlying);
 				hasConditions = true;
 			}
-		}/*
-		else if (c instanceof OnFlyCondition) {
-			OnFlyCondition onFly = (OnFlyCondition) c;
-			// TODO (get from a Map<Condition, value> for each Item ?)
-			conditions.getMpAndHpAndDp().add(onFly);
-			hasConditions = true;
 		}
-		else if (c instanceof NoFlyingCondition) {
-			NoFlyingCondition noFly = (NoFlyingCondition) c;
-			// TODO
-			conditions.getMpAndHpAndDp().add(noFly);
-			hasConditions = true;
-		}*/
 		else if (c instanceof ChainCondition) {
 			ChainCondition chain = (ChainCondition) c;
 			if (JAXBHandler.getValue(cs, "self_chain_count") != null && JAXBHandler.getValue(cs, "self_chain_count") != 0) {chain.setSelfcount((Integer) JAXBHandler.getValue(cs, "self_chain_count"));}
@@ -688,13 +654,7 @@ public class AionSkillsWriter extends AbstractWriter {
 				conditions.getMpAndHpAndDp().add(chain);
 				hasConditions = true;
 			}
-		}/*
-		else if (c instanceof BackCondition) {
-			BackCondition back = (BackCondition) c;
-			// TODO
-			conditions.getMpAndHpAndDp().add(back);
-			hasConditions = true;
-		}*/
+		}
 		else if (c instanceof FormCondition) {
 			FormCondition form = (FormCondition) c;
 			form.setValue(TransformType.fromClient(JAXBHandler.getValue(cs, "allow_use_form_category").toString()).toString());
@@ -1828,15 +1788,22 @@ public class AionSkillsWriter extends AbstractWriter {
 	private boolean setGeneral(ClientSkill cs, Effect effect, int a) {
 		boolean hasGeneralEffects = false;
 		String current = "effect" + a + "_";
-		
-		/** TODO
-		protected ActionModifiers modifiers;
-		protected Conditions subconditions;
-		**/
+
 		hasGeneralEffects |= setChange(cs, effect, current);
-		// hasGeneralEffects |= setEffectConditions(cs, effect, current);
+		if (!effect.getChange().isEmpty()) {
+			for (Change change : effect.getChange())
+				if (change.getConditions() == null) {
+					Conditions cond = new Conditions();
+					cond = getEffectConditions(cs, cond, current);
+					if (cond != null) {
+						effect.setConditions(cond);
+						hasGeneralEffects = true;
+					}
+				}
+		}
 		hasGeneralEffects |= setSubEffect(cs, effect, current);
-		hasGeneralEffects |= setActionModifiers(cs, effect, current);
+		hasGeneralEffects |= setModifiersOrSubConditions(cs, effect, current);
+		
 		
 		if (JAXBHandler.getValue(cs, current + "hop_a") != null && JAXBHandler.getValue(cs, current + "hop_a") != 0) {
 			effect.setHopa((Integer) JAXBHandler.getValue(cs, current + "hop_a"));
@@ -1931,124 +1898,6 @@ public class AionSkillsWriter extends AbstractWriter {
 		return hasGeneralEffects;
 	}
 	
-	private boolean setSubEffect(ClientSkill cs, Effect effect, String current) {
-		boolean hasSubEffect = false;
-		String s = null;
-		int skillId = 0;
-		
-		if (getIntValue(cs, current, "reserved14") == 0 && JAXBHandler.getValue(cs, current + "reserved14") != null)
-			s = JAXBHandler.getValue(cs, current + "reserved14").toString();
-		else if (getIntValue(cs, current, "reserved15") == 0 && JAXBHandler.getValue(cs, current + "reserved15") != null)
-			s = JAXBHandler.getValue(cs, current + "reserved15").toString();
-		else if (getIntValue(cs, current, "reserved7") == 0 && JAXBHandler.getValue(cs, current + "reserved7") != null)
-			s = JAXBHandler.getValue(cs, current + "reserved7").toString();
-		
-		// Computing skillId
-		if (!Strings.isNullOrEmpty(s)) {
-			if (getSkillId(s) != 0) {skillId = getSkillId(s);}
-			else if (getSkillId("NormalAttack_" + s) != 0) {skillId = getSkillId("NormalAttack_" + s);}
-			else if (getSkillId(s.substring(1)) != 0) {skillId = getSkillId(s.substring(1));}
-			else if (s.matches(".*\\d.*")) {
-				Scanner in = new Scanner("s").useDelimiter("[^0-9]+");
-				if (in.hasNext()) {
-					int i = in.nextInt();
-					if (i != 0) {
-						s = s.replaceAll(".*\\d.*", "") + "_" + i;
-						if (getSkillId(s) != 0) {skillId = getSkillId(s);}
-						else if (getSkillId("NormalAttack_" + s) != 0) {skillId = getSkillId("NormalAttack_" + s);}
-					}
-				}
-			}
-		}
-		
-		if (skillId != 0) {
-			SubEffect sub = new SubEffect();
-			sub.setSkillId(skillId);
-			if (getIntValue(cs, current, "reserved18") > 0 && getIntValue(cs, current, "reserved18") < 100)
-				sub.setChance(getIntValue(cs, current, "reserved18"));
-			if (effect instanceof SignetBurstEffect)
-				sub.setAddeffect(true);
-			effect.setSubeffect(sub);
-			hasSubEffect = true;
-		}
-	
-		return hasSubEffect;
-	}
-	
-	private boolean setActionModifiers(ClientSkill cs, Effect effect, String current) {
-		boolean hasModifiers = false;
-		ActionModifiers modifiers = new ActionModifiers();
-		
-		if (JAXBHandler.getValue(cs, current + "reserved16") != null) {
-		
-			String modString = JAXBHandler.getValue(cs, current + "reserved16").toString().toUpperCase().trim();
-			
-			List<String> modStrings = new ArrayList<String>();
-			Collections.addAll(modStrings, modString.split(","));
-			
-			for (String s : modStrings) {
-				s= s.trim();
-				boolean add = false;
-				if (s.startsWith("_RACE_") && Race.fromClient(s.replaceFirst("_RACE_", "")) != Race.NONE) {
-					TargetRaceDamageModifier race = new TargetRaceDamageModifier();
-					race.setRace(Race.fromClient(s.replaceFirst("_RACE_", "")).toString());
-					add |= setModifiersGeneral(cs, race, current);
-					if (add) {
-						modifiers.getBackdamageAndFrontdamageAndAbnormaldamage().add(race);
-						hasModifiers = true;
-					}
-				}
-				else if (s.startsWith("_CLASS_") && PlayerClass.fromClient(s.replaceFirst("_CLASS_", "")) != null) {
-					// TODO: Implement
-				}
-				else if (s.equalsIgnoreCase("_BACK") || s.equalsIgnoreCase("BACK")) {
-					BackDamageModifier back = new BackDamageModifier();
-					add |= setModifiersGeneral(cs, back, current);
-					if (add) {
-						modifiers.getBackdamageAndFrontdamageAndAbnormaldamage().add(back);
-						hasModifiers = true;
-					}
-				}
-				else if (s.equalsIgnoreCase("_FRONT") || s.equalsIgnoreCase("FRONT")) {
-					FrontDamageModifier front = new FrontDamageModifier();
-					add |= setModifiersGeneral(cs, front, current);
-					if (add) {
-						modifiers.getBackdamageAndFrontdamageAndAbnormaldamage().add(front);
-						hasModifiers = true;
-					}
-				}
-				else if (EffectType.fromClient(s) != null) {
-					AbnormalDamageModifier abnormal = new AbnormalDamageModifier();
-					abnormal.setState(EffectType.fromClient(s).toString());
-					add |= setModifiersGeneral(cs, abnormal, current);
-					if (add) {
-						modifiers.getBackdamageAndFrontdamageAndAbnormaldamage().add(abnormal);
-						hasModifiers = true;
-					}
-				}
-			}
-			
-			if (hasModifiers)
-				effect.setModifiers(modifiers);
-		}
-		return hasModifiers;
-	}
-	
-	private boolean setModifiersGeneral(ClientSkill cs, ActionModifier mod, String current) {		
-		boolean hasGeneral = false;
-		// Set the general properties of the modifier
-		if (getIntValue(cs, current, "reserved7") == 1) {mod.setMode("PERCENT");}
-		if (getIntValue(cs, current, "reserved10") != 0) {
-			if (getIntValue(cs, current, "reserved10") != 0) {mod.setValue(getIntValue(cs, current, "reserved10")); hasGeneral = true;}
-			if (getIntValue(cs, current, "reserved9") != 0) {mod.setDelta(getIntValue(cs, current, "reserved9")); hasGeneral = true;}
-		}
-		else { // if reserved10 instanceof Element
-			if (getIntValue(cs, current, "reserved9") != 0) {mod.setValue(getIntValue(cs, current, "reserved9")); hasGeneral = true;}
-			if (getIntValue(cs, current, "reserved8") != 0) {mod.setDelta(getIntValue(cs, current, "reserved8")); hasGeneral = true;}
-		}
-		return hasGeneral;
-	}
-	
 	private boolean setChange(ClientSkill cs, Effect e, String current) {
 		Change change = new Change();
 		List<Change> changes = new ArrayList<Change>();
@@ -2125,10 +1974,14 @@ public class AionSkillsWriter extends AbstractWriter {
 			modifiers.put(StatModifiers.ATTACK_SPEED, getIntValue(cs, current, "reserved2") * -1);
 		
 		if (!modifiers.isEmpty()) {
+			Conditions cond = new Conditions();
 			for (StatModifiers mod : modifiers.keySet()) {
 				change = new Change();
 				
-				// change.setConditions(getConditions(cs, current)); //TODO
+				// Conditions
+				cond = getEffectConditions(cs, cond, current);
+				if (cond != null)
+					change.setConditions(cond);
 				
 				// Stat
 				change.setStat(mod.toString());
@@ -2159,7 +2012,7 @@ public class AionSkillsWriter extends AbstractWriter {
 	
 	private void fixFuncByValue(Effect e) {
 		for (Change change : e.getChange()) {
-			if (Math.abs(change.getValue()) <= 100)
+			if (Math.abs(change.getValue()) < 100)
 					change.setFunc("PERCENT");
 		}			
 	}
@@ -2220,6 +2073,203 @@ public class AionSkillsWriter extends AbstractWriter {
 		}
 		return modifiers;
 	}
+	
+	private Conditions getEffectConditions(ClientSkill cs, Conditions conditions, String current) {
+		boolean hasConditions = false;
+		
+		if (JAXBHandler.getValue(cs, current + "cond_status") != null) {
+		
+			String cond = JAXBHandler.getValue(cs, current + "cond_status").toString().toUpperCase().trim();
+			
+			if (cond.equalsIgnoreCase("_NFLYING")) {
+				NoFlyingCondition noFly = new NoFlyingCondition();
+				conditions.getMpAndHpAndDp().add(noFly);
+				hasConditions = true;
+			}
+			else if (cond.equalsIgnoreCase("_FLYING")) {
+				TargetFlyingCondition fly = new TargetFlyingCondition();
+				conditions.getMpAndHpAndDp().add(fly);
+				hasConditions = true;
+			}
+			else if (EffectType.fromClient(cond) != null) {
+				AbnormalStateCondition abnormalCond = new AbnormalStateCondition();
+				abnormalCond.setValue(EffectType.fromClient(cond).toString());
+				conditions.getMpAndHpAndDp().add(abnormalCond);
+				hasConditions = true;
+			}
+			else
+				try {int poubelle = Integer.parseInt(cond);} catch (Exception ex) {System.out.println("[CONDITIONS] Undeclared Condition : " + cond);}
+		}
+		else if (JAXBHandler.getValue(cs, current + "cond_attack_dir") != null && JAXBHandler.getValue(cs, current + "cond_attack_dir") != 0) {
+			BackCondition back = new BackCondition();
+			conditions.getMpAndHpAndDp().add(back);
+			hasConditions = true;
+		}
+		else if (getIntValue(cs, current, "reserved9") == 1) {
+			OnFlyCondition onFly = new OnFlyCondition();
+			conditions.getMpAndHpAndDp().add(onFly);
+			hasConditions = true;
+		}
+		else if (JAXBHandler.getValue(cs, current + "reserved5") != null && JAXBHandler.getValue(cs, current + "reserved13") != null) {
+			WeaponCondition weapon = new WeaponCondition();
+			
+			String weaponS = JAXBHandler.getValue(cs, current + "reserved5").toString().toUpperCase().trim();
+			
+			List<String> weapons = new ArrayList<String>();
+			Collections.addAll(weapons, weaponS.split(","));
+			
+			for (String weap : weapons) {
+				weap = weap.trim();
+				if (WeaponType.fromClient(weap) != null)
+					weapon.getWeapon().add(WeaponType.fromClient(weap).toString());
+			}
+			conditions.getMpAndHpAndDp().add(weapon);
+			hasConditions = true;
+		}
+		//TODO: Implement ArmorCondition ?
+		
+		if (hasConditions)
+			return conditions;
+		else
+			return null;
+	}
+	
+	private boolean setSubEffect(ClientSkill cs, Effect effect, String current) {
+		boolean hasSubEffect = false;
+		String s = null;
+		int skillId = 0;
+		
+		if (getIntValue(cs, current, "reserved14") == 0 && JAXBHandler.getValue(cs, current + "reserved14") != null)
+			s = JAXBHandler.getValue(cs, current + "reserved14").toString();
+		else if (getIntValue(cs, current, "reserved15") == 0 && JAXBHandler.getValue(cs, current + "reserved15") != null)
+			s = JAXBHandler.getValue(cs, current + "reserved15").toString();
+		else if (getIntValue(cs, current, "reserved7") == 0 && JAXBHandler.getValue(cs, current + "reserved7") != null)
+			s = JAXBHandler.getValue(cs, current + "reserved7").toString();
+		
+		// Computing skillId
+		if (!Strings.isNullOrEmpty(s)) {
+			if (getSkillId(s) != 0) {skillId = getSkillId(s);}
+			else if (getSkillId("NormalAttack_" + s) != 0) {skillId = getSkillId("NormalAttack_" + s);}
+			else if (getSkillId(s.substring(1)) != 0) {skillId = getSkillId(s.substring(1));}
+			else if (s.matches(".*\\d.*")) {
+				Scanner in = new Scanner("s").useDelimiter("[^0-9]+");
+				if (in.hasNext()) {
+					int i = in.nextInt();
+					if (i != 0) {
+						s = s.replaceAll(".*\\d.*", "") + "_" + i;
+						if (getSkillId(s) != 0) {skillId = getSkillId(s);}
+						else if (getSkillId("NormalAttack_" + s) != 0) {skillId = getSkillId("NormalAttack_" + s);}
+					}
+				}
+			}
+		}
+		
+		if (skillId != 0) {
+			SubEffect sub = new SubEffect();
+			sub.setSkillId(skillId);
+			if (getIntValue(cs, current, "reserved18") > 0 && getIntValue(cs, current, "reserved18") < 100)
+				sub.setChance(getIntValue(cs, current, "reserved18"));
+			if (effect instanceof SignetBurstEffect)
+				sub.setAddeffect(true);
+			effect.setSubeffect(sub);
+			hasSubEffect = true;
+		}
+	
+		return hasSubEffect;
+	}
+	
+	private boolean setModifiersOrSubConditions(ClientSkill cs, Effect effect, String current) {
+		boolean hasModifiers = false; boolean hasConditions = false;
+		
+		ActionModifiers modifiers = new ActionModifiers();
+		Conditions conditions = new Conditions();
+		
+		if (JAXBHandler.getValue(cs, current + "reserved16") != null) {
+		
+			String modString = JAXBHandler.getValue(cs, current + "reserved16").toString().toUpperCase().trim();
+			
+			List<String> modStrings = new ArrayList<String>();
+			Collections.addAll(modStrings, modString.split(","));
+			
+			for (String s : modStrings) {
+				s= s.trim();
+				boolean add = false;
+				
+				if (s.equalsIgnoreCase("_NFLYING")) {
+					NoFlyingCondition noFly = new NoFlyingCondition();
+					conditions.getMpAndHpAndDp().add(noFly);
+					hasConditions = true;
+				}
+				else if (s.startsWith("_RACE_") && Race.fromClient(s.replaceFirst("_RACE_", "")) != Race.NONE) {
+					TargetRaceDamageModifier race = new TargetRaceDamageModifier();
+					race.setRace(Race.fromClient(s.replaceFirst("_RACE_", "")).toString());
+					add |= setModifiersGeneral(cs, race, current);
+					if (add) {
+						modifiers.getBackdamageAndFrontdamageAndAbnormaldamage().add(race);
+						hasModifiers = true;
+					}
+				}
+				else if (s.startsWith("_CLASS_") && PlayerClass.fromClient(s.replaceFirst("_CLASS_", "")) != null) {
+					// TODO: Implement
+				}
+				else if (s.equalsIgnoreCase("_BACK") || s.equalsIgnoreCase("BACK")) {
+					BackDamageModifier back = new BackDamageModifier();
+					add |= setModifiersGeneral(cs, back, current);
+					if (add) {
+						modifiers.getBackdamageAndFrontdamageAndAbnormaldamage().add(back);
+						hasModifiers = true;
+					}
+				}
+				else if (s.equalsIgnoreCase("_FRONT") || s.equalsIgnoreCase("FRONT")) {
+					FrontDamageModifier front = new FrontDamageModifier();
+					add |= setModifiersGeneral(cs, front, current);
+					if (add) {
+						modifiers.getBackdamageAndFrontdamageAndAbnormaldamage().add(front);
+						hasModifiers = true;
+					}
+				}
+				else if (EffectType.fromClient(s) != null) {
+					AbnormalDamageModifier abnormalMod = new AbnormalDamageModifier();
+					abnormalMod.setState(EffectType.fromClient(s).toString());
+					add |= setModifiersGeneral(cs, abnormalMod, current);
+					if (add) {
+						modifiers.getBackdamageAndFrontdamageAndAbnormaldamage().add(abnormalMod);
+						hasModifiers = true;
+					}
+					else {
+						AbnormalStateCondition abnormalCond = new AbnormalStateCondition();
+						abnormalCond.setValue(EffectType.fromClient(s).toString());
+						conditions.getMpAndHpAndDp().add(abnormalCond);
+						hasConditions = true;
+					}
+				}
+				else
+					try {int poubelle = Integer.parseInt(s);} catch (Exception ex) {System.out.println("[MODIFIERS] Undeclared ActionModifier : " + s);}
+			}
+			
+			if (hasModifiers)
+				effect.setModifiers(modifiers);
+			if (hasConditions)
+				effect.setSubconditions(conditions);
+		}
+		return hasModifiers;
+	}
+	
+	private boolean setModifiersGeneral(ClientSkill cs, ActionModifier mod, String current) {		
+		boolean hasGeneral = false;
+		// Set the general properties of the modifier
+		if (getIntValue(cs, current, "reserved7") == 1) {mod.setMode("PERCENT");}
+		if (getIntValue(cs, current, "reserved10") != 0) {
+			if (getIntValue(cs, current, "reserved10") != 0) {mod.setValue(getIntValue(cs, current, "reserved10")); hasGeneral = true;}
+			if (getIntValue(cs, current, "reserved9") != 0) {mod.setDelta(getIntValue(cs, current, "reserved9"));}
+		}
+		else { // if reserved10 instanceof Element
+			if (getIntValue(cs, current, "reserved9") != 0) {mod.setValue(getIntValue(cs, current, "reserved9")); hasGeneral = true;}
+			if (getIntValue(cs, current, "reserved8") != 0) {mod.setDelta(getIntValue(cs, current, "reserved8"));}
+		}
+		return hasGeneral;
+	}
+
 	
 	
 	private int getIntValue(ClientSkill cs, String current, String property) {
