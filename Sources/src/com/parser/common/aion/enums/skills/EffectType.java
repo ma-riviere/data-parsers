@@ -1,8 +1,7 @@
 package com.parser.common.aion.enums.skills;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Collections;
+import java.util.ArrayList;
 
 /**
  * @author Viria
@@ -226,7 +225,6 @@ public enum EffectType {
 	NONE; //TODO: Return this (make checks if NONE)
 	
 	private String abstractCategory;
-	private String[] clientStrings;
 	
 	private EffectType(String abstractCategory) {
 		this.abstractCategory = abstractCategory;
@@ -239,6 +237,8 @@ public enum EffectType {
 	public String getAbstractCatetgory() {
 		return abstractCategory != null ? abstractCategory : "noAbstractCategory";
 	}
+	
+	public static List<String> unkEffect = new ArrayList<String>();
 	
 	/**
 	 * Returns the ENUM matching the given client string
@@ -261,7 +261,13 @@ public enum EffectType {
 				if (fromValue(string) != null)
 					return fromValue(string);
 		}
-		try {int value = Integer.parseInt(string);} catch (Exception e) {System.out.println("[SKILLS] No EffectType matching : " + string);}
+		try {int value = Integer.parseInt(string);} 
+		catch (Exception e) {
+			if (!unkEffect.contains(string.toUpperCase())) {
+				System.out.println("[EFFECT TYPE] No EffectType matching : " + string.toUpperCase());
+				unkEffect.add(string.toUpperCase());
+			}
+		}
 		return null;
 	}
 	
