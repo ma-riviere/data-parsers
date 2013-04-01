@@ -32,7 +32,5 @@ public abstract class AbstractWriter implements Writer {
 
 		System.out.println("\n" + s1 + "\n" +  s2 + "\n" + s3);
 	}
-	
-	//TODO: Print avancement
 
 }

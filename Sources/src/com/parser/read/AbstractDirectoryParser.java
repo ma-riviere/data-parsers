@@ -9,6 +9,8 @@ import java.util.Map;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Unmarshaller;
 
+import com.parser.common.Util;
+
 public abstract class AbstractDirectoryParser<T> implements ClientDirectoryParser<T> {
 
 	Map<String, List<T>> filesData = new HashMap<String, List<T>>();
@@ -51,7 +53,10 @@ public abstract class AbstractDirectoryParser<T> implements ClientDirectoryParse
 			}
 		});
 		System.out.println("\n[MAIN] [INFO] Parsing directory " + directory + " with " + files.length + " files !");
+		
 		filesData.clear();
+		Util.printProgressBarHeader(files.length);
+		
 		for (File file : files) {
 			List<T> dataList;
 			try {
@@ -65,10 +70,12 @@ public abstract class AbstractDirectoryParser<T> implements ClientDirectoryParse
 				dataList = castFrom(collection);
 				// System.out.println("Size of " + file.getName() + " : " + dataList.size());
 				filesData.put(mappedName, dataList);
+				Util.printCurrentProgress();
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
+		Util.printEndProgress();
 
 		return filesData;
 	}
