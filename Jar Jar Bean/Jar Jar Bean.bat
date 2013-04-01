@@ -51,7 +51,7 @@ ECHO = 3 : Rides        ===    4 : Instances Cooltimes ===
 ECHO = 5 : Items        ===    6 : Recipes             ===
 ECHO = 7 : Skills       ===    8 : Skill Learn         ===
 ECHO = 9 : Npcs         ===   10 : Animations          ===
-ECHO = 11 : Housing     ===                            ===
+ECHO = 11 : Housing     ===   12 : Quest                  ===
 ECHO.#####################################################
 ECHO.
 set JAR =
@@ -75,10 +75,11 @@ SET NPCS=%CLIENT%/Data/Npcs/client_npcs.xml
 SET ANIMATIONS=%CLIENT%/Data/Animations/custom_animation.xml
 SET HOUSING=%CLIENT%/Data/Housing/client_housing*.xml
 SET TOYPETS=%CLIENT%/Data/func_pet/toypet*.xml
+SET QUEST_DIALOGS=%CLIENT%/L10N/ENU/data/dialogs/quest*.xml
 
 FOR %%A IN (a b c d e f g h) DO IF %JAR%==%%A GOTO CLIENT_CLIENT
 FOR %%A IN (A B C D E F G H) DO IF %JAR%==%%A GOTO CLIENT_PARSER
-FOR %%A IN (1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18) DO IF %JAR%==%%A GOTO CLIENT_SERVER
+FOR %%A IN (1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25) DO IF %JAR%==%%A GOTO CLIENT_SERVER
 
 :CLIENT_CLIENT
 REM ## Imput xsd = Output xsd
@@ -115,6 +116,7 @@ IF "%JAR%"=="8" GOTO SKILL_LEARN
 IF "%JAR%"=="9" GOTO NPCS
 IF "%JAR%"=="10" GOTO ANIMATIONS
 IF "%JAR%"=="11" GOTO HOUSING
+IF "%JAR%"=="12" GOTO QUEST_DIALOGS
 
 :CLIENT_ITEMS
 set XMS=1024
@@ -206,6 +208,12 @@ set INPUT_XML=%TOYPETS%
 set OUTPUT_XML=%SERVER%/toypets/*.xml
 GOTO CHECKPATHS_XML
 
+:QUEST_DIALOGS
+set NAME=quest_dialogs
+set INPUT_XML=%QUEST_DIALOGS%
+set OUTPUT_XML=%SERVER%/test/quest_dialogs.xml
+GOTO CHECKPATHS_XML
+
 :ANIMATIONS
 set NAME=animations
 set INPUT_XML=%ANIMATIONS%
@@ -274,7 +282,7 @@ echo Generating %CURRENT% XSD file
 echo ==============================
 echo.
 
-java -Xms%XMS%m -Xmx%XMX%m -classpath "%cp%" org.apache.xmlbeans.impl.inst2xsd.Inst2Xsd %* -design ss -enumerations %ENUM% -outDir xsd\%VERSION%\%DIR%\ -outPrefix %NAME% -validate %XML% > nul && ECHO Done !
+java -Xms%XMS%m -Xmx%XMX%m -classpath "%cp%" org.apache.xmlbeans.impl.inst2xsd.Inst2Xsd %* -design ss -enumerations %ENUM% -outDir xsd\%VERSION%\%DIR%\ -outPrefix %NAME% -validate %XML%
 GOTO INIT_XSD
 
 REM ## Locating XSD, preparing JAR generation

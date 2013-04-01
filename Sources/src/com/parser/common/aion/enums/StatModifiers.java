@@ -108,7 +108,7 @@ public enum StatModifiers {
 	AGILITY("AGI"),
 	KNOWLEDGE("KNO"),
 	ATTACK_RANGE("ATTACKRANGE"),
-	PVE_ATTACK_RATIO("PVEATTACKRATIO"), //TODO: Add
+	PVE_ATTACK_RATIO("PVEATTACKRATIO"), //TODO: Check if not use under another name !!!!
 	// BOOST_CHARGE_TIME("BOOSTCHARGETIME"), //TODO: Add
 	KNOWIL,
 	
@@ -170,7 +170,8 @@ public enum StatModifiers {
 		
 		// Special corrections (Thanks NC ...)
 		if (string.equalsIgnoreCase("MAGICALRESIST")) {string = "MAGICAL_RESIST";}
-		if (string.equalsIgnoreCase("HP")) {string = "MAXHP";}
+		// if (string.equalsIgnoreCase("HP")) {string = "MAXHP";}
+		// if (string.equalsIgnoreCase("MP")) {string = "MAXMP";}
 		if (string.equalsIgnoreCase("ERFIRE")) {string = "FIRE_RESISTANCE";}
 		if (string.equalsIgnoreCase("ERAIR")) {string = "WIND_RESISTANCE";}
 		if (string.equalsIgnoreCase("EREARTH")) {string = "EARTH_RESISTANCE";}

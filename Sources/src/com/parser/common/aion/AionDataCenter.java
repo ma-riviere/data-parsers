@@ -1,5 +1,6 @@
 package com.parser.common.aion;
 
+import com.google.common.base.Strings;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -226,10 +227,13 @@ public class AionDataCenter {
 	// ***** JAXB Methods ****** //
 	
 	public Object skillFinder(String needed, String prop, Object value) {
-		for (ClientSkill cs : getClientSkills()) {
-			if (JAXBHandler.getValue(cs, prop) != null && JAXBHandler.getValue(cs, prop).toString().equalsIgnoreCase(value.toString()))
-				if (JAXBHandler.getValue(cs, needed) != null)
-					return JAXBHandler.getValue(cs, needed);
+		for (ClientSkill client : getClientSkills()) {
+			if (JAXBHandler.getValue(client, prop) != null && JAXBHandler.getValue(client, prop).toString().equalsIgnoreCase(value.toString())) {
+				if (Strings.isNullOrEmpty(needed))
+					return client;
+				else if (JAXBHandler.getValue(client, needed) != null)
+					return JAXBHandler.getValue(client, needed);
+			}
 		}
 		return null;
 	}
@@ -239,7 +243,7 @@ public class AionDataCenter {
 	 ****************************************/
 	
 	// Loading StringMap from Data
-	private void loadDataStrings() {
+	public void loadDataStrings() {
 		Map<String, List<ClientString>> clientStringMap = new AionDataStringParser().parse();
 		if (clientStringMap.size() == 0) {return;}
 		for (List<ClientString> lcs : clientStringMap.values())
@@ -249,7 +253,7 @@ public class AionDataCenter {
 	}
 	
 	// Loading StringMap from L10N
-	private void loadL10NStrings() {
+	public void loadL10NStrings() {
 		Map<String, List<ClientString>> clientStringMap = new AionL10NStringParser().parse();
 		if (clientStringMap.size() == 0) {return;}
 		for (List<ClientString> lcs : clientStringMap.values())
@@ -259,69 +263,69 @@ public class AionDataCenter {
 	}
 	
 	// Loading Ride Name <--> ID from client rides.xml
-	private void loadRideNameIdMap() {
+	public void loadRideNameIdMap() {
 		List<ClientRide> clientRides = new AionRidesParser().parse();
 		for (ClientRide cr : clientRides)
 			rideNameIdMap.put(cr.getName().toUpperCase(), cr.getId());
 	}
 	
 	// Loading Items Name <--> ID from an internal XML
-	private void loadItemNameIdMap() {
+	public void loadItemNameIdMap() {
 		List<Item> clientItemsInternalList = new AionItemsInternalParser().parse();
 		for (Item ci : clientItemsInternalList)
 			itemNameIdMap.put(ci.getName().toUpperCase(), ci.getId());
 	}
 	
 	// Loading Skill Name <--> ID from client XML
-	private void loadSkillNameIdMap() {
+	public void loadSkillNameIdMap() {
 		List<ClientSkill> clientSkills = getClientSkills();
 		for (ClientSkill cs : clientSkills)
 			skillNameIdMap.put(JAXBHandler.getValue(cs, "name").toString().toUpperCase(), (int) JAXBHandler.getValue(cs, "id"));
 	}
 	
 	// Loading Npc Name <--> ID from client XML
-	private void loadNpcNameIdMap() {
+	public void loadNpcNameIdMap() {
 		List<ClientNpc> clientNpcs = new AionNpcsParser().parse();
 		for (ClientNpc cn : clientNpcs)
 			npcNameIdMap.put(cn.getName().toUpperCase(), cn.getId());
 	}
 	
 	// Loading Recipes Name <--> ID from client XML
-	private void loadRecipeNameIdMap() {
+	public void loadRecipeNameIdMap() {
 		List<ClientRecipe> clientRecipes = new AionRecipesParser().parse();
 		for (ClientRecipe cr : clientRecipes)
 			recipeNameIdMap.put(JAXBHandler.getValue(cr, "name").toString().toUpperCase(), (int) JAXBHandler.getValue(cr, "id"));
 	}
 	
-	private void loadDescWorldIdMap() {
+	public void loadDescWorldIdMap() {
 		List<Data> clientWorldList = new AionWorldDataParser().parse();
 		for (Data wd : clientWorldList)
 			descWorldIdMap.put(wd.getValue().toUpperCase(), wd);
 	}
 	
 	// Loading Animations Name <--> ID from client XML
-	private void loadAnimationNameIdMap() {
+	public void loadAnimationNameIdMap() {
 		List<ClientAnimation> clientAnimations = new AionAnimationsParser().parse();
 		for (ClientAnimation ca : clientAnimations)
 			animationNameIdMap.put(ca.getName().toUpperCase(), ca.getId());
 	}
 	
 	// Loading HouseObjects Name <--> ID from client XML
-	private void loadHouseObjectNameIdMap() {
+	public void loadHouseObjectNameIdMap() {
 		List<ClientHousingObject> chos = new AionHousingObjectsParser().parse();
 		for (ClientHousingObject cho : chos)
 			houseObjectNameIdMap.put(cho.getName().toUpperCase(), cho.getId());
 	}
 	
 	// Loading HouseParts Name <--> ID from client XML
-	private void loadHousePartNameIdMap() {
+	public void loadHousePartNameIdMap() {
 		List<ClientHousingCustomPart> chps = new AionHousingPartsParser().parse();
 		for (ClientHousingCustomPart chp : chps)
 			houseDecoNameIdMap.put(chp.getName().toUpperCase(), chp.getId());
 	}
 	
 	// Loading HouseParts Name <--> ID from client XML
-	private void loadToyPetNameIdMap() {
+	public void loadToyPetNameIdMap() {
 		List<ClientToypet> cpts = new AionToyPetsParser().parse();
 		for (ClientToypet cpt : cpts)
 			toyPetNameIdMap.put(cpt.getName().toUpperCase(), cpt.getId());

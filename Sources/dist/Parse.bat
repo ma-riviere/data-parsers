@@ -7,20 +7,20 @@ ECHO #####################################################
 ECHO ###      What Data do you want to parse ?         ###
 ECHO #####################################################
 ECHO ======    Client XML build (customization) :   ======
-ECHO # a : Items        ###
+ECHO # a : Items        ###                            ###
 ECHO #####################################################
-ECHO ======   Internal XML build (faster parsing) :  ======
+ECHO ======  Internal XML build (faster parsing) :  ======
 ECHO # A : Item ID - Item Name                         ###
 ECHO #####################################################
-ECHO ======        Server XML build  :       =======
+ECHO ======        Server XML build  :             =======
 ECHO # 1 : Rides        ###    2 : Instances Cooltimes ###
 ECHO # 3 : Items        ###    4 : Recipes             ###
 ECHO # 5 : Skills       ###                            ###
 ECHO #####################################################
 ECHO ======        Server Custom XML build  :       ======
-ECHO # / : KS Rewards   ###    
+ECHO # / : KS Rewards   ###                            ###
 ECHO #####################################################
-ECHO # q : Quit
+ECHO # q : Quit                                        ###
 ECHO #####################################################
 ECHO.
 SET CHOICE=
