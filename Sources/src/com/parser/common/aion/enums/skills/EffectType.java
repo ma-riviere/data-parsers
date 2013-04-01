@@ -44,7 +44,8 @@ public enum EffectType {
     DISPELDEBUFFMENTAL("AbstractDispelEffect"),
 	
 	// DispelEffect
-	DISPEL,
+	DISPEL("DispelEffect"),
+	EVADE("DispelEffect"),
 	
 	// BufEffect
 	STATUP("BufEffect"),
@@ -74,6 +75,10 @@ public enum EffectType {
 	NODEATHPENALTY("BufEffect"),
 	HIPASS("BufEffect"),
 	
+	HOSTILEUP,
+	CHANGEHATEONATTACKED,
+	ONETIMEBOOSTSKILLATTACK,
+	
 	// DamageEffect
 	SKILLATK_INSTANT("DamageEffect"),
 	SPELLATK_INSTANT("DamageEffect"),
@@ -91,6 +96,10 @@ public enum EffectType {
 	CARVESIGNET("DamageEffect"),
 	DISPELBUFFCOUNTERATK("DamageEffect"),
 	DEATHBLOW("DamageEffect"),
+	
+	DELAYEDFPATK_INSTANT,
+	DELAYEDSKILL,
+	MAGICCOUNTERATK,
 	
 	// SignetEffect
 	SIGNET,
@@ -115,7 +124,6 @@ public enum EffectType {
 	CONFUSE,
 	BIND,
 	BUFFBIND,
-	// PETRIFICATION, //TODO: Implement, converted to Paralyze for now
 	SPIN,
 	STAGGER,
 	
@@ -124,105 +132,84 @@ public enum EffectType {
 	ALWAYSBLOCK,
 	ALWAYSRESIST,
 	ALWAYSPARRY,
-	
-	/************ TODO *************/
-	
-	MAGICCOUNTERATK,
-		
 	INVULNERABLEWING,
-		
-	// Teleport related
-	TARGETTELEPORT,
-	RANDOMMOVELOC,
-	RETURNHOME,
-	RECALL_INSTANT,
-	RETURNPOINT,
-	
-	ESCAPE,
-	EVADE,
-	
-	// Attacks
-	SKILLATK,
-	DELAYEDFPATK_INSTANT,
-	
-	DELAYEDSKILL,
 	
 	// Shape
-	SHAPECHANGE,
-	POLYMORPH,
-	DEFORM,
+	SHAPECHANGE("TransformEffect"),
+	POLYMORPH("TransformEffect"),
+	DEFORM("TransformEffect"),
 	
-	NOFLY,
-	FLYOFF,
+	// ShieldEffect
+	SHIELD("ShieldEffect"),
+	CONVERTHEAL("ShieldEffect"),
+	PROVOKER("ShieldEffect"),
+	REFLECTOR("ShieldEffect"),
+	PROTECT("ShieldEffect"),
 	
-	PULLED,
-	FALL,
-	
-	CONVERTHEAL,
-	
-	SUMMON("SummonEffect"),
-	SUMMONSKILLAREA,
-	SUMMONTRAP("SummonEffect"),
-	SUMMONSERVANT("SummonEffect"),
-	SUMMONTOTEM,
-	SUMMONHOMING("SummonEffect"),
-	SUMMONGROUPGATE("SummonEffect"),
-	SUMMONBINDINGGROUPGATE,
-	SUMMONHOUSEGATE,
-	SUMMONFUNCTIONALNPC,
-	PETORDERUSEULTRASKILL,
-	
-	OPENAERIAL,
-	CLOSEAERIAL,
-	
-	AURA,
-		
-	SHIELD,
-	SANCTUARY,
-	REFLECTOR,
-	PROTECT,
-	
-	APBOOST,
-	GATHERPOINTBOOST,
-	EXTRACTGATHERPOINTBOOST,
-	COMBINEPOINTBOOST,
-	MENUISIERCOMBINEPOINTBOOST,
-	BOOSTSKILLCOST,
-	
-	ONETIMEBOOSTSKILLATTACK,
-		
-	ABSOLUTESTATTOPCBUFF,
-	ABSOLUTESTATTOPCDEBUFF,
-	
-	PROVOKER,
-	HOSTILEUP,
-	
-	CHANGEHATEONATTACKED,
-	
-	RESURRECT,
-	RESURRECTBASE,
-	RESURRECTPOSITIONAL,
-	
+	// ResurrectEffect
+	RESURRECT("ResurrectEffect"),
+	RESURRECTBASE("ResurrectEffect"),
+	RESURRECTPOSITIONAL("ResurrectEffect"),
 	REBIRTH,
 	
-	DUMMY,
+	// SummonEffect
+	SUMMON("SummonEffect"),
+	SUMMONTRAP("SummonEffect"),
+	SUMMONSERVANT("SummonEffect"),
+	SUMMONHOMING("SummonEffect"),
+	SUMMONGROUPGATE("SummonEffect"),
+	SUMMONBINDINGGROUPGATE("SummonEffect"),
+	SUMMONSKILLAREA("SummonEffect"),
+	SUMMONTOTEM("SummonEffect"),
+	SUMMONHOUSEGATE("SummonEffect"),
 	
-	RIDEROBOT,
-	CANNON,
+	PETORDERUSEULTRASKILL,
 	
-	INTERVALSKILL,
-	SKILLLAUNCHER,
-	CONDSKILLLAUNCHER,
-	DPTRANSFER,
-	SWITCHHPMP_INSTANT,
-	
-	SKILLCOOLTIMERESET,
-	ACTIVATE_ENSLAVE,
-		
+	// Misc
 	SEARCH,
 	HIDE,
+	AURA,
+	NOFLY,
+	OPENAERIAL,
+	CLOSEAERIAL,
+	PULLED,
+	FALL,
+	SANCTUARY,
+	RANDOMMOVELOC,
+	RETURNHOME,
+	RETURNPOINT,
+	RECALL_INSTANT,
 	
-	NONE; //TODO: Return this (make checks if NONE)
+	BOOSTSKILLCOST,
+	SWITCHHPMP_INSTANT,
+	DPTRANSFER,
+	
+	SKILLLAUNCHER,
+	CONDSKILLLAUNCHER,
+	
+	// Not implemented
+	INTERVALSKILL, // TODO (Déclenchement d'un effet (reserved1) a intervalle régulier
+	TARGETTELEPORT, // TODO
+	APBOOST, // TODO
+	GATHERPOINTBOOST, // TODO
+	EXTRACTGATHERPOINTBOOST, // TODO
+	COMBINEPOINTBOOST, // TODO
+	MENUISIERCOMBINEPOINTBOOST, // TODO
+	
+	SKILLCOOLTIMERESET,
+	ACTIVATE_ENSLAVE, // Should charm target npc, make it your slave
+	
+	ABSOLUTESTATTOPCBUFF,
+	ABSOLUTESTATTOPCDEBUFF,
+	SUMMONFUNCTIONALNPC, // Summons a multi-function NPC
+	DUMMY, // For tests, reduce fly cooltime
+	RIDEROBOT,
+	CANNON,
+	FLYOFF, // Imposibility to stop flying
+	// PETRIFICATION, // Converted to Paralyze for now, to implement
+	// ESCAPE, // Set as equivalent to RETURNHOME (check if true)
+	
+	NONE;
 	
 	private String abstractCategory;
 	
@@ -253,6 +240,7 @@ public enum EffectType {
 		if (string.equalsIgnoreCase("ONETIMEBOOSTSKILLATK")) {string = "ONETIMEBOOSTSKILLATTACK";}
 		if (string.equalsIgnoreCase("SHIELDMASTERY")) {string = "SHIELD_MASTERY";}
 		if (string.equalsIgnoreCase("PETRIFICATION")) {string = "PARALYZE";}
+		if (string.equalsIgnoreCase("ESCAPE")) {string = "RETURNHOME";}
 		
 		for (EffectType v : values()) {
 			if (v.toString().equalsIgnoreCase(string))

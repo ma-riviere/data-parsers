@@ -40,7 +40,7 @@ public enum ActivationAttribute {
 			}
 		}
 		System.out.println("[SKILLS] No ActivationAttribute matching :" + string);
-		return null;
+		return ActivationAttribute.NONE;
 	}
 	
 	public static ActivationAttribute fromValue(String name) {

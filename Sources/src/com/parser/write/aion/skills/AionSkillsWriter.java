@@ -51,11 +51,18 @@ public class AionSkillsWriter extends AbstractWriter {
 	public void parse() {
 		skillBaseList = new AionDataCenter().getInstance().getClientSkills();
 		skillTreeList = new AionDataCenter().getInstance().getClientSkillTree();
+		
 		for (ClientItem ci : new AionDataCenter().getInstance().getClientItems()) {
 			if (!Strings.isNullOrEmpty(ci.getGainSkill1()))
 				stigmaItemMap.put(ci.getGainSkill1().toUpperCase(), ci);
 		}
-		System.out.println("[SKILLS] Loaded " + stigmaItemMap.size() + " Stigma Skill-Item pairs");
+		System.out.println("\n[SKILLS] Loaded " + stigmaItemMap.size() + " Stigma Skill-Item pairs");
+		
+		new AionDataCenter().getInstance().loadDataStrings();
+		new AionDataCenter().getInstance().loadL10NStrings();
+		new AionDataCenter().getInstance().loadItemNameIdMap();
+		new AionDataCenter().getInstance().loadSkillNameIdMap();
+		new AionDataCenter().getInstance().loadNpcNameIdMap();
 	}
 
 	@Override
@@ -97,8 +104,7 @@ public class AionSkillsWriter extends AbstractWriter {
 				st.setDispelCategory(DispelCategoryType.fromClient(JAXBHandler.getValue(cs, "dispel_category").toString()).toString());
 			if (JAXBHandler.getValue(cs, "required_dispel_level") != 0)
 				st.setReqDispelLevel((Integer) JAXBHandler.getValue(cs, "required_dispel_level"));
-			if (JAXBHandler.getValue(cs, "activation_attribute") != null)
-				st.setActivation(ActivationAttribute.fromClient(JAXBHandler.getValue(cs, "activation_attribute").toString()).toString());
+			st.setActivation(JAXBHandler.getValue(cs, "activation_attribute") != null ? ActivationAttribute.fromClient(JAXBHandler.getValue(cs, "activation_attribute").toString()).toString() : "NONE");
 			
 			if (getStigmaType(cs) != null)
 				st.setStigma(getStigmaType(cs).toString());
@@ -403,7 +409,7 @@ public class AionSkillsWriter extends AbstractWriter {
 	private int getNpcId(String s) {return (s != null) ? new AionDataCenter().getInstance().getNpcIdByName(s) : 0;}
 	private int getWorld(String s) {return (s != null) ? new AionDataCenter().getInstance().getWorldIdByName(s) : 0;}
 	
-	private Object findSkill(String needed, String prop, Object value) {return new AionDataCenter().getInstance().skillFinder(needed, prop, value);} //TODO: Use instead of usual getters
+	private Object findSkill(String needed, String prop, Object value) {return new AionDataCenter().getInstance().skillFinder(needed, prop, value);}
 	
 	private int getSkillLevel(ClientSkill cs) {
 		int level1 = 1;
@@ -736,7 +742,7 @@ public class AionSkillsWriter extends AbstractWriter {
 	private boolean computeEffects(ClientSkill cs, Effects effects, EffectType et, int a) {
 		boolean compute = false;
 		String current = "effect" + a + "_";
-		
+		// ########################################################## //
 		if (et.getAbstractCatetgory().equalsIgnoreCase("AbstractOverTimeEffect")) {
 			// HealOverTimeEffect
 			if (et == EffectType.HEAL) {
@@ -831,6 +837,7 @@ public class AionSkillsWriter extends AbstractWriter {
 				}
 			}
 		}
+		// ########################################################## //
 		else if (et.getAbstractCatetgory().equalsIgnoreCase("AbstractHealEffect")) {
 			// HealInstantEffect
 			if (et == EffectType.HEAL_INSTANT) {
@@ -919,7 +926,7 @@ public class AionSkillsWriter extends AbstractWriter {
 						e.setCondValue(value);
 					}
 				}
-				if (JAXBHandler.getValue(cs, current + "reserved13") != null) {
+				if (JAXBHandler.getValue(cs, current + "reserved13") != null && HealType.fromClient(JAXBHandler.getValue(cs, current + "reserved13").toString()) != HealType.NONE) {
 					e.setType(HealType.fromClient(JAXBHandler.getValue(cs, current + "reserved13").toString()).toString());
 				}
 				if (setGeneral(cs, e, a) | setAbstractHealEffect(cs, e, current) | e.getType() != null | e.getCondValue() != null) {
@@ -931,12 +938,9 @@ public class AionSkillsWriter extends AbstractWriter {
 			else if (et == EffectType.HEALCASTORONATTACKED) {
 				HealCastorOnAttackedEffect e = new HealCastorOnAttackedEffect();
 				boolean check = false;
-				if (JAXBHandler.getValue(cs, current + "reserved4") != null) {
-					float value = getFloatValue(cs, current, "reserved4");
-					if (value != 0.0f) {
-						e.setRange(value);
+				if (getFloatValue(cs, current, "reserved4") != 0.0f) {
+						e.setRange(getFloatValue(cs, current, "reserved4"));
 						check = true;
-					}
 				}
 				e.setType("HP");
 				if (setGeneral(cs, e, a) | setAbstractHealEffect(cs, e, current) | check) {
@@ -948,12 +952,9 @@ public class AionSkillsWriter extends AbstractWriter {
 			else if (et == EffectType.HEALCASTORONTARGETDEAD) {
 				HealCastorOnTargetDeadEffect e = new HealCastorOnTargetDeadEffect();
 				boolean check = false;
-				if (JAXBHandler.getValue(cs, current + "reserved4") != null) {
-					float value = getFloatValue(cs, current, "reserved4");
-					if (value != 0.0f) {
-						e.setRange(value);
+				if (getFloatValue(cs, current, "reserved4") != 0.0f) {
+						e.setRange(getFloatValue(cs, current, "reserved4"));
 						check = true;
-					}
 				}
 				e.setType("HP");
 				if (JAXBHandler.getValue(cs, current + "reserved14") != null && JAXBHandler.getValue(cs, current + "reserved14").toString().equalsIgnoreCase("Castor_Party")) {
@@ -966,6 +967,7 @@ public class AionSkillsWriter extends AbstractWriter {
 				}
 			}
 		}
+		// ########################################################## //
 		else if (et.getAbstractCatetgory().equalsIgnoreCase("AbstractDispelEffect")) {
 			// DispelDebuffEffect
 			if (et == EffectType.DISPELDEBUFF) {
@@ -1016,26 +1018,27 @@ public class AionSkillsWriter extends AbstractWriter {
 				}
 			}
 		}
-		// DispelEffect
-		else if (et == EffectType.DISPEL) {
-			DispelEffect e = new DispelEffect();
-			if (JAXBHandler.getValue(cs, current + "reserved1") != null) {
-				DispelType dtype = DispelType.fromClient(JAXBHandler.getValue(cs, current + "reserved1").toString());
-				if (dtype != DispelType.NONE) {
-					e.setDispeltype(dtype.toString());
-					if (dtype == DispelType.EFFECTID || dtype == DispelType.EFFECTIDRANGE && !getEffectIds(cs, current).isEmpty())
-						e.getEffectids().addAll(getEffectIds(cs, current));
-					else if (dtype == DispelType.EFFECTTYPE && !getEffectOrSlotType(cs, current).isEmpty())
-						e.getEffecttype().addAll(getEffectOrSlotType(cs, current));
-					else if (dtype == DispelType.SLOTTYPE && !getEffectOrSlotType(cs, current).isEmpty())
-						e.getSlottype().addAll(getEffectOrSlotType(cs, current));
+		// ########################################################## //
+		else if (et.getAbstractCatetgory().equalsIgnoreCase("DispelEffect")) {
+			// DispelEffect
+			if (et == EffectType.DISPEL) {
+				DispelEffect e = new DispelEffect();
+				if (setGeneral(cs, e, a) | setDispel(cs, e, current)) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
 				}
 			}
-			if (setGeneral(cs, e, a)) {
-				effects.getRootAndStunAndSleep().add(e);
-				compute = true;
+			// EvadeEffect
+			else if (et == EffectType.EVADE) {
+				EvadeEffect e = new EvadeEffect();
+				if (getIntValue(cs, current, "reserved14") < 255) {e.setDispelLevel(255 - getIntValue(cs, current, "reserved14"));}
+				if (setGeneral(cs, e, a) | setDispel(cs, e, current)) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
 			}
 		}
+		// ########################################################## //
 		else if (et.getAbstractCatetgory().equalsIgnoreCase("BufEffect")) {
 			// OneTimeBoostHealEffect
 			if (et == EffectType.ONETIMEBOOSTHEALEFFECT) {
@@ -1262,6 +1265,39 @@ public class AionSkillsWriter extends AbstractWriter {
 				}
 			}
 		}
+		// HostileUpEffect
+		else if (et == EffectType.HOSTILEUP) {
+			HostileUpEffect e = new HostileUpEffect();
+			if (setGeneral(cs, e, a)) {
+				compute |= setDelta(cs, e, current, new Integer[] {1});
+				compute |= setValue(cs, e, current, new Integer[] {2});
+				effects.getRootAndStunAndSleep().add(e);
+				compute = true;
+			}
+		}
+		// ChangeHateOnAttackedEffect
+		else if (et == EffectType.CHANGEHATEONATTACKED) {
+			ChangeHateOnAttackedEffect e = new ChangeHateOnAttackedEffect();
+			if (getIntValue(cs, current, "reserved3") != 0) {e.setValue1(getIntValue(cs, current, "reserved3"));}
+			if (getIntValue(cs, current, "reserved4") != 0) {e.setValue2(getIntValue(cs, current, "reserved4"));}
+			if (setGeneral(cs, e, a)) {
+				effects.getRootAndStunAndSleep().add(e);
+				compute = true;
+			}
+		}
+		// OneTimeBoostSkillAttackEffect
+		else if (et == EffectType.ONETIMEBOOSTSKILLATTACK) {
+			OneTimeBoostSkillAttackEffect e = new OneTimeBoostSkillAttackEffect();
+			if (getIntValue(cs, current, "reserved7") != 0) {e.setCount(getIntValue(cs, current, "reserved7"));}
+			if (JAXBHandler.getValue(cs, current + "reserved5") != null) {e.setType(JAXBHandler.getValue(cs, current + "reserved5").toString().toUpperCase());}
+			if (setGeneral(cs, e, a) || e.getCount() != 0) {
+				compute |= setDelta(cs, e, current, new Integer[] {1});
+				compute |= setValue(cs, e, current, new Integer[] {2});
+				effects.getRootAndStunAndSleep().add(e);
+				compute = true;
+			}
+		}
+		// ########################################################## //
 		else if (et.getAbstractCatetgory().equalsIgnoreCase("DamageEffect")) {
 			
 			// MoveBehindEffect
@@ -1381,6 +1417,8 @@ public class AionSkillsWriter extends AbstractWriter {
 					e.setSignet(signet);
 					check = true;
 				}
+				else
+					e.setSignet("SYSTEM_SKILL_SIGNET1"); //TODO ??????????????????????
 				if (setGeneral(cs, e, a) | setDamageEffect(cs, e, current) | check) {
 					effects.getRootAndStunAndSleep().add(e);
 					compute = true;
@@ -1439,6 +1477,39 @@ public class AionSkillsWriter extends AbstractWriter {
 				}
 			}
 		}
+		// ########################################################## //
+		// DelayedFpAtkInstantEffect
+		else if (et == EffectType.DELAYEDFPATK_INSTANT) {
+			DelayedFpAtkInstantEffect e = new DelayedFpAtkInstantEffect();
+			if (getIntValue(cs, current, "reserved6") == 1) {e.setPercent(true);}
+			if (getIntValue(cs, current, "reserved9") != 0) {e.setDelay(getIntValue(cs, current, "reserved9"));}
+			if (setGeneral(cs, e, a)) {
+				compute |= setDelta(cs, e, current, new Integer[] {1});
+				compute |= setValue(cs, e, current, new Integer[] {2});
+				effects.getRootAndStunAndSleep().add(e);
+				compute = true;
+			}
+		}
+		// DelayedSkillEffect
+		else if (et == EffectType.DELAYEDSKILL) {
+			DelayedSkillEffect e = new DelayedSkillEffect();
+			if (JAXBHandler.getValue(cs, current + "reserved1") != null) {e.setSkillId(getSkillId(JAXBHandler.getValue(cs, current + "reserved1").toString()));}
+			if (setGeneral(cs, e, a)) {
+				effects.getRootAndStunAndSleep().add(e);
+				compute = true;
+			}
+		}
+		else if (et == EffectType.MAGICCOUNTERATK) {
+			MagicCounterAtkEffect e = new MagicCounterAtkEffect();
+			// if (getIntValue(cs, current, "reserved6") != 0) {e.setPercent(getIntValue(cs, current, "reserved6"));} //TODO: Unused
+			if (getIntValue(cs, current, "reserved5") != 0) {e.setMaxdmg(getIntValue(cs, current, "reserved5"));}
+			if (setGeneral(cs, e, a)) {
+				compute |= setDelta(cs, e, current, new Integer[] {1});
+				compute |= setValue(cs, e, current, new Integer[] {2});
+				effects.getRootAndStunAndSleep().add(e);
+				compute = true;
+			}
+		}
 		// SignetEffect
 		else if (et == EffectType.SIGNET) {
 			SignetEffect e = new SignetEffect();
@@ -1447,7 +1518,7 @@ public class AionSkillsWriter extends AbstractWriter {
 				compute = true;
 			}
 		}
-		// **** Alterations ****/
+		// ########################################################## //
 		// StunEffect
 		else if (et == EffectType.STUN) {
 			StunEffect e = new StunEffect();
@@ -1647,6 +1718,235 @@ public class AionSkillsWriter extends AbstractWriter {
 				compute = true;
 			}
 		}
+		// InvulnerableWingEffect
+		else if (et == EffectType.INVULNERABLEWING) {
+			InvulnerableWingEffect e = new InvulnerableWingEffect();
+			if (setGeneral(cs, e, a)) {
+				effects.getRootAndStunAndSleep().add(e);
+				compute = true;
+			}
+		}
+		// ########################################################## //
+		else if (et.getAbstractCatetgory().equalsIgnoreCase("TransformEffect")) {
+			// PolymorphEffect
+			if (et == EffectType.POLYMORPH) {
+				PolymorphEffect e = new PolymorphEffect();
+				if (setGeneral(cs, e, a) | setTransform(cs, e, current)) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
+			// DeformEffect
+			else if (et == EffectType.DEFORM) {
+				DeformEffect e = new DeformEffect();
+				if (setGeneral(cs, e, a) | setTransform(cs, e, current)) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
+			// ShapeChangeEffect
+			else if (et == EffectType.SHAPECHANGE) {
+				ShapeChangeEffect e = new ShapeChangeEffect();
+				if (setGeneral(cs, e, a) | setTransform(cs, e, current)) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
+		}
+		else if (et.getAbstractCatetgory().equalsIgnoreCase("ShieldEffect")) {
+			// ShieldEffect
+			if (et == EffectType.SHIELD) {
+				ShieldEffect e = new ShieldEffect();
+				if (setGeneral(cs, e, a) | setShield(cs, e, current)) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
+			// ConvertHealEffect
+			else if (et == EffectType.CONVERTHEAL) {
+				ConvertHealEffect e = new ConvertHealEffect();
+				if (JAXBHandler.getValue(cs, current + "reserved13") != null && HealType.fromClient(JAXBHandler.getValue(cs, current + "reserved13").toString()) != HealType.NONE) {
+					e.setType(HealType.fromClient(JAXBHandler.getValue(cs, current + "reserved13").toString()).toString());
+				}
+				if (getIntValue(cs, current, "reserved9") == 1) {e.setHitpercent(true);}
+				if (setGeneral(cs, e, a) | setShield(cs, e, current)) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
+			// ReflectorEffect
+			else if (et == EffectType.REFLECTOR) {
+				ReflectorEffect e = new ReflectorEffect();
+				if (setGeneral(cs, e, a) | setShield(cs, e, current)) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
+			// ProvokerEffect
+			else if (et == EffectType.PROVOKER) {
+				ProvokerEffect e = new ProvokerEffect();
+				if (JAXBHandler.getValue(cs, current + "reserved14") != null) {e.setProvokeTarget(JAXBHandler.getValue(cs, current + "reserved14").toString().toUpperCase());} // TODO: Make enum ?
+				if (JAXBHandler.getValue(cs, current + "reserved17") != null) {e.setSkillId(getSkillId(JAXBHandler.getValue(cs, current + "reserved17").toString()));}
+				if (setGeneral(cs, e, a) | setShield(cs, e, current) | e.getSkillId() != 0) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
+			// ProtectEffect
+			else if (et == EffectType.PROTECT) {
+				ProtectEffect e = new ProtectEffect();
+				if (setGeneral(cs, e, a) | setShield(cs, e, current)) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
+		}
+		// ########################################################## //
+		else if (et.getAbstractCatetgory().equalsIgnoreCase("ResurrectEffect")) {
+			// ResurrectEffect
+			if (et == EffectType.RESURRECT) {
+				ResurrectEffect e = new ResurrectEffect();
+				if (JAXBHandler.getValue(cs, current + "reserved6") != null) {e.setSkillId(getSkillId(JAXBHandler.getValue(cs, current + "reserved6").toString()));}
+				if (setGeneral(cs, e, a) || e.getSkillId() != 0) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
+			// ResurrectBaseEffect
+			else if (et == EffectType.RESURRECTBASE) {
+				ResurrectBaseEffect e = new ResurrectBaseEffect();
+				if (JAXBHandler.getValue(cs, current + "reserved6") != null) {e.setSkillId(getSkillId(JAXBHandler.getValue(cs, current + "reserved6").toString()));}
+				if (setGeneral(cs, e, a) || e.getSkillId() != 0) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
+			// ResurrectPositionalEffect
+			else if (et == EffectType.RESURRECTPOSITIONAL) {
+				ResurrectPositionalEffect e = new ResurrectPositionalEffect();
+				if (JAXBHandler.getValue(cs, current + "reserved6") != null) {e.setSkillId(getSkillId(JAXBHandler.getValue(cs, current + "reserved6").toString()));}
+				if (setGeneral(cs, e, a) || e.getSkillId() != 0) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
+		}
+		// ########################################################## //
+		// RebirthEffect
+		else if (et == EffectType.REBIRTH) {
+			RebirthEffect e = new RebirthEffect();
+			if (JAXBHandler.getValue(cs, current + "reserved6") != null) {e.setSkillId(getSkillId(JAXBHandler.getValue(cs, current + "reserved6").toString()));}
+			if (getIntValue(cs, current, "reserved2") != 0) {e.setResurrectPercent(getIntValue(cs, current, "reserved2"));}
+			if (setGeneral(cs, e, a) || e.getSkillId() != 0) {
+				effects.getRootAndStunAndSleep().add(e);
+				compute = true;
+			}
+		}
+		else if (et.getAbstractCatetgory().equalsIgnoreCase("SummonEffect")) {
+			// SummonEffect
+			if (et == EffectType.SUMMON) {
+				SummonEffect e = new SummonEffect();
+				if (setGeneral(cs, e, a) | setSummon(cs, e, current)) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
+			// SummonHomingEffect
+			else if (et == EffectType.SUMMONHOMING) {
+				SummonHomingEffect e = new SummonHomingEffect();
+				if (getIntValue(cs, current, "reserved5") != 0) {e.setNpcCount(getIntValue(cs, current, "reserved5") * 20);}
+				if (getIntValue(cs, current, "reserved4") != 0) {e.setAttackCount(getIntValue(cs, current, "reserved4") * 10);}
+				if ((setGeneral(cs, e, a) | setSummon(cs, e, current)) && e.getNpcCount() > 0) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
+			// SummonGroupGateEffect
+			else if (et == EffectType.SUMMONGROUPGATE) {
+				SummonGroupGateEffect e = new SummonGroupGateEffect();
+				if (setGeneral(cs, e, a) | setSummon(cs, e, current)) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
+				// SummonBindingGroupGateEffect
+				else if (et == EffectType.SUMMONBINDINGGROUPGATE) {
+					SummonBindingGroupGateEffect e = new SummonBindingGroupGateEffect();
+					if (setGeneral(cs, e, a) | setSummon(cs, e, current)) {
+						effects.getRootAndStunAndSleep().add(e);
+						compute = true;
+					}
+				}
+				// SummonHouseGateEffect
+				else if (et == EffectType.SUMMONHOUSEGATE) {
+					SummonHouseGateEffect e = new SummonHouseGateEffect();
+					if (setGeneral(cs, e, a) | setSummon(cs, e, current)) {
+						effects.getRootAndStunAndSleep().add(e);
+						compute = true;
+					}
+				}
+			// SummonTrapEffect
+			else if (et == EffectType.SUMMONTRAP) {
+				SummonTrapEffect e = new SummonTrapEffect();
+				if (JAXBHandler.getValue(cs, current + "reserved9") != null) {e.setSkillId(getSkillId(JAXBHandler.getValue(cs, current + "reserved9").toString()));}
+				if (setGeneral(cs, e, a) | setSummon(cs, e, current)) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
+			// SummonServantEffect
+			else if (et == EffectType.SUMMONSERVANT) {
+				SummonServantEffect e = new SummonServantEffect();
+				if (JAXBHandler.getValue(cs, current + "reserved9") != null) {e.setSkillId(getSkillId(JAXBHandler.getValue(cs, current + "reserved9").toString()));}
+				// e.setHpRatio(); //TODO: Unused
+				if (setGeneral(cs, e, a) | setSummon(cs, e, current)) {
+					effects.getRootAndStunAndSleep().add(e);
+					compute = true;
+				}
+			}
+				// SummonTotemEffect
+				else if (et == EffectType.SUMMONTOTEM) {
+					SummonTotemEffect e = new SummonTotemEffect();
+					if (JAXBHandler.getValue(cs, current + "reserved9") != null) {e.setSkillId(getSkillId(JAXBHandler.getValue(cs, current + "reserved9").toString()));}
+					// e.setHpRatio(); //TODO: Unused
+					if (setGeneral(cs, e, a) | setSummon(cs, e, current)) {
+						effects.getRootAndStunAndSleep().add(e);
+						compute = true;
+					}
+				}
+				// SummonSkillAreaEffect
+				else if (et == EffectType.SUMMONSKILLAREA) {
+					SummonSkillAreaEffect e = new SummonSkillAreaEffect();
+					if (JAXBHandler.getValue(cs, current + "reserved9") != null) {e.setSkillId(getSkillId(JAXBHandler.getValue(cs, current + "reserved9").toString()));}
+					// e.setHpRatio(); //TODO: Unused
+					if (setGeneral(cs, e, a) | setSummon(cs, e, current)) {
+						effects.getRootAndStunAndSleep().add(e);
+						compute = true;
+					}
+				}
+		}
+		// PetOrderUseUltraSkillEffect
+		else if (et == EffectType.PETORDERUSEULTRASKILL) {
+			PetOrderUseUltraSkillEffect e = new PetOrderUseUltraSkillEffect();
+			if (getIntValue(cs, current, "reserved1") != 0) {e.setUltraSkill(getIntValue(cs, current, "reserved1"));}
+			if (getIntValue(cs, current, "reserved2") == 1) {e.setRelease(true);}
+			if (setGeneral(cs, e, a)) {
+				effects.getRootAndStunAndSleep().add(e);
+				compute = true;
+			}
+		}
+		// ########################################################## //
+		// AuraEffect
+		else if (et == EffectType.AURA) {
+			AuraEffect e = new AuraEffect();
+			if (getIntValue(cs, current, "reserved3") != 0) {e.setDistance(getIntValue(cs, current, "reserved3"));}
+			if (getIntValue(cs, current, "reserved4") != 0) {e.setDistanceZ(getIntValue(cs, current, "reserved4"));}
+			if (JAXBHandler.getValue(cs, current + "reserved1") != null) {e.setSkillId(getSkillId(JAXBHandler.getValue(cs, current + "reserved1").toString()));}
+			if (setGeneral(cs, e, a) && e.getSkillId() != 0) {
+				effects.getRootAndStunAndSleep().add(e);
+				compute = true;
+			}
+		}
 		// SearchEffect
 		else if (et == EffectType.SEARCH) {
 			SearchEffect e = new SearchEffect();
@@ -1659,12 +1959,6 @@ public class AionSkillsWriter extends AbstractWriter {
 		// HideEffect
 		else if (et == EffectType.HIDE) {
 			HideEffect e = new HideEffect();
-			//TODO : applyChange(StatModifiers.SPEED, "PERCENT", (100 - getIntValue(cs, current, "reserved2") * -1));
-			// overload the method and add a msk to the main one
-			// if stat not given, mask |= 1
-			// if percent not given mask |= 2
-			// if value not given, mask |= 4
-			// if mask == 7, compute change from client data
 			if (getIntValue(cs, current, "reserved3") != 0) {e.setBufcount(getIntValue(cs, current, "reserved3"));}
 			if (getIntValue(cs, current, "reserved4") != 0) {e.setType(getIntValue(cs, current, "reserved4"));}
 			if (getIntValue(cs, current, "reserved7") > 0) {e.setState("HIDE" + getIntValue(cs, current, "reserved7"));}
@@ -1673,9 +1967,148 @@ public class AionSkillsWriter extends AbstractWriter {
 				compute = true;
 			}
 		}
+		// NoFlyEffect
+		else if (et == EffectType.NOFLY) {
+			NoFlyEffect e = new NoFlyEffect();
+			if (setGeneral(cs, e, a)) {
+				effects.getRootAndStunAndSleep().add(e);
+				compute = true;
+			}
+		}
+		// FallEffect
+		else if (et == EffectType.FALL) {
+			FallEffect e = new FallEffect();
+			if (setGeneral(cs, e, a)) {
+				effects.getRootAndStunAndSleep().add(e);
+				compute = true;
+			}
+		}
+		// PulledEffect
+		else if (et == EffectType.PULLED) {
+			PulledEffect e = new PulledEffect();
+			if (setGeneral(cs, e, a)) {
+				effects.getRootAndStunAndSleep().add(e);
+				compute = true;
+			}
+		}
+		// OpenAerialEffect
+		else if (et == EffectType.OPENAERIAL) {
+			OpenAerialEffect e = new OpenAerialEffect();
+			if (setGeneral(cs, e, a)) {
+				effects.getRootAndStunAndSleep().add(e);
+				compute = true;
+			}
+		}
+		// CloseAerialEffect
+		else if (et == EffectType.CLOSEAERIAL) {
+			CloseAerialEffect e = new CloseAerialEffect();
+			if (setGeneral(cs, e, a)) {
+				effects.getRootAndStunAndSleep().add(e);
+				compute = true;
+			}
+		}
+		// SanctuaryEffect
+		else if (et == EffectType.SANCTUARY) {
+			SanctuaryEffect e = new SanctuaryEffect();
+			if (setGeneral(cs, e, a)) {
+				effects.getRootAndStunAndSleep().add(e);
+				compute = true;
+			}
+		}
+		// RandomMoveLocEffect
+		else if (et == EffectType.RANDOMMOVELOC) {
+			RandomMoveLocEffect e = new RandomMoveLocEffect();
+			if (getFloatValue(cs, current, "reserved2") != 0) {e.setDistance(getFloatValue(cs, current, "reserved2"));}
+			e.setDirection(getFloatValue(cs, current, "reserved1"));
+			// if (getFloatValue(cs, current, "reserved10") != 0) {e.setUp(getFloatValue(cs, current, "reserved10"));} //TODO: Unused
+			if (setGeneral(cs, e, a)) {
+				effects.getRootAndStunAndSleep().add(e);
+				compute = true;
+			}
+		}
+		// ReturnEffect
+		else if (et == EffectType.RETURNHOME) {
+			ReturnEffect e = new ReturnEffect();
+			if (setGeneral(cs, e, a)) {
+				effects.getRootAndStunAndSleep().add(e);
+				compute = true;
+			}
+		}
+		// ReturnPointEffect
+		else if (et == EffectType.RETURNPOINT) {
+			ReturnPointEffect e = new ReturnPointEffect();
+			if (setGeneral(cs, e, a)) {
+				effects.getRootAndStunAndSleep().add(e);
+				compute = true;
+			}
+		}
+		// RecallInstantEffect
+		else if (et == EffectType.RECALL_INSTANT) {
+			RecallInstantEffect e = new RecallInstantEffect();
+			if (setGeneral(cs, e, a)) {
+				effects.getRootAndStunAndSleep().add(e);
+				compute = true;
+			}
+		}
+		// BoostSkillCostEffect
+		else if (et == EffectType.BOOSTSKILLCOST) {
+			BoostSkillCostEffect e = new BoostSkillCostEffect();
+			// if (getIntValue(cs, current, "reserved1") == 1) {e.setPercent(true);} //TODO: Unused
+			if (setGeneral(cs, e, a)) {
+				compute |= setDelta(cs, e, current, new Integer[] {1});
+				compute |= setValue(cs, e, current, new Integer[] {2});
+				effects.getRootAndStunAndSleep().add(e);
+				compute = true;
+			}
+		}
+		// SwitchHpMpEffect
+		else if (et == EffectType.SWITCHHPMP_INSTANT) {
+			SwitchHpMpEffect e = new SwitchHpMpEffect();
+			if (setGeneral(cs, e, a)) {
+				effects.getRootAndStunAndSleep().add(e);
+				compute = true;
+			}
+		}
+		// DPTransferEffect
+		else if (et == EffectType.DPTRANSFER) {
+			DPTransferEffect e = new DPTransferEffect();
+			if (setGeneral(cs, e, a)) {
+				effects.getRootAndStunAndSleep().add(e);
+				compute = true;
+			}
+		}
+		// SkillLauncherEffect
+		else if (et == EffectType.SKILLLAUNCHER) {
+			SkillLauncherEffect e = new SkillLauncherEffect();
+			if (JAXBHandler.getValue(cs, current + "reserved1") != null) {e.setSkillId(getSkillId(JAXBHandler.getValue(cs, current + "reserved1").toString()));}
+			if (setGeneral(cs, e, a)) {
+				effects.getRootAndStunAndSleep().add(e);
+				compute = true;
+			}
+		}
+		// CondSkillLauncherEffect
+		else if (et == EffectType.CONDSKILLLAUNCHER) {
+			CondSkillLauncherEffect e = new CondSkillLauncherEffect();
+			if (JAXBHandler.getValue(cs, current + "reserved3") != null) {e.setSkillId(getSkillId(JAXBHandler.getValue(cs, current + "reserved3").toString()));}
+			if (JAXBHandler.getValue(cs, current + "reserved13") != null && HealType.fromClient(JAXBHandler.getValue(cs, current + "reserved3").toString()) != HealType.NONE) {
+				e.setType(HealType.fromClient(JAXBHandler.getValue(cs, current + "reserved3").toString()).toString());
+			}
+			else {
+				e.setType("HP"); //TODO ????????????
+			}
+			if (setGeneral(cs, e, a)) {
+				effects.getRootAndStunAndSleep().add(e);
+				compute |= setValue(cs, e, current, new Integer[] {4});
+				compute = true;
+			}
+		}
+		// else
+			// System.out.println("[SKILLS] [ERROR] " + et.toString() + " does not match any declared effect !");
 
 		return compute;
 	}
+	
+	/**** Abstract category properties ****/
 	
 	private boolean setAbstractOverTimeEffect(ClientSkill cs, AbstractOverTimeEffect effect, String current) {
 		boolean hasAbstractEffects = false;
@@ -1752,6 +2185,25 @@ public class AionSkillsWriter extends AbstractWriter {
 		return results;
 	}
 	
+	private boolean setDispel(ClientSkill cs, DispelEffect effect, String current) {
+		boolean hasDispel = false;
+		
+		if (JAXBHandler.getValue(cs, current + "reserved1") != null) {
+			DispelType dtype = DispelType.fromClient(JAXBHandler.getValue(cs, current + "reserved1").toString());
+			if (dtype != DispelType.NONE) {
+				effect.setDispeltype(dtype.toString());
+				if (dtype == DispelType.EFFECTID || dtype == DispelType.EFFECTIDRANGE && !getEffectIds(cs, current).isEmpty())
+					effect.getEffectids().addAll(getEffectIds(cs, current));
+				else if (dtype == DispelType.EFFECTTYPE && !getEffectOrSlotType(cs, current).isEmpty())
+					effect.getEffecttype().addAll(getEffectOrSlotType(cs, current));
+				else if (dtype == DispelType.SLOTTYPE && !getEffectOrSlotType(cs, current).isEmpty())
+					effect.getSlottype().addAll(getEffectOrSlotType(cs, current));
+			}
+		}
+	
+		return hasDispel;
+	}
+	
 	private boolean setBufEffect(ClientSkill cs, BufEffect effect, String current) {
 		boolean hasAbstractEffects = false;
 		int e = effect.getE();
@@ -1782,31 +2234,74 @@ public class AionSkillsWriter extends AbstractWriter {
 		return hasAbstractEffects;
 	}
 	
-	private boolean setValue(ClientSkill cs, Effect e, String current, Integer[] target) {
-		List<Integer> targets = new ArrayList<Integer>();
-		Collections.addAll(targets, target);
+	private boolean setTransform(ClientSkill cs, TransformEffect effect, String current) {
+		boolean hasAbstractEffects = false;
 		
-		for (Integer i : targets) {
-			if (getIntValue(cs, current, "reserved" + i) != 0) {
-				e.setValue(getIntValue(cs, current, "reserved" + i));
-				return true;
-			}
+		if (JAXBHandler.getValue(cs, current + "reserved9") != null) {
+			effect.setModel(getNpcId(JAXBHandler.getValue(cs, current + "reserved9").toString()));
+			hasAbstractEffects = true;
 		}
-		return false;
+		if (JAXBHandler.getValue(cs, current + "reserved8") != null) {
+			effect.setType(JAXBHandler.getValue(cs, current + "reserved8").toString().toUpperCase());
+			hasAbstractEffects = true;
+		}
+		if (getIntValue(cs, current, "reserved4") != 0) {
+			effect.setPanelid(getIntValue(cs, current, "reserved4"));
+			hasAbstractEffects = true;
+		}
+		
+		return hasAbstractEffects;
 	}
 	
-	private boolean setDelta(ClientSkill cs, Effect e, String current, Integer[] target) {
-		List<Integer> targets = new ArrayList<Integer>();
-		Collections.addAll(targets, target);
+	private boolean setShield(ClientSkill cs, ShieldEffect effect, String current) {
+		boolean hasAbstractEffects = false;
 		
-		for (Integer i : targets) {
-			if (getIntValue(cs, current, "reserved" + i) != 0) {
-				e.setDelta(getIntValue(cs, current, "reserved" + i));
-				return true;
-			}
+		if (getIntValue(cs, current, "reserved6") == 1) {
+			effect.setPercent(true);
+			hasAbstractEffects = true;
 		}
-		return false;
+		if (getIntValue(cs, current, "reserved1") != 0) {
+			effect.setHitdelta(getIntValue(cs, current, "reserved1"));
+			hasAbstractEffects = true;
+		}
+		if (getIntValue(cs, current, "reserved2") != 0) {
+			effect.setHitvalue(getIntValue(cs, current, "reserved2"));
+			hasAbstractEffects = true;
+		}
+		if (getIntValue(cs, current, "reserved5") != 0) {
+			effect.setRadius(getIntValue(cs, current, "reserved5"));
+			hasAbstractEffects = true;
+		}
+		if (getIntValue(cs, current, "reserved4") != 0) {
+			effect.setMinradius(getIntValue(cs, current, "reserved4"));
+			hasAbstractEffects = true;
+		}
+		if (JAXBHandler.getValue(cs, current + "cond_race") != null) {
+			effect.setCondrace(Race.fromClient(JAXBHandler.getValue(cs, current + "cond_race").toString()).toString());
+			hasAbstractEffects = true;
+		}
+		
+		hasAbstractEffects |= setDelta(cs, effect, current, new Integer[] {7});
+		hasAbstractEffects |= setValue(cs, effect, current, new Integer[] {8});
+		
+		return hasAbstractEffects;
 	}
+	
+	private boolean setSummon(ClientSkill cs, SummonEffect effect, String current) {
+		boolean hasAbstractEffects = false;
+		
+		if (getIntValue(cs, current, "reserved4") != 0) {
+			effect.setTime(getIntValue(cs, current, "reserved4"));
+			hasAbstractEffects = true;
+		}
+		if (JAXBHandler.getValue(cs, current + "reserved9") != null) {
+			effect.setNpcId(getNpcId(JAXBHandler.getValue(cs, current + "reserved9").toString()));
+			hasAbstractEffects = true;
+		}
+		return hasAbstractEffects;
+	}
+	
+	/***** General properties of Effect *****/
 	
 	private boolean setGeneral(ClientSkill cs, Effect effect, int a) {
 		boolean hasGeneralEffects = false;
@@ -1823,6 +2318,14 @@ public class AionSkillsWriter extends AbstractWriter {
 						hasGeneralEffects = true;
 					}
 				}
+		}
+		else {
+			Conditions cond = new Conditions();
+			cond = getEffectConditions(cs, cond, current);
+			if (cond != null) {
+				effect.setConditions(cond);
+				hasGeneralEffects = true;
+			}
 		}
 		hasGeneralEffects |= setSubEffect(cs, effect, current);
 		hasGeneralEffects |= setModifiersOrSubConditions(cs, effect, current);
@@ -2307,8 +2810,35 @@ public class AionSkillsWriter extends AbstractWriter {
 		}
 		return hasGeneral;
 	}
+	
+	/****** UTIL *****/
 
 	
+	private boolean setValue(ClientSkill cs, Effect e, String current, Integer[] target) {
+		List<Integer> targets = new ArrayList<Integer>();
+		Collections.addAll(targets, target);
+		
+		for (Integer i : targets) {
+			if (getIntValue(cs, current, "reserved" + i) != 0) {
+				e.setValue(getIntValue(cs, current, "reserved" + i));
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	private boolean setDelta(ClientSkill cs, Effect e, String current, Integer[] target) {
+		List<Integer> targets = new ArrayList<Integer>();
+		Collections.addAll(targets, target);
+		
+		for (Integer i : targets) {
+			if (getIntValue(cs, current, "reserved" + i) != 0) {
+				e.setDelta(getIntValue(cs, current, "reserved" + i));
+				return true;
+			}
+		}
+		return false;
+	}
 	
 	private int getIntValue(ClientSkill cs, String current, String property) {
 		int value = 0;
@@ -2321,7 +2851,7 @@ public class AionSkillsWriter extends AbstractWriter {
 	}
 	
 	private float getFloatValue(ClientSkill cs, String current, String property) {
-		float value = 0;
+		float value = 0.0f;
 		try {
 			value = Float.parseFloat(JAXBHandler.getValue(cs, current + property).toString());
 		} catch (Exception ex) {
