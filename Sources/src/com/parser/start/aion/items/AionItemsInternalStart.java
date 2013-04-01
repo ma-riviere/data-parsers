@@ -6,6 +6,6 @@ public class AionItemsInternalStart {
 
 	public static void main(String[] args) {
 		AionItemsInternalWriter writer = new AionItemsInternalWriter();
-		writer.build();
+		writer.start();
 	}
 }

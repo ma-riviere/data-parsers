@@ -6,6 +6,6 @@ public class AionCooltimesStart {
 
 	public static void main(String[] args) {
 		AionCooltimesWriter writer = new AionCooltimesWriter();
-		writer.build();
+		writer.start();
 	}
 }

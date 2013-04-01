@@ -2,7 +2,7 @@ package com.parser.write;
 
 public interface Writer {
 
-	void build();
+	void start();
 	
 	void parse();
 

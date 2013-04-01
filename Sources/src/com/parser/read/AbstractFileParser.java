@@ -30,12 +30,12 @@ public abstract class AbstractFileParser<T> implements ClientFileParser<T> {
 			unmarshaller.setEventHandler(new XmlValidationHandler());
 			File dataFile = new File("../../Data/" + version + "/client/" + file);
 			if(dataFile.exists()){
-				System.out.println(dataFile.getName()+" exists, parsing it");
+				System.out.println("\n[MAIN] [INFO] " + dataFile.getName()+" exists, reading it !");
 				Object collection = unmarshaller.unmarshal(dataFile);
 				dataList = castFrom(collection);
-				System.out.println("Size of " + file + " : " + dataList.size());
+				// System.out.println("Size of " + file + " : " + dataList.size());
 			}else{
-				System.out.println("File doesnt exist " + dataFile);
+				System.out.println("\n[MAIN][ERROR] " + dataFile + " could not be found !!");
 				return Collections.emptyList();
 			}
 			

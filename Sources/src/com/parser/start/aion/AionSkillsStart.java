@@ -6,6 +6,6 @@ public class AionSkillsStart {
 
 	public static void main(String[] args) {
 		AionSkillsWriter writer = new AionSkillsWriter(Boolean.parseBoolean(args[0]));
-		writer.build();
+		writer.start();
 	}
 }
