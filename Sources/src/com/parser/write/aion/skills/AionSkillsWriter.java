@@ -139,7 +139,7 @@ public class AionSkillsWriter extends AbstractWriter {
 			Properties prop = new Properties();
 				boolean hasProperties = false;
 				// Add the weapon range to the distances calculation
-				if (JAXBHandler.getValue(cs, "add_wpn_range") != 0) {
+				if (JAXBHandler.getValue(cs, "add_wpn_range") != 0 && JAXBHandler.getValue(cs, "activation_attribute") != null && !JAXBHandler.getValue(cs, "activation_attribute").toString().equalsIgnoreCase("Passive")) {
 					prop.setAwr(true);
 					hasProperties = true;
 				}
@@ -1192,7 +1192,6 @@ public class AionSkillsWriter extends AbstractWriter {
 			else if (et == EffectType.STATBOOST) {
 				StatboostEffect e = new StatboostEffect();
 				if (setGeneral(cs, e, a) | setBufEffect(cs, e, current)) {
-					fixFuncByValue(e);
 					effects.getRootAndStunAndSleep().add(e);
 					compute = true;
 				}
@@ -1217,7 +1216,6 @@ public class AionSkillsWriter extends AbstractWriter {
 			else if (et == EffectType.WEAPONSTATBOOST) {
 				WeaponStatboostEffect e = new WeaponStatboostEffect();
 				if (setGeneral(cs, e, a) | setBufEffect(cs, e, current)) {
-					fixFuncByValue(e);
 					effects.getRootAndStunAndSleep().add(e);
 					compute = true;
 				}
@@ -1258,6 +1256,7 @@ public class AionSkillsWriter extends AbstractWriter {
 			else if (et == EffectType.WPN_DUAL) {
 				WeaponDualEffect e = new WeaponDualEffect();
 				if (setGeneral(cs, e, a) | setBufEffect(cs, e, current)) {
+					compute |= setValue(cs, e, current, new Integer[] {6});
 					effects.getRootAndStunAndSleep().add(e);
 					compute = true;
 				}
@@ -1747,8 +1746,6 @@ public class AionSkillsWriter extends AbstractWriter {
 				f++;
 			}
 		}
-
-		hasAbstractEffects |= setValue(cs, effect, current, new Integer[] {6}); //TODO: If > 1 ?
 		return hasAbstractEffects;
 	}
 	
@@ -1942,13 +1939,16 @@ public class AionSkillsWriter extends AbstractWriter {
 		}
 		else if (e instanceof DeboostHealEffect) {
 			change.setStat(StatModifiers.HEAL_SKILL_BOOST.toString());
+			change.setValue(getIntValue(cs, current, "reserved1"));
 			change.setFunc("PERCENT");
 		}
 		else if (e instanceof BoostSkillCastingTimeEffect) {
 			change.setStat(StatModifiers.BOOST_CASTING_TIME_ATTACK.toString());
 			change.setFunc("PERCENT");
 		}
-		change.setValue(getIntValue(cs, current, "reserved2"));
+		
+		if (change.getValue() == 0)
+			change.setValue(getIntValue(cs, current, "reserved2"));
 		
 		if (change.getStat() != null)
 			changes.add(change);
@@ -1956,8 +1956,8 @@ public class AionSkillsWriter extends AbstractWriter {
 			modifiers = getClientModAndValue(cs, current);
 		
 		if (e instanceof CurseEffect) {
-			modifiers.put(StatModifiers.MAXHP, getIntValue(cs, current, "reserved2") * -1);
-			modifiers.put(StatModifiers.MAXMP, getIntValue(cs, current, "reserved2") * -1);
+			modifiers.put(StatModifiers.MAXHP, getIntValue(cs, current, "reserved2"));
+			modifiers.put(StatModifiers.MAXMP, getIntValue(cs, current, "reserved2"));
 		}
 		else if (e instanceof XPBoostEffect) {
 			modifiers.put(StatModifiers.BOOST_CRAFTING_XP_RATE, getIntValue(cs, current, "reserved2"));
@@ -1967,11 +1967,11 @@ public class AionSkillsWriter extends AbstractWriter {
 			modifiers.put(StatModifiers.BOOST_QUEST_XP_RATE, getIntValue(cs, current, "reserved2"));
 		}
 		else if (e instanceof SnareEffect) {
-			modifiers.put(StatModifiers.SPEED, getIntValue(cs, current, "reserved2") * -1);
-			modifiers.put(StatModifiers.FLY_SPEED, getIntValue(cs, current, "reserved2") * -1);
+			modifiers.put(StatModifiers.SPEED, getIntValue(cs, current, "reserved2"));
+			modifiers.put(StatModifiers.FLY_SPEED, getIntValue(cs, current, "reserved2"));
 		}
 		else if (e instanceof SlowEffect)
-			modifiers.put(StatModifiers.ATTACK_SPEED, getIntValue(cs, current, "reserved2") * -1);
+			modifiers.put(StatModifiers.ATTACK_SPEED, getIntValue(cs, current, "reserved2"));
 		
 		if (!modifiers.isEmpty()) {
 			Conditions cond = new Conditions();
@@ -1986,7 +1986,11 @@ public class AionSkillsWriter extends AbstractWriter {
 				// Stat
 				change.setStat(mod.toString());
 				// Func
-				change.setFunc(getIntValue(cs, current, "reserved6") == 1 ? "PERCENT" : "ADD");
+				change.setFunc("ADD");
+				if (getIntValue(cs, current, "reserved6") == 1)
+					change.setFunc("PERCENT");
+				if (getIntValue(cs, current, "reserved4") != 0 && getIntValue(cs, current, "reserved2") == 0)
+					change.setFunc("PERCENT");
 				// Value
 				change.setValue(modifiers.get(mod));
 				// Delta
@@ -2001,6 +2005,16 @@ public class AionSkillsWriter extends AbstractWriter {
 		for (Change c : changes) {
 			if (c.getStat().equalsIgnoreCase("ATTACK_SPEED"))
 				c.setValue(c.getValue() * -1);
+			if (e instanceof StatdownEffect || e instanceof SlowEffect || e instanceof SnareEffect || e instanceof CurseEffect || e instanceof DeboostHealEffect) {
+				if (c.getValue() > 0)
+					c.setValue(c.getValue() * -1);
+			}
+			if (c.getStat().equalsIgnoreCase("ATTACK_RANGE") && c.getFunc().equalsIgnoreCase("ADD"))
+				c.setValue(c.getValue() * 1000);
+			if (c.getStat().equalsIgnoreCase("FLY_SPEED") && c.getFunc().equalsIgnoreCase("ADD"))
+				c.setValue(c.getValue() * 100);
+			if (c.getStat().equalsIgnoreCase("SPEED") && c.getFunc().equalsIgnoreCase("ADD"))
+				c.setValue(c.getValue() * 100);
 		}
 		if (!changes.isEmpty()) {
 			e.getChange().addAll(changes);
@@ -2008,13 +2022,6 @@ public class AionSkillsWriter extends AbstractWriter {
 		} else {
 			return false;
 		}
-	}
-	
-	private void fixFuncByValue(Effect e) {
-		for (Change change : e.getChange()) {
-			if (Math.abs(change.getValue()) < 100)
-					change.setFunc("PERCENT");
-		}			
 	}
 	
 	private Map<StatModifiers, Integer> getClientModAndValue(ClientSkill cs, String current) {

@@ -217,6 +217,11 @@ public enum ItemCategory {
 			}
 		}
 		
+		if (category == ItemCategory.SHIELD || category.getEquipmentType() != null && category.getEquipmentType().equalsIgnoreCase("Weapon")) {
+			if (ci.getMaxStackCount() > 1)
+				category = ItemCategory.NONE;
+		}
+		
 		return category;
 	}
 	
