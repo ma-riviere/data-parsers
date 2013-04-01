@@ -3,20 +3,36 @@ package com.parser.write;
 public abstract class AbstractWriter implements Writer {
 
 	@Override
-	public void build() {
-		System.out.println("\n### Parsing client data ... ###\n");
+	public void start() {
+		printSection("Reading input data");
 		parse();
-		System.out.println("\n### Transforming data ...###\n");
+		printSection("Computing output data");
 		transform();
-		System.out.println("\n### Analyzing final content ... ###\n");
+		printSection("Analyzing output content");
 		analyze();
-		System.out.println("\n### Marshalling file ... ###\n");
+		printSection("Writting output file");
 		marshall();
-		System.out.println("\n### Finished successfully ! ###\n");
+		printSection("FINISHED");
 	}
 
-	protected void analyze() {
-		// TODO Auto-generated method stub
+	protected void analyze() {}
+	
+	private void printSection(String s) {
+		String s1 = ""; String s2; String s3 = "";
+		
+		while (s1.length() < 77)
+			s1 += "=";
+		
+		s2 = "[ " + s + " ]";
+		while (s2.length() < 77)
+			s2 = " " + s2 + " ";
+		
+		while (s3.length() < 77)
+			s3 += "=";
+
+		System.out.println("\n" + s1 + "\n" +  s2 + "\n" + s3);
 	}
+	
+	//TODO: Print avancement
 
 }

@@ -1647,6 +1647,32 @@ public class AionSkillsWriter extends AbstractWriter {
 				compute = true;
 			}
 		}
+		// SearchEffect
+		else if (et == EffectType.SEARCH) {
+			SearchEffect e = new SearchEffect();
+			if (getIntValue(cs, current, "reserved7") > 0) {e.setState("SEARCH" + getIntValue(cs, current, "reserved7"));}
+			if (setGeneral(cs, e, a) && e.getState() != null) {
+				effects.getRootAndStunAndSleep().add(e);
+				compute = true;
+			}
+		}
+		// HideEffect
+		else if (et == EffectType.HIDE) {
+			HideEffect e = new HideEffect();
+			//TODO : applyChange(StatModifiers.SPEED, "PERCENT", (100 - getIntValue(cs, current, "reserved2") * -1));
+			// overload the method and add a msk to the main one
+			// if stat not given, mask |= 1
+			// if percent not given mask |= 2
+			// if value not given, mask |= 4
+			// if mask == 7, compute change from client data
+			if (getIntValue(cs, current, "reserved3") != 0) {e.setBufcount(getIntValue(cs, current, "reserved3"));}
+			if (getIntValue(cs, current, "reserved4") != 0) {e.setType(getIntValue(cs, current, "reserved4"));}
+			if (getIntValue(cs, current, "reserved7") > 0) {e.setState("HIDE" + getIntValue(cs, current, "reserved7"));}
+			if (setGeneral(cs, e, a) && e.getState() != null) {
+				effects.getRootAndStunAndSleep().add(e);
+				compute = true;
+			}
+		}
 
 		return compute;
 	}
@@ -1939,11 +1965,16 @@ public class AionSkillsWriter extends AbstractWriter {
 		}
 		else if (e instanceof DeboostHealEffect) {
 			change.setStat(StatModifiers.HEAL_SKILL_BOOST.toString());
-			change.setValue(getIntValue(cs, current, "reserved1"));
+			if (getIntValue(cs, current, "reserved1") != 0) {change.setValue(getIntValue(cs, current, "reserved1"));}
 			change.setFunc("PERCENT");
 		}
 		else if (e instanceof BoostSkillCastingTimeEffect) {
 			change.setStat(StatModifiers.BOOST_CASTING_TIME_ATTACK.toString());
+			change.setFunc("PERCENT");
+		}
+		else if (e instanceof HideEffect) {
+			change.setStat(StatModifiers.SPEED.toString());
+			if (getIntValue(cs, current, "reserved2") > 0 && getIntValue(cs, current, "reserved2") < 100) {change.setValue(100 -  getIntValue(cs, current, "reserved2"));}
 			change.setFunc("PERCENT");
 		}
 		
@@ -2005,7 +2036,7 @@ public class AionSkillsWriter extends AbstractWriter {
 		for (Change c : changes) {
 			if (c.getStat().equalsIgnoreCase("ATTACK_SPEED"))
 				c.setValue(c.getValue() * -1);
-			if (e instanceof StatdownEffect || e instanceof SlowEffect || e instanceof SnareEffect || e instanceof CurseEffect || e instanceof DeboostHealEffect) {
+			if (e instanceof StatdownEffect || e instanceof SlowEffect || e instanceof SnareEffect || e instanceof CurseEffect || e instanceof DeboostHealEffect || e instanceof HideEffect) {
 				if (c.getValue() > 0)
 					c.setValue(c.getValue() * -1);
 			}

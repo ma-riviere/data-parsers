@@ -39,7 +39,7 @@ public abstract class AbstractDirectoryParser<T> implements ClientDirectoryParse
 
 		File dir = new File("../../Data/" + version + "/client/" + directory);
 		if (!dir.isDirectory()) {
-			throw new IllegalArgumentException("Not a directory" + dir.getPath());
+			throw new IllegalArgumentException("\n[MAIN] [ERROR] " + dir.getPath() + " is not a Directory !");
 		}
 		File[] files = dir.listFiles(new FileFilter() {
 
@@ -50,7 +50,7 @@ public abstract class AbstractDirectoryParser<T> implements ClientDirectoryParse
 				return false;
 			}
 		});
-		System.out.println("Found " + files.length + " files");
+		System.out.println("\n[MAIN] [INFO] Parsing directory " + directory + " with " + files.length + " files !");
 		filesData.clear();
 		for (File file : files) {
 			List<T> dataList;
@@ -63,7 +63,7 @@ public abstract class AbstractDirectoryParser<T> implements ClientDirectoryParse
 				Object collection = unmarshaller.unmarshal(file);
 				String mappedName = mapFileName(file.getName());
 				dataList = castFrom(collection);
-				System.out.println("Size of " + file.getName() + " : " + dataList.size());
+				// System.out.println("Size of " + file.getName() + " : " + dataList.size());
 				filesData.put(mappedName, dataList);
 			} catch (Exception e) {
 				e.printStackTrace();

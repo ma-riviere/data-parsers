@@ -6,6 +6,6 @@ public class AionClientItemsStart {
 
 	public static void main(String[] args) {
 		AionClientItemsWriter writer = new AionClientItemsWriter();
-		writer.build();
+		writer.start();
 	}
 }

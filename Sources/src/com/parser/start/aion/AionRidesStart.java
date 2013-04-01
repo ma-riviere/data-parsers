@@ -6,6 +6,6 @@ public class AionRidesStart {
 
 	public static void main(String[] args) {
 		AionRidesWriter writer = new AionRidesWriter();
-		writer.build();
+		writer.start();
 	}
 }
