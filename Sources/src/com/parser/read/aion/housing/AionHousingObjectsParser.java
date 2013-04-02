@@ -11,7 +11,7 @@ import com.parser.read.aion.AionReadingConfig;
 public class AionHousingObjectsParser extends AbstractFileParser<ClientHousingObject> {
 
 	public AionHousingObjectsParser() {
-		super(AionReadingConfig.VERSION, AionReadingConfig.HOUSING_PACK, AionReadingConfig.HOUSING_OBJECTS);
+		super(AionReadingConfig.VERSION, AionReadingConfig.HOUSING_BINDINGS, AionReadingConfig.HOUSING_OBJECTS);
 	}
 
 	@Override

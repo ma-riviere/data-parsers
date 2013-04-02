@@ -10,7 +10,7 @@ import com.parser.read.aion.AionReadingConfig;
 public class AionSkillTreeParser extends AbstractFileParser<ClientSkillTree> {
 
 	public AionSkillTreeParser() {
-		super(AionReadingConfig.VERSION, AionReadingConfig.SKILL_TREE_PACK, AionReadingConfig.SKILL_TREE);
+		super(AionReadingConfig.VERSION, AionReadingConfig.SKILL_TREE_BINDINGS, AionReadingConfig.SKILL_TREE);
 	}
 
 	@Override

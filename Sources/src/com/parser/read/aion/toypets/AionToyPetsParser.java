@@ -10,7 +10,7 @@ import com.parser.read.aion.AionReadingConfig;
 public class AionToyPetsParser extends AbstractFileParser<ClientToypet> {
 
 	public AionToyPetsParser() {
-			super(AionReadingConfig.VERSION, AionReadingConfig.TOYPETS_PACK, AionReadingConfig.TOYPETS);
+			super(AionReadingConfig.VERSION, AionReadingConfig.TOYPETS_BINDINGS, AionReadingConfig.TOYPETS);
 	}
 
 	@Override

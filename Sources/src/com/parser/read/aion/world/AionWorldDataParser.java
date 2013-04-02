@@ -10,7 +10,7 @@ import com.parser.read.aion.AionReadingConfig;
 public class AionWorldDataParser extends AbstractFileParser<Data> {
 
 	public AionWorldDataParser() {
-		super(AionReadingConfig.VERSION, AionReadingConfig.WORLD_PACK, AionReadingConfig.WORLD_ID);
+		super(AionReadingConfig.VERSION, AionReadingConfig.WORLD_BINDINGS, AionReadingConfig.WORLD_ID);
 	}
 
 	@Override

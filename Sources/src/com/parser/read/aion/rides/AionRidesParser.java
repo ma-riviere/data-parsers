@@ -10,7 +10,7 @@ import com.parser.read.aion.AionReadingConfig;
 public class AionRidesParser extends AbstractFileParser<ClientRide> {
 
 	public AionRidesParser() {
-		super(AionReadingConfig.VERSION, AionReadingConfig.RIDE_PACK, AionReadingConfig.RIDE);
+		super(AionReadingConfig.VERSION, AionReadingConfig.RIDE_BINDINGS, AionReadingConfig.RIDE);
 	}
 
 	@Override

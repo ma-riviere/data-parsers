@@ -10,7 +10,7 @@ import com.parser.read.aion.AionReadingConfig;
 public class AionSkillsParser extends AbstractFileParser<ClientSkill> {
 
 	public AionSkillsParser() {
-		super(AionReadingConfig.VERSION, AionReadingConfig.SKILLS_PACK, AionReadingConfig.SKILLS);
+		super(AionReadingConfig.VERSION, AionReadingConfig.SKILLS_BINDINGS, AionReadingConfig.SKILLS);
 	}
 
 	@Override

@@ -10,7 +10,7 @@ import com.parser.read.aion.AionReadingConfig;
 public class AionItemsParser extends AbstractDirectoryParser<ClientItem> {
 
 	public AionItemsParser() {
-			super(AionReadingConfig.VERSION, AionReadingConfig.ITEMS_PACK, AionReadingConfig.ITEMS, AionReadingConfig.ITEMS_PREFIX);
+			super(AionReadingConfig.VERSION, AionReadingConfig.ITEMS_BINDINGS, AionReadingConfig.ITEMS, AionReadingConfig.ITEMS_PREFIX);
 	}
 	
 	public AionItemsParser(String version, String pack, String folder, String prefix) {

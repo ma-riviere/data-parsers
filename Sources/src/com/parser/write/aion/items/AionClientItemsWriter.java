@@ -28,7 +28,7 @@ public class AionClientItemsWriter extends AbstractWriter {
 	public void parse() {
 		clientItemData = new AionItemsParser().parse();
 		if (AionReadingConfig.READ_CUSTOM)
-			customClientItemData = new AionItemsParser(AionReadingConfig.VERSION, AionReadingConfig.ITEMS_PACK, AionReadingConfig.ITEMS_CUSTOM, AionReadingConfig.ITEMS_PREFIX).parse();
+			customClientItemData = new AionItemsParser(AionReadingConfig.VERSION, AionReadingConfig.ITEMS_BINDINGS, AionReadingConfig.ITEMS_CUSTOM, AionReadingConfig.ITEMS_PREFIX).parse();
 		if (AionWritingConfig.WRITE_CUSTOM)
 			mergedClientItemList = new AionDataMerger().mergeItemData(clientItemData, customClientItemData);
 	}
@@ -331,7 +331,7 @@ public class AionClientItemsWriter extends AbstractWriter {
 
 	@Override
 	public void marshall() {
-		FileMarhshaller.marshallFile(finalTemplates, AionWritingConfig.CLIENT_ITEMS, AionReadingConfig.ITEMS_PACK);
+		FileMarhshaller.marshallFile(finalTemplates, AionWritingConfig.CLIENT_ITEMS, AionReadingConfig.ITEMS_BINDINGS);
 		System.out.println("[CLIENT - ITEMS] Items count: " + templateList.size());
 	}
 }

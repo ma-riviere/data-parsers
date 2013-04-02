@@ -10,7 +10,7 @@ import com.parser.read.aion.AionReadingConfig;
 public class AionAnimationsParser extends AbstractFileParser<ClientAnimation> {
 
 	public AionAnimationsParser() {
-			super(AionReadingConfig.VERSION, AionReadingConfig.ANIMATIONS_PACK, AionReadingConfig.ANIMATIONS);
+			super(AionReadingConfig.VERSION, AionReadingConfig.ANIMATIONS_BINDINGS, AionReadingConfig.ANIMATIONS);
 	}
 
 	@Override
