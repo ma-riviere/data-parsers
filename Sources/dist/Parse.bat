@@ -15,7 +15,7 @@ ECHO #####################################################
 ECHO ======        Server XML build  :             =======
 ECHO # 1 : Rides        ###    2 : Instances Cooltimes ###
 ECHO # 3 : Items        ###    4 : Recipes             ###
-ECHO # 5 : Skills       ###                            ###
+ECHO # 5 : Skills       ###    6 : Spawns              ###
 ECHO #####################################################
 ECHO ======        Server Custom XML build  :       ======
 ECHO # / : KS Rewards   ###                            ###
@@ -40,6 +40,7 @@ IF "%CHOICE%"=="2" SET Start=AionCooltimesStart
 IF "%CHOICE%"=="3" SET Start=items.AionItemsStart
 IF "%CHOICE%"=="4" SET Start=AionRecipesStart
 IF "%CHOICE%"=="5" SET Start=AionSkillsStart
+IF "%CHOICE%"=="6" SET Start=AionSpawnsStart
 
 REM Custom
 

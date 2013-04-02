@@ -11,7 +11,7 @@ import com.parser.read.aion.AionReadingConfig;
 public class AionCooltimesParser extends AbstractFileParser<ClientInstanceCooltime> {
 
 	public AionCooltimesParser() {
-		super(AionReadingConfig.VERSION, AionReadingConfig.COOLTIMES_PACK, AionReadingConfig.COOLTIMES);
+		super(AionReadingConfig.VERSION, AionReadingConfig.COOLTIMES_BINDINGS, AionReadingConfig.COOLTIMES);
 	}
 
 	@Override

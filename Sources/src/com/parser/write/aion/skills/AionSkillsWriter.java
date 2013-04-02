@@ -396,7 +396,7 @@ public class AionSkillsWriter extends AbstractWriter {
 
 	@Override
 	public void marshall() {
-		FileMarhshaller.marshallFile(finalTemplates, AionWritingConfig.SKILLS, AionWritingConfig.SKILLS_PACK);
+		FileMarhshaller.marshallFile(finalTemplates, AionWritingConfig.SKILLS, AionWritingConfig.SKILLS_BINDINGS);
 		System.out.println("\n[SKILLS] Skills written : " + templateList.size());
 	}
 	

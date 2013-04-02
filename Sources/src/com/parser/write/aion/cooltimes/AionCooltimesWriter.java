@@ -53,7 +53,7 @@ public class AionCooltimesWriter extends AbstractWriter {
 
 	@Override
 	public void marshall() {
-		FileMarhshaller.marshallFile(finalTemplates, AionWritingConfig.COOLTIMES, AionWritingConfig.COOLTIMES_PACK);
+		FileMarhshaller.marshallFile(finalTemplates, AionWritingConfig.COOLTIMES, AionWritingConfig.COOLTIMES_BINDINGS);
 		System.out.println("Instance Cooltimes count: " + templateList.size());
 	}
 	

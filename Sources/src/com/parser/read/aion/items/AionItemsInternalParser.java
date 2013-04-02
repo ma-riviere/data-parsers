@@ -10,7 +10,7 @@ import com.parser.read.aion.AionReadingConfig;
 public class AionItemsInternalParser extends AbstractFileParser<Item> {
 
 	public AionItemsInternalParser() {
-			super(AionReadingConfig.VERSION, AionReadingConfig.ITEMS_INTERNAL_PACK, AionReadingConfig.ITEMS_INTERNAL);
+			super(AionReadingConfig.VERSION, AionReadingConfig.ITEMS_INTERNAL_BINDINGS, AionReadingConfig.ITEMS_INTERNAL);
 	}
 
 	@Override

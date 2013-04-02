@@ -2,6 +2,7 @@ package com.parser.read;
 
 import java.io.File;
 import java.io.FileFilter;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -14,6 +15,8 @@ import com.parser.common.Util;
 public abstract class AbstractDirectoryParser<T> implements ClientDirectoryParser<T> {
 
 	Map<String, List<T>> filesData = new HashMap<String, List<T>>();
+	Map<String, File> files = new HashMap<String, File>();
+	
 	protected String version;
 	protected String pack;
 	protected String directory;
@@ -43,21 +46,15 @@ public abstract class AbstractDirectoryParser<T> implements ClientDirectoryParse
 		if (!dir.isDirectory()) {
 			throw new IllegalArgumentException("\n[MAIN] [ERROR] " + dir.getPath() + " is not a Directory !");
 		}
-		File[] files = dir.listFiles(new FileFilter() {
-
-			@Override
-			public boolean accept(File pathname) {
-				if (pathname.getName().endsWith("." + extension) && pathname.getName().startsWith(prefix))
-					return true;
-				return false;
-			}
-		});
+		
+		files.clear();
+		addTree(dir, files);
 		System.out.println("\n[MAIN] [INFO] Parsing directory " + directory + " with " + files.length + " files !");
 		
 		filesData.clear();
 		Util.printProgressBarHeader(files.length);
 		
-		for (File file : files) {
+		for (File file : files.values()) {
 			List<T> dataList;
 			try {
 				JAXBContext jc = JAXBContext.newInstance(pack);
@@ -66,7 +63,7 @@ public abstract class AbstractDirectoryParser<T> implements ClientDirectoryParse
 
 				// System.out.println("Unmarshalling " + file.getName());
 				Object collection = unmarshaller.unmarshal(file);
-				String mappedName = mapFileName(file.getName());
+				String mappedName = files.getKey(file) + "@" + mapFileName(file.getName());
 				dataList = castFrom(collection);
 				// System.out.println("Size of " + file.getName() + " : " + dataList.size());
 				filesData.put(mappedName, dataList);
@@ -78,6 +75,22 @@ public abstract class AbstractDirectoryParser<T> implements ClientDirectoryParse
 		Util.printEndProgress();
 
 		return filesData;
+	}
+	
+	protected void addTree(File directory, Map<String, File> files) throws IOException {
+		try (DirectoryStream<File> ds = Files.newDirectoryStream(directory)) {
+			for (File dirOrFile : ds) {
+				// Is a directory
+				if (Files.isDirectory(dirOrFile))
+					addTree(dirOrFile, files);
+				// Is a File and matches criteria
+				else if (dirOrFile.getName().endsWith("." + extension) && dirOrFile.getName().startsWith(prefix))
+					files.put(directory.getName(), dirOrFile);
+				// Is a file but does not match criteria
+				else
+					continue;
+			}
+		}
 	}
 
 	protected abstract List<T> castFrom(Object topNode);
