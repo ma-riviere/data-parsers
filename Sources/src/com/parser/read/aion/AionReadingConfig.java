@@ -69,7 +69,7 @@ public class AionReadingConfig {
 	
 	// Mission0
 	public static final String MISSION0 = "Levels/";
-	public static final String MISSION0_BINDINGS = "com.parser.input.aion.mission0";
+	public static final String MISSION0_BINDINGS = "com.parser.input.aion.mission";
 	public static final String MISSION0_PREFIX = "mission_";
 	
 	/** ##################################################### **/
