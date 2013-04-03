@@ -9,8 +9,8 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 
-import com.parser.input.aion.mission.Objects;
-import com.parser.input.aion.mission.Object;
+import com.parser.input.aion.mission.CLientSpawns; //TODO rename in external Bindings
+import com.parser.input.aion.mission.CLientSpawn; //TODO rename in external Bindings
 
 import com.parser.common.aion.*;
 import com.parser.read.aion.AionReadingConfig;
@@ -55,7 +55,7 @@ public class AionSpawnsWriter extends AbstractWriter {
 							newSpawn.setNpcId(getNpcId(cSpawn.getNpc()));
 							
 							if (!Strings.isNullOrEmpty(cSpawn.getPos()))
-								setSpawnXYZ(newSpawn, cSpawn.getPos());
+								setSpawnXYZH(newSpawn, cSpawn, mapId);
 							
 							addOrMerge(newSpawns, newSpawn);
 						}
@@ -76,13 +76,14 @@ public class AionSpawnsWriter extends AbstractWriter {
 			}
 		}
 	}
-
+	
+	//TODO: Marshall to different output folders (Make a method for that, to redirect output (folder Output & Input))
 	@Override
 	public void marshall() {
 		for (Integer mapId : toMarshall.keySet()) {
-			String fileName = "../../" + mapId + ".xml";
+			String filePath = "../../" + mapId + ".xml";
 			System.out.println("[SPAWNS][" + mapId + "] Spawns count: " + getSize(toMarshall.get(mapId)));
-			FileMarhshaller.marshallFile(toMarshall.get(mapId), "../../" + mapId + ".xml", AionWritingConfig.SPAWNS_BINDINGS);
+			FileMarhshaller.marshallFile(toMarshall.get(mapId), filePath, AionWritingConfig.SPAWNS_BINDINGS);
 		}
 	}
 	
@@ -108,20 +109,31 @@ public class AionSpawnsWriter extends AbstractWriter {
 		return mapId;
 	}
 	
-	private void setSpawnXYZ(Spawn newSpawn, String cPos) {
+	private void setSpawnXYZH(Spawn newSpawn, CLientSpawn cSpawn, int mapId) {
 		Spot spot = new Spot();
-		String[] xyz = cPos.split(",");
+		
+		String[] xyz = cSpawn.getPos().split(",");
+		
 		if (xyz.length != 3)
 			System.out.println("[SPAWNS][ERROR] Error while splitting position ...");
 		else {
 			spot.setX(Float.parseFloat(xyz[0]));
 			spot.setY(Float.parseFloat(xyz[1]));
+			//TODO: spot.setZ(Geodata.getZ(mapId, spot.getX(), spot.getY()))
 			spot.setZ(Float.parseFloat(xyz[2]));
-			// if (Float.valueOf(Math.abs(spot.getX())).compareTo(0.01f) <= 0 && Float.valueOf(Math.abs(spot.getY())).compareTo(0.01f) <= 0)
-				newSpawn.getSpot().add(spot);
-			// else
-				// System.out.println("[SPAWNS] [WARN] " + newSpawn.getNpcId() + " has a {O,O} spawn !");
+			spot.setH(MathUtil.convertAngleToHeading(cSpawn.getDir()));
+			setWalkingStatus(spot, cSpawn); // Walker or RandomWalker
+			newSpawn.getSpot().add(spot);
 		}
+	}
+	
+	private void setWalkingStatus(Spot spot, ClientSpawn cSpawn) {
+		if (cSpawn.getIidleRange() > 0)
+			spot.setRandomWalk(cSpawn.getIidleRange());
+		// else if (cSpawn.getIidleRange() == 0) //TODO
+			// spot.setWalkerId();
+		if (cSpawn.getIidleRange() < -1)
+			System.out.println("[SPAWNS] [INFO] Idle Range inferior to -1 for Object : " + cSpawn.getNpc());
 	}
 	
 	private void addOrMerge(List<Spawn> newSpawns, Spawn newSpawn) {
