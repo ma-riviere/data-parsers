@@ -44,8 +44,7 @@ public class AionWritingConfig {
 	
 	/**** From Mission0 ****/
 	// Spawns
-	public static final String SPAWNS = "../../spawns.xml";
-	public static final String SPAWNS_BINDINGS = "com.parser.output.aion.mission0";
+	public static final String SPAWNS_BINDINGS = "com.parser.output.aion.mission";
 	
 	/** ############################################################## **/
 
