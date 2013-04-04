@@ -29,7 +29,7 @@ public class AionWritingConfig {
 	public static final String COOLTIMES_BINDINGS = "com.parser.output.aion.cooltimes";
 	
 	// Skills
-	public static final String SKILLS = "skills/skill_templates.xml";
+	public static final String SKILLS = "Skills/skill_templates.xml";
 	public static final String SKILLS_BINDINGS = "com.parser.output.aion.skills";
 	
 	// Items

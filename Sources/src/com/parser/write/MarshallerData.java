@@ -10,7 +10,7 @@ public class MarshallerData {
 
 	public String bindings;
 	public String version;
-	public Map<Object, String> outputMap;
+	public Map<Object, String> outputMap = null;
 	public Object template;
 	public String destFile = baseDir;
 	

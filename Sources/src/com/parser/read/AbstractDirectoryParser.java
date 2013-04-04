@@ -65,9 +65,8 @@ public abstract class AbstractDirectoryParser<T> implements ClientDirectoryParse
 				unmarshaller.setEventHandler(new XmlValidationHandler());
 
 				Object collection = unmarshaller.unmarshal(file);
-				String mappedName = dirName + "@" + mapFileName(file.getName());
 				dataList = castFrom(collection);
-				filesData.put(mappedName, dataList);
+				filesData.put(dirName, dataList);
 				Util.printCurrentProgress();
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -85,11 +84,10 @@ public abstract class AbstractDirectoryParser<T> implements ClientDirectoryParse
 				if (Files.isDirectory(dirOrFile))
 					addTree(dirOrFile, files);
 				// Is a File and matches criteria
-				else if (dirOrFile.toFile().getName().endsWith("." + extension) && dirOrFile.toFile().getName().startsWith(prefix))
-					files.put(directory.toFile().getName(), dirOrFile.toFile());
-				// Is a file but does not match criteria
-				else
-					continue;
+				else if (dirOrFile.toFile().getName().endsWith("." + extension) && dirOrFile.toFile().getName().startsWith(prefix)) {
+					String mappedName = directory.toFile().getName() + "@" + mapFileName(dirOrFile.toFile().getName());
+					files.put(mappedName, dirOrFile.toFile());
+				}
 			}
 		}
 	}
