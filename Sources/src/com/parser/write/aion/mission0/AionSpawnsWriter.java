@@ -36,18 +36,8 @@ public class AionSpawnsWriter extends AbstractWriter {
 	SpawnMap staticSpawnMap = new SpawnMap();
 	
 	String baseDir = AionWritingConfig.BASE_DIR + "Spawns/";
-	Map<Integer, Integer> staticIds = new HashMap<Integer, Integer>(); // npc_id, static_id
 	
 	int mapId = 0;
-	
-	// Tests
-	static {		
-		// System.out.println("DF1_bone_piles".hashCode());
-		// System.out.println("DF1_BONE_PILES".hashCode());
-		// System.out.println("STR_OBJ_DF1_bone_piles".hashCode());
-		// System.out.println("STR_OBJ_DF1_BONE_PILES".hashCode());
-		// System.out.println("413874844");
-	}
 	
 	@Override
 	public void parse() {
@@ -100,7 +90,7 @@ public class AionSpawnsWriter extends AbstractWriter {
 	
 	@Override
 	public void marshall() {
-		System.out.println("[SPAWNS][" + mapId + "] Spawns count: " + getSize(md));
+		// printInfo(md); for the outputMap, display System.out.println("[SPAWNS][" + mapId + "] Spawns count: " + getSize(md));
 		FileMarhshaller.marshallFile(md);
 	}
 	
@@ -191,30 +181,26 @@ public class AionSpawnsWriter extends AbstractWriter {
 	
 	// TODO: Check if null coordinates
 	private void addOrMerge(SpawnMap sm, Spawn s) {
-		List<Spawn> currentSpawns = sm.getSpawn();
-		
-		if (!currentSpawns.isEmpty()) {
+
+		if (!sm.getSpawn().isEmpty()) {
 			boolean exists = false;
 			int index = -1;
 			List<Spot> newSpots = s.getSpot();
 			
-			for (Spawn spawn : currentSpawns) {
+			for (Spawn spawn : sm.getSpawn()) {
 				if (spawn.getNpcId().equals(s.getNpcId())) {
 					exists = true;
-					index = currentSpawns.indexOf(spawn);
+					index = sm.getSpawn().indexOf(spawn);
 				}
 			}
 			
 			if (exists)
-				currentSpawns.get(index).getSpot().addAll(newSpots);
+				sm.getSpawn().get(index).getSpot().addAll(newSpots);
 			else
-				currentSpawns.add(s);
+				sm.getSpawn().add(s);
 		}
 		else
-			currentSpawns.add(s);
-		
-		sm.getSpawn().clear();
-		sm.getSpawn().addAll(currentSpawns);
+			sm.getSpawn().add(s);
 	}
 	
 	private void initAllSpawns() {
