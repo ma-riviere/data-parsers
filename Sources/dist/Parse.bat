@@ -20,7 +20,7 @@ ECHO #####################################################
 ECHO ======        Server Custom XML build  :       ======
 ECHO # / : KS Rewards   ###                            ###
 ECHO #####################################################
-ECHO # q : Quit                                        ###
+ECHO # [ ] : Quit                                        ###
 ECHO #####################################################
 ECHO.
 SET CHOICE=
@@ -45,7 +45,6 @@ IF "%CHOICE%"=="6" SET Start=AionSpawnsStart
 REM Custom
 
 REM Quit
-IF "%CHOICE%"=="q" GOTO QUIT
 IF "%CHOICE%"=="" GOTO QUIT
 
 ECHO.   

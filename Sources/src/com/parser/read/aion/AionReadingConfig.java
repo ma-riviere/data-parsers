@@ -59,8 +59,8 @@ public class AionReadingConfig {
 	public static final String ANIMATIONS_BINDINGS = "com.parser.input.aion.animations";
 	
 	// Housing
-	public static final String HOUSING_OBJECTS = "Data/Housing/client_housing_object.xml"; // Objects
-	public static final String HOUSING_PARTS = "Data/Housing/client_housing_custom_part.xml"; // Parts
+	public static final String HOUSING_OBJECTS = "Data/Housing/client_housing_object.xml";
+	public static final String HOUSING_PARTS = "Data/Housing/client_housing_custom_part.xml";
 	public static final String HOUSING_BINDINGS = "com.parser.input.aion.housing";
 	
 	// Toypets
