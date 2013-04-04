@@ -18,6 +18,16 @@ public class Util {
 		System.out.println("\n" + s1 + "\n" +  s2 + "\n" + s3);
 	}
 	
+	public static void printSubSection(String s) {
+	
+		s = "[ " + s + " ]";
+		
+		while (s.length() < 79)
+			s = "-" + s + "-";
+
+		System.out.println(s);
+	}
+	
 	public static void printProgressBarHeader(int size) {
 		StringBuilder header = new StringBuilder("0% [");
 		for (int i = 0; i < size; i++) {

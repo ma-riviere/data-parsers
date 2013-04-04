@@ -48,13 +48,11 @@ public class AionSpawnsWriter extends AbstractWriter {
 
 	@Override
 	public void transform() {
-	
-		md.setBindings(AionWritingConfig.SPAWNS_BINDINGS);
-		md.setVersion(AionWritingConfig.VERSION);
 		
 		for (String mappedName : clientSpawnData.keySet()) {
-		
+					
 			mapId = getCurrentMapId(mappedName);
+			Util.printSubSection("" + mapId);
 			
 			if (mapId != 0) {
 				initAllSpawns();
@@ -81,9 +79,12 @@ public class AionSpawnsWriter extends AbstractWriter {
 				orderAllSpawns();
 				addAllSpawns();
 			}
+			new AionDataCenter().getInstance().resetLogger();
 			/// END OF CURRENT MAP ///
 		}
-		// Set marshalling map for the current Map
+		// Set MarshallerData
+		md.setBindings(AionWritingConfig.SPAWNS_BINDINGS);
+		md.setVersion(AionWritingConfig.VERSION);
 		md.setOutputMap(toMarshall);
 		toMarshall.clear();
 	}
@@ -92,15 +93,6 @@ public class AionSpawnsWriter extends AbstractWriter {
 	public void marshall() {
 		// printInfo(md); for the outputMap, display System.out.println("[SPAWNS][" + mapId + "] Spawns count: " + getSize(md));
 		FileMarhshaller.marshallFile(md);
-	}
-	
-	private int getSize(MarshallerData md) {
-		int c = 0;
-		if (!md.getOutputMap().keySet().isEmpty()) {
-			for (Object spawns : md.getOutputMap().keySet())
-				c += ((Spawns) spawns).getSpawnMap().getSpawn().size();
-		}
-		return c;
 	}
 	
 	private int getWorld(String s) {return (s != null) ? new AionDataCenter().getInstance().getWorldIdByName(s) : 0;}
@@ -229,36 +221,42 @@ public class AionSpawnsWriter extends AbstractWriter {
 		// Npcs
 		if (!npcSpawnMap.getSpawn().isEmpty()) {
 			spawns.setSpawnMap(npcSpawnMap);
+			System.out.println("[SPAWNS] Adding " + npcSpawnMap.getSpawn().size() + " Npc Spawns");
 			toMarshall.put((Object) spawns, "Npcs/" + mapId);
 			spawns = new Spawns();
 		}
 		// Instances
 		if (!instanceSpawnMap.getSpawn().isEmpty()) {
 			spawns.setSpawnMap(instanceSpawnMap);
+			System.out.println("[SPAWNS] Adding " + instanceSpawnMap.getSpawn().size() + " Instance Spawns");
 			toMarshall.put((Object) spawns, "Instances/" + mapId);
 			spawns = new Spawns();
 		}
 		// Gather
 		if (!gatherSpawnMap.getSpawn().isEmpty()) {
 			spawns.setSpawnMap(gatherSpawnMap);
+			System.out.println("[SPAWNS] Adding " + gatherSpawnMap.getSpawn().size() + " Gather Spawns");
 			toMarshall.put((Object) spawns, "Gather/" + mapId);
 			spawns = new Spawns();
 		}
 		// Siege
 		if (!siegesSpawnMap.getSpawn().isEmpty()) {
 			spawns.setSpawnMap(siegesSpawnMap);
+			System.out.println("[SPAWNS] Adding " + siegesSpawnMap.getSpawn().size() + " Siege Spawns");
 			toMarshall.put((Object) spawns, "Sieges/" + mapId);
 			spawns = new Spawns();
 		}
 		// Rifts
 		if (!riftsSpawnMap.getSpawn().isEmpty()) {
 			spawns.setSpawnMap(riftsSpawnMap);
+			System.out.println("[SPAWNS] Adding " + riftsSpawnMap.getSpawn().size() + " Rifts Spawns");
 			toMarshall.put((Object) spawns, "Rifts/" + mapId);
 			spawns = new Spawns();
 		}
 		// Statics
 		if (!staticSpawnMap.getSpawn().isEmpty()) {
 			spawns.setSpawnMap(staticSpawnMap);
+			System.out.println("[SPAWNS] Adding " + staticSpawnMap.getSpawn().size() + " Static Spawns");
 			toMarshall.put((Object) spawns, "Statics/" + mapId);
 		}
 		// END
