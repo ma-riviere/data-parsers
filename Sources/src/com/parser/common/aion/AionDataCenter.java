@@ -160,7 +160,7 @@ public class AionDataCenter {
 		if (npcNameIdMap.get(name.toUpperCase()) != null)
 			return npcNameIdMap.get(name.toUpperCase());
 		else
-			System.out.println("[NPCS] No Npc ID matching name : " + name.toUpperCase());
+			logOnce("[NPCS] No Npc ID matching name : ", name.toUpperCase());
 		return 0;
 	}
 	
@@ -329,6 +329,20 @@ public class AionDataCenter {
 		List<ClientToypet> cpts = new AionToyPetsParser().parse();
 		for (ClientToypet cpt : cpts)
 			toyPetNameIdMap.put(cpt.getName().toUpperCase(), cpt.getId());
+	}
+	
+	// TODO: Move to util or Logger class
+	public static List<String> unk = new ArrayList<String>();
+	
+	public void logOnce(String message, String value) {
+		if (!unk.contains(value.toUpperCase())) {
+			System.out.println(message + value.toUpperCase());
+			unk.add(value.toUpperCase());
+		}
+	}
+	
+	public static void resetLogger() {
+		unk = new ArrayList<String>();
 	}
 	
 	@SuppressWarnings("synthetic-access")
