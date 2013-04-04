@@ -1,8 +1,15 @@
 package com.parser.write;
 
-import com.parser.common.Util;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.parser.common.*;
 
 public abstract class AbstractWriter implements Writer {
+
+	protected Logger log = new Logger().getInstance();
+	
+	protected List<MarshallerData> orders = new ArrayList<MarshallerData>();
 
 	@Override
 	public void start() {
@@ -11,12 +18,17 @@ public abstract class AbstractWriter implements Writer {
 		Util.printSection("Computing output data");
 		transform();
 		Util.printSection("Analyzing output content");
-		analyze();
+		finalise();
 		Util.printSection("Writting output file");
 		marshall();
+		orders.clear();
 		Util.printSection("FINISHED");
 	}
 
-	protected void analyze() {}
+	protected void finalise() {}
+	
+	protected void addOrder(String bindings, String file, Object template) {
+		orders.add(new MarshallerData(bindings, file, template));
+	}
 
 }

@@ -389,14 +389,15 @@ public class AionSkillsWriter extends AbstractWriter {
 	}
 	
 	@Override
-	public void analyze() {
+	public void finalise() {
 		if (ANALYSE)
 			JAXBHandler.printUnused("skills");
 	}
 
 	@Override
 	public void marshall() {
-		FileMarhshaller.marshallFile(finalTemplates, AionWritingConfig.SKILLS, AionWritingConfig.SKILLS_BINDINGS);
+		addOrder(AionWritingConfig.SKILLS_BINDINGS, AionWritingConfig.SKILLS, finalTemplates);
+		FileMarhshaller.marshallFile(orders);
 		System.out.println("\n[SKILLS] Skills written : " + templateList.size());
 	}
 	

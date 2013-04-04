@@ -52,6 +52,7 @@ ECHO = 5 : Items        ===    6 : Recipes             ===
 ECHO = 7 : Skills       ===    8 : Skill Learn         ===
 ECHO = 9 : Npcs         ===   10 : Animations          ===
 ECHO = 11 : Housing     ===   12 : Mission0            ===
+ECHO = 13 : World Data  ===   14 :                     ===
 ECHO.#####################################################
 ECHO.
 set JAR =
@@ -64,7 +65,8 @@ set OUTPUT_XML=
 REM ## Client Data pathways
 SET DATA_STRINGS=%CLIENT%/Data/Strings/client_strings*.xml
 SET L10N_STRINGS=%CLIENT%/L10N/ENU/data/strings/client_strings*.xml
-SET WORLD=%CLIENT%/Data/world/WorldId.xml
+SET WORLD_MAPS=%CLIENT%/Data/world/WorldId.xml
+SET WORLD_DATA=%CLIENT%/Data/world/client_world_*.xml
 SET RIDES=%CLIENT%/Data/rides/rides.xml
 SET COOLTIMES=%CLIENT%/Data/world/client_instance_cooltime*.xml
 SET ITEMS=%CLIENT%/Data/Items/client_items_*.xml
@@ -107,7 +109,7 @@ ECHO [INFO] Client-Server parsing selected
 SET SAME=false
 
 IF "%JAR%"=="1" GOTO TOYPETS
-IF "%JAR%"=="2" GOTO WORLD
+IF "%JAR%"=="2" GOTO WORLD_MAPS
 IF "%JAR%"=="3" GOTO RIDES
 IF "%JAR%"=="4" GOTO COOLTIMES
 IF "%JAR%"=="5" GOTO ITEMS
@@ -118,6 +120,7 @@ IF "%JAR%"=="9" GOTO NPCS
 IF "%JAR%"=="10" GOTO ANIMATIONS
 IF "%JAR%"=="11" GOTO HOUSING
 IF "%JAR%"=="12" GOTO MISSION0
+IF "%JAR%"=="13" GOTO WORLD_DATA
 
 :CLIENT_ITEMS
 set XMS=1024
@@ -151,10 +154,16 @@ set INPUT_XML=%ITEMS%
 set OUTPUT_XML=%SERVER%/item_templates.xml
 GOTO CHECKPATHS_XML
 
-:WORLD
-set NAME=world
-set INPUT_XML=%WORLD%
+:WORLD_MAPS
+set NAME=world_maps
+set INPUT_XML=%WORLD_MAPS%
 set OUTPUT_XML=%SERVER%/world_maps.xml
+GOTO CHECKPATHS_XML
+
+:WORLD_DATA
+set NAME=world_data
+set INPUT_XML=%WORLD_DATA%
+set OUTPUT_XML=%INPUT_XML%
 GOTO CHECKPATHS_XML
 
 :RIDES

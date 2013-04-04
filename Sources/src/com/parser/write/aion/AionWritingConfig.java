@@ -10,43 +10,43 @@ public class AionWritingConfig {
 	/********************** CLIENT XML WRITING ******************************/
 	
 	// Items
-	public static final String CLIENT_ITEMS = "Custom/client_items_merged.xml";
+	public static final String CLIENT_ITEMS = "../../Output/Custom/client_items_merged.xml";
 	
 	/********************* INTERNAL XML WRITING ****************************/
 	
 	// Items
-	public static final String ITEMS_NAME_ID = "Mappings/items_name_id.xml";
+	public static final String ITEMS_NAME_ID = "../../Output/Mappings/items_name_id.xml";
 	public static final String ITEMS_NAME_ID_BINDINGS = "com.parser.input.aion.p_items";
 	
 	/*************************** SERVER XMLs *********************************/
 	
 	// Rides
-	public static final String RIDE = "rides/ride.xml";
+	public static final String RIDE = BASE_DIR + "Ride/ride.xml";
 	public static final String RIDE_BINDINGS = "com.parser.output.aion.rides";
 	
 	// Instances Cooltimes
-	public static final String COOLTIMES = "instance_cooltimes.xml";
+	public static final String COOLTIMES = BASE_DIR + "instance_cooltimes/instance_cooltimes.xml";
 	public static final String COOLTIMES_BINDINGS = "com.parser.output.aion.cooltimes";
 	
 	// Skills
-	public static final String SKILLS = "Skills/skill_templates.xml";
+	public static final String SKILLS = BASE_DIR + "Skills/skill_templates.xml";
 	public static final String SKILLS_BINDINGS = "com.parser.output.aion.skills";
 	
 	// Items
-	public static final String ITEMS = "items/item_templates.xml";
+	public static final String ITEMS = BASE_DIR + "items/item_templates.xml";
 	public static final String ITEMS_BINDINGS = "com.parser.output.aion.items";
 	
 	// Recipes
-	public static final String RECIPES = "recipes/recipe_templates.xml";
+	public static final String RECIPES = BASE_DIR + "Recipes/recipe_templates.xml";
 	public static final String RECIPES_BINDINGS = "com.parser.output.aion.recipes";
 	
 	// Npcs
-	public static final String NPCS = "npcs/npc_templates.xml";
+	public static final String NPCS = BASE_DIR + "npcs/npc_templates.xml";
 	public static final String NPCS_BINDINGS = "com.parser.output.aion.npcs";
 	
 	/**** From Mission0 ****/
 	// Spawns
-	public static final String SPAWNS = "Spawns/";
+	public static final String SPAWNS = BASE_DIR + "Spawns/";
 	public static final String SPAWNS_BINDINGS = "com.parser.output.aion.mission";
 	
 	/** ############################################################## **/

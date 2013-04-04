@@ -20,6 +20,6 @@ public class AionDataStringParser extends AbstractDirectoryParser<ClientString> 
 	
 	@Override
 	protected String mapFileName(String fileName) {
-		return fileName.replaceAll("client_world_", "").replaceAll(".xml", "");
+		return fileName.replaceAll("client_strings_", "").replaceAll(".xml", "");
 	}
 }
