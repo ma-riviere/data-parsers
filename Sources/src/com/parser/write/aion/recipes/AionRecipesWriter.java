@@ -71,14 +71,15 @@ public class AionRecipesWriter extends AbstractWriter {
 	}
 	
 	@Override
-	public void analyze() {
+	public void finalise() {
 		if (ANALYSE)
 			JAXBHandler.printUnused("recipes");
 	}
 
 	@Override
 	public void marshall() {
-		FileMarhshaller.marshallFile(finalTemplates, AionWritingConfig.RECIPES, AionWritingConfig.RECIPES_BINDINGS);
+		addOrder(AionWritingConfig.RECIPES_BINDINGS, AionWritingConfig.RECIPES, finalTemplates);
+		FileMarhshaller.marshallFile(orders);
 		System.out.println("[RECIPES] Recipes count: " + templateList.size());
 	}
 	

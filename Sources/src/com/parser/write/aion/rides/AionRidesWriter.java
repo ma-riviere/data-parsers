@@ -54,7 +54,8 @@ public class AionRidesWriter extends AbstractWriter {
 
 	@Override
 	public void marshall() {
-		FileMarhshaller.marshallFile(finalTemplates, AionWritingConfig.RIDE, AionWritingConfig.RIDE_BINDINGS);
+		addOrder(AionWritingConfig.RIDE_BINDINGS, AionWritingConfig.RIDE, finalTemplates);
+		FileMarhshaller.marshallFile(orders);
 		System.out.println("[RIDES] Rides count: " + templateList.size());
 	}
 

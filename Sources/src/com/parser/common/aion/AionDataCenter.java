@@ -18,9 +18,9 @@ import com.parser.input.aion.skills.ClientSkill;
 import com.parser.input.aion.skill_learn.ClientSkillTree;
 import com.parser.input.aion.strings.ClientString;
 import com.parser.input.aion.toypets.ClientToypet;
-import com.parser.input.aion.world.Data;
+import com.parser.input.aion.world_maps.Data; //TODO
 
-import com.parser.common.JAXBHandler;
+import com.parser.common.*;
 import com.parser.read.aion.animations.AionAnimationsParser;
 import com.parser.read.aion.housing.AionHousingObjectsParser;
 import com.parser.read.aion.housing.AionHousingPartsParser;
@@ -34,10 +34,13 @@ import com.parser.read.aion.skills.AionSkillTreeParser;
 import com.parser.read.aion.strings.AionDataStringParser;
 import com.parser.read.aion.strings.AionL10NStringParser;
 import com.parser.read.aion.toypets.AionToyPetsParser;
+import com.parser.read.aion.world.AionWorldMapsParser;
 import com.parser.read.aion.world.AionWorldDataParser;
 
 
 public class AionDataCenter {
+
+	public static Logger log = new Logger().getInstance();
 	
 	// ClientObjects lists (TODO)
 	public static List<ClientSkill> clientSkills = new ArrayList<ClientSkill>();
@@ -97,7 +100,7 @@ public class AionDataCenter {
 		else if (dataDescStringMap.get(c_string.toUpperCase()) != null)
 			return dataDescStringMap.get(c_string.toUpperCase()).getId() * mult + add;
 		else
-			System.out.println("[STRING] No ID matching string : " + c_string.toUpperCase());
+			log.unique("[STRING] No ID matching string : ", c_string.toUpperCase(), true);
 		return 0;
 	}
 	
@@ -110,7 +113,7 @@ public class AionDataCenter {
 		else if (dataDescStringMap.get(c_string.toUpperCase()) != null)
 			return dataDescStringMap.get(c_string.toUpperCase()).getBody();
 		else
-			System.out.println("[STRING] No Body matching string : " + c_string.toUpperCase());
+			log.unique("[STRING] No Body matching string : ", c_string.toUpperCase(), true);
 		return "Default String";
 	}
 	
@@ -120,7 +123,7 @@ public class AionDataCenter {
 		if (rideNameIdMap.get(name.toUpperCase()) != null)
 			return rideNameIdMap.get(name.toUpperCase());
 		else
-			System.out.println("[RIDES] No Ride ID matching name : " + name.toUpperCase());
+			log.unique("[RIDES] No Ride ID matching name : ", name.toUpperCase(), true);
 		return 0;
 	}
 	
@@ -130,7 +133,7 @@ public class AionDataCenter {
 		if (itemNameIdMap.get(name.toUpperCase()) != null)
 			return itemNameIdMap.get(name.toUpperCase());
 		else
-			System.out.println("[ITEMS] No Item ID matching name : " + name.toUpperCase());
+			log.unique("[ITEMS] No Item ID matching name : ", name.toUpperCase(), true);
 		return 0;
 	}
 	
@@ -139,8 +142,8 @@ public class AionDataCenter {
 		
 		if (skillNameIdMap.get(name.toUpperCase()) != null)
 			return skillNameIdMap.get(name.toUpperCase());
-		// else
-			// System.out.println("[SKILLS] No Skill ID matching name : " + name.toUpperCase());
+		else
+			log.unique("[SKILLS] No Skill ID matching name : ", name.toUpperCase(), true);
 		return 0;
 	}
 	
@@ -160,7 +163,7 @@ public class AionDataCenter {
 		if (npcNameIdMap.get(name.toUpperCase()) != null)
 			return npcNameIdMap.get(name.toUpperCase());
 		else
-			logOnce("[NPCS] No Npc ID matching name : ", name.toUpperCase());
+			log.unique("[NPCS] No Npc ID matching name : ", name.toUpperCase(), true);
 		return 0;
 	}
 	
@@ -170,7 +173,7 @@ public class AionDataCenter {
 		if (recipeNameIdMap.get(name.toUpperCase()) != null)
 			return recipeNameIdMap.get(name.toUpperCase());
 		else
-			System.out.println("[RECIPES] No Recipe ID matching name : " + name.toUpperCase());
+			log.unique("[RECIPES] No Recipe ID matching name : ", name.toUpperCase(), true);
 		return 0;
 	}
 	
@@ -180,7 +183,7 @@ public class AionDataCenter {
 		if (descWorldIdMap.containsKey(name.toUpperCase()))
 			return descWorldIdMap.get(name.toUpperCase()).getId();
 		else
-			System.out.println("[WORLD] No MapID for client_map : " + name.toUpperCase());
+			log.unique("[WORLD] No MapID for client_map : ", name.toUpperCase(), true);
 		return 0;
 	}
 	
@@ -190,7 +193,7 @@ public class AionDataCenter {
 		if (animationNameIdMap.get(name.toUpperCase()) != null)
 			return animationNameIdMap.get(name.toUpperCase());
 		else
-			System.out.println("[ANIMATIONS] No Animation ID matching name : " + name.toUpperCase());
+			log.unique("[ANIMATIONS] No Animation ID matching name : ", name.toUpperCase(), true);
 		return 0;
 	}
 	
@@ -200,7 +203,7 @@ public class AionDataCenter {
 		if (houseObjectNameIdMap.get(name.toUpperCase()) != null)
 			return houseObjectNameIdMap.get(name.toUpperCase());
 		else
-			System.out.println("[HOUSING] No Housing Object matching name : " + name.toUpperCase());
+			log.unique("[HOUSING] No Housing Object matching name : ", name.toUpperCase(), true);
 		return 0;
 	}
 	
@@ -210,7 +213,7 @@ public class AionDataCenter {
 		if (houseDecoNameIdMap.get(name.toUpperCase()) != null)
 			return houseDecoNameIdMap.get(name.toUpperCase());
 		else
-			System.out.println("[HOUSING] No Housing Parts matching name : " + name.toUpperCase());
+			log.unique("[HOUSING] No Housing Parts matching name : ", name.toUpperCase(), true);
 		return 0;
 	}
 	
@@ -220,7 +223,7 @@ public class AionDataCenter {
 		if (toyPetNameIdMap.get(name.toUpperCase()) != null)
 			return toyPetNameIdMap.get(name.toUpperCase());
 		else
-			System.out.println("[TOYPETS] No ToyPet ID matching name : " + name.toUpperCase());
+			log.unique("[TOYPETS] No ToyPet ID matching name : ", name.toUpperCase(), true);
 		return 0;
 	}
 	
@@ -329,20 +332,6 @@ public class AionDataCenter {
 		List<ClientToypet> cpts = new AionToyPetsParser().parse();
 		for (ClientToypet cpt : cpts)
 			toyPetNameIdMap.put(cpt.getName().toUpperCase(), cpt.getId());
-	}
-	
-	// TODO: Move to util or Logger class
-	public static List<String> unk = new ArrayList<String>();
-	
-	public void logOnce(String message, String value) {
-		if (!unk.contains(value.toUpperCase())) {
-			System.out.println(message + value.toUpperCase());
-			unk.add(value.toUpperCase());
-		}
-	}
-	
-	public static void resetLogger() {
-		unk = new ArrayList<String>();
 	}
 	
 	@SuppressWarnings("synthetic-access")

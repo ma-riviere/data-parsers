@@ -10,7 +10,8 @@ import java.util.Collections;
 import java.util.Comparator;
 
 import com.parser.input.aion.mission.ClientSpawns;
-import com.parser.input.aion.mission.ClientSpawn; 
+import com.parser.input.aion.mission.ClientSpawn;
+import com.parser.input.aion.mission.Entity;
 
 import com.parser.common.*;
 import com.parser.common.aion.*;
@@ -25,17 +26,12 @@ public class AionSpawnsWriter extends AbstractWriter {
 	
 	Map<String, List<ClientSpawns>> clientSpawnData;
 	
-	MarshallerData md = new MarshallerData();
-	Map<Object, String> toMarshall = new HashMap<Object, String>();
-	
 	SpawnMap npcSpawnMap = new SpawnMap();
 	SpawnMap instanceSpawnMap = new SpawnMap();
 	SpawnMap gatherSpawnMap = new SpawnMap();
 	SpawnMap siegesSpawnMap = new SpawnMap();
 	SpawnMap riftsSpawnMap = new SpawnMap();
 	SpawnMap staticSpawnMap = new SpawnMap();
-	
-	String baseDir = AionWritingConfig.BASE_DIR + "Spawns/";
 	
 	int mapId = 0;
 	
@@ -79,20 +75,16 @@ public class AionSpawnsWriter extends AbstractWriter {
 				orderAllSpawns();
 				addAllSpawns();
 			}
-			new AionDataCenter().getInstance().resetLogger();
+			log.reset();
 			/// END OF CURRENT MAP ///
 		}
-		// Set MarshallerData
-		md.setBindings(AionWritingConfig.SPAWNS_BINDINGS);
-		md.setVersion(AionWritingConfig.VERSION);
-		md.setOutputMap(toMarshall);
-		toMarshall.clear();
+		
 	}
 	
 	@Override
 	public void marshall() {
-		// printInfo(md); for the outputMap, display System.out.println("[SPAWNS][" + mapId + "] Spawns count: " + getSize(md));
-		FileMarhshaller.marshallFile(md);
+		FileMarhshaller.marshallFile(orders);
+		// System.out.println(); //TODO: Log of written spawns
 	}
 	
 	private int getWorld(String s) {return (s != null) ? new AionDataCenter().getInstance().getWorldIdByName(s) : 0;}
@@ -117,7 +109,7 @@ public class AionSpawnsWriter extends AbstractWriter {
 	
 	private void addClientWorldSpawn(ClientSpawn cSpawn) {
 		// 1 : Check if already exists (same npcId & very close coordinates)
-		// Spawn s = computeSpawn(cSpawn);
+		Spawn s = computeSpawn(cSpawn);
 		// TODO: Get the npc_id from client_world_....xml, <npc_info>
 		// TODO: Check if null coordinates
 		// npcSpawnMap.getSpawn().add(s);
@@ -152,7 +144,8 @@ public class AionSpawnsWriter extends AbstractWriter {
 			spot.setZ(toFloat3(xyz[2]));
 			// spot.setZ(Geodata.getZ(mapId, spot.getX(), spot.getY())); // TODO
 			spot.setH(MathUtil.degreeToHeading(cSpawn.getDir()));
-			// setStaticId(spot); //TODO
+			if (cSpawn.getType().equalsIgnoreCase("SP")&& Strings.isNullOrEmpty(cSpawn.getNpc()))
+				setStaticId(spot);
 			setWalkingInfo(spot, cSpawn); // Walker or RandomWalker
 			s.getSpot().add(spot);
 		}
@@ -160,6 +153,20 @@ public class AionSpawnsWriter extends AbstractWriter {
 	
 	private float toFloat3(String s) {
 		return Math.round(Float.parseFloat(s) * (1000.00f)) / (1000.00f);
+	}
+	
+	private void setStaticId(Spot spot) {
+		for (String mappedName : clientSpawnData.keySet()) {
+			for (ClientSpawns clientSpawns : clientSpawnData.get(mappedName)) {
+				for (Entity ent : clientSpawns.getEntity()) {
+					String[] xyz = ent.getPos().split(",");
+					if (MathUtil.getDistance(spot.getX(), spot.getY(), spot.getZ(), Float.parseFloat(xyz[0]), Float.parseFloat(xyz[1]), Float.parseFloat(xyz[2])) < 0.05){
+						//TODO: Check if z var not too big
+						spot.setStaticId((int) ent.getEntityId());
+					}
+				}
+			}
+		}
 	}
 	
 	private void setWalkingInfo(Spot spot, ClientSpawn cSpawn) {
@@ -222,42 +229,37 @@ public class AionSpawnsWriter extends AbstractWriter {
 		if (!npcSpawnMap.getSpawn().isEmpty()) {
 			spawns.setSpawnMap(npcSpawnMap);
 			System.out.println("[SPAWNS] Adding " + npcSpawnMap.getSpawn().size() + " Npc Spawns");
-			toMarshall.put((Object) spawns, "Npcs/" + mapId);
+			addOrder(AionWritingConfig.SPAWNS_BINDINGS, AionWritingConfig.SPAWNS + "Npcs/" + getXml(mapId) , (Object) spawns);
 			spawns = new Spawns();
 		}
 		// Instances
 		if (!instanceSpawnMap.getSpawn().isEmpty()) {
 			spawns.setSpawnMap(instanceSpawnMap);
 			System.out.println("[SPAWNS] Adding " + instanceSpawnMap.getSpawn().size() + " Instance Spawns");
-			toMarshall.put((Object) spawns, "Instances/" + mapId);
 			spawns = new Spawns();
 		}
 		// Gather
 		if (!gatherSpawnMap.getSpawn().isEmpty()) {
 			spawns.setSpawnMap(gatherSpawnMap);
 			System.out.println("[SPAWNS] Adding " + gatherSpawnMap.getSpawn().size() + " Gather Spawns");
-			toMarshall.put((Object) spawns, "Gather/" + mapId);
 			spawns = new Spawns();
 		}
 		// Siege
 		if (!siegesSpawnMap.getSpawn().isEmpty()) {
 			spawns.setSpawnMap(siegesSpawnMap);
 			System.out.println("[SPAWNS] Adding " + siegesSpawnMap.getSpawn().size() + " Siege Spawns");
-			toMarshall.put((Object) spawns, "Sieges/" + mapId);
 			spawns = new Spawns();
 		}
 		// Rifts
 		if (!riftsSpawnMap.getSpawn().isEmpty()) {
 			spawns.setSpawnMap(riftsSpawnMap);
 			System.out.println("[SPAWNS] Adding " + riftsSpawnMap.getSpawn().size() + " Rifts Spawns");
-			toMarshall.put((Object) spawns, "Rifts/" + mapId);
 			spawns = new Spawns();
 		}
 		// Statics
 		if (!staticSpawnMap.getSpawn().isEmpty()) {
 			spawns.setSpawnMap(staticSpawnMap);
 			System.out.println("[SPAWNS] Adding " + staticSpawnMap.getSpawn().size() + " Static Spawns");
-			toMarshall.put((Object) spawns, "Statics/" + mapId);
 		}
 		// END
 		spawns = new Spawns();
@@ -276,5 +278,9 @@ public class AionSpawnsWriter extends AbstractWriter {
 		Collections.sort(sm.getSpawn(), new Comparator<Spawn>() {	
 			public int compare(Spawn o1, Spawn o2) {return o1.getNpcId().compareTo(o2.getNpcId());}
 		});
+	}
+	
+	private String getXml(int mapId) {
+		return mapId + ".xml"; //TODO: Add name after mapId
 	}
 }
