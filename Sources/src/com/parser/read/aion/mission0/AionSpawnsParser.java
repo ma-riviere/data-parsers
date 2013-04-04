@@ -4,25 +4,25 @@ import java.util.List;
 import java.util.ArrayList;
 
 import com.parser.input.aion.mission.Mission;
-import com.parser.input.aion.mission.Objects;
+import com.parser.input.aion.mission.ClientSpawns;
 import com.parser.read.AbstractDirectoryParser;
 import com.parser.read.aion.AionReadingConfig;
 
-public class AionMission0Parser extends AbstractDirectoryParser<Objects> {
+public class AionSpawnsParser extends AbstractDirectoryParser<ClientSpawns> {
 
-	public AionMission0Parser() {
+	public AionSpawnsParser() {
 		super(AionReadingConfig.VERSION, AionReadingConfig.MISSION0_BINDINGS, AionReadingConfig.MISSION0, AionReadingConfig.MISSION0_PREFIX);
 	}
 	
-	public AionMission0Parser(String version, String pack, String folder, String prefix) {
+	public AionSpawnsParser(String version, String pack, String folder, String prefix) {
 		super(version, pack, folder, prefix);
 	}
 
 	@Override
-	protected List<Objects> castFrom(Object topNode) {
-		List<Objects> objects = new ArrayList<Objects>();
-		objects.add(((Mission) topNode).getObjects());
-		return objects;
+	protected List<ClientSpawns> castFrom(Object topNode) {
+		List<ClientSpawns> clientSpawns = new ArrayList<ClientSpawns>();
+		clientSpawns.add(((Mission) topNode).getObjects());
+		return clientSpawns;
 	}
 	
 	@Override
