@@ -18,7 +18,9 @@ import com.parser.input.aion.skills.ClientSkill;
 import com.parser.input.aion.skill_learn.ClientSkillTree;
 import com.parser.input.aion.strings.ClientString;
 import com.parser.input.aion.toypets.ClientToypet;
-import com.parser.input.aion.world_maps.Data; //TODO
+import com.parser.input.aion.world_maps.Data;
+import com.parser.input.aion.world_data.NpcInfos;
+import com.parser.input.aion.world_data.NpcInfo;
 
 import com.parser.common.*;
 import com.parser.read.aion.animations.AionAnimationsParser;
@@ -35,7 +37,7 @@ import com.parser.read.aion.strings.AionDataStringParser;
 import com.parser.read.aion.strings.AionL10NStringParser;
 import com.parser.read.aion.toypets.AionToyPetsParser;
 import com.parser.read.aion.world.AionWorldMapsParser;
-import com.parser.read.aion.world.AionWorldDataParser;
+import com.parser.read.aion.world.AionWorldNpcParser;
 
 
 public class AionDataCenter {
@@ -46,6 +48,8 @@ public class AionDataCenter {
 	public static List<ClientSkill> clientSkills = new ArrayList<ClientSkill>();
 	public static List<ClientItem> clientItems = new ArrayList<ClientItem>();
 	public static List<ClientSkillTree> clientSkillTree = new ArrayList<ClientSkillTree>();
+	
+	public static Map<Integer, List<NpcInfo>> worldNpcInfos = new HashMap<Integer, List<NpcInfo>>();
 	// Special Maps
 	public static Map<String, ClientString> dataDescStringMap = new HashMap<String, ClientString>(); // Client String <--> Real Text or NameID
 	public static Map<String, ClientString> l10nDescStringMap = new HashMap<String, ClientString>(); // Client String <--> Real Text or NameID
@@ -84,6 +88,36 @@ public class AionDataCenter {
 		if (clientSkillTree.isEmpty())
 			clientSkillTree = new AionSkillTreeParser().parse();
 		return clientSkillTree;
+	}
+	
+	public Map<Integer, List<NpcInfo>> getWorldNpcInfos() {
+		int mapId = 0;
+		if (worldNpcInfos.keySet().isEmpty()) {
+			Map<String, List<NpcInfos>> temp = new AionWorldNpcParser().parse();
+			for (String mapName : temp.keySet()) {
+				mapId = getWorldIdByName(Util.getFileName(mapName));
+				List<NpcInfo> npcInfoList = new ArrayList<NpcInfo>();
+				for (NpcInfos npcs : temp.get(mapName)) {
+					npcInfoList.addAll(npcs.getNpcInfo()); 
+				}
+				worldNpcInfos.put(mapId, npcInfoList);
+				npcInfoList.clear();
+			}
+		}
+		return worldNpcInfos;
+	}
+	
+	public List<NpcInfo> getNpcInfoByMap(String name) {
+		List<NpcInfo> data = new ArrayList<NpcInfo>();
+		if (worldNpcInfos.containsKey(getWorldIdByName(Util.getDirName(name)))) {
+			data = worldNpcInfos.get(getWorldIdByName(Util.getDirName(name)));
+		}
+		else {
+			for (NpcInfos infos : new AionWorldNpcParser().parseFile(name)) {
+				data.addAll(infos.getNpcInfo());
+			}
+		}
+		return data;
 	}
 	
 	
@@ -301,7 +335,7 @@ public class AionDataCenter {
 	}
 	
 	public void loadDescWorldIdMap() {
-		List<Data> clientWorldList = new AionWorldDataParser().parse();
+		List<Data> clientWorldList = new AionWorldMapsParser().parse();
 		for (Data wd : clientWorldList)
 			descWorldIdMap.put(wd.getValue().toUpperCase(), wd);
 	}

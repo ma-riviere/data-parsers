@@ -27,13 +27,13 @@ public class AionReadingConfig {
 	// (Dir) Client Strings
 	public static final String STRINGS_DATA = "Data/Strings/";
 	public static final String STRINGS_L10N = "L10N/ENU/data/strings/";
-	public static final String STRINGS_PREFIX = "client_strings";
+	public static final String STRINGS_PREFIX = "client_strings_";
 	public static final String STRINGS_BINDINGS = "com.parser.input.aion.strings";
 	
 	// World
 	public static final String WORLD_MAPS = "Data/world/WorldId.xml";
 	public static final String WORLD_DATA = "Data/world/";
-	public static final String WORLD_DATA_PEFIX = "client_world";
+	public static final String WORLD_DATA_PREFIX = "client_world_";
 	public static final String WORLD_MAPS_BINDINGS = "com.parser.input.aion.world_maps";
 	public static final String WORLD_DATA_BINDINGS = "com.parser.input.aion.world_data";
 	
@@ -50,7 +50,7 @@ public class AionReadingConfig {
 	
 	// (Dir) Items
 	public static final String ITEMS = "Data/Items/";
-	public static final String ITEMS_PREFIX = "client_items";
+	public static final String ITEMS_PREFIX = "client_items_";
 	public static final String ITEMS_BINDINGS = "com.parser.input.aion.items";
 	
 	// Npcs
