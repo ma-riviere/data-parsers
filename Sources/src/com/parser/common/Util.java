@@ -46,4 +46,20 @@ public class Util {
 		System.out.print(" \n");
 	}
 	
+	public static String getFileName(String s) {
+		String[] names = s.split("@");
+		String name = "";
+		if (names.length != 2)
+			System.out.println("[UTIL] Error while splitting parsed file name ...");
+		else 
+			name = names[1];
+		
+		return name;
+	}
+	
+	public static String getDirName(String s) {
+		String[] names = s.split("@");
+		return names[0];
+	}
+	
 }

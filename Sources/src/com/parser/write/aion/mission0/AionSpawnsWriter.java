@@ -12,6 +12,7 @@ import java.util.Comparator;
 import com.parser.input.aion.mission.ClientSpawns;
 import com.parser.input.aion.mission.ClientSpawn;
 import com.parser.input.aion.mission.Entity;
+import com.parser.input.aion.world_data.NpcInfo;
 
 import com.parser.common.*;
 import com.parser.common.aion.*;
@@ -34,6 +35,11 @@ public class AionSpawnsWriter extends AbstractWriter {
 	SpawnMap staticSpawnMap = new SpawnMap();
 	
 	int mapId = 0;
+	String mapName = "";
+	int count = 0; 
+	List<NpcInfo> currentNpcInfos = new ArrayList<NpcInfo>();
+	
+	int RANDOM_WALK_CAP = 15;
 	
 	@Override
 	public void parse() {
@@ -48,6 +54,8 @@ public class AionSpawnsWriter extends AbstractWriter {
 		for (String mappedName : clientSpawnData.keySet()) {
 					
 			mapId = getCurrentMapId(mappedName);
+			mapName = mappedName;
+			
 			Util.printSubSection("" + mapId);
 			
 			if (mapId != 0) {
@@ -59,10 +67,7 @@ public class AionSpawnsWriter extends AbstractWriter {
 					
 						switch (cSpawn.getType()) {
 							case "SP":
-								if (Strings.isNullOrEmpty(cSpawn.getNpc()))
-										addClientWorldSpawn(cSpawn);
-								else if (getNpcId(cSpawn.getNpc()) != 0)
-									addNpcSpawn(cSpawn);
+								addNpcSpawn(cSpawn);
 								break;
 							// case "HSP":
 								// if (!Strings.isNullOrEmpty(cSpawn.getNpc()))
@@ -76,6 +81,8 @@ public class AionSpawnsWriter extends AbstractWriter {
 				addAllSpawns();
 			}
 			log.reset();
+			System.out.println("[SPAWNS] " + count + " Npc IDs were matched fron WorldData");
+			count = 0;
 			/// END OF CURRENT MAP ///
 		}
 		
@@ -89,41 +96,61 @@ public class AionSpawnsWriter extends AbstractWriter {
 	
 	private int getWorld(String s) {return (s != null) ? new AionDataCenter().getInstance().getWorldIdByName(s) : 0;}
 	private int getNpcId(String s) {return (s != null) ? new AionDataCenter().getInstance().getNpcIdByName(s) : 0;}
+	private int getSpawnNpcId(ClientSpawn cSpawn) {
+		int npcId = 0;
+		if (!Strings.isNullOrEmpty(cSpawn.getNpc()))
+			npcId = getNpcId(cSpawn.getNpc());
+		
+		currentNpcInfos = new AionDataCenter().getInstance().getNpcInfoByMap(mapName);
+		if (npcId == 0 && !currentNpcInfos.isEmpty())
+			npcId = getNpcIdByWorldData(cSpawn);
+		
+		return npcId;
+	}
+	
+	private int getNpcIdByWorldData(ClientSpawn cSpawn) {
+		int npcId = 0;
+		for (NpcInfo npc : currentNpcInfos) {
+			float x = npc.getPos().getX();
+			float y = npc.getPos().getY();
+			float z = npc.getPos().getZ();
+			if (cSpawn.getPos() != null) {
+				String[] xyz = cSpawn.getPos().split(",");
+				if (MathUtil.getDistance(x, y, z, toFloat3(xyz[0]), toFloat3(xyz[1]), toFloat3(xyz[2])) < 0.7) { //TODO: Change precision and see count
+					npcId = npc.getNameid();
+					count++;
+				}
+			}
+		}
+		return npcId;
+	}
 	
 	private int getCurrentMapId(String mappedName) {
-		int mapId = 0;
-		String[] names = mappedName.split("@");
-		if (names.length != 2)
-			System.out.println("[SPAWNS] Error while splitting name ...");
-		else if (!names[0].equalsIgnoreCase("Levels"))
-			mapId = getWorld(names[0]);
+		int map = 0;
+		String mapName = Util.getDirName(mappedName);
+		if (!mapName.equalsIgnoreCase("Levels"))
+			map = getWorld(mapName);
 		else
 			System.out.println("[SPAWNS][ERROR] A mission0 file was inside of Levels directory !");
-		return mapId;
+		return map;
 	}
 	
 	private void addNpcSpawn(ClientSpawn cSpawn) {
 		Spawn s = computeSpawn(cSpawn);
-		addOrMerge(npcSpawnMap, s);
-	}
-	
-	private void addClientWorldSpawn(ClientSpawn cSpawn) {
-		// 1 : Check if already exists (same npcId & very close coordinates)
-		Spawn s = computeSpawn(cSpawn);
-		// TODO: Get the npc_id from client_world_....xml, <npc_info>
-		// TODO: Check if null coordinates
-		// npcSpawnMap.getSpawn().add(s);
+		if (isValidSpawn(s))
+			addOrMerge(npcSpawnMap, s);
 	}
 	
 	private void addGatherableSpawn(ClientSpawn cSpawn) {
 		Spawn s = computeSpawn(cSpawn);
-		addOrMerge(gatherSpawnMap, s);
+		if (isValidSpawn(s))
+			addOrMerge(gatherSpawnMap, s);
 	}
 	
 	private Spawn computeSpawn(ClientSpawn cSpawn) {
 		Spawn s = new Spawn();
 		
-		s.setNpcId(getNpcId(cSpawn.getNpc()));
+		s.setNpcId(getSpawnNpcId(cSpawn));
 		
 		if (!Strings.isNullOrEmpty(cSpawn.getPos()))
 			setSpot(s, cSpawn, mapId);
@@ -143,10 +170,14 @@ public class AionSpawnsWriter extends AbstractWriter {
 			spot.setY(toFloat3(xyz[1]));
 			spot.setZ(toFloat3(xyz[2]));
 			// spot.setZ(Geodata.getZ(mapId, spot.getX(), spot.getY())); // TODO
-			spot.setH(MathUtil.degreeToHeading(cSpawn.getDir()));
-			if (cSpawn.getType().equalsIgnoreCase("SP")&& Strings.isNullOrEmpty(cSpawn.getNpc()))
+			int h = MathUtil.degreeToHeading(cSpawn.getDir());
+			if (h != 0)
+				spot.setH(h);
+			if (cSpawn.getType().equalsIgnoreCase("SP") && canMove(getSpawnNpcId(cSpawn))) //TODO: Move to Npc.canMove()
 				setStaticId(spot);
-			setWalkingInfo(spot, cSpawn); // Walker or RandomWalker
+			if (spot.getStaticId() == null)
+				setWalkingInfo(spot, cSpawn); // Walker or RandomWalker
+			
 			s.getSpot().add(spot);
 		}
 	}
@@ -155,13 +186,19 @@ public class AionSpawnsWriter extends AbstractWriter {
 		return Math.round(Float.parseFloat(s) * (1000.00f)) / (1000.00f);
 	}
 	
+	private boolean canMove(int npcId) {
+		boolean canMove = true; //false
+		
+		return canMove;
+	}
+	
 	private void setStaticId(Spot spot) {
 		for (String mappedName : clientSpawnData.keySet()) {
 			for (ClientSpawns clientSpawns : clientSpawnData.get(mappedName)) {
 				for (Entity ent : clientSpawns.getEntity()) {
 					String[] xyz = ent.getPos().split(",");
-					if (MathUtil.getDistance(spot.getX(), spot.getY(), spot.getZ(), Float.parseFloat(xyz[0]), Float.parseFloat(xyz[1]), Float.parseFloat(xyz[2])) < 0.05){
-						//TODO: Check if z var not too big
+					if (MathUtil.getDistance(spot.getX(), spot.getY(), spot.getZ(), toFloat3(xyz[0]), toFloat3(xyz[1]), toFloat3(xyz[2])) < 0.7){
+						//TODO: Check if z var not too big (function that check z and x,y seperately)
 						spot.setStaticId((int) ent.getEntityId());
 					}
 				}
@@ -170,12 +207,22 @@ public class AionSpawnsWriter extends AbstractWriter {
 	}
 	
 	private void setWalkingInfo(Spot spot, ClientSpawn cSpawn) {
-		if (cSpawn.getIidleRange() > 0)
-			spot.setRandomWalk(cSpawn.getIidleRange());
+		if (cSpawn.getIidleRange() > 0) {
+			if (cSpawn.getIidleRange() > RANDOM_WALK_CAP)
+				System.out.println("[SPAWNS] Npc " + getSpawnNpcId(cSpawn) + " has " + cSpawn.getIidleRange() + " random_walk range !");
+			else //TODO: if speed = 0 or type portal/noaction/... do not set
+				spot.setRandomWalk(cSpawn.getIidleRange());
+		}
 		// else if (cSpawn.getIidleRange() == 0) //TODO
 			// spot.setWalkerId();
-		if (cSpawn.getIidleRange() < -1)
-			System.out.println("[SPAWNS] [INFO] Idle Range inferior to -1 for Object : " + cSpawn.getNpc());
+	}
+	
+	public boolean isValidSpawn(Spawn s) {
+		if (s.getNpcId() >= 200000 && s.getNpcId() <= 900000) {
+			// TODO: Check coords
+			return true;
+		}
+		return false;
 	}
 	
 	// TODO: Check if null coordinates
@@ -194,7 +241,7 @@ public class AionSpawnsWriter extends AbstractWriter {
 			}
 			
 			if (exists)
-				sm.getSpawn().get(index).getSpot().addAll(newSpots);
+				sm.getSpawn().get(index).getSpot().addAll(newSpots); //TODO: If a spot very close exists, do not add
 			else
 				sm.getSpawn().add(s);
 		}

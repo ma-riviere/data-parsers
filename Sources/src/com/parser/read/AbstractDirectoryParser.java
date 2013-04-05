@@ -5,7 +5,9 @@ import java.nio.file.*;
 import java.io.FileFilter;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.HashMap;
 import java.util.Map;
 
 import javax.xml.bind.JAXBContext;
@@ -19,25 +21,39 @@ public abstract class AbstractDirectoryParser<T> implements ClientDirectoryParse
 	Map<String, File> files = new HashMap<String, File>();
 	
 	protected String version;
-	protected String pack;
+	protected String bindings;
 	protected String directory;
 	protected String prefix;
 	protected String extension;
 
-	public AbstractDirectoryParser(String version, String pack, String directory, String prefix, String extension) {
+	public AbstractDirectoryParser(String version, String bindings, String directory, String prefix, String extension) {
 		this.version = version;
-		this.pack = pack;
+		this.bindings = bindings;
 		this.directory = directory;
 		this.prefix = prefix;
 		this.extension = extension;
 	}
 	
-	public AbstractDirectoryParser(String version, String pack, String directory, String prefix) {
-		this(version, pack, directory, prefix, "xml");
+	public AbstractDirectoryParser(String version, String bindings, String directory, String prefix) {
+		this(version, bindings, directory, prefix, ".xml");
 	}
 	
-	public AbstractDirectoryParser(String version, String pack, String directory) {
-		this(version, pack, directory, "", "xml");
+	@Override
+	public List<T> parseFile(File toMarshall) {
+		
+		List<T> dataList = new ArrayList<T>();
+		
+		try {
+			JAXBContext jc = JAXBContext.newInstance(bindings);
+			Unmarshaller unmarshaller = jc.createUnmarshaller();
+			unmarshaller.setEventHandler(new XmlValidationHandler());
+			Object collection = unmarshaller.unmarshal(toMarshall);
+			dataList = castFrom(collection);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return dataList;
 	}
 
 	@Override
@@ -58,13 +74,13 @@ public abstract class AbstractDirectoryParser<T> implements ClientDirectoryParse
 		
 		for (String dirName : files.keySet()) {
 			List<T> dataList;
-			File file = files.get(dirName);
+			File f = files.get(dirName);
 			try {
-				JAXBContext jc = JAXBContext.newInstance(pack);
+				JAXBContext jc = JAXBContext.newInstance(bindings);
 				Unmarshaller unmarshaller = jc.createUnmarshaller();
 				unmarshaller.setEventHandler(new XmlValidationHandler());
 
-				Object collection = unmarshaller.unmarshal(file);
+				Object collection = unmarshaller.unmarshal(f);
 				dataList = castFrom(collection);
 				filesData.put(dirName, dataList);
 				Util.printCurrentProgress();
@@ -84,7 +100,7 @@ public abstract class AbstractDirectoryParser<T> implements ClientDirectoryParse
 				if (Files.isDirectory(dirOrFile))
 					addTree(dirOrFile, files);
 				// Is a File and matches criteria
-				else if (dirOrFile.toFile().getName().endsWith("." + extension) && dirOrFile.toFile().getName().startsWith(prefix)) {
+				else if (dirOrFile.toFile().getName().endsWith(extension) && dirOrFile.toFile().getName().startsWith(prefix)) {
 					String mappedName = directory.toFile().getName() + "@" + mapFileName(dirOrFile.toFile().getName());
 					files.put(mappedName, dirOrFile.toFile());
 				}
@@ -94,6 +110,8 @@ public abstract class AbstractDirectoryParser<T> implements ClientDirectoryParse
 
 	protected abstract List<T> castFrom(Object topNode);
 
-	protected abstract String mapFileName(String fileName);
+	protected String mapFileName(String fileName) {
+		return fileName.replaceAll(prefix, "").replaceAll(extension, "");
+	}
 
 }
