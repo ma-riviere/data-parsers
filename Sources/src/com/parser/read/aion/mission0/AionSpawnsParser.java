@@ -11,7 +11,7 @@ import com.parser.read.aion.AionReadingConfig;
 public class AionSpawnsParser extends AbstractDirectoryParser<ClientSpawns> {
 
 	public AionSpawnsParser() {
-		super(AionReadingConfig.VERSION, AionReadingConfig.MISSION0_BINDINGS, AionReadingConfig.MISSION0, AionReadingConfig.MISSION0_PREFIX);
+		super(AionReadingConfig.MISSION0_BINDINGS, AionReadingConfig.MISSION0, AionReadingConfig.MISSION0_PREFIX);
 	}
 
 	@Override

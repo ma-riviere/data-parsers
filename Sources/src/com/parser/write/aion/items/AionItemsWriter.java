@@ -823,7 +823,7 @@ public class AionItemsWriter extends AbstractWriter {
 	}
 	
 	private static void loadDocFiles() {
-		File docFilesFolder = new File("../../Data/" + AionReadingConfig.VERSION + "/client/Data/Dialogs/doc_item");
+		File docFilesFolder = new File(AionReadingConfig.DOC_FILES);
 		File[] children = docFilesFolder.listFiles();
 		for (int i = 0; i < children.length; i++) {
 			if (children[i].isDirectory())

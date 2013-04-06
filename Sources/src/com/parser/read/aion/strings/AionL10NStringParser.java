@@ -10,7 +10,7 @@ import com.parser.read.aion.AionReadingConfig;
 public class AionL10NStringParser extends AbstractDirectoryParser<ClientString> {
 
 	public AionL10NStringParser() {
-		super(AionReadingConfig.VERSION, AionReadingConfig.STRINGS_BINDINGS, AionReadingConfig.STRINGS_L10N, AionReadingConfig.STRINGS_PREFIX);
+		super(AionReadingConfig.STRINGS_BINDINGS, AionReadingConfig.STRINGS_L10N, AionReadingConfig.STRINGS_PREFIX);
 	}
 
 	@Override

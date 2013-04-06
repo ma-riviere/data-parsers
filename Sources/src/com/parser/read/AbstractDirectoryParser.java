@@ -13,29 +13,27 @@ import java.util.Map;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Unmarshaller;
 
-import com.parser.common.Util;
+import com.parser.common.utils.Util;
 
 public abstract class AbstractDirectoryParser<T> implements ClientDirectoryParser<T> {
 
 	Map<String, List<T>> filesData = new HashMap<String, List<T>>();
 	Map<String, File> files = new HashMap<String, File>();
 	
-	protected String version;
 	protected String bindings;
 	protected String directory;
 	protected String prefix;
 	protected String extension;
 
-	public AbstractDirectoryParser(String version, String bindings, String directory, String prefix, String extension) {
-		this.version = version;
+	public AbstractDirectoryParser(String bindings, String directory, String prefix, String extension) {
 		this.bindings = bindings;
 		this.directory = directory;
 		this.prefix = prefix;
 		this.extension = extension;
 	}
 	
-	public AbstractDirectoryParser(String version, String bindings, String directory, String prefix) {
-		this(version, bindings, directory, prefix, ".xml");
+	public AbstractDirectoryParser(String bindings, String directory, String prefix) {
+		this(bindings, directory, prefix, ".xml");
 	}
 	
 	@Override
@@ -59,7 +57,7 @@ public abstract class AbstractDirectoryParser<T> implements ClientDirectoryParse
 	@Override
 	public Map<String, List<T>> parse() {
 
-		Path path = Paths.get("../../Data/" + version + "/client/" + directory);
+		Path path = Paths.get(directory);
 		if (!Files.isDirectory(path)) {
 			throw new IllegalArgumentException("\n[MAIN] [ERROR] " + path + " is not a Directory !");
 		}

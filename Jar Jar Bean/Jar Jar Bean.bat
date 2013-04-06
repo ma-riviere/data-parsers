@@ -23,8 +23,14 @@ ECHO.
 set CHOICE=
 set /P CHOICE=[VERSION] Enter your choice : %=%
 
-IF "%CHOICE%"=="1" SET VERSION=aion35
-IF "%CHOICE%"=="2" SET VERSION=aion40
+IF "%CHOICE%"=="1" (
+SET VERSION=aion35
+SET PATH=aion
+)
+IF "%CHOICE%"=="2" (
+SET VERSION=aion40
+SET PATH=aion
+)
 
 REM ## Setting Client Destination Folder
 set CLIENT=..\Data\%VERSION%\client
@@ -52,7 +58,7 @@ ECHO = 5 : Items        ===    6 : Recipes             ===
 ECHO = 7 : Skills       ===    8 : Skill Learn         ===
 ECHO = 9 : Npcs         ===   10 : Animations          ===
 ECHO = 11 : Housing     ===   12 : Mission0            ===
-ECHO = 13 : World Data  ===   14 :                     ===
+ECHO = 13 : World Data  ===   14 : Walkers              ===
 ECHO.#####################################################
 ECHO.
 set JAR =
@@ -85,12 +91,11 @@ FOR %%A IN (A B C D E F G H) DO IF %JAR%==%%A GOTO CLIENT_PARSER
 FOR %%A IN (1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25) DO IF %JAR%==%%A GOTO CLIENT_SERVER
 
 :CLIENT_CLIENT
-REM ## Imput xsd = Output xsd
 ECHO.
 ECHO [INFO] Client-Client parsing selected
 
 SET DIR=client
-SET SAME=true
+SET SKIP=output
 IF "%JAR%"=="a" GOTO CLIENT_ITEMS
 IF "%JAR%"=="b" GOTO CLIENT_STRINGS
 
@@ -99,14 +104,12 @@ ECHO.
 ECHO [INFO] Client-Parser parsing selected
 
 SET DIR=parser
-SET SAME=true
+SET SKIP=output
 IF "%JAR%"=="A" GOTO PARSER_ITEMS
 
 :CLIENT_SERVER
 ECHO.
 ECHO [INFO] Client-Server parsing selected
-
-SET SAME=false
 
 IF "%JAR%"=="1" GOTO TOYPETS
 IF "%JAR%"=="2" GOTO WORLD_MAPS
@@ -121,29 +124,30 @@ IF "%JAR%"=="10" GOTO ANIMATIONS
 IF "%JAR%"=="11" GOTO HOUSING
 IF "%JAR%"=="12" GOTO MISSION0
 IF "%JAR%"=="13" GOTO WORLD_DATA
+IF "%JAR%"=="14" GOTO WALKERS
 
 :CLIENT_ITEMS
 set XMS=1024
 set XMX=1536
 set NAME=items
 set INPUT_XML=%ITEMS%
-set OUTPUT_XML=%INPUT_XML%
-GOTO CHECKPATHS_XML
+IF NOT EXIST %INPUT_XML% GOTO CLIENT_PATH_ERROR
+GOTO XSD_TYPE
 
 :CLIENT_STRINGS
 REM ## TODO : Changer l'ordre des XML quand la 4.0 sera traduite
 set NAME=strings
 set INPUT_XML=%DATA_STRINGS%
 IF NOT EXIST %INPUT_XML% set INPUT_XML=%L10N_STRINGS%
-set OUTPUT_XML=%INPUT_XML%
-GOTO CHECKPATHS_XML
+IF NOT EXIST %INPUT_XML% GOTO CLIENT_PATH_ERROR
+GOTO XSD_TYPE
 
 REM ## Client - Parser (Internal, for faster parsing)
 :PARSER_ITEMS
 set NAME=p_items
 set INPUT_XML=%MAPPINGS%/items_name_id.xml
-set OUTPUT_XML=%INPUT_XML%
-GOTO CHECKPATHS_XML
+IF NOT EXIST %INPUT_XML% GOTO CLIENT_PATH_ERROR
+GOTO XSD_TYPE
 
 REM ## Client - Server
 :ITEMS
@@ -162,9 +166,10 @@ GOTO CHECKPATHS_XML
 
 :WORLD_DATA
 set NAME=world_data
+set SKIP=output
 set INPUT_XML=%WORLD_DATA%
-set OUTPUT_XML=%INPUT_XML%
-GOTO CHECKPATHS_XML
+IF NOT EXIST %INPUT_XML% GOTO CLIENT_PATH_ERROR REM ## TODO: Make output
+GOTO XSD_TYPE
 
 :RIDES
 set NAME=rides
@@ -225,9 +230,17 @@ set OUTPUT_XML=%SERVER%/spawns/*
 GOTO CHECKPATHS_XML
 
 :ANIMATIONS
-set NAME=animations
+set NAME=animations REM ## Move to Input only parse
+set SKIP=output
 set INPUT_XML=%ANIMATIONS%
 IF NOT EXIST %INPUT_XML% GOTO CLIENT_PATH_ERROR
+GOTO XSD_TYPE
+
+:WALKERS
+set NAME=walkers
+set SKIP=input
+set OUTPUT_XML=%SERVER%/npcs/npc_walker.xml
+IF NOT EXIST %OUTPUT_XML% GOTO CLIENT_PATH_ERROR
 GOTO XSD_TYPE
 
 REM ## END
@@ -265,22 +278,26 @@ IF "%ENUM%"=="0" SET ENUM=never
 
 REM ## Input
 :INPUT
+IF "%SKIP%"=="input" GOTO OUTPUT
+
 set CURRENT=input
 SET PREFIX=i_
 IF "%DIR%"=="null" SET DIR=client
 SET XML=%INPUT_XML%
-IF "%XSD_TYPE%"=="0" GOTO INIT_XSD
-IF "%XSD_TYPE%"=="2" GOTO INIT_XSD
+FOR %%A IN (0 2) DO IF %XSD_TYPE%==%%A GOTO INIT_XSD
+
 GOTO GENERATE_XSD
 
 REM ## Output
 :OUTPUT
+IF "%SKIP%"=="output" GOTO QUIT
+
 set CURRENT=output
 SET PREFIX=o_
 SET DIR=server
 SET XML=%OUTPUT_XML%
-IF "%XSD_TYPE%"=="0" GOTO INIT_XSD
-IF "%XSD_TYPE%"=="1" GOTO INIT_XSD
+FOR %%A IN (0 1) DO IF %XSD_TYPE%==%%A GOTO INIT_XSD
+
 GOTO GENERATE_XSD
 
 
@@ -315,13 +332,12 @@ IF EXIST %BINDING% SET PARAM=-b %BINDING%
 
 IF "%DIR%"=="parser" SET PREFIX=
 
-java -jar libs\jaxb-xjc.jar -extension %PARAM% -p com.parser.%CURRENT%.aion.%NAME% %XSD%
-"%JAVA_HOME%\bin\javac.exe" com\parser\%CURRENT%\aion\%NAME%\*.java > nul
+java -jar libs\jaxb-xjc.jar -extension %PARAM% -p com.parser.%CURRENT%.%PATH%.%NAME% %XSD%
+"%JAVA_HOME%\bin\javac.exe" com\parser\%CURRENT%\%PATH%\%NAME%\*.java > nul
 "%JAVA_HOME%\bin\jar.exe" cvf %PREFIX%%NAME%.jar com > nul & ECHO.
 rmdir /s /q com
 ROBOCOPY . ..\Sources\libs\%DIR%\ %PREFIX%%NAME%.jar /MOV /NJS /NJH > nul & ECHO Done !
 
-IF "%SAME%"=="true" GOTO QUIT
 IF "%CURRENT%"=="input" IF "%DIR%"=="client" GOTO OUTPUT
 GOTO QUIT
 

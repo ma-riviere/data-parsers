@@ -44,10 +44,17 @@ public class AionWritingConfig {
 	public static final String NPCS = BASE_DIR + "npcs/npc_templates.xml";
 	public static final String NPCS_BINDINGS = "com.parser.output.aion.npcs";
 	
-	/**** From Mission0 ****/
+	/**** Start Mission0 ****/
 	// Spawns
 	public static final String SPAWNS = BASE_DIR + "Spawns/";
+	public static final String RANDOM_SPAWNS = BASE_DIR + "random_spawns/";
 	public static final String SPAWNS_BINDINGS = "com.parser.output.aion.mission";
+	
+	/**** End Mission0 ****/
+	
+	public static final String WALKERS = BASE_DIR + "npc_walkers.xml";
+	public static final String SPAWNS_WALKERS = BASE_DIR + "npc_walkers_spawns.xml";
+	public static final String WALKERS_BINDINGS = "com.parser.output.aion.walkers";
 	
 	/** ############################################################## **/
 

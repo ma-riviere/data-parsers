@@ -10,7 +10,7 @@ import com.parser.read.aion.AionReadingConfig;
 public class AionNpcsParser extends AbstractFileParser<ClientNpc> {
 
 	public AionNpcsParser() {
-		super(AionReadingConfig.VERSION, AionReadingConfig.NPCS_BINDINGS, AionReadingConfig.NPCS);
+		super(AionReadingConfig.NPCS_BINDINGS, AionReadingConfig.NPCS);
 	}
 
 	@Override
