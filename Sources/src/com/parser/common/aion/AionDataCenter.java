@@ -44,10 +44,11 @@ public class AionDataCenter {
 
 	public static Logger log = new Logger().getInstance();
 	
-	// ClientObjects lists (TODO)
+	// TODO: Move all main lists to Map<Integer, Client>
 	public static List<ClientSkill> clientSkills = new ArrayList<ClientSkill>();
 	public static List<ClientItem> clientItems = new ArrayList<ClientItem>();
 	public static List<ClientSkillTree> clientSkillTree = new ArrayList<ClientSkillTree>();
+	public static Map<Integer, ClientNpc> clientNpcs = new HashMap<Integer, ClientNpc>();
 	
 	public static Map<Integer, List<NpcInfo>> worldNpcInfos = new HashMap<Integer, List<NpcInfo>>();
 	// Special Maps
@@ -88,6 +89,14 @@ public class AionDataCenter {
 		if (clientSkillTree.isEmpty())
 			clientSkillTree = new AionSkillTreeParser().parse();
 		return clientSkillTree;
+	}
+	
+	public Map<Integer, ClientNpc> getClientNpcs() {
+		if (clientNpcs.values().isEmpty()) {
+			for (ClientNpc cn : new AionNpcsParser().parse())
+				clientNpcs.put(cn.getId(), cn);
+		}
+		return clientNpcs;
 	}
 	
 	public Map<Integer, List<NpcInfo>> getWorldNpcInfos() {
@@ -322,7 +331,7 @@ public class AionDataCenter {
 	
 	// Loading Npc Name <--> ID from client XML
 	public void loadNpcNameIdMap() {
-		List<ClientNpc> clientNpcs = new AionNpcsParser().parse();
+		List<ClientNpc> clientNpcs = new ArrayList<ClientNpc>(getClientNpcs().values());
 		for (ClientNpc cn : clientNpcs)
 			npcNameIdMap.put(cn.getName().toUpperCase(), cn.getId());
 	}
