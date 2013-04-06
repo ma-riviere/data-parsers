@@ -12,6 +12,7 @@ import java.util.Comparator;
 import com.parser.input.aion.mission.ClientSpawns;
 import com.parser.input.aion.mission.ClientSpawn;
 import com.parser.input.aion.mission.Entity;
+import com.parser.input.aion.npcs.ClientNpc;
 import com.parser.input.aion.world_data.NpcInfo;
 
 import com.parser.common.*;
@@ -34,12 +35,18 @@ public class AionSpawnsWriter extends AbstractWriter {
 	SpawnMap riftsSpawnMap = new SpawnMap();
 	SpawnMap staticSpawnMap = new SpawnMap();
 	
-	int mapId = 0;
-	String mapName = "";
-	int count = 0; 
 	List<NpcInfo> currentNpcInfos = new ArrayList<NpcInfo>();
 	
+	String mapName = "";
+	int mapId = 0;
+	int npcId = 0;
+	
+	int count = 0;
+	
 	int RANDOM_WALK_CAP = 15;
+	int BASE_RESPAWN_TIME = 295;
+	double PRECISION = 0.7;
+	double PRECISION_Z = 15.0;
 	
 	@Override
 	public void parse() {
@@ -64,7 +71,7 @@ public class AionSpawnsWriter extends AbstractWriter {
 				for (ClientSpawns clientSpawns : clientSpawnData.get(mappedName)) {
 					
 					for (ClientSpawn cSpawn : clientSpawns.getObject()) {
-					
+						npcId = getSpawnNpcId(cSpawn);
 						switch (cSpawn.getType()) {
 							case "SP":
 								addNpcSpawn(cSpawn);
@@ -96,6 +103,8 @@ public class AionSpawnsWriter extends AbstractWriter {
 	
 	private int getWorld(String s) {return (s != null) ? new AionDataCenter().getInstance().getWorldIdByName(s) : 0;}
 	private int getNpcId(String s) {return (s != null) ? new AionDataCenter().getInstance().getNpcIdByName(s) : 0;}
+	private ClientNpc getNpc(int id) {return (id != 0) ? new AionDataCenter().getInstance().getClientNpcs().get(id) : null;}
+	
 	private int getSpawnNpcId(ClientSpawn cSpawn) {
 		int npcId = 0;
 		if (!Strings.isNullOrEmpty(cSpawn.getNpc()))
@@ -115,8 +124,7 @@ public class AionSpawnsWriter extends AbstractWriter {
 			float y = npc.getPos().getY();
 			float z = npc.getPos().getZ();
 			if (cSpawn.getPos() != null) {
-				String[] xyz = cSpawn.getPos().split(",");
-				if (MathUtil.getDistance(x, y, z, toFloat3(xyz[0]), toFloat3(xyz[1]), toFloat3(xyz[2])) < 0.7) { //TODO: Change precision and see count
+				if (MathUtil.isCloseEnough(cSpawn.getPos(), x, y, z, PRECISION, PRECISION_Z)) {
 					npcId = npc.getNameid();
 					count++;
 				}
@@ -149,13 +157,21 @@ public class AionSpawnsWriter extends AbstractWriter {
 	
 	private Spawn computeSpawn(ClientSpawn cSpawn) {
 		Spawn s = new Spawn();
-		
-		s.setNpcId(getSpawnNpcId(cSpawn));
+		//TODO: hasOverrideData to know if coords fixed by world data, and take those coords if yes
+		s.setNpcId(npcId);
+		s.setRespawnTime(getRespawnTime(npcId));
 		
 		if (!Strings.isNullOrEmpty(cSpawn.getPos()))
 			setSpot(s, cSpawn, mapId);
 		
 		return s;
+	}
+	
+	//TODO: Move to ClientNpc.java
+	private int getRespawnTime(int npcId) {
+		int respawnTime = BASE_RESPAWN_TIME;
+		//TODO: fonction de hpgauge, isMonster ...
+		return respawnTime;
 	}
 	
 	private void setSpot(Spawn s, ClientSpawn cSpawn, int mapId) {
@@ -166,29 +182,30 @@ public class AionSpawnsWriter extends AbstractWriter {
 		if (xyz.length != 3)
 			System.out.println("[SPAWNS][ERROR] Error while splitting position ...");
 		else {
-			spot.setX(toFloat3(xyz[0]));
-			spot.setY(toFloat3(xyz[1]));
-			spot.setZ(toFloat3(xyz[2]));
-			// spot.setZ(Geodata.getZ(mapId, spot.getX(), spot.getY())); // TODO
-			int h = MathUtil.degreeToHeading(cSpawn.getDir());
-			if (h != 0)
-				spot.setH(h);
-			if (cSpawn.getType().equalsIgnoreCase("SP") && canMove(getSpawnNpcId(cSpawn))) //TODO: Move to Npc.canMove()
-				setStaticId(spot);
-			if (spot.getStaticId() == null)
-				setWalkingInfo(spot, cSpawn); // Walker or RandomWalker
-			
-			s.getSpot().add(spot);
+			spot.setX(MathUtil.toFloat3(xyz[0]));
+			spot.setY(MathUtil.toFloat3(xyz[1]));
+			if (MathUtil.getDistance(0, 0, spot.getX(), spot.getY()) > 0.3) {
+				spot.setZ(MathUtil.toFloat3(xyz[2]));
+				// spot.setZ(Geodata.getZ(mapId, spot.getX(), spot.getY())); // TODO
+				int h = MathUtil.degreeToHeading(cSpawn.getDir());
+				if (h != 0) {spot.setH(h);}
+				if (cSpawn.getType().equalsIgnoreCase("SP") && !canMove(npcId)) //TODO: Move to Npc.canMove()
+					setStaticId(spot);
+				if (spot.getStaticId() == null)
+					setWalkingInfo(spot, cSpawn);
+				
+				s.getSpot().add(spot);
+			}
 		}
 	}
 	
-	private float toFloat3(String s) {
-		return Math.round(Float.parseFloat(s) * (1000.00f)) / (1000.00f);
-	}
-	
+	//TODO: Moce to ClientNpc.java
 	private boolean canMove(int npcId) {
-		boolean canMove = true; //false
-		
+		boolean canMove = true;
+		ClientNpc npc = getNpc(npcId);
+		if (npc != null && npc.getMoveSpeedNormalWalk() == 0)
+			canMove = false;
+		//TODO: Add checks on NpcType (Portal, ...)
 		return canMove;
 	}
 	
@@ -196,11 +213,8 @@ public class AionSpawnsWriter extends AbstractWriter {
 		for (String mappedName : clientSpawnData.keySet()) {
 			for (ClientSpawns clientSpawns : clientSpawnData.get(mappedName)) {
 				for (Entity ent : clientSpawns.getEntity()) {
-					String[] xyz = ent.getPos().split(",");
-					if (MathUtil.getDistance(spot.getX(), spot.getY(), spot.getZ(), toFloat3(xyz[0]), toFloat3(xyz[1]), toFloat3(xyz[2])) < 0.7){
-						//TODO: Check if z var not too big (function that check z and x,y seperately)
+					if (MathUtil.isCloseEnough(ent.getPos(), spot.getX(), spot.getY(), spot.getZ(), PRECISION, PRECISION_Z))
 						spot.setStaticId((int) ent.getEntityId());
-					}
 				}
 			}
 		}
@@ -209,8 +223,8 @@ public class AionSpawnsWriter extends AbstractWriter {
 	private void setWalkingInfo(Spot spot, ClientSpawn cSpawn) {
 		if (cSpawn.getIidleRange() > 0) {
 			if (cSpawn.getIidleRange() > RANDOM_WALK_CAP)
-				System.out.println("[SPAWNS] Npc " + getSpawnNpcId(cSpawn) + " has " + cSpawn.getIidleRange() + " random_walk range !");
-			else //TODO: if speed = 0 or type portal/noaction/... do not set
+				System.out.println("[SPAWNS] Npc " + npcId + " has " + cSpawn.getIidleRange() + " random_walk range !");
+			else
 				spot.setRandomWalk(cSpawn.getIidleRange());
 		}
 		// else if (cSpawn.getIidleRange() == 0) //TODO
@@ -219,13 +233,11 @@ public class AionSpawnsWriter extends AbstractWriter {
 	
 	public boolean isValidSpawn(Spawn s) {
 		if (s.getNpcId() >= 200000 && s.getNpcId() <= 900000) {
-			// TODO: Check coords
 			return true;
 		}
 		return false;
 	}
 	
-	// TODO: Check if null coordinates
 	private void addOrMerge(SpawnMap sm, Spawn s) {
 
 		if (!sm.getSpawn().isEmpty()) {
@@ -240,10 +252,12 @@ public class AionSpawnsWriter extends AbstractWriter {
 				}
 			}
 			
-			if (exists)
-				sm.getSpawn().get(index).getSpot().addAll(newSpots); //TODO: If a spot very close exists, do not add
-			else
+			if (exists) {
+				//TODO: If a spot very close exists, do not add
+				sm.getSpawn().get(index).getSpot().addAll(newSpots);
+			} else {
 				sm.getSpawn().add(s);
+			}
 		}
 		else
 			sm.getSpawn().add(s);
