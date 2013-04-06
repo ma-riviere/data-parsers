@@ -3,77 +3,84 @@ package com.parser.read.aion;
 public class AionReadingConfig {
 
 	public static final String VERSION = "aion40";
+	public static final String BASE_DIR = "../../Data/" + VERSION + "client/";
 	public static final boolean READ_CUSTOM = true;
 	
 	/********************************** CUSTOM XML READING *************************************/
 	
 	// Items
-	public static final String ITEMS_CUSTOM = "../../Custom/Items/";
+	public static final String ITEMS_CUSTOM = "../../Data/Custom/Items/";
 	
-	public static final String ITEMS_INTERNAL = "../../Mappings/items_name_id.xml";
+	public static final String ITEMS_INTERNAL = "../../Data/Mappings/items_name_id.xml";
 	public static final String ITEMS_INTERNAL_BINDINGS = "com.parser.input.aion.p_items";
 	
 	/*************************************** CLIENT XMLs ********************************************/
 	
 	// Rides
-	public static final String RIDE = "Data/rides/rides.xml";
+	public static final String RIDE = BASE_DIR +"Data/rides/rides.xml";
 	public static final String RIDE_BINDINGS = "com.parser.input.aion.rides";
 	
 	// Instances Cooltimes
-	public static final String COOLTIMES = "Data/world/client_instance_cooltime.xml";
-	public static final String COOLTIMES2 = "Data/world/client_instance_cooltime2.xml";
+	public static final String COOLTIMES = BASE_DIR + "Data/world/client_instance_cooltime.xml";
+	public static final String COOLTIMES2 = BASE_DIR + "Data/world/client_instance_cooltime2.xml";
 	public static final String COOLTIMES_BINDINGS = "com.parser.input.aion.cooltimes";
 
 	// (Dir) Client Strings
-	public static final String STRINGS_DATA = "Data/Strings/";
-	public static final String STRINGS_L10N = "L10N/ENU/data/strings/";
+	public static final String STRINGS_DATA = BASE_DIR + "Data/Strings/";
+	public static final String STRINGS_L10N = BASE_DIR + "L10N/ENU/data/strings/";
 	public static final String STRINGS_PREFIX = "client_strings_";
 	public static final String STRINGS_BINDINGS = "com.parser.input.aion.strings";
 	
 	// World
-	public static final String WORLD_MAPS = "Data/world/WorldId.xml";
-	public static final String WORLD_DATA = "Data/world/";
+	public static final String WORLD_MAPS = BASE_DIR + "Data/world/WorldId.xml";
+	public static final String WORLD_DATA = BASE_DIR + "Data/world/";
 	public static final String WORLD_DATA_PREFIX = "client_world_";
 	public static final String WORLD_MAPS_BINDINGS = "com.parser.input.aion.world_maps";
 	public static final String WORLD_DATA_BINDINGS = "com.parser.input.aion.world_data";
 	
-	// Skills
-	public static final String SKILLS = "Data/skills/client_skills.xml";
-	public static final String SKILL_TREE = "Data/skills/client_skill_learns.xml";
+	public static final String WAYPOINTS = BASE_DIR + "Data/world/waypoint.csv";
+	public static final String SOURCE_SPHERE = BASE_DIR + "Data/world/source_sphere.csv";
 	
+	// Skills
+	public static final String SKILLS = BASE_DIR + "Data/skills/client_skills.xml";
 	public static final String SKILLS_BINDINGS = "com.parser.input.aion.skills";
+	
+	public static final String SKILL_TREE = BASE_DIR + "Data/skills/client_skill_learns.xml";
 	public static final String SKILL_TREE_BINDINGS = "com.parser.input.aion.skill_learn";
 	
 	// Recipes
-	public static final String RECIPES = "Data/Items/client_combine_recipe.xml";
+	public static final String RECIPES = BASE_DIR + "Data/Items/client_combine_recipe.xml";
 	public static final String RECIPES_BINDINGS = "com.parser.input.aion.recipes";
 	
 	// (Dir) Items
-	public static final String ITEMS = "Data/Items/";
+	public static final String ITEMS = BASE_DIR + "Data/Items/";
 	public static final String ITEMS_PREFIX = "client_items_";
 	public static final String ITEMS_BINDINGS = "com.parser.input.aion.items";
 	
 	// Npcs
-	public static final String NPCS = "Data/Npcs/client_npcs.xml";
+	public static final String NPCS = BASE_DIR + "Data/Npcs/client_npcs.xml";
 	public static final String NPCS_BINDINGS = "com.parser.input.aion.npcs";
 	
 	// Animations
-	public static final String ANIMATIONS = "Data/Animations/custom_animation.xml";
+	public static final String ANIMATIONS = BASE_DIR + "Data/Animations/custom_animation.xml";
 	public static final String ANIMATIONS_BINDINGS = "com.parser.input.aion.animations";
 	
 	// Housing
-	public static final String HOUSING_OBJECTS = "Data/Housing/client_housing_object.xml";
-	public static final String HOUSING_PARTS = "Data/Housing/client_housing_custom_part.xml";
+	public static final String HOUSING_OBJECTS = BASE_DIR + "Data/Housing/client_housing_object.xml";
+	public static final String HOUSING_PARTS = BASE_DIR + "Data/Housing/client_housing_custom_part.xml";
 	public static final String HOUSING_BINDINGS = "com.parser.input.aion.housing";
 	
 	// Toypets
-	public static final String TOYPETS = "Data/func_pet/toypets.xml";
+	public static final String TOYPETS = BASE_DIR + "Data/func_pet/toypets.xml";
 	public static final String TOYPETS_BINDINGS = "com.parser.input.aion.toypets";
 	
 	// Mission0
-	public static final String MISSION0 = "Levels/";
+	public static final String MISSION0 = BASE_DIR + "Levels/";
 	public static final String MISSION0_BINDINGS = "com.parser.input.aion.mission";
 	public static final String MISSION0_PREFIX = "mission_";
+	
+	// Doc files
+	public static final String DOC_FILES = BASE_DIR + "Data/Dialogs/doc_item/";
 	
 	/** ##################################################### **/
 
@@ -134,7 +141,6 @@ public class AionReadingConfig {
 	public static final String SERVER_ZONE_BINDINGS = "com.parser.output.aion.zones";
 	
 	// doc_item
-	public static final String DOC_FILES = "doc_item";
 	public static final String DOC_FILES_BINDINGS = "com.parser.input.aion.docs";
 	
 	// housing lands

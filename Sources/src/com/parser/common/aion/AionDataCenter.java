@@ -22,7 +22,10 @@ import com.parser.input.aion.world_maps.Data;
 import com.parser.input.aion.world_data.NpcInfos;
 import com.parser.input.aion.world_data.NpcInfo;
 
-import com.parser.common.*;
+import com.parser.common.utils.JAXBHandler;
+import com.parser.common.utils.Logger;
+import com.parser.common.utils.Util;
+
 import com.parser.read.aion.animations.AionAnimationsParser;
 import com.parser.read.aion.housing.AionHousingObjectsParser;
 import com.parser.read.aion.housing.AionHousingPartsParser;
@@ -48,8 +51,8 @@ public class AionDataCenter {
 	public static List<ClientSkill> clientSkills = new ArrayList<ClientSkill>();
 	public static List<ClientItem> clientItems = new ArrayList<ClientItem>();
 	public static List<ClientSkillTree> clientSkillTree = new ArrayList<ClientSkillTree>();
-	public static Map<Integer, ClientNpc> clientNpcs = new HashMap<Integer, ClientNpc>();
 	
+	public static Map<Integer, ClientNpc> clientNpcs = new HashMap<Integer, ClientNpc>();
 	public static Map<Integer, List<NpcInfo>> worldNpcInfos = new HashMap<Integer, List<NpcInfo>>();
 	// Special Maps
 	public static Map<String, ClientString> dataDescStringMap = new HashMap<String, ClientString>(); // Client String <--> Real Text or NameID

@@ -10,7 +10,7 @@ import com.parser.read.aion.AionReadingConfig;
 public class AionRecipesParser extends AbstractFileParser<ClientRecipe> {
 
 	public AionRecipesParser() {
-		super(AionReadingConfig.VERSION, AionReadingConfig.RECIPES_BINDINGS, AionReadingConfig.RECIPES);
+		super(AionReadingConfig.RECIPES_BINDINGS, AionReadingConfig.RECIPES);
 	}
 
 	@Override

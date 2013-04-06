@@ -30,13 +30,15 @@ public class FileMarhshaller {
 	
 	private static void createDir(String dir) {
 		String finalDir = "";
+		File toCreate = null;
 		String[] paths = dir.split("/");
 		if (paths.length > 1) {
 			for (int i = 0; i <= paths.length - 2; i++) {
 				finalDir += paths[i] + "/";
-			}	
-		File toCreate = new File(finalDir);
-		toCreate.mkdir();
+				toCreate = new File(finalDir);
+				if (toCreate != null)
+					toCreate.mkdir();
+			}
 		}
 	}
 }

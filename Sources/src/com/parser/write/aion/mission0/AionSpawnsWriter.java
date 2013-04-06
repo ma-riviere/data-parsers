@@ -16,8 +16,10 @@ import com.parser.input.aion.mission.Entity;
 import com.parser.input.aion.npcs.ClientNpc;
 import com.parser.input.aion.world_data.NpcInfo;
 
-import com.parser.common.*;
-import com.parser.common.aion.*;
+import com.parser.common.math.MathUtil;
+import com.parser.common.utils.Util;
+
+import com.parser.common.aion.AionDataCenter;
 import com.parser.read.aion.AionReadingConfig;
 import com.parser.read.aion.mission0.AionSpawnsParser;
 import com.parser.write.*;
@@ -47,9 +49,9 @@ public class AionSpawnsWriter extends AbstractWriter {
 	int npcOverrideDataCount = 0;
 	int npcOverrideEIDCount = 0;
 	
-	int RANDOM_WALK_CAP = 20;
+	int RANDOM_WALK_CAP = 10;
 	int BASE_RESPAWN_TIME = 295;
-	double PRECISION = 1.0;
+	double PRECISION = 2.0;
 	double PRECISION_Z = 10.0;
 	
 	@Override
@@ -244,8 +246,10 @@ public class AionSpawnsWriter extends AbstractWriter {
 		//TODO: if npcOverrideData != null check movetype !!!
 		if (cSpawn.getIidleRange() > 0) {
 			if (cSpawn.getIidleRange() > RANDOM_WALK_CAP)
-				if (npcId != 0)
+				if (npcId != 0) {
 					System.out.println("[SPAWNS] Npc " + npcId + " has " + cSpawn.getIidleRange() + " iidle range !");
+					spot.setRandomWalk(RANDOM_WALK_CAP);
+				}
 			else
 				spot.setRandomWalk(cSpawn.getIidleRange());
 		}

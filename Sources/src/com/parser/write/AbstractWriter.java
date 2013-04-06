@@ -3,7 +3,8 @@ package com.parser.write;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.parser.common.*;
+import com.parser.common.utils.Logger;
+import com.parser.common.utils.Util;
 
 public abstract class AbstractWriter implements Writer {
 

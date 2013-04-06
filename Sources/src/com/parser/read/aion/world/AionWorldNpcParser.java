@@ -14,7 +14,7 @@ import com.parser.read.aion.AionReadingConfig;
 public class AionWorldNpcParser extends AbstractDirectoryParser<NpcInfos> {
 
 	public AionWorldNpcParser() {
-		super(AionReadingConfig.VERSION, AionReadingConfig.WORLD_DATA_BINDINGS, AionReadingConfig.WORLD_DATA, AionReadingConfig.WORLD_DATA_PREFIX);
+		super(AionReadingConfig.WORLD_DATA_BINDINGS, AionReadingConfig.WORLD_DATA, AionReadingConfig.WORLD_DATA_PREFIX);
 	}
 	
 	public List<NpcInfos> parseFile(String name) {
@@ -22,11 +22,11 @@ public class AionWorldNpcParser extends AbstractDirectoryParser<NpcInfos> {
 		
 		if (name.contains("@")) {
 			String[] names = name.split("@");
-			Path path = Paths.get("../../Data/" + version + "/client/" + directory + prefix + names[0] + extension);
+			Path path = Paths.get(directory + prefix + names[0] + extension);
 			try {toMarshall = path.toFile();} catch (UnsupportedOperationException uoe) {System.out.println("\n[MAIN][ERROR] Could not find file : " + names[0] + "/" + prefix + names[1] + extension);}
 		}
 		else {
-			Path path = Paths.get("../../Data/" + version + "/client/" + directory + prefix + name + extension);
+			Path path = Paths.get(directory + prefix + name + extension);
 			try {toMarshall = path.toFile();} catch (UnsupportedOperationException uoe) {System.out.println("\n[MAIN][ERROR] Could not find file : " + prefix + name + extension);}
 		}
 		

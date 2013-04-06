@@ -15,7 +15,7 @@ import com.parser.input.aion.skills.ClientSkill;
 import com.parser.input.aion.items.ClientItem;
 import com.parser.input.aion.skill_learn.ClientSkillTree;
 
-import com.parser.common.JAXBHandler;
+import com.parser.common.utils.JAXBHandler;
 import com.parser.common.aion.*;
 import com.parser.common.aion.enums.*;
 import com.parser.common.aion.enums.items.*;
