@@ -1,5 +1,6 @@
 package com.parser.write.aion.mission0;
 
+import com.google.common.base.Joiner;
 import com.google.common.base.Strings;
 import java.util.ArrayList;
 import java.util.List;
@@ -35,18 +36,21 @@ public class AionSpawnsWriter extends AbstractWriter {
 	SpawnMap riftsSpawnMap = new SpawnMap();
 	SpawnMap staticSpawnMap = new SpawnMap();
 	
-	List<NpcInfo> currentNpcInfos = new ArrayList<NpcInfo>();
-	
+	// Current map info
 	String mapName = "";
 	int mapId = 0;
+	
+	// Current Npc info
 	int npcId = 0;
+	List<NpcInfo> mapOverrideData = new ArrayList<NpcInfo>(); // Store WorldData override data for the current map
+	NpcInfo npcOverrideData = null; // Store WorldData override data for the current Npc
+	int npcOverrideDataCount = 0;
+	int npcOverrideEIDCount = 0;
 	
-	int count = 0;
-	
-	int RANDOM_WALK_CAP = 15;
+	int RANDOM_WALK_CAP = 20;
 	int BASE_RESPAWN_TIME = 295;
-	double PRECISION = 0.7;
-	double PRECISION_Z = 15.0;
+	double PRECISION = 1.0;
+	double PRECISION_Z = 10.0;
 	
 	@Override
 	public void parse() {
@@ -66,12 +70,16 @@ public class AionSpawnsWriter extends AbstractWriter {
 			Util.printSubSection("" + mapId);
 			
 			if (mapId != 0) {
-				initAllSpawns();
 				/// START OF CURRENT MAP ///
+				initAllSpawns();
+				mapOverrideData = new AionDataCenter().getInstance().getNpcInfoByMap(mapName);
+				
 				for (ClientSpawns clientSpawns : clientSpawnData.get(mappedName)) {
-					
 					for (ClientSpawn cSpawn : clientSpawns.getObject()) {
+						/** Loading current Npc data **/
+						npcOverrideData = getNpcOverrideData(cSpawn);
 						npcId = getSpawnNpcId(cSpawn);
+						/** Starting spawn analysis **/
 						switch (cSpawn.getType()) {
 							case "SP":
 								addNpcSpawn(cSpawn);
@@ -81,16 +89,19 @@ public class AionSpawnsWriter extends AbstractWriter {
 									// addGatherableSpawn(cSpawn);
 									// break;
 						}
-						
+						npcOverrideData = null;
 					}
 				}
 				orderAllSpawns();
 				addAllSpawns();
+				log.reset();
+				mapOverrideData = null;
+				System.out.println("[SPAWNS] " + npcOverrideDataCount + " Override Data were matched");
+				npcOverrideDataCount = 0;
+				System.out.println("[SPAWNS] " + npcOverrideEIDCount + " Override Entity ID were matched");
+				npcOverrideEIDCount = 0;
+				/// END OF CURRENT MAP ///
 			}
-			log.reset();
-			System.out.println("[SPAWNS] " + count + " Npc IDs were matched fron WorldData");
-			count = 0;
-			/// END OF CURRENT MAP ///
 		}
 		
 	}
@@ -105,31 +116,29 @@ public class AionSpawnsWriter extends AbstractWriter {
 	private int getNpcId(String s) {return (s != null) ? new AionDataCenter().getInstance().getNpcIdByName(s) : 0;}
 	private ClientNpc getNpc(int id) {return (id != 0) ? new AionDataCenter().getInstance().getClientNpcs().get(id) : null;}
 	
-	private int getSpawnNpcId(ClientSpawn cSpawn) {
-		int npcId = 0;
-		if (!Strings.isNullOrEmpty(cSpawn.getNpc()))
-			npcId = getNpcId(cSpawn.getNpc());
-		
-		currentNpcInfos = new AionDataCenter().getInstance().getNpcInfoByMap(mapName);
-		if (npcId == 0 && !currentNpcInfos.isEmpty())
-			npcId = getNpcIdByWorldData(cSpawn);
-		
-		return npcId;
-	}
-	
-	private int getNpcIdByWorldData(ClientSpawn cSpawn) {
-		int npcId = 0;
-		for (NpcInfo npc : currentNpcInfos) {
+	private NpcInfo getNpcOverrideData(ClientSpawn cSpawn) {
+		for (NpcInfo npc : mapOverrideData) {
 			float x = npc.getPos().getX();
 			float y = npc.getPos().getY();
 			float z = npc.getPos().getZ();
 			if (cSpawn.getPos() != null) {
 				if (MathUtil.isCloseEnough(cSpawn.getPos(), x, y, z, PRECISION, PRECISION_Z)) {
-					npcId = npc.getNameid();
-					count++;
+					npcOverrideDataCount++;
+					return npc;
 				}
 			}
 		}
+		return null;
+	}
+	
+	private int getSpawnNpcId(ClientSpawn cSpawn) {
+		int npcId = 0;
+		if (!Strings.isNullOrEmpty(cSpawn.getNpc()))
+			npcId = getNpcId(cSpawn.getNpc());
+		
+		if (npcId == 0 && npcOverrideData != null)
+			npcId = npcOverrideData.getNameid();
+		
 		return npcId;
 	}
 	
@@ -157,10 +166,19 @@ public class AionSpawnsWriter extends AbstractWriter {
 	
 	private Spawn computeSpawn(ClientSpawn cSpawn) {
 		Spawn s = new Spawn();
-		//TODO: hasOverrideData to know if coords fixed by world data, and take those coords if yes
+		
 		s.setNpcId(npcId);
 		s.setRespawnTime(getRespawnTime(npcId));
 		
+		if (npcOverrideData != null) {
+			String newPos = cSpawn.getPos();
+			String[] xyz = new String[3];
+			xyz[0] = String.valueOf(npcOverrideData.getPos().getX());
+			xyz[1] = String.valueOf(npcOverrideData.getPos().getY());
+			xyz[2] = String.valueOf(npcOverrideData.getPos().getZ());
+			newPos = Joiner.on(",").join(xyz);
+			cSpawn.setPos(newPos);
+		}
 		if (!Strings.isNullOrEmpty(cSpawn.getPos()))
 			setSpot(s, cSpawn, mapId);
 		
@@ -184,18 +202,18 @@ public class AionSpawnsWriter extends AbstractWriter {
 		else {
 			spot.setX(MathUtil.toFloat3(xyz[0]));
 			spot.setY(MathUtil.toFloat3(xyz[1]));
-			if (MathUtil.getDistance(0, 0, spot.getX(), spot.getY()) > 0.3) {
+
 				spot.setZ(MathUtil.toFloat3(xyz[2]));
-				// spot.setZ(Geodata.getZ(mapId, spot.getX(), spot.getY())); // TODO
+				// spot.setZ(Geodata.getZ(mapId, spot.getX(), spot.getY()));
 				int h = MathUtil.degreeToHeading(cSpawn.getDir());
 				if (h != 0) {spot.setH(h);}
-				if (cSpawn.getType().equalsIgnoreCase("SP") && !canMove(npcId)) //TODO: Move to Npc.canMove()
+				if (cSpawn.getType().equalsIgnoreCase("SP") && !canMove(npcId)) //TODO: other cSpawn type can be overriden ?
 					setStaticId(spot);
 				if (spot.getStaticId() == null)
 					setWalkingInfo(spot, cSpawn);
 				
 				s.getSpot().add(spot);
-			}
+			
 		}
 	}
 	
@@ -203,7 +221,7 @@ public class AionSpawnsWriter extends AbstractWriter {
 	private boolean canMove(int npcId) {
 		boolean canMove = true;
 		ClientNpc npc = getNpc(npcId);
-		if (npc != null && npc.getMoveSpeedNormalWalk() == 0)
+		if (npc != null && ((int) npc.getMoveSpeedNormalWalk()) == 0)
 			canMove = false;
 		//TODO: Add checks on NpcType (Portal, ...)
 		return canMove;
@@ -213,17 +231,21 @@ public class AionSpawnsWriter extends AbstractWriter {
 		for (String mappedName : clientSpawnData.keySet()) {
 			for (ClientSpawns clientSpawns : clientSpawnData.get(mappedName)) {
 				for (Entity ent : clientSpawns.getEntity()) {
-					if (MathUtil.isCloseEnough(ent.getPos(), spot.getX(), spot.getY(), spot.getZ(), PRECISION, PRECISION_Z))
+					if (MathUtil.isCloseEnough(ent.getPos(), spot.getX(), spot.getY(), spot.getZ(), PRECISION, PRECISION_Z)) {
 						spot.setStaticId((int) ent.getEntityId());
+						npcOverrideEIDCount++;
+					}
 				}
 			}
 		}
 	}
 	
 	private void setWalkingInfo(Spot spot, ClientSpawn cSpawn) {
+		//TODO: if npcOverrideData != null check movetype !!!
 		if (cSpawn.getIidleRange() > 0) {
 			if (cSpawn.getIidleRange() > RANDOM_WALK_CAP)
-				System.out.println("[SPAWNS] Npc " + npcId + " has " + cSpawn.getIidleRange() + " random_walk range !");
+				if (npcId != 0)
+					System.out.println("[SPAWNS] Npc " + npcId + " has " + cSpawn.getIidleRange() + " iidle range !");
 			else
 				spot.setRandomWalk(cSpawn.getIidleRange());
 		}
@@ -233,7 +255,8 @@ public class AionSpawnsWriter extends AbstractWriter {
 	
 	public boolean isValidSpawn(Spawn s) {
 		if (s.getNpcId() >= 200000 && s.getNpcId() <= 900000) {
-			return true;
+			if (!s.getSpot().isEmpty())
+				return true;
 		}
 		return false;
 	}
