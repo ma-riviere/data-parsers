@@ -10,6 +10,8 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 
+import com.geo.aion.GeoService;
+
 import com.parser.input.aion.mission.ClientSpawns;
 import com.parser.input.aion.mission.ClientSpawn;
 import com.parser.input.aion.mission.Entity;
@@ -57,6 +59,8 @@ public class AionSpawnsWriter extends AbstractWriter {
 	int BASE_RESPAWN_TIME = 295;
 	double PRECISION = 1.5;
 	double PRECISION_Z = 7.0;
+	
+	boolean USE_GEO = true; //TODO: Move to properties
 	
 	// Walkers info
 	List<SourceSphere> ssList = new ArrayList<SourceSphere>();
@@ -222,17 +226,19 @@ public class AionSpawnsWriter extends AbstractWriter {
 		else {
 			spot.setX(MathUtil.toFloat3(xyz[0]));
 			spot.setY(MathUtil.toFloat3(xyz[1]));
-
+			if (USE_GEO)
+				spot.setZ(GeoService.getInstance().getZ(mapId, spot.getX(), spot.getY()));
+			else
 				spot.setZ(MathUtil.toFloat3(xyz[2]));
-				// spot.setZ(Geodata.getZ(mapId, spot.getX(), spot.getY()));
-				int h = MathUtil.degreeToHeading(cSpawn.getDir());
-				if (h != 0) {spot.setH(h);}
-				if (cSpawn.getType().equalsIgnoreCase("SP") && !canMove(npcId)) //TODO: other cSpawn type can be overriden ?
-					setStaticId(spot);
-				if (spot.getStaticId() == null)
-					setWalkingInfo(spot, cSpawn);
-				
-				s.getSpot().add(spot);
+
+			int h = MathUtil.degreeToHeading(cSpawn.getDir());
+			if (h != 0) {spot.setH(h);}
+			if (cSpawn.getType().equalsIgnoreCase("SP") && !canMove(npcId)) //TODO: other cSpawn type can be overriden ?
+				setStaticId(spot);
+			if (spot.getStaticId() == null)
+				setWalkingInfo(spot, cSpawn);
+			
+			s.getSpot().add(spot);
 			
 		}
 	}
