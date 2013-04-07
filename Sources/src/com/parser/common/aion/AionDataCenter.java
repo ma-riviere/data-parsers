@@ -18,7 +18,7 @@ import com.parser.input.aion.skills.ClientSkill;
 import com.parser.input.aion.skill_learn.ClientSkillTree;
 import com.parser.input.aion.strings.ClientString;
 import com.parser.input.aion.toypets.ClientToypet;
-import com.parser.input.aion.world_maps.Data;
+import com.parser.input.aion.world_maps.WorldMap;
 import com.parser.input.aion.world_data.NpcInfos;
 import com.parser.input.aion.world_data.NpcInfo;
 
@@ -54,6 +54,7 @@ public class AionDataCenter {
 	
 	public static Map<Integer, ClientNpc> clientNpcs = new HashMap<Integer, ClientNpc>();
 	public static Map<Integer, List<NpcInfo>> worldNpcInfos = new HashMap<Integer, List<NpcInfo>>();
+	public static Map<String, WorldMap> worldMaps = new HashMap<String, WorldMap>();
 	// Special Maps
 	public static Map<String, ClientString> dataDescStringMap = new HashMap<String, ClientString>(); // Client String <--> Real Text or NameID
 	public static Map<String, ClientString> l10nDescStringMap = new HashMap<String, ClientString>(); // Client String <--> Real Text or NameID
@@ -62,7 +63,7 @@ public class AionDataCenter {
 	public static Map<String, Integer> skillNameIdMap = new HashMap<String, Integer>(); // Skills Name (String) <--> id (int)
 	public static Map<String, Integer> npcNameIdMap = new HashMap<String, Integer>(); // Npc Name (String) <--> id (int)
 	public static Map<String, Integer> recipeNameIdMap = new HashMap<String, Integer>(); // Recipes Name (String) <--> id (int)
-	public static Map<String, Data> descWorldIdMap = new HashMap<String, Data>(); // Client World Name (String) <--> World ID (Int)
+	
 	public static Map<String, Integer> animationNameIdMap = new HashMap<String, Integer>(); // Client Animation Name (String) <--> Animation ID (Int)
 	private static Map<String, Integer> houseObjectNameIdMap = new HashMap<String, Integer>(); // House Object Name (String) <--> ID (int)
 	private static Map<String, Integer> houseDecoNameIdMap = new HashMap<String, Integer>(); // House Object Name (String) <--> ID (int)
@@ -102,12 +103,46 @@ public class AionDataCenter {
 		return clientNpcs;
 	}
 	
+	//// Levels ////
+	
+	public Map<Integer, List<NpcInfo>> getLevelData() {
+		int mapId = 0;
+		if (worldNpcInfos.keySet().isEmpty()) {
+			Map<String, List<NpcInfos>> temp = new AionWorldNpcParser().parse();
+			for (String mapName : temp.keySet()) {
+				mapId = getWorldId(Util.getFileName(mapName));
+				List<NpcInfo> npcInfoList = new ArrayList<NpcInfo>();
+				for (NpcInfos npcs : temp.get(mapName)) {
+					npcInfoList.addAll(npcs.getNpcInfo()); 
+				}
+				worldNpcInfos.put(mapId, npcInfoList);
+				npcInfoList.clear();
+			}
+		}
+		return worldNpcInfos;
+	}
+	
+	public List<NpcInfo> getLevelDataByMap(String name) {
+		List<NpcInfo> data = new ArrayList<NpcInfo>();
+		if (worldNpcInfos.containsKey(getWorldId(Util.getDirName(name)))) {
+			data = worldNpcInfos.get(getWorldId(Util.getDirName(name)));
+		}
+		else {
+			for (NpcInfos infos : new AionWorldNpcParser().parseFile(name)) {
+				data.addAll(infos.getNpcInfo());
+			}
+		}
+		return data;
+	}
+	
+	//// World ////
+	
 	public Map<Integer, List<NpcInfo>> getWorldNpcInfos() {
 		int mapId = 0;
 		if (worldNpcInfos.keySet().isEmpty()) {
 			Map<String, List<NpcInfos>> temp = new AionWorldNpcParser().parse();
 			for (String mapName : temp.keySet()) {
-				mapId = getWorldIdByName(Util.getFileName(mapName));
+				mapId = getWorldId(Util.getFileName(mapName));
 				List<NpcInfo> npcInfoList = new ArrayList<NpcInfo>();
 				for (NpcInfos npcs : temp.get(mapName)) {
 					npcInfoList.addAll(npcs.getNpcInfo()); 
@@ -121,8 +156,8 @@ public class AionDataCenter {
 	
 	public List<NpcInfo> getNpcInfoByMap(String name) {
 		List<NpcInfo> data = new ArrayList<NpcInfo>();
-		if (worldNpcInfos.containsKey(getWorldIdByName(Util.getDirName(name)))) {
-			data = worldNpcInfos.get(getWorldIdByName(Util.getDirName(name)));
+		if (worldNpcInfos.containsKey(getWorldId(Util.getDirName(name)))) {
+			data = worldNpcInfos.get(getWorldId(Util.getDirName(name)));
 		}
 		else {
 			for (NpcInfos infos : new AionWorldNpcParser().parseFile(name)) {
@@ -131,6 +166,37 @@ public class AionDataCenter {
 		}
 		return data;
 	}
+	
+	public Map<String, WorldMap> getWorldMaps() {
+		Map<String, WorldMap> maps = new HashMap<String, WorldMap>();
+		if (worldMaps.keySet().isEmpty()) {
+			List<WorldMap> mapList = new AionWorldMapsParser().parse();
+			for (WorldMap map : mapList)
+				maps.put(map.getValue().toUpperCase(), map);
+		}
+		return maps;
+	}
+	
+	public WorldMap getWorld(Object value) {
+		
+		if (value instanceof String) {
+			if (getWorldMaps().keySet().contains(value.toString().toUpperCase()))
+				return getWorldMaps().get(value.toString().toUpperCase());
+			else
+				log.unique("[WORLD] No Map named : ", value.toString().toUpperCase(), true);
+		}
+		else if (value instanceof Integer) {
+			for (WorldMap map : getWorldMaps().values()) {
+				if (map.getId().equals(Integer.parseInt(value.toString())))
+					return map;
+				else
+					log.unique("[WORLD] No Map with ID : ", Integer.parseInt(value.toString()), false);
+			}
+		}
+		return null;
+	}
+	
+	public int getWorldId(String s) {return (getWorld(s) != null) ? getWorld(s).getId() : 0;}
 	
 	
 	/*******************
@@ -220,16 +286,6 @@ public class AionDataCenter {
 			return recipeNameIdMap.get(name.toUpperCase());
 		else
 			log.unique("[RECIPES] No Recipe ID matching name : ", name.toUpperCase(), true);
-		return 0;
-	}
-	
-	public int getWorldIdByName(String name) {
-		if (descWorldIdMap.isEmpty()) {loadDescWorldIdMap();}
-		
-		if (descWorldIdMap.containsKey(name.toUpperCase()))
-			return descWorldIdMap.get(name.toUpperCase()).getId();
-		else
-			log.unique("[WORLD] No MapID for client_map : ", name.toUpperCase(), true);
 		return 0;
 	}
 	
@@ -345,13 +401,7 @@ public class AionDataCenter {
 		for (ClientRecipe cr : clientRecipes)
 			recipeNameIdMap.put(JAXBHandler.getValue(cr, "name").toString().toUpperCase(), (int) JAXBHandler.getValue(cr, "id"));
 	}
-	
-	public void loadDescWorldIdMap() {
-		List<Data> clientWorldList = new AionWorldMapsParser().parse();
-		for (Data wd : clientWorldList)
-			descWorldIdMap.put(wd.getValue().toUpperCase(), wd);
-	}
-	
+
 	// Loading Animations Name <--> ID from client XML
 	public void loadAnimationNameIdMap() {
 		List<ClientAnimation> clientAnimations = new AionAnimationsParser().parse();

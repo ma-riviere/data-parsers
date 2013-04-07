@@ -257,7 +257,7 @@ public class AionItemsWriter extends AbstractWriter {
 				boolean hasLimits = false;
 				Uselimits limit = new Uselimits();
 				if (ci.getAreaToUse() != null) {limit.setUsearea(ci.getAreaToUse().toUpperCase()); hasLimits = true;} // Use area
-				if (ci.getOwnershipWorld() != null) {limit.setOwnershipWorld(getWorld(ci.getOwnershipWorld())); hasLimits = true;} // Use world
+				if (ci.getOwnershipWorld() != null) {limit.setOwnershipWorld(getWorldId(ci.getOwnershipWorld())); hasLimits = true;} // Use world
 				if ((int) ci.getUsableRankMin() > 0) {limit.setRankMin((int) ci.getUsableRankMin()); hasLimits = true;} // Use min rank
 				if ((int) ci.getUsableRankMax() > 0) {limit.setRankMax((int) ci.getUsableRankMax()); hasLimits = true;} // Use max rank
 				if (ci.getGenderPermitted() != null && !ci.getGenderPermitted().equalsIgnoreCase("all")) {limit.setGender(ci.getGenderPermitted().toUpperCase()); hasLimits = true;} // Use gendre
@@ -350,7 +350,7 @@ public class AionItemsWriter extends AbstractWriter {
 								if (undeline != -1)
 									suffix = suffix.substring(0, undeline);
 								
-								int worldId = getWorld(suffix);
+								int worldId = getWorldId(suffix);
 								if (worldId != 0)
 									sa.setWorldId(worldId); 																																																	//TODO : Use !!!
 							}
@@ -584,7 +584,7 @@ public class AionItemsWriter extends AbstractWriter {
 						List<Integer> mapIdList = new ArrayList<Integer>();
 						String[] coolt_sync_ids = ci.getResetInstanceCooltSyncId().trim().split(",");
 						for (int i = 0; i < coolt_sync_ids.length; i++)
-							mapIdList.add(getWorld(cooltimeSyncMap.get(Integer.parseInt(coolt_sync_ids[i].trim()))));																											// TODO : Use
+							mapIdList.add(getWorldId(cooltimeSyncMap.get(Integer.parseInt(coolt_sync_ids[i].trim()))));																											// TODO : Use
 						if (!mapIdList.isEmpty() && mapIdList != null)
 							itc.getMapid().addAll(mapIdList);
 						actionList.setInstancetimeclear(itc);
@@ -634,7 +634,7 @@ public class AionItemsWriter extends AbstractWriter {
 	private int getItemId(String s) {return (s != null) ? new AionDataCenter().getInstance().getItemIdByName(s) : 0;}
 	private int getSkillId(String s) {return (s != null) ? new AionDataCenter().getInstance().getSkillIdByName(s) : 0;}
 	private int getNpcId(String s) {return (s != null) ? new AionDataCenter().getInstance().getNpcIdByName(s) : 0;}
-	private int getWorld(String s) {return (s != null) ? new AionDataCenter().getInstance().getWorldIdByName(s) : 0;}
+	private int getWorldId(String s) {return (new AionDataCenter().getInstance().getWorld(s) != null) ? new AionDataCenter().getInstance().getWorld(s).getId() : 0;}
 	private int getAnimationId(String s) {return (s != null) ? new AionDataCenter().getInstance().getAnimationIdByName(s) : 0;}
 	
 	// TODO : getGenderPermitted getCanPolish getCannotChangeskin (to property)

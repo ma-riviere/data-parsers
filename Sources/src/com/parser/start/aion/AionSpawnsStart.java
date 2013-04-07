@@ -1,6 +1,6 @@
 package com.parser.start.aion;
 
-import com.parser.write.aion.mission0.AionSpawnsWriter;
+import com.parser.write.aion.levels.AionSpawnsWriter;
 
 public class AionSpawnsStart {
 

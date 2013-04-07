@@ -15,10 +15,11 @@ import javax.xml.bind.Unmarshaller;
 
 import com.parser.common.utils.Util;
 
-public abstract class AbstractDirectoryParser<T> implements ClientDirectoryParser<T> {
+public abstract class AbstractDirectoryParser<R, E> implements ClientDirectoryParser<R, E> {
 
-	Map<String, List<T>> filesData = new HashMap<String, List<T>>();
 	Map<String, File> files = new HashMap<String, File>();
+	Map<String, R> rootDataMap = new HashMap<String, R>();
+	Map<String, List<E>> dataMap = new HashMap<String, List<E>>();
 	
 	protected String bindings;
 	protected String directory;
@@ -37,41 +38,57 @@ public abstract class AbstractDirectoryParser<T> implements ClientDirectoryParse
 	}
 	
 	@Override
-	public List<T> parseFile(File toMarshall) {
+	public R parseFileRoot(File toMarshall) {
 		
-		List<T> dataList = new ArrayList<T>();
+		R rootData;
 		
 		try {
 			JAXBContext jc = JAXBContext.newInstance(bindings);
 			Unmarshaller unmarshaller = jc.createUnmarshaller();
 			unmarshaller.setEventHandler(new XmlValidationHandler());
 			Object collection = unmarshaller.unmarshal(toMarshall);
-			dataList = castFrom(collection);
+			rootData = castRoot(collection);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
-		return dataList;
+		return rootData;
+	}
+	
+	@Override
+	public List<E> parseFile(File toMarshall) {
+		
+		List<E> data;
+		
+		try {
+			JAXBContext jc = JAXBContext.newInstance(bindings);
+			Unmarshaller unmarshaller = jc.createUnmarshaller();
+			unmarshaller.setEventHandler(new XmlValidationHandler());
+			Object collection = unmarshaller.unmarshal(toMarshall);
+			data = cast(collection);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return data;
 	}
 
 	@Override
-	public Map<String, List<T>> parse() {
+	public Map<String, R> parseRoot() {
 
 		Path path = Paths.get(directory);
-		if (!Files.isDirectory(path)) {
-			throw new IllegalArgumentException("\n[MAIN] [ERROR] " + path + " is not a Directory !");
-		}
+		if (!Files.isDirectory(path)) {throw new IllegalArgumentException("\n[MAIN] [ERROR] " + path + " is not a Directory !");}
 		
 		files.clear();
 		
 		try {addTree(path, files);} catch (IOException io) {System.out.println(io);}
 		System.out.println("\n[MAIN] [INFO] Parsing directory " + directory + " with " + files.keySet().size() + " files !");
 		
-		filesData.clear();
+		rootDataMap.clear();
 		Util.printProgressBarHeader(files.keySet().size());
 		
 		for (String dirName : files.keySet()) {
-			List<T> dataList;
+			R rootData;
 			File f = files.get(dirName);
 			try {
 				JAXBContext jc = JAXBContext.newInstance(bindings);
@@ -79,8 +96,8 @@ public abstract class AbstractDirectoryParser<T> implements ClientDirectoryParse
 				unmarshaller.setEventHandler(new XmlValidationHandler());
 
 				Object collection = unmarshaller.unmarshal(f);
-				dataList = castFrom(collection);
-				filesData.put(dirName, dataList);
+				rootData = castRoot(collection);
+				rootDataMap.put(dirName, rootData);
 				Util.printCurrentProgress();
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -88,7 +105,42 @@ public abstract class AbstractDirectoryParser<T> implements ClientDirectoryParse
 		}
 		Util.printEndProgress();
 
-		return filesData;
+		return rootDataMap;
+	}
+	
+	@Override
+	public Map<String, List<E>> parse() {
+
+		Path path = Paths.get(directory);
+		if (!Files.isDirectory(path)) {throw new IllegalArgumentException("\n[MAIN] [ERROR] " + path + " is not a Directory !");}
+		
+		files.clear();
+		
+		try {addTree(path, files);} catch (IOException io) {System.out.println(io);}
+		System.out.println("\n[MAIN] [INFO] Parsing directory " + directory + " with " + files.keySet().size() + " files !");
+		
+		dataMap.clear();
+		Util.printProgressBarHeader(files.keySet().size());
+		
+		for (String dirName : files.keySet()) {
+			List<E> data;
+			File f = files.get(dirName);
+			try {
+				JAXBContext jc = JAXBContext.newInstance(bindings);
+				Unmarshaller unmarshaller = jc.createUnmarshaller();
+				unmarshaller.setEventHandler(new XmlValidationHandler());
+
+				Object collection = unmarshaller.unmarshal(f);
+				data = cast(collection);
+				dataMap.put(dirName, data);
+				Util.printCurrentProgress();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		Util.printEndProgress();
+
+		return dataMap;
 	}
 	
 	protected void addTree(Path directory, Map<String, File> files) throws IOException {
@@ -106,7 +158,12 @@ public abstract class AbstractDirectoryParser<T> implements ClientDirectoryParse
 		}
 	}
 
-	protected abstract List<T> castFrom(Object topNode);
+	@Override
+	public R castRoot(Object topNode) {
+		return ((R)topNode);
+	}
+	
+	protected abstract List<E> cast(Object topNode);
 
 	protected String mapFileName(String fileName) {
 		return fileName.replaceAll(prefix, "").replaceAll(extension, "");

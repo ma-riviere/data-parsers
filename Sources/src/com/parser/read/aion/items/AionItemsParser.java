@@ -7,7 +7,7 @@ import com.parser.input.aion.items.ClientItems;
 import com.parser.read.AbstractDirectoryParser;
 import com.parser.read.aion.AionReadingConfig;
 
-public class AionItemsParser extends AbstractDirectoryParser<ClientItem> {
+public class AionItemsParser extends AbstractDirectoryParser<ClientItems, ClientItem> {
 
 	public AionItemsParser() {
 		super(AionReadingConfig.ITEMS_BINDINGS, AionReadingConfig.ITEMS, AionReadingConfig.ITEMS_PREFIX);
@@ -18,7 +18,7 @@ public class AionItemsParser extends AbstractDirectoryParser<ClientItem> {
 	}
 
 	@Override
-	protected List<ClientItem> castFrom(Object topNode) {
+	protected List<ClientItem> cast(Object topNode) {
 		return ((ClientItems) topNode).getClientItem();
 	}
 }

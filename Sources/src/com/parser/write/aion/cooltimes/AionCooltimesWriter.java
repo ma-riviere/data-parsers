@@ -32,7 +32,7 @@ public class AionCooltimesWriter extends AbstractWriter {
 	public void transform() {
 		for (ClientInstanceCooltime cic : clientInstanceCooltimeList) {
 			InstanceCooltime ict = new InstanceCooltime();
-			int world_id = new AionDataCenter().getInstance().getWorldIdByName(cic.getName());
+			int world_id = getWorldId(cic.getName());
 			
 			if (world_id != 0) {
 				ict.setRace(adjustRace(cic.getRace()));
@@ -57,6 +57,8 @@ public class AionCooltimesWriter extends AbstractWriter {
 		FileMarhshaller.marshallFile(orders);
 		System.out.println("[COOLTIMES] Cooltimes count: " + templateList.size());
 	}
+	
+	private int getWorldId(String s) {return (new AionDataCenter().getInstance().getWorld(s) != null) ? new AionDataCenter().getInstance().getWorld(s).getId() : 0;}
 	
 	private int getMatchingCIC2Value(int id) {
 		for (ClientInstanceCooltime2 cic2 : clientInstanceCooltimeList2) {
