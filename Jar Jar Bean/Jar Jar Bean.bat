@@ -58,6 +58,7 @@ ECHO = 7 : Skills       ===    8 : Skill Learn         ===
 ECHO = 9 : Npcs         ===   10 : Animations          ===
 ECHO = 11 : Housing     ===   12 : Mission0            ===
 ECHO = 13 : World Data  ===   14 : Walkers              ===
+ECHO = 15 : Level Data    ===                          ===
 ECHO.#####################################################
 ECHO.
 set JAR =
@@ -84,6 +85,7 @@ SET HOUSING=%CLIENT%/Data/Housing/client_housing*.xml
 SET TOYPETS=%CLIENT%/Data/func_pet/toypet*.xml
 REM SET QUEST_DIALOGS=%CLIENT%/L10N/ENU/data/dialogs/quest*.xml
 SET MISSION0=%CLIENT%/Levels/*
+SET LEVEL_DATA=%CLIENT%/Levels/*.*leveldata.xml
 
 FOR %%A IN (a b c d e f g h) DO IF %JAR%==%%A GOTO CLIENT_CLIENT
 FOR %%A IN (A B C D E F G H) DO IF %JAR%==%%A GOTO CLIENT_PARSER
@@ -124,6 +126,7 @@ IF "%JAR%"=="11" GOTO HOUSING
 IF "%JAR%"=="12" GOTO MISSION0
 IF "%JAR%"=="13" GOTO WORLD_DATA
 IF "%JAR%"=="14" GOTO WALKERS
+IF "%JAR%"=="15" GOTO LEVEL_DATA
 
 REM ## Tests
 IF "%JAR%"=="90" GOTO TEST_SOURCE_SPHERE
@@ -230,6 +233,13 @@ set NAME=mission
 set INPUT_XML=%MISSION0%
 set OUTPUT_XML=%SERVER%/spawns/*
 GOTO CHECKPATHS_XML
+
+:LEVEL_DATA
+set NAME=level_data
+set SKIP=output
+set INPUT_XML=%LEVEL_DATA%
+IF NOT EXIST %INPUT_XML% GOTO CLIENT_PATH_ERROR
+GOTO XSD_TYPE
 
 :ANIMATIONS
 set NAME=animations REM ## Move to Input only parse
