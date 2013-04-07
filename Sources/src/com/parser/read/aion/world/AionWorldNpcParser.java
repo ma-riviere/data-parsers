@@ -11,7 +11,7 @@ import com.parser.input.aion.world_data.NpcInfos;
 import com.parser.read.AbstractDirectoryParser;
 import com.parser.read.aion.AionReadingConfig;
 
-public class AionWorldNpcParser extends AbstractDirectoryParser<NpcInfos> {
+public class AionWorldNpcParser extends AbstractDirectoryParser<Clientzones, NpcInfos> {
 
 	public AionWorldNpcParser() {
 		super(AionReadingConfig.WORLD_DATA_BINDINGS, AionReadingConfig.WORLD_DATA, AionReadingConfig.WORLD_DATA_PREFIX);
@@ -37,7 +37,7 @@ public class AionWorldNpcParser extends AbstractDirectoryParser<NpcInfos> {
 	}
 
 	@Override
-	protected List<NpcInfos> castFrom(Object topNode) {
+	protected List<NpcInfos> cast(Object topNode) {
 		List<NpcInfos> list = new ArrayList<NpcInfos>();
 		list.add(((Clientzones) topNode).getNpcInfos());
 		return list;

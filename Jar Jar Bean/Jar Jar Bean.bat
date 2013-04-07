@@ -23,21 +23,20 @@ ECHO.
 set CHOICE=
 set /P CHOICE=[VERSION] Enter your choice : %=%
 
-IF "%CHOICE%"=="1" (
-SET VERSION=aion35
-SET PATH=aion
-)
-IF "%CHOICE%"=="2" (
-SET VERSION=aion40
-SET PATH=aion
-)
+IF "%CHOICE%"=="1" SET VERSION=aion35
+IF "%CHOICE%"=="2" SET VERSION=aion40
+
+FOR %%A IN (1 2) DO IF %CHOICE%==%%A SET PATH=aion
 
 REM ## Setting Client Destination Folder
 set CLIENT=..\Data\%VERSION%\client
 set SERVER=..\Data\%VERSION%\server
 set MAPPINGS=..\Data\Mappings
+set TESTS=..\Data\Tests
 IF NOT EXIST %CLIENT% GOTO CLIENT_PATH_ERROR
 IF NOT EXIST %SERVER% GOTO CLIENT_PATH_ERROR
+IF NOT EXIST %MAPPINGS% GOTO CLIENT_PATH_ERROR
+IF NOT EXIST %TESTS% GOTO CLIENT_PATH_ERROR
 
 ECHO.
 ECHO #####################################################
@@ -88,7 +87,7 @@ SET MISSION0=%CLIENT%/Levels/*
 
 FOR %%A IN (a b c d e f g h) DO IF %JAR%==%%A GOTO CLIENT_CLIENT
 FOR %%A IN (A B C D E F G H) DO IF %JAR%==%%A GOTO CLIENT_PARSER
-FOR %%A IN (1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25) DO IF %JAR%==%%A GOTO CLIENT_SERVER
+FOR %%A IN (1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 90 91 92 93 94 95 96 97 98 99) DO IF %JAR%==%%A GOTO CLIENT_SERVER
 
 :CLIENT_CLIENT
 ECHO.
@@ -125,6 +124,9 @@ IF "%JAR%"=="11" GOTO HOUSING
 IF "%JAR%"=="12" GOTO MISSION0
 IF "%JAR%"=="13" GOTO WORLD_DATA
 IF "%JAR%"=="14" GOTO WALKERS
+
+REM ## Tests
+IF "%JAR%"=="90" GOTO TEST_SOURCE_SPHERE
 
 :CLIENT_ITEMS
 set XMS=1024
@@ -245,6 +247,14 @@ GOTO XSD_TYPE
 
 REM ## END
 
+:TEST_SOURCE_SPHERE
+set NAME=source_sphere
+set SKIP=input
+set DIR=parser
+set OUTPUT_XML=%TESTS%/source_sphere.xml
+IF NOT EXIST %OUTPUT_XML% GOTO CLIENT_PATH_ERROR
+GOTO XSD_TYPE
+
 :CHECKPATHS_XML
 IF NOT EXIST %INPUT_XML% GOTO QUIT_ABNORMAL
 IF NOT EXIST %OUTPUT_XML% GOTO QUIT_ABNORMAL
@@ -294,7 +304,7 @@ IF "%SKIP%"=="output" GOTO QUIT
 
 set CURRENT=output
 SET PREFIX=o_
-SET DIR=server
+IF "%DIR%"=="client" SET DIR=server
 SET XML=%OUTPUT_XML%
 FOR %%A IN (0 1) DO IF %XSD_TYPE%==%%A GOTO INIT_XSD
 
@@ -309,7 +319,7 @@ echo Generating %CURRENT% XSD file
 echo ==============================
 echo.
 
-java -Xms%XMS%m -Xmx%XMX%m -classpath "%cp%" org.apache.xmlbeans.impl.inst2xsd.Inst2Xsd %* -design ss -enumerations %ENUM% -outDir xsd\%VERSION%\%DIR%\ -outPrefix %NAME% -validate %XML%
+"%JAVA_HOME%\bin\java.exe" -Xms%XMS%m -Xmx%XMX%m -classpath "%cp%" org.apache.xmlbeans.impl.inst2xsd.Inst2Xsd %* -design ss -enumerations %ENUM% -outDir xsd\%VERSION%\%DIR%\ -outPrefix %NAME% -validate %XML%
 GOTO INIT_XSD
 
 REM ## Locating XSD, preparing JAR generation
@@ -332,11 +342,11 @@ IF EXIST %BINDING% SET PARAM=-b %BINDING%
 
 IF "%DIR%"=="parser" SET PREFIX=
 
-java -jar libs\jaxb-xjc.jar -extension %PARAM% -p com.parser.%CURRENT%.%PATH%.%NAME% %XSD%
+"%JAVA_HOME%\bin\java.exe" -jar libs\jaxb-xjc.jar -extension %PARAM% -p com.parser.%CURRENT%.%PATH%.%NAME% %XSD%
 "%JAVA_HOME%\bin\javac.exe" com\parser\%CURRENT%\%PATH%\%NAME%\*.java > nul
 "%JAVA_HOME%\bin\jar.exe" cvf %PREFIX%%NAME%.jar com > nul & ECHO.
 rmdir /s /q com
-ROBOCOPY . ..\Sources\libs\%DIR%\ %PREFIX%%NAME%.jar /MOV /NJS /NJH > nul & ECHO Done !
+call "../Tools/robocopy.exe" . ..\Sources\libs\%DIR%\ %PREFIX%%NAME%.jar /MOV /NJS /NJH > nul & ECHO Done !
 
 IF "%CURRENT%"=="input" IF "%DIR%"=="client" GOTO OUTPUT
 GOTO QUIT

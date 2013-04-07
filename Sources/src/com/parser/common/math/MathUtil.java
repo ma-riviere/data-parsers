@@ -20,6 +20,15 @@ public class MathUtil {
 		return Math.sqrt(dz * dz);
 	}
 	
+	public static boolean isCloseEnough(float x1, float y1, float z1, float x2, float y2, float z2, double MAX_DIST, double MAX_Z_DIST) {
+		boolean isClose = false; boolean isCloseZ = false;
+		if (getDistance(x1, y1, x2, y2) <= MAX_DIST)
+			isClose = true;
+		if (getDistanceZ(z1, z2) <= MAX_Z_DIST)
+			isCloseZ = true;
+		return isClose && isCloseZ;
+	}
+	
 	public static boolean isCloseEnough(String pos, float x, float y, float z, double MAX_DIST, double MAX_Z_DIST) {
 		boolean isClose = false; boolean isCloseZ = false;
 		String[] xyz = pos.split(",");

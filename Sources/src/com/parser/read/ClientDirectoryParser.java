@@ -4,9 +4,15 @@ import java.io.File;
 import java.util.List;
 import java.util.Map;
 
-public interface ClientDirectoryParser<T> {
+public interface ClientDirectoryParser<R, E> {
 
-	Map<String, List<T>> parse();
+	Map<String, R> parseRoot();
 	
-	List<T> parseFile(File file);
+	Map<String, List<E>> parse();
+	
+	R parseFileRoot(File file);
+	
+	List<E> parseFile(File file);
+	
+	R castRoot(Object topNode);
 }

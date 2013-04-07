@@ -2,7 +2,7 @@ package com.parser.read.aion;
 
 public class AionReadingConfig {
 
-	public static final String VERSION = "aion40";
+	public static final String VERSION = "aion40/";
 	public static final String BASE_DIR = "../../Data/" + VERSION + "client/";
 	public static final boolean READ_CUSTOM = true;
 	
