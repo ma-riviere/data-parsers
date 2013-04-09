@@ -19,8 +19,8 @@ CALL :XSD_MENU
 FOR %%A IN (1 2 3) DO IF %XSD_TYPE%==%%A ( CALL :ENUM_MENU ) ELSE ( SET ENUM=never )
 REM ## Start
 
-IF %JAR%==10 CALL :Main animations 1 800 1024 %I_ANIMATIONS%
-IF %JAR%==15 CALL :Main level_data 4 800 1024 %I_LEVELS% leveldata.xml
+IF %JAR%==10 CALL :MAIN animations 1 800 1024 %I_ANIMATIONS%
+IF %JAR%==15 CALL :MAIN level_data 4 800 1024 %I_LEVELS% leveldata.xml
 
 REM ## End
 GOTO FINISHED
@@ -34,8 +34,8 @@ ECHO #####################################################
 ECHO.
 set /P VERSION=[VERSION] Enter your choice : %=%
 
-FOR %%A IN (1 2) DO IF %VERSION%==%%A SET GAME=aion
-FOR %%A IN (3 4) DO IF %VERSION%==%%A SET GAME=tera
+FOR %%B IN (1 2) DO IF %VERSION%==%%B SET GAME=aion
+FOR %%C IN (3 4) DO IF %VERSION%==%%C SET GAME=tera
 
 IF %VERSION%==1 SET VERSION=aion35
 IF %VERSION%==2 SET VERSION=aion40
@@ -111,70 +111,70 @@ ECHO.
 SET /P ENUM=[ENUM] Number of ENUMERATIONS to generate : %=%
 GOTO:EOF
 
-:Main
+:MAIN
 REM ## NAME MASK XMS XMX INPUT OUTPUT FILENAME
 SET NAME=%1
 SET MASK=%2
 SET XMS=%3
 SET XMX=%4
-SET FILTER=
+SET FILTRE=
 
-IF %MASK%==1 SET INPUT_XML=%5
-IF %MASK%==2 SET OUTPUT_XML=%5
-IF %MASK%==3 (
-	SET INPUT_XML=%5
-	SET OUTPUT_XML=%6
-)
-FOR %%L IN (4 5) DO IF %MASK% EQU %%L (
-	SET FILTER="%6"
-	ECHO "%FILTER%"
-	CALL :Merge %5 %FILTER%
-	SET TEMP=%INPUT_FOLDER%\TEMP\*_%FILTER%
-	ECHO %TEMP%
-)
-CALL :CHECK_XML_PATHS
-FOR %%M IN (1 3 4) DO IF %MASK%==%%M ( CALL :Input *%FILTER%) ELSE ( GOTO:EOF )
-FOR %%N IN (2 3 5) DO IF %MASK%==%%N ( CALL :Output *%FILTER%) ELSE ( GOTO:EOF )
+IF %MASK%==1 CALL :INPUT_ONLY %5
+IF %MASK%==2 CALL :OUTPUT_ONLY %5
+IF %MASK%==3 CALL :BOTH %5 %6
+IF %MASK%==4 CALL :MERGE %5 %6
+IF %MASK%==5 CALL :MERGE %5 %6
+ECHO AFTER
+FOR %%M IN (1 3 4) DO IF %MASK%==%%M ( CALL :INPUT )
+FOR %%N IN (2 3 5) DO IF %MASK%==%%N ( CALL :OUTPUT )
 GOTO:EOF
 
-:CHECK_XML_PATHS
-IF %MASK% EQU 1 IF EXIST %INPUT_XML% GOTO:EOF
-IF %MASK% EQU 2 IF EXIST %OUTPUT_XML% GOTO:EOF
-IF %MASK% EQU 3 ( 
-	IF EXIST %INPUT_XML% (
-		SET MASK=2
-		CALL :CHECK_XML_PATHS
-)
-FOR %%O IN (4 5) DO IF %MASK% EQU %%O ( IF EXIST %TEMP% GOTO:EOF )
-CALL :QUIT checkpaths
+:INPUT_ONLY
+SET INPUT_XML=%1
+IF NOT EXIST %INPUT_XML% CALL :QUIT checkpaths
 GOTO:EOF
 
-:Merge
-IF EXIST %TEMP%\ RD /S /Q %TEMP%\ > nul
-CD %1
+:OUTPUT_ONLY
+SET OUTPUT_XML=%1
+IF NOT EXIST %OUTPUT_XML% CALL :QUIT checkpaths
+GOTO:EOF
+
+:BOTH
+SET INPUT_XML=%1
+IF NOT EXIST %INPUT_XML% CALL :QUIT checkpaths
+SET OUTPUT_XML=%2
+IF NOT EXIST %OUTPUT_XML% CALL :QUIT checkpaths
+GOTO:EOF
+
+:MERGE
+SET FILTRE=%2
+CD "%1"
 SET /A Compteur=0
-FOR /r %%Z IN (%2) DO CALL :Copy %%Z %2 > nul
+FOR /r %%Z IN (%2) DO CALL :COPY "%%Z" %FILTRE%
 CD %~dp0
+SET INPUT_XML=%INPUT_FOLDER%\TEMP
+SET OUTPUT_XML=%INPUT_FOLDER%\TEMP
+IF NOT EXIST %TEMP% CALL :QUIT checkpaths
 GOTO:EOF
 
-:Copy
+:COPY
 SET /A Compteur+=1
-ECHO F | CALL "%~dp0/../Tools/xcopy.exe" /C /I /Q %1 "%TEMP%\temp%Compteur%_%2" > nul
+SET TEMP=%INPUT_FOLDER%\TEMP
+ECHO F | CALL "%~dp0/../Tools/xcopy.exe" /C /I /Q %1 "%TEMP%\temp%Compteur%\%2" > nul
 GOTO:EOF
 
-:Input
+:INPUT
 set DIR=input
-ECHO INPUT
 SET PREFIX=i_
-FOR %%P IN (1 3) DO IF %XSD_TYPE%==%%P CALL :Create_xsd %INPUT_XML%%1
+FOR %%P IN (1 3) DO IF %XSD_TYPE%==%%P CALL :Create_xsd "%INPUT_XML%"
 CALL :Locate_xsd
 CALL :Build_jar
 GOTO:EOF
 
-:Output
+:OUTPUT
 set DIR=output
 SET PREFIX=o_
-FOR %%A IN (2 3) DO IF %3==%%A CALL :Create_xsd %OUTPUT_XML%
+FOR %%Q IN (2 3) DO IF %3==%%Q CALL :Create_xsd "%OUTPUT_XML%"
 CALL :Locate_xsd
 CALL :Build_jar
 GOTO:EOF
@@ -186,6 +186,10 @@ echo ==============================
 echo Generating %DIR% XSD file
 echo ==============================
 echo.
+ECHO %NAME%
+ECHO %DIR%
+ECHO %VERSION%
+ECHO %1
 "%JAVA_HOME%\bin\java.exe" -Xms%XMS%m -Xmx%XMX%m -classpath "%cp%" org.apache.xmlbeans.impl.inst2xsd.Inst2Xsd %* -design ss -enumerations %ENUM% -outDir xsd\%VERSION%\%DIR%\ -outPrefix %NAME% -validate %1
 GOTO:EOF
 
@@ -221,7 +225,7 @@ echo Every operation was done successfully !
 echo You may now Build the parser.
 echo ==============================================
 echo.
-IF EXIST %TEMP% RD /S /Q %TEMP%
+RD /S /Q %TEMP% > nul
 pause
 exit
 
@@ -231,6 +235,6 @@ IF "%1"=="checkpaths" ECHO Error in checkpaths !
 IF "%1"=="folder" ECHO Error in folder's path definition !
 IF "%1"=="cannot_find_xsd" ECHO Error, could not find XSD !
 
-IF EXIST %TEMP% RD /S /Q %TEMP%
+RD /S /Q %TEMP% > nul
 pause
 exit
