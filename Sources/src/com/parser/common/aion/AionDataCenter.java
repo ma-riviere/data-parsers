@@ -10,6 +10,8 @@ import com.parser.input.aion.animations.ClientAnimation;
 import com.parser.input.aion.housing.ClientHousingObject;
 import com.parser.input.aion.housing.ClientHousingCustomPart;
 import com.parser.input.aion.items.ClientItem;
+import com.parser.input.aion.level_data.LevelData;
+import com.parser.input.aion.level_data.LevelInfo;
 import com.parser.input.aion.p_items.Item;
 import com.parser.input.aion.npcs.ClientNpc;
 import com.parser.input.aion.recipes.ClientRecipe;
@@ -31,6 +33,7 @@ import com.parser.read.aion.housing.AionHousingObjectsParser;
 import com.parser.read.aion.housing.AionHousingPartsParser;
 import com.parser.read.aion.items.AionItemsParser;
 import com.parser.read.aion.items.AionItemsInternalParser;
+import com.parser.read.aion.levels.AionLevelDataParser;
 import com.parser.read.aion.npcs.AionNpcsParser;
 import com.parser.read.aion.recipes.AionRecipesParser;
 import com.parser.read.aion.rides.AionRidesParser;
@@ -55,6 +58,7 @@ public class AionDataCenter {
 	public static Map<Integer, ClientNpc> clientNpcs = new HashMap<Integer, ClientNpc>();
 	public static Map<Integer, List<NpcInfo>> worldNpcInfos = new HashMap<Integer, List<NpcInfo>>();
 	public static Map<String, WorldMap> worldMaps = new HashMap<String, WorldMap>();
+	public static Map<String, LevelInfo> levelInfos = new HashMap<String, LevelInfo>();
 	// Special Maps
 	public static Map<String, ClientString> dataDescStringMap = new HashMap<String, ClientString>(); // Client String <--> Real Text or NameID
 	public static Map<String, ClientString> l10nDescStringMap = new HashMap<String, ClientString>(); // Client String <--> Real Text or NameID
@@ -168,13 +172,12 @@ public class AionDataCenter {
 	}
 	
 	public Map<String, WorldMap> getWorldMaps() {
-		Map<String, WorldMap> maps = new HashMap<String, WorldMap>();
-		if (worldMaps.keySet().isEmpty()) {
+		if (worldMaps.values().isEmpty()) {
 			List<WorldMap> mapList = new AionWorldMapsParser().parse();
 			for (WorldMap map : mapList)
-				maps.put(map.getValue().toUpperCase(), map);
+				worldMaps.put(map.getValue().toUpperCase(), map);
 		}
-		return maps;
+		return worldMaps;
 	}
 	
 	public WorldMap getWorld(Object value) {
@@ -197,6 +200,16 @@ public class AionDataCenter {
 	}
 	
 	public int getWorldId(String s) {return (getWorld(s) != null) ? getWorld(s).getId() : 0;}
+	
+	public Map<String, LevelInfo> getLevelInfos() {
+		Map<String, LevelInfo> infos = new HashMap<String, LevelInfo>();
+		if (levelInfos.keySet().isEmpty()) {
+			Map<String, LevelData> dataMap = new AionLevelDataParser().parseRoot();
+			for (LevelData data : dataMap.values())
+				infos.put(data.getLevelInfo().getName().toUpperCase(), data.getLevelInfo());
+		}
+		return infos;
+	}
 	
 	
 	/*******************

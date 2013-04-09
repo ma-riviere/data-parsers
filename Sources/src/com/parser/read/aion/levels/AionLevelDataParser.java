@@ -1,4 +1,4 @@
-package com.parser.read.aion.level;
+package com.parser.read.aion.levels;
 
 import java.io.File;
 import java.nio.file.*;
@@ -14,7 +14,7 @@ import com.parser.read.aion.AionReadingConfig;
 public class AionLevelDataParser extends AbstractDirectoryParser<LevelData, LevelInfo> {
 
 	public AionLevelDataParser() {
-		super(AionReadingConfig.MISSION0_BINDINGS, AionReadingConfig.MISSION0, "leveldata");
+		super(AionReadingConfig.LEVEL_DATA_BINDINGS, AionReadingConfig.MISSION0, "leveldata");
 	}
 	
 	public LevelData parseFileRoot(String name) {
@@ -34,5 +34,12 @@ public class AionLevelDataParser extends AbstractDirectoryParser<LevelData, Leve
 			return null;
 		
 		return super.parseFileRoot(toMarshall);
+	}
+	
+	@Override
+	protected List<LevelInfo> cast(Object topNode) {
+		List<LevelInfo> levelInfo = new ArrayList<LevelInfo>();
+		levelInfo.add(((LevelData) topNode).getLevelInfo());
+		return levelInfo;
 	}
 }

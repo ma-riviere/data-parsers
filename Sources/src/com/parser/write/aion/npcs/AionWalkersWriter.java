@@ -56,7 +56,6 @@ public class AionWalkersWriter extends AbstractWriter {
 	public void parse() {
 		if (sourceSpheres == null) {sourceSpheres = new AionSourceSphereParser().parse();}
 		if (wayPoints == null) {wayPoints = new AionWayPointsParser().parse();}
-		if (USE_GEO) {GeoService.getInstance().initializeGeo();}
 	}
 
 	@Override

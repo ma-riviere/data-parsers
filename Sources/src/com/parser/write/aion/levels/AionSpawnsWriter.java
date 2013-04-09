@@ -57,7 +57,7 @@ public class AionSpawnsWriter extends AbstractWriter {
 	
 	int RANDOM_WALK_CAP = 10;
 	int BASE_RESPAWN_TIME = 295;
-	double PRECISION = 1.5;
+	double PRECISION = 2.0;
 	double PRECISION_Z = 7.0;
 	
 	boolean USE_GEO = true; //TODO: Move to properties
@@ -72,6 +72,7 @@ public class AionSpawnsWriter extends AbstractWriter {
 		new AionDataCenter().getInstance().getWorldMaps();
 		new AionDataCenter().getInstance().loadNpcNameIdMap();
 		ssList = new AionSourceSphereParser().parse();
+		if (USE_GEO) {GeoService.getInstance().initializeGeo();}
 	}
 
 	@Override
@@ -267,7 +268,11 @@ public class AionSpawnsWriter extends AbstractWriter {
 	}
 	
 	private void setWalkingInfo(Spot spot, ClientSpawn cSpawn) {
-		//TODO: if npcOverrideData != null check movetype !!!
+		if (npcOverrideData.getMovetype().equalsIgnoreCase("true") && cSpawn.getIidleRange() < 0)
+			System.out.println("[SPAWNS] Npc : " + npcId + " has -1 iidle but movetype true");
+		if (npcOverrideData.getMovetype().equalsIgnoreCase("false") && cSpawn.getIidleRange() >= 0)
+			System.out.println("[SPAWNS] Npc : " + npcId + " has positive iidle but movetype false");
+		
 		if (cSpawn.getIidleRange() > 0) {
 			if (cSpawn.getIidleRange() > RANDOM_WALK_CAP)
 				if (npcId != 0) {
@@ -412,6 +417,6 @@ public class AionSpawnsWriter extends AbstractWriter {
 	}
 	
 	private String getXml() {
-		return mapId + getName("STR_ZONE_NAME_" + mapName) + ".xml";
+		return mapId + "_" + getName("STR_ZONE_NAME_" + mapName) + ".xml";
 	}
 }

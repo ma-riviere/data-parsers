@@ -40,7 +40,7 @@ public abstract class AbstractDirectoryParser<R, E> implements ClientDirectoryPa
 	@Override
 	public R parseFileRoot(File toMarshall) {
 		
-		R rootData;
+		R rootData = null;
 		
 		try {
 			JAXBContext jc = JAXBContext.newInstance(bindings);
@@ -58,7 +58,7 @@ public abstract class AbstractDirectoryParser<R, E> implements ClientDirectoryPa
 	@Override
 	public List<E> parseFile(File toMarshall) {
 		
-		List<E> data;
+		List<E> data = new ArrayList<E>();
 		
 		try {
 			JAXBContext jc = JAXBContext.newInstance(bindings);

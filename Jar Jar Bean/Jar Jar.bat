@@ -19,9 +19,25 @@ CALL :XSD_MENU
 FOR %%A IN (1 2 3) DO IF %XSD_TYPE%==%%A ( CALL :ENUM_MENU ) ELSE ( SET ENUM=never )
 REM ## Start
 
-IF %JAR%==10 CALL :MAIN animations 1 800 1024 %I_ANIMATIONS%
-IF %JAR%==15 CALL :MAIN level_data 4 800 1024 %I_LEVELS% leveldata.xml
+IF %JAR%==1 CALL :MAIN toypets 3 800 1024 %I_TOYPETS% %O_TOYPETS%
+IF %JAR%==2 CALL :MAIN world_maps 3 800 1024 %I_WORLD_MAPS% %O_WORLD_MAPS%
+IF %JAR%==2 CALL :MAIN rides 3 800 1024 %I_RIDES% %O_RIDES%
+IF "%JAR%"=="3" GOTO RIDES
+IF "%JAR%"=="4" GOTO COOLTIMES
+IF "%JAR%"=="5" GOTO ITEMS
+IF "%JAR%"=="6" GOTO RECIPES
+IF "%JAR%"=="7" GOTO SKILLS
+IF "%JAR%"=="8" GOTO SKILL_LEARN
+IF "%JAR%"=="9" GOTO NPCS
+IF %JAR%==10 CALL :MAIN animations 1 800 1024 %ANIMATIONS%
+IF "%JAR%"=="11" GOTO HOUSING
+IF %JAR%==12 CALL :MAIN mission 6 800 1024 %LEVELS% *mission0.xml %SPAWNS% *.xml
+IF "%JAR%"=="13" GOTO WORLD_DATA
+IF "%JAR%"=="14" GOTO WALKERS
+IF %JAR%==15 CALL :MAIN level_data 4 800 1024 %LEVELS% leveldata.xml 
 
+REM ## Tests
+IF %JAR%==90 :MAIN source_sphere 2 800 1024 %SOURCE_SPHERE%
 REM ## End
 GOTO FINISHED
 
@@ -57,8 +73,27 @@ IF %GAME%==tera CALL :TERA_PATHWAYS
 GOTO:EOF
 
 :AION_PATHWAYS
-SET I_ANIMATIONS="%CLIENT%\Data\Animations\custom_animation.xml"
-SET I_LEVELS="%CLIENT%\Levels\"
+SET I_TOYPETS=%CLIENT%\Data\func_pet\toypet*.xml
+SET O_TOYPETS=%SERVER%/toypets/*.xml
+SET ANIMATIONS="%CLIENT%\Data\Animations\custom_animation.xml"
+
+SET LEVELS="%CLIENT%\Levels\"
+SET SPAWNS="%SERVER%\spawns\"
+
+SET DATA_STRINGS=%CLIENT%\Data\Strings\client_strings*.xml
+SET L10N_STRINGS=%CLIENT%\L10N\ENU\data\strings\client_strings*.xml
+SET I_WORLD_MAPS=%CLIENT%\Data\world\WorldId.xml
+SET WORLD_DATA=%CLIENT%\Data\world\client_world_*.xml
+SET RIDES=%CLIENT%\Data\rides\rides.xml
+SET COOLTIMES=%CLIENT%\Data\world\client_instance_cooltime*.xml
+SET ITEMS=%CLIENT%\Data\Items\client_items_*.xml
+SET RECIPES=%CLIENT%\Data\Items\client_combine_recipe.xml
+SET SKILLS=%CLIENT%\Data\skills\client_skills.xml
+SET SKILL_LEARN=%CLIENT%\Data\skills\client_skill_learns.xml
+SET NPCS=%CLIENT%\Data\Npcs\client_npcs.xml
+SET HOUSING=%CLIENT%\Data\Housing\client_housing*.xml
+
+REM SET QUEST_DIALOGS=%CLIENT%\L10N\ENU\data\dialogs\quest*.xml
 GOTO:EOF
 
 :JAR_MENU
@@ -112,7 +147,7 @@ SET /P ENUM=[ENUM] Number of ENUMERATIONS to generate : %=%
 GOTO:EOF
 
 :MAIN
-REM ## NAME MASK XMS XMX INPUT OUTPUT FILENAME
+REM ## NAME MASK XMS XMX INPUT [INPUT_FILTER] OUTPUT [OUTPUT_FILTER]
 SET NAME=%1
 SET MASK=%2
 SET XMS=%3
@@ -124,9 +159,11 @@ IF %MASK%==2 CALL :OUTPUT_ONLY %5
 IF %MASK%==3 CALL :BOTH %5 %6
 IF %MASK%==4 CALL :MERGE %5 %6
 IF %MASK%==5 CALL :MERGE %5 %6
-ECHO AFTER
-FOR %%M IN (1 3 4) DO IF %MASK%==%%M ( CALL :INPUT )
-FOR %%N IN (2 3 5) DO IF %MASK%==%%N ( CALL :OUTPUT )
+IF %MASK%==6 CALL :MERGE %5 %6
+ECHO DONE
+FOR %%M IN (1 3 4 6) DO IF %MASK%==%%M ( CALL :INPUT )
+IF %MASK%==6 CALL :MERGE %7 %8
+FOR %%N IN (2 3 5 6) DO IF %MASK%==%%N ( CALL :OUTPUT )
 GOTO:EOF
 
 :INPUT_ONLY
@@ -166,42 +203,39 @@ GOTO:EOF
 :INPUT
 set DIR=input
 SET PREFIX=i_
-FOR %%P IN (1 3) DO IF %XSD_TYPE%==%%P CALL :Create_xsd "%INPUT_XML%"
-CALL :Locate_xsd
-CALL :Build_jar
+FOR %%P IN (1 3) DO IF %XSD_TYPE%==%%P CALL :CREATE_XSD "%INPUT_XML%"
+CALL :LOCATE_XSD
+CALL :BUILD_JAR
+IF EXIST %TEMP% RD /S /Q %TEMP% > nul
 GOTO:EOF
 
 :OUTPUT
 set DIR=output
 SET PREFIX=o_
-FOR %%Q IN (2 3) DO IF %3==%%Q CALL :Create_xsd "%OUTPUT_XML%"
-CALL :Locate_xsd
-CALL :Build_jar
+FOR %%Q IN (2 3) DO IF %3==%%Q CALL :CREATE_XSD "%OUTPUT_XML%"
+CALL :LOCATE_XSD
+CALL :BUILD_JAR
+IF EXIST %TEMP% RD /S /Q %TEMP% > nul
 GOTO:EOF
 
 REM ## XSD Generation
-:Create_xsd
+:CREATE_XSD
 echo.
 echo ==============================
 echo Generating %DIR% XSD file
 echo ==============================
 echo.
-ECHO %NAME%
-ECHO %DIR%
-ECHO %VERSION%
-ECHO %1
 "%JAVA_HOME%\bin\java.exe" -Xms%XMS%m -Xmx%XMX%m -classpath "%cp%" org.apache.xmlbeans.impl.inst2xsd.Inst2Xsd %* -design ss -enumerations %ENUM% -outDir xsd\%VERSION%\%DIR%\ -outPrefix %NAME% -validate %1
 GOTO:EOF
 
 REM ## Locating XSD, preparing JAR generation
-:Locate_xsd
-ECHO LOCATE
+:LOCATE_XSD
 SET XSD=xsd/%VERSION%/%DIR%/%NAME%.xsd
 IF NOT EXIST %XSD% SET XSD=xsd/%VERSION%/%DIR%/%NAME%0.xsd
 IF NOT EXIST %XSD% ( CALL :QUIT cannot_find_xsd ) ELSE ( GOTO:EOF )
 
 REM ## JAR Generation
-:Build_jar
+:BUILD_JAR
 echo.
 echo ============================
 echo Building %DIR% JAR file
@@ -214,7 +248,7 @@ IF EXIST %BINDING% ( SET PARAM=-b %BINDING% ) ELSE ( SET PARAM= )
 "%JAVA_HOME%\bin\javac.exe" com\parser\%DIR%\%GAME%\%NAME%\*.java > nul
 "%JAVA_HOME%\bin\jar.exe" cvf %PREFIX%%NAME%.jar com > nul & ECHO.
 RMDIR /s /q com
-CALL "%~dp0\..\Tools\xcopy.exe" /C /I /Q /Y %PREFIX%%NAME%.jar "%~dp0\..\Sources\libs\%DIR%\%PREFIX%%NAME%.jar" > nul & ECHO Done !
+CALL "%~dp0\..\Tools\xcopy.exe" /C /I /Q /Y %PREFIX%%NAME%.jar "%~dp0..\Sources\libs\%DIR%\" > nul
 DEL /Q %PREFIX%%NAME%.jar
 GOTO:EOF
 
@@ -225,9 +259,9 @@ echo Every operation was done successfully !
 echo You may now Build the parser.
 echo ==============================================
 echo.
-RD /S /Q %TEMP% > nul
+IF EXIST %TEMP% RD /S /Q %TEMP% > nul
 pause
-exit
+GOTO QUIT2
 
 :QUIT
 IF "%1"=="wrong_game" ECHO Error, wrong game selected, exiting !
@@ -235,6 +269,8 @@ IF "%1"=="checkpaths" ECHO Error in checkpaths !
 IF "%1"=="folder" ECHO Error in folder's path definition !
 IF "%1"=="cannot_find_xsd" ECHO Error, could not find XSD !
 
-RD /S /Q %TEMP% > nul
+IF EXIST %TEMP% RD /S /Q %TEMP% > nul
 pause
 exit
+
+:QUIT2
