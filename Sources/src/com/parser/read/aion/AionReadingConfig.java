@@ -74,9 +74,10 @@ public class AionReadingConfig {
 	public static final String TOYPETS = BASE_DIR + "Data/func_pet/toypets.xml";
 	public static final String TOYPETS_BINDINGS = "com.parser.input.aion.toypets";
 	
-	// Mission0
+	// Levels
 	public static final String MISSION0 = BASE_DIR + "Levels/";
 	public static final String MISSION0_BINDINGS = "com.parser.input.aion.mission";
+	public static final String LEVEL_DATA_BINDINGS = "com.parser.input.aion.level_data";
 	public static final String MISSION0_PREFIX = "mission_";
 	
 	// Doc files

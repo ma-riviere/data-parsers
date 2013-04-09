@@ -25,7 +25,7 @@ import com.geo.aion.geoEngine.scene.VertexBuffer;
  */
 public class GeoWorldLoader {
 
-	private static String GEO_DIR = "data/geo/";
+	private static String GEO_DIR = "../../Data/geo/"; //TODO: Move to property
 
 	private static boolean DEBUG = false;
 

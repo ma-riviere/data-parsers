@@ -9,6 +9,7 @@ import java.util.Map;
 import com.parser.common.aion.AionDataCenter;
 import com.parser.common.utils.Util;
 import com.parser.input.aion.world_maps.WorldMap;
+import com.parser.input.aion.level_data.LevelInfo;
 
 import com.geo.aion.geoEngine.GeoWorldLoader;
 import com.geo.aion.geoEngine.models.GeoMap;
@@ -20,6 +21,8 @@ import com.geo.aion.geoEngine.scene.Spatial;
 public class RealGeoData implements GeoData {
 
 	private Map<Integer, GeoMap> geoMaps = new HashMap<Integer, GeoMap>();
+	private List<WorldMap> maps = new ArrayList<WorldMap>(new AionDataCenter().getInstance().getWorldMaps().values());
+	private Map<String, LevelInfo> infoMap = new HashMap<String, LevelInfo>(new AionDataCenter().getInstance().getLevelInfos());
 	
 	String geoDir = "../../Data/geo/meshs.geo"; //TODO to property
 
@@ -35,13 +38,14 @@ public class RealGeoData implements GeoData {
 	protected void loadWorldMaps(Map<String, Spatial> models) {
 		System.out.println("[GEODATA] Loading geo maps..");
 		
-		List<WorldMap> maps = new ArrayList<WorldMap>(new AionDataCenter().getInstance().getWorldMaps().values());
 		List<Integer> mapsWithErrors = new ArrayList<Integer>();
-		
-		Util.printProgressBarHeader(maps.size());
+		Util.printProgressBarHeader(infoMap.keySet().size());
 
 		for (WorldMap map : maps) {
-			GeoMap geoMap = new GeoMap(Integer.toString(map.getId()), map.getWorldSize()); //TODO
+			LevelInfo info = infoMap.get(map.getValue().toUpperCase());
+			if (info == null)
+				continue;
+			GeoMap geoMap = new GeoMap(Integer.toString(map.getId()), ((int) info.getHeightmapXSize() + info.getHeightmapYSize()));
 			try {
 				if (GeoWorldLoader.loadWorld(map.getId(), models, geoMap)) {
 					geoMaps.put(map.getId(), geoMap);
