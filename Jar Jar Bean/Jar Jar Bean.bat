@@ -1,14 +1,8 @@
-@ECHO off
+@ECHO OFF
 TITLE Jar Jar Bean
 COLOR 05
 
-SET CURRENT=
-SET PREFIX=
-SET DIR=null
-SET VERSION=0
-SET XMS=800
-SET XMX=1024
-SET SOURCES=../Sources/src
+SET /a "CURRENT=, PREFIX=, DIR=null, VERSION=, XMS=800, XMX=1024, SOURCES=../Sources/src"
 
 REM ## NetBeans XSD generator params
 set XMLBEANS_LIB=libs
@@ -33,6 +27,7 @@ set CLIENT=..\Data\%VERSION%\client
 set SERVER=..\Data\%VERSION%\server
 set MAPPINGS=..\Data\Mappings
 set TESTS=..\Data\Tests
+
 IF NOT EXIST %CLIENT% GOTO CLIENT_PATH_ERROR
 IF NOT EXIST %SERVER% GOTO CLIENT_PATH_ERROR
 IF NOT EXIST %MAPPINGS% GOTO CLIENT_PATH_ERROR
@@ -57,16 +52,14 @@ ECHO = 5 : Items        ===    6 : Recipes             ===
 ECHO = 7 : Skills       ===    8 : Skill Learn         ===
 ECHO = 9 : Npcs         ===   10 : Animations          ===
 ECHO = 11 : Housing     ===   12 : Mission0            ===
-ECHO = 13 : World Data  ===   14 : Walkers              ===
-ECHO = 15 : Level Data    ===                          ===
+ECHO = 13 : World Data  ===   14 : Walkers             ===
+ECHO = 15 : Level Data  ===                            ===
 ECHO.#####################################################
 ECHO.
 set JAR =
 set /P JAR=[JAR] JAR file to compile : %=%
 
-set NAME=
-set INPUT_XML=
-set OUTPUT_XML=
+set /a "NAME=, INPUT_XML=, OUTPUT_XML="
 
 REM ## Client Data pathways
 SET DATA_STRINGS=%CLIENT%/Data/Strings/client_strings*.xml
@@ -84,8 +77,9 @@ SET ANIMATIONS=%CLIENT%/Data/Animations/custom_animation.xml
 SET HOUSING=%CLIENT%/Data/Housing/client_housing*.xml
 SET TOYPETS=%CLIENT%/Data/func_pet/toypet*.xml
 REM SET QUEST_DIALOGS=%CLIENT%/L10N/ENU/data/dialogs/quest*.xml
-SET MISSION0=%CLIENT%/Levels/*
-SET LEVEL_DATA=%CLIENT%/Levels/*.*leveldata.xml
+SET LEVELS=%CLIENT%/Levels/
+
+SET TEMP=../Data/Temp/
 
 FOR %%A IN (a b c d e f g h) DO IF %JAR%==%%A GOTO CLIENT_CLIENT
 FOR %%A IN (A B C D E F G H) DO IF %JAR%==%%A GOTO CLIENT_PARSER
@@ -230,16 +224,29 @@ GOTO CHECKPATHS_XML
 
 :MISSION0
 set NAME=mission
-set INPUT_XML=%MISSION0%
+set INPUT_XML=%LEVELS%
 set OUTPUT_XML=%SERVER%/spawns/*
 GOTO CHECKPATHS_XML
 
 :LEVEL_DATA
 set NAME=level_data
 set SKIP=output
-set INPUT_XML=%LEVEL_DATA%
+setlocal
+CALL :Merge "%LEVELS%" leveldata.xml
+set INPUT_XML=%TEMP%
 IF NOT EXIST %INPUT_XML% GOTO CLIENT_PATH_ERROR
 GOTO XSD_TYPE
+
+:Merge
+setlocal
+MKDIR %TEMP%
+PUSHD %1
+FOR /r %%B IN (%2) DO (
+	ECHO %%B
+	CALL "../Tools/robocopy.exe" %%B %TEMP% %NAME% /NJS /NJH
+)
+POPD
+GOTO:EOF
 
 :ANIMATIONS
 set NAME=animations REM ## Move to Input only parse
@@ -310,7 +317,7 @@ GOTO GENERATE_XSD
 
 REM ## Output
 :OUTPUT
-IF "%SKIP%"=="output" GOTO QUIT
+IF "%SKIP%"=="output" GOTO FINISHED
 
 set CURRENT=output
 SET PREFIX=o_
@@ -359,7 +366,7 @@ rmdir /s /q com
 call "../Tools/robocopy.exe" . ..\Sources\libs\%DIR%\ %PREFIX%%NAME%.jar /MOV /NJS /NJH > nul & ECHO Done !
 
 IF "%CURRENT%"=="input" IF "%DIR%"=="client" GOTO OUTPUT
-GOTO QUIT
+GOTO FINISHED
 
 :CLIENT_PATH_ERROR
 echo.
@@ -370,7 +377,7 @@ echo Please check the name/location of client/server files.
 echo =======================================================
 echo.
 pause.
-exit
+GOTO QUIT
 
 :QUIT_ABNORMAL
 echo.
@@ -381,9 +388,9 @@ echo Please check the name/location of xsd files.
 echo ==============================================
 echo.
 pause.
-exit
+GOTO QUIT
 
-:QUIT
+:FINISHED
 echo.
 echo.
 echo ==============================================
@@ -391,4 +398,7 @@ echo Every operation was done successfully !
 echo You may now Build the parser.
 echo ==============================================
 echo.
-pause.
+GOTO QUIT
+
+:QUIT
+RD /S /Q %TEMP%
