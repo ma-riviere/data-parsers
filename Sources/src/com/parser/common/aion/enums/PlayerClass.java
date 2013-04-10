@@ -3,9 +3,6 @@ package com.parser.common.aion.enums;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @author Viria
- */
 public enum PlayerClass {
 
 	WARRIOR,

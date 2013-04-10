@@ -3,9 +3,6 @@ package com.parser.common.aion.enums.items;
 import java.util.List;
 import java.util.ArrayList;
 
-/**
- * @author Viria
- */
 public enum WeaponType {
 
 	DAGGER_1H("1h_dagger"),

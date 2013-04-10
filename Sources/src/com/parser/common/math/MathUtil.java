@@ -9,6 +9,19 @@ public class MathUtil {
 		return Math.sqrt(dx * dx + dy * dy + dz * dz);
 	}
 	
+	public static double getDistance(String pos1, String pos2) {
+		if (!Strings.isNullOrEmpty(pos1) && !Strings.isNullOrEmpty(pos2)) {
+			String[] xyz1 = pos1.split(",");
+			String[] xyz2 = pos2.split(",");
+			
+			float dx = Float.parseFloat(xyz1[0]) - Float.parseFloat(xyz2[0]);
+			float dy = Float.parseFloat(xyz1[1]) - Float.parseFloat(xyz2[1]);
+			float dz = Float.parseFloat(xyz1[2]) - Float.parseFloat(xyz2[2]);
+			return Math.sqrt(dx * dx + dy * dy + dz * dz);
+		}
+		return Double.MAX_VALUE;
+	}
+	
 	public static double getDistance(float x1, float y1, float x2, float y2) {
 		float dx = x1 - x2;
 		float dy = y1 - y2;

@@ -5,9 +5,6 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
 
-/**
- * @author Viria
- */
 public enum StatModifiers {
 
 	// Items

@@ -3,9 +3,6 @@ package com.parser.common.aion.enums.skills;
 import java.util.List;
 import java.util.ArrayList;
 
-/**
- * @author Viria
- */
 public enum EffectType {
 
 	// AbstractOverTimeEffect

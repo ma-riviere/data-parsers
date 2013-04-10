@@ -1,8 +1,5 @@
 package com.parser.common.aion.enums.items;
 
-/**
- * @author Viria
- */
 public enum ArmorType {
 
 	NONE,

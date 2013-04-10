@@ -51,6 +51,7 @@ public class AionDataCenter {
 	public static Logger log = new Logger().getInstance();
 	
 	// TODO: Move all main lists to Map<Integer, Client>
+	// Make it an interface/abstract <Integer, T> with ItemDataCenter<ClientItem> extends AbstractDataCenter<ClientItem>
 	public static List<ClientSkill> clientSkills = new ArrayList<ClientSkill>();
 	public static List<ClientItem> clientItems = new ArrayList<ClientItem>();
 	public static List<ClientSkillTree> clientSkillTree = new ArrayList<ClientSkillTree>();

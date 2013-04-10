@@ -2,9 +2,6 @@ package com.parser.common.aion.enums.items;
 
 import com.parser.input.aion.items.ClientItem;
 
-/**
- * @author Viria
- */
 public enum EquipmentSlot {
 
 	NONE(0),
