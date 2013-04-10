@@ -13,6 +13,8 @@ import com.parser.input.aion.items.ClientItem;
 import com.parser.input.aion.level_data.LevelData;
 import com.parser.input.aion.level_data.LevelInfo;
 import com.parser.input.aion.p_items.Item;
+import com.parser.input.aion.mission.ClientSpawn;
+import com.parser.input.aion.mission.Entity;
 import com.parser.input.aion.npcs.ClientNpc;
 import com.parser.input.aion.recipes.ClientRecipe;
 import com.parser.input.aion.rides.ClientRide;
@@ -24,6 +26,7 @@ import com.parser.input.aion.world_maps.WorldMap;
 import com.parser.input.aion.world_data.NpcInfos;
 import com.parser.input.aion.world_data.NpcInfo;
 
+import com.parser.common.aion.bindings.SourceSphere;
 import com.parser.common.utils.JAXBHandler;
 import com.parser.common.utils.Logger;
 import com.parser.common.utils.Util;
@@ -34,6 +37,7 @@ import com.parser.read.aion.housing.AionHousingPartsParser;
 import com.parser.read.aion.items.AionItemsParser;
 import com.parser.read.aion.items.AionItemsInternalParser;
 import com.parser.read.aion.levels.AionLevelDataParser;
+import com.parser.read.aion.levels.AionMissionParser;
 import com.parser.read.aion.npcs.AionNpcsParser;
 import com.parser.read.aion.recipes.AionRecipesParser;
 import com.parser.read.aion.rides.AionRidesParser;
@@ -44,22 +48,29 @@ import com.parser.read.aion.strings.AionL10NStringParser;
 import com.parser.read.aion.toypets.AionToyPetsParser;
 import com.parser.read.aion.world.AionWorldMapsParser;
 import com.parser.read.aion.world.AionWorldNpcParser;
+import com.parser.read.aion.world.AionSourceSphereParser;
 
 
 public class AionDataCenter {
 
 	public static Logger log = new Logger().getInstance();
 	
-	// TODO: Move all main lists to Map<Integer, Client>
-	// Make it an interface/abstract <Integer, T> with ItemDataCenter<ClientItem> extends AbstractDataCenter<ClientItem>
+	// TODO: Move all main lists/maps to Map<Integer, List<Client>>
+	// TODO: Move needed data to models ? Like SpawnData.java ???
 	public static List<ClientSkill> clientSkills = new ArrayList<ClientSkill>();
 	public static List<ClientItem> clientItems = new ArrayList<ClientItem>();
 	public static List<ClientSkillTree> clientSkillTree = new ArrayList<ClientSkillTree>();
 	
 	public static Map<Integer, ClientNpc> clientNpcs = new HashMap<Integer, ClientNpc>();
+	// Spawns
 	public static Map<Integer, List<NpcInfo>> worldNpcInfos = new HashMap<Integer, List<NpcInfo>>();
+	public static Map<Integer, ClientSpawn> clientSpawns = new HashMap<Integer, ClientSpawn>();
+	public static Map<Integer, List<Entity>> clientEntities = new HashMap<Integer, List<Entity>>();
+	public static Map<Integer, List<SourceSphere>> clientSpheres = new HashMap<Integer, List<SourceSphere>>();
+	
 	public static Map<String, WorldMap> worldMaps = new HashMap<String, WorldMap>();
 	public static Map<String, LevelInfo> levelInfos = new HashMap<String, LevelInfo>();
+	
 	// Special Maps
 	public static Map<String, ClientString> dataDescStringMap = new HashMap<String, ClientString>(); // Client String <--> Real Text or NameID
 	public static Map<String, ClientString> l10nDescStringMap = new HashMap<String, ClientString>(); // Client String <--> Real Text or NameID
@@ -106,6 +117,43 @@ public class AionDataCenter {
 				clientNpcs.put(cn.getId(), cn);
 		}
 		return clientNpcs;
+	}
+	
+	public Map<Integer, List<Entity>> getClientEntities() {
+		if (clientEntities.values().isEmpty()) {
+			Map<String, Mission> missionMap = new AionMissionParser().parseRoot();
+			for (String mapName : missionMap) {
+				List<Entity> temp = new ArrayList<Entity>();
+				int mapId = getWorldId(Util.getDirName(mapName));
+				if (mapId > 0) {
+					if (clientEntities.contains(mapId))
+						temp = clientEntities.get(mapId);
+					temp.addAll(missionMap.get(mapName).getObjects().getEntity());
+					clientEntities.put(mapId, temp);
+				}
+			}
+		}
+		return clientEntities;
+	}
+	
+	public Map<Integer, List<SourceSphere>> getClientSpheres() {
+		if (clientSpheres.values().isEmpty()) {
+			for (SourceSphere ss : new AionSourceSphereParser().parse()) {
+				List<SourceSphere> temp = new ArrayList<SourceSphere>();
+				int mapId = getWorldId(ss.getMap());
+				if (mapId > 0) {
+					if (clientSpheres.contains(mapId)) {
+						temp = clientSpheres.get(mapId);
+						temp.add(ss);
+					}
+					else
+						temp.add(ss);
+					
+					clientSpheres.put(mapId, temp);
+				}
+			}
+		}
+		return clientSpheres;
 	}
 	
 	//// Levels ////
