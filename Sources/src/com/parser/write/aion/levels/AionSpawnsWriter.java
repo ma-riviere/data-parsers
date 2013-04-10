@@ -55,11 +55,10 @@ public class AionSpawnsWriter extends AbstractWriter {
 	int npcOverrideDataCount = 0;
 	int npcOverrideEIDCount = 0;
 	
+	SpawnData sd = null;
 	int RANDOM_WALK_CAP = 10;
-	int BASE_RESPAWN_TIME = 295;
 	double PRECISION = 2.0;
 	double PRECISION_Z = 7.0;
-	
 	boolean USE_GEO = true; //TODO: Move to properties
 	
 	// Walkers info
@@ -85,22 +84,19 @@ public class AionSpawnsWriter extends AbstractWriter {
 		for (String mappedName : clientSpawnData.keySet()) {
 					
 			mapName = getMapName(mappedName);
-			if (mapName != null)
-				mapId = getWorldId(mapName);
+			if (mapName != null) {mapId = getWorldId(mapName);}
 			
-			Util.printSubSection("" + mapId);
+			Util.printSubSection(mapId + " " + getName("STR_ZONE_NAME_" + mapName));
 			
 			if (mapId != 0) {
 				/// START OF CURRENT MAP ///
-				initAllSpawns();
-				mapOverrideData = new AionDataCenter().getInstance().getNpcInfoByMap(mapName);
-				
+				initAllSpawns();				
 				for (ClientSpawns clientSpawns : clientSpawnData.get(mappedName)) {
 					for (ClientSpawn cSpawn : clientSpawns.getObject()) {
-						/** Loading current Npc data **/
-						npcOverrideData = getNpcOverrideData(cSpawn);
-						npcId = getSpawnNpcId(cSpawn);
-						/** Starting spawn analysis **/
+						/** Loading current Spawn data **/
+						sd = new SpawnData(cSpawn, mapName);
+
+						//TODO: Analyse afterwards, isNpc, isSiege ... based on more solid criteria
 						switch (cSpawn.getType()) {
 							case "SP":
 								addNpcSpawn(cSpawn);
@@ -110,17 +106,12 @@ public class AionSpawnsWriter extends AbstractWriter {
 									// addGatherableSpawn(cSpawn);
 									// break;
 						}
-						npcOverrideData = null;
 					}
 				}
 				orderAllSpawns();
 				addAllSpawns();
 				log.reset();
-				mapOverrideData = null;
-				System.out.println("[SPAWNS] " + npcOverrideDataCount + " Override Data were matched");
-				npcOverrideDataCount = 0;
-				System.out.println("[SPAWNS] " + npcOverrideEIDCount + " Override Entity ID were matched");
-				npcOverrideEIDCount = 0;
+				sd = null;
 				/// END OF CURRENT MAP ///
 			}
 		}
@@ -136,39 +127,12 @@ public class AionSpawnsWriter extends AbstractWriter {
 	@Override
 	public void marshall() {
 		FileMarhshaller.marshallFile(orders);
-		// System.out.println(); //TODO: Log of written spawns
+		// printMarshallStatus(orders); //TODO
 	}
 	
 	private int getWorldId(String s) {return new AionDataCenter().getInstance().getWorldId(s);}
-	private int getNpcId(String s) {return (s != null) ? new AionDataCenter().getInstance().getNpcIdByName(s) : 0;}
 	private String getName(String s) {return (s != null) ? new AionDataCenter().getInstance().getMatchingStringText(s) : "";}
 	private ClientNpc getNpc(int id) {return (id != 0) ? new AionDataCenter().getInstance().getClientNpcs().get(id) : null;}
-	
-	private NpcInfo getNpcOverrideData(ClientSpawn cSpawn) {
-		for (NpcInfo npc : mapOverrideData) {
-			float x = npc.getPos().getX();
-			float y = npc.getPos().getY();
-			float z = npc.getPos().getZ();
-			if (cSpawn.getPos() != null) {
-				if (MathUtil.isCloseEnough(cSpawn.getPos(), x, y, z, PRECISION, PRECISION_Z)) {
-					npcOverrideDataCount++;
-					return npc;
-				}
-			}
-		}
-		return null;
-	}
-	
-	private int getSpawnNpcId(ClientSpawn cSpawn) {
-		int npcId = 0;
-		if (!Strings.isNullOrEmpty(cSpawn.getNpc()))
-			npcId = getNpcId(cSpawn.getNpc());
-		
-		if (npcId == 0 && npcOverrideData != null)
-			npcId = npcOverrideData.getNameid();
-		
-		return npcId;
-	}
 	
 	private String getMapName(String mappedName) {
 	
@@ -196,29 +160,11 @@ public class AionSpawnsWriter extends AbstractWriter {
 	private Spawn computeSpawn(ClientSpawn cSpawn) {
 		Spawn s = new Spawn();
 		
-		s.setNpcId(npcId);
-		s.setRespawnTime(getRespawnTime(npcId));
-		
-		if (npcOverrideData != null) {
-			String newPos = cSpawn.getPos();
-			String[] xyz = new String[3];
-			xyz[0] = String.valueOf(npcOverrideData.getPos().getX());
-			xyz[1] = String.valueOf(npcOverrideData.getPos().getY());
-			xyz[2] = String.valueOf(npcOverrideData.getPos().getZ());
-			newPos = Joiner.on(",").join(xyz);
-			cSpawn.setPos(newPos);
-		}
-		if (!Strings.isNullOrEmpty(cSpawn.getPos()))
-			setSpot(s, cSpawn, mapId);
+		s.setNpcId(sd.getNpcId());
+		s.setRespawnTime(sd.getRespawnTime());
+		setSpot(s, cSpawn, mapId);
 		
 		return s;
-	}
-	
-	//TODO: Move to ClientNpc.java
-	private int getRespawnTime(int npcId) {
-		int respawnTime = BASE_RESPAWN_TIME;
-		//TODO: fonction de hpgauge, isMonster ...
-		return respawnTime;
 	}
 	
 	private void setSpot(Spawn s, ClientSpawn cSpawn, int mapId) {

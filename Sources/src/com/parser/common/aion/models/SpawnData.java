@@ -23,6 +23,7 @@ public class SpawnData {
 	double PRECISION = 2.0;
 	double PRECISION_Z = 10.0;
 	//TODO: Make a warn in Mathutil if x,y match but not z
+	int BASE_RESPAWN_TIME = 295;
 	
 	boolean lockSS = false;
 	boolean lockInfo = false;
@@ -32,6 +33,7 @@ public class SpawnData {
 	private String mapName;
 	
 	private int npcId = -1;
+	private int mapId = -1;
 	private SourceSphere ss = null; // From source_sphere.csv
 	private NpcInfo info = null; // From client_world_*.xml
 	private Entity entity = null; // From mission0.xml
@@ -99,32 +101,43 @@ public class SpawnData {
 		return id;
 	}
 	
-	private SourceSphere findSphere() {		
-		List<SourceSphere> list1 = getSSFromSpawn(); 
-		
-		if (list1.isEmpty() && !lockInfo) {
-			lockSS = true;
-			List<SourceSphere> list2 = getSSFromInfo();
-			if (list2.isEmpty()) {
-				lockSS = false;
-				return null;
+	private SourceSphere findSphere() {
+	
+		if (npcId > 0) {
+			List<SourceSphere> list = new ArrayList<SourceSphere>(); 
+			for (SourceSphere sphere : data.getSourceSphereList()) { //TODO
+				if (data.getNpcIdByName(sphere.getName()) == npcId)
+					list.add(sphere);
 			}
-			else {
-				lockSS = false;
-				System.out.println("[SPAWNS] " + list2.size() + " SourceSphere matched from NPC_INFO !");
-				return getClosestSS(list2);
-			}
+			return getClosestSS(list);
 		}
 		else {
-			System.out.println("[SPAWNS] " + list1.size() + " SourceSphere matched from SPAWN !");
-			return getClosestSS(list1);
+			List<SourceSphere> list1 = getSSFromSpawn(); 
+			
+			if (list1.isEmpty() && !lockInfo) {
+				lockSS = true;
+				List<SourceSphere> list2 = getSSFromInfo();
+				if (list2.isEmpty()) {
+					lockSS = false;
+					return null;
+				}
+				else {
+					lockSS = false;
+					System.out.println("[SPAWNS] " + list2.size() + " SourceSphere matched from NPC_INFO !");
+					return getClosestSS(list2);
+				}
+			}
+			else {
+				System.out.println("[SPAWNS] " + list1.size() + " SourceSphere matched from SPAWN !");
+				return getClosestSS(list1);
+			}
 		}
 	}
 	
 	private List<SourceSphere> getSSFromSpawn() {
 		List<SourceSphere> results = new ArrayList<SourceSphere>();
-		for (SourceSphere sphere : data.getSourceSphereList()) { //TODO
-			if (Strings.isNullOrEmpty(getCSpawn().getPos()))
+		for (SourceSphere sphere : data.getSourceSphereList()) {
+			if (!Strings.isNullOrEmpty(getCSpawn().getPos()))
 				if (MathUtil.isCloseEnough(getCSpawn().getPos(), sphere.getX(), sphere.getY(), sphere.getZ(), sphere.getRadius() + PRECISION, sphere.getRadius() + PRECISION_Z))
 					results.add(npc);
 		}
@@ -150,24 +163,34 @@ public class SpawnData {
 	
 	private NpcInfo findInfo() {
 		
-		List<NpcInfo> list1 = getInfoFromSpawn(); 
-		
-		if (list1.isEmpty() && !lockSS) {
-			lockInfo = true;
-			List<NpcInfo> list2 = getInfoFromSS();
-			if (list2.isEmpty()) {
-				lockInfo = false;
-				return null;
+		if (npcId > 0) {
+			List<NpcInfo> list = new ArrayList<NpcInfo>(); 
+			for (NpcInfo info : data.getNpcInfoByMap(getMapName())) {
+				if (info.getNameid() == npcId)
+					list.add(info);
 			}
-			else {
-				lockInfo = false;
-				System.out.println("[SPAWNS] " + list2.size() + " NpcInfo matched from SOURCE_SPHERE !");
-				return getClosestInfo(list2);
-			}
+			return getClosestInfo(list);
 		}
 		else {
-			System.out.println("[SPAWNS] " + list1.size() + " NpcInfo matched from SPAWN !");
-			return getClosestInfo(list1);
+			List<NpcInfo> list1 = getInfoFromSpawn(); 
+			
+			if (list1.isEmpty() && !lockSS) {
+				lockInfo = true;
+				List<NpcInfo> list2 = getInfoFromSS();
+				if (list2.isEmpty()) {
+					lockInfo = false;
+					return null;
+				}
+				else {
+					lockInfo = false;
+					System.out.println("[SPAWNS] " + list2.size() + " NpcInfo matched from SOURCE_SPHERE !");
+					return getClosestInfo(list2);
+				}
+			}
+			else {
+				System.out.println("[SPAWNS] " + list1.size() + " NpcInfo matched from SPAWN !");
+				return getClosestInfo(list1);
+			}
 		}
 	}
 	
@@ -224,7 +247,9 @@ public class SpawnData {
 	private List<Entity> getEntityFromSpawn() {
 		List<Entity> results = new ArrayList<Entity>();
 		for (Entity ent : data.getClientEntitiesByMap(mapName)) { //TODO
-		
+			if (!Strings.isNullOrEmpty(getCSpawn().getPos()) && !Strings.isNullOrEmpty(ent.getPos()))
+				if (MathUtil.isCloseEnough(ent.getPos(), getCSpawn().getPos(), PRECISION, PRECISION_Z))
+					results.add(npc);
 		}
 		return results;
 	}
@@ -243,14 +268,14 @@ public class SpawnData {
 		List<Entity> results = new ArrayList<Entity>();
 		for (Entity ent : data.getClientEntitiesByMap(mapName)) {
 			if (getInfo() != null && !Strings.isNullOrEmpty(ent.getPos()))
-				if (MathUtil.isCloseEnough(ent.getPos(), getInfo().getPos().getX(), getInfo().getPos().getY(), getInfo().getPos().getZ(), getSS().getRadius() + PRECISION, getSS().getRadius() + PRECISION_Z))
+				if (MathUtil.isCloseEnough(ent.getPos(), getInfo().getPos().getX(), getInfo().getPos().getY(), getInfo().getPos().getZ(), PRECISION, PRECISION_Z))
 					results.add(npc);
 		}
 		return results;
 	}
 	
 	private getClosestEntity(List<Entity> list) {
-		Collections.sort(list, new Comparator<Entity>() {	
+		Collections.sort(list, new Comparator<Entity>() {
 			public int compare(Entity o1, Entity o2) {return MathUtil.getDistance(o1.getPos(), getCSpawn().getPos()).compareTo(MathUtil.getDistance(o2.getPos(), getCSpawn().getPos());}
 		});
 		return list.get(0);
@@ -282,5 +307,11 @@ public class SpawnData {
 			return Math.sqrt(dx * dx + dy * dy + dz * dz);
 		}
 		return Double.MAX_VALUE;
+	}
+	
+	private int getRespawnTime(int npcId) {
+		int respawnTime = BASE_RESPAWN_TIME;
+		//TODO: fonction de hpgauge, isMonster ...
+		return respawnTime;
 	}
 }
