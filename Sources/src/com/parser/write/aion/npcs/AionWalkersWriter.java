@@ -1,6 +1,5 @@
 package com.parser.write.aion.npcs;
 
-// import org.apache.commons.codec.digest.DigestUtils;
 import com.google.common.base.Joiner;
 import java.util.Collection;
 import java.util.List;
@@ -16,7 +15,6 @@ import com.parser.common.math.MathUtil;
 import com.parser.common.math.Point3D;
 
 import com.parser.read.aion.world.AionWayPointsParser;
-import com.parser.read.aion.world.AionSourceSphereParser;
 
 import com.parser.write.AbstractWriter;
 import com.parser.write.FileMarhshaller;
@@ -30,7 +28,7 @@ public class AionWalkersWriter extends AbstractWriter {
 	Collection<WalkerTemplate> walkerList = walkers.getWalkerTemplate();
 	
 	List<WayPoint> wayPoints = null; // From waypoint.csv
-	List<SourceSphere> sourceSpheres = null; // From source_sphere.csv
+	Map<Integer, List<SourceSphere>> sourceSpheres = null; // From source_sphere.csv
 	
 	WayPoint currentWP = null;
 	double PRECISION = 2.0;
@@ -43,10 +41,12 @@ public class AionWalkersWriter extends AbstractWriter {
 	boolean fromSpawns = false;
 	List<SourceSphere> toWrite = null;
 	
-	public void writeFromSpawns(List<SourceSphere> all, List<SourceSphere> toWrite) {
-		fromSpawns = true;
+	AionDataCenter data = new AionDataCenter().getInstance();
+	
+	public void writeFromSpawns(List<SourceSphere> toWrite) {
 		this.toWrite = toWrite;
-		this.sourceSpheres = all;
+		fromSpawns = true;
+		
 		parse();
 		transform();
 		marshall();
@@ -54,22 +54,24 @@ public class AionWalkersWriter extends AbstractWriter {
 	
 	@Override
 	public void parse() {
-		if (sourceSpheres == null) {sourceSpheres = new AionSourceSphereParser().parse();}
-		if (wayPoints == null) {wayPoints = new AionWayPointsParser().parse();}
+		sourceSpheres = data.getClientSpheres();
+		wayPoints = new AionWayPointsParser().parse(); //TODO: Move to ADC
 	}
 
 	@Override
 	public void transform() {
-		for (SourceSphere ss : sourceSpheres) {
+		for (int mapId : sourceSpheres.keySet()) {
+			for (SourceSphere ss : sourceSpheres.get(mapId)) {
 			
-			if (toWrite != null) {
-				for (SourceSphere ss2 : toWrite) {
-					if (ss == ss2)
-						computeWalker(ss);
+				if (toWrite != null) {
+					for (SourceSphere ss2 : toWrite) {
+						if (ss == ss2)
+							computeWalker(ss);
+					}
 				}
-			}
-			else {
-				computeWalker(ss);
+				else {
+					computeWalker(ss);
+				}
 			}
 		}
 	}
@@ -88,13 +90,13 @@ public class AionWalkersWriter extends AbstractWriter {
 				mapId = getWorldId(ss.getMap());
 
 				// START //
-				// wt.setRouteId(DigestUtils.sha1Hex(currentWP.getName()).toUpperCase());
 				wt.setRouteId(currentWP.getName().toUpperCase());
 				
 				int pool = 0;
-				for (SourceSphere ss2 : sourceSpheres)
-					if (ss2.getWpName().equalsIgnoreCase(currentWP.getName()))
-						pool++;
+				for (int mapId : sourceSpheres.keySet())
+					for (SourceSphere ss2 : sourceSpheres.get(mapId))
+						if (ss2.getWpName().equalsIgnoreCase(currentWP.getName()))
+							pool++;
 				wt.setPool(pool != 0 ? pool : 1);
 				
 				organize(wt);
@@ -127,7 +129,7 @@ public class AionWalkersWriter extends AbstractWriter {
 		System.out.println("\n[WALKERS] Walkers count: " + walkerList.size());
 	}
 	
-	private int getWorldId(String s) {return new AionDataCenter().getInstance().getWorldId(s);}
+	private int getWorldId(String s) {return data.getWorldId(s);}
 	
 	private boolean exists(String wpName) {
 		for (WalkerTemplate walker : walkerList)
@@ -160,13 +162,15 @@ public class AionWalkersWriter extends AbstractWriter {
 	
 		Map<String, Integer> mobs = new HashMap<String, Integer>();
 		
-		
-		for (SourceSphere ss2 : sourceSpheres) {
-			if (ss2.getWpName().equalsIgnoreCase(currentWP.getName())) {
-				if (mobs.keySet().contains(ss2.getName()))
-					mobs.put(ss2.getName(), mobs.get(ss2.getName()) + 1);
-				else
-					mobs.put(ss2.getName(), 1);
+		//TODO: same count as Pool ...
+		for (int mapId : sourceSpheres.keySet()) {
+			for (SourceSphere ss2 : sourceSpheres.get(mapId)) {
+				if (ss2.getWpName().equalsIgnoreCase(currentWP.getName())) {
+					if (mobs.keySet().contains(ss2.getName()))
+						mobs.put(ss2.getName(), mobs.get(ss2.getName()) + 1);
+					else
+						mobs.put(ss2.getName(), 1);
+				}
 			}
 		}
 	

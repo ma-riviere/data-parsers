@@ -8,9 +8,9 @@ import com.parser.input.aion.mission.ClientSpawns;
 import com.parser.read.AbstractDirectoryParser;
 import com.parser.read.aion.AionReadingConfig;
 
-public class AionSpawnsParser extends AbstractDirectoryParser<Mission, ClientSpawns> {
+public class AionMissionParser extends AbstractDirectoryParser<Mission, ClientSpawns> {
 
-	public AionSpawnsParser() {
+	public AionMissionParser() {
 		super(AionReadingConfig.MISSION0_BINDINGS, AionReadingConfig.MISSION0, AionReadingConfig.MISSION0_PREFIX);
 	}
 
