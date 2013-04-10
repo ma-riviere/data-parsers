@@ -7,9 +7,6 @@ import org.apache.commons.lang.StringUtils;
 import com.parser.input.aion.items.ClientItem;
 import com.parser.common.aion.AionDataCenter;
 
-/**
- * @author Viria
- */
 public enum ItemCategory {
 
 	//TODO: PET (food, egg, present ...) CASH & SKIN !!!!!!!!!!!!!!!!!!

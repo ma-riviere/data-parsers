@@ -1,8 +1,5 @@
 package com.parser.common.aion.enums.skills;
 
-/**
- * @author Viria
- */
 public enum TransformType {
 
 	NONE,

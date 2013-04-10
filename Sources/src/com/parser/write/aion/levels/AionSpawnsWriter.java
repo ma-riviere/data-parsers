@@ -69,8 +69,12 @@ public class AionSpawnsWriter extends AbstractWriter {
 	@Override
 	public void parse() {
 		clientSpawnData = new AionSpawnsParser().parse();
+		
 		new AionDataCenter().getInstance().getWorldMaps();
 		new AionDataCenter().getInstance().loadNpcNameIdMap();
+		new AionDataCenter().getInstance().loadDataStrings();
+		new AionDataCenter().getInstance().loadL10NStrings();
+		
 		ssList = new AionSourceSphereParser().parse();
 		if (USE_GEO) {GeoService.getInstance().initializeGeo();}
 	}
@@ -244,11 +248,13 @@ public class AionSpawnsWriter extends AbstractWriter {
 		}
 	}
 	
-	//TODO: Moce to ClientNpc.java
+	// Used to find if we should look out for a static id
 	private boolean canMove(int npcId) {
 		boolean canMove = true;
 		ClientNpc npc = getNpc(npcId);
 		if (npc != null && ((int) npc.getMoveSpeedNormalWalk()) == 0)
+			canMove = false;
+		if (npcOverrideData != null && npcOverrideData.getMovetype() != null && npcOverrideData.getMovetype().equalsIgnoreCase("false"))
 			canMove = false;
 		//TODO: Add checks on NpcType (Portal, ...)
 		return canMove;
@@ -258,7 +264,7 @@ public class AionSpawnsWriter extends AbstractWriter {
 		for (String mappedName : clientSpawnData.keySet()) {
 			for (ClientSpawns clientSpawns : clientSpawnData.get(mappedName)) {
 				for (Entity ent : clientSpawns.getEntity()) {
-					if (MathUtil.isCloseEnough(ent.getPos(), spot.getX(), spot.getY(), spot.getZ(), PRECISION, PRECISION_Z)) {
+					if (!Strings.isNullOrEmpty(ent.getPos()) && MathUtil.isCloseEnough(ent.getPos(), spot.getX(), spot.getY(), spot.getZ(), PRECISION, PRECISION_Z)) {
 						spot.setStaticId((int) ent.getEntityId());
 						npcOverrideEIDCount++;
 					}
@@ -268,10 +274,6 @@ public class AionSpawnsWriter extends AbstractWriter {
 	}
 	
 	private void setWalkingInfo(Spot spot, ClientSpawn cSpawn) {
-		if (npcOverrideData.getMovetype().equalsIgnoreCase("true") && cSpawn.getIidleRange() < 0)
-			System.out.println("[SPAWNS] Npc : " + npcId + " has -1 iidle but movetype true");
-		if (npcOverrideData.getMovetype().equalsIgnoreCase("false") && cSpawn.getIidleRange() >= 0)
-			System.out.println("[SPAWNS] Npc : " + npcId + " has positive iidle but movetype false");
 		
 		if (cSpawn.getIidleRange() > 0) {
 			if (cSpawn.getIidleRange() > RANDOM_WALK_CAP)
@@ -282,7 +284,7 @@ public class AionSpawnsWriter extends AbstractWriter {
 			else
 				spot.setRandomWalk(cSpawn.getIidleRange());
 		}
-		else if (cSpawn.getIidleRange() == 0) { //TODO: Can have a walk route even if not 0 ?
+		else if (cSpawn.getIidleRange() == 0) { 
 			List<SourceSphere> temp = new ArrayList<SourceSphere>();
 			for (SourceSphere ss : ssList) {
 				if (getNpc(npcId) != null && getNpc(npcId).getName().equalsIgnoreCase(ss.getName()))

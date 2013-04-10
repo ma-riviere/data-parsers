@@ -4,9 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import com.google.common.base.Strings;
 
-/**
- * @author Viria
- */
 public enum Race {
 
 	NONE("none"),
