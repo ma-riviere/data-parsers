@@ -15,6 +15,7 @@ import com.parser.input.aion.level_data.LevelInfo;
 import com.parser.input.aion.p_items.Item;
 import com.parser.input.aion.mission.ClientSpawn;
 import com.parser.input.aion.mission.Entity;
+import com.parser.input.aion.mission.Mission;
 import com.parser.input.aion.npcs.ClientNpc;
 import com.parser.input.aion.recipes.ClientRecipe;
 import com.parser.input.aion.rides.ClientRide;
@@ -68,8 +69,8 @@ public class AionDataCenter {
 	public static Map<Integer, List<Entity>> clientEntities = new HashMap<Integer, List<Entity>>();
 	public static Map<Integer, List<SourceSphere>> clientSpheres = new HashMap<Integer, List<SourceSphere>>();
 	
-	public static Map<String, WorldMap> worldMaps = new HashMap<String, WorldMap>();
-	public static Map<String, LevelInfo> levelInfos = new HashMap<String, LevelInfo>();
+	public static Map<Integer, WorldMap> worldMaps = new HashMap<Integer, WorldMap>();
+	public static Map<Integer, LevelInfo> levelInfos = new HashMap<Integer, LevelInfo>();
 	
 	// Special Maps
 	public static Map<String, ClientString> dataDescStringMap = new HashMap<String, ClientString>(); // Client String <--> Real Text or NameID
@@ -122,11 +123,11 @@ public class AionDataCenter {
 	public Map<Integer, List<Entity>> getClientEntities() {
 		if (clientEntities.values().isEmpty()) {
 			Map<String, Mission> missionMap = new AionMissionParser().parseRoot();
-			for (String mapName : missionMap) {
+			for (String mapName : missionMap.keySet()) {
 				List<Entity> temp = new ArrayList<Entity>();
 				int mapId = getWorldId(Util.getDirName(mapName));
 				if (mapId > 0) {
-					if (clientEntities.contains(mapId))
+					if (clientEntities.keySet().contains(mapId))
 						temp = clientEntities.get(mapId);
 					temp.addAll(missionMap.get(mapName).getObjects().getEntity());
 					clientEntities.put(mapId, temp);
@@ -142,7 +143,7 @@ public class AionDataCenter {
 				List<SourceSphere> temp = new ArrayList<SourceSphere>();
 				int mapId = getWorldId(ss.getMap());
 				if (mapId > 0) {
-					if (clientSpheres.contains(mapId)) {
+					if (clientSpheres.keySet().contains(mapId)) {
 						temp = clientSpheres.get(mapId);
 						temp.add(ss);
 					}
@@ -151,6 +152,8 @@ public class AionDataCenter {
 					
 					clientSpheres.put(mapId, temp);
 				}
+				else
+					System.out.println("Could not find mapId for : " +ss.getMap().toUpperCase());
 			}
 		}
 		return clientSpheres;
@@ -207,42 +210,40 @@ public class AionDataCenter {
 		return worldNpcInfos;
 	}
 	
-	public List<NpcInfo> getNpcInfoByMap(String name) {
+	public List<NpcInfo> getNpcInfoByMap(int mapId) {
 		List<NpcInfo> data = new ArrayList<NpcInfo>();
-		if (worldNpcInfos.containsKey(getWorldId(Util.getDirName(name)))) {
-			data = worldNpcInfos.get(getWorldId(Util.getDirName(name)));
-		}
+		if (worldNpcInfos.containsKey(mapId))
+			data = worldNpcInfos.get(mapId);
 		else {
-			for (NpcInfos infos : new AionWorldNpcParser().parseFile(name)) {
+			for (NpcInfos infos : new AionWorldNpcParser().parseFile(getWorld(mapId).getValue()))
 				data.addAll(infos.getNpcInfo());
-			}
 		}
 		return data;
 	}
 	
-	public Map<String, WorldMap> getWorldMaps() {
-		if (worldMaps.values().isEmpty()) {
+	public Map<Integer, WorldMap> getWorldMaps() {
+		if (worldMaps.keySet().isEmpty()) {
 			List<WorldMap> mapList = new AionWorldMapsParser().parse();
 			for (WorldMap map : mapList)
-				worldMaps.put(map.getValue().toUpperCase(), map);
+				worldMaps.put(map.getId(), map);
 		}
 		return worldMaps;
 	}
 	
 	public WorldMap getWorld(Object value) {
 		
-		if (value instanceof String) {
-			if (getWorldMaps().keySet().contains(value.toString().toUpperCase()))
-				return getWorldMaps().get(value.toString().toUpperCase());
+		if (value instanceof Integer) {
+			if (getWorldMaps().keySet().contains(Integer.parseInt(value.toString())))
+				return getWorldMaps().get(Integer.parseInt(value.toString()));
 			else
-				log.unique("[WORLD] No Map named : ", value.toString().toUpperCase(), true);
+				log.unique("[WORLD] No Map with ID : ", Integer.parseInt(value.toString()), false);
 		}
-		else if (value instanceof Integer) {
+		else if (value instanceof String) {
 			for (WorldMap map : getWorldMaps().values()) {
-				if (map.getId().equals(Integer.parseInt(value.toString())))
+				if (map.getValue().trim().equalsIgnoreCase(value.toString().trim()))
 					return map;
-				else
-					log.unique("[WORLD] No Map with ID : ", Integer.parseInt(value.toString()), false);
+				// else
+					// log.unique("[WORLD] No Map named : ", value.toString().toUpperCase(), true);
 			}
 		}
 		return null;
@@ -250,14 +251,13 @@ public class AionDataCenter {
 	
 	public int getWorldId(String s) {return (getWorld(s) != null) ? getWorld(s).getId() : 0;}
 	
-	public Map<String, LevelInfo> getLevelInfos() {
-		Map<String, LevelInfo> infos = new HashMap<String, LevelInfo>();
+	public Map<Integer, LevelInfo> getLevelInfos() {
 		if (levelInfos.keySet().isEmpty()) {
 			Map<String, LevelData> dataMap = new AionLevelDataParser().parseRoot();
 			for (LevelData data : dataMap.values())
-				infos.put(data.getLevelInfo().getName().toUpperCase(), data.getLevelInfo());
+				levelInfos.put(getWorldId(data.getLevelInfo().getName().toUpperCase()), data.getLevelInfo());
 		}
-		return infos;
+		return levelInfos;
 	}
 	
 	

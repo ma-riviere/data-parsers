@@ -19,12 +19,14 @@ import com.geo.aion.geoEngine.scene.Spatial;
  * @author ATracer
  */
 public class RealGeoData implements GeoData {
+	
+	AionDataCenter data = new AionDataCenter().getInstance();
 
 	private Map<Integer, GeoMap> geoMaps = new HashMap<Integer, GeoMap>();
-	private List<WorldMap> maps = new ArrayList<WorldMap>(new AionDataCenter().getInstance().getWorldMaps().values());
-	private Map<String, LevelInfo> infoMap = new HashMap<String, LevelInfo>(new AionDataCenter().getInstance().getLevelInfos());
+	private List<WorldMap> maps = new ArrayList<WorldMap>(data.getWorldMaps().values());
+	private Map<Integer, LevelInfo> infoMap = new HashMap<Integer, LevelInfo>(data.getLevelInfos());
 	
-	String geoDir = "../../Data/geo/meshs.geo"; //TODO to property
+	String geoDir = "../../Data/geo/aion/meshs.geo"; //TODO to property
 
 	@Override
 	public void loadGeoMaps() {
@@ -42,7 +44,7 @@ public class RealGeoData implements GeoData {
 		Util.printProgressBarHeader(infoMap.keySet().size());
 
 		for (WorldMap map : maps) {
-			LevelInfo info = infoMap.get(map.getValue().toUpperCase());
+			LevelInfo info = infoMap.get(data.getWorldId(map.getValue().toUpperCase()));
 			if (info == null)
 				continue;
 			GeoMap geoMap = new GeoMap(Integer.toString(map.getId()), ((int) info.getHeightmapXSize() + info.getHeightmapYSize()));
