@@ -73,7 +73,7 @@ public class AionSpawnsWriter extends AbstractWriter {
 			mapName = getMapName(mappedName);
 			if (mapName != null) {mapId = getWorldId(mapName);}
 			
-			Util.printSubSection(mapId + " " + getName("STR_ZONE_NAME_" + mapName));
+			Util.printSubSection(mapId + " : " + getName("STR_ZONE_NAME_" + mapName));
 			
 			if (mapId != 0) {
 				/// START OF CURRENT MAP ///
