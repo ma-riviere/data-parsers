@@ -11,6 +11,7 @@ import java.util.LinkedList;
 
 import com.geo.aion.GeoService;
 
+import com.parser.input.aion.mission.Entity;
 import com.parser.input.aion.mission.ClientSpawn;
 import com.parser.input.aion.world_data.NpcInfo;
 
@@ -166,14 +167,52 @@ public class AionSpawnsWriter extends AbstractWriter {
 			if (h != 0) {spot.setH(h);}
 		}
 		
+		adjustZ(spot, sd);
+		
 		if (USE_GEO) {
 			float oldZ = spot.getZ();
 			spot.setZ(GeoService.getInstance().getZ(sd.getMapId(), spot.getX(), spot.getY()));
-			if (Math.abs((int) (spot.getZ() * 1) - (int) (oldZ * 1)) > 25)
+			if (Math.abs((int) (spot.getZ() * 1) - (int) (oldZ * 1)) > 75)
 				spot.setZ(oldZ);
 		}
 		
 		s.getSpot().add(spot);
+	}
+	
+	private void adjustZ(Spot spot, SpawnData sd) {
+		int MAX_VAR = 75;
+		float oldZ = spot.getZ();
+		float result = oldZ;
+		
+		
+		float entityZ = getMeanEntityZ(sd);
+		if (Math.abs((int) (entityZ * 1) - (int) (oldZ * 1)) <= MAX_VAR)
+			result = entityZ;
+		else if (USE_GEO) {
+			float geoZ = GeoService.getInstance().getZ(sd.getMapId(), spot.getX(), spot.getY());
+			if (Math.abs((int) (geoZ * 1) - (int) (oldZ * 1)) <= MAX_VAR)
+				result = geoZ;
+		}
+		spot.setZ(result);
+	}
+	
+	private float getMeanEntityZ(SpawnData sd) {
+		List<Float> results = new ArrayList<Float>();
+		for (Entity ent : data.getClientEntities().get(sd.getMapId())) {
+			if (!Strings.isNullOrEmpty(ent.getPos())) {
+				String[] xyz = ent.getPos().split(",");
+				if (MathUtil.getDistance(Float.parseFloat(xyz[0]), Float.parseFloat(xyz[1]), sd.getX(), sd.getY()) <= 8.0 && MathUtil.getDistanceZ(Float.parseFloat(xyz[2]), sd.getZ()) <= 35)
+					results.add(Float.parseFloat(xyz[2]));
+			}
+		}
+		if (results.isEmpty())
+			return 99999.99f;
+		else {
+			float sum = 0.0f;
+			for (Float f : results)
+				sum += f;
+			return (sum / (float) (results.size()));
+		}
 	}
 	
 	private void setWalkingInfo(Spot spot, SpawnData sd) {
@@ -257,7 +296,7 @@ public class AionSpawnsWriter extends AbstractWriter {
 			for (int j = i+1; j < spots.size(); j++) {
 				Spot s2 = spots.get(j);
 				if (MathUtil.isCloseEnough(s1.getX(), s1.getY(), s1.getZ(), s2.getX(), s2.getY(), s2.getZ(), 2, 8))
-					results.remove(s1); // Allows override
+					results.remove(s2); // TODO: Remove s1 or s2 ?
 			}
 		}
 		return results;
