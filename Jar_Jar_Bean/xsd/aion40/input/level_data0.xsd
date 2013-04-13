@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="DetailObjects" type="xs:string"/>
+  <xs:element name="SurfaceType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="DetailObjects"/>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="Bumpmap" use="optional"/>
+      <xs:attribute type="xs:float" name="DetailScaleX" use="optional"/>
+      <xs:attribute type="xs:float" name="DetailScaleY" use="optional"/>
+      <xs:attribute type="xs:string" name="DetailTexture" use="optional"/>
+      <xs:attribute type="xs:string" name="Material" use="optional"/>
+      <xs:attribute type="xs:string" name="Name" use="optional"/>
+      <xs:attribute type="xs:byte" name="Offset_U" use="optional"/>
+      <xs:attribute type="xs:byte" name="Offset_V" use="optional"/>
+      <xs:attribute type="xs:string" name="ProjAxis" use="optional"/>
+      <xs:attribute type="xs:byte" name="ProjectAxis" use="optional"/>
+      <xs:attribute type="xs:byte" name="Use_Terran_Specular" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MRT_Params">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:byte" name="CastShadowPLSM" use="optional"/>
+          <xs:attribute type="xs:byte" name="CastShadowPSSM" use="optional"/>
+          <xs:attribute type="xs:byte" name="RecvShadowPLSM" use="optional"/>
+          <xs:attribute type="xs:byte" name="RecvShadowPSSM" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LM_Params">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:byte" name="uvGutterSize" use="optional"/>
+          <xs:attribute type="xs:float" name="uvStretch" use="optional"/>
+          <xs:attribute type="xs:byte" name="uvTolerance" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LMInst_Params">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:byte" name="uvRenderWidth" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Object">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="MRT_Params"/>
+        <xs:element ref="LM_Params" minOccurs="0"/>
+        <xs:element ref="LMInst_Params" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute type="xs:byte" name="AlphaBlend" use="optional"/>
+      <xs:attribute type="xs:string" name="AmbientColor" use="optional"/>
+      <xs:attribute type="xs:byte" name="BackSideLevel" use="optional"/>
+      <xs:attribute type="xs:float" name="BarkContrast" use="optional"/>
+      <xs:attribute type="xs:float" name="Bending" use="optional"/>
+      <xs:attribute type="xs:string" name="BoxMax" use="optional"/>
+      <xs:attribute type="xs:string" name="BoxMin" use="optional"/>
+      <xs:attribute type="xs:float" name="Brightness" use="optional"/>
+      <xs:attribute type="xs:byte" name="CalcLighting" use="optional"/>
+      <xs:attribute type="xs:byte" name="CastShadow" use="optional"/>
+      <xs:attribute type="xs:string" name="Category" use="optional"/>
+      <xs:attribute type="xs:float" name="Density" use="optional"/>
+      <xs:attribute type="xs:short" name="ElevationMax" use="optional"/>
+      <xs:attribute type="xs:short" name="ElevationMin" use="optional"/>
+      <xs:attribute type="xs:byte" name="FadeSize" use="optional"/>
+      <xs:attribute type="xs:string" name="FileName" use="optional"/>
+      <xs:attribute type="xs:string" name="GUID" use="optional"/>
+      <xs:attribute type="xs:byte" name="Hidden" use="optional"/>
+      <xs:attribute type="xs:byte" name="Hideable" use="optional"/>
+      <xs:attribute type="xs:byte" name="Inclination" use="optional"/>
+      <xs:attribute type="xs:short" name="Index" use="optional"/>
+      <xs:attribute type="xs:string" name="Material" use="optional"/>
+      <xs:attribute type="xs:float" name="MaxViewDistRatio" use="optional"/>
+      <xs:attribute type="xs:byte" name="NoCollWithCam" use="optional"/>
+      <xs:attribute type="xs:byte" name="PhysNonColl" use="optional"/>
+      <xs:attribute type="xs:byte" name="PrecalcShadow" use="optional"/>
+      <xs:attribute type="xs:byte" name="RealTimeShadow" use="optional"/>
+      <xs:attribute type="xs:byte" name="RecvShadow" use="optional"/>
+      <xs:attribute type="xs:byte" name="ShadowDistRatio" use="optional"/>
+      <xs:attribute type="xs:float" name="Size" use="optional"/>
+      <xs:attribute type="xs:float" name="SizeVar" use="optional"/>
+      <xs:attribute type="xs:short" name="SlopeMax" use="optional"/>
+      <xs:attribute type="xs:byte" name="SlopeMin" use="optional"/>
+      <xs:attribute type="xs:byte" name="SpriteDistRatio" use="optional"/>
+      <xs:attribute type="xs:byte" name="SpriteTexRes" use="optional"/>
+      <xs:attribute type="xs:byte" name="UseSprites" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Library">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:string" name="Name" use="optional"/>
+          <xs:attribute type="xs:string" name="File" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Initialize">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:byte" name="Render_Beaches" use="optional"/>
+          <xs:attribute type="xs:byte" name="Render_Fog" use="optional"/>
+          <xs:attribute type="xs:byte" name="Render_Ocean" use="optional"/>
+          <xs:attribute type="xs:byte" name="Render_SkyBox" use="optional"/>
+          <xs:attribute type="xs:byte" name="Render_SkyCloud" use="optional"/>
+          <xs:attribute type="xs:byte" name="Render_Sun" use="optional"/>
+          <xs:attribute type="xs:byte" name="Render_Terrain" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Fly">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:byte" name="Fly_Whole_Level" use="optional"/>
+          <xs:attribute type="xs:byte" name="FRZ_NEGX" use="optional"/>
+          <xs:attribute type="xs:byte" name="FRZ_NEGY" use="optional"/>
+          <xs:attribute type="xs:byte" name="FRZ_X" use="optional"/>
+          <xs:attribute type="xs:byte" name="FRZ_Y" use="optional"/>
+          <xs:attribute type="xs:short" name="MaxHeight" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Ride">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:byte" name="Ride_Whole_Level" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BindArea">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:byte" name="IsPossible" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReCall">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:byte" name="IsPossible" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Glide">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:byte" name="IsPossible" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LevelOption">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Initialize"/>
+        <xs:element ref="Fly"/>
+        <xs:element ref="Ride"/>
+        <xs:element ref="BindArea"/>
+        <xs:element ref="ReCall"/>
+        <xs:element ref="Glide"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Mission">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="LevelOption"/>
+      </xs:sequence>
+      <xs:attribute type="xs:short" name="CGFCount" use="optional"/>
+      <xs:attribute type="xs:string" name="File" use="optional"/>
+      <xs:attribute type="xs:string" name="Name" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LevelInfo">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:byte" name="HeightmapUnitSize" use="optional"/>
+          <xs:attribute type="xs:short" name="HeightmapXSize" use="optional"/>
+          <xs:attribute type="xs:short" name="HeightmapYSize" use="optional"/>
+          <xs:attribute type="xs:string" name="Name" use="optional"/>
+          <xs:attribute type="xs:short" name="WaterLevel" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SurfaceTypes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="SurfaceType" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Vegetation">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element ref="Object" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MaterialsLibrary">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Library" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ParticlesLibrary">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Library" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MusicLibrary">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Library"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Missions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Mission"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LevelData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="LevelInfo"/>
+        <xs:element ref="SurfaceTypes"/>
+        <xs:element ref="Vegetation"/>
+        <xs:element ref="MaterialsLibrary"/>
+        <xs:element ref="ParticlesLibrary"/>
+        <xs:element ref="MusicLibrary"/>
+        <xs:element ref="Missions"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -11,6 +11,7 @@ import com.parser.common.math.MathUtil;
 import com.parser.common.utils.Util;
 import com.parser.common.aion.AionDataCenter;
 
+import com.parser.input.aion.npcs.ClientNpc;
 import com.parser.input.aion.world_data.NpcInfo;
 import com.parser.input.aion.mission.Entity;
 import com.parser.input.aion.mission.ClientSpawn;
@@ -18,192 +19,88 @@ import com.parser.input.aion.mission.ClientSpawn;
 public class SpawnData {
 	
 	private ClientSpawn cSpawn; // From mission0.xml
+	private NpcInfo info = null; // From client_world_*.xml
 	private int mapId = -1;
 	private int npcId = -1;
 	private SourceSphere ss = null; // From source_sphere.csv
-	private NpcInfo info = null; // From client_world_*.xml
 	private Entity entity = null; // From mission0.xml
 	
 	private AionDataCenter data = new AionDataCenter().getInstance();
-	//TODO: Adjust precision over the count reports !!
-	double PRECISION = 2.0;
-	double PRECISION_Z = 10.0;
-	//TODO: Make a warn in Mathutil if x,y match but not z
-	int BASE_RESPAWN_TIME = 295;
+	private ClientNpc getNpc(int id) {return (id != 0) ? data.getClientNpcs().get(id) : null;}
 	
-	boolean lockSS = false;
-	boolean lockInfo = false;
+	//TODO: Adjust precision over the count reports !!
+	double PRECISION = 0.7;
+	//TODO: Make a warn in Mathutil if x,y match but not z
+	int BASE_RESPAWN_TIME = 300;
 	
 	public SpawnData(ClientSpawn cSpawn, int mapId) {
 		this.cSpawn = cSpawn;
 		this.mapId = mapId;
-		this.npcId = getNpcId();
+		if (info == null) {info = findInfo();}
+		this.npcId = findNpcId();
 	}
 	
-	public ClientSpawn getCSpawn() {return this.cSpawn;}
-	public void setCSpawn(ClientSpawn value) {this.cSpawn = value;}
+	public SpawnData(NpcInfo info, int mapId) {
+		this.info = info;
+		this.mapId = mapId;
+		this.npcId = info.getNameid();
+	}
 	
+	public ClientSpawn getCSpawn() {return cSpawn;}
 	public int getMapId() {return this.mapId;}
-	public void setMapId(int value) {this.mapId = value;}
+	public int getNpcId() {return this.npcId;}
 	
-	public int getNpcId() {
-		if (npcId == -1)
-			return findNpcId();
-		else
-			return npcId;
+	public SourceSphere getSS() {return ss;}
+	public NpcInfo getNpcInfo() {return info;}
+	
+	private Entity getEntity() {
+		if (entity == null)
+			entity = findEntity();
+		return entity;
 	}
-	
-	public SourceSphere getSS() {
-		if (this.ss == null)
-			return findSphere();
-		else
-			return this.ss;
-	}
-	
-	public NpcInfo getNpcInfo() {
-		if (this.info == null)
-			return findInfo();
-		else
-			return this.info;
-	}
-	
-	public Entity getEntity() {
-		if (this.entity == null)
-			return findEntity();
-		else
-			return this.entity;
-	}	
 	
 	/***************************/
 	
 	private int findNpcId() {
 		int id = -1;
-		if (!Strings.isNullOrEmpty(getCSpawn().getNpc()))
-			id = data.getNpcIdByName(getCSpawn().getNpc());
+		
+		// if (getGatherableTemplate() != null) {id = getGatherableTemplate().getId();} // else ...
+		if (cSpawn != null && !Strings.isNullOrEmpty(cSpawn.getNpc())) {id = data.getNpcIdByName(cSpawn.getNpc());}
 		
 		if (id <= 0 && getNpcInfo() != null)
-			id = getNpcInfo().getNameid();
+			id = info.getNameid();
 		
-		if (id <= 0 && getSS() != null)
-			id = data.getNpcIdByName(getSS().getName());
+		if (id <= 0) {
+			if (ss == null) {ss = findSS();}
+			if (ss != null) {id = data.getNpcIdByName(ss.getName());}
+		}
 		
 		return id;
 	}
 	
-	private SourceSphere findSphere() {
-	
-		if (npcId > 0) {
-			List<SourceSphere> list = new ArrayList<SourceSphere>(); 
-			for (SourceSphere sphere : data.getClientSpheres().get(getMapId())) {
-				if (data.getNpcIdByName(sphere.getName()) == npcId)
-					list.add(sphere);
-			}
-			return getClosestSS(list);
-		}
-		else {
-			List<SourceSphere> list1 = getSSFromSpawn(); 
-			
-			if (list1.isEmpty() && !lockInfo) {
-				lockSS = true;
-				List<SourceSphere> list2 = getSSFromInfo();
-				if (list2.isEmpty()) {
-					lockSS = false;
-					return null;
-				}
-				else {
-					lockSS = false;
-					System.out.println("[SPAWNS] " + list2.size() + " SourceSphere matched from NPC_INFO !");
-					return getClosestSS(list2);
-				}
-			}
-			else {
-				System.out.println("[SPAWNS] " + list1.size() + " SourceSphere matched from SPAWN !");
-				return getClosestSS(list1);
-			}
-		}
-	}
-	
-	private List<SourceSphere> getSSFromSpawn() {
-		List<SourceSphere> results = new ArrayList<SourceSphere>();
-		List<SourceSphere> temp = data.getClientSpheres().get(getMapId());
-		if (temp != null) {
-			for (SourceSphere sphere : temp) {
-				if (!Strings.isNullOrEmpty(getCSpawn().getPos()))
-					if (MathUtil.isCloseEnough(getCSpawn().getPos(), sphere.getX(), sphere.getY(), sphere.getZ(), sphere.getRadius() + PRECISION, sphere.getRadius() + PRECISION_Z))
-						results.add(sphere);
-			}
-		}
-		return results;
-	}
-	
-	private List<SourceSphere> getSSFromInfo() {
-		List<SourceSphere> results = new ArrayList<SourceSphere>();
-		List<SourceSphere> temp = data.getClientSpheres().get(getMapId());
-		if (temp != null) {
-			for (SourceSphere sphere : temp) {
-				if (getNpcInfo() != null)
-					if (MathUtil.isCloseEnough(getNpcInfo().getPos().getX(), getNpcInfo().getPos().getY(), getNpcInfo().getPos().getZ(), sphere.getX(), sphere.getY(), sphere.getZ(), sphere.getRadius() + PRECISION, sphere.getRadius() + PRECISION_Z))
-						results.add(sphere);
-			}
-		}
-		return results;
-	}
-	
-	private SourceSphere getClosestSS(List<SourceSphere> list) {
-		Collections.sort(list, new Comparator<SourceSphere>() {	
-			public int compare(SourceSphere o1, SourceSphere o2) {return Double.compare(getDistance(o1, getCSpawn().getPos()), getDistance(o2, getCSpawn().getPos()));}
-		});
-		return list.get(0);
-	}
-	
 	private NpcInfo findInfo() {
-		
 		if (npcId > 0) {
 			List<NpcInfo> list = new ArrayList<NpcInfo>(); 
-			for (NpcInfo info : data.getNpcInfoByMap(getMapId())) {
+			for (NpcInfo info : data.getNpcInfoByMap(mapId)) {
 				if (info.getNameid() == npcId)
 					list.add(info);
 			}
-			return getClosestInfo(list);
+			if (!list.isEmpty())
+				return getClosestInfo(list);
 		}
 		else {
-			List<NpcInfo> list1 = getInfoFromSpawn(); 
-			
-			if (list1.isEmpty() && !lockSS) {
-				lockInfo = true;
-				List<NpcInfo> list2 = getInfoFromSS();
-				if (list2.isEmpty()) {
-					lockInfo = false;
-					return null;
-				}
-				else {
-					lockInfo = false;
-					System.out.println("[SPAWNS] " + list2.size() + " NpcInfo matched from SOURCE_SPHERE !");
-					return getClosestInfo(list2);
-				}
-			}
-			else {
-				System.out.println("[SPAWNS] " + list1.size() + " NpcInfo matched from SPAWN !");
+			List<NpcInfo> list1 = getInfoFromSD(); 
+			if (!list1.isEmpty())
 				return getClosestInfo(list1);
-			}
 		}
+		return null;
 	}
 	
-	private List<NpcInfo> getInfoFromSpawn() {
+	private List<NpcInfo> getInfoFromSD() {
 		List<NpcInfo> results = new ArrayList<NpcInfo>();
-		for (NpcInfo npc : data.getNpcInfoByMap(getMapId())) {
-			if (Strings.isNullOrEmpty(getCSpawn().getPos()))
-				if (MathUtil.isCloseEnough(getCSpawn().getPos(), npc.getPos().getX(), npc.getPos().getY(), npc.getPos().getZ(), PRECISION, PRECISION_Z))
-					results.add(npc);
-		}
-		return results;
-	}
-	
-	private List<NpcInfo> getInfoFromSS() {
-		List<NpcInfo> results = new ArrayList<NpcInfo>();
-		for (NpcInfo npc : data.getNpcInfoByMap(getMapId())) {
-			if (getSS() != null)
-				if (MathUtil.isCloseEnough(getSS().getX(), getSS().getY(), getSS().getZ(), npc.getPos().getX(), npc.getPos().getY(), npc.getPos().getZ(), getSS().getRadius() + PRECISION, getSS().getRadius() + PRECISION_Z))
+		for (NpcInfo npc : data.getNpcInfoByMap(mapId)) {
+			if (!Strings.isNullOrEmpty(cSpawn.getPos()))
+				if (MathUtil.isIn3dRange(getX(), getY(), getZ(), npc.getPos().getX(), npc.getPos().getY(), npc.getPos().getZ(), 1.0))
 					results.add(npc);
 		}
 		return results;
@@ -211,59 +108,68 @@ public class SpawnData {
 	
 	private NpcInfo getClosestInfo(List<NpcInfo> list) {
 		Collections.sort(list, new Comparator<NpcInfo>() {	
-			public int compare(NpcInfo o1, NpcInfo o2) {return Double.compare(getDistance(o1, getCSpawn().getPos()), getDistance(o2, getCSpawn().getPos()));}
+			public int compare(NpcInfo o1, NpcInfo o2) {return Double.compare(MathUtil.getDistance(o1.getPos().getX(), o1.getPos().getY(), o1.getPos().getZ(), getX(), getY(), getZ()), MathUtil.getDistance(o2.getPos().getX(), o2.getPos().getY(), o2.getPos().getZ(), getX(), getY(), getZ()));}
 		});
 		return list.get(0);
 	}
 	
-	private Entity findEntity() {
-		List<Entity> list1 = getEntityFromSpawn();
-		
-		if (list1.isEmpty()) {
-			List<Entity> list2 = getEntityFromSphere();
-			
-			if (list2.isEmpty()) {
-				List<Entity> list3 = getEntityFromInfo();
-				
-				if (list3.isEmpty())
-					return null;
-				else
-					return getClosestEntity(list3);
+	private SourceSphere findSS() {
+		if (npcId > 0) {
+			List<SourceSphere> list = new ArrayList<SourceSphere>(); 
+			if (data.getClientSpheres() != null && data.getClientSpheres().get(mapId) != null) {
+				for (SourceSphere sphere : data.getClientSpheres().get(mapId)) {
+					if (data.canBeUsed(sphere) && data.getNpcIdByName(sphere.getName()) == npcId)
+						list.add(sphere);
+				}
 			}
-			else {
-				return getClosestEntity(list2);
-			}
+			if (!list.isEmpty())
+				return getClosestSS(list);
 		}
 		else {
+			List<SourceSphere> list1 = getSSFromSD(); 
+			if (!list1.isEmpty())
+				return getClosestSS(list1);
+		}
+		return null;
+	}
+	
+	private List<SourceSphere> getSSFromSD() {
+		List<SourceSphere> results = new ArrayList<SourceSphere>();
+		if (data.getClientSpheres() != null && data.getClientSpheres().get(mapId) != null) {
+			for (SourceSphere sphere : data.getClientSpheres().get(mapId)) {
+				if (data.canBeUsed(sphere) && MathUtil.isIn3dRange(getX(), getY(), getZ(), sphere.getX(), sphere.getY(), sphere.getZ(), sphere.getRadius() + 1.5))
+					results.add(sphere);
+			}
+		}
+		return results;
+	}
+	
+	private SourceSphere getClosestSS(List<SourceSphere> list) {
+		Collections.sort(list, new Comparator<SourceSphere>() {	
+			public int compare(SourceSphere o1, SourceSphere o2) {return Double.compare(MathUtil.getDistance(o1.getX(), o1.getY(), o1.getZ(), getX(), getY(), getZ()), MathUtil.getDistance(o2.getX(), o2.getY(), o2.getZ(), getX(), getY(), getZ()));}
+		});
+		// Limitating sphere use
+		if (data.canBeUsed(list.get(0))) {
+			data.reduceSphereCount(list.get(0));
+			return list.get(0);
+		}
+		else
+			return null;
+	}
+	
+	private Entity findEntity() {
+		List<Entity> list1 = getEntityFromSD();
+		if (list1 == null || list1.isEmpty()) 
+			return null;
+		else
 			return getClosestEntity(list1);
-		}
 	}
 	
-	private List<Entity> getEntityFromSpawn() {
+	private List<Entity> getEntityFromSD() {
 		List<Entity> results = new ArrayList<Entity>();
-		for (Entity ent : data.getClientEntities().get(getMapId())) {
-			if (!Strings.isNullOrEmpty(getCSpawn().getPos()) && !Strings.isNullOrEmpty(ent.getPos()))
-				if (MathUtil.isCloseEnough(ent.getPos(), getCSpawn().getPos(), PRECISION, PRECISION_Z))
-					results.add(ent);
-		}
-		return results;
-	}
-	
-	private List<Entity> getEntityFromSphere() {
-		List<Entity> results = new ArrayList<Entity>();
-		for (Entity ent : data.getClientEntities().get(getMapId())) {
-			if (getSS() != null && !Strings.isNullOrEmpty(ent.getPos()))
-				if (MathUtil.isCloseEnough(ent.getPos(), getSS().getX(), getSS().getY(), getSS().getZ(), getSS().getRadius() + PRECISION, getSS().getRadius() + PRECISION_Z))
-					results.add(ent);
-		}
-		return results;
-	}
-	
-	private List<Entity> getEntityFromInfo() {
-		List<Entity> results = new ArrayList<Entity>();
-		for (Entity ent : data.getClientEntities().get(getMapId())) {
-			if (getNpcInfo() != null && !Strings.isNullOrEmpty(ent.getPos()))
-				if (MathUtil.isCloseEnough(ent.getPos(), getNpcInfo().getPos().getX(), getNpcInfo().getPos().getY(), getNpcInfo().getPos().getZ(), PRECISION, PRECISION_Z))
+		for (Entity ent : data.getClientEntities().get(mapId)) {
+			if (!Strings.isNullOrEmpty(ent.getPos()))
+				if (MathUtil.isIn3dRange(ent.getPos(), getX(), getY(), getZ(), 1.5))
 					results.add(ent);
 		}
 		return results;
@@ -271,37 +177,9 @@ public class SpawnData {
 	
 	private Entity getClosestEntity(List<Entity> list) {
 		Collections.sort(list, new Comparator<Entity>() {
-			public int compare(Entity o1, Entity o2) {return Double.compare(MathUtil.getDistance(o1.getPos(), getCSpawn().getPos()), MathUtil.getDistance(o2.getPos(), getCSpawn().getPos()));}
+			public int compare(Entity o1, Entity o2) {return Double.compare(MathUtil.getDistance(o1.getPos(), getX(), getY(), getZ()), MathUtil.getDistance(o2.getPos(), getX(), getY(), getZ()));}
 		});
 		return list.get(0);
-	}
-	
-	public double getDistance(Object obj, String pos) {
-		if (obj != null && !Strings.isNullOrEmpty(pos)) {
-			String[] xyz = pos.split(",");
-			float x = 0;
-			float y = 0;
-			float z = 0;
-			
-			if (obj instanceof SourceSphere) {
-				SourceSphere s = (SourceSphere) obj;
-				x = s.getX();
-				y = s.getY();
-				z = s.getZ();
-			}
-			else if (obj instanceof NpcInfo) {
-				NpcInfo ni = (NpcInfo) obj;
-				x = ni.getPos().getX();
-				y = ni.getPos().getY();
-				z = ni.getPos().getZ();
-			}
-			
-			float dx = Float.parseFloat(xyz[0]) - x;
-			float dy = Float.parseFloat(xyz[1]) - y;
-			float dz = Float.parseFloat(xyz[2]) - y;
-			return Math.sqrt(dx * dx + dy * dy + dz * dz);
-		}
-		return Double.POSITIVE_INFINITY;
 	}
 	
 	public int getRespawnTime() {
@@ -310,38 +188,71 @@ public class SpawnData {
 		return respawnTime;
 	}
 	
-	//TODO: Use SS coords ? (maybe to disperse too close spawns)
 	public float getX() {
 		if (getNpcInfo() != null)
-			return getNpcInfo().getPos().getX();
-		else {
-			String[] xyz = getCSpawn().getPos().split(",");
+			return info.getPos().getX();
+		else if (cSpawn != null && cSpawn.getPos() != null) {
+			String[] xyz = cSpawn.getPos().split(",");
 			return MathUtil.toFloat3(xyz[0]);
-		}	
+		}
+		else
+			return 0;
 	}
 	
 	public float getY() {
 		if (getNpcInfo() != null)
-			return getNpcInfo().getPos().getY();
-		else {
-			String[] xyz = getCSpawn().getPos().split(",");
+			return info.getPos().getY();
+		else if (cSpawn != null && cSpawn.getPos() != null) {
+			String[] xyz = cSpawn.getPos().split(",");
 			return MathUtil.toFloat3(xyz[1]);
-		}	
+		}
+		else
+			return 0;
 	}
 	
 	public float getZ() {
 		if (getNpcInfo() != null)
-			return getNpcInfo().getPos().getZ();
-		else {
-			String[] xyz = getCSpawn().getPos().split(",");
+			return info.getPos().getZ();
+		else if (cSpawn != null && cSpawn.getPos() != null) {
+			String[] xyz = cSpawn.getPos().split(",");
 			return MathUtil.toFloat3(xyz[2]);
 		}
+		else
+			return 0;
+	}
+	
+	public boolean canMove() {
+		boolean canMove = true;
+		ClientNpc npc = getNpc(npcId);
+		if (npc != null && (int) (npc.getMoveSpeedNormalWalk() * 1000) <= 0)
+			canMove = false;
+		if (getNpcInfo() != null && info.getMovetype() != null && info.getMovetype().equalsIgnoreCase("false"))
+			canMove = false;
+		//TODO: Add checks on NpcType (Portal, ...)
+		return canMove;
+	}
+	
+	public boolean canBeStatic()  {
+		boolean canBeStatic = false;
+		if (npcId >= 700000)
+			canBeStatic = true;
+		//TODO: Other conditions
+		return canBeStatic;
 	}
 	
 	public int getStaticId() {
-		if (getEntity() != null)
-			return getEntity().getEntityId();
+		if (getEntity() != null && entity.getEntityClass().equalsIgnoreCase("PlaceableObject"))
+			return entity.getEntityId();
 		else
 			return -1;
+	}
+	
+	public String getWalkerId() {
+		if (ss == null)
+			ss = findSS();
+		if (ss != null && !Strings.isNullOrEmpty(ss.getWpName()))
+			return ss.getWpName();
+		else
+			return null;
 	}
 }

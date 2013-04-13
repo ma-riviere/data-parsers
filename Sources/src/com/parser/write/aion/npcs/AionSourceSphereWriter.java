@@ -41,6 +41,7 @@ public class AionSourceSphereWriter extends AbstractWriter {
 		for (SourceSphere css : clientSpheres) {
 			Sphere s = new Sphere();
 			s.setNpcId(getNpcId(css.getName()));
+			s.setType(css.getType().toUpperCase());
 			s.setWorldId(getWorldId(css.getMap()));
 			s.setLayer(css.getLayer());
 			if (!Strings.isNullOrEmpty(css.getWpName()))

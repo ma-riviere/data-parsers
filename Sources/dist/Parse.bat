@@ -1,6 +1,9 @@
 @ECHO OFF
 COLOR 4
 
+SET XMS=512
+SET XMX=1024
+
 :MENU
 ECHO.
 ECHO #####################################################
@@ -27,28 +30,6 @@ ECHO.
 SET CHOICE=
 SET /P CHOICE=What do you want to parse : %=%
 
-SET Start=
-
-REM Client
-IF "%CHOICE%"=="a" SET Start=items.AionClientItemsStart
-
-REM Internal
-IF "%CHOICE%"=="A" SET Start=items.AionItemsInternalStart
-
-REM Server
-IF "%CHOICE%"=="1" SET Start=AionRidesStart
-IF "%CHOICE%"=="2" SET Start=AionCooltimesStart
-IF "%CHOICE%"=="3" SET Start=items.AionItemsStart
-IF "%CHOICE%"=="4" SET Start=AionRecipesStart
-IF "%CHOICE%"=="5" SET Start=AionSkillsStart
-IF "%CHOICE%"=="6" SET Start=AionSpawnsStart
-IF "%CHOICE%"=="7" SET Start=AionWalkersStart
-
-REM Tests
-IF "%CHOICE%"=="90" SET Start=AionSourceSphereStart
-
-REM Custom
-
 REM Quit
 IF "%CHOICE%"=="" GOTO QUIT
 
@@ -65,8 +46,25 @@ SET /P ANALYSE=Do you want a list of client unused elements ? %=%
 IF "%ANALYSE%"=="0" SET ANALYSE=false
 IF "%ANALYSE%"=="1" SET ANALYSE=true
 
-JAVA -Xms512m -Xmx1024m -ea -cp libs/*;Parser.jar com.parser.start.aion.%Start% %ANALYSE%
+REM Client
+IF "%CHOICE%"=="a" CALL :EXECUTE items.AionClientItemsStart %XMS% %XMX%
+REM Internal
+IF "%CHOICE%"=="A" CALL :EXECUTE items.AionItemsInternalStart %XMS% %XMX%
+REM Server
+IF "%CHOICE%"=="1" CALL :EXECUTE AionRidesStart %XMS% %XMX%
+IF "%CHOICE%"=="2" CALL :EXECUTE AionCooltimesStart %XMS% %XMX%
+IF "%CHOICE%"=="3" CALL :EXECUTE items.AionItemsStart %XMS% %XMX%
+IF "%CHOICE%"=="4" CALL :EXECUTE AionRecipesStart %XMS% %XMX%
+IF "%CHOICE%"=="5" CALL :EXECUTE AionSkillsStart %XMS% %XMX%
+IF "%CHOICE%"=="6" CALL :EXECUTE AionSpawnsStart 768 1536
+IF "%CHOICE%"=="7" CALL :EXECUTE AionWalkersStart %XMS% %XMX%
+REM Tests
+IF "%CHOICE%"=="90" CALL :EXECUTE AionSourceSphereStart %XMS% %XMX%
 
 GOTO MENU
+
+:EXECUTE
+JAVA -Xms%2m -Xmx%3m -ea -cp libs/*;Parser.jar com.parser.start.aion.%1 %ANALYSE%
+GOTO:EOF
 
 :QUIT

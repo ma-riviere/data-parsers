@@ -31,8 +31,6 @@ public class AionWalkersWriter extends AbstractWriter {
 	Map<Integer, List<SourceSphere>> sourceSpheres = null; // From source_sphere.csv
 	
 	WayPoint currentWP = null;
-	double PRECISION = 2.0;
-	double PRECISION_Z = 10.0;
 	
 	boolean USE_GEO = true; // Move to properties
 	int mapId = 0;
@@ -105,7 +103,7 @@ public class AionWalkersWriter extends AbstractWriter {
 					setRouteSteps(wt);
 				
 				//TODO: More precision
-				if (!wt.getRoutestep().isEmpty() && !MathUtil.isCloseEnough(wt.getRoutestep().get(0).getX(), wt.getRoutestep().get(0).getY(), wt.getRoutestep().get(0).getZ(), wt.getRoutestep().get(wt.getRoutestep().size() -1).getX(), wt.getRoutestep().get(wt.getRoutestep().size() -1).getY(), wt.getRoutestep().get(wt.getRoutestep().size() -1).getZ(), 15, 40))
+				if (!wt.getRoutestep().isEmpty() && !MathUtil.isIn3dRange(wt.getRoutestep().get(0).getX(), wt.getRoutestep().get(0).getY(), wt.getRoutestep().get(0).getZ(), wt.getRoutestep().get(wt.getRoutestep().size() -1).getX(), wt.getRoutestep().get(wt.getRoutestep().size() -1).getY(), wt.getRoutestep().get(wt.getRoutestep().size() -1).getZ(), 15))
 					wt.setReversed("true");
 				
 				// END //

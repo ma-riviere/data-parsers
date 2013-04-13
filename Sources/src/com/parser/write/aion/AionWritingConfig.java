@@ -21,7 +21,7 @@ public class AionWritingConfig {
 	/*************************** TEST XMLs *********************************/
 	
 	// Source Sphere
-	public static final String SPHERE = "../../Output/Tests/source_sphere.xml";
+	public static final String SPHERE = BASE_DIR + "Tests/source_sphere.xml";
 	public static final String SPHERE_BINDINGS = "com.parser.output.aion.source_sphere";
 	
 	/*************************** SERVER XMLs *********************************/
