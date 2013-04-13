@@ -28,15 +28,12 @@ public class SpawnData {
 	private AionDataCenter data = new AionDataCenter().getInstance();
 	private ClientNpc getNpc(int id) {return (id != 0) ? data.getClientNpcs().get(id) : null;}
 	
-	//TODO: Adjust precision over the count reports !!
-	double PRECISION = 0.7;
-	//TODO: Make a warn in Mathutil if x,y match but not z
 	int BASE_RESPAWN_TIME = 300;
 	
 	public SpawnData(ClientSpawn cSpawn, int mapId) {
 		this.cSpawn = cSpawn;
 		this.mapId = mapId;
-		if (info == null) {info = findInfo();}
+		// if (info == null) {info = findInfo();}
 		this.npcId = findNpcId();
 	}
 	
@@ -169,11 +166,13 @@ public class SpawnData {
 		List<Entity> results = new ArrayList<Entity>();
 		for (Entity ent : data.getClientEntities().get(mapId)) {
 			if (!Strings.isNullOrEmpty(ent.getPos()))
-				if (MathUtil.isIn3dRange(ent.getPos(), getX(), getY(), getZ(), 1.5))
+				if (MathUtil.isIn3dRange(ent.getPos(), getX(), getY(), getZ(), 4.0))
 					results.add(ent);
 		}
 		return results;
 	}
+	
+	//TODO: getEntityFromSS() --> if entity is close to SS, it will apply on evey npc of this SS
 	
 	private Entity getClosestEntity(List<Entity> list) {
 		Collections.sort(list, new Comparator<Entity>() {
