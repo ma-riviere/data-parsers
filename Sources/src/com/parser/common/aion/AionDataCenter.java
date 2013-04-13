@@ -58,19 +58,21 @@ public class AionDataCenter {
 	
 	// TODO: Move all main lists/maps to Map<Integer, List<Client>>
 	// TODO: Move needed data to models ? Like SpawnData.java ???
-	public static List<ClientSkill> clientSkills = new ArrayList<ClientSkill>();
 	public static List<ClientItem> clientItems = new ArrayList<ClientItem>();
-	public static List<ClientSkillTree> clientSkillTree = new ArrayList<ClientSkillTree>();
-	
+	// Data-Skills
+	public static List<ClientSkill> clientSkills = new ArrayList<ClientSkill>(); //TODO: Rework
+	public static List<ClientSkillTree> clientSkillTree = new ArrayList<ClientSkillTree>(); //TODO: Rework
+	// Data-Npcs
 	public static Map<Integer, ClientNpc> clientNpcs = new HashMap<Integer, ClientNpc>();
-	// Spawns
-	public static Map<Integer, List<NpcInfo>> worldNpcInfos = new HashMap<Integer, List<NpcInfo>>();
-	public static Map<Integer, ClientSpawn> clientSpawns = new HashMap<Integer, ClientSpawn>();
+	// Levels
+	public static Map<Integer, List<ClientSpawn>> clientSpawns = new HashMap<Integer, List<ClientSpawn>>();
 	public static Map<Integer, List<Entity>> clientEntities = new HashMap<Integer, List<Entity>>();
-	public static Map<Integer, List<SourceSphere>> clientSpheres = new HashMap<Integer, List<SourceSphere>>();
-	
-	public static Map<Integer, WorldMap> worldMaps = new HashMap<Integer, WorldMap>();
 	public static Map<Integer, LevelInfo> levelInfos = new HashMap<Integer, LevelInfo>();
+	// Data-World
+	public static Map<Integer, List<NpcInfo>> worldNpcInfos = new HashMap<Integer, List<NpcInfo>>();
+	public static Map<Integer, List<SourceSphere>> clientSpheres = new HashMap<Integer, List<SourceSphere>>();
+	public static Map<SourceSphere, Integer> sphereUseCount = new HashMap<SourceSphere, Integer>();
+	public static Map<Integer, WorldMap> worldMaps = new HashMap<Integer, WorldMap>();
 	
 	// Special Maps
 	public static Map<String, ClientString> dataDescStringMap = new HashMap<String, ClientString>(); // Client String <--> Real Text or NameID
@@ -137,6 +139,25 @@ public class AionDataCenter {
 		return clientEntities;
 	}
 	
+	public Map<Integer, List<ClientSpawn>> getClientSpawns() {
+		if (clientSpawns.values().isEmpty()) {
+			Map<String, Mission> missionMap = new AionMissionParser().parseRoot();
+			for (String mapName : missionMap.keySet()) {
+				List<ClientSpawn> temp = new ArrayList<ClientSpawn>();
+				int mapId = getWorldId(Util.getDirName(mapName));
+				if (mapId > 0) {
+					if (clientSpawns.keySet().contains(mapId))
+						temp = clientSpawns.get(mapId);
+					temp.addAll(missionMap.get(mapName).getObjects().getObject());
+					clientSpawns.put(mapId, temp);
+				}
+				else
+					log.unique("[LEVELS] No Map ID matching", Util.getDirName(mapName), false);
+			}
+		}
+		return clientSpawns;
+	}
+	
 	public Map<Integer, List<SourceSphere>> getClientSpheres() {
 		if (clientSpheres.values().isEmpty()) {
 			for (SourceSphere ss : new AionSourceSphereParser().parse()) {
@@ -155,40 +176,29 @@ public class AionDataCenter {
 				else
 					System.out.println("Could not find mapId for : " +ss.getMap().toUpperCase());
 			}
+			loadSphereUseCount();
 		}
 		return clientSpheres;
 	}
 	
-	//// Levels ////
-	
-	public Map<Integer, List<NpcInfo>> getLevelData() {
-		int mapId = 0;
-		if (worldNpcInfos.keySet().isEmpty()) {
-			Map<String, List<NpcInfos>> temp = new AionWorldNpcParser().parse();
-			for (String mapName : temp.keySet()) {
-				mapId = getWorldId(Util.getFileName(mapName));
-				List<NpcInfo> npcInfoList = new ArrayList<NpcInfo>();
-				for (NpcInfos npcs : temp.get(mapName)) {
-					npcInfoList.addAll(npcs.getNpcInfo()); 
-				}
-				worldNpcInfos.put(mapId, npcInfoList);
-				npcInfoList.clear();
+	private void loadSphereUseCount() {
+		for (Integer mapId : clientSpheres.keySet()) {
+			for (SourceSphere ss : clientSpheres.get(mapId)) {
+				if (ss.getClusterNum() <= 0)
+					sphereUseCount.put(ss, -1);
+				else
+					sphereUseCount.put(ss, ss.getClusterNum());
 			}
 		}
-		return worldNpcInfos;
 	}
 	
-	public List<NpcInfo> getLevelDataByMap(String name) {
-		List<NpcInfo> data = new ArrayList<NpcInfo>();
-		if (worldNpcInfos.containsKey(getWorldId(Util.getDirName(name)))) {
-			data = worldNpcInfos.get(getWorldId(Util.getDirName(name)));
-		}
-		else {
-			for (NpcInfos infos : new AionWorldNpcParser().parseFile(name)) {
-				data.addAll(infos.getNpcInfo());
-			}
-		}
-		return data;
+	public boolean canBeUsed(SourceSphere ss) {
+		// return sphereUseCount.get(ss) != 0;
+		return true;
+	}
+	
+	public void reduceSphereCount(SourceSphere ss) {
+		// sphereUseCount.put(ss, sphereUseCount.get(ss) -1);
 	}
 	
 	//// World ////

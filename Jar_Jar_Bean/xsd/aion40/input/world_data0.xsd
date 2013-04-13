@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="x" type="xs:float"/>
+  <xs:element name="y" type="xs:float"/>
+  <xs:element name="data">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="x"/>
+        <xs:element ref="y"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="type" type="xs:string"/>
+  <xs:element name="points">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="data" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="bottom" type="xs:float"/>
+  <xs:element name="top" type="xs:float"/>
+  <xs:element name="z" type="xs:float"/>
+  <xs:element name="map_point">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="x"/>
+        <xs:element ref="y"/>
+        <xs:element ref="z"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="name" type="xs:string"/>
+  <xs:element name="priority" type="xs:byte"/>
+  <xs:element name="string" type="xs:string"/>
+  <xs:element name="breath_area" type="xs:string"/>
+  <xs:element name="power_area" type="xs:string"/>
+  <xs:element name="ui_map" type="xs:string"/>
+  <xs:element name="fatigue_korea" type="xs:string"/>
+  <xs:element name="points_info">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="type" minOccurs="0"/>
+        <xs:element ref="points"/>
+        <xs:element ref="bottom"/>
+        <xs:element ref="top"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="map_points">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="map_point" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="subzone">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="name"/>
+        <xs:element ref="priority"/>
+        <xs:element ref="string"/>
+        <xs:element ref="breath_area"/>
+        <xs:element ref="power_area"/>
+        <xs:element ref="ui_map" minOccurs="0"/>
+        <xs:element ref="fatigue_korea" minOccurs="0"/>
+        <xs:element ref="points_info"/>
+        <xs:element ref="key_points" minOccurs="0"/>
+        <xs:element ref="map_points" minOccurs="0"/>
+        <xs:element ref="key_link" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="floor" type="xs:byte"/>
+  <xs:element name="radar_area">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="name"/>
+        <xs:element ref="priority" minOccurs="0"/>
+        <xs:element ref="uniqueid" minOccurs="0"/>
+        <xs:element ref="points_info"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="floor_info_area">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="name"/>
+        <xs:element ref="priority"/>
+        <xs:element ref="floor" minOccurs="0"/>
+        <xs:element ref="points_info"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="item_use_area">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="name"/>
+        <xs:element ref="priority" minOccurs="0"/>
+        <xs:element ref="uniqueid" minOccurs="0"/>
+        <xs:element ref="id" minOccurs="0"/>
+        <xs:element ref="editor_id" minOccurs="0"/>
+        <xs:element ref="ai_pattern" minOccurs="0"/>
+        <xs:element ref="start_time" minOccurs="0"/>
+        <xs:element ref="end_time" minOccurs="0"/>
+        <xs:element ref="life_time" minOccurs="0"/>
+        <xs:element ref="always_enabled" minOccurs="0"/>
+        <xs:element ref="points_info"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="abyss_id" type="xs:short"/>
+  <xs:element name="abyss_boundary_area">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="name"/>
+        <xs:element ref="abyss_id"/>
+        <xs:element ref="points_info"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="abyss_castle_area">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="name"/>
+        <xs:element ref="abyss_id"/>
+        <xs:element ref="points_info"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="artifact_result_area">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="name"/>
+        <xs:element ref="abyss_id"/>
+        <xs:element ref="points_info"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fortress_warfare_area">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="name"/>
+        <xs:element ref="abyss_id"/>
+        <xs:element ref="points_info"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="artifact_name" type="xs:string"/>
+  <xs:element name="artifact_result_area1" type="xs:string"/>
+  <xs:element name="artifact_info">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="artifact_name"/>
+        <xs:element ref="artifact_result_area1"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="movetype" type="xs:string"/>
+  <xs:element name="nameid" type="xs:int"/>
+  <xs:element name="pos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="x"/>
+        <xs:element ref="y"/>
+        <xs:element ref="z"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="spawn_version" type="xs:string"/>
+  <xs:element name="spawn_country" type="xs:byte"/>
+  <xs:element name="npc_info">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="movetype"/>
+        <xs:element ref="nameid"/>
+        <xs:element ref="pos"/>
+        <xs:element ref="spawn_version" minOccurs="0"/>
+        <xs:element ref="spawn_country" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ispossible" type="xs:string"/>
+  <xs:element name="norecall" type="xs:string"/>
+  <xs:element name="noride" type="xs:string"/>
+  <xs:element name="recall_ispossible" type="xs:string"/>
+  <xs:element name="limitarea">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="name"/>
+        <xs:element ref="norecall"/>
+        <xs:element ref="noride"/>
+        <xs:element ref="priority"/>
+        <xs:element ref="points_info"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="subzones">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="subzone" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="windboxs">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="windbox" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="attributes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="radar_area"/>
+        <xs:element ref="floor_info_area"/>
+        <xs:element ref="item_use_area"/>
+        <xs:element ref="movingcollision"/>
+        <xs:element ref="pvpzone"/>
+        <xs:element ref="nein"/>
+        <xs:element ref="itemrestrictarea"/>
+        <xs:element ref="generalarea"/>
+        <xs:element ref="housing_estate_area"/>
+        <xs:element ref="housing_building_area"/>
+        <xs:element ref="skillrestrictarea"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="outpost_areas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="outpost" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="abyss_boundary_areas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="abyss_boundary_area" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="abyss_castle_areas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="abyss_castle_area" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="artifact_result_areas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="artifact_result_area" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fortress_warfare_areas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="fortress_warfare_area" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="artifact_infos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="artifact_info" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="npc_infos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="npc_info" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="recallareas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ispossible"/>
+        <xs:element ref="recallarea" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="limitareas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="recall_ispossible"/>
+        <xs:element ref="limitarea" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="noglideareas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ispossible"/>
+        <xs:element ref="noglidearea" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="housing_areas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="housing_estate_area" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="clientzones">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="subzones"/>
+        <xs:element ref="windboxs" minOccurs="0"/>
+        <xs:element ref="attributes"/>
+        <xs:element ref="outpost_areas"/>
+        <xs:element ref="abyss_boundary_areas"/>
+        <xs:element ref="abyss_castle_areas"/>
+        <xs:element ref="artifact_result_areas"/>
+        <xs:element ref="fortress_warfare_areas" minOccurs="0"/>
+        <xs:element ref="artifact_infos"/>
+        <xs:element ref="npc_infos"/>
+        <xs:element ref="recallareas" minOccurs="0"/>
+        <xs:element ref="limitareas" minOccurs="0"/>
+        <xs:element ref="webviewareas" minOccurs="0"/>
+        <xs:element ref="tvareas" minOccurs="0"/>
+        <xs:element ref="noglideareas" minOccurs="0"/>
+        <xs:element ref="housing_areas" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="webviewareas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="webviewarea" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="movingcollision">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="name"/>
+        <xs:element ref="priority" minOccurs="0"/>
+        <xs:element ref="id" minOccurs="0"/>
+        <xs:element ref="editor_id" minOccurs="0"/>
+        <xs:element ref="ai_pattern" minOccurs="0"/>
+        <xs:element ref="start_time" minOccurs="0"/>
+        <xs:element ref="end_time" minOccurs="0"/>
+        <xs:element ref="life_time" minOccurs="0"/>
+        <xs:element ref="always_enabled" minOccurs="0"/>
+        <xs:element ref="floor" minOccurs="0"/>
+        <xs:element ref="points_info"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="pvpzone">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="name"/>
+        <xs:element ref="string" minOccurs="0"/>
+        <xs:element ref="priority" minOccurs="0"/>
+        <xs:element ref="points_info"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="possible" type="xs:string"/>
+  <xs:element name="recallarea">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="name"/>
+        <xs:element ref="possible"/>
+        <xs:element ref="priority"/>
+        <xs:element ref="points_info"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="key_point">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="x"/>
+        <xs:element ref="y"/>
+        <xs:element ref="z"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="key_points">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="key_point" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="key_link" type="xs:string"/>
+  <xs:element name="nein">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="name"/>
+        <xs:element ref="priority" minOccurs="0"/>
+        <xs:element ref="points_info"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="id" type="xs:short"/>
+  <xs:element name="force" type="xs:float"/>
+  <xs:element name="maxupspeed" type="xs:float"/>
+  <xs:element name="upheight" type="xs:float"/>
+  <xs:element name="ai_pattern" type="xs:string"/>
+  <xs:element name="start_time" type="xs:byte"/>
+  <xs:element name="end_time" type="xs:byte"/>
+  <xs:element name="life_time" type="xs:int"/>
+  <xs:element name="always_enabled" type="xs:string"/>
+  <xs:element name="windbox">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="id"/>
+        <xs:element ref="name"/>
+        <xs:element ref="force"/>
+        <xs:element ref="maxupspeed"/>
+        <xs:element ref="upheight"/>
+        <xs:element ref="ai_pattern"/>
+        <xs:element ref="start_time"/>
+        <xs:element ref="end_time"/>
+        <xs:element ref="life_time"/>
+        <xs:element ref="always_enabled"/>
+        <xs:element ref="points_info"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="uniqueid" type="xs:byte"/>
+  <xs:element name="itemrestrictarea">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="name"/>
+        <xs:element ref="uniqueid" minOccurs="0"/>
+        <xs:element ref="priority" minOccurs="0"/>
+        <xs:element ref="points_info"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="generalarea">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="name"/>
+        <xs:element ref="string" minOccurs="0"/>
+        <xs:element ref="priority" minOccurs="0"/>
+        <xs:element ref="points_info"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="rotation" type="xs:short"/>
+  <xs:element name="estatename" type="xs:string"/>
+  <xs:element name="address_id" type="xs:short"/>
+  <xs:element name="editor_id" type="xs:short"/>
+  <xs:element name="housing_building_point">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="rotation"/>
+        <xs:element ref="pos"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="housing_estate_area">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="name"/>
+        <xs:element ref="estatename"/>
+        <xs:element ref="address_id"/>
+        <xs:element ref="editor_id"/>
+        <xs:element ref="rotation"/>
+        <xs:element ref="housing_building_point"/>
+        <xs:element ref="housing_marker_point"/>
+        <xs:element ref="child_subzone"/>
+        <xs:element ref="housing_lifetime_point"/>
+        <xs:element ref="points_info"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="noglidearea">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="name"/>
+        <xs:element ref="possible"/>
+        <xs:element ref="priority"/>
+        <xs:element ref="points_info"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="housing_marker_point">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="rotation"/>
+        <xs:element ref="pos"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="child_subzone">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="name"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="housing_lifetime_point">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="rotation"/>
+        <xs:element ref="pos"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="housing_building_area">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="name"/>
+        <xs:element ref="rotation"/>
+        <xs:element ref="points_info"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="skillrestrictarea">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="name"/>
+        <xs:element ref="uniqueid"/>
+        <xs:element ref="points_info"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="tvareas" type="xs:string"/>
+  <xs:element name="webviewarea">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="name"/>
+        <xs:element ref="points_info"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="outpost">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="name"/>
+        <xs:element ref="points_info"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

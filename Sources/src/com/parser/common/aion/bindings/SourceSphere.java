@@ -2,19 +2,19 @@ package com.parser.common.aion.bindings;
 
 public class SourceSphere {
 
-	public String name;
-	public String type;
-	public String map;
-	public int layer;
+	public String name; // Concerned NPC name
+	public String type;  // Concerned NPC type
+	public String map; // Map Name
+	public int layer; // For multi-layer maps, like Reshanta
 	public float x;
 	public float y;
 	public float z;
 	public double r;
-	public String wpName;
+	public String wpName; // WayPoint name (for walkers)
 	public int conditionSpawn; // Related to sieges ? Protectors ? Seasoned ?
-	public int version; // Easy, difficult ? (easy id + 1 ?)
-	public int country; // Country Code ?
-	public int clusterNum; // pool ?
+	public int version; // Game version concerned by this spawn
+	public int country; // Country Code
+	public int clusterNum = 0; // Number of NPC supported by this SS
 	
 	public SourceSphere() {}
 	

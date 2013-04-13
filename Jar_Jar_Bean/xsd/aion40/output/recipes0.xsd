@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="component">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:int" name="quantity" use="optional"/>
+          <xs:attribute type="xs:int" name="itemid" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="comboproduct">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:int" name="itemid" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="recipe_template">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="component" maxOccurs="unbounded" minOccurs="0"/>
+        <xs:element ref="comboproduct" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute type="xs:int" name="id" use="optional"/>
+      <xs:attribute type="xs:int" name="nameid" use="optional"/>
+      <xs:attribute type="xs:int" name="skillid" use="optional"/>
+      <xs:attribute type="xs:string" name="race" use="optional"/>
+      <xs:attribute type="xs:int" name="skillpoint" use="optional"/>
+      <xs:attribute type="xs:int" name="dp" use="optional"/>
+      <xs:attribute type="xs:int" name="autolearn" use="optional"/>
+      <xs:attribute type="xs:int" name="productid" use="optional"/>
+      <xs:attribute type="xs:int" name="quantity" use="optional"/>
+      <xs:attribute type="xs:int" name="max_production_count" use="optional"/>
+      <xs:attribute type="xs:int" name="craft_delay_id" use="optional"/>
+      <xs:attribute type="xs:int" name="craft_delay_time" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="recipe_templates">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="recipe_template" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

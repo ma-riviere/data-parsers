@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="pos">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:float" name="x" use="optional"/>
+          <xs:attribute type="xs:float" name="y" use="optional"/>
+          <xs:attribute type="xs:float" name="z" use="optional"/>
+          <xs:attribute type="xs:float" name="r" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sphere">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="pos"/>
+      </xs:sequence>
+      <xs:attribute type="xs:int" name="npc_id" use="optional"/>
+      <xs:attribute type="xs:string" name="type" use="optional"/>
+      <xs:attribute type="xs:int" name="worldId" use="optional"/>
+      <xs:attribute type="xs:int" name="layer" use="optional"/>
+      <xs:attribute type="xs:int" name="version" use="optional"/>
+      <xs:attribute type="xs:int" name="country" use="optional"/>
+      <xs:attribute type="xs:int" name="pool" use="optional"/>
+      <xs:attribute type="xs:string" name="way_point" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="spheres">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="sphere" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,1930 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid XML Studio 1.0.8.0 (http://www.liquid-technologies.com) -->
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Mission">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EquipPacks" />
+        <xs:element ref="Environment" />
+        <xs:element ref="EnvSetManager" />
+        <xs:element ref="Weapons" />
+        <xs:element ref="LevelOption" />
+        <xs:element ref="WeatherSystem" />
+        <xs:element ref="ServerZoneList" />
+        <xs:element ref="TimeEnvSystem" />
+        <xs:element ref="TimeEnvZoneList" />
+        <xs:element ref="TimeofDayEnvSystem" />
+        <xs:element ref="FxArtifactSystem" />
+        <xs:element ref="CommonShapeList" />
+        <xs:element ref="EntityDescriptions" />
+        <xs:element ref="Objects" />
+      </xs:sequence>
+      <xs:attribute name="CGFCount" type="xs:int" use="required" />
+      <xs:attribute name="Description" use="required" />
+      <xs:attribute name="MusicScript" use="required" />
+      <xs:attribute name="Name" type="xs:string" use="required" />
+      <xs:attribute name="PlayerEquipPack" use="required" />
+      <xs:attribute name="Script" use="required" />
+      <xs:attribute name="Time" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EquipPacks">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="EnvSetManager">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EnvSet000" />
+      </xs:sequence>
+      <xs:attribute name="EnvSetSize" type="xs:int" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EnvSet000">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Environment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Weapons">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Used" />
+        <xs:element ref="Ammo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Used">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="Ammo">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="LevelOption">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Initialize" />
+        <xs:element ref="Fly" />
+        <xs:element ref="BindArea" />
+        <xs:element ref="ReCall" />
+        <xs:element ref="Ride" />
+        <xs:element ref="Glide" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Initialize">
+    <xs:complexType>
+      <xs:attribute name="Render_Beaches" type="xs:int" use="required" />
+      <xs:attribute name="Render_Fog" type="xs:int" use="required" />
+      <xs:attribute name="Render_Ocean" type="xs:int" use="required" />
+      <xs:attribute name="Render_SkyBox" type="xs:int" use="required" />
+      <xs:attribute name="Render_SkyCloud" type="xs:int" use="required" />
+      <xs:attribute name="Render_Sun" type="xs:int" use="required" />
+      <xs:attribute name="Render_Terrain" type="xs:int" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Fly">
+    <xs:complexType>
+      <xs:attribute name="FRZ_NEGX" type="xs:int" use="required" />
+      <xs:attribute name="FRZ_NEGY" type="xs:int" use="required" />
+      <xs:attribute name="FRZ_X" type="xs:int" use="required" />
+      <xs:attribute name="FRZ_Y" type="xs:int" use="required" />
+      <xs:attribute name="Fly_Whole_Level" type="xs:int" use="required" />
+      <xs:attribute name="MaxHeight" type="xs:int" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BindArea">
+    <xs:complexType>
+      <xs:attribute name="IsPossible" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReCall">
+    <xs:complexType>
+      <xs:attribute name="IsPossible" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Ride">
+    <xs:complexType>
+      <xs:attribute name="Ride_Whole_Level" type="xs:int" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Glide">
+    <xs:complexType>
+      <xs:attribute name="IsPossible" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WeatherSystem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="WeatherOption" />
+        <xs:element maxOccurs="unbounded" ref="WeatherSetTable" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WeatherOption">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Sky" />
+        <xs:element ref="Fog" />
+        <xs:element ref="Env" />
+        <xs:element ref="Effect" />
+        <xs:element ref="Sound" />
+        <xs:element ref="EnvName" />
+      </xs:sequence>
+	  <xs:attribute name="WeatherName" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Sky">
+    <xs:complexType>
+      <xs:attribute name="SkyCloud2D" type="xs:string" use="required" />
+      <xs:attribute name="SkyCloud3D" type="xs:string" use="required" />
+      <xs:attribute name="SkySkyBox" type="xs:string" use="required" />
+      <xs:attribute name="SkySunLensFlares" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Env">
+    <xs:complexType>
+      <xs:attribute name="EnvColor" type="xs:string" use="required" />
+      <xs:attribute name="EnvMoistureAmount" type="xs:float" use="required" />
+      <xs:attribute name="EnvRainbowAmount" type="xs:float" use="required" />
+      <xs:attribute name="EnvThunderAmount" type="xs:float" use="required" />
+      <xs:attribute name="EnvWindForce" type="xs:float" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Effect">
+    <xs:complexType>
+      <xs:attribute name="EffEarthQuake" type="xs:float" use="required" />
+      <xs:attribute name="EffHeatHaze" type="xs:float" use="required" />
+      <xs:attribute name="ParticleName" type="xs:string" use="required" />
+      <xs:attribute name="ParticleType" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Sound">
+    <xs:complexType>
+      <xs:attribute name="sEarthQuake_Amb" type="xs:string" />
+      <xs:attribute name="sEarthQuake_Syn" type="xs:string" />
+      <xs:attribute name="sParticle_Amb" type="xs:string" />
+      <xs:attribute name="sRain_Amb" type="xs:string" />
+      <xs:attribute name="sThunder_Amb" type="xs:string" />
+      <xs:attribute name="sThunder_Syn" type="xs:string" />
+      <xs:attribute name="InnerRadius" type="xs:int" />
+      <xs:attribute name="nVolume" type="xs:int" />
+      <xs:attribute name="OuterRadius" type="xs:int" />
+      <xs:attribute name="sound_Close" type="xs:string" />
+      <xs:attribute name="sound_Open" type="xs:string" />
+      <xs:attribute name="sound_Unlock" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EnvName">
+    <xs:complexType>
+      <xs:attribute name="EnvName" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WeatherSetTable">
+    <xs:complexType>
+      <xs:attribute name="att_ranking" type="xs:int" use="required" />
+      <xs:attribute name="attribute" type="xs:string" use="required" />
+      <xs:attribute name="name" type="xs:string" use="required" />
+      <xs:attribute name="weather_zone_name" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ServerZoneList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="weather_zone" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="weather_zone">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="points_info" />
+      </xs:sequence>
+	  <xs:attribute name="name" type="xs:string" use="required" />
+      <xs:attribute name="priority" type="xs:int" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TimeEnvSystem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="TimeEnvOption" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TimeEnvOption">
+    <xs:complexType>
+      <xs:attribute name="GammaDestMax" type="xs:string" use="required" />
+      <xs:attribute name="GammaDestMin" type="xs:string" use="required" />
+      <xs:attribute name="GammaInterpolate" type="xs:string" use="required" />
+      <xs:attribute name="GammaSrcMax" type="xs:string" use="required" />
+      <xs:attribute name="GammaSrcMin" type="xs:string" use="required" />
+      <xs:attribute name="PhotoColor" use="required" />
+      <xs:attribute name="PhotocolorInterpolate" type="xs:string" use="required" />
+      <xs:attribute name="SelectiveDest" use="required" />
+      <xs:attribute name="SelectiveInterpolate" type="xs:string" use="required" />
+      <xs:attribute name="SelectiveSrc" use="required" />
+      <xs:attribute name="cloud2d" use="required" />
+      <xs:attribute name="cloud3d" use="required" />
+      <xs:attribute name="env_color" use="required" />
+      <xs:attribute name="env_heathaze" type="xs:string" use="required" />
+      <xs:attribute name="env_windforce" type="xs:string" use="required" />
+      <xs:attribute name="fog_color" use="required" />
+      <xs:attribute name="fog_end" type="xs:int" use="required" />
+      <xs:attribute name="fog_start" type="xs:int" use="required" />
+      <xs:attribute name="fullscreenfx" use="required" />
+      <xs:attribute name="name" type="xs:string" use="required" />
+      <xs:attribute name="parteffect" use="required" />
+      <xs:attribute name="particlefx" use="required" />
+      <xs:attribute name="sky_box_name" type="xs:string" use="required" />
+      <xs:attribute name="sky_lens_check" type="xs:int" use="required" />
+      <xs:attribute name="sky_lens_name" type="xs:string" use="required" />
+      <xs:attribute name="sky_sun_check" type="xs:int" use="required" />
+      <xs:attribute name="sky_sun_direction" type="xs:string" use="required" />
+      <xs:attribute name="sky_sun_height" type="xs:string" use="required" />
+      <xs:attribute name="time_hour" type="xs:int" use="required" />
+      <xs:attribute name="time_min" type="xs:int" use="required" />
+      <xs:attribute name="time_name" type="xs:string" use="required" />
+      <xs:attribute name="view_dist" type="xs:int" use="required" />
+      <xs:attribute name="zonename" type="xs:string" use="required" />
+	  <xs:attribute name="skydome_name" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TimeEnvZoneList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="timeenv_zone" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="timeenv_zone">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="points_infoEl">
+          <xs:attribute name="name" type="xs:string" use="required" />
+          <xs:attribute name="priority" type="xs:int" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TimeofDayEnvSystem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="TimeofDayGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TimeofDayGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="time_name" />
+        <xs:element ref="time_hour" />
+        <xs:element ref="time_min" />
+        <xs:element ref="SSAO" />
+        <xs:element name="fog_color" type="fog_color1" />
+        <xs:element ref="view_dist" />
+        <xs:element name="fog_density" type="fog_density1" />
+        <xs:element ref="fog_heightfalloff" />
+        <xs:element ref="fogAtmosphereScale" />
+        <xs:element ref="fogAtmosphereHeight" />
+        <xs:element ref="fogAtmosphereDistFog" />
+        <xs:element ref="fogskyratio" />
+        <xs:element ref="LayerFogHeight" />
+        <xs:element ref="LayerFogOpacity" />
+        <xs:element ref="env_color" />
+        <xs:element ref="outdoor_ambient" />
+        <xs:element ref="AmbientAmplify" />
+        <xs:element ref="env_windforce" />
+        <xs:element ref="env_heathaze" />
+        <xs:element ref="particlefx" />
+        <xs:element ref="fullscreenfx" />
+        <xs:element ref="fxEnvColorRatio" />
+        <xs:element ref="fxEnvAmbAlphaRatio" />
+        <xs:element ref="fog_start" />
+        <xs:element ref="fog_end" />
+        <xs:element ref="sky_box_name" />
+		<xs:element ref="skydome_name" />
+        <xs:element ref="sky_dome_Alpha" />
+        <xs:element ref="cloud2d" />
+        <xs:element ref="cloud3d" />
+        <xs:element ref="sky_lens_name" />
+        <xs:element ref="sky_lens_check" />
+        <xs:element ref="sky_sun_check" />
+        <xs:element ref="sky_sun_height" />
+        <xs:element ref="sky_sun_direction" />
+        <xs:element ref="SunAmplify" />
+        <xs:element ref="SunShaftDisplayRatio" />
+        <xs:element ref="SunShaftFogShadowRatio" />
+        <xs:element ref="SunMultiplier" />
+        <xs:element ref="RayleighScattering" />
+        <xs:element ref="MieScattering" />
+        <xs:element ref="ZenithShift" />
+        <xs:element ref="SunWavelength_r" />
+        <xs:element ref="SunWavelength_g" />
+        <xs:element ref="SunWavelength_b" />
+        <xs:element ref="ZenithColor" />
+        <xs:element ref="NoiseAmount" />
+        <xs:element ref="WaveLength" />
+        <xs:element ref="WaveSpeed" />
+        <xs:element ref="WaveAmplitude" />
+        <xs:element ref="WaveAngle" />
+        <xs:element ref="SunSpecular" />
+        <xs:element ref="SurfaceAmount" />
+        <xs:element ref="BeachAmount" />
+        <xs:element ref="RefractColor" />
+        <xs:element ref="RefractAmount" />
+        <xs:element ref="SunColor" />
+        <xs:element ref="SunColorMultiplier" />
+        <xs:element ref="ReflectAmount" />
+        <xs:element ref="FogColor" />
+        <xs:element ref="FogDensity" />
+        <xs:element ref="LayerIntensity" />
+        <xs:element ref="LayerThaw" />
+        <xs:element ref="HorizonColor" />
+        <xs:element ref="PhotoColor" />
+        <xs:element ref="SelectiveSrc" />
+        <xs:element ref="SelectiveDest" />
+        <xs:element ref="GammaSrcMin" />
+        <xs:element ref="GammaSrcMax" />
+        <xs:element ref="GammaDestMin" />
+        <xs:element ref="GammaDestMax" />
+        <xs:element ref="GammaInterpolate" />
+        <xs:element ref="PhotocolorInterpolate" />
+        <xs:element ref="SelectiveInterpolate" />
+      </xs:sequence>
+      <xs:attribute name="vartype" type="xs:int" use="required" />
+      <xs:attribute name="zonename" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="time_name">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="time_hour">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="ratio" use="required" />
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="time_min">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="ratio" use="required" />
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SSAO">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="fog_color1">
+    <xs:complexContent mixed="false">
+      <xs:extension base="keyvalueEl">
+        <xs:attribute name="type" type="xs:string" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="view_dist">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="ratio" use="required" />
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="fog_density1">
+    <xs:complexContent mixed="false">
+      <xs:extension base="keyvalueEl">
+        <xs:attribute name="ratio" use="required" />
+        <xs:attribute name="type" type="xs:string" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="fog_heightfalloff">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="ratio" use="required" />
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fogAtmosphereScale">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="ratio" use="required" />
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fogAtmosphereHeight">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="ratio" use="required" />
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fogAtmosphereDistFog">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="ratio" use="required" />
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fogskyratio">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="ratio" use="required" />
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayerFogHeight">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="ratio" use="required" />
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayerFogOpacity">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="ratio" use="required" />
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="env_color">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="outdoor_ambient">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AmbientAmplify">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="ratio" use="required" />
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="env_windforce">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="ratio" use="required" />
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="env_heathaze">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="ratio" use="required" />
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="particlefx">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fullscreenfx">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fxEnvColorRatio">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="ratio" use="required" />
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fxEnvAmbAlphaRatio">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="ratio" use="required" />
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fog_start">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="ratio" use="required" />
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fog_end">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="ratio" use="required" />
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sky_box_name">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+   <xs:element name="skydome_name">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sky_dome_Alpha">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="ratio" use="required" />
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="cloud2d">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="cloud3d">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sky_lens_name">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sky_lens_check">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sky_sun_check">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sky_sun_height">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="ratio" use="required" />
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sky_sun_direction">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="ratio" use="required" />
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SunAmplify">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="ratio" use="required" />
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SunShaftDisplayRatio">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="ratio" use="required" />
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SunShaftFogShadowRatio">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="ratio" use="required" />
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SunMultiplier">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="ratio" use="required" />
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RayleighScattering">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="ratio" use="required" />
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MieScattering">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="ratio" use="required" />
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ZenithShift">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="ratio" use="required" />
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SunWavelength_r">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="ratio" use="required" />
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SunWavelength_g">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="ratio" use="required" />
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SunWavelength_b">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="ratio" use="required" />
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ZenithColor">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NoiseAmount">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="ratio" use="required" />
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WaveLength">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="ratio" use="required" />
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WaveSpeed">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="ratio" use="required" />
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WaveAmplitude">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="ratio" use="required" />
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WaveAngle">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="ratio" use="required" />
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SunSpecular">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="ratio" use="required" />
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SurfaceAmount">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="ratio" use="required" />
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BeachAmount">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="ratio" use="required" />
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RefractColor">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RefractAmount">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="ratio" use="required" />
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SunColor">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SunColorMultiplier">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="ratio" use="required" />
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReflectAmount">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="ratio" use="required" />
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FogColor">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FogDensity">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="ratio" use="required" />
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayerIntensity">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="ratio" use="required" />
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayerThaw">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="ratio" use="required" />
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HorizonColor">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PhotoColor">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectiveSrc">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectiveDest">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GammaSrcMin">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="ratio" use="required" />
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GammaSrcMax">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="ratio" use="required" />
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GammaDestMin">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="ratio" use="required" />
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GammaDestMax">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="ratio" use="required" />
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GammaInterpolate">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="ratio" use="required" />
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PhotocolorInterpolate">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="ratio" use="required" />
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectiveInterpolate">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="keyvalueEl">
+          <xs:attribute name="ratio" use="required" />
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FxArtifactSystem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="FxArtifactOption" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FxArtifactOption">
+    <xs:complexType>
+      <xs:attribute name="Area" use="required" />
+      <xs:attribute name="Area1" type="xs:string" use="required" />
+      <xs:attribute name="Area2" use="required" />
+      <xs:attribute name="Area3" use="required" />
+      <xs:attribute name="Area4" use="required" />
+      <xs:attribute name="Area5" use="required" />
+      <xs:attribute name="Fx" type="xs:string" use="required" />
+      <xs:attribute name="Name" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CommonShapeList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="music_zones" />
+        <xs:element ref="sub_zones" />
+        <xs:element ref="attribute_zones" />
+        <xs:element ref="npcpath_boids" />
+        <xs:element ref="flying_zones" />
+        <xs:element ref="riding_zones" />
+        <xs:element ref="beach_zones" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="music_zones">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="music_zone" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="music_zone">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="points_infoEl">
+          <xs:attribute name="name" type="xs:string" use="required" />
+          <xs:attribute name="priority" type="xs:int" use="required" />
+          <xs:attribute name="theme" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sub_zones">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="subzone" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="subzone">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="points_infoEl">
+          <xs:attribute name="name" type="xs:string" use="required" />
+          <xs:attribute name="priority" type="xs:int" use="required" />
+          <xs:attribute name="string" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="attribute_zones">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="artifact_result_area" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="artifact_result_area">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="points_infoEl">
+          <xs:attribute name="name" type="xs:string" use="required" />
+          <xs:attribute name="priority" type="xs:int" use="required" />
+          <xs:attribute name="string" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="npcpath_boids">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="npcpath_boid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="npcpath_boid">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="data" />
+      </xs:sequence>
+      <xs:attribute name="data_size" type="xs:int" />
+      <xs:attribute name="name" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="flying_zones">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="flying_zone" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="riding_zones">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="riding_zone" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="riding_zone">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="points_infoEl">
+          <xs:attribute name="name" type="xs:NCName" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="flying_zone">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="points_infoEl">
+          <xs:attribute name="name" type="xs:NCName" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="beach_zones">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="NonBeachArea" />
+      </xs:sequence>
+      <xs:attribute name="ambient_max" type="xs:float" />
+      <xs:attribute name="ambient_min" type="xs:float" />
+      <xs:attribute name="beach_allsector" type="xs:int" />
+      <xs:attribute name="beach_render" type="xs:int" />
+      <xs:attribute name="beach_texture0" type="xs:string" />
+      <xs:attribute name="beach_texture1" type="xs:string" />
+      <xs:attribute name="beach_texture2" type="xs:string" />
+      <xs:attribute name="name" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NonBeachArea">
+    <xs:complexType>
+        <xs:sequence>
+          <xs:element ref="points" />
+        </xs:sequence>
+        <xs:attribute name="name" type="xs:string" use="required" />
+        <xs:attribute name="priority" type="xs:int" use="required" />
+        <xs:attribute name="string" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EntityDescriptions">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="Objects">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Entity" maxOccurs="unbounded"/>
+        <xs:element ref="Object" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Object">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Points" type="Points1" />
+        <xs:element minOccurs="0" ref="Entities" />
+      </xs:sequence>
+      <xs:attribute name="AffectedBySun" type="xs:int" />
+      <xs:attribute name="AmbientColor" />
+      <xs:attribute name="Angles" />
+      <xs:attribute name="AreaId" type="xs:int" />
+      <xs:attribute name="Closed" type="xs:int" />
+      <xs:attribute name="DisplayFilled" type="xs:int" />
+      <xs:attribute name="DoubleSide" type="xs:int" />
+      <xs:attribute name="DynAmbientColor" />
+      <xs:attribute name="FadeInZone" type="xs:int" />
+      <xs:attribute name="GeomId" type="xs:int" />
+      <xs:attribute name="Group" type="xs:int" />
+      <xs:attribute name="GroupId" type="xs:int" />
+      <xs:attribute name="Height" type="xs:float" />
+      <xs:attribute name="HideEntitiesThroughPortals" type="xs:int" />
+      <xs:attribute name="Ignore_heightcheck" type="xs:int" />
+      <xs:attribute name="Length" type="xs:float" />
+      <xs:attribute name="LodDist" type="xs:int" />
+      <xs:attribute name="LowLODId" type="xs:int" />
+      <xs:attribute name="MergeGeom" type="xs:int" />
+      <xs:attribute name="Name" type="xs:string" use="required" />
+      <xs:attribute name="Pos" />
+      <xs:attribute name="Scale" />
+      <xs:attribute name="SkyOnly" type="xs:int" />
+      <xs:attribute name="TerrainAlign" type="xs:int" />
+      <xs:attribute name="Type" type="xs:string" use="required" />
+      <xs:attribute name="UseInIndoors" type="xs:int" />
+      <xs:attribute name="UseLOD" type="xs:int" />
+      <xs:attribute name="ViewDistRatio" type="xs:int" />
+      <xs:attribute name="Width" type="xs:float" />
+      <xs:attribute name="dir" type="xs:int" />
+      <xs:attribute name="iidle_range" type="xs:int" />
+      <xs:attribute name="npc" />
+      <xs:attribute name="subzone" />
+      <xs:attribute name="use_dir" type="xs:int" />
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="Points1">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" ref="Point" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Point">
+    <xs:complexType>
+      <xs:attribute name="Pos" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Entities">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Entity" maxOccurs="unbounded" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Environment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Fog" />
+        <xs:element ref="Shaders" />
+        <xs:element ref="EnvState" />
+        <xs:element ref="MRTSky" />
+        <xs:element ref="MRTOcean" />
+        <xs:element ref="Ocean" />
+        <xs:element ref="HeightMap" />
+        <xs:element ref="Misc" />
+        <xs:element ref="Lighting" />
+        <xs:element ref="Lighting_000" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Fog">
+    <xs:complexType>
+      <xs:attribute name="Color" type="xs:string" />
+      <xs:attribute name="ColorModify" type="xs:int" />
+      <xs:attribute name="End" type="xs:int" />
+      <xs:attribute name="FogAtmosphereHeight" type="xs:float" />
+      <xs:attribute name="FogAtmosphereScale" type="xs:float" />
+      <xs:attribute name="FogDensity" type="xs:float" />
+      <xs:attribute name="FogSkyRatio" type="xs:float" />
+      <xs:attribute name="HeightFalloff" type="xs:float" />
+      <xs:attribute name="Start" type="xs:int" />
+      <xs:attribute name="ViewDistance" type="xs:int" />
+      <xs:attribute name="FogApply" type="xs:int" />
+      <xs:attribute name="FogColor" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Shaders">
+    <xs:complexType>
+      <xs:attribute name="Shore" type="xs:string" use="required" />
+      <xs:attribute name="SkyBox" type="xs:string" use="required" />
+      <xs:attribute name="SunLensFlares" type="xs:string" use="required" />
+      <xs:attribute name="SunWaterRefl" type="xs:string" use="required" />
+      <xs:attribute name="Water" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EnvState">
+    <xs:complexType>
+      <xs:attribute name="AmbientAmplify" type="xs:float" use="required" />
+      <xs:attribute name="EnvColor" use="required" />
+      <xs:attribute name="OutdoorAmbientColor" use="required" />
+      <xs:attribute name="SkyBoxAngle" type="xs:int" use="required" />
+      <xs:attribute name="SkyBoxStretching" type="xs:float" use="required" />
+      <xs:attribute name="SunAmplify" type="xs:float" use="required" />
+      <xs:attribute name="SunColor" use="required" />
+      <xs:attribute name="SunHeightScale" type="xs:float" use="required" />
+      <xs:attribute name="WindForce" type="xs:float" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MRTSky">
+    <xs:complexType>
+      <xs:attribute name="HorizonColor" use="required" />
+      <xs:attribute name="MieScattering" type="xs:float" use="required" />
+      <xs:attribute name="RayleighScattering" type="xs:float" use="required" />
+      <xs:attribute name="SunMultiplier" type="xs:float" use="required" />
+      <xs:attribute name="SunWavelength_B" type="xs:float" use="required" />
+      <xs:attribute name="SunWavelength_G" type="xs:float" use="required" />
+      <xs:attribute name="SunWavelength_R" type="xs:float" use="required" />
+      <xs:attribute name="ZenithColor" use="required" />
+      <xs:attribute name="ZenithShift" type="xs:float" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MRTOcean">
+    <xs:complexType>
+      <xs:attribute name="BeachAmount" type="xs:float" use="required" />
+      <xs:attribute name="FogColor" use="required" />
+      <xs:attribute name="FogDensity" type="xs:float" use="required" />
+      <xs:attribute name="ReflectAmount" type="xs:float" use="required" />
+      <xs:attribute name="RefractAmount" type="xs:float" use="required" />
+      <xs:attribute name="RefractColor" use="required" />
+      <xs:attribute name="SunColor" use="required" />
+      <xs:attribute name="SunColorMultiplier" type="xs:float" use="required" />
+      <xs:attribute name="SunSpecular" type="xs:float" use="required" />
+      <xs:attribute name="SurfaceAmount" type="xs:float" use="required" />
+      <xs:attribute name="WaveAmplitude" type="xs:float" use="required" />
+      <xs:attribute name="WaveAngle" type="xs:float" use="required" />
+      <xs:attribute name="WaveLength" type="xs:float" use="required" />
+      <xs:attribute name="WaveSpeed" type="xs:float" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Ocean">
+    <xs:complexType>
+      <xs:attribute name="BorderTranspRatio" type="xs:float" use="required" />
+      <xs:attribute name="BottomTexture" use="required" />
+      <xs:attribute name="Caustics" type="xs:string" use="required" />
+      <xs:attribute name="FogColor" use="required" />
+      <xs:attribute name="FogDistance" type="xs:int" use="required" />
+      <xs:attribute name="ShoreSize" type="xs:int" use="required" />
+      <xs:attribute name="SurfaceBumpAmountX" type="xs:float" use="required" />
+      <xs:attribute name="SurfaceBumpAmountY" type="xs:float" use="required" />
+      <xs:attribute name="SurfaceReflectRatio" type="xs:float" use="required" />
+      <xs:attribute name="SurfaceTranspRatio" type="xs:float" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HeightMap">
+    <xs:complexType>
+      <xs:attribute name="DefaultZoomTexture" use="required" />
+      <xs:attribute name="GeometryLodRatio" type="xs:float" use="required" />
+      <xs:attribute name="TextureLodRatio" type="xs:float" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Misc">
+    <xs:complexType>
+      <xs:attribute name="VegetationShadowColorMin" type="xs:float" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Lighting">
+    <xs:complexType>
+      <xs:attribute name="LightingCount" type="xs:int" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Lighting_000">
+    <xs:complexType>
+      <xs:attribute name="Algorithm" type="xs:int" use="required" />
+      <xs:attribute name="Ambient" type="xs:int" use="required" />
+      <xs:attribute name="CurrentHour" type="xs:int" use="required" />
+      <xs:attribute name="HemiSamplQuality" type="xs:int" use="required" />
+      <xs:attribute name="Lighting" type="xs:int" use="required" />
+      <xs:attribute name="ObjShadows" type="xs:int" use="required" />
+      <xs:attribute name="ShadowBlur" type="xs:int" use="required" />
+      <xs:attribute name="ShadowIntensity" type="xs:int" use="required" />
+      <xs:attribute name="Shadows" type="xs:int" use="required" />
+      <xs:attribute name="SkyColor" type="xs:int" use="required" />
+      <xs:attribute name="SunColor" type="xs:int" use="required" />
+      <xs:attribute name="SunHeight" type="xs:int" use="required" />
+      <xs:attribute name="SunMultiplier" type="xs:float" use="required" />
+      <xs:attribute name="SunRotation" type="xs:int" use="required" />
+      <xs:attribute name="SunVector" use="required" />
+      <xs:attribute name="lightmap_name" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="points_infoEl">
+    <xs:sequence>
+      <xs:element ref="points_info" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="points_info">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="points" />
+      </xs:sequence>
+      <xs:attribute name="bottom" type="xs:float" use="required" />
+      <xs:attribute name="top" type="xs:float" use="required" />
+      <xs:attribute name="type" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="points">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="data" />
+      </xs:sequence>
+      <xs:attribute name="points_size" type="xs:int" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="data">
+    <xs:complexType>
+      <xs:attribute name="x" type="xs:float" use="required" />
+      <xs:attribute name="y" type="xs:float" use="required" />
+      <xs:attribute default="0" name="z" type="xs:float" use="optional" />
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="keyvalueEl">
+    <xs:sequence>
+      <xs:element ref="keyvalue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="keyvalue">
+    <xs:complexType>
+      <xs:attribute name="key0" />
+      <xs:attribute name="key1" />
+      <xs:attribute name="key2" />
+      <xs:attribute name="key3" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Entity">
+    <xs:complexType>
+      <xs:sequence minOccurs="0">
+        <xs:element ref="customColors" />
+        <xs:element ref="MRT_Params" />
+        <xs:element ref="Properties" />
+      </xs:sequence>
+      <xs:attribute name="AionFXPartialGlow" type="xs:int" />
+      <xs:attribute name="AionFXPostGlow" type="xs:int" />
+      <xs:attribute name="Angles" />
+      <xs:attribute name="CastShadowMaps" type="xs:int" />
+      <xs:attribute name="CastShadows" type="xs:int" />
+      <xs:attribute name="EntityClass" type="xs:string" />
+      <xs:attribute name="EntityGUID" type="xs:int" />
+      <xs:attribute name="EntityId" type="xs:int" />
+      <xs:attribute name="EnvSkyBoxObject" />
+      <xs:attribute name="EnvTimeShow" />
+      <xs:attribute name="EnvWeatherHide" />
+      <xs:attribute name="EnvWeatherShow" />
+      <xs:attribute name="EventType" />
+      <xs:attribute name="HiddenInGame" type="xs:int" />
+      <xs:attribute name="IgnoreFog" type="xs:int" />
+      <xs:attribute name="IgnoreViewDist" type="xs:int" />
+      <xs:attribute name="Layer" type="xs:string" />
+      <xs:attribute name="LodRatio" type="xs:int" />
+      <xs:attribute name="Name" type="xs:string" use="required" />
+      <xs:attribute name="ParentId" type="xs:int" />
+      <xs:attribute name="Pos" />
+      <xs:attribute name="PreCalcShadows" type="xs:int" />
+      <xs:attribute name="ReceiveLightmap" type="xs:int" />
+      <xs:attribute name="RecvShadowMaps" type="xs:int" />
+      <xs:attribute name="Scale" />
+      <xs:attribute name="SelfShadowing" type="xs:int" />
+      <xs:attribute name="SkipOnLowSpec" type="xs:int" />
+      <xs:attribute name="SyncAnimation" type="xs:int" />
+      <xs:attribute name="Type" type="xs:string" />
+      <xs:attribute name="ViewDistRatio" type="xs:int" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="customColors">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="MRT_Params">
+    <xs:complexType>
+      <xs:attribute name="CastShadowPLSM" type="xs:int" use="required" />
+      <xs:attribute name="CastShadowPSSM" type="xs:int" use="required" />
+      <xs:attribute name="RecvShadowPLSM" type="xs:int" use="required" />
+      <xs:attribute name="RecvShadowPSSM" type="xs:int" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Properties">
+    <xs:complexType>
+      <xs:choice minOccurs="0">
+        <xs:sequence>
+          <xs:element ref="Animation" />
+          <xs:element ref="ImpactSound" />
+          <xs:element ref="LoopSound" />
+          <xs:element ref="Physics" />
+        </xs:sequence>
+        <xs:sequence>
+          <xs:element ref="BuildInfo" />
+          <xs:element ref="PartsInfo" />
+        </xs:sequence>
+        <xs:sequence>
+          <xs:element ref="Server" />
+          <xs:element ref="Sound" />
+        </xs:sequence>
+        <xs:sequence>
+          <xs:element ref="EaxReverbProperties" />
+          <xs:element ref="Sound1" />
+          <xs:element ref="Sound2" />
+          <xs:element ref="Sound3" />
+          <xs:element ref="Sound4" />
+          <xs:element ref="Sound5" />
+          <xs:element ref="Sound6" />
+          <xs:element ref="Sound7" />
+        </xs:sequence>
+      </xs:choice>
+      <xs:attribute name="address_Address" type="xs:string" />
+      <xs:attribute name="Albedo" type="xs:float" />
+      <xs:attribute name="Amplifier" type="xs:int" />
+      <xs:attribute name="AnimationSpeed" type="xs:float" />
+      <xs:attribute name="Billboard_Type" type="xs:int" />
+      <xs:attribute name="BindingEmitterName" />
+      <xs:attribute name="DiffuseMultiplier" type="xs:float" />
+      <xs:attribute name="Env" type="xs:int" />
+      <xs:attribute name="InnerRadius" type="xs:float" />
+      <xs:attribute name="LockDist" type="xs:int" />
+      <xs:attribute name="OuterRadius" type="xs:float" />
+      <xs:attribute name="ParticleEffect" type="xs:string" />
+      <xs:attribute name="ProjectorFov" type="xs:float" />
+      <xs:attribute name="Scale" type="xs:float" />
+      <xs:attribute name="SpawnPeriod" type="xs:float" />
+      <xs:attribute name="bActive" type="xs:int" />
+      <xs:attribute name="bAI_Pattern" type="xs:int" />
+      <xs:attribute name="bAlWays_Enabled" type="xs:int" />
+      <xs:attribute name="bCastPointShadow" type="xs:int" />
+      <xs:attribute name="bCheckBottom" type="xs:int" />
+      <xs:attribute name="bDynamic" type="xs:int" />
+      <xs:attribute name="bEnabled" type="xs:int" />
+      <xs:attribute name="bLIndoorOnly" type="xs:int" />
+      <xs:attribute name="bLOutdoorOnly" type="xs:int" />
+      <xs:attribute name="bLoop" type="xs:int" />
+      <xs:attribute name="bOnce" type="xs:int" />
+      <xs:attribute name="bPhysicalize" type="xs:int" />
+      <xs:attribute name="bPlay" type="xs:int" />
+      <xs:attribute name="bProjectInAllDirs" type="xs:int" />
+      <xs:attribute name="bWeatherLayer" type="xs:int" />
+      <xs:attribute name="clrDiffuse" />
+      <xs:attribute name="craftObjectType_CraftObjectType" type="xs:string" />
+      <xs:attribute name="damage_players" type="xs:int" />
+      <xs:attribute name="estate_EstateName" type="xs:string" />
+      <xs:attribute name="fFadeValue" type="xs:int" />
+      <xs:attribute name="fFontScale" type="xs:float" />
+      <xs:attribute name="fHAngleLimit" type="xs:int" />
+      <xs:attribute name="fRadiusRandom" type="xs:int" />
+      <xs:attribute name="fScale" type="xs:int" />
+      <xs:attribute name="fUpdateRadius" type="xs:float" />
+      <xs:attribute name="fileLadderCGF" />
+      <xs:attribute name="fileModel01" />
+      <xs:attribute name="gameobjGuestbook" type="xs:string" />
+      <xs:attribute name="gameobjManager_npc" type="xs:string" />
+      <xs:attribute name="gameobjSign_nosale" type="xs:string" />
+      <xs:attribute name="gameobjTeleport" type="xs:string" />
+      <xs:attribute name="gostring_Text" />
+      <xs:attribute name="iHeight" type="xs:int" />
+      <xs:attribute name="iLand_length" type="xs:int" />
+      <xs:attribute name="iLand_width" type="xs:int" />
+      <xs:attribute name="iVolume" type="xs:int" />
+      <xs:attribute name="lighttype" type="xs:int" />
+      <xs:attribute name="nEAXEnvironment" type="xs:int" />
+      <xs:attribute name="nEnd_Time" type="xs:int" />
+      <xs:attribute name="nGroup_id" type="xs:int" />
+      <xs:attribute name="nLife_Time" type="xs:int" />
+      <xs:attribute name="nParticleType" type="xs:int" />
+      <xs:attribute name="nStart_Time" type="xs:int" />
+      <xs:attribute name="nUnique_id" type="xs:int" />
+      <xs:attribute name="object_Model" />
+      <xs:attribute name="shader_BillbardShader" />
+      <xs:attribute name="sndAnimStart" />
+      <xs:attribute name="sndAnimStop" />
+      <xs:attribute name="sndSource" />
+      <xs:attribute name="Tau" type="xs:float" />
+      <xs:attribute name="texture_BillbardTexture" />
+      <xs:attribute name="texture_ProjectorTexture" />
+      <xs:attribute name="vector_AngleOffset" />
+      <xs:attribute name="vector_Bounds" />
+      <xs:attribute name="vector_LightDir" />
+      <xs:attribute name="viewDistType_ViewType" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Animation">
+    <xs:complexType>
+      <xs:attribute name="Animation" type="xs:string" use="required" />
+      <xs:attribute name="Speed" type="xs:float" use="required" />
+      <xs:attribute name="bLoop" type="xs:int" use="required" />
+      <xs:attribute name="bPlaying" type="xs:int" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ImpactSound">
+    <xs:complexType>
+      <xs:attribute name="InnerRadius" type="xs:int" use="required" />
+      <xs:attribute name="OuterRadius" type="xs:int" use="required" />
+      <xs:attribute name="nVolume" type="xs:int" use="required" />
+      <xs:attribute name="sndFilename" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoopSound">
+    <xs:complexType>
+      <xs:attribute name="bone_name" type="xs:string" use="required" />
+      <xs:attribute name="InnerRadius" type="xs:int" use="required" />
+      <xs:attribute name="OuterRadius" type="xs:int" use="required" />
+      <xs:attribute name="nVolume" type="xs:int" use="required" />
+      <xs:attribute name="sndSource" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Physics">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="LowSpec" />
+      </xs:sequence>
+      <xs:attribute name="Density" type="xs:int" use="required" />
+      <xs:attribute name="Mass" type="xs:int" use="required" />
+      <xs:attribute name="Type" type="xs:string" use="required" />
+      <xs:attribute name="bActivateOnDamage" type="xs:int" use="required" />
+      <xs:attribute name="bFixedDamping" type="xs:int" use="required" />
+      <xs:attribute name="bResting" type="xs:int" use="required" />
+      <xs:attribute name="bRigidBody" type="xs:int" use="required" />
+      <xs:attribute name="bRigidBodyActive" type="xs:int" use="required" />
+      <xs:attribute name="damping" type="xs:int" use="required" />
+      <xs:attribute name="max_time_step" type="xs:float" use="required" />
+      <xs:attribute name="sleep_speed" type="xs:float" use="required" />
+      <xs:attribute name="vector_Impulse" use="required" />
+      <xs:attribute name="water_damping" type="xs:int" use="required" />
+      <xs:attribute name="water_density" type="xs:int" use="required" />
+      <xs:attribute name="water_resistance" type="xs:int" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LowSpec">
+    <xs:complexType>
+      <xs:attribute name="Density" type="xs:int" use="required" />
+      <xs:attribute name="Mass" type="xs:int" use="required" />
+      <xs:attribute name="bKeepMassAndWater" type="xs:int" use="required" />
+      <xs:attribute name="bKeepRigidBody" type="xs:int" use="required" />
+      <xs:attribute name="bRigidBody" type="xs:int" use="required" />
+      <xs:attribute name="max_time_step" type="xs:float" use="required" />
+      <xs:attribute name="sleep_speed" type="xs:float" use="required" />
+      <xs:attribute name="water_density" type="xs:int" use="required" />
+      <xs:attribute name="water_resistance" type="xs:int" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Server">
+    <xs:complexType>
+      <xs:attribute name="bClickable" type="xs:int" use="required" />
+      <xs:attribute name="bCloseable" type="xs:int" use="required" />
+      <xs:attribute name="bOneWay" type="xs:int" use="required" />
+      <xs:attribute name="bOpened" type="xs:int" use="required" />
+      <xs:attribute name="id" type="xs:int" use="required" />
+      <xs:attribute name="Key" type="xs:string" use="required" />
+      <xs:attribute name="Link" type="xs:string" use="required" />
+      <xs:attribute name="Timer" type="xs:int" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EaxReverbProperties">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="fReflectionsPan" />
+        <xs:element ref="fReverbPan" />
+      </xs:sequence>
+      <xs:attribute name="fAirAbsorptionHF" type="xs:int" use="required" />
+      <xs:attribute name="fDecayHFRatio" type="xs:float" use="required" />
+      <xs:attribute name="fDecayLFRatio" type="xs:float" use="required" />
+      <xs:attribute name="fDecayTime" type="xs:float" use="required" />
+      <xs:attribute name="fDensity" type="xs:int" use="required" />
+      <xs:attribute name="fDiffusion" type="xs:int" use="required" />
+      <xs:attribute name="fEchoDepth" type="xs:int" use="required" />
+      <xs:attribute name="fEchoTime" type="xs:float" use="required" />
+      <xs:attribute name="fEnvDiffusion" type="xs:int" use="required" />
+      <xs:attribute name="fEnvSize" type="xs:int" use="required" />
+      <xs:attribute name="fHFReference" type="xs:int" use="required" />
+      <xs:attribute name="fLFReference" type="xs:int" use="required" />
+      <xs:attribute name="fModulationDepth" type="xs:int" use="required" />
+      <xs:attribute name="fModulationTime" type="xs:float" use="required" />
+      <xs:attribute name="fReflectionsDelay" type="xs:int" use="required" />
+      <xs:attribute name="fReverbDelay" type="xs:int" use="required" />
+      <xs:attribute name="fRoomRolloffFactor" type="xs:int" use="required" />
+      <xs:attribute name="nEnvironment" type="xs:int" use="required" />
+      <xs:attribute name="nFlags" type="xs:int" use="required" />
+      <xs:attribute name="nReflections" type="xs:int" use="required" />
+      <xs:attribute name="nReverb" type="xs:int" use="required" />
+      <xs:attribute name="nRoom" type="xs:int" use="required" />
+      <xs:attribute name="nRoomHF" type="xs:int" use="required" />
+      <xs:attribute name="nRoomLF" type="xs:int" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fReflectionsPan">
+    <xs:complexType>
+      <xs:attribute name="x" type="xs:int" use="required" />
+      <xs:attribute name="y" type="xs:int" use="required" />
+      <xs:attribute name="z" type="xs:int" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fReverbPan">
+    <xs:complexType>
+      <xs:attribute name="x" type="xs:int" use="required" />
+      <xs:attribute name="y" type="xs:int" use="required" />
+      <xs:attribute name="z" type="xs:int" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Sound1">
+    <xs:complexType>
+      <xs:attribute name="bCentered" type="xs:int" use="required" />
+      <xs:attribute name="bDoNotOverlap" type="xs:int" use="required" />
+      <xs:attribute name="iChanceOfOccuring" type="xs:int" use="required" />
+      <xs:attribute name="iVolume" type="xs:int" use="required" />
+      <xs:attribute name="sndSound" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Sound2">
+    <xs:complexType>
+      <xs:attribute name="bCentered" type="xs:int" use="required" />
+      <xs:attribute name="bDoNotOverlap" type="xs:int" use="required" />
+      <xs:attribute name="iChanceOfOccuring" type="xs:int" use="required" />
+      <xs:attribute name="iVolume" type="xs:int" use="required" />
+      <xs:attribute name="sndSound" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Sound3">
+    <xs:complexType>
+      <xs:attribute name="bCentered" type="xs:int" use="required" />
+      <xs:attribute name="bDoNotOverlap" type="xs:int" use="required" />
+      <xs:attribute name="iChanceOfOccuring" type="xs:int" use="required" />
+      <xs:attribute name="iVolume" type="xs:int" use="required" />
+      <xs:attribute name="sndSound" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Sound4">
+    <xs:complexType>
+      <xs:attribute name="bCentered" type="xs:int" use="required" />
+      <xs:attribute name="bDoNotOverlap" type="xs:int" use="required" />
+      <xs:attribute name="iChanceOfOccuring" type="xs:int" use="required" />
+      <xs:attribute name="iVolume" type="xs:int" use="required" />
+      <xs:attribute name="sndSound" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Sound5">
+    <xs:complexType>
+      <xs:attribute name="bCentered" type="xs:int" use="required" />
+      <xs:attribute name="bDoNotOverlap" type="xs:int" use="required" />
+      <xs:attribute name="iChanceOfOccuring" type="xs:int" use="required" />
+      <xs:attribute name="iVolume" type="xs:int" use="required" />
+      <xs:attribute name="sndSound" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Sound6">
+    <xs:complexType>
+      <xs:attribute name="bCentered" type="xs:int" use="required" />
+      <xs:attribute name="bDoNotOverlap" type="xs:int" use="required" />
+      <xs:attribute name="iChanceOfOccuring" type="xs:int" use="required" />
+      <xs:attribute name="iVolume" type="xs:int" use="required" />
+      <xs:attribute name="sndSound" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Sound7">
+    <xs:complexType>
+      <xs:attribute name="bCentered" type="xs:int" use="required" />
+      <xs:attribute name="bDoNotOverlap" type="xs:int" use="required" />
+      <xs:attribute name="iChanceOfOccuring" type="xs:int" use="required" />
+      <xs:attribute name="iVolume" type="xs:int" use="required" />
+      <xs:attribute name="sndSound" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuildInfo">
+    <xs:complexType>
+      <xs:attribute name="iBuild_height" type="xs:int" use="required" />
+      <xs:attribute name="iBuild_length" type="xs:int" use="required" />
+      <xs:attribute name="iBuild_width" type="xs:int" use="required" />
+      <xs:attribute name="objBuild_mesh" type="xs:string" use="required" />
+      <xs:attribute name="objBuild_type" type="xs:string" use="required" />
+      <xs:attribute name="vectorBuild_Offset" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PartsInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="AddOn" />
+        <xs:element ref="Build" />
+        <xs:element ref="Land" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddOn">
+    <xs:complexType>
+      <xs:attribute name="addonboneAddon1_bone" type="xs:string" use="required" />
+      <xs:attribute name="addonboneAddon2_bone" type="xs:string" use="required" />
+      <xs:attribute name="addonboneAddon3_bone" type="xs:string" use="required" />
+      <xs:attribute name="addonboneAddon4_bone" type="xs:string" use="required" />
+      <xs:attribute name="addonboneEmblem1_bone" type="xs:string" use="required" />
+      <xs:attribute name="addonboneEmblem2_bone" type="xs:string" use="required" />
+      <xs:attribute name="addonboneEmblem3_bone" type="xs:string" use="required" />
+      <xs:attribute name="addonboneEmblem4_bone" type="xs:string" use="required" />
+      <xs:attribute name="addonboneEmblem5_bone" type="xs:string" use="required" />
+      <xs:attribute name="addonboneEmblem6_bone" type="xs:string" use="required" />
+      <xs:attribute name="addonboneEmblem7_bone" type="xs:string" use="required" />
+      <xs:attribute name="colorAddon1_Color" type="xs:string" use="required" />
+      <xs:attribute name="colorAddon2_Color" type="xs:string" use="required" />
+      <xs:attribute name="colorAddon3_Color" type="xs:string" use="required" />
+      <xs:attribute name="colorAddon4_Color" type="xs:string" use="required" />
+      <xs:attribute name="colorEmblem1_Color" type="xs:string" use="required" />
+      <xs:attribute name="colorEmblem2_Color" type="xs:string" use="required" />
+      <xs:attribute name="colorEmblem3_Color" type="xs:string" use="required" />
+      <xs:attribute name="colorEmblem4_Color" type="xs:string" use="required" />
+      <xs:attribute name="colorEmblem5_Color" type="xs:string" use="required" />
+      <xs:attribute name="colorEmblem6_Color" type="xs:string" use="required" />
+      <xs:attribute name="colorEmblem7_Color" type="xs:string" use="required" />
+      <xs:attribute name="housingobjAddon1" type="xs:string" use="required" />
+      <xs:attribute name="housingobjAddon2" type="xs:string" use="required" />
+      <xs:attribute name="housingobjAddon3" type="xs:string" use="required" />
+      <xs:attribute name="housingobjAddon4" type="xs:string" use="required" />
+      <xs:attribute name="housingobjEmblem1" type="xs:string" use="required" />
+      <xs:attribute name="housingobjEmblem2" type="xs:string" use="required" />
+      <xs:attribute name="housingobjEmblem3" type="xs:string" use="required" />
+      <xs:attribute name="housingobjEmblem4" type="xs:string" use="required" />
+      <xs:attribute name="housingobjEmblem5" type="xs:string" use="required" />
+      <xs:attribute name="housingobjEmblem6" type="xs:string" use="required" />
+      <xs:attribute name="housingobjEmblem7" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Build">
+    <xs:complexType>
+      <xs:attribute name="colorDoor_Color" type="xs:string" use="required" />
+      <xs:attribute name="colorFrame_Color" type="xs:string" use="required" />
+      <xs:attribute name="colorInFloor1_Color" type="xs:string" use="required" />
+      <xs:attribute name="colorInFloor2_Color" type="xs:string" use="required" />
+      <xs:attribute name="colorInFloor3_Color" type="xs:string" use="required" />
+      <xs:attribute name="colorInFloor4_Color" type="xs:string" use="required" />
+      <xs:attribute name="colorInFloor5_Color" type="xs:string" use="required" />
+      <xs:attribute name="colorInFloor6_Color" type="xs:string" use="required" />
+      <xs:attribute name="colorInWall1_Color" type="xs:string" use="required" />
+      <xs:attribute name="colorInWall2_Color" type="xs:string" use="required" />
+      <xs:attribute name="colorInWall3_Color" type="xs:string" use="required" />
+      <xs:attribute name="colorInWall4_Color" type="xs:string" use="required" />
+      <xs:attribute name="colorInWall5_Color" type="xs:string" use="required" />
+      <xs:attribute name="colorInWall6_Color" type="xs:string" use="required" />
+      <xs:attribute name="colorOutWall_Color" type="xs:string" use="required" />
+      <xs:attribute name="colorRoof_Color" type="xs:string" use="required" />
+      <xs:attribute name="housingobjDoor" type="xs:string" use="required" />
+      <xs:attribute name="housingobjFrame" type="xs:string" use="required" />
+      <xs:attribute name="housingobjInFloor1" type="xs:string" use="required" />
+      <xs:attribute name="housingobjInFloor2" type="xs:string" use="required" />
+      <xs:attribute name="housingobjInFloor3" type="xs:string" use="required" />
+      <xs:attribute name="housingobjInFloor4" type="xs:string" use="required" />
+      <xs:attribute name="housingobjInFloor5" type="xs:string" use="required" />
+      <xs:attribute name="housingobjInFloor6" type="xs:string" use="required" />
+      <xs:attribute name="housingobjInWall1" type="xs:string" use="required" />
+      <xs:attribute name="housingobjInWall2" type="xs:string" use="required" />
+      <xs:attribute name="housingobjInWall3" type="xs:string" use="required" />
+      <xs:attribute name="housingobjInWall4" type="xs:string" use="required" />
+      <xs:attribute name="housingobjInWall5" type="xs:string" use="required" />
+      <xs:attribute name="housingobjInWall6" type="xs:string" use="required" />
+      <xs:attribute name="housingobjOutWall" type="xs:string" use="required" />
+      <xs:attribute name="housingobjRoof" type="xs:string" use="required" />
+      <xs:attribute name="housingtexDoor_Texture" type="xs:string" use="required" />
+      <xs:attribute name="housingtexFrame_Texture" type="xs:string" use="required" />
+      <xs:attribute name="housingtexInFloor1_Texture" type="xs:string" use="required" />
+      <xs:attribute name="housingtexInFloor2_Texture" type="xs:string" use="required" />
+      <xs:attribute name="housingtexInFloor3_Texture" type="xs:string" use="required" />
+      <xs:attribute name="housingtexInFloor4_Texture" type="xs:string" use="required" />
+      <xs:attribute name="housingtexInFloor5_Texture" type="xs:string" use="required" />
+      <xs:attribute name="housingtexInFloor6_Texture" type="xs:string" use="required" />
+      <xs:attribute name="housingtexInWall1_Texture" type="xs:string" use="required" />
+      <xs:attribute name="housingtexInWall2_Texture" type="xs:string" use="required" />
+      <xs:attribute name="housingtexInWall3_Texture" type="xs:string" use="required" />
+      <xs:attribute name="housingtexInWall4_Texture" type="xs:string" use="required" />
+      <xs:attribute name="housingtexInWall5_Texture" type="xs:string" use="required" />
+      <xs:attribute name="housingtexInWall6_Texture" type="xs:string" use="required" />
+      <xs:attribute name="housingtexOutWall_Texture" type="xs:string" use="required" />
+      <xs:attribute name="housingtexRoof_Texture" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Land">
+    <xs:complexType>
+      <xs:attribute name="colorFence_Color" type="xs:string" use="required" />
+      <xs:attribute name="colorGarden_Color" type="xs:string" use="required" />
+      <xs:attribute name="housingobjFence" type="xs:string" use="required" />
+      <xs:attribute name="housingobjGarden" type="xs:string" use="required" />
+      <xs:attribute name="housingtexFence_Texture" type="xs:string" use="required" />
+      <xs:attribute name="housingtexGarden_Texture" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
