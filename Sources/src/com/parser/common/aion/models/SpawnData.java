@@ -166,7 +166,7 @@ public class SpawnData {
 		List<Entity> results = new ArrayList<Entity>();
 		for (Entity ent : data.getClientEntities().get(mapId)) {
 			if (!Strings.isNullOrEmpty(ent.getPos()))
-				if (MathUtil.isIn3dRange(ent.getPos(), getX(), getY(), getZ(), 4.0))
+				if (MathUtil.isIn3dRange(ent.getPos(), getX(), getY(), getZ(), 1.0))
 					results.add(ent);
 		}
 		return results;
