@@ -15,7 +15,7 @@ import javax.xml.bind.Unmarshaller;
 
 import com.parser.common.utils.Util;
 
-public abstract class AbstractDirectoryParser<R, E> implements ClientDirectoryParser<R, E> {
+public abstract class AbstractDirectoryParser<R, E> implements DirectoryParser<R, E> {
 
 	Map<String, File> files = new HashMap<String, File>();
 	Map<String, R> rootDataMap = new HashMap<String, R>();

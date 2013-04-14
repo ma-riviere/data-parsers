@@ -8,7 +8,7 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 
-public abstract class AbstractFileParser<T> implements ClientFileParser<T> {
+public abstract class AbstractFileParser<T> implements FileParser<T> {
 
 	protected List<T> dataList;
 
@@ -28,10 +28,10 @@ public abstract class AbstractFileParser<T> implements ClientFileParser<T> {
 			unmarshaller.setEventHandler(new XmlValidationHandler());
 			File dataFile = new File(file);
 			if(dataFile.exists()){
-				System.out.println("\n[MAIN] [INFO] " + dataFile.getName()+" exists, reading it !");
+				System.out.println("\n[MAIN][INFO] " + dataFile.getName()+" exists, reading it !");
 				Object collection = unmarshaller.unmarshal(dataFile);
 				dataList = castFrom(collection);
-				// System.out.println("Size of " + file + " : " + dataList.size());
+				// System.out.println("\n [MAIN][INFO] Size of " + file + " : " + dataList.size());
 			}else{
 				System.out.println("\n[MAIN][ERROR] " + dataFile + " could not be found !!");
 				return Collections.emptyList();

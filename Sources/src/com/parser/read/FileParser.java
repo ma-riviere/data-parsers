@@ -2,7 +2,7 @@ package com.parser.read;
 
 import java.util.List;
 
-public interface ClientFileParser<T> {
+public interface FileParser<T> {
 
 	List<T> parse();
 }

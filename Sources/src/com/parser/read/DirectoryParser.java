@@ -4,7 +4,7 @@ import java.io.File;
 import java.util.List;
 import java.util.Map;
 
-public interface ClientDirectoryParser<R, E> {
+public interface DirectoryParser<R, E> {
 
 	Map<String, R> parseRoot();
 	
