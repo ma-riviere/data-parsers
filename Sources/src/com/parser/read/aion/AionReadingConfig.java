@@ -9,15 +9,15 @@ public class AionReadingConfig {
 	/********************************** CUSTOM XML READING *************************************/
 	
 	// Items
-	public static final String ITEMS_CUSTOM = "../../Data/Custom/Items/";
+	public static final String ITEMS_CUSTOM = "../../Data/" + VERSION + "Custom/Items/";
 	
-	public static final String ITEMS_INTERNAL = "../../Data/Mappings/items_name_id.xml";
-	public static final String ITEMS_INTERNAL_BINDINGS = "com.parser.input.aion.p_items";
+	public static final String ITEMS_INTERNAL = "../../Data/" + VERSION + "Custom/items_name_id.xml";
+	public static final String ITEMS_INTERNAL_BINDINGS = "com.parser.output.aion.item_name";
 	
 	/*************************************** CLIENT XMLs ********************************************/
 	
 	// Rides
-	public static final String RIDE = BASE_DIR +"Data/rides/rides.xml";
+	public static final String RIDE = BASE_DIR + "Data/rides/rides.xml";
 	public static final String RIDE_BINDINGS = "com.parser.input.aion.rides";
 	
 	// Instances Cooltimes

@@ -10,18 +10,18 @@ public class AionWritingConfig {
 	/********************** CLIENT XML WRITING ******************************/
 	
 	// Items
-	public static final String CLIENT_ITEMS = "../../Output/Custom/client_items_merged.xml";
+	public static final String CLIENT_ITEMS = BASE_DIR + "Custom/client_items_merged.xml";
 	
 	/********************* INTERNAL XML WRITING ****************************/
 	
 	// Items
-	public static final String ITEMS_NAME_ID = "../../Output/Mappings/items_name_id.xml";
-	public static final String ITEMS_NAME_ID_BINDINGS = "com.parser.input.aion.p_items";
+	public static final String ITEMS_NAME_ID = BASE_DIR + "Custom/items_name_id.xml";
+	public static final String ITEMS_NAME_ID_BINDINGS = "com.parser.output.aion.item_name";
 	
 	/*************************** TEST XMLs *********************************/
 	
 	// Source Sphere
-	public static final String SPHERE = BASE_DIR + "Tests/source_sphere.xml";
+	public static final String SPHERE = BASE_DIR + "Custom/source_sphere.xml";
 	public static final String SPHERE_BINDINGS = "com.parser.output.aion.source_sphere";
 	
 	/*************************** SERVER XMLs *********************************/

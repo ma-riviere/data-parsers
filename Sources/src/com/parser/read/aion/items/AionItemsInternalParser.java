@@ -2,8 +2,8 @@ package com.parser.read.aion.items;
 
 import java.util.List;
 
-import com.parser.input.aion.p_items.Item;
-import com.parser.input.aion.p_items.Items;
+import com.parser.output.aion.item_name.Item;
+import com.parser.output.aion.item_name.Items;
 import com.parser.read.AbstractFileParser;
 import com.parser.read.aion.AionReadingConfig;
 
