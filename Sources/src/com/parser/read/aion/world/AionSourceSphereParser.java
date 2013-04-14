@@ -6,7 +6,7 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.parser.common.aion.bindings.SourceSphere;
+import com.parser.commons.aion.bindings.SourceSphere;
 
 import com.parser.read.aion.AionReadingConfig;
 

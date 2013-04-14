@@ -10,20 +10,20 @@ import java.util.Comparator;
 import java.util.LinkedList;
 
 import com.geo.aion.GeoService;
-import com.parser.Test; //TODO
 
 import com.parser.input.aion.mission.Entity;
 import com.parser.input.aion.mission.ClientSpawn;
 import com.parser.input.aion.world_data.NpcInfo;
 
-import com.parser.common.aion.AionDataCenter;
-import com.parser.common.aion.bindings.SourceSphere;
-import com.parser.common.aion.enums.spawns.ClientSpawnType;
-import com.parser.common.aion.models.SpawnData;
-import com.parser.common.aion.utils.ZUtils;
-import com.parser.common.math.MathUtil;
-import com.parser.common.utils.Logger;
-import com.parser.common.utils.Util;
+import com.parser.commons.aion.AionDataCenter;
+import com.parser.commons.aion.bindings.SourceSphere;
+import com.parser.commons.aion.enums.spawns.ClientSpawnType;
+import com.parser.commons.aion.models.SpawnData;
+import com.parser.commons.aion.properties.SpawnProperties;
+import com.parser.commons.aion.utils.ZUtils;
+import com.parser.commons.utils.maths.MathUtil;
+import com.parser.commons.utils.Logger; //TODO: Remove
+import com.parser.commons.utils.Util;
 
 import com.parser.write.*;
 import com.parser.write.aion.AionWritingConfig;
@@ -33,8 +33,8 @@ import com.parser.output.aion.mission.*;
 
 public class AionSpawnsWriter extends AbstractWriter {
 
-	AionDataCenter data = new AionDataCenter().getInstance();
-	Logger log = new Logger().getInstance();
+	private static final AionDataCenter data = new AionDataCenter().getInstance();
+	private static final Logger log = new Logger().getInstance();
 	
 	SpawnMap npcSpawnMap = new SpawnMap();
 	SpawnMap instanceSpawnMap = new SpawnMap();
@@ -43,8 +43,6 @@ public class AionSpawnsWriter extends AbstractWriter {
 	SpawnMap riftsSpawnMap = new SpawnMap();
 	SpawnMap staticSpawnMap = new SpawnMap();
 	
-	//TODO: Move to properties
-	int RANDOM_WALK_CAP = 7;
 	boolean USE_GEO = true;
 	
 	List<SourceSphere> toWrite = new ArrayList<SourceSphere>();
@@ -61,8 +59,6 @@ public class AionSpawnsWriter extends AbstractWriter {
 		data.loadL10NStrings();
 		
 		if (USE_GEO) {GeoService.getInstance().initializeGeo();}
-		
-		Test.convert();
 	}
 	
 	@Override
@@ -191,8 +187,8 @@ public class AionSpawnsWriter extends AbstractWriter {
 						toWrite.add(sd.getSS());
 				}
 				else {
-					if (sd.getCSpawn().getIidleRange() > RANDOM_WALK_CAP || sd.getCSpawn().getIidleRange() <= 1)
-						spot.setRandomWalk(RANDOM_WALK_CAP);
+					if (sd.getCSpawn().getIidleRange() > SpawnProperties.RANDOM_WALK_CAP || sd.getCSpawn().getIidleRange() <= 1)
+						spot.setRandomWalk(SpawnProperties.RANDOM_WALK_CAP);
 					else
 						spot.setRandomWalk(sd.getCSpawn().getIidleRange());
 				}
@@ -206,7 +202,7 @@ public class AionSpawnsWriter extends AbstractWriter {
 						toWrite.add(sd.getSS());
 				}
 				else
-					spot.setRandomWalk(RANDOM_WALK_CAP);
+					spot.setRandomWalk(SpawnProperties.RANDOM_WALK_CAP);
 			}
 		}
 	}

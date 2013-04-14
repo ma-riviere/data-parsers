@@ -5,7 +5,7 @@ import java.util.List;
 
 import com.parser.input.aion.cooltimes.ClientInstanceCooltime;
 import com.parser.input.aion.cooltimes.ClientInstanceCooltime2;
-import com.parser.common.aion.AionDataCenter;
+import com.parser.commons.aion.AionDataCenter;
 import com.parser.read.aion.cooltimes.AionCooltimesParser;
 import com.parser.read.aion.cooltimes.AionCooltimes2Parser;
 import com.parser.write.AbstractWriter;
