@@ -3,15 +3,15 @@ package com.parser.read.aion;
 public class AionReadingConfig {
 
 	public static final String VERSION = "aion40/";
-	public static final String BASE_DIR = "../../Data/" + VERSION + "client/";
+	public static final String BASE_DIR = "../../Input/" + VERSION + "client/";
 	public static final boolean READ_CUSTOM = true;
 	
 	/********************************** CUSTOM XML READING *************************************/
 	
 	// Items
-	public static final String ITEMS_CUSTOM = "../../Data/" + VERSION + "Custom/Items/";
+	public static final String ITEMS_CUSTOM = "../../Input/" + VERSION + "Custom/Items/";
 	
-	public static final String ITEMS_INTERNAL = "../../Data/" + VERSION + "Custom/items_name_id.xml";
+	public static final String ITEMS_INTERNAL = "../../Input/" + VERSION + "Custom/items_name_id.xml";
 	public static final String ITEMS_INTERNAL_BINDINGS = "com.parser.output.aion.item_name";
 	
 	/*************************************** CLIENT XMLs ********************************************/
