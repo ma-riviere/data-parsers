@@ -5,7 +5,7 @@ public enum ClientSpawnType {
 	SP(true), // Spawn Point
 	HSP, // Harvest Spawn Point, move to true later
 	PORTAL, // ?
-	WATERVOLUME,
+	WATERVOLUME, // Position of water
 	MP, // Map Point
 	SHAPE,
 	DP, // Direct Portal
@@ -51,7 +51,7 @@ public enum ClientSpawnType {
 					return fromValue(string);
 			}
 		}
-		System.out.println("[SPAWNS] No ClientSpawnType matching :" + string);
+		System.out.println("[SPAWNS] No ClientSpawnType matching : " + string);
 		return null;
 	}
 	

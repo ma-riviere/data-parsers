@@ -26,7 +26,7 @@ public class RealGeoData implements GeoData {
 	private List<WorldMap> maps = new ArrayList<WorldMap>(data.getWorldMaps().values());
 	private Map<Integer, LevelInfo> infoMap = new HashMap<Integer, LevelInfo>(data.getLevelInfos());
 	
-	String geoDir = "../../Data/geo/aion/meshs.geo"; //TODO to property
+	String geoDir = "../../Input/geo/aion/meshs.geo"; //TODO to property
 
 	@Override
 	public void loadGeoMaps() {

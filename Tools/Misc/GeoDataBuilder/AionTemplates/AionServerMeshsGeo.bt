@@ -1,0 +1,45 @@
+//--------------------------------------
+//--- 010 Editor v4.0.1 Binary Template
+//
+// File:
+// Author:
+// Revision:
+// Purpose:
+//--------------------------------------
+
+#include "AionCommon.bt"
+
+typedef struct {
+    WORD v[3];
+} MESH_INDEX <read=MeshIndexRead>;
+
+string MeshIndexRead(MESH_INDEX &i)
+{
+    string s;
+    SPrintf(s, "[%d,%d,%d]", i.v[0], i.v[1], i.v[2]);
+    return s;
+}
+
+typedef struct {
+    WORD verticesCount;
+    POINT_3D vertex[verticesCount];
+    WORD indicesCount;
+    MESH_INDEX index[indicesCount / 3];
+} MESH_DATA;
+
+typedef struct {
+    WORD nameSz;
+    CHAR name[nameSz];
+    WORD meshesCount;
+    MESH_DATA mesh[meshesCount] <optimize=false>;
+} MESHS_GEO_DATA <read=MeshsGeoDataRead>;
+
+string MeshsGeoDataRead(MESHS_GEO_DATA &d)
+{
+    return d.name;
+}
+
+while( !FEof() )
+{
+    MESHS_GEO_DATA meshData;
+}
