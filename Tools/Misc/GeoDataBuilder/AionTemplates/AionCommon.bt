@@ -1,0 +1,19 @@
+//--------------------------------------
+//--- 010 Editor v4.0.1 Binary Template
+//
+// File:
+// Author:
+// Revision:
+// Purpose:
+//--------------------------------------
+
+typedef struct {
+    FLOAT x, y, z;
+} POINT_3D <read=Point3DRead>;
+
+string Point3DRead(POINT_3D &p)
+{
+    string s;
+    SPrintf(s, "[%f,%f,%f]", p.x, p.y, p.z);
+    return s;
+}

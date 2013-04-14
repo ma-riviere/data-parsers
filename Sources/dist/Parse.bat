@@ -30,7 +30,6 @@ ECHO.
 SET CHOICE=
 SET /P CHOICE=What do you want to parse : %=%
 
-REM Quit
 IF "%CHOICE%"=="" GOTO QUIT
 
 ECHO.   
@@ -48,8 +47,6 @@ IF "%ANALYSE%"=="1" SET ANALYSE=true
 
 REM Client
 IF "%CHOICE%"=="a" CALL :EXECUTE items.AionClientItemsStart %XMS% %XMX%
-REM Internal
-IF "%CHOICE%"=="A" CALL :EXECUTE items.AionItemsInternalStart %XMS% %XMX%
 REM Server
 IF "%CHOICE%"=="1" CALL :EXECUTE AionRidesStart %XMS% %XMX%
 IF "%CHOICE%"=="2" CALL :EXECUTE AionCooltimesStart %XMS% %XMX%
@@ -58,7 +55,8 @@ IF "%CHOICE%"=="4" CALL :EXECUTE AionRecipesStart %XMS% %XMX%
 IF "%CHOICE%"=="5" CALL :EXECUTE AionSkillsStart %XMS% %XMX%
 IF "%CHOICE%"=="6" CALL :EXECUTE AionSpawnsStart 768 1536
 IF "%CHOICE%"=="7" CALL :EXECUTE AionWalkersStart %XMS% %XMX%
-REM Tests
+REM Custom
+IF "%CHOICE%"=="A" CALL :EXECUTE items.AionItemsInternalStart %XMS% %XMX%
 IF "%CHOICE%"=="90" CALL :EXECUTE AionSourceSphereStart %XMS% %XMX%
 
 GOTO MENU
