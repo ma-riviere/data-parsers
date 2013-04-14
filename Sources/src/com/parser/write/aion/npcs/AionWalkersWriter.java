@@ -8,11 +8,11 @@ import java.util.Map;
 
 import com.geo.aion.GeoService;
 
-import com.parser.common.aion.AionDataCenter;
-import com.parser.common.aion.bindings.WayPoint;
-import com.parser.common.aion.bindings.SourceSphere;
-import com.parser.common.math.MathUtil;
-import com.parser.common.math.Point3D;
+import com.parser.commons.aion.AionDataCenter;
+import com.parser.commons.aion.bindings.WayPoint;
+import com.parser.commons.aion.bindings.SourceSphere;
+import com.parser.commons.utils.maths.MathUtil;
+import com.parser.commons.utils.maths.Point3D;
 
 import com.parser.read.aion.world.AionWayPointsParser;
 

@@ -16,9 +16,9 @@ import com.parser.input.aion.items.*;
 import com.parser.input.aion.skill_learn.ClientSkillTree;
 import com.parser.input.aion.cooltimes.ClientInstanceCooltime;
 
-import com.parser.common.aion.*;
-import com.parser.common.aion.enums.*;
-import com.parser.common.aion.enums.items.*;
+import com.parser.commons.aion.*;
+import com.parser.commons.aion.enums.*;
+import com.parser.commons.aion.enums.items.*;
 import com.parser.read.aion.AionReadingConfig;
 import com.parser.read.aion.items.AionItemsParser;
 import com.parser.read.aion.skills.AionSkillTreeParser;

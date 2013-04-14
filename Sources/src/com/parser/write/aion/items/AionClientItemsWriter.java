@@ -9,7 +9,7 @@ import java.util.Map;
 
 import com.parser.input.aion.items.*;
 
-import com.parser.common.aion.AionDataMerger;
+import com.parser.commons.aion.AionDataMerger;
 import com.parser.read.aion.AionReadingConfig;
 import com.parser.read.aion.items.AionItemsParser;
 import com.parser.write.AbstractWriter;

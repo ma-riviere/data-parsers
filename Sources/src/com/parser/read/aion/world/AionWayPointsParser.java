@@ -7,8 +7,8 @@ import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.parser.common.aion.bindings.WayPoint;
-import com.parser.common.math.Point3D;
+import com.parser.commons.aion.bindings.WayPoint;
+import com.parser.commons.utils.maths.Point3D;
 
 import com.parser.read.aion.AionReadingConfig;
 

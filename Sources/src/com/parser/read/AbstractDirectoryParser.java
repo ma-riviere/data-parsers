@@ -13,7 +13,7 @@ import java.util.Map;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Unmarshaller;
 
-import com.parser.common.utils.Util;
+import com.parser.commons.utils.Util;
 
 public abstract class AbstractDirectoryParser<R, E> implements DirectoryParser<R, E> {
 

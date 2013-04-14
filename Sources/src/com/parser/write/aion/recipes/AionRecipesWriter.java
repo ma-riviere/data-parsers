@@ -7,8 +7,8 @@ import javax.xml.bind.JAXBElement;
 
 import com.parser.input.aion.recipes.ClientRecipe;
 
-import com.parser.common.utils.JAXBHandler;
-import com.parser.common.aion.*;
+import com.parser.commons.utils.JAXBHandler;
+import com.parser.commons.aion.*;
 import com.parser.read.aion.recipes.AionRecipesParser;
 import com.parser.write.AbstractWriter;
 import com.parser.write.FileMarhshaller;

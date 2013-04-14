@@ -6,8 +6,8 @@ import java.util.List;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.parser.common.aion.AionDataCenter;
-import com.parser.common.utils.Util;
+import com.parser.commons.aion.AionDataCenter;
+import com.parser.commons.utils.Util;
 import com.parser.input.aion.world_maps.WorldMap;
 import com.parser.input.aion.level_data.LevelInfo;
 
