@@ -11,8 +11,8 @@ import com.parser.write.AbstractWriter;
 import com.parser.write.FileMarhshaller;
 import com.parser.write.aion.AionWritingConfig;
 
-import com.parser.input.aion.p_items.Item;
-import com.parser.input.aion.p_items.Items;
+import com.parser.output.aion.item_name.Item;
+import com.parser.output.aion.item_name.Items;
 
 /**
  * Writing a custom Item NAME/ID XML (Internal use)

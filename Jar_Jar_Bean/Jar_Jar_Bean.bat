@@ -36,8 +36,9 @@ REM IF "%JAR%"=="13" GOTO WORLD_DATA
 REM IF "%JAR%"=="14" GOTO WALKERS
 IF %JAR%==15 CALL :MAIN level_data 4 800 1024 %LEVELS% leveldata.xml 
 
-REM ## Tests
+REM ## Custom
 IF %JAR%==90 CALL :MAIN source_sphere 2 800 1024 %SOURCE_SPHERE%
+IF %JAR%==A CALL :MAIN item_name 2 800 1024 %ITEMS_NAME%
 REM ## End
 GOTO FINISHED
 
@@ -72,11 +73,11 @@ GOTO:EOF
 
 :AION_PATHWAYS
 SET I_TOYPETS=%CLIENT%\Data\func_pet\toypet*.xml
-SET O_TOYPETS=%SERVER%/toypets/*.xml
-SET ANIMATIONS="%CLIENT%\Data\Animations\custom_animation.xml"
+SET O_TOYPETS=%SERVER%\toypets\*.xml
+SET ANIMATIONS=%CLIENT%\Data\Animations\custom_animation.xml
 
-SET LEVELS="%CLIENT%\Levels\"
-SET SPAWNS="%SERVER%\spawns\"
+SET LEVELS=%CLIENT%\Levels\
+SET SPAWNS=%SERVER%\spawns\
 
 SET DATA_STRINGS=%CLIENT%\Data\Strings\client_strings*.xml
 SET L10N_STRINGS=%CLIENT%\L10N\ENU\data\strings\client_strings*.xml
@@ -92,6 +93,7 @@ SET NPCS=%CLIENT%\Data\Npcs\client_npcs.xml
 SET HOUSING=%CLIENT%\Data\Housing\client_housing*.xml
 
 SET SOURCE_SPHERE=%CUSTOM%\source_sphere.xml
+SET ITEMS_NAME=%CUSTOM%\items_name_id.xml
 
 REM SET QUEST_DIALOGS=%CLIENT%\L10N\ENU\data\dialogs\quest*.xml
 GOTO:EOF
@@ -259,9 +261,7 @@ echo Every operation was done successfully !
 echo You may now Build the parser.
 echo ==============================================
 echo.
-ECHO 3
 IF EXIST %TEMP% RD /S /Q %TEMP% > nul
-ECHO 4
 pause
 GOTO QUIT2
 

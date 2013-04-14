@@ -12,7 +12,6 @@ import com.parser.input.aion.housing.ClientHousingCustomPart;
 import com.parser.input.aion.items.ClientItem;
 import com.parser.input.aion.level_data.LevelData;
 import com.parser.input.aion.level_data.LevelInfo;
-import com.parser.input.aion.p_items.Item;
 import com.parser.input.aion.mission.ClientSpawn;
 import com.parser.input.aion.mission.Entity;
 import com.parser.input.aion.mission.Mission;
@@ -51,6 +50,7 @@ import com.parser.read.aion.world.AionWorldMapsParser;
 import com.parser.read.aion.world.AionWorldNpcParser;
 import com.parser.read.aion.world.AionSourceSphereParser;
 
+import com.parser.output.aion.item_name.Item;
 
 public class AionDataCenter {
 
