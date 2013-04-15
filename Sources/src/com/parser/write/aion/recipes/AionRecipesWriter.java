@@ -8,8 +8,11 @@ import javax.xml.bind.JAXBElement;
 import com.parser.input.aion.recipes.ClientRecipe;
 
 import com.parser.commons.utils.JAXBHandler;
-import com.parser.commons.aion.*;
+import com.parser.commons.aion.AionDataCenter;
+import com.parser.commons.aion.properties.RecipesProperties;
+
 import com.parser.read.aion.recipes.AionRecipesParser;
+
 import com.parser.write.AbstractWriter;
 import com.parser.write.FileMarhshaller;
 import com.parser.write.aion.AionWritingConfig;
@@ -59,7 +62,7 @@ public class AionRecipesWriter extends AbstractWriter {
 				compo.setItemid(new AionDataCenter().getInstance().getItemIdByName(JAXBHandler.getValue(cr, "component"+a).toString()));
 				rt.getComponent().add(compo);
 			}
-			for (int b = 1; b <= AionProperties.MAX_COMBO_FOR_RECIPES; b++) {
+			for (int b = 1; b <= RecipesProperties.MAX_COMBO_FOR_RECIPES; b++) {
 				Comboproduct cp = new Comboproduct();
 				if (JAXBHandler.getValue(cr, "combo"+b+"_product") != null) {
 					cp.setItemid(new AionDataCenter().getInstance().getItemIdByName(JAXBHandler.getValue(cr, "combo"+b+"_product").toString()));
