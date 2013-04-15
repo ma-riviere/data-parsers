@@ -101,10 +101,8 @@ public class AionDataCenter {
 	}
 	
 	public List<ClientItem> getClientItems() {
-		if (clientItems.isEmpty()) {
-			for (List<ClientItem> lci : new AionItemsParser().parse().values())
-				clientItems.addAll(lci);
-		}
+		if (clientItems.isEmpty())
+			clientItems = new AionItemsParser().parse();
 		return clientItems;
 	}
 	

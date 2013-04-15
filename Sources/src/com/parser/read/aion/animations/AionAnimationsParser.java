@@ -4,17 +4,16 @@ import java.util.List;
 
 import com.parser.input.aion.animations.ClientAnimation;
 import com.parser.input.aion.animations.ClientAnimations;
-import com.parser.read.AbstractFileParser;
+
+import com.parser.read.XMLParser;
 import com.parser.read.aion.AionReadingConfig;
 
-public class AionAnimationsParser extends AbstractFileParser<ClientAnimation> {
+public class AionAnimationsParser extends XMLParser<ClientAnimations> {
 
-	public AionAnimationsParser() {
-			super(AionReadingConfig.ANIMATIONS_BINDINGS, AionReadingConfig.ANIMATIONS);
-	}
-
-	@Override
-	protected List<ClientAnimation> castFrom(Object topNode) {
-		return ((ClientAnimations) topNode).getCustomAnimation();
+	public AionAnimationsParser() {super(AionReadingConfig.ANIMATIONS_BINDINGS);}
+	
+	public List<ClientAnimation> parse() {
+		ClientAnimations root = parseFile(AionReadingConfig.ANIMATIONS);
+		return root.getCustomAnimation();
 	}
 }

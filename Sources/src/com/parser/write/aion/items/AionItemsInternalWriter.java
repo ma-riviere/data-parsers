@@ -21,20 +21,18 @@ public class AionItemsInternalWriter extends AbstractWriter {
 
 	Items finalTemplates = new Items();
 	Collection<Item> templateList = finalTemplates.getItem();
-	Map<String, List<ClientItem>> clientItemData;
+	List<ClientItem> clientItems;
 	
 	@Override
-	public void parse() {clientItemData = new AionItemsParser().parse();}
+	public void parse() {clientItems = new AionItemsParser().parse();}
 
 	@Override
 	public void transform() {
-		for (List<ClientItem> lci : clientItemData.values()) {
-			for (ClientItem ci : lci) {
-				Item it = new Item();
-				it.setId((Integer) ci.getId());
-				it.setName(ci.getName() != null ? ci.getName().toUpperCase() : "");
-				templateList.add(it);
-			}
+		for (ClientItem ci : clientItems) {
+			Item it = new Item();
+			it.setId((Integer) ci.getId());
+			it.setName(ci.getName() != null ? ci.getName().toUpperCase() : "");
+			templateList.add(it);
 		}
 	}
 

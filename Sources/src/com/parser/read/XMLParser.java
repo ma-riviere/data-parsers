@@ -1,12 +1,6 @@
 package com.parser.read;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-
 import java.util.ArrayList;
 import java.util.List;
 import javolution.util.FastMap;
@@ -26,15 +20,18 @@ public abstract class XMLParser<R> extends FilesCollector {
 		this.bindings = bindings;
 	}
 	
-	public XMLParser() {
-		this(null, null, null);
+	public XMLParser(String bindings) {
+		this(null, null, bindings);
 	}
+	
+	boolean noDisplay = false;
 	
 	public R parseFile(String s) {
 		File file = new File(s);
+		noDisplay = false;
 		return parseFile(file);
 	}
-	
+
 	public R parseFile(File file) {
 		R root = null;
 		
@@ -43,7 +40,9 @@ public abstract class XMLParser<R> extends FilesCollector {
 			Unmarshaller unmarshaller = jc.createUnmarshaller();
 			unmarshaller.setEventHandler(new XmlValidationHandler());
 			Object collection = unmarshaller.unmarshal(file);
-			root = cast(collection);
+			if (!noDisplay)
+				System.out.println("\n[MAIN][INFO] Parsing file " + file.getName());
+			root = castRoot(collection);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -56,7 +55,9 @@ public abstract class XMLParser<R> extends FilesCollector {
 		FastMap<String, R> rootMap = new FastMap<String, R>();
 		
 		List<File> files = collect();
+		System.out.println("\n[MAIN][INFO] Parsing directory " + stringPath.substring(stringPath.lastIndexOf("/")) + " with " + files.size() + " files !");
 		Util.printProgressBarHeader(files.size());
+		noDisplay = true;
 		
 		for (File file : files) {
 			R root = parseFile(file);
@@ -69,7 +70,7 @@ public abstract class XMLParser<R> extends FilesCollector {
 		return rootMap;
 	}
 	
-	public R cast(Object topNode) {
+	public R castRoot(Object topNode) {
 		return ((R) topNode);
 	}
 }
