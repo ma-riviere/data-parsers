@@ -29,10 +29,9 @@ public class AionWorldNpcParser extends XMLParser<Clientzones> {
 	private static FastMap<String, Clientzones> rootData = null;
 	
 	private FastMap<String, Clientzones> getRootData() {
-		FastMap<String[], Clientzones> parsed = parseDir();
 		if (rootData == null) {
 			rootData = new FastMap<String, Clientzones>();
-			for (Map.Entry<String[], Clientzones> entry : parsed.entrySet())
+			for (Map.Entry<String[], Clientzones> entry : parseDir().entrySet())
 				rootData.put(entry.getKey()[0].replaceAll(AionReadingConfig.WORLD_DATA_PREFIX, ""), entry.getValue());
 		}
 		return rootData;

@@ -1,7 +1,6 @@
 package com.parser.read.aion.levels;
 
 import java.util.List;
-import java.util.ArrayList;
 import java.util.Map;
 import javolution.util.FastMap;
 
@@ -22,10 +21,9 @@ public class AionMissionParser extends XMLParser<Mission> {
 	private static FastMap<String, Mission> rootData = null;
 	
 	private FastMap<String, Mission> getRootData() {
-		FastMap<String[], Mission> parsed = parseDir();
 		if (rootData == null) {
 			rootData = new FastMap<String, Mission>();
-			for (Map.Entry<String[], Mission> entry : parsed.entrySet())
+			for (Map.Entry<String[], Mission> entry : parseDir().entrySet())
 				rootData.put(entry.getKey()[1], entry.getValue());
 		}
 		return rootData;
@@ -39,10 +37,7 @@ public class AionMissionParser extends XMLParser<Mission> {
 	}
 	
 	public List<ClientSpawn> parseSpawns(String file) {
-		List<ClientSpawn> spawns = new ArrayList<ClientSpawn>();
-		for (Mission mission : parseFile(file))
-			spawns.addAll(mission.getObjects().getObject());
-		return spawns;
+		return parseFile(file).getObjects().getObject();
 	}
 	
 	public FastMap<String, List<Entity>> parseEntities() {
@@ -53,9 +48,6 @@ public class AionMissionParser extends XMLParser<Mission> {
 	}
 
 	public List<Entity> parseEntities(String file) {
-		List<Entity> entities = new ArrayList<Entity>();
-		for (Mission mission : parseFile(file))
-			entities.addAll(mission.getObjects().getEntity());
-		return entities;
+		return parseFile(file).getObjects().getEntity();
 	}
 }
