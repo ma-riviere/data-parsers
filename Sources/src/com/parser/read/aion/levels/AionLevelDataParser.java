@@ -18,7 +18,7 @@ public class AionLevelDataParser extends XMLParser<LevelData> {
 	public List<LevelInfo> parse() {
 		List<LevelInfo> elements = new ArrayList<LevelInfo>();
 		for (LevelData roots : parseDir().values())
-			elements.addAll(roots.getLevelInfo());
+			elements.add(roots.getLevelInfo());
 		return elements;
 	}
 }
