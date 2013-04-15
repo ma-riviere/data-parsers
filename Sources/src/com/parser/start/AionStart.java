@@ -8,6 +8,7 @@ import com.parser.write.aion.items.AionItemsWriter;
 import com.parser.write.aion.items.AionItemsInternalWriter;
 import com.parser.write.aion.items.AionClientItemsWriter;
 import com.parser.write.aion.levels.AionSpawnsWriter;
+import com.parser.write.aion.levels.AionHeightMapWriter;
 import com.parser.write.aion.npcs.AionWalkersWriter;
 import com.parser.write.aion.npcs.AionSourceSphereWriter;
 import com.parser.write.aion.recipes.AionRecipesWriter;
@@ -22,12 +23,10 @@ public abstract class AionStart {
 		
 		Util.printSection("Loading required properties");
 		loader.loadProperty("General");
-		loader.loadProperty("Read");
-		loader.loadProperty("Write");
 		
 		if ("SPAWNS".startsWith(args[0].toUpperCase())) {
 			AionSpawnsWriter writer = new AionSpawnsWriter();
-			loader.loadProperty("Spawn");
+			loader.loadProperty("Levels");
 			writer.start();
 		}
 		else if ("ITEMS".startsWith(args[0].toUpperCase())) {
@@ -74,6 +73,14 @@ public abstract class AionStart {
 			AionCooltimesWriter writer = new AionCooltimesWriter();
 			// loader.loadProperty("Spawn");
 			writer.start();
+		}
+		else if ("HEIGHT".startsWith(args[0].toUpperCase())) {
+			AionHeightMapWriter writer = new AionHeightMapWriter();
+			loader.loadProperty("Levels");
+			writer.start();
+		}
+		else {
+			System.out.println("[ERROR] The input you specified does not execute any Writer !");
 		}
 	}
 	

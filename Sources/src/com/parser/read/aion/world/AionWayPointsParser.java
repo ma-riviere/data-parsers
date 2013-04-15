@@ -10,45 +10,27 @@ import java.util.List;
 import com.parser.commons.aion.bindings.WayPoint;
 import com.parser.commons.utils.maths.Point3D;
 
+import com.parser.read.TextParser;
 import com.parser.read.aion.AionReadingConfig;
 
-public class AionWayPointsParser {
-
-	File file = new File(AionReadingConfig.WAYPOINTS);
+public class AionWayPointsParser extends TextParser {
 
 	public AionWayPointsParser() {}
 	
 	public List<WayPoint> parse() {
 		List<WayPoint> wpList = new ArrayList<WayPoint>();
+		File file = new File(AionReadingConfig.WAYPOINTS);
 		
-		try {
-            Scanner scanner = new Scanner(file);
-			System.out.println("\n[MAIN] [INFO] waypoint.csv was found, parsing it !");
- 
-            while (scanner.hasNextLine()) {
-                String line = scanner.nextLine();
-				WayPoint wp = extractData(line);
-				if (wp != null)
-					wpList.add(wp);
-            }
-			
-            scanner.close();
-        } 
-		catch (FileNotFoundException e) {
-			System.out.println("\n[MAIN] [INFO] Could not find waypoint.csv ! Check reading configs");
-			e.printStackTrace();
-		}
+		List<String> lines = parseFile(file).getLines();
+		for (String line : lines)
+			if (lines.indexOf(line) != 0)
+				wpList.add(extractData(line));
 		
-		System.out.println("[WALKERS] Parsed " + wpList.size() + " WayPoints !");
 		return wpList;
 	}
 	
 	private WayPoint extractData(String line) {
 		WayPoint wp = new WayPoint();
-		
-		if (line.equalsIgnoreCase("name,num,x,y,z"))
-			return null;
-		
 		String[] data = line.split(",");
 		
 		if ((data.length - 2) % 3  != 0) {

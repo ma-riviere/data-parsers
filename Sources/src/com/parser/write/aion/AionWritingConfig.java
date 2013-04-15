@@ -21,8 +21,11 @@ public class AionWritingConfig {
 	/*************************** TEST XMLs *********************************/
 	
 	// Source Sphere
-	public static final String SPHERE = BASE_DIR + "Custom/source_sphere.xml";
+	public static final String SPHERE = BASE_DIR + "Tests/source_sphere.xml";
 	public static final String SPHERE_BINDINGS = "com.parser.output.aion.source_sphere";
+	// Height Maps
+	public static final String POINTS = BASE_DIR + "Tests/height_map.xml";
+	public static final String POINTS_BINDINGS = "com.parser.output.aion.height_map";
 	
 	/*************************** SERVER XMLs *********************************/
 	

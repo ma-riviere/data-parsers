@@ -1,5 +1,7 @@
 package com.parser.commons.utils;
 
+import org.apache.commons.io.FilenameUtils;
+
 public class Util {
 
 	public static void printSection(String s) {
@@ -41,6 +43,10 @@ public class Util {
 	public static void printCurrentProgress() {System.out.print("+");}
 	
 	public static void printEndProgress() {System.out.print(" \n");}
+	
+	public static String getEncodedName(String fileName, String dirName) {
+		return dirName + "@" + FilenameUtils.removeExtension(fileName);
+	}
 	
 	public static String getFileName(String s) {
 		String[] names = s.split("@");

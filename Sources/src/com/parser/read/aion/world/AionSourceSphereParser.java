@@ -8,45 +8,27 @@ import java.util.List;
 
 import com.parser.commons.aion.bindings.SourceSphere;
 
+import com.parser.read.TextParser;
 import com.parser.read.aion.AionReadingConfig;
 
-public class AionSourceSphereParser {
-
-	File file = new File(AionReadingConfig.SOURCE_SPHERE);
+public class AionSourceSphereParser extends TextParser {
 
 	public AionSourceSphereParser() {}
 	
 	public List<SourceSphere> parse() {
 		List<SourceSphere> ssList = new ArrayList<SourceSphere>();
+		File file = new File(AionReadingConfig.SOURCE_SPHERE);
 
-		try {
-            Scanner scanner = new Scanner(file);
-			System.out.println("\n[MAIN] [INFO] source_sphere.csv was found, parsing it !");
-			
-            while (scanner.hasNextLine()) {
-                String line = scanner.nextLine();
-				SourceSphere ss = extractData(line);
-				if (ss != null)
-					ssList.add(ss);
-            }
-			
-            scanner.close();
-        } 
-		catch (FileNotFoundException e) {
-			System.out.println("\n[MAIN] [INFO] Could not find source_sphere.csv ! Check reading configs");
-			e.printStackTrace();
-		}
+		List<String> lines = parseFile(file).getLines();
+		for (String line : lines)
+			if (lines.indexOf(line) != 0)
+				ssList.add(extractData(line));
 		
-		System.out.println("[WALKERS] Parsed " + ssList.size() + " SourceSphere !");
 		return ssList;
 	}
 	
 	private SourceSphere extractData(String line) {
-		SourceSphere ss = new SourceSphere();
-		
-		if (line.equalsIgnoreCase("name,type,zone,layer,x,y,z,r,wayPointName,conditionSpawn,version,country,clusterNum"))
-			return null;
-		
+		SourceSphere ss = new SourceSphere();		
 		String[] data = line.split(",");
 		
 		ss.setName(data[0]);
