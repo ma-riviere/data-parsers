@@ -1,16 +1,20 @@
-package com.parser.write.aion.cooltimes;
+package com.parser.write.aion.world;
 
 import java.util.Collection;
 import java.util.List;
 
 import com.parser.input.aion.cooltimes.ClientInstanceCooltime;
 import com.parser.input.aion.cooltimes.ClientInstanceCooltime2;
+
 import com.parser.commons.aion.AionDataCenter;
-import com.parser.read.aion.cooltimes.AionCooltimesParser;
-import com.parser.read.aion.cooltimes.AionCooltimes2Parser;
+
+import com.parser.read.aion.world.AionCooltimesParser;
+import com.parser.read.aion.world.AionCooltimes2Parser;
+
 import com.parser.write.AbstractWriter;
 import com.parser.write.FileMarhshaller;
 import com.parser.write.aion.AionWritingConfig;
+
 import com.parser.output.aion.cooltimes.InstanceCooltime;
 import com.parser.output.aion.cooltimes.InstanceCooltimes;
 

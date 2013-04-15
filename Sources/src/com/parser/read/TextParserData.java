@@ -5,13 +5,13 @@ import java.util.List;
 public class TextParserData {
 
 	private List<String> lines = null;
-	private String name;
+	private String[] path;
 	
 	public TextParserData() {}
 	
 	public List<String> getLines() {return lines;}
 	public void setLines(List<String> lines) {this.lines = lines;}
 	
-	public String getName() {return name;}
-	public void setName(String name) {this.name = name;}
+	public String getPath(int i) {return path[i];}
+	public void setPath(String[] path) {this.path = path;}
 }

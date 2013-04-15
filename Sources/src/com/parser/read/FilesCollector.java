@@ -9,6 +9,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import javolution.util.FastList;
+import org.apache.commons.io.FilenameUtils;
 
 public abstract class FilesCollector {
 
@@ -40,5 +41,17 @@ public abstract class FilesCollector {
 					files.add(dirOrFile.toFile());
 			}
 		}
+	}
+	
+	public String[] loadPath(File file) {
+		String[] results = new String[4];
+		results[0] = FilenameUtils.getBaseName(file.getName());
+		for (int i = 1; i < 4; i++)  {
+			if (file.getParentFile() != null) {
+				file = file.getParentFile();
+				results[i] = file.getParentFile().getName();
+			}
+		}
+		return results;
 	}
 }

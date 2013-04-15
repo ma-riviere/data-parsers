@@ -51,8 +51,8 @@ public abstract class XMLParser<R> extends FilesCollector {
 		return root;
 	}
 	
-	public FastMap<String, R> parseDir() {
-		FastMap<String, R> rootMap = new FastMap<String, R>();
+	public FastMap<String[], R> parseDir() {
+		FastMap<String[], R> rootMap = new FastMap<String[], R>();
 		
 		List<File> files = collect();
 		System.out.println("\n[MAIN][INFO] Parsing directory " + stringPath.substring(stringPath.lastIndexOf("/")) + " with " + files.size() + " files !");
@@ -62,7 +62,7 @@ public abstract class XMLParser<R> extends FilesCollector {
 		for (File file : files) {
 			R root = parseFile(file);
 			if (root != null)
-				rootMap.put(Util.getEncodedName(file.getName(), file.getParentFile().getName()), root);
+				rootMap.put(loadPath(file), root);
 			Util.printCurrentProgress();
 		}
 		Util.printEndProgress();

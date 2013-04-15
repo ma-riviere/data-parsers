@@ -4,19 +4,16 @@ import java.util.List;
 
 import com.parser.input.aion.housing.ClientHousingCustomPart;
 import com.parser.input.aion.housing.ClientHousingCustomParts;
-import com.parser.read.AbstractFileParser;
+
+import com.parser.read.XMLParser;
 import com.parser.read.aion.AionReadingConfig;
 
+public class AionHousingPartsParser extends XMLParser<ClientHousingCustomParts> {
 
-public class AionHousingPartsParser extends AbstractFileParser<ClientHousingCustomPart> {
+	public AionHousingPartsParser() {super(AionReadingConfig.HOUSING_BINDINGS);} 
 
-	public AionHousingPartsParser() {
-		super(AionReadingConfig.HOUSING_BINDINGS, AionReadingConfig.HOUSING_PARTS);
+	public List<ClientHousingCustomPart> parse() {
+		ClientHousingCustomParts root = parseFile(AionReadingConfig.HOUSING_PARTS);
+		return root.getClientHousingCustomPart();
 	}
-
-	@Override
-	protected List<ClientHousingCustomPart> castFrom(Object topNode) {
-		return ((ClientHousingCustomParts) topNode).getClientHousingCustomPart();
-	}
-
 }
