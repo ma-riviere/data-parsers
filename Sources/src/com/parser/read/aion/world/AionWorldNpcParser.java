@@ -1,45 +1,51 @@
 package com.parser.read.aion.world;
 
-import java.io.File;
-import java.nio.file.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import javolution.util.FastMap;
 
 import com.parser.input.aion.world_data.Clientzones;
 import com.parser.input.aion.world_data.NpcInfos;
+import com.parser.input.aion.world_data.NpcInfo;
 
-import com.parser.read.AbstractDirectoryParser;
+import com.parser.input.aion.world_data.Subzones; //TODO
+import com.parser.input.aion.world_data.Subzone; //TODO
+
+import com.parser.input.aion.world_data.Attributes; //TODO
+import com.parser.input.aion.world_data.ItemUseArea; //TODO
+
+import com.parser.input.aion.world_data.HousingAreas; //TODO
+
+import com.parser.read.XMLParser;
 import com.parser.read.aion.AionReadingConfig;
 
-public class AionWorldNpcParser extends AbstractDirectoryParser<Clientzones, NpcInfos> {
+public class AionWorldNpcParser extends XMLParser<Clientzones> {
 
 	public AionWorldNpcParser() {
-		super(AionReadingConfig.WORLD_DATA_BINDINGS, AionReadingConfig.WORLD_DATA, AionReadingConfig.WORLD_DATA_PREFIX);
+		super(AionReadingConfig.WORLD_DATA, AionReadingConfig.WORLD_DATA_PREFIX, AionReadingConfig.WORLD_DATA_BINDINGS);
 	}
 	
-	public List<NpcInfos> parseFile(String name) {
-		File toMarshall = null;
-		
-		if (name.contains("@")) {
-			String[] names = name.split("@");
-			Path path = Paths.get(directory + prefix + names[0] + extension);
-			try {toMarshall = path.toFile();} catch (UnsupportedOperationException uoe) {System.out.println("\n[MAIN][ERROR] Could not find file : " + names[0] + "/" + prefix + names[1] + extension);}
+	private static FastMap<String, Clientzones> rootData = null;
+	
+	private FastMap<String, Clientzones> getRootData() {
+		FastMap<String[], Clientzones> parsed = parseDir();
+		if (rootData == null) {
+			rootData = new FastMap<String, Clientzones>();
+			for (Map.Entry<String[], Clientzones> entry : parsed.entrySet())
+				rootData.put(entry.getKey()[0].replaceAll(AionReadingConfig.WORLD_DATA_PREFIX, ""), entry.getValue());
 		}
-		else {
-			Path path = Paths.get(directory + prefix + name + extension);
-			try {toMarshall = path.toFile();} catch (UnsupportedOperationException uoe) {System.out.println("\n[MAIN][ERROR] Could not find file : " + prefix + name + extension);}
-		}
-		
-		if (toMarshall == null)
-			return null;
-		
-		return super.parseFile(toMarshall);
+		return rootData;
 	}
 
-	@Override
-	protected List<NpcInfos> cast(Object topNode) {
-		List<NpcInfos> list = new ArrayList<NpcInfos>();
-		list.add(((Clientzones) topNode).getNpcInfos());
-		return list;
+	public FastMap<String, List<NpcInfo>> parseNpcInfos() {
+		FastMap<String, List<NpcInfo>> npcInfos = new FastMap<String, List<NpcInfo>>();
+		for (Map.Entry<String, Clientzones> entry : getRootData().entrySet())
+			npcInfos.put(entry.getKey(), entry.getValue().getNpcInfos().getNpcInfo());
+		return npcInfos;
+	}
+	
+	public List<NpcInfo> parseNpcInfos(String file) {
+		return parseFile(file).getNpcInfos().getNpcInfo();
 	}
 }

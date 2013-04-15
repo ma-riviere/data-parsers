@@ -4,17 +4,16 @@ import java.util.List;
 
 import com.parser.input.aion.npcs.ClientNpc;
 import com.parser.input.aion.npcs.ClientNpcs;
-import com.parser.read.AbstractFileParser;
+
+import com.parser.read.XMLParser;
 import com.parser.read.aion.AionReadingConfig;
 
-public class AionNpcsParser extends AbstractFileParser<ClientNpc> {
+public class AionNpcsParser extends XMLParser<ClientNpcs> {
 
-	public AionNpcsParser() {
-		super(AionReadingConfig.NPCS_BINDINGS, AionReadingConfig.NPCS);
-	}
+	public AionNpcsParser() {super(AionReadingConfig.NPCS_BINDINGS);}
 
-	@Override
-	protected List<ClientNpc> castFrom(Object topNode) {
-		return ((ClientNpcs) topNode).getNpcClient();
+	public List<ClientNpc> parse() {
+		ClientNpcs root = parseFile(AionReadingConfig.NPCS);
+		return root.getNpcClient();
 	}
 }

@@ -16,14 +16,15 @@ public class AionItemsParser extends XMLParser<ClientItems> {
 		super(AionReadingConfig.ITEMS, AionReadingConfig.ITEMS_PREFIX, AionReadingConfig.ITEMS_BINDINGS);
 	}
 	
-	public AionItemsParser(String bindings, String folder, String prefix) {
+	// Used by ClienItemsWriter (TODO: Remove)
+	public AionItemsParser(String folder, String prefix, String bindings) {
 		super(folder, prefix, bindings);
 	}
 	
 	public List<ClientItem> parse() {
-		List<ClientItem> results = new ArrayList<ClientItem>();
-		for (ClientItems items : parseDir().values())
-			results.addAll(items.getClientItem());
-		return results;
+		List<ClientItem> elements = new ArrayList<ClientItem>();
+		for (ClientItems roots : parseDir().values())
+			elements.addAll(roots.getClientItem());
+		return elements;
 	}
 }

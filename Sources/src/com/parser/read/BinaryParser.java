@@ -67,7 +67,7 @@ public class BinaryParser extends FilesCollector {
 			
 			bpd.setBuffer(buffer);
 			bpd.setSize(size);
-			bpd.setName(Util.getEncodedName(file.getName(), file.getParentFile().getName()));
+			bpd.setPath(loadPath(file));
 		}
 		catch (IOException e) {
 			System.out.println("[BINARY PARSER] : IO Error while loading " + file.getName());

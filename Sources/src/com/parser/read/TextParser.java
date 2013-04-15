@@ -56,7 +56,7 @@ public class TextParser extends FilesCollector {
 		try {
 			lines = Files.readAllLines(path, charset);
 			tpd.setLines(lines);
-			tpd.setName(Util.getEncodedName(file.getName(), file.getParentFile().getName()));
+			tpd.setPath(loadPath(file));
 		}
 		catch (IOException e) { 
 			e.printStackTrace();

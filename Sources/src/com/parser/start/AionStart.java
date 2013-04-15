@@ -3,17 +3,17 @@ package com.parser.start;
 import com.parser.commons.aion.properties.AionPropertiesLoader;
 import com.parser.commons.utils.Util;
 
-import com.parser.write.aion.cooltimes.AionCooltimesWriter;
 import com.parser.write.aion.items.AionItemsWriter;
 import com.parser.write.aion.items.AionItemsInternalWriter;
 import com.parser.write.aion.items.AionClientItemsWriter;
 import com.parser.write.aion.levels.AionSpawnsWriter;
 import com.parser.write.aion.levels.AionHeightMapWriter;
 import com.parser.write.aion.npcs.AionWalkersWriter;
-import com.parser.write.aion.npcs.AionSourceSphereWriter;
 import com.parser.write.aion.recipes.AionRecipesWriter;
 import com.parser.write.aion.rides.AionRidesWriter;
 import com.parser.write.aion.skills.AionSkillsWriter;
+import com.parser.write.aion.world.AionSourceSphereWriter;
+import com.parser.write.aion.world.AionCooltimesWriter;
 
 public abstract class AionStart {
 

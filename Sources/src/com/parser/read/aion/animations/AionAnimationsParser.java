@@ -13,7 +13,6 @@ public class AionAnimationsParser extends XMLParser<ClientAnimations> {
 	public AionAnimationsParser() {super(AionReadingConfig.ANIMATIONS_BINDINGS);}
 	
 	public List<ClientAnimation> parse() {
-		ClientAnimations root = parseFile(AionReadingConfig.ANIMATIONS);
-		return root.getCustomAnimation();
+		return parseFile(AionReadingConfig.ANIMATIONS).getCustomAnimation();
 	}
 }

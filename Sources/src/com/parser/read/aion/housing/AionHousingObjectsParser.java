@@ -4,19 +4,16 @@ import java.util.List;
 
 import com.parser.input.aion.housing.ClientHousingObject;
 import com.parser.input.aion.housing.ClientHousingObjects;
-import com.parser.read.AbstractFileParser;
+
+import com.parser.read.XMLParser;
 import com.parser.read.aion.AionReadingConfig;
 
+public class AionHousingObjectsParser extends XMLParser<ClientHousingObjects> {
 
-public class AionHousingObjectsParser extends AbstractFileParser<ClientHousingObject> {
+	public AionHousingObjectsParser() {super(AionReadingConfig.HOUSING_BINDINGS);} 
 
-	public AionHousingObjectsParser() {
-		super(AionReadingConfig.HOUSING_BINDINGS, AionReadingConfig.HOUSING_OBJECTS);
+	public List<ClientHousingObject> parse() {
+		ClientHousingObjects root = parseFile(AionReadingConfig.HOUSING_OBJECTS);
+		return root.getClientHousingObject();
 	}
-
-	@Override
-	protected List<ClientHousingObject> castFrom(Object topNode) {
-		return ((ClientHousingObjects) topNode).getClientHousingObject();
-	}
-
 }

@@ -2,22 +2,60 @@ package com.parser.read.aion.levels;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Map;
+import javolution.util.FastMap;
 
 import com.parser.input.aion.mission.Mission;
 import com.parser.input.aion.mission.ClientSpawns;
-import com.parser.read.AbstractDirectoryParser;
+import com.parser.input.aion.mission.ClientSpawn;
+import com.parser.input.aion.mission.Entity;
+
+import com.parser.read.XMLParser;
 import com.parser.read.aion.AionReadingConfig;
 
-public class AionMissionParser extends AbstractDirectoryParser<Mission, ClientSpawns> {
+public class AionMissionParser extends XMLParser<Mission> {
 
 	public AionMissionParser() {
-		super(AionReadingConfig.MISSION0_BINDINGS, AionReadingConfig.MISSION0, AionReadingConfig.MISSION0_PREFIX);
+		super(AionReadingConfig.MISSION0, AionReadingConfig.MISSION0_PREFIX, AionReadingConfig.MISSION0_BINDINGS);
+	}
+	
+	private static FastMap<String, Mission> rootData = null;
+	
+	private FastMap<String, Mission> getRootData() {
+		FastMap<String[], Mission> parsed = parseDir();
+		if (rootData == null) {
+			rootData = new FastMap<String, Mission>();
+			for (Map.Entry<String[], Mission> entry : parsed.entrySet())
+				rootData.put(entry.getKey()[1], entry.getValue());
+		}
+		return rootData;
+	}
+	
+	public FastMap<String, List<ClientSpawn>> parseSpawns() {
+		FastMap<String, List<ClientSpawn>> spawns = new FastMap<String, List<ClientSpawn>>();
+		for (Map.Entry<String, Mission> entry : getRootData().entrySet())
+			spawns.put(entry.getKey(), entry.getValue().getObjects().getObject());
+		return spawns;
+	}
+	
+	public List<ClientSpawn> parseSpawns(String file) {
+		List<ClientSpawn> spawns = new ArrayList<ClientSpawn>();
+		for (Mission mission : parseFile(file))
+			spawns.addAll(mission.getObjects().getObject());
+		return spawns;
+	}
+	
+	public FastMap<String, List<Entity>> parseEntities() {
+		FastMap<String, List<Entity>> entities = new FastMap<String, List<Entity>>();
+		for (Map.Entry<String, Mission> entry : getRootData().entrySet())
+			entities.put(entry.getKey(), entry.getValue().getObjects().getEntity());
+		return entities;
 	}
 
-	@Override
-	protected List<ClientSpawns> cast(Object topNode) {
-		List<ClientSpawns> clientSpawns = new ArrayList<ClientSpawns>();
-		clientSpawns.add(((Mission) topNode).getObjects());
-		return clientSpawns;
+	public List<Entity> parseEntities(String file) {
+		List<Entity> entities = new ArrayList<Entity>();
+		for (Mission mission : parseFile(file))
+			entities.addAll(mission.getObjects().getEntity());
+		return entities;
 	}
 }
