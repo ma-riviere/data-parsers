@@ -5,14 +5,14 @@ COLOR 05
 PUSHD %~dp0
 
 SET INPUT_FOLDER="%~dp0..\Input"
-SET LIBS=libs
+SET OUTPUT_FOLDER="%~dp0..\Output"
 SET SOURCES="%~dp0..\Sources"
+SET LIBS=libs
 
 SET cp=%LIBS%\xbean.jar;%LIBS%\xmlbeans-qname.jar;%LIBS%\jsr173_1.0_api.jar;%LIBS%\resolver.jar
 
 :MENU
 CALL :GAME_MENU
-REM IF NOT EXIST %GAME% CALL :QUIT wrong_game
 CALL :SET_PATHWAYS
 CALL :JAR_MENU
 CALL :XSD_MENU
@@ -33,6 +33,7 @@ REM IF %JAR%==11 CALL :MAIN housing
 REM IF %JAR%==13 CALL :MAIN world_data
 REM IF %JAR%==14 CALL :MAIN walkers
 IF %JAR%==90 CALL :MAIN source_sphere 2 800 1024 %SOURCE_SPHERE%
+IF %JAR%==91 CALL :MAIN height_map 2 800 1024 %HEIGHT_MAP%
 IF %JAR%==A CALL :MAIN item_name 2 800 1024 %ITEMS_NAME%
 
 REM ## Levels
@@ -62,7 +63,7 @@ GOTO:EOF
 REM ## General pathways
 SET CLIENT=%INPUT_FOLDER%\%VERSION%\Client
 SET SERVER=%INPUT_FOLDER%\%VERSION%\Server
-SET CUSTOM=%INPUT_FOLDER%\%VERSION%\Custom
+SET CUSTOM=%OUTPUT_FOLDER%\%VERSION%\Tests
 
 IF NOT EXIST %CLIENT% CALL :QUIT folder
 IF NOT EXIST %SERVER% CALL :QUIT folder
@@ -94,6 +95,7 @@ SET NPCS=%CLIENT%\Data\Npcs\client_npcs.xml
 SET HOUSING=%CLIENT%\Data\Housing\client_housing*.xml
 
 SET SOURCE_SPHERE=%CUSTOM%\source_sphere.xml
+SET HEIGHT_MAP=%CUSTOM%\height_map.xml
 SET ITEMS_NAME=%CUSTOM%\items_name_id.xml
 
 REM SET QUEST_DIALOGS=%CLIENT%\L10N\ENU\data\dialogs\quest*.xml

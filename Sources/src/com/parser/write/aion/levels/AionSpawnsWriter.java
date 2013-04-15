@@ -19,7 +19,7 @@ import com.parser.commons.aion.AionDataCenter;
 import com.parser.commons.aion.bindings.SourceSphere;
 import com.parser.commons.aion.enums.spawns.ClientSpawnType;
 import com.parser.commons.aion.models.SpawnData;
-import com.parser.commons.aion.properties.SpawnProperties;
+import com.parser.commons.aion.properties.LevelsProperties;
 import com.parser.commons.aion.utils.ZUtils;
 import com.parser.commons.utils.maths.MathUtil;
 import com.parser.commons.utils.Logger; //TODO: Remove
@@ -184,8 +184,8 @@ public class AionSpawnsWriter extends AbstractWriter {
 						toWrite.add(sd.getSS());
 				}
 				else {
-					if (sd.getCSpawn().getIidleRange() > SpawnProperties.RANDOM_WALK_CAP || sd.getCSpawn().getIidleRange() <= 1)
-						spot.setRandomWalk(SpawnProperties.RANDOM_WALK_CAP);
+					if (sd.getCSpawn().getIidleRange() > LevelsProperties.RANDOM_WALK_CAP || sd.getCSpawn().getIidleRange() <= 1)
+						spot.setRandomWalk(LevelsProperties.RANDOM_WALK_CAP);
 					else
 						spot.setRandomWalk(sd.getCSpawn().getIidleRange());
 				}
@@ -199,7 +199,7 @@ public class AionSpawnsWriter extends AbstractWriter {
 						toWrite.add(sd.getSS());
 				}
 				else
-					spot.setRandomWalk(SpawnProperties.RANDOM_WALK_CAP);
+					spot.setRandomWalk(LevelsProperties.RANDOM_WALK_CAP);
 			}
 		}
 	}

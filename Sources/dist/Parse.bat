@@ -21,6 +21,8 @@ ECHO ###  1 : Aion  ###   2 : Tera  ###  3 : Archeage  ###
 ECHO #####################################################
 ECHO.
 SET /P GAME=What GAME do you want to parse : %=%
+
+IF "%GAME%"=="" GOTO QUIT
 GOTO:EOF
 
 :DATA_MENU
@@ -43,7 +45,9 @@ ECHO.
 SET /P ANALYSE=Do you want a list of client unused elements ? %=%
 
 IF "%ANALYSE%"=="0" SET ANALYSE=false
+IF "%ANALYSE%"=="" SET ANALYSE=false
 IF "%ANALYSE%"=="1" SET ANALYSE=true
+GOTO:EOF
 
 :EXECUTE
 JAVA -Xms512m -Xmx1024m -ea -cp libs/*;Parser.jar com.parser.start.%1 %DATA% %ANALYSE%
