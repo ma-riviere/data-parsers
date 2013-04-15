@@ -20,21 +20,21 @@ public class AionClientItemsWriter extends AbstractWriter {
 
 	ClientItems finalTemplates = new ClientItems();
 	Collection<ClientItem> templateList = finalTemplates.getClientItem();
-	Map<String, List<ClientItem>> clientItemData;
-	Map<String, List<ClientItem>> customClientItemData;
-	List<ClientItem> mergedClientItemList = new ArrayList<ClientItem>();
+	List<ClientItem> clientItemData;
+	List<ClientItem> customClientItemData;
+	// List<ClientItem> mergedClientItemList = new ArrayList<ClientItem>();
 	
 	@Override
 	public void parse() {
-		clientItemData = new AionItemsParser().parse();
-		if (AionReadingConfig.READ_CUSTOM)
-			customClientItemData = new AionItemsParser(AionReadingConfig.ITEMS_BINDINGS, AionReadingConfig.ITEMS_CUSTOM, AionReadingConfig.ITEMS_PREFIX).parse();
-		if (AionWritingConfig.WRITE_CUSTOM)
-			mergedClientItemList = new AionDataMerger().mergeItemData(clientItemData, customClientItemData);
+		// clientItemData = new AionItemsParser().parse();
+		// if (AionReadingConfig.READ_CUSTOM)
+			// customClientItemData = new AionItemsParser(AionReadingConfig.ITEMS_BINDINGS, AionReadingConfig.ITEMS_CUSTOM, AionReadingConfig.ITEMS_PREFIX).parse();
+		// if (AionWritingConfig.WRITE_CUSTOM)
+			// mergedClientItemList = new AionDataMerger().mergeItemData(clientItemData, customClientItemData);
 	}
 
 	@Override
-	public void transform() {
+	public void transform() { /*
 		if (mergedClientItemList != null && !mergedClientItemList.isEmpty()) {
 			for (ClientItem from : mergedClientItemList) {
 				ClientItem to = new ClientItem();
@@ -327,6 +327,7 @@ public class AionClientItemsWriter extends AbstractWriter {
 		}
 		else
 				System.out.println("[CLIENT - ITEMS][ERROR] Merged list is null ... Check if Configs allow to read/write custom data !");
+		*/
 	}
 
 	@Override

@@ -53,7 +53,7 @@ public class AionReadingConfig {
 	public static final String RECIPES_BINDINGS = "com.parser.input.aion.recipes";
 	
 	// (Dir) Items
-	public static final String ITEMS = BASE_DIR + "Data/Items/";
+	public static final String ITEMS = BASE_DIR + "Data/Items";
 	public static final String ITEMS_PREFIX = "client_items_";
 	public static final String ITEMS_BINDINGS = "com.parser.input.aion.items";
 	
