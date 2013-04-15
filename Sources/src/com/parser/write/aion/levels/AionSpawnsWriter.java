@@ -70,9 +70,6 @@ public class AionSpawnsWriter extends AbstractWriter {
 			String mapName = data.getWorld(mapId).getValue().toUpperCase();
 			Util.printSubSection(mapId + " : " + getName("STR_ZONE_NAME_" + mapName));
 			
-			for (Entity e : data.getClientEntities().get(mapId))
-				log.unique("[ENTITY] : ", e.getEntityClass(), false);
-			
 			List<ClientSpawn> currentCSpawns = data.getClientSpawns().get(mapId);
 			int startLevelSize = currentCSpawns.size();
 			List<NpcInfo> currentWDSpawns = data.getNpcInfoByMap(mapId);

@@ -16,13 +16,16 @@ import com.parser.input.aion.items.*;
 import com.parser.input.aion.skill_learn.ClientSkillTree;
 import com.parser.input.aion.cooltimes.ClientInstanceCooltime;
 
-import com.parser.commons.aion.*;
+import com.parser.commons.aion.AionDataCenter;
 import com.parser.commons.aion.enums.*;
 import com.parser.commons.aion.enums.items.*;
+import com.parser.commons.aion.properties.GeneralProperties;
+
 import com.parser.read.aion.AionReadingConfig;
 import com.parser.read.aion.items.AionItemsParser;
 import com.parser.read.aion.skills.AionSkillTreeParser;
 import com.parser.read.aion.cooltimes.AionCooltimesParser;
+
 import com.parser.write.AbstractWriter;
 import com.parser.write.FileMarhshaller;
 import com.parser.write.aion.AionWritingConfig;
@@ -62,7 +65,7 @@ public class AionItemsWriter extends AbstractWriter {
 					it.setName(new AionDataCenter().getInstance().getMatchingStringText(ci.getDesc()));
 				else
 					it.setName(new AionDataCenter().getInstance().getMatchingStringText("STR_" + ci.getName()));
-				it.setLevel((ci.getLevel() > AionProperties.MAX_LEVEL) ? AionProperties.MAX_LEVEL : (int) ci.getLevel()); // [UPDATE] Don't forget to keep MAX_LEVEL updated
+				it.setLevel((ci.getLevel() > GeneralProperties.MAX_LEVEL) ? GeneralProperties.MAX_LEVEL : (int) ci.getLevel()); // [UPDATE] Don't forget to keep MAX_LEVEL updated
 				if (!Strings.isNullOrEmpty(ci.getDesc()))
 					it.setDesc(new AionDataCenter().getInstance().getMatchingStringId(ci.getDesc().trim(), 2, 1));
 				
@@ -693,8 +696,8 @@ public class AionItemsWriter extends AbstractWriter {
 		restricts[10] = Byte.toString(ci.getPriest());
 		restricts[11] = Byte.toString(ci.getChanter());
 		for (int i = 0; i <= 11; i++) 
-			if (Integer.parseInt(restricts[i]) > AionProperties.MAX_LEVEL)
-				restricts[i] = String.valueOf(AionProperties.MAX_LEVEL);
+			if (Integer.parseInt(restricts[i]) > GeneralProperties.MAX_LEVEL)
+				restricts[i] = String.valueOf(GeneralProperties.MAX_LEVEL);
 		return Joiner.on(",").join(restricts);
 	}
 	

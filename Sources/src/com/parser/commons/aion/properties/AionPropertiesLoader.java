@@ -11,7 +11,7 @@ public class AionPropertiesLoader extends PropertiesLoader {
 	private static final String GAME = "aion";
 
 	@Override
-	public void loadProperty(String file) {
+	public void loadProperty(String file) {		
 		try {
 			String path = PROPERTIES_DIR + GAME + "\\" + file;
 
