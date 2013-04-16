@@ -15,8 +15,12 @@ public class Logger {
 	
 	public Logger() {}
 
-	public void log(String message, Object value) {
+	public void info(String message, Object value) {
 		System.out.println(message + value.toString().toUpperCase());
+	}
+	
+	public void info(String message) {
+		this(message, "");
 	}
 	
 	public void unique(String message, Object value, boolean ignoreNum) {
@@ -33,7 +37,7 @@ public class Logger {
 	
 	private void logUnique(String message, Object value) {
 		if (!used.contains(value.toString().toUpperCase())) {
-			log(message, value);
+			info(message, value);
 			used.add(value.toString().toUpperCase());
 		}
 	}

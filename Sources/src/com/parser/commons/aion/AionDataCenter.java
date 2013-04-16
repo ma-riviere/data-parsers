@@ -57,10 +57,15 @@ public class AionDataCenter {
 	public Map<String, ClientSkillTree> skillTrees = new HashMap<String, ClientSkillTree>();
 	
 	public Map<String, ClientSkill> getSkills() {
-		if (skills.isEmpty())
-			for (ClientSkill cs : AionSkillParser.parse())
+		if (skills.values().isEmpty())
+			for (ClientSkill cs : new AionSkillParser.parse())
 				skills.put(JAXBHandler.getValue(cs, "name").toString().toUpperCase(), cs);
 		return skills;
+	}
+	
+	public int getSkillId(String s) {
+		ClientSkill skill = getSkills().get(s);
+		return skill != null ? JAXBHandler.getValue(skill, "id") : 0;
 	}
 	
 	// JAXB Method : Will return the property "needed" of the skill which property "prop" matches the given "value", or null if no match is found
@@ -215,7 +220,7 @@ public class AionDataCenter {
 	public Map<String, ClientString> l10nStrings = new HashMap<String, ClientString>();
 	public Map<String, ClientString> strings = new HashMap<String, ClientString>();
 	
-	public ClientString getStrings() {
+	public Map<String, ClientString> getStrings() {
 		if (dataStrings.values().isEmpty()) dataStrings = index(new AionDataStringParser().parse(), on(ClientString.class).getName().toUpperCase());
 		if (l10nStrings.values().isEmpty()) l10nStrings = index(new AionL10NStringParser().parse(), on(ClientString.class).getName().toUpperCase());
 		
