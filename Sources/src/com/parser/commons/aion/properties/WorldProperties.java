@@ -17,9 +17,13 @@ public class WorldProperties {
 	@Property(key = "world.source_sphere.output.bindings", defaultValue = "")
 	public static String SPHERE_OUTPUT_BINDINGS;
 	
+	@Property(key = "world.waypoint.input", defaultValue = "waypoint.csv")
+	public static String WAYPOINT_INPUT;
+	
 	static {
 		INPUT = AionProperties.CLIENT_PATH + INPUT;
 		SPHERE_INPUT = INPUT + SPHERE_INPUT;
 		SPHERE_OUTPUT = AionProperties.OUTPUT_PATH + SPHERE_OUTPUT;
+		WAYPOINT_INPUT = INPUT + WAYPOINT_INPUT;
 	}
 }
