@@ -37,9 +37,7 @@ public class AionReadingConfig {
 	public static final String WORLD_DATA_PREFIX = "client_world_";
 	public static final String WORLD_MAPS_BINDINGS = "com.parser.input.aion.world_maps";
 	public static final String WORLD_DATA_BINDINGS = "com.parser.input.aion.world_data";
-	
-	public static final String WAYPOINTS = BASE_DIR + "Data/world/waypoint.csv";
-	public static final String SOURCE_SPHERE = BASE_DIR + "Data/world/source_sphere.csv";
+
 	
 	// Skills --> Skills
 	public static final String SKILLS = BASE_DIR + "Data/skills/client_skills.xml";

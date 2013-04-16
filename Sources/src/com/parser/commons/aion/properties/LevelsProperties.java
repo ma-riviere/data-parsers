@@ -12,12 +12,14 @@ public class LevelsProperties {
 	@Property(key = "levels.mission0.prefix", defaultValue = "mission_")
 	public static String MISSION0_PREFIX;
 	
-	@Property(key = "levels.mission0.spawns.output.dir", defaultValue = "Spawns/")
+	@Property(key = "levels.spawns.output.dir", defaultValue = "Spawns/")
 	public static String SPAWNS;
-	@Property(key = "levels.mission0.spawns.output.bindings", defaultValue = "")
+	@Property(key = "levels.spawns.output.bindings", defaultValue = "")
 	public static String SPAWNS_BINDINGS;
+	@Property(key = "levels.spawns.use.geo", defaultValue = "false")
+	public static boolean USE_GEO_FOR_SPAWNS;
 	
-	@Property(key = "levels.mission0.random.spawns.output.dir", defaultValue = "random_spawns/")
+	@Property(key = "levels.spawns.random.output.dir", defaultValue = "random_spawns/")
 	public static String RANDOM_SPAWNS;
 
 	@Property(key = "levels.random.walk.cap", defaultValue = "7")

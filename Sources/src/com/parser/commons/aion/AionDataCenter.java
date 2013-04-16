@@ -188,14 +188,14 @@ public class AionDataCenter {
 	public Map<Integer, List<Entity>> entities = new HashMap<Integer, List<Entity>>();
 	public Map<Integer, LevelInfo> levelInfos = new HashMap<Integer, LevelInfo>();
 	
-	public Map<Integer, List<Entity>> getClientEntities() {
+	public Map<Integer, List<Entity>> getLevelEntities() {
 		if (entities.values().isEmpty())
 			for (Map.Entry<String, List<Entity>> entry : new AionMissionParser().parseEntities().entrySet())
 				entities.put(getWorldId(entry.getKey()), entry.getValue());
 		return entities;
 	}
 	
-	public Map<Integer, List<ClientSpawn>> getClientSpawns() {
+	public Map<Integer, List<ClientSpawn>> getLevelSpawns() {
 		if (spawns.values().isEmpty())
 			for (Map.Entry<String, List<ClientSpawn>> entry : new AionMissionParser().parseSpawns().entrySet())
 				spawns.put(getWorldId(entry.getKey()), entry.getValue());
@@ -213,37 +213,19 @@ public class AionDataCenter {
 	
 	public Map<String, ClientString> dataStrings = new HashMap<String, ClientString>();
 	public Map<String, ClientString> l10nStrings = new HashMap<String, ClientString>();
+	public Map<String, ClientString> strings = new HashMap<String, ClientString>();
 	
-	public int getClientStringId(String c_string, int mult, int add) {
+	public ClientString getStrings() {
 		if (dataStrings.values().isEmpty()) dataStrings = index(new AionDataStringParser().parse(), on(ClientString.class).getName().toUpperCase());
 		if (l10nStrings.values().isEmpty()) l10nStrings = index(new AionL10NStringParser().parse(), on(ClientString.class).getName().toUpperCase());
 		
-		ClientString l10n = l10nStrings.get(c_string.toUpperCase());
-		if (!Strings.isNullOrEmpty(l10n))
-			return (l10n.getId() * mult) + add;
-		
-		ClientString data = dataStrings.get(c_string.toUpperCase());
-		if (!Strings.isNullOrEmpty(data))
-			return (data.getId() * mult) + add;
-		
-		log.unique("[STRINGS] No ID matching string : ", c_string.toUpperCase(), true);
-		return 0;
-	}
-	
-	public String getClientStringText(String c_string) {
-		if (dataStrings.values().isEmpty()) dataStrings = index(new AionDataStringParser().parse(), on(ClientString.class).getName().toUpperCase());
-		if (l10nStrings.values().isEmpty()) l10nStrings = index(new AionL10NStringParser().parse(), on(ClientString.class).getName().toUpperCase());
-
-		ClientString l10n = l10nStrings.get(c_string.toUpperCase());
-		if (!Strings.isNullOrEmpty(l10n))
-			return l10n.getBody();
-		
-		ClientString data = dataStrings.get(c_string.toUpperCase());
-		if (!Strings.isNullOrEmpty(data))
-			return data.getBody();
-		
-		log.unique("[STRINGS] No Body matching string : ", c_string.toUpperCase(), true);
-		return 0;
+		for (String s : dataStrings.keySet()) {
+			if (l10nStrings.containsKey(s))
+				strings.put(s, l10nStrings.get(s));
+			else
+				strings.put(s, dataStrings.get(s));
+		}
+		return strings;
 	}	
 	
 	/********************** WORLD ***************************/

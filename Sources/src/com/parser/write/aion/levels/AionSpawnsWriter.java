@@ -32,7 +32,6 @@ import com.parser.output.aion.mission.*;
 
 public class AionSpawnsWriter extends AbstractWriter {
 
-	private static final AionDataCenter data = new AionDataCenter().getInstance();
 	private static final Logger log = new Logger().getInstance();
 	
 	SpawnMap npcSpawnMap = new SpawnMap();
@@ -42,36 +41,32 @@ public class AionSpawnsWriter extends AbstractWriter {
 	SpawnMap riftsSpawnMap = new SpawnMap();
 	SpawnMap staticSpawnMap = new SpawnMap();
 	
-	boolean USE_GEO = true;
-	
 	List<SourceSphere> toWrite = new ArrayList<SourceSphere>();
 	
 	@Override
 	public void parse() {
-		data.getClientSpawns();
-		data.getClientEntities();
-		data.getClientSpheres();
-		data.getWorldMaps();
+		aion.getLevelSpawns();
+		aion.getLevelEntities();
+		aion.getSpheres();
+		aion.getWorldMaps();
+		aion.getNpcs();
+		aion.getStrings();
 		
-		data.loadNpcNameIdMap();
-		data.loadDataStrings();
-		data.loadL10NStrings();
-		
-		if (USE_GEO) {GeoService.getInstance().initializeGeo();}
+		if (LevelsProperties.USE_GEO_FOR_SPAWNS) {GeoService.getInstance().initializeGeo();}
 	}
 	
 	@Override
 	public void transform() {
 		
-		for (Integer mapId : data.getClientSpawns().keySet()) {
-			if (data.getClientSpawns().get(mapId) == null) continue;
+		for (Integer mapId : aion.getClientSpawns().keySet()) {
+			if (aion.getClientSpawns().get(mapId) == null) continue;
 			initAllSpawns(mapId);
-			String mapName = data.getWorld(mapId).getValue().toUpperCase();
+			String mapName = aion.getWorld(mapId).getValue().toUpperCase();
 			Util.printSubSection(mapId + " : " + getName("STR_ZONE_NAME_" + mapName));
 			
-			List<ClientSpawn> currentCSpawns = data.getClientSpawns().get(mapId);
+			List<ClientSpawn> currentCSpawns = aion.getClientSpawns().get(mapId);
 			int startLevelSize = currentCSpawns.size();
-			List<NpcInfo> currentWDSpawns = data.getNpcInfoByMap(mapId);
+			List<NpcInfo> currentWDSpawns = aion.getNpcInfoByMap(mapId);
 			int startWorldSize = currentWDSpawns.size();
 			
 			List<ClientSpawn> usedCSpawns = new LinkedList<ClientSpawn>();
@@ -127,7 +122,7 @@ public class AionSpawnsWriter extends AbstractWriter {
 		FileMarshaller.marshallFile(orders);
 	}
 	
-	private String getName(String s) {return (s != null) ? data.getClientStringText(s) : "";}
+	private String getName(String s) {return (s != null) ? aion.getClientStringText(s) : "";}
 	
 	private void addSpawn(SpawnData sd) {
 		Spawn s = computeSpawn(sd);

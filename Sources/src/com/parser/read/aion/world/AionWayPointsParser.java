@@ -8,10 +8,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.parser.commons.aion.bindings.WayPoint;
+import com.parser.commons.aion.properties.WorldProperties;
 import com.parser.commons.utils.maths.Point3D;
 
 import com.parser.read.TextParser;
-import com.parser.read.aion.AionReadingConfig;
 
 public class AionWayPointsParser extends TextParser {
 
@@ -19,7 +19,7 @@ public class AionWayPointsParser extends TextParser {
 	
 	public List<WayPoint> parse() {
 		List<WayPoint> wpList = new ArrayList<WayPoint>();
-		File file = new File(AionReadingConfig.WAYPOINTS);
+		File file = new File(WorldProperties.WAYPOINT_INPUT);
 		
 		List<String> lines = parseFile(file).getLines();
 		for (String line : lines)
