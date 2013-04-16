@@ -25,10 +25,10 @@ public class AionSourceSphereParser extends TextParser {
 		for (String line : lines) {
 			if (lines.indexOf(line) != 0) {
 				SourceSphere ss = extractData(line);
-				if (!spheres.containsKey(ss.getMap()))
-					spheres.put(ss.getMap(), new ArrayList<SourceSphere>().add(ss));
-				else
-					spheres.put(ss.getMap(), spheres.get(ss.getMap()).add(ss));
+				List<SourceSphere> temp = new ArrayList<SourceSphere>();
+				if (spheres.containsKey(ss.getMap()))
+					temp = spheres.get(ss.getMap());
+				spheres.put(ss.getMap(), temp);
 			}
 		}
 		

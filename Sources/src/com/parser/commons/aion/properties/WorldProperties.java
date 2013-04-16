@@ -14,7 +14,7 @@ public class WorldProperties {
 	
 	@Property(key = "world.source_sphere.output", defaultValue = "Tests/source_sphere.xml")
 	public static String SPHERE_OUTPUT;
-	@Property(key = "world.source_sphere.output.bindings", defaultValue = "source_sphere.csv")
+	@Property(key = "world.source_sphere.output.bindings", defaultValue = "")
 	public static String SPHERE_OUTPUT_BINDINGS;
 	
 	static {
