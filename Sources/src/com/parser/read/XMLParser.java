@@ -38,7 +38,7 @@ public abstract class XMLParser<R> extends FilesCollector {
 		try {
 			JAXBContext jc = JAXBContext.newInstance(bindings);
 			Unmarshaller unmarshaller = jc.createUnmarshaller();
-			unmarshaller.setEventHandler(new XmlValidationHandler());
+			unmarshaller.setEventHandler(new XMLValidationHandler());
 			Object collection = unmarshaller.unmarshal(file);
 			if (!noDisplay)
 				System.out.println("\n[MAIN][INFO] Parsing file " + file.getName());

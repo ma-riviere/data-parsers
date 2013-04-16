@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.parser.write.AbstractWriter;
-import com.parser.write.FileMarhshaller;
+import com.parser.write.FileMarshaller;
 import com.parser.write.aion.AionWritingConfig;
 
 import com.parser.read.BinaryParser;
@@ -99,8 +99,8 @@ public class AionHeightMapWriter extends AbstractWriter {
 	
 	@Override
 	public void marshall() {
-		addAionOrder(AionWritingConfig.POINTS, AionWritingConfig.POINTS_BINDINGS, points);
-		FileMarhshaller.marshallFile(orders);
+		addOrder(AionWritingConfig.POINTS, AionWritingConfig.POINTS_BINDINGS, points);
+		FileMarshaller.marshallFile(orders);
 		System.out.println("\n[POINTS] Points count: " + pointList.size());
 	}
 }

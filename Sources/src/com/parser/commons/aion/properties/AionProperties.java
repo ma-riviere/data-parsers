@@ -29,10 +29,10 @@ public class AionProperties {
 	/**
 	 * DO NOT TOUCH !!!
 	 */
-	public static final String INPUT_PATH = INPUT_DIR + VERSION + "/";
-	public static final String CLIENT_PATH = INPUT_PATH + CLIENT_DIR;
-	public static final String SERVER_PATH = INPUT_PATH + SERVER_DIR;
-	public static final String CUSTOM_PATH = INPUT_PATH + CUSTOM_DIR;
+	public static String INPUT_PATH = INPUT_DIR + VERSION + "/";
+	public static String CLIENT_PATH = INPUT_PATH + CLIENT_DIR;
+	public static String SERVER_PATH = INPUT_PATH + SERVER_DIR;
+	public static String CUSTOM_PATH = INPUT_PATH + CUSTOM_DIR;
 	
-	public static final String OUTPUT_PATH = OUTPUT_DIR + VERSION + "/";
+	public static String OUTPUT_PATH = OUTPUT_DIR + VERSION + "/";
 }

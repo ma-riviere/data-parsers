@@ -4,7 +4,7 @@ import javax.xml.bind.ValidationEvent;
 import javax.xml.bind.ValidationEventHandler;
 import javax.xml.bind.ValidationEventLocator;
 
-public class XmlValidationHandler implements ValidationEventHandler {
+public class XMLValidationHandler implements ValidationEventHandler {
 
 	@Override
 	public boolean handleEvent(ValidationEvent event) {

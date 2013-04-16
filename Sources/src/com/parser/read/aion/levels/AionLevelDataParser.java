@@ -12,7 +12,7 @@ import com.parser.commons.aion.properties.LevelsProperties;
 public class AionLevelDataParser extends XMLParser<LevelData> {
 
 	public AionLevelDataParser() {
-		super(LevelsProperties.CLIENT_PATH + LevelsProperties.LEVELS, LevelsProperties.LEVELDATA_PREFIX, LevelsProperties.LEVELDATA_BINDINGS);
+		super(LevelsProperties.LEVELS, LevelsProperties.LEVELDATA_PREFIX, LevelsProperties.LEVELDATA_BINDINGS);
 	}
 	
 	public List<LevelInfo> parse() {

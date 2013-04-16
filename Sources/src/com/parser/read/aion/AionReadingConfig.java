@@ -48,10 +48,6 @@ public class AionReadingConfig {
 	public static final String SKILL_TREE = BASE_DIR + "Data/skills/client_skill_learns.xml";
 	public static final String SKILL_TREE_BINDINGS = "com.parser.input.aion.skill_learn";
 	
-	// Recipes --> Recipes
-	public static final String RECIPES = BASE_DIR + "Data/Items/client_combine_recipe.xml";
-	public static final String RECIPES_BINDINGS = "com.parser.input.aion.recipes";
-	
 	// (Dir) Items --> Items
 	public static final String ITEMS = BASE_DIR + "Data/Items";
 	public static final String ITEMS_PREFIX = "client_items_";

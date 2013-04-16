@@ -24,7 +24,7 @@ import com.parser.read.aion.skills.AionSkillsParser;
 import com.parser.read.aion.skills.AionSkillTreeParser;
 import com.parser.read.aion.items.AionItemsParser;
 import com.parser.write.AbstractWriter;
-import com.parser.write.FileMarhshaller;
+import com.parser.write.FileMarshaller;
 import com.parser.write.aion.AionWritingConfig;
 
 import com.parser.output.aion.skills.*;
@@ -396,8 +396,8 @@ public class AionSkillsWriter extends AbstractWriter {
 
 	@Override
 	public void marshall() {
-		addAionOrder(AionWritingConfig.SKILLS, AionWritingConfig.SKILLS_BINDINGS,  finalTemplates);
-		FileMarhshaller.marshallFile(orders);
+		addOrder(AionWritingConfig.SKILLS, AionWritingConfig.SKILLS_BINDINGS,  finalTemplates);
+		FileMarshaller.marshallFile(orders);
 		System.out.println("\n[SKILLS] Skills written : " + templateList.size());
 	}
 	

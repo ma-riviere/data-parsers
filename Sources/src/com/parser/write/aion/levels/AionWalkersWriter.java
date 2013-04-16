@@ -1,4 +1,4 @@
-package com.parser.write.aion.npcs;
+package com.parser.write.aion.levels;
 
 import com.google.common.base.Joiner;
 import java.util.Collection;
@@ -17,7 +17,7 @@ import com.parser.commons.utils.maths.Point3D;
 import com.parser.read.aion.world.AionWayPointsParser;
 
 import com.parser.write.AbstractWriter;
-import com.parser.write.FileMarhshaller;
+import com.parser.write.FileMarshaller;
 import com.parser.write.aion.AionWritingConfig;
 
 import com.parser.output.aion.walkers.*;
@@ -119,11 +119,11 @@ public class AionWalkersWriter extends AbstractWriter {
 	@Override
 	public void marshall() {
 		if (fromSpawns)
-			addAionOrder(AionWritingConfig.WALKERS_BINDINGS, AionWritingConfig.SPAWNS_WALKERS, walkers);
+			addOrder(AionWritingConfig.WALKERS_BINDINGS, AionWritingConfig.SPAWNS_WALKERS, walkers);
 		else
-			addAionOrder(AionWritingConfig.WALKERS_BINDINGS, AionWritingConfig.WALKERS, walkers);
+			addOrder(AionWritingConfig.WALKERS_BINDINGS, AionWritingConfig.WALKERS, walkers);
 		
-		FileMarhshaller.marshallFile(orders);
+		FileMarshaller.marshallFile(orders);
 		System.out.println("\n[WALKERS] Walkers count: " + walkerList.size());
 	}
 	

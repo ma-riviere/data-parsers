@@ -12,7 +12,7 @@ import com.parser.read.aion.world.AionCooltimesParser;
 import com.parser.read.aion.world.AionCooltimes2Parser;
 
 import com.parser.write.AbstractWriter;
-import com.parser.write.FileMarhshaller;
+import com.parser.write.FileMarshaller;
 import com.parser.write.aion.AionWritingConfig;
 
 import com.parser.output.aion.cooltimes.InstanceCooltime;
@@ -57,8 +57,8 @@ public class AionCooltimesWriter extends AbstractWriter {
 
 	@Override
 	public void marshall() {
-		addAionOrder(AionWritingConfig.COOLTIMES, AionWritingConfig.COOLTIMES_BINDINGS, cooltimes);
-		FileMarhshaller.marshallFile(orders);
+		addOrder(AionWritingConfig.COOLTIMES, AionWritingConfig.COOLTIMES_BINDINGS, cooltimes);
+		FileMarshaller.marshallFile(orders);
 		System.out.println("\n[COOLTIMES] Cooltimes count: " + templateList.size());
 	}
 	

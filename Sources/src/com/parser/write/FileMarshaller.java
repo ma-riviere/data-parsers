@@ -10,7 +10,7 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 
-public class FileMarhshaller {
+public class FileMarshaller {
 	
 	public static void marshallFile(List<MarshallerData> orders) {
 		try {
@@ -18,8 +18,9 @@ public class FileMarhshaller {
 				JAXBContext jaxbContext = JAXBContext.newInstance(order.getBindings());
 				Marshaller marshaller = jaxbContext.createMarshaller();
 				marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, new Boolean(true));
-				createDir(order.getFile());
-				marshaller.marshal(order.getTemplate(), new FileOutputStream(order.getFile()));
+				createDir(order.getPath());
+				System.out.println("[MARSHALLER] Writting file : " + order.getFileName());
+				marshaller.marshal(order.getTemplate(), new FileOutputStream(order.getPath()));
 			}
 		} catch (JAXBException e) {
 			e.printStackTrace();

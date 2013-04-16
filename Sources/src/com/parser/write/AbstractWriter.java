@@ -5,13 +5,16 @@ import java.util.List;
 
 import com.parser.commons.utils.Logger;
 import com.parser.commons.utils.Util;
-import com.parser.commons.aion.properties.AionProperties;
+
+import com.parser.commons.aion.AionDataCenter;
 
 public abstract class AbstractWriter implements Writer {
 
 	protected Logger log = new Logger().getInstance();
-	
 	protected List<MarshallerData> orders = new ArrayList<MarshallerData>();
+	
+	// Data Centers
+	protected AionDataCenter aion = new AionDataCenter().getInstance();
 
 	@Override
 	public void start() {
@@ -21,7 +24,7 @@ public abstract class AbstractWriter implements Writer {
 		transform();
 		Util.printSection("Analyzing output content");
 		finalise();
-		Util.printSection("Writting output file");
+		Util.printSection("Writting output files");
 		marshall();
 		orders.clear();
 		Util.printSection("FINISHED");
@@ -29,8 +32,8 @@ public abstract class AbstractWriter implements Writer {
 
 	protected void finalise() {}
 	
-	protected void addAionOrder(String file, String bindings, Object template) {
-		orders.add(new MarshallerData(AionProperties.OUTPUT_PATH + file, bindings, template));
+	protected void addOrder(String file, String bindings, Object template) {
+		orders.add(new MarshallerData(file, bindings, template));
 	}
 
 }
