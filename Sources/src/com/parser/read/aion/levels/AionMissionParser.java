@@ -4,18 +4,19 @@ import java.util.List;
 import java.util.Map;
 import javolution.util.FastMap;
 
+import com.parser.commons.aion.properties.LevelsProperties;
+
 import com.parser.input.aion.mission.Mission;
 import com.parser.input.aion.mission.ClientSpawns;
 import com.parser.input.aion.mission.ClientSpawn;
 import com.parser.input.aion.mission.Entity;
 
 import com.parser.read.XMLParser;
-import com.parser.read.aion.AionReadingConfig;
 
 public class AionMissionParser extends XMLParser<Mission> {
 
 	public AionMissionParser() {
-		super(AionReadingConfig.MISSION0, AionReadingConfig.MISSION0_PREFIX, AionReadingConfig.MISSION0_BINDINGS);
+		super(LevelsProperties.CLIENT_PATH + LevelsProperties.LEVELS, LevelsProperties.MISSION0_PREFIX, LevelsProperties.MISSION0_BINDINGS);
 	}
 	
 	private static FastMap<String, Mission> rootData = null;

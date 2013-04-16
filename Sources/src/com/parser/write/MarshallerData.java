@@ -6,9 +6,9 @@ public class MarshallerData {
 	public String file;
 	public Object template;
 	
-	public MarshallerData(String bindings, String file, Object template) {
-		this.bindings = bindings;
+	public MarshallerData(String file, String bindings, Object template) {
 		this.file = file;
+		this.bindings = bindings;
 		this.template = template;
 	}
 	

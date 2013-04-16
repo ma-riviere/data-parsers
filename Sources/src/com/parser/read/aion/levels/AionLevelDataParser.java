@@ -7,12 +7,12 @@ import com.parser.input.aion.level_data.LevelData;
 import com.parser.input.aion.level_data.LevelInfo;
 
 import com.parser.read.XMLParser;
-import com.parser.read.aion.AionReadingConfig;
+import com.parser.commons.aion.properties.LevelsProperties;
 
 public class AionLevelDataParser extends XMLParser<LevelData> {
 
 	public AionLevelDataParser() {
-		super(AionReadingConfig.MISSION0, AionReadingConfig.LEVEL_DATA_PREFIX, AionReadingConfig.LEVEL_DATA_BINDINGS);
+		super(LevelsProperties.CLIENT_PATH + LevelsProperties.LEVELS, LevelsProperties.LEVELDATA_PREFIX, LevelsProperties.LEVELDATA_BINDINGS);
 	}
 	
 	public List<LevelInfo> parse() {

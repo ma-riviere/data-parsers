@@ -14,7 +14,7 @@ import org.slf4j.LoggerFactory;
  */
 public class ConfigurableProcessor {
 
-	private static final Logger log = LoggerFactory.getLogger("Configs");
+	private static final Logger log = LoggerFactory.getLogger("[CONFIGS]");
 
 	/**
 	 * This method is an entry point to the parser logic.<br>
@@ -128,9 +128,8 @@ public class ConfigurableProcessor {
 			if (!Property.DEFAULT_VALUE.equals(property.defaultValue()) || isKeyPresent(property.key(), props)) {
 				f.set(obj, getFieldValue(f, props));
 			}
-			// else if (log.isDebugEnabled()) {
-				// log.debug("Field " + f.getName() + " of class " + f.getDeclaringClass().getName() + " wasn't modified");
-			// }
+			else
+				log.warn("Field " + f.getName() + " of class " + f.getDeclaringClass().getName() + " wasn't modified !");
 		}
 		catch (Exception e) {
 			log.error("Can't transform field " + f.getName() + " of class " + f.getDeclaringClass());
@@ -167,13 +166,11 @@ public class ConfigurableProcessor {
 
 		if (value == null || value.trim().equals("")) {
 			value = defaultValue;
-			// if (log.isDebugEnabled()) {
-				// log.debug("Using default value for field " + field.getName() + " of class " + field.getDeclaringClass().getName());
-			// }
+			log.warn("Using default value for field " + field.getName() + " of class " + field.getDeclaringClass().getName());
 		}
 
-		PropertyTransformer<?> pt = PropertyTransformerFactory.newTransformer(field.getType(),
-			property.propertyTransformer());
+		PropertyTransformer<?> pt = PropertyTransformerFactory.newTransformer(field.getType(), property.propertyTransformer());
+		
 		return pt.transform(value, field);
 	}
 

@@ -81,7 +81,7 @@ public class AionRecipesWriter extends AbstractWriter {
 
 	@Override
 	public void marshall() {
-		addOrder(AionWritingConfig.RECIPES_BINDINGS, AionWritingConfig.RECIPES, finalTemplates);
+		addAionOrder(AionWritingConfig.RECIPES_BINDINGS, AionWritingConfig.RECIPES, finalTemplates);
 		FileMarhshaller.marshallFile(orders);
 		System.out.println("[RECIPES] Recipes count: " + templateList.size());
 	}

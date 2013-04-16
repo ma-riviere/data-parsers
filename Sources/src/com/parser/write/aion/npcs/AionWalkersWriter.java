@@ -119,9 +119,9 @@ public class AionWalkersWriter extends AbstractWriter {
 	@Override
 	public void marshall() {
 		if (fromSpawns)
-			addOrder(AionWritingConfig.WALKERS_BINDINGS, AionWritingConfig.SPAWNS_WALKERS, walkers);
+			addAionOrder(AionWritingConfig.WALKERS_BINDINGS, AionWritingConfig.SPAWNS_WALKERS, walkers);
 		else
-			addOrder(AionWritingConfig.WALKERS_BINDINGS, AionWritingConfig.WALKERS, walkers);
+			addAionOrder(AionWritingConfig.WALKERS_BINDINGS, AionWritingConfig.WALKERS, walkers);
 		
 		FileMarhshaller.marshallFile(orders);
 		System.out.println("\n[WALKERS] Walkers count: " + walkerList.size());

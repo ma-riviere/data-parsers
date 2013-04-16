@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.parser.commons.utils.Logger;
 import com.parser.commons.utils.Util;
+import com.parser.commons.aion.properties.AionProperties;
 
 public abstract class AbstractWriter implements Writer {
 
@@ -28,8 +29,8 @@ public abstract class AbstractWriter implements Writer {
 
 	protected void finalise() {}
 	
-	protected void addOrder(String bindings, String file, Object template) {
-		orders.add(new MarshallerData(bindings, file, template));
+	protected void addAionOrder(String file, String bindings, Object template) {
+		orders.add(new MarshallerData(AionProperties.OUTPUT_PATH + file, bindings, template));
 	}
 
 }

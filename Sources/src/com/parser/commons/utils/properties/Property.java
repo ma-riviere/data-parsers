@@ -45,8 +45,6 @@ public @interface Property {
 	 * <li>{@link String} by {@link com.parser.commons.utils.properties.transformers.StringTransformer}</li>
 	 * <li>{@link Enum} and enum by {@link com.parser.commons.utils.properties.transformers.EnumTransformer}</li>
 	 * <li>{@link java.io.File} by {@link com.parser.commons.utils.properties.transformers.FileTransformer}</li>
-	 * <li>{@link java.net.InetSocketAddress} by
-	 * {@link com.parser.commons.utils.properties.transformers.InetSocketAddressTransformer}</li>
 	 * <li>{@link java.util.regex.Pattern} by {@link com.parser.commons.utils.properties.transformers.PatternTransformer}
 	 * </ul>
 	 * <p/>
