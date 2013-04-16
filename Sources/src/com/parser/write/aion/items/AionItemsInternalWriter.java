@@ -38,7 +38,7 @@ public class AionItemsInternalWriter extends AbstractWriter {
 
 	@Override
 	public void marshall() {
-		addOrder(AionWritingConfig.ITEMS_NAME_ID_BINDINGS, AionWritingConfig.ITEMS_NAME_ID, finalTemplates);
+		addAionOrder(AionWritingConfig.ITEMS_NAME_ID, AionWritingConfig.ITEMS_NAME_ID_BINDINGS, finalTemplates);
 		FileMarhshaller.marshallFile(orders);
 		System.out.println("[ITEMS] Item Name/ID pairs count: " + templateList.size());
 	}

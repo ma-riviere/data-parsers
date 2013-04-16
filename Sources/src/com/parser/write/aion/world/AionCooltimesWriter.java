@@ -20,8 +20,8 @@ import com.parser.output.aion.cooltimes.InstanceCooltimes;
 
 public class AionCooltimesWriter extends AbstractWriter {
 
-	InstanceCooltimes finalTemplates = new InstanceCooltimes();
-	Collection<InstanceCooltime> templateList = finalTemplates.getInstanceCooltime();
+	InstanceCooltimes cooltimes = new InstanceCooltimes();
+	Collection<InstanceCooltime> templateList = cooltimes.getInstanceCooltime();
 	
 	List<ClientInstanceCooltime> clientInstanceCooltimeList;
 	List<ClientInstanceCooltime2> clientInstanceCooltimeList2;
@@ -49,7 +49,7 @@ public class AionCooltimesWriter extends AbstractWriter {
 				if (cic.getEnterMinLevelDark() != null) {ict.setEnterMinLevelDark(cic.getEnterMinLevelDark());}
 				ict.setCanEnterMentor(adjustMentor(cic.getCanEnterMentor()));
 			} else {
-				System.out.println("No WorldID could be found for InstanceCooldown : " + cic.getId() + ", Ignored.");
+				System.out.println("[COOLTIMES] No WorldID could be found for InstanceCooldown : " + cic.getId() + ", Ignored.");
 			}			
 			templateList.add(ict);
 		}
@@ -57,9 +57,9 @@ public class AionCooltimesWriter extends AbstractWriter {
 
 	@Override
 	public void marshall() {
-		addOrder(AionWritingConfig.COOLTIMES_BINDINGS, AionWritingConfig.COOLTIMES, finalTemplates);
+		addAionOrder(AionWritingConfig.COOLTIMES, AionWritingConfig.COOLTIMES_BINDINGS, cooltimes);
 		FileMarhshaller.marshallFile(orders);
-		System.out.println("[COOLTIMES] Cooltimes count: " + templateList.size());
+		System.out.println("\n[COOLTIMES] Cooltimes count: " + templateList.size());
 	}
 	
 	private int getWorldId(String s) {return (new AionDataCenter().getInstance().getWorld(s) != null) ? new AionDataCenter().getInstance().getWorld(s).getId() : 0;}

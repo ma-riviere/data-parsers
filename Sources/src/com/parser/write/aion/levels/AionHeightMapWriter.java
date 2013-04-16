@@ -99,7 +99,7 @@ public class AionHeightMapWriter extends AbstractWriter {
 	
 	@Override
 	public void marshall() {
-		addOrder(AionWritingConfig.POINTS_BINDINGS, AionWritingConfig.POINTS, points);
+		addAionOrder(AionWritingConfig.POINTS, AionWritingConfig.POINTS_BINDINGS, points);
 		FileMarhshaller.marshallFile(orders);
 		System.out.println("\n[POINTS] Points count: " + pointList.size());
 	}

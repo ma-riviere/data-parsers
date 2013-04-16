@@ -7,7 +7,7 @@ import com.parser.commons.utils.Util;
 
 public abstract class PropertiesLoader {
 
-	protected static final Logger log = LoggerFactory.getLogger("Configs");
+	protected static final Logger log = LoggerFactory.getLogger("[CONFIGS]");
 	protected static final String PROPERTIES_DIR = "../../Properties/";
 	
 	protected abstract void loadProperty(String file);

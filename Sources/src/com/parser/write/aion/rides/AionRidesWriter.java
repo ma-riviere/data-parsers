@@ -14,8 +14,8 @@ import com.parser.output.aion.rides.Rides;
 
 public class AionRidesWriter extends AbstractWriter {
 
-	Rides finalTemplates = new Rides();
-	Collection<RideInfo> templateList = finalTemplates.getRideInfo();
+	Rides rides = new Rides();
+	Collection<RideInfo> templateList = rides.getRideInfo();
 	List<ClientRide> clientRideList;
 	
 	@Override
@@ -34,7 +34,7 @@ public class AionRidesWriter extends AbstractWriter {
 				info.setFlySpeed(rideData.getFlySpeed());
 			if (rideData.getSprintSpeed() != 0) {
 				if (rideData.getCanSprint() == 0)
-					System.out.println("Sprint speed > 0 but can not sprint; id=" + rideData.getId());
+					System.out.println("[RIDE] " + rideData.getId() + " has sprint speed > 0 but can't sprint");
 				else
 					info.setSprintSpeed(rideData.getSprintSpeed());
 			}
@@ -54,9 +54,9 @@ public class AionRidesWriter extends AbstractWriter {
 
 	@Override
 	public void marshall() {
-		addOrder(AionWritingConfig.RIDE_BINDINGS, AionWritingConfig.RIDE, finalTemplates);
+		addAionOrder(AionWritingConfig.RIDE, AionWritingConfig.RIDE_BINDINGS, rides);
 		FileMarhshaller.marshallFile(orders);
-		System.out.println("[RIDES] Rides count: " + templateList.size());
+		System.out.println("\n[RIDES] Rides count: " + templateList.size());
 	}
 
 }
