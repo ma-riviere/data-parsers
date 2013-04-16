@@ -39,13 +39,13 @@ public class AionRecipesWriter extends AbstractWriter {
 			RecipeTemplate rt = new RecipeTemplate();
 			
 			rt.setId((Integer) JAXBHandler.getValue(cr, "id"));
-			rt.setNameid(new AionDataCenter().getInstance().getMatchingStringId(JAXBHandler.getValue(cr, "desc").toString(), 2, 1));
+			rt.setNameid(new AionDataCenter().getInstance().getClientStringId(JAXBHandler.getValue(cr, "desc").toString(), 2, 1));
 			rt.setSkillid(getSkill(JAXBHandler.getValue(cr, "combineskill").toString()));
 			rt.setRace(adjustRace(JAXBHandler.getValue(cr, "qualification_race").toString()));
 			rt.setSkillpoint((Integer) JAXBHandler.getValue(cr, "required_skillpoint"));
 			rt.setDp((Integer) JAXBHandler.getValue(cr, "require_dp"));
 			rt.setAutolearn((Integer) JAXBHandler.getValue(cr, "auto_learn"));
-			rt.setProductid(new AionDataCenter().getInstance().getItemIdByName(JAXBHandler.getValue(cr, "product").toString()));
+			rt.setProductid(new AionDataCenter().getInstance().getItemId(JAXBHandler.getValue(cr, "product").toString()));
 			rt.setQuantity((Integer) JAXBHandler.getValue(cr, "product_quantity"));
 			rt.setMaxProductionCount((Integer) JAXBHandler.getValue(cr, "max_production_count"));
 			rt.setCraftDelayId((Integer) JAXBHandler.getValue(cr, "craft_delay_id"));
@@ -53,13 +53,13 @@ public class AionRecipesWriter extends AbstractWriter {
 			for (int a = 1; a <= (Integer) JAXBHandler.getValue(cr, "component_quantity"); a++) {
 				Component compo = new Component();
 				compo.setQuantity((Integer) JAXBHandler.getValue(cr, "compo"+a+"_quantity"));
-				compo.setItemid(new AionDataCenter().getInstance().getItemIdByName(JAXBHandler.getValue(cr, "component"+a).toString()));
+				compo.setItemid(new AionDataCenter().getInstance().getItemId(JAXBHandler.getValue(cr, "component"+a).toString()));
 				rt.getComponent().add(compo);
 			}
 			for (int b = 1; b <= RecipesProperties.MAX_COMBO; b++) {
 				Comboproduct cp = new Comboproduct();
 				if (JAXBHandler.getValue(cr, "combo"+b+"_product") != null) {
-					cp.setItemid(new AionDataCenter().getInstance().getItemIdByName(JAXBHandler.getValue(cr, "combo"+b+"_product").toString()));
+					cp.setItemid(new AionDataCenter().getInstance().getItemId(JAXBHandler.getValue(cr, "combo"+b+"_product").toString()));
 					rt.getComboproduct().add(cp);
 				}
 			}

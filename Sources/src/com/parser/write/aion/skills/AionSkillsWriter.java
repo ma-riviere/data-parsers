@@ -403,9 +403,9 @@ public class AionSkillsWriter extends AbstractWriter {
 	
 	/******* EXTRA ********/
 	
-	private String getName(String s) {return (s != null) ? new AionDataCenter().getInstance().getMatchingStringText(s) : "";}
-	private int getNameId(String s, int mult, int plus) {return (s != null) ? new AionDataCenter().getInstance().getMatchingStringId(s, mult, plus) : 0;}
-	private int getItemId(String s) {return (s != null) ? new AionDataCenter().getInstance().getItemIdByName(s) : 0;}
+	private String getName(String s) {return (s != null) ? new AionDataCenter().getInstance().getClientStringText(s) : "";}
+	private int getNameId(String s, int mult, int plus) {return (s != null) ? new AionDataCenter().getInstance().getClientStringId(s, mult, plus) : 0;}
+	private int getItemId(String s) {return (s != null) ? new AionDataCenter().getInstance().getItemId(s) : 0;}
 	private int getSkillId(String s) {return (s != null) ? new AionDataCenter().getInstance().getSkillIdByName(s) : 0;}
 	private int getNpcId(String s) {return (s != null) ? new AionDataCenter().getInstance().getNpcIdByName(s) : 0;}
 	
