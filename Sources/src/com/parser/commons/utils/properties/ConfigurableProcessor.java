@@ -143,10 +143,6 @@ public class ConfigurableProcessor {
 	 * It tries to load property by key, if not found - it uses default value.<br>
 	 * Transformation is done using {@link com.parser.commons.utils.properties.PropertyTransformerFactory}
 	 * 
-	 * @param field
-	 *          field that has to be transformed
-	 * @param props
-	 *          properties with key\values
 	 * @return transformed object that will be used as field value
 	 * @throws TransformationException
 	 *           if something goes wrong during transformation
@@ -177,29 +173,18 @@ public class ConfigurableProcessor {
 	/**
 	 * Finds value by key in properties
 	 * 
-	 * @param key
-	 *          value key
-	 * @param props
-	 *          properties to loook for the key
 	 * @return value if found, null otherwise
 	 */
 	private static String findPropertyByKey(String key, Properties[] props) {
-		for (Properties p : props) {
-			if (p.containsKey(key)) {
+		for (Properties p : props)
+			if (p.containsKey(key))
 				return p.getProperty(key);
-			}
-		}
-
 		return null;
 	}
 
 	/**
 	 * Checks if key is present in the given properties
 	 * 
-	 * @param key
-	 *          key to check
-	 * @param props
-	 *          prperties to look for key
 	 * @return true if key present, false in other case
 	 */
 	private static boolean isKeyPresent(String key, Properties[] props) {

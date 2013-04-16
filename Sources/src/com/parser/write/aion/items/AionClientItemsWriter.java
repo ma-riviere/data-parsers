@@ -13,7 +13,7 @@ import com.parser.commons.aion.AionDataMerger;
 import com.parser.read.aion.AionReadingConfig;
 import com.parser.read.aion.items.AionItemsParser;
 import com.parser.write.AbstractWriter;
-import com.parser.write.FileMarhshaller;
+import com.parser.write.FileMarshaller;
 import com.parser.write.aion.AionWritingConfig;
 
 public class AionClientItemsWriter extends AbstractWriter {
@@ -332,8 +332,8 @@ public class AionClientItemsWriter extends AbstractWriter {
 
 	@Override
 	public void marshall() {
-		addAionOrder(AionWritingConfig.CLIENT_ITEMS, AionReadingConfig.ITEMS_BINDINGS, finalTemplates);
-		FileMarhshaller.marshallFile(orders);
+		addOrder(AionWritingConfig.CLIENT_ITEMS, AionReadingConfig.ITEMS_BINDINGS, finalTemplates);
+		FileMarshaller.marshallFile(orders);
 		System.out.println("[CLIENT - ITEMS] Items count: " + templateList.size());
 	}
 }

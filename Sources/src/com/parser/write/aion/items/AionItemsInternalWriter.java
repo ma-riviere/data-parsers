@@ -8,7 +8,7 @@ import com.parser.input.aion.items.ClientItem;
 
 import com.parser.read.aion.items.AionItemsParser;
 import com.parser.write.AbstractWriter;
-import com.parser.write.FileMarhshaller;
+import com.parser.write.FileMarshaller;
 import com.parser.write.aion.AionWritingConfig;
 
 import com.parser.output.aion.item_name.Item;
@@ -38,8 +38,8 @@ public class AionItemsInternalWriter extends AbstractWriter {
 
 	@Override
 	public void marshall() {
-		addAionOrder(AionWritingConfig.ITEMS_NAME_ID, AionWritingConfig.ITEMS_NAME_ID_BINDINGS, finalTemplates);
-		FileMarhshaller.marshallFile(orders);
+		addOrder(AionWritingConfig.ITEMS_NAME_ID, AionWritingConfig.ITEMS_NAME_ID_BINDINGS, finalTemplates);
+		FileMarshaller.marshallFile(orders);
 		System.out.println("[ITEMS] Item Name/ID pairs count: " + templateList.size());
 	}
 }

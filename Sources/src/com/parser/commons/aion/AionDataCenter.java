@@ -2,19 +2,17 @@ package com.parser.commons.aion;
 
 import com.google.common.base.Strings;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javolution.util.FastMap;
 
 import com.parser.input.aion.animations.ClientAnimation;
 import com.parser.input.aion.housing.ClientHousingObject;
 import com.parser.input.aion.housing.ClientHousingCustomPart;
 import com.parser.input.aion.items.ClientItem;
-import com.parser.input.aion.level_data.LevelData;
 import com.parser.input.aion.level_data.LevelInfo;
 import com.parser.input.aion.mission.ClientSpawn;
 import com.parser.input.aion.mission.Entity;
-import com.parser.input.aion.mission.Mission;
 import com.parser.input.aion.npcs.ClientNpc;
 import com.parser.input.aion.recipes.ClientRecipe;
 import com.parser.input.aion.rides.ClientRide;
@@ -23,70 +21,61 @@ import com.parser.input.aion.skill_learn.ClientSkillTree;
 import com.parser.input.aion.strings.ClientString;
 import com.parser.input.aion.toypets.ClientToypet;
 import com.parser.input.aion.world_maps.WorldMap;
-import com.parser.input.aion.world_data.NpcInfos;
 import com.parser.input.aion.world_data.NpcInfo;
 
 import com.parser.commons.aion.bindings.SourceSphere;
+import com.parser.commons.aion.properties.*;
 import com.parser.commons.utils.JAXBHandler;
 import com.parser.commons.utils.Logger;
 import com.parser.commons.utils.Util;
 
 import com.parser.read.aion.animations.AionAnimationsParser;
-import com.parser.read.aion.housing.AionHousingObjectsParser;
-import com.parser.read.aion.housing.AionHousingPartsParser;
-import com.parser.read.aion.items.AionItemsParser;
-import com.parser.read.aion.items.AionItemsInternalParser;
-import com.parser.read.aion.levels.AionLevelDataParser;
-import com.parser.read.aion.levels.AionMissionParser;
+import com.parser.read.aion.housing.*;
+import com.parser.read.aion.items.*;
+import com.parser.read.aion.levels.*;
 import com.parser.read.aion.npcs.AionNpcsParser;
 import com.parser.read.aion.recipes.AionRecipesParser;
 import com.parser.read.aion.rides.AionRidesParser;
-import com.parser.read.aion.skills.AionSkillsParser;
-import com.parser.read.aion.skills.AionSkillTreeParser;
-import com.parser.read.aion.strings.AionDataStringParser;
-import com.parser.read.aion.strings.AionL10NStringParser;
+import com.parser.read.aion.skills.*;
+import com.parser.read.aion.strings.*;
 import com.parser.read.aion.toypets.AionToyPetsParser;
-import com.parser.read.aion.world.AionWorldMapsParser;
-import com.parser.read.aion.world.AionWorldNpcParser;
-import com.parser.read.aion.world.AionSourceSphereParser;
+import com.parser.read.aion.world.*;
 
 import com.parser.output.aion.item_name.Item;
 
 public class AionDataCenter {
 
-	public static Logger log = new Logger().getInstance();
+	public Logger log = new Logger().getInstance();
 	
-	// TODO: Move all main lists/maps to Map<Integer, List<Client>>
-	// TODO: Move needed data to models ? Like SpawnData.java ???
-	public static List<ClientItem> clientItems = new ArrayList<ClientItem>();
+	public List<ClientItem> clientItems = new ArrayList<ClientItem>();
 	// Data-Skills
-	public static List<ClientSkill> clientSkills = new ArrayList<ClientSkill>(); //TODO: Rework
-	public static List<ClientSkillTree> clientSkillTree = new ArrayList<ClientSkillTree>(); //TODO: Rework
+	public List<ClientSkill> clientSkills = new ArrayList<ClientSkill>(); //TODO: Rework
+	public List<ClientSkillTree> clientSkillTree = new ArrayList<ClientSkillTree>(); //TODO: Rework
 	// Data-Npcs
-	public static Map<Integer, ClientNpc> clientNpcs = new HashMap<Integer, ClientNpc>();
+	public FastMap<Integer, ClientNpc> clientNpcs = new FastMap<Integer, ClientNpc>();
 	// Levels
-	public static Map<Integer, List<ClientSpawn>> clientSpawns = new HashMap<Integer, List<ClientSpawn>>();
-	public static Map<Integer, List<Entity>> clientEntities = new HashMap<Integer, List<Entity>>();
-	public static Map<Integer, LevelInfo> levelInfos = new HashMap<Integer, LevelInfo>();
+	public FastMap<Integer, List<ClientSpawn>> clientSpawns = new FastMap<Integer, List<ClientSpawn>>();
+	public FastMap<Integer, List<Entity>> clientEntities = new FastMap<Integer, List<Entity>>();
+	public FastMap<Integer, LevelInfo> levelInfos = new FastMap<Integer, LevelInfo>();
 	// Data-World
-	public static Map<Integer, List<NpcInfo>> worldNpcInfos = new HashMap<Integer, List<NpcInfo>>();
-	public static Map<Integer, List<SourceSphere>> clientSpheres = new HashMap<Integer, List<SourceSphere>>();
-	public static Map<SourceSphere, Integer> sphereUseCount = new HashMap<SourceSphere, Integer>();
-	public static Map<Integer, WorldMap> worldMaps = new HashMap<Integer, WorldMap>();
+	public FastMap<Integer, List<NpcInfo>> worldNpcInfos = new FastMap<Integer, List<NpcInfo>>();
+	public FastMap<Integer, List<SourceSphere>> clientSpheres = new FastMap<Integer, List<SourceSphere>>();
+	public FastMap<SourceSphere, Integer> sphereUseCount = new FastMap<SourceSphere, Integer>();
+	public FastMap<Integer, WorldMap> worldMaps = new FastMap<Integer, WorldMap>();
 	
 	// Special Maps
-	public static Map<String, ClientString> dataDescStringMap = new HashMap<String, ClientString>(); // Client String <--> Real Text or NameID
-	public static Map<String, ClientString> l10nDescStringMap = new HashMap<String, ClientString>(); // Client String <--> Real Text or NameID
-	public static Map<String, Integer> rideNameIdMap = new HashMap<String, Integer>(); // Items Name (String) <--> id (Int)
-	public static Map<String, Integer> itemNameIdMap = new HashMap<String, Integer>(); // Items Name (String) <--> id (Int)
-	public static Map<String, Integer> skillNameIdMap = new HashMap<String, Integer>(); // Skills Name (String) <--> id (int)
-	public static Map<String, Integer> npcNameIdMap = new HashMap<String, Integer>(); // Npc Name (String) <--> id (int)
-	public static Map<String, Integer> recipeNameIdMap = new HashMap<String, Integer>(); // Recipes Name (String) <--> id (int)
+	public FastMap<String, ClientString> dataDescStringMap = new FastMap<String, ClientString>(); // Client String <--> Real Text or NameID
+	public FastMap<String, ClientString> l10nDescStringMap = new FastMap<String, ClientString>(); // Client String <--> Real Text or NameID
+	public  FastMap<String, Integer> rideNameIdMap = new FastMap<String, Integer>(); // Items Name (String) <--> id (Int)
+	public FastMap<String, Integer> itemNameIdMap = new FastMap<String, Integer>(); // Items Name (String) <--> id (Int)
+	public FastMap<String, Integer> skillNameIdMap = new FastMap<String, Integer>(); // Skills Name (String) <--> id (int)
+	public FastMap<String, Integer> npcNameIdMap = new FastMap<String, Integer>(); // Npc Name (String) <--> id (int)
+	public FastMap<String, Integer> recipeNameIdMap = new FastMap<String, Integer>(); // Recipes Name (String) <--> id (int)
 	
-	public static Map<String, Integer> animationNameIdMap = new HashMap<String, Integer>(); // Client Animation Name (String) <--> Animation ID (Int)
-	private static Map<String, Integer> houseObjectNameIdMap = new HashMap<String, Integer>(); // House Object Name (String) <--> ID (int)
-	private static Map<String, Integer> houseDecoNameIdMap = new HashMap<String, Integer>(); // House Object Name (String) <--> ID (int)
-	private static Map<String, Integer> toyPetNameIdMap = new HashMap<String, Integer>(); // ToyPets Name (String) <--> ID (int)
+	public FastMap<String, Integer> animationNameIdMap = new FastMap<String, Integer>(); // Client Animation Name (String) <--> Animation ID (Int)
+	private FastMap<String, Integer> houseObjectNameIdMap = new FastMap<String, Integer>(); // House Object Name (String) <--> ID (int)
+	private FastMap<String, Integer> houseDecoNameIdMap = new FastMap<String, Integer>(); // House Object Name (String) <--> ID (int)
+	private FastMap<String, Integer> toyPetNameIdMap = new FastMap<String, Integer>(); // ToyPets Name (String) <--> ID (int)
 	
 	public static final AionDataCenter getInstance() {
 		return SingletonHolder.instance;
@@ -112,70 +101,42 @@ public class AionDataCenter {
 		return clientSkillTree;
 	}
 	
-	public Map<Integer, ClientNpc> getClientNpcs() {
-		if (clientNpcs.values().isEmpty()) {
+	public FastMap<Integer, ClientNpc> getClientNpcs() {
+		if (clientNpcs.values().isEmpty())
 			for (ClientNpc cn : new AionNpcsParser().parse())
 				clientNpcs.put(cn.getId(), cn);
-		}
 		return clientNpcs;
 	}
 	
-	public Map<Integer, List<Entity>> getClientEntities() {
-		if (clientEntities.values().isEmpty()) {
-			Map<String, Mission> missionMap = new AionMissionParser().parseRoot();
-			for (String mapName : missionMap.keySet()) {
-				List<Entity> temp = new ArrayList<Entity>();
-				int mapId = getWorldId(Util.getDirName(mapName));
-				if (mapId > 0) {
-					if (clientEntities.keySet().contains(mapId))
-						temp = clientEntities.get(mapId);
-					temp.addAll(missionMap.get(mapName).getObjects().getEntity());
-					clientEntities.put(mapId, temp);
-				}
-			}
-		}
+	/********************** LEVELS ***************************/
+	
+	public FastMap<Integer, List<Entity>> getClientEntities() {
+		if (clientEntities.values().isEmpty())
+			for (Map.Entry<String, List<Entity>> entry : new AionMissionParser().parseEntities())
+				clientEntities.put(getWorldId(entry.getKey()), entry.getValue());
 		return clientEntities;
 	}
 	
-	public Map<Integer, List<ClientSpawn>> getClientSpawns() {
-		if (clientSpawns.values().isEmpty()) {
-			Map<String, Mission> missionMap = new AionMissionParser().parseRoot();
-			for (String mapName : missionMap.keySet()) {
-				List<ClientSpawn> temp = new ArrayList<ClientSpawn>();
-				int mapId = getWorldId(Util.getDirName(mapName));
-				if (mapId > 0) {
-					if (clientSpawns.keySet().contains(mapId))
-						temp = clientSpawns.get(mapId);
-					temp.addAll(missionMap.get(mapName).getObjects().getObject());
-					clientSpawns.put(mapId, temp);
-				}
-				else
-					log.unique("[LEVELS] No Map ID matching", Util.getDirName(mapName), false);
-			}
-		}
+	public FastMap<Integer, List<ClientSpawn>> getClientSpawns() {
+		if (clientSpawns.values().isEmpty())
+			for (Map.Entry<String, List<ClientSpawn>> entry : new AionMissionParser().parseSpawns())
+				clientSpawns.put(getWorldId(entry.getKey()), entry.getValue());
 		return clientSpawns;
 	}
 	
-	public Map<Integer, List<SourceSphere>> getClientSpheres() {
-		if (clientSpheres.values().isEmpty()) {
-			for (SourceSphere ss : new AionSourceSphereParser().parse()) {
-				List<SourceSphere> temp = new ArrayList<SourceSphere>();
-				int mapId = getWorldId(ss.getMap());
-				if (mapId > 0) {
-					if (clientSpheres.keySet().contains(mapId)) {
-						temp = clientSpheres.get(mapId);
-						temp.add(ss);
-					}
-					else
-						temp.add(ss);
-					
-					clientSpheres.put(mapId, temp);
-				}
-				else
-					System.out.println("Could not find mapId for : " +ss.getMap().toUpperCase());
-			}
-			loadSphereUseCount();
-		}
+	public FastMap<Integer, LevelInfo> getLevelInfos() {
+		if (levelInfos.values().isEmpty())
+			for (Map.Entry<String, LevelInfo> entry : new AionLevelDataParser().parse())
+				levelInfos.put(getWorldId(entry.getKey()), entry.getValue());
+		return levelInfos;
+	}
+	
+	/********************** WORLD ***************************/
+	
+	public FastMap<Integer, List<SourceSphere>> getClientSpheres() {
+		if (clientSpheres.values().isEmpty())
+			for (Map.Entry<String, List<SourceSphere>> entry : new AionSourceSphereParser().parse())
+				clientSpheres.put(getWorldId(entry.getKey()), entry.getValue());
 		return clientSpheres;
 	}
 	
@@ -199,37 +160,24 @@ public class AionDataCenter {
 		// sphereUseCount.put(ss, sphereUseCount.get(ss) -1);
 	}
 	
-	//// World ////
-	
-	public Map<Integer, List<NpcInfo>> getWorldNpcInfos() {
-		int mapId = 0;
-		if (worldNpcInfos.keySet().isEmpty()) {
-			Map<String, List<NpcInfos>> temp = new AionWorldNpcParser().parse();
-			for (String mapName : temp.keySet()) {
-				mapId = getWorldId(Util.getFileName(mapName));
-				List<NpcInfo> npcInfoList = new ArrayList<NpcInfo>();
-				for (NpcInfos npcs : temp.get(mapName)) {
-					npcInfoList.addAll(npcs.getNpcInfo()); 
-				}
-				worldNpcInfos.put(mapId, npcInfoList);
-				npcInfoList.clear();
-			}
+	public FastMap<Integer, List<NpcInfo>> getWorldNpcInfos() {
+		if (worldNpcInfos.values().isEmpty()) {
+			for (Map.Entry<String, List<NpcInfo>> entry : new AionWorldNpcParser().parseNpcInfos())
+				worldNpcInfos.put(getWorldId(entry.getKey()), entry.getValue());
 		}
 		return worldNpcInfos;
 	}
 	
 	public List<NpcInfo> getNpcInfoByMap(int mapId) {
-		List<NpcInfo> data = new ArrayList<NpcInfo>();
 		if (worldNpcInfos.containsKey(mapId))
-			data = worldNpcInfos.get(mapId);
+			return worldNpcInfos.get(mapId);
 		else {
-			for (NpcInfos infos : new AionWorldNpcParser().parseFile(getWorld(mapId).getValue()))
-				data.addAll(infos.getNpcInfo());
+			String file = WorldProperties.INPUT + WorldProperties.INPUT_PREFIX + getWorld(mapId).getValue().toLowerCase();
+			return new AionWorldNpcParser().parseNpcInfos(file);
 		}
-		return data;
 	}
 	
-	public Map<Integer, WorldMap> getWorldMaps() {
+	public FastMap<Integer, WorldMap> getWorldMaps() {
 		if (worldMaps.keySet().isEmpty()) {
 			List<WorldMap> mapList = new AionWorldMapsParser().parse();
 			for (WorldMap map : mapList)
@@ -258,15 +206,6 @@ public class AionDataCenter {
 	}
 	
 	public int getWorldId(String s) {return (getWorld(s) != null) ? getWorld(s).getId() : 0;}
-	
-	public Map<Integer, LevelInfo> getLevelInfos() {
-		if (levelInfos.keySet().isEmpty()) {
-			Map<String, LevelData> dataMap = new AionLevelDataParser().parseRoot();
-			for (LevelData data : dataMap.values())
-				levelInfos.put(getWorldId(data.getLevelInfo().getName().toUpperCase()), data.getLevelInfo());
-		}
-		return levelInfos;
-	}
 	
 	
 	/*******************
@@ -419,7 +358,7 @@ public class AionDataCenter {
 	
 	// Loading StringMap from Data
 	public void loadDataStrings() {
-		Map<String, List<ClientString>> clientStringMap = new AionDataStringParser().parse();
+		FastMap<String, List<ClientString>> clientStringMap = new AionDataStringParser().parse();
 		if (clientStringMap.size() == 0) {return;}
 		for (List<ClientString> lcs : clientStringMap.values())
 			for (ClientString cs : lcs)
@@ -429,7 +368,7 @@ public class AionDataCenter {
 	
 	// Loading StringMap from L10N
 	public void loadL10NStrings() {
-		Map<String, List<ClientString>> clientStringMap = new AionL10NStringParser().parse();
+		FastMap<String, List<ClientString>> clientStringMap = new AionL10NStringParser().parse();
 		if (clientStringMap.size() == 0) {return;}
 		for (List<ClientString> lcs : clientStringMap.values())
 			for (ClientString cs : lcs)

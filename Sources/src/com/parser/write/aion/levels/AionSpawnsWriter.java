@@ -25,9 +25,8 @@ import com.parser.commons.utils.maths.MathUtil;
 import com.parser.commons.utils.Logger; //TODO: Remove
 import com.parser.commons.utils.Util;
 
-import com.parser.write.*;
-import com.parser.write.aion.AionWritingConfig;
-import com.parser.write.aion.npcs.AionWalkersWriter;
+import com.parser.write.AbstractWriter;
+import com.parser.write.FileMarshaller;
 
 import com.parser.output.aion.mission.*;
 
@@ -125,7 +124,7 @@ public class AionSpawnsWriter extends AbstractWriter {
 	
 	@Override
 	public void marshall() {
-		FileMarhshaller.marshallFile(orders);
+		FileMarshaller.marshallFile(orders);
 	}
 	
 	private String getName(String s) {return (s != null) ? data.getMatchingStringText(s) : "";}
@@ -290,42 +289,42 @@ public class AionSpawnsWriter extends AbstractWriter {
 		if (!npcSpawnMap.getSpawn().isEmpty()) {
 			spawns.setSpawnMap(npcSpawnMap);
 			System.out.println("[SPAWNS] Adding " + getSpotSize(npcSpawnMap) + " Npc Spots");
-			addAionOrder(AionWritingConfig.SPAWNS + "Npcs/" + getXml(mapId, mapName), AionWritingConfig.SPAWNS_BINDINGS, spawns);
+			addOrder(LevelsProperties.SPAWNS + "Npcs/" + getXml(mapId, mapName), LevelsProperties.SPAWNS_BINDINGS, spawns);
 			spawns = new Spawns();
 		}
 		// Instances
 		if (!instanceSpawnMap.getSpawn().isEmpty()) {
 			spawns.setSpawnMap(instanceSpawnMap);
 			System.out.println("[SPAWNS] Adding " + getSpotSize(instanceSpawnMap) + " Instance Spots");
-			addAionOrder(AionWritingConfig.SPAWNS + "Instances/" + getXml(mapId, mapName), AionWritingConfig.SPAWNS_BINDINGS, spawns);
+			addOrder(LevelsProperties.SPAWNS + "Instances/" + getXml(mapId, mapName), LevelsProperties.SPAWNS_BINDINGS, spawns);
 			spawns = new Spawns();
 		}
 		// Gather
 		if (!gatherSpawnMap.getSpawn().isEmpty()) {
 			spawns.setSpawnMap(gatherSpawnMap);
 			System.out.println("[SPAWNS] Adding " + getSpotSize(gatherSpawnMap) + " Gather Spots");
-			addAionOrder(AionWritingConfig.SPAWNS + "Gather/" + getXml(mapId, mapName), AionWritingConfig.SPAWNS_BINDINGS, spawns);
+			addOrder(LevelsProperties.SPAWNS + "Gather/" + getXml(mapId, mapName), LevelsProperties.SPAWNS_BINDINGS, spawns);
 			spawns = new Spawns();
 		}
 		// Siege
 		if (!siegesSpawnMap.getSpawn().isEmpty()) {
 			spawns.setSpawnMap(siegesSpawnMap);
 			System.out.println("[SPAWNS] Adding " + getSpotSize(siegesSpawnMap) + " Siege Spots");
-			addAionOrder(AionWritingConfig.SPAWNS + "Sieges/" + getXml(mapId, mapName), AionWritingConfig.SPAWNS_BINDINGS, spawns);
+			addOrder(LevelsProperties.SPAWNS + "Sieges/" + getXml(mapId, mapName), LevelsProperties.SPAWNS_BINDINGS, spawns);
 			spawns = new Spawns();
 		}
 		// Rifts
 		if (!riftsSpawnMap.getSpawn().isEmpty()) {
 			spawns.setSpawnMap(riftsSpawnMap);
 			System.out.println("[SPAWNS] Adding " + getSpotSize(riftsSpawnMap) + " Rifts Spots");
-			addAionOrder(AionWritingConfig.SPAWNS + "Rifts/" + getXml(mapId, mapName), AionWritingConfig.SPAWNS_BINDINGS, spawns);
+			addOrder(LevelsProperties.SPAWNS + "Rifts/" + getXml(mapId, mapName), LevelsProperties.SPAWNS_BINDINGS, spawns);
 			spawns = new Spawns();
 		}
 		// Statics
 		if (!staticSpawnMap.getSpawn().isEmpty()) {
 			spawns.setSpawnMap(staticSpawnMap);
 			System.out.println("[SPAWNS] Adding " + getSpotSize(staticSpawnMap) + " Static Spots");
-			addAionOrder(AionWritingConfig.SPAWNS + "Statics/" + getXml(mapId, mapName), AionWritingConfig.SPAWNS_BINDINGS, spawns);
+			addOrder(LevelsProperties.SPAWNS + "Statics/" + getXml(mapId, mapName), LevelsProperties.SPAWNS_BINDINGS, spawns);
 		}
 		// END
 		spawns = new Spawns();

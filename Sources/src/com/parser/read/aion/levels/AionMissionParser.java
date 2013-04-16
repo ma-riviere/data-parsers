@@ -16,7 +16,7 @@ import com.parser.read.XMLParser;
 public class AionMissionParser extends XMLParser<Mission> {
 
 	public AionMissionParser() {
-		super(LevelsProperties.CLIENT_PATH + LevelsProperties.LEVELS, LevelsProperties.MISSION0_PREFIX, LevelsProperties.MISSION0_BINDINGS);
+		super(LevelsProperties.LEVELS, LevelsProperties.MISSION0_PREFIX, LevelsProperties.MISSION0_BINDINGS);
 	}
 	
 	private static FastMap<String, Mission> rootData = null;

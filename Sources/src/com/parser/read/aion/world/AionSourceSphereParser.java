@@ -5,26 +5,34 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.List;
+import javolution.util.FastMap;
 
 import com.parser.commons.aion.bindings.SourceSphere;
+import com.parser.commons.aion.properties.WorldProperties;
 
 import com.parser.read.TextParser;
-import com.parser.read.aion.AionReadingConfig;
 
 public class AionSourceSphereParser extends TextParser {
 
 	public AionSourceSphereParser() {}
 	
-	public List<SourceSphere> parse() {
-		List<SourceSphere> ssList = new ArrayList<SourceSphere>();
-		File file = new File(AionReadingConfig.SOURCE_SPHERE);
-
-		List<String> lines = parseFile(file).getLines();
-		for (String line : lines)
-			if (lines.indexOf(line) != 0)
-				ssList.add(extractData(line));
+	public FastMap<String, List<SourceSphere>> parse() {
+		FastMap<String, List<SourceSphere>> spheres = new FastMap<String, List<SourceSphere>>();
 		
-		return ssList;
+		File file = new File(WorldProperties.SPHERE_INPUT);
+		List<String> lines = parseFile(file).getLines();
+		
+		for (String line : lines) {
+			if (lines.indexOf(line) != 0) {
+				SourceSphere ss = extractData(line);
+				if (!spheres.containsKey(ss.getMap()))
+					spheres.put(ss.getMap(), new ArrayList<SourceSphere>().add(ss));
+				else
+					spheres.put(ss.getMap(), spheres.get(ss.getMap()).add(ss));
+			}
+		}
+		
+		return spheres;
 	}
 	
 	private SourceSphere extractData(String line) {

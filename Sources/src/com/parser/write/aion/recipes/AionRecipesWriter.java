@@ -1,9 +1,7 @@
 package com.parser.write.aion.recipes;
 
-import java.io.Serializable;
 import java.util.Collection;
 import java.util.List;
-import javax.xml.bind.JAXBElement;
 
 import com.parser.input.aion.recipes.ClientRecipe;
 
@@ -14,20 +12,16 @@ import com.parser.commons.aion.properties.RecipesProperties;
 import com.parser.read.aion.recipes.AionRecipesParser;
 
 import com.parser.write.AbstractWriter;
-import com.parser.write.FileMarhshaller;
-import com.parser.write.aion.AionWritingConfig;
+import com.parser.write.FileMarshaller;
 
-import com.parser.output.aion.recipes.RecipeTemplates;
-import com.parser.output.aion.recipes.RecipeTemplate;
-import com.parser.output.aion.recipes.Component;
-import com.parser.output.aion.recipes.Comboproduct;
+import com.parser.output.aion.recipes.*;
 
 public class AionRecipesWriter extends AbstractWriter {
 
 	public static boolean ANALYSE = false;
 	
-	RecipeTemplates finalTemplates = new RecipeTemplates();
-	Collection<RecipeTemplate> templateList = finalTemplates.getRecipeTemplate();
+	RecipeTemplates recipes = new RecipeTemplates();
+	Collection<RecipeTemplate> templateList = recipes.getRecipeTemplate();
 	List<ClientRecipe> clientRecipesData;
 	
 	public AionRecipesWriter(boolean analyse) {
@@ -62,7 +56,7 @@ public class AionRecipesWriter extends AbstractWriter {
 				compo.setItemid(new AionDataCenter().getInstance().getItemIdByName(JAXBHandler.getValue(cr, "component"+a).toString()));
 				rt.getComponent().add(compo);
 			}
-			for (int b = 1; b <= RecipesProperties.MAX_COMBO_FOR_RECIPES; b++) {
+			for (int b = 1; b <= RecipesProperties.MAX_COMBO; b++) {
 				Comboproduct cp = new Comboproduct();
 				if (JAXBHandler.getValue(cr, "combo"+b+"_product") != null) {
 					cp.setItemid(new AionDataCenter().getInstance().getItemIdByName(JAXBHandler.getValue(cr, "combo"+b+"_product").toString()));
@@ -81,8 +75,8 @@ public class AionRecipesWriter extends AbstractWriter {
 
 	@Override
 	public void marshall() {
-		addAionOrder(AionWritingConfig.RECIPES_BINDINGS, AionWritingConfig.RECIPES, finalTemplates);
-		FileMarhshaller.marshallFile(orders);
+		addOrder(RecipesProperties.OUTPUT_BINDINGS, RecipesProperties.OUTPUT, recipes);
+		FileMarshaller.marshallFile(orders);
 		System.out.println("[RECIPES] Recipes count: " + templateList.size());
 	}
 	

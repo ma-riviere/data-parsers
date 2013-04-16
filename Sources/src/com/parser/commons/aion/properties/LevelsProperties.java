@@ -2,7 +2,7 @@ package com.parser.commons.aion.properties;
 
 import com.parser.commons.utils.properties.Property;
 
-public class LevelsProperties extends AionProperties {
+public class LevelsProperties {
 
 	@Property(key = "levels.input.dir", defaultValue = "")
 	public static String LEVELS;
@@ -27,4 +27,10 @@ public class LevelsProperties extends AionProperties {
 	public static String LEVELDATA_BINDINGS;
 	@Property(key = "levels.leveldata.prefix", defaultValue = "leveldata")
 	public static String LEVELDATA_PREFIX;
+	
+	static {
+		LEVELS = AionProperties.CLIENT_PATH + LEVELS;
+		SPAWNS = AionProperties.OUTPUT_PATH + SPAWNS;
+		RANDOM_SPAWNS = AionProperties.OUTPUT_PATH + RANDOM_SPAWNS;
+	}
 }

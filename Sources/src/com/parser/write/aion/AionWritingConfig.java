@@ -19,10 +19,6 @@ public class AionWritingConfig {
 	public static final String ITEMS_NAME_ID_BINDINGS = "com.parser.output.aion.item_name";
 	
 	/*************************** TEST XMLs *********************************/
-	
-	// Source Sphere
-	public static final String SPHERE = BASE_DIR + "Tests/source_sphere.xml";
-	public static final String SPHERE_BINDINGS = "com.parser.output.aion.source_sphere";
 	// Height Maps
 	public static final String POINTS = BASE_DIR + "Tests/height_map.xml";
 	public static final String POINTS_BINDINGS = "com.parser.output.aion.height_map";
@@ -45,21 +41,9 @@ public class AionWritingConfig {
 	public static final String ITEMS = BASE_DIR + "items/item_templates.xml";
 	public static final String ITEMS_BINDINGS = "com.parser.output.aion.items";
 	
-	// Recipes
-	public static final String RECIPES = BASE_DIR + "Recipes/recipe_templates.xml";
-	public static final String RECIPES_BINDINGS = "com.parser.output.aion.recipes";
-	
 	// Npcs
 	public static final String NPCS = BASE_DIR + "npcs/npc_templates.xml";
 	public static final String NPCS_BINDINGS = "com.parser.output.aion.npcs";
-	
-	/**** Start Mission0 ****/
-	// Spawns
-	public static final String SPAWNS = BASE_DIR + "Spawns/";
-	public static final String RANDOM_SPAWNS = BASE_DIR + "random_spawns/";
-	public static final String SPAWNS_BINDINGS = "com.parser.output.aion.mission";
-	
-	/**** End Mission0 ****/
 	
 	public static final String WALKERS = BASE_DIR + "npc_walkers.xml";
 	public static final String SPAWNS_WALKERS = BASE_DIR + "npc_walkers_spawns.xml";

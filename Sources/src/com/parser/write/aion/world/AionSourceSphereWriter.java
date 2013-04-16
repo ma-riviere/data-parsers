@@ -7,15 +7,14 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-import com.parser.commons.aion.AionDataCenter;
 import com.parser.commons.aion.bindings.SourceSphere;
+import com.parser.commons.aion.properties.WorldProperties;
 import com.parser.commons.utils.maths.MathUtil;
 
 import com.parser.read.aion.world.AionSourceSphereParser;
 
 import com.parser.write.AbstractWriter;
-import com.parser.write.FileMarhshaller;
-import com.parser.write.aion.AionWritingConfig;
+import com.parser.write.FileMarshaller;
 
 import com.parser.output.aion.source_sphere.*;
 
@@ -28,18 +27,18 @@ public class AionSourceSphereWriter extends AbstractWriter {
 		
 	@Override
 	public void parse() {
-		clientSpheres = new AionSourceSphereParser().parse();
-		new AionDataCenter().getInstance().getWorldMaps();
-		new AionDataCenter().getInstance().loadNpcNameIdMap();		
+		clientSpheres = aion.getClientSpheres().values();
+		aion.getWorldMaps();
+		aion.loadNpcNameIdMap();		
 	}
 
 	@Override
 	public void transform() {
 		for (SourceSphere css : clientSpheres) {
 			Sphere s = new Sphere();
-			s.setNpcId(getNpcId(css.getName()));
+			s.setNpcId(aion.getNpcIdByName(css.getName()));
 			s.setType(css.getType().toUpperCase());
-			s.setWorldId(getWorldId(css.getMap()));
+			s.setWorldId(aion.getWorldId(css.getMap()));
 			s.setLayer(css.getLayer());
 			if (!Strings.isNullOrEmpty(css.getWpName()))
 				s.setWayPoint(css.getWpName().toUpperCase());
@@ -62,13 +61,10 @@ public class AionSourceSphereWriter extends AbstractWriter {
 	
 	@Override
 	public void marshall() {
-		addAionOrder(AionWritingConfig.SPHERE, AionWritingConfig.SPHERE_BINDINGS, spheres);
-		FileMarhshaller.marshallFile(orders);
+		addOrder(WorldProperties.SPHERE_OUTPUT, WorldProperties.SPHERE_OUTPUT_BINDINGS, spheres);
+		FileMarshaller.marshallFile(orders);
 		System.out.println("\n[SPHERE] source_sphere count: " + sList.size());
 	}
-	
-	private int getWorldId(String s) {return new AionDataCenter().getInstance().getWorldId(s);}
-	private int getNpcId(String s) {return (s != null) ? new AionDataCenter().getInstance().getNpcIdByName(s) : 0;}
 	
 	private Spheres order(Spheres spheres) {
 		List<Sphere> list = new ArrayList<Sphere>(spheres.getSphere());

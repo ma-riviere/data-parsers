@@ -6,7 +6,7 @@ import java.util.List;
 import com.parser.input.aion.rides.ClientRide;
 import com.parser.read.aion.rides.AionRidesParser;
 import com.parser.write.AbstractWriter;
-import com.parser.write.FileMarhshaller;
+import com.parser.write.FileMarshaller;
 import com.parser.write.aion.AionWritingConfig;
 import com.parser.output.aion.rides.Bounds;
 import com.parser.output.aion.rides.RideInfo;
@@ -54,8 +54,8 @@ public class AionRidesWriter extends AbstractWriter {
 
 	@Override
 	public void marshall() {
-		addAionOrder(AionWritingConfig.RIDE, AionWritingConfig.RIDE_BINDINGS, rides);
-		FileMarhshaller.marshallFile(orders);
+		addOrder(AionWritingConfig.RIDE, AionWritingConfig.RIDE_BINDINGS, rides);
+		FileMarshaller.marshallFile(orders);
 		System.out.println("\n[RIDES] Rides count: " + templateList.size());
 	}
 

@@ -27,7 +27,7 @@ import com.parser.read.aion.skills.AionSkillTreeParser;
 import com.parser.read.aion.world.AionCooltimesParser;
 
 import com.parser.write.AbstractWriter;
-import com.parser.write.FileMarhshaller;
+import com.parser.write.FileMarshaller;
 import com.parser.write.aion.AionWritingConfig;
 
 import com.parser.output.aion.items.*;
@@ -627,8 +627,8 @@ public class AionItemsWriter extends AbstractWriter {
 
 	@Override
 	public void marshall() {
-		addAionOrder(AionWritingConfig.ITEMS, AionWritingConfig.ITEMS_BINDINGS, finalTemplates);
-		FileMarhshaller.marshallFile(orders);
+		addOrder(AionWritingConfig.ITEMS, AionWritingConfig.ITEMS_BINDINGS, finalTemplates);
+		FileMarshaller.marshallFile(orders);
 		System.out.println("[ITEMS] Items count: " + templateList.size());
 	}
 	
