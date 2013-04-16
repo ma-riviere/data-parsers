@@ -166,6 +166,13 @@ public class AionSpawnsWriter extends AbstractWriter {
 			if (h != 0) {spot.setH(h);}
 		}
 		
+		// To match WalkerFormator logic
+		if (spot.getWalkerId() != null) {
+			spot.setX(sd.getSS().getX());
+			spot.setY(sd.getSS().getY());
+			spot.setZ(sd.getSS().getZ());
+		}
+		
 		// if (spot.getStaticId() == null)
 			// spot.setZ(ZUtils.getBestZ(sd));
 		

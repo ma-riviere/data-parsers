@@ -2,10 +2,8 @@ package com.parser.commons.utils.properties;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
+import java.util.logging.Logger;
 import java.util.Properties;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * This class is designed to process classes and interfaces that have fields marked with {@link Property} annotation
@@ -14,7 +12,7 @@ import org.slf4j.LoggerFactory;
  */
 public class ConfigurableProcessor {
 
-	private static final Logger log = LoggerFactory.getLogger("[CONFIGS]");
+	static final Logger log = Logger.getLogger("CONFIGS");
 
 	/**
 	 * This method is an entry point to the parser logic.<br>
@@ -98,7 +96,7 @@ public class ConfigurableProcessor {
 			if (f.isAnnotationPresent(Property.class)) {
 				// Final fields should not be processed
 				if (Modifier.isFinal(f.getModifiers())) {
-					log.error("Attempt to proceed final field " + f.getName() + " of class " + clazz.getName());
+					log.severe("Attempt to proceed final field " + f.getName() + " of class " + clazz.getName());
 					throw new RuntimeException();
 				}
 				processField(f, obj, props);
@@ -129,10 +127,10 @@ public class ConfigurableProcessor {
 				f.set(obj, getFieldValue(f, props));
 			}
 			else
-				log.warn("Field " + f.getName() + " of class " + f.getDeclaringClass().getName() + " wasn't modified !");
+				log.warning("Field " + f.getName() + " of class " + f.getDeclaringClass().getName() + " wasn't modified !");
 		}
 		catch (Exception e) {
-			log.error("Can't transform field " + f.getName() + " of class " + f.getDeclaringClass());
+			log.severe("Can't transform field " + f.getName() + " of class " + f.getDeclaringClass());
 			throw new RuntimeException();
 		}
 		f.setAccessible(oldAccessible);
@@ -154,7 +152,7 @@ public class ConfigurableProcessor {
 		String value = null;
 
 		if (key.isEmpty()) {
-			log.warn("Property " + field.getName() + " of class " + field.getDeclaringClass().getName() + " has empty key");
+			log.warning("Property " + field.getName() + " of class " + field.getDeclaringClass().getName() + " has empty key");
 		}
 		else {
 			value = findPropertyByKey(key, props);
@@ -162,7 +160,7 @@ public class ConfigurableProcessor {
 
 		if (value == null || value.trim().equals("")) {
 			value = defaultValue;
-			log.warn("Using default value for field " + field.getName() + " of class " + field.getDeclaringClass().getName());
+			log.warning("Using default value for field " + field.getName() + " of class " + field.getDeclaringClass().getName());
 		}
 
 		PropertyTransformer<?> pt = PropertyTransformerFactory.newTransformer(field.getType(), property.propertyTransformer());

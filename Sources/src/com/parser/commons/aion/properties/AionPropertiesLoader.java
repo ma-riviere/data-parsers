@@ -1,8 +1,6 @@
 package com.parser.commons.aion.properties;
 
 import java.util.Properties;
-import org.slf4j.LoggerFactory;
-import org.slf4j.Logger;
 
 import com.parser.commons.utils.properties.*;
 
@@ -22,7 +20,6 @@ public class AionPropertiesLoader extends PropertiesLoader {
 
 		}
 		catch (Exception e) {
-			log.error("Can't load " + GAME + "'s " + file, e);
 			throw new Error("Can't load " + GAME + "'s " + file, e);
 		}
 	}

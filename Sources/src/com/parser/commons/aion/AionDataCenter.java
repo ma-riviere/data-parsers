@@ -112,21 +112,21 @@ public class AionDataCenter {
 	
 	public FastMap<Integer, List<Entity>> getClientEntities() {
 		if (clientEntities.values().isEmpty())
-			for (Map.Entry<String, List<Entity>> entry : new AionMissionParser().parseEntities())
+			for (Map.Entry<String, List<Entity>> entry : new AionMissionParser().parseEntities().entrySet())
 				clientEntities.put(getWorldId(entry.getKey()), entry.getValue());
 		return clientEntities;
 	}
 	
 	public FastMap<Integer, List<ClientSpawn>> getClientSpawns() {
 		if (clientSpawns.values().isEmpty())
-			for (Map.Entry<String, List<ClientSpawn>> entry : new AionMissionParser().parseSpawns())
+			for (Map.Entry<String, List<ClientSpawn>> entry : new AionMissionParser().parseSpawns().entrySet())
 				clientSpawns.put(getWorldId(entry.getKey()), entry.getValue());
 		return clientSpawns;
 	}
 	
 	public FastMap<Integer, LevelInfo> getLevelInfos() {
 		if (levelInfos.values().isEmpty())
-			for (Map.Entry<String, LevelInfo> entry : new AionLevelDataParser().parse())
+			for (Map.Entry<String, LevelInfo> entry : new AionLevelDataParser().parse().entrySet())
 				levelInfos.put(getWorldId(entry.getKey()), entry.getValue());
 		return levelInfos;
 	}
@@ -135,7 +135,7 @@ public class AionDataCenter {
 	
 	public FastMap<Integer, List<SourceSphere>> getClientSpheres() {
 		if (clientSpheres.values().isEmpty())
-			for (Map.Entry<String, List<SourceSphere>> entry : new AionSourceSphereParser().parse())
+			for (Map.Entry<String, List<SourceSphere>> entry : new AionSourceSphereParser().parse().entrySet())
 				clientSpheres.put(getWorldId(entry.getKey()), entry.getValue());
 		return clientSpheres;
 	}
