@@ -45,10 +45,6 @@ public class AionWritingConfig {
 	public static final String NPCS = BASE_DIR + "npcs/npc_templates.xml";
 	public static final String NPCS_BINDINGS = "com.parser.output.aion.npcs";
 	
-	public static final String WALKERS = BASE_DIR + "npc_walkers.xml";
-	public static final String SPAWNS_WALKERS = BASE_DIR + "npc_walkers_spawns.xml";
-	public static final String WALKERS_BINDINGS = "com.parser.output.aion.walkers";
-	
 	/** ############################################################## **/
 
 	// npc shouts

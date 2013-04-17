@@ -22,7 +22,7 @@ REM ## Data
 IF %JAR%==1 CALL :MAIN toypets 3 800 1024 %I_TOYPETS% %O_TOYPETS%
 IF %JAR%==2 CALL :MAIN world_maps 3 800 1024 %I_WORLD_MAPS% %O_WORLD_MAPS%
 IF %JAR%==3 CALL :MAIN rides 3 800 1024 %I_RIDES% %O_RIDES%
-REM IF %JAR%==4 CALL :MAIN cooltimes
+IF %JAR%==4 CALL :MAIN cooltimes 3 800 1024 %I_COOLTIMES% %O_COOLTIMES%
 REM IF %JAR%==5 CALL :MAIN items
 REM IF %JAR%==6 CALL :MAIN recipes
 REM IF %JAR%==7 CALL :MAIN skills
@@ -77,6 +77,8 @@ GOTO:EOF
 SET I_TOYPETS=%CLIENT%\Data\func_pet\toypet*.xml
 SET O_TOYPETS=%SERVER%\toypets\*.xml
 SET ANIMATIONS=%CLIENT%\Data\Animations\custom_animation.xml
+SET I_COOLTIMES=%CLIENT%\Data\world\client_instance_cooltime*.xml
+SET O_COOLTIMES=%SERVER%\instance_cooltimes.xml
 
 SET LEVELS=%CLIENT%\Levels\
 SET SPAWNS=%SERVER%\spawns\

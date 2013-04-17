@@ -174,7 +174,7 @@ public enum ItemCategory {
 					category = ItemCategory.QUEST_ITEM;
 			}
 			if (ci.getDescLong() != null) {
-				String desc = new AionDataHub().getInstance().getClientStringText(ci.getDescLong()).toUpperCase();
+				String desc = new AionDataHub().getInstance().getStrings().get(ci.getDescLong()).getBody().toUpperCase();
 				if (desc.contains("Double-click to begin a quest".toUpperCase()) || desc.contains("더블 클릭하여 퀘스트를 받을 수 있습니다".toUpperCase())) // Check 182213370
 					category = ItemCategory.QUEST_START_ITEM;
 			}

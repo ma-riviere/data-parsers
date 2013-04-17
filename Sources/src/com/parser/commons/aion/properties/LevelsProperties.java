@@ -4,7 +4,7 @@ import com.parser.commons.utils.properties.Property;
 
 public class LevelsProperties {
 
-	@Property(key = "levels.input.dir", defaultValue = "")
+	@Property(key = "levels.input", defaultValue = "")
 	public static String LEVELS;
 	
 	@Property(key = "levels.mission0.input.bindings", defaultValue = "")
@@ -12,14 +12,12 @@ public class LevelsProperties {
 	@Property(key = "levels.mission0.prefix", defaultValue = "mission_")
 	public static String MISSION0_PREFIX;
 	
-	@Property(key = "levels.spawns.output.dir", defaultValue = "Spawns/")
+	@Property(key = "levels.spawns.output", defaultValue = "Spawns/")
 	public static String SPAWNS;
 	@Property(key = "levels.spawns.output.bindings", defaultValue = "")
 	public static String SPAWNS_BINDINGS;
-	@Property(key = "levels.spawns.use.geo", defaultValue = "false")
-	public static boolean USE_GEO_FOR_SPAWNS;
 	
-	@Property(key = "levels.spawns.random.output.dir", defaultValue = "random_spawns/")
+	@Property(key = "levels.spawns.random.output", defaultValue = "random_spawns/random_spawns.xml")
 	public static String RANDOM_SPAWNS;
 
 	@Property(key = "levels.random.walk.cap", defaultValue = "7")
@@ -28,7 +26,7 @@ public class LevelsProperties {
 	@Property(key = "levels.leveldata.input.bindings", defaultValue = "")
 	public static String LEVELDATA_BINDINGS;
 	@Property(key = "levels.leveldata.prefix", defaultValue = "leveldata")
-	public static String LEVELDATA_PREFIX;
+	public static String LEVELDATA_PREFIX;	
 	
 	static {
 		LEVELS = AionProperties.CLIENT_PATH + LEVELS;

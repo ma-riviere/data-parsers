@@ -23,6 +23,9 @@ public class AionProperties {
 	@Property(key = "general.output.use.custom", defaultValue = "false")
 	public static boolean USE_CUSTOM_OUTPUT;
 	
+	@Property(key = "general.use.geo", defaultValue = "false")
+	public static boolean USE_GEO;
+	
 	@Property(key = "general.max.level", defaultValue = "60")
 	public static int MAX_LEVEL;
 	

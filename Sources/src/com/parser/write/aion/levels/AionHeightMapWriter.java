@@ -1,10 +1,7 @@
 package com.parser.write.aion.levels;
 
-import com.google.common.base.Strings;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import com.parser.write.AbstractWriter;
@@ -29,11 +26,10 @@ public class AionHeightMapWriter extends AbstractWriter {
 	Points points = new Points();
 	Collection<Point> pointList = points.getPoint();
 	
-	Map<Integer, LevelInfo> infoMap = new HashMap<Integer, LevelInfo>();
+	Map<String, LevelInfo> infoMap = new HashMap<String, LevelInfo>();
 	
 	static final int MIN_X = 0;
 	static final int MIN_Y = 0;
-	int mapId = 0;
 	int MAX_X = 1536;
 	int x = 1536;
 	int MAX_Y = 1536;
@@ -55,14 +51,14 @@ public class AionHeightMapWriter extends AbstractWriter {
 			System.out.println("[ERROR] Buffer size is not valid, more than 3 bytes may be used for map : " + bpd.getPath(1));
 			return;
 		}
-		mapId = data.getWorldId(bpd.getPath(1));
+		int mapId = data.getWorldId(bpd.getPath(1));
 		if (mapId == 0) {
 			System.out.println("Invalid map name " + bpd.getPath(1));
 			return;
 		}
 		
-		// MAX_X = infoMap.get(mapId).getHeightmapXSize();
-		// MAX_Y = infoMap.get(mapId).getHeightmapYSize();
+		// MAX_X = infoMap.get(bpd.getPath(1)).getHeightmapXSize();
+		// MAX_Y = infoMap.get(bpd.getPath(1)).getHeightmapYSize();
 		
 		int count = bpd.getSize() / 3;
 		
@@ -101,6 +97,6 @@ public class AionHeightMapWriter extends AbstractWriter {
 	public void marshall() {
 		addOrder(AionWritingConfig.POINTS, AionWritingConfig.POINTS_BINDINGS, points);
 		FileMarshaller.marshallFile(orders);
-		System.out.println("\n[POINTS] Points count: " + pointList.size());
+		System.out.println("\n[POINTS] Points count : " + pointList.size());
 	}
 }
