@@ -18,7 +18,7 @@ public class Logger {
 	}
 	
 	public void info(String message) {
-		this(message, "");
+		info(message, "");
 	}
 	
 	public void unique(String message, Object value, boolean ignoreNum) {

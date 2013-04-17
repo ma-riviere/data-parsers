@@ -7,7 +7,7 @@ import com.google.common.base.Strings;
 public enum Race {
 
 	NONE("none"),
-	PC_ALL("all"),
+	PC_ALL("both"),
 	ELYOS("pc_light"),
 	ASMODIANS("pc_dark"),
 	LYCAN,
@@ -61,6 +61,8 @@ public enum Race {
 	public static List<String> unkRace = new ArrayList<String>();
 	
 	public static Race fromClient(String string) {
+	
+		if (string.equalsIgnoreCase("ALL")) {string = "BOTH";}
 	
 		if (Strings.isNullOrEmpty(string))
 			return Race.NONE;

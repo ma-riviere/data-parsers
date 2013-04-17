@@ -1,8 +1,6 @@
 package com.parser.commons.aion;
 
-import static ch.lambdaj.Lambda.index;
-import static ch.lambdaj.Lambda.on;
-import static ch.lambdaj.Lambda.flatten;
+import static ch.lambdaj.Lambda.*;
 
 import com.google.common.base.Strings;
 import java.util.ArrayList;
@@ -11,6 +9,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.parser.input.aion.animations.ClientAnimation;
+import com.parser.input.aion.cooltimes.ClientInstanceCooltime;
+import com.parser.input.aion.cooltimes.ClientInstanceCooltime2;
 import com.parser.input.aion.housing.ClientHousingObject;
 import com.parser.input.aion.housing.ClientHousingCustomPart;
 import com.parser.input.aion.items.ClientItem;
@@ -239,23 +239,45 @@ public class AionDataHub {
 	
 	public Map<String, WorldMap> worldMaps = new HashMap<String, WorldMap>();
 	public Map<String, List<NpcInfo>> dataSpawns = new HashMap<String, List<NpcInfo>>();
+	
 	public Map<String, List<SourceSphere>> spheres = new HashMap<String, List<SourceSphere>>();
-	public Map<SourceSphere, Integer> sphereUseCount = new HashMap<SourceSphere, Integer>();
+		public Map<SourceSphere, Integer> sphereUseCount = new HashMap<SourceSphere, Integer>();
+	public Map<String, WayPoint> waypoints = new HashMap<String, WayPoint>();
+	
+	public Map<ClientInstanceCooltime, ClientInstanceCooltime2> cooltimes = new HashMap<ClientInstanceCooltime, ClientInstanceCooltime2>();
 	
 	public Map<String, WorldMap> getWorldMaps() {
 		if (worldMaps.values().isEmpty())
-			index(new AionWorldMapsParser().parse(), on(WorldMap.class).getValue().toUpperCase());
+			worldMaps = index(new AionWorldMapsParser().parse(), on(WorldMap.class).getValue().toUpperCase());
 		return worldMaps;
+	}
+	
+	public int getWorldId(String map) {
+		return getWorldMaps().get(map.toUpperCase()) != null ? getWorldMaps().get(map.toUpperCase()).getId() : 0;
+	}
+	
+	public Map<String, List<NpcInfo>> getDataSpawns() {
+		if (dataSpawns.values().isEmpty())
+			dataSpawns = new AionClientWorldParser().parseNpcInfos();
+		return dataSpawns;
+	}
+	
+	public List<NpcInfo> getDataSpawns(String map) {
+		if (!dataSpawns.containsKey(map.toUpperCase())) {
+			String file = WorldProperties.INPUT + WorldProperties.CLIENT_WORLD_PREFIX + map.toLowerCase();
+			dataSpawns.put(map, AionClientWorldParser().parseNpcInfos(file));
+		}
+		return dataSpawns.get(map.toUpperCase());
 	}
 	
 	public Map<String, List<SourceSphere>> getSpheres() {
 		if (spheres.values().isEmpty())
-			spheres = new AionSourceSphereParser().parse().entrySet());
+			spheres = new AionSourceSphereParser().parse();
 		return spheres;
 	}
 	
 	public void loadSphereUseCount() {
-		for (SourceSphere ss : flatten(spheres.values()))
+		for (SourceSphere ss : new ArrayList<SourceSphere>(flatten(spheres.values())))
 			sphereUseCount.put(ss, ss.getClusterNum() > 0 ? ss.getClusterNum() : -1);
 	}
 	
@@ -268,18 +290,16 @@ public class AionDataHub {
 		// sphereUseCount.put(ss, sphereUseCount.get(ss) -1);
 	}
 	
-	public Map<String, List<NpcInfo>> getDataSpawns() {
-		if (dataSpawns.values().isEmpty())
-			dataSpawns = new AionClientWorldParser().parseNpcInfos());
-		return dataSpawns;
+	public Map<String, WayPoint> getWayPoints() {
+		if (waypoints.values().isEmpty())
+			waypoints = index(new AionWayPointsParser().parse(), on(WayPoint.class).getName().toUpperCase());
+		return waypoints;
 	}
 	
-	public List<NpcInfo> getDataSpawns(String map) {
-		if (!dataSpawns.containsKey(map.toUpperCase())) {
-			String file = WorldProperties.INPUT + WorldProperties.INPUT_PREFIX + map.toLowerCase();
-			dataSpawns.put(map, AionClientWorldParser().parseNpcInfos(file));
-		}
-		return dataSpawns.get(map.toUpperCase());
+	public Map<ClientInstanceCooltime, ClientInstanceCooltime2> getCooltimes() {
+		if (cooltimes.values().isEmpty())
+			cooltimes = index(new AionCooltimesParser().parse(), selectUnique(new AionCooltimes2Parser().parse(), having(on(ClientInstanceCooltime2.class).getId() == on(ClientInstanceCooltime.class).getId())));
+		return cooltimes;
 	}
 
 	@SuppressWarnings("synthetic-access")

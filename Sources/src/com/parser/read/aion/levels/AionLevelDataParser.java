@@ -1,6 +1,7 @@
 package com.parser.read.aion.levels;
 
 import javolution.util.FastMap;
+import java.util.Map;
 
 import com.parser.input.aion.level_data.LevelData;
 import com.parser.input.aion.level_data.LevelInfo;
@@ -16,7 +17,7 @@ public class AionLevelDataParser extends XMLParser<LevelData> {
 	
 	public FastMap<String, LevelInfo> parse() {
 		FastMap<String, LevelInfo> levelInfos = new FastMap<String, LevelInfo>();
-		for (Map.Entry<String[], LevelData> entry : parseDir())
+		for (Map.Entry<String[], LevelData> entry : parseDir().entrySet())
 			levelInfos.put(entry.getKey()[1], entry.getValue().getLevelInfo());
 		return levelInfos;
 	}

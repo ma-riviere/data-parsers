@@ -1,42 +1,40 @@
 package com.parser.write.aion.items;
 
-
 import java.util.Collection;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.HashMap;
-import java.util.Map;
 
 import com.parser.input.aion.items.*;
 
-import com.parser.commons.aion.AionDataMerger;
 import com.parser.read.aion.AionReadingConfig;
 import com.parser.read.aion.items.AionItemsParser;
+
+import com.parser.commons.aion.properties.AionProperties;
+import com.parser.commons.aion.utils.AionDataMerger;
+
 import com.parser.write.AbstractWriter;
 import com.parser.write.FileMarshaller;
 import com.parser.write.aion.AionWritingConfig;
 
 public class AionClientItemsWriter extends AbstractWriter {
 
-	ClientItems finalTemplates = new ClientItems();
-	Collection<ClientItem> templateList = finalTemplates.getClientItem();
-	List<ClientItem> clientItemData;
-	List<ClientItem> customClientItemData;
-	// List<ClientItem> mergedClientItemList = new ArrayList<ClientItem>();
+	ClientItems mergedItems = new ClientItems();
+	Collection<ClientItem> mergedItemList = mergedItems.getClientItem();
+	Collection<ClientItem> client;
+	Collection<ClientItem> custom;
+	Collection<ClientItem> merged;
 	
 	@Override
 	public void parse() {
-		// clientItemData = new AionItemsParser().parse();
-		// if (AionReadingConfig.READ_CUSTOM)
-			// customClientItemData = new AionItemsParser(AionReadingConfig.ITEMS_CUSTOM, AionReadingConfig.ITEMS_PREFIX, AionReadingConfig.ITEMS_BINDINGS).parse();
-		// if (AionWritingConfig.WRITE_CUSTOM)
-			// mergedClientItemList = new AionDataMerger().mergeItemData(clientItemData, customClientItemData);
+		client = aion.getItems().values();
+		if (AionProperties.USE_CUSTOM_INPUT)
+			custom = new AionItemsParser(AionReadingConfig.ITEMS_CUSTOM, AionReadingConfig.ITEMS_PREFIX, AionReadingConfig.ITEMS_BINDINGS).parse().values();
+		if (AionProperties.USE_CUSTOM_OUTPUT)
+			merged = new AionDataMerger().mergeItemData(client, custom);
 	}
 
 	@Override
-	public void transform() { /*
-		if (mergedClientItemList != null && !mergedClientItemList.isEmpty()) {
-			for (ClientItem from : mergedClientItemList) {
+	public void transform() {
+		if (merged != null && !merged.isEmpty()) {
+			for (ClientItem from : merged) {
 				ClientItem to = new ClientItem();
 				// START
 				to.setId(from.getId());
@@ -322,18 +320,17 @@ public class AionClientItemsWriter extends AbstractWriter {
 				to.setExpExtractionReward(from.getExpExtractionReward());
 				to.setRideDataName(from.getRideDataName());
 				// END
-				templateList.add(to);
+				mergedItemList.add(to);
 			}
 		}
 		else
 				System.out.println("[CLIENT - ITEMS][ERROR] Merged list is null ... Check if Configs allow to read/write custom data !");
-		*/
 	}
 
 	@Override
 	public void marshall() {
-		addOrder(AionWritingConfig.CLIENT_ITEMS, AionReadingConfig.ITEMS_BINDINGS, finalTemplates);
+		addOrder(AionWritingConfig.CLIENT_ITEMS, AionReadingConfig.ITEMS_BINDINGS, mergedItems);
 		FileMarshaller.marshallFile(orders);
-		System.out.println("[CLIENT - ITEMS] Items count: " + templateList.size());
+		System.out.println("\n[CLIENT - ITEMS] Items count : " + mergedItemList.size());
 	}
 }

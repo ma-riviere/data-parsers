@@ -15,13 +15,13 @@ import com.parser.output.aion.recipes.*;
 
 public class AionRecipesWriter extends AbstractWriter {
 
-	public static boolean analyse = false;
+	public static boolean ANALYSE = false;
 	
 	RecipeTemplates recipes = new RecipeTemplates();
 	Collection<RecipeTemplate> recipeList = recipes.getRecipeTemplate();
 	Collection<ClientRecipe> clientRecipes;
 	
-	public AionRecipesWriter(boolean analyse) {this.analyse = analyse;}
+	public AionRecipesWriter(boolean analyse) {this.ANALYSE = analyse;}
 	
 	@Override
 	public void parse() {
@@ -67,7 +67,7 @@ public class AionRecipesWriter extends AbstractWriter {
 	
 	@Override
 	public void finalise() {
-		if (analyse) JAXBHandler.printUnused("recipes");
+		if (ANALYSE) JAXBHandler.printUnused("recipes");
 	}
 
 	@Override

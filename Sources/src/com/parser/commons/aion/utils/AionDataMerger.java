@@ -1,4 +1,4 @@
-package com.parser.commons.aion;
+package com.parser.commons.aion.utils;
 
 import java.util.Collections;
 import java.util.ArrayList;

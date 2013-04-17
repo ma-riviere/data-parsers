@@ -27,6 +27,7 @@ import com.parser.commons.utils.Util;
 
 import com.parser.write.AbstractWriter;
 import com.parser.write.FileMarshaller;
+import com.parser.write.aion.world.AionWalkersWriter;
 
 import com.parser.output.aion.mission.*;
 
@@ -52,7 +53,7 @@ public class AionSpawnsWriter extends AbstractWriter {
 		aion.getNpcs();
 		aion.getStrings();
 		
-		if (LevelsProperties.USE_GEO_FOR_SPAWNS) {GeoService.getInstance().initializeGeo();}
+		if (LevelsProperties.USE_GEO) {GeoService.getInstance().initializeGeo();}
 	}
 	
 	@Override
