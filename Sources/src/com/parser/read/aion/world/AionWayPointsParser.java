@@ -19,7 +19,7 @@ public class AionWayPointsParser extends TextParser {
 	
 	public List<WayPoint> parse() {
 		List<WayPoint> wpList = new ArrayList<WayPoint>();
-		File file = new File(WorldProperties.WAYPOINT_INPUT);
+		File file = new File(WorldProperties.WAYPOINT);
 		
 		List<String> lines = parseFile(file).getLines();
 		for (String line : lines)

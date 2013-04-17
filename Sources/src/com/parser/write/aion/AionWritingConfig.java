@@ -5,8 +5,6 @@ public class AionWritingConfig {
 	public static final String VERSION = "aion40/";
 	public static final String BASE_DIR = "../../Output/" + VERSION;
 	
-	public static final boolean WRITE_CUSTOM = true;
-	
 	/********************** CLIENT XML WRITING ******************************/
 	
 	// Items
@@ -28,10 +26,6 @@ public class AionWritingConfig {
 	// Rides
 	public static final String RIDE = BASE_DIR + "Ride/ride.xml";
 	public static final String RIDE_BINDINGS = "com.parser.output.aion.rides";
-	
-	// Instances Cooltimes
-	public static final String COOLTIMES = BASE_DIR + "instance_cooltimes/instance_cooltimes.xml";
-	public static final String COOLTIMES_BINDINGS = "com.parser.output.aion.cooltimes";
 	
 	// Skills
 	public static final String SKILLS = BASE_DIR + "Skills/skill_templates.xml";

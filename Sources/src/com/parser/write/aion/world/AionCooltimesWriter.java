@@ -7,10 +7,10 @@ import com.parser.input.aion.cooltimes.ClientInstanceCooltime;
 import com.parser.input.aion.cooltimes.ClientInstanceCooltime2;
 
 import com.parser.commons.aion.enums.Race;
+import com.parser.commons.aion.properties.WorldProperties;
 
 import com.parser.write.AbstractWriter;
 import com.parser.write.FileMarshaller;
-import com.parser.write.aion.AionWritingConfig;
 
 import com.parser.output.aion.cooltimes.InstanceCooltime;
 import com.parser.output.aion.cooltimes.InstanceCooltimes;
@@ -53,7 +53,7 @@ public class AionCooltimesWriter extends AbstractWriter {
 
 	@Override
 	public void marshall() {
-		addOrder(AionWritingConfig.COOLTIMES, AionWritingConfig.COOLTIMES_BINDINGS, cooltimes);
+		addOrder(WorldProperties.OUTPUT_COOLTIMES, WorldProperties.OUTPUT_COOLTIMES_BINDINGS, cooltimes);
 		FileMarshaller.marshallFile(orders);
 		System.out.println("\n[COOLTIMES] Cooltimes count : " + cooltimeList.size());
 	}

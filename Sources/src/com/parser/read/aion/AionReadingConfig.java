@@ -20,11 +20,6 @@ public class AionReadingConfig {
 	public static final String RIDE = BASE_DIR + "Data/rides/rides.xml";
 	public static final String RIDE_BINDINGS = "com.parser.input.aion.rides";
 	
-	// Instances Cooltimes
-	public static final String COOLTIMES = BASE_DIR + "Data/world/client_instance_cooltime.xml";
-	public static final String COOLTIMES2 = BASE_DIR + "Data/world/client_instance_cooltime2.xml";
-	public static final String COOLTIMES_BINDINGS = "com.parser.input.aion.cooltimes";
-
 	// (Dir) Client Strings
 	public static final String STRINGS_DATA = BASE_DIR + "Data/Strings/";
 	public static final String STRINGS_L10N = BASE_DIR + "L10N/ENU/data/strings/";
