@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.parser.commons.aion.AionDataCenter;
+import com.parser.commons.aion.AionDataHub;
 import com.parser.commons.utils.Util;
 import com.parser.input.aion.world_maps.WorldMap;
 import com.parser.input.aion.level_data.LevelInfo;
@@ -20,7 +20,7 @@ import com.geo.aion.geoEngine.scene.Spatial;
  */
 public class RealGeoData implements GeoData {
 	
-	AionDataCenter data = new AionDataCenter().getInstance();
+	AionDataHub data = new AionDataHub().getInstance();
 
 	private Map<Integer, GeoMap> geoMaps = new HashMap<Integer, GeoMap>();
 	private List<WorldMap> maps = new ArrayList<WorldMap>(data.getWorldMaps().values());

@@ -6,14 +6,12 @@ import java.util.List;
 public class Logger {
 	
 	// TODO: Use regex matching (%d, %d) et value multiples
+	//TODO: [INFO] + message for log.info, etc
 
 	public List<String> used = new ArrayList<String>();
 	
-	public static final Logger getInstance() {
-		return SingletonHolder.instance;
-	}
-	
 	public Logger() {}
+	public static final Logger getInstance() {return SingletonHolder.instance;}
 
 	public void info(String message, Object value) {
 		System.out.println(message + value.toString().toUpperCase());

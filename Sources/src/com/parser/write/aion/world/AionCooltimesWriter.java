@@ -6,7 +6,7 @@ import java.util.List;
 import com.parser.input.aion.cooltimes.ClientInstanceCooltime;
 import com.parser.input.aion.cooltimes.ClientInstanceCooltime2;
 
-import com.parser.commons.aion.AionDataCenter;
+import com.parser.commons.aion.AionDataHub;
 
 import com.parser.read.aion.world.AionCooltimesParser;
 import com.parser.read.aion.world.AionCooltimes2Parser;
@@ -62,7 +62,7 @@ public class AionCooltimesWriter extends AbstractWriter {
 		System.out.println("\n[COOLTIMES] Cooltimes count: " + templateList.size());
 	}
 	
-	private int getWorldId(String s) {return (new AionDataCenter().getInstance().getWorld(s) != null) ? new AionDataCenter().getInstance().getWorld(s).getId() : 0;}
+	private int getWorldId(String s) {return (new AionDataHub().getInstance().getWorld(s) != null) ? new AionDataHub().getInstance().getWorld(s).getId() : 0;}
 	
 	private int getMatchingCIC2Value(int id) {
 		for (ClientInstanceCooltime2 cic2 : clientInstanceCooltimeList2) {

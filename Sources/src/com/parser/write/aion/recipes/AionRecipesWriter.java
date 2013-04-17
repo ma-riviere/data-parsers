@@ -1,8 +1,6 @@
 package com.parser.write.aion.recipes;
 
 import java.util.Collection;
-import java.util.ArrayList;
-import java.util.List;
 
 import com.parser.input.aion.recipes.ClientRecipe;
 
@@ -21,13 +19,13 @@ public class AionRecipesWriter extends AbstractWriter {
 	
 	RecipeTemplates recipes = new RecipeTemplates();
 	Collection<RecipeTemplate> recipeList = recipes.getRecipeTemplate();
-	List<ClientRecipe> clientRecipes = null;
+	Collection<ClientRecipe> clientRecipes;
 	
 	public AionRecipesWriter(boolean analyse) {this.analyse = analyse;}
 	
 	@Override
 	public void parse() {
-		clientRecipes = new ArrayList<ClientRecipe>(aion.getRecipes().values());
+		clientRecipes = aion.getRecipes().values();
 		aion.getStrings();
 		aion.getSkills();
 		aion.getItems();

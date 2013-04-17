@@ -20,9 +20,9 @@ import com.parser.input.aion.world_data.HousingAreas; //TODO
 import com.parser.read.XMLParser;
 import com.parser.read.aion.AionReadingConfig;
 
-public class AionWorldNpcParser extends XMLParser<Clientzones> {
+public class AionClientWorldParser extends XMLParser<Clientzones> {
 
-	public AionWorldNpcParser() {
+	public AionClientWorldParser() {
 		super(AionReadingConfig.WORLD_DATA, AionReadingConfig.WORLD_DATA_PREFIX, AionReadingConfig.WORLD_DATA_BINDINGS);
 	}
 	

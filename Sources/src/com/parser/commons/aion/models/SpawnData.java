@@ -9,7 +9,7 @@ import java.util.Comparator;
 import com.parser.commons.aion.bindings.SourceSphere;
 import com.parser.commons.utils.maths.MathUtil;
 import com.parser.commons.utils.Util;
-import com.parser.commons.aion.AionDataCenter;
+import com.parser.commons.aion.AionDataHub;
 
 import com.parser.input.aion.npcs.ClientNpc;
 import com.parser.input.aion.world_data.NpcInfo;
@@ -25,7 +25,7 @@ public class SpawnData {
 	private SourceSphere ss = null; // From source_sphere.csv
 	private Entity entity = null; // From mission0.xml
 	
-	private AionDataCenter data = new AionDataCenter().getInstance();
+	private AionDataHub data = new AionDataHub().getInstance();
 	private ClientNpc getNpc(int id) {return (id != 0) ? data.getClientNpcs().get(id) : null;}
 	
 	int BASE_RESPAWN_TIME = 300;
