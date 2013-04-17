@@ -49,20 +49,20 @@ public class AionSkillsWriter extends AbstractWriter {
 	
 	@Override
 	public void parse() {
-		skillBaseList = new AionDataCenter().getInstance().getClientSkills();
-		skillTreeList = new AionDataCenter().getInstance().getClientSkillTree();
+		skillBaseList = new AionDataHub().getInstance().getClientSkills();
+		skillTreeList = new AionDataHub().getInstance().getClientSkillTree();
 		
-		for (ClientItem ci : new AionDataCenter().getInstance().getClientItems()) {
+		for (ClientItem ci : new AionDataHub().getInstance().getClientItems()) {
 			if (!Strings.isNullOrEmpty(ci.getGainSkill1()))
 				stigmaItemMap.put(ci.getGainSkill1().toUpperCase(), ci);
 		}
 		System.out.println("\n[SKILLS] Loaded " + stigmaItemMap.size() + " Stigma Skill-Item pairs");
 		
-		new AionDataCenter().getInstance().loadDataStrings();
-		new AionDataCenter().getInstance().loadL10NStrings();
-		new AionDataCenter().getInstance().loadItemNameIdMap();
-		new AionDataCenter().getInstance().loadSkillNameIdMap();
-		new AionDataCenter().getInstance().loadNpcNameIdMap();
+		new AionDataHub().getInstance().loadDataStrings();
+		new AionDataHub().getInstance().loadL10NStrings();
+		new AionDataHub().getInstance().loadItemNameIdMap();
+		new AionDataHub().getInstance().loadSkillNameIdMap();
+		new AionDataHub().getInstance().loadNpcNameIdMap();
 	}
 
 	@Override
@@ -403,13 +403,13 @@ public class AionSkillsWriter extends AbstractWriter {
 	
 	/******* EXTRA ********/
 	
-	private String getName(String s) {return (s != null) ? new AionDataCenter().getInstance().getClientStringText(s) : "";}
-	private int getNameId(String s, int mult, int plus) {return (s != null) ? new AionDataCenter().getInstance().getClientStringId(s, mult, plus) : 0;}
-	private int getItemId(String s) {return (s != null) ? new AionDataCenter().getInstance().getItemId(s) : 0;}
-	private int getSkillId(String s) {return (s != null) ? new AionDataCenter().getInstance().getSkillIdByName(s) : 0;}
-	private int getNpcId(String s) {return (s != null) ? new AionDataCenter().getInstance().getNpcIdByName(s) : 0;}
+	private String getName(String s) {return (s != null) ? new AionDataHub().getInstance().getClientStringText(s) : "";}
+	private int getNameId(String s, int mult, int plus) {return (s != null) ? new AionDataHub().getInstance().getClientStringId(s, mult, plus) : 0;}
+	private int getItemId(String s) {return (s != null) ? new AionDataHub().getInstance().getItemId(s) : 0;}
+	private int getSkillId(String s) {return (s != null) ? new AionDataHub().getInstance().getSkillIdByName(s) : 0;}
+	private int getNpcId(String s) {return (s != null) ? new AionDataHub().getInstance().getNpcIdByName(s) : 0;}
 	
-	private Object findSkill(String needed, String prop, Object value) {return new AionDataCenter().getInstance().skillFinder(needed, prop, value);}
+	private Object findSkill(String needed, String prop, Object value) {return new AionDataHub().getInstance().skillFinder(needed, prop, value);}
 	
 	private int getSkillLevel(ClientSkill cs) {
 		int level1 = 1;

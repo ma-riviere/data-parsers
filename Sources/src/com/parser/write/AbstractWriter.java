@@ -6,7 +6,7 @@ import java.util.List;
 import com.parser.commons.utils.Logger;
 import com.parser.commons.utils.Util;
 
-import com.parser.commons.aion.AionDataCenter;
+import com.parser.commons.aion.AionDataHub;
 
 public abstract class AbstractWriter implements Writer {
 
@@ -14,7 +14,7 @@ public abstract class AbstractWriter implements Writer {
 	protected List<MarshallerData> orders = new ArrayList<MarshallerData>();
 	
 	// Data Centers
-	protected AionDataCenter aion = new AionDataCenter().getInstance();
+	protected AionDataHub aion = new AionDataHub().getInstance();
 
 	@Override
 	public void start() {

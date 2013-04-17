@@ -2,6 +2,7 @@ package com.parser.commons.aion;
 
 import static ch.lambdaj.Lambda.index;
 import static ch.lambdaj.Lambda.on;
+import static ch.lambdaj.Lambda.flatten;
 
 import com.google.common.base.Strings;
 import java.util.ArrayList;
@@ -45,11 +46,11 @@ import com.parser.read.aion.world.*;
 
 import com.parser.output.aion.item_name.Item;
 
-public class AionDataCenter {
+public class AionDataHub {
 
 	public Logger log = new Logger().getInstance();	
-	public AionDataCenter() {}
-	public static final AionDataCenter getInstance() {return SingletonHolder.instance;}
+	public AionDataHub() {}
+	public static final AionDataHub getInstance() {return SingletonHolder.instance;}
 	
 	/********************** SKILLS ***************************/
 	
@@ -220,6 +221,7 @@ public class AionDataCenter {
 	public Map<String, ClientString> l10nStrings = new HashMap<String, ClientString>();
 	public Map<String, ClientString> strings = new HashMap<String, ClientString>();
 	
+	// Replacing koorean Strings by it's traduction, if exists
 	public Map<String, ClientString> getStrings() {
 		if (dataStrings.values().isEmpty()) dataStrings = index(new AionDataStringParser().parse(), on(ClientString.class).getName().toUpperCase());
 		if (l10nStrings.values().isEmpty()) l10nStrings = index(new AionL10NStringParser().parse(), on(ClientString.class).getName().toUpperCase());
@@ -235,10 +237,10 @@ public class AionDataCenter {
 	
 	/********************** WORLD ***************************/
 	
-	public Map<Integer, List<NpcInfo>> dataSpawns = new HashMap<Integer, List<NpcInfo>>();
-	public Map<Integer, List<SourceSphere>> spheres = new HashMap<Integer, List<SourceSphere>>();
+	public Map<String, WorldMap> worldMaps = new HashMap<String, WorldMap>();
+	public Map<String, List<NpcInfo>> dataSpawns = new HashMap<String, List<NpcInfo>>();
+	public Map<String, List<SourceSphere>> spheres = new HashMap<String, List<SourceSphere>>();
 	public Map<SourceSphere, Integer> sphereUseCount = new HashMap<SourceSphere, Integer>();
-	public Map<Integer, WorldMap> worldMaps = new HashMap<Integer, WorldMap>();
 	
 	public Map<String, WorldMap> getWorldMaps() {
 		if (worldMaps.values().isEmpty())
@@ -246,10 +248,9 @@ public class AionDataCenter {
 		return worldMaps;
 	}
 	
-	public Map<Integer, List<SourceSphere>> getSpheres() {
+	public Map<String, List<SourceSphere>> getSpheres() {
 		if (spheres.values().isEmpty())
-			for (Map.Entry<String, List<SourceSphere>> entry : new AionSourceSphereParser().parse().entrySet())
-				spheres.put(getWorldId(entry.getKey()), entry.getValue());
+			spheres = new AionSourceSphereParser().parse().entrySet());
 		return spheres;
 	}
 	
@@ -267,25 +268,22 @@ public class AionDataCenter {
 		// sphereUseCount.put(ss, sphereUseCount.get(ss) -1);
 	}
 	
-	public Map<Integer, List<NpcInfo>> getDataSpawns() {
-		if (dataSpawns.values().isEmpty()) {
-			for (Map.Entry<String, List<NpcInfo>> entry : new AionWorldNpcParser().parseNpcInfos())
-				dataSpawns.put(getWorldId(entry.getKey()), entry.getValue());
-		}
+	public Map<String, List<NpcInfo>> getDataSpawns() {
+		if (dataSpawns.values().isEmpty())
+			dataSpawns = new AionClientWorldParser().parseNpcInfos());
 		return dataSpawns;
 	}
 	
-	public List<NpcInfo> getDataSpawns(int mapId) {
-		if (dataSpawns.containsKey(mapId))
-			return dataSpawns.get(mapId);
-		else {
-			String file = WorldProperties.INPUT + WorldProperties.INPUT_PREFIX + getWorld(mapId).getValue().toLowerCase();
-			return new AionWorldNpcParser().parseNpcInfos(file);
+	public List<NpcInfo> getDataSpawns(String map) {
+		if (!dataSpawns.containsKey(map.toUpperCase())) {
+			String file = WorldProperties.INPUT + WorldProperties.INPUT_PREFIX + map.toLowerCase();
+			dataSpawns.put(map, AionClientWorldParser().parseNpcInfos(file));
 		}
+		return dataSpawns.get(map.toUpperCase());
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder 	{
-		protected static final AionDataCenter instance = new AionDataCenter();
+		protected static final AionDataHub instance = new AionDataHub();
 	}
 }

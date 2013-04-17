@@ -16,7 +16,7 @@ import com.parser.input.aion.items.*;
 import com.parser.input.aion.skill_learn.ClientSkillTree;
 import com.parser.input.aion.cooltimes.ClientInstanceCooltime;
 
-import com.parser.commons.aion.AionDataCenter;
+import com.parser.commons.aion.AionDataHub;
 import com.parser.commons.aion.enums.*;
 import com.parser.commons.aion.enums.items.*;
 import com.parser.commons.aion.properties.AionProperties;
@@ -34,7 +34,7 @@ import com.parser.output.aion.items.*;
 
 public class AionItemsWriter extends AbstractWriter {
 
-	AionDataCenter data = new AionDataCenter().getInstance();
+	AionDataHub data = new AionDataHub().getInstance();
 
 	ItemTemplates finalTemplates = new ItemTemplates();
 	Collection<ItemTemplate> templateList = finalTemplates.getItemTemplate();
@@ -63,12 +63,12 @@ public class AionItemsWriter extends AbstractWriter {
 			
 			it.setId((int) ci.getId());
 			if (!Strings.isNullOrEmpty(ci.getDesc()))
-				it.setName(new AionDataCenter().getInstance().getClientStringText(ci.getDesc()));
+				it.setName(new AionDataHub().getInstance().getClientStringText(ci.getDesc()));
 			else
-				it.setName(new AionDataCenter().getInstance().getClientStringText("STR_" + ci.getName()));
+				it.setName(new AionDataHub().getInstance().getClientStringText("STR_" + ci.getName()));
 			it.setLevel((ci.getLevel() > AionProperties.MAX_LEVEL) ? AionProperties.MAX_LEVEL : (int) ci.getLevel()); // [UPDATE] Don't forget to keep MAX_LEVEL updated
 			if (!Strings.isNullOrEmpty(ci.getDesc()))
-				it.setDesc(new AionDataCenter().getInstance().getClientStringId(ci.getDesc().trim(), 2, 1));
+				it.setDesc(new AionDataHub().getInstance().getClientStringId(ci.getDesc().trim(), 2, 1));
 			
 			it.setSlot(EquipmentSlot.getEquipSlotByString(ci).getEquipmentSlot());
 			it.setCategory(ItemCategory.getMatchingCategory(ci).toString());
@@ -331,7 +331,7 @@ public class AionItemsWriter extends AbstractWriter {
 				if (ci.getCraftRecipeInfo() != null) {
 					Craftlearn recipeAction = new Craftlearn();
 					
-					int recipeId = new AionDataCenter().getInstance().getRecipes(ci.getCraftRecipeInfo());
+					int recipeId = new AionDataHub().getInstance().getRecipes(ci.getCraftRecipeInfo());
 					if (recipeId != 0) 
 						recipeAction.setRecipeid(recipeId);
 					
@@ -484,14 +484,14 @@ public class AionItemsWriter extends AbstractWriter {
 				// Spawn House Object
 				if (ci.getSummonHousingObject() != null) {
 					Houseobject ho = new Houseobject();
-					ho.setId(new AionDataCenter().getInstance().getHouseObjects(ci.getSummonHousingObject()));
+					ho.setId(new AionDataHub().getInstance().getHouseObjects(ci.getSummonHousingObject()));
 					actionList.setHouseobject(ho);
 					hasActions = true;
 				}
 				// Spawn House Decoration
 				if (ci.getCustomPartName() != null) {
 					Housedeco hd = new Housedeco();
-					hd.setId(new AionDataCenter().getInstance().getHouseParts(ci.getCustomPartName()));
+					hd.setId(new AionDataHub().getInstance().getHouseParts(ci.getCustomPartName()));
 					actionList.setHousedeco(hd);
 					hasActions = true;
 				}
@@ -516,7 +516,7 @@ public class AionItemsWriter extends AbstractWriter {
 					}
 					/*
 					if (ci.getDescLong() != null) {
-						String desc = new AionDataCenter().getInstance().getClientStringText(ci.getDescLong()).toUpperCase();
+						String desc = new AionDataHub().getInstance().getClientStringText(ci.getDescLong()).toUpperCase();
 						
 						if (desc.contains("Double-click to begin a quest".toUpperCase()) || desc.contains("더블 클릭하여 퀘스트를 받을 수 있습니다".toUpperCase()))
 							System.out.println("[ITEMS] : Item " + it.getId() + " starts a quest and has <quest> value of : " + ci.getQuest());
@@ -531,7 +531,7 @@ public class AionItemsWriter extends AbstractWriter {
 					}
 					/*
 					if (ci.getDescLong() != null) {
-						String desc = new AionDataCenter().getInstance().getClientStringText(ci.getDescLong()).toUpperCase();
+						String desc = new AionDataHub().getInstance().getClientStringText(ci.getDescLong()).toUpperCase();
 						
 						if (it.getActions() != null && it.getActions().getRead() == null && (desc.contains("Double-click to read".toUpperCase()) || desc.contains("더블 클릭하면 읽을 수 있습니다".toUpperCase())))
 							System.out.println("[ITEMS] : Item " + it.getId() + " should be readable !");
@@ -551,7 +551,7 @@ public class AionItemsWriter extends AbstractWriter {
 				}
 				// FuncPet																																																			TODO : Use
 				if (ci.getFuncPetName() != null) {
-					int toyId = new AionDataCenter().getInstance().getToyPets(ci.getFuncPetName());
+					int toyId = new AionDataHub().getInstance().getToyPets(ci.getFuncPetName());
 					if (toyId != 0) {
 						Toypetadopt adopt = new Toypetadopt();
 						adopt.setPetid(toyId);
@@ -597,7 +597,7 @@ public class AionItemsWriter extends AbstractWriter {
 				// Ride
 				if (ci.getRideDataName() != null) {
 					Ride rideAction = new Ride();
-					rideAction.setNpcId(new AionDataCenter().getInstance().getRides(ci.getRideDataName()));
+					rideAction.setNpcId(new AionDataHub().getInstance().getRides(ci.getRideDataName()));
 					actionList.setRide(rideAction);
 					hasActions = true;
 				}
@@ -634,11 +634,11 @@ public class AionItemsWriter extends AbstractWriter {
 	
 	/****** EXTRA *******/
 	
-	private int getItemId(String s) {return (s != null) ? new AionDataCenter().getInstance().getItemId(s) : 0;}
-	private int getSkillId(String s) {return (s != null) ? new AionDataCenter().getInstance().getSkillIdByName(s) : 0;}
-	private int getNpcId(String s) {return (s != null) ? new AionDataCenter().getInstance().getNpcIdByName(s) : 0;}
-	private int getWorldId(String s) {return (new AionDataCenter().getInstance().getWorld(s) != null) ? new AionDataCenter().getInstance().getWorld(s).getId() : 0;}
-	private int getAnimationId(String s) {return (s != null) ? new AionDataCenter().getInstance().getAnimations(s) : 0;}
+	private int getItemId(String s) {return (s != null) ? new AionDataHub().getInstance().getItemId(s) : 0;}
+	private int getSkillId(String s) {return (s != null) ? new AionDataHub().getInstance().getSkillIdByName(s) : 0;}
+	private int getNpcId(String s) {return (s != null) ? new AionDataHub().getInstance().getNpcIdByName(s) : 0;}
+	private int getWorldId(String s) {return (new AionDataHub().getInstance().getWorld(s) != null) ? new AionDataHub().getInstance().getWorld(s).getId() : 0;}
+	private int getAnimationId(String s) {return (s != null) ? new AionDataHub().getInstance().getAnimations(s) : 0;}
 	
 	// TODO : getGenderPermitted getCanPolish getCannotChangeskin (to property)
 	private int getMask(ClientItem ci) {
@@ -810,7 +810,7 @@ public class AionItemsWriter extends AbstractWriter {
 		RequireSkill requireSkill = new RequireSkill();
 		List<Integer> skills = new ArrayList<Integer>();
 		
-		skills = new AionDataCenter().getInstance().getAllSkillsContaining(skillString);
+		skills = new AionDataHub().getInstance().getAllSkillsContaining(skillString);
 		requireSkill.getSkillId().addAll(skills);
 		
 		stigma.getRequireSkill().add(requireSkill);

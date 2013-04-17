@@ -17,14 +17,14 @@ import com.parser.read.BinaryParserData;
 import com.parser.input.aion.level_data.LevelInfo;
 
 import com.parser.commons.utils.Util;
-import com.parser.commons.aion.AionDataCenter;
+import com.parser.commons.aion.AionDataHub;
 import com.parser.commons.aion.properties.LevelsProperties;
 
 import com.parser.output.aion.height_map.*;
 
 public class AionHeightMapWriter extends AbstractWriter {
 
-	AionDataCenter data = new AionDataCenter().getInstance();
+	AionDataHub data = new AionDataHub().getInstance();
 
 	Points points = new Points();
 	Collection<Point> pointList = points.getPoint();

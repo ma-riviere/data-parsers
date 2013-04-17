@@ -8,7 +8,7 @@ import java.util.Map;
 
 import com.geo.aion.GeoService;
 
-import com.parser.commons.aion.AionDataCenter;
+import com.parser.commons.aion.AionDataHub;
 import com.parser.commons.aion.bindings.WayPoint;
 import com.parser.commons.aion.bindings.SourceSphere;
 import com.parser.commons.utils.maths.MathUtil;
@@ -39,7 +39,7 @@ public class AionWalkersWriter extends AbstractWriter {
 	boolean fromSpawns = false;
 	List<SourceSphere> toWrite = null;
 	
-	AionDataCenter data = new AionDataCenter().getInstance();
+	AionDataHub data = new AionDataHub().getInstance();
 	
 	public void writeFromSpawns(List<SourceSphere> toWrite) {
 		this.toWrite = toWrite;

@@ -1,7 +1,8 @@
 @ECHO off
 COLOR 3
 
-setx /M JAVA_HOME "C:\Program Files\Java\jdk1.7.0_17" > nul
+REM setx /M JAVA_HOME "C:\Program Files\Java\jdk1.7.0_17" > nul
+setx /M JAVA_HOME "C:\Program Files\Java\jdk1.8.0" > nul
 setx /M JAVA_TOOL_OPTIONS -Dfile.encoding=UTF8 > nul
 
 rem ## Save return path
