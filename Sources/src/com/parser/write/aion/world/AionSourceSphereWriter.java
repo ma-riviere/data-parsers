@@ -61,7 +61,7 @@ public class AionSourceSphereWriter extends AbstractWriter {
 	
 	@Override
 	public void marshall() {
-		addOrder(WorldProperties.SPHERE_OUTPUT, WorldProperties.SPHERE_OUTPUT_BINDINGS, spheres);
+		addOrder(WorldProperties.OUTPUT_SPHERE, WorldProperties.SPHERE_OUTPUT_BINDINGS, spheres);
 		FileMarshaller.marshallFile(orders);
 		System.out.println("\n[SPHERE] source_sphere count: " + sList.size());
 	}
