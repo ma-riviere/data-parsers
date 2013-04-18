@@ -8,6 +8,7 @@ import java.util.Map;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedList;
+import javolution.util.FastMap;
 
 import com.geo.aion.GeoService;
 
@@ -19,6 +20,7 @@ import com.parser.commons.aion.AionDataHub;
 import com.parser.commons.aion.bindings.SourceSphere;
 import com.parser.commons.aion.enums.spawns.ClientSpawnType;
 import com.parser.commons.aion.models.SpawnData;
+import com.parser.commons.aion.properties.AionProperties;
 import com.parser.commons.aion.properties.LevelsProperties;
 import com.parser.commons.aion.utils.ZUtils;
 import com.parser.commons.utils.maths.MathUtil;
@@ -32,8 +34,6 @@ import com.parser.write.aion.world.AionWalkersWriter;
 import com.parser.output.aion.mission.*;
 
 public class AionSpawnsWriter extends AbstractWriter {
-
-	private static final Logger log = new Logger().getInstance();
 	
 	SpawnMap npcSpawnMap = new SpawnMap();
 	SpawnMap instanceSpawnMap = new SpawnMap();
@@ -42,32 +42,32 @@ public class AionSpawnsWriter extends AbstractWriter {
 	SpawnMap riftsSpawnMap = new SpawnMap();
 	SpawnMap staticSpawnMap = new SpawnMap();
 	
+	FastMap<String, List<ClientSpawn>> levelSpawns;
 	List<SourceSphere> toWrite = new ArrayList<SourceSphere>();
 	
 	@Override
 	public void parse() {
-		aion.getLevelSpawns();
+		levelSpawns = new FastMap<String, List<ClientSpawn>>(aion.getLevelSpawns());
 		aion.getLevelEntities();
 		aion.getSpheres();
 		aion.getWorldMaps();
 		aion.getNpcs();
 		aion.getStrings();
 		
-		if (LevelsProperties.USE_GEO) {GeoService.getInstance().initializeGeo();}
+		if (AionProperties.USE_GEO) {GeoService.getInstance().initializeGeo();}
 	}
 	
 	@Override
 	public void transform() {
 		
-		for (Integer mapId : aion.getClientSpawns().keySet()) {
-			if (aion.getClientSpawns().get(mapId) == null) continue;
+		for (String mapName : levelSpawns.keySet()) {
+			int mapId = aion.getWorldId(mapName);
 			initAllSpawns(mapId);
-			String mapName = aion.getWorld(mapId).getValue().toUpperCase();
 			Util.printSubSection(mapId + " : " + getName("STR_ZONE_NAME_" + mapName));
 			
-			List<ClientSpawn> currentCSpawns = aion.getClientSpawns().get(mapId);
+			List<ClientSpawn> currentCSpawns = levelSpawns.get(mapName);
 			int startLevelSize = currentCSpawns.size();
-			List<NpcInfo> currentWDSpawns = aion.getNpcInfoByMap(mapId);
+			List<NpcInfo> currentWDSpawns = aion.getDataSpawns().get(mapName);
 			int startWorldSize = currentWDSpawns.size();
 			
 			List<ClientSpawn> usedCSpawns = new LinkedList<ClientSpawn>();
@@ -76,7 +76,7 @@ public class AionSpawnsWriter extends AbstractWriter {
 			// Loading spawns from Mission_Mission0.xml
 			for (ClientSpawn cSpawn : currentCSpawns) {
 				if (ClientSpawnType.fromClient(cSpawn.getType()) != null && ClientSpawnType.fromClient(cSpawn.getType()).shouldBeSpawned()) {
-					SpawnData sd = new SpawnData(cSpawn, mapId);
+					SpawnData sd = new SpawnData(cSpawn, mapName);
 					if (sd.getNpcId() > 0) {
 						addSpawn(sd);
 						if (!usedCSpawns.contains(cSpawn))
@@ -94,7 +94,7 @@ public class AionSpawnsWriter extends AbstractWriter {
 			// Loading spawns from client_world_*.xml
 			for (NpcInfo info : currentWDSpawns) {
 				if (!usedWDSpawns.contains(info)) {
-					SpawnData sd = new SpawnData(info, mapId);
+					SpawnData sd = new SpawnData(info, mapName);
 					if (sd.getNpcId() > 0) {
 						addSpawn(sd);
 						usedWDSpawns.add(info);
@@ -123,7 +123,7 @@ public class AionSpawnsWriter extends AbstractWriter {
 		FileMarshaller.marshallFile(orders);
 	}
 	
-	private String getName(String s) {return (s != null) ? aion.getStrings().get(s) : "";}
+	private String getName(String s) {return (s != null) ? aion.getStrings().get(s).getBody() : "";}
 	
 	private void addSpawn(SpawnData sd) {
 		Spawn s = computeSpawn(sd);

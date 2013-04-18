@@ -200,21 +200,19 @@ public class AionDataHub {
 	
 	/********************** LEVELS ***************************/
 	
-	public Map<Integer, List<ClientSpawn>> spawns = new HashMap<Integer, List<ClientSpawn>>();
-	public Map<Integer, List<Entity>> entities = new HashMap<Integer, List<Entity>>();
+	public Map<String, List<ClientSpawn>> spawns = new HashMap<String, List<ClientSpawn>>();
+	public Map<String, List<Entity>> entities = new HashMap<String, List<Entity>>();
 	public Map<String, LevelInfo> levelInfos = new HashMap<String, LevelInfo>();
 	
-	public Map<Integer, List<Entity>> getLevelEntities() {
+	public Map<String, List<Entity>> getLevelEntities() {
 		if (entities.values().isEmpty())
-			for (Map.Entry<String, List<Entity>> entry : new AionMissionParser().parseEntities().entrySet())
-				entities.put(getWorldId(entry.getKey()), entry.getValue());
+			entities = new AionMissionParser().parseEntities();
 		return entities;
 	}
 	
-	public Map<Integer, List<ClientSpawn>> getLevelSpawns() {
+	public Map<String, List<ClientSpawn>> getLevelSpawns() {
 		if (spawns.values().isEmpty())
-			for (Map.Entry<String, List<ClientSpawn>> entry : new AionMissionParser().parseSpawns().entrySet())
-				spawns.put(getWorldId(entry.getKey()), entry.getValue());
+			spawns = new AionMissionParser().parseSpawns();
 		return spawns;
 	}
 	
