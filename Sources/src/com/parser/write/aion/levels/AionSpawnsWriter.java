@@ -123,7 +123,7 @@ public class AionSpawnsWriter extends AbstractWriter {
 		FileMarshaller.marshallFile(orders);
 	}
 	
-	private String getName(String s) {return (s != null) ? aion.getClientStringText(s) : "";}
+	private String getName(String s) {return (s != null) ? aion.getStrings().get(s) : "";}
 	
 	private void addSpawn(SpawnData sd) {
 		Spawn s = computeSpawn(sd);

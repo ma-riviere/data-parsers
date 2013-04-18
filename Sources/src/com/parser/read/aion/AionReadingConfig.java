@@ -4,7 +4,6 @@ public class AionReadingConfig {
 
 	public static final String VERSION = "aion40/";
 	public static final String BASE_DIR = "../../Input/" + VERSION + "client/";
-	public static final boolean READ_CUSTOM = true;
 	
 	/********************************** CUSTOM XML READING *************************************/
 	

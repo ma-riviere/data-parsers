@@ -24,7 +24,7 @@ public class RealGeoData implements GeoData {
 
 	private Map<Integer, GeoMap> geoMaps = new HashMap<Integer, GeoMap>();
 	private List<WorldMap> maps = new ArrayList<WorldMap>(data.getWorldMaps().values());
-	private Map<Integer, LevelInfo> infoMap = new HashMap<Integer, LevelInfo>(data.getLevelInfos());
+	private Map<String, LevelInfo> infoMap = new HashMap<String, LevelInfo>(data.getLevelInfos());
 	
 	String geoDir = "../../Input/geo/aion/meshs.geo"; //TODO to property
 
@@ -44,7 +44,7 @@ public class RealGeoData implements GeoData {
 		Util.printProgressBarHeader(infoMap.keySet().size());
 
 		for (WorldMap map : maps) {
-			LevelInfo info = infoMap.get(data.getWorldId(map.getValue().toUpperCase()));
+			LevelInfo info = infoMap.get(map.getValue().toUpperCase());
 			if (info == null)
 				continue;
 			GeoMap geoMap = new GeoMap(Integer.toString(map.getId()), ((int) info.getHeightmapXSize() + info.getHeightmapYSize()));

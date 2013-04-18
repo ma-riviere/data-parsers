@@ -26,9 +26,9 @@ public class AionClientItemsWriter extends AbstractWriter {
 	public void parse() {
 		client = aion.getItems().values();
 		if (AionProperties.USE_CUSTOM_INPUT)
-			custom = new AionItemsParser(AionReadingConfig.ITEMS_CUSTOM, AionReadingConfig.ITEMS_PREFIX, AionReadingConfig.ITEMS_BINDINGS).parse().values();
-		if (AionProperties.USE_CUSTOM_OUTPUT)
-			merged = new AionDataMerger().mergeItemData(client, custom);
+			custom = new AionItemsParser(AionReadingConfig.ITEMS_CUSTOM, AionReadingConfig.ITEMS_PREFIX, AionReadingConfig.ITEMS_BINDINGS).parse();
+		// if (AionProperties.USE_CUSTOM_OUTPUT)
+			// merged = new AionDataMerger().mergeItemData(client, custom);
 	}
 
 	@Override

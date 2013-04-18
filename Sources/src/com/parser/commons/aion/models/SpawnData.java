@@ -3,8 +3,9 @@ package com.parser.commons.aion.models;
 import com.google.common.base.Strings;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Collections;
-import java.util.Comparator;
+import java.util.Collections; //TODO: Remove
+import java.util.Comparator; //TODO: Remove
+import static ch.lambdaj.Lambda.*;
 
 import com.parser.commons.aion.bindings.SourceSphere;
 import com.parser.commons.utils.maths.MathUtil;
@@ -20,31 +21,30 @@ public class SpawnData {
 	
 	private ClientSpawn cSpawn; // From mission0.xml
 	private NpcInfo info = null; // From client_world_*.xml
-	private int mapId = -1;
+	private String map = null;
 	private int npcId = -1;
 	private SourceSphere ss = null; // From source_sphere.csv
 	private Entity entity = null; // From mission0.xml
 	
 	private AionDataHub data = new AionDataHub().getInstance();
-	private ClientNpc getNpc(int id) {return (id != 0) ? data.getClientNpcs().get(id) : null;}
 	
 	int BASE_RESPAWN_TIME = 300;
 	
-	public SpawnData(ClientSpawn cSpawn, int mapId) {
+	public SpawnData(ClientSpawn cSpawn, String map) {
 		this.cSpawn = cSpawn;
-		this.mapId = mapId;
+		this.map = map;
 		// if (info == null) {info = findInfo();}
 		this.npcId = findNpcId();
 	}
 	
-	public SpawnData(NpcInfo info, int mapId) {
+	public SpawnData(NpcInfo info, String map) {
 		this.info = info;
-		this.mapId = mapId;
+		this.map = map;
 		this.npcId = info.getNameid();
 	}
 	
 	public ClientSpawn getCSpawn() {return cSpawn;}
-	public int getMapId() {return this.mapId;}
+	public String getMapId() {return this.map;}
 	public int getNpcId() {return this.npcId;}
 	
 	public SourceSphere getSS() {return ss;}
@@ -62,14 +62,14 @@ public class SpawnData {
 		int id = -1;
 		
 		// if (getGatherableTemplate() != null) {id = getGatherableTemplate().getId();} // else ...
-		if (cSpawn != null && !Strings.isNullOrEmpty(cSpawn.getNpc())) {id = data.getNpcIdByName(cSpawn.getNpc());}
+		if (cSpawn != null && !Strings.isNullOrEmpty(cSpawn.getNpc())) {id = data.getNpcs().get(cSpawn.getNpc()).getId();}
 		
 		if (id <= 0 && getNpcInfo() != null)
 			id = info.getNameid();
 		
 		if (id <= 0) {
 			if (ss == null) {ss = findSS();}
-			if (ss != null) {id = data.getNpcIdByName(ss.getName());}
+			if (ss != null) {id = data.getNpcs().get(ss.getName()).getId();}
 		}
 		
 		return id;
@@ -78,7 +78,7 @@ public class SpawnData {
 	private NpcInfo findInfo() {
 		if (npcId > 0) {
 			List<NpcInfo> list = new ArrayList<NpcInfo>(); 
-			for (NpcInfo info : data.getNpcInfoByMap(mapId)) {
+			for (NpcInfo info : data.getDataSpawns(map)) {
 				if (info.getNameid() == npcId)
 					list.add(info);
 			}
@@ -95,7 +95,7 @@ public class SpawnData {
 	
 	private List<NpcInfo> getInfoFromSD() {
 		List<NpcInfo> results = new ArrayList<NpcInfo>();
-		for (NpcInfo npc : data.getNpcInfoByMap(mapId)) {
+		for (NpcInfo npc : data.getDataSpawns(map)) {
 			if (!Strings.isNullOrEmpty(cSpawn.getPos()))
 				if (MathUtil.isIn3dRange(getX(), getY(), getZ(), npc.getPos().getX(), npc.getPos().getY(), npc.getPos().getZ(), 1.0))
 					results.add(npc);
@@ -113,9 +113,9 @@ public class SpawnData {
 	private SourceSphere findSS() {
 		if (npcId > 0) {
 			List<SourceSphere> list = new ArrayList<SourceSphere>(); 
-			if (data.getClientSpheres() != null && data.getClientSpheres().get(mapId) != null) {
-				for (SourceSphere sphere : data.getClientSpheres().get(mapId)) {
-					if (data.canBeUsed(sphere) && data.getNpcIdByName(sphere.getName()) == npcId)
+			if (data.getSpheres() != null && data.getSpheres().get(map) != null) {
+				for (SourceSphere sphere : data.getSpheres().get(map)) {
+					if (data.canBeUsed(sphere) && data.getNpcs().get(sphere.getName()).getId() == npcId)
 						list.add(sphere);
 				}
 			}
@@ -132,8 +132,8 @@ public class SpawnData {
 	
 	private List<SourceSphere> getSSFromSD() {
 		List<SourceSphere> results = new ArrayList<SourceSphere>();
-		if (data.getClientSpheres() != null && data.getClientSpheres().get(mapId) != null) {
-			for (SourceSphere sphere : data.getClientSpheres().get(mapId)) {
+		if (data.getSpheres() != null && data.getSpheres().get(map) != null) {
+			for (SourceSphere sphere : data.getSpheres().get(map)) {
 				if (data.canBeUsed(sphere) && MathUtil.isIn3dRange(getX(), getY(), getZ(), sphere.getX(), sphere.getY(), sphere.getZ(), sphere.getRadius() + 1.5))
 					results.add(sphere);
 			}
@@ -164,7 +164,7 @@ public class SpawnData {
 	
 	private List<Entity> getEntityFromSD() {
 		List<Entity> results = new ArrayList<Entity>();
-		for (Entity ent : data.getClientEntities().get(mapId)) {
+		for (Entity ent : data.getLevelEntities().get(map)) {
 			if (!Strings.isNullOrEmpty(ent.getPos()))
 				if (MathUtil.isIn3dRange(ent.getPos(), getX(), getY(), getZ(), 1.0))
 					results.add(ent);
@@ -222,7 +222,7 @@ public class SpawnData {
 	
 	public boolean canMove() {
 		boolean canMove = true;
-		ClientNpc npc = getNpc(npcId);
+		ClientNpc npc = data.getNpc(npcId);
 		if (npc != null && (int) (npc.getMoveSpeedNormalWalk() * 1000) <= 0)
 			canMove = false;
 		if (getNpcInfo() != null && info.getMovetype() != null && info.getMovetype().equalsIgnoreCase("false"))
