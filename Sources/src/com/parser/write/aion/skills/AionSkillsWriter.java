@@ -36,8 +36,8 @@ public class AionSkillsWriter extends AbstractWriter {
 	SkillData finalTemplates = new SkillData();
 	Collection<SkillTemplate> templateList = finalTemplates.getSkillTemplate();
 	
-	List<ClientSkill> skillBaseList = null;
-	List<ClientSkillTree> skillTreeList = null;
+	Collection<ClientSkill> skillBaseList;
+	Collection<ClientSkillTree> skillTreeList;
 	Map<String, ClientItem> stigmaItemMap = new HashMap<String, ClientItem>();
 	
 	public AionSkillsWriter(boolean analyse) {
@@ -46,10 +46,10 @@ public class AionSkillsWriter extends AbstractWriter {
 	
 	@Override
 	public void parse() {
-		skillBaseList = aion.getSkills();
-		skillTreeList = aion.getSkillTrees();
+		skillBaseList = aion.getSkills().values();
+		skillTreeList = aion.getSkillTrees().values();
 		
-		for (ClientItem ci : aion.getClientItems()) {
+		for (ClientItem ci : aion.getItems().values()) {
 			if (!Strings.isNullOrEmpty(ci.getGainSkill1()))
 				stigmaItemMap.put(ci.getGainSkill1().toUpperCase(), ci);
 		}
