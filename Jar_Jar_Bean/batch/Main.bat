@@ -14,7 +14,7 @@ IF %XSD_TYPE%==3 (
 	SET OUTPUT_XML="%~6"
 )
 
-IF NOT %XSD_TYPE%==0 FOR %%V IN (3 4 5 6) DO IF %MASK%==%%V CALL :MERGE "%~5" "%~6"
+IF NOT %XSD_TYPE%==0 FOR %%V IN (3 4 5 6) DO IF %MASK%==%%V CALL :MERGE %~5 %~6
 
 FOR %%M IN (1 3 4 6) DO IF %MASK%==%%M CALL :INPUT
 IF %MASK%==6 CALL :MERGE %7 %8
@@ -23,17 +23,10 @@ GOTO FINISHED
 
 :MERGE
 SET FILTRE=%2
-CD %~1
-SET /A Compteur=0
-FOR /r %%Z IN (%FILTRE%) DO CALL :COPY "%%Z" %FILTRE%
+ROBOCOPY  %~1 %TEMP% /R:1 /W:1 /S %FILTRE% > nul
 SET INPUT_XML=%TEMP%
 SET OUTPUT_XML=%TEMP%
 IF NOT EXIST %TEMP% CALL Fail.bat checkpaths
-GOTO:EOF
-
-:COPY
-SET /A Compteur+=1
-ECHO F | CALL %XCOPY% /C /I /Q "%~1" "%TEMP%\temp%Compteur%\%FILTRE%" > nul
 GOTO:EOF
 
 :INPUT
@@ -67,7 +60,7 @@ echo ==============================
 echo Generating %DIR% XSD file
 echo ==============================
 echo.
-"%JAVA_HOME%\bin\java.exe" -Xms%XMS%m -Xmx%XMX%m -classpath "%cp%" org.apache.xmlbeans.impl.inst2xsd.Inst2Xsd %* -design ss -enumerations %ENUM% -outDir xsd\%VERSION%\%DIR%\ -outPrefix %NAME% -validate "%~1"
+"%JAVA_HOME%\bin\java.exe" -Xms%XMS%m -Xmx%XMX%m -classpath "%cp%" org.apache.xmlbeans.impl.inst2xsd.Inst2Xsd %* -design ss -enumerations %ENUM% -outDir %XSD_DIR%\%VERSION%\%DIR%\ -outPrefix %NAME% -validate "%~1" > nul & ECHO Done !
 GOTO:EOF
 
 REM ## Locating XSD, preparing JAR generation

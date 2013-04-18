@@ -19,7 +19,7 @@ SET I_HOUSING=%CLIENT%\Data\Housing\client_housing*.xml
 SET DATA_STRINGS=%CLIENT%\Data\Strings\client_strings*.xml
 
 REM ## Levels
-SET LEVELS=E:\Jeux\Aion\Client\Client\aion40\Levels
+SET LEVELS=E:\Jeux\Aion\Client\Client\aion40\Levels\
 
 REM ## L10N
 SET L10N_STRINGS=%CLIENT%\L10N\ENU\data\strings\client_strings*.xml
