@@ -28,9 +28,15 @@ public class LevelsProperties {
 	@Property(key = "levels.leveldata.prefix", defaultValue = "leveldata")
 	public static String LEVELDATA_PREFIX;	
 	
+	@Property(key = "levels.heightmap.output", defaultValue = "Tests/height_map.xml")
+	public static String HEIGHTMAP;
+	@Property(key = "levels.heightmap.output.bindings", defaultValue = "")
+	public static String HEIGHTMAP_BINDINGS;
+	
 	static {
 		LEVELS = AionProperties.CLIENT_PATH + LEVELS;
 		SPAWNS = AionProperties.OUTPUT_PATH + SPAWNS;
 		RANDOM_SPAWNS = AionProperties.OUTPUT_PATH + RANDOM_SPAWNS;
+		HEIGHTMAP = AionProperties.OUTPUT_PATH + HEIGHTMAP;
 	}
 }

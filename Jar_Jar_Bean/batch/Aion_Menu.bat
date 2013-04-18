@@ -22,7 +22,7 @@ ECHO.#####################################################
 ECHO.
 set /P JAR=[JAR] JAR file to compile : %=%
 
-REM ## Data
+:: Data
 IF %JAR%==1 CALL Main.bat toypets 3 800 1024 %I_TOYPETS% %O_TOYPETS%
 IF %JAR%==2 CALL Main.bat world_maps 3 800 1024 %I_WORLD_MAPS% %O_WORLD_MAPS%
 IF %JAR%==3 CALL Main.bat rides 3 800 1024 %I_RIDES% %O_RIDES%
@@ -40,6 +40,9 @@ IF %JAR%==90 CALL Main.bat source_sphere 2 800 1024 %SOURCE_SPHERE%
 IF %JAR%==91 CALL Main.bat height_map 2 800 1024 %HEIGHT_MAP%
 IF %JAR%==A CALL Main.bat item_name 2 800 1024 %ITEMS_NAME%
 
-REM ## Levels
-IF %JAR%==12 CALL Main.bat mission 6 800 1024 %LEVELS% *mission0.xml %O_SPAWNS% *.xml
+:: Levels
+IF %JAR%==12 CALL Main.bat mission 6 2048 2400 %LEVELS% *mission0.xml %O_SPAWNS% *.xml
 IF %JAR%==15 CALL Main.bat level_data 4 800 1024 %LEVELS% leveldata.xml
+
+:: L10N
+IF %JAR%==16 CALL Main.bat strings 1 800 1024 %DATA_STRINGS%

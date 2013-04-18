@@ -1,6 +1,6 @@
 @ECHO OFF
 
-REM ## NAME MASK XMS XMX INPUT [INPUT_FILTER] OUTPUT [OUTPUT_FILTER]
+:: NAME MASK XMS XMX INPUT [INPUT_FILTER] OUTPUT [OUTPUT_FILTER]
 SET NAME=%~1
 SET MASK=%2
 SET XMS=%3
@@ -53,7 +53,7 @@ CALL :BUILD_JAR
 IF EXIST "%TEMP%" RD /S /Q "%TEMP%" > nul
 GOTO:EOF
 
-REM ## XSD Generation
+:: XSD Generation
 :CREATE_XSD
 echo.
 echo ==============================
@@ -63,12 +63,12 @@ echo.
 "%JAVA_HOME%\bin\java.exe" -Xms%XMS%m -Xmx%XMX%m -classpath "%cp%" org.apache.xmlbeans.impl.inst2xsd.Inst2Xsd %* -design ss -enumerations %ENUM% -outDir %XSD_DIR%\%VERSION%\%DIR%\ -outPrefix %NAME% -validate "%~1" > nul & ECHO Done !
 GOTO:EOF
 
-REM ## Locating XSD, preparing JAR generation
+:: Locating XSD, preparing JAR generation
 :LOCATE_XSD
 IF EXIST %XSD_DIR%\%VERSION%\%DIR%\%NAME%.xsd ( SET XSD=%XSD_DIR%\%VERSION%\%DIR%\%NAME%.xsd ) ELSE ( SET XSD=%XSD_DIR%/%VERSION%/%DIR%/%NAME%0.xsd )
 IF NOT EXIST %XSD% ( CALL Fail.bat cannot_find_xsd ) ELSE ( GOTO:EOF )
 
-REM ## JAR Generation
+:: JAR Generation
 :BUILD_JAR
 echo.
 echo ============================

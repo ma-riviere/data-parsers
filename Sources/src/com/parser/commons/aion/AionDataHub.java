@@ -1,6 +1,7 @@
 package com.parser.commons.aion;
 
 import static ch.lambdaj.Lambda.*;
+import static org.hamcrest.Matchers.equalTo;
 
 import com.google.common.base.Strings;
 import java.util.ArrayList;
@@ -59,19 +60,19 @@ public class AionDataHub {
 	
 	public Map<String, ClientSkill> getSkills() {
 		if (skills.values().isEmpty())
-			for (ClientSkill cs : new AionSkillParser.parse())
+			for (ClientSkill cs : new AionSkillsParser().parse())
 				skills.put(JAXBHandler.getValue(cs, "name").toString().toUpperCase(), cs);
 		return skills;
 	}
 	
 	public int getSkillId(String s) {
 		ClientSkill skill = getSkills().get(s);
-		return skill != null ? JAXBHandler.getValue(skill, "id") : 0;
+		return skill != null ? (Integer) JAXBHandler.getValue(skill, "id") : 0;
 	}
 	
 	// JAXB Method : Will return the property "needed" of the skill which property "prop" matches the given "value", or null if no match is found
 	public Object skillFinder(String needed, String prop, Object value) {
-		for (ClientSkill client : getClientSkills().values()) {
+		for (ClientSkill client : getSkills().values()) {
 			if (JAXBHandler.getValue(client, prop) != null && JAXBHandler.getValue(client, prop).toString().equalsIgnoreCase(value.toString())) {
 				if (Strings.isNullOrEmpty(needed))
 					return client;
@@ -84,15 +85,15 @@ public class AionDataHub {
 	
 	public List<Integer> getAllSkillsContaining(String s) {		
 		List<Integer> results = new ArrayList<Integer>();
-		for (String ficelle : getClientSkills().keySet())
+		for (String ficelle : getSkills().keySet())
 			if (ficelle.contains(s.toUpperCase()))
-				results.add(skills.get(ficelle));
+				results.add((Integer) JAXBHandler.getValue(skills.get(ficelle), "id"));
 		return results;
 	}
 	
 	public Map<String, ClientSkillTree> getSkillTrees() {
-		if (skillTrees.isEmpty())
-			skillTrees = index(new AionSkillTreeParser().parse(), on(ClientSkillTree.class).getName().toUpperCase());
+		if (skillTrees.values().isEmpty())
+			skillTrees = index(new AionSkillTreeParser().parse(), on(ClientSkillTree.class).getSkill().toUpperCase());
 		return skillTrees;
 	}
 	
@@ -114,7 +115,7 @@ public class AionDataHub {
 				itemNameIdMap.put(ci.getName().toUpperCase(), ci.getId());
 		
 		int id = itemNameIdMap.get(name.toUpperCase());
-		if (id != null) return itemNameIdMap.get(name.toUpperCase());
+		if (id != 0) return id;
 
 		log.unique("[ITEMS] No Item ID matching name : ", name.toUpperCase(), true);
 		return 0;
@@ -124,10 +125,14 @@ public class AionDataHub {
 	
 	public Map<String, ClientNpc> npcs = new HashMap<String, ClientNpc>();
 	
-	public Map<Integer, ClientNpc> getNpcs() {
+	public Map<String, ClientNpc> getNpcs() {
 		if (npcs.values().isEmpty())
 			npcs = index(new AionNpcsParser().parse(), on(ClientNpc.class).getName().toUpperCase());
 		return npcs;
+	}
+	
+	public ClientNpc getNpc(int id) {
+		return selectUnique(getNpcs(), having(on(ClientNpc.class).getId(), equalTo(id)));
 	}
 	
 	/*********************** RIDES ****************************/
@@ -147,8 +152,13 @@ public class AionDataHub {
 	public Map<String, ClientRecipe> getRecipes() {
 		if (recipes.values().isEmpty()) 
 			for (ClientRecipe cr : new AionRecipesParser().parse())
-				recipes.put(JAXBHandler.getValue(cr, "name").toString().toUpperCase(), (int) JAXBHandler.getValue(cr, "id"));
+				recipes.put(JAXBHandler.getValue(cr, "name").toString().toUpperCase(), cr);
 		return recipes;
+	}
+	
+	public int getRecipeId(String s) {
+		ClientRecipe cr = getRecipes().get(s);
+		return cr != null ? (Integer) JAXBHandler.getValue(cr, "id") : 0;
 	}
 	
 	/********************* ANIMATIONS ***********************/
@@ -192,7 +202,7 @@ public class AionDataHub {
 	
 	public Map<Integer, List<ClientSpawn>> spawns = new HashMap<Integer, List<ClientSpawn>>();
 	public Map<Integer, List<Entity>> entities = new HashMap<Integer, List<Entity>>();
-	public Map<Integer, LevelInfo> levelInfos = new HashMap<Integer, LevelInfo>();
+	public Map<String, LevelInfo> levelInfos = new HashMap<String, LevelInfo>();
 	
 	public Map<Integer, List<Entity>> getLevelEntities() {
 		if (entities.values().isEmpty())
@@ -208,10 +218,9 @@ public class AionDataHub {
 		return spawns;
 	}
 	
-	public Map<Integer, LevelInfo> getLevelInfos() {
+	public Map<String, LevelInfo> getLevelInfos() {
 		if (levelInfos.values().isEmpty())
-			for (Map.Entry<String, LevelInfo> entry : new AionLevelDataParser().parse().entrySet())
-				levelInfos.put(getWorldId(entry.getKey()), entry.getValue());
+			levelInfos = new AionLevelDataParser().parse();
 		return levelInfos;
 	}
 	
@@ -265,7 +274,7 @@ public class AionDataHub {
 	public List<NpcInfo> getDataSpawns(String map) {
 		if (!dataSpawns.containsKey(map.toUpperCase())) {
 			String file = WorldProperties.INPUT + WorldProperties.CLIENT_WORLD_PREFIX + map.toLowerCase();
-			dataSpawns.put(map, AionClientWorldParser().parseNpcInfos(file));
+			dataSpawns.put(map, new AionClientWorldParser().parseNpcInfos(file));
 		}
 		return dataSpawns.get(map.toUpperCase());
 	}

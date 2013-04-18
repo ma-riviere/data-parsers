@@ -8,10 +8,10 @@ import com.parser.write.aion.items.AionItemsInternalWriter;
 import com.parser.write.aion.items.AionClientItemsWriter;
 import com.parser.write.aion.levels.AionSpawnsWriter;
 import com.parser.write.aion.levels.AionHeightMapWriter;
-import com.parser.write.aion.levels.AionWalkersWriter;
 import com.parser.write.aion.recipes.AionRecipesWriter;
 import com.parser.write.aion.rides.AionRidesWriter;
 import com.parser.write.aion.skills.AionSkillsWriter;
+import com.parser.write.aion.world.AionWalkersWriter;
 import com.parser.write.aion.world.AionSourceSphereWriter;
 import com.parser.write.aion.world.AionCooltimesWriter;
 
@@ -26,6 +26,11 @@ public abstract class AionStart {
 		
 		if ("SPAWNS".startsWith(args[0].toUpperCase())) {
 			AionSpawnsWriter writer = new AionSpawnsWriter();
+			loader.loadProperty("Levels");
+			writer.start();
+		}
+		else if ("HEIGHT".startsWith(args[0].toUpperCase())) {
+			AionHeightMapWriter writer = new AionHeightMapWriter();
 			loader.loadProperty("Levels");
 			writer.start();
 		}
@@ -49,16 +54,6 @@ public abstract class AionStart {
 			// loader.loadProperty("Skills");
 			writer.start();
 		}
-		else if ("WALKERS".startsWith(args[0].toUpperCase())) {
-			AionWalkersWriter writer = new AionWalkersWriter();
-			loader.loadProperty("Levels");
-			writer.start();
-		}
-		else if ("SPHERE".startsWith(args[0].toUpperCase())) {
-			AionSourceSphereWriter writer = new AionSourceSphereWriter();
-			loader.loadProperty("World");
-			writer.start();
-		}
 		else if ("RIDES".startsWith(args[0].toUpperCase())) {
 			AionRidesWriter writer = new AionRidesWriter();
 			// loader.loadProperty("Rides");
@@ -74,9 +69,14 @@ public abstract class AionStart {
 			loader.loadProperty("World");
 			writer.start();
 		}
-		else if ("HEIGHT".startsWith(args[0].toUpperCase())) {
-			AionHeightMapWriter writer = new AionHeightMapWriter();
-			loader.loadProperty("Levels");
+		else if ("WALKERS".startsWith(args[0].toUpperCase())) {
+			AionWalkersWriter writer = new AionWalkersWriter();
+			loader.loadProperty("World");
+			writer.start();
+		}
+		else if ("SPHERE".startsWith(args[0].toUpperCase())) {
+			AionSourceSphereWriter writer = new AionSourceSphereWriter();
+			loader.loadProperty("World");
 			writer.start();
 		}
 		else {

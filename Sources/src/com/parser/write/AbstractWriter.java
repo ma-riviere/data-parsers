@@ -15,6 +15,8 @@ public abstract class AbstractWriter implements Writer {
 	
 	// Data Centers
 	protected AionDataHub aion = new AionDataHub().getInstance();
+	// protected TeraDataHub tera = new TeraDataHub().getInstance();
+	// protected ArcheageDataHub arch = new ArcheageDataHub().getInstance();
 
 	@Override
 	public void start() {

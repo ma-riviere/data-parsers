@@ -12,6 +12,9 @@ import java.util.Map;
 import java.util.HashSet;
 import java.util.Set;
 
+import static ch.lambdaj.Lambda.index;
+import static ch.lambdaj.Lambda.on;
+
 import com.parser.input.aion.items.*;
 import com.parser.input.aion.skill_learn.ClientSkillTree;
 import com.parser.input.aion.cooltimes.ClientInstanceCooltime;
@@ -22,8 +25,6 @@ import com.parser.commons.aion.enums.items.*;
 import com.parser.commons.aion.properties.AionProperties;
 
 import com.parser.read.aion.AionReadingConfig;
-import com.parser.read.aion.items.AionItemsParser;
-import com.parser.read.aion.skills.AionSkillTreeParser;
 import com.parser.read.aion.world.AionCooltimesParser;
 
 import com.parser.write.AbstractWriter;
@@ -34,26 +35,27 @@ import com.parser.output.aion.items.*;
 
 public class AionItemsWriter extends AbstractWriter {
 
-	AionDataHub data = new AionDataHub().getInstance();
+	AionDataHub data = aion;
 
 	ItemTemplates finalTemplates = new ItemTemplates();
 	Collection<ItemTemplate> templateList = finalTemplates.getItemTemplate();
-	List<ClientItem> clientItems;
+	Collection<ClientItem> clientItems;
 	
 	// Modifiers variables
 	public List<Add> addList = new ArrayList<Add>();
 	public List<Rate> rateList = new ArrayList<Rate>();
 	
 	// Actions
-	public static List<ClientSkillTree> skillTreeList = new ArrayList<ClientSkillTree>();
-	public static Map<Integer, String> cooltimeSyncMap = new HashMap<Integer, String>();
+	public static Collection<ClientSkillTree> skillTreeList;
+	public static Map<Integer, ClientInstanceCooltime> cooltimeSyncMap = new HashMap<Integer, ClientInstanceCooltime>();
 	private static Set<String> docFiles = new HashSet<String>();
 	
 	
 	@Override
 	public void parse() {
-		clientItems = data.getClientItems();
-		skillTreeList = new AionSkillTreeParser().parse();
+		clientItems = aion.getItems().values();
+		skillTreeList = aion.getSkillTrees().values();
+		cooltimeSyncMap = index(aion.getCooltimes(), on(ClientInstanceCooltime.class).getCooltSyncId());
 	}
 
 	@Override
@@ -63,12 +65,12 @@ public class AionItemsWriter extends AbstractWriter {
 			
 			it.setId((int) ci.getId());
 			if (!Strings.isNullOrEmpty(ci.getDesc()))
-				it.setName(new AionDataHub().getInstance().getClientStringText(ci.getDesc()));
+				it.setName(aion.getStrings().get(ci.getDesc()).getBody());
 			else
-				it.setName(new AionDataHub().getInstance().getClientStringText("STR_" + ci.getName()));
+				it.setName(aion.getStrings().get("STR_" + ci.getName()).getBody());
 			it.setLevel((ci.getLevel() > AionProperties.MAX_LEVEL) ? AionProperties.MAX_LEVEL : (int) ci.getLevel()); // [UPDATE] Don't forget to keep MAX_LEVEL updated
 			if (!Strings.isNullOrEmpty(ci.getDesc()))
-				it.setDesc(new AionDataHub().getInstance().getClientStringId(ci.getDesc().trim(), 2, 1));
+				it.setDesc(aion.getStrings().get(ci.getDesc().trim()).getId() * 2 + 1);
 			
 			it.setSlot(EquipmentSlot.getEquipSlotByString(ci).getEquipmentSlot());
 			it.setCategory(ItemCategory.getMatchingCategory(ci).toString());
@@ -261,7 +263,7 @@ public class AionItemsWriter extends AbstractWriter {
 			boolean hasLimits = false;
 			Uselimits limit = new Uselimits();
 			if (ci.getAreaToUse() != null) {limit.setUsearea(ci.getAreaToUse().toUpperCase()); hasLimits = true;} // Use area
-			if (ci.getOwnershipWorld() != null) {limit.setOwnershipWorld(getWorldId(ci.getOwnershipWorld())); hasLimits = true;} // Use world
+			if (ci.getOwnershipWorld() != null) {limit.setOwnershipWorld(aion.getWorldId(ci.getOwnershipWorld())); hasLimits = true;} // Use world
 			if ((int) ci.getUsableRankMin() > 0) {limit.setRankMin((int) ci.getUsableRankMin()); hasLimits = true;} // Use min rank
 			if ((int) ci.getUsableRankMax() > 0) {limit.setRankMax((int) ci.getUsableRankMax()); hasLimits = true;} // Use max rank
 			if (ci.getGenderPermitted() != null && !ci.getGenderPermitted().equalsIgnoreCase("all")) {limit.setGender(ci.getGenderPermitted().toUpperCase()); hasLimits = true;} // Use gendre
@@ -278,9 +280,9 @@ public class AionItemsWriter extends AbstractWriter {
 				int skill1 = 0; int skill2 = 0;
 				String skill = "";
 				
-				skill1 = getSkillId(ci.getGainSkill1());
+				skill1 = aion.getSkillId(ci.getGainSkill1());
 				if (ci.getGainSkill2() != null)
-					skill2 = getSkillId(ci.getGainSkill2());
+					skill2 = aion.getSkillId(ci.getGainSkill2());
 				
 				
 				if (skill1 !=0)
@@ -331,7 +333,7 @@ public class AionItemsWriter extends AbstractWriter {
 				if (ci.getCraftRecipeInfo() != null) {
 					Craftlearn recipeAction = new Craftlearn();
 					
-					int recipeId = new AionDataHub().getInstance().getRecipes(ci.getCraftRecipeInfo());
+					int recipeId = aion.getRecipeId(ci.getCraftRecipeInfo());
 					if (recipeId != 0) 
 						recipeAction.setRecipeid(recipeId);
 					
@@ -340,7 +342,7 @@ public class AionItemsWriter extends AbstractWriter {
 				}
 				// Use Skill
 				if (ci.getActivationSkill() != null) {
-					int skill = getSkillId(ci.getActivationSkill());
+					int skill = aion.getSkillId(ci.getActivationSkill());
 					if (skill != 0) {
 						Skilluse sa = new Skilluse();
 						
@@ -354,7 +356,7 @@ public class AionItemsWriter extends AbstractWriter {
 							if (undeline != -1)
 								suffix = suffix.substring(0, undeline);
 							
-							int worldId = getWorldId(suffix);
+							int worldId = aion.getWorldId(suffix);
 							if (worldId != 0)
 								sa.setWorldId(worldId); 																																																	//TODO : Use !!!
 						}
@@ -414,7 +416,7 @@ public class AionItemsWriter extends AbstractWriter {
 				// Learn Skill
 				if (ci.getSkillToLearn() != null) {
 					
-					int skillId = getSkillId(ci.getSkillToLearn());	
+					int skillId = aion.getSkillId(ci.getSkillToLearn());	
 					
 					if (skillId != 0) {
 						List<ClientSkillTree> skillsToLearn = getSkillTrees(ci.getSkillToLearn().toUpperCase());
@@ -484,14 +486,14 @@ public class AionItemsWriter extends AbstractWriter {
 				// Spawn House Object
 				if (ci.getSummonHousingObject() != null) {
 					Houseobject ho = new Houseobject();
-					ho.setId(new AionDataHub().getInstance().getHouseObjects(ci.getSummonHousingObject()));
+					ho.setId(aion.getHouseObjects().get(ci.getSummonHousingObject()).getId());
 					actionList.setHouseobject(ho);
 					hasActions = true;
 				}
 				// Spawn House Decoration
 				if (ci.getCustomPartName() != null) {
 					Housedeco hd = new Housedeco();
-					hd.setId(new AionDataHub().getInstance().getHouseParts(ci.getCustomPartName()));
+					hd.setId(aion.getHouseParts().get(ci.getCustomPartName()).getId());
 					actionList.setHousedeco(hd);
 					hasActions = true;
 				}
@@ -516,7 +518,7 @@ public class AionItemsWriter extends AbstractWriter {
 					}
 					/*
 					if (ci.getDescLong() != null) {
-						String desc = new AionDataHub().getInstance().getClientStringText(ci.getDescLong()).toUpperCase();
+						String desc = aion.getStrings().get(ci.getDescLong()).getBody().toUpperCase();
 						
 						if (desc.contains("Double-click to begin a quest".toUpperCase()) || desc.contains("더블 클릭하여 퀘스트를 받을 수 있습니다".toUpperCase()))
 							System.out.println("[ITEMS] : Item " + it.getId() + " starts a quest and has <quest> value of : " + ci.getQuest());
@@ -531,7 +533,7 @@ public class AionItemsWriter extends AbstractWriter {
 					}
 					/*
 					if (ci.getDescLong() != null) {
-						String desc = new AionDataHub().getInstance().getClientStringText(ci.getDescLong()).toUpperCase();
+						String desc = aion.getStrings().get(ci.getDescLong()).getBody().toUpperCase();
 						
 						if (it.getActions() != null && it.getActions().getRead() == null && (desc.contains("Double-click to read".toUpperCase()) || desc.contains("더블 클릭하면 읽을 수 있습니다".toUpperCase())))
 							System.out.println("[ITEMS] : Item " + it.getId() + " should be readable !");
@@ -551,7 +553,7 @@ public class AionItemsWriter extends AbstractWriter {
 				}
 				// FuncPet																																																			TODO : Use
 				if (ci.getFuncPetName() != null) {
-					int toyId = new AionDataHub().getInstance().getToyPets(ci.getFuncPetName());
+					int toyId = aion.getToyPets().get(ci.getFuncPetName()).getId();
 					if (toyId != 0) {
 						Toypetadopt adopt = new Toypetadopt();
 						adopt.setPetid(toyId);
@@ -583,12 +585,11 @@ public class AionItemsWriter extends AbstractWriter {
 				}
 				// Instance Time clear
 				if (ci.getResetInstanceCooltSyncId() != null && ci.getResetInstanceCooltSyncId() != "") {
-					if (cooltimeSyncMap.isEmpty()) {loadCooltimeSyncMap();}
 					Instancetimeclear itc = new Instancetimeclear();
 					List<Integer> mapIdList = new ArrayList<Integer>();
 					String[] coolt_sync_ids = ci.getResetInstanceCooltSyncId().trim().split(",");
 					for (int i = 0; i < coolt_sync_ids.length; i++)
-						mapIdList.add(getWorldId(cooltimeSyncMap.get(Integer.parseInt(coolt_sync_ids[i].trim()))));																											// TODO : Use
+						mapIdList.add(aion.getWorldId(cooltimeSyncMap.get(Integer.parseInt(coolt_sync_ids[i].trim())).getName()));																											// TODO : Use
 					if (!mapIdList.isEmpty() && mapIdList != null)
 						itc.getMapid().addAll(mapIdList);
 					actionList.setInstancetimeclear(itc);
@@ -597,7 +598,7 @@ public class AionItemsWriter extends AbstractWriter {
 				// Ride
 				if (ci.getRideDataName() != null) {
 					Ride rideAction = new Ride();
-					rideAction.setNpcId(new AionDataHub().getInstance().getRides(ci.getRideDataName()));
+					rideAction.setNpcId(aion.getRides().get(ci.getRideDataName()).getId());
 					actionList.setRide(rideAction);
 					hasActions = true;
 				}
@@ -609,7 +610,7 @@ public class AionItemsWriter extends AbstractWriter {
 			if (ci.getProcEnchantSkill() != null) {
 				Godstone gd = new Godstone();
 
-				int skillId = getSkillId(ci.getProcEnchantSkill());
+				int skillId = aion.getSkillId(ci.getProcEnchantSkill());
 				if (skillId != 0) {
 					gd.setSkillid(skillId);
 					gd.setSkilllvl((int) ci.getProcEnchantSkillLevel());
@@ -634,11 +635,9 @@ public class AionItemsWriter extends AbstractWriter {
 	
 	/****** EXTRA *******/
 	
-	private int getItemId(String s) {return (s != null) ? new AionDataHub().getInstance().getItemId(s) : 0;}
-	private int getSkillId(String s) {return (s != null) ? new AionDataHub().getInstance().getSkillIdByName(s) : 0;}
-	private int getNpcId(String s) {return (s != null) ? new AionDataHub().getInstance().getNpcIdByName(s) : 0;}
-	private int getWorldId(String s) {return (new AionDataHub().getInstance().getWorld(s) != null) ? new AionDataHub().getInstance().getWorld(s).getId() : 0;}
-	private int getAnimationId(String s) {return (s != null) ? new AionDataHub().getInstance().getAnimations(s) : 0;}
+	private int getItemId(String s) {return (s != null) ? aion.getItemId(s) : 0;}
+	private int getNpcId(String s) {return (s != null) ? aion.getNpcs().get(s).getId() : 0;}
+	private int getAnimationId(String s) {return (s != null) ? aion.getAnimations().get(s).getId() : 0;}
 	
 	// TODO : getGenderPermitted getCanPolish getCannotChangeskin (to property)
 	private int getMask(ClientItem ci) {
@@ -806,26 +805,17 @@ public class AionItemsWriter extends AbstractWriter {
 	}
 	
 	// Finds all skills containing that name
-	private static void addRequireSkillToStigma(Stigma stigma, String skillString) {
+	private void addRequireSkillToStigma(Stigma stigma, String skillString) {
 		RequireSkill requireSkill = new RequireSkill();
 		List<Integer> skills = new ArrayList<Integer>();
 		
-		skills = new AionDataHub().getInstance().getAllSkillsContaining(skillString);
+		skills = aion.getAllSkillsContaining(skillString);
 		requireSkill.getSkillId().addAll(skills);
 		
 		stigma.getRequireSkill().add(requireSkill);
 	}
 	
-	private static void loadCooltimeSyncMap() {
-		List<ClientInstanceCooltime> cics = new ArrayList<ClientInstanceCooltime>();
-		cics = new AionCooltimesParser().parse();
-		for (ClientInstanceCooltime cic : cics) {
-			if (cic != null)
-				cooltimeSyncMap.put((int) cic.getCooltSyncId(), cic.getName());
-		}
-	}
-	
-	private static void loadDocFiles() {
+	private void loadDocFiles() {
 		File docFilesFolder = new File(AionReadingConfig.DOC_FILES);
 		File[] children = docFilesFolder.listFiles();
 		for (int i = 0; i < children.length; i++) {

@@ -19,7 +19,7 @@ public class AionSourceSphereParser extends TextParser {
 	public FastMap<String, List<SourceSphere>> parse() {
 		FastMap<String, List<SourceSphere>> spheres = new FastMap<String, List<SourceSphere>>();
 		
-		File file = new File(WorldProperties.SPHERE_INPUT);
+		File file = new File(WorldProperties.INPUT_SPHERE);
 		List<String> lines = parseFile(file).getLines();
 		
 		for (String line : lines) {
