@@ -53,7 +53,7 @@ public abstract class AionStart {
 			writer.start();
 		}
 		else if (StringUtils.startsWithIgnoreCase("SKILLS", args[0])) {
-			AionSkillsWriter writer = new AionSkillsWriter(Boolean.parseBoolean(args[1]));
+			AionSkillsWriter writer = new AionSkillsWriter();
 			// loader.loadProperties("Skills");
 			// loader.loadProperties("Items");
 			writer.start();
@@ -64,7 +64,7 @@ public abstract class AionStart {
 			writer.start();
 		}
 		else if (StringUtils.startsWithIgnoreCase("RECIPES", args[0])) {
-			AionRecipesWriter writer = new AionRecipesWriter(Boolean.parseBoolean(args[1]));
+			AionRecipesWriter writer = new AionRecipesWriter();
 			loader.loadProperties("Recipes"); //TODO: Move to Data
 			writer.start();
 		}

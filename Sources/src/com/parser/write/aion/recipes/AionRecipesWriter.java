@@ -21,8 +21,6 @@ public class AionRecipesWriter extends AbstractWriter {
 	private static Collection<RecipeTemplate> recipeList = recipes.getRecipeTemplate();
 	private static Collection<ClientRecipe> clientRecipes;
 	
-	public AionRecipesWriter(boolean analyse) {this.ANALYSE = analyse;}
-	
 	@Override
 	public void parse() {
 		clientRecipes = aion.getRecipes().values();
@@ -64,15 +62,10 @@ public class AionRecipesWriter extends AbstractWriter {
 			recipeList.add(rt);
 		}
 	}
-	
-	@Override
-	public void finalise() {
-		if (ANALYSE) JAXBHandler.printUnused("recipes");
-	}
 
 	@Override
 	public void marshall() {
-		addOrder(RecipesProperties.OUTPUT_BINDINGS, RecipesProperties.OUTPUT, recipes);
+		addOrder(RecipesProperties.OUTPUT, RecipesProperties.OUTPUT_BINDINGS, recipes);
 		FileMarshaller.marshallFile(orders);
 		System.out.println("\n[RECIPES] Recipes count: " + recipeList.size());
 	}
