@@ -30,9 +30,9 @@ IF %JAR%==4 CALL Main.bat cooltimes 3 800 1024 %I_COOLTIMES% %O_COOLTIMES%
 IF %JAR%==5 CALL Main.bat items 3 1024 1536 %I_ITEMS% %O_ITEMS%
 IF %JAR%==6 CALL Main.bat recipes 3 800 1024 %I_RECIPES% %O_RECIPES%
 IF %JAR%==7 CALL Main.bat skills 3 1000 1200 %I_SKILLS% %O_SKILLS%
-IF %JAR%==8 CALL Main.bat skill_learn 1 800 1024 %I_SKILL_TREE%
+IF %JAR%==8 CALL Main.bat skill_learn 3 800 1024 %I_SKILL_TREE% %O_SKILL_TREE%
 IF %JAR%==9 CALL Main.bat npcs 1 1024 1536 %I_NPCS%
-IF %JAR%==10 CALL Main.bat animations 1 800 1024 %ANIMATIONS%
+IF %JAR%==10 CALL Main.bat animations 1 800 1024 %I_ANIMATIONS%
 IF %JAR%==11 CALL Main.bat housing 1 800 1024 %I_HOUSING%
 IF %JAR%==13 CALL Main.bat world_data 1 800 1024 %I_WORLD_DATA%
 IF %JAR%==14 CALL Main.bat walkers 2 800 1024 %O_WALKERS%
@@ -41,5 +41,5 @@ IF %JAR%==91 CALL Main.bat height_map 2 800 1024 %HEIGHT_MAP%
 IF %JAR%==A CALL Main.bat item_name 2 800 1024 %ITEMS_NAME%
 
 REM ## Levels
-IF %JAR%==12 CALL Main.bat mission 6 800 1024 %LEVELS% *mission0.xml %SPAWNS% *.xml
+IF %JAR%==12 CALL Main.bat mission 6 800 1024 %LEVELS% *mission0.xml %O_SPAWNS% *.xml
 IF %JAR%==15 CALL Main.bat level_data 4 800 1024 %LEVELS% leveldata.xml
