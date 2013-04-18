@@ -2,17 +2,18 @@
 TITLE [ Jar Jar Bean ]
 COLOR 05
 
-PUSHD %~dp0
+PUSHD "..\..\"
 
-SET INPUT_FOLDER="%~dp0..\Input"
-SET OUTPUT_FOLDER="%~dp0..\Output"
-SET SOURCES="%~dp0..\Sources"
-SET LIBS=libs
-SET BATCH=%~dp0batch
+SET INPUT_FOLDER=%CD%\Input
+SET OUTPUT_FOLDER=%CD%\Output
+SET SOURCES=%CD%\Sources
+SET LIBS="%CD%\Jar_Jar_Bean\libs"
+SET XSD_DIR="%CD%\Jar_Jar_Bean\xsd"
+SET TEMP="%INPUT_FOLDER%\TEMP"
+SET XCOPY="%CD%\Tools\xcopy.exe"
 SET cp=%LIBS%\xbean.jar;%LIBS%\xmlbeans-qname.jar;%LIBS%\jsr173_1.0_api.jar;%LIBS%\resolver.jar
 
-SET MAIN=%BATCH%\Main.bat
-SET FAIL=%BATCH%\Fail.bat
+POPD
 
 :MENU
 CALL :GAME_MENU
@@ -45,13 +46,13 @@ SET CLIENT=%INPUT_FOLDER%\%VERSION%\Client
 SET SERVER=%INPUT_FOLDER%\%VERSION%\Server
 SET CUSTOM=%OUTPUT_FOLDER%\%VERSION%\Tests
 
-IF NOT EXIST %CLIENT% CALL %FAIL% folder
-IF NOT EXIST %SERVER% CALL %FAIL% folder
+IF NOT EXIST %CLIENT% CALL Fail.bat folder
+IF NOT EXIST %SERVER% CALL Fail.bat folder
 
 REM ## Specific pathways
-IF %GAME%==aion CALL "%BATCH%\Aion_Pathways.bat"
-IF %GAME%==archeage CALL "%BATCH%\Archeage_Pathways.bat"
-IF %GAME%==tera CALL "%BATCH%\Tera_Pathways.bat"
+IF %GAME%==aion CALL Aion_Pathways.bat
+IF %GAME%==archeage CALL Archeage_Pathways.bat
+IF %GAME%==tera CALL Tera_Pathways.bat
 GOTO:EOF
 
 :XSD_MENU
@@ -78,9 +79,9 @@ SET /P ENUM=[ENUM] Number of ENUMERATIONS to generate : %=%
 GOTO:EOF
 
 :EXECUTE
-IF %GAME%==aion CALL "%BATCH%\Aion_Menu.bat"
-IF %GAME%==archeage CALL "%BATCH%\Archeage_Menu.bat"
-IF %GAME%==tera CALL "%BATCH%\Tera_Menu.bat"
+IF %GAME%==aion CALL Aion_Menu.bat
+IF %GAME%==archeage CALL Archeage_Menu.bat
+IF %GAME%==tera CALL Tera_Menu.bat
 GOTO:EOF
 
 :QUIT
