@@ -12,7 +12,7 @@ SET BATCH=%~dp0batch
 SET cp=%LIBS%\xbean.jar;%LIBS%\xmlbeans-qname.jar;%LIBS%\jsr173_1.0_api.jar;%LIBS%\resolver.jar
 
 SET MAIN=%BATCH%\Main.bat
-SET QUIT=%BATCH%\Quit.bat
+SET FAIL=%BATCH%\Fail.bat
 
 :MENU
 CALL :GAME_MENU
@@ -45,8 +45,8 @@ SET CLIENT=%INPUT_FOLDER%\%VERSION%\Client
 SET SERVER=%INPUT_FOLDER%\%VERSION%\Server
 SET CUSTOM=%OUTPUT_FOLDER%\%VERSION%\Tests
 
-IF NOT EXIST %CLIENT% CALL %QUIT% folder
-IF NOT EXIST %SERVER% CALL %QUIT% folder
+IF NOT EXIST %CLIENT% CALL %FAIL% folder
+IF NOT EXIST %SERVER% CALL %FAIL% folder
 
 REM ## Specific pathways
 IF %GAME%==aion CALL "%BATCH%\Aion_Pathways.bat"
