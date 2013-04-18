@@ -1,6 +1,8 @@
 package com.parser.start;
 
-import com.parser.commons.aion.properties.AionPropertiesLoader;
+import org.apache.commons.lang.StringUtils;
+
+import com.parser.commons.utils.properties.PropertiesLoader;
 import static com.parser.commons.utils.Util.printSection;
 
 import com.parser.write.aion.items.AionItemsWriter;
@@ -17,66 +19,68 @@ import com.parser.write.aion.world.AionCooltimesWriter;
 
 public abstract class AionStart {
 
-	private static final AionPropertiesLoader loader = new AionPropertiesLoader();
+	private static final PropertiesLoader loader = new PropertiesLoader("aion");
 	
 	public static void main(String[] args) {
 		
 		printSection("Loading required properties");
-		loader.loadProperty("General");
+		loader.loadProperties("Aion");
 		
-		if ("SPAWNS".startsWith(args[0].toUpperCase())) {
+		if (StringUtils.startsWithIgnoreCase("SPAWNS", args[0])) {
 			AionSpawnsWriter writer = new AionSpawnsWriter();
-			loader.loadProperty("Levels");
+			loader.loadProperties("Levels");
+			loader.loadProperties("World");
 			writer.start();
 		}
-		else if ("HEIGHT".startsWith(args[0].toUpperCase())) {
+		else if (StringUtils.startsWithIgnoreCase("HEIGHT", args[0])) {
 			AionHeightMapWriter writer = new AionHeightMapWriter();
-			loader.loadProperty("Levels");
+			loader.loadProperties("Levels");
 			writer.start();
 		}
-		else if ("ITEMS".startsWith(args[0].toUpperCase())) {
+		else if (StringUtils.startsWithIgnoreCase("ITEMS", args[0])) {
 			AionItemsWriter writer = new AionItemsWriter();
-			// loader.loadProperty("Items");
+			// loader.loadProperties("Items");
 			writer.start();
 		}
-		else if ("ITEMS_INTERNAL".startsWith(args[0].toUpperCase())) {
+		else if (StringUtils.startsWithIgnoreCase("ITEMS_ID", args[0])) {
 			AionItemsInternalWriter writer = new AionItemsInternalWriter();
-			// loader.loadProperty("Items");
+			// loader.loadProperties("Items");
 			writer.start();
 		}
-		else if ("ITEMS_CLIENT".startsWith(args[0].toUpperCase())) {
+		else if (StringUtils.startsWithIgnoreCase("ITEMS_CLIENT", args[0])) {
 			AionClientItemsWriter writer = new AionClientItemsWriter();
-			// loader.loadProperty("Items");
+			// loader.loadProperties("Items");
 			writer.start();
 		}
-		else if ("SKILLS".startsWith(args[0].toUpperCase())) {
+		else if (StringUtils.startsWithIgnoreCase("SKILLS", args[0])) {
 			AionSkillsWriter writer = new AionSkillsWriter(Boolean.parseBoolean(args[1]));
-			// loader.loadProperty("Skills");
+			// loader.loadProperties("Skills");
+			// loader.loadProperties("Items");
 			writer.start();
 		}
-		else if ("RIDES".startsWith(args[0].toUpperCase())) {
+		else if (StringUtils.startsWithIgnoreCase("RIDES", args[0])) {
 			AionRidesWriter writer = new AionRidesWriter();
-			// loader.loadProperty("Rides");
+			// loader.loadProperties("Rides");
 			writer.start();
 		}
-		else if ("RECIPES".startsWith(args[0].toUpperCase())) {
+		else if (StringUtils.startsWithIgnoreCase("RECIPES", args[0])) {
 			AionRecipesWriter writer = new AionRecipesWriter(Boolean.parseBoolean(args[1]));
-			loader.loadProperty("Recipes");
+			loader.loadProperties("Recipes"); //TODO: Move to Data
 			writer.start();
 		}
-		else if ("COOLTIMES".startsWith(args[0].toUpperCase())) {
+		else if (StringUtils.startsWithIgnoreCase("COOLTIMES", args[0])) {
 			AionCooltimesWriter writer = new AionCooltimesWriter();
-			loader.loadProperty("World");
+			loader.loadProperties("World");
 			writer.start();
 		}
-		else if ("WALKERS".startsWith(args[0].toUpperCase())) {
+		else if (StringUtils.startsWithIgnoreCase("WALKERS", args[0])) {
 			AionWalkersWriter writer = new AionWalkersWriter();
-			loader.loadProperty("World");
+			loader.loadProperties("World");
 			writer.start();
 		}
-		else if ("SPHERE".startsWith(args[0].toUpperCase())) {
+		else if (StringUtils.startsWithIgnoreCase("SPHERE", args[0])) {
 			AionSourceSphereWriter writer = new AionSourceSphereWriter();
-			loader.loadProperty("World");
+			loader.loadProperties("World");
 			writer.start();
 		}
 		else {

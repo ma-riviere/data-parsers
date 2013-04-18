@@ -36,7 +36,7 @@ public class WorldProperties {
 	@Property(key = "world.cooltimes.output.bindings", defaultValue = "")
 	public static String OUTPUT_COOLTIMES_BINDINGS;
 	
-	static {
+	public void loadPaths() {
 		INPUT = AionProperties.CLIENT_PATH + INPUT;
 		
 		INPUT_SPHERE = INPUT + INPUT_SPHERE;

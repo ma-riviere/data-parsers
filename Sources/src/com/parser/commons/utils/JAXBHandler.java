@@ -17,6 +17,8 @@ public class JAXBHandler {
 
 	public static Map<String, List<String>> unused = new HashMap<String, List<String>>();
 	public static Map<String, List<String>> all = new HashMap<String, List<String>>();
+	
+	//TODO: Make map <String, Property> for faster exploration
 
 	public static Object getValue(ClientRecipe cr, String propertyName) {
 	
