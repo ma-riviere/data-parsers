@@ -40,10 +40,6 @@ public class AionSkillsWriter extends AbstractWriter {
 	Collection<ClientSkillTree> skillTreeList;
 	Map<String, ClientItem> stigmaItemMap = new HashMap<String, ClientItem>();
 	
-	public AionSkillsWriter(boolean analyse) {
-		this.ANALYSE = analyse;
-	}
-	
 	@Override
 	public void parse() {
 		skillBaseList = aion.getSkills().values();
@@ -379,12 +375,6 @@ public class AionSkillsWriter extends AbstractWriter {
 			/************************** END **************************/
 			templateList.add(st);
 		}
-	}
-	
-	@Override
-	public void finalise() {
-		if (ANALYSE)
-			JAXBHandler.printUnused("skills");
 	}
 
 	@Override
