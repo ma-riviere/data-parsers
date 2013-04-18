@@ -4,6 +4,7 @@ import static ch.lambdaj.Lambda.*;
 import static org.hamcrest.Matchers.equalTo;
 
 import com.google.common.base.Strings;
+import org.apache.commons.lang.StringUtils;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.HashMap;
@@ -29,7 +30,7 @@ import com.parser.input.aion.world_maps.WorldMap;
 import com.parser.input.aion.world_data.NpcInfo;
 
 import com.parser.commons.aion.bindings.SourceSphere;
-import com.parser.commons.aion.bindings.WayPoint; //TODO
+import com.parser.commons.aion.bindings.WayPoint;
 import com.parser.commons.aion.properties.*;
 import com.parser.commons.utils.*;
 
@@ -66,8 +67,7 @@ public class AionDataHub {
 	}
 	
 	public int getSkillId(String s) {
-		ClientSkill skill = getSkills().get(s);
-		return skill != null ? (Integer) JAXBHandler.getValue(skill, "id") : 0;
+		return (!Strings.isNullOrEmpty(s) && getSkills().get(s) != null) ? (Integer) JAXBHandler.getValue(getSkills().get(s), "id") : 0;
 	}
 	
 	// JAXB Method : Will return the property "needed" of the skill which property "prop" matches the given "value", or null if no match is found
@@ -110,15 +110,11 @@ public class AionDataHub {
 	
 	// Accessing Item ID by a separate xml file
 	public int getItemId(String name) {
-		if (itemNameIdMap.values().isEmpty())
+		if (itemNameIdMap.isEmpty()) {
 			for (Item ci : new AionItemsInternalParser().parse())
 				itemNameIdMap.put(ci.getName().toUpperCase(), ci.getId());
-		
-		int id = itemNameIdMap.get(name.toUpperCase());
-		if (id != 0) return id;
-
-		log.unique("[ITEMS] No Item ID matching name : ", name.toUpperCase(), true);
-		return 0;
+		}
+		return (!Strings.isNullOrEmpty(name) && itemNameIdMap.get(name.toUpperCase()) != null) ? itemNameIdMap.get(name.toUpperCase()) : 0;
 	}
 	
 	/********************** NPCS ***************************/
@@ -133,6 +129,10 @@ public class AionDataHub {
 	
 	public ClientNpc getNpc(int id) {
 		return selectUnique(getNpcs(), having(on(ClientNpc.class).getId(), equalTo(id)));
+	}
+	
+	public int getNpcId(String s) {
+		return (!Strings.isNullOrEmpty(s) && getNpcs().get(s.toUpperCase()) != null) ? getNpcs().get(s.toUpperCase()).getId() : 0;
 	}
 	
 	/*********************** RIDES ****************************/
@@ -157,8 +157,7 @@ public class AionDataHub {
 	}
 	
 	public int getRecipeId(String s) {
-		ClientRecipe cr = getRecipes().get(s);
-		return cr != null ? (Integer) JAXBHandler.getValue(cr, "id") : 0;
+		return (!Strings.isNullOrEmpty(s) && getRecipes().get(s) != null) ? (Integer) JAXBHandler.getValue(getRecipes().get(s), "id") : 0;
 	}
 	
 	/********************* ANIMATIONS ***********************/
@@ -240,7 +239,15 @@ public class AionDataHub {
 				strings.put(s, dataStrings.get(s));
 		}
 		return strings;
-	}	
+	}
+	
+	public int getStringId(String s) {
+		return (!Strings.isNullOrEmpty(s) && getStrings().get(s.toUpperCase()) != null) ? getStrings().get(s.toUpperCase()).getId() : 0;
+	}
+	
+	public String getStringText(String s) {
+		return (!Strings.isNullOrEmpty(s) && getStrings().get(s.toUpperCase()) != null) ? getStrings().get(s.toUpperCase()).getBody() : StringUtils.EMPTY;
+	}
 	
 	/********************** WORLD ***************************/
 	
@@ -260,7 +267,7 @@ public class AionDataHub {
 	}
 	
 	public int getWorldId(String map) {
-		return getWorldMaps().get(map.toUpperCase()) != null ? getWorldMaps().get(map.toUpperCase()).getId() : 0;
+		return (!Strings.isNullOrEmpty(map) && getWorldMaps().get(map.toUpperCase()) != null) ? getWorldMaps().get(map.toUpperCase()).getId() : 0;
 	}
 	
 	public Map<String, List<NpcInfo>> getDataSpawns() {

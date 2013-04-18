@@ -7,6 +7,7 @@ public class Logger {
 	
 	// TODO: Use regex matching (%d, %d) et value multiples
 	//TODO: [INFO] + message for log.info, etc
+	// TODO: Add logging for items loaded in Hub
 
 	public List<String> used = new ArrayList<String>();
 	
@@ -14,11 +15,19 @@ public class Logger {
 	public static final Logger getInstance() {return SingletonHolder.instance;}
 
 	public void info(String message, Object value) {
-		System.out.println(message + value.toString().toUpperCase());
+		System.out.println("[INFO] " + message + value.toString().toUpperCase());
 	}
 	
 	public void info(String message) {
 		info(message, "");
+	}
+	
+	public void warn(String message) {
+		System.out.println("[WARN] " + message);
+	}
+	
+	public void error(String message) {
+		System.out.println("[ERROR] " + message);
 	}
 	
 	public void unique(String message, Object value, boolean ignoreNum) {

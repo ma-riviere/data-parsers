@@ -4,6 +4,14 @@ import com.parser.commons.utils.properties.Property;
 
 public class AionProperties {
 
+	public AionProperties() {}
+
+	public static String INPUT_PATH;
+	public static String CLIENT_PATH;
+	public static String SERVER_PATH;
+	public static String CUSTOM_PATH;
+	public static String OUTPUT_PATH;
+
 	@Property(key = "general.version", defaultValue = "aion40")
 	public static String VERSION;
 	
@@ -28,14 +36,13 @@ public class AionProperties {
 	
 	@Property(key = "general.max.level", defaultValue = "60")
 	public static int MAX_LEVEL;
-	
-	/**
-	 * DO NOT TOUCH !!!
-	 */
-	public static String INPUT_PATH = INPUT_DIR + VERSION + "/";
-	public static String CLIENT_PATH = INPUT_PATH + CLIENT_DIR;
-	public static String SERVER_PATH = INPUT_PATH + SERVER_DIR;
-	public static String CUSTOM_PATH = INPUT_PATH + CUSTOM_DIR;
-	
-	public static String OUTPUT_PATH = OUTPUT_DIR + VERSION + "/";
+		
+	public void loadPaths() {
+		INPUT_PATH = INPUT_DIR + VERSION + "/";
+		CLIENT_PATH = INPUT_PATH + CLIENT_DIR;
+		SERVER_PATH = INPUT_PATH + SERVER_DIR;
+		CUSTOM_PATH = INPUT_PATH + CUSTOM_DIR;
+		
+		OUTPUT_PATH = OUTPUT_DIR + VERSION + "/";
+	}
 }

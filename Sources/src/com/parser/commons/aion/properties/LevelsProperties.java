@@ -33,7 +33,7 @@ public class LevelsProperties {
 	@Property(key = "levels.heightmap.output.bindings", defaultValue = "")
 	public static String HEIGHTMAP_BINDINGS;
 	
-	static {
+	public void loadPaths() {
 		LEVELS = AionProperties.CLIENT_PATH + LEVELS;
 		SPAWNS = AionProperties.OUTPUT_PATH + SPAWNS;
 		RANDOM_SPAWNS = AionProperties.OUTPUT_PATH + RANDOM_SPAWNS;
