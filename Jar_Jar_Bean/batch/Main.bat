@@ -21,48 +21,45 @@ GOTO:EOF
 
 :INPUT_ONLY
 SET INPUT_XML=%1
-IF NOT EXIST %INPUT_XML% CALL :QUIT checkpaths
+IF NOT EXIST %INPUT_XML% CALL %FAIL% checkpaths
 GOTO:EOF
 
 :OUTPUT_ONLY
 SET OUTPUT_XML=%1
-IF NOT EXIST %OUTPUT_XML% CALL :QUIT checkpaths
+IF NOT EXIST %OUTPUT_XML% CALL %FAIL% checkpaths
 GOTO:EOF
 
 :BOTH
 SET INPUT_XML=%1
-IF NOT EXIST %INPUT_XML% CALL :QUIT checkpaths
+IF NOT EXIST %INPUT_XML% CALL %FAIL% checkpaths
 SET OUTPUT_XML=%2
-IF NOT EXIST %OUTPUT_XML% CALL :QUIT checkpaths
+IF NOT EXIST %OUTPUT_XML% CALL %FAIL% checkpaths
 GOTO:EOF
 
 :MERGE
 SET FILTRE=%2
-ECHO MERGE
 CD "%1"
 SET /A Compteur=0
 FOR /r %%Z IN (%FILTRE%) DO CALL :COPY "%%Z" %FILTRE%
 CD %~dp0
 SET INPUT_XML=%INPUT_FOLDER%\TEMP
 SET OUTPUT_XML=%INPUT_FOLDER%\TEMP
-IF NOT EXIST %TEMP% CALL :QUIT checkpaths
+IF NOT EXIST %TEMP% CALL %FAIL% checkpaths
 GOTO:EOF
 
 :COPY
-ECHO COPY
 SET /A Compteur+=1
 SET TEMP=%INPUT_FOLDER%\TEMP
 ECHO F | CALL "%~dp0/../Tools/xcopy.exe" /C /I /Q "%~1" "%TEMP%\temp%Compteur%\%FILTRE%" > nul
 GOTO:EOF
 
 :INPUT
-ECHO INPUT
 set DIR=input
 SET PREFIX=i_
 FOR %%P IN (1 3) DO IF %XSD_TYPE%==%%P CALL :CREATE_XSD "%INPUT_XML%"
 CALL :LOCATE_XSD
 CALL :BUILD_JAR
-IF EXIST %TEMP% RD /S /Q %TEMP% > nul
+IF EXIST "%TEMP%" RD /S /Q "%TEMP%" > nul
 GOTO:EOF
 
 :OUTPUT
@@ -71,7 +68,7 @@ SET PREFIX=o_
 FOR %%Q IN (2 3) DO IF %XSD_TYPE%==%%Q CALL :CREATE_XSD "%OUTPUT_XML%"
 CALL :LOCATE_XSD
 CALL :BUILD_JAR
-IF EXIST %TEMP% RD /S /Q %TEMP% > nul
+IF EXIST "%TEMP%" RD /S /Q "%TEMP%" > nul
 GOTO:EOF
 
 REM ## XSD Generation
@@ -88,7 +85,7 @@ REM ## Locating XSD, preparing JAR generation
 :LOCATE_XSD
 SET XSD=xsd/%VERSION%/%DIR%/%NAME%.xsd
 IF NOT EXIST %XSD% SET XSD=xsd/%VERSION%/%DIR%/%NAME%0.xsd
-IF NOT EXIST %XSD% ( CALL :QUIT cannot_find_xsd ) ELSE ( GOTO:EOF )
+IF NOT EXIST %XSD% ( CALL %FAIL% cannot_find_xsd ) ELSE ( GOTO:EOF )
 
 REM ## JAR Generation
 :BUILD_JAR
@@ -117,16 +114,3 @@ echo ==============================================
 echo.
 IF EXIST "%TEMP%" RD /S /Q "%TEMP%" > nul
 pause
-GOTO QUIT2
-
-:QUIT
-IF "%1"=="wrong_game" ECHO Error, wrong game selected, exiting !
-IF "%1"=="checkpaths" ECHO Error in checkpaths !
-IF "%1"=="folder" ECHO Error in folder's path definition !
-IF "%1"=="cannot_find_xsd" ECHO Error, could not find XSD !
-
-IF EXIST "%TEMP%" RD /S /Q "%TEMP%" > nul
-pause
-exit
-
-:QUIT2
