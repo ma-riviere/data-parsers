@@ -9,8 +9,10 @@ SET ANIMATIONS=%CLIENT%\Data\Animations\custom_animation.xml
 SET I_COOLTIMES=%CLIENT%\Data\world\client_instance_cooltime*.xml
 SET O_COOLTIMES=%SERVER%\instance_cooltimes.xml
 
+REM ## Change
 SET LEVELS=%CLIENT%\Levels\
-SET SPAWNS=%SERVER%\spawns\
+
+SET SPAWNS=%SERVER%\Spawns\
 
 SET DATA_STRINGS=%CLIENT%\Data\Strings\client_strings*.xml
 SET L10N_STRINGS=%CLIENT%\L10N\ENU\data\strings\client_strings*.xml
