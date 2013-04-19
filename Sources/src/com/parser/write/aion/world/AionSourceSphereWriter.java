@@ -26,7 +26,7 @@ public class AionSourceSphereWriter extends AbstractWriter {
 	List<SourceSphere> ssList;
 		
 	@Override
-	public void parse() {
+	public void collect() {
 		ssList = new ArrayList<SourceSphere>(flatten(aion.getSpheres().values()));
 		aion.getWorldMaps();
 		aion.getNpcs();		
@@ -60,7 +60,7 @@ public class AionSourceSphereWriter extends AbstractWriter {
 	}
 	
 	@Override
-	public void marshall() {
+	public void create() {
 		addOrder(WorldProperties.OUTPUT_SPHERE, WorldProperties.SPHERE_OUTPUT_BINDINGS, spheres);
 		FileMarshaller.marshallFile(orders);
 		System.out.println("\n[SPHERE] source_sphere count: " + sList.size());

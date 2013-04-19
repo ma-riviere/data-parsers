@@ -38,7 +38,7 @@ public class AionHeightMapWriter extends AbstractWriter {
 	BinaryParserData bpd = null;
 		
 	@Override
-	public void parse() {
+	public void collect() {
 		String HEIGHT_MAP_PATH = "../../Input/aion40/Client/Levels/df1/terrain/land_map.h32";
 		bpd = new BinaryParser().parseFile(HEIGHT_MAP_PATH);
 		infoMap = data.getLevelData();
@@ -93,7 +93,7 @@ public class AionHeightMapWriter extends AbstractWriter {
 	}
 	
 	@Override
-	public void marshall() {
+	public void create() {
 		addOrder(LevelsProperties.HEIGHTMAP, LevelsProperties.HEIGHTMAP_BINDINGS, points);
 		FileMarshaller.marshallFile(orders);
 		System.out.println("\n[POINTS] Points count : " + pointList.size());

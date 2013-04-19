@@ -46,7 +46,7 @@ public class AionSpawnsWriter extends AbstractWriter {
 	List<SourceSphere> toWrite = new ArrayList<SourceSphere>();
 	
 	@Override
-	public void parse() {
+	public void collect() {
 		levelSpawns = new FastMap<String, List<ClientSpawn>>(aion.getLevelSpawns());
 		aion.getLevelEntities();
 		aion.getSpheres();
@@ -119,7 +119,7 @@ public class AionSpawnsWriter extends AbstractWriter {
 	}
 	
 	@Override
-	public void marshall() {
+	public void create() {
 		FileMarshaller.marshallFile(orders);
 	}
 	

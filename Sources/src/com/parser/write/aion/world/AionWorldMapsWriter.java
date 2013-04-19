@@ -29,7 +29,7 @@ public class AionWorldMapsWriter extends AbstractWriter {
 	FastMap<String, Zonemap> zoneMaps;
 	
 	@Override
-	public void parse() {
+	public void collect() {
 		clientMaps = aion.getWorldMaps().values();
 		levelData = new FastMap(aion.getLevelData());
 		zoneMaps = new FastMap(aion.getZoneMaps());
@@ -86,7 +86,7 @@ public class AionWorldMapsWriter extends AbstractWriter {
 	}
 	
 	@Override
-	public void marshall() {
+	public void create() {
 		addOrder(WorldProperties.OUTPUT_WORLD_MAPS, WorldProperties.OUTPUT_WORLD_MAPS_BINDINGS, worldMaps);
 		FileMarshaller.marshallFile(orders);
 		System.out.println("\n[MAPS] WorldMaps count: " + mapList.size());

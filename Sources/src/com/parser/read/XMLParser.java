@@ -10,6 +10,7 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 
 import com.parser.commons.utils.Util;
+import com.parser.commons.utils.xml.XMLValidationHandler;
 
 public abstract class XMLParser<R> extends FilesCollector {
 
