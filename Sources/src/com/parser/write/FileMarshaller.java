@@ -2,16 +2,17 @@ package com.parser.write;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileWriter;
-
+import java.io.FileOutputStream;
 import java.util.List;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
-
 import javax.xml.stream.XMLOutputFactory;
 import javax.xml.stream.XMLStreamWriter;
-import javanet.staxutils.IndentingXMLStreamWriter;
+
+import net.sf.saxon.s9api.Processor;
+import net.sf.saxon.s9api.Serializer.Property;
+import net.sf.saxon.s9api.Serializer;
 
 import com.parser.commons.utils.xml.XMLCommentsWritter;
 
@@ -27,8 +28,15 @@ public class FileMarshaller {
 				System.out.println("[MARSHALLER] Writting file : " + order.getFileName());
 				
 				createDir(order.getPath());
-				FileWriter fw = new FileWriter(new File(order.getPath()));
-				XMLStreamWriter writer = new IndentingXMLStreamWriter(XMLOutputFactory.newInstance().createXMLStreamWriter(fw));
+				
+				Processor p = new Processor(false);
+				Serializer s = p.newSerializer();
+				s.setOutputProperty(Property.METHOD, "xml");
+				s.setOutputProperty(Property.INDENT, "yes");
+				s.setOutputProperty(Property.ENCODING, "UTF-8");
+				s.setOutputProperty(Property.STANDALONE, "yes");
+				s.setOutputStream(new FileOutputStream(order.getPath()));
+				XMLStreamWriter writer = s.getXMLStreamWriter();
 				
 				if (order.getCommentsMap() != null)
 					marshaller.setListener(new XMLCommentsWritter(writer, order.getCommentsMap()));

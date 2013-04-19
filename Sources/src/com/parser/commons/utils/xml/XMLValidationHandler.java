@@ -2,24 +2,24 @@ package com.parser.commons.utils.xml;
 
 import javax.xml.bind.ValidationEvent;
 import javax.xml.bind.ValidationEventHandler;
-import javax.xml.bind.ValidationEventLocator;
 
 public class XMLValidationHandler implements ValidationEventHandler {
 
 	@Override
 	public boolean handleEvent(ValidationEvent event) {
-		if (event.getSeverity() == ValidationEvent.ERROR) {
-			System.out.println("[XML]" + event.getMessage() + "at line :" + event.getLocator().getLineNumber());
-		}
-		else if (event.getSeverity() == ValidationEvent.FATAL_ERROR) {
-			ValidationEventLocator locator = event.getLocator();
-			String message = event.getMessage();
-			int line = locator.getLineNumber();
-			int column = locator.getColumnNumber();
-			System.out.println("[XML] Error at [line=" + line + ", column=" + column + "] : " + message);
-			throw new Error(event.getLinkedException());
-		}
-		return true;
-	}
+        System.out.println("[EVENT]");
+        System.out.println("[SEVERITY] :  " + event.getSeverity());
+        System.out.println("[MESSAGE] :  " + event.getMessage());
+        System.out.println("[LINKED EXCEPTION] :  " + event.getLinkedException());
+        System.out.println("[LOCATOR] ");
+        System.out.println("    [LINE NUMBER] :  " + event.getLocator().getLineNumber());
+        System.out.println("    [COLUMN NUMBER] :  " + event.getLocator().getColumnNumber());
+        System.out.println("    [OFFSET] :  " + event.getLocator().getOffset());
+        System.out.println("    [OBJECT] :  " + event.getLocator().getObject());
+        System.out.println("    [NODE] :  " + event.getLocator().getNode());
+        System.out.println("    [URL] :  " + event.getLocator().getURL());
+		System.out.println("\n");
+        return true;
+    }
 
 }

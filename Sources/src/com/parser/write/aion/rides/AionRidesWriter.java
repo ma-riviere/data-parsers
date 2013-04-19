@@ -1,6 +1,7 @@
 package com.parser.write.aion.rides;
 
 import java.util.Collection;
+import java.util.List;
 
 import static ch.lambdaj.Lambda.sort;
 import static ch.lambdaj.Lambda.on;
@@ -17,7 +18,7 @@ import com.parser.output.aion.rides.*;
 public class AionRidesWriter extends AbstractWriter {
 
 	Rides rides = new Rides();
-	Collection<RideInfo> rideList = rides.getRideInfo();
+	List<RideInfo> rideList = rides.getRideInfo();
 	Collection<ClientRide> clientRideList;
 	
 	@Override
@@ -51,7 +52,6 @@ public class AionRidesWriter extends AbstractWriter {
 				info.setBounds(radius);
 			}
 			rideList.add(info);
-			addComment(info, "This is a test comment : " + info.getId());
 		}
 	}
 
