@@ -52,6 +52,7 @@ public class AionSkillsWriter extends AbstractWriter {
 		System.out.println("\n[SKILLS] Loaded " + stigmaItemMap.size() + " Stigma Skill-Item pairs");
 		
 		aion.getStrings();
+		aion.getNpcs();
 	}
 
 	@Override

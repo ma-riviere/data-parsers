@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ai_info">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:int" name="chase_target" use="optional"/>
+          <xs:attribute type="xs:int" name="chase_home" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="map">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ai_info" minOccurs="0" maxOccurs="1"/>
+      </xs:sequence>
+      <xs:attribute type="xs:int" name="id" use="optional"/>
+      <xs:attribute type="xs:string" name="name" use="optional"/>
+      <xs:attribute type="xs:int" name="death_level" use="optional"/>
+      <xs:attribute type="xs:int" name="water_level" use="optional"/>
+      <xs:attribute type="xs:string" name="world_type" use="optional"/>
+      <xs:attribute type="xs:int" name="world_size" use="optional"/>
+      <xs:attribute type="xs:int" name="flags" use="optional"/>
+      <xs:attribute type="xs:int" name="max_user" use="optional"/>
+      <xs:attribute type="xs:int" name="twin_count" use="optional"/>
+      <xs:attribute type="xs:string" name="instance" use="optional"/>
+      <xs:attribute type="xs:string" name="except_buff" use="optional"/>
+      <xs:attribute type="xs:string" name="prison" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="world_maps">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="map" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

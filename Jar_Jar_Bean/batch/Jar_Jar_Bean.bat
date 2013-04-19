@@ -76,6 +76,7 @@ ECHO ###    How many ENUMERATIONS should be generated ?    ###
 ECHO #########################################################
 ECHO.
 SET /P ENUM=[ENUM] Number of ENUMERATIONS to generate : %=%
+IF %ENUM%==0 SET ENUM=never
 GOTO:EOF
 
 :EXECUTE

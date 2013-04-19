@@ -10,7 +10,7 @@ import com.parser.write.FileMarshaller;
 import com.parser.read.BinaryParser;
 import com.parser.read.BinaryParserData;
 
-import com.parser.input.aion.level_data.LevelInfo;
+import com.parser.input.aion.level_data.LevelData;
 
 import com.parser.commons.utils.Util;
 import com.parser.commons.aion.AionDataHub;
@@ -25,7 +25,7 @@ public class AionHeightMapWriter extends AbstractWriter {
 	Points points = new Points();
 	Collection<Point> pointList = points.getPoint();
 	
-	Map<String, LevelInfo> infoMap = new HashMap<String, LevelInfo>();
+	Map<String, LevelData> infoMap = new HashMap<String, LevelData>();
 	
 	static final int MIN_X = 0;
 	static final int MIN_Y = 0;
@@ -41,7 +41,7 @@ public class AionHeightMapWriter extends AbstractWriter {
 	public void parse() {
 		String HEIGHT_MAP_PATH = "../../Input/aion40/Client/Levels/df1/terrain/land_map.h32";
 		bpd = new BinaryParser().parseFile(HEIGHT_MAP_PATH);
-		infoMap = data.getLevelInfos();
+		infoMap = data.getLevelData();
 	}
 
 	@Override
@@ -56,8 +56,8 @@ public class AionHeightMapWriter extends AbstractWriter {
 			return;
 		}
 		
-		// MAX_X = infoMap.get(bpd.getPath(1)).getHeightmapXSize();
-		// MAX_Y = infoMap.get(bpd.getPath(1)).getHeightmapYSize();
+		// MAX_X = infoMap.getLevelInfo().get(bpd.getPath(1)).getHeightmapXSize();
+		// MAX_Y = infoMap.getLevelInfo().get(bpd.getPath(1)).getHeightmapYSize();
 		
 		int count = bpd.getSize() / 3;
 		

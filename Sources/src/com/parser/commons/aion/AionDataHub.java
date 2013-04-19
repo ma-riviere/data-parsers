@@ -16,7 +16,7 @@ import com.parser.input.aion.cooltimes.ClientInstanceCooltime2;
 import com.parser.input.aion.housing.ClientHousingObject;
 import com.parser.input.aion.housing.ClientHousingCustomPart;
 import com.parser.input.aion.items.ClientItem;
-import com.parser.input.aion.level_data.LevelInfo;
+import com.parser.input.aion.level_data.LevelData;
 import com.parser.input.aion.mission.ClientSpawn;
 import com.parser.input.aion.mission.Entity;
 import com.parser.input.aion.npcs.ClientNpc;
@@ -28,6 +28,7 @@ import com.parser.input.aion.strings.ClientString;
 import com.parser.input.aion.toypets.ClientToypet;
 import com.parser.input.aion.world_maps.WorldMap;
 import com.parser.input.aion.world_data.NpcInfo;
+import com.parser.input.aion.zone_maps.Zonemap;
 
 import com.parser.commons.aion.bindings.SourceSphere;
 import com.parser.commons.aion.bindings.WayPoint;
@@ -201,7 +202,7 @@ public class AionDataHub {
 	
 	public Map<String, List<ClientSpawn>> spawns = new HashMap<String, List<ClientSpawn>>();
 	public Map<String, List<Entity>> entities = new HashMap<String, List<Entity>>();
-	public Map<String, LevelInfo> levelInfos = new HashMap<String, LevelInfo>();
+	public Map<String, LevelData> levelData = new HashMap<String, LevelData>();
 	
 	public Map<String, List<Entity>> getLevelEntities() {
 		if (entities.values().isEmpty())
@@ -215,10 +216,10 @@ public class AionDataHub {
 		return spawns;
 	}
 	
-	public Map<String, LevelInfo> getLevelInfos() {
-		if (levelInfos.values().isEmpty())
-			levelInfos = new AionLevelDataParser().parse();
-		return levelInfos;
+	public Map<String, LevelData> getLevelData() {
+		if (levelData.values().isEmpty())
+			levelData = new AionLevelDataParser().parse();
+		return levelData;
 	}
 	
 	/********************** STRINGS *************************/
@@ -252,6 +253,8 @@ public class AionDataHub {
 	/********************** WORLD ***************************/
 	
 	public Map<String, WorldMap> worldMaps = new HashMap<String, WorldMap>();
+	public Map<String, Zonemap> zoneMaps = new HashMap<String, Zonemap>();
+	
 	public Map<String, List<NpcInfo>> dataSpawns = new HashMap<String, List<NpcInfo>>();
 	
 	public Map<String, List<SourceSphere>> spheres = new HashMap<String, List<SourceSphere>>();
@@ -270,6 +273,12 @@ public class AionDataHub {
 		return (!Strings.isNullOrEmpty(map) && getWorldMaps().get(map.toUpperCase()) != null) ? getWorldMaps().get(map.toUpperCase()).getId() : 0;
 	}
 	
+	public Map<String, Zonemap> getZoneMaps() {
+		if (zoneMaps.values().isEmpty())
+			zoneMaps = index(new AionZoneMapsParser().parse(), on(Zonemap.class).getName().toUpperCase());
+		return zoneMaps;
+	}
+	
 	public Map<String, List<NpcInfo>> getDataSpawns() {
 		if (dataSpawns.values().isEmpty())
 			dataSpawns = new AionClientWorldParser().parseNpcInfos();
@@ -278,7 +287,7 @@ public class AionDataHub {
 	
 	public List<NpcInfo> getDataSpawns(String map) {
 		if (!dataSpawns.containsKey(map.toUpperCase())) {
-			String file = WorldProperties.INPUT + WorldProperties.CLIENT_WORLD_PREFIX + map.toLowerCase();
+			String file = WorldProperties.CLIENT_WORLD + WorldProperties.CLIENT_WORLD_PREFIX + map.toLowerCase();
 			dataSpawns.put(map, new AionClientWorldParser().parseNpcInfos(file));
 		}
 		return dataSpawns.get(map.toUpperCase());

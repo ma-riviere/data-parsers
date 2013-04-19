@@ -24,7 +24,11 @@ set /P JAR=[JAR] JAR file to compile : %=%
 
 :: Data
 IF %JAR%==1 CALL Main.bat toypets 3 800 1024 %I_TOYPETS% %O_TOYPETS%
-IF %JAR%==2 CALL Main.bat world_maps 3 800 1024 %I_WORLD_MAPS% %O_WORLD_MAPS%
+IF %JAR%==2 (
+	CALL Main.bat zone_maps 1 800 1024 %I_ZONE_MAPS%
+	CALL Main.bat world_maps 3 800 1024 %I_WORLD_MAPS% %O_WORLD_MAPS%
+	CALL Main.bat level_data 4 800 1024 %LEVELS% leveldata.xml
+)
 IF %JAR%==3 CALL Main.bat rides 3 800 1024 %I_RIDES% %O_RIDES%
 IF %JAR%==4 CALL Main.bat cooltimes 3 800 1024 %I_COOLTIMES% %O_COOLTIMES%
 IF %JAR%==5 CALL Main.bat items 3 1024 1536 %I_ITEMS% %O_ITEMS%
@@ -46,3 +50,5 @@ IF %JAR%==15 CALL Main.bat level_data 4 800 1024 %LEVELS% leveldata.xml
 
 :: L10N
 IF %JAR%==16 CALL Main.bat strings 1 800 1024 %DATA_STRINGS%
+
+CALL Jar_Jar_Bean.bat

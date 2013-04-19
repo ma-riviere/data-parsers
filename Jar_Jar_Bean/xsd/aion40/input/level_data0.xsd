@@ -15,8 +15,8 @@
       <xs:attribute type="xs:float" name="Offset_U" use="optional"/>
       <xs:attribute type="xs:float" name="Offset_V" use="optional"/>
       <xs:attribute type="xs:string" name="ProjAxis" use="optional"/>
-      <xs:attribute type="xs:byte" name="ProjectAxis" use="optional"/>
-      <xs:attribute type="xs:byte" name="Use_Terran_Specular" use="optional"/>
+      <xs:attribute type="xs:int" name="ProjectAxis" use="optional"/>
+      <xs:attribute type="xs:int" name="Use_Terran_Specular" use="optional"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="Library">
@@ -33,13 +33,13 @@
     <xs:complexType>
       <xs:simpleContent>
         <xs:extension base="xs:string">
-          <xs:attribute type="xs:byte" name="Render_Beaches" use="optional"/>
-          <xs:attribute type="xs:byte" name="Render_Fog" use="optional"/>
-          <xs:attribute type="xs:byte" name="Render_Ocean" use="optional"/>
-          <xs:attribute type="xs:byte" name="Render_SkyBox" use="optional"/>
-          <xs:attribute type="xs:byte" name="Render_SkyCloud" use="optional"/>
-          <xs:attribute type="xs:byte" name="Render_Sun" use="optional"/>
-          <xs:attribute type="xs:byte" name="Render_Terrain" use="optional"/>
+          <xs:attribute type="xs:int" name="Render_Beaches" use="optional"/>
+          <xs:attribute type="xs:int" name="Render_Fog" use="optional"/>
+          <xs:attribute type="xs:int" name="Render_Ocean" use="optional"/>
+          <xs:attribute type="xs:int" name="Render_SkyBox" use="optional"/>
+          <xs:attribute type="xs:int" name="Render_SkyCloud" use="optional"/>
+          <xs:attribute type="xs:int" name="Render_Sun" use="optional"/>
+          <xs:attribute type="xs:int" name="Render_Terrain" use="optional"/>
         </xs:extension>
       </xs:simpleContent>
     </xs:complexType>
@@ -48,12 +48,12 @@
     <xs:complexType>
       <xs:simpleContent>
         <xs:extension base="xs:string">
-          <xs:attribute type="xs:byte" name="Fly_Whole_Level" use="optional"/>
-          <xs:attribute type="xs:short" name="FRZ_NEGX" use="optional"/>
-          <xs:attribute type="xs:short" name="FRZ_NEGY" use="optional"/>
-          <xs:attribute type="xs:short" name="FRZ_X" use="optional"/>
-          <xs:attribute type="xs:short" name="FRZ_Y" use="optional"/>
-          <xs:attribute type="xs:short" name="MaxHeight" use="optional"/>
+          <xs:attribute type="xs:int" name="Fly_Whole_Level" use="optional"/>
+          <xs:attribute type="xs:int" name="FRZ_NEGX" use="optional"/>
+          <xs:attribute type="xs:int" name="FRZ_NEGY" use="optional"/>
+          <xs:attribute type="xs:int" name="FRZ_X" use="optional"/>
+          <xs:attribute type="xs:int" name="FRZ_Y" use="optional"/>
+          <xs:attribute type="xs:int" name="MaxHeight" use="optional"/>
         </xs:extension>
       </xs:simpleContent>
     </xs:complexType>
@@ -62,7 +62,7 @@
     <xs:complexType>
       <xs:simpleContent>
         <xs:extension base="xs:string">
-          <xs:attribute type="xs:byte" name="Ride_Whole_Level" use="optional"/>
+          <xs:attribute type="xs:int" name="Ride_Whole_Level" use="optional"/>
         </xs:extension>
       </xs:simpleContent>
     </xs:complexType>
@@ -111,7 +111,7 @@
       <xs:sequence>
         <xs:element ref="LevelOption"/>
       </xs:sequence>
-      <xs:attribute type="xs:short" name="CGFCount" use="optional"/>
+      <xs:attribute type="xs:int" name="CGFCount" use="optional"/>
       <xs:attribute type="xs:string" name="File" use="optional"/>
       <xs:attribute type="xs:string" name="Name" use="optional"/>
     </xs:complexType>
@@ -120,9 +120,9 @@
     <xs:complexType>
       <xs:simpleContent>
         <xs:extension base="xs:string">
-          <xs:attribute type="xs:byte" name="HeightmapUnitSize" use="optional"/>
-          <xs:attribute type="xs:short" name="HeightmapXSize" use="optional"/>
-          <xs:attribute type="xs:short" name="HeightmapYSize" use="optional"/>
+          <xs:attribute type="xs:int" name="HeightmapUnitSize" use="optional"/>
+          <xs:attribute type="xs:int" name="HeightmapXSize" use="optional"/>
+          <xs:attribute type="xs:int" name="HeightmapYSize" use="optional"/>
           <xs:attribute type="xs:string" name="Name" use="optional"/>
           <xs:attribute type="xs:float" name="WaterLevel" use="optional"/>
         </xs:extension>
@@ -188,10 +188,10 @@
     <xs:complexType>
       <xs:simpleContent>
         <xs:extension base="xs:string">
-          <xs:attribute type="xs:byte" name="CastShadowPLSM" use="optional"/>
-          <xs:attribute type="xs:byte" name="CastShadowPSSM" use="optional"/>
-          <xs:attribute type="xs:byte" name="RecvShadowPLSM" use="optional"/>
-          <xs:attribute type="xs:byte" name="RecvShadowPSSM" use="optional"/>
+          <xs:attribute type="xs:int" name="CastShadowPLSM" use="optional"/>
+          <xs:attribute type="xs:int" name="CastShadowPSSM" use="optional"/>
+          <xs:attribute type="xs:int" name="RecvShadowPLSM" use="optional"/>
+          <xs:attribute type="xs:int" name="RecvShadowPSSM" use="optional"/>
         </xs:extension>
       </xs:simpleContent>
     </xs:complexType>
@@ -200,9 +200,9 @@
     <xs:complexType>
       <xs:simpleContent>
         <xs:extension base="xs:string">
-          <xs:attribute type="xs:byte" name="uvGutterSize" use="optional"/>
+          <xs:attribute type="xs:int" name="uvGutterSize" use="optional"/>
           <xs:attribute type="xs:float" name="uvStretch" use="optional"/>
-          <xs:attribute type="xs:byte" name="uvTolerance" use="optional"/>
+          <xs:attribute type="xs:int" name="uvTolerance" use="optional"/>
         </xs:extension>
       </xs:simpleContent>
     </xs:complexType>
@@ -211,7 +211,7 @@
     <xs:complexType>
       <xs:simpleContent>
         <xs:extension base="xs:string">
-          <xs:attribute type="xs:byte" name="uvRenderWidth" use="optional"/>
+          <xs:attribute type="xs:int" name="uvRenderWidth" use="optional"/>
         </xs:extension>
       </xs:simpleContent>
     </xs:complexType>
@@ -223,42 +223,42 @@
         <xs:element ref="LM_Params" minOccurs="0"/>
         <xs:element ref="LMInst_Params" minOccurs="0"/>
       </xs:sequence>
-      <xs:attribute type="xs:byte" name="AlphaBlend" use="optional"/>
+      <xs:attribute type="xs:int" name="AlphaBlend" use="optional"/>
       <xs:attribute type="xs:string" name="AmbientColor" use="optional"/>
-      <xs:attribute type="xs:byte" name="BackSideLevel" use="optional"/>
+      <xs:attribute type="xs:int" name="BackSideLevel" use="optional"/>
       <xs:attribute type="xs:float" name="BarkContrast" use="optional"/>
       <xs:attribute type="xs:float" name="Bending" use="optional"/>
       <xs:attribute type="xs:string" name="BoxMax" use="optional"/>
       <xs:attribute type="xs:string" name="BoxMin" use="optional"/>
       <xs:attribute type="xs:float" name="Brightness" use="optional"/>
-      <xs:attribute type="xs:byte" name="CalcLighting" use="optional"/>
-      <xs:attribute type="xs:byte" name="CastShadow" use="optional"/>
+      <xs:attribute type="xs:int" name="CalcLighting" use="optional"/>
+      <xs:attribute type="xs:int" name="CastShadow" use="optional"/>
       <xs:attribute type="xs:string" name="Category" use="optional"/>
       <xs:attribute type="xs:float" name="Density" use="optional"/>
-      <xs:attribute type="xs:short" name="ElevationMax" use="optional"/>
+      <xs:attribute type="xs:int" name="ElevationMax" use="optional"/>
       <xs:attribute type="xs:float" name="ElevationMin" use="optional"/>
-      <xs:attribute type="xs:byte" name="FadeSize" use="optional"/>
+      <xs:attribute type="xs:int" name="FadeSize" use="optional"/>
       <xs:attribute type="xs:string" name="FileName" use="optional"/>
       <xs:attribute type="xs:string" name="GUID" use="optional"/>
-      <xs:attribute type="xs:byte" name="Hidden" use="optional"/>
-      <xs:attribute type="xs:byte" name="Hideable" use="optional"/>
-      <xs:attribute type="xs:byte" name="Inclination" use="optional"/>
-      <xs:attribute type="xs:short" name="Index" use="optional"/>
+      <xs:attribute type="xs:int" name="Hidden" use="optional"/>
+      <xs:attribute type="xs:int" name="Hideable" use="optional"/>
+      <xs:attribute type="xs:int" name="Inclination" use="optional"/>
+      <xs:attribute type="xs:int" name="Index" use="optional"/>
       <xs:attribute type="xs:string" name="Material" use="optional"/>
       <xs:attribute type="xs:float" name="MaxViewDistRatio" use="optional"/>
-      <xs:attribute type="xs:byte" name="NoCollWithCam" use="optional"/>
-      <xs:attribute type="xs:byte" name="PhysNonColl" use="optional"/>
-      <xs:attribute type="xs:byte" name="PrecalcShadow" use="optional"/>
-      <xs:attribute type="xs:byte" name="RealTimeShadow" use="optional"/>
-      <xs:attribute type="xs:byte" name="RecvShadow" use="optional"/>
-      <xs:attribute type="xs:byte" name="ShadowDistRatio" use="optional"/>
+      <xs:attribute type="xs:int" name="NoCollWithCam" use="optional"/>
+      <xs:attribute type="xs:int" name="PhysNonColl" use="optional"/>
+      <xs:attribute type="xs:int" name="PrecalcShadow" use="optional"/>
+      <xs:attribute type="xs:int" name="RealTimeShadow" use="optional"/>
+      <xs:attribute type="xs:int" name="RecvShadow" use="optional"/>
+      <xs:attribute type="xs:int" name="ShadowDistRatio" use="optional"/>
       <xs:attribute type="xs:float" name="Size" use="optional"/>
       <xs:attribute type="xs:float" name="SizeVar" use="optional"/>
-      <xs:attribute type="xs:short" name="SlopeMax" use="optional"/>
+      <xs:attribute type="xs:int" name="SlopeMax" use="optional"/>
       <xs:attribute type="xs:float" name="SlopeMin" use="optional"/>
       <xs:attribute type="xs:float" name="SpriteDistRatio" use="optional"/>
-      <xs:attribute type="xs:byte" name="SpriteTexRes" use="optional"/>
-      <xs:attribute type="xs:byte" name="UseSprites" use="optional"/>
+      <xs:attribute type="xs:int" name="SpriteTexRes" use="optional"/>
+      <xs:attribute type="xs:int" name="UseSprites" use="optional"/>
     </xs:complexType>
   </xs:element>
 </xs:schema>

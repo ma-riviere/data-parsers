@@ -5,11 +5,12 @@
 :: Data
 SET I_TOYPETS=%CLIENT%\Data\func_pet\toypet*.xml
 SET I_ANIMATIONS=%CLIENT%\Data\Animations\custom_animation.xml
-SET I_COOLTIMES=%CLIENT%\Data\world\client_instance_cooltime*.xml
-SET I_WORLD_MAPS=%CLIENT%\Data\world\WorldId.xml
-SET I_WORLD_DATA=%CLIENT%\Data\world\client_world_*.xml
+SET I_COOLTIMES=%CLIENT%\Data\World\client_instance_cooltime*.xml
+SET I_WORLD_MAPS=%CLIENT%\Data\World\WorldId.xml
+SET I_ZONE_MAPS=%CLIENT%\Data\World\zonemap.xml
+SET I_WORLD_DATA=%CLIENT%\Data\World\client_world_*.xml
 SET I_RIDES=%CLIENT%\Data\rides\rides.xml
-SET I_COOLTIMES=%CLIENT%\Data\world\client_instance_cooltime*.xml
+SET I_COOLTIMES=%CLIENT%\Data\World\client_instance_cooltime*.xml
 SET I_ITEMS=%CLIENT%\Data\Items\client_items_*.xml
 SET I_RECIPES=%CLIENT%\Data\Items\client_combine_recipe.xml
 SET I_SKILLS=%CLIENT%\Data\skills\client_skills.xml

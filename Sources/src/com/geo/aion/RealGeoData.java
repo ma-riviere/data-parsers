@@ -9,6 +9,7 @@ import java.util.Map;
 import com.parser.commons.aion.AionDataHub;
 import com.parser.commons.utils.Util;
 import com.parser.input.aion.world_maps.WorldMap;
+import com.parser.input.aion.level_data.LevelData;
 import com.parser.input.aion.level_data.LevelInfo;
 
 import com.geo.aion.geoEngine.GeoWorldLoader;
@@ -24,7 +25,7 @@ public class RealGeoData implements GeoData {
 
 	private Map<Integer, GeoMap> geoMaps = new HashMap<Integer, GeoMap>();
 	private List<WorldMap> maps = new ArrayList<WorldMap>(data.getWorldMaps().values());
-	private Map<String, LevelInfo> infoMap = new HashMap<String, LevelInfo>(data.getLevelInfos());
+	private Map<String, LevelData> infoMap = new HashMap<String, LevelData>(data.getLevelData());
 	
 	String geoDir = "../../Input/geo/aion/meshs.geo"; //TODO to property
 
@@ -44,7 +45,7 @@ public class RealGeoData implements GeoData {
 		Util.printProgressBarHeader(infoMap.keySet().size());
 
 		for (WorldMap map : maps) {
-			LevelInfo info = infoMap.get(map.getValue().toUpperCase());
+			LevelInfo info = infoMap.get(map.getValue().toUpperCase()).getLevelInfo();
 			if (info == null)
 				continue;
 			GeoMap geoMap = new GeoMap(Integer.toString(map.getId()), ((int) info.getHeightmapXSize() + info.getHeightmapYSize()));
