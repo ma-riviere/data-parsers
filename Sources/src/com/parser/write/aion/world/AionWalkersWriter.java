@@ -38,7 +38,7 @@ public class AionWalkersWriter extends AbstractWriter {
 		this.toWrite = toWrite;
 		fromSpawns = true;
 		
-		this.start();
+		collect(); transform(); create();
 	}
 	
 	@Override
@@ -94,7 +94,7 @@ public class AionWalkersWriter extends AbstractWriter {
 	@Override
 	public void create() {
 		String OUTPUT = fromSpawns ? WorldProperties.WALKERS_FROM_SPAWNS : WorldProperties.WALKERS;
-		addOrder(WorldProperties.WALKERS_BINDINGS, OUTPUT, walkers);
+		addOrder(OUTPUT, WorldProperties.WALKERS_BINDINGS, walkers);
 		FileMarshaller.marshallFile(orders);
 		System.out.println("\n[WALKERS] Walkers count: " + walkerList.size());
 	}

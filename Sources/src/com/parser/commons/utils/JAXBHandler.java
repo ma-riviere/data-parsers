@@ -11,14 +11,14 @@ public class JAXBHandler {
 	public static Object getValue(ClientRecipe cr, String propertyName) {
 		for (JAXBElement<? extends Serializable> jaxb : cr.getIdOrNameOrDesc())
 			if (jaxb.getName().getLocalPart().equalsIgnoreCase(propertyName))
-				return (jaxb != null) ? jaxb.getDeclaredType().cast(jaxb) : null;
+				return (jaxb != null) ? jaxb.getDeclaredType().cast(jaxb.getValue()) : null;
 		return null;
 	}
 	
 	public static Object getValue(ClientSkill cs, String propertyName) {
 		for (JAXBElement<? extends Serializable> jaxb : cs.getIdOrNameOrDesc())
 			if (jaxb.getName().getLocalPart().equalsIgnoreCase(propertyName))
-				return (jaxb != null) ? jaxb.getDeclaredType().cast(jaxb) : null;
+				return (jaxb != null) ? jaxb.getDeclaredType().cast(jaxb.getValue()) : null;
 		return null;
 	}
 }

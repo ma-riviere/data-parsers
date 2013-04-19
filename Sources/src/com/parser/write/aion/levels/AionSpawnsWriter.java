@@ -62,12 +62,13 @@ public class AionSpawnsWriter extends AbstractWriter {
 		
 		for (String mapName : levelSpawns.keySet()) {
 			int mapId = aion.getWorldId(mapName);
+			if (mapId == 0) continue;
 			initAllSpawns(mapId);
-			Util.printSubSection(mapId + " : " + getName("STR_ZONE_NAME_" + mapName));
+			Util.printSubSection(mapId + " : " + aion.getStringText("STR_ZONE_NAME_" + mapName));
 			
 			List<ClientSpawn> currentCSpawns = levelSpawns.get(mapName);
 			int startLevelSize = currentCSpawns.size();
-			List<NpcInfo> currentWDSpawns = aion.getDataSpawns().get(mapName);
+			List<NpcInfo> currentWDSpawns = aion.getDataSpawns(mapName);
 			int startWorldSize = currentWDSpawns.size();
 			
 			List<ClientSpawn> usedCSpawns = new LinkedList<ClientSpawn>();
@@ -113,17 +114,12 @@ public class AionSpawnsWriter extends AbstractWriter {
 	}
 	
 	@Override
-	public void finalise() {
+	public void create() {
+		FileMarshaller.marshallFile(orders);
+		// Creating walkers needed for the maps
 		AionWalkersWriter writer = new AionWalkersWriter();
 		writer.writeFromSpawns(toWrite);
 	}
-	
-	@Override
-	public void create() {
-		FileMarshaller.marshallFile(orders);
-	}
-	
-	private String getName(String s) {return (s != null) ? aion.getStrings().get(s).getBody() : "";}
 	
 	private void addSpawn(SpawnData sd) {
 		Spawn s = computeSpawn(sd);
@@ -247,6 +243,8 @@ public class AionSpawnsWriter extends AbstractWriter {
 		}
 		else
 			sm.getSpawn().add(s);
+		
+		addComment(s, aion.getStringText(aion.getNpc(s.getNpcId()).getName()));
 	}
 	
 	private List<Spot> noDuplicates(List<Spot> spots) {
@@ -356,6 +354,6 @@ public class AionSpawnsWriter extends AbstractWriter {
 	}
 	
 	private String getXml(int mapId, String mapName) {
-		return mapId + "_" + getName("STR_ZONE_NAME_" + mapName) + ".xml";
+		return mapId + "_" + aion.getStringText("STR_ZONE_NAME_" + mapName) + ".xml";
 	}
 }

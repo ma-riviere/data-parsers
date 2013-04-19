@@ -56,7 +56,7 @@ public abstract class XMLParser<R> extends FilesCollector {
 		FastMap<String[], R> rootMap = new FastMap<String[], R>();
 		
 		List<File> files = collect();
-		System.out.println("\n[MAIN][INFO] Parsing directory " + stringPath.substring(stringPath.lastIndexOf("/")) + " with " + files.size() + " files !");
+		System.out.println("\n[MAIN][INFO] Parsing directory " + stringPath + " with " + files.size() + " files !");
 		Util.printProgressBarHeader(files.size());
 		noDisplay = true;
 		

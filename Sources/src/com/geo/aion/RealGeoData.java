@@ -45,10 +45,10 @@ public class RealGeoData implements GeoData {
 		Util.printProgressBarHeader(infoMap.keySet().size());
 
 		for (WorldMap map : maps) {
-			LevelInfo info = infoMap.get(map.getValue().toUpperCase()).getLevelInfo();
-			if (info == null)
-				continue;
-			GeoMap geoMap = new GeoMap(Integer.toString(map.getId()), ((int) info.getHeightmapXSize() + info.getHeightmapYSize()));
+			LevelData data = infoMap.get(map.getValue().toUpperCase());
+			if (data == null) continue;
+			
+			GeoMap geoMap = new GeoMap(Integer.toString(map.getId()), ((int) data.getLevelInfo().getHeightmapXSize() + data.getLevelInfo().getHeightmapYSize()));
 			try {
 				if (GeoWorldLoader.loadWorld(map.getId(), models, geoMap)) {
 					geoMaps.put(map.getId(), geoMap);
