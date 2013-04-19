@@ -21,7 +21,7 @@ public class AionItemsInternalWriter extends AbstractWriter {
 	Collection<ClientItem> clientItems;
 	
 	@Override
-	public void parse() {
+	public void collect() {
 		clientItems = aion.getItems().values();
 	}
 
@@ -36,7 +36,7 @@ public class AionItemsInternalWriter extends AbstractWriter {
 	}
 
 	@Override
-	public void marshall() {
+	public void create() {
 		addOrder(AionWritingConfig.ITEMS_NAME_ID, AionWritingConfig.ITEMS_NAME_ID_BINDINGS, items2);
 		FileMarshaller.marshallFile(orders);
 		System.out.println("\n[ITEMS-2] Item Name/ID pairs count : " + itemList.size());

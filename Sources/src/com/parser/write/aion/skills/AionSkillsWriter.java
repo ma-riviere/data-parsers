@@ -41,7 +41,7 @@ public class AionSkillsWriter extends AbstractWriter {
 	Map<String, ClientItem> stigmaItemMap = new HashMap<String, ClientItem>();
 	
 	@Override
-	public void parse() {
+	public void collect() {
 		skillBaseList = aion.getSkills().values();
 		skillTreeList = aion.getSkillTrees().values();
 		
@@ -379,7 +379,7 @@ public class AionSkillsWriter extends AbstractWriter {
 	}
 
 	@Override
-	public void marshall() {
+	public void create() {
 		addOrder(AionWritingConfig.SKILLS, AionWritingConfig.SKILLS_BINDINGS,  finalTemplates);
 		FileMarshaller.marshallFile(orders);
 		System.out.println("\n[SKILLS] Skills written : " + templateList.size());

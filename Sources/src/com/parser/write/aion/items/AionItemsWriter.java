@@ -52,7 +52,7 @@ public class AionItemsWriter extends AbstractWriter {
 	
 	
 	@Override
-	public void parse() {
+	public void collect() {
 		clientItems = aion.getItems().values();
 		skillTreeList = aion.getSkillTrees().values();
 		cooltimeSyncMap = index(aion.getCooltimes(), on(ClientInstanceCooltime.class).getCooltSyncId());
@@ -627,7 +627,7 @@ public class AionItemsWriter extends AbstractWriter {
 	}
 
 	@Override
-	public void marshall() {
+	public void create() {
 		addOrder(AionWritingConfig.ITEMS, AionWritingConfig.ITEMS_BINDINGS, finalTemplates);
 		FileMarshaller.marshallFile(orders);
 		System.out.println("[ITEMS] Items count: " + templateList.size());

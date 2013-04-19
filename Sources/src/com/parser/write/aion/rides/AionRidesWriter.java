@@ -2,6 +2,9 @@ package com.parser.write.aion.rides;
 
 import java.util.Collection;
 
+import static ch.lambdaj.Lambda.sort;
+import static ch.lambdaj.Lambda.on;
+
 import com.parser.input.aion.rides.ClientRide;
 import com.parser.read.aion.rides.AionRidesParser;
 
@@ -18,7 +21,7 @@ public class AionRidesWriter extends AbstractWriter {
 	Collection<ClientRide> clientRideList;
 	
 	@Override
-	public void parse() {
+	public void collect() {
 		clientRideList = aion.getRides().values();
 	}
 
@@ -48,12 +51,14 @@ public class AionRidesWriter extends AbstractWriter {
 				info.setBounds(radius);
 			}
 			rideList.add(info);
+			addComment(info, "This is a test comment : " + info.getId());
 		}
 	}
 
 	@Override
-	public void marshall() {
-		addOrder(AionWritingConfig.RIDE, AionWritingConfig.RIDE_BINDINGS, rides);
+	public void create() {
+		rideList = sort(rideList, on(RideInfo.class).getId());
+		addOrder(AionWritingConfig.RIDE, AionWritingConfig.RIDE_BINDINGS, rides, comments);
 		FileMarshaller.marshallFile(orders);
 		log.info("\n[RIDES] Rides count: ", rideList.size());
 	}

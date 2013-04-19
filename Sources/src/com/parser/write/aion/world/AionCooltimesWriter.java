@@ -23,7 +23,7 @@ public class AionCooltimesWriter extends AbstractWriter {
 	FastMap<ClientInstanceCooltime, ClientInstanceCooltime2> ccs;
 	
 	@Override
-	public void parse() {
+	public void collect() {
 		ccs = new FastMap<ClientInstanceCooltime, ClientInstanceCooltime2>(aion.getCooltimes());
 	}
 
@@ -52,7 +52,7 @@ public class AionCooltimesWriter extends AbstractWriter {
 	}
 
 	@Override
-	public void marshall() {
+	public void create() {
 		addOrder(WorldProperties.OUTPUT_COOLTIMES, WorldProperties.OUTPUT_COOLTIMES_BINDINGS, cooltimes);
 		FileMarshaller.marshallFile(orders);
 		System.out.println("\n[COOLTIMES] Cooltimes count : " + cooltimeList.size());

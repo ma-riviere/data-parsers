@@ -4,9 +4,9 @@ public interface Writer {
 
 	void start();
 	
-	void parse();
+	void collect();
 
 	void transform();
 
-	void marshall();
+	void create();
 }

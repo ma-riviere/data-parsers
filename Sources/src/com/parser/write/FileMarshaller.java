@@ -2,13 +2,18 @@ package com.parser.write;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
+import java.io.FileWriter;
 
 import java.util.List;
-
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
+
+import javax.xml.stream.XMLOutputFactory;
+import javax.xml.stream.XMLStreamWriter;
+import javanet.staxutils.IndentingXMLStreamWriter;
+
+import com.parser.commons.utils.xml.XMLCommentsWritter;
 
 public class FileMarshaller {
 	
@@ -17,14 +22,25 @@ public class FileMarshaller {
 			for (MarshallerData order : orders) {
 				JAXBContext jaxbContext = JAXBContext.newInstance(order.getBindings());
 				Marshaller marshaller = jaxbContext.createMarshaller();
-				marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, new Boolean(true));
-				createDir(order.getPath());
+				marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+				
 				System.out.println("[MARSHALLER] Writting file : " + order.getFileName());
-				marshaller.marshal(order.getTemplate(), new FileOutputStream(order.getPath()));
+				
+				createDir(order.getPath());
+				FileWriter fw = new FileWriter(new File(order.getPath()));
+				XMLStreamWriter writer = new IndentingXMLStreamWriter(XMLOutputFactory.newInstance().createXMLStreamWriter(fw));
+				
+				if (order.getCommentsMap() != null)
+					marshaller.setListener(new XMLCommentsWritter(writer, order.getCommentsMap()));
+				
+				marshaller.marshal(order.getTemplate(), writer);
+				
+				writer.flush();	
+				writer.close();
 			}
 		} catch (JAXBException e) {
 			e.printStackTrace();
-		} catch (FileNotFoundException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}

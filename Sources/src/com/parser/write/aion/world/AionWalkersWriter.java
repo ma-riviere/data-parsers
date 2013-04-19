@@ -42,7 +42,7 @@ public class AionWalkersWriter extends AbstractWriter {
 	}
 	
 	@Override
-	public void parse() {
+	public void collect() {
 		ssList = new ArrayList<SourceSphere>(flatten(aion.getSpheres().values()));
 		aion.getWayPoints();
 	}
@@ -92,7 +92,7 @@ public class AionWalkersWriter extends AbstractWriter {
 	}
 
 	@Override
-	public void marshall() {
+	public void create() {
 		String OUTPUT = fromSpawns ? WorldProperties.WALKERS_FROM_SPAWNS : WorldProperties.WALKERS;
 		addOrder(WorldProperties.WALKERS_BINDINGS, OUTPUT, walkers);
 		FileMarshaller.marshallFile(orders);

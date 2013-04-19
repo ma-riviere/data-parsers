@@ -1,4 +1,4 @@
-package com.parser.read;
+package com.parser.commons.utils.xml;
 
 import javax.xml.bind.ValidationEvent;
 import javax.xml.bind.ValidationEventHandler;

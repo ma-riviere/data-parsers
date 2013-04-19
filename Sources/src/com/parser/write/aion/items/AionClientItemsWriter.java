@@ -23,7 +23,7 @@ public class AionClientItemsWriter extends AbstractWriter {
 	Collection<ClientItem> merged;
 	
 	@Override
-	public void parse() {
+	public void collect() {
 		client = aion.getItems().values();
 		if (AionProperties.USE_CUSTOM_INPUT)
 			custom = new AionItemsParser(AionReadingConfig.ITEMS_CUSTOM, AionReadingConfig.ITEMS_PREFIX, AionReadingConfig.ITEMS_BINDINGS).parse();
@@ -328,7 +328,7 @@ public class AionClientItemsWriter extends AbstractWriter {
 	}
 
 	@Override
-	public void marshall() {
+	public void create() {
 		addOrder(AionWritingConfig.CLIENT_ITEMS, AionReadingConfig.ITEMS_BINDINGS, mergedItems);
 		FileMarshaller.marshallFile(orders);
 		System.out.println("\n[CLIENT - ITEMS] Items count : " + mergedItemList.size());

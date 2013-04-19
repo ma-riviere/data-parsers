@@ -22,7 +22,7 @@ public class AionRecipesWriter extends AbstractWriter {
 	private static Collection<ClientRecipe> clientRecipes;
 	
 	@Override
-	public void parse() {
+	public void collect() {
 		clientRecipes = aion.getRecipes().values();
 		aion.getStrings();
 		aion.getSkills();
@@ -64,7 +64,7 @@ public class AionRecipesWriter extends AbstractWriter {
 	}
 
 	@Override
-	public void marshall() {
+	public void create() {
 		addOrder(RecipesProperties.OUTPUT, RecipesProperties.OUTPUT_BINDINGS, recipes);
 		FileMarshaller.marshallFile(orders);
 		System.out.println("\n[RECIPES] Recipes count: " + recipeList.size());
