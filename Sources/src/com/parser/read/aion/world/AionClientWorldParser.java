@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Map;
 import javolution.util.FastMap;
 
+import com.parser.commons.aion.properties.WorldProperties;
+
 import com.parser.input.aion.world_data.Clientzones;
 import com.parser.input.aion.world_data.NpcInfos;
 import com.parser.input.aion.world_data.NpcInfo;
@@ -18,12 +20,11 @@ import com.parser.input.aion.world_data.ItemUseArea; //TODO
 import com.parser.input.aion.world_data.HousingAreas; //TODO
 
 import com.parser.read.XMLParser;
-import com.parser.read.aion.AionReadingConfig;
 
 public class AionClientWorldParser extends XMLParser<Clientzones> {
 
 	public AionClientWorldParser() {
-		super(AionReadingConfig.WORLD_DATA, AionReadingConfig.WORLD_DATA_PREFIX, AionReadingConfig.WORLD_DATA_BINDINGS);
+		super(WorldProperties.CLIENT_WORLD, WorldProperties.CLIENT_WORLD_PREFIX, WorldProperties.CLIENT_WORLD_BINDINGS);
 	}
 	
 	private static FastMap<String, Clientzones> rootData = null;
@@ -32,7 +33,7 @@ public class AionClientWorldParser extends XMLParser<Clientzones> {
 		if (rootData == null) {
 			rootData = new FastMap<String, Clientzones>();
 			for (Map.Entry<String[], Clientzones> entry : parseDir().entrySet())
-				rootData.put(entry.getKey()[0].replaceAll(AionReadingConfig.WORLD_DATA_PREFIX, ""), entry.getValue());
+				rootData.put(entry.getKey()[0].replaceAll(WorldProperties.CLIENT_WORLD_PREFIX, ""), entry.getValue());
 		}
 		return rootData;
 	}

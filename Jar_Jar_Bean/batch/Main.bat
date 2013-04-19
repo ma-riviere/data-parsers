@@ -14,7 +14,7 @@ IF %XSD_TYPE%==3 (
 	SET OUTPUT_XML="%~6"
 )
 
-IF NOT %XSD_TYPE%==0 FOR %%V IN (3 4 5 6) DO IF %MASK%==%%V CALL :MERGE %~5 %~6
+IF NOT %XSD_TYPE%==0 FOR %%V IN (4 5 6) DO IF %MASK%==%%V CALL :MERGE %~5 %~6
 
 FOR %%M IN (1 3 4 6) DO IF %MASK%==%%M CALL :INPUT
 IF %MASK%==6 CALL :MERGE %7 %8
@@ -94,5 +94,3 @@ echo You may now Build the parser.
 echo ==============================================
 echo.
 IF EXIST "%TEMP%" RD /S /Q "%TEMP%" > nul
-
-CALL Jar_Jar_Bean.bat

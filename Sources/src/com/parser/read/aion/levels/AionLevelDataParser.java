@@ -15,10 +15,10 @@ public class AionLevelDataParser extends XMLParser<LevelData> {
 		super(LevelsProperties.LEVELS, LevelsProperties.LEVELDATA_PREFIX, LevelsProperties.LEVELDATA_BINDINGS);
 	}
 	
-	public FastMap<String, LevelInfo> parse() {
-		FastMap<String, LevelInfo> levelInfos = new FastMap<String, LevelInfo>();
+	public FastMap<String, LevelData> parse() {
+		FastMap<String, LevelData> levelData = new FastMap<String, LevelData>();
 		for (Map.Entry<String[], LevelData> entry : parseDir().entrySet())
-			levelInfos.put(entry.getKey()[1], entry.getValue().getLevelInfo());
-		return levelInfos;
+			levelData.put(entry.getKey()[1], entry.getValue());
+		return levelData;
 	}
 }

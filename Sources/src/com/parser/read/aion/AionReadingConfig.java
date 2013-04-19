@@ -25,14 +25,6 @@ public class AionReadingConfig {
 	public static final String STRINGS_PREFIX = "client_strings_";
 	public static final String STRINGS_BINDINGS = "com.parser.input.aion.strings";
 	
-	// World --> World
-	public static final String WORLD_MAPS = BASE_DIR + "Data/world/WorldId.xml";
-	public static final String WORLD_DATA = BASE_DIR + "Data/world/";
-	public static final String WORLD_DATA_PREFIX = "client_world_";
-	public static final String WORLD_MAPS_BINDINGS = "com.parser.input.aion.world_maps";
-	public static final String WORLD_DATA_BINDINGS = "com.parser.input.aion.world_data";
-
-	
 	// Skills --> Skills
 	public static final String SKILLS = BASE_DIR + "Data/skills/client_skills.xml";
 	public static final String SKILLS_BINDINGS = "com.parser.input.aion.skills";
