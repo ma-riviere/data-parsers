@@ -27,13 +27,12 @@ import com.parser.commons.utils.maths.MathUtil;
 import com.parser.commons.utils.Logger;
 import com.parser.commons.utils.Util;
 
-import com.parser.write.AbstractWriter;
-import com.parser.write.FileMarshaller;
+import com.parser.write.DataProcessor;
 import com.parser.write.aion.world.AionWalkersWriter;
 
 import com.parser.output.aion.mission.*;
 
-public class AionSpawnsWriter extends AbstractWriter {
+public class AionSpawnsWriter extends DataProcessor {
 	
 	SpawnMap npcSpawnMap = new SpawnMap();
 	SpawnMap instanceSpawnMap = new SpawnMap();
@@ -115,7 +114,7 @@ public class AionSpawnsWriter extends AbstractWriter {
 	
 	@Override
 	public void create() {
-		FileMarshaller.marshallFile(orders);
+		write(orders);
 		// Creating walkers needed for the maps
 		AionWalkersWriter writer = new AionWalkersWriter();
 		writer.writeFromSpawns(toWrite);

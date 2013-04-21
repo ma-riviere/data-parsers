@@ -9,10 +9,10 @@ import com.parser.commons.utils.Util;
 
 import com.parser.commons.aion.AionDataHub;
 
-public abstract class AbstractWriter implements Writer {
+public abstract class DataProcessor extends Writer implements IProcessor {
 
 	protected Logger log = new Logger().getInstance();
-	protected List<MarshallerData> orders = new ArrayList<MarshallerData>();
+	protected List<MarshalOrder> orders = new ArrayList<MarshalOrder>();
 	protected FastMap<Object, String> comments = new FastMap<Object, String>();
 	
 	// Data Centers
@@ -37,12 +37,17 @@ public abstract class AbstractWriter implements Writer {
 
 	protected void finalise() {}
 	
+	//TODO: move declaration to IProecssor to make compulsory
+	protected void addOrder(String file, String extension, String bindings, Object template, FastMap<Object, String> comments) {
+		orders.add(new MarshalOrder(file, extension, bindings, template, comments));
+	}
+	
 	protected void addOrder(String file, String bindings, Object template, FastMap<Object, String> comments) {
-		orders.add(new MarshallerData(file, bindings, template, comments));
+		orders.add(new MarshalOrder(file, ".xml", bindings, template, comments));
 	}
 	
 	protected void addOrder(String file, String bindings, Object template) {
-		orders.add(new MarshallerData(file, bindings, template, null));
+		orders.add(new MarshalOrder(file, ".xml", bindings, template, null));
 	}
 	
 	protected void addComment(Object toMarshall, String linkedComment) {

@@ -1,6 +1,7 @@
 package com.parser.write.aion.rides;
 
 import java.util.Collection;
+import java.util.ArrayList;
 import java.util.List;
 
 import static ch.lambdaj.Lambda.sort;
@@ -9,21 +10,20 @@ import static ch.lambdaj.Lambda.on;
 import com.parser.input.aion.rides.ClientRide;
 import com.parser.read.aion.rides.AionRidesParser;
 
-import com.parser.write.AbstractWriter;
-import com.parser.write.FileMarshaller;
+import com.parser.write.DataProcessor;
 import com.parser.write.aion.AionWritingConfig;
 
 import com.parser.output.aion.rides.*;
 
-public class AionRidesWriter extends AbstractWriter {
+public class AionRidesWriter extends DataProcessor {
 
 	Rides rides = new Rides();
-	List<RideInfo> rideList = rides.getRideInfo();
+	Collection<RideInfo> rideList = rides.getRideInfo();
 	Collection<ClientRide> clientRideList;
 	
 	@Override
 	public void collect() {
-		clientRideList = aion.getRides().values();
+		clientRideList = sort(aion.getRides().values(), on(ClientRide.class).getId());
 	}
 
 	@Override
@@ -57,9 +57,8 @@ public class AionRidesWriter extends AbstractWriter {
 
 	@Override
 	public void create() {
-		rideList = sort(rideList, on(RideInfo.class).getId());
-		addOrder(AionWritingConfig.RIDE, AionWritingConfig.RIDE_BINDINGS, rides, comments);
-		FileMarshaller.marshallFile(orders);
+		addOrder(AionWritingConfig.RIDE, AionWritingConfig.RIDE_BINDINGS, rides, null);
+		addOrder(AionWritingConfig.RIDE, ".dat", AionWritingConfig.RIDE_BINDINGS, rides, null);
 		log.info("\n[RIDES] Rides count: ", rideList.size());
 	}
 }

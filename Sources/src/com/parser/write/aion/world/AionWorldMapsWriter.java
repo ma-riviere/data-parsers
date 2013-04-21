@@ -9,17 +9,18 @@ import static ch.lambdaj.Lambda.sort;
 import static ch.lambdaj.Lambda.on;
 
 import com.parser.input.aion.level_data.LevelData;
+import com.parser.input.aion.level_data.LevelInfo;
+import com.parser.input.aion.level_data.LevelOption;
 import com.parser.input.aion.world_maps.WorldMap;
 import com.parser.input.aion.zone_maps.Zonemap;
 
 import com.parser.commons.aion.properties.WorldProperties;
 
-import com.parser.write.AbstractWriter;
-import com.parser.write.FileMarshaller;
+import com.parser.write.DataProcessor;
 
 import com.parser.output.aion.world_maps.*;
 
-public class AionWorldMapsWriter extends AbstractWriter {
+public class AionWorldMapsWriter extends DataProcessor {
 
 	WorldMaps worldMaps = new WorldMaps();
 	Collection<Map> mapList = worldMaps.getMap();
@@ -43,23 +44,36 @@ public class AionWorldMapsWriter extends AbstractWriter {
 			Map m = new Map();
 			
 			LevelData data = levelData.get(cm.getValue());
+			
+			if (data == null) {
+				System.out.println("[MAPS] Null Level Data for map : " + cm.getValue());
+				continue;
+			}
+			
+			LevelInfo infos = data.getLevelInfo();
+			LevelOption options = (data.getMissions() != null && data.getMissions().getMission() != null) ? data.getMissions().getMission().getLevelOption() : null;			
 			Zonemap zoneMap = zoneMaps.get(cm.getValue());
+			
+			if (infos == null || options == null) {
+				System.out.println("[MAPS] Null Level Options/Infos for map : " + cm.getValue());
+				continue;
+			}
 			
 			m.setId(cm.getId());
 			
 			m.setName(aion.getStringText("STR_ZONE_NAME_" + cm.getValue()));
 			
-			if (data.getMissions().getMission().getLevelOption().getFly().getFlyWholeLevel() != 0)
-				m.setDeathLevel(data.getMissions().getMission().getLevelOption().getFly().getMaxHeight());
+			if (options.getFly().getFlyWholeLevel() != 0)
+				m.setDeathLevel(options.getFly().getMaxHeight());
 				
-			m.setWaterLevel((int) Math.round(data.getLevelInfo().getWaterLevel()));
+			m.setWaterLevel((int) Math.round(infos.getWaterLevel()));
 			
 			String worldType = getWorldType(zoneMap.getMapCategory());
 			if (worldType != null)
 				m.setWorldType(worldType);
-			m.setWorldSize(data.getLevelInfo().getHeightmapXSize() + data.getLevelInfo().getHeightmapYSize());
+			m.setWorldSize(infos.getHeightmapXSize() + infos.getHeightmapYSize());
 			
-			m.setFlags(getFlags(cm, data));
+			m.setFlags(getFlags(cm, options));
 			
 			if (cm.getMaxUser() != null && cm.getMaxUser() != 0)
 				m.setMaxUser(cm.getMaxUser());
@@ -88,7 +102,7 @@ public class AionWorldMapsWriter extends AbstractWriter {
 	@Override
 	public void create() {
 		addOrder(WorldProperties.OUTPUT_WORLD_MAPS, WorldProperties.OUTPUT_WORLD_MAPS_BINDINGS, worldMaps);
-		FileMarshaller.marshallFile(orders);
+		write(orders);
 		System.out.println("\n[MAPS] WorldMaps count: " + mapList.size());
 	}
 	
@@ -112,19 +126,19 @@ public class AionWorldMapsWriter extends AbstractWriter {
 		}
 	}
 	
-	private int getFlags(WorldMap cm, LevelData data) {
+	private int getFlags(WorldMap cm, LevelOption options) {
 		int flags = 0;
-		if (!data.getMissions().getMission().getLevelOption().getBindArea().getIsPossible().equalsIgnoreCase("0") || !data.getMissions().getMission().getLevelOption().getBindArea().getIsPossible().equalsIgnoreCase("false")) //0
+		if (!options.getBindArea().getIsPossible().equalsIgnoreCase("0") || !options.getBindArea().getIsPossible().equalsIgnoreCase("false")) //0
 			flags |= 1;
-		if (!data.getMissions().getMission().getLevelOption().getReCall().getIsPossible().equalsIgnoreCase("0") || !data.getMissions().getMission().getLevelOption().getReCall().getIsPossible().equalsIgnoreCase("false")) //1
+		if (!options.getReCall().getIsPossible().equalsIgnoreCase("0") || !options.getReCall().getIsPossible().equalsIgnoreCase("false")) //1
 			flags |= 2;
-		if (!data.getMissions().getMission().getLevelOption().getGlide().getIsPossible().equalsIgnoreCase("0") || !data.getMissions().getMission().getLevelOption().getGlide().getIsPossible().equalsIgnoreCase("false")) //1
+		if (!options.getGlide().getIsPossible().equalsIgnoreCase("0") || !options.getGlide().getIsPossible().equalsIgnoreCase("false")) //1
 			flags |= 4;
-		if (data.getMissions().getMission().getLevelOption().getFly().getFlyWholeLevel() > 0) //0
+		if (options.getFly().getFlyWholeLevel() > 0) //0
 			flags |= 8;
-		if (data.getMissions().getMission().getLevelOption().getRide().getRideWholeLevel() == 1) //1
+		if (options.getRide().getRideWholeLevel() == 1) //1
 			flags |= 16;
-		if (data.getMissions().getMission().getLevelOption().getRide().getRideWholeLevel() == 2) //1
+		if (options.getRide().getRideWholeLevel() == 2) //1
 			flags |= 32;
 		// if (PVP_ENABLED) // cm.getShowPvpState() > 0 ? //1
 			// flags |= 64;

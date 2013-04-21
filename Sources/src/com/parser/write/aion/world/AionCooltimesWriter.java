@@ -9,13 +9,12 @@ import com.parser.input.aion.cooltimes.ClientInstanceCooltime2;
 import com.parser.commons.aion.enums.Race;
 import com.parser.commons.aion.properties.WorldProperties;
 
-import com.parser.write.AbstractWriter;
-import com.parser.write.FileMarshaller;
+import com.parser.write.DataProcessor;
 
 import com.parser.output.aion.cooltimes.InstanceCooltime;
 import com.parser.output.aion.cooltimes.InstanceCooltimes;
 
-public class AionCooltimesWriter extends AbstractWriter {
+public class AionCooltimesWriter extends DataProcessor {
 
 	InstanceCooltimes cooltimes = new InstanceCooltimes();
 	Collection<InstanceCooltime> cooltimeList = cooltimes.getInstanceCooltime();
@@ -54,7 +53,7 @@ public class AionCooltimesWriter extends AbstractWriter {
 	@Override
 	public void create() {
 		addOrder(WorldProperties.OUTPUT_COOLTIMES, WorldProperties.OUTPUT_COOLTIMES_BINDINGS, cooltimes);
-		FileMarshaller.marshallFile(orders);
+		write(orders);
 		System.out.println("\n[COOLTIMES] Cooltimes count : " + cooltimeList.size());
 	}
 }

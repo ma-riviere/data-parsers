@@ -18,12 +18,11 @@ import com.parser.commons.aion.properties.WorldProperties;
 import com.parser.commons.utils.maths.MathUtil;
 import com.parser.commons.utils.maths.Point3D;
 
-import com.parser.write.AbstractWriter;
-import com.parser.write.FileMarshaller;
+import com.parser.write.DataProcessor;
 
 import com.parser.output.aion.walkers.*;
 
-public class AionWalkersWriter extends AbstractWriter {
+public class AionWalkersWriter extends DataProcessor {
 
 	NpcWalker walkers = new NpcWalker();
 	Collection<WalkerTemplate> walkerList = walkers.getWalkerTemplate();
@@ -95,7 +94,7 @@ public class AionWalkersWriter extends AbstractWriter {
 	public void create() {
 		String OUTPUT = fromSpawns ? WorldProperties.WALKERS_FROM_SPAWNS : WorldProperties.WALKERS;
 		addOrder(OUTPUT, WorldProperties.WALKERS_BINDINGS, walkers);
-		FileMarshaller.marshallFile(orders);
+		write(orders);
 		System.out.println("\n[WALKERS] Walkers count: " + walkerList.size());
 	}
 	

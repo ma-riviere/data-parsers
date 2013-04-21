@@ -13,7 +13,7 @@ public class AionWritingConfig {
 	public static final String ITEMS_NAME_ID_BINDINGS = "com.parser.output.aion.item_name";
 	
 	// Rides
-	public static final String RIDE = BASE_DIR + "Ride/ride.xml";
+	public static final String RIDE = BASE_DIR + "Ride/ride";
 	public static final String RIDE_BINDINGS = "com.parser.output.aion.rides";
 	
 	// Skills

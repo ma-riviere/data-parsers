@@ -320,8 +320,18 @@ public class AionDataHub {
 	}
 	
 	public Map<ClientInstanceCooltime, ClientInstanceCooltime2> getCooltimes() {
-		if (cooltimes.values().isEmpty())
-			cooltimes = index(new AionCooltimesParser().parse(), selectUnique(new AionCooltimes2Parser().parse(), having(on(ClientInstanceCooltime2.class).getId() == on(ClientInstanceCooltime.class).getId())));
+		if (cooltimes.values().isEmpty()) {
+		
+			List<ClientInstanceCooltime2> cooltimes2 = new ArrayList<ClientInstanceCooltime2>();
+			
+			if (cooltimes2.isEmpty())
+				cooltimes2 = new AionCooltimes2Parser().parse();
+			
+			for (ClientInstanceCooltime cic : new AionCooltimesParser().parse())
+				for (ClientInstanceCooltime2 cic2 : cooltimes2)
+					if (cic.getId() == cic2.getId())
+						cooltimes.put(cic, cic2);
+		}
 		return cooltimes;
 	}
 
