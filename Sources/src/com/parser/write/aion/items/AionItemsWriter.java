@@ -27,13 +27,12 @@ import com.parser.commons.aion.properties.AionProperties;
 import com.parser.read.aion.AionReadingConfig;
 import com.parser.read.aion.world.AionCooltimesParser;
 
-import com.parser.write.AbstractWriter;
-import com.parser.write.FileMarshaller;
+import com.parser.write.DataProcessor;
 import com.parser.write.aion.AionWritingConfig;
 
 import com.parser.output.aion.items.*;
 
-public class AionItemsWriter extends AbstractWriter {
+public class AionItemsWriter extends DataProcessor {
 
 	AionDataHub data = aion;
 
@@ -629,7 +628,7 @@ public class AionItemsWriter extends AbstractWriter {
 	@Override
 	public void create() {
 		addOrder(AionWritingConfig.ITEMS, AionWritingConfig.ITEMS_BINDINGS, finalTemplates);
-		FileMarshaller.marshallFile(orders);
+		write(orders);
 		System.out.println("[ITEMS] Items count: " + templateList.size());
 	}
 	

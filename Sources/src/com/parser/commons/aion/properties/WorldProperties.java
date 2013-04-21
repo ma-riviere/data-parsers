@@ -32,7 +32,7 @@ public class WorldProperties {
 	public static String INPUT_COOLTIMES;
 	@Property(key = "world.cooltimes2.input", defaultValue = "client_instance_cooltime2.xml")
 	public static String INPUT_COOLTIMES2;
-	@Property(key = "world.cooltimes.output.bindings", defaultValue = "")
+	@Property(key = "world.cooltimes.input.bindings", defaultValue = "")
 	public static String INPUT_COOLTIMES_BINDINGS;
 	@Property(key = "world.cooltimes.output", defaultValue = "instance_cooltimes/instance_cooltimes.xml")
 	public static String OUTPUT_COOLTIMES;

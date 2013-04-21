@@ -10,11 +10,10 @@ import com.parser.read.aion.items.AionItemsParser;
 import com.parser.commons.aion.properties.AionProperties;
 import com.parser.commons.aion.utils.AionDataMerger;
 
-import com.parser.write.AbstractWriter;
-import com.parser.write.FileMarshaller;
+import com.parser.write.DataProcessor;
 import com.parser.write.aion.AionWritingConfig;
 
-public class AionClientItemsWriter extends AbstractWriter {
+public class AionClientItemsWriter extends DataProcessor {
 
 	ClientItems mergedItems = new ClientItems();
 	Collection<ClientItem> mergedItemList = mergedItems.getClientItem();
@@ -330,7 +329,7 @@ public class AionClientItemsWriter extends AbstractWriter {
 	@Override
 	public void create() {
 		addOrder(AionWritingConfig.CLIENT_ITEMS, AionReadingConfig.ITEMS_BINDINGS, mergedItems);
-		FileMarshaller.marshallFile(orders);
+		write(orders);
 		System.out.println("\n[CLIENT - ITEMS] Items count : " + mergedItemList.size());
 	}
 }

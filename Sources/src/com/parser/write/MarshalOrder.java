@@ -3,22 +3,20 @@ package com.parser.write;
 import java.io.File;
 import javolution.util.FastMap;
 
-public class MarshallerData {
+public class MarshalOrder {
 
-	public String bindings;
 	public String path;
+	public String extension;
+	public String bindings;
 	public Object template;
-	public FastMap<Object, String> comments = null;
+	public FastMap<Object, String> comments = new FastMap<Object, String>();
 	
-	public MarshallerData(String path, String bindings, Object template, FastMap<Object, String> comments) {
+	public MarshalOrder(String path, String extension, String bindings, Object template, FastMap<Object, String> comments) {
 		this.path = path;
+		this.extension = extension;
 		this.bindings = bindings;
 		this.template = template;
 		this.comments = comments;
-	}
-	
-	public MarshallerData(String path, String bindings, Object template) {
-		this(path, bindings, template, null);
 	}
 	
 	public String getBindings() {return bindings;}
@@ -32,5 +30,8 @@ public class MarshallerData {
 	
 	public FastMap<Object, String> getCommentsMap() {return comments;}
 	
-	public String getFileName() {return new File(path).getName();}
+	public String getExtension() {return extension;}
+	
+	
+	public String getFileName() {return new File(path + extension).getName();}
 }

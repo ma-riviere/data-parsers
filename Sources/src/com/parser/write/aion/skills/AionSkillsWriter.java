@@ -23,13 +23,12 @@ import com.parser.commons.aion.enums.skills.*;
 import com.parser.read.aion.skills.AionSkillsParser;
 import com.parser.read.aion.skills.AionSkillTreeParser;
 import com.parser.read.aion.items.AionItemsParser;
-import com.parser.write.AbstractWriter;
-import com.parser.write.FileMarshaller;
+import com.parser.write.DataProcessor;
 import com.parser.write.aion.AionWritingConfig;
 
 import com.parser.output.aion.skills.*;
 
-public class AionSkillsWriter extends AbstractWriter {
+public class AionSkillsWriter extends DataProcessor {
 
 	public static boolean ANALYSE = false;
 
@@ -381,7 +380,7 @@ public class AionSkillsWriter extends AbstractWriter {
 	@Override
 	public void create() {
 		addOrder(AionWritingConfig.SKILLS, AionWritingConfig.SKILLS_BINDINGS,  finalTemplates);
-		FileMarshaller.marshallFile(orders);
+		write(orders);
 		System.out.println("\n[SKILLS] Skills written : " + templateList.size());
 	}
 	

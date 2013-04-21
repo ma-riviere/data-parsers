@@ -13,12 +13,11 @@ import com.parser.commons.aion.bindings.SourceSphere;
 import com.parser.commons.aion.properties.WorldProperties;
 import com.parser.commons.utils.maths.MathUtil;
 
-import com.parser.write.AbstractWriter;
-import com.parser.write.FileMarshaller;
+import com.parser.write.DataProcessor;
 
 import com.parser.output.aion.source_sphere.*;
 
-public class AionSourceSphereWriter extends AbstractWriter {
+public class AionSourceSphereWriter extends DataProcessor {
 
 	Spheres spheres = new Spheres();
 	Collection<Sphere> sList = spheres.getSphere();
@@ -62,7 +61,7 @@ public class AionSourceSphereWriter extends AbstractWriter {
 	@Override
 	public void create() {
 		addOrder(WorldProperties.OUTPUT_SPHERE, WorldProperties.SPHERE_OUTPUT_BINDINGS, spheres);
-		FileMarshaller.marshallFile(orders);
+		write(orders);
 		System.out.println("\n[SPHERE] source_sphere count: " + sList.size());
 	}
 }

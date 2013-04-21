@@ -8,12 +8,11 @@ import com.parser.commons.utils.JAXBHandler;
 import com.parser.commons.aion.enums.Race;
 import com.parser.commons.aion.properties.RecipesProperties;
 
-import com.parser.write.AbstractWriter;
-import com.parser.write.FileMarshaller;
+import com.parser.write.DataProcessor;
 
 import com.parser.output.aion.recipes.*;
 
-public class AionRecipesWriter extends AbstractWriter {
+public class AionRecipesWriter extends DataProcessor {
 
 	public static boolean ANALYSE = false;
 	
@@ -66,7 +65,7 @@ public class AionRecipesWriter extends AbstractWriter {
 	@Override
 	public void create() {
 		addOrder(RecipesProperties.OUTPUT, RecipesProperties.OUTPUT_BINDINGS, recipes);
-		FileMarshaller.marshallFile(orders);
+		write(orders);
 		System.out.println("\n[RECIPES] Recipes count: " + recipeList.size());
 	}
 }

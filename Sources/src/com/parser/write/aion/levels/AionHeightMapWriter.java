@@ -4,8 +4,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.parser.write.AbstractWriter;
-import com.parser.write.FileMarshaller;
+import com.parser.write.DataProcessor;
 
 import com.parser.read.BinaryParser;
 import com.parser.read.BinaryParserData;
@@ -18,7 +17,7 @@ import com.parser.commons.aion.properties.LevelsProperties;
 
 import com.parser.output.aion.height_map.*;
 
-public class AionHeightMapWriter extends AbstractWriter {
+public class AionHeightMapWriter extends DataProcessor {
 
 	AionDataHub data = new AionDataHub().getInstance();
 
@@ -95,7 +94,7 @@ public class AionHeightMapWriter extends AbstractWriter {
 	@Override
 	public void create() {
 		addOrder(LevelsProperties.HEIGHTMAP, LevelsProperties.HEIGHTMAP_BINDINGS, points);
-		FileMarshaller.marshallFile(orders);
+		write(orders);
 		System.out.println("\n[POINTS] Points count : " + pointList.size());
 	}
 }
