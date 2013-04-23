@@ -61,7 +61,6 @@ public class AionSourceSphereWriter extends DataProcessor {
 	@Override
 	public void create() {
 		addOrder(WorldProperties.OUTPUT_SPHERE, WorldProperties.SPHERE_OUTPUT_BINDINGS, spheres);
-		write(orders);
 		System.out.println("\n[SPHERE] source_sphere count: " + sList.size());
 	}
 }

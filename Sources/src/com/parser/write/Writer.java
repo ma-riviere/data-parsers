@@ -101,24 +101,37 @@ public abstract class Writer {
 		output.close();
 	}
 	
-	public void writeBufferData(Node node, ByteBuffer buffer) {
-		//TODO: Print node attributes + elements count
-		System.out.println("Entering Node :" + node.getNodeName());
-		NodeList list = node.getChildNodes();
-		for (int i=0; i<list.getLength(); i++) {
-			Node child = list.item(i);
-			System.out.println("Entering Node :" + child.getNodeName());
-			if (child.hasAttributes()) {
-				Element childElement = (Element) child;
-				NamedNodeMap attributes = childElement.getAttributes();
-				for (int j = 0; j < attributes.getLength(); j++) {
-					System.out.println("Writing  attribute :" + attributes.item(j).getNodeName() + " with value : " + attributes.item(j).getNodeValue());
-					addToBuffer(buffer, attributes.item(j).getNodeValue());
-				}
+	private void writeBufferData(Node node, ByteBuffer buffer) {
+		System.out.println("[INFO][MAIN] Analysing node : " + node.getNodeName());
+		if (node.hasAttributes()) {writeNodeAttributes(buffer, node);}
+		if (node.hasChildNodes()) {writeNodeChilds(buffer, node);}
+		else {buffer.put("viria".getBytes());}
+		System.out.println("[INFO][MAIN] Finished analysing node : " + node.getNodeName());
+	}
+	
+	private void writeNodeAttributes(ByteBuffer buffer, Node node) {
+		NamedNodeMap attributes = node.getAttributes();
+		short attributesCount = (short) attributes.getLength();
+		if (attributesCount > 0) {
+			for (short j = 0; j < attributesCount; j++) {
+				System.out.println("[INFO][ATTR] WRITING VALUE of : " + attributes.item(j).getNodeValue() + " for ATTRIBUTE " + attributes.item(j).getNodeName());
+				addToBuffer(buffer, attributes.item(j).getNodeValue());
 			}
-			writeBufferData(child, buffer);
 		}
-		buffer.put("viria".getBytes());
+	}
+	
+	private void writeNodeChilds(ByteBuffer buffer, Node node) {
+		NodeList childs = node.getChildNodes();
+		short childsCount = (short) childs.getLength();
+		System.out.println("[INFO][NODE] Node : " + node.getNodeName() + " has " + childsCount  + " childs !");
+		if (childsCount > 0) {
+			buffer.putShort(childsCount);
+			System.out.println("[INFO][NODE] WRITING child COUNT of : " + childsCount);
+			for (short i=0; i< childsCount; i++) {
+				Node child = childs.item(i);
+				writeBufferData(child, buffer);
+			}
+		}
 	}
 	
 	private void addToBuffer(ByteBuffer buffer, Object source) {

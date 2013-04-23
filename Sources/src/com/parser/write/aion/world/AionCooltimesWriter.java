@@ -53,7 +53,6 @@ public class AionCooltimesWriter extends DataProcessor {
 	@Override
 	public void create() {
 		addOrder(WorldProperties.OUTPUT_COOLTIMES, WorldProperties.OUTPUT_COOLTIMES_BINDINGS, cooltimes);
-		write(orders);
 		System.out.println("\n[COOLTIMES] Cooltimes count : " + cooltimeList.size());
 	}
 }

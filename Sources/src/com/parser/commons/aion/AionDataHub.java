@@ -274,8 +274,10 @@ public class AionDataHub {
 	}
 	
 	public Map<String, Zonemap> getZoneMaps() {
-		if (zoneMaps.values().isEmpty())
-			zoneMaps = index(new AionZoneMapsParser().parse(), on(Zonemap.class).getName().toUpperCase());
+		if (zoneMaps.isEmpty())
+			for (Zonemap zm : new AionZoneMapsParser().parse())
+				zoneMaps.put(zm.getName().toUpperCase(), zm);
+			// zoneMaps = index(new AionZoneMapsParser().parse(), on(Zonemap.class).getName().toUpperCase());
 		return zoneMaps;
 	}
 	

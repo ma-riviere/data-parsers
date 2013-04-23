@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="EncDec" default="dist" basedir=".">
+	<description>
+		EncDec Build File
+	</description>
+	<property name="jre" location="${java.home}/lib"/>
+	<property name="src" location="src"/>
+	<property name="libs" location="libs"/>
+	<property name="build" location="build"/>
+	<property name="build.classes" location="${build}/classes"/>
+	<property name="build.dist" location="${build}/dist"/>
+	<property name="build.dist.encdec" location="${build.dist}/EncDec"/>
+	<path id="classpath">
+		<fileset dir="${libs}">
+			<include name="*.jar"/>
+		</fileset>
+	</path>
+	<target name="clean" description="Removes build directory.">
+		<delete dir="${build}"/>
+	</target>
+	<target name="init" description="Create the output directories.">
+		<mkdir dir="${build}"/>
+		<mkdir dir="${build.classes}"/>
+	</target>
+	<target name="compile" depends="init" description="Compile the source.">
+		<javac destdir="${build.classes}" optimize="on" debug="on" nowarn="off" source="1.8" target="1.8" includeantruntime="false">
+			<src path="${src}"/>
+			<classpath refid="classpath"/>
+		</javac>
+	</target>
+	<target name="jar" depends="compile" description="Create the jar file">
+		<jar destfile="${build}/EncDec.jar">
+			<fileset dir="${build.classes}"/>
+		</jar>
+	</target>
+	<target name="dist" depends="jar">
+		<mkdir dir="${build.dist}"/>
+		<mkdir dir="${build.dist.encdec}"/>
+		<mkdir dir="${build.dist.encdec}/libs"/>
+		<copy todir="${build.dist.encdec}">
+			<fileset dir="${build}">
+				<include name="EncDec.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="${build.dist.encdec}/libs">
+			<fileset dir="${libs}">
+				<include name="*.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="${build.dist.encdec}">
+			<fileset dir="dist">
+				<include name="*.*"/>
+			</fileset>
+		</copy>
+		<zip destfile="${build}/EncDec.zip" basedir="${build.dist}"/>
+	</target>
+</project>

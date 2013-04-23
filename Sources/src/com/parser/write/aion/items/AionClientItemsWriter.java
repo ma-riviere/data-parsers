@@ -329,7 +329,6 @@ public class AionClientItemsWriter extends DataProcessor {
 	@Override
 	public void create() {
 		addOrder(AionWritingConfig.CLIENT_ITEMS, AionReadingConfig.ITEMS_BINDINGS, mergedItems);
-		write(orders);
 		System.out.println("\n[CLIENT - ITEMS] Items count : " + mergedItemList.size());
 	}
 }

@@ -628,7 +628,6 @@ public class AionItemsWriter extends DataProcessor {
 	@Override
 	public void create() {
 		addOrder(AionWritingConfig.ITEMS, AionWritingConfig.ITEMS_BINDINGS, finalTemplates);
-		write(orders);
 		System.out.println("[ITEMS] Items count: " + templateList.size());
 	}
 	

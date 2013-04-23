@@ -94,7 +94,6 @@ public class AionWalkersWriter extends DataProcessor {
 	public void create() {
 		String OUTPUT = fromSpawns ? WorldProperties.WALKERS_FROM_SPAWNS : WorldProperties.WALKERS;
 		addOrder(OUTPUT, WorldProperties.WALKERS_BINDINGS, walkers);
-		write(orders);
 		System.out.println("\n[WALKERS] Walkers count: " + walkerList.size());
 	}
 	

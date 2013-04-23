@@ -114,7 +114,6 @@ public class AionSpawnsWriter extends DataProcessor {
 	
 	@Override
 	public void create() {
-		write(orders);
 		// Creating walkers needed for the maps
 		AionWalkersWriter writer = new AionWalkersWriter();
 		writer.writeFromSpawns(toWrite);
