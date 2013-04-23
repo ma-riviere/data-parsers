@@ -42,12 +42,12 @@ public abstract class FilesCollector {
 	}
 	
 	public String[] loadPath(File file) {
-		String[] results = new String[4];
+		String[] results = new String[5];
 		results[0] = FilenameUtils.getBaseName(file.getName());
-		for (int i = 1; i < 4; i++)  {
+		for (int i = 1; i < 5; i++)  {
 			if (file.getParentFile() != null) {
 				file = file.getParentFile();
-				results[i] = file.getParentFile().getName();
+				results[i] = file.getName();
 			}
 		}
 		return results;

@@ -94,7 +94,6 @@ public class AionHeightMapWriter extends DataProcessor {
 	@Override
 	public void create() {
 		addOrder(LevelsProperties.HEIGHTMAP, LevelsProperties.HEIGHTMAP_BINDINGS, points);
-		write(orders);
 		System.out.println("\n[POINTS] Points count : " + pointList.size());
 	}
 }

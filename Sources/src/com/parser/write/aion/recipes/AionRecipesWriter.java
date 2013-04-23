@@ -65,7 +65,6 @@ public class AionRecipesWriter extends DataProcessor {
 	@Override
 	public void create() {
 		addOrder(RecipesProperties.OUTPUT, RecipesProperties.OUTPUT_BINDINGS, recipes);
-		write(orders);
 		System.out.println("\n[RECIPES] Recipes count: " + recipeList.size());
 	}
 }

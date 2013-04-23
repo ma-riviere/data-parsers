@@ -15,7 +15,6 @@ public abstract class DataProcessor extends Writer implements IProcessor {
 	protected List<MarshalOrder> orders = new ArrayList<MarshalOrder>();
 	protected FastMap<Object, String> comments = new FastMap<Object, String>();
 	
-	// Data Centers
 	protected AionDataHub aion = new AionDataHub().getInstance();
 	// protected TeraDataHub tera = new TeraDataHub().getInstance();
 	// protected ArcheageDataHub arch = new ArcheageDataHub().getInstance();
@@ -30,6 +29,7 @@ public abstract class DataProcessor extends Writer implements IProcessor {
 		finalise();
 		Util.printSection("Creating output files");
 		create();
+		write(orders);
 		orders.clear();
 		comments.clear();
 		Util.printSection("FINISHED");
@@ -37,17 +37,12 @@ public abstract class DataProcessor extends Writer implements IProcessor {
 
 	protected void finalise() {}
 	
-	//TODO: move declaration to IProecssor to make compulsory
-	protected void addOrder(String file, String extension, String bindings, Object template, FastMap<Object, String> comments) {
+	protected void addOrder(String file, String extension, String bindings, Object template) {
 		orders.add(new MarshalOrder(file, extension, bindings, template, comments));
 	}
 	
-	protected void addOrder(String file, String bindings, Object template, FastMap<Object, String> comments) {
-		orders.add(new MarshalOrder(file, ".xml", bindings, template, comments));
-	}
-	
 	protected void addOrder(String file, String bindings, Object template) {
-		orders.add(new MarshalOrder(file, ".xml", bindings, template, null));
+		orders.add(new MarshalOrder(file, ".xml", bindings, template, comments));
 	}
 	
 	protected void addComment(Object toMarshall, String linkedComment) {

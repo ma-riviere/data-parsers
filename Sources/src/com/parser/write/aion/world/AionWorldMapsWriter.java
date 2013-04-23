@@ -26,14 +26,12 @@ public class AionWorldMapsWriter extends DataProcessor {
 	Collection<Map> mapList = worldMaps.getMap();
 	
 	Collection<WorldMap> clientMaps;
-	FastMap<String, LevelData> levelData;
-	FastMap<String, Zonemap> zoneMaps;
 	
 	@Override
 	public void collect() {
 		clientMaps = aion.getWorldMaps().values();
-		levelData = new FastMap(aion.getLevelData());
-		zoneMaps = new FastMap(aion.getZoneMaps());
+		aion.getLevelData();
+		aion.getZoneMaps();
 		aion.getStrings();
 		aion.getCooltimes();
 	}
@@ -43,19 +41,26 @@ public class AionWorldMapsWriter extends DataProcessor {
 		for (WorldMap cm : clientMaps) {
 			Map m = new Map();
 			
-			LevelData data = levelData.get(cm.getValue());
+			LevelData data = aion.getLevelData().get(cm.getValue().toUpperCase());
 			
 			if (data == null) {
-				System.out.println("[MAPS] Null Level Data for map : " + cm.getValue());
+				System.out.println("[MAPS] No Level Data for map : " + cm.getValue());
 				continue;
 			}
 			
 			LevelInfo infos = data.getLevelInfo();
-			LevelOption options = (data.getMissions() != null && data.getMissions().getMission() != null) ? data.getMissions().getMission().getLevelOption() : null;			
-			Zonemap zoneMap = zoneMaps.get(cm.getValue());
+			LevelOption options = (data.getMissions() != null && data.getMissions().getMission() != null) ? data.getMissions().getMission().getLevelOption() : null;
+			for (String map : aion.getZoneMaps().keySet())
+				System.out.println(map);
+			
+			Zonemap zoneMap = aion.getZoneMaps().get(cm.getValue().toUpperCase());
 			
 			if (infos == null || options == null) {
-				System.out.println("[MAPS] Null Level Options/Infos for map : " + cm.getValue());
+				System.out.println("[MAPS] No Level Options/Infos for map : " + cm.getValue());
+				continue;
+			}
+			if (zoneMap == null) {
+				System.out.println("[MAPS] No ZoneMap for map : " + cm.getValue());
 				continue;
 			}
 			
@@ -102,7 +107,6 @@ public class AionWorldMapsWriter extends DataProcessor {
 	@Override
 	public void create() {
 		addOrder(WorldProperties.OUTPUT_WORLD_MAPS, WorldProperties.OUTPUT_WORLD_MAPS_BINDINGS, worldMaps);
-		write(orders);
 		System.out.println("\n[MAPS] WorldMaps count: " + mapList.size());
 	}
 	

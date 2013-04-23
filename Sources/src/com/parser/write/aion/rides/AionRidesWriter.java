@@ -57,8 +57,8 @@ public class AionRidesWriter extends DataProcessor {
 
 	@Override
 	public void create() {
-		addOrder(AionWritingConfig.RIDE, AionWritingConfig.RIDE_BINDINGS, rides, null);
-		addOrder(AionWritingConfig.RIDE, ".dat", AionWritingConfig.RIDE_BINDINGS, rides, null);
+		addOrder(AionWritingConfig.RIDE, AionWritingConfig.RIDE_BINDINGS, rides);
+		// addOrder(AionWritingConfig.RIDE, ".dat", AionWritingConfig.RIDE_BINDINGS, rides);
 		log.info("\n[RIDES] Rides count: ", rideList.size());
 	}
 }

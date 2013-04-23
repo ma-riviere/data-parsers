@@ -380,7 +380,6 @@ public class AionSkillsWriter extends DataProcessor {
 	@Override
 	public void create() {
 		addOrder(AionWritingConfig.SKILLS, AionWritingConfig.SKILLS_BINDINGS,  finalTemplates);
-		write(orders);
 		System.out.println("\n[SKILLS] Skills written : " + templateList.size());
 	}
 	

@@ -37,7 +37,6 @@ public class AionItemsInternalWriter extends DataProcessor {
 	@Override
 	public void create() {
 		addOrder(AionWritingConfig.ITEMS_NAME_ID, AionWritingConfig.ITEMS_NAME_ID_BINDINGS, items2);
-		write(orders);
 		System.out.println("\n[ITEMS-2] Item Name/ID pairs count : " + itemList.size());
 	}
 }
