@@ -7,8 +7,8 @@ PUSHD "..\..\"
 SET INPUT_FOLDER=%CD%\Input
 SET OUTPUT_FOLDER=%CD%\Output
 SET SOURCES=%CD%\Sources
-SET LIBS="%CD%\Jar_Jar_Bean\libs"
-SET XSD_DIR="%CD%\Jar_Jar_Bean\xsd"
+SET LIBS="%CD%\Bindings\libs"
+SET XSD_DIR="%CD%\Bindings\xsd"
 SET TEMP="%INPUT_FOLDER%\TEMP"
 SET XCOPY="%CD%\Tools\xcopy.exe"
 SET cp=%LIBS%\xbean.jar;%LIBS%\xmlbeans-qname.jar;%LIBS%\jsr173_1.0_api.jar;%LIBS%\resolver.jar
