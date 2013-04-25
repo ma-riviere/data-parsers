@@ -40,6 +40,7 @@ public class Banane {
 	private static void doCrypt() {
 		try {
 			manager.initZipWriting();
+			System.out.println("[DEBUG] Collected " + collected.size() + " files");
 			for (File file : collected) {
 				byte[] cryptedData = crypter.crypt(manager.read(file));
 				String cryptedFN = Base64.encodeBase64String(file.getName().getBytes());
@@ -61,8 +62,7 @@ public class Banane {
 	
 	private static void doDecrypt() {
 		try {
-		if (collected.isEmpty())
-			return;
+			System.out.println("[DEBUG] Collected " + collected.size() + " files");
 			for (File archive : collected) {
 				byte[] clearData = decrypter.decrypt(manager.read(archive));
 				String newZip = archive.getName().substring(0, archive.getName().indexOf(".mar"));
