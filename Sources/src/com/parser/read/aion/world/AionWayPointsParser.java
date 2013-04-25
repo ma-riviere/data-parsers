@@ -1,8 +1,6 @@
 package com.parser.read.aion.world;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
