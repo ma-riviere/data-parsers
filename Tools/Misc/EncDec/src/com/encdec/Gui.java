@@ -52,9 +52,9 @@ public class Gui extends JFrame {
 	
 	private class ButtonListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
-			password = passField.getText();
-			if (password != null && password != "")
-				Banane.init(choice, password);
+			if (passField.getText() != null && passField.getText() != "" && choice != null) {
+				Banane.init(choice, passField.getText());
+			}
 		}
     }
 }

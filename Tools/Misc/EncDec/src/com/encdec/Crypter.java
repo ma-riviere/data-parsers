@@ -54,11 +54,11 @@ public class Crypter extends Banane {
 				parameters.setRootFolderInZip(manager.getRelativePathWithoutFN(file));
 				zipFile.addFile(file, parameters);
 			}
-			return true;
 		} catch (ZipException e) {
 			System.out.println("Erreur lors de l'archivage des donnees : ");
-			e.printStackTrace();
+			// e.printStackTrace();
 			return false;
 		}
+		return true;
 	}
 }
