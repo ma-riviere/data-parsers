@@ -41,6 +41,7 @@ public class Decrypter {
 			return true;
 		}
 		catch (ZipException e) {
+			System.out.println("Erreur lors de l'extraction des donnees : ");
 			e.printStackTrace();
 			return false;
 		}

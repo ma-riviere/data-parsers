@@ -12,25 +12,29 @@ public class Banane {
 	public static FileUtils manager = null;
   
 	public static void main(String[] args) {
-		if (args.length == 2) {
-			initFileUtils();
-			if (args[0].equalsIgnoreCase("c")) {
-				collected = manager.collect("");
-				crypter = new Crypter(args[1]);
-				doCrypt();
-			}
-			else if (args[0].equalsIgnoreCase("d")) {
-				collected = manager.collect(".marz");
-				decrypter = new Decrypter(args[1]);
-				doDecrypt();
-			}
+		new Gui();
+	}
+	
+	public static void init(String choice, String password) {
+		initFileUtils();
+		if (choice.equalsIgnoreCase("c")) {
+			collected = manager.collect("");
+			crypter = new Crypter(password);
+			doCrypt();
+		}
+		else if (choice.equalsIgnoreCase("d")) {
+			collected = manager.collect(".marz");
+			decrypter = new Decrypter(password);
+			doDecrypt();
 		}
 	}
 	
 	private static void initFileUtils() {
 		try {
+			System.out.println("[DEBUG] Init !");
 			String targetDir = new File(".").getCanonicalPath();
 			manager = new FileUtils(targetDir);
+			collected.clear();
 		}
 		catch (Exception e) {
 			System.out.println("Error during initialization of File Manager : " + e);
@@ -55,8 +59,10 @@ public class Banane {
 			
 			for (File toDelete : collected)
 				toDelete.delete();
+			manager.cleanEmptyDirs();
 		}
 		catch (Exception e) {e.printStackTrace();}
+		System.out.println("ATTENTION : Prenez soin de retenir votre mot de passe !");
 	}
 	
 	private static void doDecrypt() {
@@ -65,6 +71,10 @@ public class Banane {
 			for (File archive : collected) {
 				if (decrypter.decryptZip(archive))
 					archive.delete();
+				else {
+					System.out.println("		!!! Mot de passe incorrect !!!");
+					return;
+				}
 			}
 			collected.clear();
 			collected = manager.collect(".mar");

@@ -50,7 +50,6 @@ public class Crypter extends Banane {
 			parameters.setEncryptionMethod(Zip4jConstants.ENC_METHOD_AES);
 			parameters.setAesKeyStrength(Zip4jConstants.AES_STRENGTH_128);
 			parameters.setPassword(pass);
-			// zipFile.createZipFile(new ArrayList<File>(), parameters);
 			for (File file : files) {
 				parameters.setRootFolderInZip(manager.getRelativePathWithoutFN(file));
 				zipFile.addFile(file, parameters);
