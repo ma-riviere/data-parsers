@@ -66,9 +66,9 @@ public class FileUtils {
 		}
 	}
  
-	public void write(byte[] data, String fn, String extension) {
+	public void write(byte[] data, String fn) {
 		try {
-			FileOutputStream out = new FileOutputStream(fn + extension);
+			FileOutputStream out = new FileOutputStream(fn);
 			out.write(data);
 			out.close();
 		}
@@ -81,12 +81,16 @@ public class FileUtils {
 		return new File(zip + extension);
 	}
 	
-	public String getRelativePath(File file) {
-		return new File(targetDir).toURI().relativize(file.toURI()).getPath();
-	}
-	
 	public String getRelativePathWithoutFN(File file) {
 		return new File(targetDir).toURI().relativize(file.getParentFile().toURI()).getPath();
+	}
+	
+	public String generateFilePath(File file, String newFN, String newExt) {
+		return targetDir + "\\" + getRelativePathWithoutFN(file) + "\\" + newFN + newExt;
+	}
+	
+	public void changeExtension(File file, String newExt) {
+		file.renameTo(new File(file.getName().substring(0, file.getName().lastIndexOf(".")) + newExt));
 	}
  
     /**
