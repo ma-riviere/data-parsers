@@ -20,7 +20,7 @@ public class Banane {
 				doCrypt();
 			}
 			else if (args[0].equalsIgnoreCase("d")) {
-				collected = manager.collect(".zip"); //TODO :change to .marz
+				collected = manager.collect(".marz");
 				decrypter = new Decrypter(args[1]);
 				doDecrypt();
 			}
@@ -43,14 +43,15 @@ public class Banane {
 			for (File file : collected) {
 				byte[] cryptedData = crypter.crypt(manager.read(file));
 				String cryptedFN = Base64.encodeBase64String(file.getName().getBytes());
-				String relativePath = manager.getRelativePathWithoutFN(file) != "" ? manager.getRelativePathWithoutFN(file) + "\\" : "";
-				manager.write(cryptedData, relativePath + cryptedFN, ".mar");
+				String filePath = manager.generateFilePath(file, cryptedFN, ".mar");
+				manager.write(cryptedData, filePath);
 				file.delete();
 			}
 			collected.clear();
 			collected = manager.collect(".mar");
+			System.out.println("[DEBUG] Collected " + collected.size() + " crypted files");
 			crypter.crypt2zip(manager.getArchive(""), collected);
-			// manager.changeExtension(manager.getArchive(".zip"), ".marz");
+			manager.changeExtension(manager.getArchive(""), ".marz");
 			
 			for (File toDelete : collected)
 				toDelete.delete();
@@ -69,10 +70,10 @@ public class Banane {
 			collected = manager.collect(".mar");
 			System.out.println("[DEBUG] Collected " + collected.size() + " crypted files");
 			for (File file : collected) {
-				byte[] clearFile = decrypter.decrypt(manager.read(file));
+				byte[] clearData = decrypter.decrypt(manager.read(file));
 				String clearFN = new String(Base64.decodeBase64(file.getName().replace(".mar", "")));
-				String relativePath = manager.getRelativePathWithoutFN(file) != "" ? manager.getRelativePathWithoutFN(file) + "\\" : "";
-				manager.write(clearFile, relativePath + clearFN, "");
+				String filePath = manager.generateFilePath(file, clearFN, "");
+				manager.write(clearData, filePath);
 				file.delete();
 			}
 		}

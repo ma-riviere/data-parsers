@@ -50,12 +50,11 @@ public class Crypter extends Banane {
 			parameters.setEncryptionMethod(Zip4jConstants.ENC_METHOD_AES);
 			parameters.setAesKeyStrength(Zip4jConstants.AES_STRENGTH_128);
 			parameters.setPassword(pass);
-			zipFile.createZipFile(files, parameters);
+			// zipFile.createZipFile(new ArrayList<File>(), parameters);
 			for (File file : files) {
 				parameters.setRootFolderInZip(manager.getRelativePathWithoutFN(file));
 				zipFile.addFile(file, parameters);
 			}
-			// System.out.println("[ZIP] Zipped : " + files.size());
 			return true;
 		} catch (ZipException e) {
 			System.out.println("Erreur lors de l'archivage des donnees : ");
