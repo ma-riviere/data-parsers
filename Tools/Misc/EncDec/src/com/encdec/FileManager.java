@@ -19,7 +19,7 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 import java.util.zip.ZipOutputStream;
 
-public class FileUtils {
+public class FileManager {
 
 	protected static List<File> files = new ArrayList<File>();
 	protected FileOutputStream fos = null;
@@ -28,12 +28,13 @@ public class FileUtils {
 	protected String targetDir = null;
 	protected String zip = null;
 	
-	public FileUtils(String targetDir) {
+	public FileManager(String targetDir) {
 		this.targetDir = targetDir;
-		zip = targetDir + "\\" + new File(targetDir).getName() + ".zip";
+		zip = targetDir + "\\" + new File(targetDir).getName();
 	}
 	
-	public List<File> collect(String extension) {		
+	public List<File> collect(String extension) {
+		files.clear();
 		Path path = Paths.get(targetDir);
 		try {explore(path, extension, files);}
 		catch (IOException io) {System.out.println(io);}
@@ -45,7 +46,7 @@ public class FileUtils {
 			for (Path dirOrFile : ds) {
 				if (Files.isDirectory(dirOrFile))
 					explore(dirOrFile, extension, files);
-				else if (dirOrFile.toFile().getName().toLowerCase().contains(extension) && !dirOrFile.toFile().getName().toLowerCase().equalsIgnoreCase("EncDec.exe")) {
+				else if (dirOrFile.toFile().getName().toLowerCase().endsWith(extension) && !dirOrFile.toFile().getName().toLowerCase().equalsIgnoreCase("EncDec.exe")) {
 					files.add(dirOrFile.toFile());
 				}
 			}
@@ -95,7 +96,6 @@ public class FileUtils {
 	
 	public void cleanEmptyDirs() {
 		File current = new File(targetDir);
-		// System.out.println(current.listFiles().length + " files in dir : " + current.getName());
 		for (File file : current.listFiles()) {
 			if (file.isDirectory() && file.listFiles().length == 0)
 				file.delete();

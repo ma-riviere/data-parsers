@@ -38,12 +38,12 @@ public class Decrypter {
 			ZipFile zipFile = new ZipFile(archive);
 			if (zipFile.isEncrypted()) {zipFile.setPassword(pass);}
 			zipFile.extractAll("./");
-			return true;
 		}
 		catch (ZipException e) {
 			System.out.println("Erreur lors de l'extraction des donnees : ");
 			e.printStackTrace();
 			return false;
 		}
+		return true;
 	}
 }
