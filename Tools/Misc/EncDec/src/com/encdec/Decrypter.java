@@ -1,11 +1,15 @@
 package com.encdec;
 
+import java.io.File;
 import java.util.Arrays;
 import javax.crypto.*;
 import javax.crypto.spec.*;
 import javax.crypto.spec.SecretKeySpec;
 
 import org.apache.commons.codec.digest.DigestUtils;
+
+import net.lingala.zip4j.core.ZipFile;
+import net.lingala.zip4j.exception.ZipException;
 
 public class Decrypter {
 
@@ -26,6 +30,19 @@ public class Decrypter {
 		catch (Exception e) {
 			System.out.println("Erreur lors du decryptage des donnees : " + e);
 			return null;
+		}
+	}
+	
+	public boolean decryptZip(File archive) {
+		try {
+			ZipFile zipFile = new ZipFile(archive);
+			if (zipFile.isEncrypted()) {zipFile.setPassword(pass);}
+			zipFile.extractAll("./");
+			return true;
+		}
+		catch (ZipException e) {
+			e.printStackTrace();
+			return false;
 		}
 	}
 }
