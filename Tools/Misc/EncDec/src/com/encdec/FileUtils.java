@@ -45,9 +45,8 @@ public class FileUtils {
 			for (Path dirOrFile : ds) {
 				if (Files.isDirectory(dirOrFile))
 					explore(dirOrFile, extension, files);
-				else if (!dirOrFile.toFile().getName().toLowerCase().contains(".bat") && !dirOrFile.toFile().getName().toLowerCase().contains(".jar")) {
+				else if (dirOrFile.toFile().getName().toLowerCase().contains(extension) && !dirOrFile.toFile().getName().toLowerCase().contains(".bat") && !dirOrFile.toFile().getName().toLowerCase().contains(".jar")) {
 					files.add(dirOrFile.toFile());
-					// System.out.println("[COLLECTING] Ajout du fichier : " + dirOrFile.toFile().getName());
 				}
 			}
 		}
@@ -77,53 +76,6 @@ public class FileUtils {
 			System.out.println("[WRITING] Probleme lors de la sauvegarde du fichier : " + e.getMessage());
 		}
 	}
-	
-	public void unZip(File file) throws Exception {
-		ZipFile zipFile = new ZipFile(file);
-		Enumeration enumeration = zipFile.entries();
-		while (enumeration.hasMoreElements()) {
-			ZipEntry zipEntry = (ZipEntry) enumeration.nextElement();
-			System.out.println("[DEBUG] Unzipping : " + zipEntry.getName());
-			BufferedInputStream bis = new BufferedInputStream(zipFile.getInputStream(zipEntry));
-			int size;
-			byte[] buffer = new byte[1024 * 1024];
-			BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(zipEntry.getName()), buffer.length);
-			while ((size = bis.read(buffer, 0, buffer.length)) != -1) {
-				bos.write(buffer, 0, size);
-			}	
-			bos.flush();
-			bos.close();
-			bis.close();
-		}
-  }
-	
-	public void initZipWriting() {
-		try{
-			fos = new FileOutputStream(zip);
-			zos = new ZipOutputStream(fos);
-		}
-		catch(IOException ex){
-			ex.printStackTrace();   
-		}
-	}
-	
-	public void endZipWriting() {
-		try {zos.close();}
-		catch(IOException ex) {ex.printStackTrace();}
-	}
-	
-	public void zip(byte[] data, String cryptedFN) {
-		try {
-			ZipEntry ze = new ZipEntry(cryptedFN);
-			zos.putNextEntry(ze);
-			zos.write(data, 0, data.length);
-			zos.closeEntry();
-			// System.out.println("[ZIPPING] Added data for file  : " + file);
-		}
-		catch (IOException e) {
-			e.printStackTrace();   
-		}
-	}
    
 	public File getArchive(String extension) {
 		return new File(zip + extension);
@@ -131,6 +83,10 @@ public class FileUtils {
 	
 	public String getRelativePath(File file) {
 		return new File(targetDir).toURI().relativize(file.toURI()).getPath();
+	}
+	
+	public String getRelativePathWithoutFN(File file) {
+		return new File(targetDir).toURI().relativize(file.getParentFile().toURI()).getPath();
 	}
  
     /**

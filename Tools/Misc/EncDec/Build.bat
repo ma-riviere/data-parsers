@@ -5,7 +5,7 @@ REM SETX /M JAVA_HOME "C:\Program Files\Java\jdk1.7.0_17" > nul
 SETX /M JAVA_HOME "C:\Program Files\Java\jdk1.8.0" > nul
 SETX /M JAVA_TOOL_OPTIONS -Dfile.encoding=UTF8 > nul
 
-set ANT=D:\Aion\Parsers\Tools\Ant\bin\ant
+set ANT=D:\Games\Parsers\Tools\Ant\bin\ant
 
 echo.
 echo =============================
@@ -32,7 +32,7 @@ echo Unzipping new EncDec's files
 echo =============================
 echo.
 
-ECHO A | CALL "D:\Aion\Parsers\Tools\unzip.exe" -q %EncDec% && echo Done !
+ECHO A | CALL "D:\Games\Parsers\Tools\unzip.exe" -q %EncDec% && echo Done !
 
 echo.
 echo ===============================

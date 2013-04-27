@@ -9,18 +9,18 @@ public class Banane {
 	private static List<File> collected = null;
 	private static Crypter crypter = null;
 	private static Decrypter decrypter = null;
-	private static FileUtils manager = null;
+	public static FileUtils manager = null;
   
 	public static void main(String[] args) {
 		if (args.length == 2) {
 			initFileUtils();
 			if (args[0].equalsIgnoreCase("c")) {
-				collected = manager.collect(".*");
+				collected = manager.collect("");
 				crypter = new Crypter(args[1]);
 				doCrypt();
 			}
 			else if (args[0].equalsIgnoreCase("d")) {
-				collected = manager.collect(".mar");
+				collected = manager.collect(".zip"); //TODO :change to .marz
 				decrypter = new Decrypter(args[1]);
 				doDecrypt();
 			}
@@ -39,85 +39,43 @@ public class Banane {
 	
 	private static void doCrypt() {
 		try {
-			manager.initZipWriting();
 			System.out.println("[DEBUG] Collected " + collected.size() + " files");
 			for (File file : collected) {
 				byte[] cryptedData = crypter.crypt(manager.read(file));
 				String cryptedFN = Base64.encodeBase64String(file.getName().getBytes());
-				String relativePath = manager.getRelativePath(file);
-				manager.zip(cryptedData, relativePath + cryptedFN);
+				String relativePath = manager.getRelativePathWithoutFN(file) != "" ? manager.getRelativePathWithoutFN(file) + "\\" : "";
+				manager.write(cryptedData, relativePath + cryptedFN, ".mar");
 				file.delete();
 			}
-			try {
-				File archive = manager.getArchive("");
-				byte[] cryptedAR = crypter.crypt(manager.read(archive));
-				manager.write(cryptedAR, archive.getName(), ".mar");
-				archive.delete();
-			}
-			catch (Exception e) {e.printStackTrace();}
+			collected.clear();
+			collected = manager.collect(".mar");
+			crypter.crypt2zip(manager.getArchive(""), collected);
+			// manager.changeExtension(manager.getArchive(".zip"), ".marz");
+			
+			for (File toDelete : collected)
+				toDelete.delete();
 		}
 		catch (Exception e) {e.printStackTrace();}
-		manager.endZipWriting();
 	}
 	
 	private static void doDecrypt() {
 		try {
-			System.out.println("[DEBUG] Collected " + collected.size() + " files");
+			System.out.println("[DEBUG] Collected " + collected.size() + " archive files");
 			for (File archive : collected) {
-				byte[] clearData = decrypter.decrypt(manager.read(archive));
-				String newZip = archive.getName().substring(0, archive.getName().indexOf(".mar"));
-				manager.write(clearData, newZip, "");
-				manager.unZip(new File(newZip));
-				archive.delete();
+				if (decrypter.decryptZip(archive))
+					archive.delete();
 			}
+			collected.clear();
 			collected = manager.collect(".mar");
+			System.out.println("[DEBUG] Collected " + collected.size() + " crypted files");
 			for (File file : collected) {
 				byte[] clearFile = decrypter.decrypt(manager.read(file));
-				String clearFN = new String(Base64.decodeBase64(file.getName()));
-				manager.write(clearFile, manager.getRelativePath(file) + "\\" + clearFN, "");
-				file.delete(); 
+				String clearFN = new String(Base64.decodeBase64(file.getName().replace(".mar", "")));
+				String relativePath = manager.getRelativePathWithoutFN(file) != "" ? manager.getRelativePathWithoutFN(file) + "\\" : "";
+				manager.write(clearFile, relativePath + clearFN, "");
+				file.delete();
 			}
 		}
 		catch (Exception e) {e.printStackTrace();}
 	}
-	
-	/*
-	private static void doCrypt() {
-		try {
-			for (File file : files) {
-				byte[] cryptedData = crypter.crypt(FileUtils.read(file));
-				String cryptedFN = Base64.encodeBase64String(file.getName().getBytes());
-				FileUtils.write(cryptedData, file.getParent() + "\\" + cryptedFN, ".mar");
-				System.out.println("Writing file : " + file.getParent() + "\\" + cryptedFN + ".mar");
-				file.delete(); //TODO: Remove later
-			}
-			// files = FileUtils.collect(".", ".mar");
-			// Archive all resulting files to "."
-			// byte[] cryptedArchive = crypter.crypt(archive);
-			// String cryptedAN = crypter.crypt(archive.getName());
-			// FileUtils.write(cryptedArchive, cryptedAN);
-		}
-		catch (Exception e) {
-			
-		}
-	}
-	
-	private static void doDecrypt() {
-		try {
-			// Archive all resulting files
-			// byte[] cryptedArchive = decrypter.decrypt(archive);
-			// String cryptedAN = decrypter.decrypt(archive.getName());
-			// FileUtils.write(cryptedArchive, cryptedAN);
-			for (File file : files) {
-				byte[] clearFile = decrypter.decrypt(FileUtils.read(file));
-				String clearFN = new String(Base64.decodeBase64(file.getName()), "UTF8");
-				FileUtils.write(clearFile, file.getParent() + "\\" + clearFN, "");
-				file.delete();  //TODO: Remove later
-			}
-		}
-		catch (Exception e) {
-			
-		}
-	}
-	*/
 }
