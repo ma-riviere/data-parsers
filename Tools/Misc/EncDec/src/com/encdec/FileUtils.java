@@ -45,7 +45,7 @@ public class FileUtils {
 			for (Path dirOrFile : ds) {
 				if (Files.isDirectory(dirOrFile))
 					explore(dirOrFile, extension, files);
-				else if (dirOrFile.toFile().getName().toLowerCase().contains(extension) && !dirOrFile.toFile().getName().toLowerCase().contains(".bat") && !dirOrFile.toFile().getName().toLowerCase().contains(".jar")) {
+				else if (dirOrFile.toFile().getName().toLowerCase().contains(extension) && !dirOrFile.toFile().getName().toLowerCase().equalsIgnoreCase("EncDec.exe")) {
 					files.add(dirOrFile.toFile());
 				}
 			}
@@ -91,6 +91,15 @@ public class FileUtils {
 	
 	public void changeExtension(File file, String newExt) {
 		file.renameTo(new File(file.getName().substring(0, file.getName().lastIndexOf(".")) + newExt));
+	}
+	
+	public void cleanEmptyDirs() {
+		File current = new File(targetDir);
+		// System.out.println(current.listFiles().length + " files in dir : " + current.getName());
+		for (File file : current.listFiles()) {
+			if (file.isDirectory() && file.listFiles().length == 0)
+				file.delete();
+		}
 	}
  
     /**

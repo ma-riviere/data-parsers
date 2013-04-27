@@ -32,7 +32,7 @@ echo Unzipping new EncDec's files
 echo =============================
 echo.
 
-ECHO A | CALL "D:\Games\Parsers\Tools\unzip.exe" -q %EncDec% && echo Done !
+ECHO A | CALL "D:\Games\Parsers\Tools\unzip.exe" -q %EncDec% -d .\bin && echo Done !
 
 echo.
 echo ===============================
