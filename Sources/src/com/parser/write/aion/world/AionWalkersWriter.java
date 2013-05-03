@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static ch.lambdaj.Lambda.*;
+import static org.hamcrest.CoreMatchers.equalTo;
 
 import com.geo.aion.GeoService;
 
@@ -26,8 +27,8 @@ public class AionWalkersWriter extends DataProcessor {
 
 	NpcWalker walkers = new NpcWalker();
 	Collection<WalkerTemplate> walkerList = walkers.getWalkerTemplate();
-	// Map<Integer, List<SourceSphere>> sourceSpheres;
 	List<SourceSphere> ssList;
+	Map<String, Integer> wpMap = new HashMap<String, Integer>();
 	
 	// When called by AionSpawnsWriter
 	boolean fromSpawns = false;
@@ -43,13 +44,25 @@ public class AionWalkersWriter extends DataProcessor {
 	@Override
 	public void collect() {
 		ssList = new ArrayList<SourceSphere>(flatten(aion.getSpheres().values()));
+		for (SourceSphere ss : ssList) {
+			if (ss.getWpName() != null) {
+				int count = 0;
+				if (wpMap.containsKey(ss.getWpName()))
+					count = wpMap.get(ss.getWpName());
+				
+				count++;
+				wpMap.remove(ss.getWpName());
+				wpMap.put(ss.getWpName(), count);
+			}
+		}
 		aion.getWayPoints();
 	}
 
 	@Override
 	public void transform() {
 		for (SourceSphere ss : ssList) {
-			if (toWrite != null) {
+			
+			if (fromSpawns) {
 				for (SourceSphere ss2 : toWrite)
 					if (ss == ss2)
 						computeWalker(ss);
@@ -69,10 +82,7 @@ public class AionWalkersWriter extends DataProcessor {
 			if (currentWP == null) return;
 
 			wt.setRouteId(currentWP.getName().toUpperCase());
-			
-			//TODO: Test
-			int pool = sum(select(ssList, having(on(SourceSphere.class).getWpName().equalsIgnoreCase(currentWP.getName())))).intValue();
-			wt.setPool(pool != 0 ? pool : 1);
+			wt.setPool(wpMap.get(ss.getWpName()));
 			
 			organize(wt, currentWP);
 			
@@ -127,32 +137,28 @@ public class AionWalkersWriter extends DataProcessor {
 
 	private void organize(WalkerTemplate wt, WayPoint currentWP) {
 	
-		Map<String, Integer> mobs = new HashMap<String, Integer>();
-		
-		for (SourceSphere ss : ssList)
-			mobs.put(ss.getName(), sum(select(ssList, having(on(SourceSphere.class).getWpName().equalsIgnoreCase(currentWP.getName())))).intValue());
-	
 		String formation = null;
+		String name = currentWP.getName().toUpperCase();
+		if (wpMap.get(name) == null) return;
 		
-		for (String name : mobs.keySet()) {
-			if (mobs.get(name) > 1 && mobs.get(name) <= 4)
-				formation = "SQUARE";
-			else if (mobs.get(name) > 4)
-				formation = "CIRCLE";
-		}
+		if (wpMap.get(name) > 1 && wpMap.get(name) <= 4)
+			formation = "SQUARE";
+		else if (wpMap.get(name) > 4)
+			formation = "CIRCLE";
 		
 		if (formation != null)
 			wt.setFormation(formation);
 	
+		/*
 		if (wt.getFormation() != null) {
 			
 			String row = null;
-			String[] rows = new String[mobs.keySet().size()];
+			String[] rows = new String[wpMap.keySet().size()];
 			
-			if (mobs.keySet().size() > 1) {
+			if (wpMap.keySet().size() > 1) {
 				int i = 0;
-				for (String s : mobs.keySet())
-					rows[i++] = mobs.get(s).toString();
+				for (String s : wpMap.keySet())
+					rows[i++] = wpMap.get(s).toString();
 				
 				if (rows.length != 0)			
 					row = Joiner.on(",").join(rows);
@@ -160,6 +166,6 @@ public class AionWalkersWriter extends DataProcessor {
 
 			if (row != null)
 				wt.setRows(row);
-		}
+		}*/
 	}
 }

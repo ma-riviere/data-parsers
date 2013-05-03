@@ -1,6 +1,7 @@
 package com.parser.read.aion.world;
 
 import java.io.File;
+import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
 import javolution.util.FastMap;
@@ -26,6 +27,8 @@ public class AionSourceSphereParser extends TextParser {
 				List<SourceSphere> temp = new ArrayList<SourceSphere>();
 				if (spheres.containsKey(ss.getMap()))
 					temp = spheres.get(ss.getMap());
+				
+				temp.add(ss);
 				spheres.put(ss.getMap(), temp);
 			}
 		}
@@ -34,12 +37,12 @@ public class AionSourceSphereParser extends TextParser {
 	}
 	
 	private SourceSphere extractData(String line) {
-		SourceSphere ss = new SourceSphere();		
+		SourceSphere ss = new SourceSphere();
 		String[] data = line.split(",");
 		
 		ss.setName(data[0]);
 		ss.setType(data[1]);
-		ss.setMap(data[2]);
+		ss.setMap(data[2].toUpperCase());
 		ss.setLayer(Integer.parseInt(data[3]));
 		ss.setX(Float.parseFloat(data[4]));
 		ss.setY(Float.parseFloat(data[5]));

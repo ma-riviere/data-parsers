@@ -22,7 +22,7 @@ public class Util {
 	
 		s = "[ " + s + " ]";
 		
-		while (s.length() < 79)
+		while (s.length() < 78)
 			s = "-" + s + "-";
 
 		System.out.println(s);
