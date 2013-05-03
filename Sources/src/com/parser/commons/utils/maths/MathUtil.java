@@ -51,7 +51,7 @@ public class MathUtil {
 		float dx = (obj2X - obj1X);
 		float dy = (obj2Y - obj1Y);
 		float dz = (obj2Z - obj1Z);
-		return (dx * dx + dy * dy + dz * dz) < range * range;
+		return Math.sqrt(dx * dx + dy * dy + dz * dz) < range;
 	}
 	
 	public static boolean isIn3dRange(String pos, float obj2X, float obj2Y, float obj2Z, double range) {
@@ -61,7 +61,7 @@ public class MathUtil {
 		float dx = (Float.parseFloat(xyz[0]) - obj2X);
 		float dy = (Float.parseFloat(xyz[1]) - obj2Y);
 		float dz = (Float.parseFloat(xyz[2]) - obj2Z);
-		return (dx * dx + dy * dy + dz * dz) < range * range;
+		return Math.sqrt(dx * dx + dy * dy + dz * dz) < range;
 	}
 	
 	public static boolean isIn3dRange(String pos1, String pos2, double range) {
@@ -70,7 +70,7 @@ public class MathUtil {
 		float dx = Float.parseFloat(xyz1[0]) - Float.parseFloat(xyz2[0]);
 		float dy = Float.parseFloat(xyz1[1]) - Float.parseFloat(xyz2[1]);
 		float dz = Float.parseFloat(xyz1[2]) - Float.parseFloat(xyz2[2]);
-		return (dx * dx + dy * dy + dz * dz) < range * range;
+		return Math.sqrt(dx * dx + dy * dy + dz * dz) < range;
 	}
 	
 	public final static float headingToDegree(byte h) {

@@ -10,7 +10,17 @@ public enum ClientEntityType {
 	BUGS,
 	MILESTONE(true, -1.47f),
 	BIRDS,
-	PLACEABLEOBJECT(true, -0.1f),
+	PLACEABLEOBJECT(true, -0.1f, true),
+	ABYSSARTIFACTS(true), // ?
+	EMBLEM, // ?
+	ABYSSSHIELD, // ?
+	ABYSSDOOR(true), // ?
+	ABYSSCARRIER(true), // ?
+	ABYSSCARRIER_SUBMESH, // ?
+	ABYSSCONTROLTOWER(true), // ?
+	ABYSS_PVPEFFECT, // ?
+	ABYSSARTIFACTS_EFFECT, // ?
+	MILESTONE_NDIST, // ?
 	RANDOMAMBIENTSOUND,
 	CHAIR(true, -0.2f),
 	DYNAMICLIGHT,
@@ -20,23 +30,34 @@ public enum ClientEntityType {
 	private String clientString;
 	private boolean hasCorrectZ = false;
 	private float zCorrection = 0.0f;
+	private boolean canBeStatic = false;
 	
-	private ClientEntityType(String clientString, boolean hasCorrectZ, float zCorrection) {
+	private ClientEntityType(String clientString, boolean hasCorrectZ, float zCorrection, boolean canBeStatic) {
 		this.clientString = clientString;
 		this.hasCorrectZ = hasCorrectZ;
 		this.zCorrection = zCorrection;
+		this.canBeStatic = canBeStatic;
+	}
+	
+	private ClientEntityType(boolean hasCorrectZ, float zCorrection, boolean canBeStatic) {
+		this(null, hasCorrectZ, zCorrection, canBeStatic);
 	}
 	
 	private ClientEntityType(boolean hasCorrectZ, float zCorrection) {
-		this(null, hasCorrectZ, zCorrection);
+		this(null, hasCorrectZ, zCorrection, false);
+	}
+	
+	private ClientEntityType(boolean canBeStatic) {
+		this(null, false, 0.0f, canBeStatic);
 	}
 	
 	private ClientEntityType() {
-		this(null, false, 0.0f);
+		this(null, false, 0.0f, false);
 	}
 	
 	public String getClientString() {return clientString;}
 	public boolean hasCorrectZ() {return hasCorrectZ;}
+	public boolean canBeStatic() {return canBeStatic;}
 	
 	/**
 	 * Returns the ENUM matching the given client string

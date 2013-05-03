@@ -1,15 +1,16 @@
 package com.parser.read;
 
-// import java.nio.file.Files;
-// import java.nio.file.Path;
-// import java.nio.file.Paths;
-// import java.nio.charset.Charset;
-// import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
+// import java.io.FileReader;
 import java.io.IOException;
-import java.util.Scanner;
+// import java.util.Scanner;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +19,7 @@ import com.parser.commons.utils.Util;
 
 public class TextParser extends FilesCollector {
 
-	// static Charset charset = StandardCharsets.UTF_8;
+	static Charset charset = StandardCharsets.UTF_8;
 	private String endLine = null;
 	
 	public TextParser(String stringPath, String prefix, String extension, String endLine) {
@@ -44,11 +45,15 @@ public class TextParser extends FilesCollector {
 		return parseFile(file);
 	}
 	
+	boolean noDisplay = false;
+	
 	public List<TextParserData> parseDir() {
 		List<TextParserData> tpds = new ArrayList<TextParserData>();
 		
 		List<File> files = collect();
+		System.out.println("\n[MAIN][INFO] Parsing directory " + stringPath + " with " + files.size() + " text files !");
 		Util.printProgressBarHeader(files.size());
+		noDisplay = true;
 		
 		for (File file : collect()) {
 			TextParserData tpd = parseFile(file);
@@ -64,22 +69,24 @@ public class TextParser extends FilesCollector {
 	public TextParserData parseFile(File file) {
 		TextParserData tpd = new TextParserData();
 		
-		// Path path = Paths.get(file.getPath());
+		Path path = Paths.get(file.getPath());
 		List<String> lines = null;
+		if (!noDisplay)
+			System.out.println("\n[MAIN][INFO] Parsing file " + file.getName());
 		try {
-			FileReader fr = new FileReader(file);
-			Scanner scanner = new Scanner(fr);
-			if (endLine != null)
-				scanner.useDelimiter(endLine);
+			// FileReader fr = new FileReader(file);
+			// Scanner scanner = new Scanner(fr);
+			// if (endLine != null)
+				// scanner.useDelimiter(endLine);
 				
-			while (scanner.hasNext()) {
-				tpd.addLine(scanner.next());
+			// while (scanner.hasNext()) {
+				// tpd.addLine(scanner.next());
 				// System.out.println("[DEBUG] Reading line : " + scanner.next());
-			}
-			// lines = Files.readAllLines(path, charset);
-			// tpd.setLines(lines);
+			// }
+			lines = Files.readAllLines(path, charset);
+			tpd.setLines(lines);
 			tpd.setPath(loadPath(file));
-			fr.close();
+			// fr.close();
 		}
 		catch (FileNotFoundException fnf) { 
 			fnf.printStackTrace();

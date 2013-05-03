@@ -1,6 +1,7 @@
 package com.parser.commons.utils.xml;
 
 import javolution.util.FastMap;
+import com.google.common.base.Strings;
 
 import javax.xml.bind.Marshaller.Listener;
 import javax.xml.stream.XMLStreamException;
@@ -19,7 +20,7 @@ public class XMLCommentsWriter extends Listener {
 	@Override
 	public void beforeMarshal(Object source) {
 		//TODO: UseFastEquals (hashCode2, see WDGen)
-		if (comments.keySet().contains(source)) {
+		if (comments.keySet().contains(source) && !Strings.isNullOrEmpty(comments.get(source))) {
 			try {
 				xmlStreamWriter.writeComment(comments.get(source));
 			} catch (XMLStreamException e) {

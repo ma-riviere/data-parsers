@@ -58,53 +58,60 @@ public class AionSpawnsWriter extends DataProcessor {
 	
 	@Override
 	public void transform() {
-		
 		for (String mapName : levelSpawns.keySet()) {
 			int mapId = aion.getWorldId(mapName);
 			if (mapId == 0) continue;
 			initAllSpawns(mapId);
 			Util.printSubSection(mapId + " : " + aion.getStringText("STR_ZONE_NAME_" + mapName));
 			
-			List<ClientSpawn> currentCSpawns = levelSpawns.get(mapName);
+			// Initializing client spawn data
+			List<NpcInfo> spawnsFromWorld = aion.getDataSpawns(mapName);
+			
+			List<ClientSpawn> allCSpawns =  levelSpawns.get(mapName);
+			List<ClientSpawn> currentCSpawns = new LinkedList<ClientSpawn>();
+			for (ClientSpawn cs : allCSpawns) {
+				if (ClientSpawnType.fromClient(cs.getType()) != null && ClientSpawnType.fromClient(cs.getType()).shouldBeSpawned())
+					currentCSpawns.add(cs);
+			}
 			int startLevelSize = currentCSpawns.size();
-			List<NpcInfo> currentWDSpawns = aion.getDataSpawns(mapName);
-			int startWorldSize = currentWDSpawns.size();
+			List<ClientSpawn> usedCS = new LinkedList<ClientSpawn>();
+			//TODO: Store used SS with WP !
 			
-			List<ClientSpawn> usedCSpawns = new LinkedList<ClientSpawn>();
-			List<NpcInfo> usedWDSpawns = new LinkedList<NpcInfo>(); 
+			// Spawning WORLD
+			for (NpcInfo info : spawnsFromWorld) {
+				SpawnData sd = new SpawnData(info.getNameid(), info, mapName);
+				ClientSpawn match = sd.findMatchingCS(info, currentCSpawns);
+				if (match != null) { 
+					sd = new SpawnData(info.getNameid(), match, mapName);
+					currentCSpawns.remove(match);
+				}
+				addSpawn(sd);
+			}
+			System.out.println("[SPAWNS] Added " + spawnsFromWorld.size() + " spots from World spawns !");
 			
-			// Loading spawns from Mission_Mission0.xml
+			// Spawning LEVELS (only spawns that can be identified)
 			for (ClientSpawn cSpawn : currentCSpawns) {
-				if (ClientSpawnType.fromClient(cSpawn.getType()) != null && ClientSpawnType.fromClient(cSpawn.getType()).shouldBeSpawned()) {
-					SpawnData sd = new SpawnData(cSpawn, mapName);
-					if (sd.getNpcId() > 0) {
-						addSpawn(sd);
-						if (!usedCSpawns.contains(cSpawn))
-							usedCSpawns.add(cSpawn);
-						if (sd.getNpcInfo() != null && !usedWDSpawns.contains(sd.getNpcInfo()))
-							usedWDSpawns.add(sd.getNpcInfo());
-					}
+				if (!Strings.isNullOrEmpty(cSpawn.getNpc()) && aion.getNpcs().get(cSpawn.getNpc().toUpperCase()) != null) {
+					SpawnData sd = new SpawnData(aion.getNpcs().get(cSpawn.getNpc().toUpperCase()).getId(), cSpawn, mapName);
+					addSpawn(sd);
+					usedCS.add(cSpawn);
 				}
 			}
-			for (ClientSpawn cs : usedCSpawns)
-				currentCSpawns.remove(cs);
-				
-			System.out.println("[SPAWNS] " + currentCSpawns.size() + " / " + startLevelSize + " spots from LEVELS were not used");
+			for (ClientSpawn cs : usedCS) {currentCSpawns.remove(cs);}
+			usedCS.clear();
 			
-			// Loading spawns from client_world_*.xml
-			for (NpcInfo info : currentWDSpawns) {
-				if (!usedWDSpawns.contains(info)) {
-					SpawnData sd = new SpawnData(info, mapName);
-					if (sd.getNpcId() > 0) {
-						addSpawn(sd);
-						usedWDSpawns.add(info);
-					}
+			// Spawning unidentified LEVELS spawns using SPHERES
+			for (ClientSpawn uCSpawn : currentCSpawns) {
+				SpawnData sd = new SpawnData(uCSpawn, mapName);
+				if (sd.getNpcId() >= 200000) {
+					addSpawn(sd);
+					usedCS.add(uCSpawn);
 				}
 			}
-			for (NpcInfo inf : usedWDSpawns)
-				currentWDSpawns.remove(inf);
+			for (ClientSpawn cs : usedCS) {currentCSpawns.remove(cs);}
+			usedCS.clear();
 			
-			System.out.println("[SPAWNS] " + currentWDSpawns.size() + " / " + startWorldSize + " spots from WORLD were not used");
+			System.out.println("[SPAWNS] Added " + (startLevelSize - currentCSpawns.size()) + " / " + startLevelSize + " spots from Levels spawns !");
 
 			// FINALLY //
 			addAllSpawns(mapId, mapName);
@@ -145,59 +152,34 @@ public class AionSpawnsWriter extends DataProcessor {
 		spot.setX(sd.getX());
 		spot.setY(sd.getY());
 		spot.setZ(sd.getZ());
-		
-		if (sd.canBeStatic() && sd.getStaticId() != -1) 
-			spot.setStaticId(sd.getStaticId());
-		if (spot.getStaticId() == null && sd.canMove())
-			setWalkingInfo(spot, sd);
-		
-		if (sd.getCSpawn() != null && sd.getCSpawn().getDir() != null && spot.getRandomWalk() == null && spot.getWalkerId() == null && spot.getStaticId() == null) {
-			int h = MathUtil.degreeToHeading(sd.getCSpawn().getDir());
-			if (h != 0) {spot.setH(h);}
+
+		if (sd.getWalkerId() != null) {
+			spot.setWalkerId(sd.getWalkerId());
+			if (!toWrite.contains(sd.getSS()))
+				toWrite.add(sd.getSS());
 		}
+		else if (sd.getRandomWalk() > 0)
+			spot.setRandomWalk(sd.getRandomWalk());
+		
+		//TODO: Walker state && walker ID ??
+		
+		if (sd.getStaticId() > 0) 
+			spot.setStaticId(sd.getStaticId());
+		
+		if (sd.getH() != 0) {spot.setH(sd.getH());}
 		
 		// To match WalkerFormator logic
-		if (spot.getWalkerId() != null) {
-			spot.setX(sd.getSS().getX());
-			spot.setY(sd.getSS().getY());
-			spot.setZ(sd.getSS().getZ());
-		}
+		// if (spot.getWalkerId() != null) {
+			// spot.setX(sd.getSS().getX());
+			// spot.setY(sd.getSS().getY());
+			// spot.setZ(sd.getSS().getZ());
+		// }
 		
+		// Fixing Z with Geo && useful level data (TODO)
 		// if (spot.getStaticId() == null)
 			// spot.setZ(ZUtils.getBestZ(sd));
 		
 		s.getSpot().add(spot);
-	}
-	
-	private void setWalkingInfo(Spot spot, SpawnData sd) {
-		
-		if (sd.getCSpawn() != null) {
-			if (sd.getCSpawn().getIidleRange() != null && sd.getCSpawn().getIidleRange() >= 0) {
-				if (sd.getWalkerId() != null) {
-					spot.setWalkerId(sd.getSS().getWpName().toUpperCase());
-					//TODO: Set Walker Id & State
-					if (!toWrite.contains(sd.getSS()))
-						toWrite.add(sd.getSS());
-				}
-				else {
-					if (sd.getCSpawn().getIidleRange() > LevelsProperties.RANDOM_WALK_CAP || sd.getCSpawn().getIidleRange() <= 1)
-						spot.setRandomWalk(LevelsProperties.RANDOM_WALK_CAP);
-					else
-						spot.setRandomWalk(sd.getCSpawn().getIidleRange());
-				}
-			}
-		} else if (sd.getNpcInfo() != null) {
-			if (sd.getNpcInfo().getMovetype().equalsIgnoreCase("true")) {
-				if (sd.getWalkerId() != null) {
-					spot.setWalkerId(sd.getSS().getWpName().toUpperCase());
-					//TODO: Set Walker Id & State
-					if (!toWrite.contains(sd.getSS()))
-						toWrite.add(sd.getSS());
-				}
-				else
-					spot.setRandomWalk(LevelsProperties.RANDOM_WALK_CAP);
-			}
-		}
 	}
 	
 	private boolean isValidSpawn(Spawn s) {
@@ -230,19 +212,23 @@ public class AionSpawnsWriter extends DataProcessor {
 			}
 			
 			if (exists) {
-				List<Spot> merged = sm.getSpawn().get(index).getSpot();
+				List<Spot> merged = new ArrayList<Spot>();
+				merged.addAll(sm.getSpawn().get(index).getSpot());
 				merged.addAll(newSpots);
 				merged = noDuplicates(merged);
 				sm.getSpawn().get(index).getSpot().clear();
 				sm.getSpawn().get(index).getSpot().addAll(merged);
 			} 
-			else
+			else {
 				sm.getSpawn().add(s);
+				addComment(s, aion.getStringText(aion.getNpc(s.getNpcId()).getDesc()));
+			}
 		}
-		else
+		else {
 			sm.getSpawn().add(s);
-		
-		addComment(s, aion.getStringText(aion.getNpc(s.getNpcId()).getName()));
+			// addLine();
+			addComment(s, aion.getStringText(aion.getNpc(s.getNpcId()).getDesc()));
+		}
 	}
 	
 	private List<Spot> noDuplicates(List<Spot> spots) {
@@ -252,7 +238,7 @@ public class AionSpawnsWriter extends DataProcessor {
 			for (int j = i+1; j < spots.size(); j++) {
 				Spot s2 = spots.get(j);
 				if (MathUtil.isCloseEnough(s1.getX(), s1.getY(), s1.getZ(), s2.getX(), s2.getY(), s2.getZ(), 2, 8))
-					results.remove(s2); // TODO: Remove s1 or s2 ?
+					results.remove(s2); // TODO: Remove s1 (first added) or s2 (last added) ?
 			}
 		}
 		return results;
@@ -287,42 +273,42 @@ public class AionSpawnsWriter extends DataProcessor {
 		// Npcs
 		if (!npcSpawnMap.getSpawn().isEmpty()) {
 			spawns.setSpawnMap(npcSpawnMap);
-			System.out.println("[SPAWNS] Adding " + getSpotSize(npcSpawnMap) + " Npc Spots");
+			System.out.println("[SPAWNS] Finally, added " + getSpotSize(npcSpawnMap) + " Npc Spots");
 			addOrder(LevelsProperties.SPAWNS + "Npcs/" + getXml(mapId, mapName), LevelsProperties.SPAWNS_BINDINGS, spawns);
 			spawns = new Spawns();
 		}
 		// Instances
 		if (!instanceSpawnMap.getSpawn().isEmpty()) {
 			spawns.setSpawnMap(instanceSpawnMap);
-			System.out.println("[SPAWNS] Adding " + getSpotSize(instanceSpawnMap) + " Instance Spots");
+			System.out.println("[SPAWNS] Finally, added " + getSpotSize(instanceSpawnMap) + " Instance Spots");
 			addOrder(LevelsProperties.SPAWNS + "Instances/" + getXml(mapId, mapName), LevelsProperties.SPAWNS_BINDINGS, spawns);
 			spawns = new Spawns();
 		}
 		// Gather
 		if (!gatherSpawnMap.getSpawn().isEmpty()) {
 			spawns.setSpawnMap(gatherSpawnMap);
-			System.out.println("[SPAWNS] Adding " + getSpotSize(gatherSpawnMap) + " Gather Spots");
+			System.out.println("[SPAWNS] Finally, added " + getSpotSize(gatherSpawnMap) + " Gather Spots");
 			addOrder(LevelsProperties.SPAWNS + "Gather/" + getXml(mapId, mapName), LevelsProperties.SPAWNS_BINDINGS, spawns);
 			spawns = new Spawns();
 		}
 		// Siege
 		if (!siegesSpawnMap.getSpawn().isEmpty()) {
 			spawns.setSpawnMap(siegesSpawnMap);
-			System.out.println("[SPAWNS] Adding " + getSpotSize(siegesSpawnMap) + " Siege Spots");
+			System.out.println("[SPAWNS] Finally, added " + getSpotSize(siegesSpawnMap) + " Siege Spots");
 			addOrder(LevelsProperties.SPAWNS + "Sieges/" + getXml(mapId, mapName), LevelsProperties.SPAWNS_BINDINGS, spawns);
 			spawns = new Spawns();
 		}
 		// Rifts
 		if (!riftsSpawnMap.getSpawn().isEmpty()) {
 			spawns.setSpawnMap(riftsSpawnMap);
-			System.out.println("[SPAWNS] Adding " + getSpotSize(riftsSpawnMap) + " Rifts Spots");
+			System.out.println("[SPAWNS] Finally, added " + getSpotSize(riftsSpawnMap) + " Rifts Spots");
 			addOrder(LevelsProperties.SPAWNS + "Rifts/" + getXml(mapId, mapName), LevelsProperties.SPAWNS_BINDINGS, spawns);
 			spawns = new Spawns();
 		}
 		// Statics
 		if (!staticSpawnMap.getSpawn().isEmpty()) {
 			spawns.setSpawnMap(staticSpawnMap);
-			System.out.println("[SPAWNS] Adding " + getSpotSize(staticSpawnMap) + " Static Spots");
+			System.out.println("[SPAWNS] Finally, added " + getSpotSize(staticSpawnMap) + " Static Spots");
 			addOrder(LevelsProperties.SPAWNS + "Statics/" + getXml(mapId, mapName), LevelsProperties.SPAWNS_BINDINGS, spawns);
 		}
 		// END
@@ -352,6 +338,6 @@ public class AionSpawnsWriter extends DataProcessor {
 	}
 	
 	private String getXml(int mapId, String mapName) {
-		return mapId + "_" + aion.getStringText("STR_ZONE_NAME_" + mapName) + ".xml";
+		return mapId + "_" + aion.getStringText("STR_ZONE_NAME_" + mapName);
 	}
 }

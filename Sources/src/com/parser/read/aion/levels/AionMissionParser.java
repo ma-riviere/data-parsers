@@ -25,7 +25,7 @@ public class AionMissionParser extends XMLParser<Mission> {
 		if (rootData == null) {
 			rootData = new FastMap<String, Mission>();
 			for (Map.Entry<String[], Mission> entry : parseDir().entrySet())
-				rootData.put(entry.getKey()[1], entry.getValue());
+				rootData.put(entry.getKey()[1].toUpperCase(), entry.getValue());
 		}
 		return rootData;
 	}
