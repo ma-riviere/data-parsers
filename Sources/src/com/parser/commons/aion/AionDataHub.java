@@ -142,6 +142,10 @@ public class AionDataHub {
 		return (!Strings.isNullOrEmpty(s) && getNpcs().get(s.toUpperCase()) != null) ? getNpcs().get(s.toUpperCase()).getId() : 0;
 	}
 	
+	public String getNpcName(int id) {
+		return getStringText(getNpc(id).getDesc());
+	}
+	
 	/*********************** RIDES ****************************/
 	
 	public  Map<String, ClientRide> rides = new HashMap<String, ClientRide>();
@@ -274,6 +278,13 @@ public class AionDataHub {
 				worldMaps.put(wm.getValue().toUpperCase(), wm);
 			// worldMaps = index(new AionWorldMapsParser().parse(), on(WorldMap.class).getValue().toUpperCase());
 		return worldMaps;
+	}
+	
+	public boolean isInstance(String map) {
+		for (ClientInstanceCooltime cic : getCooltimes().keySet())
+			if (cic.getName().equalsIgnoreCase(map))
+				return true;
+		return false;
 	}
 	
 	public int getWorldId(String map) {

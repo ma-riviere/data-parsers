@@ -9,6 +9,7 @@ import com.parser.write.aion.items.AionItemsWriter;
 import com.parser.write.aion.items.AionItemsInternalWriter;
 import com.parser.write.aion.items.AionClientItemsWriter;
 import com.parser.write.aion.levels.AionSpawnsWriter;
+import com.parser.write.aion.levels.AionSpawnsWriter2;
 import com.parser.write.aion.levels.AionHeightMapWriter;
 import com.parser.write.aion.recipes.AionRecipesWriter;
 import com.parser.write.aion.rides.AionRidesWriter;
@@ -25,7 +26,7 @@ public abstract class AionStart {
 		loader.loadProperties("Aion");
 		
 		if (StringUtils.startsWithIgnoreCase("SPAWNS", args[0])) {
-			AionSpawnsWriter writer = new AionSpawnsWriter();
+			AionSpawnsWriter2 writer = new AionSpawnsWriter2();
 			loader.loadProperties("Levels");
 			loader.loadProperties("World");
 			writer.start();

@@ -15,9 +15,9 @@ ECHO = 3 : Rides        ===    4 : Instances Cooltimes ===
 ECHO = 5 : Items        ===    6 : Recipes             ===
 ECHO = 7 : Skills       ===    8 : Skill Learn         ===
 ECHO = 9 : Npcs         ===   10 : Animations          ===
-ECHO = 11 : Housing     ===   12 : Mission0            ===
+ECHO = 11 : Housing     ===   12 : Spawns            ===
 ECHO = 13 : World Data  ===   14 : Walkers             ===
-ECHO = 15 : Level Data  ===   16 : Strings             ===
+ECHO = 15 :   ===   16 : Strings             ===
 ECHO.#####################################################
 ECHO.
 set /P JAR=[JAR] JAR file to compile : %=%
@@ -35,7 +35,7 @@ IF %JAR%==5 CALL Main.bat items 3 1024 1536 %I_ITEMS% %O_ITEMS%
 IF %JAR%==6 CALL Main.bat recipes 3 800 1024 %I_RECIPES% %O_RECIPES%
 IF %JAR%==7 CALL Main.bat skills 3 1000 1200 %I_SKILLS% %O_SKILLS%
 IF %JAR%==8 CALL Main.bat skill_learn 3 800 1024 %I_SKILL_TREE% %O_SKILL_TREE%
-IF %JAR%==9 CALL Main.bat npcs 1 1024 1536 %I_NPCS%
+IF %JAR%==9 CALL Main.bat npcs 1 2048 2400 %I_NPCS%
 IF %JAR%==10 CALL Main.bat animations 1 800 1024 %I_ANIMATIONS%
 IF %JAR%==11 CALL Main.bat housing 1 800 1024 %I_HOUSING%
 IF %JAR%==13 CALL Main.bat world_data 1 800 1024 %I_WORLD_DATA%
@@ -45,8 +45,13 @@ IF %JAR%==91 CALL Main.bat height_map 2 800 1024 %HEIGHT_MAP%
 IF %JAR%==A CALL Main.bat item_name 2 800 1024 %ITEMS_NAME%
 
 :: Levels
-IF %JAR%==12 CALL Main.bat mission 6 2048 2400 %LEVELS% *mission0.xml %O_SPAWNS% *.xml
-IF %JAR%==15 CALL Main.bat level_data 4 800 1024 %LEVELS% leveldata.xml
+IF %JAR%==12 (
+	CALL Main.bat spawns 4 800 1024 %O_SPAWNS% *.xml
+	CALL Main.bat spawns2 2 800 1024 %O_SPAWNS2%
+	CALL Main.bat mission 4 2048 2400 %LEVELS% *mission0.xml
+	CALL Main.bat level_data 4 800 1024 %LEVELS% leveldata.xml
+)
+IF %JAR%==spawns2 CALL Main.bat spawns2 2 800 1024 %O_SPAWNS2%
 
 :: L10N
 IF %JAR%==16 CALL Main.bat strings 1 800 1024 %DATA_STRINGS%
