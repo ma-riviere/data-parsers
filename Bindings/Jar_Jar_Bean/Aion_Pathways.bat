@@ -48,3 +48,4 @@ SET O_WALKERS=%SERVER%\npcs\npc_walker*.xml
 SET SOURCE_SPHERE=%CUSTOM%\source_sphere.xml
 SET HEIGHT_MAP=%CUSTOM%\height_map.xml
 SET ITEMS_NAME=%CUSTOM%\items_name_id.xml
+SET O_SPAWNS2=%CUSTOM%\spawns.xml

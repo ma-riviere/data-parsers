@@ -8,7 +8,7 @@ public enum ClientSpawnType {
 	WATERVOLUME, // Position of water
 	MP, // Map Point
 	SHAPE,
-	DP, // Direct Portal
+	DP, // Direct Portal : spawn points of rifts
 	KP, // Key Point
 	OCCLUDERAREA, // ?
 	SEEDPOINT, // ?
