@@ -43,7 +43,7 @@ public class AionSpawnsWriter2 extends DataProcessor {
 	SpawnMap staticSpawnMap = new SpawnMap();
 	
 	FastMap<String, List<ClientSpawn>> levelSpawns;
-	List<Entity> levelEntities;
+	List<Entity> levelEntities = new ArrayList<Entity>();
 	
 	List<SourceSphere> spheres = new ArrayList<SourceSphere>();
 	Map<SourceSphere, Integer> usedSS = new HashMap<SourceSphere, Integer>();
@@ -52,17 +52,13 @@ public class AionSpawnsWriter2 extends DataProcessor {
 	static int BASE_RESPAWN_TIME = 295;
 	static int BASE_GATHER_RESPAWN_TIME = 55;
 	static int BASE_STATIC_RESPAWN_TIME = 5;
-	static int MAX_ENTITY_DIST = 5;
+	static int MAX_ENTITY_DIST = 8;
 	
 	@Override
 	public void collect() {
 		levelSpawns = new FastMap<String, List<ClientSpawn>>(aion.getLevelSpawns());
-		spheres = aion.getSpheres().get(map);
-		// Loading usable entities
-		for (Entity e : aion.getLevelEntities().get(map)) {
-			if (!Strings.isNullOrEmpty(e.getPos()) && e.getEntityClass() != null && ClientEntityType.fromClient(e.getEntityClass()) != null && ClientEntityType.fromClient(e.getEntityClass()).canBeStatic())
-				levelEntities.add(e);
-		}
+		aion.getLevelEntities();
+		aion.getSpheres();
 		aion.getWorldMaps();
 		aion.getNpcs();
 		aion.getStrings();
@@ -77,6 +73,14 @@ public class AionSpawnsWriter2 extends DataProcessor {
 			if (mapId == 0) continue;
 			initAllSpawns(mapId);
 			Util.printSubSection(mapId + " : " + aion.getStringText("STR_ZONE_NAME_" + map));
+			
+			spheres.clear();
+			spheres = aion.getSpheres().get(map);
+			// Loading usable entities
+			for (Entity e : aion.getLevelEntities().get(map)) {
+				if (!Strings.isNullOrEmpty(e.getPos()) && e.getEntityClass() != null && ClientEntityType.fromClient(e.getEntityClass()) != null && ClientEntityType.fromClient(e.getEntityClass()).canBeStatic())
+					levelEntities.add(e);
+			}
 			
 			// Initializing client spawn data
 			List<ClientSpawn> currentCSpawns = new LinkedList<ClientSpawn>();
@@ -124,16 +128,18 @@ public class AionSpawnsWriter2 extends DataProcessor {
 		// Fixing Z with Geo && useful level data (TODO)
 		// if (spot.getStaticId() == null)
 			// spot.setZ(ZUtils.getBestZ(sd));
-		
-		List<Occupant> occupants = new ArrayList<Occupant>();
-		occupants.add(createOccupant(ws, map));
-		
+
 		Spawn existing = findExistingSpawn(s);
 		if (existing != null) {
-			addOccupants(existing, occupants);
+			if (!checkPresence(existing, ws.getNameid())) {
+				Occupant occ = createOccupant(ws, map);
+				addOccupant(existing, occ);
+			}
 		}
 		else {
-			addOccupants(s, occupants);
+			Occupant occ = createOccupant(ws, map); // Can nerver by null (NpcId always present)
+			addOccupant(s, occ);
+			addComment(s, "[SPAWN] :: WORLD <> //moveto " + aion.getWorldId(map) + " " + s.getX() + " " + s.getY() + " " + s.getZ());
 		}
 	}
 	
@@ -155,19 +161,30 @@ public class AionSpawnsWriter2 extends DataProcessor {
 		else if (cs.getIidleRange() >= 0)
 			s.setH(MathUtil.degreeToHeading(cs.getIidleRange()));
 		
-		List<Occupant> occupants = findOccupants(cs, map);
-		if (occupants == null || occupants.isEmpty()) {
-			System.out.println("[SPAWNS] No occupants could be found for cSpawn : " + cs.getName());
-			return;
-		}
-		
 		Spawn existing = findExistingSpawn(s);
-		if (existing != null) {
-			if (canAdd2Existing)
-				addOccupants(existing, occupants);
+		if (existing != null) { // Spawn exist already
+			if (canAdd2Existing) { // Future occupant can be added to an already created spawns (by non-vacant or World)
+				if (!Strings.isNullOrEmpty(cs.getNpc()) && !checkPresence(existing, aion.getNpcId(cs.getNpc()))) {
+					List<Occupant> occupants = findOccupants(cs, map);
+					if (occupants != null || !occupants.isEmpty())
+						addOccupants(existing, occupants);
+					else
+						System.out.println("[SPAWNS] No occupants could be found for cSpawn : " + cs.getName());
+				}
+				else if (Strings.isNullOrEmpty(cs.getNpc())) {
+					// Should not happen now (!canBeAdded2Existing)
+					System.out.println("WARN : Trying to add vacant spawn ...");
+				}
+			}
 		}
 		else {
-			addOccupants(s, occupants);
+			List<Occupant> occupants = findOccupants(cs, map);
+			if (occupants != null || !occupants.isEmpty()) {
+				addOccupants(s, occupants);
+				addComment(s, "[SPAWN] :: " + cs.getName() + " <> //moveto " + aion.getWorldId(map) + " " + s.getX() + " " + s.getY() + " " + s.getZ());
+			}
+			else
+				System.out.println("[SPAWNS] No occupants could be found for cSpawn : " + cs.getName());
 		}
 	}
 	
@@ -206,7 +223,7 @@ public class AionSpawnsWriter2 extends DataProcessor {
 	private List<Occupant> findOccupantsFromSpheres(ClientSpawn cs, String map) {
 		List<Occupant> results = new LinkedList<Occupant>();
 		for (SourceSphere sphere : spheres) {
-			if (canBeUsed(sphere) && sphere.getVersion() == 0 && sphere.getCountry() == -1 && shouldBeAdded(sphere, results) && MathUtil.isIn3dRange(cs.getPos(), sphere.getX(), sphere.getY(), sphere.getZ(), sphere.getRadius()))
+			if (canBeUsed(sphere) && /*sphere.getVersion() == 0 && sphere.getCountry() == -1 &&*/ shouldBeAdded(sphere, results) && MathUtil.isIn3dRange(cs.getPos(), sphere.getX(), sphere.getY(), sphere.getZ(), sphere.getRadius()))
 				results.add(createOccupant(sphere, map));
 		}
 		return results;	
@@ -226,21 +243,22 @@ public class AionSpawnsWriter2 extends DataProcessor {
 			if (makeItStatic(result, npcId, map, sphere.getX(), sphere.getY(), sphere.getZ()))
 				result.setRespawnTime(BASE_STATIC_RESPAWN_TIME);
 				
-		addComment(result, "[VACANT CS] :: " + aion.getNpcName(npcId));
+		addComment(result, "[From SPHERE] :: " + aion.getNpcName(npcId));
 		return result;
 	}
 	
 	private Occupant createOccupant(NpcInfo info, String map) {
 		int npcId = info.getNameid();
 		Occupant result = createOccupant(npcId);
-		// SourceSphere owner = matchSphere(npcId, map, info.getPos().getX(), info.getPos().getY(), info.getPos().getZ());
-		// if (owner != null) {
-			// if (!makeItWalk(result, owner))
-				// if (makeItStatic(result, npcId, map, info.getPos().getX(), info.getPos().getY(), info.getPos().getZ()))
-					// result.setRespawnTime(BASE_STATIC_RESPAWN_TIME);
-		// }
-		result.setRespawnTime(BASE_STATIC_RESPAWN_TIME);
-		addComment(result, "[WORLD] :: " + aion.getNpcName(npcId));
+		SourceSphere owner = matchSphere(npcId, map, info.getPos().getX(), info.getPos().getY(), info.getPos().getZ());
+		if (owner != null)
+			makeItWalk(result, owner);
+		
+		if (result.getWalkerId() == null) {
+			if (makeItStatic(result, npcId, map, info.getPos().getX(), info.getPos().getY(), info.getPos().getZ()))
+				result.setRespawnTime(BASE_STATIC_RESPAWN_TIME);
+		}
+		addComment(result, "[From WORLD] :: " + aion.getNpcName(npcId));
 		return result;
 	}
 	
@@ -258,7 +276,7 @@ public class AionSpawnsWriter2 extends DataProcessor {
 					result.setRespawnTime(BASE_STATIC_RESPAWN_TIME);
 			}
 		}
-		addComment(result, "[OCCUPIED CS] :: " + aion.getNpcName(npcId));
+		addComment(result, "[From LEVELS] :: " + aion.getNpcName(npcId));
 		return result;
 	}
 	
@@ -282,8 +300,16 @@ public class AionSpawnsWriter2 extends DataProcessor {
 					
 					if (npc.getRaceType() != null)
 						result.setRace(getRace(npc.getRaceType()));
-					else if (npc.getGameLang() != null)
+					if (result.getRace() == null && npc.getGameLang() != null)
 						result.setRace(getRace(npc.getGameLang()));
+					if (result.getRace() == null && npc.getTribe() != null) {
+						if (npc.getTribe().toUpperCase().contains("LIGHT"))
+							result.setRace("ELYOS");
+						else if (npc.getTribe().toUpperCase().contains("DARK"))
+							result.setRace("ASMODIANS");
+						else
+							result.setRace("NONE"); //WARN: Should never happen !
+					}
 						
 					result.setMod(getMod(npc.getAbyssNpcType()));
 
@@ -302,14 +328,14 @@ public class AionSpawnsWriter2 extends DataProcessor {
 					result.setChance(30); // 70% less chance to be spawned compared to the others
 				}
 			}
-		}	
+		}
 		result.setId(id);
 		
 		return result;
 	}
 	
 	private String getRace(String s) {
-		String result = "NONE";
+		String result = null;
 		switch (s.toUpperCase()) {
 			case "DRAKAN":
 			case "DRAGON":
@@ -325,6 +351,9 @@ public class AionSpawnsWriter2 extends DataProcessor {
 			case "PC_DARK_CASTLE_DOOR":
 			case "GCHIEF_DARK":
 				result = "ASMODIANS"; break;
+			
+			case "TELEPORTER": // Handled by another param
+				break;
 			default:
 				System.out.println("[SPAWNS] No siege race declared for : " + s.toUpperCase());
 		}
@@ -344,10 +373,12 @@ public class AionSpawnsWriter2 extends DataProcessor {
 			case "DOORREPAIR":
 			case "DOOR":
 			case "BOSS":
-			// case "RAID":
-			// case "BARRIER":
 			case "SHIELDNPC_ON":
 				result="SIEGE"; break;
+			
+			case "RAID":
+			case "BARRIER":
+				break;
 			default:
 				System.out.println("[SPAWNS] No siege mod declared for : " + type.toUpperCase());
 		}
@@ -361,6 +392,9 @@ public class AionSpawnsWriter2 extends DataProcessor {
 	private int  computeRespawnTime(ClientNpc npc) {
 		int time = BASE_RESPAWN_TIME;
 		// TODO
+		// isQuesl
+		// hpGauge
+		// isNamed
 		return time;
 	}
 	
@@ -398,7 +432,7 @@ public class AionSpawnsWriter2 extends DataProcessor {
 	}
 	
 	private boolean makeItWalk(Occupant occ, SourceSphere ss) {
-		if (!Strings.isNullOrEmpty(ss.getWpName()) && occ.getType().equalsIgnoreCase("SIEGE") || occ.getType().equalsIgnoreCase("NPC")) {
+		if (!Strings.isNullOrEmpty(ss.getWpName()) && occ.getType() != null && canMove(occ.getId()) && (occ.getType().equalsIgnoreCase("SIEGE") || occ.getType().equalsIgnoreCase("NPC"))) {
 			occ.setWalkerId(ss.getWpName().toUpperCase());
 			// occ.setState();
 			// occ.setWalkerIndex();
@@ -409,7 +443,7 @@ public class AionSpawnsWriter2 extends DataProcessor {
 	}
 	
 	private boolean makeItWander(Occupant occ, ClientSpawn cs) {
-		if (occ.getType().equalsIgnoreCase("SIEGE") || occ.getType().equalsIgnoreCase("NPC")) {
+		if (canMove(occ.getId()) && (occ.getType().equalsIgnoreCase("SIEGE") || occ.getType().equalsIgnoreCase("NPC"))) {
 			if (cs.getDir() != -1 && cs.getIidleRange() > 1 && cs.getIidleRange() <= 20) {
 				occ.setRandomWalk(cs.getIidleRange());
 				return true;
@@ -418,10 +452,17 @@ public class AionSpawnsWriter2 extends DataProcessor {
 		return false;
 	}
 	
+	private boolean canMove(int id) {
+		if (aion.getNpc(id) != null && aion.getNpc(id).getMoveSpeedNormalWalk() * 1000 <= 0)
+			return false;
+		return true;
+	}
+	
 	private boolean makeItStatic(Occupant occ, int npcId, String map, float x, float y, float z) {
 		List<Entity> results = new ArrayList<Entity>();
 		ClientNpc npc = aion.getNpc(npcId);
-		if (npc == null) return false;
+		
+		if (npc == null || !canBeStatic(npcId)) return false;
 
 		// Get entity based on client mesh name (can't always match, but a lot faster)
 		for (Entity ent : levelEntities) {
@@ -453,14 +494,30 @@ public class AionSpawnsWriter2 extends DataProcessor {
 		return list.get(0);
 	}
 	
+	private boolean canBeStatic(int id) {
+		if (aion.getNpc(id) != null && aion.getNpc(id).getCursorType().equalsIgnoreCase("action"))
+			return true;
+		return false;
+	}
+	
 	// Add given occupants to an existing Spawn, and add the spawn to the temporary list
 	private void addOccupants(Spawn s, List<Occupant> occupants) {
 		temp.remove(s);
-		for (Occupant occ : occupants) {
-			if (!s.getOccupant().contains(occ))
-				s.getOccupant().add(occ);
-		}
+		for (Occupant toAdd : occupants)
+			addOccupant(s, toAdd);
 		temp.add(s);
+	}
+	
+	private void addOccupant(Spawn s, Occupant occ) {
+		s.getOccupant().add(occ);
+	}
+	
+	private boolean checkPresence(Spawn s, int id) {
+		for (Occupant present : s.getOccupant()) {
+			if (id == present.getId())
+				return true; // Means that it is already linked to the spawn, so do not add it
+		}
+		return false;
 	}
 	
 	private void initAllSpawns(int mapId) {
