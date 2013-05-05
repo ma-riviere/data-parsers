@@ -143,7 +143,7 @@ public class AionDataHub {
 	}
 	
 	public String getNpcName(int id) {
-		return getStringText(getNpc(id).getDesc());
+		return (getNpc(id) != null && getNpc(id).getDesc() != null) ? getStringText(getNpc(id).getDesc()) : null;
 	}
 	
 	/*********************** RIDES ****************************/

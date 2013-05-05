@@ -50,10 +50,10 @@ public class AionSourceSphereParser extends TextParser {
 		ss.setRadius(Double.parseDouble(data[7]));
 		ss.setWpName(data[8]);
 		ss.setConditionSpawn(Integer.parseInt(data[9]));
-		ss.setVersion(Integer.parseInt(data[10]));
-		ss.setCountry(Integer.parseInt(data[11]));
-		if (data.length == 13)
-			ss.setClusterNum(Integer.parseInt(data[12]));
+		// ss.setVersion(Integer.parseInt(data[10])); // 4.0 KR only
+		// ss.setCountry(Integer.parseInt(data[11])); // 4.0 KR only
+		if (data.length == 11)
+			ss.setClusterNum(Integer.parseInt(data[10]));
 		else
 			ss.setClusterNum(0);
 		

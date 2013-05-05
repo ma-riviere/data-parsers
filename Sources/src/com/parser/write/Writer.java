@@ -64,10 +64,11 @@ public abstract class Writer {
 		Processor p = new Processor(false);
 		Serializer s = p.newSerializer();
 		
-		s.setOutputProperty(Property.METHOD, "xml");
+		s.setOutputProperty(Property.METHOD, "xhtml");
 		s.setOutputProperty(Property.INDENT, "yes");
 		s.setOutputProperty(Property.ENCODING, "UTF-8");
 		s.setOutputProperty(Property.STANDALONE, "yes");
+		s.setOutputProperty(Property.SAXON_LINE_LENGTH, "256000");
 		s.setOutputStream(output);
 		
 		XMLStreamWriter writer = s.getXMLStreamWriter();

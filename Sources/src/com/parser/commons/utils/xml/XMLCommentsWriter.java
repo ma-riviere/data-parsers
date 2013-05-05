@@ -19,7 +19,6 @@ public class XMLCommentsWriter extends Listener {
 
 	@Override
 	public void beforeMarshal(Object source) {
-		//TODO: UseFastEquals (hashCode2, see WDGen)
 		if (comments.keySet().contains(source) && !Strings.isNullOrEmpty(comments.get(source))) {
 			try {
 				xmlStreamWriter.writeComment(comments.get(source));
