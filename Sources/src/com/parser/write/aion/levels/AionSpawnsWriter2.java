@@ -69,43 +69,61 @@ public class AionSpawnsWriter2 extends DataProcessor {
 	@Override
 	public void transform() {
 		for (String map : levelSpawns.keySet()) {
+			// Loading the current map
 			int mapId = aion.getWorldId(map);
 			if (mapId == 0) continue;
 			initAllSpawns(mapId);
 			Util.printSubSection(mapId + " : " + aion.getStringText("STR_ZONE_NAME_" + map));
 			
+			// Loading SourceSphere for the current Map
 			spheres.clear();
 			spheres = aion.getSpheres().get(map);
-			// Loading usable entities
+			
+			// Loading usable entities (entities that can be used as static ID)
 			for (Entity e : aion.getLevelEntities().get(map)) {
 				if (!Strings.isNullOrEmpty(e.getPos()) && e.getEntityClass() != null && ClientEntityType.fromClient(e.getEntityClass()) != null && ClientEntityType.fromClient(e.getEntityClass()).canBeStatic())
 					levelEntities.add(e);
 			}
 			
-			// Initializing client spawn data
+			// Loading usable mission_mission0 spawns
 			List<ClientSpawn> currentCSpawns = new LinkedList<ClientSpawn>();
 			for (ClientSpawn cs : levelSpawns.get(map)) {
 				if (ClientSpawnType.fromClient(cs.getType()) != null && ClientSpawnType.fromClient(cs.getType()).shouldBeSpawned())
 					currentCSpawns.add(cs);
 			}
-
+			
+			/**
+			 * Spawn creation logic (by )
+			 * 1) Load usable ENTITIES for static ID (and primary geo correction ? TODO)
+			 * 2) Use WORLD spots
+			 *	--> Try to find equivalent from LEVELS to get heading and so
+			 * 3) Use OCCUPIED LEVELS spots (those who are attributed to a specific NPC ID)
+			 * 4) Use VACANT LEVELS spots (those who aren't attributed to any NPC or object)
+			 *	--> Find matching source-spheres, and find out which one is the best (the smallest range ?)
+			 *	--> 
+			 * TODO : If VCS can only be used once, remove them after use so "findingAllOccupants" won't use them
+			 */
+			
+			// Handling WORLD spawns
+			System.out.println("[INFO] Starting WORLD spawns");
 			for (NpcInfo info : aion.getDataSpawns(map)) {
 				createSpawn(info, map);
 			}
-			
-			// Occupied LEVELS spawns
+			// Handling occupied LEVELS spawns
+			System.out.println("[INFO] Starting occupied LEVELS spawns");
 			for (ClientSpawn cSpawn : currentCSpawns) {
-				if (Strings.isNullOrEmpty(cSpawn.getNpc())) continue; // Unidentified spawns will be dealt fith later ...
-				createSpawn(cSpawn, map, true);
+				if (Strings.isNullOrEmpty(cSpawn.getNpc())) continue; // Vacant spawns will be dealt with later ...
+				createSpawn(cSpawn, map);
 			}
-			// Vacant LEVELS spawns
+			// Handling vacant LEVELS spawns
+			System.out.println("[INFO] Starting vacant LEVELS spawns");
 			for (ClientSpawn vSpawn : currentCSpawns) {
 				if (!Strings.isNullOrEmpty(vSpawn.getNpc())) continue; // Those spawns have already been handled !
-				createSpawn(vSpawn, map, false);
+				createSpawn(vSpawn, map);
 			}
 
 			// FINALLY //
-			scatterAllSpawns(map);
+			arrangeAllSpawns(map);
 			addAllSpawns(mapId, map);
 			log.reset();
 		}
@@ -117,7 +135,9 @@ public class AionSpawnsWriter2 extends DataProcessor {
 		AionWalkersWriter writer = new AionWalkersWriter();
 		writer.writeFromSpawns(toWrite);
 	}
-	
+	/**
+	 * Create a new Spawn Point from a WORLD spawn
+	 */
 	private void createSpawn(NpcInfo ws, String map) {
 		
 		Spawn s = new Spawn();
@@ -129,22 +149,25 @@ public class AionSpawnsWriter2 extends DataProcessor {
 		// if (spot.getStaticId() == null)
 			// spot.setZ(ZUtils.getBestZ(sd));
 
-		Spawn existing = findExistingSpawn(s);
-		if (existing != null) {
-			if (!checkPresence(existing, ws.getNameid())) {
+		Spawn existing = findExistingSP(s);
+		if (existing != null) { // Spawn point already exists
+			if (!hasOccupantWithSameId(existing, ws.getNameid())) { // If true, do nothing (occupant already linked to this spawn point)
 				Occupant occ = createOccupant(ws, map);
 				addOccupant(existing, occ);
 			}
 		}
-		else {
-			Occupant occ = createOccupant(ws, map); // Can nerver by null (NpcId always present)
+		else { // Spawn point does not exist and will be created
+			Occupant occ = createOccupant(ws, map); // Can never by null (NpcId always present)
 			addOccupant(s, occ);
 			addComment(s, "[SPAWN] :: WORLD <> //moveto " + aion.getWorldId(map) + " " + s.getX() + " " + s.getY() + " " + s.getZ());
 		}
 	}
 	
-	private void createSpawn(ClientSpawn cs, String map, boolean canAdd2Existing) {
-		if (Strings.isNullOrEmpty(cs.getPos())) return;
+	/**
+	 * Create a new Spawn Point from a LEVEL spawn
+	 */
+	private void createSpawn(ClientSpawn cs, String map) {
+		if (Strings.isNullOrEmpty(cs.getPos())) return; // TODO : Print them, see what to do with them (Center of SS ? Match with WS)
 		
 		Spawn s = new Spawn();
 		String[] xyz = cs.getPos().split(",");
@@ -156,15 +179,22 @@ public class AionSpawnsWriter2 extends DataProcessor {
 		// if (spot.getStaticId() == null)
 			// spot.setZ(ZUtils.getBestZ(sd));
 		
+		// When dir is < 0, Iidle_range seems to act as heading (TODO: More info)
 		if (cs.getDir() >= 0)
 			s.setH(MathUtil.degreeToHeading(cs.getDir()));
 		else if (cs.getIidleRange() >= 0)
 			s.setH(MathUtil.degreeToHeading(cs.getIidleRange()));
 		
-		Spawn existing = findExistingSpawn(s);
-		if (existing != null) { // Spawn exist already
-			if (canAdd2Existing) { // Future occupant can be added to an already created spawns (by non-vacant or World)
-				if (!Strings.isNullOrEmpty(cs.getNpc()) && !checkPresence(existing, aion.getNpcId(cs.getNpc()))) {
+		Spawn existing = findExistingSP(s);
+		if (existing != null) { // Spawn point already exists
+			// If that spawn has an occupant with the same ID, exit
+			if (!Strings.isNullOrEmpty(cs.getNpc()) && hasOccupantWithSameId(existing, aion.getNpcId(cs.getNpc()))) return;
+			/**
+			 * If SP already exists, find npcId and only add it if its a named or siege spawn. Maybe check this later when npcId / type is known ?
+			 */
+			if (canAdd2Existing) { // Future occupant can be added to an already created SP (for multiple occupants SP, for spots holding a named version)
+				//TODO: If getNpc is null, 
+				if (!Strings.isNullOrEmpty(cs.getNpc()) && !hasOccupantWithSameId(existing, aion.getNpcId(cs.getNpc()))) {
 					List<Occupant> occupants = findOccupants(cs, map);
 					if (occupants != null || !occupants.isEmpty())
 						addOccupants(existing, occupants);
@@ -177,7 +207,7 @@ public class AionSpawnsWriter2 extends DataProcessor {
 				}
 			}
 		}
-		else {
+		else { // Spawn point does not exist and will be created
 			List<Occupant> occupants = findOccupants(cs, map);
 			if (occupants != null || !occupants.isEmpty()) {
 				addOccupants(s, occupants);
@@ -189,18 +219,18 @@ public class AionSpawnsWriter2 extends DataProcessor {
 	}
 	
 	// Compare currently created spawn to previously added to find similarities
-	private Spawn findExistingSpawn(Spawn s) {
+	private Spawn findExistingSP(Spawn s) {
 		for (Spawn _s : temp)
 			if (MathUtil.isCloseEnough(s.getX(), s.getY(), s.getZ(), _s.getX(), _s.getY(), _s.getZ(), 2, 9)) // WARN: Check the precision
 				return _s;
 		return null;
 	}
 	
-	// Find the occupants of the given cSpawn
+	// Find occupants for the given CSP
 	private List<Occupant> findOccupants(ClientSpawn cs, String map) {
 		List<Occupant> results = new ArrayList<Occupant>();
 		
-		// Spawn is occupied
+		// SP is occupied
 		if (!Strings.isNullOrEmpty(cs.getNpc())) {
 			if (ClientSpawnType.fromClient(cs.getType()) == ClientSpawnType.SP) {
 				ClientNpc npc = aion.getNpcs().get(cs.getNpc().toUpperCase());
@@ -250,6 +280,7 @@ public class AionSpawnsWriter2 extends DataProcessor {
 	private Occupant createOccupant(NpcInfo info, String map) {
 		int npcId = info.getNameid();
 		Occupant result = createOccupant(npcId);
+		// TODO : Check if can be a walker or can be static before looking for matching SS or ENT
 		SourceSphere owner = matchSphere(npcId, map, info.getPos().getX(), info.getPos().getY(), info.getPos().getZ());
 		if (owner != null)
 			makeItWalk(result, owner);
@@ -385,20 +416,21 @@ public class AionSpawnsWriter2 extends DataProcessor {
 		return result;
 	}
 	
+	// Checks if the NPC is a named one
 	private boolean isNamed(ClientNpc npc) {
 		return npc.getName().toUpperCase().contains("NAMED");
 	}
 	
-	private int  computeRespawnTime(ClientNpc npc) {
+	private int computeRespawnTime(ClientNpc npc) {
 		int time = BASE_RESPAWN_TIME;
 		// TODO
-		// isQuesl
+		// isQuest
 		// hpGauge
 		// isNamed
 		return time;
 	}
 	
-	// Finding most appropriate owner sphere for a Spawn not generated using spheres
+	// Finding most appropriate (lowest Radius ?) owner sphere for a Spawn not generated using spheres
 	private SourceSphere matchSphere(int npcId, String map, float x, float y, float z) {
 		List<SourceSphere> results = new ArrayList<SourceSphere>(); 
 		
@@ -508,11 +540,14 @@ public class AionSpawnsWriter2 extends DataProcessor {
 		temp.add(s);
 	}
 	
+	// TODO: Temp ?
 	private void addOccupant(Spawn s, Occupant occ) {
+		// temp.remove(s);
 		s.getOccupant().add(occ);
+		// temp.add(s);
 	}
 	
-	private boolean checkPresence(Spawn s, int id) {
+	private boolean hasOccupantWithSameId(Spawn s, int id) {
 		for (Occupant present : s.getOccupant()) {
 			if (id == present.getId())
 				return true; // Means that it is already linked to the spawn, so do not add it
@@ -541,7 +576,7 @@ public class AionSpawnsWriter2 extends DataProcessor {
 		staticSpawnMap.setMapId(mapId);
 	}
 	
-	private void scatterAllSpawns(String map) {
+	private void arrangeAllSpawns(String map) {
 		if (aion.isInstance(map.toUpperCase()))
 			instanceSpawnMap.getSpawn().addAll(temp);
 		for (Spawn s : temp) {
