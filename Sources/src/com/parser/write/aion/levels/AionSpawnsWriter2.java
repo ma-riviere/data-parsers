@@ -186,35 +186,39 @@ public class AionSpawnsWriter2 extends DataProcessor {
 			s.setH(MathUtil.degreeToHeading(cs.getIidleRange()));
 		
 		Spawn existing = findExistingSP(s);
-		if (existing != null) { // Spawn point already exists
-			// If that spawn has an occupant with the same ID, exit
-			if (!Strings.isNullOrEmpty(cs.getNpc()) && hasOccupantWithSameId(existing, aion.getNpcId(cs.getNpc()))) return;
-			/**
-			 * If SP already exists, find npcId and only add it if its a named or siege spawn. Maybe check this later when npcId / type is known ?
-			 */
-			if (canAdd2Existing) { // Future occupant can be added to an already created SP (for multiple occupants SP, for spots holding a named version)
-				//TODO: If getNpc is null, 
-				if (!Strings.isNullOrEmpty(cs.getNpc()) && !hasOccupantWithSameId(existing, aion.getNpcId(cs.getNpc()))) {
-					List<Occupant> occupants = findOccupants(cs, map);
-					if (occupants != null || !occupants.isEmpty())
-						addOccupants(existing, occupants);
-					else
-						System.out.println("[SPAWNS] No occupants could be found for cSpawn : " + cs.getName());
+		if (existing != null) { // SP already exists
+			if (!Strings.isNullOrEmpty(cs.getNpc()) && !hasOccupantWithSameId(existing, aion.getNpcId(cs.getNpc()))) {
+				// List<Occupant> occupants = findOccupants(cs, map);
+				Occupant occ = findOccupant(cs, map);
+				if (occ != null) {
+					if (existing.getOccupant().isEmpty())
+						addOccupant(existing, occ);
+					else {
+						// SIEGE Npc can be added to an already used SP
+						if (occ.getType().equalsIgnoreCase("SIEGE"))
+							addOccupant(existing, occ);
+						// NAMED Npc can be added to an already used SP
+						else {
+							ClientNpc npc = aion.getNpc(id);
+							if (npc != null && isNamed(npc))
+								addOccupant(existing, occ);
+						}
+					}
 				}
-				else if (Strings.isNullOrEmpty(cs.getNpc())) {
-					// Should not happen now (!canBeAdded2Existing)
-					System.out.println("WARN : Trying to add vacant spawn ...");
-				}
+				else
+					System.out.println("[SPAWNS] No occupants could be found for SP : " + cs.getName());
 			}
 		}
-		else { // Spawn point does not exist and will be created
-			List<Occupant> occupants = findOccupants(cs, map);
-			if (occupants != null || !occupants.isEmpty()) {
-				addOccupants(s, occupants);
+		// Spawn point does not exist and will be created, and the occupant added (if any)
+		else {
+			// List<Occupant> occupants = findOccupants(cs, map);
+			Occupant occ = findOccupant(cs, map);
+			if (occ != null) {
+				addOccupant(s, occ);
 				addComment(s, "[SPAWN] :: " + cs.getName() + " <> //moveto " + aion.getWorldId(map) + " " + s.getX() + " " + s.getY() + " " + s.getZ());
 			}
 			else
-				System.out.println("[SPAWNS] No occupants could be found for cSpawn : " + cs.getName());
+				System.out.println("[SPAWNS] No occupants could be found for SP : " + cs.getName());
 		}
 	}
 	
@@ -226,7 +230,7 @@ public class AionSpawnsWriter2 extends DataProcessor {
 		return null;
 	}
 	
-	// Find occupants for the given CSP
+	/** Find occupants for the given CSP
 	private List<Occupant> findOccupants(ClientSpawn cs, String map) {
 		List<Occupant> results = new ArrayList<Occupant>();
 		
@@ -253,7 +257,7 @@ public class AionSpawnsWriter2 extends DataProcessor {
 	private List<Occupant> findOccupantsFromSpheres(ClientSpawn cs, String map) {
 		List<Occupant> results = new LinkedList<Occupant>();
 		for (SourceSphere sphere : spheres) {
-			if (canBeUsed(sphere) && /*sphere.getVersion() == 0 && sphere.getCountry() == -1 &&*/ shouldBeAdded(sphere, results) && MathUtil.isIn3dRange(cs.getPos(), sphere.getX(), sphere.getY(), sphere.getZ(), sphere.getRadius()))
+			if (canBeUsed(sphere) && shouldBeAdded(sphere, results) && MathUtil.isIn3dRange(cs.getPos(), sphere.getX(), sphere.getY(), sphere.getZ(), sphere.getRadius()))
 				results.add(createOccupant(sphere, map));
 		}
 		return results;	
@@ -265,7 +269,32 @@ public class AionSpawnsWriter2 extends DataProcessor {
 				return false;
 		return true;
 	}
+	*/
 	
+	// Find the occupant for the given CSP
+	private Occupant findOccupant(ClientSpawn cs, String map) {
+	
+		
+		// CSP is occupied
+		if (!Strings.isNullOrEmpty(cs.getNpc())) {
+			if (ClientSpawnType.fromClient(cs.getType()) == ClientSpawnType.SP) {
+				ClientNpc npc = aion.getNpcs().get(cs.getNpc().toUpperCase());
+				if (npc != null) results.add(createOccupant(cs, map));
+			}
+			else if (ClientSpawnType.fromClient(cs.getType()) == ClientSpawnType.HSP) {
+				// Gatherable gather = aion.getGatherables().get(cs.getNpc().toUpperCase());
+				// if (gather != null) results.add(createOccupant(gather.getId()));
+			}
+		}
+		
+		// CSP is vacant
+		else
+			results.addAll(findOccupantsFromSpheres(cs, map));
+		
+		return results;
+	}
+	
+	// Creating an occupant from a SourceSphere
 	private Occupant createOccupant(SourceSphere sphere, String map) {
 		int npcId = aion.getNpcId(sphere.getName().toUpperCase());
 		Occupant result = createOccupant(aion.getNpcId(sphere.getName().toUpperCase()));
@@ -277,6 +306,7 @@ public class AionSpawnsWriter2 extends DataProcessor {
 		return result;
 	}
 	
+	// Creating an occupant from a WORLD SP
 	private Occupant createOccupant(NpcInfo info, String map) {
 		int npcId = info.getNameid();
 		Occupant result = createOccupant(npcId);
@@ -293,6 +323,7 @@ public class AionSpawnsWriter2 extends DataProcessor {
 		return result;
 	}
 	
+	// Create an occupant from a LEVELS SP
 	private Occupant createOccupant(ClientSpawn cs, String map) {
 		int npcId = aion.getNpcId(cs.getNpc());
 		Occupant result = createOccupant(npcId);
@@ -314,13 +345,14 @@ public class AionSpawnsWriter2 extends DataProcessor {
 	// Create an occupant from NpcId
 	private Occupant createOccupant(int id) {
 		Occupant result = new Occupant();
-		ClientNpc npc = aion.getNpc(id);
 		
 		if (id > 400000 && id <= 410000) {
 			result.setType("GATHER");
 			result.setRespawnTime(BASE_GATHER_RESPAWN_TIME); //TODO: get GatherTemplate : if big one (several gathers), bigger respawn time
 			// addComment(result, "[GATHER] :: " + aion.getGatherables().get(npcId));
 		}
+		
+		ClientNpc npc = aion.getNpc(id);
 		else if (npc != null) {
 			if (!Strings.isNullOrEmpty(npc.getAbyssNpcType()) && getMod(npc.getAbyssNpcType()) != null) {
 				Matcher siegeM = Pattern.compile("\\d{4}").matcher(npc.getName());
@@ -532,19 +564,20 @@ public class AionSpawnsWriter2 extends DataProcessor {
 		return false;
 	}
 	
-	// Add given occupants to an existing Spawn, and add the spawn to the temporary list
+	/** Add given occupants to an existing Spawn, and add the spawn to the temporary list
 	private void addOccupants(Spawn s, List<Occupant> occupants) {
 		temp.remove(s);
 		for (Occupant toAdd : occupants)
 			addOccupant(s, toAdd);
 		temp.add(s);
 	}
+	*/
 	
 	// TODO: Temp ?
 	private void addOccupant(Spawn s, Occupant occ) {
-		// temp.remove(s);
+		temp.remove(s);
 		s.getOccupant().add(occ);
-		// temp.add(s);
+		temp.add(s);
 	}
 	
 	private boolean hasOccupantWithSameId(Spawn s, int id) {
@@ -576,6 +609,7 @@ public class AionSpawnsWriter2 extends DataProcessor {
 		staticSpawnMap.setMapId(mapId);
 	}
 	
+	// Arrange all create Spawns into proper categories
 	private void arrangeAllSpawns(String map) {
 		if (aion.isInstance(map.toUpperCase()))
 			instanceSpawnMap.getSpawn().addAll(temp);
